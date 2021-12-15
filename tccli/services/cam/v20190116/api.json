@@ -2750,6 +2750,7 @@
         {
           "default": "",
           "document": "指定用户Uin，不填默认列出当前用户访问密钥",
+          "example": "123456",
           "member": "uint64",
           "name": "TargetUin",
           "required": false,
@@ -2763,8 +2764,10 @@
       "members": [
         {
           "document": "访问密钥列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AccessKey",
           "name": "AccessKeys",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

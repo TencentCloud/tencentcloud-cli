@@ -1,10 +1,28 @@
 {
   "actions": {
+    "AddAccountToAccountGroup": {
+      "document": "账号组添加账号",
+      "input": "AddAccountToAccountGroupRequest",
+      "name": "账号组添加账号",
+      "output": "AddAccountToAccountGroupResponse"
+    },
     "AddUserToUserGroup": {
       "document": "加入用户到用户组",
       "input": "AddUserToUserGroupRequest",
       "name": "加入用户到用户组",
       "output": "AddUserToUserGroupResponse"
+    },
+    "CreateAccountGroup": {
+      "document": "创建账号组",
+      "input": "CreateAccountGroupRequest",
+      "name": "创建账号组",
+      "output": "CreateAccountGroupResponse"
+    },
+    "CreateAppAccount": {
+      "document": "创建应用账号",
+      "input": "CreateAppAccountRequest",
+      "name": "创建应用账号",
+      "output": "CreateAppAccountResponse"
     },
     "CreateOrgNode": {
       "document": "新建一个机构节点",
@@ -24,6 +42,18 @@
       "name": "新建用户组",
       "output": "CreateUserGroupResponse"
     },
+    "DeleteAccountGroup": {
+      "document": "删除账号组",
+      "input": "DeleteAccountGroupRequest",
+      "name": "删除账号组",
+      "output": "DeleteAccountGroupResponse"
+    },
+    "DeleteAppAccount": {
+      "document": "删除应用账号",
+      "input": "DeleteAppAccountRequest",
+      "name": "删除应用账号",
+      "output": "DeleteAppAccountResponse"
+    },
     "DeleteOrgNode": {
       "document": "删除一个机构节点",
       "input": "DeleteOrgNodeRequest",
@@ -41,6 +71,24 @@
       "input": "DeleteUserGroupRequest",
       "name": "删除用户组",
       "output": "DeleteUserGroupResponse"
+    },
+    "DeleteUsers": {
+      "document": "批量删除当前节点下的用户。如果出现个别用户删除错误，将不影响其余被勾选用户被删除的操作，同时提示未被删除的用户名称/用户ID。",
+      "input": "DeleteUsersRequest",
+      "name": "批量删除用户",
+      "output": "DeleteUsersResponse"
+    },
+    "DescribeAccountGroup": {
+      "document": "查询账号组列表",
+      "input": "DescribeAccountGroupRequest",
+      "name": "查询账号组列表",
+      "output": "DescribeAccountGroupResponse"
+    },
+    "DescribeAppAccount": {
+      "document": "查询应用账号列表",
+      "input": "DescribeAppAccountRequest",
+      "name": "查询应用账号列表",
+      "output": "DescribeAppAccountResponse"
     },
     "DescribeApplication": {
       "document": "获取一个应用的信息。",
@@ -89,6 +137,18 @@
       "input": "DescribeUserResourcesAuthorizationRequest",
       "name": "查询指定用户下的资源授权列表",
       "output": "DescribeUserResourcesAuthorizationResponse"
+    },
+    "DescribeUserThirdPartyAccountInfo": {
+      "document": "通过用户名或用户 id 获取用户的第三方账号绑定信息。",
+      "input": "DescribeUserThirdPartyAccountInfoRequest",
+      "name": "获取用户的第三方账号绑定信息",
+      "output": "DescribeUserThirdPartyAccountInfoResponse"
+    },
+    "ListAccountInAccountGroup": {
+      "document": " 获取账号组中的账号列表",
+      "input": "ListAccountInAccountGroupRequest",
+      "name": "获取账号组中的账号列表",
+      "output": "ListAccountInAccountGroupResponse"
     },
     "ListApplicationAuthorizations": {
       "document": "应用授权关系列表（含搜索条件匹配）。",
@@ -150,6 +210,18 @@
       "name": "获取用户组中的用户列表",
       "output": "ListUsersInUserGroupResponse"
     },
+    "ModifyAccountGroup": {
+      "document": "修改账号组",
+      "input": "ModifyAccountGroupRequest",
+      "name": "修改账号组",
+      "output": "ModifyAccountGroupResponse"
+    },
+    "ModifyAppAccount": {
+      "document": "修改应用账号",
+      "input": "ModifyAppAccountRequest",
+      "name": "修改应用账号",
+      "output": "ModifyAppAccountResponse"
+    },
     "ModifyApplication": {
       "document": "更新一个应用的信息",
       "input": "ModifyApplicationRequest",
@@ -161,6 +233,12 @@
       "input": "ModifyUserInfoRequest",
       "name": "修改用户",
       "output": "ModifyUserInfoResponse"
+    },
+    "RemoveAccountFromAccountGroup": {
+      "document": "从账号组中移除账号",
+      "input": "RemoveAccountFromAccountGroupRequest",
+      "name": "从账号组中移除账号",
+      "output": "RemoveAccountFromAccountGroupResponse"
     },
     "RemoveUserFromUserGroup": {
       "document": "从用户组中移除用户",
@@ -182,6 +260,104 @@
     "serviceShortName": "eiam"
   },
   "objects": {
+    "AccountGroupInfo": {
+      "document": "查询账号组信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号组名。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccountGroupSearchCriteria": {
+      "document": "账号组查询参数",
+      "members": [
+        {
+          "default": "",
+          "document": "关键字",
+          "example": "比赛一组",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AddAccountToAccountGroupRequest": {
+      "document": "AddAccountToAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加入账号组的账号ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAccountToAccountGroupResponse": {
+      "document": "AddAccountToAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddUserToUserGroupRequest": {
       "document": "AddUserToUserGroup请求参数结构体",
       "members": [
@@ -218,6 +394,78 @@
       ],
       "type": "object"
     },
+    "AppAccountInfo": {
+      "document": "查询账号信息列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "账号ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LinkUserInfo",
+          "name": "UserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AppAccountSearchCriteria": {
+      "document": "账号查询参数",
+      "members": [
+        {
+          "default": "",
+          "document": "关键字",
+          "example": "张三",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ApplicationAuthorizationInfo": {
       "document": "应用信息列表。",
       "members": [
@@ -249,6 +497,26 @@
           "name": "InheritedForm",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -560,6 +828,123 @@
       ],
       "usage": "out"
     },
+    "CreateAccountGroupRequest": {
+      "document": "CreateAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号组名。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountGroupResponse": {
+      "document": "CreateAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "账号组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAppAccountRequest": {
+      "document": "CreateAppAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAppAccountResponse": {
+      "document": "CreateAppAccount返回参数结构体",
+      "members": [
+        {
+          "document": "账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrgNodeRequest": {
       "document": "CreateOrgNode请求参数结构体",
       "members": [
@@ -785,6 +1170,60 @@
       ],
       "type": "object"
     },
+    "DeleteAccountGroupRequest": {
+      "document": "DeleteAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID数组。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountGroupResponse": {
+      "document": "DeleteAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppAccountRequest": {
+      "document": "DeleteAppAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号ID数组。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppAccountResponse": {
+      "document": "DeleteAppAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteOrgNodeRequest": {
       "document": "DeleteOrgNode请求参数结构体",
       "members": [
@@ -866,6 +1305,213 @@
     "DeleteUserResponse": {
       "document": "DeleteUser返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersRequest": {
+      "document": "DeleteUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "被删除用户的ID列表。DeleteIdList 和 DeleteNameList 需至少一个不为空；都不为空时优先使用 DeleteNameList。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "被删除用户的名称列表。DeleteIdList 和 DeleteNameList 需至少一个不为空；都不为空时优先使用 DeleteNameList。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteNameList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersResponse": {
+      "document": "DeleteUsers返回参数结构体",
+      "members": [
+        {
+          "document": "未被成功删除的用户信息。当业务参数为DeleteIdList时，本字段将返回未成功删除的用户ID列表。当业务参数为DeleteNameList时，本字段将返回未成功删除的用户名称列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountGroupRequest": {
+      "document": "DescribeAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
+          "example": "无",
+          "member": "AccountGroupSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountGroupResponse": {
+      "document": "DescribeAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回查询的总记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回符合条件的数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccountGroupInfo",
+          "name": "AccountGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppAccountRequest": {
+      "document": "DescribeAppAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
+          "example": "无",
+          "member": "AppAccountSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppAccountResponse": {
+      "document": "DescribeAppAccount返回参数结构体",
+      "members": [
+        {
+          "document": "返回查询的总记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "应用ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回符合条件的数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppAccountInfo",
+          "name": "AppAccountList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1143,6 +1789,15 @@
           "name": "OrgNodeChildInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "机构节点描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1560,6 +2215,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "当前用户的密码是否需要重置，该字段为false表示不需要重置密码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PwdNeedReset",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1667,6 +2331,69 @@
       ],
       "type": "object"
     },
+    "DescribeUserThirdPartyAccountInfoRequest": {
+      "document": "DescribeUserThirdPartyAccountInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户 ID。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserThirdPartyAccountInfoResponse": {
+      "document": "DescribeUserThirdPartyAccountInfo返回参数结构体",
+      "members": [
+        {
+          "document": "用户 id。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户名。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "三方账号的绑定情况。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ThirdPartyAccountInfo",
+          "name": "ThirdPartyAccounts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InheritedForm": {
       "document": "应用信息列表。",
       "members": [
@@ -1692,6 +2419,113 @@
         }
       ],
       "usage": "out"
+    },
+    "LinkUserInfo": {
+      "document": "账号关联的用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListAccountInAccountGroupRequest": {
+      "document": "ListAccountInAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。",
+          "example": "无",
+          "member": "AccountGroupSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAccountInAccountGroupResponse": {
+      "document": "ListAccountInAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "查询返回的相关账号列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppAccountInfo",
+          "name": "AccountList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回查询账号的总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账号组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListApplicationAuthorizationsRequest": {
       "document": "ListApplicationAuthorizations请求参数结构体",
@@ -1974,6 +2808,42 @@
           "name": "UserId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模糊查询条件，支持匹配用户组名称（DisplayName）。如果该字段为空，则默认展示该用户所有的用户组。",
+          "example": "无",
+          "member": "UserGroupInformationSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：用户组名称（DisplayName）、用户组ID（UserGroupId）、创建时间（CreatedDate）。如果该字段为空，则默认按照用户组名称正向排序。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户组。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户组。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1997,6 +2867,24 @@
           "name": "UserId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户所属的用户组信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserGroupInfo",
+          "name": "UserGroupInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回的用户组信息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -2100,6 +2988,42 @@
           "name": "IncludeOrgNodeChildInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户属性搜索条件，可查询条件包括：用户名、手机号码，邮箱、用户锁定状态、用户冻结状态、创建时间、上次修改时间，支持多种属性组合作为查询条件。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配、中括号以逗号分隔（[Min，Max]）表示闭区间查询、大括号以逗号分隔（{Min，Max}）表示开区间查询，中括号与大括号可以配合使用（例如：{Min，Max]表示最小值开区间，最大值闭区间查询）。范围匹配支持使用星号（例如{20,*]表示查询范围为大于20的所有数据）。范围查询同时支持时间段查询，支持的属性包括创建时间 （CreationTime）、上次修改时间（LastUpdateTime），查询的时间格式遵循 ISO 8601 标准，例如：2021-01-13T09:44:07.182+0000。",
+          "example": "无",
+          "member": "ListUsersInOrgNodeSearchCriteria",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "排序条件集合。可排序的属性支持：用户名字（UserName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、创建时间 （CreatedDate）、上次更新时间（LastModifiedDate）。如果不指定，则默认按照用户昵称（DisplayName）正向排序。",
+          "example": "无",
+          "member": "SortCondition",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2144,6 +3068,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "组织机构ID路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeIdPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "组织机构名称路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeNamePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2151,6 +3093,82 @@
         }
       ],
       "type": "object"
+    },
+    "ListUsersInOrgNodeSearchCriteria": {
+      "document": "展示机构下用户的属性搜索条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名，长度限制：64个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户邮箱。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户创建时间，遵循 ISO 8601 标准。",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户上次更新时间。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "名称匹配搜索，匹配范围包括：用户名称、用户手机号。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ListUsersInUserGroupRequest": {
       "document": "ListUsersInUserGroup请求参数结构体",
@@ -2287,6 +3305,105 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountGroupRequest": {
+      "document": "ModifyAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号组名。未传入该参数时，表示不进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述，未传入该参数时，表示不进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountGroupResponse": {
+      "document": "ModifyAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppAccountRequest": {
+      "document": "ModifyAppAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号名称。未传入该参数时，表示不进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号密码。未传入该参数时，表示不进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述，未传入该参数时，表示不进行修改。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppAccountResponse": {
+      "document": "ModifyAppAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2460,6 +3577,15 @@
           "name": "PwdNeedReset",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2548,6 +3674,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机构节点描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2584,9 +3720,65 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构ID路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeIdPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组织机构名称路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgNodeNamePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "RemoveAccountFromAccountGroupRequest": {
+      "document": "RemoveAccountFromAccountGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账号组ID",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要移除账号ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveAccountFromAccountGroupResponse": {
+      "document": "RemoveAccountFromAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RemoveUserFromUserGroupRequest": {
       "document": "RemoveUserFromUserGroup请求参数结构体",
@@ -2650,6 +3842,32 @@
       ],
       "usage": "in"
     },
+    "ThirdPartyAccountInfo": {
+      "document": "三方账号信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方账号代码。\"2\"代表企业微信。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "账号对应的用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UpdateOrgNodeRequest": {
       "document": "UpdateOrgNode请求参数结构体",
       "members": [
@@ -2704,6 +3922,52 @@
       ],
       "type": "object"
     },
+    "UserGroupInfo": {
+      "document": "返回的用户组列表。",
+      "members": [
+        {
+          "default": "",
+          "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户组ID，是用户组全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "UserGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户组备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UserGroupInfoSearchCriteria": {
       "document": "用户组属性搜索条件。",
       "members": [
@@ -2755,6 +4019,22 @@
         }
       ],
       "usage": "out"
+    },
+    "UserGroupInformationSearchCriteria": {
+      "document": "获取用户所在的用户组列表功能中用户组属性搜索条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "名称匹配搜索，匹配范围包括：用户组名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "UserInfo": {
       "document": "用户信息列表。",

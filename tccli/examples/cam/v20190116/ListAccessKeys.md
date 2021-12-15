@@ -15,12 +15,12 @@ Output:
     "Response": {
         "AccessKeys": [
             {
-                "AccessKeyId": "WERDlOp351234hlczDqKDvRjsvmQsJQWEaYK",
+                "AccessKeyId": "AKIDlOp****mQsJQWEaYK",
                 "Status": "Active",
                 "CreateTime": "2019-12-25 14:53:03"
             },
             {
-                "AccessKeyId": "A2342hOvQQQWvNdgXHrFQOHySnzb5OVP7dv8",
+                "AccessKeyId": "A2342hOv****QOHySnzb5P7dv8",
                 "Status": "Active",
                 "CreateTime": "2020-03-03 16:51:21"
             }

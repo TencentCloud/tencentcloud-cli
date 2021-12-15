@@ -10855,10 +10855,20 @@
         {
           "default": "",
           "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,不支持同时指定SecurityGroupId和Filters参数。\n<li>security-group-id - String - 安全组ID。</li>\n<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>\n<li>address-module - String - IP地址模板或IP地址组模板ID。</li>\n<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>\n<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>\n<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>\n<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>\n<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>\n<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10868,8 +10878,10 @@
       "members": [
         {
           "document": "安全组规则集合。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

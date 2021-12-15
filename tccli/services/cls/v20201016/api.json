@@ -13,9 +13,9 @@
       "output": "CreateAlarmResponse"
     },
     "CreateAlarmNotice": {
-      "document": "该接口用户创建告警通知模板。",
+      "document": "该接口用户创建通知渠道组。",
       "input": "CreateAlarmNoticeRequest",
-      "name": "创建告警通知模板",
+      "name": "创建通知渠道组",
       "output": "CreateAlarmNoticeResponse"
     },
     "CreateAsyncContextTask": {
@@ -79,9 +79,9 @@
       "output": "DeleteAlarmResponse"
     },
     "DeleteAlarmNotice": {
-      "document": "该接口用于删除告警通知模板",
+      "document": "该接口用于删除通知渠道组",
       "input": "DeleteAlarmNoticeRequest",
-      "name": "删除告警通知模板",
+      "name": "删除通知渠道组",
       "output": "DeleteAlarmNoticeResponse"
     },
     "DeleteAsyncContextTask": {
@@ -145,13 +145,13 @@
       "output": "DeleteTopicResponse"
     },
     "DescribeAlarmNotices": {
-      "document": "该接口用于获取告警通知模板列表",
+      "document": "该接口用于获取通知渠道组列表",
       "input": "DescribeAlarmNoticesRequest",
-      "name": "获取告警通知模板列表",
+      "name": "获取通知渠道组列表",
       "output": "DescribeAlarmNoticesResponse"
     },
     "DescribeAlarms": {
-      "document": "本接口用于获取告警策略。",
+      "document": "本接口用于获取告警策略列表。",
       "input": "DescribeAlarmsRequest",
       "name": "获取告警策略列表",
       "output": "DescribeAlarmsResponse"
@@ -277,9 +277,9 @@
       "output": "ModifyAlarmResponse"
     },
     "ModifyAlarmNotice": {
-      "document": "该接口用于修改告警通知模板。",
+      "document": "该接口用于修改通知渠道组",
       "input": "ModifyAlarmNoticeRequest",
-      "name": "修改告警通知模板",
+      "name": "修改通知渠道组",
       "output": "ModifyAlarmNoticeResponse"
     },
     "ModifyConfig": {
@@ -325,7 +325,7 @@
       "output": "RetryShipperTaskResponse"
     },
     "SearchLog": {
-      "document": "本接口用于搜索日志",
+      "document": "本接口用于搜索日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过15",
       "input": "SearchLogRequest",
       "name": "搜索日志",
       "output": "SearchLogResponse"
@@ -5838,7 +5838,7 @@
         },
         {
           "default": "",
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时",
           "example": "context",
           "member": "string",
           "name": "Context",

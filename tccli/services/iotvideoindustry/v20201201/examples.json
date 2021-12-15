@@ -40,6 +40,22 @@
         "title": "创建设备"
       }
     ],
+    "CreateLiveChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveChannel\n<公共请求参数>\n\n{\n    \"LiveChannelType\": 1,\n    \"LiveChannelName\": \"直播001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveChannelId\": \"72f556500f0311ec806aacde48001122\",\n        \"PushStreamAddress\": \"rtmp://10.4.56.32:31935/liveFixed/72f556500f0311ec806aacde48001122\",\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "创建直播频道"
+      }
+    ],
+    "CreateLiveRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveRecordPlan\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tgrp-cyjjxyyyds\",\n    \"PlanType\": 1,\n    \"PlanName\": \"固定直播录制008\",\n    \"LiveChannelIds\": [\n        \"channel-01\",\n        \"channel-02\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PlanId\": \"LivePlanxxx\",\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "创建直播录制计划"
+      }
+    ],
     "CreateRecordPlan": [
       {
         "document": "",
@@ -48,12 +64,28 @@
         "title": "CreateRecordPlan"
       }
     ],
+    "CreateScene": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScene\n<公共请求参数>\n\n{\n    \"SceneName\": \"测试场景\",\n    \"SceneTrigger\": \"{\\\"2\\\":{\\\"Name\\\":\\\"设备报警\\\",\\\"WarnType\\\":{\\\"1\\\":\\\"视频丢失报警\\\",\\\"2\\\":\\\"设备防拆报警\\\",\\\"3\\\":\\\"存储设备磁盘满报警\\\",\\\"4\\\":\\\"设备高温报警\\\",\\\"5\\\":\\\"设备低温报警\\\"}}}\",\n    \"RecordDuration\": 360,\n    \"StoreDuration\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"IntId\": 2,\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "创建场景"
+      }
+    ],
     "CreateTimeTemplate": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTimeTemplate\n<公共请求参数>\n\n{\n    \"IsAllWeek\": 0,\n    \"TimeTemplateSpecs\": [\n        {\n            \"DayofWeek\": 1,\n            \"EndTime\": \"12:30\",\n            \"BeginTime\": \"14:30\"\n        }\n    ],\n    \"Name\": \"myTemplate\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1b9e7ac-0989-4af9-a454-26f69d6997d9\",\n        \"TemplateId\": \"template-xxx\"\n    }\n}",
         "title": "CreateTimeTemplate"
+      }
+    ],
+    "DeleteChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChannel\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99576636581320000328_99576636581320000328\",\n    \"ChannelId\": \"99576636581320000328_99576636581320000328\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "删除通道"
       }
     ],
     "DeleteDevice": [
@@ -72,12 +104,44 @@
         "title": "删除分组"
       }
     ],
+    "DeleteLiveChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveChannel\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"72f556500f0311ec806aacde48001122\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "删除直播接口"
+      }
+    ],
+    "DeleteLiveRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "删除直播录制计划"
+      }
+    ],
+    "DeleteLiveVideoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveVideoList\n<公共请求参数>\n\n{\n    \"IntIDs\": [\n        1234,\n        5667,\n        8845\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sfddsdfdsfdsdfsadfsa\"\n    }\n}",
+        "title": "直播录像删除"
+      }
+    ],
     "DeleteRecordPlan": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"Status\": \"OK\"\n    }\n}",
         "title": "DeleteRecordPlan"
+      }
+    ],
+    "DeleteScene": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScene\n<公共请求参数>\n\n{\n    \"IntId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "删除场景"
       }
     ],
     "DeleteTimeTemplate": [
@@ -88,12 +152,36 @@
         "title": "删除时间模板"
       }
     ],
+    "DeleteVideoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVideoList\n<公共请求参数>\n\n{\n    \"InitIDs\": [\n        4543564,\n        654567\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5a0a4e9-91f3-48f1-87e2-2c003cbdc3ed\"\n    }\n}",
+        "title": "删除录像存储列表"
+      }
+    ],
     "DescribeAllDeviceList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllDeviceList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceId\": \"xxxxxx\",\n                \"Status\": 3,\n                \"CreateTime\": 1607073128,\n                \"ExtraInformation\": \"{\\\"DeviceModel\\\":\\\"xxx\\\",\\\"Manufacturer\\\":\\\"xxx\\\"}\",\n                \"NickName\": \"myDevice01\",\n                \"GroupPath\": \"\"\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取所有设备列表"
+      }
+    ],
+    "DescribeBindSceneDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBindSceneDevices\n<公共请求参数>\n\n{\n    \"SceneId\": 5,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DeviceId\": \"99576636581320000327_99576636581320000327\",\n                \"ChannelId\": \"99576636581320000327_99576636581320000327\"\n            },\n            {\n                \"DeviceId\": \"99576636581320000328_99576636581320000328\",\n                \"ChannelId\": \"99576636581320000328_99576636581320000328\"\n            }\n        ],\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取场景绑定设备列表"
+      }
+    ],
+    "DescribeChannelsByLiveRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelsByLiveRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"TotalCount\": 1,\n        \"LiveChannels\": [\n            {\n                \"ChannelId\": \"id0\"\n            }\n        ]\n    }\n}",
+        "title": "根据直播录制计划获取频道列表"
       }
     ],
     "DescribeDeviceGroup": [
@@ -160,6 +248,62 @@
         "title": "获取设备下属通道"
       }
     ],
+    "DescribeLiveChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveChannel\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"e4a6427192a34cca8ea1d74815b7f458\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveChannelId\": \"e4a6427192a34cca8ea1d74815b7f458\",\n        \"LiveChannelName\": \"004\",\n        \"LiveChannelType\": 1,\n        \"LiveStatus\": 0,\n        \"PushStreamAddress\": \"rtmp://:0/liveFixed/e4a6427192a34cca8ea1d74815b7f458\",\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"CreateTime\": \"2021-11-10 11:11:10\",\n        \"UpdateTime\": \"2021-11-10 11:11:10\"\n    }\n}",
+        "title": "直播详情接口"
+      }
+    ],
+    "DescribeLiveChannelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveChannelList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"LiveChannels\": [\n            {\n                \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n                \"LiveChannelName\": \"001\",\n                \"LiveChannelType\": 1,\n                \"PushStreamAddress\": \"rtmp://127.0.0.1:19350/liveFixed/cea6f74f29164253b43411fd888f4dc3\",\n                \"CreateTime\": \"2021-09-07 19:49:10\",\n                \"UpdateTime\": \"2021-09-07 19:49:10\",\n                \"LiveStatus\": 0\n            },\n            {\n                \"LiveChannelId\": \"e4a6427192a34cca8ea1d74815b7f458\",\n                \"LiveChannelName\": \"004\",\n                \"LiveChannelType\": 1,\n                \"PushStreamAddress\": \"rtmp://127.0.0.1:19350/liveFixed/e4a6427192a34cca8ea1d74815b7f458\",\n                \"CreateTime\": \"2021-09-07 19:41:08\",\n                \"UpdateTime\": \"2021-09-07 19:42:58\",\n                \"LiveStatus\": 0\n            }\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"Total\": 2\n    }\n}",
+        "title": "直播列表接口"
+      }
+    ],
+    "DescribeLiveRecordPlanById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveRecordPlanById\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"PlanName\": \"直播录制001\",\n        \"TemplateId\": \"template-001\",\n        \"TemplateName\": \"录制模板001\",\n        \"RecordStorageTime\": 30,\n        \"PlanType\": 2\n    }\n}",
+        "title": "获取直播录制计划详情"
+      }
+    ],
+    "DescribeLiveRecordPlanIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveRecordPlanIds\n<公共请求参数>\n\n{\n    \"TemplateId\": \"plan-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"TotalCount\": 3,\n        \"Plans\": [\n            {\n                \"PlanId\": \"planxxx-0\",\n                \"PlanName\": \"namexxx0\"\n            },\n            {\n                \"PlanId\": \"planxxx-1\",\n                \"PlanName\": \"namexxx1\"\n            },\n            {\n                \"PlanId\": \"planxxx-2\",\n                \"PlanName\": \"namexxx2\"\n            }\n        ]\n    }\n}",
+        "title": "获取直播录制计划列表"
+      }
+    ],
+    "DescribeLiveStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveStream\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"e4a6427192a34cca8ea1d74815b7f458\",\n    \"ExpireTime\": 124177555\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StreamId\": \"\",\n            \"RtspAddr\": \"rtsp://127.0.0.1/live/test\",\n            \"RtmpAddr\": \"rtmp://127.0.0.1/live/test\",\n            \"HlsAddr\": \"http://127.0.0.1/live/test.m3u8\",\n            \"FlvAddr\": \"http://127.0.0.1/live/test.flv\"\n        },\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\"\n    }\n}",
+        "title": "直播拉流接口"
+      }
+    ],
+    "DescribeLiveVideoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVideoList\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordList\": [\n            {\n                \"IntID\": 3352901,\n                \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n                \"ExpectDeleteTime\": 1633599082,\n                \"RecordTimeLen\": 600,\n                \"FileSize\": 268908746,\n                \"VideoUrl\": \"https://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/8e62c9e03701925923890211076/f0.mp4 \",\n                \"RecordPlanId\": \"plan-7fqulsjc\",\n                \"StartTime\": 1631007068,\n                \"EndTime\": 1631007668\n            }\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"Total\": 1\n    }\n}",
+        "title": "直播录像回放列表"
+      }
+    ],
+    "DescribeRecordDatesByLive": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordDatesByLive\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Dates\": [\n            \"2021-09-07\"\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\"\n    }\n}",
+        "title": "直播录像存储日期列表"
+      }
+    ],
     "DescribeRecordStream": [
       {
         "document": "使用StartTime/EndTime",
@@ -180,6 +324,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSIPServer\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Host\": \"127.0.0.1\",\n            \"Port\": 5060,\n            \"Serial\": \"44020000002000000001\",\n            \"Realm\": \"4402000000\"\n        },\n        \"RequestId\": \"2a8acbcc-f3f5-4e04-898f-33593f460798\"\n    }\n}",
         "title": "获取SIP服务器配置"
+      }
+    ],
+    "DescribeScenes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IntId\": 1,\n                \"Uin\": \"2\",\n                \"SceneName\": \"测试场景\",\n                \"SceneTrigger\": \"{22222}\",\n                \"RecordDuration\": 360,\n                \"StoreDuration\": 2,\n                \"CreateTime\": \"2021-10-21T19:22:58+08:00\",\n                \"UpdateTime\": \"2021-10-21T19:22:58+08:00\"\n            },\n            {\n                \"IntId\": 2,\n                \"Uin\": \"2\",\n                \"SceneName\": \"测试场景1\",\n                \"SceneTrigger\": \"{2222211}\",\n                \"RecordDuration\": 3600,\n                \"StoreDuration\": 2,\n                \"CreateTime\": \"2021-10-21T19:34:21+08:00\",\n                \"UpdateTime\": \"2021-10-21T19:40:14+08:00\"\n            }\n        ],\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取场景列表"
       }
     ],
     "DescribeStatisticDetails": [
@@ -204,6 +356,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubGroups\n<公共请求参数>\n\n{\n    \"GroupId\": \"group_root\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupList\": [\n            {\n                \"GroupName\": \"groupA\",\n                \"ParentId\": \"group_root\",\n                \"GroupId\": \"gro-30to7hxt\",\n                \"GroupPath\": \"/gro-30to7hxt\",\n                \"GroupDescribe\": \"this is xxx\",\n                \"DeviceNum\": 2,\n                \"SubGroupNum\": 0,\n                \"CreateTime\": 1608256825\n            }\n        ],\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询子分组列表"
+      }
+    ],
+    "DescribeSubscriptionStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscriptionStatus\n<公共请求参数>\n\n{\n    \"DeviceId\": \"aaa_bbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sss118\",\n        \"AlarmStatus\": 1\n    }\n}",
+        "title": "查询主设备设备告警订阅状态"
       }
     ],
     "DescribeVideoList": [
@@ -276,12 +436,60 @@
         "title": "查询指定设备某天的录制情况"
       }
     ],
+    "ModifyBindPlanLiveChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBindPlanLiveChannel\n<公共请求参数>\n\n{\n    \"PlanId\": \"lrplan-w3oovcjp\",\n    \"Type\": 1,\n    \"LiveChannelIds\": [\n        \"20a15bbc31fd45b1a5625c08e5e23a7f\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "直播录制计划绑定解绑直播频道"
+      }
+    ],
     "ModifyDeviceData": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceData\n<公共请求参数>\n\n{\n    \"DeviceId\": \"device01\",\n    \"NickName\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"11111\",\n        \"Status\": \"OK\"\n    }\n}",
         "title": "编辑设备信息"
+      }
+    ],
+    "ModifyLiveChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveChannel\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"e4a6427192a34cca8ea1d74815b7f458\",\n    \"LiveChannelName\": \"直播004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "编辑直播接口"
+      }
+    ],
+    "ModifyLiveRecordPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveRecordPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-001\",\n    \"TemplateId\": \"template-001\",\n    \"PlanName\": \"直播录制001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "编辑直播录制计划"
+      }
+    ],
+    "ModifyLiveVideo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveVideo\n<公共请求参数>\n\n{\n    \"IntIDs\": [\n        3352901\n    ],\n    \"ExpireTime\": 1633599083\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sfddsdfdsfdsdfsadfsa\"\n    }\n}",
+        "title": "直播录像编辑"
+      }
+    ],
+    "ModifySubscriptionStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubscriptionStatus\n<公共请求参数>\n\n{\n    \"DeviceId\": \"aaa_bbb\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sss118\"\n    }\n}",
+        "title": "编辑设备订阅状态"
+      }
+    ],
+    "ModifyVideoInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVideoInfo\n<公共请求参数>\n\n{\n    \"InitIDs\": [\n        21331\n    ],\n    \"ExpireTime\": 1624204800\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5a0a4e9-91f3-48f1-87e2-2c003cbdc3ed\"\n    }\n}",
+        "title": "修改录像存储列表"
       }
     ],
     "UpdateDeviceGroup": [

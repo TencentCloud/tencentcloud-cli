@@ -21,7 +21,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmNotice\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\",\n            \"Headers\": [\n                \"Content-Type:appliction/json\"\n            ],\n            \"Body\": \"{\\\"Uin\\\":\\\"${UIN}\\\",\\\"AlarmId\\\":\\\"alarm-xxxxxxxxx\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AlarmNoticeId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "创建告警通知模板"
+        "title": "创建通知渠道组"
       }
     ],
     "CreateAsyncContextTask": [
@@ -109,7 +109,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "删除告警通知模板"
+        "title": "删除通知渠道组"
       }
     ],
     "DeleteAsyncContextTask": [
@@ -197,7 +197,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmNotices\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AlarmNotices\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取告警通知模板列表"
+        "title": "获取通知渠道组列表"
       }
     ],
     "DescribeAlarms": [
@@ -205,7 +205,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarms\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Alarms\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取告警策略列表"
+        "title": "获取通知渠道组列表"
       }
     ],
     "DescribeAsyncContextResult": [
@@ -332,7 +332,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShippers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"shipperId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Shippers\": [\n            {\n                \"ShipperId\": \"xxxx-xx-xx-xx-yyyyyyyy\",\n                \"TopicId\": \"xxxx-xxx-xxx-xxxxx-xxxxx\",\n                \"Bucket\": \"testbucket-appid\",\n                \"Prefix\": \"test\",\n                \"ShipperName\": \"testname\",\n                \"Interval\": 300,\n                \"MaxSize\": 256,\n                \"Status\": true,\n                \"FilterRules\": [\n                    {\n                        \"Key\": \"\",\n                        \"Regex\": \"\",\n                        \"Value\": \"\"\n                    }\n                ],\n                \"Partition\": \"%Y%m%d\",\n                \"CreateTime\": \"2017-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Shippers\": [\n            {\n                \"ShipperId\": \"c9a96b57-9f35-4800-b5c7-6ce6173b7db5\",\n                \"TopicId\": \"ab14dfa7-e9eb-4cd4-8300-2f35145f145e\",\n                \"Bucket\": \"0052d6c8apbeijing100008449822-1254077820\",\n                \"Prefix\": \"ab14dfa7-e9eb-4cd4-8300-2f35145f145e-1601543434\",\n                \"ShipperName\": \"ap-beijing-carywu-1601543434\",\n                \"Interval\": 300,\n                \"MaxSize\": 100,\n                \"Status\": true,\n                \"FilterRules\": [],\n                \"Partition\": \"/%Y/%m/%d/%H/\",\n                \"Compress\": {\n                    \"Format\": \"gzip\"\n                },\n                \"Content\": {\n                    \"Format\": \"json\"\n                },\n                \"CreateTime\": \"2020-10-01 17:10:32\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"99bf3fb9-eb09-41e1-aac7-7e4e7ed08f5d\"\n    }\n}",
         "title": "获取投递规则"
       }
     ],
@@ -373,7 +373,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89\",\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\",\n            \"Headers\": [\n                \"Content-Type:appliction/json\"\n            ],\n            \"Body\": \"{\\\"Uin\\\":\\\"${UIN}\\\",\\\"AlarmId\\\":\\\"${AlarmId}\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "修改告警通知模板"
+        "title": "修改通知渠道组"
       }
     ],
     "ModifyConfig": [

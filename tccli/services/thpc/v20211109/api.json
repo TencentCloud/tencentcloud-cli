@@ -357,6 +357,42 @@
       ],
       "type": "object"
     },
+    "GooseFSOption": {
+      "document": "描述GooseFS挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件系统本地挂载路径",
+          "example": "/data",
+          "member": "string",
+          "name": "LocalPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统远程挂载路径",
+          "example": "/data/goosefs-fuse",
+          "member": "string",
+          "name": "RemotePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统master的ip和端口",
+          "example": "无",
+          "member": "string",
+          "name": "Masters",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "InstanceChargePrepaid": {
       "document": "描述了实例的计费模式",
       "members": [
@@ -526,7 +562,17 @@
           "example": "无",
           "member": "CFSOption",
           "name": "CFSOptions",
-          "required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群挂在GooseFS文件系统选项",
+          "example": "无",
+          "member": "GooseFSOption",
+          "name": "GooseFSOptions",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }

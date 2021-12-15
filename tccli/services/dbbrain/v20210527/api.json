@@ -60,6 +60,12 @@
       "name": "获取诊断事件详情",
       "output": "DescribeDBDiagEventResponse"
     },
+    "DescribeDBDiagEvents": {
+      "document": "获取指定时间段内的诊断事件列表，支持依据风险等级、实例ID等条件过滤。",
+      "input": "DescribeDBDiagEventsRequest",
+      "name": "获取诊断事件列表",
+      "output": "DescribeDBDiagEventsResponse"
+    },
     "DescribeDBDiagHistory": {
       "document": "获取实例诊断事件的列表。",
       "input": "DescribeDBDiagHistoryRequest",
@@ -918,6 +924,96 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagEventsRequest": {
+      "document": "DescribeDBDiagEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2021-05-27 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。",
+          "example": "2021-05-27 01:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "风险等级列表，取值按影响程度从高至低分别为：1 - 致命、2 -严重、3 - 告警、4 - 提示、5 -健康。",
+          "example": "[1, 2, 3, 4]",
+          "member": "int64",
+          "name": "Severities",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例ID列表。",
+          "example": "[\"cdb-test\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认20，最大值为50。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagEventsResponse": {
+      "document": "DescribeDBDiagEvents返回参数结构体",
+      "members": [
+        {
+          "document": "诊断事件的总数目。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断事件的列表。",
+          "example": "无",
+          "member": "DiagHistoryEventItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

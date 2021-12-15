@@ -337,8 +337,8 @@
     "ListAccessKeys": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\r\n&TargetUin=123456\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"WERDlOp351234hlczDqKDvRjsvmQsJQWEaYK\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"A2342hOvQQQWvNdgXHrFQOHySnzb5OVP7dv8\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\n&TargetUin=123456\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"AKIDlOp****mQsJQWEaYK\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"A2342hOv****QOHySnzb5P7dv8\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
         "title": "列出访问密钥"
       }
     ],

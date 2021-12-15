@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc DescribeSecurityGroupPolicies --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --SecurityGroupId sg-ohuuioma
 ```
 
@@ -19,10 +18,12 @@ Output:
                 {
                     "PolicyIndex": 0,
                     "ServiceTemplate": {
-                        "ServiceId": "ppm-f5n1f8da"
+                        "ServiceId": "ppm-f5n1f8da",
+                        "ServiceGroupId": ""
                     },
                     "AddressTemplate": {
-                        "AddressGroupId": "ipmg-2uw6ujo6"
+                        "AddressGroupId": "ipmg-2uw6ujo6",
+                        "AddressId": ""
                     },
                     "Action": "ACCEPT",
                     "ModifyTime": "2017-03-12 10:00:00",
@@ -31,10 +32,12 @@ Output:
                 {
                     "PolicyIndex": 1,
                     "ServiceTemplate": {
-                        "ServiceId": "ppm-f5n1f8da"
+                        "ServiceId": "ppm-f5n1f8da",
+                        "ServiceGroupId": ""
                     },
                     "AddressTemplate": {
-                        "AddressGroupId": "ipmg-2uw6ujo6"
+                        "AddressGroupId": "ipmg-2uw6ujo6",
+                        "AddressId": ""
                     },
                     "Action": "ACCEPT",
                     "ModifyTime": "2017-03-12 10:00:00",
@@ -45,10 +48,12 @@ Output:
                 {
                     "PolicyIndex": 0,
                     "ServiceTemplate": {
-                        "ServiceId": "ppm-f5n1f8da"
+                        "ServiceId": "ppm-f5n1f8da",
+                        "ServiceGroupId": ""
                     },
                     "AddressTemplate": {
-                        "AddressGroupId": "ipmg-2uw6ujo6"
+                        "AddressGroupId": "ipmg-2uw6ujo6",
+                        "AddressId": ""
                     },
                     "Action": "ACCEPT",
                     "ModifyTime": "2017-03-12 10:00:00",

@@ -18,65 +18,105 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "RenewFlag": "null",
-                "Uuid": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
-                "InstanceState": "RUNNING",
-                "LatestOperationState": "SUCCESS",
-                "OsName": "CentOS 7.6 64bit",
-                "CreatedTime": "2020-03-10T02:43:51Z",
-                "RestrictState": "NORMAL",
-                "ExpiredTime": "2020-04-10T02:47:36Z",
-                "DisasterRecoverGroupId": "",
+                "RenewFlag": "xx",
+                "Uuid": "xx",
+                "InstanceState": "xx",
+                "LatestOperationState": "xx",
+                "LoginSettings": {
+                    "Password": "xx",
+                    "KeepImageLogin": "xx",
+                    "KeyIds": [
+                        "xx"
+                    ]
+                },
+                "IPv6Addresses": [
+                    "xx"
+                ],
+                "RestrictState": "xx",
+                "ExpiredTime": "2020-09-22T00:00:00+00:00",
+                "DisasterRecoverGroupId": "xx",
                 "Memory": 1,
-                "IPv6Addresses": null,
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "CPU": 1,
-                "CamRoleName": "",
+                "RdmaIpAddresses": [
+                    "xx"
+                ],
+                "CamRoleName": "xx",
                 "PublicIpAddresses": [
                     "123.207.11.190"
                 ],
-                "Tags": [],
-                "InstanceId": "ins-9bxebleo",
-                "ImageId": "img-9qabwvbn",
-                "StopChargingMode": "NOT_APPLICABLE",
-                "InstanceChargeType": "PREPAID",
-                "InstanceType": "S1.SMALL1",
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "InstanceId": "xx",
+                "ImageId": "xx",
+                "StopChargingMode": "xx",
+                "InstanceChargeType": "xx",
+                "InstanceType": "xx",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "DiskId": "disk-nucurerk",
-                    "DiskType": "CLOUD_PREMIUM"
+                    "CdcId": "xx",
+                    "DiskId": "xx",
+                    "DiskType": "xx"
                 },
                 "Placement": {
+                    "HostId": "xx",
                     "ProjectId": 1174660,
-                    "HostId": null,
-                    "Zone": "ap-guangzhou-2"
+                    "HostIds": [
+                        "xx"
+                    ],
+                    "Zone": "xx",
+                    "HostIps": [
+                        "xx"
+                    ]
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
                 ],
-                "LoginSettings": {
-                    "KeyIds": null
-                },
+                "OsName": "xx",
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "测试实例",
-                "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
+                "InstanceName": "xx",
+                "DataDisks": [
+                    {
+                        "DeleteWithInstance": true,
+                        "Encrypt": true,
+                        "CdcId": "xx",
+                        "DiskType": "xx",
+                        "ThroughputPerformance": 0,
+                        "KmsKeyId": "xx",
+                        "DiskSize": 0,
+                        "SnapshotId": "xx",
+                        "DiskId": "xx"
+                    }
+                ],
+                "IsolatedSource": "xx",
                 "VirtualPrivateCloud": {
-                    "SubnetId": "subnet-a2676p0e",
+                    "SubnetId": "xx",
                     "AsVpcGateway": false,
-                    "VpcId": "vpc-g7wzcv7n"
+                    "Ipv6AddressCount": 1,
+                    "VpcId": "xx",
+                    "PrivateIpAddresses": [
+                        "xx"
+                    ]
                 },
-                "LatestOperationRequestId": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
+                "LatestOperationRequestId": "xx",
                 "InternetAccessible": {
-                    "InternetMaxBandwidthOut": 1,
-                    "InternetChargeType": "BANDWIDTH_PREPAID"
+                    "PublicIpAssigned": true,
+                    "InternetChargeType": "xx",
+                    "BandwidthPackageId": "xx",
+                    "InternetMaxBandwidthOut": 1
                 },
-                "LatestOperation": "RenewInstances"
+                "HpcClusterId": "xx",
+                "LatestOperation": "xx"
             }
         ],
         "TotalCount": 2,
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        "RequestId": "xx"
     }
 }
 ```
@@ -133,6 +173,7 @@ Output:
                     "DiskId": "disk-nucurerk",
                     "DiskType": "CLOUD_PREMIUM"
                 },
+                "IsolatedSource": "xx",
                 "Placement": {
                     "ProjectId": 1174660,
                     "HostId": null,
@@ -148,8 +189,7 @@ Output:
                     "sg-p1ezv4wz"
                 ],
                 "InstanceName": "测试实例",
-                "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
+                "DataDisks": [],
                 "VirtualPrivateCloud": {
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
@@ -160,6 +200,8 @@ Output:
                     "InternetMaxBandwidthOut": 1,
                     "InternetChargeType": "BANDWIDTH_PREPAID"
                 },
+                "RdmaIpAddresses": [],
+                "HpcClusterId": "",
                 "LatestOperation": "RenewInstances"
             }
         ],
@@ -189,65 +231,105 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "RenewFlag": "null",
-                "Uuid": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
-                "InstanceState": "STOPPING",
-                "LatestOperationState": "OPERATING",
-                "OsName": "CentOS 7.6 64bit",
-                "CreatedTime": "2020-03-10T02:43:51Z",
-                "RestrictState": "NORMAL",
-                "ExpiredTime": "2020-04-10T02:47:36Z",
-                "DisasterRecoverGroupId": "",
+                "RenewFlag": "xx",
+                "Uuid": "xx",
+                "InstanceState": "xx",
+                "LatestOperationState": "xx",
+                "LoginSettings": {
+                    "Password": "xx",
+                    "KeepImageLogin": "xx",
+                    "KeyIds": [
+                        "xx"
+                    ]
+                },
+                "IPv6Addresses": [
+                    "xx"
+                ],
+                "RestrictState": "xx",
+                "ExpiredTime": "2020-09-22T00:00:00+00:00",
+                "DisasterRecoverGroupId": "xx",
                 "Memory": 1,
-                "IPv6Addresses": null,
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
                 "CPU": 1,
-                "CamRoleName": "",
+                "RdmaIpAddresses": [
+                    "xx"
+                ],
+                "CamRoleName": "xx",
                 "PublicIpAddresses": [
                     "123.207.11.190"
                 ],
-                "Tags": [],
-                "InstanceId": "ins-9bxebleo",
-                "ImageId": "img-9qabwvbn",
-                "StopChargingMode": "NOT_APPLICABLE",
-                "InstanceChargeType": "PREPAID",
-                "InstanceType": "S1.SMALL1",
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "InstanceId": "xx",
+                "ImageId": "xx",
+                "StopChargingMode": "xx",
+                "InstanceChargeType": "xx",
+                "InstanceType": "xx",
                 "SystemDisk": {
                     "DiskSize": 50,
-                    "DiskId": "disk-nucurerk",
-                    "DiskType": "CLOUD_PREMIUM"
+                    "CdcId": "xx",
+                    "DiskId": "xx",
+                    "DiskType": "xx"
                 },
                 "Placement": {
+                    "HostId": "xx",
                     "ProjectId": 1174660,
-                    "HostId": null,
-                    "Zone": "ap-guangzhou-2"
+                    "HostIds": [
+                        "xx"
+                    ],
+                    "Zone": "xx",
+                    "HostIps": [
+                        "xx"
+                    ]
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
                 ],
-                "LoginSettings": {
-                    "KeyIds": null
-                },
+                "OsName": "xx",
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "测试实例",
-                "DataDisks": null,
-                "IsolatedSource": "NOTISOLATED",
+                "InstanceName": "xx",
+                "DataDisks": [
+                    {
+                        "DeleteWithInstance": true,
+                        "Encrypt": true,
+                        "CdcId": "xx",
+                        "DiskType": "xx",
+                        "ThroughputPerformance": 0,
+                        "KmsKeyId": "xx",
+                        "DiskSize": 0,
+                        "SnapshotId": "xx",
+                        "DiskId": "xx"
+                    }
+                ],
+                "IsolatedSource": "xx",
                 "VirtualPrivateCloud": {
-                    "SubnetId": "subnet-a2676p0e",
+                    "SubnetId": "xx",
                     "AsVpcGateway": false,
-                    "VpcId": "vpc-g7wzcv7n"
+                    "Ipv6AddressCount": 1,
+                    "VpcId": "xx",
+                    "PrivateIpAddresses": [
+                        "xx"
+                    ]
                 },
-                "LatestOperationRequestId": "2f8decef-78b2-4e20-bcfe-7a5112658a05",
+                "LatestOperationRequestId": "xx",
                 "InternetAccessible": {
-                    "InternetMaxBandwidthOut": 1,
-                    "InternetChargeType": "BANDWIDTH_PREPAID"
+                    "PublicIpAssigned": true,
+                    "InternetChargeType": "xx",
+                    "BandwidthPackageId": "xx",
+                    "InternetMaxBandwidthOut": 1
                 },
-                "LatestOperation": "StopInstances"
+                "HpcClusterId": "xx",
+                "LatestOperation": "xx"
             }
         ],
         "TotalCount": 2,
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        "RequestId": "xx"
     }
 }
 ```

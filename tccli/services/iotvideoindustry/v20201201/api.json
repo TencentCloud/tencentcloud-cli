@@ -30,17 +30,41 @@
       "name": "创建分组",
       "output": "CreateDeviceGroupResponse"
     },
+    "CreateLiveChannel": {
+      "document": "创建直播频道",
+      "input": "CreateLiveChannelRequest",
+      "name": "创建直播频道",
+      "output": "CreateLiveChannelResponse"
+    },
+    "CreateLiveRecordPlan": {
+      "document": "创建直播录制计划",
+      "input": "CreateLiveRecordPlanRequest",
+      "name": "创建直播录制计划",
+      "output": "CreateLiveRecordPlanResponse"
+    },
     "CreateRecordPlan": {
       "document": "本接口(CreateRecordPlan) 用于创建录制计划，使设备与时间模板绑定，以便及时启动录制",
       "input": "CreateRecordPlanRequest",
       "name": "创建录制计划",
       "output": "CreateRecordPlanResponse"
     },
+    "CreateScene": {
+      "document": "创建场景",
+      "input": "CreateSceneRequest",
+      "name": "创建场景",
+      "output": "CreateSceneResponse"
+    },
     "CreateTimeTemplate": {
       "document": "本接口(CreateTimeTemplate) 用于根据模板描述的具体录制时间片段，创建定制化的时间模板。",
       "input": "CreateTimeTemplateRequest",
       "name": "创建时间模板",
       "output": "CreateTimeTemplateResponse"
+    },
+    "DeleteChannel": {
+      "document": "删除通道接口",
+      "input": "DeleteChannelRequest",
+      "name": "删除通道接口",
+      "output": "DeleteChannelResponse"
     },
     "DeleteDevice": {
       "document": "本接口(DeleteDevice)用于删除设备。",
@@ -54,11 +78,35 @@
       "name": "删除分组",
       "output": "DeleteDeviceGroupResponse"
     },
+    "DeleteLiveChannel": {
+      "document": "删除直播接口",
+      "input": "DeleteLiveChannelRequest",
+      "name": "删除直播接口",
+      "output": "DeleteLiveChannelResponse"
+    },
+    "DeleteLiveRecordPlan": {
+      "document": "删除直播录制计划",
+      "input": "DeleteLiveRecordPlanRequest",
+      "name": "删除直播录制计划",
+      "output": "DeleteLiveRecordPlanResponse"
+    },
+    "DeleteLiveVideoList": {
+      "document": "直播录像删除",
+      "input": "DeleteLiveVideoListRequest",
+      "name": "直播录像删除",
+      "output": "DeleteLiveVideoListResponse"
+    },
     "DeleteRecordPlan": {
       "document": "本接口(DeleteRecordPlan)用于删除录制计划\n录制计划删除的同时，会停止该录制计划下的全部录制任务。",
       "input": "DeleteRecordPlanRequest",
       "name": "删除录制计划",
       "output": "DeleteRecordPlanResponse"
+    },
+    "DeleteScene": {
+      "document": "删除场景",
+      "input": "DeleteSceneRequest",
+      "name": "删除场景",
+      "output": "DeleteSceneResponse"
     },
     "DeleteTimeTemplate": {
       "document": "本接口(DeleteTimeTemplate) 用于删除时间模板。",
@@ -66,11 +114,29 @@
       "name": "删除时间模板",
       "output": "DeleteTimeTemplateResponse"
     },
+    "DeleteVideoList": {
+      "document": "删除录像存储列表",
+      "input": "DeleteVideoListRequest",
+      "name": "删除录像存储列表",
+      "output": "DeleteVideoListResponse"
+    },
     "DescribeAllDeviceList": {
       "document": "本接口(DescribeAllDeviceList) 用于获取设备列表。",
       "input": "DescribeAllDeviceListRequest",
       "name": "获取设备列表",
       "output": "DescribeAllDeviceListResponse"
+    },
+    "DescribeBindSceneDevices": {
+      "document": "获取场景绑定设备列表",
+      "input": "DescribeBindSceneDevicesRequest",
+      "name": "获取场景绑定设备列表",
+      "output": "DescribeBindSceneDevicesResponse"
+    },
+    "DescribeChannelsByLiveRecordPlan": {
+      "document": "根据直播录制计划获取频道列表",
+      "input": "DescribeChannelsByLiveRecordPlanRequest",
+      "name": "根据直播录制计划获取频道列表",
+      "output": "DescribeChannelsByLiveRecordPlanResponse"
     },
     "DescribeDeviceGroup": {
       "document": "本接口(DescribeDeviceGroup)用于根据设备ID查询设备所在分组信息，可批量查询。",
@@ -120,6 +186,48 @@
       "name": "获取设备下属通道",
       "output": "DescribeIPCChannelsResponse"
     },
+    "DescribeLiveChannel": {
+      "document": "直播详情接口",
+      "input": "DescribeLiveChannelRequest",
+      "name": "直播详情接口",
+      "output": "DescribeLiveChannelResponse"
+    },
+    "DescribeLiveChannelList": {
+      "document": "直播列表接口",
+      "input": "DescribeLiveChannelListRequest",
+      "name": "直播列表接口",
+      "output": "DescribeLiveChannelListResponse"
+    },
+    "DescribeLiveRecordPlanById": {
+      "document": "获取直播录制计划详情",
+      "input": "DescribeLiveRecordPlanByIdRequest",
+      "name": "获取直播录制计划详情",
+      "output": "DescribeLiveRecordPlanByIdResponse"
+    },
+    "DescribeLiveRecordPlanIds": {
+      "document": "获取直播录制计划列表",
+      "input": "DescribeLiveRecordPlanIdsRequest",
+      "name": "获取直播录制计划列表",
+      "output": "DescribeLiveRecordPlanIdsResponse"
+    },
+    "DescribeLiveStream": {
+      "document": "直播拉流接口",
+      "input": "DescribeLiveStreamRequest",
+      "name": "直播拉流接",
+      "output": "DescribeLiveStreamResponse"
+    },
+    "DescribeLiveVideoList": {
+      "document": "直播录像回放列表",
+      "input": "DescribeLiveVideoListRequest",
+      "name": "直播录像回放列表",
+      "output": "DescribeLiveVideoListResponse"
+    },
+    "DescribeRecordDatesByLive": {
+      "document": "直播录像存储日期列表",
+      "input": "DescribeRecordDatesByLiveRequest",
+      "name": "直播录像存储日期列表",
+      "output": "DescribeRecordDatesByLiveResponse"
+    },
     "DescribeRecordStream": {
       "document": "获取回放视频流(NVR录制用)\nRecordId和StartTime/EndTime互斥\n当存在RecordId时，StartTime和EndTime无效\n当RecordId为空，StartTime和EndTime生效",
       "input": "DescribeRecordStreamRequest",
@@ -131,6 +239,12 @@
       "input": "DescribeSIPServerRequest",
       "name": "获取SIP服务器配置",
       "output": "DescribeSIPServerResponse"
+    },
+    "DescribeScenes": {
+      "document": "获取场景列表",
+      "input": "DescribeScenesRequest",
+      "name": "获取场景列表",
+      "output": "DescribeScenesResponse"
     },
     "DescribeStatisticDetails": {
       "document": "本接口(DescribeStatisticDetails)用于查询指定统计项详情，返回结果按天为单位聚合，支持的最大时间查询范围为31天。",
@@ -149,6 +263,12 @@
       "input": "DescribeSubGroupsRequest",
       "name": "查询子分组列表",
       "output": "DescribeSubGroupsResponse"
+    },
+    "DescribeSubscriptionStatus": {
+      "document": "查询主设备订阅状态",
+      "input": "DescribeSubscriptionStatusRequest",
+      "name": "查询主设备订阅状态",
+      "output": "DescribeSubscriptionStatusResponse"
     },
     "DescribeVideoList": {
       "document": "根据时间获取回放文件列表(云端录制用)",
@@ -198,11 +318,47 @@
       "name": "查询设备的录制结果",
       "output": "GetVideoListByConResponse"
     },
+    "ModifyBindPlanLiveChannel": {
+      "document": "直播录制计划绑定解绑直播频道",
+      "input": "ModifyBindPlanLiveChannelRequest",
+      "name": "直播录制计划绑定解绑直播频道",
+      "output": "ModifyBindPlanLiveChannelResponse"
+    },
     "ModifyDeviceData": {
       "document": "本接口(ModifyDeviceData)用于编辑设备信息。",
       "input": "ModifyDeviceDataRequest",
       "name": "编辑设备信息",
       "output": "ModifyDeviceDataResponse"
+    },
+    "ModifyLiveChannel": {
+      "document": "编辑直播接口",
+      "input": "ModifyLiveChannelRequest",
+      "name": "编辑直播接口",
+      "output": "ModifyLiveChannelResponse"
+    },
+    "ModifyLiveRecordPlan": {
+      "document": "编辑直播录制计划",
+      "input": "ModifyLiveRecordPlanRequest",
+      "name": "编辑直播录制计划",
+      "output": "ModifyLiveRecordPlanResponse"
+    },
+    "ModifyLiveVideo": {
+      "document": "直播录像编辑",
+      "input": "ModifyLiveVideoRequest",
+      "name": "直播录像编辑",
+      "output": "ModifyLiveVideoResponse"
+    },
+    "ModifySubscriptionStatus": {
+      "document": "编辑设备订阅状态",
+      "input": "ModifySubscriptionStatusRequest",
+      "name": "编辑设备订阅状态",
+      "output": "ModifySubscriptionStatusResponse"
+    },
+    "ModifyVideoInfo": {
+      "document": "修改录像存储列表",
+      "input": "ModifyVideoInfoRequest",
+      "name": "修改录像存储列表",
+      "output": "ModifyVideoInfoResponse"
     },
     "UpdateDeviceGroup": {
       "document": "本接口(UpdateDeviceGroup)用于修改分组信息。",
@@ -651,6 +807,132 @@
       ],
       "type": "object"
     },
+    "CreateLiveChannelRequest": {
+      "document": "CreateLiveChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "直播频道名称",
+          "example": "直播频道001",
+          "member": "string",
+          "name": "LiveChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "直播频道类型 1：固定直播；2：移动直播",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveChannelType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveChannelResponse": {
+      "document": "CreateLiveChannel返回参数结构体",
+      "members": [
+        {
+          "document": "直播频道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72f556500f0311ec806aacde48001122",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "直播频道推流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://10.4.56.32:31935/liveFixed/72f556500f0311ec806aacde480011",
+          "member": "string",
+          "name": "PushStreamAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveRecordPlanRequest": {
+      "document": "CreateLiveRecordPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "录制计划名",
+          "example": "固定直播录制008",
+          "member": "string",
+          "name": "PlanName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计划类型 1：固定直播 2：移动直播",
+          "example": "1",
+          "member": "int64",
+          "name": "PlanType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间模板ID,固定直播时为必填",
+          "example": "tgrp-cyjjxyyyds",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录制文件存储时长，单位天，默认30天",
+          "example": "30",
+          "member": "int64",
+          "name": "RecordStorageTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "绑定的直播频道ID列表",
+          "example": "[\"channel-01\",\"channel-02\"]",
+          "member": "string",
+          "name": "LiveChannelIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveRecordPlanResponse": {
+      "document": "CreateLiveRecordPlan返回参数结构体",
+      "members": [
+        {
+          "document": "录制计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LivePlanxxx",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRecordPlanRequest": {
       "document": "CreateRecordPlan请求参数结构体",
       "members": [
@@ -723,6 +1005,78 @@
       ],
       "type": "object"
     },
+    "CreateSceneRequest": {
+      "document": "CreateScene请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "场景名称",
+          "example": "告警录制",
+          "member": "string",
+          "name": "SceneName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景触发规则",
+          "example": "{\"2\":{\"Name\":\"设备报警\",\"WarnType\":{\"1\":\"视频丢失报警\",\"2\":\"设备防拆报警\",\"3\":\"存",
+          "member": "string",
+          "name": "SceneTrigger",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录制时长 (秒)",
+          "example": "3600",
+          "member": "int64",
+          "name": "RecordDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录像存储时长(天)",
+          "example": "30",
+          "member": "int64",
+          "name": "StoreDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备列表",
+          "example": "无",
+          "member": "DeviceItem",
+          "name": "Devices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSceneResponse": {
+      "document": "CreateScene返回参数结构体",
+      "members": [
+        {
+          "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTimeTemplateRequest": {
       "document": "CreateTimeTemplate请求参数结构体",
       "members": [
@@ -768,6 +1122,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChannelRequest": {
+      "document": "DeleteChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "99576636581320000310_99782261871320000002",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道ID",
+          "example": "99576636581320000310_99782261871320000002",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChannelResponse": {
+      "document": "DeleteChannel返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -849,6 +1239,96 @@
       ],
       "type": "object"
     },
+    "DeleteLiveChannelRequest": {
+      "document": "DeleteLiveChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "直播频道ID",
+          "example": "72f556500f0311ec806aacde48001122",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveChannelResponse": {
+      "document": "DeleteLiveChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveRecordPlanRequest": {
+      "document": "DeleteLiveRecordPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "plan-001",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveRecordPlanResponse": {
+      "document": "DeleteLiveRecordPlan返回参数结构体",
+      "members": [
+        {
+          "document": "删除状态描述",
+          "example": "OK",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveVideoListRequest": {
+      "document": "DeleteLiveVideoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频ID 列表, 大小限制(100)",
+          "example": "[1234,5667,8845]",
+          "member": "uint64",
+          "name": "IntIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveVideoListResponse": {
+      "document": "DeleteLiveVideoList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRecordPlanRequest": {
       "document": "DeleteRecordPlan请求参数结构体",
       "members": [
@@ -885,6 +1365,33 @@
       ],
       "type": "object"
     },
+    "DeleteSceneRequest": {
+      "document": "DeleteScene请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "11",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSceneResponse": {
+      "document": "DeleteScene返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTimeTemplateRequest": {
       "document": "DeleteTimeTemplate请求参数结构体",
       "members": [
@@ -912,6 +1419,33 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoListRequest": {
+      "document": "DeleteVideoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频ID列表长度限制100内",
+          "example": "[12424,43535]",
+          "member": "int64",
+          "name": "InitIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoListResponse": {
+      "document": "DeleteVideoList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -989,6 +1523,132 @@
           "example": "无",
           "member": "AllDeviceInfo",
           "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBindSceneDevicesRequest": {
+      "document": "DescribeBindSceneDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "场景ID",
+          "example": "23",
+          "member": "int64",
+          "name": "SceneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移值",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "条数限制最大不能超过1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBindSceneDevicesResponse": {
+      "document": "DescribeBindSceneDevices返回参数结构体",
+      "members": [
+        {
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelsByLiveRecordPlanRequest": {
+      "document": "DescribeChannelsByLiveRecordPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "1",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelsByLiveRecordPlanResponse": {
+      "document": "DescribeChannelsByLiveRecordPlan返回参数结构体",
+      "members": [
+        {
+          "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "通道详情数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveChannelItem",
+          "name": "LiveChannels",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1440,6 +2100,537 @@
       ],
       "type": "object"
     },
+    "DescribeLiveChannelListRequest": {
+      "document": "DescribeLiveChannelList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "直播频道类型，1：固定直播；2：移动直播",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveChannelType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "直播录制计划ID, null: 直播录制计划为空",
+          "example": "无",
+          "member": "string",
+          "name": "RecordPlanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "频道名称 (支持模糊搜索)",
+          "example": "无",
+          "member": "string",
+          "name": "LiveChannelName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveChannelListResponse": {
+      "document": "DescribeLiveChannelList返回参数结构体",
+      "members": [
+        {
+          "document": "频道总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "频道信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveChannelInfo",
+          "name": "LiveChannels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveChannelRequest": {
+      "document": "DescribeLiveChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "频道ID",
+          "example": "e4a6427192a34cca8ea1d74815b7f458",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveChannelResponse": {
+      "document": "DescribeLiveChannel返回参数结构体",
+      "members": [
+        {
+          "document": "频道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e4a6427192a34cca8ea1d74815b7f458",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "频道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "直播004",
+          "member": "string",
+          "name": "LiveChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "直播频道类型 1：固定直播；2：移动直播\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveChannelType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "通道直播状态：1: 未推流，2: 推流中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "推流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://:0/liveFixed/e4a6427192a34cca8ea1d74815b7f458",
+          "member": "string",
+          "name": "PushStreamAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-10 11:11:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-10 11:11:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRecordPlanByIdRequest": {
+      "document": "DescribeLiveRecordPlanById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "plan-001",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRecordPlanByIdResponse": {
+      "document": "DescribeLiveRecordPlanById返回参数结构体",
+      "members": [
+        {
+          "document": "计划名称",
+          "example": "直播录制001",
+          "member": "string",
+          "name": "PlanName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板ID",
+          "example": "template-001",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板名称",
+          "example": "录制模板001",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储时间",
+          "example": "30",
+          "member": "int64",
+          "name": "RecordStorageTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计划类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PlanType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRecordPlanIdsRequest": {
+      "document": "DescribeLiveRecordPlanIds请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "时间模板ID",
+          "example": "plan-001",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRecordPlanIdsResponse": {
+      "document": "DescribeLiveRecordPlanIds返回参数结构体",
+      "members": [
+        {
+          "document": "总个数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "计划数组",
+          "example": "无",
+          "member": "LiveRecordPlanItem",
+          "name": "Plans",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamRequest": {
+      "document": "DescribeLiveStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "频道ID",
+          "example": "e4a6427192a34cca8ea1d74815b7f458",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "124177555",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveStreamResponse": {
+      "document": "DescribeLiveStream返回参数结构体",
+      "members": [
+        {
+          "document": "拉流地址，只有在推流情况下才有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamAddress",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveVideoListRequest": {
+      "document": "DescribeLiveVideoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的每页数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "直播ID",
+          "example": "无",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始录制开始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "StartRecordTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始录制结束时间",
+          "example": "无",
+          "member": "int64",
+          "name": "EndRecordTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过期开始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "StartExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过期结束时间",
+          "example": "无",
+          "member": "int64",
+          "name": "EndExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件大小范围 Byte",
+          "example": "无",
+          "member": "int64",
+          "name": "StartFileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件大小范围 Byte",
+          "example": "无",
+          "member": "int64",
+          "name": "EndFileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "录制状态，5: 录制回写完",
+          "example": "无",
+          "member": "int64",
+          "name": "IsRecording",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveVideoListResponse": {
+      "document": "DescribeLiveVideoList返回参数结构体",
+      "members": [
+        {
+          "document": "总的条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "录制任务详情数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveRecordItem",
+          "name": "RecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordDatesByLiveRequest": {
+      "document": "DescribeRecordDatesByLive请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "直播频道ID",
+          "example": "cea6f74f29164253b43411fd888f4dc3",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页值，本地录制时参数无效",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制值，本地录制时参数无效",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordDatesByLiveResponse": {
+      "document": "DescribeRecordDatesByLive返回参数结构体",
+      "members": [
+        {
+          "document": "录制日期数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Dates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordStreamData": {
       "document": "DescribeRecordStreamData 复杂类型",
       "members": [
@@ -1593,6 +2784,60 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesRequest": {
+      "document": "DescribeScenes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "条数限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesResponse": {
+      "document": "DescribeScenes返回参数结构体",
+      "members": [
+        {
+          "document": "场景总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "场景列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SceneItem",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1818,6 +3063,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionStatusRequest": {
+      "document": "DescribeSubscriptionStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "99576636581320000310_99782261871320000002",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscriptionStatusResponse": {
+      "document": "DescribeSubscriptionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "设备GB28181报警订阅状态 1：未开启订阅；2：已开启订阅",
+          "example": "2",
+          "member": "int64",
+          "name": "AlarmStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2785,6 +4066,275 @@
       ],
       "usage": "both"
     },
+    "LiveChannelInfo": {
+      "document": "频道信息",
+      "members": [
+        {
+          "default": "",
+          "document": "频道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cea6f74f29164253b43411fd888f4dc3",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "频道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "001",
+          "member": "string",
+          "name": "LiveChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "频道类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveChannelType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通道直播状态：1: 未推流，2: 推流中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LiveStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://:0/liveFixed/cea6f74f29164253b43411fd888f4dc3",
+          "member": "string",
+          "name": "PushStreamAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 19:26:16",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-08 19:26:16",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveChannelItem": {
+      "document": "直播频道详情",
+      "members": [
+        {
+          "default": "",
+          "document": "频道ID",
+          "example": "“xxxx”",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "频道名称",
+          "example": "\"直播001\"",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveRecordItem": {
+      "document": "直播录制详情item",
+      "members": [
+        {
+          "default": "",
+          "document": "录制文件自增ID",
+          "example": "1",
+          "member": "int64",
+          "name": "IntID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "直播频道ID",
+          "example": "cea6f74f29164253b43411fd888f4dc3",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpectDeleteTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制时长",
+          "example": "0",
+          "member": "int64",
+          "name": "RecordTimeLen",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小",
+          "example": "0",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制文件url",
+          "example": "\"http/xx.xx.xx/xx.mp4\"",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "plan-7fqulsjc",
+          "member": "string",
+          "name": "RecordPlanId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制开始时间",
+          "example": "1631007068",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "录制结束时间",
+          "example": "1631007668",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveRecordPlanItem": {
+      "document": "直播录制计划详情",
+      "members": [
+        {
+          "default": "",
+          "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "planxxx-0",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "namexxx0",
+          "member": "string",
+          "name": "PlanName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyBindPlanLiveChannelRequest": {
+      "document": "ModifyBindPlanLiveChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "直播录制计划ID",
+          "example": "lrplan-w3oovckd",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1: 绑定 2: 解绑",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "直播频道ID列表",
+          "example": "[\"20a15bbc31fd45b1a5625c08e5e23a7f\"]",
+          "member": "string",
+          "name": "LiveChannelIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBindPlanLiveChannelResponse": {
+      "document": "ModifyBindPlanLiveChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDeviceDataRequest": {
       "document": "ModifyDeviceData请求参数结构体",
       "members": [
@@ -2821,6 +4371,204 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveChannelRequest": {
+      "document": "ModifyLiveChannel请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "直播频道ID",
+          "example": "e4a6427192a34cca8ea1d74815b7f458",
+          "member": "string",
+          "name": "LiveChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "直播频道名",
+          "example": "直播004",
+          "member": "string",
+          "name": "LiveChannelName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveChannelResponse": {
+      "document": "ModifyLiveChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveRecordPlanRequest": {
+      "document": "ModifyLiveRecordPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "录制计划ID",
+          "example": "plan-001",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "录制计划名",
+          "example": "直播录制001",
+          "member": "string",
+          "name": "PlanName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间模板ID，固定直播时为必填",
+          "example": "template-001",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveRecordPlanResponse": {
+      "document": "ModifyLiveRecordPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveVideoRequest": {
+      "document": "ModifyLiveVideo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频ID 列表, 大小限制(100)",
+          "example": "[3352901]",
+          "member": "int64",
+          "name": "IntIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过期时间 秒 (-1: 为永不过期)",
+          "example": "1633599083",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveVideoResponse": {
+      "document": "ModifyLiveVideo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscriptionStatusRequest": {
+      "document": "ModifySubscriptionStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "99576636581320000310_99782261871320000002",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订阅状态 1：关闭订阅 2：开启订阅",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅",
+          "example": "Alarm",
+          "member": "string",
+          "name": "SubscriptionItem",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscriptionStatusResponse": {
+      "document": "ModifySubscriptionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVideoInfoRequest": {
+      "document": "ModifyVideoInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "视频ID列表长度限制100内",
+          "example": "[0]",
+          "member": "int64",
+          "name": "InitIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过期时间 时间戳 -1: 永不过期 0: 无效值",
+          "example": "1624204800",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVideoInfoResponse": {
+      "document": "ModifyVideoInfo返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3002,6 +4750,92 @@
       ],
       "usage": "out"
     },
+    "SceneItem": {
+      "document": "场景列表元素",
+      "members": [
+        {
+          "default": "",
+          "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1624204800",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试场景",
+          "member": "string",
+          "name": "SceneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"2\":{\"Name\":\"设备报警\",\"WarnType\":{\"1\":\"视频丢失报警\",\"2\":\"设备防拆报警\",\"3\":\"存",
+          "member": "string",
+          "name": "SceneTrigger",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "录制时长 秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "RecordDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储时长 天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "StoreDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-10-21T19:22:58+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-10-21T19:22:58+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ServerConfiguration": {
       "document": "SIIP服务器相关配置项",
       "members": [
@@ -3063,6 +4897,62 @@
           "name": "Sum",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamAddress": {
+      "document": "拉流地址，只有在推流情况下才有\n",
+      "members": [
+        {
+          "default": "",
+          "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "StreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rtsp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtsp://127.0.0.1/live/test",
+          "member": "string",
+          "name": "RtspAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rtmp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://127.0.0.1/live/test",
+          "member": "string",
+          "name": "RtmpAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "hls流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/live/test.m3u8",
+          "member": "string",
+          "name": "HlsAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "flv流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/live/test.flv",
+          "member": "string",
+          "name": "FlvAddr",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
