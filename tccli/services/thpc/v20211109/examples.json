@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindAutoScalingGroup": [
+      {
+        "document": "",
+        "input": "https://thpc.tencentcloudapi.com/?Action=BindAutoScalingGroup\n&ClusterId=hpc-5lyv94lq\n&LaunchConfigurationId=asc-jhf9c1gi\n&AutoScalingGroupId=asg-aesc6pcq\n&ExpansionBusyTime=120\n&ShrinkIdleTime=300\n&DryRun=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4d90874-f565-463d-ba1d-c707517eeaa1\"\n    }\n}",
+        "title": "绑定弹性伸缩组"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "",

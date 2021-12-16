@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindAutoScalingGroup": {
+      "document": "本接口(BindAutoScalingGroup)用于为集群队列绑定弹性伸缩组",
+      "input": "BindAutoScalingGroupRequest",
+      "name": "绑定弹性伸缩组",
+      "output": "BindAutoScalingGroupResponse"
+    },
     "CreateCluster": {
       "document": "本接口 (CreateCluster) 用于创建并启动集群。",
       "input": "CreateClusterRequest",
@@ -20,6 +26,96 @@
     "serviceShortName": "thpc"
   },
   "objects": {
+    "BindAutoScalingGroupRequest": {
+      "document": "BindAutoScalingGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID。",
+          "example": "hpc-5lyv94lq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩启动配置ID。",
+          "example": "asc-jhf9c1gi",
+          "member": "string",
+          "name": "LaunchConfigurationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩组ID。",
+          "example": "asg-aesc6pcq",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
+          "example": "120",
+          "member": "int64",
+          "name": "ExpansionBusyTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
+          "example": "300",
+          "member": "int64",
+          "name": "ShrinkIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启自动扩容，默认值true。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoExpansion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启自动缩容，默认值true。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoShrink",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAutoScalingGroupResponse": {
+      "document": "BindAutoScalingGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CFSOption": {
       "document": "描述CFS文件系统版本和挂载信息",
       "members": [

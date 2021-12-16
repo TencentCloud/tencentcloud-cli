@@ -56,6 +56,14 @@
         "title": "创建直播录制计划"
       }
     ],
+    "CreateMessageForward": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageForward\n<公共请求参数>\n\n{\n    \"RegionId\": \"gz\",\n    \"RegionName\": \"广州\",\n    \"Instance\": \"ckafka\",\n    \"InstanceName\": \"卡夫卡\",\n    \"MessageType\": \"[1]\",\n    \"TopicId\": \"topicid\",\n    \"TopicName\": \"topicname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntId\": 1,\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "创建消息转发配置"
+      }
+    ],
     "CreateRecordPlan": [
       {
         "document": "",
@@ -126,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveVideoList\n<公共请求参数>\n\n{\n    \"IntIDs\": [\n        1234,\n        5667,\n        8845\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sfddsdfdsfdsdfsadfsa\"\n    }\n}",
         "title": "直播录像删除"
+      }
+    ],
+    "DeleteMessageForward": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageForward\n<公共请求参数>\n\n{\n    \"IntId\": 14665\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "删除消息转发配置"
       }
     ],
     "DeleteRecordPlan": [
@@ -294,6 +310,22 @@
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVideoList\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"RecordList\": [\n            {\n                \"IntID\": 3352901,\n                \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n                \"ExpectDeleteTime\": 1633599082,\n                \"RecordTimeLen\": 600,\n                \"FileSize\": 268908746,\n                \"VideoUrl\": \"https://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/8e62c9e03701925923890211076/f0.mp4 \",\n                \"RecordPlanId\": \"plan-7fqulsjc\",\n                \"StartTime\": 1631007068,\n                \"EndTime\": 1631007668\n            }\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"Total\": 1\n    }\n}",
         "title": "直播录像回放列表"
+      }
+    ],
+    "DescribeMessageForward": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageForward\n<公共请求参数>\n\n{\n    \"IntId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2021-09-30T17:26:47+08:00\",\n        \"Instance\": \"ckafka\",\n        \"InstanceName\": \"卡夫卡\",\n        \"IntId\": 1,\n        \"MessageType\": \"[1]\",\n        \"RegionId\": \"gz\",\n        \"RegionName\": \"广州\",\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"TopicId\": \"topic\",\n        \"Uin\": \"admin\",\n        \"TopicName\": \"topicname\"\n    }\n}",
+        "title": "查看消息转发配置详情"
+      }
+    ],
+    "DescribeMessageForwards": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageForwards\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IntId\": 1,\n                \"Uin\": \"admin\",\n                \"MessageType\": \"[1]\",\n                \"RegionName\": \"广州\",\n                \"Instance\": \"ckafka\",\n                \"InstanceName\": \"卡夫卡\",\n                \"TopicId\": \"topic\",\n                \"TopicName\": \"topicname\",\n                \"CreateTime\": \"2021-09-30T17:26:47+08:00\",\n                \"UpdateTime\": \"2021-09-30T17:26:47+08:00\"\n            }\n        ],\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看消息转发配置列表"
       }
     ],
     "DescribeRecordDatesByLive": [
@@ -474,6 +506,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveVideo\n<公共请求参数>\n\n{\n    \"IntIDs\": [\n        3352901\n    ],\n    \"ExpireTime\": 1633599083\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sfddsdfdsfdsdfsadfsa\"\n    }\n}",
         "title": "直播录像编辑"
+      }
+    ],
+    "ModifyMessageForward": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMessageForward\n<公共请求参数>\n\n{\n    \"IntId\": 1,\n    \"MessageType\": \"[1,2]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\"\n    }\n}",
+        "title": "修改消息转发配置"
       }
     ],
     "ModifySubscriptionStatus": [

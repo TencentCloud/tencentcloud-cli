@@ -16,6 +16,26 @@
         "title": "SAML 断言申请角色临时凭证"
       }
     ],
+    "GetCallerIdentity": [
+      {
+        "document": "",
+        "input": "https://sts.tencentcloudapi.com/?Action=GetCallerIdentity\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"CAMRole\",\n        \"AccountId\": \"1000262***\",\n        \"UserId\": \"461168601842741***:roleSessionName\",\n        \"PrincipalId\": \"1000261****\",\n        \"Arn\": \"qcs::sts:1000262***:assumed-role/461168601842741***\",\n        \"RequestId\": \"1c875b55-128b-4152-9e73-0984fd489ba2\"\n    }\n}",
+        "title": "使用AssumeRole生成的临时凭证调用"
+      },
+      {
+        "document": "",
+        "input": "https://sts.tencentcloudapi.com/?Action=GetCallerIdentity\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"CAMUser\",\n        \"AccountId\": \"1000262***\",\n        \"UserId\": \"1000261****:federatedUserName\",\n        \"PrincipalId\": \"1000261****\",\n        \"Arn\": \"qcs::sts:1000262***:federated-user/1000261****\",\n        \"RequestId\": \"1c875b55-128b-4152-9e73-0984fd489ba2\"\n    }\n}",
+        "title": "使用GetFederationToken生成的临时凭据调用"
+      },
+      {
+        "document": "",
+        "input": "https://sts.tencentcloudapi.com/?Action=GetCallerIdentity\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"CAMUser\",\n        \"AccountId\": \"1000262***\",\n        \"UserId\": \"1000261***\",\n        \"PrincipalId\": \"1000261****\",\n        \"Arn\": \"qcs::cam:1000262***:uin/1000261***\",\n        \"RequestId\": \"1c875b55-128b-4152-9e73-0984fd489ba2\"\n    }\n}",
+        "title": "使用子账号长期密钥调用"
+      }
+    ],
     "GetFederationToken": [
       {
         "document": "授权该临时证书具有以下权限：\n{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:PutObject\"],\"resource\":[\"qcs::cos:ap-beijing:uid/123456:prefix//123456/bucketA/*\"]}]}\n\n注意，因为GET请求需要给所有参数做urlencode，所以下面示例中的Policy参数是做了两次urlencode的结果。",

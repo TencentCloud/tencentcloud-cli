@@ -24,6 +24,14 @@
         "title": "关联到云联网"
       }
     ],
+    "AttachDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-5vmz00i3\"\n    ],\n    \"InstanceId\": \"lhins-qg08np8l\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "挂载云盘"
+      }
+    ],
     "CreateBlueprint": [
       {
         "document": "",
@@ -128,6 +136,46 @@
         "title": "查询云联网关联的实例信息"
       }
     ],
+    "DescribeDiskConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 10,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"MaxDiskSize\": 1000,\n                \"MinDiskSize\": 20,\n                \"DiskStepSize\": 10,\n                \"DiskSalesState\": \"SOLD_OUT\"\n            }\n        ],\n        \"RequestId\": \"8f8e7988-39e6-4ed6-8e36-135b639e9a3a\"\n    }\n}",
+        "title": "查询磁盘配置"
+      }
+    ],
+    "DescribeDiskDiscount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDiskDiscount\n<公共请求参数>\n\n{\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskSize\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountDetail\": [\n            {\n                \"TimeSpan\": 1,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 15.0,\n                \"RealTotalCost\": 15.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 2,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 30.0,\n                \"RealTotalCost\": 30.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 3,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 45.0,\n                \"RealTotalCost\": 45.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 4,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 60.0,\n                \"RealTotalCost\": 60.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 5,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 75.0,\n                \"RealTotalCost\": 75.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 6,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 90.0,\n                \"RealTotalCost\": 90.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 7,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 105.0,\n                \"RealTotalCost\": 105.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 8,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 120.0,\n                \"RealTotalCost\": 120.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 9,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 135.0,\n                \"RealTotalCost\": 135.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 10,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 150.0,\n                \"RealTotalCost\": 150.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 11,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 165.0,\n                \"RealTotalCost\": 165.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 12,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 180.0,\n                \"RealTotalCost\": 180.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 24,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 360.0,\n                \"RealTotalCost\": 360.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 36,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 540.0,\n                \"RealTotalCost\": 540.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 48,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 720.0,\n                \"RealTotalCost\": 720.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            },\n            {\n                \"TimeSpan\": 60,\n                \"TimeUnit\": \"m\",\n                \"TotalCost\": 900.0,\n                \"RealTotalCost\": 900.0,\n                \"Discount\": 100,\n                \"PolicyDetail\": {\n                    \"UserDiscount\": 100,\n                    \"CommonDiscount\": 100,\n                    \"FinalDiscount\": 100\n                }\n            }\n        ],\n        \"RequestId\": \"0b8d268d-be74-4b91-b624-7a29d70cabb0\"\n    }\n}",
+        "title": "查询云硬盘折扣信息"
+      }
+    ],
+    "DescribeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-p1zflrif\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskSet\": [\n            {\n                \"DiskId\": \"lhdisk-p1zflrif\",\n                \"InstanceId\": \"lhins-anxwfvxh\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"DiskName\": \"lhdisk-p1zflrif-system-disk\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"DiskChargeType\": \"PREPAID\",\n                \"DiskSize\": 30,\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"DiskState\": \"ATTACHED\",\n                \"Attached\": true,\n                \"DeleteWithInstance\": false,\n                \"LatestOperation\": \"DetachDisks\",\n                \"LatestOperationState\": \"FAILED\",\n                \"LatestOperationRequestId\": \"54118bb6-7206-43f7-bf53-b77a394ad51e\",\n                \"CreatedTime\": \"2021-08-25T08:50:57Z\",\n                \"ExpiredTime\": \"2021-10-28T09:11:37Z\",\n                \"IsolatedTime\": null\n            }\n        ],\n        \"RequestId\": \"b362f486-571c-4094-afd5-22a38bd63046\"\n    }\n}",
+        "title": "查询磁盘"
+      }
+    ],
+    "DescribeDisksDeniedActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisksDeniedActions\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-eobj8huv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskDeniedActionSet\": [\n            {\n                \"DiskId\": \"lhdisk-eobj8huv\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"DetachDisks\",\n                        \"Code\": \"UnsupportedOperation.InvalidDiskState\",\n                        \"Message\": \"磁盘 `lhdisk-eobj8huv` 处于 `待挂载` 状态中，不支持该操作。\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"fd7fcb32-d48f-4d0e-ab33-e4985fc6e647\"\n    }\n}",
+        "title": "查询磁盘操作限制列表"
+      }
+    ],
+    "DescribeDisksReturnable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisksReturnable\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-eobj8huv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DiskReturnableSet\": [\n            {\n                \"DiskId\": \"lhdisk-5vmz00i3\",\n                \"IsReturnable\": true,\n                \"ReturnFailCode\": 0,\n                \"ReturnFailMessage\": \"\"\n            }\n        ],\n        \"RequestId\": \"3eec6c10-a8c7-41e4-b4ba-c84a5000211d\"\n    }\n}",
+        "title": "查询磁盘是否可退还"
+      }
+    ],
     "DescribeFirewallRules": [
       {
         "document": "",
@@ -188,6 +236,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstancesDeniedActions\n&InstanceIds.0=lhins-ruy9d2tw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceDeniedActionSet\": [\n            {\n                \"InstanceId\": \"lhins-ruy9d2tw\",\n                \"DeniedActions\": [\n                    {\n                        \"Action\": \"StartInstances\",\n                        \"Code\": \"UnsupportedOperation.InvalidInstanceState\",\n                        \"Message\": \"The request does not support the instance `lhins-ruy9d2tw` which is in the state of `RUNNING`.\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"ccfc8767-94e4-410a-a062-927e6ea79f0f\"\n    }\n}",
         "title": "查看实例操作限制列表"
+      }
+    ],
+    "DescribeInstancesDiskNum": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesDiskNum\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-anxwfvxh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AttachDetailSet\": [\n            {\n                \"InstanceId\": \"lhins-anxwfvxh\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 5\n            }\n        ],\n        \"RequestId\": \"3a73da61-4f9a-453b-bc11-553383f5d59d\"\n    }\n}",
+        "title": "查询实例挂载云盘数量"
       }
     ],
     "DescribeInstancesReturnable": [
@@ -270,6 +326,14 @@
         "title": "解关联云联网"
       }
     ],
+    "DetachDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-eobj8huv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "卸载云硬盘"
+      }
+    ],
     "DisassociateInstancesKeyPairs": [
       {
         "document": "",
@@ -294,12 +358,28 @@
         "title": "查询一个镜像的价格"
       }
     ],
+    "InquirePriceCreateDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateDisks\n<公共请求参数>\n\n{\n    \"DiskSize\": 20,\n    \"DiskType\": \"CLOUD_SSD\",\n    \"DiskChargePrepaid\": {\n        \"Period\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 16.0,\n            \"OriginalPrice\": 16.0,\n            \"Discount\": 100,\n            \"DiscountPrice\": 16.0\n        },\n        \"RequestId\": \"4214ba7a-0784-4cbb-a342-e5cc288c484c\"\n    }\n}",
+        "title": "新购磁盘询价"
+      }
+    ],
     "InquirePriceCreateInstances": [
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=InquirePriceCreateInstances\n&BundleId=bundle_ntp_small1_500\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&InstanceChargePrepaid.Period=1\n&InstanceCount=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalBundlePrice\": 60.0,\n                \"OriginalPrice\": 1440.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 1440.0\n            }\n        },\n        \"RequestId\": \"96d188f2-caf0-4d63-ba6f-474d22a8b344\"\n    }\n}",
         "title": "创建实例询价-成功返回"
+      }
+    ],
+    "InquirePriceRenewDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenewDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-5vmz00i3\"\n    ],\n    \"RenewDiskChargePrepaid\": {\n        \"Period\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 16.0,\n            \"OriginalPrice\": 16.0,\n            \"Discount\": 100,\n            \"DiscountPrice\": 16.0\n        },\n        \"RequestId\": \"4214ba7a-0784-4cbb-a342-e5cc288c484c\"\n    }\n}",
+        "title": "续费磁盘询价"
       }
     ],
     "InquirePriceRenewInstances": [
@@ -316,6 +396,22 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintAttribute\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-1ynlfst1\",\n    \"BlueprintName\": \"new-blueprint\",\n    \"Description\": \"new-blueprint\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896682bb-fb47-4fce-94d9-9a4f2abbfaac\"\n    }\n}",
         "title": "修改镜像的名称与描述"
+      }
+    ],
+    "ModifyDisksAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDisksAttribute\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-djn43yh1\"\n    ],\n    \"DiskName\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e7152c8-4653-4efd-86c0-fa633579db48\"\n    }\n}",
+        "title": "修改磁盘名称"
+      }
+    ],
+    "ModifyDisksRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDisksRenewFlag\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-qx45d7ik\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "修改磁盘续费标识"
       }
     ],
     "ModifyFirewallRuleDescription": [
@@ -412,6 +508,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fd6992a-f8b1-4cd2-9574-cb4251bc524f\"\n    }\n}",
         "title": "关闭实例"
+      }
+    ],
+    "TerminateDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-p1zflrif\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "销毁磁盘"
       }
     ],
     "TerminateInstances": [

@@ -1129,7 +1129,7 @@
         },
         {
           "default": "",
-          "document": "searchlog   histogram",
+          "document": "searchlog  histogram",
           "example": "searchlog",
           "member": "string",
           "name": "ActionType",
@@ -1148,7 +1148,7 @@
         {
           "default": "",
           "document": "开始时间",
-          "example": "无",
+          "example": "2021-09-26 21:01:46",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -1156,7 +1156,7 @@
         },
         {
           "default": "",
-          "document": "限制",
+          "document": "单次查询返回的原始日志条数，最大值为100",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -1165,7 +1165,7 @@
         },
         {
           "default": "",
-          "document": "上下文",
+          "document": "上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时",
           "example": "无",
           "member": "string",
           "name": "Context",
@@ -1174,8 +1174,8 @@
         },
         {
           "default": "",
-          "document": "查询语句",
-          "example": "无",
+          "document": "查询语句，语句长度最大为4096",
+          "example": "id:100",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -1184,7 +1184,7 @@
         {
           "default": "",
           "document": "结束时间",
-          "example": "无",
+          "example": "2021-09-26 21:01:46",
           "member": "string",
           "name": "EndTime",
           "required": false,

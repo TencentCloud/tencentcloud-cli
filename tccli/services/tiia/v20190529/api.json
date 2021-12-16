@@ -415,7 +415,7 @@
         },
         {
           "default": "",
-          "document": "图库类型， 默认为通用。\n类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。",
+          "document": "图库类型， 默认为通用。\n类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。\n3: 针对电商（通用品类）和logo优化。",
           "example": "1",
           "member": "uint64",
           "name": "GroupType",
@@ -1553,6 +1553,48 @@
       ],
       "usage": "out"
     },
+    "ImageRect": {
+      "document": "图像主体区域坐标",
+      "members": [
+        {
+          "default": "",
+          "document": "左上角横坐标。",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "左上角纵坐标。",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宽度。",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高度。",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Labels": {
       "document": "名人识别的标签",
       "members": [
@@ -1966,6 +2008,15 @@
           "name": "Filter",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图像主体区域。",
+          "example": "无",
+          "member": "ImageRect",
+          "name": "ImageRect",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

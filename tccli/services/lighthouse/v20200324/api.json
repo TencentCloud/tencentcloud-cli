@@ -18,6 +18,12 @@
       "name": "关联云联网",
       "output": "AttachCcnResponse"
     },
+    "AttachDisks": {
+      "document": "本接口（AttachDisks）用于挂载一个或多个弹性云盘。",
+      "input": "AttachDisksRequest",
+      "name": "挂载云盘",
+      "output": "AttachDisksResponse"
+    },
     "CreateBlueprint": {
       "document": "本接口 (CreateBlueprint) 用于创建镜像。",
       "input": "CreateBlueprintRequest",
@@ -96,6 +102,36 @@
       "name": "查询云联网关联的实例信息",
       "output": "DescribeCcnAttachedInstancesResponse"
     },
+    "DescribeDiskConfigs": {
+      "document": "本接口（DescribeDiskConfigs）用于查询磁盘配置。",
+      "input": "DescribeDiskConfigsRequest",
+      "name": "查看磁盘配置",
+      "output": "DescribeDiskConfigsResponse"
+    },
+    "DescribeDiskDiscount": {
+      "document": "本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息",
+      "input": "DescribeDiskDiscountRequest",
+      "name": "查询云硬盘折扣信息",
+      "output": "DescribeDiskDiscountResponse"
+    },
+    "DescribeDisks": {
+      "document": "本接口（DescribeDisks）用于查询磁盘信息。",
+      "input": "DescribeDisksRequest",
+      "name": "查询磁盘",
+      "output": "DescribeDisksResponse"
+    },
+    "DescribeDisksDeniedActions": {
+      "document": "本接口（DescribeDisksDeniedActions）用于查询一个或多个磁盘的操作限制列表信息",
+      "input": "DescribeDisksDeniedActionsRequest",
+      "name": "查询磁盘操作限制列表信息",
+      "output": "DescribeDisksDeniedActionsResponse"
+    },
+    "DescribeDisksReturnable": {
+      "document": "本接口（DescribeDisksReturnable）用于查询磁盘是否可退还。",
+      "input": "DescribeDisksReturnableRequest",
+      "name": "查看磁盘是否可退还",
+      "output": "DescribeDisksReturnableResponse"
+    },
     "DescribeFirewallRules": {
       "document": "本接口（DescribeFirewallRules）用于查询实例的防火墙规则。",
       "input": "DescribeFirewallRulesRequest",
@@ -137,6 +173,12 @@
       "input": "DescribeInstancesDeniedActionsRequest",
       "name": "查看实例操作限制列表",
       "output": "DescribeInstancesDeniedActionsResponse"
+    },
+    "DescribeInstancesDiskNum": {
+      "document": "本接口(DescribeInstancesDiskNum)用于查询实例挂载云盘数量。",
+      "input": "DescribeInstancesDiskNumRequest",
+      "name": "查询实例挂载云盘数量",
+      "output": "DescribeInstancesDiskNumResponse"
     },
     "DescribeInstancesReturnable": {
       "document": "本接口（DescribeInstancesReturnable）用于查询实例是否可退还。",
@@ -198,6 +240,12 @@
       "name": "解关联云联网",
       "output": "DetachCcnResponse"
     },
+    "DetachDisks": {
+      "document": "本接口（DetachDisks）用于卸载一个或多个弹性云盘。",
+      "input": "DetachDisksRequest",
+      "name": "卸载云硬盘",
+      "output": "DetachDisksResponse"
+    },
     "DisassociateInstancesKeyPairs": {
       "document": "本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。\n\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 ResetInstancesPassword 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateInstancesKeyPairsRequest",
@@ -216,11 +264,23 @@
       "name": "创建镜像询价",
       "output": "InquirePriceCreateBlueprintResponse"
     },
+    "InquirePriceCreateDisks": {
+      "document": "本接口（InquirePriceCreateDisks）用于新购磁盘询价。",
+      "input": "InquirePriceCreateDisksRequest",
+      "name": "新购磁盘询价",
+      "output": "InquirePriceCreateDisksResponse"
+    },
     "InquirePriceCreateInstances": {
       "document": "本接口（InquiryPriceCreateInstances）用于创建实例询价。",
       "input": "InquirePriceCreateInstancesRequest",
       "name": "创建实例询价",
       "output": "InquirePriceCreateInstancesResponse"
+    },
+    "InquirePriceRenewDisks": {
+      "document": "本接口（InquirePriceRenewDisks）用于续费磁盘询价。",
+      "input": "InquirePriceRenewDisksRequest",
+      "name": "续费磁盘询价",
+      "output": "InquirePriceRenewDisksResponse"
     },
     "InquirePriceRenewInstances": {
       "document": "本接口（InquirePriceCreateInstances）用于续费实例询价。",
@@ -233,6 +293,18 @@
       "input": "ModifyBlueprintAttributeRequest",
       "name": "修改镜像属性",
       "output": "ModifyBlueprintAttributeResponse"
+    },
+    "ModifyDisksAttribute": {
+      "document": "本接口(ModifyDisksAttribute)用于修改磁盘属性",
+      "input": "ModifyDisksAttributeRequest",
+      "name": "修改磁盘属性",
+      "output": "ModifyDisksAttributeResponse"
+    },
+    "ModifyDisksRenewFlag": {
+      "document": "本接口（ModifyDisksRenewFlag）用于修改磁盘续费标识。",
+      "input": "ModifyDisksRenewFlagRequest",
+      "name": "修改磁盘续费标识",
+      "output": "ModifyDisksRenewFlagResponse"
     },
     "ModifyFirewallRuleDescription": {
       "document": "本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。\n\n在 FirewallRule 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
@@ -305,6 +377,12 @@
       "input": "StopInstancesRequest",
       "name": "关闭实例",
       "output": "StopInstancesResponse"
+    },
+    "TerminateDisks": {
+      "document": "本接口（TerminateDisks）用于销毁一个或多个磁盘。",
+      "input": "TerminateDisksRequest",
+      "name": "销毁磁盘",
+      "output": "TerminateDisksResponse"
     },
     "TerminateInstances": {
       "document": "本接口 (TerminateInstances) 用于销毁实例。\n\n* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态 (LatestOperationState) 为“SUCCESS”，则代表操作成功。",
@@ -409,6 +487,87 @@
     },
     "AttachCcnResponse": {
       "document": "AttachCcn返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDetail": {
+      "document": "挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "\"lhins-anxwfvxh\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例已挂载弹性云盘数量",
+          "example": "1",
+          "member": "int64",
+          "name": "AttachedDiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可挂载弹性云盘数量",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxAttachCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachDisksRequest": {
+      "document": "AttachDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-5vmz00i3\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "lhins-qg08np8l",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDisksResponse": {
+      "document": "AttachDisks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1474,6 +1633,285 @@
       ],
       "type": "object"
     },
+    "DescribeDiskConfigsRequest": {
+      "document": "DescribeDiskConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "- zone:\n可用区",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskConfigsResponse": {
+      "document": "DescribeDiskConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘配置列表",
+          "example": "无",
+          "member": "DiskConfig",
+          "name": "DiskConfigSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskDiscountRequest": {
+      "document": "DescribeDiskDiscount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘类型, 取值: \"CLOUD_PREMIUM\"",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "磁盘大小",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiskDiscountResponse": {
+      "document": "DescribeDiskDiscount返回参数结构体",
+      "members": [
+        {
+          "document": "币种：CNY人民币，USD 美元。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
+          "example": "无",
+          "member": "DiscountDetail",
+          "name": "DiscountDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksDeniedActionsRequest": {
+      "document": "DescribeDisksDeniedActions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-eobj8huv\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksDeniedActionsResponse": {
+      "document": "DescribeDisksDeniedActions返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘操作限制列表详细信息。",
+          "example": "无",
+          "member": "DiskDeniedActions",
+          "name": "DiskDeniedActionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksRequest": {
+      "document": "DescribeDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-p1zflrif\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤器列表。\ndisk-id\n按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【磁盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【磁盘类型】进行过滤。\n类型：String\n必选：否\ndisk-state\n按照【磁盘状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "云盘列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据云盘的创建时间排序。 \"EXPIRED_TIME\"：依据云盘的到期时间排序。\"DISK_SIZE\"：依据云盘的大小排序。默认按云盘创建时间排序。",
+          "example": "CREATED_FIELD",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输出云盘列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksResponse": {
+      "document": "DescribeDisks返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘信息列表",
+          "example": "无",
+          "member": "Disk",
+          "name": "DiskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的磁盘信息数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksReturnableRequest": {
+      "document": "DescribeDisksReturnable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-eobj8huv\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDisksReturnableResponse": {
+      "document": "DescribeDisksReturnable返回参数结构体",
+      "members": [
+        {
+          "document": "可退还磁盘详细信息列表。",
+          "example": "无",
+          "member": "DiskReturnable",
+          "name": "DiskReturnableSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的磁盘数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFirewallRulesRequest": {
       "document": "DescribeFirewallRules请求参数结构体",
       "members": [
@@ -1714,6 +2152,51 @@
           "name": "InstanceDeniedActionSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumRequest": {
+      "document": "DescribeInstancesDiskNum请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "example": "[\"lhins-anxwfvxh\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesDiskNumResponse": {
+      "document": "DescribeInstancesDiskNum返回参数结构体",
+      "members": [
+        {
+          "document": "挂载信息列表",
+          "example": "无",
+          "member": "AttachDetail",
+          "name": "AttachDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "挂载信息数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2344,6 +2827,33 @@
       ],
       "type": "object"
     },
+    "DetachDisksRequest": {
+      "document": "DetachDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-eobj8huv\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachDisksResponse": {
+      "document": "DetachDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisassociateInstancesKeyPairsRequest": {
       "document": "DisassociateInstancesKeyPairs请求参数结构体",
       "members": [
@@ -2435,6 +2945,412 @@
           "name": "PolicyDetail",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Disk": {
+      "document": "磁盘信息",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID",
+          "example": "lhdisk-p1zflrif",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "lhins-anxwfvxh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘名称",
+          "example": "disk-name",
+          "member": "string",
+          "name": "DiskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘类型",
+          "example": "DATA_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘介质类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘付费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘大小",
+          "example": "20",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘状态",
+          "example": "UNATTACHED",
+          "member": "string",
+          "name": "DiskState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘挂载状态",
+          "example": "False",
+          "member": "bool",
+          "name": "Attached",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否随实例释放",
+          "example": "False",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次操作",
+          "example": "CreateDisks",
+          "member": "string",
+          "name": "LatestOperation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次操作状态",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LatestOperationState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一次请求ID",
+          "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
+          "member": "string",
+          "name": "LatestOperationRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-08-25T08:50:57Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-25T08:50:57Z",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-25T08:50:57Z",
+          "member": "datetime_iso",
+          "name": "IsolatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskChargePrepaid": {
+      "document": "磁盘包年包月相关参数设置",
+      "members": [
+        {
+          "default": "",
+          "document": "新购周期",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新购单位. 默认值: \"m\"",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DiskConfig": {
+      "document": "磁盘配置",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘可售卖状态",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "DiskSalesState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大磁盘大小",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小磁盘大小",
+          "example": "10",
+          "member": "int64",
+          "name": "MinDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘步长",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskStepSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskDeniedActions": {
+      "document": "磁盘操作限制列表详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID",
+          "example": "lhdisk-eobj8huv",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作限制列表",
+          "example": "无",
+          "member": "DeniedAction",
+          "name": "DeniedActions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskPrice": {
+      "document": "磁盘价格",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘单价",
+          "example": "1.1",
+          "member": "float",
+          "name": "OriginalDiskPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘总价",
+          "example": "2.2",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣",
+          "example": "0.8",
+          "member": "float",
+          "name": "Discount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价",
+          "example": "2.1",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiskReturnable": {
+      "document": "可退还磁盘详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID",
+          "example": "lhdisk-eobj8huv",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘是否可退还。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsReturnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例退还失败错误码。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnFailCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例退还失败错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnFailMessage",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2702,6 +3618,69 @@
       ],
       "type": "object"
     },
+    "InquirePriceCreateDisksRequest": {
+      "document": "InquirePriceCreateDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘大小",
+          "example": "30",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "硬盘介质类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新购磁盘包年包月相关参数设置",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "磁盘个数, 默认值: 1",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceCreateDisksResponse": {
+      "document": "InquirePriceCreateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘价格",
+          "example": "无",
+          "member": "DiskPrice",
+          "name": "DiskPrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquirePriceCreateInstancesRequest": {
       "document": "InquirePriceCreateInstances请求参数结构体",
       "members": [
@@ -2752,6 +3731,51 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewDisksRequest": {
+      "document": "InquirePriceRenewDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-eobj8huv\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费磁盘包年包月相关参数设置",
+          "example": "无",
+          "member": "RenewDiskChargePrepaid",
+          "name": "RenewDiskChargePrepaid",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewDisksResponse": {
+      "document": "InquirePriceRenewDisks返回参数结构体",
+      "members": [
+        {
+          "document": "磁盘价格",
+          "example": "无",
+          "member": "DiskPrice",
+          "name": "DiskPrice",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -3411,6 +4435,78 @@
       ],
       "usage": "out"
     },
+    "ModifyDisksAttributeRequest": {
+      "document": "ModifyDisksAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-p1zflrif\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "磁盘名称",
+          "example": "disk-name",
+          "member": "string",
+          "name": "DiskName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksAttributeResponse": {
+      "document": "ModifyDisksAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksRenewFlagRequest": {
+      "document": "ModifyDisksRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-eobj8huv\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksRenewFlagResponse": {
+      "document": "ModifyDisksRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyFirewallRuleDescriptionRequest": {
       "document": "ModifyFirewallRuleDescription请求参数结构体",
       "members": [
@@ -3766,6 +4862,52 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewDiskChargePrepaid": {
+      "document": "续费磁盘包年包月相关参数设置",
+      "members": [
+        {
+          "default": "",
+          "document": "新购周期",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标识",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "周期单位. 默认值: \"m\"",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前实例到期时间",
+          "example": "无",
+          "member": "string",
+          "name": "CurInstanceDeadline",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResetAttachCcnRequest": {
       "document": "ResetAttachCcn请求参数结构体",
@@ -4218,6 +5360,33 @@
         }
       ],
       "usage": "out"
+    },
+    "TerminateDisksRequest": {
+      "document": "TerminateDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "磁盘ID列表",
+          "example": "[\"lhdisk-p1zflrif\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateDisksResponse": {
+      "document": "TerminateDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TerminateInstancesRequest": {
       "document": "TerminateInstances请求参数结构体",

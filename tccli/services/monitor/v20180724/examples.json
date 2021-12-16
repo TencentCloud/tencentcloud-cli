@@ -266,6 +266,14 @@
         "title": "查询云监控产品列表"
       }
     ],
+    "DescribePrometheusInstances": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusInstances\n&InstanceIds.0=prom-ncxkwqr8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"InstanceName\": \"name\",\n                \"InstanceChargeType\": 1,\n                \"InstanceId\": \"prom-xxxxx\",\n                \"InstanceStatus\": 1,\n                \"RegionId\": 1,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"VpcId\": \"vpcID\",\n                \"SubnetId\": \"subnetid\",\n                \"IPv4Address\": \"\",\n                \"DataRetentionTime\": 30,\n                \"EnableGrafana\": 0,\n                \"GrafanaURL\": \"\",\n                \"CreatedAt\": \"2020-07-07T10:39:18Z\"\n            }\n        ],\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "查看 Prometheus 实例列表"
+      }
+    ],
     "DescribeServiceDiscovery": [
       {
         "document": "",

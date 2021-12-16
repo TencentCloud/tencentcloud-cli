@@ -959,7 +959,7 @@
         },
         {
           "default": "",
-          "document": "核保结论",
+          "document": "核保结论：加费、承保、拒保、延期、除外、加费+除外",
           "example": "拒保",
           "member": "string",
           "name": "Conclusion",

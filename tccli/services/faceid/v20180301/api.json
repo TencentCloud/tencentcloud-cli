@@ -54,6 +54,12 @@
       "name": "实名核身鉴权",
       "output": "DetectAuthResponse"
     },
+    "DetectReflectLivenessAndCompare": {
+      "document": "使用一闪SDK生成的数据包检测活体，并和用户传入的图片进行比对。",
+      "input": "DetectReflectLivenessAndCompareRequest",
+      "name": "一闪活体比对",
+      "output": "DetectReflectLivenessAndCompareResponse"
+    },
     "EncryptedPhoneVerification": {
       "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持MD5加密传输。",
       "input": "EncryptedPhoneVerificationRequest",
@@ -1402,6 +1408,105 @@
         }
       ],
       "usage": "out"
+    },
+    "DetectReflectLivenessAndCompareRequest": {
+      "document": "DetectReflectLivenessAndCompare请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SDK生成的数据包活体数据包的资源地址。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "LiveDataUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SDK生成的数据包活体数据包的资源Md5。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "LiveDataMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于比对的目标图片的资源地址。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于比对的目标图片的资源Md5。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "ImageMd5",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectReflectLivenessAndCompareResponse": {
+      "document": "DetectReflectLivenessAndCompare返回参数结构体",
+      "members": [
+        {
+          "document": "验证通过后的视频最佳截图照片资源地址，jpg格式。",
+          "example": "https://faceid-resource-sg-1254418846.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "BestFrameUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证通过后的视频最佳截图照片资源Md5。",
+          "example": "d41d8cd98f00b204e9800998ecf8427e",
+          "member": "string",
+          "name": "BestFrameMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "Success",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "example": "95.3",
+          "member": "float",
+          "name": "Sim",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EidInfo": {
       "document": "Eid出参，包括商户方用户的标识和加密的用户姓名身份证信息。",

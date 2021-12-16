@@ -42,6 +42,12 @@
       "name": "创建直播录制计划",
       "output": "CreateLiveRecordPlanResponse"
     },
+    "CreateMessageForward": {
+      "document": "创建消息转发配置",
+      "input": "CreateMessageForwardRequest",
+      "name": "创建消息转发配置",
+      "output": "CreateMessageForwardResponse"
+    },
     "CreateRecordPlan": {
       "document": "本接口(CreateRecordPlan) 用于创建录制计划，使设备与时间模板绑定，以便及时启动录制",
       "input": "CreateRecordPlanRequest",
@@ -95,6 +101,12 @@
       "input": "DeleteLiveVideoListRequest",
       "name": "直播录像删除",
       "output": "DeleteLiveVideoListResponse"
+    },
+    "DeleteMessageForward": {
+      "document": "删除消息转发配置",
+      "input": "DeleteMessageForwardRequest",
+      "name": "删除消息转发配置",
+      "output": "DeleteMessageForwardResponse"
     },
     "DeleteRecordPlan": {
       "document": "本接口(DeleteRecordPlan)用于删除录制计划\n录制计划删除的同时，会停止该录制计划下的全部录制任务。",
@@ -222,6 +234,18 @@
       "name": "直播录像回放列表",
       "output": "DescribeLiveVideoListResponse"
     },
+    "DescribeMessageForward": {
+      "document": "查看消息转发配置详情",
+      "input": "DescribeMessageForwardRequest",
+      "name": "查看消息转发配置详情",
+      "output": "DescribeMessageForwardResponse"
+    },
+    "DescribeMessageForwards": {
+      "document": "查看消息转发配置列表",
+      "input": "DescribeMessageForwardsRequest",
+      "name": "查看消息转发配置列表",
+      "output": "DescribeMessageForwardsResponse"
+    },
     "DescribeRecordDatesByLive": {
       "document": "直播录像存储日期列表",
       "input": "DescribeRecordDatesByLiveRequest",
@@ -347,6 +371,12 @@
       "input": "ModifyLiveVideoRequest",
       "name": "直播录像编辑",
       "output": "ModifyLiveVideoResponse"
+    },
+    "ModifyMessageForward": {
+      "document": "修改消息转发配置",
+      "input": "ModifyMessageForwardRequest",
+      "name": "修改消息转发配置",
+      "output": "ModifyMessageForwardResponse"
     },
     "ModifySubscriptionStatus": {
       "document": "编辑设备订阅状态",
@@ -933,6 +963,96 @@
       ],
       "type": "object"
     },
+    "CreateMessageForwardRequest": {
+      "document": "CreateMessageForward请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "区域ID",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "区域名称",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "kafka_instance",
+          "member": "string",
+          "name": "Instance",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "json数组， 转发类型 1: 告警 2:GPS",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "MessageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kafka topic id",
+          "example": "topic1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kafka topic 名称",
+          "example": "topname11",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMessageForwardResponse": {
+      "document": "CreateMessageForward返回参数结构体",
+      "members": [
+        {
+          "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2435",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRecordPlanRequest": {
       "document": "CreateRecordPlan请求参数结构体",
       "members": [
@@ -1319,6 +1439,33 @@
     },
     "DeleteLiveVideoListResponse": {
       "document": "DeleteLiveVideoList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageForwardRequest": {
+      "document": "DeleteMessageForward请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "16242",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageForwardResponse": {
+      "document": "DeleteMessageForward返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2564,6 +2711,177 @@
           "example": "无",
           "member": "LiveRecordItem",
           "name": "RecordList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageForwardRequest": {
+      "document": "DescribeMessageForward请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "16242",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageForwardResponse": {
+      "document": "DescribeMessageForward返回参数结构体",
+      "members": [
+        {
+          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka_instance",
+          "member": "string",
+          "name": "Instance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2435",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "json数组， 转发类型 1: 告警 2:GPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "MessageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "kafka topic id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-30T17:26:47+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户Uin信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1222000222",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "kafka topic 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topicname123",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageForwardsRequest": {
+      "document": "DescribeMessageForwards请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数量限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageForwardsResponse": {
+      "document": "DescribeMessageForwards返回参数结构体",
+      "members": [
+        {
+          "document": "配置总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MessageForward",
+          "name": "List",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -4290,6 +4608,122 @@
       ],
       "usage": "out"
     },
+    "MessageForward": {
+      "document": "消息转发配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124354",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1624204800",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "json数组， 转发类型 1: 告警 2:GPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "MessageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka_instance",
+          "member": "string",
+          "name": "Instance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kafka topic id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-30T17:26:47+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-30T17:26:47+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-kafka",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyBindPlanLiveChannelRequest": {
       "document": "ModifyBindPlanLiveChannel请求参数结构体",
       "members": [
@@ -4487,6 +4921,42 @@
     },
     "ModifyLiveVideoResponse": {
       "document": "ModifyLiveVideo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMessageForwardRequest": {
+      "document": "ModifyMessageForward请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置ID",
+          "example": "1624",
+          "member": "int64",
+          "name": "IntId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "json数组， 转发类型 1: 告警 2:GPS",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "MessageType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMessageForwardResponse": {
+      "document": "ModifyMessageForward返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

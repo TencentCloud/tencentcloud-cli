@@ -137,7 +137,7 @@
       },
       {
         "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\n&StartDate=2019-01-01\n&EndDate=2019-01-01\n&ProductCode=10181\n&Domain= \n&<公共请求参数>",
+        "input": "https://billing.tencentcloudapi.com/?Action=DescribeDosageDetailByDate\n&StartDate=2019-01-01\n&EndDate=2019-01-01\n&ProductCode=10181\n&Domain= \"\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RetCode\": 0,\n        \"RetMsg\": \"\",\n        \"Unit\": \"GB\",\n        \"DetailSets\": [\n            {\n                \"Domain\": \"\",\n                \"InstanceID\": \"lb-1zvuxyml\",\n                \"DetailPoints\": [\n                    {\n                        \"Time\": \"2019-01-01 00:00:00\",\n                        \"Value\": \"18731317843\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f4fbb2f0-d93b-4828-a156-79a43f29da6d\"\n    }\n}",
         "title": "CLB、EIP，视频直播业务按日期获取用量明细"
       }

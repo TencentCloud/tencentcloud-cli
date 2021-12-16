@@ -186,6 +186,12 @@
       "name": "查询云监控产品列表",
       "output": "DescribeProductListResponse"
     },
+    "DescribePrometheusInstances": {
+      "document": "本接口 (DescribePrometheusInstances) 用于查询一个或多个实例的详细信息。\n<ul>\n<li>可以根据实例ID、实例名称或者实例状态等信息来查询实例的详细信息</li>\n<li>如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。</li>\n</ul>",
+      "input": "DescribePrometheusInstancesRequest",
+      "name": "查看 Prometheus 实例列表",
+      "output": "DescribePrometheusInstancesResponse"
+    },
     "DescribeServiceDiscovery": {
       "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "DescribeServiceDiscoveryRequest",
@@ -6221,6 +6227,114 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusInstancesRequest": {
+      "document": "DescribePrometheusInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。",
+          "example": "[\"prom-xxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照【实例状态】进行过滤。\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照【实例名称】进行过滤。",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。",
+          "example": "无",
+          "member": "PrometheusTag",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照【实例的IPv4地址】进行过滤。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IPv4Address",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstancesResponse": {
+      "document": "DescribePrometheusInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusInstancesItem",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "符合条件的实例数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceDiscoveryRequest": {
       "document": "DescribeServiceDiscovery请求参数结构体",
       "members": [
@@ -7639,6 +7753,338 @@
       ],
       "usage": "out"
     },
+    "PrometheusInstanceGrantInfo": {
+      "document": "实例的授权信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否有计费操作权限(1=有，2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasChargeOperation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否显示VPC信息的权限(1=有，2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasVpcDisplay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可修改Grafana的状态(1=有，2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasGrafanaStatusChange",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有管理agent的权限(1=有，2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasAgentManage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否有管理TKE集成的权限(1=有，2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasTkeManage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否显示API等信息(1=有, 2=无)",
+          "example": "1",
+          "member": "int64",
+          "name": "HasApiOperation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusInstancesItem": {
+      "document": "Prometheus 服务响应体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "prom-123456",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：\n<ul>\n<li>2：包年包月</li>\n<li>3：按量</li>\n</ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-123456",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 ID",
+          "example": "subnet-123456",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "DataRetentionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例业务状态。取值范围：\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://url",
+          "member": "string",
+          "name": "GrafanaURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启 Grafana\n<li>0：不开启</li>\n<li>1：开启</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableGrafana",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例IPV4地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.2",
+          "member": "string",
+          "name": "IPv4Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "PrometheusTag",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费状态\n<ul>\n<li>1：正常</li>\n<li>2：过期</li>\n<li>3：销毁</li>\n<li>4：分配中</li>\n<li>5：分配失败</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "基础1",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</ii>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否快过期\n<ul>\n<li>0：否</li>\n<li>1：快过期</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsNearExpire",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据写入需要的 Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token",
+          "member": "string",
+          "name": "AuthToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Prometheus Remote Write 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://url",
+          "member": "string",
+          "name": "RemoteWrite",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Prometheus HTTP Api 根地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://url",
+          "member": "string",
+          "name": "ApiRootPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Proxy 的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://url",
+          "member": "string",
+          "name": "ProxyAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Grafana 运行状态\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重启中</li>\n<li>5：销毁中</li>\n<li>6：已停机</li>\n<li>7：已删除</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "GrafanaStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Grafana IP 白名单列表，使用英文分号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.2",
+          "member": "string",
+          "name": "GrafanaIpWhiteList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "PrometheusInstanceGrantInfo",
+          "name": "Grant",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusRuleKV": {
       "document": "prometheus 报警规则 KV 参数",
       "members": [
@@ -7776,6 +8222,30 @@
         }
       ],
       "usage": "out"
+    },
+    "PrometheusTag": {
+      "document": "Prometheus 托管服务标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签的健值",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PutMonitorDataRequest": {
       "document": "PutMonitorData请求参数结构体",
