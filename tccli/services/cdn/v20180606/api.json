@@ -2279,6 +2279,7 @@
         {
           "default": "",
           "document": "动作，取值为以为3个类型中的一个：\"intercept\",\"permit\",\"monitor\"，分别表示： 拦截， 放行，监控",
+          "example": "intercept",
           "member": "string",
           "name": "Action",
           "required": true,
@@ -2288,6 +2289,7 @@
         {
           "default": "",
           "document": "会话总次数",
+          "example": "1",
           "member": "int64",
           "name": "Nums",
           "required": true,
@@ -2297,6 +2299,7 @@
         {
           "default": "",
           "document": "BotType=UB时，表示预测标签，取值如下：\n                \"crawler_unregular\",\n                \"crawler_regular\",\n                \"request_repeat\",\n                \"credential_miss_user\",\n                \"credential_without_user\",\n                \"credential_only_action\",\n                \"credential_user_password\",\n                \"credential_cracking\",\n                \"credential_stuffing\",\n                \"brush_sms\",\n                \"brush_captcha\",\n                \"reg_malicious\"\nBotType=TCB时，表示Bot分类，取值如下：\n                \"Uncategorised\",\n                \"Search engine bot\",\n                \"Site monitor\",\n                \"Screenshot creator\",\n                \"Link checker\",\n                \"Web scraper\",\n                \"Vulnerability scanner\",\n                \"Virus scanner\",\n                \"Speed tester\",\n                \"Feed Fetcher\",\n                \"Tool\",\n                \"Marketing\"\nBotType=UCB时，为二期接口，暂时未定义内容",
+          "example": "crawler_unregular",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -2306,6 +2309,7 @@
         {
           "default": "",
           "document": "会话持续时间",
+          "example": "1",
           "member": "float",
           "name": "SessionDuration",
           "required": true,
@@ -2315,6 +2319,7 @@
         {
           "default": "",
           "document": "访问源IP",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "SrcIp",
           "required": true,
@@ -2324,6 +2329,7 @@
         {
           "default": "",
           "document": "异常特征",
+          "example": "[]",
           "member": "string",
           "name": "BotFeature",
           "required": true,
@@ -2333,6 +2339,7 @@
         {
           "default": "",
           "document": "最新检测时间",
+          "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "Time",
           "required": true,
@@ -2342,6 +2349,7 @@
         {
           "default": "",
           "document": "BOT得分",
+          "example": "1",
           "member": "int64",
           "name": "Score",
           "required": true,
@@ -2351,6 +2359,7 @@
         {
           "default": "",
           "document": "平均速率",
+          "example": "1",
           "member": "float",
           "name": "AvgSpeed",
           "required": true,
@@ -2360,6 +2369,7 @@
         {
           "default": "",
           "document": "BotType=TCB，表示TCB名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCB",
           "member": "string",
           "name": "TcbDetail",
           "required": true,
@@ -2369,11 +2379,22 @@
         {
           "default": "",
           "document": "BOT记录唯一ID，用于查询访问详情",
+          "example": "123123",
           "member": "string",
           "name": "Id",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.123.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6334,6 +6355,15 @@
           "name": "FilterIp",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名列表，为空表示查询AppID维度数据",
+          "example": "[www.test.com]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

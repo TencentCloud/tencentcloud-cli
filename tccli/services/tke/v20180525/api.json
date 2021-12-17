@@ -1737,6 +1737,7 @@
         {
           "default": "",
           "document": "集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64",
+          "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "ClusterOs",
           "required": false,
@@ -1746,6 +1747,7 @@
         {
           "default": "",
           "document": "集群版本,默认值为1.10.5",
+          "example": "v1.18.4",
           "member": "string",
           "name": "ClusterVersion",
           "required": false,
@@ -1755,6 +1757,7 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "clstest",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -1764,6 +1767,7 @@
         {
           "default": "",
           "document": "集群描述",
+          "example": "test cluster",
           "member": "string",
           "name": "ClusterDescription",
           "required": false,
@@ -1773,6 +1777,7 @@
         {
           "default": "",
           "document": "私有网络ID，形如vpc-xxx。创建托管空集群时必传。",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1782,6 +1787,7 @@
         {
           "default": "",
           "document": "集群内新增资源所属项目ID。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1791,6 +1797,7 @@
         {
           "default": "",
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到集群实例。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1800,6 +1807,7 @@
         {
           "default": "",
           "document": "容器的镜像版本，\"DOCKER_CUSTOMIZE\"(容器定制版),\"GENERAL\"(普通版本，默认值)",
+          "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,
@@ -1809,10 +1817,21 @@
         {
           "default": "",
           "document": "是否开启节点的默认安全组(默认: 否，Aphla特性)",
+          "example": "false",
           "member": "bool",
           "name": "NeedWorkSecurityGroup",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡",
+          "example": "subnet-xx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2824,6 +2843,7 @@
         {
           "default": "",
           "document": "集群容器网络配置信息",
+          "example": "无",
           "member": "ClusterCIDRSettings",
           "name": "ClusterCIDRSettings",
           "required": true,
@@ -2832,6 +2852,7 @@
         {
           "default": "",
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -2840,6 +2861,7 @@
         {
           "default": "",
           "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。",
+          "example": "无",
           "member": "RunInstancesForNode",
           "name": "RunInstancesForNode",
           "required": false,
@@ -2848,6 +2870,7 @@
         {
           "default": "",
           "document": "集群的基本配置信息",
+          "example": "无",
           "member": "ClusterBasicSettings",
           "name": "ClusterBasicSettings",
           "required": false,
@@ -2856,6 +2879,7 @@
         {
           "default": "",
           "document": "集群高级配置信息",
+          "example": "无",
           "member": "ClusterAdvancedSettings",
           "name": "ClusterAdvancedSettings",
           "required": false,
@@ -2864,6 +2888,7 @@
         {
           "default": "",
           "document": "节点高级配置信息",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -2871,7 +2896,8 @@
         },
         {
           "default": "",
-          "document": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100。",
+          "document": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。",
+          "example": "无",
           "member": "ExistedInstancesForNode",
           "name": "ExistedInstancesForNode",
           "required": false,
@@ -2880,6 +2906,7 @@
         {
           "default": "",
           "document": "CVM类型和其对应的数据盘挂载配置信息",
+          "example": "无",
           "member": "InstanceDataDiskMountSetting",
           "name": "InstanceDataDiskMountSettings",
           "required": false,
@@ -2888,6 +2915,7 @@
         {
           "default": "",
           "document": "需要安装的扩展组件信息",
+          "example": "无",
           "member": "ExtensionAddon",
           "name": "ExtensionAddons",
           "required": false,
@@ -2901,8 +2929,10 @@
       "members": [
         {
           "document": "集群ID",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

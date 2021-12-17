@@ -1833,6 +1833,7 @@
         {
           "default": "",
           "document": "迁移任务的名称",
+          "example": "测试接口",
           "member": "string",
           "name": "MigrateName",
           "required": true,
@@ -1841,6 +1842,7 @@
         {
           "default": "",
           "document": "迁移类型（1:结构迁移 2:数据迁移 3:增量同步）",
+          "example": "2",
           "member": "uint64",
           "name": "MigrateType",
           "required": true,
@@ -1849,6 +1851,7 @@
         {
           "default": "",
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）",
+          "example": "5",
           "member": "uint64",
           "name": "SourceType",
           "required": true,
@@ -1857,6 +1860,7 @@
         {
           "default": "",
           "document": "迁移源",
+          "example": "无",
           "member": "MigrateSource",
           "name": "Source",
           "required": true,
@@ -1865,6 +1869,7 @@
         {
           "default": "",
           "document": "迁移目标",
+          "example": "无",
           "member": "MigrateTarget",
           "name": "Target",
           "required": true,
@@ -1873,6 +1878,7 @@
         {
           "default": "",
           "document": "迁移DB对象 ，离线迁移不使用（SourceType=4或SourceType=5）。",
+          "example": "无",
           "member": "MigrateDB",
           "name": "MigrateDBSet",
           "required": false,
@@ -1881,6 +1887,7 @@
         {
           "default": "",
           "document": "按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。",
+          "example": "无",
           "member": "RenameRestoreDatabase",
           "name": "RenameRestore",
           "required": false,
@@ -1894,8 +1901,10 @@
       "members": [
         {
           "document": "迁移任务ID",
+          "example": "2728",
           "member": "int64",
           "name": "MigrateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3321,6 +3330,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3329,6 +3339,7 @@
         {
           "default": "",
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3337,6 +3348,7 @@
         {
           "default": "",
           "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3350,22 +3362,28 @@
       "members": [
         {
           "document": "实例ID",
+          "example": "mssql-632eyp63",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "账户信息列表",
+          "example": "无",
           "member": "AccountDetail",
           "name": "Accounts",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4241,6 +4259,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：mssql-c1nl9rpv或者mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "mssql-6f4ddx2f ",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4254,8 +4273,10 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4319,6 +4340,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "[\"mssql-njj2mtpl\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -4327,6 +4349,7 @@
         {
           "default": "",
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4335,6 +4358,7 @@
         {
           "default": "",
           "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4348,15 +4372,19 @@
       "members": [
         {
           "document": "数据库数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例数据库列表",
+          "example": "无",
           "member": "InstanceDBDetail",
           "name": "DBInstances",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4980,6 +5008,7 @@
         {
           "default": "",
           "document": "可用区英文ID，形如ap-guangzhou-1",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -4988,6 +5017,7 @@
         {
           "default": "",
           "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型",
+          "example": "HA",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -5001,15 +5031,19 @@
       "members": [
         {
           "document": "规格信息数组",
+          "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "返回总共多少条数据",
+          "example": "4",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6682,6 +6716,7 @@
         {
           "default": "",
           "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6690,6 +6725,7 @@
         {
           "default": "",
           "document": "账号权限变更信息",
+          "example": "无",
           "member": "AccountPrivilegeModifyInfo",
           "name": "Accounts",
           "required": true,
@@ -6703,8 +6739,10 @@
       "members": [
         {
           "document": "异步任务流程ID",
+          "example": "30321",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

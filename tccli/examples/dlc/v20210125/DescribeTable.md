@@ -17,7 +17,7 @@ Output:
         "RequestId": "a8317085-a8a7-46ea-b7db-ca7b72c2a6bf",
         "Table": {
             "TableBaseInfo": {
-                "DatasourceConnectionName": "",
+                "DatasourceConnectionName": "DataLakeCatalog",
                 "DatabaseName": "testdb",
                 "TableName": "table1"
             },

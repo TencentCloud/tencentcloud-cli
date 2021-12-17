@@ -150,6 +150,12 @@
       "name": "获取实例灾备详情",
       "output": "DescribeDcnDetailResponse"
     },
+    "DescribeFileDownloadUrl": {
+      "document": "本接口(DescribeFileDownloadUrl)用于获取数据库指定备份或日志文件的下载连接。",
+      "input": "DescribeFileDownloadUrlRequest",
+      "name": "获取备份或日志的下载连接",
+      "output": "DescribeFileDownloadUrlResponse"
+    },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询流程状态。",
       "input": "DescribeFlowRequest",
@@ -3429,6 +3435,51 @@
           "name": "DcnDetails",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileDownloadUrlRequest": {
+      "document": "DescribeFileDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "tdsql-1234abcd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "不带签名的文件路径",
+          "example": "/cos_backup/xxx",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileDownloadUrlResponse": {
+      "document": "DescribeFileDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "带签名的下载连接",
+          "example": "http://cos.domain/xxx",
+          "member": "string",
+          "name": "PreSignedUrl",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

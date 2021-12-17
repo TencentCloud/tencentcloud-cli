@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdn DescribeScdnBotRecords --cli-unfold-argument  \
     --BotType TCB \
-    --Domain zc-test-a.qcloudwaf.com \
+    --Domain 123.com \
     --StartTime '2020-04-20 12:00:00' \
     --EndTime '2020-04-20 23:59:59' \
     --Offset 0 \

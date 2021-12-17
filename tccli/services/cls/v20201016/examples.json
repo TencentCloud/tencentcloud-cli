@@ -48,6 +48,14 @@
         "title": "创建采集规则配置"
       }
     ],
+    "CreateConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Ckafka\": {\n        \"Vip\": \"10.123.123.123\",\n        \"Vport\": \"8888\",\n        \"InstanceId\": \"xxxxx\",\n        \"InstanceName\": \"myname\",\n        \"TopicId\": \"xxxxx\",\n        \"TopicName\": \"xxxxx\"\n    },\n    \"Content\": {\n        \"EnableTag\": true,\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    },\n    \"NeedContent\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "创建投递任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "",
@@ -142,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFromMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx-xxx-xxxxxx\",\n    \"ConfigId\": \"xxxxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除应用到机器组的采集配置"
+      }
+    ],
+    "DeleteConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "删除投递配置"
       }
     ],
     "DeleteExport": [
@@ -254,6 +270,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"configId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"xxxx-xx-xx-xx-yyyyyyyy\",\n                \"Path\": \"/abc/log/test.log\",\n                \"LogType\": \"delimiter_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"date\",\n                    \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n                    \"Delimiter\": \"|\",\n                    \"LogRegex\": \".*\",\n                    \"BeginRegex\": \"^\",\n                    \"Keys\": [\n                        \"date\",\n                        \"\",\n                        \"content\"\n                    ],\n                    \"FilterKeyRegex\": [\n                        {\n                            \"Key\": \"xx\",\n                            \"Regex\": \"xxxx\"\n                        }\n                    ],\n                    \"UnMatchLogKey\": \"testlog\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Backtracking\": -1\n                },\n                \"UserDefineRule\": \"xxxx\",\n                \"UpdateTime\": \"2017-08-08 12:12:12\",\n                \"CreateTime\": \"2017-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取采集配置"
+      }
+    ],
+    "DescribeConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8888\",\n            \"InstanceId\": \"xxxxx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx\",\n            \"TopicName\": \"xxxxx\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ]\n        },\n        \"NeedContent\": true\n    }\n}",
+        "title": "获取投递配置"
       }
     ],
     "DescribeExports": [
@@ -382,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"Name\": \"testname\",\n    \"Path\": \"/data/nginx/log/access.log\",\n    \"LogType\": \"delimiter_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"xxxx\"\n            }\n        ],\n        \"UnMatchUpLoadSwitch\": true,\n        \"UnMatchLogKey\": \"testlog\",\n        \"Backtracking\": 1048576\n    },\n    \"UserDefineRule\": \"xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改采集规则配置"
+      }
+    ],
+    "ModifyConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Effective\": true,\n    \"Ckafka\": {\n        \"Vip\": \"10.123.123.123\",\n        \"Vport\": \"8888\",\n        \"InstanceId\": \"xxxxx\",\n        \"InstanceName\": \"myname\",\n        \"TopicId\": \"xxxxx\",\n        \"TopicName\": \"xxxxx\"\n    },\n    \"Content\": {\n        \"EnableTag\": true,\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    },\n    \"NeedContent\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "修改投递任务"
       }
     ],
     "ModifyIndex": [

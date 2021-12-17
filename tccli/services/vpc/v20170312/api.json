@@ -4773,6 +4773,15 @@
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专线网关高可用区容灾组ID",
+          "example": "ha_gourp_1",
+          "member": "string",
+          "name": "HaZoneGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4966,6 +4975,7 @@
         {
           "default": "",
           "document": "转换实例名称",
+          "example": "\"www_lakalakk\"",
           "member": "string",
           "name": "Ip6TranslatorName",
           "required": false,
@@ -4974,6 +4984,7 @@
         {
           "default": "",
           "document": "创建转换实例数量，默认是1个",
+          "example": "1",
           "member": "int64",
           "name": "Ip6TranslatorCount",
           "required": false,
@@ -4982,6 +4993,7 @@
         {
           "default": "",
           "document": "转换实例运营商属性，可取\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
+          "example": "\"BGP\"",
           "member": "string",
           "name": "Ip6InternetServiceProvider",
           "required": false,
@@ -4995,8 +5007,10 @@
       "members": [
         {
           "document": "转换实例的唯一ID数组，形如\"ip6-xxxxxxxx\"",
+          "example": "[\"ip6-90pt7p9q\"]",
           "member": "string",
           "name": "Ip6TranslatorSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7076,6 +7090,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-8j0phqix",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -12498,6 +12513,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关流控明细启用状态：\n0：关闭\n1：开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableFlowDetails",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启、关闭网关流控明细时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-02-01 12:00:00",
+          "member": "string",
+          "name": "FlowDetailsUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持开启网关流控明细\n0：不支持\n1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NewAfc",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专线网关接入网络类型：\n<li>`VXLAN` - VXLAN类型。</li>\n<li>`MPLS` - MPLS类型。</li>\n<li>`Hybrid` - Hybrid类型。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VXLAN",
+          "member": "string",
+          "name": "AccessNetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跨可用区容灾专线网关的可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "HaZoneList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12508,6 +12573,7 @@
         {
           "default": "",
           "document": "路由ID。",
+          "example": "dcr-xxxxxxx",
           "member": "string",
           "name": "RouteId",
           "required": true,
@@ -12517,6 +12583,7 @@
         {
           "default": "",
           "document": "IDC网段。",
+          "example": "192.168.1.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -12526,10 +12593,31 @@
         {
           "default": "",
           "document": "`BGP`的`AS-Path`属性。",
+          "example": "['2342', '342']",
           "member": "string",
           "name": "ASPath",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -15719,6 +15807,7 @@
         {
           "default": "",
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx",
+          "example": "ip6-90pt7p9q",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
@@ -15727,6 +15816,7 @@
         {
           "default": "",
           "document": "IPV6转换规则唯一ID，形如rule6-xxxxxxxx",
+          "example": "rule6-7v3vwgec",
           "member": "string",
           "name": "Ip6RuleId",
           "required": true,
@@ -15735,6 +15825,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的名称",
+          "example": "\"rule_name\"",
           "member": "string",
           "name": "Ip6RuleName",
           "required": false,
@@ -15743,6 +15834,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的IPV4地址",
+          "example": "100.192.3.9",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -15751,6 +15843,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的IPV4端口号",
+          "example": "77",
           "member": "int64",
           "name": "Vport",
           "required": false,

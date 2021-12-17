@@ -25,7 +25,7 @@
       "output": "BindWorkGroupsToUserResponse"
     },
     "CancelTask": {
-      "document": "取消任务执行",
+      "document": "本接口（CancelTask），用于取消任务执行",
       "input": "CancelTaskRequest",
       "name": "取消任务执行",
       "output": "CancelTaskResponse"
@@ -61,7 +61,7 @@
       "output": "CreateTaskResponse"
     },
     "CreateTasks": {
-      "document": "批量创建任务",
+      "document": "本接口（CreateTasks），用于批量创建任务",
       "input": "CreateTasksRequest",
       "name": "批量创建任务",
       "output": "CreateTasksResponse"
@@ -127,13 +127,13 @@
       "output": "DescribeStoreLocationResponse"
     },
     "DescribeTable": {
-      "document": "查询单个表的详细信息。",
+      "document": "本接口（DescribeTable），用于查询单个表的详细信息。",
       "input": "DescribeTableRequest",
       "name": "查询表详情",
       "output": "DescribeTableResponse"
     },
     "DescribeTables": {
-      "document": "本接口（DescribleTables）用于查询数据表列表。",
+      "document": "本接口（DescribeTables）用于查询数据表列表。",
       "input": "DescribeTablesRequest",
       "name": "查询数据表列表",
       "output": "DescribeTablesResponse"
@@ -497,6 +497,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-07 06:19:23",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字段修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-07 06:19:23",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -515,8 +545,8 @@
         },
         {
           "default": "",
-          "document": "数据源名称，默认为CosDataCatalog",
-          "example": "CosDataCatalog",
+          "document": "数据源名称，默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
@@ -692,6 +722,15 @@
           "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据引擎名称，不填提交到默认集群",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -803,10 +842,19 @@
         },
         {
           "default": "",
-          "document": "数据源名称，默认为COSDataCatalog",
-          "example": "COSDataCatalog",
+          "document": "数据源名称，默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计算引擎名称，不填任务提交到默认集群",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
           "required": false,
           "type": "string"
         }
@@ -1013,7 +1061,7 @@
       "members": [
         {
           "default": "",
-          "document": "数据库名称。",
+          "document": "数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。",
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
@@ -1023,7 +1071,7 @@
         },
         {
           "default": "",
-          "document": "数据库描述信息，长度 0~256。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库描述信息，长度 0~500。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
           "member": "string",
           "name": "Comment",
@@ -1039,6 +1087,16 @@
           "name": "Properties",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1069,7 +1127,7 @@
         },
         {
           "default": "",
-          "document": "数据库属性列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "允许针对数据库的属性元数据信息进行指定。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Property",
           "name": "Properties",
@@ -1249,12 +1307,30 @@
         },
         {
           "default": "",
-          "document": "数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为CosDataCatalog",
-          "example": "datasource-xxx",
+          "document": "数据源唯名称，该名称可以通过DescribeDatasourceConnection接口查询到。默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，当前版本仅支持按库名排序",
+          "example": "DatabaseName",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型：false：降序（默认）、true：升序",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1420,7 +1496,7 @@
         {
           "default": "",
           "document": "查询表所在的数据源名称",
-          "example": "CosDataCatalog",
+          "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
@@ -1491,10 +1567,55 @@
         },
         {
           "default": "",
-          "document": "指定查询的数据源名称，默认为CosDataCatalog",
-          "example": "CosDataCatalog",
+          "document": "指定查询的数据源名称，默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间：用于对更新时间的筛选",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终止时间：用于对更新时间的筛选",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持：ModifiedTime（默认）；CreateTime",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，false：降序（默认）；true",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW",
+          "example": "Table",
+          "member": "string",
+          "name": "TableType",
           "required": false,
           "type": "string"
         }
@@ -1554,7 +1675,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）\ntask-type -string （任务类型过滤）分导入任务和sql任务",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1563,7 +1684,7 @@
         },
         {
           "default": "",
-          "document": "排序字段，支持如下字段类型，create-time",
+          "document": "排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）",
           "example": "create-time",
           "member": "string",
           "name": "SortBy",
@@ -1594,6 +1715,15 @@
           "example": "2019-01-22 00:00:00",
           "member": "string",
           "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持计算资源名字筛选",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
           "required": false,
           "type": "string"
         }
@@ -1756,6 +1886,42 @@
           "example": "COSDataCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "test",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序规则",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2021-11-11 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-11-11 00:00:00",
+          "member": "string",
+          "name": "EndTime",
           "required": false,
           "type": "string"
         }
@@ -2352,6 +2518,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该数据表备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TableComment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "具体类型，表or视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据格式类型，hive，iceberg等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hive",
+          "member": "string",
+          "name": "TableFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2695,6 +2891,86 @@
           "name": "ProgressDetail",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646962000",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-1gghpd1t",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行sql的子uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "****",
+          "member": "string",
+          "name": "OperateUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计算资源名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导入类型是本地导入还是cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导入配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"paths\",\"Value\":\"lakefs://20000003366d155f79a522c8349496",
+          "member": "string",
+          "name": "InputConf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "DataNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "查询数据能不能下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CanDownload",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

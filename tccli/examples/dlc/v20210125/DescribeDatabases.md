@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc DescribeDatabases --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --Limit 1 \
     --Offset 0
 ```

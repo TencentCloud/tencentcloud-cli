@@ -36,6 +36,12 @@
       "name": "创建采集规则配置",
       "output": "CreateConfigResponse"
     },
+    "CreateConsumer": {
+      "document": "本接口用于创建投递任务",
+      "input": "CreateConsumerRequest",
+      "name": "创建投递任务",
+      "output": "CreateConsumerResponse"
+    },
     "CreateExport": {
       "document": "本接口用于创建日志下载任务",
       "input": "CreateExportRequest",
@@ -107,6 +113,12 @@
       "input": "DeleteConfigFromMachineGroupRequest",
       "name": "删除应用到机器组的采集配置",
       "output": "DeleteConfigFromMachineGroupResponse"
+    },
+    "DeleteConsumer": {
+      "document": "本接口用于删除投递配置",
+      "input": "DeleteConsumerRequest",
+      "name": "删除投递配置",
+      "output": "DeleteConsumerResponse"
     },
     "DeleteExport": {
       "document": "本接口用于删除日志下载任务",
@@ -191,6 +203,12 @@
       "input": "DescribeConfigsRequest",
       "name": "获取采集规则配置",
       "output": "DescribeConfigsResponse"
+    },
+    "DescribeConsumer": {
+      "document": "本接口用于获取投递配置",
+      "input": "DescribeConsumerRequest",
+      "name": "获取投递配置",
+      "output": "DescribeConsumerResponse"
     },
     "DescribeExports": {
       "document": "本接口用于获取日志下载任务列表",
@@ -287,6 +305,12 @@
       "input": "ModifyConfigRequest",
       "name": "修改采集规则配置",
       "output": "ModifyConfigResponse"
+    },
+    "ModifyConsumer": {
+      "document": "本接口用于修改投递任务",
+      "input": "ModifyConsumerRequest",
+      "name": "修改投递任务",
+      "output": "ModifyConsumerResponse"
     },
     "ModifyIndex": {
       "document": "本接口用于修改索引配置\n",
@@ -1043,6 +1067,72 @@
       ],
       "usage": "both"
     },
+    "Ckafka": {
+      "document": "CKafka的描述-需要投递到的kafka信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Ckafka 的 Vip",
+          "example": "“10.123.123.123”",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka 的 Vport",
+          "example": "“8888”",
+          "member": "string",
+          "name": "Vport",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka 的 InstanceId",
+          "example": "“xxxxxx”",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka 的 InstanceName",
+          "example": "\"myname\"",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka 的 TopicId",
+          "example": "\"xxxxxxxx\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka 的 TopicName",
+          "example": "\"xxxxxxxx\"",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Column": {
       "document": "日志分析的列属性",
       "members": [
@@ -1190,6 +1280,32 @@
         }
       ],
       "usage": "out"
+    },
+    "ConsumerContent": {
+      "document": "投递任务出入参 Content",
+      "members": [
+        {
+          "default": "",
+          "document": "是否投递 TAG 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableTag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
+          "member": "string",
+          "name": "MetaFields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ContentInfo": {
       "document": "投递日志的内容格式配置",
@@ -1650,6 +1766,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerRequest": {
+      "document": "CreateConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递任务绑定的日志主题 ID",
+          "example": "\"xxx-xxx-xxx-xxx\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否投递日志的元数据信息，默认为 true",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedContent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "如果需要投递元数据信息，元数据信息的描述",
+          "example": "无",
+          "member": "ConsumerContent",
+          "name": "Content",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "CKafka的描述",
+          "example": "无",
+          "member": "Ckafka",
+          "name": "Ckafka",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerResponse": {
+      "document": "CreateConsumer返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2390,6 +2560,33 @@
       ],
       "type": "object"
     },
+    "DeleteConsumerRequest": {
+      "document": "DeleteConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递任务绑定的日志主题 ID",
+          "example": "\"xxx-xxx-xxx-xxx\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerResponse": {
+      "document": "DeleteConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteExportRequest": {
       "document": "DeleteExport请求参数结构体",
       "members": [
@@ -3072,6 +3269,69 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerRequest": {
+      "document": "DescribeConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递任务绑定的日志主题 ID",
+          "example": "\"xxx-xxx-xxx-xxx\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerResponse": {
+      "document": "DescribeConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "投递任务是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Effective",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否投递日志的元数据信息",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedContent",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "如果需要投递元数据信息，元数据信息的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerContent",
+          "name": "Content",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CKafka的描述",
+          "example": "无",
+          "member": "Ckafka",
+          "name": "Ckafka",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5133,6 +5393,69 @@
     },
     "ModifyConfigResponse": {
       "document": "ModifyConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerRequest": {
+      "document": "ModifyConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递任务绑定的日志主题 ID",
+          "example": "\"xxx-xxx-xxx-xxx\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "投递任务是否生效",
+          "example": "false",
+          "member": "bool",
+          "name": "Effective",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否投递日志的元数据信息，默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedContent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "如果需要投递元数据信息，元数据信息的描述",
+          "example": "无",
+          "member": "ConsumerContent",
+          "name": "Content",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "CKafka的描述",
+          "example": "无",
+          "member": "Ckafka",
+          "name": "Ckafka",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerResponse": {
+      "document": "ModifyConsumer返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

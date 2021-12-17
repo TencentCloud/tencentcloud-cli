@@ -12,6 +12,12 @@
       "name": "添加拨测分组",
       "output": "CreateAgentGroupResponse"
     },
+    "CreateProbeTasks": {
+      "document": "批量创建探测任务",
+      "input": "CreateProbeTasksRequest",
+      "name": "批量创建探测任务",
+      "output": "CreateProbeTasksResponse"
+    },
     "CreateTaskEx": {
       "document": "创建拨测任务(扩展)",
       "input": "CreateTaskExRequest",
@@ -23,6 +29,12 @@
       "input": "DeleteAgentGroupRequest",
       "name": "删除拨测分组",
       "output": "DeleteAgentGroupResponse"
+    },
+    "DeleteProbeTask": {
+      "document": "删除拨测任务",
+      "input": "DeleteProbeTaskRequest",
+      "name": "删除拨测任务",
+      "output": "DeleteProbeTaskResponse"
     },
     "DeleteTasks": {
       "document": "删除多个拨测任务",
@@ -65,6 +77,24 @@
       "input": "DescribeCatLogsRequest",
       "name": "查询拨测流水",
       "output": "DescribeCatLogsResponse"
+    },
+    "DescribeDetailedSingleProbeData": {
+      "document": "根据时间范围、任务ID、运营商等条件查询单次拨测详情数据",
+      "input": "DescribeDetailedSingleProbeDataRequest",
+      "name": "列出单次拨测详情数据",
+      "output": "DescribeDetailedSingleProbeDataResponse"
+    },
+    "DescribeProbeNodes": {
+      "document": "查询拨测节点",
+      "input": "DescribeProbeNodesRequest",
+      "name": "查询拨测节点",
+      "output": "DescribeProbeNodesResponse"
+    },
+    "DescribeProbeTasks": {
+      "document": "查询探测任务列表",
+      "input": "DescribeProbeTasksRequest",
+      "name": "查询探测任务列表",
+      "output": "DescribeProbeTasksResponse"
     },
     "DescribeTaskDetail": {
       "document": "查询拨测任务信息",
@@ -150,11 +180,29 @@
       "name": "暂停拨测任务",
       "output": "PauseTaskResponse"
     },
+    "ResumeProbeTask": {
+      "document": "恢复拨测任务",
+      "input": "ResumeProbeTaskRequest",
+      "name": "恢复拨测任务",
+      "output": "ResumeProbeTaskResponse"
+    },
     "RunTask": {
       "document": "运行拨测任务",
       "input": "RunTaskRequest",
       "name": "运行拨测任务",
       "output": "RunTaskResponse"
+    },
+    "SuspendProbeTask": {
+      "document": "暂停拨测任务",
+      "input": "SuspendProbeTaskRequest",
+      "name": "暂停拨测任务",
+      "output": "SuspendProbeTaskResponse"
+    },
+    "UpdateProbeTaskConfigurationList": {
+      "document": "批量更新拨测任务配置",
+      "input": "UpdateProbeTaskConfigurationListRequest",
+      "name": "批量更新拨测任务配置",
+      "output": "UpdateProbeTaskConfigurationListResponse"
     },
     "VerifyResult": {
       "document": "验证拨测任务，结果验证查询（验证成功的，才建议创建拨测任务）",
@@ -1100,6 +1148,87 @@
       ],
       "type": "object"
     },
+    "CreateProbeTasksRequest": {
+      "document": "CreateProbeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "批量任务名-地址",
+          "example": "无",
+          "member": "ProbeTaskBasicConfiguration",
+          "name": "BatchTasks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "探测节点",
+          "example": "[\"10001\"]",
+          "member": "string",
+          "name": "Nodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "探测间隔",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "探测参数",
+          "example": "{}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskCategory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定时任务cron表达式",
+          "example": "* 0-5 * * *",
+          "member": "string",
+          "name": "Cron",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProbeTasksResponse": {
+      "document": "CreateProbeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTaskExRequest": {
       "document": "CreateTaskEx请求参数结构体",
       "members": [
@@ -1429,6 +1558,60 @@
     "DeleteAgentGroupResponse": {
       "document": "DeleteAgentGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProbeTaskRequest": {
+      "document": "DeleteProbeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "[\"task-xx\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProbeTaskResponse": {
+      "document": "DeleteProbeTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务总量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TaskResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1846,6 +2029,366 @@
       ],
       "type": "object"
     },
+    "DescribeDetailedSingleProbeDataRequest": {
+      "document": "DescribeDetailedSingleProbeData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间戳（毫秒级）",
+          "example": "1000000000",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳（毫秒级）",
+          "example": "1000000000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "AnalyzeTaskType_UploadDownload",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待排序字段",
+          "example": "ProbeTime",
+          "member": "string",
+          "name": "SortField",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "true表示升序",
+          "example": "true",
+          "member": "bool",
+          "name": "Ascending",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "选中字段",
+          "example": "[ProbeTime]",
+          "member": "string",
+          "name": "SelectedFields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "起始取数位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "取数数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "[task_fasdfds]",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "拨测点运营商",
+          "example": "[电信]",
+          "member": "string",
+          "name": "Operators",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "拨测点地区",
+          "example": "[上海]",
+          "member": "string",
+          "name": "Districts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "错误类型",
+          "example": "[正常]",
+          "member": "string",
+          "name": "ErrorTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetailedSingleProbeDataResponse": {
+      "document": "DescribeDetailedSingleProbeData返回参数结构体",
+      "members": [
+        {
+          "document": "单次详情数据",
+          "example": "无",
+          "member": "DetailedSingleDataDefine",
+          "name": "DataSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的数据总数",
+          "example": "10000",
+          "member": "int64",
+          "name": "TotalNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeNodesRequest": {
+      "document": "DescribeProbeNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 海外 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "Location",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否IPv6",
+          "example": "false",
+          "member": "bool",
+          "name": "IsIPv6",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "名字模糊搜索",
+          "example": "沈阳",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeNodesResponse": {
+      "document": "DescribeProbeNodes返回参数结构体",
+      "members": [
+        {
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
+          "member": "NodeDefine",
+          "name": "NodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeTasksRequest": {
+      "document": "DescribeProbeTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID  列表",
+          "example": "[\"task-xx\"]",
+          "member": "string",
+          "name": "TaskIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "example": "probe",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "探测目标",
+          "example": "http://www.qq.com",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务状态列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单状态\n<li>1 = 正常</li>\n<li> 2 = 欠费 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测类型",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "节点类型",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "TaskCategory",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序的列",
+          "example": "task_category",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否正序",
+          "example": "true",
+          "member": "bool",
+          "name": "Ascend",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeTasksResponse": {
+      "document": "DescribeProbeTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ProbeTask",
+          "name": "TaskSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务总数",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskDetailRequest": {
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
@@ -1980,6 +2523,42 @@
       ],
       "type": "object"
     },
+    "DetailedSingleDataDefine": {
+      "document": "单条详细拨测数据",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测时间戳",
+          "example": "1000000000",
+          "member": "uint64",
+          "name": "ProbeTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "储存所有string类型字段",
+          "example": "[{...}, {...}]",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "储存所有float类型字段",
+          "example": "[{...},{...}]",
+          "member": "Field",
+          "name": "Fields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DimensionsDetail": {
       "document": "拨测点维度信息",
       "members": [
@@ -2003,6 +2582,42 @@
         }
       ],
       "usage": "in"
+    },
+    "Field": {
+      "document": "储存float类型字段",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义字段编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义字段名称/说明",
+          "example": "probeTime",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段值",
+          "example": "10000000000",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GetAvailRatioHistoryRequest": {
       "document": "GetAvailRatioHistory请求参数结构体",
@@ -2646,6 +3261,42 @@
       ],
       "usage": "out"
     },
+    "Label": {
+      "document": "保存string类型字段",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义字段编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义字段名称/说明",
+          "example": "probeIP",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段值",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAgentGroupRequest": {
       "document": "ModifyAgentGroup请求参数结构体",
       "members": [
@@ -2945,6 +3596,92 @@
       ],
       "type": "object"
     },
+    "NodeDefine": {
+      "document": "探测节点",
+      "members": [
+        {
+          "default": "",
+          "document": "节点名称",
+          "example": "中国电信-北京 IDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点代码",
+          "example": "10001",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点类型\n<li> 1 = IDC </li>\n<li> 2 = LastMile </li>\n<li> 3 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络服务商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "NetService",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区域",
+          "example": "福建",
+          "member": "string",
+          "name": "District",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "宁德市",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IP 类型\n<li> 1 = IPv4 </li>\n<li> 2 = IPv6 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IPType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域\n<li> 1 = 中国大陆 </li>\n<li> 2 = 港澳台 </li>\n<li> 3 = 国外 </li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Location",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PauseTaskRequest": {
       "document": "PauseTask请求参数结构体",
       "members": [
@@ -2970,6 +3707,178 @@
         }
       ],
       "type": "object"
+    },
+    "ProbeTask": {
+      "document": "探测任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "probe",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测节点列表",
+          "example": "[\"10000\"]",
+          "member": "string",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测间隔",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "探测参数",
+          "example": "{}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标地址",
+          "example": "http://www.qq.com",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式\n<li>1 = 试用版本</li>\n<li> 2 = 付费版本 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态\n<li>1 = 正常</li>\n<li> 2 = 欠费 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务分类\n<li>1 = PC</li>\n<li> 2 = Mobile </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskCategory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "\"2020\"",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定时任务cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "* 0-5 * * *",
+          "member": "string",
+          "name": "Cron",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时任务启动状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CronState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProbeTaskBasicConfiguration": {
+      "document": "type ProbeTaskBasicConfiguration struct {\n\tTaskID        TaskID `json:\"TaskId\" gorm:\"column:task_id\"`\n\tName          string `json:\"Name\" binding:\"required\" gorm:\"column:name\"`\n\tTargetAddress string `json:\"TargetAddress\" binding:\"required\" gorm:\"column:target_address\"`\n}",
+      "members": [
+        {
+          "default": "",
+          "document": "拨测任务名称",
+          "example": "probe-task1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拨测目标地址",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ProvinceDetail": {
       "document": "省份可用率",
@@ -3082,6 +3991,60 @@
       ],
       "usage": "out"
     },
+    "ResumeProbeTaskRequest": {
+      "document": "ResumeProbeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "[\"task-xx\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeProbeTaskResponse": {
+      "document": "ResumeProbeTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务总量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TaskResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RunTaskRequest": {
       "document": "RunTask请求参数结构体",
       "members": [
@@ -3099,6 +4062,60 @@
     "RunTaskResponse": {
       "document": "RunTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SuspendProbeTaskRequest": {
+      "document": "SuspendProbeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "[\"task-xx\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SuspendProbeTaskResponse": {
+      "document": "SuspendProbeTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务总量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务成功量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TaskResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3203,6 +4220,105 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskResult": {
+      "document": "任务执行结果",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "错误信息",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateProbeTaskConfigurationListRequest": {
+      "document": "UpdateProbeTaskConfigurationList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 ID",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "拨测节点",
+          "example": "[\"10001\"]",
+          "member": "string",
+          "name": "Nodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "拨测间隔",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "拨测参数",
+          "example": "{}",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时任务cron表达式",
+          "example": "* 0-5 * * *",
+          "member": "string",
+          "name": "Cron",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProbeTaskConfigurationListResponse": {
+      "document": "UpdateProbeTaskConfigurationList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VerifyResultRequest": {
       "document": "VerifyResult请求参数结构体",

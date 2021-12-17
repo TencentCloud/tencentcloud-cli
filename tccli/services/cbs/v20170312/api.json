@@ -344,6 +344,42 @@
       ],
       "type": "object"
     },
+    "AutoMountConfiguration": {
+      "document": "自动初始化、挂载云盘时指定配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "要挂载到的实例ID。",
+          "example": "[\"ins-abcdefgh\"]",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机内的挂载点。",
+          "example": "[\"/mnt/datadisk0\"]",
+          "member": "string",
+          "name": "MountPoint",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件系统类型，支持的有 ext4、xfs。",
+          "example": "ext4",
+          "member": "string",
+          "name": "FileSystemType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "AutoSnapshotPolicy": {
       "document": "描述了定期快照策略的详细信息",
       "members": [
@@ -796,6 +832,15 @@
           "name": "DeleteSnapshot",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建云盘时指定自动挂载并初始化该数据盘。",
+          "example": "无",
+          "member": "AutoMountConfiguration",
+          "name": "AutoMountConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

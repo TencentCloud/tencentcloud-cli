@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.exceptions import ConfigurationError, ClientError
+from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
@@ -14,6 +15,7 @@ from tencentcloud.redis.v20180412 import models as models_v20180412
 
 from jmespath import search
 import time
+from tccli import six
 
 def doDescribeProxySlowLog(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
@@ -3657,5 +3659,11 @@ def parse_global_arg(parsed_globals):
                 param['timeout'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
+    
+    # 如果在配置文件中读取字段的值，python2中的json.load函数会读取unicode类型的值，因此这里要转化类型
+    if six.PY2:
+        for key, value in g_param.items():
+            if isinstance(value, six.text_type):
+                g_param[key] = value.encode('utf-8')
     return g_param
 

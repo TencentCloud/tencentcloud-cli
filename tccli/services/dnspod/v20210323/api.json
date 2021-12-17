@@ -231,7 +231,7 @@
         },
         {
           "default": "",
-          "document": "子域名(主机记录)。",
+          "document": "子域名(主机记录)，默认为@。",
           "example": "www",
           "member": "string",
           "name": "SubDomain",
@@ -241,7 +241,7 @@
         },
         {
           "default": "",
-          "document": "解析记录的线路，详见 DescribeRecordLineList 接口。",
+          "document": "解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。",
           "example": "百度",
           "member": "string",
           "name": "RecordLine",
@@ -251,7 +251,7 @@
         },
         {
           "default": "",
-          "document": "解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId",
+          "document": "解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。",
           "example": "90=0",
           "member": "string",
           "name": "RecordLineId",
@@ -261,7 +261,7 @@
         },
         {
           "default": "",
-          "document": "记录权重值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录权重值(暂未支持)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "Weight",
@@ -271,7 +271,7 @@
         },
         {
           "default": "",
-          "document": "记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选",
+          "document": "记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。",
           "example": "20",
           "member": "uint64",
           "name": "MX",
@@ -281,7 +281,7 @@
         },
         {
           "default": "",
-          "document": "记录的 TTL 值，默认600",
+          "document": "记录的 TTL 值，默认600。",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -291,7 +291,7 @@
         },
         {
           "default": "",
-          "document": "记录状态。0表示禁用，1表示启用，默认启用",
+          "document": "记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。",
           "example": "1",
           "member": "uint64",
           "name": "Enabled",
@@ -301,7 +301,7 @@
         },
         {
           "default": "",
-          "document": "记录别名",
+          "document": "记录备注(暂未支持)。",
           "example": "test",
           "member": "string",
           "name": "Remark",

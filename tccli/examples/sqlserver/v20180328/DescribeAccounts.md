@@ -15,26 +15,18 @@ Output:
     "Response": {
         "RequestId": "5729760c-db94-4c71-a1ee-ebd43adae189",
         "InstanceId": "mssql-632eyp63",
+        "TotalCount": 1,
         "Accounts": [
             {
-                "Name": "wang",
-                "Remark": "wang test account",
-                "CreateTime": "2018-07-27 22:24:54",
-                "Status": 2,
-                "UpdateTime": "2018-07-27 22:25:25",
-                "PassTime": "2018-07-27 22:25:25",
+                "CreateTime": "2021-09-16 14:33:04",
                 "Dbs": [],
-                "InternalStatus": "enable"
-            },
-            {
-                "Name": "test",
-                "Remark": "暂无",
-                "CreateTime": "2018-08-07 15:28:00",
+                "InternalStatus": "enable",
+                "IsAdmin": true,
+                "Name": "xiaowei",
+                "PassTime": "2021-09-16 14:33:55",
+                "Remark": "--",
                 "Status": 2,
-                "UpdateTime": "2018-08-07 15:28:00",
-                "PassTime": "0000-00-00 00:00:00",
-                "Dbs": [],
-                "InternalStatus": "enable"
+                "UpdateTime": "2021-09-16 14:33:55"
             }
         ]
     }

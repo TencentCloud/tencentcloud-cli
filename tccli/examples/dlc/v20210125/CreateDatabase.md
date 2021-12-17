@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Execution": {
-            "SQL": "CREATE DATABASE IF NOT EXISTS `COSDataCatalog`.`testDB` COMMENT 'create by nick' WITH DBPROPERTIES ('env'='dev')"
+            "SQL": "CREATE DATABASE IF NOT EXISTS `DataLakeCatalog`.`testDB` COMMENT 'create by nick' WITH DBPROPERTIES ('env'='dev')"
         },
         "RequestId": "2f67771a-a384-4b4e-86a5-146d8829ae2d"
     }

@@ -19,9 +19,9 @@
       "output": "AttachCcnResponse"
     },
     "AttachDisks": {
-      "document": "本接口（AttachDisks）用于挂载一个或多个弹性云盘。",
+      "document": "本接口（AttachDisks）用于挂载一个或多个云硬盘。",
       "input": "AttachDisksRequest",
-      "name": "挂载云盘",
+      "name": "挂载云硬盘",
       "output": "AttachDisksResponse"
     },
     "CreateBlueprint": {
@@ -109,27 +109,27 @@
       "output": "DescribeDiskConfigsResponse"
     },
     "DescribeDiskDiscount": {
-      "document": "本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息",
+      "document": "本接口(DescribeDiskDiscount)用于查询云硬盘折扣信息。",
       "input": "DescribeDiskDiscountRequest",
       "name": "查询云硬盘折扣信息",
       "output": "DescribeDiskDiscountResponse"
     },
     "DescribeDisks": {
-      "document": "本接口（DescribeDisks）用于查询磁盘信息。",
+      "document": "本接口（DescribeDisks）用于查询云硬盘信息。",
       "input": "DescribeDisksRequest",
-      "name": "查询磁盘",
+      "name": "查询云硬盘",
       "output": "DescribeDisksResponse"
     },
     "DescribeDisksDeniedActions": {
-      "document": "本接口（DescribeDisksDeniedActions）用于查询一个或多个磁盘的操作限制列表信息",
+      "document": "本接口（DescribeDisksDeniedActions）用于查询一个或多个云硬盘的操作限制列表信息。",
       "input": "DescribeDisksDeniedActionsRequest",
-      "name": "查询磁盘操作限制列表信息",
+      "name": "查询云硬盘操作限制列表信息",
       "output": "DescribeDisksDeniedActionsResponse"
     },
     "DescribeDisksReturnable": {
-      "document": "本接口（DescribeDisksReturnable）用于查询磁盘是否可退还。",
+      "document": "本接口（DescribeDisksReturnable）用于查询云硬盘是否可退还。",
       "input": "DescribeDisksReturnableRequest",
-      "name": "查看磁盘是否可退还",
+      "name": "查看云硬盘是否可退还",
       "output": "DescribeDisksReturnableResponse"
     },
     "DescribeFirewallRules": {
@@ -175,9 +175,9 @@
       "output": "DescribeInstancesDeniedActionsResponse"
     },
     "DescribeInstancesDiskNum": {
-      "document": "本接口(DescribeInstancesDiskNum)用于查询实例挂载云盘数量。",
+      "document": "本接口(DescribeInstancesDiskNum)用于查询实例挂载云硬盘数量。",
       "input": "DescribeInstancesDiskNumRequest",
-      "name": "查询实例挂载云盘数量",
+      "name": "查询实例挂载云硬盘数量",
       "output": "DescribeInstancesDiskNumResponse"
     },
     "DescribeInstancesReturnable": {
@@ -241,7 +241,7 @@
       "output": "DetachCcnResponse"
     },
     "DetachDisks": {
-      "document": "本接口（DetachDisks）用于卸载一个或多个弹性云盘。",
+      "document": "本接口（DetachDisks）用于卸载一个或多个云硬盘。",
       "input": "DetachDisksRequest",
       "name": "卸载云硬盘",
       "output": "DetachDisksResponse"
@@ -277,9 +277,9 @@
       "output": "InquirePriceCreateInstancesResponse"
     },
     "InquirePriceRenewDisks": {
-      "document": "本接口（InquirePriceRenewDisks）用于续费磁盘询价。",
+      "document": "本接口（InquirePriceRenewDisks）用于续费云硬盘询价。",
       "input": "InquirePriceRenewDisksRequest",
-      "name": "续费磁盘询价",
+      "name": "续费云硬盘询价",
       "output": "InquirePriceRenewDisksResponse"
     },
     "InquirePriceRenewInstances": {
@@ -295,15 +295,15 @@
       "output": "ModifyBlueprintAttributeResponse"
     },
     "ModifyDisksAttribute": {
-      "document": "本接口(ModifyDisksAttribute)用于修改磁盘属性",
+      "document": "本接口(ModifyDisksAttribute)用于修改云硬盘属性。",
       "input": "ModifyDisksAttributeRequest",
-      "name": "修改磁盘属性",
+      "name": "修改云硬盘属性",
       "output": "ModifyDisksAttributeResponse"
     },
     "ModifyDisksRenewFlag": {
-      "document": "本接口（ModifyDisksRenewFlag）用于修改磁盘续费标识。",
+      "document": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。",
       "input": "ModifyDisksRenewFlagRequest",
-      "name": "修改磁盘续费标识",
+      "name": "修改云硬盘续费标识",
       "output": "ModifyDisksRenewFlagResponse"
     },
     "ModifyFirewallRuleDescription": {
@@ -379,9 +379,9 @@
       "output": "StopInstancesResponse"
     },
     "TerminateDisks": {
-      "document": "本接口（TerminateDisks）用于销毁一个或多个磁盘。",
+      "document": "本接口（TerminateDisks）用于销毁一个或多个云硬盘。",
       "input": "TerminateDisksRequest",
-      "name": "销毁磁盘",
+      "name": "销毁云硬盘",
       "output": "TerminateDisksResponse"
     },
     "TerminateInstances": {
@@ -538,7 +538,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-5vmz00i3\"]",
           "member": "string",
           "name": "DiskIds",
@@ -547,7 +547,7 @@
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "lhins-qg08np8l",
           "member": "string",
           "name": "InstanceId",
@@ -556,7 +556,7 @@
         },
         {
           "default": "",
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -1674,7 +1674,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘类型, 取值: \"CLOUD_PREMIUM\"",
+          "document": "云硬盘类型, 取值: \"CLOUD_PREMIUM\"。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -1683,7 +1683,7 @@
         },
         {
           "default": "",
-          "document": "磁盘大小",
+          "document": "云硬盘大小。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -1728,7 +1728,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
           "name": "DiskIds",
@@ -1742,7 +1742,7 @@
       "document": "DescribeDisksDeniedActions返回参数结构体",
       "members": [
         {
-          "document": "磁盘操作限制列表详细信息。",
+          "document": "云硬盘操作限制列表详细信息。",
           "example": "无",
           "member": "DiskDeniedActions",
           "name": "DiskDeniedActionSet",
@@ -1764,7 +1764,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",
@@ -1773,7 +1773,7 @@
         },
         {
           "default": "",
-          "document": "过滤器列表。\ndisk-id\n按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【磁盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【磁盘类型】进行过滤。\n类型：String\n必选：否\ndisk-state\n按照【磁盘状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。",
+          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 DiskIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1791,7 +1791,7 @@
         },
         {
           "default": "",
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1800,7 +1800,7 @@
         },
         {
           "default": "",
-          "document": "云盘列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据云盘的创建时间排序。 \"EXPIRED_TIME\"：依据云盘的到期时间排序。\"DISK_SIZE\"：依据云盘的大小排序。默认按云盘创建时间排序。",
+          "document": "云硬盘列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据云硬盘的创建时间排序。 \"EXPIRED_TIME\"：依据云硬盘的到期时间排序。\"DISK_SIZE\"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。",
           "example": "CREATED_FIELD",
           "member": "string",
           "name": "OrderField",
@@ -1809,7 +1809,7 @@
         },
         {
           "default": "",
-          "document": "输出云盘列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列",
+          "document": "输出云硬盘列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列。",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -1823,7 +1823,7 @@
       "document": "DescribeDisks返回参数结构体",
       "members": [
         {
-          "document": "磁盘信息列表",
+          "document": "云硬盘信息列表。",
           "example": "无",
           "member": "Disk",
           "name": "DiskSet",
@@ -1832,7 +1832,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "符合条件的磁盘信息数量",
+          "document": "符合条件的云硬盘信息数量。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -1854,7 +1854,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
           "name": "DiskIds",
@@ -1886,7 +1886,7 @@
       "document": "DescribeDisksReturnable返回参数结构体",
       "members": [
         {
-          "document": "可退还磁盘详细信息列表。",
+          "document": "可退还云硬盘详细信息列表。",
           "example": "无",
           "member": "DiskReturnable",
           "name": "DiskReturnableSet",
@@ -1895,7 +1895,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "符合条件的磁盘数量。",
+          "document": "符合条件的云硬盘数量。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -2168,7 +2168,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID列表",
+          "document": "实例ID列表。",
           "example": "[\"lhins-anxwfvxh\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -2832,7 +2832,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
           "name": "DiskIds",
@@ -3137,11 +3137,11 @@
       "usage": "out"
     },
     "DiskChargePrepaid": {
-      "document": "磁盘包年包月相关参数设置",
+      "document": "云硬盘包年包月相关参数设置",
       "members": [
         {
           "default": "",
-          "document": "新购周期",
+          "document": "新购周期。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -3151,7 +3151,7 @@
         },
         {
           "default": "",
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3161,7 +3161,7 @@
         },
         {
           "default": "",
-          "document": "新购单位. 默认值: \"m\"",
+          "document": "新购单位. 默认值: \"m\"。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -3173,11 +3173,11 @@
       "usage": "in"
     },
     "DiskConfig": {
-      "document": "磁盘配置",
+      "document": "云硬盘配置",
       "members": [
         {
           "default": "",
-          "document": "可用区",
+          "document": "可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -3187,7 +3187,7 @@
         },
         {
           "default": "",
-          "document": "磁盘类型",
+          "document": "云硬盘类型。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -3197,7 +3197,7 @@
         },
         {
           "default": "",
-          "document": "磁盘可售卖状态",
+          "document": "云硬盘可售卖状态。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "DiskSalesState",
@@ -3207,7 +3207,7 @@
         },
         {
           "default": "",
-          "document": "最大磁盘大小",
+          "document": "最大云硬盘大小。",
           "example": "1000",
           "member": "int64",
           "name": "MaxDiskSize",
@@ -3217,7 +3217,7 @@
         },
         {
           "default": "",
-          "document": "最小磁盘大小",
+          "document": "最小云硬盘大小。",
           "example": "10",
           "member": "int64",
           "name": "MinDiskSize",
@@ -3227,7 +3227,7 @@
         },
         {
           "default": "",
-          "document": "磁盘步长",
+          "document": "云硬盘步长。",
           "example": "10",
           "member": "int64",
           "name": "DiskStepSize",
@@ -3243,7 +3243,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID",
+          "document": "云硬盘ID。",
           "example": "lhdisk-eobj8huv",
           "member": "string",
           "name": "DiskId",
@@ -3253,7 +3253,7 @@
         },
         {
           "default": "",
-          "document": "操作限制列表",
+          "document": "操作限制列表。",
           "example": "无",
           "member": "DeniedAction",
           "name": "DeniedActions",
@@ -3265,11 +3265,11 @@
       "usage": "out"
     },
     "DiskPrice": {
-      "document": "磁盘价格",
+      "document": "云硬盘价格",
       "members": [
         {
           "default": "",
-          "document": "磁盘单价",
+          "document": "云硬盘单价。",
           "example": "1.1",
           "member": "float",
           "name": "OriginalDiskPrice",
@@ -3279,7 +3279,7 @@
         },
         {
           "default": "",
-          "document": "磁盘总价",
+          "document": "云硬盘总价。",
           "example": "2.2",
           "member": "float",
           "name": "OriginalPrice",
@@ -3289,7 +3289,7 @@
         },
         {
           "default": "",
-          "document": "折扣",
+          "document": "折扣。",
           "example": "0.8",
           "member": "float",
           "name": "Discount",
@@ -3299,7 +3299,7 @@
         },
         {
           "default": "",
-          "document": "折后总价",
+          "document": "折后总价。",
           "example": "2.1",
           "member": "float",
           "name": "DiscountPrice",
@@ -3311,11 +3311,11 @@
       "usage": "out"
     },
     "DiskReturnable": {
-      "document": "可退还磁盘详细信息",
+      "document": "可退还云硬盘详细信息",
       "members": [
         {
           "default": "",
-          "document": "磁盘ID",
+          "document": "云硬盘ID。",
           "example": "lhdisk-eobj8huv",
           "member": "string",
           "name": "DiskId",
@@ -3325,7 +3325,7 @@
         },
         {
           "default": "",
-          "document": "磁盘是否可退还。",
+          "document": "云硬盘是否可退还。",
           "example": "true",
           "member": "bool",
           "name": "IsReturnable",
@@ -3335,7 +3335,7 @@
         },
         {
           "default": "",
-          "document": "实例退还失败错误码。",
+          "document": "云硬盘退还失败错误码。",
           "example": "0",
           "member": "int64",
           "name": "ReturnFailCode",
@@ -3345,7 +3345,7 @@
         },
         {
           "default": "",
-          "document": "实例退还失败错误信息。",
+          "document": "云硬盘退还失败错误信息。",
           "example": "无",
           "member": "string",
           "name": "ReturnFailMessage",
@@ -3749,7 +3749,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
           "name": "DiskIds",
@@ -3758,7 +3758,7 @@
         },
         {
           "default": "",
-          "document": "续费磁盘包年包月相关参数设置",
+          "document": "续费云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "RenewDiskChargePrepaid",
           "name": "RenewDiskChargePrepaid",
@@ -3772,7 +3772,7 @@
       "document": "InquirePriceRenewDisks返回参数结构体",
       "members": [
         {
-          "document": "磁盘价格",
+          "document": "云硬盘价格。",
           "example": "无",
           "member": "DiskPrice",
           "name": "DiskPrice",
@@ -4440,7 +4440,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",
@@ -4449,7 +4449,7 @@
         },
         {
           "default": "",
-          "document": "磁盘名称",
+          "document": "云硬盘名称。",
           "example": "disk-name",
           "member": "string",
           "name": "DiskName",
@@ -4476,7 +4476,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-eobj8huv\"]",
           "member": "string",
           "name": "DiskIds",
@@ -4485,7 +4485,7 @@
         },
         {
           "default": "",
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -4864,11 +4864,11 @@
       "usage": "out"
     },
     "RenewDiskChargePrepaid": {
-      "document": "续费磁盘包年包月相关参数设置",
+      "document": "续费云硬盘包年包月相关参数设置",
       "members": [
         {
           "default": "",
-          "document": "新购周期",
+          "document": "新购周期。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -4878,7 +4878,7 @@
         },
         {
           "default": "",
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -4888,7 +4888,7 @@
         },
         {
           "default": "",
-          "document": "周期单位. 默认值: \"m\"",
+          "document": "周期单位. 默认值: \"m\"。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -4898,7 +4898,7 @@
         },
         {
           "default": "",
-          "document": "当前实例到期时间",
+          "document": "当前实例到期时间。",
           "example": "无",
           "member": "string",
           "name": "CurInstanceDeadline",
@@ -5366,7 +5366,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘ID列表",
+          "document": "云硬盘ID列表。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",

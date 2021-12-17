@@ -348,13 +348,13 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=VPC\n&NetworkInstanceId=vpc-m7sr81gh\n&GatewayType=NAT\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"EnableBGPCommunity\": false,\n            \"VpcId\": \"vpc-m7sr81gh\",\n            \"CcnId\": \"\",\n            \"EnableBGP\": false,\n            \"CcnRouteType\": \"BGP\",\n            \"NetworkType\": \"VPC\",\n            \"NetworkInstanceId\": \"vpc-m7sr81gh\",\n            \"GatewayType\": \"NAT\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"NatGatewayId\": \"nat-m7dr11gc\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"CreateTime\": \"2020-09-22 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"EnableBGPCommunity\": false,\n            \"VpcId\": \"vpc-m7sr81gh\",\n            \"CcnId\": \"\",\n            \"EnableBGP\": false,\n            \"CcnRouteType\": \"BGP\",\n            \"NetworkType\": \"VPC\",\n            \"NetworkInstanceId\": \"vpc-m7sr81gh\",\n            \"GatewayType\": \"NAT\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"NatGatewayId\": \"nat-m7dr11gc\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"NewAfc\": 0,\n            \"FlowDetailsUpdateTime\": \"xx\",\n            \"EnableFlowDetails\": 0,\n            \"AccessNetworkType\": \"Unknown\",\n            \"CreateTime\": \"2020-09-22 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个关联VPC的NAT型专线网关"
       },
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=CCN\n&NetworkInstanceId=ccn-8j0phqix\n&GatewayType=NORMAL\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"VpcId\": \"vpc-ilii3ejt\",\n            \"NetworkType\": \"CCN\",\n            \"NetworkInstanceId\": \"ccn-c1aopa13\",\n            \"GatewayType\": \"NORMAL\",\n            \"EnableBGPCommunity\": true,\n            \"EnableBGP\": true,\n            \"CcnId\": \"ccn-8j0phqix\",\n            \"CcnRouteType\": \"BGP\",\n            \"NatGatewayId\": \"\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"CreateTime\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"VpcId\": \"vpc-ilii3ejt\",\n            \"NetworkType\": \"CCN\",\n            \"NetworkInstanceId\": \"ccn-c1aopa13\",\n            \"GatewayType\": \"NORMAL\",\n            \"EnableBGPCommunity\": true,\n            \"EnableBGP\": true,\n            \"CcnId\": \"ccn-8j0phqix\",\n            \"CcnRouteType\": \"BGP\",\n            \"NatGatewayId\": \"\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"CreateTime\": \"0000-00-00 00:00:00\",\n            \"NewAfc\": 1,\n            \"FlowDetailsUpdateTime\": \"xx\",\n            \"EnableFlowDetails\": 0,\n            \"AccessNetworkType\": \"VXLAN\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个关联CCN的标准型专线网关"
       }
     ],
@@ -385,7 +385,7 @@
     "CreateIp6Translators": [
       {
         "document": "创建IPV6转换实例",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateIp6Translators\r\n&Ip6TranslatorCount=1\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateIp6Translators\n&Ip6TranslatorCount=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ip6TranslatorSet\": [\n            \"ip6-90pt7p9q\"\n        ],\n        \"RequestId\": \"aa645287-23fa-4950-8dc4-c56e63d2ca87\"\n    }\n}",
         "title": "创建IPV6转换实例"
       }
@@ -1937,7 +1937,7 @@
     "ModifyIp6Rule": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6Rule\r\n&Ip6TranslatorId=ip6-90pt7p9q\r\n&Ip6RuleId=rule6-7v3vwgec\r\n&Vip=100.192.3.9\r\n&Vport=77\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6Rule\n&Ip6TranslatorId=ip6-90pt7p9q\n&Ip6RuleId=rule6-7v3vwgec\n&Vip=100.192.3.9\n&Vport=77\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80243425-b653-4b2c-82c0-d3d758a0e12a\"\n    }\n}",
         "title": "修改转换规则的IPV4地址和IPV4端口号"
       }

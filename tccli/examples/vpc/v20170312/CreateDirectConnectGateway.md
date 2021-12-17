@@ -35,6 +35,10 @@ Output:
             "LocalZone": false,
             "Zone": "ap-guangzhou-1",
             "ModeType": "standard",
+            "NewAfc": 0,
+            "FlowDetailsUpdateTime": "xx",
+            "EnableFlowDetails": 0,
+            "AccessNetworkType": "Unknown",
             "CreateTime": "2020-09-22 00:00:00"
         },
         "RequestId": "b8351d12-3c82-4d4b-9d88-972e02ca4620"
@@ -79,7 +83,11 @@ Output:
             "VXLANSupport": [
                 true
             ],
-            "CreateTime": "0000-00-00 00:00:00"
+            "CreateTime": "0000-00-00 00:00:00",
+            "NewAfc": 1,
+            "FlowDetailsUpdateTime": "xx",
+            "EnableFlowDetails": 0,
+            "AccessNetworkType": "VXLAN"
         },
         "RequestId": "b8351d12-3c82-4d4b-9d88-972e02ca4620"
     }

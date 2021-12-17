@@ -8,7 +8,7 @@ Input:
 tccli dlc CreateTable --cli-unfold-argument  \
     --TableInfo.TableBaseInfo.DatabaseName testhyw \
     --TableInfo.TableBaseInfo.TableName Table1 \
-    --TableInfo.TableBaseInfo.DatasourceConnectionName COSDataCatalog \
+    --TableInfo.TableBaseInfo.DatasourceConnectionName DataLakeCatalog \
     --TableInfo.Columns.0.Name user_id \
     --TableInfo.Columns.0.Type int \
     --TableInfo.Columns.1.Name birthday \
@@ -37,7 +37,7 @@ Output:
 {
     "Response": {
         "Execution": {
-            "SQL": "CREATE EXTERNAL TABLE IF NOT EXISTS `COSDataCatalog`.`testhyw`.`Table1` (`user_id` int,`birthday` int,`gender` int) PARTITIONED BY (`gender` string)  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTIES ('separatorChar'=',','quoteChar'='\"') STORED AS TEXTFILE LOCATION 'cosn://rickyhu-1301312708/test1/'  TBLPROPERTIES ('skip.header.line.count'='1')"
+            "SQL": "CREATE EXTERNAL TABLE IF NOT EXISTS `DataLakeCatalog`.`testhyw`.`Table1` (`user_id` int,`birthday` int,`gender` int) PARTITIONED BY (`gender` string)  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' WITH SERDEPROPERTIES ('separatorChar'=',','quoteChar'='\"') STORED AS TEXTFILE LOCATION 'cosn://rickyhu-1301312708/test1/'  TBLPROPERTIES ('skip.header.line.count'='1')"
         },
         "RequestId": "b076c1df-26f0-45b7-84f1-fa4eeca7c83f"
     }
