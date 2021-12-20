@@ -27,6 +27,7 @@ Output:
                 "LibName": "Porn",
                 "Score": 72,
                 "Label": "Porn",
+                "SubLabel": "SexualBehavior",
                 "LibId": "12",
                 "Suggestion": "Review",
                 "Keywords": [
@@ -47,6 +48,7 @@ Output:
             }
         ],
         "Label": "Ad",
+        "SubLabel": "Contact",
         "Score": 87,
         "RequestId": "x2123-123123-123",
         "Suggestion": "Block",

@@ -4112,29 +4112,37 @@
       "members": [
         {
           "document": "负载均衡总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "运行中的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "RunningCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "隔离中的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "IsolationCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "即将到期的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "WillExpireCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6908,7 +6916,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw2rm0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -6916,7 +6925,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器 ID。",
+          "example": "lbl-d1ubsydq",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -6925,6 +6935,7 @@
         {
           "default": "",
           "document": "监听器下的某个旧域名。",
+          "example": "foo.net",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6933,6 +6944,7 @@
         {
           "default": "",
           "document": "新域名，\t长度限制为：1-120。有三种使用格式：非正则表达式格式，通配符格式，正则表达式格式。非正则表达式格式只能使用字母、数字、‘-’、‘.’。通配符格式的使用 ‘*’ 只能在开头或者结尾。正则表达式以'~'开头。",
+          "example": "bar.net",
           "member": "string",
           "name": "NewDomain",
           "required": true,

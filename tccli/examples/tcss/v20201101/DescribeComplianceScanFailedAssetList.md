@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeComplianceScanFailedAssetList --cli-unfold-argument  \
-    --AssetTypeSet ASSET_CONTAINDER \
+    --AssetTypeSet ASSET_CONTAINER \
     --Offset 0 \
     --Limit 10
 ```

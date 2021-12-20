@@ -48,6 +48,22 @@
         "title": "创建密钥对"
       }
     ],
+    "CreateLaunchTemplate": [
+      {
+        "document": "只传必传的Zone和镜像ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州二区，镜像ID为：img-pmqg1cw7，实例启动模板名称：test",
+        "input": "https://cvm.tencentcloudapi.com/?Action=CreateLaunchTemplate\n&Placement.Zone=ap-guangzhou-2\n&ImageId=img-pmqg1cw7\n&LaunchTemplateName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LaunchTemplateId\": \"lt-lobxe2yo\",\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec309\"\n    }\n}",
+        "title": "使用最简单参数创建实例启动模板"
+      }
+    ],
+    "CreateLaunchTemplateVersion": [
+      {
+        "document": "本示例使用最少的参数，基于默认启动模板版本号创建新的版本。这里将默认版本中的实例创建位置选择为广州一区",
+        "input": "https://cvm.tencentcloudapi.com/?Action=CreateLaunchTemplateVersion\n&Placement.Zone=ap-guangzhou-1\n&LaunchTemplateId=lt-lobxe2yo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LaunchTemplateVersionNumber\": 7,\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec309\"\n    }\n}",
+        "title": "创建实例启动模板新版本"
+      }
+    ],
     "DeleteDisasterRecoverGroups": [
       {
         "document": "删除分散置放群组",
@@ -70,6 +86,22 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DeleteKeyPairs\r\n&KeyIds.0=skey-mv9yzyjj\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除密钥对"
+      }
+    ],
+    "DeleteLaunchTemplate": [
+      {
+        "document": "",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteLaunchTemplate\n&LaunchTemplateId=lt-34vaef8fe\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec311\"\n    }\n}",
+        "title": "删除实例启动模板"
+      }
+    ],
+    "DeleteLaunchTemplateVersions": [
+      {
+        "document": "本例删除启动模板lt-34vaef8fe中的版本号为2和3版本",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteLaunchTemplateVersions\n&LaunchTemplateId=lt-34vaef8fe\n&LaunchTemplateVersions.0=2\n&LaunchTemplateVersions.1=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec311\"\n    }\n}",
+        "title": "删除实例启动模板版本"
       }
     ],
     "DescribeAccountQuota": [
@@ -232,6 +264,22 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeKeyPairs\n&Filters.0.Name=key-name\n&Filters.0.Values.0=Tencent\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"skey-mv9yzyjj\",\n                \"KeyName\": \"Tencent\",\n                \"Description\": \"\",\n                \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2016-12-02T00:22:40Z\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查询密钥对列表"
+      }
+    ],
+    "DescribeLaunchTemplateVersions": [
+      {
+        "document": "",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeLaunchTemplateVersions\n&LaunchTemplateId=lt-b8v1kcyq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchTemplateVersionSet\": [\n            {}\n        ],\n        \"RequestId\": \"b2da6ace-add1-48dc-ae73-6fc1eed95f1d\"\n    }\n}",
+        "title": "查询实例模板版本信息"
+      }
+    ],
+    "DescribeLaunchTemplates": [
+      {
+        "document": "",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeLaunchTemplates\n&LaunchTemplateIds.0=lt-q9t8j8eg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchTemplateSet\": [\n            {}\n        ],\n        \"RequestId\": \"b2d70642-c69a-4115-ae4e-f6ddade68fea\"\n    }\n}",
+        "title": "查询实例启动模板"
       }
     ],
     "DescribeRegions": [
@@ -502,6 +550,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=ModifyKeyPairAttribute\r\n&KeyId=skey-mv9yzyjj\r\n&Description=Tencent\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aea2227b-fbb7-4cc7-bf29-d49b2b6db97c\"\n    }\n}",
         "title": "修改密钥对描述信息"
+      }
+    ],
+    "ModifyLaunchTemplateDefaultVersion": [
+      {
+        "document": "本例将ID为lt-34vaef8fe的实例启动模板的默认启动版本号设置为2",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyLaunchTemplateDefaultVersion\n&LaunchTemplateId=lt-34vaef8fe\n&DefaultVersion=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec311\"\n    }\n}",
+        "title": "修改默认实例启动模板版本号"
       }
     ],
     "PurchaseReservedInstancesOffering": [

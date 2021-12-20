@@ -36,6 +36,18 @@
       "name": "创建密钥对",
       "output": "CreateKeyPairResponse"
     },
+    "CreateLaunchTemplate": {
+      "document": "本接口（CreateLaunchTemplate）用于创建实例启动模板。\n\n实例启动模板是一种配置数据并可用于创建实例，其内容包含创建实例所需的配置，比如实例类型，数据盘和系统盘的类型和大小，以及安全组等信息。\n\n初次创建实例模板后，其模板版本为默认版本1，新版本的创建可使用CreateLaunchTemplateVersion创建，版本号递增。默认情况下，在RunInstances中指定实例启动模板，若不指定模板版本号，则使用默认版本。",
+      "input": "CreateLaunchTemplateRequest",
+      "name": "创建实例启动模板",
+      "output": "CreateLaunchTemplateResponse"
+    },
+    "CreateLaunchTemplateVersion": {
+      "document": "本接口（CreateLaunchTemplateVersion）根据指定的实例模板ID以及对应的模板版本号创建新的实例启动模板，若未指定模板版本号则使用默认版本号。每个实例启动模板最多创建30个版本。",
+      "input": "CreateLaunchTemplateVersionRequest",
+      "name": "创建实例启动模板新版本",
+      "output": "CreateLaunchTemplateVersionResponse"
+    },
     "DeleteDisasterRecoverGroups": {
       "document": "本接口 (DeleteDisasterRecoverGroups)用于删除[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。只有空的置放群组才能被删除，非空的群组需要先销毁组内所有云服务器，才能执行删除操作，不然会产生删除置放群组失败的错误。",
       "input": "DeleteDisasterRecoverGroupsRequest",
@@ -53,6 +65,18 @@
       "input": "DeleteKeyPairsRequest",
       "name": "删除密钥对",
       "output": "DeleteKeyPairsResponse"
+    },
+    "DeleteLaunchTemplate": {
+      "document": "本接口（DeleteLaunchTemplate）用于删除一个实例启动模板。",
+      "input": "DeleteLaunchTemplateRequest",
+      "name": "删除实例启动模板",
+      "output": "DeleteLaunchTemplateResponse"
+    },
+    "DeleteLaunchTemplateVersions": {
+      "document": "本接口（DeleteLaunchTemplateVersions）用于删除一个或者多个实例启动模板版本。",
+      "input": "DeleteLaunchTemplateVersionsRequest",
+      "name": "删除实例启动模板版本",
+      "output": "DeleteLaunchTemplateVersionsResponse"
     },
     "DescribeAccountQuota": {
       "document": "本接口(DescribeAccountQuota)用于查询用户配额详情。",
@@ -161,6 +185,18 @@
       "input": "DescribeKeyPairsRequest",
       "name": "查询密钥对列表",
       "output": "DescribeKeyPairsResponse"
+    },
+    "DescribeLaunchTemplateVersions": {
+      "document": "本接口（DescribeLaunchTemplateVersions）用于查询实例模板版本信息。",
+      "input": "DescribeLaunchTemplateVersionsRequest",
+      "name": "查询实例模板版本信息",
+      "output": "DescribeLaunchTemplateVersionsResponse"
+    },
+    "DescribeLaunchTemplates": {
+      "document": "本接口（DescribeLaunchTemplates）用于查询一个或者多个实例启动模板。",
+      "input": "DescribeLaunchTemplatesRequest",
+      "name": "查询实例启动模板",
+      "output": "DescribeLaunchTemplatesResponse"
     },
     "DescribeRegions": {
       "document": "本接口(DescribeRegions)用于查询地域信息。因平台策略原因，该接口暂时停止更新，为确保您正常调用，可切换至新链接：https://cloud.tencent.com/document/product/1278/55255。",
@@ -341,6 +377,12 @@
       "input": "ModifyKeyPairAttributeRequest",
       "name": "修改密钥对属性",
       "output": "ModifyKeyPairAttributeResponse"
+    },
+    "ModifyLaunchTemplateDefaultVersion": {
+      "document": "本接口（ModifyLaunchTemplateDefaultVersion）用于修改实例启动模板默认版本。",
+      "input": "ModifyLaunchTemplateDefaultVersionRequest",
+      "name": "修改实例启动模板默认版本",
+      "output": "ModifyLaunchTemplateDefaultVersionResponse"
     },
     "PurchaseReservedInstancesOffering": {
       "document": "本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例",
@@ -970,6 +1012,537 @@
       ],
       "type": "object"
     },
+    "CreateLaunchTemplateRequest": {
+      "document": "CreateLaunchTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例启动模板名称。长度为2~128个英文或中文字符。",
+          "example": "MyLaunchTemplate",
+          "member": "string",
+          "name": "LaunchTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。",
+          "example": "NA",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>",
+          "example": "img-dkwyg6sr",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符。",
+          "example": "MyLaunchTemplateVersionDesc",
+          "member": "string",
+          "name": "LaunchTemplateVersionDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则系统将根据当前地域的资源售卖情况动态指定默认机型。<br><li>对于付费模式为CDHPAID的实例创建，该参数以\"CDH_\"为前缀，根据CPU和内存配置生成，具体形式为：CDH_XCXG，例如对于创建CPU为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。",
+          "example": "S5.16XLARGE256",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "NA",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "NA",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若不指定该参数，则默认使用基础网络。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
+          "example": "NA",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "NA",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持60个字符（包含模式串）。",
+          "example": "MyInstance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
+          "example": "NA",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "example": "['sg-rf6ogz49']",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
+          "example": "NA",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "NA",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
+          "example": "NA",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
+          "example": "NA",
+          "member": "ActionTimer",
+          "name": "ActionTimer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "置放群组id，仅支持指定一个。",
+          "example": "['ps-3p88qhfo']",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
+          "example": "NA",
+          "member": "InstanceMarketOptionsRequest",
+          "name": "InstanceMarketOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。",
+          "example": "YmFzZTY0Cg==",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例。",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
+          "example": "testroleName001",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
+          "example": "hpc-a5n666lo",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "NA",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLaunchTemplateResponse": {
+      "document": "CreateLaunchTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "当通过本接口来创建实例启动模板时会返回该参数，表示创建成功的实例启动模板`ID`。",
+          "example": "lt-a5n123lo",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLaunchTemplateVersionRequest": {
+      "document": "CreateLaunchTemplateVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。",
+          "example": "NA",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "启动模板ID，新版本将基于该实例启动模板ID创建。",
+          "example": "NA",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。",
+          "example": "1",
+          "member": "int64",
+          "name": "LaunchTemplateVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符。",
+          "example": "new_version",
+          "member": "string",
+          "name": "LaunchTemplateVersionDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则系统将根据当前地域的资源售卖情况动态指定默认机型。<br><li>对于付费模式为CDHPAID的实例创建，该参数以\"CDH_\"为前缀，根据CPU和内存配置生成，具体形式为：CDH_XCXG，例如对于创建CPU为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>",
+          "example": "img-irmer45l",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "NA",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "example": "NA",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若不指定该参数，则默认使用基础网络。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
+          "example": "NA",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
+          "example": "NA",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持60个字符（包含模式串）。",
+          "example": "my_instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
+          "example": "NA",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "example": "NA",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
+          "example": "NA",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "NA",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
+          "example": "NA",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
+          "example": "NA",
+          "member": "ActionTimer",
+          "name": "ActionTimer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "置放群组id，仅支持指定一个。",
+          "example": "NA",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
+          "example": "NA",
+          "member": "InstanceMarketOptionsRequest",
+          "name": "InstanceMarketOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。",
+          "example": "NA",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例。",
+          "example": "NA",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
+          "example": "NA",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
+          "example": "NA",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "example": "NA",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "NA",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLaunchTemplateVersionResponse": {
+      "document": "CreateLaunchTemplateVersion返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的实例启动模板版本号。",
+          "example": "2",
+          "member": "int64",
+          "name": "LaunchTemplateVersionNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataDisk": {
       "document": "描述了数据盘的信息",
       "members": [
@@ -1135,6 +1708,69 @@
     },
     "DeleteKeyPairsResponse": {
       "document": "DeleteKeyPairs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLaunchTemplateRequest": {
+      "document": "DeleteLaunchTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "启动模板ID。",
+          "example": "lt-rf6ogz49",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLaunchTemplateResponse": {
+      "document": "DeleteLaunchTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLaunchTemplateVersionsRequest": {
+      "document": "DeleteLaunchTemplateVersions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "启动模板ID。",
+          "example": "lt-irmer45l",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本列表。",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "LaunchTemplateVersions",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLaunchTemplateVersionsResponse": {
+      "document": "DeleteLaunchTemplateVersions返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1971,6 +2607,177 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLaunchTemplateVersionsRequest": {
+      "document": "DescribeLaunchTemplateVersions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "启动模板ID。",
+          "example": "\"lt-irmer45l\"",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例启动模板列表。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "LaunchTemplateVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "通过范围指定版本时的最小版本号，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过范围指定版本时的最大版本号，默认为30。",
+          "example": "2",
+          "member": "uint64",
+          "name": "MaxVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。",
+          "example": "false",
+          "member": "bool",
+          "name": "DefaultVersion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLaunchTemplateVersionsResponse": {
+      "document": "DescribeLaunchTemplateVersions返回参数结构体",
+      "members": [
+        {
+          "document": "实例启动模板总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例启动模板版本集合。",
+          "example": "NA",
+          "member": "LaunchTemplateVersionInfo",
+          "name": "LaunchTemplateVersionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLaunchTemplatesRequest": {
+      "document": "DescribeLaunchTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "启动模板ID，一个或者多个启动模板ID。若未指定，则显示用户所有模板。",
+          "example": "['lt-irmer45l']",
+          "member": "string",
+          "name": "LaunchTemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<p style=\"padding-left: 30px;\">按照【<strong>LaunchTemplateNames</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchTemplateIds`和`Filters`。",
+          "example": "NA",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLaunchTemplatesResponse": {
+      "document": "DescribeLaunchTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例模板数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "LaunchTemplateInfo",
+          "name": "LaunchTemplateSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4803,6 +5610,21 @@
       ],
       "usage": "out"
     },
+    "LaunchTemplate": {
+      "document": "实例启动模板，通过该参数可使用实例模板中的预设参数创建实例。",
+      "members": [],
+      "usage": "in"
+    },
+    "LaunchTemplateInfo": {
+      "document": "实例启动模板简要信息。",
+      "members": [],
+      "usage": "out"
+    },
+    "LaunchTemplateVersionInfo": {
+      "document": "实例启动模板版本集合",
+      "members": [],
+      "usage": "out"
+    },
     "LocalDiskType": {
       "document": "本地磁盘规格",
       "members": [
@@ -5340,6 +6162,42 @@
     },
     "ModifyKeyPairAttributeResponse": {
       "document": "ModifyKeyPairAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLaunchTemplateDefaultVersionRequest": {
+      "document": "ModifyLaunchTemplateDefaultVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "启动模板ID。",
+          "example": "lt-irmer45l",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待设置的默认版本号。",
+          "example": "2",
+          "member": "int64",
+          "name": "DefaultVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLaunchTemplateDefaultVersionResponse": {
+      "document": "ModifyLaunchTemplateDefaultVersion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6647,7 +7505,7 @@
         },
         {
           "default": "",
-          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。\n <b>注：本数据结构中的Zone为必填参数。</b>",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。\n <b>注：本数据结构中的Zone为必填参数。</b>\n如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。",
           "example": "NA",
           "member": "Placement",
           "name": "Placement",
@@ -6665,7 +7523,7 @@
         },
         {
           "default": "",
-          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>",
+          "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>\n如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。",
           "example": "img-irmer45l",
           "member": "string",
           "name": "ImageId",
@@ -6842,6 +7700,15 @@
           "name": "HpcClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例启动模板。",
+          "example": "NA",
+          "member": "LaunchTemplate",
+          "name": "LaunchTemplate",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

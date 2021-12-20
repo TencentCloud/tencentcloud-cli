@@ -23,7 +23,16 @@ Output:
                 "DiscountPrice": 1440.0
             }
         },
-        "RequestId": "96d188f2-caf0-4d63-ba6f-474d22a8b344"
+        "RequestId": "96d188f2-caf0-4d63-ba6f-474d22a8b344",
+        "DataDiskPriceSet": [
+            {
+                "Discount": 0.0,
+                "OriginalDiskPrice": 0.0,
+                "OriginalPrice": 0.0,
+                "DiskId": "xx",
+                "DiscountPrice": 0.0
+            }
+        ]
     }
 }
 ```

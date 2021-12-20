@@ -531,7 +531,7 @@
     "ModifyDomain": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyDomain\r\n&LoadBalancerId=lb-cuxw2rm0\r\n&ListenerId=lbl-d1ubsydq\r\n&Domain=foo.net\r\n&NewDomain=bar.net\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyDomain\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-d1ubsydq\n&Domain=foo.net\n&NewDomain=bar.net\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"db141822-c025-4765-88d4-02bdec0e67ed\"\n    }\n}",
         "title": "修改HTTP监听器下转发规则的域名"
       }

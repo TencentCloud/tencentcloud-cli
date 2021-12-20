@@ -144,6 +144,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -256,6 +266,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -331,6 +351,16 @@
           "name": "LibType",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -845,6 +875,16 @@
           "example": "1",
           "member": "string",
           "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SubLabel",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1453,6 +1493,16 @@
           "name": "Score",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -103,9 +103,9 @@
       "output": "DescribeCcnAttachedInstancesResponse"
     },
     "DescribeDiskConfigs": {
-      "document": "本接口（DescribeDiskConfigs）用于查询磁盘配置。",
+      "document": "本接口（DescribeDiskConfigs）用于查询云硬盘配置。",
       "input": "DescribeDiskConfigsRequest",
-      "name": "查看磁盘配置",
+      "name": "查看云硬盘配置",
       "output": "DescribeDiskConfigsResponse"
     },
     "DescribeDiskDiscount": {
@@ -265,9 +265,9 @@
       "output": "InquirePriceCreateBlueprintResponse"
     },
     "InquirePriceCreateDisks": {
-      "document": "本接口（InquirePriceCreateDisks）用于新购磁盘询价。",
+      "document": "本接口（InquirePriceCreateDisks）用于新购云硬盘询价。",
       "input": "InquirePriceCreateDisksRequest",
-      "name": "新购磁盘询价",
+      "name": "新购云硬盘询价",
       "output": "InquirePriceCreateDisksResponse"
     },
     "InquirePriceCreateInstances": {
@@ -1205,6 +1205,62 @@
       ],
       "type": "object"
     },
+    "DataDiskPrice": {
+      "document": "数据盘价格",
+      "members": [
+        {
+          "default": "",
+          "document": "云硬盘ID。",
+          "example": "lhdisk-f3vgfci1",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘单价。",
+          "example": "0.8",
+          "member": "float",
+          "name": "OriginalDiskPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘总价。",
+          "example": "0.8",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折扣。",
+          "example": "0.5",
+          "member": "float",
+          "name": "Discount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "折后总价。",
+          "example": "0.4",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteBlueprintsRequest": {
       "document": "DeleteBlueprints请求参数结构体",
       "members": [
@@ -1638,7 +1694,7 @@
       "members": [
         {
           "default": "",
-          "document": "- zone:\n可用区",
+          "document": "过滤器列表。\n<li>zone</li>按照【可用区】进行过滤。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1652,7 +1708,7 @@
       "document": "DescribeDiskConfigs返回参数结构体",
       "members": [
         {
-          "document": "磁盘配置列表",
+          "document": "云硬盘配置列表。",
           "example": "无",
           "member": "DiskConfig",
           "name": "DiskConfigSet",
@@ -3623,7 +3679,7 @@
       "members": [
         {
           "default": "",
-          "document": "磁盘大小",
+          "document": "云硬盘大小, 单位: GB。",
           "example": "30",
           "member": "int64",
           "name": "DiskSize",
@@ -3632,7 +3688,7 @@
         },
         {
           "default": "",
-          "document": "硬盘介质类型",
+          "document": "云硬盘介质类型。取值: \"CLOUD_PREMIUM\"(高性能云盘), \"CLOUD_SSD\"(SSD云硬盘)。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -3641,7 +3697,7 @@
         },
         {
           "default": "",
-          "document": "新购磁盘包年包月相关参数设置",
+          "document": "新购云硬盘包年包月相关参数设置。",
           "example": "无",
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
@@ -3650,7 +3706,7 @@
         },
         {
           "default": "",
-          "document": "磁盘个数, 默认值: 1",
+          "document": "云硬盘个数, 默认值: 1。",
           "example": "1",
           "member": "int64",
           "name": "DiskCount",
@@ -3664,7 +3720,7 @@
       "document": "InquirePriceCreateDisks返回参数结构体",
       "members": [
         {
-          "document": "磁盘价格",
+          "document": "云硬盘价格。",
           "example": "无",
           "member": "DiskPrice",
           "name": "DiskPrice",
@@ -3809,6 +3865,24 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否续费数据盘",
+          "example": "false",
+          "member": "bool",
+          "name": "RenewDataDisk",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "数据盘是否对齐实例到期时间",
+          "example": "false",
+          "member": "bool",
+          "name": "AlignInstanceExpiredTime",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3824,6 +3898,15 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "数据盘价格信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDiskPrice",
+          "name": "DataDiskPriceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -775,7 +775,7 @@
     "DescribeComplianceScanFailedAssetList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceScanFailedAssetList\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINDER\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComplianceScanFailedAssetList\n<公共请求参数>\n\n{\n    \"AssetTypeSet\": [\n        \"ASSET_CONTAINER\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\",\n        \"TotalCount\": 1,\n        \"ScanFailedAssetList\": [\n            {\n                \"CustomerAssetId\": 123456789,\n                \"AssetType\": \"ASSET_CONTAINDER\",\n                \"AssetName\": \"happy-jenkins\",\n                \"CheckStatus\": \"CHECK_FINISHED\",\n                \"CheckTime\": \"2021-04-02 16:42:00\",\n                \"FailureReason\": \"发生一些预料之外的情况\",\n                \"Suggestion\": \"尝试重试\"\n            }\n        ]\n    }\n}",
         "title": "查询上次检测失败的资产的列表"
       }

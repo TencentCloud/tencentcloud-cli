@@ -5018,7 +5018,7 @@
       "members": [
         {
           "default": "",
-          "document": "指定要扫描的资产类型列表。若不填，对所有资产触发扫描。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
+          "document": "指定要扫描的资产类型列表。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
           "example": "无",
           "member": "string",
           "name": "AssetTypeSet",
@@ -10461,7 +10461,7 @@
       "members": [
         {
           "default": "",
-          "document": "资产的ID。",
+          "document": "客户资产的ID。",
           "example": "123",
           "member": "uint64",
           "name": "CustomerAssetId",
@@ -10533,7 +10533,7 @@
       "members": [
         {
           "default": "",
-          "document": "资产的类型，传入时，只查询此类型资产的定时任务；不传，则返回所有定时任务。\n\n取值为：\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
+          "document": "资产的类型，取值为：\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetType",
@@ -10704,7 +10704,7 @@
       "members": [
         {
           "default": "",
-          "document": "资产类型列表。",
+          "document": "资产类型列表。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetTypeSet",
