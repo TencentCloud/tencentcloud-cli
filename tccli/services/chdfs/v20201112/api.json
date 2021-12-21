@@ -426,6 +426,7 @@
         {
           "default": "",
           "document": "文件系统名称",
+          "example": "test",
           "member": "string",
           "name": "FileSystemName",
           "required": true,
@@ -433,7 +434,8 @@
         },
         {
           "default": "",
-          "document": "文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍",
+          "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
+          "example": "1073741824",
           "member": "uint64",
           "name": "CapacityQuota",
           "required": true,
@@ -442,6 +444,7 @@
         {
           "default": "",
           "document": "是否校验POSIX ACL",
+          "example": "true",
           "member": "bool",
           "name": "PosixAcl",
           "required": true,
@@ -450,6 +453,7 @@
         {
           "default": "",
           "document": "文件系统描述，默认为空字符串",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -458,6 +462,7 @@
         {
           "default": "",
           "document": "超级用户名列表，默认为空数组",
+          "example": "[\"hadoop\"]",
           "member": "string",
           "name": "SuperUsers",
           "required": false,
@@ -466,6 +471,7 @@
         {
           "default": "",
           "document": "根目录Inode用户名，默认为hadoop",
+          "example": "hadoop",
           "member": "string",
           "name": "RootInodeUser",
           "required": false,
@@ -474,10 +480,29 @@
         {
           "default": "",
           "document": "根目录Inode组名，默认为supergroup",
+          "example": "supergroup",
           "member": "string",
           "name": "RootInodeGroup",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否打开Ranger地址校验",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRanger",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "Ranger地址列表，默认为空数组",
+          "example": "[\"127.0.0.1:8080\"]",
+          "member": "string",
+          "name": "RangerServiceAddresses",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -487,8 +512,10 @@
       "members": [
         {
           "document": "文件系统",
+          "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -870,6 +897,7 @@
         {
           "default": "",
           "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -883,22 +911,46 @@
       "members": [
         {
           "document": "文件系统",
+          "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "已使用容量（byte），包括标准和归档存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统已使用容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "CapacityUsed",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "已使用归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "uint64",
           "name": "ArchiveCapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已使用COS标准存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StandardCapacityUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "已使用COS低频存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DegradeCapacityUsed",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -921,8 +973,10 @@
       "members": [
         {
           "document": "文件系统列表",
+          "example": "无",
           "member": "FileSystem",
           "name": "FileSystems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1162,6 +1216,7 @@
         {
           "default": "",
           "document": "资源所属用户AppId",
+          "example": "1000000",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -1171,6 +1226,7 @@
         {
           "default": "",
           "document": "文件系统名称",
+          "example": "test",
           "member": "string",
           "name": "FileSystemName",
           "required": true,
@@ -1180,6 +1236,7 @@
         {
           "default": "",
           "document": "文件系统描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1189,6 +1246,7 @@
         {
           "default": "",
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1198,6 +1256,7 @@
         {
           "default": "",
           "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1207,6 +1266,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "1629099694",
           "member": "datetime_iso",
           "name": "CreateTime",
           "required": true,
@@ -1216,6 +1276,7 @@
         {
           "default": "",
           "document": "文件系统块大小（byte）",
+          "example": "4194304",
           "member": "uint64",
           "name": "BlockSize",
           "required": true,
@@ -1225,6 +1286,7 @@
         {
           "default": "",
           "document": "文件系统容量（byte）",
+          "example": "1073741824",
           "member": "uint64",
           "name": "CapacityQuota",
           "required": true,
@@ -1234,6 +1296,7 @@
         {
           "default": "",
           "document": "文件系统状态（1：创建中；2：创建成功；3：创建失败）",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -1243,6 +1306,7 @@
         {
           "default": "",
           "document": "超级用户名列表",
+          "example": "[\"hadoop\"]",
           "member": "string",
           "name": "SuperUsers",
           "required": true,
@@ -1252,11 +1316,32 @@
         {
           "default": "",
           "document": "POSIX权限控制",
+          "example": "true",
           "member": "bool",
           "name": "PosixAcl",
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否打开Ranger地址校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRanger",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Ranger地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1:8080\"]",
+          "member": "string",
+          "name": "RangerServiceAddresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1402,6 +1487,7 @@
         {
           "default": "",
           "document": "文件系统ID",
+          "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1410,6 +1496,7 @@
         {
           "default": "",
           "document": "文件系统名称",
+          "example": "test",
           "member": "string",
           "name": "FileSystemName",
           "required": false,
@@ -1418,6 +1505,7 @@
         {
           "default": "",
           "document": "文件系统描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1425,7 +1513,8 @@
         },
         {
           "default": "",
-          "document": "文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍\n注意：修改的文件系统容量不能小于当前使用量",
+          "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍\n注意：修改的文件系统容量不能小于当前使用量",
+          "example": "1073741824",
           "member": "uint64",
           "name": "CapacityQuota",
           "required": false,
@@ -1434,6 +1523,7 @@
         {
           "default": "",
           "document": "超级用户名列表，可以为空数组",
+          "example": "[\"hadoop\"]",
           "member": "string",
           "name": "SuperUsers",
           "required": false,
@@ -1442,10 +1532,29 @@
         {
           "default": "",
           "document": "是否校验POSIX ACL",
+          "example": "true",
           "member": "bool",
           "name": "PosixAcl",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否打开Ranger地址校验",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRanger",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "Ranger地址列表，可以为空数组",
+          "example": "[\"127.0.0.1:8080\"]",
+          "member": "string",
+          "name": "RangerServiceAddresses",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1650,7 +1759,7 @@
         },
         {
           "default": "",
-          "document": "回热任务类型（1：标准；2：极速；3：批量）",
+          "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -1730,7 +1839,7 @@
         },
         {
           "default": "",
-          "document": "转换类型（1：归档；2：删除）",
+          "document": "转换类型（1：归档；2：删除；3：低频）",
           "example": "1",
           "member": "uint64",
           "name": "Type",

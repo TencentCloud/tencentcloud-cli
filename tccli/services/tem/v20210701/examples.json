@@ -159,6 +159,14 @@
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "回滚分批发布"
       }
+    ],
+    "RollingUpdateApplicationByVersion": [
+      {
+        "document": "应用部署",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollingUpdateApplicationByVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"DeployVersion\": \"xx\",\n    \"PackageName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"version-xxx\"\n    }\n}",
+        "title": "应用部署"
+      }
     ]
   },
   "version": "1.0"

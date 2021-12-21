@@ -238,6 +238,24 @@
           "name": "DiskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回滚前是否执行自动关机",
+          "example": "False",
+          "member": "bool",
+          "name": "AutoStopInstance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "回滚完成后是否自动开机",
+          "example": "False",
+          "member": "bool",
+          "name": "AutoStartInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

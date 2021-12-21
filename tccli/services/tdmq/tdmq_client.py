@@ -449,7 +449,7 @@ def doCreateAMQPVHost(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTopics(args, parsed_globals):
+def doDeleteEnvironmentRoles(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -474,11 +474,11 @@ def doDeleteTopics(args, parsed_globals):
     client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTopicsRequest()
+    model = models.DeleteEnvironmentRolesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteTopics(model)
+        rsp = client.DeleteEnvironmentRoles(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1217,6 +1217,54 @@ def doCreateCmqSubscribe(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribePublisherSummary(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePublisherSummaryRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribePublisherSummary(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteRocketMQNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1583,54 +1631,6 @@ def doDescribeCmqSubscriptionDetail(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeCmqSubscriptionDetail(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateRocketMQNamespace(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRocketMQNamespaceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateRocketMQNamespace(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2369,7 +2369,7 @@ def doDescribeRocketMQCluster(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteEnvironmentRoles(args, parsed_globals):
+def doDeleteTopics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2394,11 +2394,11 @@ def doDeleteEnvironmentRoles(args, parsed_globals):
     client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteEnvironmentRolesRequest()
+    model = models.DeleteTopicsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteEnvironmentRoles(model)
+        rsp = client.DeleteTopics(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3329,6 +3329,54 @@ def doSendCmqMsg(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateRocketMQTopic(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRocketMQTopicRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateRocketMQTopic(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyEnvironmentAttributes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3473,7 +3521,7 @@ def doUnbindCmqDeadLetter(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateRocketMQTopic(args, parsed_globals):
+def doCreateRocketMQNamespace(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3498,11 +3546,11 @@ def doCreateRocketMQTopic(args, parsed_globals):
     client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateRocketMQTopicRequest()
+    model = models.CreateRocketMQNamespaceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateRocketMQTopic(model)
+        rsp = client.CreateRocketMQNamespace(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4031,6 +4079,54 @@ def doDescribeEnvironmentRoles(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeEnvironmentRoles(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribePublishers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TdmqClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribePublishersRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribePublishers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4645,7 +4741,7 @@ ACTION_MAP = {
     "DeleteCmqQueue": doDeleteCmqQueue,
     "DescribeCmqTopics": doDescribeCmqTopics,
     "CreateAMQPVHost": doCreateAMQPVHost,
-    "DeleteTopics": doDeleteTopics,
+    "DeleteEnvironmentRoles": doDeleteEnvironmentRoles,
     "DeleteRocketMQGroup": doDeleteRocketMQGroup,
     "RewindCmqQueue": doRewindCmqQueue,
     "CreateTopic": doCreateTopic,
@@ -4661,6 +4757,7 @@ ACTION_MAP = {
     "ModifyRocketMQTopic": doModifyRocketMQTopic,
     "DescribeEnvironmentAttributes": doDescribeEnvironmentAttributes,
     "CreateCmqSubscribe": doCreateCmqSubscribe,
+    "DescribePublisherSummary": doDescribePublisherSummary,
     "DeleteRocketMQNamespace": doDeleteRocketMQNamespace,
     "DeleteCluster": doDeleteCluster,
     "DeleteCmqTopic": doDeleteCmqTopic,
@@ -4669,7 +4766,6 @@ ACTION_MAP = {
     "ModifyRocketMQGroup": doModifyRocketMQGroup,
     "ModifyCmqTopicAttribute": doModifyCmqTopicAttribute,
     "DescribeCmqSubscriptionDetail": doDescribeCmqSubscriptionDetail,
-    "CreateRocketMQNamespace": doCreateRocketMQNamespace,
     "CreateAMQPCluster": doCreateAMQPCluster,
     "DescribeCmqDeadLetterSourceQueues": doDescribeCmqDeadLetterSourceQueues,
     "DescribeAMQPVHosts": doDescribeAMQPVHosts,
@@ -4685,7 +4781,7 @@ ACTION_MAP = {
     "CreateSubscription": doCreateSubscription,
     "DeleteAMQPCluster": doDeleteAMQPCluster,
     "DescribeRocketMQCluster": doDescribeRocketMQCluster,
-    "DeleteEnvironmentRoles": doDeleteEnvironmentRoles,
+    "DeleteTopics": doDeleteTopics,
     "ResetMsgSubOffsetByTimestamp": doResetMsgSubOffsetByTimestamp,
     "DescribeBindVpcs": doDescribeBindVpcs,
     "DescribeAMQPCreateQuota": doDescribeAMQPCreateQuota,
@@ -4705,10 +4801,11 @@ ACTION_MAP = {
     "ReceiveMessage": doReceiveMessage,
     "ModifyAMQPExchange": doModifyAMQPExchange,
     "SendCmqMsg": doSendCmqMsg,
+    "CreateRocketMQTopic": doCreateRocketMQTopic,
     "ModifyEnvironmentAttributes": doModifyEnvironmentAttributes,
     "DescribeRoles": doDescribeRoles,
     "UnbindCmqDeadLetter": doUnbindCmqDeadLetter,
-    "CreateRocketMQTopic": doCreateRocketMQTopic,
+    "CreateRocketMQNamespace": doCreateRocketMQNamespace,
     "CreateEnvironmentRole": doCreateEnvironmentRole,
     "DescribeRocketMQTopics": doDescribeRocketMQTopics,
     "DescribeRocketMQClusters": doDescribeRocketMQClusters,
@@ -4720,6 +4817,7 @@ ACTION_MAP = {
     "SendBatchMessages": doSendBatchMessages,
     "ClearCmqQueue": doClearCmqQueue,
     "DescribeEnvironmentRoles": doDescribeEnvironmentRoles,
+    "DescribePublishers": doDescribePublishers,
     "CreateRocketMQCluster": doCreateRocketMQCluster,
     "PublishCmqMsg": doPublishCmqMsg,
     "DescribeBindClusters": doDescribeBindClusters,

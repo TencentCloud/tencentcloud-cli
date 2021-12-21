@@ -504,6 +504,22 @@
         "title": "获取生产者列表"
       }
     ],
+    "DescribePublisherSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublisherSummary\n<公共请求参数>\n\n{\n    \"Topic\": \"xx\",\n    \"Namespace\": \"xx\",\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MsgRateIn\": 0.0,\n        \"PublisherCount\": 0,\n        \"StorageSize\": 0,\n        \"RequestId\": \"xx\",\n        \"MsgThroughputIn\": 0.0\n    }\n}",
+        "title": "获取生产者概览"
+      }
+    ],
+    "DescribePublishers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublishers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Name\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"ClusterId\": \"xx\",\n    \"Namespace\": \"xx\",\n    \"Topic\": \"xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Publishers\": [\n            {\n                \"ConnectedSince\": \"xx\",\n                \"MsgThroughputIn\": 0.0,\n                \"ClientVersion\": \"xx\",\n                \"ProducerId\": 0,\n                \"Partition\": 0,\n                \"AverageMsgSize\": 0.0,\n                \"ProducerName\": \"xx\",\n                \"Address\": \"xx\",\n                \"MsgRateIn\": 0.0\n            }\n        ]\n    }\n}",
+        "title": "获取生产者列表"
+      }
+    ],
     "DescribeRocketMQCluster": [
       {
         "document": "",

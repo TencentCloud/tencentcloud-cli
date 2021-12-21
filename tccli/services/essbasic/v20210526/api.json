@@ -36,6 +36,18 @@
       "name": "渠道用量查询",
       "output": "DescribeUsageResponse"
     },
+    "GetDownloadFlowUrl": {
+      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载确认页面链接，支持客户合同（流程）归类打包下载。\n",
+      "input": "GetDownloadFlowUrlRequest",
+      "name": "获取合同（流程）批量下载链接",
+      "output": "GetDownloadFlowUrlResponse"
+    },
+    "OperateChannelTemplate": {
+      "document": "此接口（OperateChannelTemplate）用于渠道侧将模板库中的模板对合作企业进行查询和设置, 其中包括可见性的修改以及对合作企业的指定.\n1、同步标识=select时：\n输入规则：“可见标识”、“指定合作企业列表”为空。\n处理规则：返回指定模版的可见标识、指定合作企业列表。\n2、同步标识=update时：\n输入规则：“可见标识”、“指定合作企业列表”非必填输入。\n处理规则：\n若“可见标识”=空，不做处理，返回当前的可见标识。\n若“可见标识”=所有合作企业，不取“指定合作企业列表”的值处理。\n若“可见标识”=指定合作企业，取“指定合作企业列表”的值进行更新/插入。\n3、同步标识=delete时：\n输入规则：“可见标识”、“指定合作企业列表”非必填输入。\n处理规则：\n仅取“指定合作企业列表”的值进行删除处理，为空时不做处。",
+      "input": "OperateChannelTemplateRequest",
+      "name": "操作渠道模板",
+      "output": "OperateChannelTemplateResponse"
+    },
     "PrepareFlows": {
       "document": "该接口 (PrepareFlows) 用于创建待发起文件",
       "input": "PrepareFlowsRequest",
@@ -117,6 +129,32 @@
         }
       ],
       "usage": "in"
+    },
+    "AuthFailMessage": {
+      "document": "授权出错信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合作企业Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "出错信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Component": {
       "document": "此结构体 (Component) 用于描述控件属性。",
@@ -752,6 +790,32 @@
       ],
       "type": "object"
     },
+    "DownloadFlowInfo": {
+      "document": "合同（流程）下载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "文件夹名称",
+          "example": "测试合同文件夹",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同（流程）的标识数组",
+          "example": "[\"FlowId1\",\"FlowId2\"]",
+          "member": "string",
+          "name": "FlowIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "FlowApproverInfo": {
       "document": "创建流程签署人入参",
       "members": [
@@ -833,6 +897,16 @@
           "name": "OpenId",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
+          "example": "3",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -995,6 +1069,186 @@
         }
       ],
       "usage": "both"
+    },
+    "GetDownloadFlowUrlRequest": {
+      "document": "GetDownloadFlowUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），",
+          "example": "无",
+          "member": "DownloadFlowInfo",
+          "name": "DownLoadFlows",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDownloadFlowUrlResponse": {
+      "document": "GetDownloadFlowUrl返回参数结构体",
+      "members": [
+        {
+          "document": "进入合同（流程）下载确认页面链接",
+          "example": "无",
+          "member": "string",
+          "name": "DownLoadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateChannelTemplateRequest": {
+      "document": "OperateChannelTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道方模板库模板唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型，查询:\"SELECT\"，删除:\"DELETE\"，更新:\"UPDATE\"",
+          "example": "无",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模板可见性, 全部可见-\"all\", 部分可见-\"part\"",
+          "example": "无",
+          "member": "string",
+          "name": "AuthTag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合作企业方第三方机构唯一标识数据",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenIds",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateChannelTemplateResponse": {
+      "document": "OperateChannelTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯电子签颁发给渠道的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道方模板库模板唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "全部成功-\"all-success\",部分成功-\"part-success\", 全部失败-\"fail\"失败的会在FailMessageList中展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all-success",
+          "member": "string",
+          "name": "OperateResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "模板可见性, 全部可见-\"all\", 部分可见-\"part\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SELECT",
+          "member": "string",
+          "name": "AuthTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "合作企业方第三方机构唯一标识数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "操作失败信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthFailMessage",
+          "name": "FailMessageList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PrepareFlowsRequest": {
       "document": "PrepareFlows请求参数结构体",

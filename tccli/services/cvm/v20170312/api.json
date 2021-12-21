@@ -5612,17 +5612,185 @@
     },
     "LaunchTemplate": {
       "document": "实例启动模板，通过该参数可使用实例模板中的预设参数创建实例。",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例启动模板ID，通过该参数可使用实例模板中的预设参数创建实例。",
+          "example": "lt-rf6ogz48",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本号，若给定，新实例启动模板将基于给定的版本号创建",
+          "example": "1",
+          "member": "uint64",
+          "name": "LaunchTemplateVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "LaunchTemplateInfo": {
       "document": "实例启动模板简要信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "实例启动模版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LatestVersionNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例启动模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lt-rf6ogz49",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例启动模板名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "foobar",
+          "member": "string",
+          "name": "LaunchTemplateName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例启动模板默认版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "DefaultVersionNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例启动模板包含的版本总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "uint64",
+          "name": "LaunchTemplateVersionCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建该模板的用户UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "CreatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建该模板的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-12-17T01:54:31Z",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LaunchTemplateVersionData": {
+      "document": "实例启动模板版本信息",
       "members": [],
       "usage": "out"
     },
     "LaunchTemplateVersionInfo": {
       "document": "实例启动模板版本集合",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例启动模板版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LaunchTemplateVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本数据详情。",
+          "example": "NA",
+          "member": "LaunchTemplateVersionData",
+          "name": "LaunchTemplateVersionData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本创建时间。",
+          "example": "2020-12-17T01:54:31Z",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例启动模板ID。",
+          "example": "lt-b8v1kcyq",
+          "member": "string",
+          "name": "LaunchTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认启动模板版本。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefaultVersion",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例启动模板版本描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyVersion",
+          "member": "string",
+          "name": "LaunchTemplateVersionDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者。",
+          "example": "251001234",
+          "member": "string",
+          "name": "CreatedBy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "LocalDiskType": {

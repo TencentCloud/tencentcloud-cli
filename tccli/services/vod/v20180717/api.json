@@ -637,7 +637,7 @@
       "output": "ParseStreamingManifestResponse"
     },
     "ProcessMedia": {
-      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能内容审核（鉴黄、鉴恐、鉴政）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 智能内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
+      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
       "input": "ProcessMediaRequest",
       "name": "视频处理",
       "output": "ProcessMediaResponse"
@@ -980,6 +980,7 @@
         {
           "default": "",
           "document": "转自适应码流规格。",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -989,6 +990,7 @@
         {
           "default": "",
           "document": "打包格式，只能为 HLS。",
+          "example": "HLS",
           "member": "string",
           "name": "Package",
           "required": true,
@@ -998,6 +1000,7 @@
         {
           "default": "",
           "document": "加密类型。",
+          "example": "SimpleAES",
           "member": "string",
           "name": "DrmType",
           "required": true,
@@ -1007,6 +1010,7 @@
         {
           "default": "",
           "document": "播放地址。",
+          "example": "http://xxx.myqcloud.com/xxx.mp4",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -1834,11 +1838,11 @@
       "usage": "out"
     },
     "AiContentReviewResult": {
-      "document": "内容审核结果",
+      "document": "智能识别结果",
       "members": [
         {
           "default": "",
-          "document": "任务的类型，可以取的值有：\n<li>Porn：图片鉴黄</li>\n<li>Terrorism：图片鉴恐</li>\n<li>Political：图片鉴政</li>\n<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴黄</li>\n<li>Porn.Ocr：Ocr 文字鉴黄</li>\n<li>Political.Asr：Asr 文字（ 音频中的文字）鉴政</li>\n<li>Political.Ocr：Ocr 文字鉴政</li>\n<li>Terrorism.Ocr：Ocr 文字鉴恐</li>\n<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>\n<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>",
+          "document": "任务的类型，可以取的值有：\n<li>Porn：图片鉴别是否涉及令人反感的信息</li>\n<li>Terrorism：图片鉴别是否涉及令人不安全的信息</li>\n<li>Political：图片鉴别是否涉及令人不适宜的信息</li>\n<li>Porn.Asr：Asr 文字（ 音频中的文字）鉴别是否涉及令人反感的信息</li>\n<li>Porn.Ocr：Ocr 文字鉴别是否涉及令人反感的信息</li>\n<li>Political.Asr：Asr 文字（ 音频中的文字）鉴别是否涉及令人不适宜的信息</li>\n<li>Political.Ocr：Ocr 文字鉴别是否涉及令人不适宜的信息</li>\n<li>Terrorism.Ocr：Ocr 文字鉴别是否涉及令人不安全的信息</li>\n<li>Prohibited.Asr：Asr 文字（ 音频中的文字）鉴违禁</li>\n<li>Prohibited.Ocr：Ocr 文字鉴违禁</li>",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -1848,7 +1852,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核智能画面鉴黄任务的查询结果，当任务类型为 Porn 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（画面涉及令人反感的信息）的查询结果，当任务类型为 Porn 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPornResult",
           "name": "PornTask",
@@ -1858,7 +1862,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核智能画面鉴恐任务的查询结果，当任务类型为 Terrorism 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（画面涉及令人不安全的信息）的查询结果，当任务类型为 Terrorism 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskTerrorismResult",
           "name": "TerrorismTask",
@@ -1868,7 +1872,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核智能画面鉴政任务的查询结果，当任务类型为 Political 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（画面涉及令人不适宜的信息）的查询结果，当任务类型为 Political 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPoliticalResult",
           "name": "PoliticalTask",
@@ -1878,7 +1882,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Asr 文字鉴黄任务的查询结果，当任务类型为 Porn.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（Asr 文字涉及令人反感的信息）的查询结果，当任务类型为 Porn.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPornAsrResult",
           "name": "PornAsrTask",
@@ -1888,7 +1892,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Ocr 文字鉴黄任务的查询结果，当任务类型为 Porn.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（Ocr 文字涉及令人反感的信息）的查询结果，当任务类型为 Porn.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPornOcrResult",
           "name": "PornOcrTask",
@@ -1898,7 +1902,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Asr 文字鉴政任务的查询结果，当任务类型为 Political.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（Asr 文字涉及令人不适宜的信息）的查询结果，当任务类型为 Political.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPoliticalAsrResult",
           "name": "PoliticalAsrTask",
@@ -1908,7 +1912,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Ocr 文字鉴政任务的查询结果，当任务类型为 Political.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（Ocr 文字涉及令人不适宜的信息）的查询结果，当任务类型为 Political.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskPoliticalOcrResult",
           "name": "PoliticalOcrTask",
@@ -1918,7 +1922,7 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Ocr 文字鉴恐任务的查询结果，当任务类型为 Terrorism.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别任务（ Ocr 文字涉及令人不安全的信息）的查询结果，当任务类型为 Terrorism.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiReviewTaskTerrorismOcrResult",
           "name": "TerrorismOcrTask",
@@ -1928,20 +1932,20 @@
         },
         {
           "default": "",
-          "document": "视频内容审核 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "AiReviewTaskProhibitedAsrResult",
-          "name": "ProhibitedAsrTask",
+          "member": "AiReviewTaskProhibitedOcrResult",
+          "name": "ProhibitedOcrTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "default": "",
-          "document": "视频内容审核 Ocr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频智能识别 Asr 文字鉴违禁任务的查询结果，当任务类型为 Prohibited.Asr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "AiReviewTaskProhibitedOcrResult",
-          "name": "ProhibitedOcrTask",
+          "member": "AiReviewTaskProhibitedAsrResult",
+          "name": "ProhibitedAsrTask",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -1950,11 +1954,12 @@
       "usage": "out"
     },
     "AiContentReviewTaskInput": {
-      "document": "智能内容审核任务类型",
+      "document": "智能识别任务类型",
       "members": [
         {
           "default": "",
-          "document": "视频内容审核模板 ID。",
+          "document": "智能识别模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3421,11 +3426,12 @@
       "usage": "out"
     },
     "AiReviewPoliticalAsrTaskInput": {
-      "document": "内容审核 Asr 文字鉴政、敏感任务输入参数类型",
+      "document": "智能识别 Asr 文字涉及令人不适宜的信息、违规任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴政模板 ID。",
+          "document": "鉴别涉及令人不适宜信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3436,11 +3442,11 @@
       "usage": "out"
     },
     "AiReviewPoliticalAsrTaskOutput": {
-      "document": "Asr 文字涉政信息",
+      "document": "Asr 文字涉及令人不适宜的信息",
       "members": [
         {
           "default": "",
-          "document": "Asr 文字涉政、敏感评分，分值为0到100。",
+          "document": "Asr 文字涉及令人不适宜的信息、违规评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3450,7 +3456,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字涉政、敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "Asr 文字涉及令人不适宜的信息、违规结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3460,7 +3466,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "Asr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
@@ -3470,7 +3476,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "Asr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3480,7 +3486,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉政、敏感嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "Asr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3492,11 +3498,12 @@
       "usage": "out"
     },
     "AiReviewPoliticalOcrTaskInput": {
-      "document": "内容审核 Ocr 文字鉴政任务输入参数类型",
+      "document": "智能识别 Ocr 文字涉及令人不适宜信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴政模板 ID。",
+          "document": "鉴别涉及令人不适宜信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3507,11 +3514,11 @@
       "usage": "out"
     },
     "AiReviewPoliticalOcrTaskOutput": {
-      "document": "Ocr 文字涉政信息",
+      "document": "Ocr 文字涉及令人不适宜的信息",
       "members": [
         {
           "default": "",
-          "document": "Ocr 文字涉政、敏感评分，分值为0到100。",
+          "document": "Ocr 文字涉及令人不适宜的信息、违规评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3521,7 +3528,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字涉政、敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "Ocr 文字涉及令人不适宜的信息、违规结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3531,7 +3538,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "Ocr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
@@ -3541,7 +3548,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "Ocr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3551,7 +3558,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉政、敏感嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "Ocr 文字有涉及令人不适宜的信息、违规嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3563,11 +3570,12 @@
       "usage": "out"
     },
     "AiReviewPoliticalTaskInput": {
-      "document": "内容审核鉴政任务输入参数类型",
+      "document": "智能识别涉及令人不适宜信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴政模板 ID。",
+          "document": "鉴别涉及令人不适宜信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3578,11 +3586,11 @@
       "usage": "out"
     },
     "AiReviewPoliticalTaskOutput": {
-      "document": "涉政信息",
+      "document": "涉及令人不适宜的信息",
       "members": [
         {
           "default": "",
-          "document": "视频涉政评分，分值为0到100。",
+          "document": "视频涉及令人不适宜信息的评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3592,7 +3600,7 @@
         },
         {
           "default": "",
-          "document": "涉政结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "涉及令人不适宜信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3602,7 +3610,7 @@
         },
         {
           "default": "",
-          "document": "视频鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\n其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：\n<li>politician：政治人物。</li>",
+          "document": "视频涉及令人不适宜信息的结果标签。智能识别模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\n其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：\n<li>politician：相关人物。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -3612,7 +3620,7 @@
         },
         {
           "default": "",
-          "document": "有涉政嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "有涉及令人不适宜信息嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewPoliticalSegmentItem",
           "name": "SegmentSet",
@@ -3622,7 +3630,7 @@
         },
         {
           "default": "",
-          "document": "涉政嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "有涉及令人不适宜的信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3632,7 +3640,7 @@
         },
         {
           "default": "",
-          "document": "涉政嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "有涉及令人不适宜的信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3644,11 +3652,12 @@
       "usage": "out"
     },
     "AiReviewPornAsrTaskInput": {
-      "document": "内容审核 Asr 文字鉴黄任务输入参数类型",
+      "document": "智能识别 Asr 文字涉及令人反感的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴黄模板 ID。",
+          "document": "鉴别涉及令人反感的信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3659,11 +3668,11 @@
       "usage": "out"
     },
     "AiReviewPornAsrTaskOutput": {
-      "document": "Asr 文字涉黄信息",
+      "document": "Asr 文字涉及令人反感的信息",
       "members": [
         {
           "default": "",
-          "document": "Asr 文字涉黄评分，分值为0到100。",
+          "document": "Asr 文字涉及令人反感的信息的评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3673,7 +3682,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字涉黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "Asr 文字涉及令人反感的信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3683,7 +3692,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "Asr 文字有涉及令人反感的信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
@@ -3693,7 +3702,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "Asr 文字有涉及令人反感的信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3703,7 +3712,7 @@
         },
         {
           "default": "",
-          "document": "Asr 文字有涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "Asr 文字有涉及令人反感的信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3715,11 +3724,12 @@
       "usage": "out"
     },
     "AiReviewPornOcrTaskInput": {
-      "document": "内容审核 Ocr 文字鉴黄任务输入参数类型",
+      "document": "智能识别 Ocr 文字涉及令人反感的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴黄模板 ID。",
+          "document": "鉴别涉及令人反感的信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3730,11 +3740,11 @@
       "usage": "out"
     },
     "AiReviewPornOcrTaskOutput": {
-      "document": "Ocr 文字涉黄信息",
+      "document": "Ocr 文字涉及令人反感的信息",
       "members": [
         {
           "default": "",
-          "document": "Ocr 文字涉黄评分，分值为0到100。",
+          "document": "Ocr 文字涉及令人反感的信息的评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3744,7 +3754,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字涉黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "Ocr 文字涉及令人反感的信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3754,7 +3764,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "Ocr 文字有涉及令人反感的信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
@@ -3764,7 +3774,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "Ocr 文字有涉及令人反感的信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3774,7 +3784,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "Ocr 文字有涉及令人反感的信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3786,11 +3796,12 @@
       "usage": "out"
     },
     "AiReviewPornTaskInput": {
-      "document": "内容审核鉴黄任务输入参数类型",
+      "document": "只能识别涉及令人反感的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴黄模板 ID。",
+          "document": "鉴别涉及令人反感的信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3801,11 +3812,11 @@
       "usage": "in"
     },
     "AiReviewPornTaskOutput": {
-      "document": "鉴黄结果信息",
+      "document": "鉴别涉及令人反感的信息的结果信息",
       "members": [
         {
           "default": "",
-          "document": "视频鉴黄评分，分值为0到100。",
+          "document": "视频鉴别涉及令人反感的信息的评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -3815,7 +3826,7 @@
         },
         {
           "default": "",
-          "document": "鉴黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "鉴别涉及令人反感的信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -3825,7 +3836,7 @@
         },
         {
           "default": "",
-          "document": "视频鉴黄结果标签，取值范围：\n<li>porn：色情。</li>\n<li>sexy：性感。</li>\n<li>vulgar：低俗。</li>\n<li>intimacy：亲密行为。</li>",
+          "document": "视频鉴别涉及令人反感的信息的结果标签，取值范围：\n<li>porn：色情。</li>\n<li>sexy：性感。</li>\n<li>vulgar：低俗。</li>\n<li>intimacy：亲密行为。</li>",
           "example": "无",
           "member": "string",
           "name": "Label",
@@ -3835,7 +3846,7 @@
         },
         {
           "default": "",
-          "document": "有涉黄嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "有涉及令人反感的信息的嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewSegmentItem",
           "name": "SegmentSet",
@@ -3845,7 +3856,7 @@
         },
         {
           "default": "",
-          "document": "涉黄嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "涉及令人反感的信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -3855,7 +3866,7 @@
         },
         {
           "default": "",
-          "document": "涉黄嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "涉及令人反感的信息的嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -3867,11 +3878,12 @@
       "usage": "out"
     },
     "AiReviewProhibitedAsrTaskInput": {
-      "document": "内容审核 Asr 文字鉴违禁任务输入参数类型",
+      "document": "智能识别 Asr 文字鉴违禁任务输入参数类型",
       "members": [
         {
           "default": "",
           "document": "鉴违禁模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -3938,11 +3950,12 @@
       "usage": "out"
     },
     "AiReviewProhibitedOcrTaskInput": {
-      "document": "内容审核 Ocr 文字鉴违禁任务输入参数类型",
+      "document": "智能识别 Ocr 文字鉴违禁任务输入参数类型",
       "members": [
         {
           "default": "",
           "document": "鉴违禁模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -4009,11 +4022,12 @@
       "usage": "out"
     },
     "AiReviewTaskPoliticalAsrResult": {
-      "document": "内容审核 Asr 文字鉴政、敏感任务结果类型",
+      "document": "智能识别 Asr 文字涉及令人不适宜信息、违规任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4023,6 +4037,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4032,6 +4047,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4041,6 +4057,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4049,7 +4066,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴政任务输入。",
+          "document": "智能识别 Asr 文字涉及令人不适宜信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPoliticalAsrTaskInput",
           "name": "Input",
           "required": true,
@@ -4058,7 +4076,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴政任务输出。",
+          "document": "智能识别 Asr 文字涉及令人不适宜信息的任务输出。",
+          "example": "无",
           "member": "AiReviewPoliticalAsrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4069,11 +4088,12 @@
       "usage": "out"
     },
     "AiReviewTaskPoliticalOcrResult": {
-      "document": "内容审核 Ocr 文字鉴政、敏感任务结果类型",
+      "document": "智能识别 Ocr 文字涉及令人不适宜信息、违规任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4083,6 +4103,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4092,6 +4113,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4101,6 +4123,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4109,7 +4132,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴政任务输入。",
+          "document": "智能识别 Ocr 文字涉及令人不适宜信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPoliticalOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -4118,7 +4142,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴政任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别 Ocr 文字涉及令人不适宜信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewPoliticalOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4129,11 +4154,12 @@
       "usage": "out"
     },
     "AiReviewTaskPoliticalResult": {
-      "document": "内容审核鉴政任务结果类型",
+      "document": "智能识别涉及令人不适宜信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4143,6 +4169,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4152,6 +4179,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4161,6 +4189,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4169,7 +4198,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴政任务输入。",
+          "document": "智能识别涉及令人不适宜信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPoliticalTaskInput",
           "name": "Input",
           "required": true,
@@ -4178,7 +4208,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴政任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别涉及令人不适宜信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewPoliticalTaskOutput",
           "name": "Output",
           "required": true,
@@ -4189,11 +4220,12 @@
       "usage": "out"
     },
     "AiReviewTaskPornAsrResult": {
-      "document": "内容审核 Asr 文字鉴黄任务结果类型",
+      "document": "智能识别 Asr 文字涉及令人反感的信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4203,6 +4235,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4212,6 +4245,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4221,6 +4255,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4229,7 +4264,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴黄任务输入。",
+          "document": "智能识别 Asr 文字涉及令人反感的信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPornAsrTaskInput",
           "name": "Input",
           "required": true,
@@ -4238,7 +4274,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别 Asr 文字涉及令人反感的信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewPornAsrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4249,11 +4286,12 @@
       "usage": "out"
     },
     "AiReviewTaskPornOcrResult": {
-      "document": "内容审核 Ocr 文字鉴黄任务结果类型",
+      "document": "智能识别 Ocr 文字涉及令人反感的信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4263,6 +4301,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4272,6 +4311,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4281,6 +4321,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4289,7 +4330,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴黄任务输入。",
+          "document": "智能识别 Ocr 文字涉及令人反感的信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPornOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -4298,7 +4340,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Ocr 文字智能识别涉及令人反感的信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewPornOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4309,11 +4352,12 @@
       "usage": "out"
     },
     "AiReviewTaskPornResult": {
-      "document": "内容审核鉴黄任务结果类型",
+      "document": "智能识别涉及令人反感的信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4323,6 +4367,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4332,6 +4377,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4341,6 +4387,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4349,7 +4396,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴黄任务输入。",
+          "document": "智能识别涉及令人反感的信息的任务输入。",
+          "example": "无",
           "member": "AiReviewPornTaskInput",
           "name": "Input",
           "required": true,
@@ -4358,7 +4406,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别涉及令人反感的信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewPornTaskOutput",
           "name": "Output",
           "required": true,
@@ -4369,11 +4418,12 @@
       "usage": "out"
     },
     "AiReviewTaskProhibitedAsrResult": {
-      "document": "内容审核 Asr 文字鉴任违禁务结果类型",
+      "document": "智能识别 Asr 文字鉴任违禁务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4383,6 +4433,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4392,6 +4443,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4401,6 +4453,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4409,7 +4462,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴违禁任务输入。",
+          "document": "智能识别 Asr 文字鉴违禁任务输入。",
+          "example": "无",
           "member": "AiReviewProhibitedAsrTaskInput",
           "name": "Input",
           "required": true,
@@ -4418,7 +4472,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Asr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别 Asr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewProhibitedAsrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4429,11 +4484,12 @@
       "usage": "out"
     },
     "AiReviewTaskProhibitedOcrResult": {
-      "document": "内容审核 Ocr 文字鉴任违禁务结果类型",
+      "document": "智能识别 Ocr 文字鉴任违禁务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4443,6 +4499,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4452,6 +4509,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4461,6 +4519,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4469,7 +4528,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴违禁任务输入。",
+          "document": "智能识别 Ocr 文字鉴违禁任务输入。",
+          "example": "无",
           "member": "AiReviewProhibitedOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -4478,7 +4538,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别 Ocr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewProhibitedOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4489,11 +4550,12 @@
       "usage": "out"
     },
     "AiReviewTaskTerrorismOcrResult": {
-      "document": "内容审核 Ocr 文字鉴恐任务结果类型",
+      "document": "智能识别 Ocr 文字鉴别涉及令人不安全的信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4503,6 +4565,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4512,6 +4575,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4521,6 +4585,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4529,7 +4594,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴恐任务输入。",
+          "document": "智能识别 Ocr 文字涉及令人不安全的信息的任务输入。",
+          "example": "无",
           "member": "AiReviewTerrorismOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -4538,7 +4604,8 @@
         },
         {
           "default": "",
-          "document": "内容审核 Ocr 文字鉴恐任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别 Ocr 文字涉及令人不安全的信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewTerrorismOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -4549,11 +4616,12 @@
       "usage": "out"
     },
     "AiReviewTaskTerrorismResult": {
-      "document": "内容审核鉴恐任务结果类型",
+      "document": "智能识别涉及令人不安全的信息的任务结果类型",
       "members": [
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4563,6 +4631,7 @@
         {
           "default": "",
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -4572,6 +4641,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -4581,6 +4651,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -4589,7 +4660,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴恐任务输入。",
+          "document": "智能识别涉及令人不安全的信息的任务输入。",
+          "example": "无",
           "member": "AiReviewTerrorismTaskInput",
           "name": "Input",
           "required": true,
@@ -4598,7 +4670,8 @@
         },
         {
           "default": "",
-          "document": "内容审核鉴恐任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能识别涉及令人不安全的信息的任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiReviewTerrorismTaskOutput",
           "name": "Output",
           "required": true,
@@ -4609,11 +4682,12 @@
       "usage": "out"
     },
     "AiReviewTerrorismOcrTaskInput": {
-      "document": "内容审核 Ocr 文字鉴恐任务输入参数类型",
+      "document": "智能识别 Ocr 文字涉及令人不安全的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴恐模板 ID。",
+          "document": "鉴别涉及令人不安全的信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -4624,11 +4698,11 @@
       "usage": "out"
     },
     "AiReviewTerrorismOcrTaskOutput": {
-      "document": "Ocr 文字涉恐信息",
+      "document": "Ocr 文字涉及令人不安全的信息",
       "members": [
         {
           "default": "",
-          "document": "Ocr 文字涉恐评分，分值为0到100。",
+          "document": "Ocr 文字有涉及令人不安全信息的评分，分值为0到100。",
           "example": "无",
           "member": "float",
           "name": "Confidence",
@@ -4638,7 +4712,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字涉恐结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "Ocr 文字有涉及令人不安全信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
           "example": "无",
           "member": "string",
           "name": "Suggestion",
@@ -4648,7 +4722,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉恐嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
+          "document": "Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表。\n<font color=red>注意</font> ：该列表最多仅展示前 100 个元素。如希望获得完整结果，请从 SegmentSetFileUrl 对应的文件中获取。",
           "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
@@ -4658,7 +4732,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉恐嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
+          "document": "Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达 SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
           "example": "http://12xxx",
           "member": "string",
           "name": "SegmentSetFileUrl",
@@ -4668,7 +4742,7 @@
         },
         {
           "default": "",
-          "document": "Ocr 文字有涉恐嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "Ocr 文字有涉及令人不安全信息嫌疑的视频片段列表文件 URL 失效时间，使用  [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "SegmentSetFileUrlExpireTime",
@@ -4680,11 +4754,12 @@
       "usage": "out"
     },
     "AiReviewTerrorismTaskInput": {
-      "document": "内容审核鉴恐任务输入参数类型",
+      "document": "智能识别涉及令人不安全的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
-          "document": "鉴恐模板 ID。",
+          "document": "鉴别涉及令人不安全的信息的模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -6419,11 +6494,12 @@
       "type": "object"
     },
     "ContentReviewTemplateItem": {
-      "document": "内容审核模板详情",
+      "document": "智能识别模板详情",
       "members": [
         {
           "default": "",
-          "document": "内容审核模板唯一标识。",
+          "document": "智能识别模板唯一标识。",
+          "example": "无",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -6432,7 +6508,8 @@
         },
         {
           "default": "",
-          "document": "内容审核模板名称，长度限制：64 个字符。",
+          "document": "智能识别模板名称，长度限制：64 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6441,7 +6518,8 @@
         },
         {
           "default": "",
-          "document": "内容审核模板描述信息，长度限制：256 个字符。",
+          "document": "智能识别模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -6450,7 +6528,8 @@
         },
         {
           "default": "",
-          "document": "鉴黄控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "鉴别涉及令人反感的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
           "required": true,
@@ -6459,7 +6538,8 @@
         },
         {
           "default": "",
-          "document": "鉴恐控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "鉴别涉及令人不安全的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
           "required": true,
@@ -6468,7 +6548,8 @@
         },
         {
           "default": "",
-          "document": "鉴政控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "鉴别涉及令人不适宜的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
           "required": true,
@@ -6478,6 +6559,7 @@
         {
           "default": "",
           "document": "违禁控制参数。违禁内容包括：\n<li>谩骂；</li>\n<li>涉毒违法。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProhibitedConfigureInfo",
           "name": "ProhibitedConfigure",
           "required": true,
@@ -6486,7 +6568,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义内容审核控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义智能识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
           "required": true,
@@ -6495,7 +6578,8 @@
         },
         {
           "default": "",
-          "document": "审核结果是否进入审核墙（对审核结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "document": "智能识别结果是否进入智能识别墙（对智能识别结果进行人工复核）的开关。\n<li>ON：是；</li>\n<li>OFF：否。</li>",
+          "example": "无",
           "member": "string",
           "name": "ReviewWallSwitch",
           "required": true,
@@ -6505,6 +6589,7 @@
         {
           "default": "",
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
+          "example": "无",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": true,
@@ -6514,6 +6599,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -6523,6 +6609,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -7620,6 +7707,7 @@
         {
           "default": "",
           "document": "任务流名字（支持中文，不超过20个字）。",
+          "example": "我的一个任务流",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7628,6 +7716,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -7636,6 +7725,7 @@
         {
           "default": "",
           "document": "视频处理类型任务参数。",
+          "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": false,
@@ -7643,7 +7733,8 @@
         },
         {
           "default": "",
-          "document": "AI 智能内容审核类型任务参数。",
+          "document": "AI 智能识别类型任务参数。",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
@@ -7652,6 +7743,7 @@
         {
           "default": "",
           "document": "AI 智能内容分析类型任务参数。",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
@@ -7660,6 +7752,7 @@
         {
           "default": "",
           "document": "AI 内容识别类型任务参数。",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
@@ -7668,6 +7761,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -12496,7 +12590,7 @@
         },
         {
           "default": "",
-          "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：政治人物。</li>",
+          "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：相关人物。</li>",
           "example": "无",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
@@ -12552,7 +12646,7 @@
         },
         {
           "default": "",
-          "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：政治人物。</li>",
+          "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：相关人物。</li>",
           "example": "无",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
@@ -14215,11 +14309,12 @@
       "usage": "out"
     },
     "MediaContentReviewAsrTextSegmentItem": {
-      "document": "内容审核 Asr 文字审核嫌疑片段",
+      "document": "智能识别 Asr 文字的嫌疑片段",
       "members": [
         {
           "default": "",
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
           "required": true,
@@ -14229,6 +14324,7 @@
         {
           "default": "",
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
           "required": true,
@@ -14238,6 +14334,7 @@
         {
           "default": "",
           "document": "嫌疑片段置信度。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -14246,7 +14343,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段审核结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "嫌疑片段智能识别的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -14256,6 +14354,7 @@
         {
           "default": "",
           "document": "嫌疑关键词列表。",
+          "example": "无",
           "member": "string",
           "name": "KeywordSet",
           "required": true,
@@ -14266,11 +14365,12 @@
       "usage": "out"
     },
     "MediaContentReviewOcrTextSegmentItem": {
-      "document": "内容审核 Ocr 文字审核嫌疑片段",
+      "document": "智能识别 Ocr 文字的嫌疑片段",
       "members": [
         {
           "default": "",
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
           "required": true,
@@ -14280,6 +14380,7 @@
         {
           "default": "",
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
           "required": true,
@@ -14289,6 +14390,7 @@
         {
           "default": "",
           "document": "嫌疑片段置信度。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -14297,7 +14399,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段审核结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "嫌疑片段智能识别的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -14307,6 +14410,7 @@
         {
           "default": "",
           "document": "嫌疑关键词列表。",
+          "example": "无",
           "member": "string",
           "name": "KeywordSet",
           "required": true,
@@ -14316,6 +14420,7 @@
         {
           "default": "",
           "document": "嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
           "member": "int64",
           "name": "AreaCoordSet",
           "required": true,
@@ -14325,6 +14430,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -14334,6 +14440,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "PicUrlExpireTime",
           "required": true,
@@ -14344,11 +14451,12 @@
       "usage": "out"
     },
     "MediaContentReviewPoliticalSegmentItem": {
-      "document": "内容审核涉政嫌疑片段",
+      "document": "智能识别涉及令人不适宜信息的嫌疑片段",
       "members": [
         {
           "default": "",
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
           "required": true,
@@ -14358,6 +14466,7 @@
         {
           "default": "",
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
           "required": true,
@@ -14366,7 +14475,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段涉政分数。",
+          "document": "嫌疑片段分数。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -14375,7 +14485,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段鉴政结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "嫌疑片段涉及令人不适宜的信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -14384,7 +14495,8 @@
         },
         {
           "default": "",
-          "document": "涉政人物、违规图标名字。",
+          "document": "涉及令人不适宜的信息、违规图标名字。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -14393,7 +14505,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段鉴政结果标签。内容审核模板[画面鉴政任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\npolitician：\n<li>nation_politician：国家领导人；</li>\n<li>province_politician: 省部级领导人；</li>\n<li>bureau_politician：厅局级领导人；</li>\n<li>county_politician：县处级领导人；</li>\n<li>rural_politician：乡科级领导人；</li>\n<li>sensitive_politician：敏感政治人物；</li>\n<li>foreign_politician：国外领导人。</li>\nentertainment：\n<li>sensitive_entertainment：敏感娱乐人物。</li>\nsport：\n<li>sensitive_sport：敏感体育人物。</li>\nentrepreneur：\n<li>sensitive_entrepreneur：敏感商业人物。</li>\nscholar：\n<li>sensitive_scholar：敏感教育学者。</li>\ncelebrity：\n<li>sensitive_celebrity：敏感知名人物；</li>\n<li>historical_celebrity：历史知名人物。</li>\nmilitary：\n<li>sensitive_military：敏感军事人物。</li>",
+          "document": "嫌疑片段涉及令人不适宜的信息的结果标签。智能识别模板[画面涉及令人不适宜的信息的任务控制参数](https://cloud.tencent.com/document/api/266/31773#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\npolitician：\n<li>nation_politician：国家领导人；</li>\n<li>province_politician: 省部级领导人；</li>\n<li>bureau_politician：厅局级领导人；</li>\n<li>county_politician：县处级领导人；</li>\n<li>rural_politician：乡科级领导人；</li>\n<li>sensitive_politician：违规相关人物；</li>\n<li>foreign_politician：国外领导人。</li>\nentertainment：\n<li>sensitive_entertainment：违规娱乐人物。</li>\nsport：\n<li>sensitive_sport：违规体育人物。</li>\nentrepreneur：\n<li>sensitive_entrepreneur：违规商业人物。</li>\nscholar：\n<li>sensitive_scholar：违规教育学者。</li>\ncelebrity：\n<li>sensitive_celebrity：违规知名人物；</li>\n<li>historical_celebrity：历史知名人物。</li>\nmilitary：\n<li>sensitive_military：违规相关人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -14403,6 +14516,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -14411,7 +14525,8 @@
         },
         {
           "default": "",
-          "document": "涉政人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "document": "涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
           "member": "int64",
           "name": "AreaCoordSet",
           "required": true,
@@ -14421,6 +14536,7 @@
         {
           "default": "",
           "document": "该字段已废弃，请使用 PicUrlExpireTime。",
+          "example": "无",
           "member": "int64",
           "name": "PicUrlExpireTimeStamp",
           "required": true,
@@ -14430,6 +14546,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "PicUrlExpireTime",
           "required": true,
@@ -14440,11 +14557,12 @@
       "usage": "out"
     },
     "MediaContentReviewSegmentItem": {
-      "document": "内容审核涉黄/暴恐嫌疑片段",
+      "document": "智能识别涉及令人反感的信息、涉及令人不安全的信息的嫌疑片段",
       "members": [
         {
           "default": "",
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
           "required": true,
@@ -14454,6 +14572,7 @@
         {
           "default": "",
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
           "required": true,
@@ -14462,7 +14581,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段涉黄分数。",
+          "document": "嫌疑片段涉及令人反感的信息的分数。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -14471,7 +14591,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段鉴黄结果标签。",
+          "document": "嫌疑片段涉及令人反感的信息的结果标签。",
+          "example": "无",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -14480,7 +14601,8 @@
         },
         {
           "default": "",
-          "document": "嫌疑片段鉴黄结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "document": "嫌疑片段鉴别涉及令人反感的信息的结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -14490,6 +14612,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -14499,6 +14622,7 @@
         {
           "default": "",
           "document": "该字段已废弃，请使用 PicUrlExpireTime。",
+          "example": "无",
           "member": "int64",
           "name": "PicUrlExpireTimeStamp",
           "required": true,
@@ -14508,6 +14632,7 @@
         {
           "default": "",
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "PicUrlExpireTime",
           "required": true,
@@ -14922,11 +15047,12 @@
       "usage": "out"
     },
     "MediaMiniProgramReviewElem": {
-      "document": "小程序审核概要元信息",
+      "document": "小程序智能识别概要元信息",
       "members": [
         {
           "default": "",
-          "document": "审核类型。 \n<li>Porn：画面涉黄，</li>\n<li>Porn.Ocr：文字涉黄，</li>\n<li>Porn.Asr：声音涉黄，</li>\n<li>Terrorism：画面涉暴恐，</li>\n<li>Political：画面涉政，</li>\n<li>Political.Ocr：文字涉政，</li>\n<li>Political.Asr：声音涉政。</li>",
+          "document": "智能识别类型。 \n<li>Porn：画面涉及令人反感的信息，</li>\n<li>Porn.Ocr：文字涉及令人反感的信息，</li>\n<li>Porn.Asr：声音涉及令人反感的信息，</li>\n<li>Terrorism：画面涉及令人不安全的信息，</li>\n<li>Political：画面涉及令人不适宜的信息，</li>\n<li>Political.Ocr：文字涉及令人不适宜的信息，</li>\n<li>Political.Asr：声音涉及令人不适宜的信息。</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -14935,7 +15061,8 @@
         },
         {
           "default": "",
-          "document": "审核意见。\n<li>pass：确认正常，</li>\n<li>block：确认违规，</li>\n<li>review：疑似违规。</li>",
+          "document": "智能识别意见。\n<li>pass：确认正常，</li>\n<li>block：确认违规，</li>\n<li>review：疑似违规。</li>",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
           "required": true,
@@ -14944,7 +15071,8 @@
         },
         {
           "default": "",
-          "document": "审核结果置信度。取值 0~100。",
+          "document": "智能识别结果置信度。取值 0~100。",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -14955,11 +15083,12 @@
       "usage": "out"
     },
     "MediaMiniProgramReviewInfo": {
-      "document": "小程序审核信息",
+      "document": "小程序智能识别信息",
       "members": [
         {
           "default": "",
-          "document": "审核信息列表。",
+          "document": "智能识别信息列表。",
+          "example": "无",
           "member": "MediaMiniProgramReviewInfoItem",
           "name": "MiniProgramReviewList",
           "required": true,
@@ -14970,11 +15099,12 @@
       "usage": "out"
     },
     "MediaMiniProgramReviewInfoItem": {
-      "document": "小程序审核信息单元",
+      "document": "小程序智能识别信息单元",
       "members": [
         {
           "default": "",
           "document": "模板id。小程序视频发布的视频所对应的转码模板ID，为0代表原始视频。",
+          "example": "无",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -14984,6 +15114,7 @@
         {
           "default": "",
           "document": "视频元信息。",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "required": false,
@@ -14992,7 +15123,8 @@
         },
         {
           "default": "",
-          "document": "小程序审核视频播放地址。",
+          "document": "小程序智能识别视频播放地址。",
+          "example": "无",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -15002,6 +15134,7 @@
         {
           "default": "",
           "document": "小程序视频发布状态：\n<li>Pass：成功。</li>\n<li>Rejected：未通过。</li>",
+          "example": "无",
           "member": "string",
           "name": "ReviewResult",
           "required": true,
@@ -15010,7 +15143,8 @@
         },
         {
           "default": "",
-          "document": "小程序审核元素。",
+          "document": "小程序智能识别元素。",
+          "example": "无",
           "member": "MediaMiniProgramReviewElem",
           "name": "ReviewSummary",
           "required": true,
@@ -15743,6 +15877,7 @@
         {
           "default": "",
           "document": "指定时间点截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -15752,6 +15887,7 @@
         {
           "default": "",
           "document": "同一规格的截图信息集合，每个元素代表一张截图。",
+          "example": "null",
           "member": "MediaSnapshotByTimePicInfoItem",
           "name": "PicInfoSet",
           "required": true,
@@ -18498,11 +18634,12 @@
       "usage": "out"
     },
     "PoliticalAsrReviewTemplateInfo": {
-      "document": "语音鉴政任务控制参数",
+      "document": "语音鉴别涉及令人不适宜的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "语音鉴政任务开关，可选值：\n<li>ON：开启语音鉴政任务；</li>\n<li>OFF：关闭语音鉴政任务。</li>",
+          "document": "语音鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启语音鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭语音鉴别的涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -18510,19 +18647,21 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
-          "name": "BlockConfidence",
+          "name": "ReviewConfidence",
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
-          "name": "ReviewConfidence",
+          "name": "BlockConfidence",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18531,11 +18670,12 @@
       "usage": "both"
     },
     "PoliticalAsrReviewTemplateInfoForUpdate": {
-      "document": "语音鉴政任务控制参数。",
+      "document": "语音鉴别涉及令人不适宜的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "语音鉴政任务开关，可选值：\n<li>ON：开启语音鉴政任务；</li>\n<li>OFF：关闭语音鉴政任务。</li>",
+          "document": "语音鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启语音鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭语音鉴别涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -18544,7 +18684,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18553,7 +18694,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18564,11 +18706,12 @@
       "usage": "in"
     },
     "PoliticalConfigureInfo": {
-      "document": "鉴政任务控制参数",
+      "document": "鉴别涉及令人不适宜的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴政控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画面鉴别涉及令人不适宜的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PoliticalImgReviewTemplateInfo",
           "name": "ImgReviewInfo",
           "required": false,
@@ -18577,7 +18720,8 @@
         },
         {
           "default": "",
-          "document": "语音鉴政控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音鉴别涉及令人不适宜的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PoliticalAsrReviewTemplateInfo",
           "name": "AsrReviewInfo",
           "required": false,
@@ -18586,7 +18730,8 @@
         },
         {
           "default": "",
-          "document": "文本鉴政控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本鉴别涉及令人不适宜的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PoliticalOcrReviewTemplateInfo",
           "name": "OcrReviewInfo",
           "required": false,
@@ -18597,11 +18742,12 @@
       "usage": "both"
     },
     "PoliticalConfigureInfoForUpdate": {
-      "document": "鉴政任务控制参数。",
+      "document": "鉴别涉及令人不适宜的信息的控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴政控制参数。",
+          "document": "画面鉴别涉及令人不适宜的信息的控制参数。",
+          "example": "无",
           "member": "PoliticalImgReviewTemplateInfoForUpdate",
           "name": "ImgReviewInfo",
           "required": false,
@@ -18610,7 +18756,8 @@
         },
         {
           "default": "",
-          "document": "语音鉴政控制参数。",
+          "document": "语音鉴别涉及令人不适宜的信息的控制参数。",
+          "example": "无",
           "member": "PoliticalAsrReviewTemplateInfoForUpdate",
           "name": "AsrReviewInfo",
           "required": false,
@@ -18619,7 +18766,8 @@
         },
         {
           "default": "",
-          "document": "文本鉴政控制参数。",
+          "document": "文本鉴别涉及令人不适宜的信息的控制参数。",
+          "example": "无",
           "member": "PoliticalOcrReviewTemplateInfoForUpdate",
           "name": "OcrReviewInfo",
           "required": false,
@@ -18630,11 +18778,12 @@
       "usage": "in"
     },
     "PoliticalImgReviewTemplateInfo": {
-      "document": "画面鉴政任务控制参数",
+      "document": "画面鉴别涉及令人不适宜的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴政任务开关，可选值：\n<li>ON：开启画面鉴政任务；</li>\n<li>OFF：关闭画面鉴政任务。</li>",
+          "document": "画面鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -18643,7 +18792,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：政治人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：军事人物。</li>",
+          "document": "画面鉴别涉及令人不适宜的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：相关人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：相关人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -18652,7 +18802,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18661,7 +18812,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18672,11 +18824,12 @@
       "usage": "both"
     },
     "PoliticalImgReviewTemplateInfoForUpdate": {
-      "document": "画面鉴政任务控制参数。",
+      "document": "画面鉴别涉及令人不适宜的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴政任务开关，可选值：\n<li>ON：开启画面鉴政任务；</li>\n<li>OFF：关闭画面鉴政任务。</li>",
+          "document": "画面鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -18685,7 +18838,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：政治人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：军事人物。</li>",
+          "document": "画面鉴别涉及令人不适宜的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回，可选值为：\n<li>violation_photo：违规图标；</li>\n<li>politician：相关人物；</li>\n<li>entertainment：娱乐人物；</li>\n<li>sport：体育人物；</li>\n<li>entrepreneur：商业人物；</li>\n<li>scholar：教育学者；</li>\n<li>celebrity：知名人物；</li>\n<li>military：相关人物。</li>",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -18694,7 +18848,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18703,7 +18858,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18714,11 +18870,12 @@
       "usage": "in"
     },
     "PoliticalOcrReviewTemplateInfo": {
-      "document": "文本鉴政任务控制参数",
+      "document": "文本鉴别涉及令人不适宜的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "文本鉴政任务开关，可选值：\n<li>ON：开启文本鉴政任务；</li>\n<li>OFF：关闭文本鉴政任务。</li>",
+          "document": "文本鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -18726,8 +18883,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18735,8 +18893,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18747,11 +18906,12 @@
       "usage": "both"
     },
     "PoliticalOcrReviewTemplateInfoForUpdate": {
-      "document": "文本鉴政任务控制参数。",
+      "document": "文本鉴别涉及令人不适宜的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "文本鉴政任务开关，可选值：\n<li>ON：开启文本鉴政任务；</li>\n<li>OFF：关闭文本鉴政任务。</li>",
+          "document": "文本鉴别涉及令人不适宜的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人不适宜的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人不适宜的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -18760,7 +18920,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18769,7 +18930,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18780,11 +18942,12 @@
       "usage": "in"
     },
     "PornAsrReviewTemplateInfo": {
-      "document": "语音鉴黄任务控制参数",
+      "document": "语音鉴别涉及令人反感的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "语音鉴黄任务开关，可选值：\n<li>ON：开启语音鉴黄任务；</li>\n<li>OFF：关闭语音鉴黄任务。</li>",
+          "document": "语音鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -18792,8 +18955,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18801,8 +18965,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18813,11 +18978,12 @@
       "usage": "both"
     },
     "PornAsrReviewTemplateInfoForUpdate": {
-      "document": "语音鉴黄任务控制参数。",
+      "document": "语音鉴别涉及令人反感的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "语音鉴黄任务开关，可选值：\n<li>ON：开启语音鉴黄任务；</li>\n<li>OFF：关闭语音鉴黄任务。</li>",
+          "document": "语音鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启语音鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭语音鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -18826,7 +18992,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18835,7 +19002,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18846,11 +19014,12 @@
       "usage": "in"
     },
     "PornConfigureInfo": {
-      "document": "鉴黄任务控制参数",
+      "document": "鉴别涉及令人反感的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴黄控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画面鉴别涉及令人反感的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PornImgReviewTemplateInfo",
           "name": "ImgReviewInfo",
           "required": false,
@@ -18859,7 +19028,8 @@
         },
         {
           "default": "",
-          "document": "语音鉴黄控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音鉴别涉及令人反感的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PornAsrReviewTemplateInfo",
           "name": "AsrReviewInfo",
           "required": false,
@@ -18868,7 +19038,8 @@
         },
         {
           "default": "",
-          "document": "文本鉴黄控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本鉴别涉及令人反感的信息的控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PornOcrReviewTemplateInfo",
           "name": "OcrReviewInfo",
           "required": false,
@@ -18879,11 +19050,12 @@
       "usage": "both"
     },
     "PornConfigureInfoForUpdate": {
-      "document": "鉴黄任务控制参数。",
+      "document": "鉴别涉及令人反感的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴黄控制参数。",
+          "document": "画面鉴别涉及令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornImgReviewTemplateInfoForUpdate",
           "name": "ImgReviewInfo",
           "required": false,
@@ -18892,7 +19064,8 @@
         },
         {
           "default": "",
-          "document": "语音鉴黄控制参数。",
+          "document": "语音鉴别涉及令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornAsrReviewTemplateInfoForUpdate",
           "name": "AsrReviewInfo",
           "required": false,
@@ -18901,7 +19074,8 @@
         },
         {
           "default": "",
-          "document": "文本鉴黄控制参数。",
+          "document": "文本鉴别涉及令人反感的信息的控制参数。",
+          "example": "无",
           "member": "PornOcrReviewTemplateInfoForUpdate",
           "name": "OcrReviewInfo",
           "required": false,
@@ -18912,11 +19086,12 @@
       "usage": "in"
     },
     "PornImgReviewTemplateInfo": {
-      "document": "画面鉴黄任务控制参数",
+      "document": "画面鉴别涉及令人反感的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴黄任务开关，可选值：\n<li>ON：开启画面鉴黄任务；</li>\n<li>OFF：关闭画面鉴黄任务。</li>",
+          "document": "画面鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -18925,7 +19100,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴黄过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
+          "document": "画面鉴别涉及令人反感的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -18933,8 +19109,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "90",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18942,8 +19119,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 0 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 0 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18954,11 +19132,12 @@
       "usage": "both"
     },
     "PornImgReviewTemplateInfoForUpdate": {
-      "document": "画面鉴黄任务控制参数。",
+      "document": "画面鉴别涉及令人反感的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴黄任务开关，可选值：\n<li>ON：开启画面鉴黄任务；</li>\n<li>OFF：关闭画面鉴黄任务。</li>",
+          "document": "画面鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -18967,7 +19146,8 @@
         },
         {
           "default": "",
-          "document": "画面鉴黄过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
+          "document": "画面鉴别涉及令人反感的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -18976,7 +19156,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -18985,7 +19166,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -18996,11 +19178,12 @@
       "usage": "in"
     },
     "PornOcrReviewTemplateInfo": {
-      "document": "文本鉴黄任务控制参数",
+      "document": "文本鉴别涉及令人反感的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "文本鉴黄任务开关，可选值：\n<li>ON：开启文本鉴黄任务；</li>\n<li>OFF：关闭文本鉴黄任务。</li>",
+          "document": "文本鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -19008,8 +19191,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19017,8 +19201,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19029,11 +19214,12 @@
       "usage": "both"
     },
     "PornOcrReviewTemplateInfoForUpdate": {
-      "document": "文本鉴黄任务控制参数。",
+      "document": "文本鉴别涉及令人反感的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "文本鉴黄任务开关，可选值：\n<li>ON：开启文本鉴黄任务；</li>\n<li>OFF：关闭文本鉴黄任务。</li>",
+          "document": "文本鉴别涉及令人反感的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人反感的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人反感的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -19043,6 +19229,7 @@
         {
           "default": "",
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19052,6 +19239,7 @@
         {
           "default": "",
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19067,6 +19255,7 @@
         {
           "default": "",
           "document": "视频处理任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -19076,6 +19265,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -19085,6 +19275,7 @@
         {
           "default": "",
           "document": "已弃用，请使用各个具体任务的 ErrCode。",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -19094,6 +19285,7 @@
         {
           "default": "",
           "document": "已弃用，请使用各个具体任务的 Message。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -19103,6 +19295,7 @@
         {
           "default": "",
           "document": "媒体文件 ID\n<li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 FileId；</li>\n<li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Id。</li>",
+          "example": "无",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -19112,6 +19305,7 @@
         {
           "default": "",
           "document": "媒体文件名称\n<li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.Name；</li>\n<li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Name。</li>",
+          "example": "无",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -19121,6 +19315,7 @@
         {
           "default": "",
           "document": "媒体文件地址\n<li>若流程由 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起，该字段表示 [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo) 的 BasicInfo.MediaUrl；</li>\n<li>若流程由 [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) 发起，该字段表示 [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo) 的 Url。</li>",
+          "example": "无",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -19130,6 +19325,7 @@
         {
           "default": "",
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "required": true,
@@ -19139,6 +19335,7 @@
         {
           "default": "",
           "document": "视频处理任务的执行状态与结果。",
+          "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
           "required": true,
@@ -19147,7 +19344,8 @@
         },
         {
           "default": "",
-          "document": "视频内容审核任务的执行状态与结果。",
+          "document": "视频智能识别任务的执行状态与结果。",
+          "example": "无",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
           "required": true,
@@ -19157,6 +19355,7 @@
         {
           "default": "",
           "document": "视频内容分析任务的执行状态与结果。",
+          "example": "无",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
           "required": true,
@@ -19166,6 +19365,7 @@
         {
           "default": "",
           "document": "视频内容识别任务的执行状态与结果。",
+          "example": "无",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
           "required": true,
@@ -19175,6 +19375,7 @@
         {
           "default": "",
           "document": "任务流的优先级，取值范围为 [-10, 10]。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": true,
@@ -19184,6 +19385,7 @@
         {
           "default": "",
           "document": "任务流状态变更通知模式。\n<li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知；</li>\n<li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知；</li>\n<li>None：不接受该任务流回调。</li>",
+          "example": "无",
           "member": "string",
           "name": "TasksNotifyMode",
           "required": true,
@@ -19193,6 +19395,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": true,
@@ -19202,6 +19405,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -19217,6 +19421,7 @@
         {
           "default": "",
           "document": "任务流名字。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -19226,6 +19431,7 @@
         {
           "default": "",
           "document": "任务流模板类型，取值范围：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -19235,6 +19441,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -19244,6 +19451,7 @@
         {
           "default": "",
           "document": "视频处理类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": true,
@@ -19252,7 +19460,8 @@
         },
         {
           "default": "",
-          "document": "AI 智能内容审核类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI 智能识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": true,
@@ -19262,6 +19471,7 @@
         {
           "default": "",
           "document": "AI 智能内容分析类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": true,
@@ -19271,6 +19481,7 @@
         {
           "default": "",
           "document": "AI 内容识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": true,
@@ -19280,6 +19491,7 @@
         {
           "default": "",
           "document": "微信小程序发布任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WechatMiniProgramPublishTaskInput",
           "name": "MiniProgramPublishTask",
           "required": true,
@@ -19289,6 +19501,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -19298,6 +19511,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -19507,6 +19721,7 @@
         {
           "default": "",
           "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -19515,6 +19730,7 @@
         {
           "default": "",
           "document": "视频处理类型任务参数。",
+          "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": false,
@@ -19522,7 +19738,8 @@
         },
         {
           "default": "",
-          "document": "视频内容审核类型任务参数。",
+          "document": "视频智能识别类型任务参数。",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
@@ -19531,6 +19748,7 @@
         {
           "default": "",
           "document": "视频内容分析类型任务参数。",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
@@ -19539,6 +19757,7 @@
         {
           "default": "",
           "document": "视频内容识别类型任务参数。",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
@@ -19547,6 +19766,7 @@
         {
           "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -19555,6 +19775,7 @@
         {
           "default": "",
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
+          "example": "无",
           "member": "string",
           "name": "TasksNotifyMode",
           "required": false,
@@ -19563,6 +19784,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -19571,6 +19793,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -19579,6 +19802,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -19587,6 +19811,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -19600,8 +19825,10 @@
       "members": [
         {
           "document": "任务 ID",
+          "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19715,7 +19942,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源类型。\n<li>Storage：存储资源包。</li>\n<li>Traffic：流量资源包。</li>\n<li>Transcode：普通转码资源包。</li>\n<li>TESHD：极速高清转码资源包。</li>\n<li>Review：视频审核转码资源包。</li>",
+          "document": "资源类型。\n<li>Storage：存储资源包。</li>\n<li>Traffic：流量资源包。</li>\n<li>Transcode：普通转码资源包。</li>\n<li>TESHD：极速高清转码资源包。</li>\n<li>Review：视频智能识别转码资源包。</li>",
           "example": "无",
           "member": "string",
           "name": "ResourceType",
@@ -19725,7 +19952,7 @@
         },
         {
           "default": "",
-          "document": "资源包额度。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频审核资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
+          "document": "资源包额度。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频智能识别资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
           "example": "无",
           "member": "int64",
           "name": "Amount",
@@ -19735,7 +19962,7 @@
         },
         {
           "default": "",
-          "document": "资源包余量。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频审核资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
+          "document": "资源包余量。\n<li>视频存储资源包，单位为字节。</li>\n<li>视频转码资源包，单位为秒。</li>\n<li>视频智能识别资源包，单位为秒。</li>\n<li>视频极速高清资源包，单位为秒。</li>\n<li>视频加速资源包，单位为字节。</li>",
           "example": "无",
           "member": "int64",
           "name": "Left",
@@ -19752,6 +19979,7 @@
         {
           "default": "",
           "document": "语音违禁任务开关，可选值：\n<li>ON：开启语音违禁任务；</li>\n<li>OFF：关闭语音违禁任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -19760,7 +19988,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19769,7 +19998,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19785,6 +20015,7 @@
         {
           "default": "",
           "document": "语音违禁任务开关，可选值：\n<li>ON：开启语音违禁任务；</li>\n<li>OFF：关闭语音违禁任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -19793,7 +20024,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19802,7 +20034,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19866,6 +20099,7 @@
         {
           "default": "",
           "document": "文本违禁任务开关，可选值：\n<li>ON：开启文本违禁任务；</li>\n<li>OFF：关闭文本违禁任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -19874,7 +20108,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19883,7 +20118,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -19899,6 +20135,7 @@
         {
           "default": "",
           "document": "文本违禁任务开关，可选值：\n<li>ON：开启文本违禁任务；</li>\n<li>OFF：关闭文本违禁任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -19907,7 +20144,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -19916,7 +20154,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -22199,11 +22438,12 @@
       "usage": "out"
     },
     "TerrorismConfigureInfo": {
-      "document": "鉴恐任务控制参数",
+      "document": "鉴别涉及令人不安全的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴恐任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "画面鉴别涉及令人不安全的信息的任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TerrorismImgReviewTemplateInfo",
           "name": "ImgReviewInfo",
           "required": false,
@@ -22212,7 +22452,8 @@
         },
         {
           "default": "",
-          "document": "文字鉴恐任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字鉴别涉及令人不安全的信息的任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TerrorismOcrReviewTemplateInfo",
           "name": "OcrReviewInfo",
           "required": true,
@@ -22223,11 +22464,12 @@
       "usage": "out"
     },
     "TerrorismConfigureInfoForUpdate": {
-      "document": "鉴恐任务控制参数。",
+      "document": "鉴别涉及令人不安全的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴恐任务控制参数。",
+          "document": "画面鉴别涉及令人不安全的信息的任务控制参数。",
+          "example": "无",
           "member": "TerrorismImgReviewTemplateInfoForUpdate",
           "name": "ImgReviewInfo",
           "required": false,
@@ -22236,7 +22478,8 @@
         },
         {
           "default": "",
-          "document": "文本鉴恐任务控制参数。",
+          "document": "文本鉴别涉及令人不安全的信息的任务控制参数。",
+          "example": "无",
           "member": "TerrorismOcrReviewTemplateInfoForUpdate",
           "name": "OcrReviewInfo",
           "required": false,
@@ -22247,11 +22490,11 @@
       "usage": "in"
     },
     "TerrorismImgReviewTemplateInfo": {
-      "document": "画面鉴恐任务控制参数",
+      "document": "画面鉴别涉及令人不安全的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "document": "画面鉴别涉及令人不安全的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -22261,7 +22504,7 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "document": "画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
           "example": "guns",
           "member": "string",
           "name": "LabelSet",
@@ -22271,7 +22514,7 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
           "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
@@ -22281,7 +22524,7 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 80 分。取值范围：0~100。",
           "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -22293,11 +22536,11 @@
       "usage": "both"
     },
     "TerrorismImgReviewTemplateInfoForUpdate": {
-      "document": "画面鉴恐任务控制参数。",
+      "document": "画面鉴别涉及令人不安全的信息的任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "画面鉴恐任务开关，可选值：\n<li>ON：开启画面鉴恐任务；</li>\n<li>OFF：关闭画面鉴恐任务。</li>",
+          "document": "画面鉴别涉及令人不安全的信息的任务开关，可选值：\n<li>ON：开启画面鉴别涉及令人不安全的信息的任务；</li>\n<li>OFF：关闭画面鉴别涉及令人不安全的信息的任务。</li>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -22307,7 +22550,7 @@
         },
         {
           "default": "",
-          "document": "画面鉴恐过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
+          "document": "画面鉴别涉及令人不安全的信息的过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：暴恐旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：暴恐人物；</li>\n<li>scenario：暴恐画面。</li>",
           "example": "bloody",
           "member": "string",
           "name": "LabelSet",
@@ -22317,7 +22560,7 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
           "example": "95",
           "member": "int64",
           "name": "BlockConfidence",
@@ -22327,7 +22570,7 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
           "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
@@ -22339,11 +22582,12 @@
       "usage": "in"
     },
     "TerrorismOcrReviewTemplateInfo": {
-      "document": "文本鉴恐任务控制参数",
+      "document": "文本鉴别涉及令人不安全的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "文本鉴恐任务开关，可选值：\n<li>ON：开启文本鉴恐任务；</li>\n<li>OFF：关闭文本鉴恐任务。</li>",
+          "document": "文本鉴别涉及令人不安全的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人不安全的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人不安全的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -22352,7 +22596,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -22361,7 +22606,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -22372,11 +22618,12 @@
       "usage": "both"
     },
     "TerrorismOcrReviewTemplateInfoForUpdate": {
-      "document": "文本鉴恐任务控制参数",
+      "document": "文本鉴别涉及令人不安全的信息的任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "文本鉴恐任务开关，可选值：\n<li>ON：开启文本鉴恐任务；</li>\n<li>OFF：关闭文本鉴恐任务。</li>",
+          "document": "文本鉴别涉及令人不安全的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人不安全的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人不安全的信息的任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -22385,7 +22632,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -22394,7 +22642,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -22874,11 +23123,12 @@
       "usage": "both"
     },
     "UserDefineAsrTextReviewTemplateInfo": {
-      "document": "用户自定义语音审核任务控制参数",
+      "document": "用户自定义语音智能识别任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "用户自定语音审核任务开关，可选值：\n<li>ON：开启自定义语音审核任务；</li>\n<li>OFF：关闭自定义语音审核任务。</li>",
+          "document": "用户自定语音智能识别任务开关，可选值：\n<li>ON：开启自定义语音智能识别任务；</li>\n<li>OFF：关闭自定义语音智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -22887,7 +23137,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义语音过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义语音关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义语音过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义语音关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -22895,8 +23146,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -22904,8 +23156,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -22916,11 +23169,12 @@
       "usage": "both"
     },
     "UserDefineAsrTextReviewTemplateInfoForUpdate": {
-      "document": "用户自定义语音审核任务控制参数",
+      "document": "用户自定义语音智能识别任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "用户自定语音审核任务开关，可选值：\n<li>ON：开启自定义语音审核任务；</li>\n<li>OFF：关闭自定义语音审核任务。</li>",
+          "document": "用户自定语音智能识别任务开关，可选值：\n<li>ON：开启自定义语音智能识别任务；</li>\n<li>OFF：关闭自定义语音智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -22929,7 +23183,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义语音过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义语音关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义语音过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回。如果要使用标签过滤功能，添加自定义语音关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -22938,7 +23193,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -22947,7 +23203,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -22958,11 +23215,12 @@
       "usage": "in"
     },
     "UserDefineConfigureInfo": {
-      "document": "用户自定义审核任务控制参数",
+      "document": "用户自定义智能识别任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "用户自定义人物审核控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义人物智能识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserDefineFaceReviewTemplateInfo",
           "name": "FaceReviewInfo",
           "required": false,
@@ -22971,7 +23229,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义语音审核控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义语音智能识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserDefineAsrTextReviewTemplateInfo",
           "name": "AsrReviewInfo",
           "required": false,
@@ -22980,7 +23239,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义文本审核控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义文本智能识别控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UserDefineOcrTextReviewTemplateInfo",
           "name": "OcrReviewInfo",
           "required": false,
@@ -22991,11 +23251,12 @@
       "usage": "both"
     },
     "UserDefineConfigureInfoForUpdate": {
-      "document": "用户自定义审核任务控制参数。",
+      "document": "用户自定义智能识别任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "用户自定义人物审核控制参数。",
+          "document": "用户自定义人物智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineFaceReviewTemplateInfoForUpdate",
           "name": "FaceReviewInfo",
           "required": false,
@@ -23004,7 +23265,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义语音审核控制参数。",
+          "document": "用户自定义语音智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineAsrTextReviewTemplateInfoForUpdate",
           "name": "AsrReviewInfo",
           "required": false,
@@ -23013,7 +23275,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义文本审核控制参数。",
+          "document": "用户自定义文本智能识别控制参数。",
+          "example": "无",
           "member": "UserDefineOcrTextReviewTemplateInfoForUpdate",
           "name": "OcrReviewInfo",
           "required": false,
@@ -23024,11 +23287,12 @@
       "usage": "in"
     },
     "UserDefineFaceReviewTemplateInfo": {
-      "document": "用户自定义人物审核任务控制参数",
+      "document": "用户自定义人物智能识别任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "用户自定义人物审核任务开关，可选值：\n<li>ON：开启自定义人物审核任务；</li>\n<li>OFF：关闭自定义人物审核任务。</li>",
+          "document": "用户自定义人物智能识别任务开关，可选值：\n<li>ON：开启自定义人物智能识别任务；</li>\n<li>OFF：关闭自定义人物智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -23037,7 +23301,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义人物过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义人物库的时，需要添加对应人物标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义人物过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义人物库的时，需要添加对应人物标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -23045,8 +23310,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "97",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能智能识别达到该分数以上，认为涉嫌违规，不填默认为 97 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -23054,8 +23320,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "95",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 95 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -23066,11 +23333,12 @@
       "usage": "both"
     },
     "UserDefineFaceReviewTemplateInfoForUpdate": {
-      "document": "用户自定义人物审核任务控制参数。",
+      "document": "用户自定义人物智能识别任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "用户自定义人物审核任务开关，可选值：\n<li>ON：开启自定义人物审核任务；</li>\n<li>OFF：关闭自定义人物审核任务。</li>",
+          "document": "用户自定义人物智能识别任务开关，可选值：\n<li>ON：开启自定义人物智能识别任务；</li>\n<li>OFF：关闭自定义人物智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -23079,7 +23347,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义人物过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义人物库的时，需要添加对应人物标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义人物过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回。如果要使用标签过滤功能，添加自定义人物库的时，需要添加对应人物标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -23088,7 +23357,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -23097,7 +23367,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -23108,11 +23379,12 @@
       "usage": "in"
     },
     "UserDefineOcrTextReviewTemplateInfo": {
-      "document": "用户自定义文本审核任务控制参数",
+      "document": "用户自定义文本智能识别任务控制参数",
       "members": [
         {
           "default": "",
-          "document": "用户自定文本审核任务开关，可选值：\n<li>ON：开启自定义文本审核任务；</li>\n<li>OFF：关闭自定义文本审核任务。</li>",
+          "document": "用户自定文本智能识别任务开关，可选值：\n<li>ON：开启自定义文本智能识别任务；</li>\n<li>OFF：关闭自定义文本智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -23121,7 +23393,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义文本过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义文本过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -23129,8 +23402,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "100",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -23138,8 +23412,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "75",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "default": "",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -23150,11 +23425,12 @@
       "usage": "both"
     },
     "UserDefineOcrTextReviewTemplateInfoForUpdate": {
-      "document": "用户自定义文本审核任务控制参数。",
+      "document": "用户自定义文本智能识别任务控制参数。",
       "members": [
         {
           "default": "",
-          "document": "用户自定文本审核任务开关，可选值：\n<li>ON：开启自定义文本审核任务；</li>\n<li>OFF：关闭自定义文本审核任务。</li>",
+          "document": "用户自定文本智能识别任务开关，可选值：\n<li>ON：开启自定义文本智能识别任务；</li>\n<li>OFF：关闭自定义文本智能识别任务。</li>",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
@@ -23163,7 +23439,8 @@
         },
         {
           "default": "",
-          "document": "用户自定义文本过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "document": "用户自定义文本过滤标签，智能识别结果包含选择的标签则返回结果，如果过滤标签为空，则智能识别结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
@@ -23172,7 +23449,8 @@
         },
         {
           "default": "",
-          "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "document": "判定涉嫌违规的分数阈值，当智能识别达到该分数以上，认为涉嫌违规。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
@@ -23181,7 +23459,8 @@
         },
         {
           "default": "",
-          "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "document": "判定需人工复核是否违规的分数阈值，当智能识别达到该分数以上，认为需人工复核。取值范围：0~100。",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
@@ -23719,6 +23998,7 @@
         {
           "default": "",
           "document": "任务 ID。",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -23728,6 +24008,7 @@
         {
           "default": "",
           "document": "任务状态，取值：\nWAITING：等待中；\nPROCESSING：处理中；\nFINISH：已完成。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -23737,6 +24018,7 @@
         {
           "default": "",
           "document": "错误码\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -23746,6 +24028,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "无",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -23755,6 +24038,7 @@
         {
           "default": "",
           "document": "发布视频文件 ID。",
+          "example": "无",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -23764,6 +24048,7 @@
         {
           "default": "",
           "document": "发布视频所对应的转码模板 ID，为 0 代表原始视频。",
+          "example": "无",
           "member": "uint64",
           "name": "SourceDefinition",
           "required": true,
@@ -23772,7 +24057,8 @@
         },
         {
           "default": "",
-          "document": "微信小程序视频发布状态，取值：\n<li>Pass：发布成功；</li>\n<li>Failed：发布失败；</li>\n<li>Rejected：审核未通过。</li>",
+          "document": "微信小程序视频发布状态，取值：\n<li>Pass：发布成功；</li>\n<li>Failed：发布失败；</li>\n<li>Rejected：智能识别未通过。</li>",
+          "example": "无",
           "member": "string",
           "name": "PublishResult",
           "required": true,

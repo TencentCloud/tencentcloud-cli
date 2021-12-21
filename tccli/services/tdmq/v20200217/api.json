@@ -378,6 +378,18 @@
       "name": "生产者列表",
       "output": "DescribeProducersResponse"
     },
+    "DescribePublisherSummary": {
+      "document": "获取消息生产概览信息",
+      "input": "DescribePublisherSummaryRequest",
+      "name": "获取消息生产概览",
+      "output": "DescribePublisherSummaryResponse"
+    },
+    "DescribePublishers": {
+      "document": "获取生产者信息列表",
+      "input": "DescribePublishersRequest",
+      "name": "获取生产者信息",
+      "output": "DescribePublishersResponse"
+    },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",
       "input": "DescribeRocketMQClusterRequest",
@@ -6410,6 +6422,186 @@
       ],
       "type": "object"
     },
+    "DescribePublisherSummaryRequest": {
+      "document": "DescribePublisherSummary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "test",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublisherSummaryResponse": {
+      "document": "DescribePublisherSummary返回参数结构体",
+      "members": [
+        {
+          "document": "生产速率（条/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "MsgRateIn",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "生产速率（字节/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "MsgThroughputIn",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "生产者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PublisherCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "消息存储大小，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublishersRequest": {
+      "document": "DescribePublishers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "pulsar-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "test",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数过滤器，支持ProducerName，Address字段",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序器",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublishersResponse": {
+      "document": "DescribePublishers返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生产者信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Publisher",
+          "name": "Publishers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQClusterRequest": {
       "document": "DescribeRocketMQCluster请求参数结构体",
       "members": [
@@ -8909,6 +9101,102 @@
       ],
       "type": "object"
     },
+    "Publisher": {
+      "document": "生产者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "生产者id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ProducerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ProducerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1:1234",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "客户端版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.7.2",
+          "member": "string",
+          "name": "ClientVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息生产速率（条/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21.233",
+          "member": "float",
+          "name": "MsgRateIn",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消息生产吞吐速率（字节/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21.3655",
+          "member": "float",
+          "name": "MsgThroughputIn",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平均消息大小（字节）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1233",
+          "member": "float",
+          "name": "AverageMsgSize",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectedSince",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产者连接的主题分区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReceiveMessageRequest": {
       "document": "ReceiveMessage请求参数结构体",
       "members": [
@@ -10008,6 +10296,32 @@
         }
       ],
       "type": "object"
+    },
+    "Sort": {
+      "document": "排序器",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "升序ASC，降序DESC",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Subscription": {
       "document": "订阅者",

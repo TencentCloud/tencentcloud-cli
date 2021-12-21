@@ -119,6 +119,12 @@
       "input": "RevertDeployApplicationRequest",
       "name": "回滚分批发布",
       "output": "RevertDeployApplicationResponse"
+    },
+    "RollingUpdateApplicationByVersion": {
+      "document": "更新应用部署版本",
+      "input": "RollingUpdateApplicationByVersionRequest",
+      "name": "更新应用部署版本",
+      "output": "RollingUpdateApplicationByVersionResponse"
     }
   },
   "metadata": {
@@ -2947,6 +2953,78 @@
           "name": "Result",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollingUpdateApplicationByVersionRequest": {
+      "document": "RollingUpdateApplicationByVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新版本，IMAGE 部署为 tag 值；JAR/WAR 部署 为 Version",
+          "example": "v1",
+          "member": "string",
+          "name": "DeployVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "JAR/WAR 包名，仅 JAR/WAR 部署时必填",
+          "example": "xxx",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求来源平台，含 IntelliJ，Coding",
+          "example": "IntelliJ",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollingUpdateApplicationByVersionResponse": {
+      "document": "RollingUpdateApplicationByVersion返回参数结构体",
+      "members": [
+        {
+          "document": "版本ID",
+          "example": "1",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

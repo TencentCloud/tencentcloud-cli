@@ -147,7 +147,7 @@
         },
         {
           "default": "",
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubLabel",
@@ -269,7 +269,7 @@
         },
         {
           "default": "",
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubLabel",
@@ -355,7 +355,7 @@
         },
         {
           "default": "",
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubLabel",
@@ -881,7 +881,7 @@
         },
         {
           "default": "",
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "SubLabel",
@@ -1497,7 +1497,7 @@
         },
         {
           "default": "",
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SubLabel",

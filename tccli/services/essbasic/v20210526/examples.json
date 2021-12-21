@@ -54,6 +54,22 @@
         "title": "渠道用量查询-需要汇总"
       }
     ],
+    "GetDownloadFlowUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDownloadFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"DownLoadFlows\": [\n        {\n            \"FlowIdList\": [\n                \"test-flow-id1\",\n                \"test-flow-id2\"\n            ],\n            \"FileName\": \"文件夹1\"\n        },\n        {\n            \"FlowIdList\": [\n                \"test-flow-id3\",\n                \"test-flow-id4\"\n            ],\n            \"FileName\": \"文件夹2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DownLoadUrl\": \"https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1639587153&code=yDxjKUUgydjf9pruUuO4zjES4adWk38k&token=yDxjKUUgydjf9pruUuO4zjES4adWk38k&operate=downloadFlow\",\n        \"RequestId\": \"s16221xxx14775648\"\n    }\n}",
+        "title": "生成批量下载控制连接地址"
+      }
+    ],
+    "OperateChannelTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"TemplateId\": \"yDxlkUyKQDpMlwUuO4zjEvToNRI2MuTr\",\n    \"OperateType\": \"select\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"16fd2f7d7ae85d13ca5f8d501d57b5ec\",\n        \"AuthTag\": \"all\",\n        \"FailMessageList\": [],\n        \"OperateResult\": \"all-success\",\n        \"ProxyOrganizationOpenIds\": [\n            \"合作企业1\",\n            \"合作企业2\"\n        ],\n        \"TemplateId\": \"yDxlkUyKQDpMlwUuO4zjEvToNRI2MuTr\",\n        \"RequestId\": \"s1639589450249716125\"\n    }\n}",
+        "title": "查询模板库中的模板信息"
+      }
+    ],
     "PrepareFlows": [
       {
         "document": "",

@@ -145,7 +145,7 @@
           "example": "NFS 3.0",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -155,7 +155,7 @@
           "example": "SD",
           "member": "string",
           "name": "StorageType",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -288,8 +288,8 @@
         },
         {
           "default": "",
-          "document": "调度器类型。目前仅支持SGE调度器。",
-          "example": "无",
+          "document": "调度器类型。<br><li>SGE：SGE调度器。",
+          "example": "SGE",
           "member": "string",
           "name": "SchedulerType",
           "required": false,
@@ -351,7 +351,7 @@
         },
         {
           "default": "",
-          "document": "域名字服务类型。目前仅支持NIS域名字服务。",
+          "document": "域名字服务类型。<br><li>NIS：NIS域名字服务。",
           "example": "无",
           "member": "string",
           "name": "AccountType",
@@ -383,13 +383,13 @@
       "document": "CreateCluster返回参数结构体",
       "members": [
         {
-          "document": "集群ID。",
+          "document": "集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

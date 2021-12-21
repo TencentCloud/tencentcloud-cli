@@ -320,6 +320,7 @@
         {
           "default": "",
           "document": "数据迁移任务名称",
+          "example": "usertest                               // DTS任务名称",
           "member": "string",
           "name": "JobName",
           "required": true,
@@ -328,6 +329,7 @@
         {
           "default": "",
           "document": "迁移任务配置选项",
+          "example": "无",
           "member": "MigrateOption",
           "name": "MigrateOption",
           "required": true,
@@ -335,7 +337,8 @@
         },
         {
           "default": "",
-          "document": "源实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
+          "document": "源实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona，sqlserver 不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
+          "example": "mysql                          // 源实例是mysql",
           "member": "string",
           "name": "SrcDatabaseType",
           "required": true,
@@ -344,6 +347,7 @@
         {
           "default": "",
           "document": "源实例接入类型，值包括：extranet(外网),cvm(CVM自建实例),dcg(专线接入的实例),vpncloud(云VPN接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)",
+          "example": "extranet                         // 公网迁移",
           "member": "string",
           "name": "SrcAccessType",
           "required": true,
@@ -352,6 +356,7 @@
         {
           "default": "",
           "document": "源实例信息，具体内容跟迁移任务类型相关",
+          "example": "无",
           "member": "SrcInfo",
           "name": "SrcInfo",
           "required": true,
@@ -359,7 +364,8 @@
         },
         {
           "default": "",
-          "document": "目标实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
+          "document": "目标实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona，sqlserver，cynosdbmysql。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
+          "example": "mysql                          // 目标实例mysql",
           "member": "string",
           "name": "DstDatabaseType",
           "required": true,
@@ -368,6 +374,7 @@
         {
           "default": "",
           "document": "目标实例接入类型，目前支持：cdb（腾讯云数据库实例）",
+          "example": "cdb                              // 目标实例是腾讯云mysql",
           "member": "string",
           "name": "DstAccessType",
           "required": true,
@@ -376,6 +383,7 @@
         {
           "default": "",
           "document": "目标实例信息",
+          "example": "无",
           "member": "DstInfo",
           "name": "DstInfo",
           "required": true,
@@ -383,11 +391,21 @@
         },
         {
           "default": "",
-          "document": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{Database:db1,Table:[table1,table2]},{Database:db2}]\n对于database-schema-table三级结构：\n[{Database:db1,Schema:s1\nTable:[table1,table2]},{Database:db1,Schema:s2\nTable:[table1,table2]},{Database:db2,Schema:s1\nTable:[table1,table2]},{Database:db3},{Database:db4\nSchema:s1}]",
+          "document": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]",
+          "example": "无",
           "member": "string",
           "name": "DatabaseInfo",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "迁移实例的tag",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -397,8 +415,10 @@
       "members": [
         {
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1187,6 +1207,7 @@
         {
           "default": "",
           "document": "订阅实例ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,

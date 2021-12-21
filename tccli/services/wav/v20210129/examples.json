@@ -16,6 +16,14 @@
         "title": "设置标签库"
       }
     ],
+    "CreateLead": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLead\n<公共请求参数>\n\n{\n    \"SeriesId\": 1376410380566495234,\n    \"SalesName\": \"李四\",\n    \"Remark\": \"备注\",\n    \"ChannelName\": \"51QC\",\n    \"DealerId\": 1438394065134600193,\n    \"SourceType\": 0,\n    \"CustomerSex\": 0,\n    \"ChannelId\": 1008,\n    \"BrandId\": 1373911438101237762,\n    \"CustomerPhone\": \"手机号\",\n    \"SalesPhone\": \"手机号\",\n    \"CcName\": \"王五\",\n    \"ModelId\": 1376759329958998019,\n    \"CreateTime\": 1638178594245,\n    \"CustomerName\": \"张三\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fea177dd-9fa6-4e76-9c8f-67f5a21f20bb\",\n        \"BusinessCode\": 0,\n        \"BusinessMsg\": \"创建成功\"\n    }\n}",
+        "title": "线索回收接口"
+      }
+    ],
     "QueryActivityJoinList": [
       {
         "document": "",
@@ -64,6 +72,14 @@
         "title": "查询线索列表接口"
       }
     ],
+    "QueryDealerInfoList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryDealerInfoList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"DealerId\": 1348080105398452226,\n                \"DealerName\": \"经销商名称\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询经销商信息列表接口"
+      }
+    ],
     "QueryExternalContactDetail": [
       {
         "document": "",
@@ -102,6 +118,14 @@
         "input": "https://wav.tencentcloudapi.com/?Action=QueryMiniAppCodeList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"MiniAdminUrl\": \"https://weworksaas-web-dev.map.qq.com/\",\n                \"State\": 1,\n                \"CreateTime\": 1618556502,\n                \"UpdateTime\": 1618556507,\n                \"MiniAppName\": \"官方小程序\",\n                \"MiniAppLogo\": \"https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.com/media/9b2bfb85-9d3a-41d2-a6cb-2ac95b11af68.jpg\",\n                \"Id\": 10\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
         "title": "查询小程序码列表"
+      }
+    ],
+    "QueryVehicleInfoList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryVehicleInfoList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"HasMore\": 1,\n        \"PageData\": [\n            {\n                \"BrandId\": 1348081115398452226,\n                \"BrandName\": \"品牌名称\",\n                \"SeriesId\": 1348080105398452333,\n                \"SeriesName\": \"车系名称\",\n                \"ModelId\": 1348084565398452121,\n                \"ModelName\": \"车型名称\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询车系车型信息列表接口"
       }
     ]
   },

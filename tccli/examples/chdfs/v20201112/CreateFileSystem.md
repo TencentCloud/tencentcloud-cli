@@ -32,7 +32,11 @@ Output:
                 "hadoop"
             ],
             "PosixAcl": true,
-            "Status": 1
+            "Status": 1,
+            "EnableRanger": false,
+            "RangerServiceAddresses": [
+                "127.0.0.1:8080"
+            ]
         },
         "RequestId": "ecba2ede-de08-41d5-99cc-b5444912b7f2"
     }

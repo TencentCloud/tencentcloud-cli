@@ -30,6 +30,12 @@
       "name": "设置DDoS防护的AI防护开关",
       "output": "CreateDDoSAIResponse"
     },
+    "CreateDDoSBlackWhiteIpList": {
+      "document": "添加DDoS防护的IP网段黑白名单",
+      "input": "CreateDDoSBlackWhiteIpListRequest",
+      "name": "添加DDoS防护的IP网段黑白名单",
+      "output": "CreateDDoSBlackWhiteIpListResponse"
+    },
     "CreateDDoSGeoIPBlockConfig": {
       "document": "添加DDoS防护的区域封禁配置",
       "input": "CreateDDoSGeoIPBlockConfigRequest",
@@ -96,6 +102,12 @@
       "name": "删除DDoS防护的IP黑白名单",
       "output": "DeleteBlackWhiteIpListResponse"
     },
+    "DeleteDDoSBlackWhiteIpList": {
+      "document": "删除DDoS防护的IP网段黑白名单",
+      "input": "DeleteDDoSBlackWhiteIpListRequest",
+      "name": "删除DDoS防护的IP网段黑白名单",
+      "output": "DeleteDDoSBlackWhiteIpListResponse"
+    },
     "DeleteDDoSGeoIPBlockConfig": {
       "document": "删除DDoS防护的区域封禁配置",
       "input": "DeleteDDoSGeoIPBlockConfigRequest",
@@ -149,6 +161,12 @@
       "input": "DescribeCCTrendRequest",
       "name": "获取CC攻击指标数据",
       "output": "DescribeCCTrendResponse"
+    },
+    "DescribeDDoSBlackWhiteIpList": {
+      "document": "获取DDoS防护的IP网段黑白名单",
+      "input": "DescribeDDoSBlackWhiteIpListRequest",
+      "name": "获取DDoS防护的IP网段黑白名单",
+      "output": "DescribeDDoSBlackWhiteIpListResponse"
     },
     "DescribeDDoSTrend": {
       "document": "获取DDoS攻击流量带宽和攻击包速率数据",
@@ -1207,6 +1225,51 @@
       ],
       "type": "object"
     },
+    "CreateDDoSBlackWhiteIpListRequest": {
+      "document": "CreateDDoSBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "example": "[{\"Ip\":\"1.1.1.1\\r\\n\", \"Mask\":0}]",
+          "member": "IpSegment",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑名单IP), white(白名单IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSBlackWhiteIpListResponse": {
+      "document": "CreateDDoSBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDDoSGeoIPBlockConfigRequest": {
       "document": "CreateDDoSGeoIPBlockConfig请求参数结构体",
       "members": [
@@ -1795,6 +1858,51 @@
       ],
       "type": "object"
     },
+    "DeleteDDoSBlackWhiteIpListRequest": {
+      "document": "DeleteDDoSBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "example": "[{\"ip\":\"1.1.1.1\\r\\n\", \"Mask\":0]",
+          "member": "IpSegment",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑名单IP), white(白名单IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDDoSBlackWhiteIpListResponse": {
+      "document": "DeleteDDoSBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDDoSGeoIPBlockConfigRequest": {
       "document": "DeleteDDoSGeoIPBlockConfig请求参数结构体",
       "members": [
@@ -2324,6 +2432,51 @@
           "name": "MetricName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSBlackWhiteIpListRequest": {
+      "document": "DescribeDDoSBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSBlackWhiteIpListResponse": {
+      "document": "DescribeDDoSBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "黑名单IP列表",
+          "example": "[{\"Ip\":\"123.123.123.1\", \"Mask\":0}]",
+          "member": "IpSegment",
+          "name": "BlackIpList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "白名单IP列表",
+          "example": "[{\"Ip\":\"123.123.123.2\", \"Mask\":0}]",
+          "member": "IpSegment",
+          "name": "WhiteIpList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3972,6 +4125,32 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IpSegment": {
+      "document": "ip段数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "ip地址",
+          "example": "1.1.2.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip掩码，如果为32位ip，填0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Mask",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
