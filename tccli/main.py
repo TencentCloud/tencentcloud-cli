@@ -29,9 +29,14 @@ from tccli import __version__
 from tccli.exceptions import UnknownArgumentError, ConfigurationError, NoCredentialsError, NoRegionError, ClientError
 from tccli.error_msg import USAGE
 
-# LOG = logging.getLogger('tccli.main')
-# LOG_FORMAT = ('%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s')
 log = init('tccli.main')
+
+
+def save_to_log(msg):
+    args = sys.argv[1:]
+    args_str = ' '.join(args)
+    log.info("Command: tccli %s" % args_str)
+    log.error(msg)
 
 
 def main():
@@ -46,23 +51,27 @@ def main():
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        save_to_log(str(e))
         return
     except ConfigurationError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        save_to_log(str(e))
         return
     except NoRegionError as e:
         msg = ('%s You can configure your region by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
+        save_to_log(msg)
         return
     except NoCredentialsError as e:
         msg = ('%s. You can configure your credentials by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
+        save_to_log(msg)
         return
     except KeyboardInterrupt:
         sys.stdout.write("\n")
@@ -71,12 +80,13 @@ def main():
         sys.stderr.write("\n")
         sys.stderr.write(six.text_type(e))
         sys.stderr.write("\n")
+        save_to_log(six.text_type(e))
         return
     except Exception as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
-        log.error(e)
+        save_to_log(str(e))
         return
 
 
