@@ -9,6 +9,7 @@ import sys
 import tccli.six as six
 import signal
 import logging
+from tccli.log import init
 base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base)
 try:
@@ -28,8 +29,9 @@ from tccli import __version__
 from tccli.exceptions import UnknownArgumentError, ConfigurationError, NoCredentialsError, NoRegionError, ClientError
 from tccli.error_msg import USAGE
 
-LOG = logging.getLogger('tccli.main')
-LOG_FORMAT = ('%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s')
+# LOG = logging.getLogger('tccli.main')
+# LOG_FORMAT = ('%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s')
+log = init('tccli.main')
 
 
 def main():
@@ -38,7 +40,7 @@ def main():
         sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
         return
     try:
-        LOG.debug("begin cli command")
+        log.debug("begin cli command")
         CLICommand()()
     except UnknownArgumentError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
@@ -74,6 +76,7 @@ def main():
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        log.error(e)
         return
 
 
