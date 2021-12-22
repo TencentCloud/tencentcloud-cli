@@ -8,7 +8,6 @@ import os
 import sys
 import tccli.six as six
 import signal
-import logging
 from tccli.log import init
 base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base)
