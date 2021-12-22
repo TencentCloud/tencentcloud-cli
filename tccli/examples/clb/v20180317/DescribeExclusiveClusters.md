@@ -17,6 +17,7 @@ Output:
         "TotalCount": 1,
         "ClusterSet": [
             {
+                "ClustersVersion": "",
                 "ClusterId": "tgw-12345678",
                 "ClusterName": "tgw_cluster",
                 "ClusterType": "TGW",

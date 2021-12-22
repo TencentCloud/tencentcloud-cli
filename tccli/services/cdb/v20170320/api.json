@@ -583,16 +583,10 @@
       "output": "ModifyParamTemplateResponse"
     },
     "ModifyRoGroupInfo": {
-      "document": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重等。",
+      "document": "本接口（ModifyRoGroupInfo）用于更新云数据库只读组的信息。包括设置实例延迟超限剔除策略，设置只读实例读权重，设置复制延迟时间等。",
       "input": "ModifyRoGroupInfoRequest",
       "name": "更新实例Ro组的信息",
       "output": "ModifyRoGroupInfoResponse"
-    },
-    "ModifyRoReplicationDelay": {
-      "document": "修改延迟只读实例的延迟复制时间。",
-      "input": "ModifyRoReplicationDelayRequest",
-      "name": "修改延迟只读实例的延迟复制时间",
-      "output": "ModifyRoReplicationDelayResponse"
     },
     "ModifyTimeWindow": {
       "document": "本接口(ModifyTimeWindow)用于更新云数据库实例的维护时间窗口。",
@@ -642,23 +636,11 @@
       "name": "回档数据库表",
       "output": "StartBatchRollbackResponse"
     },
-    "StartDelayReplication": {
-      "document": "启动延迟只读实例的延迟复制。",
-      "input": "StartDelayReplicationRequest",
-      "name": "启动延迟复制",
-      "output": "StartDelayReplicationResponse"
-    },
     "StopDBImportJob": {
       "document": "本接口(StopDBImportJob)用于终止数据导入任务。",
       "input": "StopDBImportJobRequest",
       "name": "终止数据导入任务",
       "output": "StopDBImportJobResponse"
-    },
-    "StopDelayReplication": {
-      "document": "停止延迟只读实例的延迟复制。",
-      "input": "StopDelayReplicationRequest",
-      "name": "停止延迟复制",
-      "output": "StopDelayReplicationResponse"
     },
     "StopRollback": {
       "document": "本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeAsyncRequestInfo 查询任务的执行情况。",
@@ -9713,6 +9695,15 @@
           "name": "IsBalanceRoLoad",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "废弃参数，无意义。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ReplicationDelayTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9721,39 +9712,14 @@
       "document": "ModifyRoGroupInfo返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dadaddasda-23adcasdasd-asdaasc",
           "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoReplicationDelayRequest": {
-      "document": "ModifyRoReplicationDelay请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例 ID。",
-          "member": "string",
-          "name": "InstanceId",
+          "name": "AsyncRequestId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
-        {
-          "default": "",
-          "document": "延迟时间（s）。最小值1，最大值259200。",
-          "member": "int64",
-          "name": "ReplicationDelay",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyRoReplicationDelayResponse": {
-      "document": "ModifyRoReplicationDelay返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10549,6 +10515,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟复制时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "DelayReplicationTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10559,6 +10535,7 @@
         {
           "default": "",
           "document": "RO 组名称。",
+          "example": "test_rogroup",
           "member": "string",
           "name": "RoGroupName",
           "required": false,
@@ -10568,6 +10545,7 @@
         {
           "default": "",
           "document": "RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。",
+          "example": "10",
           "member": "int64",
           "name": "RoMaxDelayTime",
           "required": false,
@@ -10577,6 +10555,7 @@
         {
           "default": "",
           "document": "是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。",
+          "example": "1",
           "member": "int64",
           "name": "RoOfflineDelay",
           "required": false,
@@ -10586,6 +10565,7 @@
         {
           "default": "",
           "document": "最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。",
+          "example": "1",
           "member": "int64",
           "name": "MinRoInGroup",
           "required": false,
@@ -10595,10 +10575,21 @@
         {
           "default": "",
           "document": "权重模式。支持值包括：\"system\" - 系统自动分配； \"custom\" - 用户自定义设置。注意，若设置 \"custom\" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。",
+          "example": "system",
           "member": "string",
           "name": "WeightMode",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "延迟复制时间。",
+          "example": "100",
+          "member": "int64",
+          "name": "ReplicationDelayTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -11742,63 +11733,6 @@
       ],
       "type": "object"
     },
-    "StartDelayReplicationRequest": {
-      "document": "StartDelayReplication请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例 ID。",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "延迟复制类型。可选值 DEFAULT（按照延迟复制时间进行复制）、GTID（回放到指定GTID）、DUE_TIME（回放到指定时间点）。",
-          "member": "string",
-          "name": "DelayReplicationType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "指定时间点，默认为0，最大值不能超过当前时间。",
-          "member": "int64",
-          "name": "DueTime",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "指定GITD。回放到指定GTID时必传。",
-          "member": "string",
-          "name": "Gtid",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StartDelayReplicationResponse": {
-      "document": "StartDelayReplication返回参数结构体",
-      "members": [
-        {
-          "document": "延迟复制任务 ID。DelayReplicationType不为DEFAULT时返回，可用来查询回放任务状态。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "AsyncRequestId",
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "StopDBImportJobRequest": {
       "document": "StopDBImportJob请求参数结构体",
       "members": [
@@ -11815,32 +11749,6 @@
     },
     "StopDBImportJobResponse": {
       "document": "StopDBImportJob返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopDelayReplicationRequest": {
-      "document": "StopDelayReplication请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "实例 ID。",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopDelayReplicationResponse": {
-      "document": "StopDelayReplication返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12447,6 +12355,24 @@
           "name": "MaxDelayTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否跨区迁移。0-普通迁移，1-跨区迁移，默认值为0。该值为1时支持变更实例主节点可用区。",
+          "example": "1",
+          "member": "int64",
+          "name": "CrossCluster",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主节点可用区，该值仅在跨区迁移时生效。仅支持同地域下的可用区进行迁移。",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

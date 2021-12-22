@@ -798,22 +798,14 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\n&RoGroupId=cdbrg-iup41a4t\n&RoGroupInfo.RoOfflineDelay=1\n&RoGroupInfo.RoMaxDelayTime=10\n&RoGroupInfo.MinRoInGroup=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
         "title": "设置RO组的延迟剔除策略"
       },
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=ModifyRoGroupInfo\n&RoGroupId=cdbrg-iup41a4t\n&RoGroupInfo.WeightMode=custom\n&RoWeightValues.0.InstanceId=cdbr0-iup41a4t\n&RoWeightValues.0.Weight=30\n&RoWeightValues.1.InstanceId=cdbr0-test1234\n&RoWeightValues.1.Weight=70\n&IsBalanceRoLoad=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FBQWER\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
         "title": "重新均衡RO组内实例的权重"
-      }
-    ],
-    "ModifyRoReplicationDelay": [
-      {
-        "document": "修改延迟只读实例的延迟复制时间",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoReplicationDelay\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-test\",\n    \"ReplicationDelay\": 259200\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28a67cf3-4589-8534-2be0-17475fa5c892\"\n    }\n}",
-        "title": "修改延迟只读实例的延迟复制时间"
       }
     ],
     "ModifyTimeWindow": [
@@ -880,28 +872,12 @@
         "title": "回档数据库表"
       }
     ],
-    "StartDelayReplication": [
-      {
-        "document": "启动延迟只读实例的延迟复制。",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartDelayReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-test\",\n    \"DelayReplicationType\": \"DUE_TIME\",\n    \"DueTime\": 1600400231\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"818e3462-93b8a8a8-a4911f89-2896ed4d\",\n        \"RequestId\": \"28a67cf3-4589-8534-2be0-17475fa5c892\"\n    }\n}",
-        "title": "启动延迟复制"
-      }
-    ],
     "StopDBImportJob": [
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=StopDBImportJob\r\n&AsyncRequestId=434e366f-beaf56d6-508b7f33-2abdb382\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "终止数据导入任务"
-      }
-    ],
-    "StopDelayReplication": [
-      {
-        "document": "停止延迟只读实例的延迟复制。",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDelayReplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28a67cf3-4589-8534-2be0-17475fa5c892\"\n    }\n}",
-        "title": "停止延迟复制"
       }
     ],
     "StopRollback": [

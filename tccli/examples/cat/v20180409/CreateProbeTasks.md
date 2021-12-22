@@ -1,4 +1,4 @@
-**Example 1: 批量创建探测任务**
+**Example 1: 批量创建拨测任务**
 
 
 
@@ -13,7 +13,9 @@ tccli cat CreateProbeTasks --cli-unfold-argument  \
     --TaskCategory 1 \
     --TaskType 1 \
     --Nodes 10001 \
-    --Cron * 0-6 * * *
+    --Cron * 0-6 * * * \
+    --Tag.0.TagKey abc \
+    --Tag.0.TagValue a1
 ```
 
 Output: 

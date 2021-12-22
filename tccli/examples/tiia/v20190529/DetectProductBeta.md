@@ -38,7 +38,8 @@ Output:
             "Price": "￥7299",
             "ProductCategory": "家电数码",
             "Score": 0.544267654419,
-            "Image": "https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74"
+            "Image": "https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74",
+            "LemmaInfoList": []
         },
         "ProductInfoList": [
             {
@@ -54,7 +55,8 @@ Output:
                 "Price": "￥7299",
                 "ProductCategory": "家电数码",
                 "Score": 0.544267654419,
-                "Image": "https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74"
+                "Image": "https://wxamusic.wx.qq.com/wxasr/getminipic/MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j?media-id=MAnWZ-KslXfAMK4k0dIDv4lfYZQsAPG8r4MKYPL3fI1yDgRjXI68eyE2krz6ku0j&appid=wx91d27dbf599dff74",
+                "LemmaInfoList": []
             }
         ],
         "RequestId": "2054720d-0c93-4028-9843-8fb9114ce2e2"

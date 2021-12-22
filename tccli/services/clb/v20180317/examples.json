@@ -324,7 +324,7 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeExclusiveClusters\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"tgw-12345678\",\n                \"ClusterName\": \"tgw_cluster\",\n                \"ClusterType\": \"TGW\",\n                \"ClusterTag\": null,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Network\": \"Public\",\n                \"Isp\": \"CMCC\",\n                \"MaxConn\": 12,\n                \"MaxInFlow\": 0,\n                \"MaxInPkg\": 0,\n                \"MaxOutFlow\": 0,\n                \"MaxOutPkg\": 0,\n                \"MaxNewConn\": 0,\n                \"HTTPMaxNewConn\": 0,\n                \"HTTPSMaxNewConn\": 0,\n                \"HTTPQps\": 0,\n                \"HTTPSQps\": 0,\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                },\n                \"ResourceCount\": 30,\n                \"IdleResourceCount\": 26,\n                \"LoadBalanceDirectorCount\": 4\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterSet\": [\n            {\n                \"ClustersVersion\": \"\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"ClusterName\": \"tgw_cluster\",\n                \"ClusterType\": \"TGW\",\n                \"ClusterTag\": null,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Network\": \"Public\",\n                \"Isp\": \"CMCC\",\n                \"MaxConn\": 12,\n                \"MaxInFlow\": 0,\n                \"MaxInPkg\": 0,\n                \"MaxOutFlow\": 0,\n                \"MaxOutPkg\": 0,\n                \"MaxNewConn\": 0,\n                \"HTTPMaxNewConn\": 0,\n                \"HTTPSMaxNewConn\": 0,\n                \"HTTPQps\": 0,\n                \"HTTPSQps\": 0,\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                },\n                \"ResourceCount\": 30,\n                \"IdleResourceCount\": 26,\n                \"LoadBalanceDirectorCount\": 4\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
         "title": "查询集群列表"
       }
     ],
@@ -509,7 +509,7 @@
     "MigrateClassicalLoadBalancers": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=MigrateClassicalLoadBalancers\r\n&LoadBalancerIds.0=lb-isdw5mum\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=MigrateClassicalLoadBalancers\n&LoadBalancerIds.0=lb-isdw5mum\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"55afe8ae-9580-4582-92e6-c7e67f893c1f\"\n    }\n}",
         "title": "传统型迁移"
       }
@@ -667,7 +667,7 @@
     "ReplaceCertForLoadBalancers": [
       {
         "document": "指定新证书ID，替换服务端证书",
-        "input": "https://clb.tencentcloudapi.com/?Action=ReplaceCertForLoadBalancers\r\n&OldCertificateId=cuxw0123\r\n&Certificate.CertId=cuxw4567\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ReplaceCertForLoadBalancers\n&OldCertificateId=cuxw0123\n&Certificate.CertId=cuxw4567\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
         "title": "替换负载均衡实例关联的服务端证书"
       }
@@ -697,19 +697,19 @@
     "SetLoadBalancerSecurityGroups": [
       {
         "document": "负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-12345678 将被绑定至此负载均衡实例。",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\r\n&LoadBalancerId=lb-cuxw2r00\r\n&SecurityGroups.0=sg-0936o7sd\r\n&SecurityGroups.1=sg-12345678\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&SecurityGroups.0=sg-0936o7sd\n&SecurityGroups.1=sg-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
         "title": "绑定多个安全组至负载均衡实例"
       },
       {
         "document": "负载均衡实例原来绑定了两个安全组： sg-0936o7sd、sg-12345678，执行本操作后，安全组 sg-12345678 将从此负载均衡实例解绑。",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\r\n&LoadBalancerId=lb-cuxw2r00\r\n&SecurityGroups.0=sg-0936o7sd\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&SecurityGroups.0=sg-0936o7sd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04644\"\n    }\n}",
         "title": "从负载均衡实例解绑一个安全组"
       },
       {
         "document": "负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\r\n&LoadBalancerId=lb-cuxw2r00\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04655\"\n    }\n}",
         "title": "解绑所有安全组"
       }
@@ -717,7 +717,7 @@
     "SetSecurityGroupForLoadbalancers": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetSecurityGroupForLoadbalancers\r\n&SecurityGroup=sg-12345678\r\n&OperationType=ADD\r\n&LoadBalancerIds.0=lb-0936o712\r\n&LoadBalancerIds.1=lb-tttt5555\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetSecurityGroupForLoadbalancers\n&SecurityGroup=sg-12345678\n&OperationType=ADD\n&LoadBalancerIds.0=lb-0936o712\n&LoadBalancerIds.1=lb-tttt5555\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
         "title": "绑定一个安全组至多个负载均衡"
       }

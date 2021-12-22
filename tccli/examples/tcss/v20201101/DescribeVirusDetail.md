@@ -47,6 +47,8 @@ Output:
         "EventType": "xx",
         "Status": "xx",
         "SubStatus": "xx",
+        "ClientIP": "xx",
+        "HostIP": "xx",
         "RequestId": "xx"
     }
 }

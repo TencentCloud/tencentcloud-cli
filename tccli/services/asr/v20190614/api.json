@@ -337,6 +337,15 @@
           "name": "HotwordId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调数据中，是否需要对应音频数据。",
+          "example": "flase",
+          "member": "bool",
+          "name": "AudioData",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

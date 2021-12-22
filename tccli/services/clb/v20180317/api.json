@@ -31,7 +31,7 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享创创建\n功能内测中，[提单开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse"
@@ -1540,7 +1540,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。",
+          "document": "负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不传此参数则视为默认项目。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -1549,7 +1549,7 @@
         },
         {
           "default": "",
-          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。",
+          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZoneId",
@@ -6720,6 +6720,7 @@
         {
           "default": "",
           "document": "传统型负载均衡ID数组",
+          "example": "[\"lb-isdw5mum\\r\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -6728,6 +6729,7 @@
         {
           "default": "",
           "document": "独占集群信息",
+          "example": "无",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
           "required": false,
@@ -7592,6 +7594,7 @@
         {
           "default": "",
           "document": "配额名称，取值范围：\n<li> TOTAL_OPEN_CLB_QUOTA: 用户当前地域下的公网LB配额 </li>\n<li> TOTAL_INTERNAL_CLB_QUOTA: 用户当前地域下的内网LB配额 </li>\n<li> TOTAL_LISTENER_QUOTA: 一个CLB下的监听器配额 </li>\n<li> TOTAL_LISTENER_RULE_QUOTA: 一个监听器下的转发规则配额 </li>\n<li> TOTAL_TARGET_BIND_QUOTA: 一条转发规则下绑定设备配额 </li>",
+          "example": "TOTAL_OPEN_CLB_QUOTA",
           "member": "string",
           "name": "QuotaId",
           "required": true,
@@ -7601,6 +7604,7 @@
         {
           "default": "",
           "document": "当前使用数量，为 null 时表示无意义。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "int64",
           "name": "QuotaCurrent",
           "required": true,
@@ -7610,6 +7614,7 @@
         {
           "default": "",
           "document": "配额数量。",
+          "example": "3",
           "member": "int64",
           "name": "QuotaLimit",
           "required": true,
@@ -7769,6 +7774,7 @@
         {
           "default": "",
           "document": "需要被替换的证书的ID，可以是服务端证书或客户端证书",
+          "example": "cuxw0123",
           "member": "string",
           "name": "OldCertificateId",
           "required": true,
@@ -7777,6 +7783,7 @@
         {
           "default": "",
           "document": "新证书的内容等相关信息",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": true,
@@ -8013,6 +8020,7 @@
         {
           "default": "",
           "document": "转发规则的域名。长度限制为：1~80。",
+          "example": "www.xxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -8022,6 +8030,7 @@
         {
           "default": "",
           "document": "转发规则的路径。长度限制为：1~200。",
+          "example": "/xxxx",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -8031,6 +8040,7 @@
         {
           "default": "",
           "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。",
+          "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -8040,6 +8050,7 @@
         {
           "default": "",
           "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "example": "{\"HealthSwitch\": 1, \"TimeOut\": 5, \"IntervalTime\": 5, \"HealthNum\"",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -8049,6 +8060,7 @@
         {
           "default": "",
           "document": "证书信息",
+          "example": "{\"SSLMode\": \"UNIDIRECTIONAL\", \"CertId\": \"fF6AGfxE\"}",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -8058,6 +8070,7 @@
         {
           "default": "",
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -8067,6 +8080,7 @@
         {
           "default": "",
           "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC",
+          "example": "HTTP",
           "member": "string",
           "name": "ForwardType",
           "required": false,
@@ -8076,6 +8090,7 @@
         {
           "default": "",
           "document": "是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "example": "true",
           "member": "bool",
           "name": "DefaultServer",
           "required": false,
@@ -8085,6 +8100,7 @@
         {
           "default": "",
           "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "example": "true",
           "member": "bool",
           "name": "Http2",
           "required": false,
@@ -8094,6 +8110,7 @@
         {
           "default": "",
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
+          "example": "NODE",
           "member": "string",
           "name": "TargetType",
           "required": false,
@@ -8103,6 +8120,7 @@
         {
           "default": "",
           "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "example": "trpcall",
           "member": "string",
           "name": "TrpcCallee",
           "required": false,
@@ -8112,6 +8130,7 @@
         {
           "default": "",
           "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "example": "trpcFunc",
           "member": "string",
           "name": "TrpcFunc",
           "required": false,
@@ -8121,6 +8140,7 @@
         {
           "default": "",
           "document": "是否开启QUIC，注意，只有HTTPS域名才能开启QUIC",
+          "example": "true",
           "member": "bool",
           "name": "Quic",
           "required": false,
@@ -8541,6 +8561,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID",
+          "example": "lb-cuxw2r00",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8549,6 +8570,7 @@
         {
           "default": "",
           "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定50个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组。",
+          "example": "[\"sg-0936o7sd\\r\\n\",\"sg-12345678\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -8575,6 +8597,7 @@
         {
           "default": "",
           "document": "安全组ID，如 sg-12345678",
+          "example": "sg-12345678",
           "member": "string",
           "name": "SecurityGroup",
           "required": true,
@@ -8583,6 +8606,7 @@
         {
           "default": "",
           "document": "ADD 绑定安全组；\nDEL 解绑安全组",
+          "example": "ADD",
           "member": "string",
           "name": "OperationType",
           "required": true,
@@ -8591,6 +8615,7 @@
         {
           "default": "",
           "document": "负载均衡实例ID数组",
+          "example": "[\"lb-0936o712\\r\\n\",\"lb-tttt5555\\r\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -8747,6 +8772,7 @@
         {
           "default": "",
           "document": "负载均衡ID",
+          "example": "lb-agcadfe",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8756,6 +8782,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "lbl-xxxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -8765,6 +8792,7 @@
         {
           "default": "",
           "document": "目标组ID",
+          "example": "lbtg-0nzo3czo",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -8774,6 +8802,7 @@
         {
           "default": "",
           "document": "转发规则ID",
+          "example": "loc-aaaaaa",
           "member": "string",
           "name": "LocationId",
           "required": false,

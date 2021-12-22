@@ -17,6 +17,12 @@
       "input": "DeleteClusterRequest",
       "name": "删除集群",
       "output": "DeleteClusterResponse"
+    },
+    "DescribeClusters": {
+      "document": "本接口（DescribeClusters）用于查询集群列表。",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群列表",
+      "output": "DescribeClustersResponse"
     }
   },
   "metadata": {
@@ -162,6 +168,112 @@
       ],
       "usage": "in"
     },
+    "ClusterOverview": {
+      "document": "集群概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID。",
+          "example": "hpc-2mv1i3d8",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态。取值范围：<br><li>PENDING：创建中<br><li>INITING：初始化中<br><li>INIT_FAILED：初始化失败<br><li>RUNNING：运行中<br><li>TERMINATING：销毁中",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群位置信息。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群调度器。",
+          "example": "SGE",
+          "member": "string",
+          "name": "SchedulerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputeNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计算节点概览。",
+          "example": "无",
+          "member": "ComputeNodeOverview",
+          "name": "ComputeNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管控节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ManagerNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "管控节点概览。",
+          "example": "无",
+          "member": "ManagerNodeOverview",
+          "name": "ManagerNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ComputeNode": {
       "document": "计算节点信息。",
       "members": [
@@ -237,6 +349,22 @@
         }
       ],
       "usage": "in"
+    },
+    "ComputeNodeOverview": {
+      "document": "计算节点概览。",
+      "members": [
+        {
+          "default": "",
+          "document": "计算节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
@@ -453,6 +581,69 @@
       ],
       "type": "object"
     },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表。通过该参数可以指定需要查询信息的集群列表。<br>如果您不指定该参数，则返回Limit数量以内的集群信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群概览信息列表。",
+          "example": "无",
+          "member": "ClusterOverview",
+          "name": "ClusterSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GooseFSOption": {
       "document": "描述GooseFS挂载信息",
       "members": [
@@ -632,6 +823,22 @@
         }
       ],
       "usage": "in"
+    },
+    "ManagerNodeOverview": {
+      "document": "管控节点概览。",
+      "members": [
+        {
+          "default": "",
+          "document": "管控节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Placement": {
       "document": "描述了实例的抽象位置",

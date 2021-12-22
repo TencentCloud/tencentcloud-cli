@@ -139,7 +139,7 @@
       "output": "DescribeGroupOffsetsResponse"
     },
     "DescribeInstanceAttributes": {
-      "document": "获取实例属性",
+      "document": "获取实例属性 ",
       "input": "DescribeInstanceAttributesRequest",
       "name": "获取实例属性",
       "output": "DescribeInstanceAttributesResponse"
@@ -3327,6 +3327,52 @@
       ],
       "type": "object"
     },
+    "DynamicDiskConfig": {
+      "document": "动态硬盘扩容配置",
+      "members": [
+        {
+          "default": "",
+          "document": "动态硬盘扩容配置开关（0: 关闭，1: 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Enable\": 1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每次磁盘动态扩容大小百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"StepForwardPercentage\": 15",
+          "member": "int64",
+          "name": "StepForwardPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘配额百分比触发条件，即消息达到此值触发硬盘自动扩容事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"DiskQuotaPercentage\": 70",
+          "member": "int64",
+          "name": "DiskQuotaPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大扩容硬盘大小，以 GB 为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"MaxDiskSpace\": 1000",
+          "member": "int64",
+          "name": "MaxDiskSpace",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DynamicRetentionTime": {
       "document": "动态消息保留时间配置",
       "members": [
@@ -4113,6 +4159,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动态硬盘扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "DynamicDiskConfig",
+          "name": "DynamicDiskConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4697,6 +4753,15 @@
           "name": "PublicNetwork",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动态硬盘扩容策略配置",
+          "example": "无",
+          "member": "DynamicDiskConfig",
+          "name": "DynamicDiskConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4907,6 +4972,15 @@
           "name": "RetentionBytes",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "1",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

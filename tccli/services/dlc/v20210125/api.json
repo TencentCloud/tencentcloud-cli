@@ -138,6 +138,12 @@
       "name": "查询数据表列表",
       "output": "DescribeTablesResponse"
     },
+    "DescribeTaskResult": {
+      "document": "查询任务结果",
+      "input": "DescribeTaskResultRequest",
+      "name": "查询任务结果",
+      "output": "DescribeTaskResultResponse"
+    },
     "DescribeTasks": {
       "document": "该接口（DescribleTasks）用于查询任务列表",
       "input": "DescribeTasksRequest",
@@ -1652,6 +1658,60 @@
       ],
       "type": "object"
     },
+    "DescribeTaskResultRequest": {
+      "document": "DescribeTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务唯一ID",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回1000行数据。",
+          "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回结果的最大行数，范围0~1000，默认为1000.",
+          "example": "500",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultResponse": {
+      "document": "DescribeTaskResult返回参数结构体",
+      "members": [
+        {
+          "document": "查询的任务信息，返回为空表示输入任务ID对应的任务不存在。只有当任务状态为成功（2）的时候，才会返回任务的结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskResultInfo",
+          "name": "TaskInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTasksRequest": {
       "document": "DescribeTasks请求参数结构体",
       "members": [
@@ -2972,6 +3032,192 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskResultInfo": {
+      "document": "任务结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务唯一ID",
+          "example": "fdd9c5fa21ca11eca6fb5254006c64af",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源名称，当前任务执行时候选中的默认数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COSDataCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库名称，当前任务执行时候选中的默认数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前执行的SQL，一个任务包含一个SQL",
+          "example": "select * from test limit 10;",
+          "member": "string",
+          "name": "SQL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行任务的类型，现在分为DDL、DML、DQL",
+          "example": "DDL",
+          "member": "string",
+          "name": "SQLType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描的数据量，单位byte",
+          "example": "1024",
+          "member": "int64",
+          "name": "DataAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行耗时，单位秒",
+          "example": "42",
+          "member": "int64",
+          "name": "UsedTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结果输出的COS桶地址",
+          "example": "cosn://dlc-nj-125849872/test/DLCQueryResults/2021/09/",
+          "member": "string",
+          "name": "OutputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间，时间戳",
+          "example": "1632991895728",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行信息，成功时返回success，失败时返回失败原因",
+          "example": "success",
+          "member": "string",
+          "name": "OutputMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被影响的行数",
+          "example": "OK, No rows affected (0.000000 seconds)",
+          "member": "string",
+          "name": "RowAffectInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果的schema信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "ResultSchema",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结果信息，反转义后，外层数组的每个元素为一行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[[\\\"3\\\",\\\"kk\\\"],[\\\"3\\\",\\\"kk\\\"]]",
+          "member": "string",
+          "name": "ResultSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分页信息，如果没有更多结果数据，nextToken为空",
+          "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
+          "member": "string",
+          "name": "NextToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行进度num/100(%)",
+          "example": "100",
+          "member": "int64",
+          "name": "Percentage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务进度明细",
+          "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
+          "member": "string",
+          "name": "ProgressDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控制台展示格式。table：表格展示 text：文本展示",
+          "example": "table",
+          "member": "string",
+          "name": "DisplayFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

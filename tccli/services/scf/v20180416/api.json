@@ -649,7 +649,7 @@
         },
         {
           "default": "",
-          "document": "Git地址",
+          "document": "Git地址。该功能已下线。",
           "example": "Git地址",
           "member": "string",
           "name": "GitUrl",
@@ -659,7 +659,7 @@
         },
         {
           "default": "",
-          "document": "Git用户名",
+          "document": "Git用户名。该功能已下线。",
           "example": "Git用户名",
           "member": "string",
           "name": "GitUserName",
@@ -669,7 +669,7 @@
         },
         {
           "default": "",
-          "document": "Git密码",
+          "document": "Git密码。该功能已下线。",
           "example": "Git密码",
           "member": "string",
           "name": "GitPassword",
@@ -679,7 +679,7 @@
         },
         {
           "default": "",
-          "document": "加密后的Git密码，一般无需指定",
+          "document": "加密后的Git密码，一般无需指定。该功能已下线。",
           "example": "加密后的Git密码",
           "member": "string",
           "name": "GitPasswordSecret",
@@ -689,7 +689,7 @@
         },
         {
           "default": "",
-          "document": "Git分支",
+          "document": "Git分支。该功能已下线。",
           "example": "Git分支",
           "member": "string",
           "name": "GitBranch",
@@ -699,7 +699,7 @@
         },
         {
           "default": "",
-          "document": "代码在Git仓库中的路径",
+          "document": "代码在Git仓库中的路径。该功能已下线。",
           "example": "代码在Git仓库中的路径",
           "member": "string",
           "name": "GitDirectory",
@@ -709,7 +709,7 @@
         },
         {
           "default": "",
-          "document": "指定要拉取的版本",
+          "document": "指定要拉取的版本。该功能已下线。",
           "example": "Git拉取的版本",
           "member": "string",
           "name": "GitCommitId",
@@ -719,7 +719,7 @@
         },
         {
           "default": "",
-          "document": "加密后的Git用户名，一般无需指定",
+          "document": "加密后的Git用户名，一般无需指定。该功能已下线。",
           "example": "加密后的Git用户名",
           "member": "string",
           "name": "GitUserNameSecret",
@@ -3296,7 +3296,7 @@
         },
         {
           "default": "",
-          "document": "entrypoint执行命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "Command",
@@ -3306,7 +3306,7 @@
         },
         {
           "default": "",
-          "document": "命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"'",
           "member": "string",
           "name": "Args",

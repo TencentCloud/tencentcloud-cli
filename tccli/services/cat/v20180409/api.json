@@ -13,9 +13,9 @@
       "output": "CreateAgentGroupResponse"
     },
     "CreateProbeTasks": {
-      "document": "批量创建探测任务",
+      "document": "批量创建拨测任务",
       "input": "CreateProbeTasksRequest",
-      "name": "批量创建探测任务",
+      "name": "批量创建拨测任务",
       "output": "CreateProbeTasksResponse"
     },
     "CreateTaskEx": {
@@ -91,9 +91,9 @@
       "output": "DescribeProbeNodesResponse"
     },
     "DescribeProbeTasks": {
-      "document": "查询探测任务列表",
+      "document": "查询拨测任务列表",
       "input": "DescribeProbeTasksRequest",
-      "name": "查询探测任务列表",
+      "name": "查询拨测任务列表",
       "output": "DescribeProbeTasksResponse"
     },
     "DescribeTaskDetail": {
@@ -1171,7 +1171,7 @@
         },
         {
           "default": "",
-          "document": "探测节点",
+          "document": "拨测节点",
           "example": "[\"10001\"]",
           "member": "string",
           "name": "Nodes",
@@ -1180,7 +1180,7 @@
         },
         {
           "default": "",
-          "document": "探测间隔",
+          "document": "拨测间隔",
           "example": "30",
           "member": "int64",
           "name": "Interval",
@@ -1189,7 +1189,7 @@
         },
         {
           "default": "",
-          "document": "探测参数",
+          "document": "拨测参数",
           "example": "{}",
           "member": "string",
           "name": "Parameters",
@@ -1213,6 +1213,15 @@
           "name": "Cron",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源标签值",
+          "example": "[{\"TagKey\":\"a\", \"TagValue\": \"a1\"}]",
+          "member": "Tag",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2268,7 +2277,7 @@
         },
         {
           "default": "",
-          "document": "探测目标",
+          "document": "拨测目标",
           "example": "http://www.qq.com",
           "member": "string",
           "name": "TargetAddress",
@@ -2355,6 +2364,15 @@
           "name": "Ascend",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "资源标签值",
+          "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
+          "member": "KeyValuePair",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3261,6 +3279,32 @@
       ],
       "usage": "out"
     },
+    "KeyValuePair": {
+      "document": "健值对",
+      "members": [
+        {
+          "default": "",
+          "document": "健",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Label": {
       "document": "保存string类型字段",
       "members": [
@@ -3709,7 +3753,7 @@
       "type": "object"
     },
     "ProbeTask": {
-      "document": "探测任务",
+      "document": "拨测任务",
       "members": [
         {
           "default": "",
@@ -3743,7 +3787,7 @@
         },
         {
           "default": "",
-          "document": "探测节点列表",
+          "document": "拨测节点列表",
           "example": "[\"10000\"]",
           "member": "string",
           "name": "Nodes",
@@ -3753,7 +3797,7 @@
         },
         {
           "default": "",
-          "document": "探测间隔",
+          "document": "拨测间隔",
           "example": "30",
           "member": "int64",
           "name": "Interval",
@@ -3763,7 +3807,7 @@
         },
         {
           "default": "",
-          "document": "探测参数",
+          "document": "拨测参数",
           "example": "{}",
           "member": "string",
           "name": "Parameters",
@@ -3849,6 +3893,16 @@
           "name": "CronState",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务当前绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
+          "member": "KeyValuePair",
+          "name": "TagInfoList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4124,6 +4178,32 @@
         }
       ],
       "type": "object"
+    },
+    "Tag": {
+      "document": "资源的标签，通过标签对资源进行划分用于支持细粒度的鉴权、分账等场景",
+      "members": [
+        {
+          "default": "",
+          "document": "key",
+          "example": "k",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value",
+          "example": "v",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TaskAlarm": {
       "document": "可用性监控任务状态及告警信息",

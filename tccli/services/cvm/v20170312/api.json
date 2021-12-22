@@ -5714,7 +5714,238 @@
     },
     "LaunchTemplateVersionData": {
       "document": "实例启动模板版本信息",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S1.SMALL2",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyInstance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例系统盘信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例数据盘信息。只包含随实例购买的数据盘。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例带宽信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属虚拟私有网络信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生产实例所使用的镜像`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-pi0aa46r",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['sg-rf6ogz49']",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例登录设置。目前只返回实例所关联的密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testroleName001",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hpc-a5n666lo",
+          "member": "string",
+          "name": "HpcClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "增强服务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TXlVc2VyRGF0YQo=",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "置放群组id，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['ps-3p88qhfo']",
+          "member": "string",
+          "name": "DisasterRecoverGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "ActionTimer",
+          "name": "ActionTimer",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "InstanceMarketOptionsRequest",
+          "name": "InstanceMarketOptions",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云服务器的主机名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyHostName",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "LaunchTemplateVersionInfo": {

@@ -32,6 +32,14 @@
         "title": "绑定云资源"
       }
     ],
+    "DeleteApplication": [
+      {
+        "document": "服务版本删除",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"DeleteApplicationIfNoRunningVersion\": true,\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "服务版本删除"
+      }
+    ],
     "DeleteIngress": [
       {
         "document": "删除 Ingress 规则",

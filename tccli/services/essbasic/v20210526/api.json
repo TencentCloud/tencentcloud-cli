@@ -156,6 +156,22 @@
       ],
       "usage": "out"
     },
+    "CcInfo": {
+      "document": "抄送信息",
+      "members": [
+        {
+          "default": "",
+          "document": "被抄送人手机号",
+          "example": "xxx",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Component": {
       "document": "此结构体 (Component) 用于描述控件属性。",
       "members": [
@@ -1003,6 +1019,16 @@
           "name": "CustomerData",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被抄送人的信息列表",
+          "example": "xxx",
+          "member": "CcInfo",
+          "name": "CcInfos",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1869,6 +1895,16 @@
           "name": "Recipients",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是发起人",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPromoter",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -1,4 +1,4 @@
-**Example 1: 查询探测任务列表**
+**Example 1: 查询拨测任务列表**
 
 
 
@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli cat DescribeProbeTasks --cli-unfold-argument  \
-    --TaskIDs task-xx
+    --TaskIDs task-xx \
+    --TagFilters.0.Key name \
+    --TagFilters.0.Value zhangsan
 ```
 
 Output: 
@@ -25,6 +27,12 @@ Output:
                 "TaskType": 1,
                 "Nodes": [
                     "10001"
+                ],
+                "TagInfoList": [
+                    {
+                        "Key": "tag_key1",
+                        "Value": "tag_value1"
+                    }
                 ]
             }
         ]
