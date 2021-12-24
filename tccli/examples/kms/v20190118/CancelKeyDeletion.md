@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "xxxxx",
         "KeyId": "23e80852-1e38-11e9-b129-5cb9019b4b01"
     }
 }

@@ -108,6 +108,12 @@
       "name": "创建或者更新 Ingress 规则",
       "output": "ModifyIngressResponse"
     },
+    "RestartApplication": {
+      "document": "服务重启",
+      "input": "RestartApplicationRequest",
+      "name": "服务重启",
+      "output": "RestartApplicationResponse"
+    },
     "RestartApplicationPod": {
       "document": "重启应用实例",
       "input": "RestartApplicationPodRequest",
@@ -131,6 +137,12 @@
       "input": "RollingUpdateApplicationByVersionRequest",
       "name": "更新应用部署版本",
       "output": "RollingUpdateApplicationByVersionResponse"
+    },
+    "StopApplication": {
+      "document": "服务停止",
+      "input": "StopApplicationRequest",
+      "name": "服务停止",
+      "output": "StopApplicationResponse"
     }
   },
   "metadata": {
@@ -2943,6 +2955,60 @@
       ],
       "type": "object"
     },
+    "RestartApplicationRequest": {
+      "document": "RestartApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartApplicationResponse": {
+      "document": "RestartApplication返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResumeDeployApplicationRequest": {
       "document": "ResumeDeployApplication请求参数结构体",
       "members": [
@@ -3210,6 +3276,60 @@
         }
       ],
       "usage": "out"
+    },
+    "StopApplicationRequest": {
+      "document": "StopApplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务id",
+          "example": "1",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源渠道",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceChannel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopApplicationResponse": {
+      "document": "StopApplication返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StorageConf": {
       "document": "存储卷配置",

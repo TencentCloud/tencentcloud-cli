@@ -302,6 +302,14 @@
         "title": "获取服务相关角色详情"
       }
     ],
+    "GetRolePermissionBoundary": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetRolePermissionBoundary\r\n&RoleId=1234567\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 123456,\n        \"PolicyType\": 1,\n        \"CreateMode\": 5,\n        \"PolicyName\": \"QcloudCOSAccessForCLSRole,QcloudCKAFKAAccessForCLSRole\",\n        \"PolicyDocument\": \"{\\\"strategyInfo\\\":{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"*\\\",\\\"resource\\\":\\\"*\\\"}]}}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "title": "获取角色权限边界"
+      }
+    ],
     "GetSAMLProvider": [
       {
         "document": "查询身份提供商详情",
@@ -332,6 +340,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=GetUser\r\n&Name=test124\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Uid\": 1001774,\n        \"Remark\": \"test\",\n        \"ConsoleLogin\": 1,\n        \"PhoneNum\": \"10086\",\n        \"CountryCode\": \"86\",\n        \"Email\": \"123@qq.com\",\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "查询子用户"
+      }
+    ],
+    "GetUserPermissionBoundary": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUserPermissionBoundary\r\n&TargetUin=1234567\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 123456,\n        \"PolicyType\": 1,\n        \"CreateMode\": 5,\n        \"PolicyName\": \"QcloudCOSAccessForCLSRole,QcloudCKAFKAAccessForCLSRole\",\n        \"PolicyDocument\": \"{\\\"strategyInfo\\\":{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"*\\\",\\\"resource\\\":\\\"*\\\"}]}}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "title": "获取用户权限边界"
       }
     ],
     "ListAccessKeys": [

@@ -496,7 +496,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d5dbc7e-6afa-488f-82d9-26e2ca9f2094\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a17ead82-00d3-4bf2-8ec2-55292c42d6e3\"\n    }\n}",
         "title": "镜像仓库查询镜像仓库列表"
       }
     ],

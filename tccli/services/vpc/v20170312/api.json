@@ -3821,6 +3821,7 @@
         {
           "default": "",
           "document": "探测目的IPv4地址数组，最多两个。",
+          "example": "[\"10.0.0.2\\r\\n\",\"10.0.0.3\\r\\n\"]",
           "member": "string",
           "name": "DetectDestinationIp",
           "required": true,
@@ -3829,6 +3830,7 @@
         {
           "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；",
+          "example": "NORMAL_CVM",
           "member": "string",
           "name": "NextHopType",
           "required": true,
@@ -3837,6 +3839,7 @@
         {
           "default": "",
           "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；",
+          "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
           "required": true,
@@ -3845,6 +3848,7 @@
         {
           "default": "",
           "document": "网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "netd-12345678",
           "member": "string",
           "name": "NetDetectId",
           "required": false,
@@ -3853,6 +3857,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -3861,6 +3866,7 @@
         {
           "default": "",
           "document": "子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "subnet-siqkaiqm",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -3869,6 +3875,7 @@
         {
           "default": "",
           "document": "网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "name",
           "member": "string",
           "name": "NetDetectName",
           "required": false,
@@ -3882,8 +3889,10 @@
       "members": [
         {
           "document": "网络探测验证结果对象数组。",
+          "example": "无",
           "member": "NetDetectIpState",
           "name": "NetDetectIpStateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11328,7 +11337,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12181,6 +12190,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -12189,6 +12199,7 @@
         {
           "default": "",
           "document": "要解关联网络实例列表",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,

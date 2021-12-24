@@ -13,36 +13,39 @@ Output:
 ```
 {
     "Response": {
+        "Credential": {
+            "CACert": "xx",
+            "Token": "xx"
+        },
         "Addresses": [
             {
-                "Type": "advertise",
-                "Ip": "169.254.128.200",
-                "Port": 60002
+                "Ip": "xx",
+                "Type": "xx",
+                "Port": 1
             },
             {
-                "Type": "public",
-                "Ip": "100.98.109.15",
-                "Port": 11126
+                "Ip": "xx",
+                "Type": "xx",
+                "Port": 1
             }
         ],
-        "InternalLB": {
-            "SubnetId": "xx",
-            "Enabled": true
-        },
+        "ProxyLB": true,
+        "RequestId": "xx",
         "PublicLB": {
             "SecurityPolicies": [
                 "xx"
             ],
             "Enabled": true,
+            "SecurityGroup": "xx",
             "AllowFromCidrs": [
                 "xx"
-            ]
+            ],
+            "ExtraParam": "xx"
         },
-        "Credential": {
-            "CACert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FULQo=",
-            "Token": "WBnCe69iqui0HuEZJ0Yac2hvwxQ1jG0j"
-        },
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "InternalLB": {
+            "SubnetId": "xx",
+            "Enabled": true
+        }
     }
 }
 ```

@@ -497,6 +497,54 @@ def doDescribeBackupOverview(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doStopReplication(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopReplicationRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.StopReplication(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDBInstanceName(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3665,7 +3713,7 @@ def doDescribeDBInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doVerifyRootAccount(args, parsed_globals):
+def doModifyRoGroupInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3690,11 +3738,11 @@ def doVerifyRootAccount(args, parsed_globals):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VerifyRootAccountRequest()
+    model = models.ModifyRoGroupInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.VerifyRootAccount(model)
+        rsp = client.ModifyRoGroupInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4145,7 +4193,7 @@ def doDescribeAccounts(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyRoGroupInfo(args, parsed_globals):
+def doVerifyRootAccount(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4170,11 +4218,11 @@ def doModifyRoGroupInfo(args, parsed_globals):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyRoGroupInfoRequest()
+    model = models.VerifyRootAccountRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyRoGroupInfo(model)
+        rsp = client.VerifyRootAccount(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4415,6 +4463,54 @@ def doDescribeSlowLogData(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeSlowLogData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeRoGroups(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeRoGroupsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeRoGroups(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5201,7 +5297,7 @@ def doDescribeDBSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRoGroups(args, parsed_globals):
+def doStartReplication(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5226,11 +5322,11 @@ def doDescribeRoGroups(args, parsed_globals):
     client = mod.CdbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRoGroupsRequest()
+    model = models.StartReplicationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeRoGroups(model)
+        rsp = client.StartReplication(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5510,6 +5606,7 @@ ACTION_MAP = {
     "ModifyInstanceTag": doModifyInstanceTag,
     "DescribeTimeWindow": doDescribeTimeWindow,
     "DescribeBackupOverview": doDescribeBackupOverview,
+    "StopReplication": doStopReplication,
     "ModifyDBInstanceName": doModifyDBInstanceName,
     "StopRollback": doStopRollback,
     "OfflineIsolatedInstances": doOfflineIsolatedInstances,
@@ -5576,7 +5673,7 @@ ACTION_MAP = {
     "DescribeDBZoneConfig": doDescribeDBZoneConfig,
     "DescribeDBInstanceRebootTime": doDescribeDBInstanceRebootTime,
     "DescribeDBInstances": doDescribeDBInstances,
-    "VerifyRootAccount": doVerifyRootAccount,
+    "ModifyRoGroupInfo": doModifyRoGroupInfo,
     "CreateAuditRule": doCreateAuditRule,
     "DescribeDBInstanceCharset": doDescribeDBInstanceCharset,
     "AssociateSecurityGroups": doAssociateSecurityGroups,
@@ -5586,12 +5683,13 @@ ACTION_MAP = {
     "DescribeDBSwitchRecords": doDescribeDBSwitchRecords,
     "CreateDBImportJob": doCreateDBImportJob,
     "DescribeAccounts": doDescribeAccounts,
-    "ModifyRoGroupInfo": doModifyRoGroupInfo,
+    "VerifyRootAccount": doVerifyRootAccount,
     "DescribeBackupDownloadRestriction": doDescribeBackupDownloadRestriction,
     "ModifyAccountPassword": doModifyAccountPassword,
     "DescribeUploadedFiles": doDescribeUploadedFiles,
     "ModifyAccountDescription": doModifyAccountDescription,
     "DescribeSlowLogData": doDescribeSlowLogData,
+    "DescribeRoGroups": doDescribeRoGroups,
     "DeleteAuditLogFile": doDeleteAuditLogFile,
     "ModifyBackupConfig": doModifyBackupConfig,
     "DescribeAuditRules": doDescribeAuditRules,
@@ -5608,7 +5706,7 @@ ACTION_MAP = {
     "DescribeSupportedPrivileges": doDescribeSupportedPrivileges,
     "DescribeBinlogs": doDescribeBinlogs,
     "DescribeDBSecurityGroups": doDescribeDBSecurityGroups,
-    "DescribeRoGroups": doDescribeRoGroups,
+    "StartReplication": doStartReplication,
     "DescribeCloneList": doDescribeCloneList,
     "ModifyNameOrDescByDpId": doModifyNameOrDescByDpId,
     "UpgradeDBInstance": doUpgradeDBInstance,

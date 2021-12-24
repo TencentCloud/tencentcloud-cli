@@ -31,7 +31,7 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享创创建\n功能内测中，[提单开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse"
@@ -4075,6 +4075,7 @@
         {
           "default": "",
           "document": "服务端证书的ID，或客户端证书的ID",
+          "example": "[\"RwFAfr8Y\\r\\n\"]",
           "member": "string",
           "name": "CertIds",
           "required": true,
@@ -4088,8 +4089,10 @@
       "members": [
         {
           "document": "证书ID，以及与该证书ID关联的负载均衡实例列表",
+          "example": "无",
           "member": "CertIdRelatedWithLoadBalancers",
           "name": "CertSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4489,8 +4492,10 @@
       "members": [
         {
           "document": "配额列表",
+          "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4562,7 +4567,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤",
+          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -4570,7 +4576,8 @@
         },
         {
           "default": "",
-          "document": "显示数量限制，默认20",
+          "document": "显示数量限制，默认20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4578,7 +4585,8 @@
         },
         {
           "default": "",
-          "document": "显示的偏移量，默认为0",
+          "document": "显示的偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4591,23 +4599,29 @@
       "document": "DescribeTargetGroupInstances返回参数结构体",
       "members": [
         {
-          "document": "本次查询的结果数量",
+          "document": "本次查询的结果数量。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "绑定的服务器信息",
+          "document": "绑定的服务器信息。",
+          "example": "无",
           "member": "TargetGroupBackend",
           "name": "TargetGroupInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实际统计数量，不受Limit，Offset，CAM的影响",
+          "document": "实际统计数量，不受Limit、Offset、CAM的影响。",
+          "example": "2",
           "member": "uint64",
           "name": "RealCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -43,7 +43,7 @@
     "ModifyDbauditInstancesRenewFlag": [
       {
         "document": "",
-        "input": "https://cds.tencentcloudapi.com/?Action=ModifyDbauditInstancesRenewFlag\r\n&InstanceId=1453498545\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "input": "https://cds.tencentcloudapi.com/?Action=ModifyDbauditInstancesRenewFlag\n&InstanceId=1453498545\n&AutoRenewFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改数据安全审计实例续费标识"
       }

@@ -353,13 +353,13 @@
     "DescribeLoadBalancerListByCertId": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\r\n&CertIds.0=RwFAfr8Y\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\n&CertIds.0=RwFAfr8Y\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"RwFAfr8Y\",\n                \"LoadBalancers\": []\n            }\n        ],\n        \"RequestId\": \"fe6059b5-faa6-4f21-92a1-0c9ee5df5e54\"\n    }\n}",
         "title": "指定的证书ID没有关联到任何负载均衡"
       },
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\r\n&CertIds.0=Rrsw4nIA\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\n&CertIds.0=Rrsw4nIA\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"Rrsw4nIA\",\n                \"LoadBalancers\": [\n                    {\n                        \"LoadBalancerId\": \"lb-rbw529fz\",\n                        \"LoadBalancerName\": \"test_LB\",\n                        \"Forward\": 1,\n                        \"Domain\": \"\",\n                        \"LoadBalancerVips\": [\n                            \"129.226.78.67\"\n                        ],\n                        \"LoadBalancerType\": \"OPEN\",\n                        \"Status\": 1,\n                        \"CreateTime\": \"2019-07-02 18:12:52\",\n                        \"StatusTime\": \"2019-07-02 21:50:07\",\n                        \"ProjectId\": 0,\n                        \"OpenBgp\": 0,\n                        \"Snat\": false,\n                        \"Isolation\": 0,\n                        \"Log\": \"\",\n                        \"AnycastZone\": \"\",\n                        \"AddressIPVersion\": \"ipv4\",\n                        \"VpcId\": \"vpc-lt9uj4mo\",\n                        \"NumericalVpcId\": 117008,\n                        \"TargetRegionInfo\": {\n                            \"Region\": \"ap-hongkong\",\n                            \"VpcId\": \"vpc-lt9uj4mo\"\n                        },\n                        \"SubnetId\": \"\",\n                        \"SecureGroups\": [],\n                        \"Tags\": [],\n                        \"VipIsp\": \"BGP\",\n                        \"MasterZone\": null,\n                        \"BackupZoneSet\": null,\n                        \"IsolatedTime\": null,\n                        \"ExpireTime\": null,\n                        \"ChargeType\": null,\n                        \"NetworkAttributes\": null,\n                        \"PrepaidAttributes\": null\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"7718d187-7684-4294-954b-1e13009d75f6\"\n    }\n}",
         "title": "指定的证书ID有关联到负载均衡"
       }
@@ -439,7 +439,7 @@
     "DescribeTargetGroupInstances": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargetGroupInstances\r\n&Filters.0.Name=TargetGroupId\r\n&Filters.0.Values.0=lbtg-5xunivs0\r\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargetGroupInstances\n&Filters.0.Name=TargetGroupId\n&Filters.0.Values.0=lbtg-5xunivs0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TargetGroupInstanceSet\": [\n            {\n                \"TargetGroupId\": \"lbtg-5xunivs0\",\n                \"Type\": \"CVM\",\n                \"InstanceId\": \"ins-197234qt\",\n                \"InstanceName\": \"未命名\",\n                \"Port\": 3333,\n                \"Weight\": 43,\n                \"PublicIpAddresses\": [],\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.32\"\n                ],\n                \"EniId\": null,\n                \"RegisteredTime\": \"2019-07-24 20:02:43\"\n            },\n            {\n                \"TargetGroupId\": \"lbtg-5xunivs0\",\n                \"Type\": \"CVM\",\n                \"InstanceId\": \"ins-197234qt\",\n                \"InstanceName\": \"未命名\",\n                \"Port\": 2222,\n                \"Weight\": 55,\n                \"PublicIpAddresses\": [],\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.32\"\n                ],\n                \"EniId\": null,\n                \"RegisteredTime\": \"2019-07-23 21:01:08\"\n            }\n        ],\n        \"RealCount\": 2,\n        \"RequestId\": \"94240d7f-8bc1-422a-81b9-5ea76d486a66\"\n    }\n}",
         "title": "显示目标组绑定的服务器信息"
       }

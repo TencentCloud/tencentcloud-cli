@@ -221,15 +221,9 @@
     "CheckNetDetectState": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\r\n&Version=2017-03-12\r\n&NetDetectId=netd-12345678\r\n&DetectDestinationIp.0=10.0.0.2\r\n&DetectDestinationIp.1=10.0.0.3\r\n&NextHopType=NORMAL_CVM\r\n&NextHopDestination=10.0.0.4\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\n&NetDetectId=netd-12345678\n&DetectDestinationIp.0=10.0.0.2\n&DetectDestinationIp.1=10.0.0.3\n&NextHopType=NORMAL_CVM\n&NextHopDestination=10.0.0.4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NetDetectIpStateSet\": [\n            {\n                \"DetectDestinationIp\": \"10.0.0.2\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            },\n            {\n                \"DetectDestinationIp\": \"10.0.0.3\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据网络探测ID验证探测参数"
-      },
-      {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\r\n&Version=2017-03-12\r\n&VpcId=vpc-12345678\r\n&SubnetId=subnet-12345678\r\n&NetDetectName=test\r\n&DetectDestinationIp.0=10.0.0.5\r\n&DetectDestinationIp.1=10.0.0.6\r\n&NextHopType=NORMAL_CVM\r\n&NextHopDestination=10.0.0.4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetDetectIpStateSet\": [\n            {\n                \"DetectDestinationIp\": \"10.0.0.5\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            },\n            {\n                \"DetectDestinationIp\": \"10.0.0.6\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
-        "title": "根据输入信息验证探测参数"
       }
     ],
     "CloneSecurityGroup": [
@@ -1549,7 +1543,7 @@
     "DetachCcnInstances": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DetachCcnInstances\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l\r\n&Instances.0.InstanceType=VPC\r\n&Instances.0.InstanceId=vpc-3dr1zrr9\r\n&Instances.0.InstanceRegion=ap-guangzhou\r\n&Instances.1.InstanceType=DIRECTCONNECT\r\n&Instances.1.InstanceId=dcg-98qosdc3\r\n&Instances.1.InstanceRegion=ap-guangzhou",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DetachCcnInstances\n&CcnId=ccn-gree226l\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&Instances.1.InstanceType=DIRECTCONNECT\n&Instances.1.InstanceId=dcg-98qosdc3\n&Instances.1.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "云联网解关联多个网络实例"
       }

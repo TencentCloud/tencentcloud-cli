@@ -40,6 +40,14 @@
         "title": "查询ES集群实例"
       }
     ],
+    "DescribeViews": [
+      {
+        "document": "",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeViews\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NodesView\": [\n            {\n                \"CpuNum\": 0,\n                \"MemUsage\": 0.0,\n                \"NodeId\": \"xx\",\n                \"CpuUsage\": 0.0,\n                \"Break\": 0.0,\n                \"Visible\": 0.0,\n                \"DiskSize\": 0,\n                \"MemSize\": 0,\n                \"NodeIp\": \"xx\",\n                \"DiskUsage\": 0.0\n            }\n        ],\n        \"ClusterView\": {\n            \"TargetNodeTypes\": [\n                \"xx\"\n            ],\n            \"AvgCpuUsage\": 0.0,\n            \"AvgMemUsage\": 0.0,\n            \"Break\": 0.0,\n            \"Visible\": 0.0,\n            \"AvgDiskUsage\": 0.0,\n            \"Health\": 0.0,\n            \"TotalDiskSize\": 1\n        },\n        \"RequestId\": \"xx\",\n        \"KibanasView\": [\n            {\n                \"MemUsage\": 0.0,\n                \"Ip\": \"xx\",\n                \"CpuUsage\": 0.0,\n                \"CpuNum\": 0,\n                \"DiskSize\": 0,\n                \"MemSize\": 0,\n                \"DiskUsage\": 0.0\n            }\n        ]\n    }\n}",
+        "title": "查询集群视图"
+      }
+    ],
     "DiagnoseInstance": [
       {
         "document": "",

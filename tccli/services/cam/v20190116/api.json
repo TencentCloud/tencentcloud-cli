@@ -222,6 +222,12 @@
       "name": "获取角色详情",
       "output": "GetRoleResponse"
     },
+    "GetRolePermissionBoundary": {
+      "document": "获取角色权限边界",
+      "input": "GetRolePermissionBoundaryRequest",
+      "name": "获取角色权限边界",
+      "output": "GetRolePermissionBoundaryResponse"
+    },
     "GetSAMLProvider": {
       "document": "查询SAML身份提供商详情",
       "input": "GetSAMLProviderRequest",
@@ -245,6 +251,12 @@
       "input": "GetUserRequest",
       "name": "查询子用户",
       "output": "GetUserResponse"
+    },
+    "GetUserPermissionBoundary": {
+      "document": "获取用户权限边界",
+      "input": "GetUserPermissionBoundaryRequest",
+      "name": "获取用户权限边界",
+      "output": "GetUserPermissionBoundaryResponse"
     },
     "ListAccessKeys": {
       "document": "列出指定CAM用户的访问密钥",
@@ -2287,6 +2299,67 @@
       ],
       "type": "object"
     },
+    "GetRolePermissionBoundaryRequest": {
+      "document": "GetRolePermissionBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "角色ID",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRolePermissionBoundaryResponse": {
+      "document": "GetRolePermissionBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyDocument",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PolicyType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreateMode",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRoleRequest": {
       "document": "GetRole请求参数结构体",
       "members": [
@@ -2468,6 +2541,67 @@
           "member": "string",
           "name": "ServiceName",
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserPermissionBoundaryRequest": {
+      "document": "GetUserPermissionBoundary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "子账号Uin",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserPermissionBoundaryResponse": {
+      "document": "GetUserPermissionBoundary返回参数结构体",
+      "members": [
+        {
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PolicyDocument",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "PolicyType",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreateMode",
+          "type": "int",
           "value_allowed_null": true
         },
         {

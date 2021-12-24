@@ -6707,6 +6707,24 @@
           "name": "RepoType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据卷信息",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "VolumeInfos",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载点信息",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfos",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9523,6 +9541,7 @@
         {
           "default": "",
           "document": "命名空间ID",
+          "example": "namespace-xxxxxxx",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -9531,6 +9550,7 @@
         {
           "default": "",
           "document": "搜索字段",
+          "example": "ms-xxxxxxx",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -9539,6 +9559,7 @@
         {
           "default": "",
           "document": "排序字段",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -9547,6 +9568,7 @@
         {
           "default": "",
           "document": "排序类型",
+          "example": "无",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -9555,6 +9577,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -9563,6 +9586,7 @@
         {
           "default": "",
           "document": "分页个数",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -9571,6 +9595,7 @@
         {
           "default": "",
           "document": "状态过滤，online、offline、single_online",
+          "example": "[\"online\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -9579,8 +9604,18 @@
         {
           "default": "",
           "document": "IdList",
+          "example": "[\"ms-xxx\"]",
           "member": "string",
           "name": "MicroserviceIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "搜索的服务名列表",
+          "example": "[\"provider\"]",
+          "member": "string",
+          "name": "MicroserviceNameList",
           "required": false,
           "type": "list"
         }
@@ -9592,8 +9627,10 @@
       "members": [
         {
           "document": "微服务分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TsfPageMicroservice",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -20658,6 +20695,88 @@
         }
       ],
       "usage": "out"
+    },
+    "VolumeInfo": {
+      "document": "容器卷挂载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "数据卷类型",
+          "example": "emptyDir",
+          "member": "string",
+          "name": "VolumeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据卷名称",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据卷配置",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeConfig",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VolumeMountInfo": {
+      "document": "容器卷挂载点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "挂载数据卷名称",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeMountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载路径",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeMountPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "挂载子路径",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeMountSubPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写，1：读 2：读写",
+          "example": "2",
+          "member": "string",
+          "name": "ReadOrWrite",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

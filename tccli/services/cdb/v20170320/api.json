@@ -636,11 +636,23 @@
       "name": "回档数据库表",
       "output": "StartBatchRollbackResponse"
     },
+    "StartReplication": {
+      "document": "开启 RO 复制，从主实例同步数据。",
+      "input": "StartReplicationRequest",
+      "name": "开启复制",
+      "output": "StartReplicationResponse"
+    },
     "StopDBImportJob": {
       "document": "本接口(StopDBImportJob)用于终止数据导入任务。",
       "input": "StopDBImportJobRequest",
       "name": "终止数据导入任务",
       "output": "StopDBImportJobResponse"
+    },
+    "StopReplication": {
+      "document": "停止 RO 复制，中断从主实例同步数据。",
+      "input": "StopReplicationRequest",
+      "name": "停止复制",
+      "output": "StopReplicationResponse"
     },
     "StopRollback": {
       "document": "本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeAsyncRequestInfo 查询任务的执行情况。",
@@ -11733,6 +11745,42 @@
       ],
       "type": "object"
     },
+    "StartReplicationRequest": {
+      "document": "StartReplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。仅支持只读实例。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartReplicationResponse": {
+      "document": "StartReplication返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopDBImportJobRequest": {
       "document": "StopDBImportJob请求参数结构体",
       "members": [
@@ -11750,6 +11798,42 @@
     "StopDBImportJobResponse": {
       "document": "StopDBImportJob返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopReplicationRequest": {
+      "document": "StopReplication请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。仅支持只读实例。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopReplicationResponse": {
+      "document": "StopReplication返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

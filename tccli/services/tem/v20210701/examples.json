@@ -144,6 +144,14 @@
         "title": "创建或者更新 Ingress 规则"
       }
     ],
+    "RestartApplication": [
+      {
+        "document": "服务版本停止",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "服务版本停止"
+      }
+    ],
     "RestartApplicationPod": [
       {
         "document": "重启应用实例",
@@ -174,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollingUpdateApplicationByVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"DeployVersion\": \"xx\",\n    \"PackageName\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": \"version-xxx\"\n    }\n}",
         "title": "应用部署"
+      }
+    ],
+    "StopApplication": [
+      {
+        "document": "服务版本停止",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "服务版本停止"
       }
     ]
   },

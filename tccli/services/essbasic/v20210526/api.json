@@ -18,6 +18,12 @@
       "name": "获取跳转小程序签署链接",
       "output": "CreateSignUrlsResponse"
     },
+    "DescribeFlowDetailInfo": {
+      "document": "此接口（DescribeFlowDetailInfo）用于查询合同(流程)的详细信息。",
+      "input": "DescribeFlowDetailInfoRequest",
+      "name": "查询合同(流程)的详细信息",
+      "output": "DescribeFlowDetailInfoResponse"
+    },
     "DescribeResourceUrlsByFlows": {
       "document": "根据流程信息批量获取资源下载链接",
       "input": "DescribeResourceUrlsByFlowsRequest",
@@ -590,6 +596,78 @@
       ],
       "type": "object"
     },
+    "DescribeFlowDetailInfoRequest": {
+      "document": "DescribeFlowDetailInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同(流程)编号数组",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowDetailInfoResponse": {
+      "document": "DescribeFlowDetailInfo返回参数结构体",
+      "members": [
+        {
+          "document": "渠道侧应用号Id",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "渠道侧企业第三方Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "合同(流程)的具体详细描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowDetailInfo",
+          "name": "FlowInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceUrlsByFlowsRequest": {
       "document": "DescribeResourceUrlsByFlows请求参数结构体",
       "members": [
@@ -832,6 +910,122 @@
       ],
       "usage": "in"
     },
+    "FlowApproverDetail": {
+      "document": "签署人的流程信息明细",
+      "members": [
+        {
+          "default": "",
+          "document": "模板配置时候的签署人id,与控件绑定",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiptId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道侧企业的第三方id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道侧企业操作人的第三方id",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOperatorOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道侧企业名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人签署顺序",
+          "example": "无",
+          "member": "int64",
+          "name": "SignOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前签署人的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "签署人签署时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproveTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与者类型 (ORGANIZATION企业/PERSON个人)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FlowApproverInfo": {
       "document": "创建流程签署人入参",
       "members": [
@@ -927,6 +1121,102 @@
         }
       ],
       "usage": "in"
+    },
+    "FlowDetailInfo": {
+      "document": "此结构体(FlowDetailInfo)描述的是合同(流程)的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "合同(流程)的Id",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的名字",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的类型",
+          "example": "无",
+          "member": "string",
+          "name": "FlowType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的状态",
+          "example": "无",
+          "member": "string",
+          "name": "FlowStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的信息",
+          "example": "无",
+          "member": "string",
+          "name": "FlowMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的创建时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的签署截止时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "DeadLine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义数据",
+          "example": "无",
+          "member": "string",
+          "name": "CustomData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同(流程)的签署人数组",
+          "example": "无",
+          "member": "FlowApproverDetail",
+          "name": "FlowApproverInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FlowInfo": {
       "document": "此结构体 (FlowInfo) 用于描述流程信息。",

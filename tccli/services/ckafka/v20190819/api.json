@@ -233,6 +233,12 @@
       "input": "ModifyTopicAttributesRequest",
       "name": "设置主题属性",
       "output": "ModifyTopicAttributesResponse"
+    },
+    "SendMessage": {
+      "document": "通过HTTP接入层发送消息",
+      "input": "SendMessageRequest",
+      "name": "HTTP发送消息",
+      "output": "SendMessageResponse"
     }
   },
   "metadata": {
@@ -555,6 +561,32 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchContent": {
+      "document": "批量发送消息内容",
+      "members": [
+        {
+          "default": "",
+          "document": "发送的消息体",
+          "example": "message-content",
+          "member": "string",
+          "name": "Body",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送消息的键名",
+          "example": "messag-ke9g8d929h",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "BatchCreateAclRequest": {
       "document": "BatchCreateAcl请求参数结构体",
@@ -5333,6 +5365,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SendMessageRequest": {
+      "document": "SendMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DataHub接入ID",
+          "example": "datahubId",
+          "member": "string",
+          "name": "DataHubId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送消息内容",
+          "example": "无",
+          "member": "BatchContent",
+          "name": "Message",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageResponse": {
+      "document": "SendMessage返回参数结构体",
+      "members": [
+        {
+          "document": "消息ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubscribedInfo": {
       "document": "订阅信息实体",

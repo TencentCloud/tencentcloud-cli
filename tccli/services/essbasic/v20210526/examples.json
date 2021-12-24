@@ -24,6 +24,14 @@
         "title": "批量创建签署参与者签署H5链接"
       }
     ],
+    "DescribeFlowDetailInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowDetailInfo\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"渠道经办人id\"\n        },\n        \"ProxyOrganizationOpenId\": \"渠道企业第三方id\",\n        \"AppId\": \"16fd2f7d7ae85d13ca5f8d501d57b5ec\"\n    },\n    \"FlowIds\": [\n        \"yDxjGUUgydjfjp2rUuO4zjERvGKmZJeX\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"16fd2f7d7ae85d13ca5f8d501d57b5ec\",\n        \"FlowInfo\": [\n            {\n                \"CreateOn\": 1638954201,\n                \"DeadLine\": 1689688460,\n                \"FlowId\": \"yDxjGUUgydjfjp2rUuO4zjERvGKmZJeX\",\n                \"FlowMessage\": \"\",\n                \"FlowName\": \"示例1\",\n                \"FlowStatus\": \"INIT\",\n                \"FlowType\": \"示例\"\n            }\n        ],\n        \"ProxyOrganizationOpenId\": \"渠道测第三方id\",\n        \"RequestId\": \"s1639904010686603599\"\n    }\n}",
+        "title": "查询流程合同的详细信息"
+      }
+    ],
     "DescribeResourceUrlsByFlows": [
       {
         "document": "",

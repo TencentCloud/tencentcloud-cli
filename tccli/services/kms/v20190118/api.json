@@ -211,9 +211,9 @@
       "output": "GetPublicKeyResponse"
     },
     "GetRegions": {
-      "document": "获取支持的地域列表",
+      "document": "获取可以提供KMS服务的地域列表",
       "input": "GetRegionsRequest",
-      "name": "获取支持的地域列表",
+      "name": "获取可以提供KMS服务的地域列表",
       "output": "GetRegionsResponse"
     },
     "GetServiceStatus": {
@@ -332,6 +332,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -358,6 +359,7 @@
         {
           "default": "",
           "document": "CMK的唯一标识",
+          "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -366,6 +368,7 @@
         {
           "default": "",
           "document": "使用PublicKey加密的密文，Base64编码",
+          "example": "无",
           "member": "string",
           "name": "Ciphertext",
           "required": true,
@@ -374,6 +377,7 @@
         {
           "default": "",
           "document": "在使用公钥加密时对应的算法：当前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256",
+          "example": "RSAES_OAEP_SHA_1",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -387,15 +391,19 @@
       "members": [
         {
           "document": "CMK的唯一标识",
+          "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解密后的明文，base64编码",
+          "example": "dGVzdA==",
           "member": "string",
           "name": "Plaintext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -414,6 +422,7 @@
         {
           "default": "",
           "document": "CMK的唯一标识",
+          "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -422,6 +431,7 @@
         {
           "default": "",
           "document": "使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。",
+          "example": "无",
           "member": "string",
           "name": "Ciphertext",
           "required": true,
@@ -435,15 +445,19 @@
       "members": [
         {
           "document": "CMK的唯一标识",
+          "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解密后的明文，base64编码",
+          "example": "dGVzdA==",
           "member": "string",
           "name": "Plaintext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -462,6 +476,7 @@
         {
           "default": "",
           "document": "cmk的ID",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -470,6 +485,7 @@
         {
           "default": "",
           "document": "云产品的唯一性标识符",
+          "example": "ssm",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -478,6 +494,7 @@
         {
           "default": "",
           "document": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。",
+          "example": "resourceId",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -504,6 +521,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -530,6 +548,7 @@
         {
           "default": "",
           "document": "需要被取消删除的CMK的唯一标志",
+          "example": "无",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -543,8 +562,10 @@
       "members": [
         {
           "document": "唯一标志被取消删除的CMK。",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -580,7 +601,7 @@
         },
         {
           "default": "",
-          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥, “ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥, “ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥",
+          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥，“ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECDSA384”表示创建用于签名验签的 ECDSA384 非对称秘钥。完整的秘钥用途与算法支持列表可通过 ListAlgorithms 接口获取。",
           "example": "ASYMMETRIC_DECRYPT_SM2",
           "member": "string",
           "name": "KeyUsage",
@@ -783,6 +804,7 @@
         {
           "default": "",
           "document": "待解密的密文数据",
+          "example": "Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL",
           "member": "string",
           "name": "CiphertextBlob",
           "required": true,
@@ -791,8 +813,27 @@
         {
           "default": "",
           "document": "key/value对的json字符串，如果Encrypt指定了该参数，则在调用Decrypt API时需要提供同样的参数，最大支持1024字符",
+          "example": "无",
           "member": "string",
           "name": "EncryptionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptionPublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
+          "example": "SM2",
+          "member": "string",
+          "name": "EncryptionAlgorithm",
           "required": false,
           "type": "string"
         }
@@ -804,15 +845,19 @@
       "members": [
         {
           "document": "CMK的全局唯一标识",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "解密后的明文。该字段是base64编码的，为了得到原始明文，调用方需要进行base64解码",
+          "document": "若调用时未提供 EncryptionPublicKey，该字段值为 Base64 编码的明文，需进行 Base64 解码以获取明文。\n若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取明文。",
+          "example": "dGVzdCUyMHBsYWluJTIwdGV4dA==",
           "member": "string",
           "name": "Plaintext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -831,6 +876,7 @@
         {
           "default": "",
           "document": "指定需要删除密钥材料的EXTERNAL CMK。",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -883,6 +929,7 @@
         {
           "default": "",
           "document": "CMK全局唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -896,8 +943,10 @@
       "members": [
         {
           "document": "密钥属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadata",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -916,6 +965,7 @@
         {
           "default": "",
           "document": "查询CMK的ID列表，批量查询一次最多支持100个KeyId",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b03\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -929,8 +979,10 @@
       "members": [
         {
           "document": "返回的属性信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1160,6 +1212,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1186,6 +1239,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1212,6 +1266,7 @@
         {
           "default": "",
           "document": "需要批量禁用的CMK Id 列表，CMK数量最大支持100",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -1290,6 +1345,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1316,6 +1372,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1342,6 +1399,7 @@
         {
           "default": "",
           "document": "需要批量启用的CMK Id 列表， CMK数量最大支持100",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -1539,6 +1597,7 @@
         {
           "default": "",
           "document": "CMK全局唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1547,6 +1606,7 @@
         {
           "default": "",
           "document": "指定生成Datakey的加密算法以及Datakey大小，AES_128或者AES_256。KeySpec 和 NumberOfBytes 必须指定一个",
+          "example": "AES_256",
           "member": "string",
           "name": "KeySpec",
           "required": false,
@@ -1555,6 +1615,7 @@
         {
           "default": "",
           "document": "生成的DataKey的长度，同时指定NumberOfBytes和KeySpec时，以NumberOfBytes为准。最小值为1， 最大值为1024。KeySpec 和 NumberOfBytes 必须指定一个",
+          "example": "无",
           "member": "uint64",
           "name": "NumberOfBytes",
           "required": false,
@@ -1563,8 +1624,27 @@
         {
           "default": "",
           "document": "key/value对的json字符串，如果使用该字段，则返回的DataKey在解密时需要填入相同的字符串",
+          "example": "无",
           "member": "string",
           "name": "EncryptionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptionPublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（C1C3C2），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
+          "example": "SM2",
+          "member": "string",
+          "name": "EncryptionAlgorithm",
           "required": false,
           "type": "string"
         }
@@ -1576,22 +1656,28 @@
       "members": [
         {
           "document": "CMK的全局唯一标识",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "生成的数据密钥DataKey的明文，该明文使用base64进行了编码，需base64解码后作为数据密钥本地使用",
+          "document": "若调用时未提供 EncryptionPublicKey，该字段值为生成的数据密钥 DataKey 的 Base64 编码的明文，需进行 Base64 解码以获取 DataKey 明文。\n若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取 DataKey 明文。",
+          "example": "uW9wqntw+FAgnfsIrxOpOA==",
           "member": "string",
           "name": "Plaintext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据密钥DataKey加密后的密文，用户需要自行保存该密文，KMS不托管用户的数据密钥。可以通过Decrypt接口从CiphertextBlob中获取数据密钥DataKey明文",
+          "example": "g2F8eQk44QrTbfj09TL17AZyFPgs8BTtZe2j27Wuw1YzTBCxnd0T/gwFQSasmtzxZi6mmvD7DCjCE+LxJmdhXQ==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-h/nUfRbaTUY7/KWXwuSK1Py+ZFRTK5WQiUz6yQE5XBFUN3UwPOUbl8P3A3caow2rlqTjUw==",
           "member": "string",
           "name": "CiphertextBlob",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1610,6 +1696,7 @@
         {
           "default": "",
           "document": "生成的随机数的长度。最小值为1， 最大值为1024。",
+          "example": "16",
           "member": "uint64",
           "name": "NumberOfBytes",
           "required": true,
@@ -1623,8 +1710,10 @@
       "members": [
         {
           "document": "生成的随机数的明文，该明文使用base64编码，用户需要使用base64解码得到明文。",
+          "example": "17mvQgMl0sbM7OAJ7fpLsA==",
           "member": "string",
           "name": "Plaintext",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1643,6 +1732,7 @@
         {
           "default": "",
           "document": "CMK唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1656,8 +1746,10 @@
       "members": [
         {
           "document": "密钥轮换是否开启",
+          "example": "无",
           "member": "bool",
           "name": "KeyRotationEnabled",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1676,6 +1768,7 @@
         {
           "default": "",
           "document": "CMK的唯一标识，获取密钥参数的CMK必须是EXTERNAL类型，即在CreateKey时指定Type=2 类型的CMK。",
+          "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0810",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1684,6 +1777,7 @@
         {
           "default": "",
           "document": "指定加密密钥材料的算法，目前支持RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256",
+          "example": "RSAES_OAEP_SHA_1",
           "member": "string",
           "name": "WrappingAlgorithm",
           "required": true,
@@ -1692,6 +1786,7 @@
         {
           "default": "",
           "document": "指定加密密钥材料的类型，目前只支持RSA_2048",
+          "example": "RSA_2048",
           "member": "string",
           "name": "WrappingKeySpec",
           "required": true,
@@ -1705,29 +1800,37 @@
       "members": [
         {
           "document": "CMK的唯一标识，用于指定目标导入密钥材料的CMK。",
+          "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0810",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "导入密钥材料需要的token，用于作为 ImportKeyMaterial 的参数。",
+          "example": "Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpw3adjEFXyCP2yqzV8xdD5GMY4gIZoDfJ33SnnbxDMRND8lzh4mZjzFNM8PsjhYrgVSxIiJOCHupZvD4QcoGco8",
           "member": "string",
           "name": "ImportToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用于加密密钥材料的RSA公钥，base64编码。使用PublicKey base64解码后的公钥将导入密钥进行加密后作为 ImportKeyMaterial 的参数。",
+          "example": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1IjpYRubNKn97lPU0/eR8UBaV11glfQLNqlub+YspXwBsvVqcnSvu5c8GoLTEYGSTVbvsREDCq6VfFoSeoIqbv8aWukxbPGWgI1nu55ocvWwthzROFA5UPGC8LOuH0ftZ5Z7cIaigEenS3ngfo4MYTJtg6/Bl1jJVWvjnKzgswsZeFclSURedSXUcMxfSI344s6I17DTNAQ/vQqyjFGIyo2+JctaxVlY2XuBZf7tPimNdoxAoJ14QxAl1gQGu959xnRJ4rwZbxsklJnEivQqTBeFIiv3KTzFJS6bkz2eqRJ1p4jTBDWbHEWTVt6tdXPj4+4D21RFGAt3706vf4PIrwIDAQAB",
           "member": "string",
           "name": "PublicKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "该导出token和公钥的有效期，超过该时间后无法导入，需要重新调用GetParametersForImport获取。",
+          "example": "1566614716",
           "member": "uint64",
           "name": "ParametersValidTo",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1804,8 +1907,10 @@
       "members": [
         {
           "document": "可用region列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-hongkong",
           "member": "string",
           "name": "Regions",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1828,43 +1933,55 @@
       "members": [
         {
           "document": "KMS服务是否开通， true 表示已开通",
+          "example": "1",
           "member": "bool",
           "name": "ServiceEnabled",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "InvalidType",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "0-普通版，1-旗舰版",
+          "example": "0",
           "member": "uint64",
           "name": "UserLevel",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "旗舰版到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1603701385",
           "member": "uint64",
           "name": "ProExpireTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "旗舰版是否自动续费：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "ProRenewFlag",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kms_pro_12345",
           "member": "string",
           "name": "ProResourceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1883,6 +2000,7 @@
         {
           "default": "",
           "document": "使用GetParametersForImport 返回的PublicKey加密后的密钥材料base64编码。对于国密版本region的KMS，导入的密钥材料长度要求为 128 bit，FIPS版本region的KMS， 导入的密钥材料长度要求为 256 bit。",
+          "example": "无",
           "member": "string",
           "name": "EncryptedKeyMaterial",
           "required": true,
@@ -1891,6 +2009,7 @@
         {
           "default": "",
           "document": "通过调用GetParametersForImport获得的导入令牌。",
+          "example": "Sy+GF4f+XxUan1sfSBfqWQmyJeVO30wcqLEMoW4REpxBApJqYG9zc37OM0Z3qT/mvLofzM3hwVJSTzIITcAo6ew3LidOJ3nwNoVNOM2wnrL+g9puwP0GpbbSwTd16X9E",
           "member": "string",
           "name": "ImportToken",
           "required": true,
@@ -1899,6 +2018,7 @@
         {
           "default": "",
           "document": "指定导入密钥材料的CMK，需要和GetParametersForImport 指定的CMK相同。",
+          "example": "1ff78c0d-c54b-11e9-9cc9-5254006d0800",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -1907,6 +2027,7 @@
         {
           "default": "",
           "document": "密钥材料过期时间 unix 时间戳，不指定或者 0 表示密钥材料不会过期，若指定过期时间，需要大于当前时间点，最大支持 2147443200。",
+          "example": "0",
           "member": "uint64",
           "name": "ValidTo",
           "required": false,
@@ -2108,22 +2229,28 @@
       "members": [
         {
           "document": "本地区支持的对称加密算法",
+          "example": "无",
           "member": "AlgorithmInfo",
           "name": "SymmetricAlgorithms",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "本地区支持的非对称加密算法",
+          "example": "无",
           "member": "AlgorithmInfo",
           "name": "AsymmetricAlgorithms",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "本地区支持的非对称签名验签算法",
+          "example": "无",
           "member": "AlgorithmInfo",
           "name": "AsymmetricSignVerifyAlgorithms",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2259,6 +2386,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2267,6 +2395,7 @@
         {
           "default": "",
           "document": "含义跟 SQL 查询的 Limit 一致，表示本次获最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "example": "2",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2275,6 +2404,7 @@
         {
           "default": "",
           "document": "根据创建者角色筛选，默认 0 表示用户自己创建的cmk， 1 表示授权其它云产品自动创建的cmk",
+          "example": "无",
           "member": "uint64",
           "name": "Role",
           "required": false,
@@ -2288,15 +2418,19 @@
       "members": [
         {
           "document": "CMK列表数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Key",
           "name": "Keys",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "CMK的总数量",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2349,6 +2483,7 @@
         {
           "default": "",
           "document": "需要重新加密的密文",
+          "example": "Ade234dasdeEWdGVzdCUyMHBsYWlJJlIHL",
           "member": "string",
           "name": "CiphertextBlob",
           "required": true,
@@ -2357,6 +2492,7 @@
         {
           "default": "",
           "document": "重新加密使用的CMK，如果为空，则使用密文原有的CMK重新加密（若密钥没有轮换则密文不会刷新）",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "DestinationKeyId",
           "required": false,
@@ -2365,6 +2501,7 @@
         {
           "default": "",
           "document": "CiphertextBlob 密文加密时使用的key/value对的json字符串。如果加密时未使用，则为空",
+          "example": "无",
           "member": "string",
           "name": "SourceEncryptionContext",
           "required": false,
@@ -2373,6 +2510,7 @@
         {
           "default": "",
           "document": "重新加密使用的key/value对的json字符串，如果使用该字段，则返回的新密文在解密时需要填入相同的字符串",
+          "example": "无",
           "member": "string",
           "name": "DestinationEncryptionContext",
           "required": false,
@@ -2386,29 +2524,37 @@
       "members": [
         {
           "document": "重新加密后的密文",
+          "example": "无",
           "member": "string",
           "name": "CiphertextBlob",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "重新加密使用的CMK",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "重新加密前密文使用的CMK",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b0000",
           "member": "string",
           "name": "SourceKeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "true表示密文已经重新加密。同一个CMK进行重加密，在密钥没有发生轮换的情况下不会进行实际重新加密操作，返回原密文",
+          "example": "1",
           "member": "bool",
           "name": "ReEncrypted",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2427,6 +2573,7 @@
         {
           "default": "",
           "document": "CMK的唯一标志",
+          "example": "无",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2435,6 +2582,7 @@
         {
           "default": "",
           "document": "计划删除时间区间[7,30]",
+          "example": "无",
           "member": "uint64",
           "name": "PendingWindowInDays",
           "required": true,
@@ -2448,15 +2596,19 @@
       "members": [
         {
           "document": "计划删除执行时间",
+          "example": "1559318399",
           "member": "uint64",
           "name": "DeletionDate",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "唯一标志被计划删除的CMK",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2586,6 +2738,7 @@
         {
           "default": "",
           "document": "cmk的ID",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2594,6 +2747,7 @@
         {
           "default": "",
           "document": "云产品的唯一性标识符",
+          "example": "ssm",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2602,6 +2756,7 @@
         {
           "default": "",
           "document": "资源/实例ID，由调用方根据自己的云产品特征来定义，以字符串形式做存储。",
+          "example": "resourceId",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2628,6 +2783,7 @@
         {
           "default": "",
           "document": "新的别名，1-60个字符或数字的组合",
+          "example": "NewAlias",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -2636,6 +2792,7 @@
         {
           "default": "",
           "document": "CMK的全局唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -2662,6 +2819,7 @@
         {
           "default": "",
           "document": "新的描述信息，最大支持1024字节",
+          "example": "NewDescription",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -2670,6 +2828,7 @@
         {
           "default": "",
           "document": "需要修改描述信息的CMK ID",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
           "member": "string",
           "name": "KeyId",
           "required": true,

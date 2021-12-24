@@ -2155,6 +2155,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新内外网功能，需要传递安全组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -4944,6 +4954,7 @@
           "example": "{}",
           "member": "IPAddress",
           "name": "Addresses",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4952,6 +4963,7 @@
           "example": "{}",
           "member": "ClusterCredential",
           "name": "Credential",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4960,6 +4972,7 @@
           "example": "{}",
           "member": "ClusterPublicLB",
           "name": "PublicLB",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4968,7 +4981,17 @@
           "example": "{}",
           "member": "ClusterInternalLB",
           "name": "InternalLB",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标记是否新的内外网功能",
+          "example": "false",
+          "member": "bool",
+          "name": "ProxyLB",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11117,6 +11140,15 @@
           "example": "false",
           "member": "bool",
           "name": "NeedDeleteCbs",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标记是否是新的内外网。默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ProxyLB",
           "required": false,
           "type": "bool"
         }

@@ -30,6 +30,12 @@
       "name": "查询ES集群实例",
       "output": "DescribeInstancesResponse"
     },
+    "DescribeViews": {
+      "document": "查询集群各视图数据，包括集群维度、节点维度、Kibana维度",
+      "input": "DescribeViewsRequest",
+      "name": "查询集群视图",
+      "output": "DescribeViewsResponse"
+    },
     "DiagnoseInstance": {
       "document": "智能运维诊断集群",
       "input": "DiagnoseInstanceRequest",
@@ -110,6 +116,183 @@
     "serviceShortName": "es"
   },
   "objects": {
+    "ClusterView": {
+      "document": "集群维度视图数据",
+      "members": [
+        {
+          "default": "",
+          "document": "集群健康状态",
+          "member": "float",
+          "name": "Health",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群是否可见",
+          "member": "float",
+          "name": "Visible",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群是否熔断",
+          "member": "float",
+          "name": "Break",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均磁盘使用率",
+          "member": "float",
+          "name": "AvgDiskUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均内存使用率",
+          "member": "float",
+          "name": "AvgMemUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均cpu使用率",
+          "member": "float",
+          "name": "AvgCpuUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群总存储大小",
+          "member": "uint64",
+          "name": "TotalDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端请求节点",
+          "member": "string",
+          "name": "TargetNodeTypes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在线节点数",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总节点数",
+          "member": "int64",
+          "name": "TotalNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据节点数",
+          "member": "int64",
+          "name": "DataNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "索引数",
+          "member": "int64",
+          "name": "IndexNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文档数",
+          "member": "int64",
+          "name": "DocNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘已使用字节数",
+          "member": "int64",
+          "name": "DiskUsedInBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分片个数",
+          "member": "int64",
+          "name": "ShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主分片个数",
+          "member": "int64",
+          "name": "PrimaryShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "迁移中的分片个数",
+          "member": "int64",
+          "name": "RelocatingShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "初始化中的分片个数",
+          "member": "int64",
+          "name": "InitializingShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未分配的分片个数",
+          "member": "int64",
+          "name": "UnassignedShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CosBackup": {
       "document": "ES cos自动备份信息",
       "members": [
@@ -719,6 +902,60 @@
           "name": "InstanceList",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeViewsRequest": {
+      "document": "DescribeViews请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeViewsResponse": {
+      "document": "DescribeViews返回参数结构体",
+      "members": [
+        {
+          "document": "集群维度视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClusterView",
+          "member": "ClusterView",
+          "name": "ClusterView",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点维度视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NodesView",
+          "member": "NodeView",
+          "name": "NodesView",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Kibana维度视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "KibanasView",
+          "member": "KibanaView",
+          "name": "KibanasView",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1667,6 +1904,84 @@
       ],
       "usage": "out"
     },
+    "KibanaView": {
+      "document": "Kibana视图数据",
+      "members": [
+        {
+          "default": "",
+          "document": "Kibana节点IP",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点总磁盘大小",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘使用率",
+          "member": "float",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内存大小",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存使用率",
+          "member": "float",
+          "name": "MemUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点cpu个数",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu使用率",
+          "member": "float",
+          "name": "CpuUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LocalDiskInfo": {
       "document": "节点本地盘信息",
       "members": [
@@ -1854,6 +2169,182 @@
         }
       ],
       "usage": "both"
+    },
+    "NodeView": {
+      "document": "节点维度视图数据",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID",
+          "example": "NodeId",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点IP",
+          "example": "NodeIp",
+          "member": "string",
+          "name": "NodeIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点是否可见",
+          "example": "Visible",
+          "member": "float",
+          "name": "Visible",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否熔断",
+          "example": "Break",
+          "member": "float",
+          "name": "Break",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点总磁盘大小",
+          "example": "DiskSize",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘使用率",
+          "example": "DiskUsage",
+          "member": "float",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点内存大小，单位GB",
+          "example": "MemSize",
+          "member": "int64",
+          "name": "MemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存使用率",
+          "example": "MemUsage",
+          "member": "float",
+          "name": "MemUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点cpu个数",
+          "example": "CpuNum",
+          "member": "int64",
+          "name": "CpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu使用率",
+          "example": "CpuUsage",
+          "member": "float",
+          "name": "CpuUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "Zone",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点角色",
+          "example": "NodeRole",
+          "member": "string",
+          "name": "NodeRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点HTTP IP",
+          "example": "NodeHttpIp",
+          "member": "string",
+          "name": "NodeHttpIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "JVM内存使用率",
+          "example": "JvmMemUsage",
+          "member": "float",
+          "name": "JvmMemUsage",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点分片数",
+          "example": "ShardNum",
+          "member": "int64",
+          "name": "ShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点上磁盘ID列表",
+          "example": "DiskIds",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为隐藏可用区",
+          "example": "Hidden",
+          "member": "bool",
+          "name": "Hidden",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Operation": {
       "document": "ES集群操作详细信息",

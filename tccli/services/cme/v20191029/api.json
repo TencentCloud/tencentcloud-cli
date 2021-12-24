@@ -5895,7 +5895,7 @@
         },
         {
           "default": "",
-          "document": "素材类型，同素材素材，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>",
+          "document": "卡槽类型，可取值有：\n<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>\n<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>\n<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>\n<li> TEXT：文本卡槽，可替换文本内容。</li>",
           "example": "0",
           "member": "string",
           "name": "Type",
@@ -5905,13 +5905,23 @@
         },
         {
           "default": "",
-          "document": "默认素材 Id。",
+          "document": "默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "DefaultMaterialId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认文本卡槽信息。当卡槽类型为 TEXT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextSlotInfo",
+          "name": "DefaultTextSlotInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -6545,6 +6555,22 @@
         }
       ],
       "usage": "in"
+    },
+    "TextSlotInfo": {
+      "document": "文本类型卡槽信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文本内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ThirdPartyPublishInfo": {
       "document": "第三方平台视频发布信息。",
