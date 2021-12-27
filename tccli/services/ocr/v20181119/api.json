@@ -2729,6 +2729,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -2737,6 +2738,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2745,6 +2747,7 @@
         {
           "default": "",
           "document": "场景字段，默认不用填写。\n可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。",
+          "example": "无",
           "member": "string",
           "name": "Scene",
           "required": false,
@@ -2753,8 +2756,18 @@
         {
           "default": "",
           "document": "是否开启单字的四点定位坐标输出，默认值为false。",
+          "example": "无",
           "member": "bool",
           "name": "EnableWordPolygon",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "文本检测开关，默认值为true。\n设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableDetectText",
           "required": false,
           "type": "bool"
         }
@@ -2766,15 +2779,19 @@
       "members": [
         {
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
+          "example": "无",
           "member": "TextGeneralHandwriting",
           "name": "TextDetections",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "0",
           "member": "float",
           "name": "Angel",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },

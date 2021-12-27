@@ -20,7 +20,6 @@ Output:
                 "RuleId": "arule-c9qvmfm8",
                 "RuleName": "example6",
                 "RuleState": 3,
-                "Health": "unknown",
                 "Type": "",
                 "Labels": [
                     {
@@ -55,7 +54,6 @@ Output:
                 "RuleId": "arule-nnqzmis6",
                 "RuleName": "example5",
                 "RuleState": 2,
-                "Health": "ok",
                 "Type": "",
                 "Labels": [
                     {

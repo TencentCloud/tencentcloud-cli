@@ -83,7 +83,27 @@ Output:
                         "Y": 53
                     }
                 ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}",
+                "WordPolygon": [
+                    {
+                        "LeftBottom": {
+                            "X": 97,
+                            "Y": 204
+                        },
+                        "LeftTop": {
+                            "X": 97,
+                            "Y": 156
+                        },
+                        "RightBottom": {
+                            "X": 134,
+                            "Y": 204
+                        },
+                        "RightTop": {
+                            "X": 134,
+                            "Y": 156
+                        }
+                    }
+                ]
             }
         ],
         "Angel": 0,
