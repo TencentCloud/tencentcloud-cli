@@ -8,7 +8,8 @@ import os
 import sys
 import tccli.six as six
 import signal
-import logging
+from tccli.log import init
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, base)
 try:
@@ -28,8 +29,7 @@ from tccli import __version__
 from tccli.exceptions import UnknownArgumentError, ConfigurationError, NoCredentialsError, NoRegionError, ClientError
 from tccli.error_msg import USAGE
 
-LOG = logging.getLogger('tccli.main')
-LOG_FORMAT = ('%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s')
+log = init('tccli.main')
 
 
 def main():
@@ -38,29 +38,33 @@ def main():
         sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
         return
     try:
-        LOG.debug("begin cli command")
+        log.info("tccli %s" % ' '.join(sys.argv[1:]))
         CLICommand()()
     except UnknownArgumentError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        log.exception(e)
         return
     except ConfigurationError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        log.exception(e)
         return
     except NoRegionError as e:
         msg = ('%s You can configure your region by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
+        log.exception(e)
         return
     except NoCredentialsError as e:
         msg = ('%s. You can configure your credentials by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
+        log.exception(e)
         return
     except KeyboardInterrupt:
         sys.stdout.write("\n")
@@ -69,11 +73,19 @@ def main():
         sys.stderr.write("\n")
         sys.stderr.write(six.text_type(e))
         sys.stderr.write("\n")
+        log.exception(e)
+        return
+    except TencentCloudSDKException as e:
+        sys.stderr.write("usage: %s\n" % USAGE)
+        sys.stderr.write(str(e))
+        sys.stderr.write("\n")
+        log.error(e)
         return
     except Exception as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
+        log.exception(e)
         return
 
 
