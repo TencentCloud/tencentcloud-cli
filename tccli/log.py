@@ -6,7 +6,7 @@ import os
 def init(name):
     logdir = os.path.join(os.path.expanduser("~"), '.tccli', 'log')
     if not os.path.exists(logdir):
-        os.mkdir(logdir)
+        os.makedirs(logdir)
     fn = os.path.join(logdir, "tccli.log")
     FMT = '[%(asctime)s] [%(process)d] [%(name)s] [%(levelname)s] %(message)s'
     mb = 1024 * 1024
