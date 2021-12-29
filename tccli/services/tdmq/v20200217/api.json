@@ -372,12 +372,6 @@
       "name": "运营端获节点健康状态",
       "output": "DescribeNodeHealthOptResponse"
     },
-    "DescribeProducers": {
-      "document": "获取生产者列表，仅显示在线的生产者",
-      "input": "DescribeProducersRequest",
-      "name": "生产者列表",
-      "output": "DescribeProducersResponse"
-    },
     "DescribePublisherSummary": {
       "document": "获取消息生产概览信息",
       "input": "DescribePublisherSummaryRequest",
@@ -2268,75 +2262,6 @@
           "name": "MaxQueryCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "Connection": {
-      "document": "生产者连接实例",
-      "members": [
-        {
-          "default": "",
-          "document": "生产者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "Address",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "主题分区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "Partitions",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "生产者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ClientVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "生产者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ProducerName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "生产者ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ProducerId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "消息平均大小(byte)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "AverageMsgSize",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "生成速率(byte/秒)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "MsgThroughputIn",
-          "required": true,
-          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6332,96 +6257,6 @@
       ],
       "type": "object"
     },
-    "DescribeProducersRequest": {
-      "document": "DescribeProducers请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "环境（命名空间）名称。",
-          "example": "default",
-          "member": "string",
-          "name": "EnvironmentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主题名。",
-          "example": "U_TOPIC_nfa_game_push_retry_kb",
-          "member": "string",
-          "name": "TopicName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "起始下标，不填默认为0。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，不填则默认为10，最大值为20。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "生产者名称，模糊匹配。",
-          "example": "test",
-          "member": "string",
-          "name": "ProducerName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "Pulsar 集群的ID",
-          "example": "pulsar-xxxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProducersResponse": {
-      "document": "DescribeProducers返回参数结构体",
-      "members": [
-        {
-          "document": "生产者集合数组。",
-          "example": "无",
-          "member": "Producer",
-          "name": "ProducerSets",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "记录总数。",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribePublisherSummaryRequest": {
       "document": "DescribePublisherSummary请求参数结构体",
       "members": [
@@ -8991,48 +8826,6 @@
           "name": "TopicType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "Producer": {
-      "document": "生产者",
-      "members": [
-        {
-          "default": "",
-          "document": "环境（命名空间）名称。",
-          "member": "string",
-          "name": "EnvironmentId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主题名称。",
-          "member": "string",
-          "name": "TopicName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "连接数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "CountConnect",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "连接集合。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "Connection",
-          "name": "ConnectionSets",
-          "required": true,
-          "type": "list",
           "value_allowed_null": true
         }
       ],
