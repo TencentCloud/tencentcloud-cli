@@ -181,7 +181,7 @@
       "output": "DescribeAccessRegionsResponse"
     },
     "DescribeAccessRegionsByDestRegion": {
-      "document": "本接口（DescribeAccessRegionsByDestRegion）根据源站区域查询可用的加速区域列表",
+      "document": "本接口（DescribeAccessRegionsByDestRegion）根据源站区域查询可用的加速区域列表。",
       "input": "DescribeAccessRegionsByDestRegionRequest",
       "name": "根据源站区域查询可用加速区域",
       "output": "DescribeAccessRegionsByDestRegionResponse"
@@ -577,7 +577,7 @@
       "usage": "in"
     },
     "AccessRegionDetial": {
-      "document": "根据源站查询的可用加速区域信息及对应的可选带宽和并发量",
+      "document": "根据源站查询的可用加速区域信息及对应的可选带宽和并发量。",
       "members": [
         {
           "default": "",
@@ -1236,7 +1236,7 @@
         },
         {
           "default": "",
-          "document": "通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "document": "通道套餐类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
@@ -2142,10 +2142,19 @@
         },
         {
           "default": "",
-          "document": "网络类型，可取值：normal、cn2，默认值normal",
+          "document": "网络类型，normal表示常规BGP，cn2表示精品BGP，triple表示三网",
           "example": "normal",
           "member": "string",
           "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
+          "example": "Thunder",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }
@@ -2970,7 +2979,7 @@
         },
         {
           "default": "",
-          "document": "通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "document": "通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
@@ -3838,7 +3847,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。   \n每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定InstanceIds和Filters。 \nProjectId - String - 是否必填：否 -（过滤条件）按照项目ID过滤。   \nAccessRegion - String - 是否必填：否 - （过滤条件）按照接入地域过滤。    \nRealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。\nGroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。\nIPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。",
+          "document": "过滤条件。   \n每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定InstanceIds和Filters。 \nProjectId - String - 是否必填：否 -（过滤条件）按照项目ID过滤。   \nAccessRegion - String - 是否必填：否 - （过滤条件）按照接入地域过滤。    \nRealServerRegion - String - 是否必填：否 - （过滤条件）按照源站地域过滤。\nGroupId - String - 是否必填：否 - （过滤条件）按照通道组ID过滤。\nIPAddressVersion - String - 是否必填：否 - （过滤条件）按照IP版本过滤。\nPackageType - String - 是否必填：否 - （过滤条件）按照通道套餐类型过滤。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4576,7 +4585,7 @@
         },
         {
           "default": "",
-          "document": "通道组类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "document": "通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
@@ -6012,7 +6021,7 @@
         },
         {
           "default": "",
-          "document": "通道组类型。Thunder表示标准通道组，Accelerator表示游戏加速器通道。",
+          "document": "通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
@@ -7929,7 +7938,7 @@
         },
         {
           "default": "",
-          "document": "通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，\nCrossBorder表示跨境通道。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",

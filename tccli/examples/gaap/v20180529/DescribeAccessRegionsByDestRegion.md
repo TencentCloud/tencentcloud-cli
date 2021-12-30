@@ -34,7 +34,10 @@ Output:
                     5,
                     6,
                     7
-                ]
+                ],
+                "RegionArea": "NorthChina",
+                "RegionAreaName": "中国大陆-华北",
+                "IDCType": "dc"
             }
         ],
         "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",
