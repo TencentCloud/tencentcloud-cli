@@ -16,28 +16,13 @@ Output:
     "Response": {
         "Content": [
             {
-                "Status": "xx",
-                "Paymode": "xx",
-                "VpcId": "xx",
-                "SpecId": "xx",
-                "Name": "xx",
-                "EnableStorage": true,
-                "InstanceId": "xx",
-                "EKSClusterID": "xx",
-                "SubnetIds": [
-                    "a"
-                ],
-                "StorageType": "xx",
-                "StorageCapacity": 0,
-                "Edition": "xx",
-                "Replica": 3,
-                "EngineRegion": "xx",
                 "EnvInfos": [
                     {
                         "VpcInfos": [
                             {
                                 "SubnetId": "xx",
-                                "VpcId": "xx"
+                                "VpcId": "xx",
+                                "IntranetAddress": "xx"
                             }
                         ],
                         "Status": "xx",
@@ -50,6 +35,56 @@ Output:
                     }
                 ],
                 "Type": "xx",
+                "Edition": "xx",
+                "Status": "xx",
+                "EnableConsoleIntranet": true,
+                "VpcId": "xx",
+                "SpecId": "xx",
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ],
+                "InstanceId": "xx",
+                "EnableConsoleInternet": true,
+                "EngineRegion": "xx",
+                "Name": "xx",
+                "ServiceGovernanceInfos": [
+                    {
+                        "VpcInfos": [
+                            {
+                                "SubnetId": "xx",
+                                "VpcId": "xx",
+                                "IntranetAddress": "xx"
+                            }
+                        ],
+                        "BoundK8SInfos": [
+                            {
+                                "BoundClusterId": "xx",
+                                "BoundClusterType": "xx"
+                            }
+                        ],
+                        "EngineRegion": "xx"
+                    }
+                ],
+                "StorageCapacity": 0,
+                "EKSClusterID": "xx",
+                "VpcInfos": [
+                    {
+                        "SubnetId": "xx",
+                        "VpcId": "xx",
+                        "IntranetAddress": "xx"
+                    }
+                ],
+                "StorageType": "xx",
+                "SubnetIds": [
+                    "a"
+                ],
+                "Paymode": "xx",
+                "EnableStorage": true,
+                "Replica": 3,
+                "EnableInternet": true,
                 "CreateTime": "xx"
             }
         ],

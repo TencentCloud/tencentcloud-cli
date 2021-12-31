@@ -294,6 +294,12 @@
       "name": "获取设备历史位置",
       "output": "GetDeviceLocationHistoryResponse"
     },
+    "GetFamilyDeviceUserList": {
+      "document": "用于获取设备绑定的用户列表",
+      "input": "GetFamilyDeviceUserListRequest",
+      "name": "获取设备绑定的用户列表",
+      "output": "GetFamilyDeviceUserListResponse"
+    },
     "GetLoRaGatewayList": {
       "document": "获取 LoRa 网关列表接口",
       "input": "GetLoRaGatewayListRequest",
@@ -3347,6 +3353,32 @@
       ],
       "usage": "out"
     },
+    "DeviceUser": {
+      "document": "设备的用户",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "userId",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户角色 1所有者，0：其他分享者",
+          "example": "0",
+          "member": "int64",
+          "name": "Role",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DevicesItem": {
       "document": "ProductId -> DeviceName",
       "members": [
@@ -4138,6 +4170,51 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFamilyDeviceUserListRequest": {
+      "document": "GetFamilyDeviceUserList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "productID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "DeviceName",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFamilyDeviceUserListResponse": {
+      "document": "GetFamilyDeviceUserList返回参数结构体",
+      "members": [
+        {
+          "document": "设备的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceUser",
+          "name": "UserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

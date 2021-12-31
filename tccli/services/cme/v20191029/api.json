@@ -3180,21 +3180,31 @@
       "members": [
         {
           "default": "",
-          "document": "媒资绑定模板 ID，可取值为：\n<li>1000000：媒体文件为 URL，且 URL Scheme 为 https；</li>\n<li>1000001：媒体文件为 URL，且 URL Scheme 为 http。</li>\n\n注：如果要支持其它存储平台或者类型的媒体绑定，请联系 [客服](https://cloud.tencent.com/online-service?from=doc_1156)。",
+          "document": "目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。",
+          "example": "www.qq.com/a.mp4",
+          "member": "string",
+          "name": "MediaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段废弃，请勿使用。",
           "example": "1000000",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "媒资绑定媒体路径或文件 ID。如果要绑定 URL 类型的媒体，请将 URL 的 <code>'https://'</code> 或者 <code>'http://'</code> 去掉，例如：\n原始媒体 URL 为 `https://www.example.com/a.mp4`，则 MediaKey 为 `www.example.com/a.mp4`。",
-          "example": "www.qq.com/a.mp4",
+          "document": "媒资挂载的存储 Id。",
+          "example": "60097a8a8ea83d00017b484b",
           "member": "string",
-          "name": "MediaKey",
-          "required": true,
+          "name": "StorageId",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5885,7 +5895,7 @@
         },
         {
           "default": "",
-          "document": "素材类型，同素材素材，可取值有：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片。</li>",
+          "document": "卡槽类型，可取值有：\n<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>\n<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>\n<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>\n<li> TEXT：文本卡槽，可替换文本内容。</li>",
           "example": "0",
           "member": "string",
           "name": "Type",
@@ -5895,13 +5905,23 @@
         },
         {
           "default": "",
-          "document": "默认素材 Id。",
+          "document": "默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "DefaultMaterialId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认文本卡槽信息。当卡槽类型为 TEXT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextSlotInfo",
+          "name": "DefaultTextSlotInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -6535,6 +6555,22 @@
         }
       ],
       "usage": "in"
+    },
+    "TextSlotInfo": {
+      "document": "文本类型卡槽信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "文本内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ThirdPartyPublishInfo": {
       "document": "第三方平台视频发布信息。",

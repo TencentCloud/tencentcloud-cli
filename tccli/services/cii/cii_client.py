@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.exceptions import ConfigurationError, ClientError
+from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
@@ -16,6 +17,7 @@ from tencentcloud.cii.v20201210 import models as models_v20201210
 
 from jmespath import search
 import time
+from tccli import six
 
 def doDescribeStructureDifference(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
@@ -305,6 +307,54 @@ def doCreateStructureTask(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateAutoClassifyStructureTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CiiClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateAutoClassifyStructureTaskRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateAutoClassifyStructureTask(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeStructCompareData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -420,6 +470,7 @@ ACTION_MAP = {
     "CreateUnderwriteTaskById": doCreateUnderwriteTaskById,
     "DescribeMachineUnderwrite": doDescribeMachineUnderwrite,
     "CreateStructureTask": doCreateStructureTask,
+    "CreateAutoClassifyStructureTask": doCreateAutoClassifyStructureTask,
     "DescribeStructCompareData": doDescribeStructCompareData,
     "DescribeStructureResult": doDescribeStructureResult,
 
@@ -526,5 +577,11 @@ def parse_global_arg(parsed_globals):
                 param['timeout'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
+    
+    # 如果在配置文件中读取字段的值，python2中的json.load函数会读取unicode类型的值，因此这里要转化类型
+    if six.PY2:
+        for key, value in g_param.items():
+            if isinstance(value, six.text_type):
+                g_param[key] = value.encode('utf-8')
     return g_param
 

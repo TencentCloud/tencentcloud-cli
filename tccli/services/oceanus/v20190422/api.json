@@ -2094,6 +2094,26 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Savepoint路径",
+          "example": "Savepoint",
+          "member": "string",
+          "name": "SavepointPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Savepoint的Id",
+          "example": "cql-6w8eab6f",
+          "member": "string",
+          "name": "SavepointId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

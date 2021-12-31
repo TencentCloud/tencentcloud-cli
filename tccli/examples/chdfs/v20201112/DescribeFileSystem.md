@@ -26,10 +26,16 @@ Output:
                 "hadoop"
             ],
             "PosixAcl": true,
-            "Status": 2
+            "Status": 2,
+            "EnableRanger": false,
+            "RangerServiceAddresses": [
+                "127.0.0.1:8080"
+            ]
         },
         "CapacityUsed": 0,
         "ArchiveCapacityUsed": 0,
+        "StandardCapacityUsed": 0,
+        "DegradeCapacityUsed": 0,
         "RequestId": "22e36f95-9295-4132-a75e-09a08d2e13fc"
     }
 }

@@ -5,7 +5,7 @@
         "document": "",
         "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotId=snap-gybrif0z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc96242e-566c-ae6a-b74a-5a1f823683b2\"\n    }\n}",
-        "title": "创建快照"
+        "title": "回滚快照"
       }
     ],
     "AttachDisks": [

@@ -7279,6 +7279,15 @@
           "name": "TimeoutPeriod",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "example": "2",
+          "member": "uint64",
+          "name": "EngineType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13857,6 +13866,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "example": "1",
+          "member": "uint64",
+          "name": "EngineType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -19977,7 +19995,7 @@
         },
         {
           "default": "",
-          "document": "状态；4-:待处理，5-已信任，6-已隔离",
+          "document": "状态；4-:待处理，5-已信任，6-已隔离，8-文件已删除",
           "example": "xxx",
           "member": "uint64",
           "name": "Status",
@@ -20053,6 +20071,16 @@
           "name": "LatestScanTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险等级 0未知、1低、2中、3高、4严重",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -20356,6 +20384,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级 0提示、1低、2中、3高、4严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20618,6 +20656,15 @@
           "example": "1",
           "member": "uint64",
           "name": "KillProcess",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
+          "example": "1",
+          "member": "uint64",
+          "name": "EngineType",
           "required": false,
           "type": "int"
         }

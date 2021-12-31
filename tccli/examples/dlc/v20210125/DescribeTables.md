@@ -8,7 +8,8 @@ Input:
 tccli dlc DescribeTables --cli-unfold-argument  \
     --Limit 1 \
     --Offset 0 \
-    --DatabaseName testdb
+    --DatabaseName testdb \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

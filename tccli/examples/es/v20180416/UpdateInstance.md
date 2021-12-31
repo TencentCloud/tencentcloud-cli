@@ -14,7 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c96a110c-7493-452d-a99b-683d07xxxxxx"
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```
@@ -42,7 +43,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6001962a-17c5-4604-a0af-0d4719xxxxxx"
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```
@@ -63,7 +65,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e7c1bb22-e5f2-42f1-8a12-a97a6dxxxxxx"
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```
@@ -84,7 +87,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1b72089e-720f-4f95-a4ae-4da461xxxxxx"
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```
@@ -106,7 +110,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "dd3f624d-9a72-4057-85cb-f5d32exxxxxx"
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```

@@ -108,6 +108,12 @@
       "name": "查询伸缩活动",
       "output": "DescribeAutoScalingActivitiesResponse"
     },
+    "DescribeAutoScalingAdvices": {
+      "document": "此接口用于查询伸缩组配置建议。",
+      "input": "DescribeAutoScalingAdvicesRequest",
+      "name": "查询弹性伸缩配置建议",
+      "output": "DescribeAutoScalingAdvicesResponse"
+    },
     "DescribeAutoScalingGroupLastActivities": {
       "document": "本接口（DescribeAutoScalingGroupLastActivities）用于查询伸缩组的最新一次伸缩活动记录。",
       "input": "DescribeAutoScalingGroupLastActivitiesRequest",
@@ -460,6 +466,42 @@
       ],
       "usage": "out"
     },
+    "Advice": {
+      "document": "伸缩配置建议。",
+      "members": [
+        {
+          "default": "",
+          "document": "问题描述。",
+          "example": "DiskSoldOut",
+          "member": "string",
+          "name": "Problem",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "问题详情。",
+          "example": "无",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "建议解决方案。",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AttachInstancesRequest": {
       "document": "AttachInstances请求参数结构体",
       "members": [
@@ -504,6 +546,32 @@
         }
       ],
       "type": "object"
+    },
+    "AutoScalingAdvice": {
+      "document": "伸缩组配置建议。",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID。",
+          "example": "asg-pc2oqu2z",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "伸缩组配置建议集合。",
+          "example": "无",
+          "member": "Advice",
+          "name": "Advices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AutoScalingGroup": {
       "document": "伸缩组",
@@ -2240,6 +2308,42 @@
           "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalingAdvicesRequest": {
+      "document": "DescribeAutoScalingAdvices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的伸缩组列表，上限100。",
+          "example": "[\"asg-2pvrsyog\", \"asg-4wtj6aeq\"]",
+          "member": "string",
+          "name": "AutoScalingGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalingAdvicesResponse": {
+      "document": "DescribeAutoScalingAdvices返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩组配置建议集合。",
+          "example": "无",
+          "member": "AutoScalingAdvice",
+          "name": "AutoScalingAdviceSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false

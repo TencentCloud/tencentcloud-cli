@@ -15,12 +15,14 @@ Output:
     "Response": {
         "Result": {
             "MsgRetentionTime": 1440,
+            "DeleteRouteTimestamp": "xx",
             "Version": "xx",
             "Config": {
                 "DefaultNumPartitions": 0,
                 "AutoCreateTopicsEnable": true,
                 "DefaultReplicationFactor": 2
             },
+            "RemainingPartitions": 0,
             "Status": 1,
             "CreatedTopics": 0,
             "VpcId": "xx",
@@ -60,6 +62,12 @@ Output:
                 "Enable": 0,
                 "BottomRetention": 360
             },
+            "DynamicDiskConfig": {
+                "Enable": 1,
+                "DiskQuotaPercentage": 30,
+                "StepForwardPercentage": 15,
+                "MaxDiskSpace": 1000
+            },
             "Vport": "xx",
             "CreateTime": 1,
             "VipList": [
@@ -67,7 +75,8 @@ Output:
                     "Vip": "xx",
                     "Vport": "xx"
                 }
-            ]
+            ],
+            "RemainingTopics": 0
         },
         "RequestId": "xx"
     }

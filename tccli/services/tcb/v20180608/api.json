@@ -8351,6 +8351,7 @@
         {
           "default": "",
           "document": "环境ID",
+          "example": "lotestapi100004",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -8359,6 +8360,7 @@
         {
           "default": "",
           "document": "服务名称",
+          "example": "dockerservicename",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -8367,6 +8369,7 @@
         {
           "default": "",
           "document": "版本名称",
+          "example": "dbde",
           "member": "string",
           "name": "VersionName",
           "required": true,
@@ -8375,6 +8378,7 @@
         {
           "default": "",
           "document": "环境变量",
+          "example": "dnide",
           "member": "string",
           "name": "EnvParams",
           "required": false,
@@ -8383,6 +8387,7 @@
         {
           "default": "",
           "document": "最小副本数",
+          "example": "1.0",
           "member": "string",
           "name": "MinNum",
           "required": false,
@@ -8391,6 +8396,7 @@
         {
           "default": "",
           "document": "最大副本数",
+          "example": "1.0",
           "member": "string",
           "name": "MaxNum",
           "required": false,
@@ -8399,6 +8405,7 @@
         {
           "default": "",
           "document": "端口",
+          "example": "8080",
           "member": "string",
           "name": "ContainerPort",
           "required": false,
@@ -8407,6 +8414,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -8415,6 +8423,7 @@
         {
           "default": "",
           "document": "日志采集路径",
+          "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
           "required": false,
@@ -8423,6 +8432,7 @@
         {
           "default": "",
           "document": "是否重设备注",
+          "example": "true",
           "member": "bool",
           "name": "IsResetRemark",
           "required": false,
@@ -8431,6 +8441,7 @@
         {
           "default": "",
           "document": "修改基础信息",
+          "example": "false",
           "member": "bool",
           "name": "BasicModify",
           "required": false,
@@ -8439,6 +8450,7 @@
         {
           "default": "",
           "document": "操作备注",
+          "example": "mark",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -8452,8 +8464,10 @@
       "members": [
         {
           "document": "返回结果（succ为成功）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

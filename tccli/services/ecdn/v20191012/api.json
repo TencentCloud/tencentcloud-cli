@@ -226,6 +226,72 @@
       ],
       "type": "object"
     },
+    "AdvanceHttps": {
+      "document": "回源的自定义Https配置",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义Tls数据开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "CustomTlsStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"TLSv1\",\"TLSv1.1\",\"TLSv1.2\",\"TLSv1.3\"]",
+          "member": "string",
+          "name": "TlsVersion",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义加密套件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"EECDH+AES128\"",
+          "member": "string",
+          "name": "Cipher",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源双向校验开启状态\noff - 关闭校验\noneWay - 校验源站\ntwoWay - 双向校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "VerifyOriginType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源层证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerCert",
+          "name": "CertInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientCert",
+          "name": "OriginCertInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Cache": {
       "document": "缓存配置简单版本，该版本不支持设置源站未返回max-age情况下的缓存规则。",
       "members": [
@@ -1823,6 +1889,16 @@
           "name": "BackupOriginType",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HTTPS回源高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "AdvanceHttps",
+          "name": "AdvanceHttps",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

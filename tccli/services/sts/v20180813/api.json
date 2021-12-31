@@ -12,6 +12,12 @@
       "name": "根据 SAML 断言申请角色临时凭证",
       "output": "AssumeRoleWithSAMLResponse"
     },
+    "GetCallerIdentity": {
+      "document": "获取当前调用者的身份信息。\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时凭据的身份获取。",
+      "input": "GetCallerIdentityRequest",
+      "name": "获取当前调用者的身份信息",
+      "output": "GetCallerIdentityResponse"
+    },
     "GetFederationToken": {
       "document": "获取联合身份临时访问凭证",
       "input": "GetFederationTokenRequest",
@@ -255,6 +261,58 @@
         }
       ],
       "usage": "out"
+    },
+    "GetCallerIdentityRequest": {
+      "document": "GetCallerIdentity请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCallerIdentityResponse": {
+      "document": "GetCallerIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "当前调用者ARN。",
+          "member": "string",
+          "name": "Arn",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前调用者所属主账号Uin。",
+          "member": "string",
+          "name": "AccountId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份标识。\n1. 调用者是云账号时，返回的是当前账号Uin\n2. 调用者是角色时，返回的是roleId:roleSessionName\n3. 调用者是联合身份时，返回的是uin:federatedUserName",
+          "member": "string",
+          "name": "UserId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "密钥所属账号Uin。\n1. 调用者是云账号，返回的当前账号Uin\n2, 调用者是角色，返回的申请角色密钥的账号Uin",
+          "member": "string",
+          "name": "PrincipalId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份类型。",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetFederationTokenRequest": {
       "document": "GetFederationToken请求参数结构体",

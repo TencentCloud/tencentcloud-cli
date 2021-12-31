@@ -22,6 +22,7 @@ Output:
         "CustomizedOrgNodeId": "BB1",
         "OrgNodeId": "7999987a-c9dc-4dd2-b3e2-b52f53317aa6",
         "OrgNodeChildInfo": null,
+        "Description": "测试机构",
         "DataSource": null
     }
 }

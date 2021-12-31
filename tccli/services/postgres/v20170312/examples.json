@@ -27,17 +27,29 @@
     "CreateDBInstances": [
       {
         "document": "",
-        "input": "https://postgres.tencentcloudapi.com/?Action=CreateDBInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=9.3.5\n&AutoVoucher=0\n&AutoRenewFlag=1\n&<公共请求参数>",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateDBInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=12.4\n&AutoVoucher=0\n&AutoRenewFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"123\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
         "title": "创建PostgreSQL实例"
       }
     ],
     "CreateInstances": [
       {
-        "document": "",
-        "input": "https://postgres.tencentcloudapi.com/?Action=CreateInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=9.3.5\n&AutoVoucher=0\n&AutoRenewFlag=1\n&Charset=UTF8\n&AdminName=test2313\n&AdminPassword= xxxxxxx\n&<公共请求参数>",
+        "document": "创建12.4版本中最新内核版的PostgreSQL实例",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBVersion=12.4\n&AutoVoucher=0\n&AutoRenewFlag=1\n&Charset=UTF8\n&AdminName=test2313\n&AdminPassword= xxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
-        "title": "创建PostgreSQL实例"
+        "title": "创建12.4版本的PostgreSQL实例"
+      },
+      {
+        "document": "创建12版本中最新内核版本的PostgreSQL实例",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBMajorVersion=12\n&AutoVoucher=0\n&AutoRenewFlag=1\n&Charset=UTF8\n&AdminName=test2313\n&AdminPassword= xxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "创建12版本中最新内核版本的PostgreSQL实例"
+      },
+      {
+        "document": "创建内核版本号为v12.4_r1.0版本的PostgreSQL实例",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateInstances\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&InstanceCount=1\n&Period=1\n&InstanceChargeType=prepaid\n&Zone=ap-guangzhou-2\n&DBKernelVersion=v12.4_r1.0\n&AutoVoucher=0\n&AutoRenewFlag=1\n&Charset=UTF8\n&AdminName=test2313\n&AdminPassword= xxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxxx\"\n        ],\n        \"BillId\": \"123\"\n    }\n}",
+        "title": "创建指定内核版本号的PostgreSQL实例"
       }
     ],
     "CreateReadOnlyDBInstance": [

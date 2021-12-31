@@ -47,7 +47,7 @@ tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
     --EndDate 2019-01-01 \
     --ProductCode 10181 \
-    --Domain 
+    --Domain ' ""'
 ```
 
 Output: 

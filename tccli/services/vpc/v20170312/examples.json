@@ -221,15 +221,9 @@
     "CheckNetDetectState": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\r\n&Version=2017-03-12\r\n&NetDetectId=netd-12345678\r\n&DetectDestinationIp.0=10.0.0.2\r\n&DetectDestinationIp.1=10.0.0.3\r\n&NextHopType=NORMAL_CVM\r\n&NextHopDestination=10.0.0.4\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\n&NetDetectId=netd-12345678\n&DetectDestinationIp.0=10.0.0.2\n&DetectDestinationIp.1=10.0.0.3\n&NextHopType=NORMAL_CVM\n&NextHopDestination=10.0.0.4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NetDetectIpStateSet\": [\n            {\n                \"DetectDestinationIp\": \"10.0.0.2\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            },\n            {\n                \"DetectDestinationIp\": \"10.0.0.3\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据网络探测ID验证探测参数"
-      },
-      {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CheckNetDetectState\r\n&Version=2017-03-12\r\n&VpcId=vpc-12345678\r\n&SubnetId=subnet-12345678\r\n&NetDetectName=test\r\n&DetectDestinationIp.0=10.0.0.5\r\n&DetectDestinationIp.1=10.0.0.6\r\n&NextHopType=NORMAL_CVM\r\n&NextHopDestination=10.0.0.4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetDetectIpStateSet\": [\n            {\n                \"DetectDestinationIp\": \"10.0.0.5\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            },\n            {\n                \"DetectDestinationIp\": \"10.0.0.6\",\n                \"State\": 0,\n                \"Delay\": 0,\n                \"PacketLossRate\": 0\n            }\n        ],\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
-        "title": "根据输入信息验证探测参数"
       }
     ],
     "CloneSecurityGroup": [
@@ -348,13 +342,13 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=VPC\n&NetworkInstanceId=vpc-m7sr81gh\n&GatewayType=NAT\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"EnableBGPCommunity\": false,\n            \"VpcId\": \"vpc-m7sr81gh\",\n            \"CcnId\": \"\",\n            \"EnableBGP\": false,\n            \"CcnRouteType\": \"BGP\",\n            \"NetworkType\": \"VPC\",\n            \"NetworkInstanceId\": \"vpc-m7sr81gh\",\n            \"GatewayType\": \"NAT\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"NatGatewayId\": \"nat-m7dr11gc\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"CreateTime\": \"2020-09-22 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-gjug0kul\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"EnableBGPCommunity\": false,\n            \"VpcId\": \"vpc-m7sr81gh\",\n            \"CcnId\": \"\",\n            \"EnableBGP\": false,\n            \"CcnRouteType\": \"BGP\",\n            \"NetworkType\": \"VPC\",\n            \"NetworkInstanceId\": \"vpc-m7sr81gh\",\n            \"GatewayType\": \"NAT\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"NatGatewayId\": \"nat-m7dr11gc\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"NewAfc\": 0,\n            \"FlowDetailsUpdateTime\": \"xx\",\n            \"EnableFlowDetails\": 0,\n            \"AccessNetworkType\": \"Unknown\",\n            \"CreateTime\": \"2020-09-22 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个关联VPC的NAT型专线网关"
       },
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDirectConnectGateway\n&DirectConnectGatewayName=test\n&NetworkType=CCN\n&NetworkInstanceId=ccn-8j0phqix\n&GatewayType=NORMAL\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"VpcId\": \"vpc-ilii3ejt\",\n            \"NetworkType\": \"CCN\",\n            \"NetworkInstanceId\": \"ccn-c1aopa13\",\n            \"GatewayType\": \"NORMAL\",\n            \"EnableBGPCommunity\": true,\n            \"EnableBGP\": true,\n            \"CcnId\": \"ccn-8j0phqix\",\n            \"CcnRouteType\": \"BGP\",\n            \"NatGatewayId\": \"\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"CreateTime\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DirectConnectGateway\": {\n            \"DirectConnectGatewayId\": \"dcg-3vwxt61v\",\n            \"DirectConnectGatewayName\": \"test\",\n            \"VpcId\": \"vpc-ilii3ejt\",\n            \"NetworkType\": \"CCN\",\n            \"NetworkInstanceId\": \"ccn-c1aopa13\",\n            \"GatewayType\": \"NORMAL\",\n            \"EnableBGPCommunity\": true,\n            \"EnableBGP\": true,\n            \"CcnId\": \"ccn-8j0phqix\",\n            \"CcnRouteType\": \"BGP\",\n            \"NatGatewayId\": \"\",\n            \"DirectConnectGatewayIp\": \"10.21.0.5\",\n            \"LocalZone\": false,\n            \"Zone\": \"ap-guangzhou-1\",\n            \"ModeType\": \"standard\",\n            \"VXLANSupport\": [\n                true\n            ],\n            \"CreateTime\": \"0000-00-00 00:00:00\",\n            \"NewAfc\": 1,\n            \"FlowDetailsUpdateTime\": \"xx\",\n            \"EnableFlowDetails\": 0,\n            \"AccessNetworkType\": \"VXLAN\"\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个关联CCN的标准型专线网关"
       }
     ],
@@ -385,7 +379,7 @@
     "CreateIp6Translators": [
       {
         "document": "创建IPV6转换实例",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateIp6Translators\r\n&Ip6TranslatorCount=1\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateIp6Translators\n&Ip6TranslatorCount=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ip6TranslatorSet\": [\n            \"ip6-90pt7p9q\"\n        ],\n        \"RequestId\": \"aa645287-23fa-4950-8dc4-c56e63d2ca87\"\n    }\n}",
         "title": "创建IPV6转换实例"
       }
@@ -1355,8 +1349,8 @@
     "DescribeSecurityGroupPolicies": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroupPolicies\r\n&Version=2017-03-12\r\n&SecurityGroupId=sg-ohuuioma\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecurityGroupPolicySet\": {\n            \"Ingress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"ModifyPolicies\"\n                },\n                {\n                    \"PolicyIndex\": 1,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"2\"\n                }\n            ],\n            \"Egress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"E1\"\n                }\n            ],\n            \"Version\": 60\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSecurityGroupPolicies\n&SecurityGroupId=sg-ohuuioma\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SecurityGroupPolicySet\": {\n            \"Ingress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"ModifyPolicies\"\n                },\n                {\n                    \"PolicyIndex\": 1,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"2\"\n                }\n            ],\n            \"Egress\": [\n                {\n                    \"PolicyIndex\": 0,\n                    \"ServiceTemplate\": {\n                        \"ServiceId\": \"ppm-f5n1f8da\",\n                        \"ServiceGroupId\": \"\"\n                    },\n                    \"AddressTemplate\": {\n                        \"AddressGroupId\": \"ipmg-2uw6ujo6\",\n                        \"AddressId\": \"\"\n                    },\n                    \"Action\": \"ACCEPT\",\n                    \"ModifyTime\": \"2017-03-12 10:00:00\",\n                    \"PolicyDescription\": \"E1\"\n                }\n            ],\n            \"Version\": 60\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询安全组规则"
       }
     ],
@@ -1549,7 +1543,7 @@
     "DetachCcnInstances": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DetachCcnInstances\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l\r\n&Instances.0.InstanceType=VPC\r\n&Instances.0.InstanceId=vpc-3dr1zrr9\r\n&Instances.0.InstanceRegion=ap-guangzhou\r\n&Instances.1.InstanceType=DIRECTCONNECT\r\n&Instances.1.InstanceId=dcg-98qosdc3\r\n&Instances.1.InstanceRegion=ap-guangzhou",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DetachCcnInstances\n&CcnId=ccn-gree226l\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&Instances.1.InstanceType=DIRECTCONNECT\n&Instances.1.InstanceId=dcg-98qosdc3\n&Instances.1.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "云联网解关联多个网络实例"
       }
@@ -1937,7 +1931,7 @@
     "ModifyIp6Rule": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6Rule\r\n&Ip6TranslatorId=ip6-90pt7p9q\r\n&Ip6RuleId=rule6-7v3vwgec\r\n&Vip=100.192.3.9\r\n&Vport=77\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6Rule\n&Ip6TranslatorId=ip6-90pt7p9q\n&Ip6RuleId=rule6-7v3vwgec\n&Vip=100.192.3.9\n&Vport=77\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80243425-b653-4b2c-82c0-d3d758a0e12a\"\n    }\n}",
         "title": "修改转换规则的IPV4地址和IPV4端口号"
       }

@@ -104,6 +104,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeInstanceParams": [
+      {
+        "document": "用户请求该接口获取其mongoDB实例可配置的参数列表；",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"jyjcw8yv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceEnumParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"EnumValue\": [\n                    \"xx\"\n                ],\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\"\n            }\n        ],\n        \"InstanceTextParam\": [\n            {\n                \"Status\": \"xx\",\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"TextValue\": \"xx\",\n                \"ValueType\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"InstanceIntegerParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"Min\": \"xx\",\n                \"Max\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\",\n                \"Unit\": \"xx\"\n            }\n        ],\n        \"InstanceMultiParam\": [\n            {\n                \"Status\": 1,\n                \"CurrentValue\": \"xx\",\n                \"DefaultValue\": \"xx\",\n                \"NeedRestart\": \"xx\",\n                \"EnumValue\": [\n                    \"xx\"\n                ],\n                \"ParamName\": \"xx\",\n                \"Tips\": [\n                    \"xx\"\n                ],\n                \"ValueType\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "InstanceEnumParam"
+      }
+    ],
     "DescribeSecurityGroup": [
       {
         "document": "",

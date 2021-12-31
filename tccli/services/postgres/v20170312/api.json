@@ -650,15 +650,6 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本，目前支持以下版本：9.3.5、9.5.4、10.4、11.8、12.4 。",
-          "example": "无",
-          "member": "string",
-          "name": "DBVersion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "实例容量大小，单位：GB。",
           "example": "无",
           "member": "uint64",
@@ -701,6 +692,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。",
+          "example": "12.4",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -800,6 +800,24 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。",
+          "example": "12",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。",
+          "example": "v12.4_r1.0",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -852,15 +870,6 @@
           "example": "无",
           "member": "string",
           "name": "SpecCode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "PostgreSQL主版本，目前支持：9.3、9.5、10、11、12、13以及9.3.5、9.5.4、10.4、11.8、12.4版本。",
-          "example": "无",
-          "member": "string",
-          "name": "DBVersion",
           "required": true,
           "type": "string"
         },
@@ -935,6 +944,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例",
+          "example": "12.4",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -1034,6 +1052,24 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例",
+          "example": "12",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例",
+          "example": "v12.4_r1.0",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1786,8 +1822,8 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL主版本",
-          "example": "12",
+          "document": "PostgreSQL版本",
+          "example": "12.4",
           "member": "string",
           "name": "DBVersion",
           "required": true,
@@ -1972,6 +2008,16 @@
           "name": "NetworkAccessList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL主要版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5584,7 +5630,7 @@
         {
           "default": "",
           "document": "数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "10.4",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -5647,6 +5693,16 @@
           "example": "v10.4_r1.0",
           "member": "string",
           "name": "DBKernelVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库主要版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "DBMajorVersion",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5815,6 +5871,7 @@
         {
           "default": "",
           "document": "规格ID",
+          "example": "1",
           "member": "string",
           "name": "SpecCode",
           "required": true,
@@ -5823,7 +5880,8 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL的内核版本编号",
+          "document": "PostgreSQL的版本编号",
+          "example": "1",
           "member": "string",
           "name": "Version",
           "required": true,
@@ -5833,6 +5891,7 @@
         {
           "default": "",
           "document": "内核编号对应的完整版本名称",
+          "example": "1",
           "member": "string",
           "name": "VersionName",
           "required": true,
@@ -5842,6 +5901,7 @@
         {
           "default": "",
           "document": "CPU核数",
+          "example": "1",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -5851,6 +5911,7 @@
         {
           "default": "",
           "document": "内存大小，单位：MB",
+          "example": "1",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -5860,6 +5921,7 @@
         {
           "default": "",
           "document": "该规格所支持最大存储容量，单位：GB",
+          "example": "1",
           "member": "uint64",
           "name": "MaxStorage",
           "required": true,
@@ -5869,6 +5931,7 @@
         {
           "default": "",
           "document": "该规格所支持最小存储容量，单位：GB",
+          "example": "1",
           "member": "uint64",
           "name": "MinStorage",
           "required": true,
@@ -5878,6 +5941,7 @@
         {
           "default": "",
           "document": "该规格的预估QPS",
+          "example": "1",
           "member": "uint64",
           "name": "Qps",
           "required": true,
@@ -5887,6 +5951,7 @@
         {
           "default": "",
           "document": "该规格对应的计费ID",
+          "example": "1",
           "member": "uint64",
           "name": "Pid",
           "required": true,
@@ -5896,11 +5961,32 @@
         {
           "default": "",
           "document": "机器类型",
+          "example": "1",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL的主要版本编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "MajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "PostgreSQL的内核版本编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "KernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

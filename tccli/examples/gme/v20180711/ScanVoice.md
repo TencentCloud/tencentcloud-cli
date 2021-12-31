@@ -9,7 +9,7 @@ tccli gme ScanVoice --cli-unfold-argument  \
     --BizId 1400000000 \
     --Scenes default \
     --Live false \
-    --Callback  \
+    --Callback https://0.0.0.0/user_callback \
     --Tasks.0.DataId 1400000000_test_data_id \
     --Tasks.0.Url http://xxx/audio_store/xxxx.mp3
 ```
@@ -40,7 +40,7 @@ tccli gme ScanVoice --cli-unfold-argument  \
     --BizId 1400000000 \
     --Scenes default \
     --Live true \
-    --Callback  \
+    --Callback https://0.0.0.0/user_callback \
     --Tasks.0.DataId 1400000000_test_data_id \
     --Tasks.0.Url https://xxxx
 ```

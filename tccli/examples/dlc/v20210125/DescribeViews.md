@@ -8,7 +8,11 @@ Input:
 tccli dlc DescribeViews --cli-unfold-argument  \
     --Limit 1 \
     --Offset 0 \
-    --DatabaseName testdb
+    --DatabaseName testdb \
+    --Sort name \
+    --Asc True \
+    --StartTime 2021-11-11 00:00:00 \
+    --EndTime 2021-11-18 00:00:00
 ```
 
 Output: 

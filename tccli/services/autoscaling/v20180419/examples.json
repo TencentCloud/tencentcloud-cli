@@ -210,6 +210,14 @@
         "title": "根据伸缩活动ID查询伸缩活动列表"
       }
     ],
+    "DescribeAutoScalingAdvices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingAdvices\n<公共请求参数>\n\n{\n    \"AutoScalingGroupIds\": [\n        \"asg-2pvrsyog\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoScalingAdviceSet\": [\n            {\n                \"AutoScalingGroupId\": \"asg-2pvrsyog\",\n                \"Advices\": [\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-1` is invalid.\"\n                    },\n                    {\n                        \"Problem\": \"InvalidInstanceType\",\n                        \"Solution\": \"It is recommended to replace the invalid instance type.\",\n                        \"Detail\": \"Instance Type `S2.MEDIUM4`(`POSTPAID_BY_HOUR`) in `ap-guangzhou-4` is invalid.\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5f7c48b7-222b-4f13-ae5e-978716b49f1c\"\n    }\n}",
+        "title": "查询伸缩组配置建议"
+      }
+    ],
     "DescribeAutoScalingGroupLastActivities": [
       {
         "document": "",

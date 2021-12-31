@@ -3821,6 +3821,7 @@
         {
           "default": "",
           "document": "探测目的IPv4地址数组，最多两个。",
+          "example": "[\"10.0.0.2\\r\\n\",\"10.0.0.3\\r\\n\"]",
           "member": "string",
           "name": "DetectDestinationIp",
           "required": true,
@@ -3829,6 +3830,7 @@
         {
           "default": "",
           "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；",
+          "example": "NORMAL_CVM",
           "member": "string",
           "name": "NextHopType",
           "required": true,
@@ -3837,6 +3839,7 @@
         {
           "default": "",
           "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；",
+          "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
           "required": true,
@@ -3845,6 +3848,7 @@
         {
           "default": "",
           "document": "网络探测实例ID。形如：netd-12345678。该参数与（VpcId，SubnetId，NetDetectName），至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "netd-12345678",
           "member": "string",
           "name": "NetDetectId",
           "required": false,
@@ -3853,6 +3857,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-12345678`。该参数与（SubnetId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -3861,6 +3866,7 @@
         {
           "default": "",
           "document": "子网实例ID。形如：subnet-12345678。该参数与（VpcId，NetDetectName）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "subnet-siqkaiqm",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -3869,6 +3875,7 @@
         {
           "default": "",
           "document": "网络探测名称，最大长度不能超过60个字节。该参数与（VpcId，SubnetId）配合使用，与NetDetectId至少要有一个。当NetDetectId存在时，使用NetDetectId。",
+          "example": "name",
           "member": "string",
           "name": "NetDetectName",
           "required": false,
@@ -3882,8 +3889,10 @@
       "members": [
         {
           "document": "网络探测验证结果对象数组。",
+          "example": "无",
           "member": "NetDetectIpState",
           "name": "NetDetectIpStateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4773,6 +4782,15 @@
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专线网关高可用区容灾组ID",
+          "example": "ha_gourp_1",
+          "member": "string",
+          "name": "HaZoneGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4966,6 +4984,7 @@
         {
           "default": "",
           "document": "转换实例名称",
+          "example": "\"www_lakalakk\"",
           "member": "string",
           "name": "Ip6TranslatorName",
           "required": false,
@@ -4974,6 +4993,7 @@
         {
           "default": "",
           "document": "创建转换实例数量，默认是1个",
+          "example": "1",
           "member": "int64",
           "name": "Ip6TranslatorCount",
           "required": false,
@@ -4982,6 +5002,7 @@
         {
           "default": "",
           "document": "转换实例运营商属性，可取\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
+          "example": "\"BGP\"",
           "member": "string",
           "name": "Ip6InternetServiceProvider",
           "required": false,
@@ -4995,8 +5016,10 @@
       "members": [
         {
           "document": "转换实例的唯一ID数组，形如\"ip6-xxxxxxxx\"",
+          "example": "[\"ip6-90pt7p9q\"]",
           "member": "string",
           "name": "Ip6TranslatorSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6360,6 +6383,42 @@
           "name": "RouteType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）",
+          "example": "active",
+          "member": "string",
+          "name": "NegotiationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "DpdEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒",
+          "example": "30",
+          "member": "string",
+          "name": "DpdTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
+          "example": "clear",
+          "member": "string",
+          "name": "DpdAction",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7076,6 +7135,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-8j0phqix",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -10855,10 +10915,20 @@
         {
           "default": "",
           "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,不支持同时指定SecurityGroupId和Filters参数。\n<li>security-group-id - String - 安全组ID。</li>\n<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>\n<li>address-module - String - IP地址模板或IP地址组模板ID。</li>\n<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>\n<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>\n<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>\n<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>\n<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>\n<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10868,8 +10938,10 @@
       "members": [
         {
           "document": "安全组规则集合。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11265,7 +11337,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12118,6 +12190,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -12126,6 +12199,7 @@
         {
           "default": "",
           "document": "要解关联网络实例列表",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -12486,6 +12560,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网关流控明细启用状态：\n0：关闭\n1：开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableFlowDetails",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启、关闭网关流控明细时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-02-01 12:00:00",
+          "member": "string",
+          "name": "FlowDetailsUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持开启网关流控明细\n0：不支持\n1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NewAfc",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专线网关接入网络类型：\n<li>`VXLAN` - VXLAN类型。</li>\n<li>`MPLS` - MPLS类型。</li>\n<li>`Hybrid` - Hybrid类型。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VXLAN",
+          "member": "string",
+          "name": "AccessNetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "跨可用区容灾专线网关的可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "HaZoneList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12496,6 +12620,7 @@
         {
           "default": "",
           "document": "路由ID。",
+          "example": "dcr-xxxxxxx",
           "member": "string",
           "name": "RouteId",
           "required": true,
@@ -12505,6 +12630,7 @@
         {
           "default": "",
           "document": "IDC网段。",
+          "example": "192.168.1.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -12514,10 +12640,31 @@
         {
           "default": "",
           "document": "`BGP`的`AS-Path`属性。",
+          "example": "['2342', '342']",
           "member": "string",
           "name": "ASPath",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -15707,6 +15854,7 @@
         {
           "default": "",
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx",
+          "example": "ip6-90pt7p9q",
           "member": "string",
           "name": "Ip6TranslatorId",
           "required": true,
@@ -15715,6 +15863,7 @@
         {
           "default": "",
           "document": "IPV6转换规则唯一ID，形如rule6-xxxxxxxx",
+          "example": "rule6-7v3vwgec",
           "member": "string",
           "name": "Ip6RuleId",
           "required": true,
@@ -15723,6 +15872,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的名称",
+          "example": "\"rule_name\"",
           "member": "string",
           "name": "Ip6RuleName",
           "required": false,
@@ -15731,6 +15881,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的IPV4地址",
+          "example": "100.192.3.9",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -15739,6 +15890,7 @@
         {
           "default": "",
           "document": "IPV6转换规则修改后的IPV4端口号",
+          "example": "77",
           "member": "int64",
           "name": "Vport",
           "required": false,
@@ -16790,6 +16942,7 @@
         {
           "default": "",
           "document": "VPN通道实例ID。形如：vpnx-f49l6u0z。",
+          "example": "vpnx-i0f4fo4m",
           "member": "string",
           "name": "VpnConnectionId",
           "required": true,
@@ -16798,6 +16951,7 @@
         {
           "default": "",
           "document": "VPN通道名称，可任意命名，但不得超过60个字符。",
+          "example": "new_name",
           "member": "string",
           "name": "VpnConnectionName",
           "required": false,
@@ -16806,6 +16960,7 @@
         {
           "default": "",
           "document": "预共享密钥。",
+          "example": "tencent",
           "member": "string",
           "name": "PreShareKey",
           "required": false,
@@ -16814,6 +16969,7 @@
         {
           "default": "",
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
+          "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
@@ -16822,6 +16978,7 @@
         {
           "default": "",
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
+          "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
@@ -16830,6 +16987,7 @@
         {
           "default": "",
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
+          "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
@@ -16838,6 +16996,7 @@
         {
           "default": "",
           "document": "是否启用通道健康检查",
+          "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -16846,6 +17005,7 @@
         {
           "default": "",
           "document": "本端通道探测ip",
+          "example": "无",
           "member": "string",
           "name": "HealthCheckLocalIp",
           "required": false,
@@ -16854,8 +17014,45 @@
         {
           "default": "",
           "document": "对端通道探测ip",
+          "example": "无",
           "member": "string",
           "name": "HealthCheckRemoteIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协商类型，默认为active（主动协商）。可选值：active（主动协商），passive（被动协商），flowTrigger（流量协商）",
+          "example": "active",
+          "member": "string",
+          "name": "NegotiationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "DpdEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "DPD超时时间。即探测确认对端不存在需要的时间。dpdEnable为1（开启）时有效。默认30，单位为秒",
+          "example": "30",
+          "member": "string",
+          "name": "DpdTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
+          "example": "clear",
+          "member": "string",
+          "name": "DpdAction",
           "required": false,
           "type": "string"
         }

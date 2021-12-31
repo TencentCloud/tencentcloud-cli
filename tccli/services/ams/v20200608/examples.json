@@ -19,7 +19,7 @@
     "CreateBizConfig": [
       {
         "document": "创建业务配置，1个账号最多可以创建20个配置",
-        "input": "https://ams.tencentcloudapi.com/?Action=CreateBizConfig\n&BizType=1002\n&BizName=音频审核模板\n&ModerationCategories.0=Porn\n&ModerationCategories.1=Polity\n&ModerationCategories.2=Terror\n&MediaModeration.ImageFrequency=5\n&MediaModeration.AudioFrequency=60\n&MediaModeration.SegmentOutput.Bucket=cms_segments-623322\n&MediaModeration.SegmentOutput.Region=ap-guangzhou\n&<公共请求参数>",
+        "input": "https://ams.tencentcloudapi.com/?Action=CreateBizConfig\n&BizType=1002\n&BizName=音频审核模板\n&ModerationCategories.0=Porn\n&ModerationCategories.1=Polity\n&ModerationCategories.2=Terror\n&MediaModeration.ImageFrequency=5\n&MediaModeration.AudioFrequency=60\n&MediaModeration.SegmentOutput.Bucket=cms_segments-623322\n&MediaModeration.SegmentOutput.Region=ap-guangzhou\n&MediaModeration.SegmentOutput.ObjectPrefix=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
         "title": "创建业务配置"
       }

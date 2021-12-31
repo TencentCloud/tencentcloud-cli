@@ -6,6 +6,18 @@
       "name": "批量添加 ACL 策略",
       "output": "BatchCreateAclResponse"
     },
+    "BatchModifyGroupOffsets": {
+      "document": "批量修改消费组offset",
+      "input": "BatchModifyGroupOffsetsRequest",
+      "name": "批量修改消费组offset",
+      "output": "BatchModifyGroupOffsetsResponse"
+    },
+    "BatchModifyTopicAttributes": {
+      "document": "批量设置主题属性",
+      "input": "BatchModifyTopicAttributesRequest",
+      "name": "批量设置主题属性",
+      "output": "BatchModifyTopicAttributesResponse"
+    },
     "CreateAcl": {
       "document": "添加 ACL 策略",
       "input": "CreateAclRequest",
@@ -53,6 +65,12 @@
       "input": "DeleteAclRuleRequest",
       "name": "删除ACL规则",
       "output": "DeleteAclRuleResponse"
+    },
+    "DeleteInstancePre": {
+      "document": "删除预付费实例",
+      "input": "DeleteInstancePreRequest",
+      "name": "删除预付费实例",
+      "output": "DeleteInstancePreResponse"
     },
     "DeleteRouteTriggerTime": {
       "document": "修改删除路由延迟触发时间",
@@ -121,7 +139,7 @@
       "output": "DescribeGroupOffsetsResponse"
     },
     "DescribeInstanceAttributes": {
-      "document": "获取实例属性",
+      "document": "获取实例属性 ",
       "input": "DescribeInstanceAttributesRequest",
       "name": "获取实例属性",
       "output": "DescribeInstanceAttributesResponse"
@@ -221,6 +239,12 @@
       "input": "ModifyTopicAttributesRequest",
       "name": "设置主题属性",
       "output": "ModifyTopicAttributesResponse"
+    },
+    "SendMessage": {
+      "document": "通过HTTP接入层发送消息",
+      "input": "SendMessageRequest",
+      "name": "HTTP发送消息",
+      "output": "SendMessageResponse"
     }
   },
   "metadata": {
@@ -544,6 +568,32 @@
       ],
       "usage": "out"
     },
+    "BatchContent": {
+      "document": "批量发送消息内容",
+      "members": [
+        {
+          "default": "",
+          "document": "发送的消息体",
+          "example": "message-content",
+          "member": "string",
+          "name": "Body",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送消息的键名",
+          "example": "messag-ke9g8d929h",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "BatchCreateAclRequest": {
       "document": "BatchCreateAcl请求参数结构体",
       "members": [
@@ -606,6 +656,276 @@
         }
       ],
       "type": "object"
+    },
+    "BatchModifyGroupOffsetsRequest": {
+      "document": "BatchModifyGroupOffsets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "消费分组名称",
+          "example": "1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "partition信息",
+          "example": "1",
+          "member": "Partitions",
+          "name": "Partitions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指定topic，默认所有topic",
+          "example": "1",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyGroupOffsetsResponse": {
+      "document": "BatchModifyGroupOffsets返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTopicAttributesRequest": {
+      "document": "BatchModifyTopicAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题属性列表",
+          "example": "无",
+          "member": "BatchModifyTopicInfo",
+          "name": "Topic",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTopicAttributesResponse": {
+      "document": "BatchModifyTopicAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "BatchModifyTopicResultDTO",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTopicInfo": {
+      "document": "批量修改topic参数",
+      "members": [
+        {
+          "default": "",
+          "document": "topic名称",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区数",
+          "example": "0",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "1",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicaNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息删除策略，可以选择delete 或者compact",
+          "example": "compact",
+          "member": "string",
+          "name": "CleanUpPolicy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当producer设置request.required.acks为-1时，min.insync.replicas指定replicas的最小数目",
+          "example": "1",
+          "member": "int64",
+          "name": "MinInsyncReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否允许非ISR的副本成为Leader",
+          "example": "false",
+          "member": "bool",
+          "name": "UncleanLeaderElectionEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic维度的消息保留时间（毫秒）范围1 分钟到90 天",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionMs",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "topic维度的消息保留大小，范围1 MB到1024 GB",
+          "example": "1",
+          "member": "int64",
+          "name": "RetentionBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Segment分片滚动的时长（毫秒），范围1 到90 天",
+          "example": "1",
+          "member": "int64",
+          "name": "SegmentMs",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批次的消息大小，范围1 KB到12 MB",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxMessageBytes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BatchModifyTopicResultDTO": {
+      "document": "批量修改topic属性结果",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态消息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ClusterInfo": {
       "document": "集群信息实体",
@@ -1544,6 +1864,15 @@
           "name": "RetentionBytes",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "1",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1757,6 +2086,42 @@
           "name": "Result",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePreRequest": {
+      "document": "DeleteInstancePre请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePreResponse": {
+      "document": "DeleteInstancePre返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "data",
+          "member": "CreateInstancePreResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2457,6 +2822,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例ID过滤",
+          "example": "instance-will-s",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2465,6 +2831,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "example": "tre",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -2473,6 +2840,7 @@
         {
           "default": "",
           "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -2481,6 +2849,7 @@
         {
           "default": "",
           "document": "偏移量，不填默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2489,6 +2858,7 @@
         {
           "default": "",
           "document": "返回数量，不填则默认10，最大值100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2496,7 +2866,8 @@
         },
         {
           "default": "",
-          "document": "匹配标签key值。",
+          "document": "已废弃。匹配标签key值。",
+          "example": "1",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -2510,8 +2881,10 @@
       "members": [
         {
           "document": "返回的结果",
+          "example": "无",
           "member": "InstanceResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3036,6 +3409,52 @@
         }
       ],
       "type": "object"
+    },
+    "DynamicDiskConfig": {
+      "document": "动态硬盘扩容配置",
+      "members": [
+        {
+          "default": "",
+          "document": "动态硬盘扩容配置开关（0: 关闭，1: 开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Enable\": 1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每次磁盘动态扩容大小百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"StepForwardPercentage\": 15",
+          "member": "int64",
+          "name": "StepForwardPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "磁盘配额百分比触发条件，即消息达到此值触发硬盘自动扩容事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"DiskQuotaPercentage\": 70",
+          "member": "int64",
+          "name": "DiskQuotaPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大扩容硬盘大小，以 GB 为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"MaxDiskSpace\": 1000",
+          "member": "int64",
+          "name": "MaxDiskSpace",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DynamicRetentionTime": {
       "document": "动态消息保留时间配置",
@@ -3803,6 +4222,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余创建分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "135",
+          "member": "int64",
+          "name": "RemainingPartitions",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余创建主题数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "135",
+          "member": "int64",
+          "name": "RemainingTopics",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动态硬盘扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "DynamicDiskConfig",
+          "name": "DynamicDiskConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4423,6 +4872,15 @@
           "name": "PublicNetwork",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动态硬盘扩容策略配置",
+          "example": "无",
+          "member": "DynamicDiskConfig",
+          "name": "DynamicDiskConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4633,6 +5091,15 @@
           "name": "RetentionBytes",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "1",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4712,6 +5179,32 @@
         }
       ],
       "usage": "out"
+    },
+    "Partitions": {
+      "document": "partition信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分区",
+          "example": "0",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "partition 消费位移",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Price": {
       "document": "消息价格实体",
@@ -4959,6 +5452,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SendMessageRequest": {
+      "document": "SendMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "DataHub接入ID",
+          "example": "datahubId",
+          "member": "string",
+          "name": "DataHubId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发送消息内容",
+          "example": "无",
+          "member": "BatchContent",
+          "name": "Message",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageResponse": {
+      "document": "SendMessage返回参数结构体",
+      "members": [
+        {
+          "document": "消息ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubscribedInfo": {
       "document": "订阅信息实体",
@@ -5784,6 +6322,7 @@
         {
           "default": "",
           "document": "zone列表",
+          "example": "1",
           "member": "ZoneInfo",
           "name": "ZoneList",
           "required": true,
@@ -5793,6 +6332,7 @@
         {
           "default": "",
           "document": "最大购买实例个数",
+          "example": "1",
           "member": "int64",
           "name": "MaxBuyInstanceNum",
           "required": true,
@@ -5802,6 +6342,7 @@
         {
           "default": "",
           "document": "最大购买带宽 单位Mb/s",
+          "example": "1",
           "member": "int64",
           "name": "MaxBandwidth",
           "required": true,
@@ -5811,6 +6352,7 @@
         {
           "default": "",
           "document": "后付费单位价格",
+          "example": "1",
           "member": "Price",
           "name": "UnitPrice",
           "required": true,
@@ -5820,6 +6362,7 @@
         {
           "default": "",
           "document": "后付费消息单价",
+          "example": "1",
           "member": "Price",
           "name": "MessagePrice",
           "required": true,
@@ -5829,6 +6372,7 @@
         {
           "default": "",
           "document": "用户独占集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
           "required": true,
@@ -5838,6 +6382,7 @@
         {
           "default": "",
           "document": "购买标准版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Standard",
           "required": true,
@@ -5847,6 +6392,7 @@
         {
           "default": "",
           "document": "购买标准版S2配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "StandardS2",
           "required": true,
@@ -5856,6 +6402,7 @@
         {
           "default": "",
           "document": "购买专业版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Profession",
           "required": true,
@@ -5865,8 +6412,29 @@
         {
           "default": "",
           "document": "购买物理独占版配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Physical",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PublicNetwork",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网带宽配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PublicNetworkLimit",
           "required": true,
           "type": "string",
           "value_allowed_null": true

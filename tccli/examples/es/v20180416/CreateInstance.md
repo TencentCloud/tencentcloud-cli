@@ -27,8 +27,9 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "es-xxxxxx",
-        "RequestId": "d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx"
+        "InstanceId": "xx",
+        "RequestId": "xx",
+        "DealName": "xx"
     }
 }
 ```

@@ -99,19 +99,19 @@
     "ScanVoice": [
       {
         "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
-        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=false\r\n&Callback=\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=http://xxx/audio_store/xxxx.mp3\r\n&<公共请求参数>",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\n&BizId=1400000000\n&Scenes.0=default\n&Live=false\n&Callback=https://0.0.0.0/user_callback\n&Tasks.0.DataId=1400000000_test_data_id\n&Tasks.0.Url=http://xxx/audio_store/xxxx.mp3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "提交语音文件检测任务-2"
       },
       {
         "document": "通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
-        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=true\r\n&Callback=\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=https://xxxx\r\n&<公共请求参数>",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\n&BizId=1400000000\n&Scenes.0=default\n&Live=true\n&Callback=https://0.0.0.0/user_callback\n&Tasks.0.DataId=1400000000_test_data_id\n&Tasks.0.Url=https://xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "提交语音流检测任务"
       },
       {
         "document": "通过语音文件的方式提交检测任务，可通过设置回调地址 Callback 获取检测结果",
-        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\r\n&BizId=1400000000\r\n&Scenes.0=default\r\n&Live=false\r\n&Callback=https://0.0.0.0/user_callback\r\n&Tasks.0.DataId=1400000000_test_data_id\r\n&Tasks.0.Url=http://xxxx/audio_store/xxxx.mp3\r\n&<公共请求参数>",
+        "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\n&BizId=1400000000\n&Scenes.0=default\n&Live=false\n&Callback=https://0.0.0.0/user_callback\n&Tasks.0.DataId=1400000000_test_data_id\n&Tasks.0.Url=http://xxxx/audio_store/xxxx.mp3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "提交语音文件检测任务"
       }

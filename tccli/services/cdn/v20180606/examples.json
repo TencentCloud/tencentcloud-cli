@@ -291,7 +291,7 @@
     "DescribeScdnBotRecords": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotRecords\n&BotType=TCB\n&Domain=zc-test-a.qcloudwaf.com\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:59\n&Offset=0\n&Limit=20\n&SortBy.0.Key=timestamp\n&SortBy.0.Sequence=desc\n&Area=overseas\n&<公共请求参数>",
+        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotRecords\n&BotType=TCB\n&Domain=123.com\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:59\n&Offset=0\n&Limit=20\n&SortBy.0.Key=timestamp\n&SortBy.0.Sequence=desc\n&Area=overseas\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [],\n        \"RequestId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\"\n    }\n}",
         "title": "获取指定类型的BOT记录"
       }

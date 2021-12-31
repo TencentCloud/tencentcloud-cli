@@ -78,6 +78,12 @@
       "name": "查询云数据库实例列表",
       "output": "DescribeDBInstancesResponse"
     },
+    "DescribeInstanceParams": {
+      "document": "本接口(DescribeInstanceParams)用于查询当前实例可修改的参数列表。",
+      "input": "DescribeInstanceParamsRequest",
+      "name": "获取当前实例可修改的参数列表",
+      "output": "DescribeInstanceParamsResponse"
+    },
     "DescribeSecurityGroup": {
       "document": "查询实例绑定的安全组",
       "input": "DescribeSecurityGroupRequest",
@@ -1874,6 +1880,78 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceParamsRequest": {
+      "document": "DescribeInstanceParams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceParamsResponse": {
+      "document": "DescribeInstanceParams返回参数结构体",
+      "members": [
+        {
+          "document": "值为枚举类型参数集合",
+          "example": "无",
+          "member": "InstanceEnumParam",
+          "name": "InstanceEnumParam",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值为integer类型参数集合",
+          "example": "无",
+          "member": "InstanceIntegerParam",
+          "name": "InstanceIntegerParam",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值为text类型的参数集合",
+          "example": "无",
+          "member": "InstanceTextParam",
+          "name": "InstanceTextParam",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值为混合类型的参数集合",
+          "example": "无",
+          "member": "InstanceMultiParam",
+          "name": "InstanceMultiParam",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前实例支持修改的参数个数统计 如0",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSecurityGroupRequest": {
       "document": "DescribeSecurityGroup请求参数结构体",
       "members": [
@@ -2732,6 +2810,370 @@
           "document": "实例对应的物理实例id，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
           "member": "string",
           "name": "RealInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceEnumParam": {
+      "document": "实例可修改参数枚举类型集合。",
+      "members": [
+        {
+          "default": "",
+          "document": "参数当前值",
+          "example": "\"all\"",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "\"slowOp\"",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "枚举值，所有支持的值",
+          "example": "[\"off\",\"slowOp\",\"all\"]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启后生效，\"1\"需要，\"0\"无需重启",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "\"operationProfiling.mode\"",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中英文说明",
+          "example": "[\"事务加锁超时时间\",\"max transaction lockrequest timeout millis\"]",
+          "member": "string",
+          "name": "Tips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值类型说明",
+          "example": "\"enum\"",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否获取到参数，1为获取，前端正常显示，0:前段显示loading",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceIntegerParam": {
+      "document": "实例可修改参数integer类型集合。",
+      "members": [
+        {
+          "default": "",
+          "document": "当前值",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大值",
+          "example": "\"65536\"",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小值",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否徐亚哦重启后生效 1:需要重启；0:无需重启",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "\"operation.profiling.slowOpThresholdMs\"",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数说明",
+          "example": "[\"数据库profiler确定慢查询的阈值，单位毫秒，默认值100\",\"The Performance Advisor re\"]",
+          "member": "string",
+          "name": "Tips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数类型",
+          "example": "\"integer\"",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "暂时未用到，前端使用redis侧代码，为了兼容，保留该参数",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceMultiParam": {
+      "document": "实例可修改参数Multi类型集合。",
+      "members": [
+        {
+          "default": "",
+          "document": "当前值",
+          "example": "\"01:00\"",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值",
+          "example": "NULL",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指导值范围",
+          "example": "[\"00:00\",\"23:00\" ]",
+          "member": "string",
+          "name": "EnumValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称",
+          "example": "\"openBalance.window\"",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态值",
+          "example": "\"1\"",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数说明",
+          "example": "[\"负载均衡时间窗\",\"balance.window\"]",
+          "member": "string",
+          "name": "Tips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值类型，multi混合类型",
+          "example": "\"multi\"",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceTextParam": {
+      "document": "实例可修改参数text类型集合。",
+      "members": [
+        {
+          "default": "",
+          "document": "当前值(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "默认值(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数名称(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "text类型值(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TextValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "说明(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Tips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值类型(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值获取状态(暂未使用)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false

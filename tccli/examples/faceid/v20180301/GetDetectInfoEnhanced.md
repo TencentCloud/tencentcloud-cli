@@ -62,6 +62,13 @@ Output:
             "OcrBack": "xx",
             "Avatar": "xx"
         },
+        "IntentionVerifyData": {
+            "IntentionVerifyVideo": "xx",
+            "ErrorCode": 0,
+            "ErrorMessage": "成功",
+            "AsrResult": "xx",
+            "IntentionVerifyBestFrame": "xx"
+        },
         "BestFrame": {
             "BestFrame": "xx",
             "BestFrames": [

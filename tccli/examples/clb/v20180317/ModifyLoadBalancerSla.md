@@ -1,4 +1,4 @@
-**Example 1: 提升性能保障规格**
+**Example 1: 共享型实例升级为性能容量型**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb ModifyLoadBalancerSla --cli-unfold-argument  \
-    --LoadBalancerSla.0.LoadBalancerId lb-db2nt5l2 \
-    --LoadBalancerSla.0.SlaType sla-3
+    --LoadBalancerSla.0.LoadBalancerId lb-db2n**** \
+    --LoadBalancerSla.0.SlaType SLA
 ```
 
 Output: 

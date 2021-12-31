@@ -12,7 +12,7 @@ tccli postgres CreateDBInstances --cli-unfold-argument  \
     --Period 1 \
     --InstanceChargeType prepaid \
     --Zone ap-guangzhou-2 \
-    --DBVersion 9.3.5 \
+    --DBVersion 12.4 \
     --AutoVoucher 0 \
     --AutoRenewFlag 1
 ```

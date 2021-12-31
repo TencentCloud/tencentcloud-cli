@@ -109,7 +109,7 @@
       "output": "GetFunctionEventInvokeConfigResponse"
     },
     "GetFunctionLogs": {
-      "document": "该接口根据指定的日志查询条件返回函数运行日志。",
+      "document": "该接口根据指定的日志查询条件返回函数运行日志。该接口已下线，查询函数请求运行的返回信息，请使用 [GetRequestStatus](https://cloud.tencent.com/document/product/583/65348)。查询函数运行日志，请参考[日志检索教程](https://cloud.tencent.com/document/product/583/52637)。",
       "input": "GetFunctionLogsRequest",
       "name": "获取函数运行日志",
       "output": "GetFunctionLogsResponse"
@@ -649,7 +649,7 @@
         },
         {
           "default": "",
-          "document": "Git地址",
+          "document": "Git地址。该功能已下线。",
           "example": "Git地址",
           "member": "string",
           "name": "GitUrl",
@@ -659,7 +659,7 @@
         },
         {
           "default": "",
-          "document": "Git用户名",
+          "document": "Git用户名。该功能已下线。",
           "example": "Git用户名",
           "member": "string",
           "name": "GitUserName",
@@ -669,7 +669,7 @@
         },
         {
           "default": "",
-          "document": "Git密码",
+          "document": "Git密码。该功能已下线。",
           "example": "Git密码",
           "member": "string",
           "name": "GitPassword",
@@ -679,7 +679,7 @@
         },
         {
           "default": "",
-          "document": "加密后的Git密码，一般无需指定",
+          "document": "加密后的Git密码，一般无需指定。该功能已下线。",
           "example": "加密后的Git密码",
           "member": "string",
           "name": "GitPasswordSecret",
@@ -689,7 +689,7 @@
         },
         {
           "default": "",
-          "document": "Git分支",
+          "document": "Git分支。该功能已下线。",
           "example": "Git分支",
           "member": "string",
           "name": "GitBranch",
@@ -699,7 +699,7 @@
         },
         {
           "default": "",
-          "document": "代码在Git仓库中的路径",
+          "document": "代码在Git仓库中的路径。该功能已下线。",
           "example": "代码在Git仓库中的路径",
           "member": "string",
           "name": "GitDirectory",
@@ -709,7 +709,7 @@
         },
         {
           "default": "",
-          "document": "指定要拉取的版本",
+          "document": "指定要拉取的版本。该功能已下线。",
           "example": "Git拉取的版本",
           "member": "string",
           "name": "GitCommitId",
@@ -719,7 +719,7 @@
         },
         {
           "default": "",
-          "document": "加密后的Git用户名，一般无需指定",
+          "document": "加密后的Git用户名，一般无需指定。该功能已下线。",
           "example": "加密后的Git用户名",
           "member": "string",
           "name": "GitUserNameSecret",
@@ -1390,7 +1390,7 @@
         },
         {
           "default": "",
-          "document": "函数版本，如果删除版本的话传入版本号，不传入改字段删除函数下的所有版本",
+          "document": "填写需要删除的版本号，不填默认删除函数下全部版本。",
           "example": "\"\"",
           "member": "string",
           "name": "Qualifier",
@@ -1560,6 +1560,7 @@
         {
           "default": "",
           "document": "函数的名称",
+          "example": "ledDummyAPITest",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -1568,6 +1569,7 @@
         {
           "default": "",
           "document": "要删除的触发器名称",
+          "example": "trigger_name",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -1576,6 +1578,7 @@
         {
           "default": "",
           "document": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型",
+          "example": "timer",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1584,6 +1587,7 @@
         {
           "default": "",
           "document": "函数所属命名空间",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -1592,6 +1596,7 @@
         {
           "default": "",
           "document": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段",
+          "example": "无",
           "member": "string",
           "name": "TriggerDesc",
           "required": false,
@@ -1600,6 +1605,7 @@
         {
           "default": "",
           "document": "函数的版本信息",
+          "example": "$DEFAULT",
           "member": "string",
           "name": "Qualifier",
           "required": false,
@@ -3151,7 +3157,7 @@
         },
         {
           "default": "",
-          "document": "查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 24小时",
+          "document": "查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min",
           "example": "2017-05-16 20:00:00",
           "member": "string",
           "name": "StartTime",
@@ -3280,7 +3286,7 @@
         },
         {
           "default": "",
-          "document": "应用的ENTRYPOINT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"entrypoint.sh\"",
           "member": "string",
           "name": "EntryPoint",
@@ -3290,7 +3296,7 @@
         },
         {
           "default": "",
-          "document": "entrypoint执行命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "Command",
@@ -3300,7 +3306,7 @@
         },
         {
           "default": "",
-          "document": "命令参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"'",
           "member": "string",
           "name": "Args",
@@ -5264,7 +5270,7 @@
         },
         {
           "default": "",
-          "document": "该参数已下线",
+          "document": "true，向指定请求[发送 SIGTERM 终止信号](https://cloud.tencent.com/document/product/583/63969#.E5.8F.91.E9.80.81.E7.BB.88.E6.AD.A2.E4.BF.A1.E5.8F.B7]， ，默认值为 false。",
           "example": "false",
           "member": "bool",
           "name": "GraceShutdown",

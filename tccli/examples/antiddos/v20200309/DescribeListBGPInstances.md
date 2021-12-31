@@ -46,6 +46,8 @@ Output:
                     "Region": "ap-guangzhou"
                 },
                 "Name": "123test",
+                "DDoSLevel": "low",
+                "CCEnable": 1,
                 "Status": "idle",
                 "ExpiredTime": "2020-04-11 14:28:55",
                 "CreatedTime": "2020-03-11 14:28:55",

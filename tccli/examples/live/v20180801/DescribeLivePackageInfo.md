@@ -19,6 +19,7 @@ Output:
         "TotalNum": 0,
         "PageNum": 0,
         "PageSize": 0,
+        "FluxPackageBillMode": "xx",
         "LivePackageInfoList": [
             {
                 "Id": "17",

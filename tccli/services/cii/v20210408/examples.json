@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateAutoClassifyStructureTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoClassifyStructureTask\n<公共请求参数>\n\n{\n    \"ServiceType\": \"Underwrite\",\n    \"PolicyId\": \"0406-01\",\n    \"TriggerType\": \"Auto\",\n    \"InsuranceTypes\": [\n        \"CriticalDiseaseInsurance\",\n        \"LifeInsurance\",\n        \"AccidentInsurance\"\n    ],\n    \"TaskInfos\": [\n        {\n            \"CustomerId\": \"0406-01-1\",\n            \"CustomerName\": \"0406-01-1\",\n            \"FileList\": [\n                \"original_upload_dir/test.pdf\"\n            ],\n            \"ImageList\": []\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"MainTaskId\": \"37835597617481728\"\n    }\n}",
+        "title": "创建未分类结构化任务接口示例"
+      }
+    ],
     "CreateStructureTask": [
       {
         "document": "",

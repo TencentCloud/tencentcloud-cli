@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
 from tccli import __version__
 from tccli.utils import Utils
-from tccli.exceptions import ConfigurationError, ClientError
+from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
@@ -14,6 +15,7 @@ from tencentcloud.cls.v20201016 import models as models_v20201016
 
 from jmespath import search
 import time
+from tccli import six
 
 def doCreateMachineGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
@@ -141,6 +143,54 @@ def doGetAlarmLog(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.GetAlarmLog(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateConsumer(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateConsumerRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateConsumer(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -687,7 +737,7 @@ def doCreateShipper(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyShipper(args, parsed_globals):
+def doModifyConsumer(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -712,11 +762,11 @@ def doModifyShipper(args, parsed_globals):
     client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyShipperRequest()
+    model = models.ModifyConsumerRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyShipper(model)
+        rsp = client.ModifyConsumer(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -831,7 +881,7 @@ def doCreateAlarmNotice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeConfigs(args, parsed_globals):
+def doDeleteConsumer(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -856,11 +906,11 @@ def doDescribeConfigs(args, parsed_globals):
     client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeConfigsRequest()
+    model = models.DeleteConsumerRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeConfigs(model)
+        rsp = client.DeleteConsumer(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1763,16 +1813,23 @@ def doUploadLog(args, parsed_globals):
         endpoint=g_param[OptionsDefine.Endpoint],
         proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
     )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
     model = models.UploadLogRequest()
     model.from_json_string(json.dumps(args))
+    if not sys.stdin.isatty():
+        if six.PY2:
+            body = sys.stdin.read()
+        else:
+            body = sys.stdin.buffer.read()
+    else:
+        raise ParamError("Missing required input, you can use `< /path/to/file` to input your binary file.")
     start_time = time.time()
     while True:
-        rsp = client.UploadLog(model)
+        rsp = client.UploadLog(model, body)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1821,6 +1878,54 @@ def doDescribeShipperTasks(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeShipperTasks(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyShipper(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyShipperRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyShipper(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2205,6 +2310,102 @@ def doDescribeLogContext(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeLogContext(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeConsumer(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeConsumerRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeConsumer(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeConfigs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeConfigsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeConfigs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2765,6 +2966,7 @@ ACTION_MAP = {
     "CreateMachineGroup": doCreateMachineGroup,
     "DescribeMachineGroups": doDescribeMachineGroups,
     "GetAlarmLog": doGetAlarmLog,
+    "CreateConsumer": doCreateConsumer,
     "ModifyTopic": doModifyTopic,
     "DescribeAsyncContextResult": doDescribeAsyncContextResult,
     "DescribeAsyncContextTasks": doDescribeAsyncContextTasks,
@@ -2776,10 +2978,10 @@ ACTION_MAP = {
     "CreateIndex": doCreateIndex,
     "DeleteConfig": doDeleteConfig,
     "CreateShipper": doCreateShipper,
-    "ModifyShipper": doModifyShipper,
+    "ModifyConsumer": doModifyConsumer,
     "DeleteAsyncSearchTask": doDeleteAsyncSearchTask,
     "CreateAlarmNotice": doCreateAlarmNotice,
-    "DescribeConfigs": doDescribeConfigs,
+    "DeleteConsumer": doDeleteConsumer,
     "ModifyAlarm": doModifyAlarm,
     "DeleteMachineGroup": doDeleteMachineGroup,
     "DeleteLogset": doDeleteLogset,
@@ -2800,6 +3002,7 @@ ACTION_MAP = {
     "ModifyConfig": doModifyConfig,
     "UploadLog": doUploadLog,
     "DescribeShipperTasks": doDescribeShipperTasks,
+    "ModifyShipper": doModifyShipper,
     "CreateConfig": doCreateConfig,
     "DescribeMachineGroupConfigs": doDescribeMachineGroupConfigs,
     "CreateAsyncContextTask": doCreateAsyncContextTask,
@@ -2808,6 +3011,8 @@ ACTION_MAP = {
     "DescribeAsyncSearchTasks": doDescribeAsyncSearchTasks,
     "DescribeAlarms": doDescribeAlarms,
     "DescribeLogContext": doDescribeLogContext,
+    "DescribeConsumer": doDescribeConsumer,
+    "DescribeConfigs": doDescribeConfigs,
     "MergePartition": doMergePartition,
     "DescribeMachines": doDescribeMachines,
     "RetryShipperTask": doRetryShipperTask,
@@ -2922,5 +3127,11 @@ def parse_global_arg(parsed_globals):
                 param['timeout'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
+    
+    # 如果在配置文件中读取字段的值，python2中的json.load函数会读取unicode类型的值，因此这里要转化类型
+    if six.PY2:
+        for key, value in g_param.items():
+            if isinstance(value, six.text_type):
+                g_param[key] = value.encode('utf-8')
     return g_param
 

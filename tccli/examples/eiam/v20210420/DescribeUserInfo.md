@@ -28,6 +28,7 @@ Output:
         "DataSource": "xx",
         "ExpirationTime": "xx",
         "Email": "xx",
+        "PwdNeedReset": true,
         "RequestId": "xx"
     }
 }

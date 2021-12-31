@@ -476,6 +476,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "1453498545",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -484,6 +485,7 @@
         {
           "default": "",
           "document": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": true,

@@ -12,7 +12,8 @@ tccli ams CreateBizConfig --cli-unfold-argument  \
     --MediaModeration.ImageFrequency 5 \
     --MediaModeration.AudioFrequency 60 \
     --MediaModeration.SegmentOutput.Bucket cms_segments-623322 \
-    --MediaModeration.SegmentOutput.Region ap-guangzhou
+    --MediaModeration.SegmentOutput.Region ap-guangzhou \
+    --MediaModeration.SegmentOutput.ObjectPrefix xxx
 ```
 
 Output: 

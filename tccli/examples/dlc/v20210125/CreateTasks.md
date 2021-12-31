@@ -12,7 +12,7 @@ tccli dlc CreateTasks --cli-unfold-argument  \
     --Tasks.Config.0.Value  \
     --Tasks.FailureTolerance Proceed \
     --DatabaseName testdb \
-    --DatasourceConnectionName COSDataCatalog
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

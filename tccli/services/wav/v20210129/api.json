@@ -12,6 +12,12 @@
       "name": "新增标签库接口",
       "output": "CreateCorpTagResponse"
     },
+    "CreateLead": {
+      "document": "线索回收接口",
+      "input": "CreateLeadRequest",
+      "name": "线索回收接口",
+      "output": "CreateLeadResponse"
+    },
     "QueryActivityJoinList": {
       "document": "根据游标拉取活动参与列表信息",
       "input": "QueryActivityJoinListRequest",
@@ -48,6 +54,12 @@
       "name": "查询线索列表接口",
       "output": "QueryClueInfoListResponse"
     },
+    "QueryDealerInfoList": {
+      "document": "企业可通过此接口获取录入在企微SaaS平台上的经销商信息。",
+      "input": "QueryDealerInfoListRequest",
+      "name": "查询经销商信息列表接口",
+      "output": "QueryDealerInfoListResponse"
+    },
     "QueryExternalContactDetail": {
       "document": "企业可通过此接口，根据外部联系人的userid，拉取客户详情",
       "input": "QueryExternalContactDetailRequest",
@@ -77,6 +89,12 @@
       "input": "QueryMiniAppCodeListRequest",
       "name": "查询小程序码列表接口",
       "output": "QueryMiniAppCodeListResponse"
+    },
+    "QueryVehicleInfoList": {
+      "document": "企业可通过此接口获取企微SaaS平台上的车系车型信息。",
+      "input": "QueryVehicleInfoListRequest",
+      "name": "查询车系车型信息列表接口",
+      "output": "QueryVehicleInfoListResponse"
     }
   },
   "metadata": {
@@ -982,6 +1000,203 @@
       ],
       "type": "object"
     },
+    "CreateLeadRequest": {
+      "document": "CreateLead请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "来源ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源名称",
+          "example": "51QC",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建时间， 单位毫秒",
+          "example": "1638178594245",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "线索类型：1-400呼入，2-常规留资",
+          "example": "2",
+          "member": "int64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "经销商id",
+          "example": "1438394065134600193",
+          "member": "uint64",
+          "name": "DealerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "品牌id",
+          "example": "1373911438101237762",
+          "member": "uint64",
+          "name": "BrandId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "车系id",
+          "example": "1376410380566495234",
+          "member": "uint64",
+          "name": "SeriesId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "CustomerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户手机号",
+          "example": "134****1234",
+          "member": "string",
+          "name": "CustomerPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "车型id",
+          "example": "1376759329958998019",
+          "member": "uint64",
+          "name": "ModelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户性别: 0-未知, 1-男, 2-女",
+          "example": "0",
+          "member": "int64",
+          "name": "CustomerSex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "销售姓名",
+          "example": "李四",
+          "member": "string",
+          "name": "SalesName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "销售手机号",
+          "example": "134****6789",
+          "member": "string",
+          "name": "SalesPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Cc坐席姓名",
+          "example": "王五",
+          "member": "string",
+          "name": "CcName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLeadResponse": {
+      "document": "CreateLead返回参数结构体",
+      "members": [
+        {
+          "document": "线索处理状态码： 0-表示创建成功， 1-表示线索合并，2-表示线索重复",
+          "example": "0",
+          "member": "int64",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "线索处理结果描述",
+          "example": "创建成功",
+          "member": "string",
+          "name": "BusinessMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DealerInfo": {
+      "document": "经销商信息",
+      "members": [
+        {
+          "default": "",
+          "document": "企微SaaS平台经销商id",
+          "example": "1438393844623261698",
+          "member": "uint64",
+          "name": "DealerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经销商名称",
+          "example": "深圳神车经销商",
+          "member": "string",
+          "name": "DealerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExternalContact": {
       "document": "客户信息",
       "members": [
@@ -1852,6 +2067,69 @@
       ],
       "type": "object"
     },
+    "QueryDealerInfoListRequest": {
+      "document": "QueryDealerInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDealerInfoListResponse": {
+      "document": "QueryDealerInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "经销商信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DealerInfo",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasMore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryExternalContactDetailRequest": {
       "document": "QueryExternalContactDetail请求参数结构体",
       "members": [
@@ -2104,6 +2382,69 @@
       ],
       "type": "object"
     },
+    "QueryVehicleInfoListRequest": {
+      "document": "QueryVehicleInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryVehicleInfoListResponse": {
+      "document": "QueryVehicleInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "车系车型信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VehicleInfo",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页游标，下次调用带上该值，则从当前的位置继续往后拉取新增的数据，以实现增量拉取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否还有更多数据。0-否；1-是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasMore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TagDetailInfo": {
       "document": "标签详细信息",
       "members": [
@@ -2251,6 +2592,72 @@
         }
       ],
       "usage": "in"
+    },
+    "VehicleInfo": {
+      "document": "车型车系信息",
+      "members": [
+        {
+          "default": "",
+          "document": "品牌id",
+          "example": "1334702033519960066",
+          "member": "uint64",
+          "name": "BrandId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "品牌名称",
+          "example": "品牌名称",
+          "member": "string",
+          "name": "BrandName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车系id",
+          "example": "1334702033528348674",
+          "member": "uint64",
+          "name": "SeriesId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车系名称",
+          "example": "车系名称",
+          "member": "string",
+          "name": "SeriesName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车型id",
+          "example": "1334740794876203009",
+          "member": "uint64",
+          "name": "ModelId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "车型名称",
+          "example": "车型名称",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WeComTagDetail": {
       "document": "企微个人标签信息,渠道活码使用",

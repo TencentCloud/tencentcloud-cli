@@ -1,4 +1,4 @@
-**Example 1: 查询任务列表**
+**Example 1: 任务列表展示**
 
 
 
@@ -6,59 +6,54 @@ Input:
 
 ```
 tccli dlc DescribeTasks --cli-unfold-argument  \
-    --Limit 20 \
-    --Offset 0 \
+    --Sorting desc \
+    --Filters.0.Values e386471f-139a-4e59-877f-50ece8135b99 \
     --Filters.0.Name task-id \
-    --Filters.0.Values 4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564
+    --Filters.1.Values e386471f-139a-4e59-877f-50ece8135b98 \
+    --Filters.1.Name task-id \
+    --Limit 10 \
+    --SortBy create-time \
+    --StartTime 2019-01-21 00:00:00 \
+    --Offset 0 \
+    --EndTime 2019-01-22 00:00:00 \
+    --DataEngineName shared_presto
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "7b1b3bb1-6174-49ea-a97e-bb141d32c1b0",
+        "TotalCount": 1,
         "TaskList": [
             {
-                "Id": "4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564",
-                "DatabaseName": "testdb",
-                "SQLType": "DQL",
-                "SQL": "SELECT * FROM `test`.`table1` LIMIT 10",
-                "DataAmount": 0,
-                "UsedTime": 0,
-                "OutputPath": "cosn://rickyhu-1301312708/test2/DLCQueryResults/2021/09/01/4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564/",
-                "RowAffectInfo": "",
-                "ResultExpired": false,
-                "State": 1,
-                "CreateTime": "1630496032942",
-                "DataSet": "",
-                "Error": "",
-                "OutputMessage": "",
-                "Percentage": 0,
-                "TaskType": "SQLTask",
-                "ProgressDetail": ""
+                "CanDownload": true,
+                "DataSet": "{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}",
+                "State": 2,
+                "DataAmount": 1024,
+                "Percentage": 100,
+                "SQLType": "DDL",
+                "RowAffectInfo": "500 rows selected (0.077 seconds)",
+                "InputConf": "[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]",
+                "DataEngineId": "resource-1gghpd1t",
+                "UpdateTime": "1611646962000",
+                "TaskType": "presto",
+                "ProgressDetail": "[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]",
+                "InputType": "local",
+                "DataNumber": 100,
+                "ResultExpired": true,
+                "OutputPath": "cosn://test-bucket-123434324234/result/",
+                "DataEngineName": "shared_presto",
+                "Error": "****",
+                "OperateUin": "****",
+                "OutputMessage": "****",
+                "CreateTime": "1611646962000",
+                "UsedTime": 60000,
+                "DatabaseName": "database1",
+                "SQL": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+                "Id": "89570c65-49de-4bbd-ac0a-a67c724fc80f"
             }
         ],
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 2: 任务列表展示**
-
-
-
-Input: 
-
-```
-tccli dlc DescribeTasks --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "5b68c82f-d946-4ea9-8336-2f56ff5dd199",
-        "TaskList": [],
-        "TotalCount": 0
+        "RequestId": "b577857e-041f-46c7-b5cf-4b3d3f50bc51"
     }
 }
 ```

@@ -80,6 +80,14 @@
         "title": "获取诊断事件详情"
       }
     ],
+    "DescribeDBDiagEvents": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagEvents\n&StartTime=2021-05-27T00:00:00+00:00\n&EndTime=2021-05-27T01:00:00+00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a9a6ba0-5893-11ec-8ad2-ff04c623cbd9\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-test\",\n                \"EventId\": 330858512,\n                \"StartTime\": \"2021-05-27 00:01:10\",\n                \"EndTime\": \"2021-05-27 00:01:20\",\n                \"DiagItem\": \"事务未提交\",\n                \"DiagType\": \"事务未提交\",\n                \"Severity\": 1,\n                \"Outline\": \"存在未提交事务\",\n                \"Metric\": \"\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "title": "获取诊断事件列表"
+      }
+    ],
     "DescribeDBDiagHistory": [
       {
         "document": "",

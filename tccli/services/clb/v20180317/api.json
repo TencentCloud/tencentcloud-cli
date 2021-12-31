@@ -31,7 +31,7 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse"
@@ -186,6 +186,12 @@
       "name": "查询集群中资源列表",
       "output": "DescribeClusterResourcesResponse"
     },
+    "DescribeCrossTargets": {
+      "document": "查询跨域2.0版本云联网后端子机和网卡信息。",
+      "input": "DescribeCrossTargetsRequest",
+      "name": "查询跨域2.0版本云联网后端子机和网卡信息",
+      "output": "DescribeCrossTargetsResponse"
+    },
     "DescribeCustomizedConfigAssociateList": {
       "document": "拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。",
       "input": "DescribeCustomizedConfigAssociateListRequest",
@@ -306,6 +312,12 @@
       "name": "手动添加负载均衡转发规则的重定向关系",
       "output": "ManualRewriteResponse"
     },
+    "MigrateClassicalLoadBalancers": {
+      "document": "本接口将传统型负载均衡迁移成(原应用型)负载均衡\n本接口为异步接口，接口成功返回后，可使用 DescribeLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
+      "input": "MigrateClassicalLoadBalancersRequest",
+      "name": "传统型负载均衡迁移成(原应用型)负载均衡",
+      "output": "MigrateClassicalLoadBalancersResponse"
+    },
     "ModifyBlockIPList": {
       "document": "修改负载均衡的IP（client IP）封禁黑名单列表，一个转发规则最多支持封禁 2000000 个IP，及黑名单容量为 2000000。\n（接口灰度中，如需使用请提工单）",
       "input": "ModifyBlockIPListRequest",
@@ -337,9 +349,9 @@
       "output": "ModifyLoadBalancerAttributesResponse"
     },
     "ModifyLoadBalancerSla": {
-      "document": "升、降配接口。支持共享型clb升级到性能保障型clb。支持性能保障型提升等级。支持性能保障降低规格。（不支持性能保障降级到共享型）。",
+      "document": "支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。",
       "input": "ModifyLoadBalancerSlaRequest",
-      "name": "性能保障变配",
+      "name": "性能容量型变配",
       "output": "ModifyLoadBalancerSlaResponse"
     },
     "ModifyRule": {
@@ -1528,7 +1540,7 @@
         },
         {
           "default": "",
-          "document": "负载均衡实例所属的项目 ID，可以通过 DescribeProject 接口获取。不传此参数则视为默认项目。",
+          "document": "负载均衡实例所属的项目 ID，可以通过 [DescribeProject](https://cloud.tencent.com/document/product/378/4400) 接口获取。不传此参数则视为默认项目。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -1537,7 +1549,7 @@
         },
         {
           "default": "",
-          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。可通过 DescribeMasterZones 接口查询一个地域的主可用区的列表。",
+          "document": "仅适用于公网负载均衡。设置跨可用区容灾时的主可用区ID，例如 100001 或 ap-guangzhou-1\n注：主可用区是需要承载流量的可用区，备可用区默认不承载流量，主可用区不可用时才使用备可用区，平台将为您自动选择最佳备可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "MasterZoneId",
@@ -2760,6 +2772,92 @@
       ],
       "type": "object"
     },
+    "CrossTargets": {
+      "document": "跨域2.0云联网下子机和网卡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "本地私有网络ID，即负载均衡的VpcId。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡所属的私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡的IP地址",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机或网卡所属的私有网络名称。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机的网卡ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EniId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子机实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子机实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子机或者网卡所属的地域。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteListenerRequest": {
       "document": "DeleteListener请求参数结构体",
       "members": [
@@ -3575,6 +3673,69 @@
       ],
       "type": "object"
     },
+    "DescribeCrossTargetsRequest": {
+      "document": "DescribeCrossTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回后端服务列表数目，默认20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回后端服务列表起始偏移量，默认0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询跨域2.0版本云联网后端子机和网卡服务列表条件，详细的过滤条件如下：\n<li> vpc-id - String - 是否必填：否 - （过滤条件）按照 本地私有网络ID，即负载均衡的VpcId 过滤，如：\"vpc-12345678\"。</li>\n<li> ip - String - 是否必填：否 - （过滤条件）按照 后端服务ip 过滤，如：\"192.168.0.1\"。</li>\n<li> listener-id - String - 是否必填：否 - （过滤条件）按照 监听器ID 过滤，如：\"lbl-12345678\"。</li>\n<li> location-id - String - 是否必填：否 - （过滤条件）按照 七层监听器规则ID 过滤，如：\"loc-12345678\"。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossTargetsResponse": {
+      "document": "DescribeCrossTargets返回参数结构体",
+      "members": [
+        {
+          "document": "后端服务列表总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "后端服务列表。",
+          "example": "无",
+          "member": "CrossTargets",
+          "name": "CrossTargetSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCustomizedConfigAssociateListRequest": {
       "document": "DescribeCustomizedConfigAssociateList请求参数结构体",
       "members": [
@@ -3914,6 +4075,7 @@
         {
           "default": "",
           "document": "服务端证书的ID，或客户端证书的ID",
+          "example": "[\"RwFAfr8Y\\r\\n\"]",
           "member": "string",
           "name": "CertIds",
           "required": true,
@@ -3927,8 +4089,10 @@
       "members": [
         {
           "document": "证书ID，以及与该证书ID关联的负载均衡实例列表",
+          "example": "无",
           "member": "CertIdRelatedWithLoadBalancers",
           "name": "CertSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3951,29 +4115,37 @@
       "members": [
         {
           "document": "负载均衡总数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "运行中的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "RunningCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "隔离中的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "IsolationCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "即将到期的负载均衡数目",
+          "example": "0",
           "member": "int64",
           "name": "WillExpireCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4320,8 +4492,10 @@
       "members": [
         {
           "document": "配额列表",
+          "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4393,7 +4567,8 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤",
+          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -4401,7 +4576,8 @@
         },
         {
           "default": "",
-          "document": "显示数量限制，默认20",
+          "document": "显示数量限制，默认20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4409,7 +4585,8 @@
         },
         {
           "default": "",
-          "document": "显示的偏移量，默认为0",
+          "document": "显示的偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4422,23 +4599,29 @@
       "document": "DescribeTargetGroupInstances返回参数结构体",
       "members": [
         {
-          "document": "本次查询的结果数量",
+          "document": "本次查询的结果数量。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "绑定的服务器信息",
+          "document": "绑定的服务器信息。",
+          "example": "无",
           "member": "TargetGroupBackend",
           "name": "TargetGroupInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "实际统计数量，不受Limit，Offset，CAM的影响",
+          "document": "实际统计数量，不受Limit、Offset、CAM的影响。",
+          "example": "2",
           "member": "uint64",
           "name": "RealCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6545,6 +6728,42 @@
       ],
       "type": "object"
     },
+    "MigrateClassicalLoadBalancersRequest": {
+      "document": "MigrateClassicalLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传统型负载均衡ID数组",
+          "example": "[\"lb-isdw5mum\\r\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "独占集群信息",
+          "example": "无",
+          "member": "ExclusiveCluster",
+          "name": "ExclusiveCluster",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "MigrateClassicalLoadBalancersResponse": {
+      "document": "MigrateClassicalLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBlockIPListRequest": {
       "document": "ModifyBlockIPList请求参数结构体",
       "members": [
@@ -6713,7 +6932,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID。",
+          "example": "lb-cuxw2rm0",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -6721,7 +6941,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡监听器 ID",
+          "document": "负载均衡监听器 ID。",
+          "example": "lbl-d1ubsydq",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -6730,6 +6951,7 @@
         {
           "default": "",
           "document": "监听器下的某个旧域名。",
+          "example": "foo.net",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6738,6 +6960,7 @@
         {
           "default": "",
           "document": "新域名，\t长度限制为：1-120。有三种使用格式：非正则表达式格式，通配符格式，正则表达式格式。非正则表达式格式只能使用字母、数字、‘-’、‘.’。通配符格式的使用 ‘*’ 只能在开头或者结尾。正则表达式以'~'开头。",
+          "example": "bar.net",
           "member": "string",
           "name": "NewDomain",
           "required": true,
@@ -6970,7 +7193,8 @@
       "members": [
         {
           "default": "",
-          "document": "负载均衡性能保障实例ID和变配的目标规格",
+          "document": "负载均衡实例信息",
+          "example": "无",
           "member": "SlaUpdateParam",
           "name": "LoadBalancerSla",
           "required": true,
@@ -7384,6 +7608,7 @@
         {
           "default": "",
           "document": "配额名称，取值范围：\n<li> TOTAL_OPEN_CLB_QUOTA: 用户当前地域下的公网LB配额 </li>\n<li> TOTAL_INTERNAL_CLB_QUOTA: 用户当前地域下的内网LB配额 </li>\n<li> TOTAL_LISTENER_QUOTA: 一个CLB下的监听器配额 </li>\n<li> TOTAL_LISTENER_RULE_QUOTA: 一个监听器下的转发规则配额 </li>\n<li> TOTAL_TARGET_BIND_QUOTA: 一条转发规则下绑定设备配额 </li>",
+          "example": "TOTAL_OPEN_CLB_QUOTA",
           "member": "string",
           "name": "QuotaId",
           "required": true,
@@ -7393,6 +7618,7 @@
         {
           "default": "",
           "document": "当前使用数量，为 null 时表示无意义。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "int64",
           "name": "QuotaCurrent",
           "required": true,
@@ -7402,6 +7628,7 @@
         {
           "default": "",
           "document": "配额数量。",
+          "example": "3",
           "member": "int64",
           "name": "QuotaLimit",
           "required": true,
@@ -7561,6 +7788,7 @@
         {
           "default": "",
           "document": "需要被替换的证书的ID，可以是服务端证书或客户端证书",
+          "example": "cuxw0123",
           "member": "string",
           "name": "OldCertificateId",
           "required": true,
@@ -7569,6 +7797,7 @@
         {
           "default": "",
           "document": "新证书的内容等相关信息",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": true,
@@ -7805,6 +8034,7 @@
         {
           "default": "",
           "document": "转发规则的域名。长度限制为：1~80。",
+          "example": "www.xxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7814,6 +8044,7 @@
         {
           "default": "",
           "document": "转发规则的路径。长度限制为：1~200。",
+          "example": "/xxxx",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -7823,6 +8054,7 @@
         {
           "default": "",
           "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。",
+          "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -7832,6 +8064,7 @@
         {
           "default": "",
           "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
+          "example": "{\"HealthSwitch\": 1, \"TimeOut\": 5, \"IntervalTime\": 5, \"HealthNum\"",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -7841,6 +8074,7 @@
         {
           "default": "",
           "document": "证书信息",
+          "example": "{\"SSLMode\": \"UNIDIRECTIONAL\", \"CertId\": \"fF6AGfxE\"}",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -7850,6 +8084,7 @@
         {
           "default": "",
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
+          "example": "WRR",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -7859,6 +8094,7 @@
         {
           "default": "",
           "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC",
+          "example": "HTTP",
           "member": "string",
           "name": "ForwardType",
           "required": false,
@@ -7868,6 +8104,7 @@
         {
           "default": "",
           "document": "是否将该域名设为默认域名，注意，一个监听器下只能设置一个默认域名。",
+          "example": "true",
           "member": "bool",
           "name": "DefaultServer",
           "required": false,
@@ -7877,6 +8114,7 @@
         {
           "default": "",
           "document": "是否开启Http2，注意，只有HTTPS域名才能开启Http2。",
+          "example": "true",
           "member": "bool",
           "name": "Http2",
           "required": false,
@@ -7886,6 +8124,7 @@
         {
           "default": "",
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
+          "example": "NODE",
           "member": "string",
           "name": "TargetType",
           "required": false,
@@ -7895,6 +8134,7 @@
         {
           "default": "",
           "document": "TRPC被调服务器路由，ForwardType为TRPC时必填",
+          "example": "trpcall",
           "member": "string",
           "name": "TrpcCallee",
           "required": false,
@@ -7904,6 +8144,7 @@
         {
           "default": "",
           "document": "TRPC调用服务接口，ForwardType为TRPC时必填",
+          "example": "trpcFunc",
           "member": "string",
           "name": "TrpcFunc",
           "required": false,
@@ -7913,6 +8154,7 @@
         {
           "default": "",
           "document": "是否开启QUIC，注意，只有HTTPS域名才能开启QUIC",
+          "example": "true",
           "member": "bool",
           "name": "Quic",
           "required": false,
@@ -8333,6 +8575,7 @@
         {
           "default": "",
           "document": "负载均衡实例 ID",
+          "example": "lb-cuxw2r00",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8341,6 +8584,7 @@
         {
           "default": "",
           "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定50个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组。",
+          "example": "[\"sg-0936o7sd\\r\\n\",\"sg-12345678\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -8367,6 +8611,7 @@
         {
           "default": "",
           "document": "安全组ID，如 sg-12345678",
+          "example": "sg-12345678",
           "member": "string",
           "name": "SecurityGroup",
           "required": true,
@@ -8375,6 +8620,7 @@
         {
           "default": "",
           "document": "ADD 绑定安全组；\nDEL 解绑安全组",
+          "example": "ADD",
           "member": "string",
           "name": "OperationType",
           "required": true,
@@ -8383,6 +8629,7 @@
         {
           "default": "",
           "document": "负载均衡实例ID数组",
+          "example": "[\"lb-0936o712\\r\\n\",\"lb-tttt5555\\r\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -8404,11 +8651,12 @@
       "type": "object"
     },
     "SlaUpdateParam": {
-      "document": "性能保障变配参数",
+      "document": "性能容量型变配参数",
       "members": [
         {
           "default": "",
           "document": "lb的字符串ID",
+          "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8417,7 +8665,8 @@
         },
         {
           "default": "",
-          "document": "需要变更的性能保障级别",
+          "document": "变更为性能容量型，固定为SLA",
+          "example": "SLA",
           "member": "string",
           "name": "SlaType",
           "required": true,
@@ -8537,6 +8786,7 @@
         {
           "default": "",
           "document": "负载均衡ID",
+          "example": "lb-agcadfe",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -8546,6 +8796,7 @@
         {
           "default": "",
           "document": "监听器ID",
+          "example": "lbl-xxxx",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -8555,6 +8806,7 @@
         {
           "default": "",
           "document": "目标组ID",
+          "example": "lbtg-0nzo3czo",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -8564,6 +8816,7 @@
         {
           "default": "",
           "document": "转发规则ID",
+          "example": "loc-aaaaaa",
           "member": "string",
           "name": "LocationId",
           "required": false,

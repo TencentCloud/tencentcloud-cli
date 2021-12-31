@@ -40,6 +40,14 @@
         "title": "设置DDoS防护的AI防护开关"
       }
     ],
+    "CreateDDoSBlackWhiteIpList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateDDoSBlackWhiteIpList\n&InstanceId=bgpip-00001001\n&IpList.0.Ip=1.1.1.1\n&IpList.0.Mask=0\n&Type=black\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7739a1e-837d-4248-bf9f-16a9bf77db22\"\n    }\n}",
+        "title": "添加DDoS防护的IP黑白名单"
+      }
+    ],
     "CreateDDoSGeoIPBlockConfig": [
       {
         "document": "",
@@ -128,6 +136,14 @@
         "title": "删除DDoS防护的IP黑白名单"
       }
     ],
+    "DeleteDDoSBlackWhiteIpList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DeleteDDoSBlackWhiteIpList\n&InstanceId=bgpip-00001001\n&IpList.0.Ip=1.1.1.1\n&IpList.0.Mask=0\n&Type=black\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7739a1e-837d-4248-bf9f-16a9bf77db22\"\n    }\n}",
+        "title": "删除DDoS防护的IP黑白名单"
+      }
+    ],
     "DeleteDDoSGeoIPBlockConfig": [
       {
         "document": "",
@@ -200,6 +216,14 @@
         "title": "获取CC攻击指标数据"
       }
     ],
+    "DescribeDDoSBlackWhiteIpList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeDDoSBlackWhiteIpList\n&InstanceId=bgpip-00001001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f996729-bb5b-49da-89c3-8fc2a7400bd5\",\n        \"BlackIpList\": [\n            {\n                \"Ip\": \"123.123.123.1\",\n                \"Mask\": 0\n            }\n        ],\n        \"WhiteIpList\": [\n            {\n                \"Ip\": \"123.123.123.2\",\n                \"Mask\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取DDoS防护的IP黑白名单"
+      }
+    ],
     "DescribeDDoSTrend": [
       {
         "document": "",
@@ -236,7 +260,7 @@
       {
         "document": "",
         "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListBGPInstances\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgp-00000001\n&FilterRegion=ap-guangzhou\n&FilterName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d362f93-9a48-4194-995f-d3dd377c770d\",\n        \"InstanceList\": [\n            {\n                \"InstanceDetail\": {\n                    \"EipList\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"InstanceId\": \"bgp-00000001\"\n                },\n                \"PackInfo\": {\n                    \"PackId\": \"\",\n                    \"PackType\": \"\"\n                },\n                \"SpecificationLimit\": {\n                    \"ProtectBandwidth\": 20000,\n                    \"ProtectCountLimit\": 0,\n                    \"ProtectIPNumberLimit\": 5,\n                    \"AutoRenewFlag\": 0\n                },\n                \"Usage\": {\n                    \"ProtectCountUsage\": 0,\n                    \"ProtectIPNumberUsage\": 0,\n                    \"Last7DayAttackCount\": 0\n                },\n                \"Region\": {\n                    \"Region\": \"ap-guangzhou\"\n                },\n                \"Name\": \"123test\",\n                \"Status\": \"idle\",\n                \"ExpiredTime\": \"2020-04-11 14:28:55\",\n                \"CreatedTime\": \"2020-03-11 14:28:55\",\n                \"EipProductInfos\": [\n                    {\n                        \"Ip\": \"1.1.1.1\",\n                        \"BizType\": \"public\",\n                        \"DeviceType\": \"cvm\",\n                        \"InstanceId\": \"ins-f2f9ssbo\"\n                    }\n                ],\n                \"BoundStatus\": \"idle\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d362f93-9a48-4194-995f-d3dd377c770d\",\n        \"InstanceList\": [\n            {\n                \"InstanceDetail\": {\n                    \"EipList\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"InstanceId\": \"bgp-00000001\"\n                },\n                \"PackInfo\": {\n                    \"PackId\": \"\",\n                    \"PackType\": \"\"\n                },\n                \"SpecificationLimit\": {\n                    \"ProtectBandwidth\": 20000,\n                    \"ProtectCountLimit\": 0,\n                    \"ProtectIPNumberLimit\": 5,\n                    \"AutoRenewFlag\": 0\n                },\n                \"Usage\": {\n                    \"ProtectCountUsage\": 0,\n                    \"ProtectIPNumberUsage\": 0,\n                    \"Last7DayAttackCount\": 0\n                },\n                \"Region\": {\n                    \"Region\": \"ap-guangzhou\"\n                },\n                \"Name\": \"123test\",\n                \"DDoSLevel\": \"low\",\n                \"CCEnable\": 1,\n                \"Status\": \"idle\",\n                \"ExpiredTime\": \"2020-04-11 14:28:55\",\n                \"CreatedTime\": \"2020-03-11 14:28:55\",\n                \"EipProductInfos\": [\n                    {\n                        \"Ip\": \"1.1.1.1\",\n                        \"BizType\": \"public\",\n                        \"DeviceType\": \"cvm\",\n                        \"InstanceId\": \"ins-f2f9ssbo\"\n                    }\n                ],\n                \"BoundStatus\": \"idle\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取高防包资产实例列表"
       }
     ],

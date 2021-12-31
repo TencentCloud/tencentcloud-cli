@@ -4153,7 +4153,7 @@
         },
         {
           "default": "",
-          "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"。",
+          "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"\n200: \"截图回调\"。",
           "example": "1",
           "member": "uint64",
           "name": "EventType",
@@ -5126,6 +5126,15 @@
           "name": "PageSize",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：\n标准直播，中国大陆（境内全地区）计费方式。\n标准直播，国际/港澳台（境外多地区）计费方式。\n快直播，中国大陆（境内全地区）计费方式。\n快直播，国际/港澳台（境外多地区）计费方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "201,201,204,204",
+          "member": "string",
+          "name": "FluxPackageBillMode",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
