@@ -122,6 +122,7 @@
         {
           "default": "",
           "document": "集群健康状态",
+          "example": "1",
           "member": "float",
           "name": "Health",
           "required": false,
@@ -131,6 +132,7 @@
         {
           "default": "",
           "document": "集群是否可见",
+          "example": "1",
           "member": "float",
           "name": "Visible",
           "required": true,
@@ -140,6 +142,7 @@
         {
           "default": "",
           "document": "集群是否熔断",
+          "example": "1",
           "member": "float",
           "name": "Break",
           "required": true,
@@ -149,6 +152,7 @@
         {
           "default": "",
           "document": "平均磁盘使用率",
+          "example": "0.7",
           "member": "float",
           "name": "AvgDiskUsage",
           "required": true,
@@ -158,6 +162,7 @@
         {
           "default": "",
           "document": "平均内存使用率",
+          "example": "0.1",
           "member": "float",
           "name": "AvgMemUsage",
           "required": true,
@@ -167,6 +172,7 @@
         {
           "default": "",
           "document": "平均cpu使用率",
+          "example": "0.1",
           "member": "float",
           "name": "AvgCpuUsage",
           "required": true,
@@ -176,6 +182,7 @@
         {
           "default": "",
           "document": "集群总存储大小",
+          "example": "0.1",
           "member": "uint64",
           "name": "TotalDiskSize",
           "required": true,
@@ -185,6 +192,7 @@
         {
           "default": "",
           "document": "客户端请求节点",
+          "example": "[\"hot\"]",
           "member": "string",
           "name": "TargetNodeTypes",
           "required": true,
@@ -194,6 +202,7 @@
         {
           "default": "",
           "document": "在线节点数",
+          "example": "10",
           "member": "int64",
           "name": "NodeNum",
           "required": true,
@@ -203,6 +212,7 @@
         {
           "default": "",
           "document": "总节点数",
+          "example": "10",
           "member": "int64",
           "name": "TotalNodeNum",
           "required": true,
@@ -212,6 +222,7 @@
         {
           "default": "",
           "document": "数据节点数",
+          "example": "7",
           "member": "int64",
           "name": "DataNodeNum",
           "required": true,
@@ -221,6 +232,7 @@
         {
           "default": "",
           "document": "索引数",
+          "example": "100",
           "member": "int64",
           "name": "IndexNum",
           "required": true,
@@ -230,6 +242,7 @@
         {
           "default": "",
           "document": "文档数",
+          "example": "100000",
           "member": "int64",
           "name": "DocNum",
           "required": true,
@@ -239,6 +252,7 @@
         {
           "default": "",
           "document": "磁盘已使用字节数",
+          "example": "10000",
           "member": "int64",
           "name": "DiskUsedInBytes",
           "required": true,
@@ -248,6 +262,7 @@
         {
           "default": "",
           "document": "分片个数",
+          "example": "10000",
           "member": "int64",
           "name": "ShardNum",
           "required": true,
@@ -257,6 +272,7 @@
         {
           "default": "",
           "document": "主分片个数",
+          "example": "1000",
           "member": "int64",
           "name": "PrimaryShardNum",
           "required": true,
@@ -266,6 +282,7 @@
         {
           "default": "",
           "document": "迁移中的分片个数",
+          "example": "1",
           "member": "int64",
           "name": "RelocatingShardNum",
           "required": true,
@@ -275,6 +292,7 @@
         {
           "default": "",
           "document": "初始化中的分片个数",
+          "example": "1",
           "member": "int64",
           "name": "InitializingShardNum",
           "required": true,
@@ -284,11 +302,42 @@
         {
           "default": "",
           "document": "未分配的分片个数",
+          "example": "0",
           "member": "int64",
           "name": "UnassignedShardNum",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业版COS存储容量大小，单位GB",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCosStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业版集群可搜索快照cos存放的bucket名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "es-3p7lkxxx-1021",
+          "member": "string",
+          "name": "SearchableSnapshotCosBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业版集群可搜索快照cos所属appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1221",
+          "member": "string",
+          "name": "SearchableSnapshotCosAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -606,6 +655,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -814,6 +872,7 @@
         {
           "default": "",
           "document": "集群实例所属可用区，不传则默认所有可用区",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -822,6 +881,7 @@
         {
           "default": "",
           "document": "集群实例ID列表",
+          "example": "es-abcdefgh",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -830,6 +890,7 @@
         {
           "default": "",
           "document": "集群实例名称列表",
+          "example": "测试",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -838,6 +899,7 @@
         {
           "default": "",
           "document": "分页起始值, 默认值0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -846,6 +908,7 @@
         {
           "default": "",
           "document": "分页大小，默认值20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -854,6 +917,7 @@
         {
           "default": "",
           "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序",
+          "example": "1",
           "member": "uint64",
           "name": "OrderByKey",
           "required": false,
@@ -862,6 +926,7 @@
         {
           "default": "",
           "document": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序",
+          "example": "0",
           "member": "uint64",
           "name": "OrderByType",
           "required": false,
@@ -870,6 +935,7 @@
         {
           "default": "",
           "document": "节点标签信息列表",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "required": false,
@@ -878,8 +944,18 @@
         {
           "default": "",
           "document": "私有网络vip列表",
+          "example": "10.2.3.4",
           "member": "string",
           "name": "IpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "可用区列表",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "ZoneList",
           "required": false,
           "type": "list"
         }
@@ -891,15 +967,19 @@
       "members": [
         {
           "document": "返回的实例个数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息列表",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1541,7 +1621,7 @@
         },
         {
           "default": "",
-          "document": "冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "WarmNodeType",
@@ -1551,7 +1631,7 @@
         },
         {
           "default": "",
-          "document": "冷节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
           "name": "WarmNodeNum",
@@ -1561,7 +1641,7 @@
         },
         {
           "default": "",
-          "document": "冷节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "WarmCpuNum",
@@ -1571,7 +1651,7 @@
         },
         {
           "default": "",
-          "document": "冷节点内存内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点内存内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "uint64",
           "name": "WarmMemSize",
@@ -1581,7 +1661,7 @@
         },
         {
           "default": "",
-          "document": "冷节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "WarmDiskType",
@@ -1591,7 +1671,7 @@
         },
         {
           "default": "",
-          "document": "冷节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "温节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "WarmDiskSize",
@@ -1767,6 +1847,126 @@
           "name": "SecurityGroups",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "ColdNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "ColdNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ColdCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ColdMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "ColdDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冷节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "ColdDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ES.S1.SMALL2",
+          "member": "string",
+          "name": "FrozenNodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "FrozenNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "FrozenCpuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点内存大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "FrozenMemSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "FrozenDiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "冻节点磁盘大小，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "FrozenDiskSize",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3012,6 +3212,15 @@
       "document": "UpdateInstance返回参数结构体",
       "members": [
         {
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3080,6 +3289,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3088,6 +3298,7 @@
         {
           "default": "",
           "document": "需要安装的插件名列表",
+          "example": "[\"analysis-qq\\n\",\"sql\\n\"]",
           "member": "string",
           "name": "InstallPluginList",
           "required": false,
@@ -3096,6 +3307,7 @@
         {
           "default": "",
           "document": "需要卸载的插件名列表",
+          "example": "[\"analysis-qq\\n\",\"sql\\n\"]",
           "member": "string",
           "name": "RemovePluginList",
           "required": false,
@@ -3104,6 +3316,7 @@
         {
           "default": "",
           "document": "是否强制重启",
+          "example": "true",
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
@@ -3112,10 +3325,20 @@
         {
           "default": "",
           "document": "是否重新安装",
+          "example": "true",
           "member": "bool",
           "name": "ForceUpdate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "0：系统插件",
+          "example": "0",
+          "member": "uint64",
+          "name": "PluginType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3238,6 +3461,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3246,6 +3470,7 @@
         {
           "default": "",
           "document": "License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum",
+          "example": "platinum",
           "member": "string",
           "name": "LicenseType",
           "required": true,
@@ -3254,6 +3479,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券<li>0：不自动使用</li><li>1：自动使用</li>默认值0",
+          "example": "111",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -3262,6 +3488,7 @@
         {
           "default": "",
           "document": "代金券ID列表（目前仅支持指定一张代金券）",
+          "example": "111",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3270,6 +3497,7 @@
         {
           "default": "",
           "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "example": "0",
           "member": "uint64",
           "name": "BasicSecurityType",
           "required": false,
@@ -3278,6 +3506,7 @@
         {
           "default": "",
           "document": "是否强制重启<li>true强制重启</li><li>false不强制重启</li> 默认值false",
+          "example": "TRUE",
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
@@ -3289,6 +3518,15 @@
     "UpgradeLicenseResponse": {
       "document": "UpgradeLicense返回参数结构体",
       "members": [
+        {
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -6,6 +6,12 @@
       "name": "绑定策略对象",
       "output": "BindingPolicyObjectResponse"
     },
+    "BindingPolicyTag": {
+      "document": "策略绑定标签",
+      "input": "BindingPolicyTagRequest",
+      "name": "策略绑定标签",
+      "output": "BindingPolicyTagResponse"
+    },
     "CreateAlarmNotice": {
       "document": "创建通知模板",
       "input": "CreateAlarmNoticeRequest",
@@ -1353,6 +1359,78 @@
     },
     "BindingPolicyObjectResponse": {
       "document": "BindingPolicyObject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindingPolicyTagRequest": {
+      "document": "BindingPolicyTag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定取值 monitor",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "policy-gqz8m9uq",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于实例、实例组绑定和解绑接口（BindingPolicyObject、UnBindingAllPolicyObject、UnBindingPolicyObject）的策略 ID",
+          "example": "5678",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "策略标签",
+          "example": "无",
+          "member": "PolicyTag",
+          "name": "Tag",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "产品类型",
+          "example": "cvm",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例分组ID",
+          "example": "78",
+          "member": "int64",
+          "name": "InstanceGroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BindingPolicyTagResponse": {
+      "document": "BindingPolicyTag返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7719,6 +7797,30 @@
         }
       ],
       "usage": "out"
+    },
+    "PolicyTag": {
+      "document": "策略标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签Value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ProductSimple": {
       "document": "云监控支持的产品简要信息",
