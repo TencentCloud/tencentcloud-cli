@@ -173,6 +173,12 @@
       "input": "ResetDBInstancePasswordRequest",
       "name": "修改实例用户的密码",
       "output": "ResetDBInstancePasswordResponse"
+    },
+    "SetAccountUserPrivilege": {
+      "document": "账户权限设置。",
+      "input": "SetAccountUserPrivilegeRequest",
+      "name": "设置账户权限",
+      "output": "SetAccountUserPrivilegeResponse"
     }
   },
   "metadata": {
@@ -222,6 +228,32 @@
         }
       ],
       "type": "object"
+    },
+    "Auth": {
+      "document": "用户权限",
+      "members": [
+        {
+          "default": "",
+          "document": "*表示所有数据库,db.name表示特定的name数据库。",
+          "example": "\"db_test\"",
+          "member": "string",
+          "name": "NameSpace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用于控制权限,0无权限，1只读，2只写，3读写。",
+          "example": "1",
+          "member": "int64",
+          "name": "Mask",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "BackupDownloadTask": {
       "document": "备份下载任务",
@@ -3698,6 +3730,60 @@
         }
       ],
       "usage": "out"
+    },
+    "SetAccountUserPrivilegeRequest": {
+      "document": "SetAccountUserPrivilege请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cmgo-kbcfl64r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账号名称",
+          "example": "bob",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "权限信息",
+          "example": "11",
+          "member": "Auth",
+          "name": "AuthRole",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetAccountUserPrivilegeResponse": {
+      "document": "SetAccountUserPrivilege返回参数结构体",
+      "members": [
+        {
+          "document": "设置任务ID,用于查询是否设置完成",
+          "example": "100000",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ShardInfo": {
       "document": "实例分片详情",

@@ -274,6 +274,46 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cls日志所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "LogRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLS",
+          "member": "string",
+          "name": "LogSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志功能开关 0 关 | 1 开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRelatedLog",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "LogTopicID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

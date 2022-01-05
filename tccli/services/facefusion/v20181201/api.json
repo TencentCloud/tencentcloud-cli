@@ -600,6 +600,7 @@
         {
           "default": "",
           "document": "输入图片base64",
+          "example": "string",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -609,6 +610,7 @@
         {
           "default": "",
           "document": "输入图片url",
+          "example": "string",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -618,6 +620,7 @@
         {
           "default": "",
           "document": "上传的图片人脸位置信息（人脸框）",
+          "example": "{}",
           "member": "FaceRect",
           "name": "InputImageFaceRect",
           "required": false,
@@ -626,7 +629,8 @@
         },
         {
           "default": "",
-          "document": "控制台上传的素材人脸ID",
+          "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
+          "example": "string",
           "member": "string",
           "name": "TemplateFaceID",
           "required": false,

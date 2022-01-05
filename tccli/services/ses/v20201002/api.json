@@ -43,9 +43,9 @@
       "output": "DeleteEmailIdentityResponse"
     },
     "DeleteEmailTemplate": {
-      "document": "删除发信模版",
+      "document": "删除发信模板",
       "input": "DeleteEmailTemplateRequest",
-      "name": "删除发信模版",
+      "name": "删除发信模板",
       "output": "DeleteEmailTemplateResponse"
     },
     "GetEmailIdentity": {
@@ -564,7 +564,8 @@
       "members": [
         {
           "default": "",
-          "document": "模版ID",
+          "document": "模板ID",
+          "example": "10086",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,

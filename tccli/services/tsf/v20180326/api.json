@@ -7042,7 +7042,7 @@
         },
         {
           "default": "",
-          "document": "数据卷信息",
+          "document": "数据卷信息-废弃，请用VolumeInfoList参数",
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfos",
@@ -7051,12 +7051,30 @@
         },
         {
           "default": "",
-          "document": "数据卷挂载点信息",
+          "document": "数据卷挂载点信息-废弃，请用VolumeMountInfoList参数",
           "example": "无",
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfos",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据卷信息，list",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "VolumeInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载点信息，list",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfoList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

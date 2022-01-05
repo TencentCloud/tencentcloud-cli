@@ -17,6 +17,9 @@ Output:
         "Status": "xx",
         "DisplayName": "xx",
         "Description": "xx",
+        "SecondaryOrgNodeIdList": [
+            "xx"
+        ],
         "UserGroupIds": [
             "xx",
             "xx"

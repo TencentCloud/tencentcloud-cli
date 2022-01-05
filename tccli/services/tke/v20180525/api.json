@@ -2822,6 +2822,15 @@
           "name": "OsCustomizeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8651,6 +8660,15 @@
           "name": "ExtraArgs",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9075,6 +9093,16 @@
           "name": "UserScript",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
