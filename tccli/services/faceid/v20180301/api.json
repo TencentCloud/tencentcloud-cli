@@ -1123,6 +1123,7 @@
         {
           "default": "",
           "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "OcrFront",
           "required": true,
@@ -1132,6 +1133,7 @@
         {
           "default": "",
           "document": "OCR反面照片的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "OcrBack",
           "required": true,
@@ -1141,6 +1143,7 @@
         {
           "default": "",
           "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProcessedFrontImage",
           "required": true,
@@ -1150,6 +1153,7 @@
         {
           "default": "",
           "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProcessedBackImage",
           "required": true,
@@ -1159,10 +1163,21 @@
         {
           "default": "",
           "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Avatar",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9102 身份证复印件告警。\n-9103 身份证翻拍告警。\n-9106 身份证 PS 告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "int64",
+          "name": "WarnInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3394,6 +3409,15 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"\",\"移动\",\"电信\",\"联通\"]",
+          "example": "移动",
+          "member": "string",
+          "name": "Isp",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -21,7 +21,7 @@ Output:
     "Response": {
         "Templates": [
             {
-                "Description": "测试模版",
+                "Description": "测试模板",
                 "Recipients": [
                     {
                         "RecipientType": "INDIVIDUAL",
@@ -36,7 +36,7 @@ Output:
                 ],
                 "Creator": "鹅鹅子",
                 "CreatedOn": 1234567890,
-                "TemplateName": "测试模版",
+                "TemplateName": "测试模板",
                 "SignComponents": [
                     {
                         "ComponentValue": "",
@@ -58,6 +58,7 @@ Output:
                     }
                 ],
                 "TemplateType": 0,
+                "IsPromoter": true,
                 "Components": [
                     {
                         "ComponentValue": "yDxlTUyKQWX76SUupHcb7uS5xe8mbiVR",

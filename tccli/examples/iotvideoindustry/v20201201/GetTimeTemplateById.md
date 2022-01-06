@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry GetTimeTemplateById --cli-unfold-argument  \
-    --TemplateId tgrp-i90oxywh
+    --TemplateId tgrp-xxxxxxx
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",
         "Template": {
             "TemplateId": "tgrp-xxxxxxx",
-            "Name": "vzzlin3",
+            "Name": "xxx",
             "IsAllWeek": 0,
             "Type": 1,
             "TimeTemplateSpecs": [

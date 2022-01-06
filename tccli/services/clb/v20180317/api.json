@@ -2548,6 +2548,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4888,6 +4897,15 @@
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单ID。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4903,6 +4921,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "由负载均衡实例唯一 ID 组成的数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lb-6efswuxa\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

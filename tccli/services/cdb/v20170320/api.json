@@ -2450,6 +2450,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "金融围拢 ID 。",
+          "example": "cage-test",
+          "member": "string",
+          "name": "CageId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -98,13 +98,13 @@
       {
         "document": "在私有网络中创建一个公网负载均衡",
         "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancer\n&LoadBalancerType=OPEN\n&Forward=1\n&VpcId=vpc-30xqxt9p\n&LoadBalancerName=test\n&ProjectId=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"RequestId\": \"9b3f0b57-fb64-4918-8dd6-ce02604fb52c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"DealName\": \"20220101660009831340631\",\n        \"RequestId\": \"9b3f0b57-fb64-4918-8dd6-ce02604fb52c\"\n    }\n}",
         "title": "创建一个公网负载均衡实例"
       },
       {
         "document": "在私有网络中创建一个内网负载均衡",
         "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancer\n&LoadBalancerType=INTERNAL\n&Forward=1\n&LoadBalancerName=test_internal\n&VpcId=vpc-30xqxt9p\n&SubnetId=subnet-k57djpow\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-kmfrnqci\"\n        ],\n        \"RequestId\": \"7ffa6830-cd1b-4bc4-8e24-1688885f594a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-kmfrnqci\"\n        ],\n        \"DealName\": \"20211230660009761735781\",\n        \"RequestId\": \"7ffa6830-cd1b-4bc4-8e24-1688885f594a\"\n    }\n}",
         "title": "创建一个内网负载均衡实例"
       }
     ],
@@ -486,7 +486,7 @@
       {
         "document": "假设某次调用创建转发规则接口返回成功，且返回的 RequestId 为 55c85074-3e7f-4c6d-864f-673660d4f8de，则需要查询该异步任务最终是否执行成功。响应中，Status 为 0 表示任务执行成功。",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeTaskStatus\n&TaskId=55c85074-3e7f-4c6d-864f-673660d4f8de\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"917384bc-5b8d-4b68-a0bc-a58f815e8e3b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"RequestId\": \"917384bc-5b8d-4b68-a0bc-a58f815e8e3b\"\n    }\n}",
         "title": "查询异步任务状态"
       }
     ],

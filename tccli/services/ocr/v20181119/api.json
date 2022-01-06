@@ -997,7 +997,8 @@
       "members": [
         {
           "default": "",
-          "document": "“0“：一致\n“-1”：此号未查询到结果",
+          "document": "“0“：一致\n“-1”：不一致",
+          "example": "无",
           "member": "string",
           "name": "RegNum",
           "required": true,
@@ -1007,6 +1008,7 @@
         {
           "default": "",
           "document": "“0“：一致\n“-1”：不一致\n“”：不验真",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1016,6 +1018,7 @@
         {
           "default": "",
           "document": "“0“：一致\n“-1”：不一致\n“”：不验真",
+          "example": "无",
           "member": "string",
           "name": "Address",
           "required": true,

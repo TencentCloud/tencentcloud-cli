@@ -1264,7 +1264,7 @@
       "usage": "out"
     },
     "ExternalContactSimpleInfo": {
-      "document": "列部联系人简短信息",
+      "document": "外部联系人简短信息",
       "members": [
         {
           "default": "",
