@@ -374,6 +374,14 @@
         "title": "获取角色绑定的策略列表"
       }
     ],
+    "ListAttachedUserAllPolicies": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserAllPolicies\n&Rp=1\n&Page=10\n&AttachType=1\n&TargetUin=1234565\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 11,\n        \"PolicyList\": [\n            {\n                \"PolicyId\": \"522474\",\n                \"PolicyName\": \"policygen-20191204195412\",\n                \"Description\": \"\",\n                \"AddTime\": \"2019-12-04 19:56:35\",\n                \"StrategyType\": \"1\",\n                \"CreateMode\": \"3\",\n                \"Deactived\": 1,\n                \"Groups\": [],\n                \"DeactivedDetail\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d369dabb-ebc9-4598-baae-e1177e9e3868\"\n    }\n}",
+        "title": "列出用户关联的策略（包括随组关联）"
+      }
+    ],
     "ListAttachedUserPolicies": [
       {
         "document": "查询绑定到子账号3449203261的策略列表",

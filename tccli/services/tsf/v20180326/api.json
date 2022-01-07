@@ -3679,6 +3679,26 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据卷信息，list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "VolumeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载信息，list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

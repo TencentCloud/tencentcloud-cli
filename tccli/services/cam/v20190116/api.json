@@ -276,6 +276,12 @@
       "name": "获取角色绑定的策略列表",
       "output": "ListAttachedRolePoliciesResponse"
     },
+    "ListAttachedUserAllPolicies": {
+      "document": "列出用户关联的策略（包括随组关联）",
+      "input": "ListAttachedUserAllPoliciesRequest",
+      "name": "列出用户关联的策略（包括随组关联）",
+      "output": "ListAttachedUserAllPoliciesResponse"
+    },
     "ListAttachedUserPolicies": {
       "document": "本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。",
       "input": "ListAttachedUserPoliciesRequest",
@@ -998,6 +1004,117 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachedUserPolicy": {
+      "document": "用户关联的策略详情",
+      "members": [
+        {
+          "default": "",
+          "document": "策略ID",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略类型(1表示自定义策略，2表示预设策略)",
+          "member": "string",
+          "name": "StrategyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建模式(1表示按产品或项目权限创建的策略，其他表示策略语法创建的策略)",
+          "member": "string",
+          "name": "CreateMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "随组关联信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "AttachedUserPolicyGroupInfo",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否已下线(0:否 1:是)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "Deactived",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "DeactivedDetail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AttachedUserPolicyGroupInfo": {
+      "document": "用户关联策略(随组管理)信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3061,6 +3178,96 @@
         {
           "document": "角色关联的策略总数",
           "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedUserAllPoliciesRequest": {
+      "document": "ListAttachedUserAllPolicies请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "目标用户ID",
+          "example": "1234565",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量，必须大于 0 且小于或等于 200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码，从 1开始，不能大于 200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0:返回直接关联和随组关联策略，1:只返回直接关联策略，2:只返回随组关联策略",
+          "example": "1",
+          "member": "uint64",
+          "name": "AttachType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索关键字",
+          "example": "searchKey",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAttachedUserAllPoliciesResponse": {
+      "document": "ListAttachedUserAllPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "策略列表数据",
+          "example": "无",
+          "member": "AttachedUserPolicy",
+          "name": "PolicyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "策略总数",
+          "example": "11",
           "member": "uint64",
           "name": "TotalNum",
           "required": true,

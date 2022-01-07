@@ -75,7 +75,7 @@
     "CreateLiveRecordTemplate": {
       "document": "创建录制模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
       "input": "CreateLiveRecordTemplateRequest",
-      "name": "创建录制模板",
+      "name": "直播创建录制模板",
       "output": "CreateLiveRecordTemplateResponse"
     },
     "CreateLiveSnapshotRule": {
@@ -639,7 +639,7 @@
     "ModifyLiveRecordTemplate": {
       "document": "修改录制模板配置。",
       "input": "ModifyLiveRecordTemplateRequest",
-      "name": "修改录制模板配置",
+      "name": "直播修改录制模板配置",
       "output": "ModifyLiveRecordTemplateResponse"
     },
     "ModifyLiveSnapshotTemplate": {
@@ -11132,6 +11132,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -11141,6 +11142,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "test-1",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -11150,6 +11152,7 @@
         {
           "default": "",
           "document": "描述信息。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -11159,6 +11162,7 @@
         {
           "default": "",
           "document": "FLV 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "FlvParam",
           "required": true,
@@ -11168,6 +11172,7 @@
         {
           "default": "",
           "document": "HLS 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "HlsParam",
           "required": true,
@@ -11177,6 +11182,7 @@
         {
           "default": "",
           "document": "MP4 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "Mp4Param",
           "required": true,
@@ -11186,6 +11192,7 @@
         {
           "default": "",
           "document": "AAC 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "AacParam",
           "required": true,
@@ -11195,6 +11202,7 @@
         {
           "default": "",
           "document": "0：普通直播，\n1：慢直播。",
+          "example": "1",
           "member": "int64",
           "name": "IsDelayLive",
           "required": true,
@@ -11204,6 +11212,7 @@
         {
           "default": "",
           "document": "HLS 录制定制参数",
+          "example": "无",
           "member": "HlsSpecialParam",
           "name": "HlsSpecialParam",
           "required": true,
@@ -11213,6 +11222,7 @@
         {
           "default": "",
           "document": "MP3 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "Mp3Param",
           "required": true,

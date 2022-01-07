@@ -9273,6 +9273,7 @@
         {
           "default": "",
           "document": "集群类型",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -9282,6 +9283,7 @@
         {
           "default": "",
           "document": "集群id",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9291,6 +9293,7 @@
         {
           "default": "",
           "document": "agent状态\nnormal = 正常\nabnormal = 异常",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9300,11 +9303,22 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "tke集群",
           "member": "string",
           "name": "ClusterName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外labels\n本集群的所有指标都会带上这几个label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name=cluster_name,Value=x",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9456,6 +9470,16 @@
           "name": "Annotations",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

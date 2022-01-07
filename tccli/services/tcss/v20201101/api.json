@@ -7298,6 +7298,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "主机实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7329,7 +7347,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),\"TENCENTCLOUD\":\"腾讯云服务器\",\"OTHERCLOUD\":\"非腾讯云服务器\"</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),\"TENCENTCLOUD\":\"腾讯云服务器\",\"OTHERCLOUD\":\"非腾讯云服务器\"</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -14491,7 +14509,7 @@
         },
         {
           "default": "",
-          "document": "主机来源",
+          "document": "主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；",
           "example": "无",
           "member": "string",
           "name": "MachineType",
@@ -14517,6 +14535,26 @@
           "name": "Uuid",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionID",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

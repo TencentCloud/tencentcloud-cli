@@ -141,6 +141,8 @@ include tccli/services/dtf/v20200506/api.json
 include tccli/services/dtf/v20200506/examples.json
 include tccli/services/dts/v20180330/api.json
 include tccli/services/dts/v20180330/examples.json
+include tccli/services/eb/v20210416/api.json
+include tccli/services/eb/v20210416/examples.json
 include tccli/services/ecc/v20181213/api.json
 include tccli/services/ecc/v20181213/examples.json
 include tccli/services/ecdn/v20191012/api.json

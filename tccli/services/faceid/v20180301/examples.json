@@ -192,6 +192,20 @@
         "title": "微信实名认证鉴权"
       }
     ],
+    "GetWeChatBillDetails": [
+      {
+        "document": "获取第一页数据时，Cursor值传0。当HasNextPage的值为true时，继续调用接口。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWeChatBillDetails\n<公共请求参数>\n\n{\n    \"Date\": \"2020-09-22\",\n    \"Cursor\": 0,\n    \"RuleId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": 1873,\n        \"WeChatBillDetails\": [\n            {\n                \"ChargeCount\": 1,\n                \"ChargeDetails\": [\n                    {\n                        \"ErrorMessage\": \"成功\",\n                        \"Name\": \"**钱\",\n                        \"Seq\": \"xxxxx-xxxxx-xxxxx-xxxxx\",\n                        \"Idcard\": \"4************8\",\n                        \"ErrorCode\": 0,\n                        \"IsNeedCharge\": true,\n                        \"ChargeType\": \"核身\",\n                        \"ReqTime\": \"1638781186273\",\n                        \"Sim\": \"100.00\"\n                    }\n                ],\n                \"BizToken\": \"xxxxxxxx-xxxxxx-xxxxxx\",\n                \"RuleId\": \"96\"\n            }\n        ],\n        \"HasNextPage\": true,\n        \"RequestId\": \"xxxxxx-xxxxxx-xxxxxxx\"\n    }\n}",
+        "title": "获取第一页数据"
+      },
+      {
+        "document": "获取后续页面数据时，将上一页返回的NextCursor值作为入参传入。当HasNextPage的值为false的时候，即可停止调用接口。",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWeChatBillDetails\n<公共请求参数>\n\n{\n    \"Date\": \"2020-09-22\",\n    \"Cursor\": 1873,\n    \"RuleId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": 28888,\n        \"WeChatBillDetails\": [\n            {\n                \"ChargeCount\": 1,\n                \"ChargeDetails\": [\n                    {\n                        \"ErrorMessage\": \"成功\",\n                        \"Name\": \"**钱\",\n                        \"Seq\": \"xxxxx-xxxxx-xxxxx-xxxxx\",\n                        \"Idcard\": \"4************8\",\n                        \"ErrorCode\": 0,\n                        \"IsNeedCharge\": true,\n                        \"ChargeType\": \"核身\",\n                        \"ReqTime\": \"1638781186273\",\n                        \"Sim\": \"100.00\"\n                    }\n                ],\n                \"BizToken\": \"xxxxxxxx-xxxxxx-xxxxxx\",\n                \"RuleId\": \"96\"\n            }\n        ],\n        \"HasNextPage\": false,\n        \"RequestId\": \"xxxxxx-xxxxxx-xxxxxxx\"\n    }\n}",
+        "title": "获取后续页面数据"
+      }
+    ],
     "IdCardOCRVerification": [
       {
         "document": "",

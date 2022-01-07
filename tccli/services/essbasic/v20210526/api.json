@@ -1035,17 +1035,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "签署人手机号，脱敏显示",
-          "example": "13888888888",
-          "member": "string",
-          "name": "Mobile",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1055,6 +1045,16 @@
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号，脱敏显示",
+          "example": "13888888888",
+          "member": "string",
+          "name": "Mobile",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1117,6 +1117,46 @@
           "name": "PreReadTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN",
+          "example": "[\"OCR_ESIGN\"]",
+          "member": "string",
+          "name": "ComponentLimitType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同一渠道下其他合作企业OpenId，B2B场景下必传；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1313,7 +1353,7 @@
         },
         {
           "default": "",
-          "document": "被抄送人的信息列表",
+          "document": "被抄送人的信息列表，抄送功能暂不开放",
           "example": "xxx",
           "member": "CcInfo",
           "name": "CcInfos",

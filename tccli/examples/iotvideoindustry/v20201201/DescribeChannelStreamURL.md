@@ -7,7 +7,8 @@ Input:
 ```
 tccli iotvideoindustry DescribeChannelStreamURL --cli-unfold-argument  \
     --DeviceId 34020000001180000036_34020000001180000036 \
-    --ChannelId 34020000001180000036_34020000001320000092
+    --ChannelId 34020000001180000036_34020000001320000092 \
+    --ExpireTime 0
 ```
 
 Output: 
