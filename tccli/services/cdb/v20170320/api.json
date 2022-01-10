@@ -2849,6 +2849,15 @@
         },
         {
           "default": "",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "ParamTemplateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "告警策略名数组，例如:[\"policy-uyoee9wg\"]，AlarmPolicyList不为空时该参数无效。",
           "example": "[]",
           "member": "string",
@@ -3200,7 +3209,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "ParamTemplateType",

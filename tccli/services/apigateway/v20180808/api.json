@@ -2720,6 +2720,42 @@
       ],
       "usage": "in"
     },
+    "CosConfig": {
+      "document": "cos类型的api配置",
+      "members": [
+        {
+          "default": "",
+          "document": "API调用后端COS的方式，前端请求方法与Action的可选值为：\nGET：GetObject\nPUT：PutObject\nPOST：PostObject、AppendObject\nHEAD： HeadObject\nDELETE： DeleteObject。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GetObject",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API后端COS的存储桶名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API调用后端COS的签名开关，默认为false。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Authorization",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAPIDocRequest": {
       "document": "CreateAPIDoc请求参数结构体",
       "members": [
@@ -9902,6 +9938,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API后端COS配置。如果 ServiceType 是 COS，则此参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Key\":\"/cos.txt\",\"Action\":\"GetObject\",\"BucketName\":\"test\",\"Auth",
+          "member": "CosConfig",
+          "name": "CosConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

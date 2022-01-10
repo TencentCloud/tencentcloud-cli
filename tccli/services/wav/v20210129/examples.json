@@ -85,7 +85,7 @@
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactDetail\n&ExternalUserId=2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"\",\n        \"RequestId\": \"482482d3-1631-4c41-a42a-41809d0e5593\",\n        \"Customer\": {\n            \"Type\": 1,\n            \"Phone\": \"\",\n            \"UnionId\": \"o1MJd6WzhNPBPLuXID6gpbHY2Mko\",\n            \"ExternalUserId\": \"wmpqy2CAAALJVRD88JLOUVONlJS9c7nA\",\n            \"Gender\": 1,\n            \"Name\": \"艺术就是派大星\"\n        },\n        \"FollowUser\": [\n            {\n                \"OperUserId\": \"wmpqy2CAAALJVRD88JLOUVONlJS9c7nA\",\n                \"Description\": \"\",\n                \"AddWay\": 3,\n                \"UserId\": \"TaXun\",\n                \"CreateTime\": 1621849569,\n                \"Tags\": [\n                    {\n                        \"GroupName\": \"个人标签\",\n                        \"Type\": 2,\n                        \"TagId\": \"etpqy2CAAA4au5I00lvVcnlZ_berhx1g\",\n                        \"TagName\": \"标签名称\"\n                    }\n                ],\n                \"Remark\": \"备注\"\n            }\n        ]\n    }\n}",
-        "title": "获取客户详情"
+        "title": "查询外部联系人详情"
       }
     ],
     "QueryExternalContactList": [
@@ -93,7 +93,7 @@
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryExternalContactList\n&Cursor=sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\n&Limit=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"sHmJbhJZhCwwMYmSot50dl2Hs9qQvbP+pCUVxlm/oLU=\",\n        \"PageData\": [\n            {\n                \"SalesName\": \"杨过\",\n                \"UserId\": \"YangGuo\",\n                \"ExternalUserId\": \"wmpqy2CAAATGwpQTxuU1IUfoiOFH2cXA\",\n                \"DepartmentIdList\": [\n                    0,\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
-        "title": "客户列表"
+        "title": "查询外部联系人列表"
       }
     ],
     "QueryExternalUserMappingInfo": [

@@ -7037,6 +7037,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "mssql-p2yli7gv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7045,6 +7046,7 @@
         {
           "default": "",
           "document": "新VPC网络Id",
+          "example": "vpc-ilki4qdp",
           "member": "string",
           "name": "NewVpcId",
           "required": true,
@@ -7053,6 +7055,7 @@
         {
           "default": "",
           "document": "新子网Id",
+          "example": "subnet-lru6dhh8",
           "member": "string",
           "name": "NewSubnetId",
           "required": true,
@@ -7061,10 +7064,20 @@
         {
           "default": "",
           "document": "原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时",
+          "example": "12",
           "member": "int64",
           "name": "OldIpRetainTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定VIP地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7074,8 +7087,10 @@
       "members": [
         {
           "document": "实例转网流程id，可通过[DescribeFlowStatus](https://cloud.tencent.com/document/product/238/19967)接口查询流程状态",
+          "example": "100125",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

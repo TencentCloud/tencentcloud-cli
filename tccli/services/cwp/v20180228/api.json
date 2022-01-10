@@ -1117,9 +1117,9 @@
       "output": "InquiryPriceOpenProVersionPrepaidResponse"
     },
     "ModifyAutoOpenProVersionConfig": {
-      "document": " 用于设置新增主机自动开通专业版配置。",
+      "document": " 用于设置新增主机自动开通专业防护配置。",
       "input": "ModifyAutoOpenProVersionConfigRequest",
-      "name": "设置新增主机自动开通专业版配置",
+      "name": "设置自动开通配置",
       "output": "ModifyAutoOpenProVersionConfigResponse"
     },
     "ModifyBanMode": {
@@ -12397,6 +12397,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "旗舰版主机数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlagshipMachineCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "保护天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12778,12 +12796,21 @@
         },
         {
           "default": "",
-          "document": "是否仅支持专业版机器的查询（true：仅专业版   false：专业版+基础版）",
+          "document": "该参数已作废.",
           "example": "true",
           "member": "bool",
           "name": "IsQueryProMachine",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤条件。\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>",
+          "example": "[]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13204,6 +13231,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.",
+          "example": "BASIC_VERSION",
+          "member": "string",
+          "name": "ProtectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13431,7 +13467,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -19706,7 +19742,7 @@
         },
         {
           "default": "",
-          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>",
+          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
@@ -19910,6 +19946,16 @@
           "example": "3.10.0-1127.19.1.el7.x86_64",
           "member": "string",
           "name": "KernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.",
+          "example": "BASIC_VERSION",
+          "member": "string",
+          "name": "ProtectType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20393,6 +20439,26 @@
           "name": "Level",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "木马检测平台用,分割 1云查杀引擎、2TAV、3binaryAi、4异常行为、5威胁情报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "CheckPlatform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

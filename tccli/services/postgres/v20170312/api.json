@@ -1070,6 +1070,15 @@
           "name": "DBKernelVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例节点信息，购买跨可用区实例时填写。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1568,6 +1577,7 @@
         {
           "default": "",
           "document": "备份文件唯一标识",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -1577,6 +1587,7 @@
         {
           "default": "",
           "document": "文件生成的开始时间",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1586,6 +1597,7 @@
         {
           "default": "",
           "document": "文件生成的结束时间",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -1595,6 +1607,7 @@
         {
           "default": "",
           "document": "文件大小(K)",
+          "example": "无",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -1604,6 +1617,7 @@
         {
           "default": "",
           "document": "策略（0-实例备份；1-多库备份）",
+          "example": "无",
           "member": "int64",
           "name": "Strategy",
           "required": true,
@@ -1613,6 +1627,7 @@
         {
           "default": "",
           "document": "类型（0-定时）",
+          "example": "无",
           "member": "int64",
           "name": "Way",
           "required": true,
@@ -1622,6 +1637,7 @@
         {
           "default": "",
           "document": "备份方式（1-完整）",
+          "example": "无",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -1631,6 +1647,7 @@
         {
           "default": "",
           "document": "状态（1-创建中；2-成功；3-失败）",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1640,6 +1657,7 @@
         {
           "default": "",
           "document": "DB列表",
+          "example": "无",
           "member": "string",
           "name": "DbList",
           "required": true,
@@ -1649,6 +1667,7 @@
         {
           "default": "",
           "document": "内网下载地址",
+          "example": "无",
           "member": "string",
           "name": "InternalAddr",
           "required": true,
@@ -1658,11 +1677,22 @@
         {
           "default": "",
           "document": "外网下载地址",
+          "example": "无",
           "member": "string",
           "name": "ExternalAddr",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2019,6 +2049,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2098,6 +2138,32 @@
         }
       ],
       "usage": "out"
+    },
+    "DBNode": {
+      "document": "描述实例节点信息，包括节点类型、节点所在可用区。",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型，值可以为：\nPrimary，代表主节点；\nStandby，代表备节点。",
+          "example": "Primary, Standby",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在可用区，例如 ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteReadOnlyGroupRequest": {
       "document": "DeleteReadOnlyGroup请求参数结构体",
@@ -3341,15 +3407,19 @@
       "members": [
         {
           "document": "返回的结果数量。",
+          "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "可用区信息集合。",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6198,6 +6268,7 @@
         {
           "default": "",
           "document": "该可用区的英文名称",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6207,6 +6278,7 @@
         {
           "default": "",
           "document": "该可用区的中文名称",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -6216,6 +6288,7 @@
         {
           "default": "",
           "document": "该可用区对应的数字编号",
+          "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -6224,7 +6297,8 @@
         },
         {
           "default": "",
-          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用",
+          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
           "required": true,
@@ -6234,11 +6308,22 @@
         {
           "default": "",
           "document": "该可用区是否支持Ipv6",
+          "example": "1",
           "member": "uint64",
           "name": "ZoneSupportIpv6",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该可用区对应的备可用区集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1,ap-guangzhou-2",
+          "member": "string",
+          "name": "StandbyZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

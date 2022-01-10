@@ -3705,7 +3705,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警",
+          "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警\n-9107       模糊图片告警",
           "example": "[]",
           "member": "int64",
           "name": "Warn",
