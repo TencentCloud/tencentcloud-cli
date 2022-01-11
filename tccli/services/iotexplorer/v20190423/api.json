@@ -1,5 +1,17 @@
 {
   "actions": {
+    "BindDevices": {
+      "document": "批量绑定子设备",
+      "input": "BindDevicesRequest",
+      "name": "批量绑定子设备",
+      "output": "BindDevicesResponse"
+    },
+    "BindProducts": {
+      "document": "批量绑定子产品",
+      "input": "BindProductsRequest",
+      "name": "批量绑定子产品",
+      "output": "BindProductsResponse"
+    },
     "CallDeviceActionAsync": {
       "document": "提供给用户异步调用设备行为的能力",
       "input": "CallDeviceActionAsyncRequest",
@@ -156,11 +168,23 @@
       "name": "获取量产详情",
       "output": "DescribeBatchProductionResponse"
     },
+    "DescribeBindedProducts": {
+      "document": "获取网关产品已经绑定的子产品",
+      "input": "DescribeBindedProductsRequest",
+      "name": "获取网关产品已经绑定的子产品",
+      "output": "DescribeBindedProductsResponse"
+    },
     "DescribeDevice": {
       "document": "用于查看某个设备的详细信息",
       "input": "DescribeDeviceRequest",
       "name": "查看设备详情",
       "output": "DescribeDeviceResponse"
+    },
+    "DescribeDeviceBindGateway": {
+      "document": "查询设备绑定的网关设备",
+      "input": "DescribeDeviceBindGatewayRequest",
+      "name": "查询设备绑定的网关设备",
+      "output": "DescribeDeviceBindGatewayResponse"
     },
     "DescribeDeviceData": {
       "document": "根据设备产品ID、设备名称，获取设备上报的属性数据。",
@@ -197,6 +221,18 @@
       "input": "DescribeFirmwareTaskRequest",
       "name": "查询固件升级任务列表",
       "output": "DescribeFirmwareTaskResponse"
+    },
+    "DescribeGatewayBindDevices": {
+      "document": "获取网关绑定的子设备列表",
+      "input": "DescribeGatewayBindDevicesRequest",
+      "name": "获取网关绑定的子设备列表",
+      "output": "DescribeGatewayBindDevicesResponse"
+    },
+    "DescribeGatewaySubProducts": {
+      "document": "用于获取网关可绑定或解绑的子产品",
+      "input": "DescribeGatewaySubProductsRequest",
+      "name": "获取网关可操作的子产品",
+      "output": "DescribeGatewaySubProductsResponse"
     },
     "DescribeLoRaFrequency": {
       "document": "提供查询LoRa自定义频点详情的能力",
@@ -299,6 +335,12 @@
       "input": "GetFamilyDeviceUserListRequest",
       "name": "获取设备绑定的用户列表",
       "output": "GetFamilyDeviceUserListResponse"
+    },
+    "GetGatewaySubDeviceList": {
+      "document": "获取指定网关设备的子设备列表",
+      "input": "GetGatewaySubDeviceListRequest",
+      "name": "获取指定网关设备的子设备列表",
+      "output": "GetGatewaySubDeviceListResponse"
     },
     "GetLoRaGatewayList": {
       "document": "获取 LoRa 网关列表接口",
@@ -449,6 +491,18 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse"
+    },
+    "UnbindDevices": {
+      "document": "批量解绑子设备",
+      "input": "UnbindDevicesRequest",
+      "name": "批量解绑子设备",
+      "output": "UnbindDevicesResponse"
+    },
+    "UnbindProducts": {
+      "document": "批量解绑子产品",
+      "input": "UnbindProductsRequest",
+      "name": "批量解绑子产品",
+      "output": "UnbindProductsResponse"
     },
     "UpdateDevicesEnableState": {
       "document": "批量禁用启用设备",
@@ -632,6 +686,200 @@
         }
       ],
       "usage": "out"
+    },
+    "BindDeviceInfo": {
+      "document": "BindDeviceInfo",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称。",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindDevicesRequest": {
+      "document": "BindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID。",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名。",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被绑定设备的产品ID。",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被绑定的多个设备名。",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDevicesResponse": {
+      "document": "BindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindProductInfo": {
+      "document": "绑定、未绑定产品详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID。",
+          "example": "productud",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称。",
+          "example": "productname",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品所属项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "projectid",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "物模型类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataProtocol",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品分组模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ProductType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "连接类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "else",
+          "member": "string",
+          "name": "NetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dev",
+          "member": "string",
+          "name": "DevStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BindProductsRequest": {
+      "document": "BindProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID。",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待绑定的子产品ID数组。",
+          "member": "string",
+          "name": "ProductIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindProductsResponse": {
+      "document": "BindProducts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CallDeviceActionAsyncRequest": {
       "document": "CallDeviceActionAsync请求参数结构体",
@@ -2094,6 +2342,116 @@
       ],
       "type": "object"
     },
+    "DescribeBindedProductsRequest": {
+      "document": "DescribeBindedProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBindedProductsResponse": {
+      "document": "DescribeBindedProducts返回参数结构体",
+      "members": [
+        {
+          "document": "当前分页的子产品数组",
+          "member": "BindProductInfo",
+          "name": "Products",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "绑定的子产品总数量",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceBindGatewayRequest": {
+      "document": "DescribeDeviceBindGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "productId",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceBindGatewayResponse": {
+      "document": "DescribeDeviceBindGateway返回参数结构体",
+      "members": [
+        {
+          "document": "网关产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "productId",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网关设备名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deviceName",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceDataHistoryRequest": {
       "document": "DescribeDeviceDataHistory请求参数结构体",
       "members": [
@@ -2635,6 +2993,157 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesRequest": {
+      "document": "DescribeGatewayBindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子产品的ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的页大小",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesResponse": {
+      "document": "DescribeGatewayBindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "子设备信息。",
+          "member": "BindDeviceInfo",
+          "name": "Devices",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备总数。",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备所属的产品名。",
+          "member": "string",
+          "name": "ProductName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewaySubProductsRequest": {
+      "document": "DescribeGatewaySubProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID",
+          "example": "gatewayProductId",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目Id",
+          "example": "pri_1233545",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewaySubProductsResponse": {
+      "document": "DescribeGatewaySubProducts返回参数结构体",
+      "members": [
+        {
+          "document": "当前分页的可绑定或解绑的产品信息。",
+          "example": "无",
+          "member": "BindProductInfo",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可绑定或解绑的产品总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3598,6 +4107,112 @@
       ],
       "usage": "out"
     },
+    "FamilySubDevice": {
+      "document": "子设备详情",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "productId",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "devicename",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备ID",
+          "example": "deviceId",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aliasName",
+          "member": "string",
+          "name": "AliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备绑定的家庭ID",
+          "example": "familyId",
+          "member": "string",
+          "name": "FamilyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备所在的房间ID，默认\"0\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "roomId",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "IconUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "grid图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "url",
+          "member": "string",
+          "name": "IconUrlGrid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备绑定时间戳",
+          "example": "1627459546",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备更新时间戳",
+          "example": "1627459546",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FenceAlarmPoint": {
       "document": "围栏告警位置点",
       "members": [
@@ -4214,6 +4829,78 @@
           "name": "UserList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGatewaySubDeviceListRequest": {
+      "document": "GetGatewaySubDeviceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID",
+          "example": "productId",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备名称",
+          "example": "deviceName",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGatewaySubDeviceListResponse": {
+      "document": "GetGatewaySubDeviceList返回参数结构体",
+      "members": [
+        {
+          "document": "设备的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilySubDevice",
+          "name": "DeviceList",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -6820,6 +7507,97 @@
         }
       ],
       "usage": "in"
+    },
+    "UnbindDevicesRequest": {
+      "document": "UnbindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名列表",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDevicesResponse": {
+      "document": "UnbindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindProductsRequest": {
+      "document": "UnbindProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待解绑的子产品ID数组",
+          "member": "string",
+          "name": "ProductIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindProductsResponse": {
+      "document": "UnbindProducts返回参数结构体",
+      "members": [
+        {
+          "document": "绑定了待解绑的LoRa产品下的设备的网关设备列表",
+          "member": "string",
+          "name": "GatewayDeviceNames",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateDevicesEnableStateRequest": {
       "document": "UpdateDevicesEnableState请求参数结构体",

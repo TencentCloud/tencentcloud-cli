@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcss ModifyRiskSyscallStatus --cli-unfold-argument  \
-    --EventIdSet xx \
-    --Status xx \
-    --Remark xx
+    --EventIdSet 61c396cb85a03485f10c353e \
+    --Status EVENT_INGNORE \
+    --Remark 备注
 ```
 
 Output: 

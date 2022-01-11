@@ -18,11 +18,23 @@
       "name": "保存游戏存档",
       "output": "SaveGameArchiveResponse"
     },
+    "StartPublishStream": {
+      "document": "开始云端推流",
+      "input": "StartPublishStreamRequest",
+      "name": "开始云端推流",
+      "output": "StartPublishStreamResponse"
+    },
     "StopGame": {
       "document": "强制退出游戏",
       "input": "StopGameRequest",
       "name": "强制退出游戏",
       "output": "StopGameResponse"
+    },
+    "StopPublishStream": {
+      "document": "停止云端推流",
+      "input": "StopPublishStreamRequest",
+      "name": "停止云端推流",
+      "output": "StopPublishStreamResponse"
     },
     "SwitchGameArchive": {
       "document": "切换游戏存档",
@@ -332,6 +344,42 @@
       ],
       "type": "object"
     },
+    "StartPublishStreamRequest": {
+      "document": "StartPublishStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "123123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流地址，仅支持rtmp协议",
+          "example": "rtmp://live.stream.com/publish",
+          "member": "string",
+          "name": "PublishUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamResponse": {
+      "document": "StartPublishStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopGameRequest": {
       "document": "StopGame请求参数结构体",
       "members": [
@@ -358,6 +406,33 @@
     },
     "StopGameResponse": {
       "document": "StopGame返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishStreamRequest": {
+      "document": "StopPublishStream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "123123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishStreamResponse": {
+      "document": "StopPublishStream返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

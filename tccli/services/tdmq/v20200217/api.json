@@ -2734,7 +2734,7 @@
         },
         {
           "default": "",
-          "document": "集群的标签列表",
+          "document": "集群的标签列表(已废弃)",
           "example": "NULL",
           "member": "Tag",
           "name": "Tags",

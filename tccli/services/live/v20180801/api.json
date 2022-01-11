@@ -1637,7 +1637,7 @@
       "members": [
         {
           "default": "",
-          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。",
+          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。\n注意：不同输入，该值不可重复",
           "example": "1",
           "member": "int64",
           "name": "ImageLayer",

@@ -47,15 +47,9 @@
     "AddEditReverseShellWhiteList": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditReverseShellWhiteList\n&WhiteListInfo.DstIp=xxx\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.DstPort=12345\n&WhiteListInfo.ProcessName=xxx\n&<公共请求参数>",
+        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditReverseShellWhiteList\n&WhiteListInfo.DstIp=127.0.0.1\n&WhiteListInfo.ImageIds.0=sha256:xxxx\n&WhiteListInfo.DstPort=12345\n&WhiteListInfo.ProcessName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
         "title": "添加反弹shell白名单"
-      },
-      {
-        "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=AddEditReverseShellWhiteList\n&WhiteListInfo.DstIp=xxxx\n&WhiteListInfo.ImageIds.0=xxxx\n&WhiteListInfo.DstPort=12345\n&WhiteListInfo.ProcessName=xxx\n&WhiteListInfo.Id=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\"\n    }\n}",
-        "title": "编辑白名单"
       }
     ],
     "AddEditRiskSyscallWhiteList": [
@@ -1263,7 +1257,7 @@
     "ModifyRiskSyscallStatus": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyRiskSyscallStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyRiskSyscallStatus\n&EventIdSet.0=61c396cb85a03485f10c353e\n&Status=EVENT_INGNORE\n&Remark=备注\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改高危系统调用事件状态"
       }
