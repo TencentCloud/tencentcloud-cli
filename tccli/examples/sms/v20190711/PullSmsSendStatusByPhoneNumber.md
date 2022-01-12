@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sms PullSmsSendStatusByPhoneNumber --cli-unfold-argument  \
-    --SendDateTime 1464624000 \
-    --EndDateTime 1464624123 \
+    --SendDateTime 1570526300 \
+    --EndDateTime 1570526400 \
     --Offset 0 \
     --Limit 2 \
     --PhoneNumber +8615291996666 \

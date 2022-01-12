@@ -445,7 +445,7 @@
       "output": "DescribeTimeWindowResponse"
     },
     "DescribeUploadedFiles": {
-      "document": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表。",
+      "document": "本接口(DescribeUploadedFiles)用于查询用户导入的SQL文件列表，全地域公共参数Region均为ap-shanghai。",
       "input": "DescribeUploadedFilesRequest",
       "name": "查询导入SQL文件列表 （已废弃）",
       "output": "DescribeUploadedFilesResponse"
@@ -7327,6 +7327,7 @@
         {
           "default": "",
           "document": "文件路径。该字段应填用户主账号的OwnerUin信息。",
+          "example": "100000983328",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -7335,6 +7336,7 @@
         {
           "default": "",
           "document": "记录偏移量，默认值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7343,6 +7345,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，默认值为20。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7356,15 +7359,19 @@
       "members": [
         {
           "document": "符合查询条件的SQL文件总数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的SQL文件列表。",
+          "example": "无",
           "member": "SqlFileInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

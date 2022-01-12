@@ -72,3 +72,69 @@ Output:
 }
 ```
 
+**Example 2: nanjing-test-20220111**
+
+
+
+Input: 
+
+```
+tccli tem DeployApplication --cli-unfold-argument  \
+    --Service.Name 字符串 \
+    --JvmOpts 字符串 \
+    --SpeedUp false \
+    --PreStop 字符串 \
+    --ImgRepo 字符串 \
+    --EnvConf.0.Config 字符串 \
+    --EnvConf.0.Type 字符串 \
+    --EnvConf.0.Key 字符串 \
+    --EnvConf.0.Value 字符串 \
+    --ImageCommand 字符串 \
+    --Description 字符串 \
+    --JdkVersion 字符串 \
+    --ApplicationId 字符串 \
+    --LogOutputConf.ClsLogTopicName 字符串 \
+    --LogOutputConf.ClsLogsetName 字符串 \
+    --LogOutputConf.ClsLogTopicId 字符串 \
+    --LogOutputConf.OutputType 字符串 \
+    --LogOutputConf.ClsLogsetId 字符串 \
+    --ConfEdited false \
+    --EnvironmentId 字符串 \
+    --CpuSpec 0.1 \
+    --DeployMode 字符串 \
+    --SecurityGroupIds 字符串 \
+    --SourceChannel 0 \
+    --LogEnable 0 \
+    --InitPodNum 2 \
+    --VersionDesc 字符串 \
+    --ImageArgs 字符串 \
+    --MemorySpec 1024 \
+    --UseRegistryDefaultConfig true \
+    --LogConfs 字符串 \
+    --PkgName 字符串 \
+    --StorageMountConfs.0.VolumeName 字符串 \
+    --StorageMountConfs.0.MountPath 字符串 \
+    --DeployVersion 字符串 \
+    --VersionId 字符串 \
+    --SettingConfs.0.ConfigDataName 字符串 \
+    --SettingConfs.0.MountedPath 字符串 \
+    --SettingConfs.0.Data.0.Config 字符串 \
+    --SettingConfs.0.Data.0.Type 字符串 \
+    --SettingConfs.0.Data.0.Key 字符串 \
+    --SettingConfs.0.Data.0.Value 字符串 \
+    --StorageConfs.0.StorageVolPath 字符串 \
+    --StorageConfs.0.StorageVolIp 字符串 \
+    --StorageConfs.0.StorageVolName 字符串 \
+    --PostStart 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "422a54ac-9913-4d46-8439-9c05600003b3",
+        "Result": "version-success"
+    }
+}
+```
+

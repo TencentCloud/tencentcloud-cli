@@ -5464,6 +5464,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预置类型 Default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProvisionedType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

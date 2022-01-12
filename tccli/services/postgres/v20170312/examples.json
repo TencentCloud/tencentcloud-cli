@@ -8,6 +8,14 @@
         "title": "将实例postgres-k95qzetn加入只读组pgrogrp-test中"
       }
     ],
+    "CloneDBInstance": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CloneDBInstance\n&DBInstanceId=postgres-abcd1234\n&SpecCode=cdb.pg.z1.2g\n&Storage=10\n&Period=1\n&InstanceChargeType=prepaid\n&AutoVoucher=0\n&AutoRenewFlag=1\n&DBNodeSet.0.Role=Primary\n&DBNodeSet.0.Zone=ap-guangzhou-3\n&DBNodeSet.1.Role=Standby\n&DBNodeSet.1.Zone=ap-guangzhou-3\n&RecoveryTargetTime=2021-12-25 01:27:35\n&VpcId=vpc-2ot3acw1\n&SubnetId=subnet-ppv9iw34\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealName\": \"20211225711000768276461\",\n        \"BillId\": \"20211225711000768276471\"\n    }\n}",
+        "title": "克隆实例"
+      }
+    ],
     "CloseDBExtranetAccess": [
       {
         "document": "",
@@ -104,6 +112,30 @@
         "input": "https://postgres.tencentcloudapi.com/?Action=DescribeAccounts\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Details\": [\n            {\n                \"UserName\": \"root\",\n                \"Status\": 2,\n                \"Remark\": \"（测试）这个账户是无效的\",\n                \"DBInstanceId\": \"postgres-apzvwncr\",\n                \"UpdateTime\": \"2018-06-12 17:21:57\",\n                \"CreateTime\": \"2018-06-12 17:21:54\"\n            }\n        ]\n    }\n}",
         "title": "获取实例postgres-apzvwncr的用户列表"
+      }
+    ],
+    "DescribeAvailableRecoveryTime": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeAvailableRecoveryTime\n&DBInstanceId=postgres-apzvwncr\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"RecoveryBeginTime\": \"2021-12-24 03:41:50\",\n        \"RecoveryEndTime\": \"2021-12-25 17:43:27\"\n    }\n}",
+        "title": "查询实例可恢复的时间范围"
+      }
+    ],
+    "DescribeBackupPlans": [
+      {
+        "document": "查询postgres-xxxxxxxx实例的所有备份计划",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plans\": [\n            {\n                \"BackupPeriod\": \"[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]\",\n                \"BaseBackupRetentionPeriod\": 3,\n                \"MaxBackupStartTime\": \"10:00:00\",\n                \"MinBackupStartTime\": \"08:00:00\"\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "查询实例所有备份计划"
+      }
+    ],
+    "DescribeCloneDBInstanceSpec": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeCloneDBInstanceSpec\n&DBInstanceId=postgres-apzvwncr\n&RecoveryTargetTime=2021-12-24 03:41:50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"MinSpecCode\": \"cdb.pg.sh1.2g\",\n        \"MinStorage\": 10\n    }\n}",
+        "title": "查询实例克隆需要的最小规格"
       }
     ],
     "DescribeDBBackups": [
@@ -316,6 +348,28 @@
         "input": "https://postgres.tencentcloudapi.com/?Action=ModifyAccountRemark\n&DBInstanceId=postgres-6bwgamo3\n&UserName=test\n&Remark=testModifyRemark\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "修改帐号备注"
+      }
+    ],
+    "ModifyBackupPlan": [
+      {
+        "document": "将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留3天",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyBackupPlan\n&DBInstanceId=postgres-xxxxxxxx\n&BackupPeriod.0=monday\n&BackupPeriod.1=tuesday\n&BaseBackupRetentionPeriod=3\n&MinBackupStartTime=01:00:00\n&MaxBackupStartTime=02:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
+        "title": "修改实例备份计划"
+      }
+    ],
+    "ModifyDBInstanceDeployment": [
+      {
+        "document": "将实例postgres-abcd1234主节点可用区调整广州1区，备节点调整为广州2区。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceDeployment\n&DBInstanceId=postgres-abcd1234\n&DBNodeSet.0.Role=Primary\n&DBNodeSet.0.Zone=ap-guangzhou-1\n&DBNodeSet.1.Role=Standby\n&DBNodeSet.1.Zone=ap-guangzhou-2\n&SwitchTag=1\n&SwitchStartTime=12:00:00\n&SwitchEndTime=12:30:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "实例修改为跨可用区"
+      },
+      {
+        "document": "将实例postgres-abcd1234主节点可用区调整广州3区，备节点调整为广州3区。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=ModifyDBInstanceDeployment\n&DBInstanceId=postgres-abcd1234\n&DBNodeSet.0.Role=Primary\n&DBNodeSet.0.Zone=ap-guangzhou-3\n&DBNodeSet.1.Role=Standby\n&DBNodeSet.1.Zone=ap-guangzhou-3\n&SwitchTag=1\n&SwitchStartTime=12:00:00\n&SwitchEndTime=12:30:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "title": "实例修改为单可用区"
       }
     ],
     "ModifyDBInstanceName": [
