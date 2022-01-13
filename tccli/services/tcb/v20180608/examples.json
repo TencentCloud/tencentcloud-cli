@@ -584,6 +584,14 @@
         "title": "示例"
       }
     ],
+    "SearchClsLog": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=xx\n&EndTime=xx\n&Limit=10\n&QueryString=x\n&Sort=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
+        "title": "搜索CLS日志"
+      }
+    ],
     "TurnOffStandaloneGateway": [
       {
         "document": "",

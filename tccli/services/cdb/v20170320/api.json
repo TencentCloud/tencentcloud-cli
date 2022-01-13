@@ -367,7 +367,7 @@
       "output": "DescribeParamTemplateInfoResponse"
     },
     "DescribeParamTemplates": {
-      "document": "该接口（DescribeParamTemplates）查询参数模板列表。",
+      "document": "该接口（DescribeParamTemplates）查询参数模板列表，全地域公共参数Region均为ap-guangzhou。",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板列表",
       "output": "DescribeParamTemplatesResponse"
@@ -3386,6 +3386,15 @@
           "name": "ParamList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "TemplateType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6056,6 +6065,7 @@
         {
           "default": "",
           "document": "mysql版本，目前支持 [\"5.1\", \"5.5\", \"5.6\", \"5.7\"]。",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
@@ -6069,15 +6079,19 @@
       "members": [
         {
           "document": "参数个数。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数详情。",
+          "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6385,6 +6399,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-ezq1vzem",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6398,15 +6413,19 @@
       "members": [
         {
           "document": "实例的参数总数。",
+          "example": "72",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数详情。",
+          "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6492,6 +6511,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6502,7 +6530,17 @@
     },
     "DescribeParamTemplatesRequest": {
       "document": "DescribeParamTemplates请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "引擎版本，缺省则查询所有",
+          "example": "[\"5.5\"]",
+          "member": "string",
+          "name": "EngineVersions",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeParamTemplatesResponse": {
@@ -6510,15 +6548,19 @@
       "members": [
         {
           "document": "该用户的参数模板数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数模板详情。",
+          "example": "无",
           "member": "ParamTemplateInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10063,6 +10105,7 @@
         {
           "default": "",
           "document": "参数模板ID",
+          "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -10072,6 +10115,7 @@
         {
           "default": "",
           "document": "参数模板名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -10081,6 +10125,7 @@
         {
           "default": "",
           "document": "参数模板描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -10090,8 +10135,19 @@
         {
           "default": "",
           "document": "实例引擎版本",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数模板类型",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "TemplateType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10129,6 +10185,7 @@
         {
           "default": "",
           "document": "参数名称",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -10137,7 +10194,8 @@
         },
         {
           "default": "",
-          "document": "参数类型",
+          "document": "参数类型：integer，enum，float，string，func",
+          "example": "string",
           "member": "string",
           "name": "ParamType",
           "required": true,
@@ -10147,6 +10205,7 @@
         {
           "default": "",
           "document": "参数默认值",
+          "example": "OFF",
           "member": "string",
           "name": "Default",
           "required": true,
@@ -10156,6 +10215,7 @@
         {
           "default": "",
           "document": "参数描述",
+          "example": "Controls the sensitivity of linear read-ahead that InnoDB uses t",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -10165,6 +10225,7 @@
         {
           "default": "",
           "document": "参数当前值",
+          "example": "56",
           "member": "string",
           "name": "CurrentValue",
           "required": true,
@@ -10174,6 +10235,7 @@
         {
           "default": "",
           "document": "修改参数后，是否需要重启数据库以使参数生效。可能的值包括：0-不需要重启；1-需要重启",
+          "example": "1",
           "member": "int64",
           "name": "NeedReboot",
           "required": true,
@@ -10183,6 +10245,7 @@
         {
           "default": "",
           "document": "参数允许的最大值",
+          "example": "64",
           "member": "int64",
           "name": "Max",
           "required": true,
@@ -10192,6 +10255,7 @@
         {
           "default": "",
           "document": "参数允许的最小值",
+          "example": "1",
           "member": "int64",
           "name": "Min",
           "required": true,
@@ -10201,10 +10265,31 @@
         {
           "default": "",
           "document": "参数的可选枚举值。如果为非枚举参数，则为空",
+          "example": "[]",
           "member": "string",
           "name": "EnumValue",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数是公式类型时，该字段有效，表示公式类型最大值",
+          "example": "64",
+          "member": "string",
+          "name": "MaxFunc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数是公式类型时，该字段有效，表示公式类型最小值",
+          "example": "1",
+          "member": "string",
+          "name": "MinFunc",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

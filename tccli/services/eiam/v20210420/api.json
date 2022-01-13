@@ -725,7 +725,7 @@
       ],
       "usage": "in"
     },
-    "AuthorizationResouceEntityInfo": {
+    "AuthorizationResourceEntityInfo": {
       "document": "授权资源详情",
       "members": [
         {
@@ -1893,7 +1893,7 @@
         {
           "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "AuthorizationResouceEntityInfo",
+          "member": "AuthorizationResourceEntityInfo",
           "name": "AuthorizationOrgResourceList",
           "required": true,
           "type": "list",
@@ -2043,7 +2043,7 @@
         {
           "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "AuthorizationResouceEntityInfo",
+          "member": "AuthorizationResourceEntityInfo",
           "name": "AuthorizationUserGroupResourceList",
           "required": true,
           "type": "list",

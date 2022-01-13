@@ -1151,6 +1151,15 @@
       "document": "CreateNatFwInstance返回参数结构体",
       "members": [
         {
+          "document": "防火墙实例id",
+          "example": "cfwnat-xxx",
+          "member": "string",
+          "name": "CfwInsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1258,6 +1267,15 @@
     "CreateNatFwInstanceWithDomainResponse": {
       "document": "CreateNatFwInstanceWithDomain返回参数结构体",
       "members": [
+        {
+          "document": "nat实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwnat-xxx",
+          "member": "string",
+          "name": "CfwInsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3699,6 +3717,7 @@
         {
           "default": "",
           "document": "EdgeId值两个vpc间的边id  不是必填项可以为空，就是所有vpc间的访问控制规则",
+          "example": "cfws-0c61d56ba6",
           "member": "string",
           "name": "EdgeId",
           "required": true,
@@ -3712,15 +3731,28 @@
       "members": [
         {
           "document": "阻断策略规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70",
           "member": "uint64",
           "name": "StrategyNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "启用规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70",
           "member": "uint64",
           "name": "StartRuleNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "规则总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

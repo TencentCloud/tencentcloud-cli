@@ -300,6 +300,12 @@
       "name": "重置账号密码",
       "output": "ResetAccountPasswordResponse"
     },
+    "SwitchDBInstanceHA": {
+      "document": "本接口(SwitchDBInstanceHA)用于实例主备切换。",
+      "input": "SwitchDBInstanceHARequest",
+      "name": "实例主备切换",
+      "output": "SwitchDBInstanceHAResponse"
+    },
     "UpgradeDCDBInstance": {
       "document": "本接口（UpgradeDCDBInstance）用于升级分布式数据库实例。本接口完成下单和支付两个动作，如果发生支付失败的错误，调用用户账户相关接口中的支付订单接口（PayDeals）重新支付即可。",
       "input": "UpgradeDCDBInstanceRequest",
@@ -5741,6 +5747,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchDBInstanceHARequest": {
+      "document": "SwitchDBInstanceHA请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id，形如 tdsql-ow728lmc。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换的目标区域，会自动选择该可用区中延迟最低的节点。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDBInstanceHAResponse": {
+      "document": "SwitchDBInstanceHA返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程Id",
+          "example": "无",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TableColumn": {
       "document": "数据库列信息",
