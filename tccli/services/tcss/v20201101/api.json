@@ -11148,6 +11148,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "未处理木马事件",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandledVirusEventCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13664,13 +13673,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "一键检测的超时设置",
+          "document": "一键检测的超时设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ClickTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13718,7 +13727,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "扫描状态 任务状态:\nSCAN_NONE:无， \nSCAN_SCANNING:正在扫描中，\nSCAN_FINISH：扫描完成， \nSCAN_TIMEOUT：扫描超时\nSCAN_CANCELING: 取消中",
+          "document": "扫描状态 任务状态:\nSCAN_NONE:无， \nSCAN_SCANNING:正在扫描中，\nSCAN_FINISH：扫描完成， \nSCAN_TIMEOUT：扫描超时\nSCAN_CANCELING: 取消中\nSCAN_CANCELED:已取消",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -16564,7 +16573,7 @@
         },
         {
           "default": "",
-          "document": "检测周期每隔多少天",
+          "document": "检测周期每隔多少天(1|3|7)",
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
@@ -16582,7 +16591,7 @@
         },
         {
           "default": "",
-          "document": "扫描全部路径",
+          "document": "扫描全部路径(true:全选,false:自选)",
           "example": "true",
           "member": "bool",
           "name": "ScanPathAll",
@@ -16600,7 +16609,7 @@
         },
         {
           "default": "",
-          "document": "超时时长",
+          "document": "超时时长(5~24h)",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -16631,7 +16640,7 @@
           "example": "[]",
           "member": "string",
           "name": "ScanIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16640,7 +16649,7 @@
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -16663,7 +16672,7 @@
       "members": [
         {
           "default": "",
-          "document": "超时时长单位小时",
+          "document": "超时时长单位小时(5~24h)",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -19119,7 +19128,7 @@
         },
         {
           "default": "",
-          "document": "失败子状态:\nFILE_NOT_FOUND:文件不存在\nFILE_ABNORMAL:文件异常\nFILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常\nBACKUP_FILE_NOT_FOUND:备份文件不存在\nCONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在\nCONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在",
+          "document": "失败子状态:\nFILE_NOT_FOUND:文件不存在\nFILE_ABNORMAL:文件异常\nFILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常\nBACKUP_FILE_NOT_FOUND:备份文件不存在\nCONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在\nCONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在\nTIMEOUT: 超时\nTOO_MANY: 任务过多\nOFFLINE: 离线\nINTERNAL: 服务内部错误\nVALIDATION: 参数非法",
           "example": "xxx",
           "member": "string",
           "name": "SubStatus",

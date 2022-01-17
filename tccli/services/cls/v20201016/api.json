@@ -3776,7 +3776,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要配置键值或者元字段索引的字段",
+          "document": "需要配置键值或者元字段索引的字段，元字段Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -3786,6 +3787,7 @@
         {
           "default": "",
           "document": "字段的索引描述信息",
+          "example": "无",
           "member": "ValueInfo",
           "name": "Value",
           "required": true,
@@ -4668,7 +4670,7 @@
         },
         {
           "default": "",
-          "document": "索引规则，Rule和Effective两个必须有一个参数存在",
+          "document": "索引规则",
           "example": "无",
           "member": "RuleInfo",
           "name": "Rule",
@@ -5267,11 +5269,12 @@
       "usage": "both"
     },
     "RuleTagInfo": {
-      "document": "标签索引配置信息",
+      "document": "元字段索引配置",
       "members": [
         {
           "default": "",
           "document": "是否大小写敏感",
+          "example": "无",
           "member": "bool",
           "name": "CaseSensitive",
           "required": true,
@@ -5280,7 +5283,8 @@
         },
         {
           "default": "",
-          "document": "标签索引配置中的字段信息",
+          "document": "元字段索引配置中的字段信息",
+          "example": "无",
           "member": "KeyValueInfo",
           "name": "KeyValues",
           "required": true,

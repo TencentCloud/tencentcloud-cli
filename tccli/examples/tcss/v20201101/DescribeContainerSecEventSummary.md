@@ -16,7 +16,8 @@ Output:
         "UnhandledRiskSyscallCnt": 1,
         "RequestId": "xx",
         "UnhandledReverseShellCnt": 1,
-        "UnhandledAbnormalProcessCnt": 1
+        "UnhandledAbnormalProcessCnt": 1,
+        "UnhandledVirusEventCnt": 1
     }
 }
 ```

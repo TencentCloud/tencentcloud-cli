@@ -33,6 +33,8 @@ Output:
         "RecognizeWarnMsg": [
             "WARN_DRIVER_LICENSE_PS_CARD"
         ],
+        "CumulativeScore": "xx",
+        "State": "xx",
         "RequestId": "4ba2958b-e7cf-41c2-aafe-fdc985307f63"
     }
 }
@@ -75,6 +77,8 @@ Output:
             "WARN_DRIVER_LICENSE_PS_CARD",
             "WARN_DRIVER_LICENSE_SCREENED_CARD"
         ],
+        "CumulativeScore": "xx",
+        "State": "xx",
         "RequestId": "4ba2958b-e7cf-41c2-aafe-fdc985307f63"
     }
 }
@@ -111,6 +115,8 @@ Output:
         "IssuingAuthority": "",
         "RecognizeWarnCode": [],
         "RecognizeWarnMsg": [],
+        "CumulativeScore": "xx",
+        "State": "xx",
         "RequestId": "83e87a88-2382-4781-96ec-f8d620fffee8"
     }
 }
@@ -153,6 +159,8 @@ Output:
             "WARN_DRIVER_LICENSE_PS_CARD",
             "WARN_DRIVER_LICENSE_SCREENED_CARD"
         ],
+        "CumulativeScore": "xx",
+        "State": "xx",
         "RequestId": "83e87a88-2382-4781-96ec-f8d620fffee8"
     }
 }

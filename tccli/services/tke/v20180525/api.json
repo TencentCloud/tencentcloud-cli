@@ -579,7 +579,7 @@
     "UpdateEKSCluster": {
       "document": "修改弹性集群名称等属性 ",
       "input": "UpdateEKSClusterRequest",
-      "name": "修改弹性集群",
+      "name": "修改弹性集群EKS",
       "output": "UpdateEKSClusterResponse"
     },
     "UpdateEKSContainerInstance": {
@@ -11203,6 +11203,15 @@
           "name": "ProxyLB",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "扩展参数。须是map[string]string 的json 格式。",
+          "example": "{aa}",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

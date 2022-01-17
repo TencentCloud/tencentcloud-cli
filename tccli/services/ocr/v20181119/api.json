@@ -55,7 +55,7 @@
       "output": "ClassifyDetectOCRResponse"
     },
     "DriverLicenseOCR": {
-      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。",
+      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。",
       "input": "DriverLicenseOCRRequest",
       "name": "驾驶证识别",
       "output": "DriverLicenseOCRResponse"
@@ -1529,6 +1529,7 @@
         {
           "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1537,6 +1538,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1545,6 +1547,7 @@
         {
           "default": "",
           "document": "FRONT 为驾驶证主页正面（有红色印章的一面），\nBACK 为驾驶证副页正面（有档案编号的一面）。\n默认值为：FRONT。",
+          "example": "FRONT",
           "member": "string",
           "name": "CardSide",
           "required": false,
@@ -1558,106 +1561,154 @@
       "members": [
         {
           "document": "姓名",
+          "example": "李明",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "性别",
+          "example": "男",
           "member": "string",
           "name": "Sex",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "国籍",
+          "example": "中国",
           "member": "string",
           "name": "Nationality",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "住址",
+          "example": "上海市徐汇区田林路397号腾云大厦6F",
           "member": "string",
           "name": "Address",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "出生日期（YYYY-MM-DD）",
+          "example": "1987-01-01",
           "member": "string",
           "name": "DateOfBirth",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "初次领证日期（YYYY-MM-DD）",
+          "example": "2011-10-01",
           "member": "string",
           "name": "DateOfFirstIssue",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "准驾车型",
+          "example": "C1",
           "member": "string",
           "name": "Class",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "有效期开始时间（YYYY-MM-DD）",
+          "example": "2011-10-01",
           "member": "string",
           "name": "StartDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "有效期截止时间（YYYY-MM-DD）",
+          "example": "2017-10-01",
           "member": "string",
           "name": "EndDate",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "证号",
+          "example": "440524198701010014",
           "member": "string",
           "name": "CardCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "档案编号",
+          "example": "无",
           "member": "string",
           "name": "ArchivesCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "记录",
+          "example": "无",
           "member": "string",
           "name": "Record",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "Code 告警码列表和释义：\n-9102  复印件告警\n-9103  翻拍件告警\n-9106  ps告警\n注：告警码可以同时存在多个",
+          "example": "[-9106]",
           "member": "int64",
           "name": "RecognizeWarnCode",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "告警码说明：\nWARN_DRIVER_LICENSE_COPY_CARD 复印件告警\nWARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警\nWARN_DRIVER_LICENSE_PS_CARD ps告警\n注：告警信息可以同时存在多个",
+          "example": "[\"WARN_DRIVER_LICENSE_PS_CARD\"]",
           "member": "string",
           "name": "RecognizeWarnMsg",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "发证单位",
+          "example": "上海市公安局交通警察总队",
           "member": "string",
           "name": "IssuingAuthority",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态（仅电子驾驶证支持返回该字段）",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "累积记分（仅电子驾驶证支持返回该字段）",
+          "example": "无",
+          "member": "string",
+          "name": "CumulativeScore",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

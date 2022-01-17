@@ -72,6 +72,18 @@
       "name": "添加DDoS防护的特征过滤规则",
       "output": "CreatePacketFilterConfigResponse"
     },
+    "CreatePortAclConfig": {
+      "document": "添加DDoS防护的端口acl策略",
+      "input": "CreatePortAclConfigRequest",
+      "name": "添加DDoS防护的端口acl策略",
+      "output": "CreatePortAclConfigResponse"
+    },
+    "CreatePortAclConfigList": {
+      "document": "批量添加DDoS防护的端口acl策略",
+      "input": "CreatePortAclConfigListRequest",
+      "name": "批量添加DDoS防护的端口acl策略",
+      "output": "CreatePortAclConfigListResponse"
+    },
     "CreateProtocolBlockConfig": {
       "document": "设置DDoS防护的协议封禁配置",
       "input": "CreateProtocolBlockConfigRequest",
@@ -320,6 +332,82 @@
     "serviceShortName": "antiddos"
   },
   "objects": {
+    "AclConfig": {
+      "document": "基于端口的acl策略",
+      "members": [
+        {
+          "default": "",
+          "document": "协议类型, 可取值tcp, udp, all",
+          "example": "tcp",
+          "member": "string",
+          "name": "ForwardProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的端口起始，可取值范围0~65535",
+          "example": "0",
+          "member": "uint64",
+          "name": "DPortStart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目的端口结束，可取值范围0~65535",
+          "example": "65535",
+          "member": "uint64",
+          "name": "DPortEnd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源端口起始，可取值范围0~65535",
+          "example": "0",
+          "member": "uint64",
+          "name": "SPortStart",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源端口结束，可取值范围0~65535",
+          "example": "65535",
+          "member": "uint64",
+          "name": "SPortEnd",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作，可取值：drop， transmit， forward",
+          "example": "65535",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AssociateDDoSEipAddressRequest": {
       "document": "AssociateDDoSEipAddress请求参数结构体",
       "members": [
@@ -1476,6 +1564,78 @@
     },
     "CreatePacketFilterConfigResponse": {
       "document": "CreatePacketFilterConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortAclConfigListRequest": {
+      "document": "CreatePortAclConfigList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID列表",
+          "example": "[\"bgpip-00001001\"]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "端口acl策略",
+          "example": "无",
+          "member": "AclConfig",
+          "name": "AclConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortAclConfigListResponse": {
+      "document": "CreatePortAclConfigList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortAclConfigRequest": {
+      "document": "CreatePortAclConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口acl策略",
+          "example": "无",
+          "member": "AclConfig",
+          "name": "AclConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortAclConfigResponse": {
+      "document": "CreatePortAclConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

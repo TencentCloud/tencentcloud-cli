@@ -8,6 +8,14 @@
         "title": "添加维护时间窗口"
       }
     ],
+    "ApplyCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyCDBProxy\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"SecurityGroup\": [\n        \"xx\"\n    ],\n    \"Mem\": 1,\n    \"UniqSubnetId\": \"xx\",\n    \"Desc\": \"xx\",\n    \"Cpu\": 1,\n    \"ProxyCount\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"dd803e8b-02543d6b-0b6ec9c4-8c1e133c\",\n        \"RequestId\": \"6236a2ad-0557-48c3-b983-247d2870e0a1\"\n    }\n}",
+        "title": "创建数据库代理"
+      }
+    ],
     "AssociateSecurityGroups": [
       {
         "document": "",
@@ -22,6 +30,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=BalanceRoGroupLoad\r\n&RoGroupId=cdbrg-eb2w7dto\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "均衡RO组内实例的负载"
+      }
+    ],
+    "CloseCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"OnlyCloseRW\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "关闭数据库代理"
       }
     ],
     "CloseWanService": [
@@ -332,6 +348,14 @@
         "title": "查询二进制日志"
       }
     ],
+    "DescribeCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RWInstInfo\": {\n            \"MaxDelay\": 1,\n            \"AutoAddRo\": true,\n            \"IsKickOut\": true,\n            \"FailOver\": true,\n            \"RWInstInfo\": {},\n            \"MinCount\": 1,\n            \"WeightMode\": \"xx\",\n            \"InstCount\": 1\n        },\n        \"ProxyNode\": {\n            \"ProxyNodeId\": \"xx\",\n            \"ProxyNodeMem\": 1,\n            \"ProxyNodeConnections\": 1,\n            \"ProxyNodeCpu\": 1,\n            \"ProxyStatus\": \"xx\"\n        },\n        \"ConnectionPoolInfo\": {\n            \"ConnectionPoolType\": \"xx\",\n            \"PoolConnectionTimeOut\": 0,\n            \"ConnectionPool\": true\n        },\n        \"RequestId\": \"xx\",\n        \"Address\": {\n            \"UniqVpcId\": \"xx\",\n            \"VPort\": 1,\n            \"Vip\": \"xx\",\n            \"UniqSubnet\": \"xx\",\n            \"Desc\": \"xx\"\n        },\n        \"ProxyGroup\": [\n            {\n                \"ConnectionPoolInfo\": {\n                    \"ConnectionPoolType\": \"xx\",\n                    \"PoolConnectionTimeOut\": 0,\n                    \"ConnectionPool\": false\n                },\n                \"RWInstInfo\": {\n                    \"MaxDelay\": 1,\n                    \"AutoAddRo\": true,\n                    \"IsKickOut\": true,\n                    \"FailOver\": true,\n                    \"RWInstInfo\": {},\n                    \"MinCount\": 1,\n                    \"WeightMode\": \"xx\",\n                    \"InstCount\": 1\n                },\n                \"BaseGroup\": {\n                    \"Status\": \"xx\",\n                    \"CurrentProxyVersion\": \"xx\",\n                    \"ProxyGroupId\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"NodeCount\": 1,\n                    \"SupportUpgradeProxyVersion\": \"xx\",\n                    \"OpenRW\": true\n                },\n                \"ProxyNode\": {\n                    \"ProxyNodeId\": \"xx\",\n                    \"ProxyNodeMem\": 1,\n                    \"ProxyNodeConnections\": 1,\n                    \"ProxyNodeCpu\": 1,\n                    \"ProxyStatus\": \"xx\"\n                },\n                \"Address\": {\n                    \"UniqVpcId\": \"xx\",\n                    \"VPort\": 1,\n                    \"Vip\": \"xx\",\n                    \"UniqSubnet\": \"xx\",\n                    \"Desc\": \"xx\"\n                }\n            }\n        ],\n        \"BaseGroup\": {\n            \"Status\": \"xx\",\n            \"CurrentProxyVersion\": \"xx\",\n            \"ProxyGroupId\": \"xx\",\n            \"Zone\": \"xx\",\n            \"Region\": \"xx\",\n            \"NodeCount\": 1,\n            \"SupportUpgradeProxyVersion\": \"xx\",\n            \"OpenRW\": true\n        }\n    }\n}",
+        "title": "查询数据库代理"
+      }
+    ],
     "DescribeCloneList": [
       {
         "document": "",
@@ -498,6 +522,14 @@
         "title": "查询实例的可设置参数列表"
       }
     ],
+    "DescribeLocalBinlogConfig": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeLocalBinlogConfig\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LocalBinlogConfig\": {\n            \"MaxUsage\": 30,\n            \"SaveHours\": 120\n        },\n        \"LocalBinlogConfigDefault\": {\n            \"MaxUsage\": 30,\n            \"SaveHours\": 120\n        },\n        \"RequestId\": \"a8cce05c-3975-1243-1087-17e2851d3486\"\n    }\n}",
+        "title": "查询本地binlog保留策略"
+      }
+    ],
     "DescribeParamTemplateInfo": [
       {
         "document": "",
@@ -520,6 +552,22 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&ProjectId=11954\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
         "title": "查询项目安全组信息"
+      }
+    ],
+    "DescribeProxyConnectionPoolConf": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyConnectionPoolConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"PoolConf\": [\n            {\n                \"ConnectionPoolType\": \"SessionConnectionPool\",\n                \"MaxPoolConnectionTimeOut\": 600,\n                \"MinPoolConnectionTimeOut\": 1\n            }\n        ],\n        \"RequestId\": \"a1ae22d5-2633-4f09-ba59-8fe103ac64b6\"\n    }\n}",
+        "title": "查询数据库代理连接池配置"
+      }
+    ],
+    "DescribeProxyCustomConf": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyCustomConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 3,\n        \"CustomConf\": [\n            {\n                \"Cpu\": 2,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 4000,\n                \"Type\": \"高可用版本\"\n            },\n            {\n                \"Cpu\": 4,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 8000,\n                \"Type\": \"高可用版本\"\n            },\n            {\n                \"Cpu\": 8,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 16000,\n                \"Type\": \"高可用版本\"\n            }\n        ],\n        \"RequestId\": \"9bd2a785-2dc0-47dc-b285-2b154a218ea1\",\n        \"WeightRule\": [\n            {\n                \"LessThan\": 2000,\n                \"Weight\": 1\n            },\n            {\n                \"LessThan\": 8000,\n                \"Weight\": 2\n            },\n            {\n                \"LessThan\": 16000,\n                \"Weight\": 4\n            },\n            {\n                \"LessThan\": 32000,\n                \"Weight\": 8\n            },\n            {\n                \"LessThan\": 48000,\n                \"Weight\": 10\n            },\n            {\n                \"LessThan\": 64000,\n                \"Weight\": 12\n            },\n            {\n                \"LessThan\": 96000,\n                \"Weight\": 14\n            },\n            {\n                \"LessThan\": 128000,\n                \"Weight\": 16\n            },\n            {\n                \"LessThan\": 192000,\n                \"Weight\": 24\n            },\n            {\n                \"LessThan\": 256000,\n                \"Weight\": 30\n            },\n            {\n                \"LessThan\": 488000,\n                \"Weight\": 50\n            },\n            {\n                \"LessThan\": 690000,\n                \"Weight\": 75\n            },\n            {\n                \"LessThan\": -1,\n                \"Weight\": 100\n            }\n        ]\n    }\n}",
+        "title": "查询数据库代理规格配置"
       }
     ],
     "DescribeRoGroups": [
@@ -730,6 +778,38 @@
         "title": "修改备份下载来源限制"
       }
     ],
+    "ModifyCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxy\n<公共请求参数>\n\n{\n    \"RoWeightValues\": {},\n    \"MaxDelay\": 1,\n    \"AutoAddRo\": true,\n    \"ProxyGroupId\": \"proxy-test\",\n    \"IsKickout\": true,\n    \"FailOver\": true,\n    \"MinCount\": 1,\n    \"WeightMode\": \"system\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"122198-2222-1223-2222-c3a1733\"\n    }\n}",
+        "title": "配置数据库读写分离"
+      }
+    ],
+    "ModifyCDBProxyConnectionPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyConnectionPool\n<公共请求参数>\n\n{\n    \"OpenConnectionPool\": true,\n    \"ConnectionPoolType\": \"SessionConnectionPool\",\n    \"PoolConnectionTimeOut\": 10,\n    \"ProxyGroupId\": \"proxy-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "配置数据库代理连接池"
+      }
+    ],
+    "ModifyCDBProxyDesc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyDesc\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"Desc\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "修改代理描述"
+      }
+    ],
+    "ModifyCDBProxyVipVPort": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyVipVPort\n<公共请求参数>\n\n{\n    \"DstIp\": \"127.0.1\",\n    \"ProxyGroupId\": \"proxt-test\",\n    \"UniqVpcId\": \"vpc-test\",\n    \"UniqSubnetId\": \"sub-test\",\n    \"ReleaseDuration\": 1,\n    \"DstPort\": 1201\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "修改数据库代理VIP或端口"
+      }
+    ],
     "ModifyDBInstanceName": [
       {
         "document": "",
@@ -776,6 +856,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=ModifyInstanceTag\r\n&InstanceId=cdb-uns231ns\r\n&ReplaceTags.0.TagKey=march1\r\n&ReplaceTags.0.TagValue.0=marchtest1\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改、删除实例标签"
+      }
+    ],
+    "ModifyLocalBinlogConfig": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyLocalBinlogConfig\n&InstanceId=cdb-c1nl9rpv\n&SaveHours=72\n&MaxUsage=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "修改本地binlog保留策略"
       }
     ],
     "ModifyNameOrDescByDpId": [
@@ -848,6 +936,14 @@
         "title": "解隔离云数据库实例"
       }
     ],
+    "ReloadBalanceProxyNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReloadBalanceProxyNode\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "负载均衡数据库代理"
+      }
+    ],
     "RenewDBInstance": [
       {
         "document": "",
@@ -904,6 +1000,14 @@
         "title": "撤销回档任务"
       }
     ],
+    "SwitchCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "切换数据库代理"
+      }
+    ],
     "SwitchDBInstanceMasterSlave": [
       {
         "document": "",
@@ -926,6 +1030,22 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=SwitchForUpgrade\r\n&InstanceId=cdb-eb2w7dto\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "切换访问新实例"
+      }
+    ],
+    "UpgradeCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCDBProxy\n<公共请求参数>\n\n{\n    \"UpgradeTime\": \"nowTime\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"InstanceId\": \"cdb-test\",\n    \"Mem\": 4000,\n    \"ReloadBalance\": \"true\",\n    \"Cpu\": 2,\n    \"ProxyCount\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "升级数据库代理配置"
+      }
+    ],
+    "UpgradeCDBProxyVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCDBProxyVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"DstProxyVersion\": \"1.0.1\",\n    \"SrcProxyVersion\": \"1.1.2\",\n    \"UpgradeTime\": \"nowTime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
+        "title": "升级数据库代理版本"
       }
     ],
     "UpgradeDBInstance": [

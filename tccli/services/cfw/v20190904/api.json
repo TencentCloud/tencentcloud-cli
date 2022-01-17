@@ -103,9 +103,9 @@
       "output": "DescribeAcListsResponse"
     },
     "DescribeAddrTemplateList": {
-      "document": "获取地址模版列表",
+      "document": "获取地址模板列表",
       "input": "DescribeAddrTemplateListRequest",
-      "name": "获取地址模版列表",
+      "name": "获取地址模板列表",
       "output": "DescribeAddrTemplateListResponse"
     },
     "DescribeAssociatedInstanceList": {
@@ -341,6 +341,12 @@
       "input": "ModifyResourceGroupRequest",
       "name": "资产中心资产组信息修改",
       "output": "ModifyResourceGroupResponse"
+    },
+    "ModifyRunSyncAsset": {
+      "document": "同步资产-互联网&VPC（新）",
+      "input": "ModifyRunSyncAssetRequest",
+      "name": "同步资产-互联网&VPC（新）",
+      "output": "ModifyRunSyncAssetResponse"
     },
     "ModifySecurityGroupAllRuleStatus": {
       "document": "启用停用全部规则",
@@ -4828,6 +4834,42 @@
     "ModifyResourceGroupResponse": {
       "document": "ModifyResourceGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRunSyncAssetRequest": {
+      "document": "ModifyRunSyncAsset请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "0: 互联网防火墙开关，1：vpc 防火墙开关",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRunSyncAssetResponse": {
+      "document": "ModifyRunSyncAsset返回参数结构体",
+      "members": [
+        {
+          "document": "0：同步成功，1：资产更新中，2：后台同步调用失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

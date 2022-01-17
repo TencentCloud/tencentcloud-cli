@@ -435,7 +435,7 @@
     "UpdateDomainConfig": {
       "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。",
       "input": "UpdateDomainConfigRequest",
-      "name": "更新域名配置",
+      "name": "更新加速域名配置",
       "output": "UpdateDomainConfigResponse"
     },
     "UpdateImageConfig": {
@@ -559,7 +559,7 @@
         },
         {
           "default": "",
-          "document": "加速域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
+          "document": "加速域名业务类型\nweb：网页小文件\ndownload：下载大文件\nmedia：音视频点播\nhybrid:  动静加速\ndynamic:  动态加速",
           "example": "web",
           "member": "string",
           "name": "ServiceType",
@@ -847,7 +847,7 @@
         },
         {
           "default": "",
-          "document": "QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。",
+          "document": "Quic访问（收费服务，详见计费说明和产品文档）",
           "example": "无",
           "member": "Quic",
           "name": "Quic",
@@ -14867,7 +14867,7 @@
         },
         {
           "default": "",
-          "document": "QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。",
+          "document": "Quic访问（收费服务，详见计费说明和产品文档）",
           "example": "无",
           "member": "Quic",
           "name": "Quic",

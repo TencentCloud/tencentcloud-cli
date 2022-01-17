@@ -43,7 +43,7 @@
       "output": "DescribeUsageResponse"
     },
     "GetDownloadFlowUrl": {
-      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载确认页面链接，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.",
+      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.\n",
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取合同（流程）批量下载链接",
       "output": "GetDownloadFlowUrlResponse"
@@ -1283,8 +1283,8 @@
         },
         {
           "default": "",
-          "document": "模版ID",
-          "example": "模版Id数组",
+          "document": "模板ID",
+          "example": "模板Id数组",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -1463,7 +1463,7 @@
       "document": "GetDownloadFlowUrl返回参数结构体",
       "members": [
         {
-          "document": "进入合同（流程）下载确认页面链接",
+          "document": "合同（流程）下载地址",
           "example": "无",
           "member": "string",
           "name": "DownLoadUrl",

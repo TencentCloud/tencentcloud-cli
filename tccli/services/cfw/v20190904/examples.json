@@ -153,7 +153,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddrTemplateList\n<公共请求参数>\n\n{\n    \"SearchValue\": \"xx\",\n    \"By\": \"xx\",\n    \"Limit\": 0,\n    \"Order\": \"xx\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": \"mb_123456\",\n                \"Name\": \"数据库白名单\",\n                \"Detail\": \"test\",\n                \"IpString\": \"0.0.0.0\",\n                \"InsertTime\": \"xxxxxx\",\n                \"UpdateTime\": \"xxxxxx\",\n                \"Type\": 1,\n                \"RulesNum\": 1\n            }\n        ],\n        \"NameList\": [\n            \"xxxxxx\"\n        ],\n        \"RequestId\": \"18ab90ea-b199-42c8-90bc-e3fd08027625\"\n    }\n}",
-        "title": "获取地址模版列表示例"
+        "title": "获取地址模板列表示例"
       }
     ],
     "DescribeAssociatedInstanceList": [
@@ -478,6 +478,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"xx\",\n    \"GroupId\": \"xx\",\n    \"ParentId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "资产中心资产组信息修改"
+      }
+    ],
+    "ModifyRunSyncAsset": [
+      {
+        "document": "",
+        "input": "https://cfw.tencentcloudapi.com/?Action=ModifyRunSyncAsset\n&Type=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
+        "title": "同步资产-互联网&VPC"
       }
     ],
     "ModifySecurityGroupAllRuleStatus": [

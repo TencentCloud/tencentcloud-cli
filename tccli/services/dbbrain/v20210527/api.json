@@ -1677,7 +1677,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "邮件模版总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮件配置总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
