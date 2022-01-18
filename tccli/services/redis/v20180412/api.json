@@ -13,7 +13,7 @@
       "output": "AssociateSecurityGroupsResponse"
     },
     "ChangeReplicaToMaster": {
-      "document": "该接口仅支持多AZ实例副本组提主",
+      "document": "该接口仅支持多AZ实例副本组提主和单AZ副本提主",
       "input": "ChangeReplicaToMasterRequest",
       "name": "副本组提主",
       "output": "ChangeReplicaToMasterResponse"
@@ -747,7 +747,7 @@
           "example": "354266",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
@@ -5490,6 +5490,15 @@
           "name": "Password",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单AZ实例节点信息",
+          "example": "null",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

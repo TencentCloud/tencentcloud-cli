@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateKTVRobot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKTVRobot\n<公共请求参数>\n\n{\n    \"RTCSystem\": \"TRTC\",\n    \"JoinRoomInput\": {\n        \"TRTCJoinRoomInput\": {\n            \"Sign\": \"xxxxxxxxxxx\",\n            \"RoomId\": \"12345\",\n            \"SdkAppId\": \"140000001\",\n            \"UserId\": \"tom\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RobotId\": \"ame-xxxxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建直播互动机器人"
+      }
+    ],
     "DescribeAuthInfo": [
       {
         "document": "获取授权项目列表",
@@ -20,7 +28,7 @@
       {
         "document": "获取授权项目已购云音乐列表",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudMusicPurchased\n<公共请求参数>\n\n{\n    \"AuthInfoId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MusicOpenDetail\": [\n            {\n                \"MusicName\": \"xx\",\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"MusicImageUrl\": \"xx\",\n                \"AlbumName\": \"xx\",\n                \"Duration\": 1,\n                \"AlbumImageUrl\": \"xx\",\n                \"Singers\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MusicOpenDetail\": [\n            {\n                \"MusicName\": \"xx\",\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"MusicImageUrl\": \"xx\",\n                \"AlbumName\": \"xx\",\n                \"Duration\": 1,\n                \"AlbumImageUrl\": \"xx\",\n                \"Singers\": [\n                    \"xx\"\n                ],\n                \"LyricUrl\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeCloudMusicPurchased"
       }
     ],
@@ -62,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylists\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlaylistBaseInfoSet\": [\n            {\n                \"Description\": \"xx\",\n                \"MusicNum\": 0,\n                \"PlaylistId\": \"xx\",\n                \"Title\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取即时广播曲库推荐歌单"
+      }
+    ],
+    "DescribeKTVRobots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVRobots\n<公共请求参数>\n\n{\n    \"RobotIds\": [\n        \"ame-xxxxx1\"\n    ],\n    \"Statuses\": [\n        \"Play\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVRobotInfoSet\": [\n            {\n                \"RobotId\": \"ame-xxxxx1\",\n                \"Status\": \"Play\",\n                \"Playlists\": [\n                    \"xxxx1\",\n                    \"xxxx2\",\n                    \"xxxx3\",\n                    \"xxxx4\"\n                ],\n                \"CurIndex\": 2,\n                \"Position\": 120,\n                \"RTCSystem\": \"TRTC\",\n                \"JoinRoomInput\": {\n                    \"TRTCJoinRoomInput\": {\n                        \"Sign\": \"xxxxxxxxxxx\",\n                        \"RoomId\": \"12345\",\n                        \"SdkAppId\": \"140000001\",\n                        \"UserId\": \"tom\"\n                    }\n                },\n                \"SetAudioParamInput\": {\n                    \"Definition\": \"audio/mi\",\n                    \"Type\": \"Original\"\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询机器人信息"
       }
     ],
     "DescribeLyric": [
@@ -114,7 +130,7 @@
       {
         "document": "根据购买曲库包用户可查询已回退的歌曲信息",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePkgOfflineMusic\n<公共请求参数>\n\n{\n    \"PackageOrderId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"OfflineMusicSet\": [\n            {\n                \"ItemId\": \"xx\",\n                \"MusicName\": \"xx\",\n                \"OffRemark\": \"xx\",\n                \"OffTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OfflineMusicSet\": [\n            {\n                \"ItemId\": \"ABCD\",\n                \"MusicName\": \"A\",\n                \"OffRemark\": \"授权到期\",\n                \"OffTime\": \"2006-01-01 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xxx\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "曲库包获取已核销歌曲回退数据"
       }
     ],
@@ -124,6 +140,14 @@
         "input": "https://ame.tencentcloudapi.com/?Action=DescribeStations\n&Limit=1\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HaveMore\": 0,\n        \"Offset\": 0,\n        \"RequestId\": \"s1568780320026098000\",\n        \"Size\": 3,\n        \"Stations\": [\n            {\n                \"CategoryCode\": \"\",\n                \"CategoryID\": \"DB5C207AE09E058C\",\n                \"ImagePathMap\": [\n                    {\n                        \"Key\": \"JPG-320X320-STATION\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"JPG-600X600-STATION\",\n                        \"Value\": \"\"\n                    },\n                    {\n                        \"Key\": \"JPG-NXN-STATION\",\n                        \"Value\": \"\"\n                    }\n                ],\n                \"Name\": \"素材-国风\",\n                \"Rank\": 1\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "获取分类内容（Station）列表"
+      }
+    ],
+    "DestroyKTVRobot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyKTVRobot\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "销毁机器人"
       }
     ],
     "ModifyMusicOnShelves": [
@@ -156,6 +180,38 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"ame-78dxxx\",\n                \"Duration\": 120,\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"七里香\",\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "搜索 KTV 歌曲"
+      }
+    ],
+    "SyncKTVRobotCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SetPlaylist\",\n    \"SetPlaylistCommandInput\": {\n        \"Type\": \"Add\",\n        \"MusicIds\": [\n            \"xxxxxxx\"\n        ],\n        \"Index\": -1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "播放列表添加歌曲"
+      },
+      {
+        "document": "播放第2首歌曲",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"Play\",\n    \"PlayCommandInput\": {\n        \"Index\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "播放指定音乐"
+      },
+      {
+        "document": "变更歌曲音频参数",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SetAudioParam\",\n    \"SetAudioParamCommandInput\": {\n        \"Definition\": \"audio/hi\",\n        \"Type\": \"Accompaniment\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "变更歌曲音频参数"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SwitchNext\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "切换下一首歌曲"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SendMessage\",\n    \"SendMessageCommandInput\": {\n        \"Message\": \"{\\\"Field1\\\":\\\"Value1\\\"}\",\n        \"Repeat\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "发送自定义消息"
       }
     ],
     "TakeMusicOffShelves": [

@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli ecdn PurgeUrlsCache --cli-unfold-argument  \
-    --Urls http://www.test.com/1.jpg \
-    --Area mainland
+    --Urls http://www.test.com/1.jpg
 ```
 
 Output: 

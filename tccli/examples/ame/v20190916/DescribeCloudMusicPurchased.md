@@ -26,7 +26,8 @@ Output:
                 "AlbumImageUrl": "xx",
                 "Singers": [
                     "xx"
-                ]
+                ],
+                "LyricUrl": "xx"
             }
         ],
         "RequestId": "xx"

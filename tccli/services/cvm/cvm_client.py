@@ -353,7 +353,7 @@ def doModifyKeyPairAttribute(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstancesModification(args, parsed_globals):
+def doModifyHostsAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -378,11 +378,11 @@ def doDescribeInstancesModification(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancesModificationRequest()
+    model = models.ModifyHostsAttributeRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeInstancesModification(model)
+        rsp = client.ModifyHostsAttribute(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -623,6 +623,54 @@ def doInquiryPriceResetInstancesInternetMaxBandwidth(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.InquiryPriceResetInstancesInternetMaxBandwidth(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doProgramFpgaImage(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ProgramFpgaImageRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ProgramFpgaImage(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1025,7 +1073,7 @@ def doDescribeLaunchTemplateVersions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeInstanceInternetBandwidthConfigs(args, parsed_globals):
+def doDescribeInstancesModification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1050,11 +1098,11 @@ def doDescribeInstanceInternetBandwidthConfigs(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceInternetBandwidthConfigsRequest()
+    model = models.DescribeInstancesModificationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeInstanceInternetBandwidthConfigs(model)
+        rsp = client.DescribeInstancesModification(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3521,7 +3569,7 @@ def doModifyInstanceDiskType(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyHostsAttribute(args, parsed_globals):
+def doDescribeInstanceInternetBandwidthConfigs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3546,11 +3594,11 @@ def doModifyHostsAttribute(args, parsed_globals):
     client = mod.CvmClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyHostsAttributeRequest()
+    model = models.DescribeInstanceInternetBandwidthConfigsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyHostsAttribute(model)
+        rsp = client.DescribeInstanceInternetBandwidthConfigs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3779,12 +3827,13 @@ ACTION_MAP = {
     "DescribeImageSharePermission": doDescribeImageSharePermission,
     "ImportImage": doImportImage,
     "ModifyKeyPairAttribute": doModifyKeyPairAttribute,
-    "DescribeInstancesModification": doDescribeInstancesModification,
+    "ModifyHostsAttribute": doModifyHostsAttribute,
     "DescribeImages": doDescribeImages,
     "DeleteLaunchTemplate": doDeleteLaunchTemplate,
     "ModifyInstancesAttribute": doModifyInstancesAttribute,
     "InquiryPriceRenewInstances": doInquiryPriceRenewInstances,
     "InquiryPriceResetInstancesInternetMaxBandwidth": doInquiryPriceResetInstancesInternetMaxBandwidth,
+    "ProgramFpgaImage": doProgramFpgaImage,
     "DeleteImages": doDeleteImages,
     "CreateKeyPair": doCreateKeyPair,
     "ImportKeyPair": doImportKeyPair,
@@ -3793,7 +3842,7 @@ ACTION_MAP = {
     "InquiryPriceRunInstances": doInquiryPriceRunInstances,
     "DescribeInstances": doDescribeInstances,
     "DescribeLaunchTemplateVersions": doDescribeLaunchTemplateVersions,
-    "DescribeInstanceInternetBandwidthConfigs": doDescribeInstanceInternetBandwidthConfigs,
+    "DescribeInstancesModification": doDescribeInstancesModification,
     "InquiryPriceTerminateInstances": doInquiryPriceTerminateInstances,
     "AssociateInstancesKeyPairs": doAssociateInstancesKeyPairs,
     "DescribeInstanceVncUrl": doDescribeInstanceVncUrl,
@@ -3845,7 +3894,7 @@ ACTION_MAP = {
     "DescribeInternetChargeTypeConfigs": doDescribeInternetChargeTypeConfigs,
     "RebootInstances": doRebootInstances,
     "ModifyInstanceDiskType": doModifyInstanceDiskType,
-    "ModifyHostsAttribute": doModifyHostsAttribute,
+    "DescribeInstanceInternetBandwidthConfigs": doDescribeInstanceInternetBandwidthConfigs,
     "DescribeInstanceTypeConfigs": doDescribeInstanceTypeConfigs,
     "DisassociateSecurityGroups": doDisassociateSecurityGroups,
     "AllocateHosts": doAllocateHosts,

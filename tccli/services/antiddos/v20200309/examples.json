@@ -48,6 +48,14 @@
         "title": "添加DDoS防护的IP黑白名单"
       }
     ],
+    "CreateDDoSConnectLimit": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateDDoSConnectLimit\n&InstanceId=bgpip-00000001\n&ConnectLimitConfig.SdNewLimit=0\n&ConnectLimitConfig.DstNewLimit=0\n&ConnectLimitConfig.SdConnLimit=0\n&ConnectLimitConfig.DstConnLimit=0\n&ConnectLimitConfig.BadConnThreshold=0\n&ConnectLimitConfig.NullConnEnable=0\n&ConnectLimitConfig.ConnTimeout=0\n&ConnectLimitConfig.SynRate=0\n&ConnectLimitConfig.SynLimit=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
+        "title": "配置DDoS连接抑制选项"
+      }
+    ],
     "CreateDDoSGeoIPBlockConfig": [
       {
         "document": "",

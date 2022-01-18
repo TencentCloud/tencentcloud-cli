@@ -11,13 +11,16 @@ tccli organization CreateOrganizationMember --cli-unfold-argument  \
     --NodeId 27 \
     --AccountName test \
     --PermissionIds 1 \
-    --PolicyType Finical
+    --PolicyType Finical \
+    --PayUin  \
+    --IdentityRoleID 1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Uin": 100001919,
         "RequestId": "1a556fac-cd38-4732-86ef-6283d6abddd7"
     }
 }

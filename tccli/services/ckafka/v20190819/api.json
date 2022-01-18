@@ -147,7 +147,7 @@
     "DescribeInstances": {
       "document": "本接口（DescribeInstance）用于在用户账户下获取消息队列 CKafka 实例列表",
       "input": "DescribeInstancesRequest",
-      "name": "获取实例列表",
+      "name": "获取实例列表信息",
       "output": "DescribeInstancesResponse"
     },
     "DescribeInstancesDetail": {
@@ -2735,6 +2735,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例ID过滤",
+          "example": "instance-will-s",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2743,6 +2744,7 @@
         {
           "default": "",
           "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "example": "tre",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -2751,6 +2753,7 @@
         {
           "default": "",
           "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "example": "[\"0\\r\\n\",\"1\\r\\n\",\"2\\r\\n\"]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -2758,7 +2761,8 @@
         },
         {
           "default": "",
-          "document": "偏移量，不填默认为0",
+          "document": "偏移量，不填默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2766,7 +2770,8 @@
         },
         {
           "default": "",
-          "document": "返回数量，不填则默认10，最大值20",
+          "document": "返回数量，不填则默认10，最大值20。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2775,6 +2780,7 @@
         {
           "default": "",
           "document": "匹配标签key值。",
+          "example": "1",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -2782,11 +2788,21 @@
         },
         {
           "default": "",
-          "document": "过滤器",
+          "document": "过滤器。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照实例ID过滤",
+          "example": "[instance-will-s]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2796,8 +2812,10 @@
       "members": [
         {
           "document": "返回的实例详情结果对象",
+          "example": "无",
           "member": "InstanceDetailResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2864,6 +2882,15 @@
           "example": "1",
           "member": "string",
           "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络Id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
           "required": false,
           "type": "string"
         }
@@ -4509,6 +4536,36 @@
           "name": "RebalanceTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例当前partition数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PartitionNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网带宽类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PublicNetworkChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网带宽值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PublicNetwork",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

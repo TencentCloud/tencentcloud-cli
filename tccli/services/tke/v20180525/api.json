@@ -8669,6 +8669,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
+          "example": "0",
+          "member": "int64",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

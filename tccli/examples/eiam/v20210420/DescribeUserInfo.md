@@ -32,7 +32,8 @@ Output:
         "ExpirationTime": "xx",
         "Email": "xx",
         "PwdNeedReset": true,
-        "RequestId": "xx"
+        "RequestId": "xx",
+        "AdminFlag": 1
     }
 }
 ```

@@ -36,6 +36,12 @@
       "name": "添加DDoS防护的IP网段黑白名单",
       "output": "CreateDDoSBlackWhiteIpListResponse"
     },
+    "CreateDDoSConnectLimit": {
+      "document": "配置DDoS连接抑制选项",
+      "input": "CreateDDoSConnectLimitRequest",
+      "name": "配置DDoS连接抑制选项",
+      "output": "CreateDDoSConnectLimitResponse"
+    },
     "CreateDDoSGeoIPBlockConfig": {
       "document": "添加DDoS防护的区域封禁配置",
       "input": "CreateDDoSGeoIPBlockConfigRequest",
@@ -1160,6 +1166,93 @@
       ],
       "usage": "out"
     },
+    "ConnectLimitConfig": {
+      "document": "连接抑制相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "基于源IP+目的IP的每秒新建数限制",
+          "member": "uint64",
+          "name": "SdNewLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基于目的IP的每秒新建数限制",
+          "member": "uint64",
+          "name": "DstNewLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基于源IP+目的IP的并发连接控制",
+          "member": "uint64",
+          "name": "SdConnLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基于目的IP+目的端口的并发连接控制",
+          "member": "uint64",
+          "name": "DstConnLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基于连接抑制触发阈值，取值范围[0,4294967295]",
+          "member": "uint64",
+          "name": "BadConnThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常连接检测条件，空连接防护开关，，取值范围[0,1]",
+          "member": "uint64",
+          "name": "NullConnEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常连接检测条件，连接超时，，取值范围[0,65535]",
+          "member": "uint64",
+          "name": "ConnTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常连接检测条件，syn占比ack百分比，，取值范围[0,100]",
+          "member": "uint64",
+          "name": "SynRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常连接检测条件，syn阈值，取值范围[0,100]",
+          "member": "uint64",
+          "name": "SynLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateBlackWhiteIpListRequest": {
       "document": "CreateBlackWhiteIpList请求参数结构体",
       "members": [
@@ -1348,6 +1441,42 @@
     },
     "CreateDDoSBlackWhiteIpListResponse": {
       "document": "CreateDDoSBlackWhiteIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSConnectLimitRequest": {
+      "document": "CreateDDoSConnectLimit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例Id",
+          "example": "bgpip-00000001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接抑制配置",
+          "example": "无",
+          "member": "ConnectLimitConfig",
+          "name": "ConnectLimitConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDDoSConnectLimitResponse": {
+      "document": "CreateDDoSConnectLimit返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

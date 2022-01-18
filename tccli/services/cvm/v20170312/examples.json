@@ -560,6 +560,14 @@
         "title": "修改默认实例启动模板版本号"
       }
     ],
+    "ProgramFpgaImage": [
+      {
+        "document": "本示例将由客户提供的FPGA镜像文件烧录到实例上的两块FPGA卡",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ProgramFpgaImage\n&InstanceId=ins-r8hr2upy\n&FPGAUrl=fpga-test-123456.cos.ap-guangzhou.myqcloud.com/test.xclbin\n&DBDFs.0=0000:00:08.0\n&DBDFs.1=0000:00:09.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270dfafb54a7\"\n    }\n}",
+        "title": "在线烧录FPGA镜像"
+      }
+    ],
     "PurchaseReservedInstancesOffering": [
       {
         "document": "",

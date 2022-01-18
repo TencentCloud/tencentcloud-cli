@@ -255,7 +255,7 @@
     "DescribeCDBProxy": {
       "document": "查询数据库代理",
       "input": "DescribeCDBProxyRequest",
-      "name": "查询数据代理",
+      "name": "查询数据库代理",
       "output": "DescribeCDBProxyResponse"
     },
     "DescribeCloneList": {
