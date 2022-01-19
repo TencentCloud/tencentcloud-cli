@@ -9960,6 +9960,7 @@
         {
           "default": "",
           "document": "IP地理位置库协议类型，目前仅支持\"ipv4\"。",
+          "example": "ipv4",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -9973,15 +9974,19 @@
       "members": [
         {
           "document": "IP地理位置库下载链接地址。",
+          "example": "https://ip-address-repo-1255852779.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "DownLoadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "链接到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。",
+          "example": "2020-01-15T10:56:42+00:00",
           "member": "datetime_iso",
           "name": "ExpiredAt",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

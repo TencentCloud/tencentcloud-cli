@@ -186,6 +186,12 @@
       "name": "获取DDoS防护的IP网段黑白名单",
       "output": "DescribeDDoSBlackWhiteIpListResponse"
     },
+    "DescribeDDoSConnectLimitList": {
+      "document": "获取DDoS连接抑制配置列表",
+      "input": "DescribeDDoSConnectLimitListRequest",
+      "name": "获取DDoS连接抑制配置列表",
+      "output": "DescribeDDoSConnectLimitListResponse"
+    },
     "DescribeDDoSTrend": {
       "document": "获取DDoS攻击流量带宽和攻击包速率数据",
       "input": "DescribeDDoSTrendRequest",
@@ -257,6 +263,12 @@
       "input": "DescribeListPacketFilterConfigRequest",
       "name": "获取DDoS防护的特征过滤规则列表",
       "output": "DescribeListPacketFilterConfigResponse"
+    },
+    "DescribeListPortAclList": {
+      "document": "获取DDoS防护的端口acl策略列表",
+      "input": "DescribeListPortAclListRequest",
+      "name": "获取DDoS防护的端口acl策略列表",
+      "output": "DescribeListPortAclListResponse"
     },
     "DescribeListProtectThresholdConfig": {
       "document": "获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等",
@@ -413,6 +425,32 @@
         }
       ],
       "usage": "both"
+    },
+    "AclConfigRelation": {
+      "document": "端口acl策略配置与高防资源关联",
+      "members": [
+        {
+          "default": "",
+          "document": "acl策略",
+          "example": "无",
+          "member": "AclConfig",
+          "name": "AclConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例列表",
+          "example": "无",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AssociateDDoSEipAddressRequest": {
       "document": "AssociateDDoSEipAddress请求参数结构体",
@@ -1252,6 +1290,30 @@
         }
       ],
       "usage": "both"
+    },
+    "ConnectLimitRelation": {
+      "document": "连接抑制列表",
+      "members": [
+        {
+          "default": "",
+          "document": "连接抑制配置",
+          "member": "ConnectLimitConfig",
+          "name": "ConnectLimitConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接抑制关联的实例信息",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateBlackWhiteIpListRequest": {
       "document": "CreateBlackWhiteIpList请求参数结构体",
@@ -2777,6 +2839,78 @@
       ],
       "type": "object"
     },
+    "DescribeDDoSConnectLimitListRequest": {
+      "document": "DescribeDDoSConnectLimitList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可选参数，按照IP进行过滤",
+          "example": "无",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选参数，按照实例id进行过滤",
+          "example": "无",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSConnectLimitListResponse": {
+      "document": "DescribeDDoSConnectLimitList返回参数结构体",
+      "members": [
+        {
+          "document": "连接抑制配置总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "连接抑制配置详情信息",
+          "example": "无",
+          "member": "ConnectLimitRelation",
+          "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDDoSTrendRequest": {
       "document": "DescribeDDoSTrend请求参数结构体",
       "members": [
@@ -3744,6 +3878,78 @@
           "example": "无",
           "member": "PacketFilterRelation",
           "name": "ConfigList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListPortAclListRequest": {
+      "document": "DescribeListPortAclList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip搜索",
+          "example": "1.1.1.3",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListPortAclListResponse": {
+      "document": "DescribeListPortAclList返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "端口acl策略",
+          "example": "无",
+          "member": "AclConfigRelation",
+          "name": "AclList",
           "required": true,
           "type": "list",
           "value_allowed_null": false

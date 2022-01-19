@@ -224,3 +224,38 @@ Output:
 }
 ```
 
+**Example 2: 请求参数实例**
+
+
+
+Input: 
+
+```
+tccli apm DescribeMetricRecords --cli-unfold-argument  \
+    --OrderBy.Key service_duration_avg \
+    --OrderBy.Value DESC \
+    --Filters.0.Type  \
+    --Filters.0.Key span.kind \
+    --Filters.0.Value server \
+    --InstanceId apm-6xYKFXYxo \
+    --BusinessName taw \
+    --Metrics.0.Compare 1 \
+    --Metrics.0.Compares 1 \
+    --Metrics.0.MetricName qps \
+    --Limit 10 \
+    --StartTime 1618361193 \
+    --Offset 22 \
+    --EndTime 1618677137 \
+    --GroupBy operation
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Records": [],
+        "RequestId": "5809b2da-cfd8-499c-8897-7dfee822a8cb"
+    }
+}
+```
+

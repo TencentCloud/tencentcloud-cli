@@ -248,6 +248,14 @@
         "title": "获取DDoS防护的IP黑白名单"
       }
     ],
+    "DescribeDDoSConnectLimitList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeDDoSConnectLimitList\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"InstanceDetailList\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ],\n                \"ConnectLimitConfig\": {\n                    \"SynLimit\": 1,\n                    \"BadConnThreshold\": 1,\n                    \"SdConnLimit\": 1,\n                    \"SdNewLimit\": 1,\n                    \"SynRate\": 1,\n                    \"ConnTimeout\": 1,\n                    \"DstConnLimit\": 1,\n                    \"DstNewLimit\": 1,\n                    \"NullConnEnable\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取DDoS连接抑制配置列表"
+      }
+    ],
     "DescribeDDoSTrend": [
       {
         "document": "",
@@ -342,6 +350,14 @@
         "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListPacketFilterConfig\n&Offset=0\n&Limit=25\n&FilterIp=1.1.1.1\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"53f8e307-fc36-41dd-99a4-0b8e3b3a9408\",\n        \"ConfigList\": [\n            {\n                \"PacketFilterConfig\": {\n                    \"Protocol\": \"\",\n                    \"SportStart\": 0,\n                    \"SportEnd\": 0,\n                    \"DportStart\": 0,\n                    \"DportEnd\": 0,\n                    \"PktlenMin\": 0,\n                    \"PktlenMax\": 1500,\n                    \"Action\": \"drop\",\n                    \"MatchBegin\": \"begin_l5\",\n                    \"MatchType\": \"sunday\",\n                    \"Str\": \"hello\",\n                    \"Depth\": 20,\n                    \"Offset\": 0,\n                    \"IsNot\": 0,\n                    \"MatchLogic\": \"and\",\n                    \"MatchBegin2\": \"begin_l5\",\n                    \"MatchType2\": \"sunday\",\n                    \"Str2\": \"world\",\n                    \"Depth2\": 20,\n                    \"Offset2\": 5,\n                    \"IsNot2\": 0,\n                    \"Id\": \"00e8v4zj\"\n                },\n                \"InstanceDetailList\": [\n                    {\n                        \"EipList\": [\n                            \"1.1.1.1\"\n                        ],\n                        \"InstanceId\": \"bgpip-0000011x\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取DDoS防护的特征过滤规则列表"
+      }
+    ],
+    "DescribeListPortAclList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeListPortAclList\n&Offset=0\n&Limit=10\n&FilterInstanceId=bgpip-0000011x\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83978459-3a66-46e7-bb97-c946656d16eb\",\n        \"AclList\": [\n            {\n                \"AclConfig\": {\n                    \"ForwardProtocol\": \"tcp\",\n                    \"DPortStart\": 0,\n                    \"DPortEnd\": 65535,\n                    \"SPortStart\": 0,\n                    \"SPortEnd\": 65535,\n                    \"Action\": \"drop\",\n                    \"Priority\": 10\n                },\n                \"InstanceDetailList\": [\n                    {\n                        \"EipList\": [\n                            \"1.2.2.19\"\n                        ],\n                        \"InstanceId\": \"bgpip-0000011x\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 2\n    }\n}",
+        "title": "获取DDoS防护的端口acl策略列表"
       }
     ],
     "DescribeListProtectThresholdConfig": [

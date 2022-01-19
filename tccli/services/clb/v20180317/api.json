@@ -8080,21 +8080,21 @@
       "members": [
         {
           "default": "",
-          "document": "转发规则的域名。长度限制为：1~80。",
-          "example": "www.xxxx.com",
+          "document": "转发规则的路径。长度限制为：1~200。",
+          "example": "/xxxx",
           "member": "string",
-          "name": "Domain",
+          "name": "Url",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "转发规则的路径。长度限制为：1~200。",
-          "example": "/xxxx",
+          "document": "转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "example": "www.xxxx.com",
           "member": "string",
-          "name": "Url",
-          "required": true,
+          "name": "Domain",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8206,6 +8206,16 @@
           "name": "Quic",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

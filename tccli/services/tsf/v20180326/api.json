@@ -271,7 +271,7 @@
       "output": "DeleteUnitRuleResponse"
     },
     "DeployContainerGroup": {
-      "document": "部署容器应用",
+      "document": "部署容器应用-更新",
       "input": "DeployContainerGroupRequest",
       "name": "部署容器应用",
       "output": "DeployContainerGroupResponse"
@@ -7095,6 +7095,15 @@
           "name": "VolumeMountInfoList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否清除数据卷信息，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "VolumeClean",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
