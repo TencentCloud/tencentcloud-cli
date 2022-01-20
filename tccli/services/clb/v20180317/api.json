@@ -2129,21 +2129,21 @@
       "members": [
         {
           "default": "",
-          "document": "日志集的保存周期，单位：天，最大 90。",
-          "example": "7",
-          "member": "uint64",
-          "name": "Period",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。",
           "example": "clb_logset",
           "member": "string",
           "name": "LogsetName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集的保存周期，单位：天。",
+          "example": "7",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -2774,6 +2774,15 @@
           "name": "TopicType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集的保存周期，单位：天，默认30天。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3106,7 +3115,7 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
@@ -3124,7 +3133,7 @@
         },
         {
           "default": "",
-          "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。",
+          "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。",
           "example": "www.default.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
@@ -6633,6 +6642,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6907,7 +6926,7 @@
         },
         {
           "default": "",
-          "document": "域名（必须是已经创建的转发规则下的域名）。",
+          "document": "域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
@@ -6916,7 +6935,7 @@
         },
         {
           "default": "",
-          "document": "要修改的新域名。",
+          "document": "要修改的新域名。NewDomain和NewDomains只能传一个。",
           "example": "www.new.example.com",
           "member": "string",
           "name": "NewDomain",
@@ -6952,12 +6971,21 @@
         },
         {
           "default": "",
-          "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。",
+          "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。",
           "example": "www.qcloud.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的新域名列表。NewDomain和NewDomains只能传一个。",
+          "example": "[\"www.new.example.com\"]",
+          "member": "string",
+          "name": "NewDomains",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8227,6 +8255,7 @@
         {
           "default": "",
           "document": "转发规则的 ID",
+          "example": "loc-xxx",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -8236,6 +8265,7 @@
         {
           "default": "",
           "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.xxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -8245,6 +8275,7 @@
         {
           "default": "",
           "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -8254,6 +8285,7 @@
         {
           "default": "",
           "document": "会话保持时间",
+          "example": "无",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -8263,6 +8295,7 @@
         {
           "default": "",
           "document": "健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -8272,6 +8305,7 @@
         {
           "default": "",
           "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
           "required": false,
@@ -8281,6 +8315,7 @@
         {
           "default": "",
           "document": "规则的请求转发方式",
+          "example": "无",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -8290,6 +8325,7 @@
         {
           "default": "",
           "document": "转发规则所属的监听器 ID",
+          "example": "无",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -8299,6 +8335,7 @@
         {
           "default": "",
           "document": "转发规则的重定向目标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RewriteTarget",
           "name": "RewriteTarget",
           "required": true,
@@ -8308,6 +8345,7 @@
         {
           "default": "",
           "document": "是否开启gzip",
+          "example": "无",
           "member": "bool",
           "name": "HttpGzip",
           "required": true,
@@ -8317,6 +8355,7 @@
         {
           "default": "",
           "document": "转发规则是否为自动创建",
+          "example": "无",
           "member": "bool",
           "name": "BeAutoCreated",
           "required": true,
@@ -8326,6 +8365,7 @@
         {
           "default": "",
           "document": "是否作为默认域名",
+          "example": "无",
           "member": "bool",
           "name": "DefaultServer",
           "required": true,
@@ -8335,6 +8375,7 @@
         {
           "default": "",
           "document": "是否开启Http2",
+          "example": "无",
           "member": "bool",
           "name": "Http2",
           "required": true,
@@ -8344,6 +8385,7 @@
         {
           "default": "",
           "document": "负载均衡与后端服务之间的转发协议",
+          "example": "无",
           "member": "string",
           "name": "ForwardType",
           "required": true,
@@ -8353,6 +8395,7 @@
         {
           "default": "",
           "document": "转发规则的创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8362,6 +8405,7 @@
         {
           "default": "",
           "document": "后端服务器类型",
+          "example": "无",
           "member": "string",
           "name": "TargetType",
           "required": true,
@@ -8371,6 +8415,7 @@
         {
           "default": "",
           "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
           "required": true,
@@ -8380,6 +8425,7 @@
         {
           "default": "",
           "document": "WAF实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "WafDomainId",
           "required": true,
@@ -8389,6 +8435,7 @@
         {
           "default": "",
           "document": "TRPC被调服务器路由，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TrpcCallee",
           "required": true,
@@ -8398,6 +8445,7 @@
         {
           "default": "",
           "document": "TRPC调用服务接口，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TrpcFunc",
           "required": true,
@@ -8407,10 +8455,21 @@
         {
           "default": "",
           "document": "QUIC状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "QuicStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

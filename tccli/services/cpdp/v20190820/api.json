@@ -8005,7 +8005,7 @@
       "members": [
         {
           "default": "",
-          "document": "开票平台ID",
+          "document": "开票平台ID\n0 : 高灯\n1 : 票易通",
           "example": "1",
           "member": "int64",
           "name": "InvoicePlatformId",
@@ -8159,7 +8159,7 @@
       "members": [
         {
           "default": "",
-          "document": "开票平台ID",
+          "document": "开票平台ID\n0 : 高灯\n1 : 票易通",
           "example": "1",
           "member": "int64",
           "name": "InvoicePlatformId",
@@ -15261,7 +15261,7 @@
       "members": [
         {
           "default": "",
-          "document": "开票平台ID",
+          "document": "开票平台ID\n0 : 高灯\n1 : 票易通",
           "example": "1",
           "member": "int64",
           "name": "InvoicePlatformId",
@@ -15539,7 +15539,7 @@
       "members": [
         {
           "default": "",
-          "document": "开票平台ID",
+          "document": "开票平台ID\n0 : 高灯\n1 : 票易通",
           "example": "1",
           "member": "int64",
           "name": "InvoicePlatformId",
@@ -23974,6 +23974,7 @@
         {
           "default": "",
           "document": "平台渠道",
+          "example": "1",
           "member": "int64",
           "name": "Channel",
           "required": true,
@@ -23982,6 +23983,7 @@
         {
           "default": "",
           "document": "完税ID",
+          "example": "tax-xxx",
           "member": "string",
           "name": "TaxId",
           "required": true,
@@ -23990,6 +23992,7 @@
         {
           "default": "",
           "document": "完税列表下载地址",
+          "example": "http://cos.qcloud.com/tax.xlsx",
           "member": "string",
           "name": "FileUrl",
           "required": true,

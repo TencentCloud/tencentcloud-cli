@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddSubStructureTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSubStructureTasks\n<公共请求参数>\n\n{\n    \"MainTaskId\": \"Mstiljhgwglc\",\n    \"TaskInfos\": [\n        {\n            \"TaskType\": \"MedCheckReport\",\n            \"CustomerId\": \"1\",\n            \"CustomerName\": \"小明\",\n            \"FileList\": [\n                \"xxx.jpg\",\n                \"yyy.jpg\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"SubTaskIds\": [\n            \"Sr595vgwutc1\",\n            \"Sr5fb7zin9xd\"\n        ]\n    }\n}",
+        "title": "获取报告分类结果"
+      }
+    ],
     "CreateAutoClassifyStructureTask": [
       {
         "document": "",
@@ -32,6 +40,14 @@
         "title": "查询机器核保任务数据示例"
       }
     ],
+    "DescribeReportClassify": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReportClassify\n<公共请求参数>\n\n{\n    \"ServiceType\": \"Structured\",\n    \"FileList\": [\n        \"700000198392/original_upload_dir/700000198392_b0a3da0c-af75-464f-b202-f49c7127c012.pdf\",\n        \"700000198392/original_upload_dir/700000198392_6622637e-4da0-11ec-b930-525400f962860_rh95vodxdkw.jpg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"Reports\": [\n            {\n                \"ReportType\": \"HealthReport\",\n                \"FileList\": [\n                    \"700000198392/original_upload_dir/700000198392_b0a3da0c-af75-464f-b202-f49c7127c012.pdf\"\n                ]\n            },\n            {\n                \"ReportType\": \"MedCheckReport\",\n                \"FileList\": [\n                    \"700000198392/original_upload_dir/700000198392_6622637e-4da0-11ec-b930-525400f962860_rh95vodxdkw.jpg\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取报告分类结果"
+      }
+    ],
     "DescribeStructCompareData": [
       {
         "document": "",
@@ -62,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructureTaskResult\n<公共请求参数>\n\n{\n    \"MainTaskId\": \"37835597617481728\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"Status\": \"0\",\n        \"Results\": [\n            {\n                \"Quality\": 0.72,\n                \"StructureResult\": \"xxxxxx\"\n            }\n        ]\n    }\n}",
         "title": "获取结构化结果接口示例"
+      }
+    ],
+    "DescribeUnderwriteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnderwriteTask\n<公共请求参数>\n\n{\n    \"UnderwriteTaskId\": \"3456234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubAccountUin\": \"xx\",\n        \"Status\": 1,\n        \"RequestId\": \"xx\",\n        \"Uin\": \"xx\",\n        \"UnderwriteResults\": [\n            {\n                \"ManualDetail\": {\n                    \"Explanation\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Conclusion\": \"xx\"\n                },\n                \"ReviewTime\": \"xx\",\n                \"Results\": {\n                    \"InsuranceType\": \"xx\",\n                    \"Result\": [\n                        {\n                            \"Laboratory\": [\n                                {\n                                    \"Name\": \"xx\",\n                                    \"Value\": \"xx\",\n                                    \"Result\": \"xx\"\n                                }\n                            ],\n                            \"Explanation\": [\n                                {\n                                    \"Name\": \"xx\",\n                                    \"Value\": \"xx\",\n                                    \"Result\": \"xx\"\n                                }\n                            ],\n                            \"Conclusion\": \"xx\",\n                            \"Disease\": [\n                                {\n                                    \"Name\": \"xx\",\n                                    \"Value\": \"xx\",\n                                    \"Result\": \"xx\"\n                                }\n                            ],\n                            \"Title\": \"xx\"\n                        }\n                    ]\n                },\n                \"CustomerName\": \"xx\",\n                \"CustomerId\": \"xx\"\n            }\n        ],\n        \"PolicyId\": \"xx\",\n        \"MainTaskId\": \"xx\",\n        \"UnderwriteTaskId\": \"xx\"\n    }\n}",
+        "title": "查询核保任务数据示例"
       }
     ],
     "UploadMedicalFile": [

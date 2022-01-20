@@ -115,10 +115,16 @@
       "output": "ListTargetsResponse"
     },
     "PublishEvent": {
-      "document": "用于Event事件投递",
+      "document": "（已废弃）用于Event事件投递",
       "input": "PublishEventRequest",
       "name": "Event事件投递",
       "output": "PublishEventResponse"
+    },
+    "PutEvents": {
+      "document": "用于Event事件投递",
+      "input": "PutEventsRequest",
+      "name": "事件投递",
+      "output": "PutEventsResponse"
     },
     "UpdateConnection": {
       "document": "更新事件连接器",
@@ -1851,6 +1857,42 @@
     },
     "PublishEventResponse": {
       "document": "PublishEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEventsRequest": {
+      "document": "PutEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件列表",
+          "example": "EventList",
+          "member": "Event",
+          "name": "EventList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "EventBusId",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEventsResponse": {
+      "document": "PutEvents返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

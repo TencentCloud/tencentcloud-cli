@@ -928,6 +928,14 @@
         "title": "开通实例外网访问"
       }
     ],
+    "QueryCDBProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyGroup\": [\n            {\n                \"Address\": [\n                    {\n                        \"Desc\": \"\",\n                        \"UniqSubnet\": \"subnet-test\",\n                        \"UniqVpcId\": \"vpc-test\",\n                        \"VPort\": 3306,\n                        \"Vip\": \"172.16.48.49\"\n                    }\n                ],\n                \"BaseGroup\": {\n                    \"CurrentProxyVersion\": \"1.0.1\",\n                    \"NodeCount\": 2,\n                    \"OpenRW\": false,\n                    \"ProxyGroupId\": \"proxy-test\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"Status\": \"online\",\n                    \"SupportUpgradeProxyVersion\": \"1.0.1\",\n                    \"Zone\": \"ap-guangzhou-6\"\n                },\n                \"ConnectionPoolInfo\": {\n                    \"ConnectionPool\": false,\n                    \"ConnectionPoolType\": \"\",\n                    \"PoolConnectionTimeOut\": 0\n                },\n                \"ProxyNode\": [\n                    {\n                        \"ProxyNodeConnections\": 2,\n                        \"ProxyNodeId\": \"proxynode-test\",\n                        \"ProxyStatus\": \"online\"\n                    },\n                    {\n                        \"ProxyNodeConnections\": 2,\n                        \"ProxyNodeId\": \"proxynode-test\",\n                        \"ProxyStatus\": \"online\"\n                    }\n                ],\n                \"RWInstInfo\": {\n                    \"AutoAddRo\": false,\n                    \"FailOver\": false,\n                    \"InstCount\": 0,\n                    \"IsKickOut\": false,\n                    \"MaxDelay\": 0,\n                    \"MinCount\": 0,\n                    \"RWInstInfo\": [],\n                    \"WeightMode\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"733f71d8-6c3a-419e-830f-4471c5bc2791\"\n    }\n}",
+        "title": "查询代理详情"
+      }
+    ],
     "ReleaseIsolatedDBInstances": [
       {
         "document": "",

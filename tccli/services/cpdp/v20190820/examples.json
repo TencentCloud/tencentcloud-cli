@@ -857,7 +857,7 @@
     "QueryTransferResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTransferResult\n<公共请求参数>\n\n{\n    \"OrderId\": \"xx\",\n    \"MerchantId\": \"xx\",\n    \"TransferType\": 0,\n    \"TradeSerialNo\": \"xx\",\n    \"MerchantAppId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTransferResult\n<公共请求参数>\n\n{\n    \"OrderId\": \"xx\",\n    \"MerchantId\": \"xx\",\n    \"TransferType\": 1,\n    \"TradeSerialNo\": \"xx\",\n    \"MerchantAppId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"OrderId\": \"xx\",\n            \"Remark\": \"xx\",\n            \"TradeStatus\": 0,\n            \"TradeSerialNo\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "QueryTransferResult"
       }

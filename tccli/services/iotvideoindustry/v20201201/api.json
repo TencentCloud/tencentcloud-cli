@@ -4662,7 +4662,7 @@
         },
         {
           "default": "",
-          "document": "通道唯一标识",
+          "document": "通道唯一标识（此接口升级为必填字段）",
           "example": "34020000001180000036_34020000001320000092",
           "member": "string",
           "name": "ChannelId",
@@ -5925,7 +5925,7 @@
         },
         {
           "default": "",
-          "document": "通道唯一标识",
+          "document": "通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填",
           "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "ChannelId",
@@ -6175,7 +6175,7 @@
         },
         {
           "default": "",
-          "document": "通道唯一标识",
+          "document": "通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填",
           "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "ChannelId",

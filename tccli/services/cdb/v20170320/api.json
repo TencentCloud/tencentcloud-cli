@@ -678,6 +678,12 @@
       "name": "开通实例外网访问",
       "output": "OpenWanServiceResponse"
     },
+    "QueryCDBProxy": {
+      "document": "查询代理详情",
+      "input": "QueryCDBProxyRequest",
+      "name": "查询代理详情",
+      "output": "QueryCDBProxyResponse"
+    },
     "ReleaseIsolatedDBInstances": {
       "document": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。",
       "input": "ReleaseIsolatedDBInstancesRequest",
@@ -11501,6 +11507,62 @@
       ],
       "usage": "out"
     },
+    "ProxyGroups": {
+      "document": "数据代理组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代理基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseGroupInfo",
+          "name": "BaseGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Address",
+          "name": "Address",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理连接池信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConnectionPoolInfo",
+          "name": "ConnectionPoolInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyNodeInfo",
+          "name": "ProxyNode",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RWInfos",
+          "name": "RWInstInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ProxyNodeInfo": {
       "document": "代理节点信息",
       "members": [
@@ -11556,6 +11618,60 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryCDBProxyRequest": {
+      "document": "QueryCDBProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCDBProxyResponse": {
+      "document": "QueryCDBProxy返回参数结构体",
+      "members": [
+        {
+          "document": "代理数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "代理信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProxyGroups",
+          "name": "ProxyGroup",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RWInfo": {
       "document": "proxy读写分离信息",
@@ -11638,6 +11754,92 @@
           "name": "RWInstInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RWInfos": {
+      "document": "proxy读写分离信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代理实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权重分配模式；\n系统自动分配：\"system\"， 自定义：\"custom\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "system",
+          "member": "string",
+          "name": "WeightMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启延迟剔除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsKickOut",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最小保留数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "MinCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "延迟剔除阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxDelay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启故障转移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "FailOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动添加RO\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoAddRo",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代理实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "RWInstanceInfo",
+          "name": "RWInstInfo",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

@@ -203,8 +203,8 @@
     "CreateTaskFlow": [
       {
         "document": "创建工作流",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateTaskFlow\n&FlowName=exec-6g4rq8z6\n&TriggerRule={}\n&FlowEdges=[]\n&TimeOut=3000\n&<公共请求参数>",
-        "output": "{\r\n    \"Reponse\": {\r\n        \"Result\": \"flow-kw2sk8\" \r\n    }\r\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFlow\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"ProgramIdList\": [\n        \"xx\"\n    ],\n    \"TriggerRule\": {\n        \"RepeatInterval\": 1,\n        \"RuleType\": \"xx\",\n        \"Expression\": \"xx\"\n    },\n    \"TimeOut\": 1,\n    \"FlowEdges\": [\n        {\n            \"PositionX\": \"xx\",\n            \"PositionY\": \"xx\",\n            \"NodeType\": \"xx\",\n            \"NodeName\": \"xx\",\n            \"EdgeType\": \"xx\",\n            \"NodeId\": \"xx\",\n            \"ChildNodeId\": \"xx\",\n            \"CoreNode\": \"xx\",\n            \"FlowId\": \"xx\",\n            \"TaskLogId\": \"xx\",\n            \"TaskId\": \"xx\",\n            \"GraphId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建工作流"
       }
     ],

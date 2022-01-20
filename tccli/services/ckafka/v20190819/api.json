@@ -2797,7 +2797,7 @@
         },
         {
           "default": "",
-          "document": "按照实例ID过滤",
+          "document": "已经废弃， 使用InstanceIdList",
           "example": "[instance-will-s]",
           "member": "string",
           "name": "InstanceIds",

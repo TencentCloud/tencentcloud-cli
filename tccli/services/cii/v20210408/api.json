@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddSubStructureTasks": {
+      "document": "中银三星需求，基于主任务批量添加结构化子任务",
+      "input": "AddSubStructureTasksRequest",
+      "name": "结构化增量子任务",
+      "output": "AddSubStructureTasksResponse"
+    },
     "CreateAutoClassifyStructureTask": {
       "document": "本接口(CreateAutoClassifyStructureTask)基于提供的客户及保单信息，创建并启动结构化识别任务。",
       "input": "CreateAutoClassifyStructureTaskRequest",
@@ -23,6 +29,12 @@
       "input": "DescribeMachineUnderwriteRequest",
       "name": "查询机器核保任务数据",
       "output": "DescribeMachineUnderwriteResponse"
+    },
+    "DescribeReportClassify": {
+      "document": "saas页面集成了自动分类功能，该接口提供自动分类结果",
+      "input": "DescribeReportClassifyRequest",
+      "name": "报告自动分类",
+      "output": "DescribeReportClassifyResponse"
     },
     "DescribeStructCompareData": {
       "document": "结构化对比查询接口，对比结构化复核前后数据差异，查询识别正确率，召回率。",
@@ -48,6 +60,12 @@
       "name": "获取结构化结果接口",
       "output": "DescribeStructureTaskResultResponse"
     },
+    "DescribeUnderwriteTask": {
+      "document": "本接口(DescribeUnderwriteTask)用于查询核保任务结果",
+      "input": "DescribeUnderwriteTaskRequest",
+      "name": "查询核保任务数据",
+      "output": "DescribeUnderwriteTaskResponse"
+    },
     "UploadMedicalFile": {
       "document": "上传医疗影像文件，可以用来做结构化。",
       "input": "UploadMedicalFileRequest",
@@ -62,6 +80,77 @@
     "serviceShortName": "cii"
   },
   "objects": {
+    "AddSubStructureTasksRequest": {
+      "document": "AddSubStructureTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "主任务id",
+          "example": "Mr595vgwutc0",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子任务信息数组",
+          "example": "无",
+          "member": "CreateStructureTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSubStructureTasksResponse": {
+      "document": "AddSubStructureTasks返回参数结构体",
+      "members": [
+        {
+          "document": "增量子任务id数组",
+          "example": "无",
+          "member": "string",
+          "name": "SubTaskIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClassifiedReports": {
+      "document": "报告分类结果",
+      "members": [
+        {
+          "default": "",
+          "document": "报告类型",
+          "example": "AdmissionReport",
+          "member": "string",
+          "name": "ReportType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件列表",
+          "example": "[\"xxxx/xx.jpg\", \"xxxx/xx.jpg\"]",
+          "member": "string",
+          "name": "FileList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClassifyInfo": {
       "document": "报告分类信息",
       "members": [
@@ -603,6 +692,51 @@
       ],
       "type": "object"
     },
+    "DescribeReportClassifyRequest": {
+      "document": "DescribeReportClassify请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务类型（Structured/Underwrite）",
+          "example": "Structured",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件地址数组",
+          "example": "[\"xxxx/xx.jpg\", \"xxxx/xx.jpg\"]",
+          "member": "string",
+          "name": "FileList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReportClassifyResponse": {
+      "document": "DescribeReportClassify返回参数结构体",
+      "members": [
+        {
+          "document": "报告分类结果",
+          "example": "无",
+          "member": "ClassifiedReports",
+          "name": "Reports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStructCompareDataRequest": {
       "document": "DescribeStructCompareData请求参数结构体",
       "members": [
@@ -908,6 +1042,96 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnderwriteTaskRequest": {
+      "document": "DescribeUnderwriteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "u-task-1",
+          "member": "string",
+          "name": "UnderwriteTaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnderwriteTaskResponse": {
+      "document": "DescribeUnderwriteTask返回参数结构体",
+      "members": [
+        {
+          "document": "腾讯云主账号ID",
+          "example": "100000000123",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "操作人子账户ID",
+          "example": "100000000123",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "保单ID",
+          "example": "id-123456",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主任务ID",
+          "example": "Malksjdkjl234",
+          "member": "string",
+          "name": "MainTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核保任务ID",
+          "example": "U23slkd",
+          "member": "string",
+          "name": "UnderwriteTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "核保结果",
+          "example": "无",
+          "member": "UnderwriteOutput",
+          "name": "UnderwriteResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1282,6 +1506,42 @@
       ],
       "usage": "out"
     },
+    "UnderwriteConclusion": {
+      "document": "核保结论 机器结论和人工结论统一数据结构",
+      "members": [
+        {
+          "default": "",
+          "document": "类型",
+          "example": "CriticalDiseaseInsurance",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结论",
+          "example": "Accept",
+          "member": "string",
+          "name": "Conclusion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解释",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "Explanation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UnderwriteItem": {
       "document": "机器核保结论子项",
       "members": [
@@ -1313,6 +1573,62 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnderwriteOutput": {
+      "document": "核保结果输出",
+      "members": [
+        {
+          "default": "",
+          "document": "客户ID",
+          "example": "user123",
+          "member": "string",
+          "name": "CustomerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户姓名",
+          "example": "xingming",
+          "member": "string",
+          "name": "CustomerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结果",
+          "example": "无",
+          "member": "InsuranceResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复核时间",
+          "example": "1970-01-01 00:00:00",
+          "member": "string",
+          "name": "ReviewTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人工复核结果",
+          "example": "无",
+          "member": "UnderwriteConclusion",
+          "name": "ManualDetail",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

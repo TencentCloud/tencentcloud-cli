@@ -1096,11 +1096,12 @@
       "usage": "out"
     },
     "AttachedUserPolicyGroupInfo": {
-      "document": "用户关联策略(随组管理)信息",
+      "document": "用户关联策略(随组关联)信息",
       "members": [
         {
           "default": "",
           "document": "分组ID",
+          "example": "10012",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
@@ -1110,6 +1111,7 @@
         {
           "default": "",
           "document": "分组名称",
+          "example": "group_one",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1355,6 +1357,7 @@
         {
           "default": "",
           "document": "SAML身份提供商名称",
+          "example": "testName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1363,6 +1366,7 @@
         {
           "default": "",
           "document": "SAML身份提供商描述",
+          "example": "testProvider",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1371,6 +1375,7 @@
         {
           "default": "",
           "document": "SAML身份提供商Base64编码的元数据文档",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48bWQ6RW50aXR5RGVzY3JpcHRvciBlbnRpdHlJRD0iaHR0cDovL3d3dy5va3RhLmNvbS9leGsxa3F4bWNqUW1HQURNeTM1NyIgeG1sbnM6bWQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDptZXRhZGF0YSI%2BPG1kOklEUFNTT0Rlc2NyaXB0b3IgV2FudEF1dGhuUmVxdWVzdHNTaWduZWQ9ImZhbHNlIiBwcm90b2NvbFN1cHBvcnRFbnVtZXJhdGlvbj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnB%3D%3D",
           "member": "string",
           "name": "SAMLMetadataDocument",
           "required": true,
@@ -1384,8 +1389,10 @@
       "members": [
         {
           "document": "SAML身份提供商资源描述符",
+          "example": "testProviderArn",
           "member": "string",
           "name": "ProviderArn",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1986,7 +1993,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态：0:未设置，11:已开启，2:已禁用",
+          "document": "状态：0:未设置，1:已开启，2:已禁用",
           "example": "11",
           "member": "uint64",
           "name": "Status",
@@ -2381,6 +2388,7 @@
         {
           "default": "",
           "document": "策略ID",
+          "example": "17698703",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -2388,7 +2396,8 @@
         },
         {
           "default": "",
-          "document": "策略版本号",
+          "document": "策略版本号，可由ListPolicyVersions获取",
+          "example": "2",
           "member": "uint64",
           "name": "VersionId",
           "required": true,
@@ -2402,8 +2411,10 @@
       "members": [
         {
           "document": "策略版本详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PolicyVersionDetail",
           "name": "PolicyVersion",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2483,6 +2494,7 @@
         {
           "default": "",
           "document": "角色 ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "4611686018427844696",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -2491,6 +2503,7 @@
         {
           "default": "",
           "document": "角色名，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "QCSRole",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -2504,8 +2517,10 @@
       "members": [
         {
           "document": "角色详情",
+          "example": "无",
           "member": "RoleInfo",
           "name": "RoleInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2524,6 +2539,7 @@
         {
           "default": "",
           "document": "SAML身份提供商名称",
+          "example": "okta",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2537,36 +2553,46 @@
       "members": [
         {
           "document": "SAML身份提供商名称",
+          "example": "okta",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "SAML身份提供商描述",
+          "example": "okta",
           "member": "string",
           "name": "Description",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "SAML身份提供商创建时间",
+          "example": "2018-09-17 17:18:03",
           "member": "datetime",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "SAML身份提供商上次修改时间",
+          "example": "2018-09-17 17:18:03",
           "member": "datetime",
           "name": "ModifyTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "SAML身份提供商元数据文档",
+          "example": "U0FNTE1ldGFkYXRh",
           "member": "string",
           "name": "SAMLMetadata",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2736,6 +2762,7 @@
         {
           "default": "",
           "document": "子用户用户名",
+          "example": "test124",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2749,57 +2776,73 @@
       "members": [
         {
           "document": "子用户用户 UIN",
+          "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "子用户用户名",
+          "example": "test124",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "子用户 UID",
+          "example": "1001774",
           "member": "uint64",
           "name": "Uid",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "子用户备注",
+          "document": "子用户备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "document": "子用户能否登录控制台",
+          "document": "子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "手机号",
+          "example": "10086",
           "member": "string",
           "name": "PhoneNum",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "区号",
+          "example": "86",
           "member": "string",
           "name": "CountryCode",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "邮箱",
+          "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2896,6 +2939,7 @@
         {
           "default": "",
           "document": "子用户 Uid。",
+          "example": "100000001",
           "member": "uint64",
           "name": "Uid",
           "required": true,
@@ -2905,6 +2949,7 @@
         {
           "default": "",
           "document": "子用户 Uin。",
+          "example": "100000001",
           "member": "uint64",
           "name": "Uin",
           "required": true,
@@ -2914,6 +2959,7 @@
         {
           "default": "",
           "document": "子用户名称。",
+          "example": "userName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2923,6 +2969,7 @@
         {
           "default": "",
           "document": "手机号。",
+          "example": "13600000001",
           "member": "string",
           "name": "PhoneNum",
           "required": true,
@@ -2932,6 +2979,7 @@
         {
           "default": "",
           "document": "手机区域代码。",
+          "example": "86",
           "member": "string",
           "name": "CountryCode",
           "required": true,
@@ -2940,7 +2988,8 @@
         },
         {
           "default": "",
-          "document": "是否已验证手机。",
+          "document": "是否已验证手机。0-未验证  1-验证",
+          "example": "0",
           "member": "uint64",
           "name": "PhoneFlag",
           "required": true,
@@ -2950,6 +2999,7 @@
         {
           "default": "",
           "document": "邮箱地址。",
+          "example": "email@qq.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -2958,7 +3008,8 @@
         },
         {
           "default": "",
-          "document": "是否已验证邮箱。",
+          "document": "是否已验证邮箱。0-未验证  1-验证",
+          "example": "1",
           "member": "uint64",
           "name": "EmailFlag",
           "required": true,
@@ -2967,7 +3018,8 @@
         },
         {
           "default": "",
-          "document": "用户类型。",
+          "document": "用户类型。1-全局协作者 2-项目协作者 3-消息接收者",
+          "example": "1",
           "member": "uint64",
           "name": "UserType",
           "required": true,
@@ -2977,6 +3029,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2021-11-11 19:38:01",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -2985,7 +3038,8 @@
         },
         {
           "default": "",
-          "document": "是否为主消息接收人。",
+          "document": "是否为主消息接收人。0-否 1-是",
+          "example": "1",
           "member": "uint64",
           "name": "IsReceiverOwner",
           "required": true,
@@ -3345,6 +3399,7 @@
         {
           "default": "",
           "document": "分页条数，缺省为20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3353,6 +3408,7 @@
         {
           "default": "",
           "document": "分页起始值，缺省为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3366,15 +3422,19 @@
       "members": [
         {
           "document": "总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "协作者信息",
+          "example": "无",
           "member": "SubAccountInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3393,6 +3453,7 @@
         {
           "default": "",
           "document": "策略 id",
+          "example": "524497",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -3401,6 +3462,7 @@
         {
           "default": "",
           "document": "页码，默认值是 1，从 1 开始",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -3409,6 +3471,7 @@
         {
           "default": "",
           "document": "每页大小，默认值是 20",
+          "example": "10",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -3417,6 +3480,7 @@
         {
           "default": "",
           "document": "可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'",
+          "example": "All",
           "member": "string",
           "name": "EntityFilter",
           "required": false,
@@ -3430,15 +3494,19 @@
       "members": [
         {
           "document": "实体总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AttachEntityOfPolicy",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3969,8 +4037,10 @@
       "members": [
         {
           "document": "子用户信息",
+          "example": "无",
           "member": "SubAccountInfo",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4590,6 +4660,7 @@
         {
           "default": "",
           "document": "策略ID",
+          "example": "17698703",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -4597,7 +4668,8 @@
         },
         {
           "default": "",
-          "document": "策略版本号",
+          "document": "策略版本号，可由ListPolicyVersions获取",
+          "example": "1",
           "member": "uint64",
           "name": "VersionId",
           "required": true,
@@ -5144,6 +5216,7 @@
         {
           "default": "",
           "document": "是否可登录，可登录：1，不可登录：0",
+          "example": "1",
           "member": "int64",
           "name": "ConsoleLogin",
           "required": true,
@@ -5151,7 +5224,8 @@
         },
         {
           "default": "",
-          "document": "角色ID",
+          "document": "角色ID，入参 RoleId 与 RoleName 二选一",
+          "example": "10000000947212312",
           "member": "int64",
           "name": "RoleId",
           "required": false,
@@ -5159,7 +5233,8 @@
         },
         {
           "default": "",
-          "document": "角色名",
+          "document": "角色名，入参 RoleId 与 RoleName 二选一",
+          "example": "RoleNameConsole",
           "member": "string",
           "name": "RoleName",
           "required": false,

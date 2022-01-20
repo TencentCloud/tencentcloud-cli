@@ -958,6 +958,15 @@
           "name": "ZoneList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "健康状态筛列表",
+          "example": "无",
+          "member": "int64",
+          "name": "HealthStatus",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1965,6 +1974,16 @@
           "example": "100",
           "member": "uint64",
           "name": "FrozenDiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "HealthStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true
