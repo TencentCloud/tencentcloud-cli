@@ -147,7 +147,7 @@
     "DescribeImageSharePermission": [
       {
         "document": "查看镜像img-6pb6lrmy的分享信息。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImageSharePermission\r\n&ImageId=img-6pb6lrmy\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImageSharePermission\n&ImageId=img-6pb6lrmy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SharePermissionSet\": [\n            {\n                \"CreatedTime\": \"2018-06-10T11:02:50Z\",\n                \"AccountId\": \"101104350000\"\n            },\n            {\n                \"CreatedTime\": \"2018-06-13T15:03:25Z\",\n                \"AccountId\": \"101104350001\"\n            }\n        ],\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "查看指定镜像的分享信息"
       }
@@ -471,7 +471,7 @@
     "ModifyImageAttribute": [
       {
         "document": "修改镜像img-6pb6lrmy的名称为sample",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageAttribute\r\n&ImageId=img-6pb6lrmy\r\n&ImageName=sample\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageAttribute\n&ImageId=img-6pb6lrmy\n&ImageName=sample\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "修改镜像名称"
       }
@@ -479,7 +479,7 @@
     "ModifyImageSharePermission": [
       {
         "document": "共享镜像img-6pb6lrmy给账户1038493875",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageSharePermission\r\n&ImageId=img-6pb6lrmy\r\n&AccountIds.0=1038493875\r\n&Permission=SHARE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageSharePermission\n&ImageId=img-6pb6lrmy\n&AccountIds.0=1038493875\n&Permission=SHARE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "共享镜像"
       }

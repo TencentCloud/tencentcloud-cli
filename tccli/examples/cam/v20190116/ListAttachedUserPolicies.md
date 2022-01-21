@@ -17,15 +17,21 @@ Output:
     "Response": {
         "List": [
             {
-                "PolicyId": 1,
-                "PolicyName": "AdministratorAccess",
-                "AddTime": "2018-04-09 16:31:19",
-                "CreateMode": 2,
-                "PolicyType": "User"
+                "PolicyId": 109360057,
+                "PolicyName": "test-0103",
+                "AddTime": "2022-01-03 10:38:28",
+                "CreateMode": 3,
+                "Remark": "",
+                "OperateOwnerUin": null,
+                "OperateUin": null,
+                "OperateUinType": null,
+                "PolicyType": "",
+                "Deactived": 0,
+                "DeactivedDetail": []
             }
         ],
         "TotalNum": 1,
-        "RequestId": "836d7034-9854-44f0-9d4a-ee57842f8644"
+        "RequestId": "db1cdf3f-9b1a-47c5-88b3-c49089aaa811"
     }
 }
 ```

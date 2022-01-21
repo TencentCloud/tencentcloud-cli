@@ -191,6 +191,24 @@
       "input": "PhoneVerificationRequest",
       "name": "手机号三要素核验",
       "output": "PhoneVerificationResponse"
+    },
+    "PhoneVerificationCMCC": {
+      "document": "本接口用于校验中国移动手机号、姓名和身份证号的真实性和一致性。中国移动支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCMCCRequest",
+      "name": "手机号三要素核验（移动）",
+      "output": "PhoneVerificationCMCCResponse"
+    },
+    "PhoneVerificationCTCC": {
+      "document": "本接口用于校验中国电信手机号、姓名和身份证号的真实性和一致性。中国电信支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCTCCRequest",
+      "name": "手机号三要素核验（电信）",
+      "output": "PhoneVerificationCTCCResponse"
+    },
+    "PhoneVerificationCUCC": {
+      "document": "本接口用于校验中国联通手机号、姓名和身份证号的真实性和一致性。中国联通支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCUCCRequest",
+      "name": "手机号三要素核验（联通）",
+      "output": "PhoneVerificationCUCCResponse"
     }
   },
   "metadata": {
@@ -3495,6 +3513,249 @@
           "name": "StatusCode",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCMCCRequest": {
+      "document": "PhoneVerificationCMCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCMCCResponse": {
+      "document": "PhoneVerificationCMCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "移动",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCTCCRequest": {
+      "document": "PhoneVerificationCTCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCTCCResponse": {
+      "document": "PhoneVerificationCTCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "比对一致",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCUCCRequest": {
+      "document": "PhoneVerificationCUCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCUCCResponse": {
+      "document": "PhoneVerificationCUCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "联通",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "比对一致",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

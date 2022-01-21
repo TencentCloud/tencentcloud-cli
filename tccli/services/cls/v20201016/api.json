@@ -2662,7 +2662,7 @@
         },
         {
           "default": "",
-          "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS",
+          "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
           "name": "BTime",

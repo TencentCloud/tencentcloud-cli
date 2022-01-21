@@ -399,7 +399,7 @@
     "UpdatePolicy": {
       "document": "本接口（UpdatePolicy ）可用于更新策略。\n如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。",
       "input": "UpdatePolicyRequest",
-      "name": "更新策略",
+      "name": "更新策略信息",
       "output": "UpdatePolicyResponse"
     },
     "UpdateRoleConsoleLogin": {
@@ -852,6 +852,7 @@
         {
           "default": "",
           "document": "策略ID，入参PolicyId与PolicyName二选一",
+          "example": "1",
           "member": "uint64",
           "name": "PolicyId",
           "required": false,
@@ -860,6 +861,7 @@
         {
           "default": "",
           "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "example": "4611686018427397905",
           "member": "string",
           "name": "AttachRoleId",
           "required": false,
@@ -868,6 +870,7 @@
         {
           "default": "",
           "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "AttachRoleName",
           "required": false,
@@ -876,6 +879,7 @@
         {
           "default": "",
           "document": "策略名，入参PolicyId与PolicyName二选一",
+          "example": "policygen-test",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -902,6 +906,7 @@
         {
           "default": "",
           "document": "策略 id",
+          "example": "524497",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -910,6 +915,7 @@
         {
           "default": "",
           "document": "子账号 uin",
+          "example": "3449203261",
           "member": "uint64",
           "name": "AttachUin",
           "required": true,
@@ -1573,6 +1579,7 @@
         {
           "default": "",
           "document": "角色ID（与角色名至少填一个）",
+          "example": "1234567",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -1581,6 +1588,7 @@
         {
           "default": "",
           "document": "角色名（与角色ID至少填一个）",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -1607,6 +1615,7 @@
         {
           "default": "",
           "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "4611686018427844696",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -1615,6 +1624,7 @@
         {
           "default": "",
           "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -1667,6 +1677,7 @@
         {
           "default": "",
           "document": "要删除的服务相关角色的名称。",
+          "example": "Qcs_Role",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -1680,8 +1691,10 @@
       "members": [
         {
           "document": "删除任务ID，可用于检查删除服务相关角色状态。",
+          "example": "100",
           "member": "string",
           "name": "DeletionTaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2050,6 +2063,7 @@
         {
           "default": "",
           "document": "策略ID，入参PolicyId与PolicyName二选一",
+          "example": "1",
           "member": "uint64",
           "name": "PolicyId",
           "required": false,
@@ -2058,6 +2072,7 @@
         {
           "default": "",
           "document": "角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "example": "4611686018427397905",
           "member": "string",
           "name": "DetachRoleId",
           "required": false,
@@ -2066,6 +2081,7 @@
         {
           "default": "",
           "document": "角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "DetachRoleName",
           "required": false,
@@ -2074,6 +2090,7 @@
         {
           "default": "",
           "document": "策略名，入参PolicyId与PolicyName二选一",
+          "example": "QCS_PolicyName",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -3343,6 +3360,7 @@
         {
           "default": "",
           "document": "子账号 uin",
+          "example": "3449203261",
           "member": "uint64",
           "name": "TargetUin",
           "required": true,
@@ -3351,6 +3369,7 @@
         {
           "default": "",
           "document": "页码，默认值是 1，从 1 开始",
+          "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
@@ -3359,6 +3378,7 @@
         {
           "default": "",
           "document": "每页大小，默认值是 20",
+          "example": "10",
           "member": "uint64",
           "name": "Rp",
           "required": false,
@@ -3372,15 +3392,19 @@
       "members": [
         {
           "document": "策略总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "策略列表",
+          "example": "无",
           "member": "AttachPolicyInfo",
           "name": "List",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4383,6 +4407,7 @@
         {
           "default": "",
           "document": "策略ID",
+          "example": "1234567",
           "member": "int64",
           "name": "PolicyId",
           "required": true,
@@ -4391,6 +4416,7 @@
         {
           "default": "",
           "document": "角色ID（与角色名至少填一个）",
+          "example": "1234567",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -4399,6 +4425,7 @@
         {
           "default": "",
           "document": "角色名（与角色ID至少填一个）",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -5067,6 +5094,7 @@
         {
           "default": "",
           "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
@@ -5075,6 +5103,7 @@
         {
           "default": "",
           "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "4611686018427731422",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -5083,6 +5112,7 @@
         {
           "default": "",
           "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -5151,6 +5181,7 @@
         {
           "default": "",
           "document": "策略ID，与PolicyName二选一必填",
+          "example": "17698703",
           "member": "uint64",
           "name": "PolicyId",
           "required": false,
@@ -5159,6 +5190,7 @@
         {
           "default": "",
           "document": "策略名，与PolicyId二选一必填",
+          "example": "QCS_PolicyName",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -5167,6 +5199,7 @@
         {
           "default": "",
           "document": "策略描述",
+          "example": "Policy_Description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5175,6 +5208,7 @@
         {
           "default": "",
           "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D",
           "member": "string",
           "name": "PolicyDocument",
           "required": false,
@@ -5183,6 +5217,7 @@
         {
           "default": "",
           "document": "预设策略备注",
+          "example": "remark",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -5196,8 +5231,10 @@
       "members": [
         {
           "document": "策略id，入参是PolicyName时，才会返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10041",
           "member": "uint64",
           "name": "PolicyId",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5261,6 +5298,7 @@
         {
           "default": "",
           "document": "角色描述",
+          "example": "abc234",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5269,6 +5307,7 @@
         {
           "default": "",
           "document": "角色ID，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "4611686018427731422",
           "member": "string",
           "name": "RoleId",
           "required": false,
@@ -5277,6 +5316,7 @@
         {
           "default": "",
           "document": "角色名称，用于指定角色，入参 RoleId 与 RoleName 二选一",
+          "example": "QCS_RoleName",
           "member": "string",
           "name": "RoleName",
           "required": false,

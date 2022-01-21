@@ -73,7 +73,7 @@
       "output": "GetEmailTemplateResponse"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询180天之内的数据",
+      "document": "获取邮件发送状态。仅支持查询30天之内的数据",
       "input": "GetSendEmailStatusRequest",
       "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse"

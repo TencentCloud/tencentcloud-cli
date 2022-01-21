@@ -181,7 +181,7 @@
       "output": "InvoiceGeneralOCRResponse"
     },
     "LicensePlateOCR": {
-      "document": "本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号信息。",
+      "document": "本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。",
       "input": "LicensePlateOCRRequest",
       "name": "车牌识别",
       "output": "LicensePlateOCRResponse"
@@ -3675,6 +3675,15 @@
           "name": "Rect",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。",
+          "example": "红",
+          "member": "string",
+          "name": "Color",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

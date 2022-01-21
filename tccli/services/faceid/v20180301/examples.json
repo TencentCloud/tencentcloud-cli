@@ -315,6 +315,30 @@
         "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"Isp\": \"电信\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
         "title": "认证通过示例"
       }
+    ],
+    "PhoneVerificationCMCC": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerificationCMCC\n&IdCard=440111201903211111\n&Name=张三\n&Phone=13000000000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"Isp\": \"移动\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "PhoneVerificationCTCC": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerificationCTCC\n&IdCard=440111201903211111\n&Name=张三\n&Phone=13000000000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"Isp\": \"电信\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "PhoneVerificationCUCC": [
+      {
+        "document": "",
+        "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerificationCUCC\n&IdCard=440111201903211111\n&Name=张三\n&Phone=13000000000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"认证通过\",\n        \"Isp\": \"联通\",\n        \"RequestId\": \"a5fdb909-5ee6-43ff-a152-bb1b9744ee8b\"\n    }\n}",
+        "title": "示例"
+      }
     ]
   },
   "version": "1.0"

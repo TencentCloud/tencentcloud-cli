@@ -27,7 +27,7 @@
     "AttachRolePolicy": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\r\n&PolicyId=1\r\n&AttachRoleId=4611686018427397905\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachRolePolicy\n&PolicyId=1\n&AttachRoleId=4611686018427397905\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b55ef5b-36b1-4649-8bb9-1aca465f17fb\"\n    }\n}",
         "title": "绑定权限策略到角色"
       }
@@ -35,7 +35,7 @@
     "AttachUserPolicy": [
       {
         "document": "绑定策略ID为524497的策略到用户3449203261",
-        "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\r\n&PolicyId=524497\r\n&AttachUin=3449203261\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=AttachUserPolicy\n&PolicyId=524497\n&AttachUin=3449203261\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a21f666-d00e-4df8-92f7-7121f9012e43\"\n    }\n}",
         "title": "绑定策略到用户"
       }
@@ -131,7 +131,7 @@
     "DeleteRole": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\r\n&RoleId=4611686018427844696\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRole\n&RoleId=4611686018427844696\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc9759b5-5345-490e-b276-a3a0dd45004c\"\n    }\n}",
         "title": "删除角色"
       }
@@ -139,7 +139,7 @@
     "DeleteRolePermissionsBoundary": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRolePermissionsBoundary\r\n&RoleId=1234567\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=DeleteRolePermissionsBoundary\n&RoleId=1234567\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "删除角色权限边界"
       }
@@ -235,7 +235,7 @@
     "DetachRolePolicy": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=DetachRolePolicy\r\n&PolicyId=1\r\n&DetachRoleId=4611686018427397905\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=DetachRolePolicy\n&PolicyId=1\n&DetachRoleId=4611686018427397905\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"62c57079-8c81-469a-9112-9c5f2025b0b0\"\n    }\n}",
         "title": "解绑角色的策略"
       }
@@ -385,8 +385,8 @@
     "ListAttachedUserPolicies": [
       {
         "document": "查询绑定到子账号3449203261的策略列表",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\r\n&TargetUin=3449203261\r\n&Page=1\r\n&Rp=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 1,\n                \"PolicyName\": \"AdministratorAccess\",\n                \"AddTime\": \"2018-04-09 16:31:19\",\n                \"CreateMode\": 2,\n                \"PolicyType\": \"User\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\n&TargetUin=3449203261\n&Page=1\n&Rp=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 109360057,\n                \"PolicyName\": \"test-0103\",\n                \"AddTime\": \"2022-01-03 10:38:28\",\n                \"CreateMode\": 3,\n                \"Remark\": \"\",\n                \"OperateOwnerUin\": null,\n                \"OperateUin\": null,\n                \"OperateUinType\": null,\n                \"PolicyType\": \"\",\n                \"Deactived\": 0,\n                \"DeactivedDetail\": []\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"db1cdf3f-9b1a-47c5-88b3-c49089aaa811\"\n    }\n}",
         "title": "查询子账号关联的策略列表"
       }
     ],
@@ -487,7 +487,7 @@
     "PutRolePermissionsBoundary": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=PutRolePermissionsBoundary\r\n&RoleId=1234567\r\n&PolicyId=1234567\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=PutRolePermissionsBoundary\n&RoleId=1234567\n&PolicyId=1234567\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "设置角色权限边界"
       }
@@ -543,8 +543,8 @@
     "UpdatePolicy": [
       {
         "document": "本示例将更新一个策略为允许用户以任何cos的API访问任何cos的资源",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdatePolicy\r\n&PolicyId=17698703\r\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdatePolicy\n&PolicyId=17698703\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 1,\n        \"RequestId\": \"60e60a86-af67-4bbe-8377-7024a0e1d4c7\"\n    }\n}",
         "title": "更新一个策略"
       }
     ],
@@ -559,7 +559,7 @@
     "UpdateRoleDescription": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\r\n&RoleId=4611686018427731422\r\n&Description=abc234\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\n&RoleId=4611686018427731422\n&Description=abc234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\n    }\n}",
         "title": "修改角色描述信息"
       }

@@ -3593,6 +3593,15 @@
           "name": "MetricName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选参数，按照维度过滤",
+          "example": "[\"InstanceId\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

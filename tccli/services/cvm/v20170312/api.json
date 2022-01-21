@@ -952,6 +952,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2042,6 +2051,7 @@
         {
           "default": "",
           "document": "需要共享的镜像Id",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -2055,8 +2065,10 @@
       "members": [
         {
           "document": "镜像共享信息",
+          "example": "无",
           "member": "SharePermission",
           "name": "SharePermissionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2083,7 +2095,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n<li> image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤</li>\n<li> image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\n    PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像) \n    PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\n    SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像) 。</li>\n<li> image-name - String - 是否必填： 否 - （过滤条件）按照镜像名称进行过滤</li>\n<li> platform - String - 是否必填： 否 - （过滤条件）按照镜像平台过滤，如 CentOS</li>",
+          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n\n<li><strong>image-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>image-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p>\n<li><strong>image-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>platform</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如CentOS。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3825,6 +3837,15 @@
           "name": "Force",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6204,6 +6225,7 @@
         {
           "default": "",
           "document": "镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -6212,6 +6234,7 @@
         {
           "default": "",
           "document": "设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。",
+          "example": "sample",
           "member": "string",
           "name": "ImageName",
           "required": false,
@@ -6220,6 +6243,7 @@
         {
           "default": "",
           "document": "设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。",
+          "example": "sample",
           "member": "string",
           "name": "ImageDescription",
           "required": false,
@@ -6246,6 +6270,7 @@
         {
           "default": "",
           "document": "镜像ID，形如`img-gvbnzy6f`。镜像Id可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。 <br>镜像ID必须指定为状态为`NORMAL`的镜像。镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -6254,6 +6279,7 @@
         {
           "default": "",
           "document": "接收分享镜像的账号Id列表，array型参数的格式可以参考[API简介](/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
+          "example": "[\"1038493875\\r\\n\"]",
           "member": "string",
           "name": "AccountIds",
           "required": true,
@@ -6262,6 +6288,7 @@
         {
           "default": "",
           "document": "操作，包括 `SHARE`，`CANCEL`。其中`SHARE`代表分享操作，`CANCEL`代表取消分享操作。",
+          "example": "SHARE",
           "member": "string",
           "name": "Permission",
           "required": true,
