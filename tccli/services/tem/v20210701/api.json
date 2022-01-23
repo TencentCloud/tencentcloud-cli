@@ -965,7 +965,7 @@
         },
         {
           "default": "",
-          "document": "JDK 版本。\n- KONA：使用 kona jdk。\n- OPEN：使用 open jdk。",
+          "document": "JDK 版本。\n- KONA:8：使用 kona jdk 8。\n- OPEN:8：使用 open jdk 8。\n- KONA:11：使用 kona jdk 11。\n- OPEN:11：使用 open jdk 11。",
           "example": "1",
           "member": "string",
           "name": "JdkVersion",
@@ -1133,6 +1133,33 @@
           "name": "LogEnable",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "（除开镜像配置）配置是否修改",
+          "example": "true",
+          "member": "bool",
+          "name": "ConfEdited",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启应用加速",
+          "example": "true",
+          "member": "bool",
+          "name": "SpeedUp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "启动探针配置",
+          "example": "1",
+          "member": "HealthCheckConfig",
+          "name": "StartupProbe",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1349,6 +1376,16 @@
           "example": "200",
           "member": "int64",
           "name": "BatchInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小可用实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinAvailable",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2808,7 +2845,7 @@
       "members": [
         {
           "default": "",
-          "document": "建",
+          "document": "键",
           "example": "1",
           "member": "string",
           "name": "Key",
@@ -2825,6 +2862,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型，default 为自定义，reserved 为系统变量，referenced 为引用配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "configName",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3146,6 +3203,51 @@
           "name": "From",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；",
+          "example": "AUTO",
+          "member": "string",
+          "name": "DeployStrategyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发布批次数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalBatchCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批次间隔时间",
+          "example": "60",
+          "member": "int64",
+          "name": "BatchInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "小批量验证批次的实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "BetaBatchNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "发布过程中保障的最小可用实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinAvailable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3700,6 +3802,16 @@
           "name": "EnableTswTraceService",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境锁，1为上锁，0则为上锁",
+          "example": "1",
+          "member": "int64",
+          "name": "Locked",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

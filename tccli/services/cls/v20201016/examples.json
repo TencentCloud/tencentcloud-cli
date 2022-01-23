@@ -24,22 +24,6 @@
         "title": "创建通知渠道组"
       }
     ],
-    "CreateAsyncContextTask": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAsyncContextTask\n<公共请求参数>\n\n{\n    \"LogsetId\": \"4463e7b0-3ec8-41a1-ae48-5d24b22167c2\",\n    \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n    \"Time\": 1622454759000,\n    \"PkgId\": \"528C1318606EFEB8-1A7\",\n    \"PkgLogId\": \"644564\",\n    \"AsyncSearchTaskId\": \"as-65eff1fb-d552-4603-8966-03703e59188f\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncContextTaskId\": \"ac-49ea31d0-1508-4528-8574-155442d1458a\",\n        \"RequestId\": \"b276cb6e-4687-11eb-b378-0242ac130002\"\n    }\n}",
-        "title": "创建异步上下文任务"
-      }
-    ],
-    "CreateAsyncSearchTask": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAsyncSearchTask\n<公共请求参数>\n\n{\n    \"LogsetId\": \"4463e7b0-3ec8-41a1-ae48-5d24b22167c2\",\n    \"TopicId\": \"f28b17c8-d339-4547-bfff-0953b7901355\",\n    \"From\": 1608794854000,\n    \"To\": 1608794855000,\n    \"Query\": \"ERROR\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b276cb6e-4687-11eb-b378-0242ac130002\"\n    }\n}",
-        "title": "创建异步检索任务"
-      }
-    ],
     "CreateConfig": [
       {
         "document": "",
@@ -118,22 +102,6 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除通知渠道组"
-      }
-    ],
-    "DeleteAsyncContextTask": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAsyncContextTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n    \"AsyncContextTaskId\": \"ac-49ea31d0-1508-4528-8574-155442d1458a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "删除异步上下文任务"
-      }
-    ],
-    "DeleteAsyncSearchTask": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAsyncSearchTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"AsyncSearchTaskId\": \"as-65eff1fb-d552-4603-8966-03703e59188f\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "删除异步检索任务"
       }
     ],
     "DeleteConfig": [
@@ -221,39 +189,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarms\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Alarms\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取通知渠道组列表"
-      }
-    ],
-    "DescribeAsyncContextResult": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncContextResult\n<公共请求参数>\n\n{\n    \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n    \"AsyncContextTaskId\": \"ac-251fb2e2-3ac7-4f7b-827b-ad0cff8a22d2\",\n    \"PkgId\": \"4C581DDA5FC70663-FDA78\",\n    \"PkgLogId\": \"655363\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"PkgId\": \"4C581DDA5FC70663-FDA78\",\n                \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n                \"LogJson\": \"{\\\"content\\\":\\\"test\\\"}\",\n                \"FileName\": \"/root/test/nginx.log\",\n                \"Source\": \"10.0.0.1\",\n                \"Time\": 1608794854001,\n                \"TopicName\": \"nginx-log\",\n                \"PkgLogId\": \"655363\"\n            }\n        ],\n        \"PrevOver\": true,\n        \"NextOver\": true,\n        \"RequestId\": \"b276cb6e-4687-11eb-b378-0242ac130002\"\n    }\n}",
-        "title": "获取异步上下文任务结果"
-      }
-    ],
-    "DescribeAsyncContextTasks": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncContextTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncContextTasks\": [\n            {\n                \"LogsetId\": \"4463e7b0-3ec8-41a1-ae48-5d24b22167c2\",\n                \"TopicId\": \"f28b17c8-d339-4547-bfff-0953b7901355\",\n                \"CreateTime\": 1623225367000,\n                \"FinishTime\": 1623225367000,\n                \"Status\": 1,\n                \"AsyncContextTaskId\": \"ac-251fb2e2-3ac7-4f7b-827b-ad0cff8a22d2\",\n                \"AsyncSearchTaskId\": \"as-60a2e99b-24a5-4bc3-97b3-ffaac2f1c3eb\",\n                \"PkgLogId\": \"644564\",\n                \"Time\": 1620986479000,\n                \"PkgId\": \"528C1318606EFEB8-1A7\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取异步上下文任务列表"
-      }
-    ],
-    "DescribeAsyncSearchResult": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncSearchResult\n<公共请求参数>\n\n{\n    \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n    \"AsyncSearchTaskId\": \"as-65eff1fb-d552-4603-8966-03703e59188f\",\n    \"Limit\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"PkgId\": \"4C581DDA5FC70663-FDA78\",\n                \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n                \"LogJson\": \"{\\\"content\\\":\\\"test\\\"}\",\n                \"FileName\": \"/root/test/nginx.log\",\n                \"Source\": \"10.0.0.1\",\n                \"Time\": 1608794854001,\n                \"TopicName\": \"nginx-log\",\n                \"PkgLogId\": \"655363\"\n            }\n        ],\n        \"ListOver\": true,\n        \"Context\": \"\",\n        \"RequestId\": \"b276cb6e-4687-11eb-b378-0242ac130002\"\n    }\n}",
-        "title": "获取异步检索任务结果"
-      }
-    ],
-    "DescribeAsyncSearchTasks": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncSearchTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncSearchTasks\": [\n            {\n                \"LogsetId\": \"4463e7b0-3ec8-41a1-ae48-5d24b22167c2\",\n                \"TopicId\": \"f28b17c8-d339-4547-bfff-0953b7901355\",\n                \"CreateTime\": \"2021-04-02 08:00:00\",\n                \"Status\": 1,\n                \"AsyncSearchTaskId\": \"as-251fb2e2-3ac7-4f7b-827b-ad0cff8a22d2\",\n                \"Query\": \"ERROR\",\n                \"From\": 1620986479000,\n                \"To\": 1620986480000,\n                \"Sort\": \"asc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取异步检索任务列表"
+        "title": "获取告警策略列表"
       }
     ],
     "DescribeConfigMachineGroups": [
@@ -364,7 +300,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"Status\": true,\n                \"TopicId\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"StorageType\": \"xx\",\n                \"PartitionCount\": 1,\n                \"MaxSplitPartitions\": 0,\n                \"Period\": 0,\n                \"AutoSplit\": true,\n                \"LogsetId\": \"xx\",\n                \"Index\": true,\n                \"CreateTime\": \"xx\",\n                \"TopicName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"Status\": true,\n                \"TopicId\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"StorageType\": \"xx\",\n                \"PartitionCount\": 1,\n                \"MaxSplitPartitions\": 0,\n                \"Period\": 0,\n                \"AutoSplit\": true,\n                \"TopicName\": \"xx\",\n                \"Index\": true,\n                \"CreateTime\": \"xx\",\n                \"LogsetId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取日志主题列表"
       }
     ],
@@ -419,7 +355,7 @@
     "ModifyIndex": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\",\n    \"Rule\": {\n        \"FullText\": {\n            \"CaseSensitive\": false,\n            \"Tokenizer\": \"-=/?\"\n        },\n        \"Tag\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"__TAG__.timestamp\"\n                }\n            ]\n        },\n        \"KeyValue\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"age\"\n                }\n            ]\n        }\n    },\n    \"Status\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\",\n    \"Rule\": {\n        \"FullText\": {\n            \"CaseSensitive\": false,\n            \"Tokenizer\": \"-=/?\"\n        },\n        \"Tag\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"timestamp\"\n                }\n            ]\n        },\n        \"KeyValue\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"age\"\n                }\n            ]\n        }\n    },\n    \"Status\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改索引"
       }

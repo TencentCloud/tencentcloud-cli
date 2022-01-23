@@ -2148,6 +2148,15 @@
           "name": "ErrorTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "[深圳市]",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

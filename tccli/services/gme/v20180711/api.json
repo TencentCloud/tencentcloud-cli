@@ -882,11 +882,20 @@
         },
         {
           "default": "",
-          "document": "房间号列表，最大不能超过10个",
+          "document": "房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
           "example": "[1234, 2345]",
           "member": "uint64",
           "name": "RoomIds",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）",
+          "example": "[\"1234\", \"2345\"]",
+          "member": "string",
+          "name": "StrRoomIds",
+          "required": false,
           "type": "list"
         }
       ],
@@ -1428,6 +1437,16 @@
           "name": "Uins",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字符串房间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1234\"",
+          "member": "string",
+          "name": "StrRoomId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -20,7 +20,10 @@ Output:
             "Description": "abc",
             "AddTime": "2019-07-10 11:22:27",
             "UpdateTime": "2019-07-10 11:22:27",
-            "ConsoleLogin": 0
+            "ConsoleLogin": 0,
+            "RoleType": "system",
+            "SessionDuration": 43200,
+            "DeletionTaskId": "114"
         },
         "RequestId": "87fb9770-0fca-4c5a-b985-1c36b05a95cb"
     }

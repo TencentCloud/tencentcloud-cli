@@ -2114,7 +2114,7 @@
       "members": [
         {
           "default": "",
-          "document": "增加白名单信息，白名单id为空，编辑白名单id不能为空",
+          "document": "增加或编辑白名单信息。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空。",
           "example": "{}",
           "member": "ReverseShellWhiteListInfo",
           "name": "WhiteListInfo",
@@ -2123,7 +2123,7 @@
         },
         {
           "default": "",
-          "document": "仅在添加白名单时候使用",
+          "document": "仅在添加事件白名单时候使用",
           "example": "\"\"",
           "member": "string",
           "name": "EventId",
@@ -4748,12 +4748,39 @@
         },
         {
           "default": "",
-          "document": "扫描的镜像列表Id",
+          "document": "扫描的镜像列表",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "不需要扫描的镜像列表, 与Filters配合使用",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExcludeImageList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否仅扫描各repository最新版的镜像, 与Filters配合使用",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlyScanLatest",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5018,7 +5045,7 @@
       "members": [
         {
           "default": "",
-          "document": "指定要扫描的资产类型列表。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
+          "document": "指定要扫描的资产类型列表。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产\nAssetTypeSet, PolicySetId, PeriodTaskId三个参数，必须要给其中一个参数填写有效的值。",
           "example": "无",
           "member": "string",
           "name": "AssetTypeSet",
@@ -7298,6 +7325,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "主机实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7329,7 +7374,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),\"TENCENTCLOUD\":\"腾讯云服务器\",\"OTHERCLOUD\":\"非腾讯云服务器\"</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),\"TENCENTCLOUD\":\"腾讯云服务器\",\"OTHERCLOUD\":\"非腾讯云服务器\"</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -7991,7 +8036,17 @@
     },
     "DescribeAssetImageRegistryDetailRequest": {
       "document": "DescribeAssetImageRegistryDetail请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "仓库列表id",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeAssetImageRegistryDetailResponse": {
@@ -8011,6 +8066,276 @@
           "example": "无",
           "member": "string",
           "name": "ImageRepoAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "安全漏洞数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VulCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "木马病毒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VirusCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "风险行为数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RiskCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "敏感信息数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SentiveInfoCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "木马扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanVirusError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanVulError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "层文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LayerInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高危扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanRiskError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "木马信息扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanVirusProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "漏洞扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanVulProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "敏感扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanRiskProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余扫描时间秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanRemainTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "cve扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CveStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "高危扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "木马扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VirusStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsAuthorized",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ImageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistryRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "镜像创建的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2019-10-24T14:20:51+0800\"",
+          "member": "datetime_iso",
+          "name": "ImageCreateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -8080,6 +8405,15 @@
           "name": "Order",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否仅展示repository版本最新的镜像，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyShowLatest",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8107,12 +8441,85 @@
     },
     "DescribeAssetImageRegistryListRequest": {
       "document": "DescribeAssetImageRegistryList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤字段\nIsAuthorized是否授权，取值全部all，未授权0，已授权1",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc，desc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否仅展示各repository最新的镜像, 默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyShowLatest",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeAssetImageRegistryListResponse": {
       "document": "DescribeAssetImageRegistryList返回参数结构体",
       "members": [
+        {
+          "document": "镜像仓库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageRepoInfo",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10776,7 +11183,7 @@
       "members": [
         {
           "default": "",
-          "document": "资产类型列表。",
+          "document": "资产类型列表。\nASSET_CONTAINER, 容器\nASSET_IMAGE, 镜像\nASSET_HOST, 主机\nASSET_K8S, K8S资产",
           "example": "ASSET_CONTAINER",
           "member": "string",
           "name": "AssetTypeSet",
@@ -11125,6 +11532,15 @@
           "example": "1",
           "member": "uint64",
           "name": "UnhandledFileCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "未处理木马事件",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnhandledVirusEventCnt",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13646,13 +14062,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "一键检测的超时设置",
+          "document": "一键检测的超时设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "ClickTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13700,7 +14116,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "扫描状态 任务状态:\nSCAN_NONE:无， \nSCAN_SCANNING:正在扫描中，\nSCAN_FINISH：扫描完成， \nSCAN_TIMEOUT：扫描超时\nSCAN_CANCELING: 取消中",
+          "document": "扫描状态 任务状态:\nSCAN_NONE:无， \nSCAN_SCANNING:正在扫描中，\nSCAN_FINISH：扫描完成， \nSCAN_TIMEOUT：扫描超时\nSCAN_CANCELING: 取消中\nSCAN_CANCELED:已取消",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -14491,7 +14907,7 @@
         },
         {
           "default": "",
-          "document": "主机来源",
+          "document": "主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；",
           "example": "无",
           "member": "string",
           "name": "MachineType",
@@ -14517,6 +14933,26 @@
           "name": "Uuid",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionID",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -14742,6 +15178,352 @@
           "name": "VirusProgress",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageRepoInfo": {
+      "document": "容器安全镜像仓库列表",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像Digest",
+          "example": "无",
+          "member": "string",
+          "name": "ImageDigest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像仓库地址",
+          "example": "无",
+          "member": "string",
+          "name": "ImageRepoAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库类型",
+          "example": "无",
+          "member": "string",
+          "name": "RegistryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像名称",
+          "example": "无",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像版本",
+          "example": "无",
+          "member": "string",
+          "name": "ImageTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "ImageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近扫描时间",
+          "example": "无",
+          "member": "string",
+          "name": "ScanTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描状态",
+          "example": "无",
+          "member": "string",
+          "name": "ScanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "安全漏洞数",
+          "example": "无",
+          "member": "uint64",
+          "name": "VulCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "木马病毒数",
+          "example": "无",
+          "member": "uint64",
+          "name": "VirusCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "风险行为数",
+          "example": "无",
+          "member": "uint64",
+          "name": "RiskCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "敏感信息数",
+          "example": "无",
+          "member": "uint64",
+          "name": "SentiveInfoCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否可信镜像",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTrustImage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像系统",
+          "example": "无",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "木马扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanVirusError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanVulError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高危扫描错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanRiskError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "敏感信息扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanVirusProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "木马扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanVulProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞扫描进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanRiskProgress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余扫描时间秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanRemainTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cve扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CveStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高危扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "木马扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VirusStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsAuthorized",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仓库区域",
+          "example": "无",
+          "member": "string",
+          "name": "RegistryRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表id",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像创建的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2019-10-24T14:20:51+0800\"",
+          "member": "datetime_iso",
+          "name": "ImageCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为镜像的最新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLatestImage",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -16094,12 +16876,39 @@
         },
         {
           "default": "",
-          "document": "扫描的镜像列表Id",
+          "document": "扫描的镜像列表",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "不要扫描的镜像列表，与Filters配合使用",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExcludeImageList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否仅扫描各repository最新版本的镜像",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlyScanLatest",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16526,7 +17335,7 @@
         },
         {
           "default": "",
-          "document": "检测周期每隔多少天",
+          "document": "检测周期每隔多少天(1|3|7)",
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
@@ -16544,7 +17353,7 @@
         },
         {
           "default": "",
-          "document": "扫描全部路径",
+          "document": "扫描全部路径(true:全选,false:自选)",
           "example": "true",
           "member": "bool",
           "name": "ScanPathAll",
@@ -16562,7 +17371,7 @@
         },
         {
           "default": "",
-          "document": "超时时长",
+          "document": "超时时长(5~24h)",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -16593,7 +17402,7 @@
           "example": "[]",
           "member": "string",
           "name": "ScanIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16602,7 +17411,7 @@
           "example": "[]",
           "member": "string",
           "name": "ScanPath",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -16625,7 +17434,7 @@
       "members": [
         {
           "default": "",
-          "document": "超时时长单位小时",
+          "document": "超时时长单位小时(5~24h)",
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
@@ -19081,7 +19890,7 @@
         },
         {
           "default": "",
-          "document": "失败子状态:\nFILE_NOT_FOUND:文件不存在\nFILE_ABNORMAL:文件异常\nFILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常\nBACKUP_FILE_NOT_FOUND:备份文件不存在\nCONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在\nCONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在",
+          "document": "失败子状态:\nFILE_NOT_FOUND:文件不存在\nFILE_ABNORMAL:文件异常\nFILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常\nBACKUP_FILE_NOT_FOUND:备份文件不存在\nCONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在\nCONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在\nTIMEOUT: 超时\nTOO_MANY: 任务过多\nOFFLINE: 离线\nINTERNAL: 服务内部错误\nVALIDATION: 参数非法",
           "example": "xxx",
           "member": "string",
           "name": "SubStatus",

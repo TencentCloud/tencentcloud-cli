@@ -3593,6 +3593,15 @@
           "name": "MetricName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选参数，按照维度过滤",
+          "example": "[\"InstanceId\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8777,6 +8786,7 @@
         {
           "default": "",
           "document": "回调 url（限长256字符）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://www.123.com",
           "member": "string",
           "name": "URL",
           "required": true,
@@ -8786,6 +8796,7 @@
         {
           "default": "",
           "document": "是否通过验证 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "IsValid",
           "required": false,
@@ -8795,10 +8806,31 @@
         {
           "default": "",
           "document": "验证码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "82hf8t",
           "member": "string",
           "name": "ValidationCode",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知开始时间 一天开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "通知结束时间 一天开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86399",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

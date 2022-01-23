@@ -21,6 +21,7 @@ Output:
                 "Id": "1133398",
                 "RelatedType": 1,
                 "Uin": 3449203261,
+                "AttachmentTime": "2021-11-11 19:38:01",
                 "Name": "test1"
             }
         ],

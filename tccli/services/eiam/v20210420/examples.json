@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserToUserGroup\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"3945dcb0-e433-4fd0-a69b-b5074abe3cbd\",\n        \"5c1ab60e-4844-4d92-8708-82257657d916\",\n        \"df68819a-804b-44f8-af68-682b28d5c02e\"\n    ],\n    \"UserGroupId\": \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FailedItems\": [\n            \"xx\"\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"PwdNeedReset\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"SecondaryOrgNodeIdList\": [\n            \"xx\"\n        ],\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"PwdNeedReset\": true,\n        \"RequestId\": \"xx\",\n        \"AdminFlag\": 1\n    }\n}",
         "title": "请求示例"
       }
     ],

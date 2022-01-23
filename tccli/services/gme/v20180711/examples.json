@@ -59,9 +59,15 @@
     "DescribeRoomInfo": [
       {
         "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=DescribeRoomInfo\n&SdkAppId=1400000000\n&RoomIds.0=88888\n&<公共请求参数>",
+        "input": "https://gme.tencentcloudapi.com/?Action=DescribeRoomInfo\n&SdkAppId=1400000000\n&RoomIds.0=88888\n&StrRoomIds.0=aaaaa\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 88888,\n                \"Uins\": [\n                    1234,\n                    5678\n                ]\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "获取房间内用户信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomInfo\n<公共请求参数>\n\n{\n    \"RoomIds\": [\n        \"11\"\n    ],\n    \"SdkAppId\": \"1400405451\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50d01794-367f-4993-b4e3-cac5a4c1aaaa\",\n        \"Result\": 0,\n        \"RoomUsers\": [\n            {\n                \"RoomId\": 11,\n                \"StrRoomId\": \"\",\n                \"Uins\": []\n            }\n        ]\n    }\n}",
+        "title": "获取房间内用户信息1"
       }
     ],
     "DescribeScanResultList": [

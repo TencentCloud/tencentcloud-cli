@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddReplicationInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"InstanceRole\": \"rw\",\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ApplyParamsTemplate": [
       {
         "document": "",
@@ -70,6 +78,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateReplicationGroup": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=CreateReplicationGroup\n&InstanceId=crs-5qlrlhux\n&GroupName=name\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "创建复制组实例"
+      }
+    ],
     "DeleteInstanceAccount": [
       {
         "document": "",
@@ -83,6 +99,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"crs-cfg-sa23d5d3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteReplicationInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"SyncType\": true,\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
         "title": "请求示例"
       }
     ],

@@ -47,7 +47,9 @@ Output:
                     "RegionName": "广州",
                     "RegionNameEn": "chine guangzhou"
                 },
-                "MachineType": "CVM"
+                "MachineType": "CVM",
+                "KernelVersion": "xxx.xxx",
+                "ProtectType": "BASIC_VERSION"
             }
         ],
         "TotalCount": 1,

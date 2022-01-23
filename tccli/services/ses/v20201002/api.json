@@ -24,6 +24,18 @@
       "name": "创建邮件模板",
       "output": "CreateEmailTemplateResponse"
     },
+    "CreateReceiver": {
+      "document": "创建收件人列表，收件人列表是发送批量邮件的目标邮件地址列表。创建列表后，需要上传收件人邮箱地址。之后创建发送任务，关联列表，便可以实现批量发送邮件的功能",
+      "input": "CreateReceiverRequest",
+      "name": "创建收件人列表",
+      "output": "CreateReceiverResponse"
+    },
+    "CreateReceiverDetail": {
+      "document": "在创建完收件人列表后，向这个收件人列表中批量增加收件人邮箱地址，一次最大支持10W，异步完成处理。收件人列表只可以上传一次，不可追加上传。数据量比较大的时候，上传可能需要一点时间，可以通过查询收件人列表了解上传状态和上传数量",
+      "input": "CreateReceiverDetailRequest",
+      "name": "添加收件人地址",
+      "output": "CreateReceiverDetailResponse"
+    },
     "DeleteBlackList": {
       "document": "邮箱被拉黑之后，用户如果确认收件邮箱有效或者已经处于激活状态，可以从腾讯云地址库中删除该黑名单之后继续投递。",
       "input": "DeleteBlackListRequest",
@@ -43,9 +55,9 @@
       "output": "DeleteEmailIdentityResponse"
     },
     "DeleteEmailTemplate": {
-      "document": "删除发信模版",
+      "document": "删除发信模板",
       "input": "DeleteEmailTemplateRequest",
-      "name": "删除发信模版",
+      "name": "删除发信模板",
       "output": "DeleteEmailTemplateResponse"
     },
     "GetEmailIdentity": {
@@ -61,7 +73,7 @@
       "output": "GetEmailTemplateResponse"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询180天之内的数据",
+      "document": "获取邮件发送状态。仅支持查询30天之内的数据",
       "input": "GetSendEmailStatusRequest",
       "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse"
@@ -95,6 +107,18 @@
       "input": "ListEmailTemplatesRequest",
       "name": "获取当前邮件模板列表",
       "output": "ListEmailTemplatesResponse"
+    },
+    "ListReceivers": {
+      "document": "根据条件查询收件人列表，支持分页，模糊查询，状态查询",
+      "input": "ListReceiversRequest",
+      "name": "查询收件人列表",
+      "output": "ListReceiversResponse"
+    },
+    "ListSendTasks": {
+      "document": "分页查询批量发送邮件任务，包含即时发送任务，定时发送任务，周期重复发送任务，查询发送情况，包括请求数量，已发数量，缓存数量，任务状态等信息",
+      "input": "ListSendTasksRequest",
+      "name": "查询发送任务",
+      "output": "ListSendTasksResponse"
     },
     "SendEmail": {
       "document": "您可以通过此API发送TEXT或者HTML邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件，如需发送自定义内容，请单独联系商务开通此功能。",
@@ -240,6 +264,15 @@
           "name": "TimedParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "退订选项 1: 加入退订链接 0: 不加入退订链接",
+          "example": "1",
+          "member": "string",
+          "name": "Unsubscribe",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -395,6 +428,87 @@
     "CreateEmailTemplateResponse": {
       "document": "CreateEmailTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverDetailRequest": {
+      "document": "CreateReceiverDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "[\"xxx@abc.com\"]",
+          "member": "string",
+          "name": "Emails",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverDetailResponse": {
+      "document": "CreateReceiverDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverRequest": {
+      "document": "CreateReceiver请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人列表名称",
+          "example": "收件人列表",
+          "member": "string",
+          "name": "ReceiversName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收件人列表描述",
+          "example": "收件人列表描述",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverResponse": {
+      "document": "CreateReceiver返回参数结构体",
+      "members": [
+        {
+          "document": "收件人列表id，后续根据收件人列表id上传收件人地址",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -564,7 +678,8 @@
       "members": [
         {
           "default": "",
-          "document": "模版ID",
+          "document": "模板ID",
+          "example": "10086",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
@@ -1051,12 +1166,231 @@
       ],
       "type": "object"
     },
+    "ListReceiversRequest": {
+      "document": "ListReceivers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，整型，从0开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目，整型，不超过100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列表状态(1 待上传 2 上传中  3传完成)，若查询所有就不传这个字段",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列表名称的关键字，模糊查询",
+          "example": "列表名关键字",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListReceiversResponse": {
+      "document": "ListReceivers返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据记录",
+          "example": "无",
+          "member": "ReceiverData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSendTasksRequest": {
+      "document": "ListSendTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，整型，从0开始，0代表跳过0行",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目，整型,不超过100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务状态 1 待开始 5 发送中 6 今日暂停发送  7 发信异常 10 发送完成。查询所有状态，则不传这个字段",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务类型 1即时 2定时 3周期，查询所有类型则不传这个字段",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSendTasksResponse": {
+      "document": "ListSendTasks返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据记录",
+          "example": "无",
+          "member": "SendTaskData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReceiverData": {
+      "document": "收件人列表数据类型",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人列表名称",
+          "example": "收件人列表",
+          "member": "string",
+          "name": "ReceiversName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人地址总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人列表描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "收件人列表描述",
+          "member": "string",
+          "name": "Desc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "列表状态(1 待上传 2 上传中 3 上传完成)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReceiversStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间,如:2021-09-28 16:40:35",
+          "example": "2021-09-28 16:40:35",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SendEmailRequest": {
       "document": "SendEmail请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 \n发信人 <邮件地址> 的方式填写，例如：\n腾讯云团队 <noreply@mail.qcloud.com>",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com\n如需填写发件人说明，请按照如下方式： \n别名 <邮箱地址>",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
           "name": "FromEmailAddress",
@@ -1116,6 +1450,15 @@
           "name": "Attachments",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "退订选项 1: 加入退订链接 0: 不加入退订链接",
+          "example": "1",
+          "member": "string",
+          "name": "Unsubscribe",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1250,6 +1593,172 @@
           "name": "UserComplainted",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SendTaskData": {
+      "document": "发送任务数据",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发信地址",
+          "example": "123@abc.com",
+          "member": "string",
+          "name": "FromEmailAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收件人列表Id",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态 1 待开始 5 发送中 6 今日暂停发送  7 发信异常 10 发送完成",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型 1 即时 2 定时 3 周期",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务请求发信数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "RequestCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已经发送数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SendCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缓存数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "CacheCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "2021-09-09 12:12:13",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务更新时间",
+          "example": "2021-09-09 12:12:13",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮件主题",
+          "example": "邮件主题",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板和模板数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "周期任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CycleEmailParam",
+          "name": "CycleParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimedEmailParam",
+          "name": "TimedParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "余额不足",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收件人列表名称",
+          "example": "收件人列表名称",
+          "member": "string",
+          "name": "ReceiversName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

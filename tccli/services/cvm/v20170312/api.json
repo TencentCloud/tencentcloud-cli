@@ -384,6 +384,12 @@
       "name": "修改实例启动模板默认版本",
       "output": "ModifyLaunchTemplateDefaultVersionResponse"
     },
+    "ProgramFpgaImage": {
+      "document": "本接口(ProgramFpgaImage)用于在线烧录由客户提供的FPGA镜像文件到指定实例的指定FPGA卡上。\n* 只支持对单个实例发起在线烧录FPGA镜像的操作。\n* 支持对单个实例的多块FPGA卡同时烧录FPGA镜像，DBDFs参数为空时，默认对指定实例的所有FPGA卡进行烧录。",
+      "input": "ProgramFpgaImageRequest",
+      "name": "在线烧录FPGA镜像",
+      "output": "ProgramFpgaImageResponse"
+    },
     "PurchaseReservedInstancesOffering": {
       "document": "本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例",
       "input": "PurchaseReservedInstancesOfferingRequest",
@@ -433,7 +439,7 @@
       "output": "ResetInstancesTypeResponse"
     },
     "ResizeInstanceDisks": {
-      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。\n\n* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/api/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`和[CDH](https://cloud.tencent.com/document/product/416)实例的`LOCAL_BASIC`、`LOCAL_SSD`类型数据盘。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。\n\n* 目前只支持扩容非弹性盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/api/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`和[CDH](https://cloud.tencent.com/document/product/416)实例的`LOCAL_BASIC`、`LOCAL_SSD`类型数据盘。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。",
       "input": "ResizeInstanceDisksRequest",
       "name": "扩容实例磁盘",
       "output": "ResizeInstanceDisksResponse"
@@ -946,6 +952,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2036,6 +2051,7 @@
         {
           "default": "",
           "document": "需要共享的镜像Id",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -2049,8 +2065,10 @@
       "members": [
         {
           "document": "镜像共享信息",
+          "example": "无",
           "member": "SharePermission",
           "name": "SharePermissionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2077,7 +2095,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n<li> image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤</li>\n<li> image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：\n    PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像) \n    PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\n    SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像) 。</li>\n<li> image-name - String - 是否必填： 否 - （过滤条件）按照镜像名称进行过滤</li>\n<li> platform - String - 是否必填： 否 - （过滤条件）按照镜像平台过滤，如 CentOS</li>",
+          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n\n<li><strong>image-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>image-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p>\n<li><strong>image-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>platform</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如CentOS。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3819,6 +3837,15 @@
           "name": "Force",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
+          "example": "NA",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6198,6 +6225,7 @@
         {
           "default": "",
           "document": "镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -6206,6 +6234,7 @@
         {
           "default": "",
           "document": "设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。",
+          "example": "sample",
           "member": "string",
           "name": "ImageName",
           "required": false,
@@ -6214,6 +6243,7 @@
         {
           "default": "",
           "document": "设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。",
+          "example": "sample",
           "member": "string",
           "name": "ImageDescription",
           "required": false,
@@ -6240,6 +6270,7 @@
         {
           "default": "",
           "document": "镜像ID，形如`img-gvbnzy6f`。镜像Id可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。 <br>镜像ID必须指定为状态为`NORMAL`的镜像。镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。",
+          "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -6248,6 +6279,7 @@
         {
           "default": "",
           "document": "接收分享镜像的账号Id列表，array型参数的格式可以参考[API简介](/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
+          "example": "[\"1038493875\\r\\n\"]",
           "member": "string",
           "name": "AccountIds",
           "required": true,
@@ -6256,6 +6288,7 @@
         {
           "default": "",
           "document": "操作，包括 `SHARE`，`CANCEL`。其中`SHARE`代表分享操作，`CANCEL`代表取消分享操作。",
+          "example": "SHARE",
           "member": "string",
           "name": "Permission",
           "required": true,
@@ -6860,6 +6893,60 @@
         }
       ],
       "usage": "out"
+    },
+    "ProgramFpgaImageRequest": {
+      "document": "ProgramFpgaImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例的ID信息。",
+          "example": "ins-kdjnfkda",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "FPGA镜像文件的COS URL地址。",
+          "example": "fpga-test-123456.cos.ap-guangzhou.myqcloud.com/test.xclbin",
+          "member": "string",
+          "name": "FPGAUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例上FPGA卡的DBDF号，不填默认烧录FPGA镜像到实例所拥有的所有FPGA卡。",
+          "example": "[\"0000:00:08.0\", \"0000:00:09.0\"]",
+          "member": "string",
+          "name": "DBDFs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "试运行，不会执行实际的烧录动作，默认为False。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ProgramFpgaImageResponse": {
+      "document": "ProgramFpgaImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PurchaseReservedInstancesOfferingRequest": {
       "document": "PurchaseReservedInstancesOffering请求参数结构体",
@@ -7847,6 +7934,24 @@
           "example": "true",
           "member": "bool",
           "name": "ForceStop",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "待扩容的系统盘配置信息。只支持扩容云盘。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "扩容云盘的方式是否为在线扩容。",
+          "example": "true",
+          "member": "bool",
+          "name": "ResizeOnline",
           "required": false,
           "type": "bool"
         }

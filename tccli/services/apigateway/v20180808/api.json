@@ -2720,6 +2720,42 @@
       ],
       "usage": "in"
     },
+    "CosConfig": {
+      "document": "cos类型的api配置",
+      "members": [
+        {
+          "default": "",
+          "document": "API调用后端COS的方式，前端请求方法与Action的可选值为：\nGET：GetObject\nPUT：PutObject\nPOST：PostObject、AppendObject\nHEAD： HeadObject\nDELETE： DeleteObject。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GetObject",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API后端COS的存储桶名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API调用后端COS的签名开关，默认为false。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Authorization",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAPIDocRequest": {
       "document": "CreateAPIDoc请求参数结构体",
       "members": [
@@ -3301,6 +3337,15 @@
           "name": "IsBase64Encoded",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "事件总线ID。",
+          "example": "eb-xsae3sdf",
+          "member": "string",
+          "name": "EventBusId",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -8545,6 +8590,60 @@
           "name": "Base64EncodedTriggerRules",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "事件总线ID。",
+          "example": "eb-3sczdead",
+          "member": "string",
+          "name": "EventBusId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。",
+          "example": "EVENT",
+          "member": "string",
+          "name": "ServiceScfFunctionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用类型。",
+          "example": "Client",
+          "member": "string",
+          "name": "EIAMAppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。",
+          "example": "Authorization",
+          "member": "string",
+          "name": "EIAMAuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用Token 有效时间，单位为秒，默认为7200秒。",
+          "example": "无",
+          "member": "string",
+          "name": "EIAMAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "EIAM应用ID。",
+          "example": "7200",
+          "member": "int64",
+          "name": "TokenTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9902,6 +10001,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "API后端COS配置。如果 ServiceType 是 COS，则此参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Key\":\"/cos.txt\",\"Action\":\"GetObject\",\"BucketName\":\"test\",\"Auth",
+          "member": "CosConfig",
+          "name": "CosConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

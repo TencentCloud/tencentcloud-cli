@@ -232,6 +232,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为测试流量",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsTest",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

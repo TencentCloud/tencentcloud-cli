@@ -126,6 +126,12 @@
       "name": "微信实名认证授权",
       "output": "GetRealNameAuthTokenResponse"
     },
+    "GetWeChatBillDetails": {
+      "document": "查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。",
+      "input": "GetWeChatBillDetailsRequest",
+      "name": "查询账单明细（微信渠道）",
+      "output": "GetWeChatBillDetailsResponse"
+    },
     "IdCardOCRVerification": {
       "document": "本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。",
       "input": "IdCardOCRVerificationRequest",
@@ -185,6 +191,24 @@
       "input": "PhoneVerificationRequest",
       "name": "手机号三要素核验",
       "output": "PhoneVerificationResponse"
+    },
+    "PhoneVerificationCMCC": {
+      "document": "本接口用于校验中国移动手机号、姓名和身份证号的真实性和一致性。中国移动支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCMCCRequest",
+      "name": "手机号三要素核验（移动）",
+      "output": "PhoneVerificationCMCCResponse"
+    },
+    "PhoneVerificationCTCC": {
+      "document": "本接口用于校验中国电信手机号、姓名和身份证号的真实性和一致性。中国电信支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCTCCRequest",
+      "name": "手机号三要素核验（电信）",
+      "output": "PhoneVerificationCTCCResponse"
+    },
+    "PhoneVerificationCUCC": {
+      "document": "本接口用于校验中国联通手机号、姓名和身份证号的真实性和一致性。中国联通支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
+      "input": "PhoneVerificationCUCCRequest",
+      "name": "手机号三要素核验（联通）",
+      "output": "PhoneVerificationCUCCResponse"
     }
   },
   "metadata": {
@@ -427,6 +451,102 @@
         }
       ],
       "type": "object"
+    },
+    "ChargeDetail": {
+      "document": "计费详情",
+      "members": [
+        {
+          "default": "",
+          "document": "一比一时间时间戳，13位。",
+          "example": "无",
+          "member": "string",
+          "name": "ReqTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一比一请求的唯一标记。",
+          "example": "无",
+          "member": "string",
+          "name": "Seq",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一比一时使用的、脱敏后的身份证号。",
+          "example": "无",
+          "member": "string",
+          "name": "Idcard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一比一时使用的、脱敏后的姓名。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一比一的相似度。0-100，保留2位小数。",
+          "example": "无",
+          "member": "string",
+          "name": "Sim",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次详情是否收费。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsNeedCharge",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收费类型，比对、核身、混合部署。",
+          "example": "无",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一最终结果。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次活体一比一最终结果描述。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CheckBankCardInformationRequest": {
       "document": "CheckBankCardInformation请求参数结构体",
@@ -1123,6 +1243,7 @@
         {
           "default": "",
           "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "OcrFront",
           "required": true,
@@ -1132,6 +1253,7 @@
         {
           "default": "",
           "document": "OCR反面照片的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "OcrBack",
           "required": true,
@@ -1141,6 +1263,7 @@
         {
           "default": "",
           "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProcessedFrontImage",
           "required": true,
@@ -1150,6 +1273,7 @@
         {
           "default": "",
           "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "ProcessedBackImage",
           "required": true,
@@ -1159,10 +1283,21 @@
         {
           "default": "",
           "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Avatar",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开启身份证防翻拍告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9102 身份证复印件告警。\n-9103 身份证翻拍告警。\n-9106 身份证 PS 告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "int64",
+          "name": "WarnInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2418,6 +2553,78 @@
       ],
       "type": "object"
     },
+    "GetWeChatBillDetailsRequest": {
+      "document": "GetWeChatBillDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拉取的日期（YYYY-MM-DD）。最大可追溯到365天前。当天6点后才能拉取前一天的数据。",
+          "example": "无",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "游标。用于分页，取第一页时传0，取后续页面时，传入本接口响应中返回的NextCursor字段的值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cursor",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要拉取账单详情业务对应的RuleId。不传会返回所有RuleId数据。默认为空字符串。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWeChatBillDetailsResponse": {
+      "document": "GetWeChatBillDetails返回参数结构体",
+      "members": [
+        {
+          "document": "是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasNextPage",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下一页的游标。用于分页。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NextCursor",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据",
+          "example": "无",
+          "member": "WeChatBillDetail",
+          "name": "WeChatBillDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IdCardOCRVerificationRequest": {
       "document": "IdCardOCRVerification请求参数结构体",
       "members": [
@@ -3317,6 +3524,249 @@
       ],
       "type": "object"
     },
+    "PhoneVerificationCMCCRequest": {
+      "document": "PhoneVerificationCMCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCMCCResponse": {
+      "document": "PhoneVerificationCMCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "移动",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "业务结果描述。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCTCCRequest": {
+      "document": "PhoneVerificationCTCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCTCCResponse": {
+      "document": "PhoneVerificationCTCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "比对一致",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCUCCRequest": {
+      "document": "PhoneVerificationCUCC请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "622222222222222222X",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "15123567346",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PhoneVerificationCUCCResponse": {
+      "document": "PhoneVerificationCUCC返回参数结构体",
+      "members": [
+        {
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "运营商名称。\n取值范围为[\"移动\",\"联通\",\"电信\",\"\"]",
+          "example": "联通",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务结果描述。",
+          "example": "比对一致",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PhoneVerificationRequest": {
       "document": "PhoneVerification请求参数结构体",
       "members": [
@@ -3399,6 +3849,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "运营商名称。\n取值范围为[\"\",\"移动\",\"电信\",\"联通\"]",
+          "example": "移动",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3406,6 +3865,52 @@
         }
       ],
       "type": "object"
+    },
+    "WeChatBillDetail": {
+      "document": "账单详情",
+      "members": [
+        {
+          "default": "",
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "BizToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本token收费次数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChargeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本token计费详情",
+          "example": "无",
+          "member": "ChargeDetail",
+          "name": "ChargeDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务RuleId",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

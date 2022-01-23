@@ -91,7 +91,7 @@
         },
         {
           "default": "",
-          "document": "关系策略",
+          "document": "关系策略  取值：Financial",
           "example": "Finical",
           "member": "string",
           "name": "PolicyType",
@@ -142,6 +142,24 @@
           "name": "RecordId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代付者Uin",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PayUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "管理身份",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "IdentityRoleID",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -149,6 +167,15 @@
     "CreateOrganizationMemberResponse": {
       "document": "CreateOrganizationMember返回参数结构体",
       "members": [
+        {
+          "document": "成员Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100019119",
+          "member": "int64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -365,6 +392,32 @@
       ],
       "type": "object"
     },
+    "MemberIdentity": {
+      "document": "成员管理身份",
+      "members": [
+        {
+          "default": "",
+          "document": "身份ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityAliasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OrgMember": {
       "document": "企业组织成员",
       "members": [
@@ -486,6 +539,36 @@
           "name": "IsAllowQuit",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代付者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PayUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "代付者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "管理身份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberIdentity",
+          "name": "OrgIdentity",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

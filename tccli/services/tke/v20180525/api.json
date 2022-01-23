@@ -579,7 +579,7 @@
     "UpdateEKSCluster": {
       "document": "修改弹性集群名称等属性 ",
       "input": "UpdateEKSClusterRequest",
-      "name": "修改弹性集群",
+      "name": "修改弹性集群EKS",
       "output": "UpdateEKSClusterResponse"
     },
     "UpdateEKSContainerInstance": {
@@ -2822,6 +2822,15 @@
           "name": "OsCustomizeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8651,6 +8660,24 @@
           "name": "ExtraArgs",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "设置加入的节点是否参与调度，默认值为0，表示参与调度；非0表示不参与调度, 待节点初始化完成之后, 可执行kubectl uncordon nodename使node加入调度.",
+          "example": "0",
+          "member": "int64",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9076,6 +9103,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9245,6 +9282,7 @@
         {
           "default": "",
           "document": "集群类型",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -9254,6 +9292,7 @@
         {
           "default": "",
           "document": "集群id",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9263,6 +9302,7 @@
         {
           "default": "",
           "document": "agent状态\nnormal = 正常\nabnormal = 异常",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9272,11 +9312,22 @@
         {
           "default": "",
           "document": "集群名称",
+          "example": "tke集群",
           "member": "string",
           "name": "ClusterName",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外labels\n本集群的所有指标都会带上这几个label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name=cluster_name,Value=x",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9428,6 +9479,16 @@
           "name": "Annotations",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警规则状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11151,6 +11212,15 @@
           "name": "ProxyLB",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "扩展参数。须是map[string]string 的json 格式。",
+          "example": "{aa}",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

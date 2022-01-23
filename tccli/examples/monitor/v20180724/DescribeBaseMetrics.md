@@ -19,6 +19,8 @@ Output:
             {
                 "Namespace": "QCE/CVM",
                 "MetricName": "AccOuttraffic",
+                "MetricCName": "外网出流量",
+                "MetricEName": "the out traffic",
                 "Unit": "MB",
                 "UnitCname": "",
                 "Period": [
@@ -98,6 +100,8 @@ Output:
             {
                 "Namespace": "QCE/CDB",
                 "MetricName": "BytesReceived",
+                "MetricCName": "",
+                "MetricEName": "",
                 "Unit": "Bps",
                 "UnitCname": "",
                 "Period": [

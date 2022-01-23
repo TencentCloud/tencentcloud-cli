@@ -99,9 +99,15 @@
     "CreateWxCloudBaseRunServerDBCluster": [
       {
         "document": "在微信云托管后台，用户开通MySQL时需要调用",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"AccountPassword\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"AccountPassword\": \"xx\",\n    \"DbVersion\": \"5.7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "开通微信云托管MySQL服务实例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWxCloudBaseRunServerDBCluster\n<公共请求参数>\n\n{\n    \"DbVersion\": \"字符串\",\n    \"WxAppId\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"AccountPassword\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1210cbf-f738-47f7-8e6d-2af814acece6\"\n    }\n}",
+        "title": "success"
       }
     ],
     "DeleteCloudBaseProjectLatestVersion": [
@@ -372,7 +378,7 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvs\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageName\": \"free\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"free\",\n                \"CreateTime\": \"2018-08-13 10:52:09\",\n                \"UpdateTime\": \"2018-08-13 10:52:40\",\n                \"LogServices\": [],\n                \"StaticStorages\": [],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageName\": \"free\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"free\",\n                \"CreateTime\": \"2018-08-13 10:52:09\",\n                \"UpdateTime\": \"2018-08-13 10:52:40\",\n                \"LogServices\": [],\n                \"StaticStorages\": [],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"xx\",\n                        \"ClsRegion\": \"xx\",\n                        \"ClsLogsetId\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-e724843f483e\"\n    }\n}",
         "title": "查询环境信息"
       }
     ],
@@ -582,6 +588,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollUpdateCloudBaseRunServerVersion\n<公共请求参数>\n\n{\n    \"MaxNum\": \"xx\",\n    \"EnvParams\": \"xx\",\n    \"PackageName\": \"xx\",\n    \"MountVolumeInfo\": [\n        {\n            \"ReadOnly\": true,\n            \"MountPath\": \"xx\",\n            \"Name\": \"xx\",\n            \"NfsVolumes\": [\n                {\n                    \"Path\": \"xx\",\n                    \"ReadOnly\": true,\n                    \"Server\": \"xx\"\n                }\n            ]\n        }\n    ],\n    \"Branch\": \"xx\",\n    \"Rollback\": true,\n    \"BuildDir\": \"xx\",\n    \"Repository\": \"xx\",\n    \"Mem\": \"xx\",\n    \"UploadType\": \"xx\",\n    \"RepositoryType\": \"xx\",\n    \"InitialDelaySeconds\": 0,\n    \"CustomLogs\": \"xx\",\n    \"FlowRatio\": 0,\n    \"MinNum\": \"xx\",\n    \"VersionRemark\": \"xx\",\n    \"ContainerPort\": 0,\n    \"DockerfilePath\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"SnapshotName\": \"xx\",\n    \"ServerName\": \"xx\",\n    \"EnableUnion\": true,\n    \"PackageVersion\": \"xx\",\n    \"Cpu\": \"xx\",\n    \"CodeDetail\": {\n        \"Url\": \"xx\",\n        \"Name\": {\n            \"FullName\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    },\n    \"ImageInfo\": {\n        \"ImageUrl\": \"xx\",\n        \"RepositoryName\": \"xx\",\n        \"IsPublic\": true,\n        \"ServerAddr\": \"xx\",\n        \"TagName\": \"xx\"\n    },\n    \"PolicyThreshold\": \"xx\",\n    \"IsRebuild\": true,\n    \"PolicyType\": \"xx\",\n    \"VersionName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"VersionName\": \"xxx\",\n        \"RunId\": \"a123\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "SearchClsLog": [
+      {
+        "document": "",
+        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=xx\n&EndTime=xx\n&Limit=10\n&QueryString=x\n&Sort=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
+        "title": "搜索CLS日志"
       }
     ],
     "TurnOffStandaloneGateway": [

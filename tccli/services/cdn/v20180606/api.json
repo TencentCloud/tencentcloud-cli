@@ -435,7 +435,7 @@
     "UpdateDomainConfig": {
       "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。",
       "input": "UpdateDomainConfigRequest",
-      "name": "更新域名配置",
+      "name": "更新加速域名配置",
       "output": "UpdateDomainConfigResponse"
     },
     "UpdateImageConfig": {
@@ -559,7 +559,7 @@
         },
         {
           "default": "",
-          "document": "加速域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
+          "document": "加速域名业务类型\nweb：网页小文件\ndownload：下载大文件\nmedia：音视频点播\nhybrid:  动静加速\ndynamic:  动态加速",
           "example": "web",
           "member": "string",
           "name": "ServiceType",
@@ -847,7 +847,7 @@
         },
         {
           "default": "",
-          "document": "QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。",
+          "document": "Quic访问（收费服务，详见计费说明和产品文档）",
           "example": "无",
           "member": "Quic",
           "name": "Quic",
@@ -8751,6 +8751,7 @@
         {
           "default": "",
           "document": "https 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -8760,6 +8761,7 @@
         {
           "default": "",
           "document": "http2 配置开关\non：开启\noff：关闭\n初次启用 https 加速会默认开启 http2 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rewrew",
           "member": "string",
           "name": "Http2",
           "required": false,
@@ -8769,6 +8771,7 @@
         {
           "default": "",
           "document": "OCSP 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "OcspStapling",
           "required": false,
@@ -8778,6 +8781,7 @@
         {
           "default": "",
           "document": "客户端证书校验功能\non：开启\noff：关闭\n默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsadsa",
           "member": "string",
           "name": "VerifyClient",
           "required": false,
@@ -8787,6 +8791,7 @@
         {
           "default": "",
           "document": "服务端证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServerCert",
           "name": "CertInfo",
           "required": false,
@@ -8796,6 +8801,7 @@
         {
           "default": "",
           "document": "客户端证书配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClientCert",
           "name": "ClientCertInfo",
           "required": false,
@@ -8805,6 +8811,7 @@
         {
           "default": "",
           "document": "Spdy 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dfdf",
           "member": "string",
           "name": "Spdy",
           "required": false,
@@ -8814,6 +8821,7 @@
         {
           "default": "",
           "document": "https 证书部署状态\nclosed：已关闭\ndeploying：部署中\ndeployed：部署成功\nfailed：部署失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "closed",
           "member": "string",
           "name": "SslStatus",
           "required": false,
@@ -8823,6 +8831,7 @@
         {
           "default": "",
           "document": "Hsts配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Hsts",
           "name": "Hsts",
           "required": false,
@@ -8832,6 +8841,7 @@
         {
           "default": "",
           "document": "Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"TLSv1\"]",
           "member": "string",
           "name": "TlsVersion",
           "required": false,
@@ -10293,6 +10303,7 @@
         {
           "default": "",
           "document": "时间戳防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Authentication",
           "name": "Authentication",
           "required": false,
@@ -10302,6 +10313,7 @@
         {
           "default": "",
           "document": "带宽封顶配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
           "required": false,
@@ -10311,6 +10323,7 @@
         {
           "default": "",
           "document": "缓存规则配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Cache",
           "name": "Cache",
           "required": false,
@@ -10320,6 +10333,7 @@
         {
           "default": "",
           "document": "缓存相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
@@ -10329,6 +10343,7 @@
         {
           "default": "",
           "document": "智能压缩配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Compression",
           "name": "Compression",
           "required": false,
@@ -10338,6 +10353,7 @@
         {
           "default": "",
           "document": "下载限速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
           "required": false,
@@ -10347,6 +10363,7 @@
         {
           "default": "",
           "document": "错误码重定向配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
           "required": false,
@@ -10356,6 +10373,7 @@
         {
           "default": "",
           "document": "301和302自动回源跟随配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
           "required": false,
@@ -10365,6 +10383,7 @@
         {
           "default": "",
           "document": "访问协议强制跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
@@ -10374,6 +10393,7 @@
         {
           "default": "",
           "document": "Https配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Https",
           "name": "Https",
           "required": false,
@@ -10383,6 +10403,7 @@
         {
           "default": "",
           "document": "IP黑白名单配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
@@ -10392,6 +10413,7 @@
         {
           "default": "",
           "document": "IP限频配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
@@ -10401,6 +10423,7 @@
         {
           "default": "",
           "document": "浏览器缓存规则配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
           "required": false,
@@ -10410,6 +10433,7 @@
         {
           "default": "",
           "document": "源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Origin",
           "name": "Origin",
           "required": false,
@@ -10419,6 +10443,7 @@
         {
           "default": "",
           "document": "跨国优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
           "required": false,
@@ -10428,6 +10453,7 @@
         {
           "default": "",
           "document": "Range回源配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
           "required": false,
@@ -10437,6 +10463,7 @@
         {
           "default": "",
           "document": "防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Referer",
           "name": "Referer",
           "required": false,
@@ -10446,6 +10473,7 @@
         {
           "default": "",
           "document": "回源请求头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
           "required": false,
@@ -10455,6 +10483,7 @@
         {
           "default": "",
           "document": "源站响应头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
@@ -10464,6 +10493,7 @@
         {
           "default": "",
           "document": "遵循源站缓存头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
           "required": false,
@@ -10473,6 +10503,7 @@
         {
           "default": "",
           "document": "seo优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Seo",
           "name": "Seo",
           "required": false,
@@ -10482,6 +10513,7 @@
         {
           "default": "",
           "document": "域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceType",
           "required": false,
@@ -10491,6 +10523,7 @@
         {
           "default": "",
           "document": "状态码缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
           "required": false,
@@ -10500,8 +10533,29 @@
         {
           "default": "",
           "document": "视频拖拽配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源S3私有鉴权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AwsPrivateAccess",
+          "name": "AwsPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源OSS私有鉴权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11005,6 +11059,7 @@
         {
           "default": "",
           "document": "时间戳防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Authentication",
           "name": "Authentication",
           "required": false,
@@ -11014,6 +11069,7 @@
         {
           "default": "",
           "document": "带宽封顶配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
           "required": false,
@@ -11023,6 +11079,7 @@
         {
           "default": "",
           "document": "缓存规则配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Cache",
           "name": "Cache",
           "required": false,
@@ -11032,6 +11089,7 @@
         {
           "default": "",
           "document": "缓存相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
@@ -11041,6 +11099,7 @@
         {
           "default": "",
           "document": "智能压缩配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Compression",
           "name": "Compression",
           "required": false,
@@ -11050,6 +11109,7 @@
         {
           "default": "",
           "document": "下载限速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
           "required": false,
@@ -11059,6 +11119,7 @@
         {
           "default": "",
           "document": "错误码重定向配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
           "required": false,
@@ -11068,6 +11129,7 @@
         {
           "default": "",
           "document": "301和302自动回源跟随配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
           "required": false,
@@ -11077,6 +11139,7 @@
         {
           "default": "",
           "document": "访问协议强制跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
@@ -11086,6 +11149,7 @@
         {
           "default": "",
           "document": "Https配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Https",
           "name": "Https",
           "required": false,
@@ -11095,6 +11159,7 @@
         {
           "default": "",
           "document": "IP黑白名单配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
@@ -11104,6 +11169,7 @@
         {
           "default": "",
           "document": "IP限频配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
@@ -11113,6 +11179,7 @@
         {
           "default": "",
           "document": "浏览器缓存规则配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
           "required": false,
@@ -11122,6 +11189,7 @@
         {
           "default": "",
           "document": "源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Origin",
           "name": "Origin",
           "required": false,
@@ -11131,6 +11199,7 @@
         {
           "default": "",
           "document": "跨国优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
           "required": false,
@@ -11140,6 +11209,7 @@
         {
           "default": "",
           "document": "Range回源配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
           "required": false,
@@ -11149,6 +11219,7 @@
         {
           "default": "",
           "document": "防盗链配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Referer",
           "name": "Referer",
           "required": false,
@@ -11158,6 +11229,7 @@
         {
           "default": "",
           "document": "回源请求头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
           "required": false,
@@ -11167,6 +11239,7 @@
         {
           "default": "",
           "document": "源站响应头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
@@ -11176,6 +11249,7 @@
         {
           "default": "",
           "document": "遵循源站缓存头部配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
           "required": false,
@@ -11185,6 +11259,7 @@
         {
           "default": "",
           "document": "seo优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Seo",
           "name": "Seo",
           "required": false,
@@ -11194,6 +11269,7 @@
         {
           "default": "",
           "document": "域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceType",
           "required": false,
@@ -11203,6 +11279,7 @@
         {
           "default": "",
           "document": "状态码缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
           "required": false,
@@ -11212,8 +11289,29 @@
         {
           "default": "",
           "document": "视频拖拽配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源S3私有鉴权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AwsPrivateAccess",
+          "name": "AwsPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源OSS私有鉴权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OssPrivateAccess",
+          "name": "OssPrivateAccess",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13559,7 +13657,8 @@
       "members": [
         {
           "default": "",
-          "document": "服务器证书 ID\n在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器证书 ID 在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LE-dsfdsf",
           "member": "string",
           "name": "CertId",
           "required": false,
@@ -13569,6 +13668,7 @@
         {
           "default": "",
           "document": "服务器证书名称\n在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa.com",
           "member": "string",
           "name": "CertName",
           "required": false,
@@ -13578,6 +13678,7 @@
         {
           "default": "",
           "document": "服务器证书信息\n上传自有证书时必填，需要包含完整的证书链\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "不展示",
           "member": "string",
           "name": "Certificate",
           "required": false,
@@ -13587,6 +13688,7 @@
         {
           "default": "",
           "document": "服务器密钥信息\n上传自有证书时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "不展示",
           "member": "string",
           "name": "PrivateKey",
           "required": false,
@@ -13596,6 +13698,7 @@
         {
           "default": "",
           "document": "证书过期时间\n作为入参配置时无需填充\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-01 09:48:19",
           "member": "datetime",
           "name": "ExpireTime",
           "required": false,
@@ -13605,6 +13708,7 @@
         {
           "default": "",
           "document": "证书颁发时间\n作为入参配置时无需填充\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-01 09:48:19",
           "member": "datetime",
           "name": "DeployTime",
           "required": false,
@@ -13614,6 +13718,7 @@
         {
           "default": "",
           "document": "证书备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
           "member": "string",
           "name": "Message",
           "required": false,
@@ -14762,7 +14867,7 @@
         },
         {
           "default": "",
-          "document": "QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。",
+          "document": "Quic访问（收费服务，详见计费说明和产品文档）",
           "example": "无",
           "member": "Quic",
           "name": "Quic",

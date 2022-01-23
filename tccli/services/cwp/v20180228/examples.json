@@ -716,7 +716,7 @@
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeGeneralStat\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MachinesAll\": 87,\n        \"MachinesUninstalled\": 37,\n        \"AgentsAll\": 50,\n        \"AgentsOnline\": 7,\n        \"AgentsOffline\": 43,\n        \"AgentsPro\": 12,\n        \"AgentsBasic\": 38,\n        \"AgentsProExpireWithInSevenDays\": 1,\n        \"RiskMachine\": 0,\n        \"Shutdown\": 0,\n        \"Offline\": 0,\n        \"RequestId\": \"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MachinesAll\": 87,\n        \"MachinesUninstalled\": 37,\n        \"AgentsAll\": 50,\n        \"AgentsOnline\": 7,\n        \"AgentsOffline\": 43,\n        \"AgentsPro\": 12,\n        \"AgentsBasic\": 38,\n        \"AgentsProExpireWithInSevenDays\": 1,\n        \"RiskMachine\": 0,\n        \"Shutdown\": 0,\n        \"Offline\": 0,\n        \"ProtectDays\": 1,\n        \"FlagshipMachineCnt\": 1,\n        \"RequestId\": \"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\n    }\n}",
         "title": "获取主机安全相关统计"
       }
     ],
@@ -804,7 +804,7 @@
       {
         "document": "本接口（DescribeMachineInfo）用于获取机器详细情况。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineInfo\n&Uuid=UUID\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ProVersionDeadline\": \"xx\",\n        \"IsProVersion\": true,\n        \"MachineOs\": \"xx\",\n        \"Uuid\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"HasAssetScan\": 1,\n        \"InstanceId\": \"xx\",\n        \"MachineName\": \"xx\",\n        \"FreeVulsLeft\": 1,\n        \"MachineIp\": \"xx\",\n        \"PayMode\": \"xx\",\n        \"AgentVersion\": \"xx\",\n        \"MachineRegion\": \"xx\",\n        \"ProtectDays\": 1,\n        \"Quuid\": \"xx\",\n        \"FreeMalwaresLeft\": 1,\n        \"MachineStatus\": \"xx\",\n        \"MachineWanIp\": \"xx\",\n        \"MachineType\": \"xx\",\n        \"ProVersionOpenDate\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProVersionDeadline\": \"xx\",\n        \"IsProVersion\": true,\n        \"MachineOs\": \"xx\",\n        \"Uuid\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"HasAssetScan\": 1,\n        \"InstanceId\": \"xx\",\n        \"MachineName\": \"xx\",\n        \"FreeVulsLeft\": 1,\n        \"MachineIp\": \"xx\",\n        \"PayMode\": \"xx\",\n        \"AgentVersion\": \"xx\",\n        \"MachineRegion\": \"xx\",\n        \"ProtectDays\": 1,\n        \"Quuid\": \"xx\",\n        \"FreeMalwaresLeft\": 1,\n        \"MachineStatus\": \"xx\",\n        \"MachineWanIp\": \"xx\",\n        \"MachineType\": \"xx\",\n        \"ProVersionOpenDate\": \"xx\",\n        \"ProtectType\": \"BASIC_VERSION\"\n    }\n}",
         "title": "获取机器详情"
       }
     ],
@@ -836,7 +836,7 @@
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachines\n&MachineType=CVM\n&MachineRegion=ap-shanghai\n&Filters.0.Name=Keywords\n&Filters.0.Values.0=10.0.1.1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"0.0.0.0\",\n                \"MachineWanIp\": \"0.0.0.0\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1,\n                \"HasAssetScan\": 1,\n                \"LicenseStatus\": 0,\n                \"InvasionNum\": 0,\n                \"BaselineNum\": 0,\n                \"RegionInfo\": {\n                    \"RegionCode\": \"gz\",\n                    \"Region\": \"ap-guangzhuo\",\n                    \"RegionId\": 1,\n                    \"RegionName\": \"广州\",\n                    \"RegionNameEn\": \"chine guangzhou\"\n                },\n                \"MachineType\": \"CVM\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Machines\": [\n            {\n                \"MachineName\": \"ccs_cls-i4vyo8qa_node\",\n                \"MachineIp\": \"0.0.0.0\",\n                \"MachineWanIp\": \"0.0.0.0\",\n                \"MachineOs\": \"ubuntu16.04.1 LTSx86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"Quuid\": \"fbd6ea2c-1894-47b0-bf3e-095c78138f76\",\n                \"Uuid\": \"\",\n                \"IsProVersion\": false,\n                \"PayMode\": \"\",\n                \"VulNum\": 0,\n                \"Tag\": [],\n                \"MalwareNum\": 0,\n                \"CyberAttackNum\": 0,\n                \"SecurityStatus\": \"SAFE\",\n                \"InstanceState\": \"TERMINATED_PRO_VERSION\",\n                \"ProjectId\": 1,\n                \"HasAssetScan\": 1,\n                \"LicenseStatus\": 0,\n                \"InvasionNum\": 0,\n                \"BaselineNum\": 0,\n                \"RegionInfo\": {\n                    \"RegionCode\": \"gz\",\n                    \"Region\": \"ap-guangzhuo\",\n                    \"RegionId\": 1,\n                    \"RegionName\": \"广州\",\n                    \"RegionNameEn\": \"chine guangzhou\"\n                },\n                \"MachineType\": \"CVM\",\n                \"KernelVersion\": \"xxx.xxx\",\n                \"ProtectType\": \"BASIC_VERSION\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c30f35cb-2f3e-94f5-59ae-316e0f32e660\"\n    }\n}",
         "title": "获取区域主机列表"
       }
     ],
@@ -1490,10 +1490,10 @@
     ],
     "ModifyAutoOpenProVersionConfig": [
       {
-        "document": "设置新增主机自动开通专业版配置",
+        "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=ModifyAutoOpenProVersionConfig\n&Status=CLOSE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "设置新增主机自动开通专业版配置"
+        "title": "示例"
       }
     ],
     "ModifyBanMode": [

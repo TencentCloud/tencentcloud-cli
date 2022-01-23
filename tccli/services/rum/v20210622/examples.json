@@ -16,6 +16,22 @@
         "title": "获取DescribeDataEventUrl信息"
       }
     ],
+    "DescribeDataFetchUrl": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataFetchUrl\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&CostType=avg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataFetchUrl信息"
+      }
+    ],
+    "DescribeDataFetchUrlInfo": [
+      {
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataFetchUrlInfo\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&CostType=avg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataFetchUrlInfo信息"
+      }
+    ],
     "DescribeDataLogUrlStatistics": [
       {
         "document": "",

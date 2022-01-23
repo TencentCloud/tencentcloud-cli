@@ -73,7 +73,7 @@
       "output": "DescribeDiskOperationLogsResponse"
     },
     "DescribeDiskStoragePool": {
-      "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、集群区域名(zone)类型等信息来查询和过滤云硬盘独享集群详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
+      "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、可用区(zone)等信息来查询和过滤云硬盘独享集群详细信息，不同的过滤条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
       "input": "DescribeDiskStoragePoolRequest",
       "name": "查询云硬盘独享集群列表",
       "output": "DescribeDiskStoragePoolResponse"
@@ -119,6 +119,12 @@
       "input": "GetSnapOverviewRequest",
       "name": "获取快照概览信息",
       "output": "GetSnapOverviewResponse"
+    },
+    "InitializeDisks": {
+      "document": "重新初始化云硬盘至云硬盘初始创建时的状态。使用云硬盘的重新初始化功能时需要注意以下4点：\n1. 如果云硬盘是由快照创建的，则重新初始化会通过此快照重新回滚此云硬盘，即将云硬盘恢复为与快照一致的状态；\n2. 如果云硬盘不是通过快照创建的，则重新初始化会清空此云硬盘的数据；请在重新初始化云硬盘前检查并备份必要的数据；\n3. 当前仅未挂载的、非共享属性的数据盘云硬盘支持重新初始化；\n4. 当创建此云硬盘的原始快照被删除时，不再支持重新初始化此云硬盘。",
+      "input": "InitializeDisksRequest",
+      "name": "重新初始化云硬盘",
+      "output": "InitializeDisksResponse"
     },
     "InquirePriceModifyDiskExtraPerformance": {
       "document": "本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。",
@@ -545,7 +551,7 @@
         },
         {
           "default": "",
-          "document": "独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。",
+          "document": "独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。",
           "example": "NORMAL",
           "member": "string",
           "name": "CdcState",
@@ -555,7 +561,7 @@
         },
         {
           "default": "",
-          "document": "独享集群所属的[可用区](/document/api/213/9452#zone)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shenzhen-fsi-2",
           "member": "string",
           "name": "Zone",
@@ -575,7 +581,7 @@
         },
         {
           "default": "",
-          "document": "独享集群的资源大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群的资源容量大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CdcSize",
           "name": "CdcResource",
@@ -605,7 +611,7 @@
         },
         {
           "default": "",
-          "document": "独享集群过期时间。",
+          "document": "独享集群到期时间。",
           "example": "2029-01-01 00:00:00",
           "member": "datetime",
           "name": "ExpiredTime",
@@ -907,8 +913,8 @@
         },
         {
           "default": "",
-          "document": "快照的到期时间，到期后该快照将会自动删除",
-          "example": "2020-08-01 00:00:00",
+          "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00",
+          "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
           "required": false,
@@ -1286,7 +1292,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/api/213/9452#zone)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
+          "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2020,6 +2026,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteSnapshot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2309,6 +2325,33 @@
         }
       ],
       "usage": "out"
+    },
+    "InitializeDisksRequest": {
+      "document": "InitializeDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待重新初始化的云硬盘ID列表， 单次初始化限制20块以内",
+          "example": "[\"disk-12sdf234\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InitializeDisksResponse": {
+      "document": "InitializeDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquirePriceModifyDiskExtraPerformanceRequest": {
       "document": "InquirePriceModifyDiskExtraPerformance请求参数结构体",
@@ -3547,6 +3590,15 @@
           "name": "DiskIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteSnapshot",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -14,6 +14,8 @@ Output:
 {
     "Response": {
         "Group": "xx",
+        "InstanceID": "xx",
+        "RegionID": 0,
         "OsName": "xx",
         "DockerRootDir": "xx",
         "DockerFileSystemDriver": "xx",
@@ -28,10 +30,10 @@ Output:
         "DockerGoVersion": "xx",
         "RequestId": "xx",
         "HostIP": "xx",
-        "UUID": "xx",
+        "DockerVersion": "xx",
         "KernelVersion": "xx",
         "MachineType": "xx",
-        "DockerVersion": "xx",
+        "UUID": "xx",
         "K8sVersion": "xx",
         "K8sMasterIP": "xx",
         "ImageCnt": 1,

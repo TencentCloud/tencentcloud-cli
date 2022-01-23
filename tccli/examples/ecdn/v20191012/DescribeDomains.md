@@ -20,6 +20,7 @@ Output:
                 "CreateTime": "2019-12-03 15:23:50",
                 "Disable": "normal",
                 "Domain": "test.com",
+                "Tag": [],
                 "Origin": {
                     "Origins": [
                         "1.1.1.1"

@@ -18,11 +18,23 @@
       "name": "创建健康报告浏览地址",
       "output": "CreateDBDiagReportUrlResponse"
     },
+    "CreateKillTask": {
+      "document": "创建中断会话的任务。",
+      "input": "CreateKillTaskRequest",
+      "name": "创建中断会话的任务",
+      "output": "CreateKillTaskResponse"
+    },
     "CreateMailProfile": {
       "document": "创建邮件配置。其中入参ProfileType表示所创建配置的类型，ProfileType 取值包括：dbScan_mail_configuration（数据库巡检邮件配置）、scheduler_mail_configuration（定期生成健康报告的邮件发送配置）。Region统一选择广州，和实例所属地域无关。",
       "input": "CreateMailProfileRequest",
       "name": "创建邮件配置",
       "output": "CreateMailProfileResponse"
+    },
+    "CreateProxySessionKillTask": {
+      "document": "创建中止所有代理节点连接会话的异步任务。当前仅支持 Redis。得到的返回值为异步任务 id，可以作为参数传入接口 DescribeProxySessionKillTasks 查询kill会话任务执行状态。",
+      "input": "CreateProxySessionKillTaskRequest",
+      "name": "创建中止代理节点会话的任务",
+      "output": "CreateProxySessionKillTaskResponse"
     },
     "CreateSchedulerMailProfile": {
       "document": "该接口用于创建定期生成健康报告并邮件发送的配置，将健康报告的定期生成时间作为参数传入（周一至周日），用于设置健康报告的定期生成时间，同时保存相应的定期邮件发送的配置。",
@@ -431,6 +443,114 @@
       ],
       "type": "object"
     },
+    "CreateKillTaskRequest": {
+      "document": "CreateKillTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "kill会话任务的关联实例ID。",
+          "example": "cdb-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务持续时间时间，单位秒，手动关闭任务传-1。",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，客户端IP。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，数据库库名,多个\",\"隔开。",
+          "example": "test,test1",
+          "member": "string",
+          "name": "DB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，相关命令，多个\",\"隔开。",
+          "example": "Time,Table Dump",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，支持单条件前缀匹配。",
+          "example": "select",
+          "member": "string",
+          "name": "Info",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，用户类型。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务过滤条件，会话持续时长，单位秒。",
+          "example": "10",
+          "member": "int64",
+          "name": "Time",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKillTaskResponse": {
+      "document": "CreateKillTask返回参数结构体",
+      "members": [
+        {
+          "document": "kill会话任务创建成功返回1",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMailProfileRequest": {
       "document": "CreateMailProfile请求参数结构体",
       "members": [
@@ -494,6 +614,51 @@
     "CreateMailProfileResponse": {
       "document": "CreateMailProfile返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxySessionKillTaskRequest": {
+      "document": "CreateProxySessionKillTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "example": "crs-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxySessionKillTaskResponse": {
+      "document": "CreateProxySessionKillTask返回参数结构体",
+      "members": [
+        {
+          "document": "创建 kill 会话任务返回的异步任务 id",
+          "example": "123456",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1512,7 +1677,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "邮件模版总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮件配置总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",

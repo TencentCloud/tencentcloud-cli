@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddReplicationInstance": {
+      "document": "添加复制组成员",
+      "input": "AddReplicationInstanceRequest",
+      "name": "添加复制组成员",
+      "output": "AddReplicationInstanceResponse"
+    },
     "ApplyParamsTemplate": {
       "document": "应用参数模板到实例",
       "input": "ApplyParamsTemplateRequest",
@@ -13,7 +19,7 @@
       "output": "AssociateSecurityGroupsResponse"
     },
     "ChangeReplicaToMaster": {
-      "document": "该接口仅支持多AZ实例副本组提主",
+      "document": "该接口仅支持多AZ实例副本组提主和单AZ副本提主",
       "input": "ChangeReplicaToMasterRequest",
       "name": "副本组提主",
       "output": "ChangeReplicaToMasterResponse"
@@ -48,6 +54,12 @@
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse"
     },
+    "CreateReplicationGroup": {
+      "document": "创建复制组",
+      "input": "CreateReplicationGroupRequest",
+      "name": "创建复制组接口",
+      "output": "CreateReplicationGroupResponse"
+    },
     "DeleteInstanceAccount": {
       "document": "删除实例子账号",
       "input": "DeleteInstanceAccountRequest",
@@ -59,6 +71,12 @@
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse"
+    },
+    "DeleteReplicationInstance": {
+      "document": "移除复制组成员",
+      "input": "DeleteReplicationInstanceRequest",
+      "name": "删除复制组成员",
+      "output": "DeleteReplicationInstanceResponse"
     },
     "DescribeAutoBackupConfig": {
       "document": "获取备份配置",
@@ -500,6 +518,60 @@
       ],
       "usage": "out"
     },
+    "AddReplicationInstanceRequest": {
+      "document": "AddReplicationInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "复制组ID",
+          "example": "crs-rpl-267khx71",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例角色，rw可读写，r只读",
+          "example": "rw",
+          "member": "string",
+          "name": "InstanceRole",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddReplicationInstanceResponse": {
+      "document": "AddReplicationInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplyParamsTemplateRequest": {
       "document": "ApplyParamsTemplate请求参数结构体",
       "members": [
@@ -747,7 +819,7 @@
           "example": "354266",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
@@ -1259,6 +1331,60 @@
       ],
       "type": "object"
     },
+    "CreateReplicationGroupRequest": {
+      "document": "CreateReplicationGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dvchdv5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "复制组名称",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReplicationGroupResponse": {
+      "document": "CreateReplicationGroup返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DelayDistribution": {
       "document": "延时分布详情",
       "members": [
@@ -1351,6 +1477,60 @@
     "DeleteParamTemplateResponse": {
       "document": "DeleteParamTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReplicationInstanceRequest": {
+      "document": "DeleteReplicationInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "复制组ID",
+          "example": "crs-rpl-deindi7de",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据同步类型，true:需要数据强同步,false:不需要强同步，仅限删除主实例",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncType",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReplicationInstanceResponse": {
+      "document": "DeleteReplicationInstance返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务ID",
+          "example": "486489",
+          "member": "float",
+          "name": "TaskId",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5490,6 +5670,15 @@
           "name": "Password",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "单AZ实例节点信息",
+          "example": "null",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

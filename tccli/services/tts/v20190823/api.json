@@ -49,7 +49,7 @@
         },
         {
           "default": "",
-          "document": "音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。\n输入除以上整数之外的其他参数不生效，按默认值处理。",
+          "document": "音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。",
           "example": "1",
           "member": "float",
           "name": "Volume",
@@ -283,16 +283,7 @@
         },
         {
           "default": "",
-          "document": "模型类型，1-默认模型。",
-          "example": "1",
-          "member": "int64",
-          "name": "ModelType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。\n输入除以上整数之外的其他参数不生效，按默认值处理。",
+          "document": "音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。",
           "example": "1",
           "member": "float",
           "name": "Volume",
@@ -314,6 +305,15 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模型类型，1-默认模型。",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelType",
           "required": false,
           "type": "int"
         },

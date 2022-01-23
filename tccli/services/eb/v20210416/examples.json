@@ -1,0 +1,225 @@
+{
+  "actions": {
+    "CheckRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRule\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "规则校验"
+      }
+    ],
+    "CheckTransformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckTransformation\n<公共请求参数>\n\n{\n    \"Input\": \"{\\\"data\\\":{\\\"msgBody\\\":\\\"{\\\\\\\"city\\\\\\\":\\\\\\\"shenzhen\\\\\\\",\\\\\\\"temp\\\\\\\":32,\\\\\\\"weather\\\\\\\":\\\\\\\"sunny\\\\\\\"}\\\"}}\",\n    \"Transformations\": [\n        {\n            \"Extraction\": {\n                \"ExtractionInputPath\": \"$.data.msgBody\",\n                \"Format\": \"JSON\",\n                \"TextParams\": {\n                    \"Separator\": \":\",\n                    \"Regex\": \"shenzhen\"\n                }\n            },\n            \"EtlFilter\": {\n                \"Filter\": \"{\\\"city\\\":[{\\\"contain\\\":\\\"shen\\\"}]}\"\n            },\n            \"Transform\": {\n                \"OutputStructs\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"$.city\",\n                        \"ValueType\": \"JSONPATH\"\n                    },\n                    {\n                        \"Key\": \"const\",\n                        \"Value\": \"11\",\n                        \"ValueType\": \"NUMBER\"\n                    },\n                    {\n                        \"Key\": \"sdate\",\n                        \"Value\": \"date\",\n                        \"ValueType\": \"SYS_VARIABLE\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"589fd30c-49c9-11ec-9ad1-5254006e5bc5\",\n        \"Output\": \"{\\\"sdate\\\":\\\"2021-11-20T14:16:06+08:00\\\",\\\"city\\\":\\\"shenzhen\\\",\\\"const\\\":11}\"\n    }\n}",
+        "title": "检查转换器"
+      }
+    ],
+    "CreateConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnection\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"Type\": \"tdmq\",\n    \"ConnectionDescription\": {\n        \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\",\n        \"APIGWParams\": null\n    },\n    \"ConnectionName\": \"conn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectionId\": \"connection-5t492ybt\",\n        \"RequestId\": \"99d8d400-2bde-49d6-99f4-7367907e5964\"\n    }\n}",
+        "title": "创建连接器"
+      }
+    ],
+    "CreateEventBus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventBusId\": \"eb-xxxxxxxx\",\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
+        "title": "创建事件集"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test\",\n    \"Description\": \"test-desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"RequestId\": \"b3103b8d-77a6-4b55-b42f-a25e2dc453a9\"\n    }\n}",
+        "title": "创建事件集1"
+      }
+    ],
+    "CreateRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRule\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-anao4i7q\",\n    \"Description\": \"rule-test1\",\n    \"Enable\": true,\n    \"EventPattern\": \"{\\n  \\\"source\\\": [\\n    \\\"ckafka.cloud.tencent\\\"\\n  ]\\n}\",\n    \"RuleName\": \"rule-test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"rule-xxxxxxx\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "创建过滤规则"
+      }
+    ],
+    "CreateTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"Type\": \"scf\",\n    \"TargetDescription\": {\n        \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n    },\n    \"RuleId\": \"rule-fdltium8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\",\n        \"TargetId\": \"target-o5yx01oq\"\n    }\n}",
+        "title": "创建目标"
+      }
+    ],
+    "CreateTransformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTransformation\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxx\",\n    \"RuleId\": \"rule-xxxxx\",\n    \"Transformations\": [\n        {\n            \"Extraction\": {\n                \"ExtractionInputPath\": \"$\",\n                \"Format\": \"JSON\"\n            },\n            \"EtlFilter\": {\n                \"Filter\": \"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"\n            },\n            \"Transform\": {\n                \"OutputStructs\": [\n                    {\n                        \"Key\": \"data\",\n                        \"Value\": \"$.data\",\n                        \"ValueType\": \"STRING\"\n                    },\n                    {\n                        \"Key\": \"age\",\n                        \"Value\": \"$.age\",\n                        \"ValueType\": \"NUMBER\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TransformationId\": \"tsfm-xxxxxxxx\",\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
+        "title": "创建转换器"
+      }
+    ],
+    "DeleteConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConnection\n<公共请求参数>\n\n{\n    \"ConnectionId\": \"connection-ljwdxs09\",\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ec69b78-1e6a-4c39-b6e0-217d496ada7d\"\n    }\n}",
+        "title": "删除连接器"
+      }
+    ],
+    "DeleteEventBus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEventBus\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3103b8d-77a6-4b55-b42f-a25e2dc453a9\"\n    }\n}",
+        "title": "删除事件集"
+      }
+    ],
+    "DeleteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-xxxxxxxx\",\n    \"EventBusId\": \"eb-l65vlc2u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
+        "title": "删除事件规则"
+      }
+    ],
+    "DeleteTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-753e9ung\",\n    \"TargetId\": \"target-gxk2ukxy\",\n    \"RuleId\": \"rule-n0v4zane\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"587a0f0e-8c5d-40c2-874b-eabf103d8004\"\n    }\n}",
+        "title": "删除目标"
+      }
+    ],
+    "DeleteTransformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTransformation\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxx\",\n    \"RuleId\": \"rule-xxxxxxxxx\",\n    \"TransformationId\": \"tsfm-xxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "删除转换器"
+      }
+    ],
+    "GetEventBus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEventBus\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-28T23:34:19+08:00\",\n        \"ClsLogsetId\": \"\",\n        \"ClsTopicId\": \"\",\n        \"Description\": \"\",\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"EventBusName\": \"test\",\n        \"ModTime\": \"2021-04-28T23:34:19+08:00\",\n        \"RequestId\": \"2a65b86b-19e2-4c4f-b38e-7380475cb963\",\n        \"Type\": \"Custom\"\n    }\n}",
+        "title": "获取事件集"
+      }
+    ],
+    "GetRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRule\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleId\": \"rule-qr2wsqqy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2021-04-29T20:01:27+08:00\",\n        \"Description\": \"\",\n        \"Enable\": true,\n        \"EventBusId\": \"eb-l65vlc2u\",\n        \"EventPattern\": \"{\\\"data\\\":{\\\"prefix\\\":[\\\"1\\\",\\\"2\\\"]}}\",\n        \"ModTime\": \"2021-04-29T20:01:28+08:00\",\n        \"RequestId\": \"9babdbaf-85d9-4d79-8eb7-14fd989cf99a\",\n        \"RuleId\": \"rule-qr2wsqqy\",\n        \"RuleName\": \"test\",\n        \"Status\": \"Active\"\n    }\n}",
+        "title": "获取规则详情"
+      }
+    ],
+    "GetTransformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTransformation\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxx\",\n    \"RuleId\": \"rule-xxxxxxxxx\",\n    \"TransformationId\": \"tsfm-xxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Transformations\": [\n            {\n                \"EtlFilter\": {\n                    \"Filter\": \"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"\n                },\n                \"Extraction\": {\n                    \"ExtractionInputPath\": \"$\",\n                    \"Format\": \"JSON\",\n                    \"TextParams\": {\n                        \"Separator\": \",\"\n                    }\n                },\n                \"Transform\": {\n                    \"OutputStructs\": [\n                        {\n                            \"Key\": \"age\",\n                            \"Value\": \"$.age\",\n                            \"ValueType\": \"NUMBER\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取转换器详情"
+      }
+    ],
+    "ListConnections": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnections\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Connections\": [],\n        \"RequestId\": \"cec4c711-4e68-43ac-988f-00171f2b2146\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "获取连接器列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConnections\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Connections\": [\n            {\n                \"AddTime\": \"2021-04-29T13:13:43+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-5t492ybt\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T13:13:44+08:00\",\n                \"Status\": \"Active\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T13:00:32+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-7mpfojtt\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T13:00:33+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T12:58:24+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-il11bb0h\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T12:58:24+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T12:01:34+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-6s29eqob\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T12:01:35+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:46:27+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-dka58wiv\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:46:28+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:42:44+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-r1o76r2d\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:42:44+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:35:12+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-ay3ix129\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:35:13+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            },\n            {\n                \"AddTime\": \"2021-04-29T11:24:45+08:00\",\n                \"ConnectionDescription\": {\n                    \"APIGWParams\": null,\n                    \"ResourceDescription\": \"qcs::tdmq:ap-guangzhou:uin/3473058547:subscriptionName/pulsar-5r5drqo7j8/user/test/sub1\"\n                },\n                \"ConnectionId\": \"connection-heno97b7\",\n                \"ConnectionName\": \"conn\",\n                \"Description\": \"\",\n                \"Enable\": false,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-29T11:24:45+08:00\",\n                \"Status\": \"Failed\",\n                \"Type\": \"tdmq\"\n            }\n        ],\n        \"RequestId\": \"e576a375-88ae-4c3f-84a9-0bf28dc7b0ee\",\n        \"TotalCount\": 8\n    }\n}",
+        "title": "获取连接器列表1"
+      }
+    ],
+    "ListEventBuses": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEventBuses\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"AddTime\": \"2021-04-28T23:34:19+08:00\",\n                \"Description\": \"\",\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"EventBusName\": \"test\",\n                \"ModTime\": \"2021-04-28T23:34:19+08:00\",\n                \"Type\": \"Custom\"\n            }\n        ],\n        \"RequestId\": \"116a59b2-4d31-4d17-966e-6ee65f7401f5\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取事件集列表"
+      }
+    ],
+    "ListRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRules\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfbf943a-0032-461c-89e6-260f7a3d520d\",\n        \"Rules\": [\n            {\n                \"AddTime\": \"2021-04-29T00:06:22+08:00\",\n                \"Description\": \"\",\n                \"Enable\": true,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-28T16:06:22+08:00\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"RuleName\": \"sssss\",\n                \"Status\": \"Active\",\n                \"Targets\": null,\n                \"DeadLetterConfig\": null\n            },\n            {\n                \"AddTime\": \"2021-04-28T16:00:14+08:00\",\n                \"Description\": \"\",\n                \"Enable\": true,\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"ModTime\": \"2021-04-28T16:00:14+08:00\",\n                \"RuleId\": \"rule-m5ut05gs\",\n                \"RuleName\": \"rule\",\n                \"Status\": \"Active\",\n                \"Targets\": null,\n                \"DeadLetterConfig\": null\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "获取事件规则列表"
+      }
+    ],
+    "ListTargets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTargets\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleId\": \"rule-fdltium8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03118ade-8de2-4514-af4b-b9a2f170ddd9\",\n        \"Targets\": [\n            {\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n                },\n                \"TargetId\": \"target-azwj7s7g\",\n                \"Type\": \"scf\"\n            },\n            {\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n                },\n                \"TargetId\": \"target-o5yx01oq\",\n                \"Type\": \"scf\"\n            },\n            {\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n                },\n                \"TargetId\": \"target-prp1ovqi\",\n                \"Type\": \"scf\"\n            },\n            {\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n                },\n                \"TargetId\": \"target-krcwchke\",\n                \"Type\": \"scf\"\n            },\n            {\n                \"EventBusId\": \"eb-l65vlc2u\",\n                \"RuleId\": \"rule-fdltium8\",\n                \"TargetDescription\": {\n                    \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n                },\n                \"TargetId\": \"target-e9r3a1l0\",\n                \"Type\": \"scf\"\n            }\n        ],\n        \"TotalCount\": 5\n    }\n}",
+        "title": "获取目标列表"
+      }
+    ],
+    "PublishEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishEvent\n<公共请求参数>\n\n{\n    \"EventList\": [\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        },\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        }\n    ],\n    \"EventBusId\": \"string\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
+        "title": "事件投递"
+      }
+    ],
+    "PutEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutEvents\n<公共请求参数>\n\n{\n    \"EventList\": [\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        },\n        {\n            \"Data\": \"string\",\n            \"Type\": \"string\",\n            \"Source\": \"string\",\n            \"Subject\": \"qcs::dts:ap-guangzhou:appid12312/uid1250000000:xxx\"\n        }\n    ],\n    \"EventBusId\": \"string\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae684d86-33ec-449e-bc38-9d9552199267\"\n    }\n}",
+        "title": "事件投递"
+      }
+    ],
+    "UpdateConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateConnection\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2u\",\n    \"ConnectionId\": \"connection-l65vlc2u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3103b8d-77a6-4b55-b42f-a25e2dc453a9\"\n    }\n}",
+        "title": "更新连接器"
+      }
+    ],
+    "UpdateEventBus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEventBus\n<公共请求参数>\n\n{\n    \"EventBusName\": \"test111\",\n    \"EventBusId\": \"eb-l65vlc2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18484e4f-f6f1-4b87-8827-27422b30c8c4\"\n    }\n}",
+        "title": "更新事件集"
+      }
+    ],
+    "UpdateRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-fdltium8\",\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"RuleName\": \"sssss\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5d57478-9baf-483d-a5db-b1067424e469\"\n    }\n}",
+        "title": "更新规则"
+      }
+    ],
+    "UpdateTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTarget\n<公共请求参数>\n\n{\n    \"EnableBatchDelivery\": \"true\",\n    \"RuleId\": \"rule-51wvf3is\",\n    \"BatchEventCount\": \"32\",\n    \"TargetId\": \"target-ceh92ss4\",\n    \"EventBusId\": \"eb-ohb9x6rg\",\n    \"BatchTimeout\": \"43\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72b987c9-8842-47ac-9ad6-fa2bde3e936d\"\n    }\n}",
+        "title": "更新目标"
+      }
+    ],
+    "UpdateTransformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTransformation\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxx\",\n    \"RuleId\": \"rule-xxxxx\",\n    \"TransformationId\": \"tsfm-xxxxx\",\n    \"Transformations\": [\n        {\n            \"Extraction\": {\n                \"ExtractionInputPath\": \"$\",\n                \"Format\": \"JSON\"\n            },\n            \"EtlFilter\": {\n                \"Filter\": \"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"\n            },\n            \"Transform\": {\n                \"OutputStructs\": [\n                    {\n                        \"Key\": \"data\",\n                        \"Value\": \"$.data\",\n                        \"ValueType\": \"STRING\"\n                    },\n                    {\n                        \"Key\": \"age\",\n                        \"Value\": \"$.age\",\n                        \"ValueType\": \"NUMBER\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3d43926-c2cd-49f2-97f0-53db21e6fcea\"\n    }\n}",
+        "title": "更新转换器"
+      }
+    ]
+  },
+  "version": "1.0"
+}

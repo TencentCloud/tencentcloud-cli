@@ -75,7 +75,7 @@
     "CreateLiveRecordTemplate": {
       "document": "创建录制模板，数量上限：50，成功返回模板id后，需要调用[CreateLiveRecordRule](/document/product/267/32615)接口，将模板id绑定到流进行使用。\n<br>录制相关文档：[直播录制](/document/product/267/32739)。",
       "input": "CreateLiveRecordTemplateRequest",
-      "name": "创建录制模板",
+      "name": "直播创建录制模板",
       "output": "CreateLiveRecordTemplateResponse"
     },
     "CreateLiveSnapshotRule": {
@@ -421,7 +421,7 @@
       "output": "DescribeLiveStreamPushInfoListResponse"
     },
     "DescribeLiveStreamState": {
-      "document": "返回直播中、无推流或者禁播等状态。\n注意：该接口仅提供辅助查询流状态功能，业务重要场景不要强依赖该接口！\n\n使用建议：\n1. 去除将该接口的返回结果作为开播、关播等重要业务场景的依赖。\n2. 如业务需要该状态,可通过[推断流事件通知](/document/product/267/47025)进行存储维护直播间状态。\n3. 自行维护的直播间状态,可通过定时(>1 min)[查询直播中的流接口](/document/product/267/20472),进行状态校准。\n4. 如使用了流状态查询接口查询到流不活跃,可通过上述多种方案综合判定流状态。\n5. 接口查询时,如发生访问异常或解析异常等,可默认为活跃,减少对业务影响。",
+      "document": "返回直播中、无推流或者禁播等状态。\n\n使用建议：\n该接口提供实时流状态查询功能，鉴于网络抖动等一些不可抗因素，使用该接口作为判断主播是否开播等重要业务场景时，请参考以下使用建议。\n1. 优先使用业务自身的房间开关播逻辑，判断主播是否在线，譬如客户端开播信令和主播在线心跳等。\n2. 对于没有房间管理的直播场景，可以结合以下方案综合判断。\n2.1 根据[推断流事件通知](/document/product/267/20388) 判断主播在线状态。\n2.2 通过定时（间隔>1min）查询[直播中的流接口](/document/api/267/20472)，判断主播是否在线。\n2.3 通过 本接口 查询直播流状态，判断主播是否在线。\n2.4 以上任一方式判断为在线，都认为主播开播中，并且接口查询超时或解析异常时，也默认为在线，减少对业务的影响。",
       "input": "DescribeLiveStreamStateRequest",
       "name": "查询流状态",
       "output": "DescribeLiveStreamStateResponse"
@@ -639,7 +639,7 @@
     "ModifyLiveRecordTemplate": {
       "document": "修改录制模板配置。",
       "input": "ModifyLiveRecordTemplateRequest",
-      "name": "修改录制模板配置",
+      "name": "直播修改录制模板配置",
       "output": "ModifyLiveRecordTemplateResponse"
     },
     "ModifyLiveSnapshotTemplate": {
@@ -1637,7 +1637,7 @@
       "members": [
         {
           "default": "",
-          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。",
+          "document": "输入图层。取值范围[1，16]。\n1)背景流（即大主播画面或画布）的 image_layer 填1。\n2)纯音频混流，该参数也需填。\n注意：不同输入，该值不可重复",
           "example": "1",
           "member": "int64",
           "name": "ImageLayer",
@@ -4033,6 +4033,15 @@
           "name": "ServiceName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "大区，映射表如下：\nChina Mainland 中国大陆\nAsia Pacific I 亚太一区\nAsia Pacific II 亚太二区\nAsia Pacific III 亚太三区\nEurope 欧洲\nNorth America 北美\nSouth America 南美\nMiddle East 中东\nAfrica 非洲。",
+          "example": "[\"China Mainland\"]",
+          "member": "string",
+          "name": "RegionNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7109,6 +7118,15 @@
           "name": "Granularity",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "大区，映射表如下：\nChina Mainland 中国大陆\nAsia Pacific I 亚太一区\nAsia Pacific II 亚太二区\nAsia Pacific III 亚太三区\nEurope 欧洲\nNorth America 北美\nSouth America 南美\nMiddle East 中东\nAfrica 非洲。",
+          "example": "[\"China Mainland\"]",
+          "member": "string",
+          "name": "RegionNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7472,7 +7490,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间30天内的数据查询。",
+          "document": "结束时间，北京时间，格式为yyyy-mm-dd HH:MM:SS，\n结束时间 和 开始时间跨度不支持超过24小时，支持距当前时间15天内的数据查询。",
           "example": "2019-03-01 00:03:00",
           "member": "string",
           "name": "EndTime",
@@ -11114,6 +11132,7 @@
         {
           "default": "",
           "document": "模板 ID。",
+          "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -11123,6 +11142,7 @@
         {
           "default": "",
           "document": "模板名称。",
+          "example": "test-1",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -11132,6 +11152,7 @@
         {
           "default": "",
           "document": "描述信息。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -11141,6 +11162,7 @@
         {
           "default": "",
           "document": "FLV 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "FlvParam",
           "required": true,
@@ -11150,6 +11172,7 @@
         {
           "default": "",
           "document": "HLS 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "HlsParam",
           "required": true,
@@ -11159,6 +11182,7 @@
         {
           "default": "",
           "document": "MP4 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "Mp4Param",
           "required": true,
@@ -11168,6 +11192,7 @@
         {
           "default": "",
           "document": "AAC 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "AacParam",
           "required": true,
@@ -11177,6 +11202,7 @@
         {
           "default": "",
           "document": "0：普通直播，\n1：慢直播。",
+          "example": "1",
           "member": "int64",
           "name": "IsDelayLive",
           "required": true,
@@ -11186,6 +11212,7 @@
         {
           "default": "",
           "document": "HLS 录制定制参数",
+          "example": "无",
           "member": "HlsSpecialParam",
           "name": "HlsSpecialParam",
           "required": true,
@@ -11195,6 +11222,7 @@
         {
           "default": "",
           "document": "MP3 录制参数。",
+          "example": "无",
           "member": "RecordParam",
           "name": "Mp3Param",
           "required": true,

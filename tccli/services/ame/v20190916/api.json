@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateKTVRobot": {
+      "document": "创建机器人，支持进入 RTC 房间，播放直播互动曲库歌曲。",
+      "input": "CreateKTVRobotRequest",
+      "name": "创建直播互动机器人",
+      "output": "CreateKTVRobotResponse"
+    },
     "DescribeAuthInfo": {
       "document": "获取授权项目信息列表",
       "input": "DescribeAuthInfoRequest",
@@ -48,6 +54,12 @@
       "name": "获取直播互动曲库推荐歌单列表",
       "output": "DescribeKTVPlaylistsResponse"
     },
+    "DescribeKTVRobots": {
+      "document": "查询机器人列表，支持 Id、状态等过滤条件。",
+      "input": "DescribeKTVRobotsRequest",
+      "name": "查询直播互动机器人信息",
+      "output": "DescribeKTVRobotsResponse"
+    },
     "DescribeLyric": {
       "document": "根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。",
       "input": "DescribeLyricRequest",
@@ -90,6 +102,12 @@
       "name": "获取分类内容（Station）列表",
       "output": "DescribeStationsResponse"
     },
+    "DestroyKTVRobot": {
+      "document": "销毁机器人，机器人退出 RTC 房间。",
+      "input": "DestroyKTVRobotRequest",
+      "name": "销毁直播互动机器人",
+      "output": "DestroyKTVRobotResponse"
+    },
     "ModifyMusicOnShelves": {
       "document": "根据资源方，需要变更的参数，请求该接口进行变更，为空的参数默认为无变更",
       "input": "ModifyMusicOnShelvesRequest",
@@ -113,6 +131,12 @@
       "input": "SearchKTVMusicsRequest",
       "name": "搜索直播互动曲库歌曲",
       "output": "SearchKTVMusicsResponse"
+    },
+    "SyncKTVRobotCommand": {
+      "document": "下发操作机器人指令，支持播放、暂停、恢复、歌单设置等操作指令，实现对机器人行为的控制。",
+      "input": "SyncKTVRobotCommandRequest",
+      "name": "同步直播互动机器人指令",
+      "output": "SyncKTVRobotCommandResponse"
     },
     "TakeMusicOffShelves": {
       "document": "根据资源方所传MusicId进行将歌曲进行下架，多个MusicId使用逗号隔开",
@@ -245,6 +269,51 @@
       ],
       "usage": "out"
     },
+    "CreateKTVRobotRequest": {
+      "document": "CreateKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进房参数。",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKTVRobotResponse": {
+      "document": "CreateKTVRobot返回参数结构体",
+      "members": [
+        {
+          "document": "机器人Id。",
+          "example": "ame-xxxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DataInfo": {
       "document": "数据信息",
       "members": [
@@ -373,6 +442,7 @@
         {
           "default": "",
           "document": "授权项目Id",
+          "example": "xx",
           "member": "string",
           "name": "AuthInfoId",
           "required": true,
@@ -386,8 +456,10 @@
       "members": [
         {
           "document": "云音乐列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MusicOpenDetail",
           "name": "MusicOpenDetail",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -788,6 +860,78 @@
       ],
       "type": "object"
     },
+    "DescribeKTVRobotsRequest": {
+      "document": "DescribeKTVRobots请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人Id列表。",
+          "example": "ame-xxxxx",
+          "member": "string",
+          "name": "RobotIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "Play",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的起始偏移量，默认值：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVRobotsResponse": {
+      "document": "DescribeKTVRobots返回参数结构体",
+      "members": [
+        {
+          "document": "机器人总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机器人信息集合。",
+          "example": "无",
+          "member": "KTVRobotInfo",
+          "name": "KTVRobotInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLyricRequest": {
       "document": "DescribeLyric请求参数结构体",
       "members": [
@@ -1163,6 +1307,33 @@
       ],
       "type": "object"
     },
+    "DestroyKTVRobotRequest": {
+      "document": "DestroyKTVRobot请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "ame-xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyKTVRobotResponse": {
+      "document": "DestroyKTVRobot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ImagePath": {
       "document": "图片路径",
       "members": [
@@ -1237,6 +1408,22 @@
         }
       ],
       "usage": "out"
+    },
+    "JoinRoomInput": {
+      "document": "直播进房输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "TRTC进房参数",
+          "example": "无",
+          "member": "TRTCJoinRoomInput",
+          "name": "TRTCJoinRoomInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "KTVMusicBaseInfo": {
       "document": "KTV 曲目基础信息",
@@ -1391,6 +1578,92 @@
           "name": "MusicNum",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVRobotInfo": {
+      "document": "机器人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "ame-xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
+          "example": "Play",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放列表。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Playlists",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前歌单索引位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放进度，单位：毫秒。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频参数",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "进房信息",
+          "example": "无",
+          "member": "JoinRoomInput",
+          "name": "JoinRoomInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
+          "example": "TRTC",
+          "member": "string",
+          "name": "RTCSystem",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2020,6 +2293,22 @@
       ],
       "usage": "out"
     },
+    "PlayCommandInput": {
+      "document": "播放指令输入参数",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲位置索引。",
+          "example": "2",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "PutMusicOnTheShelvesRequest": {
       "document": "PutMusicOnTheShelves请求参数结构体",
       "members": [
@@ -2164,6 +2453,110 @@
       ],
       "type": "object"
     },
+    "SeekCommandInput": {
+      "document": "调整播放进度指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "播放位置，单位：毫秒。",
+          "example": "120",
+          "member": "uint64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SendMessageCommandInput": {
+      "document": "发送自定义信息指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义消息，json格式字符串。",
+          "example": "{\"field\":\"value\"}",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息重复次数，默认为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Repeat",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetAudioParamCommandInput": {
+      "document": "音频参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规格，取值有：\n<li>audio/mi：低规格</li>\n<li>audio/lo：中规格</li>\n<li>audio/hi：高规格</li>",
+          "example": "audio/hi",
+          "member": "string",
+          "name": "Definition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
+          "example": "Original",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SetPlaylistCommandInput": {
+      "document": "设置播放列表指令参数",
+      "members": [
+        {
+          "default": "",
+          "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>",
+          "example": "Add",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示要删除的位置。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "MusicIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Station": {
       "document": "分类内容",
       "members": [
@@ -2214,6 +2607,133 @@
         }
       ],
       "usage": "out"
+    },
+    "SyncKTVRobotCommandRequest": {
+      "document": "SyncKTVRobotCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机器人Id。",
+          "example": "ame-xxxxx",
+          "member": "string",
+          "name": "RobotId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>",
+          "example": "Play",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "播放参数。",
+          "example": "无",
+          "member": "PlayCommandInput",
+          "name": "PlayCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
+          "example": "无",
+          "member": "SetPlaylistCommandInput",
+          "name": "SetPlaylistCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "播放进度，当Command取Seek时，必填。",
+          "example": "无",
+          "member": "SeekCommandInput",
+          "name": "SeekCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "音频参数，当Command取SetAudioParam时，必填。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义消息，当Command取SendMessage时，必填。",
+          "example": "无",
+          "member": "SendMessageCommandInput",
+          "name": "SendMessageCommandInput",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncKTVRobotCommandResponse": {
+      "document": "SyncKTVRobotCommand返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TRTCJoinRoomInput": {
+      "document": "TRTC推流进房信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签名。",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "房间号。",
+          "example": "12345",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流应用ID。",
+          "example": "140000001",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户唯一标识。",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TakeMusicOffShelves": {
       "document": "下架歌曲复合结构",

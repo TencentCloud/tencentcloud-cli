@@ -33,7 +33,8 @@ Output:
                 "ResourceName": "xx",
                 "DeleteTime": 1,
                 "CreateTime": 1,
-                "NextRotationTime": 1
+                "NextRotationTime": 1,
+                "TargetUin": 0
             },
             {
                 "Status": "xx",
@@ -52,7 +53,8 @@ Output:
                 "ResourceName": "xx",
                 "DeleteTime": 1,
                 "CreateTime": 1,
-                "NextRotationTime": 1
+                "NextRotationTime": 1,
+                "TargetUin": 0
             }
         ],
         "RequestId": "xx"

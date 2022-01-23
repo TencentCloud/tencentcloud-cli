@@ -17,6 +17,9 @@ Output:
         "Status": "xx",
         "DisplayName": "xx",
         "Description": "xx",
+        "SecondaryOrgNodeIdList": [
+            "xx"
+        ],
         "UserGroupIds": [
             "xx",
             "xx"
@@ -29,7 +32,8 @@ Output:
         "ExpirationTime": "xx",
         "Email": "xx",
         "PwdNeedReset": true,
-        "RequestId": "xx"
+        "RequestId": "xx",
+        "AdminFlag": 1
     }
 }
 ```

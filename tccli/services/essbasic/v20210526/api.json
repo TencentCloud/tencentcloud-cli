@@ -7,13 +7,13 @@
       "output": "CreateConsoleLoginUrlResponse"
     },
     "CreateFlowsByTemplates": {
-      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建流程",
+      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建流程。当前可批量发起合同（流程）数量最大为20个。",
       "input": "CreateFlowsByTemplatesRequest",
       "name": "使用多个模板批量创建流程",
       "output": "CreateFlowsByTemplatesResponse"
     },
     "CreateSignUrls": {
-      "document": "根据流程Id批量创建签署参与者签署H5链接",
+      "document": "创建参与者签署短链",
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转小程序签署链接",
       "output": "CreateSignUrlsResponse"
@@ -43,19 +43,19 @@
       "output": "DescribeUsageResponse"
     },
     "GetDownloadFlowUrl": {
-      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载确认页面链接，支持客户合同（流程）归类打包下载。\n",
+      "document": "此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，支持客户合同（流程）按照自定义文件夹形式 分类下载。\n当前接口限制最多合同（流程）50个.\n",
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取合同（流程）批量下载链接",
       "output": "GetDownloadFlowUrlResponse"
     },
     "OperateChannelTemplate": {
-      "document": "此接口（OperateChannelTemplate）用于渠道侧将模板库中的模板对合作企业进行查询和设置, 其中包括可见性的修改以及对合作企业的指定.\n1、同步标识=select时：\n输入规则：“可见标识”、“指定合作企业列表”为空。\n处理规则：返回指定模版的可见标识、指定合作企业列表。\n2、同步标识=update时：\n输入规则：“可见标识”、“指定合作企业列表”非必填输入。\n处理规则：\n若“可见标识”=空，不做处理，返回当前的可见标识。\n若“可见标识”=所有合作企业，不取“指定合作企业列表”的值处理。\n若“可见标识”=指定合作企业，取“指定合作企业列表”的值进行更新/插入。\n3、同步标识=delete时：\n输入规则：“可见标识”、“指定合作企业列表”非必填输入。\n处理规则：\n仅取“指定合作企业列表”的值进行删除处理，为空时不做处。",
+      "document": "此接口（OperateChannelTemplate）用于渠道侧将模板库中的模板对合作企业进行查询和设置, 其中包括可见性的修改以及对合作企业的设置.\n1、同步标识=select时：\n返回渠道侧模板库当前模板的属性.\n2、同步标识=update或者delete时：\n对渠道子客进行模板库中模板授权,修改操作",
       "input": "OperateChannelTemplateRequest",
       "name": "操作渠道模板",
       "output": "OperateChannelTemplateResponse"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse"
@@ -394,7 +394,7 @@
         },
         {
           "default": "",
-          "document": "控制台指定模块，文件/合同管理:\"DOCUMENT\"，模版管理:\"TEMPLATE\"，印章管理:\"SEAL\"，组织架构/人员:\"OPERATOR\"，空字符串：\"账号信息\"",
+          "document": "控制台指定模块，文件/合同管理:\"DOCUMENT\"，模板管理:\"TEMPLATE\"，印章管理:\"SEAL\"，组织架构/人员:\"OPERATOR\"，空字符串：\"账号信息\"",
           "example": "无",
           "member": "string",
           "name": "Module",
@@ -754,7 +754,7 @@
         },
         {
           "default": "",
-          "document": "模版唯一标识",
+          "document": "模板唯一标识",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -1035,17 +1035,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "签署人手机号，脱敏显示",
-          "example": "13888888888",
-          "member": "string",
-          "name": "Mobile",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1055,6 +1045,16 @@
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人手机号，脱敏显示",
+          "example": "13888888888",
+          "member": "string",
+          "name": "Mobile",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1117,6 +1117,46 @@
           "name": "PreReadTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)",
+          "example": "[\"OCR_ESIGN\"]",
+          "member": "string",
+          "name": "ComponentLimitType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1243,8 +1283,8 @@
         },
         {
           "default": "",
-          "document": "模版ID",
-          "example": "模版Id数组",
+          "document": "模板ID",
+          "example": "模板Id数组",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -1313,7 +1353,7 @@
         },
         {
           "default": "",
-          "document": "被抄送人的信息列表",
+          "document": "被抄送人的信息列表，抄送功能暂不开放",
           "example": "xxx",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -1423,7 +1463,7 @@
       "document": "GetDownloadFlowUrl返回参数结构体",
       "members": [
         {
-          "document": "进入合同（流程）下载确认页面链接",
+          "document": "合同（流程）下载地址",
           "example": "无",
           "member": "string",
           "name": "DownLoadUrl",
@@ -1490,7 +1530,7 @@
         },
         {
           "default": "",
-          "document": "合作企业方第三方机构唯一标识数据",
+          "document": "合作企业方第三方机构唯一标识数据，支持多个， 用\",\"进行分隔",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
@@ -1766,6 +1806,16 @@
           "name": "RoutingOrder",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是发起方",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPromoter",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -2169,7 +2219,7 @@
         },
         {
           "default": "",
-          "document": "模板类型：1-静默签；2-静默签授权；3-普通模版",
+          "document": "模板类型：1-静默签；2-静默签授权；3-普通模板",
           "example": "3",
           "member": "int64",
           "name": "TemplateType",

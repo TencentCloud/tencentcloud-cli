@@ -123,7 +123,9 @@ Output:
                     "Switch": "off"
                 },
                 "Status": "processing",
-                "UpdateTime": "2019-12-03 15:23:50"
+                "UpdateTime": "2019-12-03 15:23:50",
+                "Tag": [],
+                "WebSocket": null
             }
         ],
         "TotalCount": 10

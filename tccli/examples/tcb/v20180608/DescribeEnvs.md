@@ -38,6 +38,14 @@ Output:
                         "Status": "RUNNING"
                     }
                 ],
+                "CustomLogServices": [
+                    {
+                        "ClsTopicId": "xx",
+                        "ClsRegion": "xx",
+                        "ClsLogsetId": "xx",
+                        "CreateTime": "2020-09-22 00:00:00"
+                    }
+                ],
                 "Storages": [
                     {
                         "Region": "ap-shanghai",

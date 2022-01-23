@@ -648,6 +648,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特性位图，每个bit位代表一种特性，其中：\n0，表示不支持该特性；\n1，表示支持该特性。\n特性位图含义如下（从右往左）：\n第1个bit，支持4层加速；\n第2个bit，支持7层加速；\n第3个bit，支持Http3接入；\n第4个bit，支持IPv6；\n第5个bit，支持精品BGP接入；\n第6个bit，支持三网接入；\n第7个bit，支持接入段Qos加速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "FeatureBitmap",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1242,6 +1252,15 @@
           "name": "PackageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：0，表示不需要支持Http3接入；1，表示需要支持Http3接入。注意：如果开启了Http3的功能，那么该通道就不再支持TCP/UDP接入的功能。该功能的启停无法在通道创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1716,6 +1735,15 @@
           "name": "PolyClientCertificateIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启Http3特性的标识，其中：\n0，表示不开启Http3；\n1，表示开启Http3。\n默认不开启Http3。可以通过SetDomainHttp3开启。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1878,6 +1906,15 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：\n0，表示不需要支持Http3接入；\n1，表示需要支持Http3接入。\n注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。\n该功能的启停无法在监听器创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2004,6 +2041,15 @@
           "name": "PackageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：\n0，表示不需要支持Http3接入；\n1，表示需要支持Http3接入。\n注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。\n该功能的启停无法在通道组创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2157,6 +2203,15 @@
           "name": "PackageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：0，表示不需要支持Http3接入；1，表示需要支持Http3接入。注意：如果开启了Http3的功能，那么该通道就不再支持TCP/UDP接入的功能。该功能的启停无法在通道创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3646,6 +3701,15 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：\n0，表示不需要支持Http3接入；\n1，表示需要支持Http3接入。\n注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。\n该功能的启停无法在监听器创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5631,6 +5695,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Http3特性标识，其中：\n0表示关闭；\n1表示启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6027,6 +6101,15 @@
           "name": "PackageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持Http3的开关，其中：0，表示不需要支持Http3接入；1，表示需要支持Http3接入。注意：如果开启了Http3的功能，那么该通道就不再支持TCP/UDP接入的功能。该功能的启停无法在通道创建完毕后再修改。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7511,12 +7594,22 @@
         },
         {
           "default": "",
-          "document": "通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持Http3特性的标识，其中：\n0表示关闭；\n1表示启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7621,6 +7714,16 @@
           "example": "1",
           "member": "uint64",
           "name": "ProxyType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持Http3特性的标识，其中：\n0，表示不支持Http3；\n1，表示支持Http3。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -7965,6 +8068,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持Http3协议的标识，其中：\n0表示关闭；\n1表示启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Http3Supported",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8224,6 +8337,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "特性位图，每个bit位代表一种特性，其中：\n0，表示不支持该特性；\n1，表示支持该特性。\n特性位图含义如下（从右往左）：\n第1个bit，支持4层加速；\n第2个bit，支持7层加速；\n第3个bit，支持Http3接入；\n第4个bit，支持IPv6；\n第5个bit，支持精品BGP接入；\n第6个bit，支持三网接入；\n第7个bit，支持接入段Qos加速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "FeatureBitmap",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

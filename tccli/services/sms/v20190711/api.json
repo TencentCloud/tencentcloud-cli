@@ -55,7 +55,7 @@
       "output": "ModifySmsTemplateResponse"
     },
     "PullSmsReplyStatus": {
-      "document": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
       "input": "PullSmsReplyStatusRequest",
       "name": "拉取短信回复状态",
       "output": "PullSmsReplyStatusResponse"
@@ -79,7 +79,7 @@
       "output": "PullSmsSendStatusByPhoneNumberResponse"
     },
     "SendSms": {
-      "document": "短信发送接口，用户给用户发短信验证码、通知类短信或营销短信。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "短信发送接口，用于给用户发短信验证码、通知类短信或营销短信。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
       "input": "SendSmsRequest",
       "name": "发送短信",
       "output": "SendSmsResponse"
@@ -142,7 +142,7 @@
         },
         {
           "default": "",
-          "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司（0，1，2，3）。\n1：APP（0，1，2，3，4） 。\n2：网站（0，1，2，3，5）。\n3：公众号或者小程序（0，1，2，3，6）。\n4：商标（7）。\n5：政府/机关事业单位/其他机构（2，3）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
+          "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司，可选 DocumentType 有（0，1）。\n1：APP，可选 DocumentType 有（0，1，2，3，4） 。\n2：网站，可选 DocumentType 有（0，1，2，3，5）。\n3：公众号，可选 DocumentType 有（0，1，2，3，8）。\n4：商标，可选 DocumentType 有（7）。\n5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。\n6：小程序，可选 DocumentType 有（0，1，2，3，6）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
           "example": "0",
           "member": "uint64",
           "name": "SignType",
@@ -151,7 +151,7 @@
         },
         {
           "default": "",
-          "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书。",
+          "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书。\n8：公众号设置页面截图（个人认证公众号）。",
           "example": "1",
           "member": "uint64",
           "name": "DocumentType",
@@ -850,7 +850,7 @@
         },
         {
           "default": "",
-          "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司（0，1，2，3）。\n1：APP（0，1，2，3，4） 。\n2：网站（0，1，2，3，5）。\n3：公众号或者小程序（0，1，2，3，6）。\n4：商标（7）。\n5：政府/机关事业单位/其他机构（2，3）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
+          "document": "签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：\n0：公司，可选 DocumentType 有（0，1）。\n1：APP，可选 DocumentType 有（0，1，2，3，4） 。\n2：网站，可选 DocumentType 有（0，1，2，3，5）。\n3：公众号，可选 DocumentType 有（0，1，2，3，8）。\n4：商标，可选 DocumentType 有（7）。\n5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。\n6：小程序，可选 DocumentType 有（0，1，2，3，6）。\n注：必须按照对应关系选择证明类型，否则会审核失败。",
           "example": "0",
           "member": "uint64",
           "name": "SignType",
@@ -859,7 +859,7 @@
         },
         {
           "default": "",
-          "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图(个人开发APP)。\n5：网站备案后台截图(个人开发网站)。\n6：小程序设置页面截图(个人认证小程序)。\n7：商标注册书。",
+          "document": "证明类型：\n0：三证合一。\n1：企业营业执照。\n2：组织机构代码证书。\n3：社会信用代码证书。\n4：应用后台管理截图（个人开发APP）。\n5：网站备案后台截图（个人开发网站）。\n6：小程序设置页面截图（个人认证小程序）。\n7：商标注册书。\n8：公众号设置页面截图（个人认证公众号）。",
           "example": "1",
           "member": "uint64",
           "name": "DocumentType",

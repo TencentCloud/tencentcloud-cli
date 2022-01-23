@@ -1,0 +1,2599 @@
+{
+  "actions": {
+    "CheckRule": {
+      "document": "规则检验",
+      "input": "CheckRuleRequest",
+      "name": "规则检验",
+      "output": "CheckRuleResponse"
+    },
+    "CheckTransformation": {
+      "document": "用于在ETL配置页面, 测试规则和数据.",
+      "input": "CheckTransformationRequest",
+      "name": "检查转换器",
+      "output": "CheckTransformationResponse"
+    },
+    "CreateConnection": {
+      "document": "创建事件连接器",
+      "input": "CreateConnectionRequest",
+      "name": "创建事件连接器",
+      "output": "CreateConnectionResponse"
+    },
+    "CreateEventBus": {
+      "document": "用于创建事件集",
+      "input": "CreateEventBusRequest",
+      "name": "创建事件集",
+      "output": "CreateEventBusResponse"
+    },
+    "CreateRule": {
+      "document": "创建事件规则",
+      "input": "CreateRuleRequest",
+      "name": "创建事件规则",
+      "output": "CreateRuleResponse"
+    },
+    "CreateTarget": {
+      "document": "创建事件目标",
+      "input": "CreateTargetRequest",
+      "name": "创建事件目标",
+      "output": "CreateTargetResponse"
+    },
+    "CreateTransformation": {
+      "document": "用于创建转换器",
+      "input": "CreateTransformationRequest",
+      "name": "创建转换器",
+      "output": "CreateTransformationResponse"
+    },
+    "DeleteConnection": {
+      "document": "删除事件连接器",
+      "input": "DeleteConnectionRequest",
+      "name": "删除事件连接器",
+      "output": "DeleteConnectionResponse"
+    },
+    "DeleteEventBus": {
+      "document": "删除事件集",
+      "input": "DeleteEventBusRequest",
+      "name": "删除事件集",
+      "output": "DeleteEventBusResponse"
+    },
+    "DeleteRule": {
+      "document": "删除事件规则",
+      "input": "DeleteRuleRequest",
+      "name": "删除事件规则",
+      "output": "DeleteRuleResponse"
+    },
+    "DeleteTarget": {
+      "document": "删除事件目标",
+      "input": "DeleteTargetRequest",
+      "name": "删除事件目标",
+      "output": "DeleteTargetResponse"
+    },
+    "DeleteTransformation": {
+      "document": "用于删除转换器",
+      "input": "DeleteTransformationRequest",
+      "name": "删除转换器",
+      "output": "DeleteTransformationResponse"
+    },
+    "GetEventBus": {
+      "document": "获取事件集详情",
+      "input": "GetEventBusRequest",
+      "name": "获取事件集详情",
+      "output": "GetEventBusResponse"
+    },
+    "GetRule": {
+      "document": "获取事件规则详情",
+      "input": "GetRuleRequest",
+      "name": "获取事件规则详情",
+      "output": "GetRuleResponse"
+    },
+    "GetTransformation": {
+      "document": "用于获取转换器详情",
+      "input": "GetTransformationRequest",
+      "name": "获取转换器详情",
+      "output": "GetTransformationResponse"
+    },
+    "ListConnections": {
+      "document": "获取事件连接器列表",
+      "input": "ListConnectionsRequest",
+      "name": "获取事件连接器列表",
+      "output": "ListConnectionsResponse"
+    },
+    "ListEventBuses": {
+      "document": "获取事件集列表",
+      "input": "ListEventBusesRequest",
+      "name": "获取事件集列表",
+      "output": "ListEventBusesResponse"
+    },
+    "ListRules": {
+      "document": "获取事件规则列表",
+      "input": "ListRulesRequest",
+      "name": "获取事件规则列表",
+      "output": "ListRulesResponse"
+    },
+    "ListTargets": {
+      "document": "获取事件目标列表",
+      "input": "ListTargetsRequest",
+      "name": "获取事件目标列表",
+      "output": "ListTargetsResponse"
+    },
+    "PublishEvent": {
+      "document": "（已废弃）用于Event事件投递",
+      "input": "PublishEventRequest",
+      "name": "Event事件投递",
+      "output": "PublishEventResponse"
+    },
+    "PutEvents": {
+      "document": "用于Event事件投递",
+      "input": "PutEventsRequest",
+      "name": "事件投递",
+      "output": "PutEventsResponse"
+    },
+    "UpdateConnection": {
+      "document": "更新事件连接器",
+      "input": "UpdateConnectionRequest",
+      "name": "更新事件连接器",
+      "output": "UpdateConnectionResponse"
+    },
+    "UpdateEventBus": {
+      "document": "更新事件集",
+      "input": "UpdateEventBusRequest",
+      "name": "更新事件集",
+      "output": "UpdateEventBusResponse"
+    },
+    "UpdateRule": {
+      "document": "更新事件规则",
+      "input": "UpdateRuleRequest",
+      "name": "更新事件规则",
+      "output": "UpdateRuleResponse"
+    },
+    "UpdateTarget": {
+      "document": "更新事件目标",
+      "input": "UpdateTargetRequest",
+      "name": "更新事件目标",
+      "output": "UpdateTargetResponse"
+    },
+    "UpdateTransformation": {
+      "document": "用于更新转换器",
+      "input": "UpdateTransformationRequest",
+      "name": "更新转换器",
+      "output": "UpdateTransformationResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-04-16",
+    "api_brief": "使用 API 管理 EventBridge 的事件集，事件规则，目标以及连接器等能力。",
+    "serviceNameCN": "事件总线",
+    "serviceShortName": "eb"
+  },
+  "objects": {
+    "APIGWParams": {
+      "document": "APIGWParams描述",
+      "members": [
+        {
+          "default": "",
+          "document": "HTTPS",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "POST",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CheckRuleRequest": {
+      "document": "CheckRule请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckRuleResponse": {
+      "document": "CheckRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTransformationRequest": {
+      "document": "CheckTransformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待处理的json字符串",
+          "example": "{\"key\": \"value\"}",
+          "member": "string",
+          "name": "Input",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一个转换规则列表",
+          "example": "无",
+          "member": "Transformation",
+          "name": "Transformations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTransformationResponse": {
+      "document": "CheckTransformation返回参数结构体",
+      "members": [
+        {
+          "document": "经过Transformations处理之后的数据",
+          "example": "{\"key2\": \"value2\"}",
+          "member": "string",
+          "name": "Output",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CkafkaDeliveryParams": {
+      "document": "用来描述需要投递到kafka topic的参数",
+      "members": [
+        {
+          "default": "",
+          "document": "ckafka topic name",
+          "example": "topic-xxxxxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ckafka资源qcs六段式",
+          "example": "qcs::ckafka:ap-chongqing:uin/123456:ckafkaId/uin/456789/ckafka-x",
+          "member": "string",
+          "name": "ResourceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CkafkaParams": {
+      "document": "Ckafka 连接器参数",
+      "members": [
+        {
+          "default": "",
+          "document": "kafka offset",
+          "example": "latest",
+          "member": "string",
+          "name": "Offset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ckafka  topic",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CkafkaTargetParams": {
+      "document": "用来描述ckafka投递目标",
+      "members": [
+        {
+          "default": "",
+          "document": "要投递到的ckafka topic",
+          "example": "topic-xxxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重试策略",
+          "example": "无",
+          "member": "RetryPolicy",
+          "name": "RetryPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Connection": {
+      "document": "Connection信息",
+      "members": [
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使能开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器ID",
+          "example": "connection-xxxxxxxx",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器描述",
+          "example": "无",
+          "member": "ConnectionDescription",
+          "name": "ConnectionDescription",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "connection",
+          "member": "string",
+          "name": "ConnectionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "apigw",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConnectionDescription": {
+      "document": "ConnectionDescription描述",
+      "members": [
+        {
+          "default": "",
+          "document": "资源qcs六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
+          "example": "qcs::apigw:ap-guangzhou:uin/0000000:serviceid/service-id",
+          "member": "string",
+          "name": "ResourceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "apigw参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "APIGWParams",
+          "name": "APIGWParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ckafka参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CkafkaParams",
+          "name": "CkafkaParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateConnectionRequest": {
+      "document": "CreateConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器描述",
+          "example": "无",
+          "member": "ConnectionDescription",
+          "name": "ConnectionDescription",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "connection",
+          "member": "string",
+          "name": "ConnectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使能开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "apigw",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectionResponse": {
+      "document": "CreateConnection返回参数结构体",
+      "members": [
+        {
+          "document": "连接器ID",
+          "example": "connection-xxxxxxxx",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEventBusRequest": {
+      "document": "CreateEventBus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "example": "EventBusName",
+          "member": "string",
+          "name": "EventBusName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集描述，不限字符类型，200字符描述以内",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEventBusResponse": {
+      "document": "CreateEventBus返回参数结构体",
+      "members": [
+        {
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleRequest": {
+      "document": "CreateRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
+          "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
+          "member": "string",
+          "name": "EventPattern",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集ID。",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "example": "rule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使能开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "事件集描述，不限字符类型，200字符描述以内",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleResponse": {
+      "document": "CreateRule返回参数结构体",
+      "members": [
+        {
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetRequest": {
+      "document": "CreateTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标类型",
+          "example": "scf",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标描述",
+          "example": "qcs::scf:ap-guangzhou:uin/3473058547:namespace/test/function/",
+          "member": "TargetDescription",
+          "name": "TargetDescription",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTargetResponse": {
+      "document": "CreateTarget返回参数结构体",
+      "members": [
+        {
+          "document": "目标ID",
+          "example": "target-e9r3a1l0",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTransformationRequest": {
+      "document": "CreateTransformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件总线 id",
+          "example": "eb-xxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则id",
+          "example": "rule-xxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一个转换规则列表，当前仅限定一个",
+          "example": "无",
+          "member": "Transformation",
+          "name": "Transformations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTransformationResponse": {
+      "document": "CreateTransformation返回参数结构体",
+      "members": [
+        {
+          "document": "生成的转换器id",
+          "example": "tsfm-xxxxxxxxxxx",
+          "member": "string",
+          "name": "TransformationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeadLetterConfig": {
+      "document": "rule对应的dlq配置",
+      "members": [
+        {
+          "default": "",
+          "document": "支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR",
+          "example": "DLQ",
+          "member": "string",
+          "name": "DisposeMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CkafkaDeliveryParams",
+          "name": "CkafkaDeliveryParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteConnectionRequest": {
+      "document": "DeleteConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器ID",
+          "example": "connection-xxxxxxxx",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConnectionResponse": {
+      "document": "DeleteConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEventBusRequest": {
+      "document": "DeleteEventBus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEventBusResponse": {
+      "document": "DeleteEventBus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleRequest": {
+      "document": "DeleteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRuleResponse": {
+      "document": "DeleteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetRequest": {
+      "document": "DeleteTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件目标ID",
+          "example": "target-xxxxxxxx",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTargetResponse": {
+      "document": "DeleteTarget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTransformationRequest": {
+      "document": "DeleteTransformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转换器id",
+          "example": "tsfm-xxxxxx",
+          "member": "string",
+          "name": "TransformationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTransformationResponse": {
+      "document": "DeleteTransformation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EtlFilter": {
+      "document": "描述如何过滤数据",
+      "members": [
+        {
+          "default": "",
+          "document": "语法Rule规则保持一致",
+          "example": "\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"",
+          "member": "string",
+          "name": "Filter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Event": {
+      "document": "eb event信息",
+      "members": [
+        {
+          "default": "",
+          "document": "事件源的信息,新产品上报必须符合EB的规范",
+          "example": "cvm.cloud.tencent",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件数据，内容由创建事件的系统来控制，当前datacontenttype仅支持application/json;charset=utf-8，所以该字段是json字符串",
+          "example": "\"{\\\"a\\\":\\\"b\\\",\\\"c\\\":\\\"d\\\",\\\"e\\\":1}\"",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型，可自定义，选填。云服务默认写 COS:Created:PostObject，用“：”分割类型字段",
+          "example": "cvm:ErrorEvent:PingUnreachable",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件来源详细描述，可自定义，选填。云服务默认为标准qcs资源表示语法：qcs::dts:ap-guangzhou:appid/uin:xxx",
+          "example": "qcs::dts:ap-guangzhou:appid/uin:xxx",
+          "member": "string",
+          "name": "Subject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EventBus": {
+      "document": "事件集信息",
+      "members": [
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集描述，不限字符类型，200字符描述以内",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "example": "EventBus",
+          "member": "string",
+          "name": "EventBusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集类型",
+          "example": "Cloud",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Extraction": {
+      "document": "描述如何提取数据",
+      "members": [
+        {
+          "default": "",
+          "document": "JsonPath, 不指定则使用默认值$.",
+          "example": "$",
+          "member": "string",
+          "name": "ExtractionInputPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "取值: TEXT/JSON",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "仅在Text需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextParams",
+          "name": "TextParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n* 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n* 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "default": "",
+          "document": "一个或者多个过滤值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤键的名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetEventBusRequest": {
+      "document": "GetEventBus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEventBusResponse": {
+      "document": "GetEventBus返回参数结构体",
+      "members": [
+        {
+          "document": "更新时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件集描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志主题ID",
+          "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志集ID",
+          "example": "78a5887e-357d-4bac-baca-1de008fa6ff0",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件集名称",
+          "example": "eb",
+          "member": "string",
+          "name": "EventBusName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "（已废弃）事件集类型",
+          "example": "Cloud",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRuleRequest": {
+      "document": "GetRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRuleResponse": {
+      "document": "GetRule返回参数结构体",
+      "members": [
+        {
+          "document": "事件集id",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件规则id",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件规则名称",
+          "example": "rule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件规则状态",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使能开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件规则描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件模式",
+          "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
+          "member": "string",
+          "name": "EventPattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransformationRequest": {
+      "document": "GetTransformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转换器id",
+          "example": "tsfm-xxxxxxx",
+          "member": "string",
+          "name": "TransformationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTransformationResponse": {
+      "document": "GetTransformation返回参数结构体",
+      "members": [
+        {
+          "document": "转换规则列表",
+          "example": "无",
+          "member": "Transformation",
+          "name": "Transformations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectionsRequest": {
+      "document": "ListConnections请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime",
+          "example": "ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConnectionsResponse": {
+      "document": "ListConnections返回参数结构体",
+      "members": [
+        {
+          "document": "连接器信息",
+          "example": "无",
+          "member": "Connection",
+          "name": "Connections",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "连接器总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEventBusesRequest": {
+      "document": "ListEventBuses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
+          "example": "ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEventBusesResponse": {
+      "document": "ListEventBuses返回参数结构体",
+      "members": [
+        {
+          "document": "事件集信息",
+          "example": "无",
+          "member": "EventBus",
+          "name": "EventBuses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件集总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRulesRequest": {
+      "document": "ListRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
+          "example": "ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRulesResponse": {
+      "document": "ListRules返回参数结构体",
+      "members": [
+        {
+          "document": "事件规则信息",
+          "example": "无",
+          "member": "Rule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "事件规则总数",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTargetsRequest": {
+      "document": "ListTargets请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
+          "example": "ModTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认为0。",
+          "example": "20",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTargetsResponse": {
+      "document": "ListTargets返回参数结构体",
+      "members": [
+        {
+          "document": "目标总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "目标信息",
+          "example": "无",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OutputStructParam": {
+      "document": "Transform输出参数",
+      "members": [
+        {
+          "default": "",
+          "document": "对应输出json中的key",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可以填json-path也可以支持常量或者内置关键字date类型",
+          "example": "$.name",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH",
+          "example": "JSONPATH",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PublishEventRequest": {
+      "document": "PublishEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件列表",
+          "example": "EventList",
+          "member": "Event",
+          "name": "EventList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "EventBusId",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishEventResponse": {
+      "document": "PublishEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEventsRequest": {
+      "document": "PutEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件列表",
+          "example": "EventList",
+          "member": "Event",
+          "name": "EventList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "EventBusId",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEventsResponse": {
+      "document": "PutEvents返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryPolicy": {
+      "document": "用来描述一个ckafka投递目标的重试策略",
+      "members": [
+        {
+          "default": "",
+          "document": "重试间隔 单位:秒",
+          "example": "30",
+          "member": "uint64",
+          "name": "RetryInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大重试次数",
+          "example": "3",
+          "member": "uint64",
+          "name": "MaxRetryAttempts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Rule": {
+      "document": "规则信息",
+      "members": [
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使能开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-27T14:34:19+08:00",
+          "member": "datetime_iso",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "rule",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Target 简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetBrief",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "rule设置的dlq规则. 可能为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeadLetterConfig",
+          "name": "DeadLetterConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SCFParams": {
+      "document": "云函数参数",
+      "members": [
+        {
+          "default": "",
+          "document": "批量投递最长等待时间",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "批量投递最大事件条数",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchEventCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启批量投递使能",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBatchDelivery",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Target": {
+      "document": "Target信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标类型",
+          "example": "scf",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标ID",
+          "example": "target-xxxxxxxx",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标描述",
+          "example": "无",
+          "member": "TargetDescription",
+          "name": "TargetDescription",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBatchDelivery",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchEventCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetBrief": {
+      "document": "目标简要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标ID",
+          "example": "target-xxxxxxxx",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标类型",
+          "example": "scf",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetDescription": {
+      "document": "TargetDescription描述",
+      "members": [
+        {
+          "default": "",
+          "document": "QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
+          "example": "qcs::scf:gz:uin/1111:resource",
+          "member": "string",
+          "name": "ResourceDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云函数参数",
+          "example": "无",
+          "member": "SCFParams",
+          "name": "SCFParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ckafka参数",
+          "example": "无",
+          "member": "CkafkaTargetParams",
+          "name": "CkafkaTargetParams",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TextParams": {
+      "document": "描述如何切分数据",
+      "members": [
+        {
+          "default": "",
+          "document": "逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ",",
+          "member": "string",
+          "name": "Separator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "填写正则表达式：长度128\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a(.*)bc",
+          "member": "string",
+          "name": "Regex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Transform": {
+      "document": "描述如何数据转换\n",
+      "members": [
+        {
+          "default": "",
+          "document": "描述如何数据转换",
+          "example": "无",
+          "member": "OutputStructParam",
+          "name": "OutputStructs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Transformation": {
+      "document": "一个转换器",
+      "members": [
+        {
+          "default": "",
+          "document": "描述如何提取数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Extraction",
+          "name": "Extraction",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述如何过滤数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EtlFilter",
+          "name": "EtlFilter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述如何数据转换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Transform",
+          "name": "Transform",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateConnectionRequest": {
+      "document": "UpdateConnection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "连接器ID",
+          "example": "connection-xxxxxxxx",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使能开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "连接器名称",
+          "example": "connection",
+          "member": "string",
+          "name": "ConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConnectionResponse": {
+      "document": "UpdateConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEventBusRequest": {
+      "document": "UpdateEventBus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集描述，不限字符类型，200字符描述以内",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "example": "EventBusName",
+          "member": "string",
+          "name": "EventBusName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEventBusResponse": {
+      "document": "UpdateEventBus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRuleRequest": {
+      "document": "UpdateRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使能开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "规则描述，不限字符类型，200字符描述以内。",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
+          "example": "rule",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRuleResponse": {
+      "document": "UpdateRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTargetRequest": {
+      "document": "UpdateTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件目标ID",
+          "example": "target-xxxxxxxx",
+          "member": "string",
+          "name": "TargetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开启批量投递使能",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBatchDelivery",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "批量投递最长等待时间",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批量投递最大事件条数",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchEventCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTargetResponse": {
+      "document": "UpdateTarget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTransformationRequest": {
+      "document": "UpdateTransformation请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "事件集ID",
+          "example": "eb-xxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "转换器id",
+          "example": "tsfm-xxxxxxxxx",
+          "member": "string",
+          "name": "TransformationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一个转换规则列表，当前仅限定一个",
+          "example": "无",
+          "member": "Transformation",
+          "name": "Transformations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTransformationResponse": {
+      "document": "UpdateTransformation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}
