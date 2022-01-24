@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
-    --RobotId ame-xxxxx \
+    --RobotId xxxxx \
     --Command SetPlaylist \
     --SetPlaylistCommandInput.Type Add \
     --SetPlaylistCommandInput.MusicIds xxxxxxx \
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
-    --RobotId ame-xxxxx \
+    --RobotId xxxxx \
     --Command Play \
     --PlayCommandInput.Index 1
 ```
@@ -52,7 +52,7 @@ Input:
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
-    --RobotId ame-xxxxx \
+    --RobotId xxxxx \
     --Command SetAudioParam \
     --SetAudioParamCommandInput.Definition audio/hi \
     --SetAudioParamCommandInput.Type Accompaniment
@@ -75,7 +75,7 @@ Input:
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
-    --RobotId ame-xxxxx \
+    --RobotId xxxxx \
     --Command SwitchNext
 ```
 
@@ -96,10 +96,32 @@ Input:
 
 ```
 tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
-    --RobotId ame-xxxxx \
+    --RobotId xxxxx \
     --Command SendMessage \
     --SendMessageCommandInput.Message {"Field1":"Value1"} \
     --SendMessageCommandInput.Repeat 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
+    }
+}
+```
+
+**Example 6: 设置播放模式**
+
+设置播放模式为随机播放。
+
+Input: 
+
+```
+tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
+    --RobotId xxxxx \
+    --Command SetPlayMode \
+    --SetPlayModeCommandInput.PlayMode Shuffle
 ```
 
 Output: 

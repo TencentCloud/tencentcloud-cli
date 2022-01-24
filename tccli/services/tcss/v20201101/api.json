@@ -4892,7 +4892,7 @@
       "members": [
         {
           "default": "",
-          "document": "是否扫描全部镜像",
+          "document": "是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
           "example": "无",
           "member": "bool",
           "name": "All",
@@ -4901,7 +4901,7 @@
         },
         {
           "default": "",
-          "document": "需要扫描的镜像列表",
+          "document": "需要扫描的镜像列表；全部镜像，镜像列表和根据过滤条件筛选三选一。",
           "example": "无",
           "member": "string",
           "name": "Images",
@@ -4910,7 +4910,7 @@
         },
         {
           "default": "",
-          "document": "扫描漏洞",
+          "document": "扫描漏洞；漏洞，木马和风险需选其一",
           "example": "无",
           "member": "bool",
           "name": "ScanVul",
@@ -4919,7 +4919,7 @@
         },
         {
           "default": "",
-          "document": "扫描木马",
+          "document": "扫描木马；漏洞，木马和风险需选其一",
           "example": "无",
           "member": "bool",
           "name": "ScanVirus",
@@ -4928,12 +4928,30 @@
         },
         {
           "default": "",
-          "document": "扫描风险",
+          "document": "扫描风险；漏洞，木马和风险需选其一",
           "example": "无",
           "member": "bool",
           "name": "ScanRisk",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据过滤条件筛选出镜像，再排除个别镜像",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeImageIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11930,6 +11948,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "本地未开启扫描镜像数",
+          "example": "1",
+          "member": "uint64",
+          "name": "NotScannedLocalImageCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16930,7 +16957,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务id",
+          "document": "任务id；任务id，镜像id和根据过滤条件筛选三选一。",
           "example": "无",
           "member": "string",
           "name": "TaskID",
@@ -16939,12 +16966,30 @@
         },
         {
           "default": "",
-          "document": "镜像id",
+          "document": "镜像id；任务id，镜像id和根据过滤条件筛选三选一。",
           "example": "无",
           "member": "string",
           "name": "Images",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。",
+          "example": "无",
+          "member": "AssetFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据过滤条件筛选出镜像，再排除个别镜像",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeImageIds",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

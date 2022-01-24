@@ -9245,7 +9245,7 @@
         },
         {
           "default": "",
-          "document": "类型",
+          "document": "类型, integer|string",
           "example": "integer",
           "member": "string",
           "name": "Type",
@@ -9282,6 +9282,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符类型的值，当Type为string时才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TLSv1",
+          "member": "string",
+          "name": "ValueString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字符类型的默认值，当Type为string时才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TLSv1",
+          "member": "string",
+          "name": "DefaultValueString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可调整范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[TLSv1,TLSv1.1,TLSv1.2]",
+          "member": "string",
+          "name": "Range",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

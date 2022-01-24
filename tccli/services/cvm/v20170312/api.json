@@ -3380,6 +3380,42 @@
       ],
       "usage": "in"
     },
+    "GPUInfo": {
+      "document": "实例GPU信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "GPUCount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例GPU地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['0000:18:00.0','0000:18:00.1']",
+          "member": "string",
+          "name": "GPUId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例GPU类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NVIDIA T4",
+          "member": "string",
+          "name": "GPUType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HostItem": {
       "document": "cdh实例详细信息",
       "members": [
@@ -4857,6 +4893,16 @@
           "name": "IsolatedSource",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUInfo",
+          "name": "GPUInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -288,6 +288,12 @@
       "name": "集群的密钥信息",
       "output": "DescribeClusterSecurityResponse"
     },
+    "DescribeClusterStatus": {
+      "document": "查看集群状态列表",
+      "input": "DescribeClusterStatusRequest",
+      "name": "查看集群状态列表",
+      "output": "DescribeClusterStatusResponse"
+    },
     "DescribeClusters": {
       "document": "查询集群列表",
       "input": "DescribeClustersRequest",
@@ -2168,6 +2174,122 @@
         }
       ],
       "usage": "in"
+    },
+    "ClusterStatus": {
+      "document": "集群状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "\"cls-xxxx\"",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态",
+          "example": "\"Running\"",
+          "member": "string",
+          "name": "ClusterState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群下机器实例的状态",
+          "example": " \"AllNormal\"",
+          "member": "string",
+          "name": "ClusterInstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群是否开启监控",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterBMonitor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterInitNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群运行中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败",
+          "example": "3",
+          "member": "int64",
+          "name": "ClusterRunningNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群异常的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterFailedNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群已关机的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterClosedNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群关机中的节点数，-1表示获取节点状态超时，-2表示获取节点状态失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterClosingNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群是否开启删除保护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterDeletionProtection",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群是否可审计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClusterAuditEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClusterVersion": {
       "document": "集群版本信息",
@@ -4849,6 +4971,51 @@
           "name": "JnsGwEndpoint",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStatusRequest": {
+      "document": "DescribeClusterStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表，不传默认拉取所有集群",
+          "example": "[\"cls-xxxxxxx\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterStatusResponse": {
+      "document": "DescribeClusterStatus返回参数结构体",
+      "members": [
+        {
+          "document": "集群状态列表",
+          "example": "无",
+          "member": "ClusterStatus",
+          "name": "ClusterStatusSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
