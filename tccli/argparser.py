@@ -3,11 +3,13 @@
 
 import sys
 import argparse
+from tccli.log import init
 from tccli import six
 from difflib import get_close_matches
 from gettext import gettext
 from tccli.error_msg import USAGE
 
+log = init("tccli.argparser")
 
 class CustomAction(argparse.Action):
 
@@ -35,6 +37,9 @@ class BaseArgParser(argparse.ArgumentParser):
     def _check_value(self, action, value):
         if action.choices is not None and value not in action.choices:
             msg = ['Invalid choice, valid choices are:\n']
+            args = (' '.join(sys.argv[1:])).split(value)
+            help_msg = "you can run `tccli %shelp` to see valid choices" % args[0]
+            log.error(USAGE + msg[0] + help_msg)
             for i in range(len(action.choices))[::self.ChoicesPerLine]:
                 current = []
                 for choice in action.choices[i:i + self.ChoicesPerLine]:
