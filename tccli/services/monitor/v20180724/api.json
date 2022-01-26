@@ -187,7 +187,7 @@
       "output": "DescribeProductEventListResponse"
     },
     "DescribeProductList": {
-      "document": "查询云监控产品列表",
+      "document": "查询云监控产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。",
       "input": "DescribeProductListRequest",
       "name": "查询云监控产品列表",
       "output": "DescribeProductListResponse"
@@ -6256,6 +6256,7 @@
         {
           "default": "",
           "document": "固定传值monitor",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -6264,6 +6265,7 @@
         {
           "default": "",
           "document": "排序方式：DESC/ASC（区分大小写），默认值DESC",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -6272,6 +6274,7 @@
         {
           "default": "",
           "document": "分页查询的偏移量，默认值0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6280,6 +6283,7 @@
         {
           "default": "",
           "document": "分页查询的每页数据量，默认值20",
+          "example": "5",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6293,15 +6297,19 @@
       "members": [
         {
           "document": "产品信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ProductSimple",
           "name": "ProductList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "产品总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "294",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },

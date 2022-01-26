@@ -10421,6 +10421,7 @@
         {
           "default": "",
           "document": "网络探测实例`ID`数组。形如：[`netd-12345678`]",
+          "example": "[\"netd-12345678\\r\\n\"]",
           "member": "string",
           "name": "NetDetectIds",
           "required": false,
@@ -10429,6 +10430,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定NetDetectIds和Filters。\n<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10437,6 +10439,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10445,6 +10448,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10458,15 +10462,19 @@
       "members": [
         {
           "document": "符合条件的网络探测验证结果对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NetDetectState",
           "name": "NetDetectStateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "符合条件的网络探测验证结果对象数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16269,6 +16277,7 @@
         {
           "default": "",
           "document": "网络探测实例`ID`。形如：`netd-12345678`",
+          "example": "netd-12345678",
           "member": "string",
           "name": "NetDetectId",
           "required": true,
@@ -16277,6 +16286,7 @@
         {
           "default": "",
           "document": "网络探测名称，最大长度不能超过60个字节。",
+          "example": "test",
           "member": "string",
           "name": "NetDetectName",
           "required": false,
@@ -16285,6 +16295,7 @@
         {
           "default": "",
           "document": "探测目的IPv4地址数组，最多两个。",
+          "example": "[\"10.0.0.2\\r\\n\",\"10.0.0.3\\r\\n\"]",
           "member": "string",
           "name": "DetectDestinationIp",
           "required": false,
@@ -16292,7 +16303,8 @@
         },
         {
           "default": "",
-          "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；",
+          "document": "下一跳类型，目前我们支持的类型有：\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nNAT：NAT网关；\nNORMAL_CVM：普通云服务器；\nCCN：云联网网关；",
+          "example": "NORMAL_CVM",
           "member": "string",
           "name": "NextHopType",
           "required": false,
@@ -16300,7 +16312,8 @@
         },
         {
           "default": "",
-          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；",
+          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-44csczop；",
+          "example": "10.0.0.4",
           "member": "string",
           "name": "NextHopDestination",
           "required": false,
@@ -16309,6 +16322,7 @@
         {
           "default": "",
           "document": "网络探测描述。",
+          "example": "test",
           "member": "string",
           "name": "NetDetectDescription",
           "required": false,

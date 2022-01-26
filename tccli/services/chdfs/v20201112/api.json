@@ -299,6 +299,7 @@
         {
           "default": "",
           "document": "挂载点ID",
+          "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
           "required": true,
@@ -307,6 +308,7 @@
         {
           "default": "",
           "document": "权限组ID列表",
+          "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
           "member": "string",
           "name": "AccessGroupIds",
           "required": true,
@@ -333,6 +335,7 @@
         {
           "default": "",
           "document": "权限组名称",
+          "example": "test",
           "member": "string",
           "name": "AccessGroupName",
           "required": true,
@@ -341,6 +344,7 @@
         {
           "default": "",
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
+          "example": "1",
           "member": "uint64",
           "name": "VpcType",
           "required": true,
@@ -349,6 +353,7 @@
         {
           "default": "",
           "document": "VPC网络ID",
+          "example": "vpc-967aipkx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -357,6 +362,7 @@
         {
           "default": "",
           "document": "权限组描述，默认为空字符串",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -370,8 +376,10 @@
       "members": [
         {
           "document": "权限组",
+          "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -570,6 +578,7 @@
         {
           "default": "",
           "document": "挂载点名称",
+          "example": "test",
           "member": "string",
           "name": "MountPointName",
           "required": true,
@@ -578,6 +587,7 @@
         {
           "default": "",
           "document": "文件系统ID",
+          "example": "f4mnvilzmdd",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -586,6 +596,7 @@
         {
           "default": "",
           "document": "挂载点状态（1：打开；2：关闭）",
+          "example": "1",
           "member": "uint64",
           "name": "MountPointStatus",
           "required": true,
@@ -599,8 +610,10 @@
       "members": [
         {
           "document": "挂载点",
+          "example": "无",
           "member": "MountPoint",
           "name": "MountPoint",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -790,6 +803,7 @@
         {
           "default": "",
           "document": "权限组ID",
+          "example": "ag-f8xoises",
           "member": "string",
           "name": "AccessGroupId",
           "required": true,
@@ -803,8 +817,10 @@
       "members": [
         {
           "document": "权限组",
+          "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -823,6 +839,7 @@
         {
           "default": "",
           "document": "VPC网络ID\n备注：入参只能指定VpcId和OwnerUin的其中一个",
+          "example": "vpc-967aipkx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -831,6 +848,7 @@
         {
           "default": "",
           "document": "资源所属者Uin",
+          "example": "100000",
           "member": "uint64",
           "name": "OwnerUin",
           "required": false,
@@ -844,8 +862,10 @@
       "members": [
         {
           "document": "权限组列表",
+          "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroups",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -864,6 +884,7 @@
         {
           "default": "",
           "document": "权限组ID",
+          "example": "ag-jwmfdcul",
           "member": "string",
           "name": "AccessGroupId",
           "required": true,
@@ -877,8 +898,10 @@
       "members": [
         {
           "document": "权限规则列表",
+          "example": "无",
           "member": "AccessRule",
           "name": "AccessRules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1012,6 +1035,7 @@
           "example": "无",
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1030,6 +1054,7 @@
         {
           "default": "",
           "document": "挂载点ID",
+          "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
           "required": true,
@@ -1043,8 +1068,10 @@
       "members": [
         {
           "document": "挂载点",
+          "example": "无",
           "member": "MountPoint",
           "name": "MountPoint",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1063,6 +1090,7 @@
         {
           "default": "",
           "document": "文件系统ID\n备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个",
+          "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": false,
@@ -1071,6 +1099,7 @@
         {
           "default": "",
           "document": "权限组ID",
+          "example": "ag-fmfpk1hk",
           "member": "string",
           "name": "AccessGroupId",
           "required": false,
@@ -1079,6 +1108,7 @@
         {
           "default": "",
           "document": "资源所属者Uin",
+          "example": "100000",
           "member": "uint64",
           "name": "OwnerUin",
           "required": false,
@@ -1092,8 +1122,10 @@
       "members": [
         {
           "document": "挂载点列表",
+          "example": "无",
           "member": "MountPoint",
           "name": "MountPoints",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1129,6 +1161,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1164,6 +1197,7 @@
           "example": "无",
           "member": "RestoreTask",
           "name": "RestoreTasks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1182,6 +1216,7 @@
         {
           "default": "",
           "document": "挂载点ID",
+          "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
           "required": true,
@@ -1190,6 +1225,7 @@
         {
           "default": "",
           "document": "权限组ID列表",
+          "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
           "member": "string",
           "name": "AccessGroupIds",
           "required": true,
@@ -1418,6 +1454,7 @@
         {
           "default": "",
           "document": "权限组ID",
+          "example": "ag-f8xoises",
           "member": "string",
           "name": "AccessGroupId",
           "required": true,
@@ -1426,6 +1463,7 @@
         {
           "default": "",
           "document": "权限组名称",
+          "example": "test",
           "member": "string",
           "name": "AccessGroupName",
           "required": false,
@@ -1434,6 +1472,7 @@
         {
           "default": "",
           "document": "权限组描述",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1604,6 +1643,7 @@
         {
           "default": "",
           "document": "挂载点ID",
+          "example": "f4mnvilzmdd-Tx5f",
           "member": "string",
           "name": "MountPointId",
           "required": true,
@@ -1612,6 +1652,7 @@
         {
           "default": "",
           "document": "挂载点名称",
+          "example": "test",
           "member": "string",
           "name": "MountPointName",
           "required": false,
@@ -1620,6 +1661,7 @@
         {
           "default": "",
           "document": "挂载点状态",
+          "example": "2",
           "member": "uint64",
           "name": "MountPointStatus",
           "required": false,
@@ -1646,6 +1688,7 @@
         {
           "default": "",
           "document": "文件系统ID",
+          "example": "f1mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1654,6 +1697,7 @@
         {
           "default": "",
           "document": "多个资源标签，可以为空数组",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,

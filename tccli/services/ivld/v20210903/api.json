@@ -1,16 +1,88 @@
 {
   "actions": {
+    "AddCustomPersonImage": {
+      "document": "增加自定义人脸图片，每个自定义人物最多可包含5张人脸图片\n\n请注意，与创建自定义人物一样，图片数据优先级优于图片URL优先级",
+      "input": "AddCustomPersonImageRequest",
+      "name": "增加自定义人脸图片",
+      "output": "AddCustomPersonImageResponse"
+    },
+    "CreateCustomCategory": {
+      "document": "创建自定义人物分类信息\n\n当L2Category为空时，将创建一级自定义分类。\n当L1Category与L2Category均不为空时，将创建二级自定义分类。请注意，**只有当一级自定义分类存在时，才可创建二级自定义分类**。",
+      "input": "CreateCustomCategoryRequest",
+      "name": "创建自定义人物分类",
+      "output": "CreateCustomCategoryResponse"
+    },
+    "CreateCustomGroup": {
+      "document": "创建自定义人物库\n\nBucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`\n\n在调用CreateCustomPerson和AddCustomPersonImage接口之前，请先确保本接口成功调用。当前每个用户只支持一个自定义人物库，一旦自定义人物库创建成功，后续接口调用均会返回人物库已存在错误。\n\n由于人脸图片对于自定义人物识别至关重要，因此自定义人物识别功能需要用户显式指定COS存储桶方可使用。具体来说，自定义人物识别功能接口(主要是CreateCustomPerson和AddCustomPersonImage)会在此COS桶下面新建IVLDCustomPersonImage目录，并在此目录下存储自定义人物图片数据以支持后续潜在的特征更新。\n\n请注意：本接口指定的COS桶仅用于**备份存储自定义人物图片**，CreateCustomPerson和AddCustomPersonImage接口入参URL可使用任意COS存储桶下的任意图片。\n\n**重要**：请务必确保本接口指定的COS存储桶存在(不要手动删除COS桶)。COS存储桶一旦指定，将不能修改。\n",
+      "input": "CreateCustomGroupRequest",
+      "name": "创建自定义人物库",
+      "output": "CreateCustomGroupResponse"
+    },
+    "CreateCustomPerson": {
+      "document": "创建自定义人物。\n\n输入人物名称，基本信息，分类信息与人脸图片，创建自定义人物\n\n人脸图片可使用图片数据(base64编码的图片数据)或者图片URL(推荐使用COS以减少下载时间，其他地址也支持)，原始图片优先，也即如果同时指定了图片数据和图片URL，接口将仅使用图片数据\n",
+      "input": "CreateCustomPersonRequest",
+      "name": "创建自定义人物",
+      "output": "CreateCustomPersonResponse"
+    },
+    "CreateDefaultCategories": {
+      "document": "创建默认自定义人物类型",
+      "input": "CreateDefaultCategoriesRequest",
+      "name": "创建默认自定义人物类型",
+      "output": "CreateDefaultCategoriesResponse"
+    },
     "CreateTask": {
       "document": "创建智能标签任务。\n\n请注意，本接口为异步接口，**返回TaskId只代表任务创建成功，不代表任务执行成功**。\n",
       "input": "CreateTaskRequest",
       "name": "创建任务",
       "output": "CreateTaskResponse"
     },
+    "DeleteCustomCategory": {
+      "document": "删除自定义分类信息",
+      "input": "DeleteCustomCategoryRequest",
+      "name": "删除自定义分类",
+      "output": "DeleteCustomCategoryResponse"
+    },
+    "DeleteCustomPerson": {
+      "document": "删除自定义人物",
+      "input": "DeleteCustomPersonRequest",
+      "name": "删除自定义人物",
+      "output": "DeleteCustomPersonResponse"
+    },
+    "DeleteCustomPersonImage": {
+      "document": "删除自定义人脸数据",
+      "input": "DeleteCustomPersonImageRequest",
+      "name": "删除自定义人脸",
+      "output": "DeleteCustomPersonImageResponse"
+    },
     "DeleteMedia": {
       "document": "将MediaId对应的媒资文件从系统中删除。\n\n**请注意，本接口仅删除媒资文件，媒资文件对应的视频分析结果不会被删除**。如您需要删除结构化分析结果，请调用DeleteTask接口。",
       "input": "DeleteMediaRequest",
       "name": "删除媒资文件",
       "output": "DeleteMediaResponse"
+    },
+    "DescribeCustomCategories": {
+      "document": "批量描述自定义人物分类信息",
+      "input": "DescribeCustomCategoriesRequest",
+      "name": "批量描述自定义人物分类",
+      "output": "DescribeCustomCategoriesResponse"
+    },
+    "DescribeCustomGroup": {
+      "document": "描述自定义人物库信息，当前库大小(库中有多少人脸)，以及库中的存储桶",
+      "input": "DescribeCustomGroupRequest",
+      "name": "描述自定义人物库",
+      "output": "DescribeCustomGroupResponse"
+    },
+    "DescribeCustomPersonDetail": {
+      "document": "描述自定义人物详细信息，包括人物信息与人物信息",
+      "input": "DescribeCustomPersonDetailRequest",
+      "name": "描述自定义人物详细信息",
+      "output": "DescribeCustomPersonDetailResponse"
+    },
+    "DescribeCustomPersons": {
+      "document": "批量描述自定义人物\n\n",
+      "input": "DescribeCustomPersonsRequest",
+      "name": "批量描述自定义人物",
+      "output": "DescribeCustomPersonsResponse"
     },
     "DescribeMedia": {
       "document": "描述媒资文件信息，包括媒资状态，分辨率，帧率等。\n\n如果媒资文件未完成导入，本接口将仅输出媒资文件的状态信息；导入完成后，本接口还将输出媒资文件的其他元信息。",
@@ -47,6 +119,18 @@
       "input": "ImportMediaRequest",
       "name": "导入媒资文件",
       "output": "ImportMediaResponse"
+    },
+    "UpdateCustomCategory": {
+      "document": "更新自定义人物分类\n\n当L2Category为空时，代表更新CategoryId对应的一级自定义人物类型以及所有二级自定义人物类型所从属的一级自定义人物类型；\n当L2Category非空时，仅更新CategoryId对应的二级自定义人物类型",
+      "input": "UpdateCustomCategoryRequest",
+      "name": "更新自定义人物分类",
+      "output": "UpdateCustomCategoryResponse"
+    },
+    "UpdateCustomPerson": {
+      "document": "更新自定义人物信息，包括姓名，简要信息，分类信息等",
+      "input": "UpdateCustomPersonRequest",
+      "name": "更新自定义人物信息",
+      "output": "UpdateCustomPersonResponse"
     }
   },
   "metadata": {
@@ -56,6 +140,69 @@
     "serviceShortName": "ivld"
   },
   "objects": {
+    "AddCustomPersonImageRequest": {
+      "document": "AddCustomPersonImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义人物图片地址",
+          "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/example.jpg",
+          "member": "string",
+          "name": "ImageURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片数据base64之后的结果",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomPersonImageResponse": {
+      "document": "AddCustomPersonImage返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义人脸图片信息",
+          "example": "无",
+          "member": "PersonImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AppearIndexPair": {
       "document": "出现信息索引对\n\nAppearIndex可选值定义如下：\n\n| AppearIndex名称 | AppearIndex取值 | AppearIndex描述 |\n|---|---|---|\n| APPEAR_INDEX_INVALID | 0 | 非法的任务状态 |\n| APPEAR_INDEX_AUDIO | 1 | 音频出现信息|\n| APPEAR_INDEX_TEXT | 2 | 可视文本出现信息|\n| APPEAR_INDEX_VIDEO | 3 | 视频出现信息|\n\n例如，当AppearIndex=1，Index=15，则意味着目标关键词出现在第16个(Index计数从0开始)音频文字识别结果之中",
       "members": [
@@ -164,6 +311,176 @@
       ],
       "usage": "out"
     },
+    "CreateCustomCategoryRequest": {
+      "document": "CreateCustomCategory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义一级类型",
+          "example": "娱乐明星",
+          "member": "string",
+          "name": "L1Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义二级类型",
+          "example": "张三",
+          "member": "string",
+          "name": "L2Category",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomCategoryResponse": {
+      "document": "CreateCustomCategory返回参数结构体",
+      "members": [
+        {
+          "document": "自定义分类信息ID",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomGroupRequest": {
+      "document": "CreateCustomGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸图片COS存储桶Host地址",
+          "example": "bk0-1234.cos.ap-shanghai.myqcloud.com",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomGroupResponse": {
+      "document": "CreateCustomGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPersonRequest": {
+      "document": "CreateCustomPerson请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义人物简要信息(仅用于标记，不支持检索)",
+          "example": "一线娱乐明星",
+          "member": "string",
+          "name": "BasicInfo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义分类ID，如不存在接口会报错",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义人物图片URL，可支持任意地址，推荐使用COS",
+          "example": "http://b0-123.cos.ap-shanghai.myqcloud.com/hello.jpg",
+          "member": "string",
+          "name": "ImageURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始图片base64编码后的数据",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomPersonResponse": {
+      "document": "CreateCustomPerson返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义人脸信息",
+          "example": "无",
+          "member": "PersonImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDefaultCategoriesRequest": {
+      "document": "CreateDefaultCategories请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDefaultCategoriesResponse": {
+      "document": "CreateDefaultCategories返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTaskRequest": {
       "document": "CreateTask请求参数结构体",
       "members": [
@@ -227,6 +544,144 @@
       ],
       "type": "object"
     },
+    "CustomCategory": {
+      "document": "自定义分类信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义分类ID",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级自定义类型",
+          "example": "娱乐明星",
+          "member": "string",
+          "name": "L1Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级自定义类型",
+          "example": "张三",
+          "member": "string",
+          "name": "L2Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomPersonFilter": {
+      "document": "自定义人物批量查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的人物姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待过滤的自定义类型Id数组",
+          "example": "[\"123\", \"456\"]",
+          "member": "string",
+          "name": "CategoryIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待过滤的自定义人物Id数组",
+          "example": "[\"person-a1\", \"person-a2\"]",
+          "member": "string",
+          "name": "PersonIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级自定义人物类型数组",
+          "example": "[\"喜剧明星\", \"话剧明星\"]",
+          "member": "string",
+          "name": "L1CategorySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CustomPersonInfo": {
+      "document": "自定义人物信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人物姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人物简介信息",
+          "example": "著名喜剧明星",
+          "member": "string",
+          "name": "BasicInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "一级自定义人物类型",
+          "example": "娱乐明星",
+          "member": "string",
+          "name": "L1Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级自定义人物类型",
+          "example": "喜剧演员",
+          "member": "string",
+          "name": "L2Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Data": {
       "document": "任务结果数据",
       "members": [
@@ -242,6 +697,132 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteCustomCategoryRequest": {
+      "document": "DeleteCustomCategory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义分类ID",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomCategoryResponse": {
+      "document": "DeleteCustomCategory返回参数结构体",
+      "members": [
+        {
+          "document": "123",
+          "example": "无",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomPersonImageRequest": {
+      "document": "DeleteCustomPersonImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义人脸图片Id",
+          "example": "image-a1b2c3",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomPersonImageResponse": {
+      "document": "DeleteCustomPersonImage返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已删除的人物图片Id",
+          "example": "image-a1b2c3",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomPersonRequest": {
+      "document": "DeleteCustomPerson请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的自定义人物ID",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomPersonResponse": {
+      "document": "DeleteCustomPerson返回参数结构体",
+      "members": [
+        {
+          "document": "已删除的自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteMediaRequest": {
       "document": "DeleteMedia请求参数结构体",
@@ -261,6 +842,184 @@
     "DeleteMediaResponse": {
       "document": "DeleteMedia返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomCategoriesRequest": {
+      "document": "DescribeCustomCategories请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCustomCategoriesResponse": {
+      "document": "DescribeCustomCategories返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物类型数组",
+          "example": "无",
+          "member": "CustomCategory",
+          "name": "CategorySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupRequest": {
+      "document": "DescribeCustomGroup请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCustomGroupResponse": {
+      "document": "DescribeCustomGroup返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物库所包含的人物个数",
+          "example": "100",
+          "member": "int64",
+          "name": "GroupSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义人物库图片后续所在的存储桶",
+          "example": "Bucket0",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomPersonDetailRequest": {
+      "document": "DescribeCustomPersonDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomPersonDetailResponse": {
+      "document": "DescribeCustomPersonDetail返回参数结构体",
+      "members": [
+        {
+          "document": "自定义人物信息",
+          "example": "无",
+          "member": "CustomPersonInfo",
+          "name": "PersonInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出现该自定义人物的所有分析人物Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"task-123\"]",
+          "member": "string",
+          "name": "TaskIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomPersonsRequest": {
+      "document": "DescribeCustomPersons请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页序号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页数据行数，最多50",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序信息，默认倒序",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "自定义人物过滤条件",
+          "example": "无",
+          "member": "CustomPersonFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomPersonsResponse": {
+      "document": "DescribeCustomPersons返回参数结构体",
+      "members": [
+        {
+          "document": "满足过滤条件的自定义人物数量",
+          "example": "123",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自定义人物信息",
+          "example": "无",
+          "member": "CustomPersonInfo",
+          "name": "PersonInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -983,6 +1742,52 @@
       ],
       "usage": "out"
     },
+    "PersonImageInfo": {
+      "document": "自定义人物人脸图片信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人脸图片ID",
+          "example": "\"941d96ae-52d9-4401-be6a-fcf1bab6a214\"",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人脸图片的URL，存储在IVLDCustomPreson存储桶内",
+          "example": "无",
+          "member": "string",
+          "name": "ImageURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人脸图片处理错误码",
+          "example": "OK",
+          "member": "string",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人脸图片处理错误信息",
+          "example": "OK",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ShowInfo": {
       "document": "视频结构化结果",
       "members": [
@@ -1428,6 +2233,123 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateCustomCategoryRequest": {
+      "document": "UpdateCustomCategory请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义人物类型Id",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一级自定义人物类型",
+          "example": "公众人物",
+          "member": "string",
+          "name": "L1Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二级自定义人物类型",
+          "example": "娱乐明星",
+          "member": "string",
+          "name": "L2Category",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomCategoryResponse": {
+      "document": "UpdateCustomCategory返回参数结构体",
+      "members": [
+        {
+          "document": "成功更新的自定义人物类型Id",
+          "example": "\"123456\"",
+          "member": "string",
+          "name": "CategoryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomPersonRequest": {
+      "document": "UpdateCustomPerson请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待更新的自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后的自定义人物名称，如为空则不更新",
+          "example": "李四",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后的自定义人物简介，如为空则不更新",
+          "example": "喜剧明星",
+          "member": "string",
+          "name": "BasicInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后的分类信息，如为空则不更新",
+          "example": "自定义分类Id",
+          "member": "string",
+          "name": "CategoryId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomPersonResponse": {
+      "document": "UpdateCustomPerson返回参数结构体",
+      "members": [
+        {
+          "document": "成功更新的自定义人物Id",
+          "example": "person-a1b2c3",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VideoAppearInfo": {
       "document": "关键词在视觉结果中的定位信息",

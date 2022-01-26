@@ -219,7 +219,7 @@
     "DescribeRoute": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRoute\r\n&InstanceId=xxx\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeRoute\n&InstanceId=xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Routers\": [\n                {\n                    \"AccessType\": 0,\n                    \"RouteId\": 2,\n                    \"VipType\": 4,\n                    \"VipList\": [\n                        {\n                            \"Vip\": \"9.13.100.63\",\n                            \"Vport\": \"8774\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"e36d80f9-21aa-4a22-9932-91e1fbd12f39\"\n    }\n}",
         "title": "查看路由信息"
       }
