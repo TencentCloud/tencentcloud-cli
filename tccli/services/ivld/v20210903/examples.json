@@ -1,11 +1,75 @@
 {
   "actions": {
+    "AddCustomPersonImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomPersonImage\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/%E6%B2%88%E8%85%BE.jpeg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageInfo\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMsg\": \"OK\",\n            \"ImageId\": \"image-Axgo3FYc-GOeV\",\n            \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-GOeV.jpeg\"\n        },\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"f7efda76-2d0d-487d-9e8c-4c198555cc1f\"\n    }\n}",
+        "title": "新增自定义人物图片"
+      }
+    ],
+    "CreateCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomCategory\n<公共请求参数>\n\n{\n    \"L1Category\": \"公众人物\",\n    \"L2Category\": \"知名医生\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"10\",\n        \"RequestId\": \"dffc5c7b-b742-4075-a9a6-9c41d51d6337\"\n    }\n}",
+        "title": "创建自定义人物分类"
+      }
+    ],
+    "CreateCustomGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomGroup\n<公共请求参数>\n\n{\n    \"Bucket\": \"test-251202813.cos.ap-guangzhou.myqcloud.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bb0c9a0f-7cb2-4df7-a91f-fbb43eeec80c\"\n    }\n}",
+        "title": "成功创建自定义人物库"
+      }
+    ],
+    "CreateCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomPerson\n<公共请求参数>\n\n{\n    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/%E6%B2%88%E8%85%BE.jpeg\",\n    \"BasicInfo\": \"测试基本信息\",\n    \"Name\": \"测试姓名\",\n    \"CategoryId\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageInfo\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMsg\": \"OK\",\n            \"ImageId\": \"image-Axgo3FYc-egMN\",\n            \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n        },\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\"\n    }\n}",
+        "title": "成功创建自定义人物"
+      }
+    ],
+    "CreateDefaultCategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDefaultCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"400ceb0d-ab84-4108-99df-9ce07c56522b\"\n    }\n}",
+        "title": "创建默认自定义人物分类信息"
+      }
+    ],
     "CreateTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"MediaPreknownInfo\": {\n        \"MediaLang\": 1,\n        \"MediaSecondLabel\": 0,\n        \"MediaLabel\": 1,\n        \"MediaType\": 2\n    },\n    \"TaskName\": \"demo-task-0\",\n    \"MediaId\": \"media-a1b2c3d4\",\n    \"UploadVideo\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2713de41-b294-429b-ac13-2c3f5c49b1db\",\n        \"TaskId\": \"task-g8lqk737\"\n    }\n}",
         "title": "输入普通话新闻素材，发起智能标签任务"
+      }
+    ],
+    "DeleteCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomCategory\n<公共请求参数>\n\n{\n    \"CategoryId\": \"99\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"99\",\n        \"RequestId\": \"94efe9e4-1381-43b4-992b-f3f731ff3387\"\n    }\n}",
+        "title": "成功删除自定义人物分类"
+      }
+    ],
+    "DeleteCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomPerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"c3679728-cd86-4bd9-a829-579e9e885c7c\"\n    }\n}",
+        "title": "删除自定义人物"
+      }
+    ],
+    "DeleteCustomPersonImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomPersonImage\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"ImageId\": \"image-Axgo3FYc-GOeV\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageId\": \"image-Axgo3FYc-GOeV\",\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"88ca11c5-3ab8-4069-b2b9-723f6143d6aa\"\n    }\n}",
+        "title": "删除自定义人物图片"
       }
     ],
     "DeleteMedia": [
@@ -20,6 +84,50 @@
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-a1b2c3d4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d608fa8-66a3-4a25-94ce-1b904d4807f3\"\n    }\n}",
         "title": "删除媒资文件失败-媒资文件不存在"
+      }
+    ],
+    "DescribeCustomCategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [],\n        \"RequestId\": \"d8461ee7-c4eb-429e-8609-3fa727e5f064\"\n    }\n}",
+        "title": "未创建任何分类，返回空数组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [\n            {\n                \"CategoryId\": \"13\",\n                \"L1Category\": \"公众人物\",\n                \"L2Category\": \"知名律师\"\n            }\n        ],\n        \"RequestId\": \"2759b810-ad36-4936-93b4-7b374a878e6a\"\n    }\n}",
+        "title": "描述自定义人物类型"
+      }
+    ],
+    "DescribeCustomGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomGroup\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"test-251202813.cos.ap-guangzhou.myqcloud.com\",\n        \"GroupSize\": 0,\n        \"RequestId\": \"dc5b7d40-2210-4298-8809-085a43f64e60\"\n    }\n}",
+        "title": "成功描述自定义人物库"
+      }
+    ],
+    "DescribeCustomPersonDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersonDetail\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfo\": {\n            \"BasicInfo\": \"测试基本信息\",\n            \"L1Category\": \"明星\",\n            \"L2Category\": \"巨星\",\n            \"Name\": \"测试姓名\",\n            \"PersonId\": \"person-Axgo3FYc\"\n        },\n        \"RequestId\": \"db04f25b-0d68-4cba-9171-254abc8ff3ac\",\n        \"TaskIdSet\": []\n    }\n}",
+        "title": "成功描述人物详细信息(包括出现这个人物的任务ID列表)"
+      }
+    ],
+    "DescribeCustomPersons": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersons\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"15\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [],\n        \"RequestId\": \"802f88a4-3c8f-4aff-8328-bc7591fdacc1\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "批量描述自定义人物"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersons\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"50\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [\n            {\n                \"BasicInfo\": \"测试基本信息\",\n                \"L1Category\": \"明星\",\n                \"L2Category\": \"巨星\",\n                \"Name\": \"测试姓名\",\n                \"PersonId\": \"person-Axgo3FYc\"\n            }\n        ],\n        \"RequestId\": \"9f5bc011-fa0b-4ad9-a4a1-2481343e9428\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "成功批量描述人物信息"
       }
     ],
     "DescribeMedia": [
@@ -80,6 +188,22 @@
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-news-6mins.mp4\",\n    \"Name\": \"demo-video-0\"\n}",
         "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-a1b2c3d4\",\n        \"RequestId\": \"50f3df82-beae-4f5f-9b47-23e8302f62ae\"\n    }\n}",
         "title": "发起导入任务成功"
+      }
+    ],
+    "UpdateCustomCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomCategory\n<公共请求参数>\n\n{\n    \"L1Category\": \"公众人物\",\n    \"L2Category\": \"娱乐明星\",\n    \"CategoryId\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"2\",\n        \"RequestId\": \"0f3d2270-90f4-4d5d-9670-3bd44ac8efa2\"\n    }\n}",
+        "title": "成功更新自定义人物类型"
+      }
+    ],
+    "UpdateCustomPerson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomPerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\",\n    \"BasicInfo\": \"新测试基本信息\",\n    \"Name\": \"测试姓名B\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonId\": \"person-Axgo3FYc\",\n        \"RequestId\": \"78b360f1-fe7a-4576-8ab4-d48d06d44572\"\n    }\n}",
+        "title": "更新人物姓名与基本信息"
       }
     ]
   },

@@ -3025,7 +3025,7 @@
         },
         {
           "default": "",
-          "document": "事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断",
+          "document": "默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断",
           "example": "[1]",
           "member": "int64",
           "name": "EventTypes",
@@ -5640,7 +5640,7 @@
         },
         {
           "default": "",
-          "document": "查询开始时间",
+          "document": "查询开始时间，时间戳秒",
           "example": "1624204800",
           "member": "int64",
           "name": "From",
@@ -5649,7 +5649,7 @@
         },
         {
           "default": "",
-          "document": "查询结束时间",
+          "document": "查询结束时间，时间戳秒",
           "example": "1624204800",
           "member": "int64",
           "name": "To",
@@ -6157,7 +6157,7 @@
         },
         {
           "default": "",
-          "document": "偏移量，默认0",
+          "document": "偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6166,7 +6166,7 @@
         },
         {
           "default": "",
-          "document": "限制量，默认200",
+          "document": "限制量",
           "example": "100",
           "member": "int64",
           "name": "Limit",

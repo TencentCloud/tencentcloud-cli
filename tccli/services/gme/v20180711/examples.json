@@ -125,7 +125,7 @@
     "VoiceFilter": [
       {
         "document": "",
-        "input": "https://gme.tencentcloudapi.com/?Action=VoiceFilter\r\n&BizId=0\r\n&FileId=test_file_id\r\n&FileName=test_file_name\r\n&FileUrl=http%3a%2f%2ftest_file_url.com%2ffile\r\n&<公共请求参数>",
+        "input": "https://gme.tencentcloudapi.com/?Action=VoiceFilter\n&BizId=0\n&FileId=test_file_id\n&FileName=test_file_name\n&FileUrl=http%3a%2f%2ftest_file_url.com%2ffile\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "语音过滤"
       }

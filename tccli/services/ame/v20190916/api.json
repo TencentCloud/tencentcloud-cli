@@ -883,6 +883,15 @@
         },
         {
           "default": "",
+          "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "CreateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "0",
           "member": "int64",
@@ -1664,6 +1673,16 @@
           "name": "RTCSystem",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeInput",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -2521,6 +2540,22 @@
       ],
       "usage": "in"
     },
+    "SetPlayModeCommandInput": {
+      "document": "设置播放模式",
+      "members": [
+        {
+          "default": "",
+          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "example": "RepeatPlaylist",
+          "member": "string",
+          "name": "PlayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SetPlaylistCommandInput": {
       "document": "设置播放列表指令参数",
       "members": [
@@ -2622,7 +2657,7 @@
         },
         {
           "default": "",
-          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>",
+          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>",
           "example": "Play",
           "member": "string",
           "name": "Command",
@@ -2671,6 +2706,15 @@
           "example": "无",
           "member": "SendMessageCommandInput",
           "name": "SendMessageCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "播放模式，当Command取SetPlayMode时，必填。",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeCommandInput",
           "required": false,
           "type": "object"
         }
@@ -2814,6 +2858,32 @@
         }
       ],
       "type": "object"
+    },
+    "TimeRange": {
+      "document": "时间范围",
+      "members": [
+        {
+          "default": "",
+          "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "Before",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
+          "example": "2020-12-10T07:25:52Z",
+          "member": "string",
+          "name": "After",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "UseRange": {
       "document": "曲库包用途信息",

@@ -2978,6 +2978,7 @@
         {
           "default": "",
           "document": "实例唯一id",
+          "example": "xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2991,8 +2992,10 @@
       "members": [
         {
           "document": "返回的路由信息结果集",
+          "example": "无",
           "member": "RouteResponse",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

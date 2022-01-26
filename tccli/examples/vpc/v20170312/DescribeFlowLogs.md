@@ -25,7 +25,10 @@ Output:
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
-                "VpcId": "vpc-pq9vxykj"
+                "VpcId": "vpc-pq9vxykj",
+                "StorageType": "cls",
+                "TagSet": [],
+                "Enable": true
             },
             {
                 "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
@@ -37,7 +40,10 @@ Output:
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
-                "VpcId": "vpc-pq9vxykj"
+                "VpcId": "vpc-pq9vxykj",
+                "StorageType": "cls",
+                "TagSet": [],
+                "Enable": true
             }
         ],
         "TotalNum": 2,

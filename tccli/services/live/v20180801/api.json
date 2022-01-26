@@ -10593,7 +10593,7 @@
         },
         {
           "default": "",
-          "document": "推流视频码率，单位: Kbps。",
+          "document": "推流视频码率，单位: bps。",
           "example": "100",
           "member": "uint64",
           "name": "VideoSpeed",
@@ -10613,7 +10613,7 @@
         },
         {
           "default": "",
-          "document": "推流音频码率，单位: Kbps。",
+          "document": "推流音频码率，单位: bps。",
           "example": "40",
           "member": "uint64",
           "name": "AudioSpeed",
@@ -10683,7 +10683,7 @@
         },
         {
           "default": "",
-          "document": "metadata 中的音频码率，单位: Kbps。",
+          "document": "metadata 中的音频码率，单位: bps。",
           "example": "22",
           "member": "uint64",
           "name": "MetaAudioSpeed",
@@ -10693,7 +10693,7 @@
         },
         {
           "default": "",
-          "document": "metadata 中的视频码率，单位: Kbps。",
+          "document": "metadata 中的视频码率，单位: bps。",
           "example": "4885",
           "member": "uint64",
           "name": "MetaVideoSpeed",

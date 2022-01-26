@@ -992,6 +992,7 @@
         {
           "default": "",
           "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。",
+          "example": "Tencent",
           "member": "string",
           "name": "KeyName",
           "required": true,
@@ -1000,6 +1001,7 @@
         {
           "default": "",
           "document": "密钥对创建后所属的项目ID。\n可以通过以下方式获取项目ID：\n<li>通过项目列表查询项目ID。\n<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -1013,8 +1015,10 @@
       "members": [
         {
           "document": "密钥对信息。",
+          "example": "无",
           "member": "KeyPair",
           "name": "KeyPair",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3380,6 +3384,42 @@
       ],
       "usage": "in"
     },
+    "GPUInfo": {
+      "document": "实例GPU信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "GPUCount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例GPU地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['0000:18:00.0','0000:18:00.1']",
+          "member": "string",
+          "name": "GPUId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例GPU类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NVIDIA T4",
+          "member": "string",
+          "name": "GPUType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HostItem": {
       "document": "cdh实例详细信息",
       "members": [
@@ -4857,6 +4897,16 @@
           "name": "IsolatedSource",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUInfo",
+          "name": "GPUInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -18,6 +18,12 @@
       "name": "绑定定期快照策略",
       "output": "BindAutoSnapshotPolicyResponse"
     },
+    "CopySnapshotCrossRegions": {
+      "document": "本接口（CopySnapshotCrossRegions）用于快照跨地域复制。\n\n* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。\n* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2022年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。",
+      "input": "CopySnapshotCrossRegionsRequest",
+      "name": "快照跨地域复制",
+      "output": "CopySnapshotCrossRegionsResponse"
+    },
     "CreateAutoSnapshotPolicy": {
       "document": "本接口（CreateAutoSnapshotPolicy）用于创建定期快照策略。\n\n* 每个地域可创建的定期快照策略数量限制请参考文档[定期快照](/document/product/362/8191)。\n* 每个地域可创建的快照有数量和容量的限制，具体请见腾讯云控制台快照页面提示，如果快照超配额，定期快照创建会失败。",
       "input": "CreateAutoSnapshotPolicyRequest",
@@ -369,7 +375,7 @@
       "type": "object"
     },
     "AutoMountConfiguration": {
-      "document": "自动初始化、挂载云盘时指定配置。",
+      "document": "描述了新购云硬盘时自动将云硬盘初始化并挂载至云服务器内部的配置。",
       "members": [
         {
           "default": "",
@@ -647,6 +653,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CopySnapshotCrossRegionsRequest": {
+      "document": "CopySnapshotCrossRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照需要复制到的目标地域，各地域的标准取值可通过接口[DescribeRegions](https://cloud.tencent.com/document/product/213/9456)查询，且只能传入支持快照的地域。",
+          "example": "[\"ap-beijing\\r\\n\"]",
+          "member": "string",
+          "name": "DestinationRegions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要跨地域复制的源快照ID，可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "snap-ckgjwkqh",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新复制快照的名称，如果不传，则默认取值为“Copied 源快照ID from 地域名”。",
+          "example": "snap-hfdadhusads",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopySnapshotCrossRegionsResponse": {
+      "document": "CopySnapshotCrossRegions返回参数结构体",
+      "members": [
+        {
+          "document": "快照跨地域复制的结果，如果请求下发成功，则返回相应地地域的新快照ID，否则返回Error。",
+          "example": "无",
+          "member": "SnapshotCopyResult",
+          "name": "SnapshotCopyResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAutoSnapshotPolicyRequest": {
       "document": "CreateAutoSnapshotPolicy请求参数结构体",
@@ -3486,6 +3546,52 @@
           "example": "2021-07-15",
           "member": "date",
           "name": "TimeStartShare",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotCopyResult": {
+      "document": "描述快照跨地域复制的结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "复制到目标地域的新快照ID。",
+          "example": "snap-hdbc13ad",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指示具体错误信息，成功时为空字符串。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，成功时取值为“Success”。",
+          "example": "\"Success\"",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地复制的目标地域。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "DestinationRegion",
           "required": true,
           "type": "string",
           "value_allowed_null": false

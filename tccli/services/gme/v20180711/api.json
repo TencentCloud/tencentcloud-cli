@@ -79,7 +79,7 @@
       "output": "ScanVoiceResponse"
     },
     "VoiceFilter": {
-      "document": "本接口用于识别涉黄、涉政等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：政治，2：色情，3：谩骂",
+      "document": "本接口用于识别涉黄等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：色情，2：谩骂",
       "input": "VoiceFilterRequest",
       "name": "语音过滤",
       "output": "VoiceFilterResponse"
@@ -1901,6 +1901,7 @@
         {
           "default": "",
           "document": "应用ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
+          "example": "0",
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1909,6 +1910,7 @@
         {
           "default": "",
           "document": "文件ID，表示文件唯一ID",
+          "example": "test_file_id",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -1917,6 +1919,7 @@
         {
           "default": "",
           "document": "文件名",
+          "example": "test_file_name",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -1925,6 +1928,7 @@
         {
           "default": "",
           "document": "文件url，urlencode编码，FileUrl和FileContent二选一",
+          "example": "http%3a%2f%2ftest_file_url.com%2ffile",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -1933,6 +1937,7 @@
         {
           "default": "",
           "document": "文件内容，base64编码，FileUrl和FileContent二选一",
+          "example": "无",
           "member": "string",
           "name": "FileContent",
           "required": false,
@@ -1941,6 +1946,7 @@
         {
           "default": "",
           "document": "用户ID",
+          "example": "无",
           "member": "string",
           "name": "OpenId",
           "required": false,

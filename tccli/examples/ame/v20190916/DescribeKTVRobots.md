@@ -7,7 +7,9 @@ Input:
 ```
 tccli ame DescribeKTVRobots --cli-unfold-argument  \
     --RobotIds ame-xxxxx1 \
-    --Statuses Play
+    --Statuses Play \
+    --CreateTime.After 2022-01-10T07:25:52Z \
+    --CreateTime.Before 2022-01-11T07:25:52Z
 ```
 
 Output: 
@@ -39,6 +41,9 @@ Output:
                 "SetAudioParamInput": {
                     "Definition": "audio/mi",
                     "Type": "Original"
+                },
+                "SetPlayModeInput": {
+                    "PlayMode": "Order"
                 }
             }
         ],

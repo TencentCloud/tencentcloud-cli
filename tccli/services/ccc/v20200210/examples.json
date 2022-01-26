@@ -8,6 +8,14 @@
         "title": "绑定坐席所属技能组示例"
       }
     ],
+    "CreateCallOutSession": [
+      {
+        "document": "在不加载前端 SDK 的场景下，可以通过在后台触发此接口进行外呼，当前只支持通过手机端回拨外呼（先拨通客服手机），并且确认已经申请并通过添加外呼白名单。",
+        "input": "https://ccc.tencentcloudapi.com/?Action=CreateCallOutSession\n&SdkAppId=1400000000\n&UserId=FooOrBar@tencent.com\n&Callee=008612300000000\n&Uui=fooandbar\n&IsForceUseMobile=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
+        "title": "外呼接口调用示例"
+      }
+    ],
     "CreateSDKLoginToken": [
       {
         "document": "",
@@ -38,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffList\": [\n        \"staff1@xxx.com\",\n        \"staff2@xxx.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"OnlineStaffList\": null\n    }\n}",
         "title": "删除坐席信息示例"
+      }
+    ],
+    "DescribeAutoCalloutTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoCalloutTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"IvrId\": 1,\n                \"CalleeCount\": 1,\n                \"Name\": \"xx\",\n                \"NotBefore\": 0,\n                \"NotAfter\": 0,\n                \"State\": 1,\n                \"Callers\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeCCCBuyInfoList": [

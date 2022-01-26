@@ -75,8 +75,8 @@
     "DescribeKTVRobots": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVRobots\n<公共请求参数>\n\n{\n    \"RobotIds\": [\n        \"ame-xxxxx1\"\n    ],\n    \"Statuses\": [\n        \"Play\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVRobotInfoSet\": [\n            {\n                \"RobotId\": \"ame-xxxxx1\",\n                \"Status\": \"Play\",\n                \"Playlists\": [\n                    \"xxxx1\",\n                    \"xxxx2\",\n                    \"xxxx3\",\n                    \"xxxx4\"\n                ],\n                \"CurIndex\": 2,\n                \"Position\": 120,\n                \"RTCSystem\": \"TRTC\",\n                \"JoinRoomInput\": {\n                    \"TRTCJoinRoomInput\": {\n                        \"Sign\": \"xxxxxxxxxxx\",\n                        \"RoomId\": \"12345\",\n                        \"SdkAppId\": \"140000001\",\n                        \"UserId\": \"tom\"\n                    }\n                },\n                \"SetAudioParamInput\": {\n                    \"Definition\": \"audio/mi\",\n                    \"Type\": \"Original\"\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVRobots\n<公共请求参数>\n\n{\n    \"RobotIds\": [\n        \"ame-xxxxx1\"\n    ],\n    \"Statuses\": [\n        \"Play\"\n    ],\n    \"CreateTime\": {\n        \"After\": \"2022-01-10T07:25:52Z\",\n        \"Before\": \"2022-01-11T07:25:52Z\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVRobotInfoSet\": [\n            {\n                \"RobotId\": \"ame-xxxxx1\",\n                \"Status\": \"Play\",\n                \"Playlists\": [\n                    \"xxxx1\",\n                    \"xxxx2\",\n                    \"xxxx3\",\n                    \"xxxx4\"\n                ],\n                \"CurIndex\": 2,\n                \"Position\": 120,\n                \"RTCSystem\": \"TRTC\",\n                \"JoinRoomInput\": {\n                    \"TRTCJoinRoomInput\": {\n                        \"Sign\": \"xxxxxxxxxxx\",\n                        \"RoomId\": \"12345\",\n                        \"SdkAppId\": \"140000001\",\n                        \"UserId\": \"tom\"\n                    }\n                },\n                \"SetAudioParamInput\": {\n                    \"Definition\": \"audio/mi\",\n                    \"Type\": \"Original\"\n                },\n                \"SetPlayModeInput\": {\n                    \"PlayMode\": \"Order\"\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询机器人信息"
       }
     ],
@@ -185,33 +185,39 @@
     "SyncKTVRobotCommand": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SetPlaylist\",\n    \"SetPlaylistCommandInput\": {\n        \"Type\": \"Add\",\n        \"MusicIds\": [\n            \"xxxxxxx\"\n        ],\n        \"Index\": -1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetPlaylist\",\n    \"SetPlaylistCommandInput\": {\n        \"Type\": \"Add\",\n        \"MusicIds\": [\n            \"xxxxxxx\"\n        ],\n        \"Index\": -1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "播放列表添加歌曲"
       },
       {
         "document": "播放第2首歌曲",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"Play\",\n    \"PlayCommandInput\": {\n        \"Index\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"Play\",\n    \"PlayCommandInput\": {\n        \"Index\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "播放指定音乐"
       },
       {
         "document": "变更歌曲音频参数",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SetAudioParam\",\n    \"SetAudioParamCommandInput\": {\n        \"Definition\": \"audio/hi\",\n        \"Type\": \"Accompaniment\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetAudioParam\",\n    \"SetAudioParamCommandInput\": {\n        \"Definition\": \"audio/hi\",\n        \"Type\": \"Accompaniment\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "变更歌曲音频参数"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SwitchNext\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SwitchNext\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "切换下一首歌曲"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"ame-xxxxx\",\n    \"Command\": \"SendMessage\",\n    \"SendMessageCommandInput\": {\n        \"Message\": \"{\\\"Field1\\\":\\\"Value1\\\"}\",\n        \"Repeat\": 2\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SendMessage\",\n    \"SendMessageCommandInput\": {\n        \"Message\": \"{\\\"Field1\\\":\\\"Value1\\\"}\",\n        \"Repeat\": 2\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "发送自定义消息"
+      },
+      {
+        "document": "设置播放模式为随机播放。",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetPlayMode\",\n    \"SetPlayModeCommandInput\": {\n        \"PlayMode\": \"Shuffle\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设置播放模式"
       }
     ],
     "TakeMusicOffShelves": [
