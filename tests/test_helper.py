@@ -18,7 +18,7 @@ def test_help_detail():
 
 def test_cvm_help():
     cmd = 'tccli cvm help'
-    expect = '<DescribeKeyPairs> <DescribeRegions>'
+    expect = '<DescribeRegions>'
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
 
