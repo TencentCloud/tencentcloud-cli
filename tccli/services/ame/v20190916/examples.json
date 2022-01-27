@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicDetail\n<公共请求参数>\n\n{\n    \"MusicId\": \"ame-78d2xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PlayToken\": \"DUE3344xxxxxx\",\n        \"LyricsUrl\": \"http://xxx.qcloud.com/subtitle.vtt\",\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"MusicId\": \"ame-78d2xxx\",\n            \"Duration\": 120,\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"Name\": \"七里香\",\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ]\n        },\n        \"DefinitionInfoSet\": [\n            {\n                \"Definition\": \"audio/mi\",\n                \"Bitrate\": 64000,\n                \"Size\": 3298220\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LyricsUrl\": \"xx\",\n        \"DefinitionInfoSet\": [\n            {\n                \"Definition\": \"xx\",\n                \"Bitrate\": 64000,\n                \"Size\": 3298220\n            }\n        ],\n        \"KTVMusicBaseInfo\": {\n            \"ComposerSet\": [\n                \"周杰伦\"\n            ],\n            \"SingerInfoSet\": [\n                {\n                    \"SingerId\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"MusicId\": \"xx\",\n            \"SingerSet\": [\n                \"周杰伦\"\n            ],\n            \"TagSet\": [\n                \"华语\",\n                \"流行\"\n            ],\n            \"Duration\": 1,\n            \"LyricistSet\": [\n                \"方文山\"\n            ],\n            \"Name\": \"xx\"\n        },\n        \"ChorusClipSet\": [\n            {\n                \"EndTime\": 0,\n                \"StartTime\": 0\n            }\n        ],\n        \"MidiJsonUrl\": \"xx\",\n        \"PlayToken\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询 KTV 曲目详情"
       }
     ],
@@ -78,6 +78,30 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVRobots\n<公共请求参数>\n\n{\n    \"RobotIds\": [\n        \"ame-xxxxx1\"\n    ],\n    \"Statuses\": [\n        \"Play\"\n    ],\n    \"CreateTime\": {\n        \"After\": \"2022-01-10T07:25:52Z\",\n        \"Before\": \"2022-01-11T07:25:52Z\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVRobotInfoSet\": [\n            {\n                \"RobotId\": \"ame-xxxxx1\",\n                \"Status\": \"Play\",\n                \"Playlists\": [\n                    \"xxxx1\",\n                    \"xxxx2\",\n                    \"xxxx3\",\n                    \"xxxx4\"\n                ],\n                \"CurIndex\": 2,\n                \"Position\": 120,\n                \"RTCSystem\": \"TRTC\",\n                \"JoinRoomInput\": {\n                    \"TRTCJoinRoomInput\": {\n                        \"Sign\": \"xxxxxxxxxxx\",\n                        \"RoomId\": \"12345\",\n                        \"SdkAppId\": \"140000001\",\n                        \"UserId\": \"tom\"\n                    }\n                },\n                \"SetAudioParamInput\": {\n                    \"Definition\": \"audio/mi\",\n                    \"Type\": \"Original\"\n                },\n                \"SetPlayModeInput\": {\n                    \"PlayMode\": \"Order\"\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询机器人信息"
+      }
+    ],
+    "DescribeKTVSingerCategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerCategories\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"GenderSet\": [\n            {}\n        ],\n        \"AreaSet\": [\n            {}\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取直播互动曲库歌手分类信息"
+      }
+    ],
+    "DescribeKTVSingerMusics": [
+      {
+        "document": "获取歌手下歌曲列表",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerMusics\n<公共请求参数>\n\n{\n    \"SingerId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"xx\"\n                ],\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取歌手下歌曲列表"
+      }
+    ],
+    "DescribeKTVSingers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Field\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Genders\": [\n        \"MALE\"\n    ],\n    \"SingerIds\": [\n        \"xx\"\n    ],\n    \"Areas\": [\n        \"CH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVSingerInfoSet\": [\n            {\n                \"SingerId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Area\": \"xx\",\n                \"Gender\": \"xx\",\n                \"PlayCount\": 10,\n                \"MusicCount\": 10\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取直播互动曲库歌手"
       }
     ],
     "DescribeLyric": [

@@ -544,7 +544,7 @@
       "members": [
         {
           "default": "",
-          "document": "订单自增 ID",
+          "document": "订单自增 ID【请勿依赖该字段作为唯一标识】",
           "example": "123456",
           "member": "string",
           "name": "DealId",
@@ -554,7 +554,7 @@
         },
         {
           "default": "",
-          "document": "订单号",
+          "document": "订单号【订单唯一键】",
           "example": "202008124664564",
           "member": "string",
           "name": "DealName",
@@ -830,7 +830,7 @@
       "members": [
         {
           "default": "",
-          "document": "订单自增 ID",
+          "document": "订单自增 ID【请勿依赖该字段作为唯一标识】",
           "example": "123456",
           "member": "string",
           "name": "DealId",
@@ -840,7 +840,7 @@
         },
         {
           "default": "",
-          "document": "订单号",
+          "document": "订单号【订单唯一键】",
           "example": "202008124664564",
           "member": "string",
           "name": "DealName",

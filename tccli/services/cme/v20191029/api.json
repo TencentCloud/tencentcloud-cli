@@ -688,6 +688,58 @@
       ],
       "usage": "in"
     },
+    "ClassCreatedEvent": {
+      "document": "分类创建事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "分类归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassDeletedEvent": {
+      "document": "分类删除事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "删除的分类归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "删除的分类路径列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ClassPathSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClassInfo": {
       "document": "分类信息",
       "members": [
@@ -705,6 +757,52 @@
           "document": "分类路径。",
           "member": "string",
           "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClassMovedEvent": {
+      "document": "分类移动事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "源分类归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "SourceOwner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源分类路径列表。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClassPathSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标分类归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "DestinationOwner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标分类归属。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "DestinationClassPath",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2721,7 +2819,7 @@
       "members": [
         {
           "default": "",
-          "document": "事件类型，可取值为：\n<li>Storage.NewFileCreated：新文件产生；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更。</li>",
+          "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件。</li>",
           "example": "Storage.NewFileCreated",
           "member": "string",
           "name": "EventType",
@@ -2731,7 +2829,17 @@
         },
         {
           "default": "",
-          "document": "新文件产生事件信息。仅当 EventType 为 Storage.NewFileCreated 时有效。",
+          "document": "操作者，表示触发事件的操作者。如果是 `cmeid_system` 表示平台管理员操作。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新文件产生事件。仅当 EventType 为 Storage.NewFileCreated 时有效。",
           "example": "无",
           "member": "StorageNewFileCreatedEvent",
           "name": "StorageNewFileCreatedEvent",
@@ -2741,13 +2849,103 @@
         },
         {
           "default": "",
-          "document": "云转推项目状态变更事件信息。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。",
+          "document": "云转推项目状态变更事件。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。",
           "example": "无",
           "member": "ProjectStreamConnectStatusChangedEvent",
           "name": "ProjectStreamConnectStatusChangedEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台项目状态变更事件。仅当 EventType 为 Project.Switcher.StatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectSwitcherStatusChangedEvent",
+          "name": "ProjectSwitcherStatusChangedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体导入事件。仅当 EventType 为 Material.Imported 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialImportedEvent",
+          "name": "MaterialImportedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体添加事件。仅当 EventType 为 Material.Added 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialAddedEvent",
+          "name": "MaterialAddedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体移动事件。仅当 EventType 为 Material.Moved 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialMovedEvent",
+          "name": "MaterialMovedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体更新事件。仅当 EventType 为 Material.Modified 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialModifiedEvent",
+          "name": "MaterialModifiedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体删除事件。仅当 EventType 为 Material.Deleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialDeletedEvent",
+          "name": "MaterialDeletedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类创建事件。仅当 EventType 为 Class.Created 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassCreatedEvent",
+          "name": "ClassCreatedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类移动事件。仅当 EventType 为 Class.Moved 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassMovedEvent",
+          "name": "ClassMovedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分类删除事件。仅当 EventType 为 Class.Deleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassDeletedEvent",
+          "name": "ClassDeletedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3703,6 +3901,32 @@
       ],
       "type": "object"
     },
+    "ImportMediaInfo": {
+      "document": "导入媒资信息",
+      "members": [
+        {
+          "default": "",
+          "document": "云点播文件 FileId。",
+          "example": "362565566555118451552",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ImportMediaToProjectRequest": {
       "document": "ImportMediaToProject请求参数结构体",
       "members": [
@@ -4143,6 +4367,42 @@
       ],
       "usage": "out"
     },
+    "MaterialAddedEvent": {
+      "document": "媒体添加事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "添加的媒体 Id 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加的媒体归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加的媒体分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MaterialBasicInfo": {
       "document": "媒体基本信息。",
       "members": [
@@ -4259,6 +4519,58 @@
       ],
       "usage": "out"
     },
+    "MaterialDeletedEvent": {
+      "document": "媒体删除事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "删除的媒体 Id 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialImportedEvent": {
+      "document": "媒体导入事件",
+      "members": [
+        {
+          "default": "",
+          "document": "导入的媒体信息列表。",
+          "example": "无",
+          "member": "ImportMediaInfo",
+          "name": "MediaInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "Owner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MaterialInfo": {
       "document": "媒体详情信息",
       "members": [
@@ -4331,6 +4643,108 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialModifiedEvent": {
+      "document": "媒体更新事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "MaterialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新后的媒体名称。如未更新则为空。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。",
+          "example": "无",
+          "member": "string",
+          "name": "PresetTagIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialMovedEvent": {
+      "document": "媒体移动事件",
+      "members": [
+        {
+          "default": "",
+          "document": "要移动的媒体 Id 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "MaterialIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源媒体归属。",
+          "example": "无",
+          "member": "Entity",
+          "name": "SourceOwner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源媒体分类路径。",
+          "example": "/媒体",
+          "member": "string",
+          "name": "SourceClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标媒体分类归属。",
+          "example": "0",
+          "member": "Entity",
+          "name": "DestinationOwner",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标媒体分类路径。",
+          "example": "/媒体/视频",
+          "member": "string",
+          "name": "DestinationClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5518,6 +5932,32 @@
       ],
       "usage": "out"
     },
+    "ProjectSwitcherStatusChangedEvent": {
+      "document": "导播台项目状态变更事件",
+      "members": [
+        {
+          "default": "",
+          "document": "导播台项目 Id。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "导播台项目状态，可取值有：\n<li>Started：导播台启动；</li>\n<li>Stopped：导播台停止；</li>\n<li>PvwStarted：导播台 PVW 开启；</li>\n<li>PgmStarted：导播台 PGM 开启，输出推流开始；</li>\n<li>PvwStopped：导播台 PVW 停止；</li>\n<li>PgmStopped：导播台 PGM 停止，输出推流结束。</li>",
+          "example": "Started",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RecordReplayProjectInput": {
       "document": "录制回放项目输入信息。",
       "members": [
@@ -6031,7 +6471,7 @@
         },
         {
           "default": "",
-          "document": "操作者 Id。",
+          "document": "操作者 Id。（废弃，请勿使用）",
           "example": "3fa6b09e-05c6-433e-bc1e-6457d264f1dd",
           "member": "string",
           "name": "Operator",
@@ -6041,7 +6481,7 @@
         },
         {
           "default": "",
-          "document": "操作类型，可取值为：\n<li>Upload：上传；</li>\n<li>PullUpload：拉取上传；</li>\n<li>Record：直播录制。</li>",
+          "document": "操作类型，可取值有：\n<li>Upload：本地上传；</li>\n<li>PullUpload：拉取上传；</li>\n<li>VideoEdit：视频剪辑；</li>\n<li>LiveStreamClip：直播流剪辑；</li>\n<li>LiveStreamRecord：直播流录制。</li>",
           "example": "Upload",
           "member": "string",
           "name": "OperationType",
@@ -6065,6 +6505,26 @@
           "example": "/媒体",
           "member": "string",
           "name": "ClassPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。",
+          "example": "125000800-PullUpload-6fdaf790821a36dbe95ec8f557366c71t",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。",
+          "example": "60097a8a8ea83d00017b484b",
+          "member": "string",
+          "name": "SourceContext",
           "required": true,
           "type": "string",
           "value_allowed_null": false
