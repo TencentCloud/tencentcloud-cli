@@ -78,6 +78,12 @@
       "name": "获取直播互动曲库歌手",
       "output": "DescribeKTVSingersResponse"
     },
+    "DescribeKTVTopList": {
+      "document": "获取直播互动曲库歌曲的周榜和月榜",
+      "input": "DescribeKTVTopListRequest",
+      "name": "获取直播互动曲库歌曲排行榜",
+      "output": "DescribeKTVTopListResponse"
+    },
     "DescribeLyric": {
       "document": "根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。",
       "input": "DescribeLyricRequest",
@@ -1191,6 +1197,60 @@
       ],
       "type": "object"
     },
+    "DescribeKTVTopListRequest": {
+      "document": "DescribeKTVTopList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "榜单类型。默认Hot\n<li> Hot, 热歌榜。</li>",
+          "example": "Hot",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "榜单周期 默认为Week\n<li> Week, 周榜。</li>\n<li> Month, 月榜。</li>",
+          "example": "Week",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTopListResponse": {
+      "document": "DescribeKTVTopList返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲基础信息列表",
+          "example": "无",
+          "member": "KTVMusicTopInfo",
+          "name": "KTVMusicTopInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回总条数",
+          "example": "30",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLyricRequest": {
       "document": "DescribeLyric请求参数结构体",
       "members": [
@@ -1799,6 +1859,82 @@
           "example": "0",
           "member": "int64",
           "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicTopInfo": {
+      "document": "排行榜结构",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手名称列表",
+          "example": "无",
+          "member": "KTVSingerBaseInfo",
+          "name": "SingerInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌词名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "LyricistSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作曲列表",
+          "example": "无",
+          "member": "string",
+          "name": "ComposerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放时长",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
           "required": true,
           "type": "int",
           "value_allowed_null": false

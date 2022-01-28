@@ -225,6 +225,8 @@ include tccli/services/lighthouse/v20200324/api.json
 include tccli/services/lighthouse/v20200324/examples.json
 include tccli/services/live/v20180801/api.json
 include tccli/services/live/v20180801/examples.json
+include tccli/services/lowcode/v20210108/api.json
+include tccli/services/lowcode/v20210108/examples.json
 include tccli/services/lp/v20200224/api.json
 include tccli/services/lp/v20200224/examples.json
 include tccli/services/mariadb/v20170312/api.json

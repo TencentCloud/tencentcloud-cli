@@ -104,6 +104,14 @@
         "title": "获取直播互动曲库歌手"
       }
     ],
+    "DescribeKTVTopList": [
+      {
+        "document": "获取直播互动曲库歌曲的周榜和月榜",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVTopList\n<公共请求参数>\n\n{\n    \"Type\": \"Hot\",\n    \"Period\": \"Week\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"KTVMusicTopInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"MusicId\": \"xx\",\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 0,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取直播互动曲库歌曲的周榜和月榜"
+      }
+    ],
     "DescribeLyric": [
       {
         "document": "",
