@@ -4921,6 +4921,7 @@
         {
           "default": "",
           "document": "子用户用户 ID",
+          "example": "123xxxxx",
           "member": "uint64",
           "name": "Uin",
           "required": true,
@@ -4930,6 +4931,7 @@
         {
           "default": "",
           "document": "子用户用户名",
+          "example": "名称",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4939,6 +4941,7 @@
         {
           "default": "",
           "document": "子用户 UID",
+          "example": "123xxxxx",
           "member": "uint64",
           "name": "Uid",
           "required": true,
@@ -4948,6 +4951,7 @@
         {
           "default": "",
           "document": "子用户备注",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -4957,6 +4961,7 @@
         {
           "default": "",
           "document": "子用户能否登录控制台",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
           "required": true,
@@ -4966,6 +4971,7 @@
         {
           "default": "",
           "document": "手机号",
+          "example": "151xxxx1001",
           "member": "string",
           "name": "PhoneNum",
           "required": true,
@@ -4975,6 +4981,7 @@
         {
           "default": "",
           "document": "区号",
+          "example": "86",
           "member": "string",
           "name": "CountryCode",
           "required": true,
@@ -4984,6 +4991,7 @@
         {
           "default": "",
           "document": "邮箱",
+          "example": "123@qq.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -4993,8 +5001,19 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-09 11:39:46",
           "member": "datetime",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "昵称",
+          "member": "string",
+          "name": "NickName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

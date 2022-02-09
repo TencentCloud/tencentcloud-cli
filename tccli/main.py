@@ -10,8 +10,7 @@ import tccli.six as six
 import signal
 from tccli.log import init
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, base)
+
 try:
     reload(sys)  # Python 2.7
     sys.setdefaultencoding('utf8')

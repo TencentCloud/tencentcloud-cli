@@ -1,0 +1,603 @@
+{
+  "actions": {
+    "DescribeDataSourceList": {
+      "document": "获取数据源详情列表",
+      "input": "DescribeDataSourceListRequest",
+      "name": "获取数据源详情列表",
+      "output": "DescribeDataSourceListResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-01-08",
+    "api_brief": "云开发低码平台云api",
+    "serviceNameCN": "云开发低码",
+    "serviceShortName": "lowcode"
+  },
+  "objects": {
+    "DataSourceDetail": {
+      "document": "数据源详情列表",
+      "members": [
+        {
+          "default": "",
+          "document": "数据源 ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源标识",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源配置",
+          "example": "无",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cms 项目状态, 0: 重新获取详情信息，1： 不需要重新获取详情信息",
+          "example": "无",
+          "member": "string",
+          "name": "CmsProject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前为环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "schema 版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SchemaVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建者用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属应用数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceLinkApp",
+          "name": "AppUsageList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublishedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子数据源ids\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChildDataSourceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Fun",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScfStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Methods",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子数据源名数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChildDataSourceNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否旧数据源 1 新 0 旧\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsNewDataSource",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源视图id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Configuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部数据源模板code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部数据源模板来源 0 空模板 1 腾讯文档 2 腾讯会议 3 企业微信 4 微信电商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Source",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublishVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "发布视图id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublishViewId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源子类型   \"database\" 标准模型 \"custom-database\" 自定义模型 \"system\" 系统模型 \"connector\" 连接器 \"custom-connector\" 自定义连接器 \"hidden\" 隐藏数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权状态  0 授权无效 1 授权有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TicketAuthInfo",
+          "name": "AuthInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceDetailItems": {
+      "document": "数据详情列表",
+      "members": [
+        {
+          "default": "",
+          "document": "数据详情列表",
+          "example": "无",
+          "member": "DataSourceDetail",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源列表总个数",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceLinkApp": {
+      "document": "数据源关联App信息",
+      "members": [
+        {
+          "default": "",
+          "document": "应用Id",
+          "example": "app-xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyApp",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否编辑状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EditStatusUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否预览状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PreviewStatusUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否正式状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OnlineStatusUse",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceQueryOption": {
+      "document": "数据源模糊查询参数",
+      "members": [
+        {
+          "default": "",
+          "document": "数据源标识模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "LikeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据源名称模糊匹配",
+          "example": "无",
+          "member": "string",
+          "name": "LikeTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeDataSourceListRequest": {
+      "document": "DescribeDataSourceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境 id",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用id数组",
+          "example": "无",
+          "member": "string",
+          "name": "Appids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据源id数组",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据源名称数组",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据源类型 database-自建数据源；cloud-integration-自定义数据源",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据源模糊查询参数",
+          "example": "无",
+          "member": "DataSourceQueryOption",
+          "name": "QueryOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据源视图Id数组",
+          "example": "无",
+          "member": "string",
+          "name": "ViewIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询未关联应用的数据源，0:未关联，该参数配合 AppIds 参数一块使用",
+          "example": "无",
+          "member": "int64",
+          "name": "AppLinkStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询应用绑定数据源: 0: 否,1: 是",
+          "example": "无",
+          "member": "int64",
+          "name": "QueryBindToApp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询连接器 0 数据模型 1 连接器 2 自定义连接器",
+          "example": "无",
+          "member": "int64",
+          "name": "QueryConnector",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数据源黑名单机制，比如不想要系统数据源[\"system\"]",
+          "example": "[\"system\"]",
+          "member": "string",
+          "name": "NotQuerySubTypeList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourceListResponse": {
+      "document": "DescribeDataSourceList返回参数结构体",
+      "members": [
+        {
+          "document": "data 数据",
+          "example": "无",
+          "member": "DataSourceDetailItems",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TicketAuthInfo": {
+      "document": "数据源授权信息",
+      "members": [
+        {
+          "default": "",
+          "document": "授权用户",
+          "example": "无",
+          "member": "string",
+          "name": "AuthUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

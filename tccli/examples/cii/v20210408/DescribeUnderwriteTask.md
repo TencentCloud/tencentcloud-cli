@@ -19,42 +19,46 @@ Output:
         "Uin": "xx",
         "UnderwriteResults": [
             {
-                "ManualDetail": {
-                    "Explanation": "xx",
-                    "Type": "xx",
-                    "Conclusion": "xx"
-                },
+                "ManualDetail": [
+                    {
+                        "Explanation": "xx",
+                        "Type": "xx",
+                        "Conclusion": "xx"
+                    }
+                ],
                 "ReviewTime": "xx",
-                "Results": {
-                    "InsuranceType": "xx",
-                    "Result": [
-                        {
-                            "Laboratory": [
-                                {
-                                    "Name": "xx",
-                                    "Value": "xx",
-                                    "Result": "xx"
-                                }
-                            ],
-                            "Explanation": [
-                                {
-                                    "Name": "xx",
-                                    "Value": "xx",
-                                    "Result": "xx"
-                                }
-                            ],
-                            "Conclusion": "xx",
-                            "Disease": [
-                                {
-                                    "Name": "xx",
-                                    "Value": "xx",
-                                    "Result": "xx"
-                                }
-                            ],
-                            "Title": "xx"
-                        }
-                    ]
-                },
+                "Results": [
+                    {
+                        "InsuranceType": "xx",
+                        "Result": [
+                            {
+                                "Laboratory": [
+                                    {
+                                        "Name": "xx",
+                                        "Value": "xx",
+                                        "Result": "xx"
+                                    }
+                                ],
+                                "Explanation": [
+                                    {
+                                        "Name": "xx",
+                                        "Value": "xx",
+                                        "Result": "xx"
+                                    }
+                                ],
+                                "Conclusion": "xx",
+                                "Disease": [
+                                    {
+                                        "Name": "xx",
+                                        "Value": "xx",
+                                        "Result": "xx"
+                                    }
+                                ],
+                                "Title": "xx"
+                            }
+                        ]
+                    }
+                ],
                 "CustomerName": "xx",
                 "CustomerId": "xx"
             }

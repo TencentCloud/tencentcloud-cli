@@ -60,6 +60,30 @@
       "name": "查询直播互动机器人信息",
       "output": "DescribeKTVRobotsResponse"
     },
+    "DescribeKTVSingerCategories": {
+      "document": "获取直播互动曲库歌手分类信息",
+      "input": "DescribeKTVSingerCategoriesRequest",
+      "name": "获取直播互动曲库歌手分类信息",
+      "output": "DescribeKTVSingerCategoriesResponse"
+    },
+    "DescribeKTVSingerMusics": {
+      "document": "根据歌手id，返回该歌手下歌曲列表。\n\n\n",
+      "input": "DescribeKTVSingerMusicsRequest",
+      "name": "获取歌手下歌曲列表",
+      "output": "DescribeKTVSingerMusicsResponse"
+    },
+    "DescribeKTVSingers": {
+      "document": "根据过滤条件，返回匹配的歌手列表。",
+      "input": "DescribeKTVSingersRequest",
+      "name": "获取直播互动曲库歌手",
+      "output": "DescribeKTVSingersResponse"
+    },
+    "DescribeKTVTopList": {
+      "document": "获取直播互动曲库歌曲的周榜和月榜",
+      "input": "DescribeKTVTopListRequest",
+      "name": "获取直播互动曲库歌曲排行榜",
+      "output": "DescribeKTVTopListResponse"
+    },
     "DescribeLyric": {
       "document": "根据接口的模式及歌曲ID来取得歌词信息或者波形图信息。",
       "input": "DescribeLyricRequest",
@@ -264,6 +288,32 @@
           "name": "Id",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChorusClip": {
+      "document": "副歌片段信息",
+      "members": [
+        {
+          "default": "",
+          "document": "副歌时间，单位：毫秒",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副歌结束时间，单位：毫秒",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -735,6 +785,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "音高数据文件下载地址",
+          "example": "\"\"",
+          "member": "string",
+          "name": "MidiJsonUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副歌片段数据列表",
+          "example": "\"\"",
+          "member": "ChorusClip",
+          "name": "ChorusClipSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -930,6 +998,248 @@
           "name": "KTVRobotInfoSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSingerCategoriesRequest": {
+      "document": "DescribeKTVSingerCategories请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeKTVSingerCategoriesResponse": {
+      "document": "DescribeKTVSingerCategories返回参数结构体",
+      "members": [
+        {
+          "document": "歌手性别分类列表",
+          "example": "无",
+          "member": "KTVSingerCategoryInfo",
+          "name": "GenderSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "歌手区域分类列表",
+          "example": "无",
+          "member": "KTVSingerCategoryInfo",
+          "name": "AreaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSingerMusicsRequest": {
+      "document": "DescribeKTVSingerMusics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌手id",
+          "example": "无",
+          "member": "string",
+          "name": "SingerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSingerMusicsResponse": {
+      "document": "DescribeKTVSingerMusics返回参数结构体",
+      "members": [
+        {
+          "document": "总曲目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "KTV 曲目列表",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSingersRequest": {
+      "document": "DescribeKTVSingers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌手id集合，精确匹配歌手id\n<li> 数组长度限制10</li>",
+          "example": "无",
+          "member": "string",
+          "name": "SingerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "歌手性别集合，不传为全部，精确匹配歌手性别类型，\n<li>数组长度限制1</li>\n<li>取值范围：直播互动曲库歌手分类信息接口，返回性别分类信息列表中，分类英文名</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Genders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "歌手区域集合，不传为全部，精确匹配歌手区域\n<li>数组长度限制10</li>\n<li>取值范围：直播互动曲库歌手分类信息接口，返回的区域分类信息列表中，分类英文名</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Areas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式。默认按照播放数倒序\n<li> Sort.Field 可选 PlayCount。</li>",
+          "example": "无",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量，默认值：0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSingersResponse": {
+      "document": "DescribeKTVSingers返回参数结构体",
+      "members": [
+        {
+          "document": "总歌手数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "KTV歌手列表",
+          "example": "无",
+          "member": "KTVSingerInfo",
+          "name": "KTVSingerInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTopListRequest": {
+      "document": "DescribeKTVTopList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "榜单类型。默认Hot\n<li> Hot, 热歌榜。</li>",
+          "example": "Hot",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "榜单周期 默认为Week\n<li> Week, 周榜。</li>\n<li> Month, 月榜。</li>",
+          "example": "Week",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVTopListResponse": {
+      "document": "DescribeKTVTopList返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲基础信息列表",
+          "example": "无",
+          "member": "KTVMusicTopInfo",
+          "name": "KTVMusicTopInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回总条数",
+          "example": "30",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1459,7 +1769,17 @@
         },
         {
           "default": "",
-          "document": "演唱者列表",
+          "document": "演唱者基础信息列表",
+          "example": "\"\"",
+          "member": "KTVSingerBaseInfo",
+          "name": "SingerInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已弃用，请使用SingerInfoSet",
           "example": "\"\"",
           "member": "string",
           "name": "SingerSet",
@@ -1539,6 +1859,82 @@
           "example": "0",
           "member": "int64",
           "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicTopInfo": {
+      "document": "排行榜结构",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手名称列表",
+          "example": "无",
+          "member": "KTVSingerBaseInfo",
+          "name": "SingerInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌词名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "LyricistSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作曲列表",
+          "example": "无",
+          "member": "string",
+          "name": "ComposerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "string",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放时长",
+          "example": "10",
+          "member": "int64",
+          "name": "Duration",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1683,6 +2079,124 @@
           "name": "SetPlayModeInput",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSingerBaseInfo": {
+      "document": "KTV 歌手基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "歌手id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SingerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSingerCategoryInfo": {
+      "document": "KTV歌手分类信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分类中文名",
+          "example": "大陆",
+          "member": "string",
+          "name": "ChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分类英文名",
+          "example": " Japan",
+          "member": "string",
+          "name": "EnglishName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSingerInfo": {
+      "document": "直播互动歌曲的歌手信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "歌手id",
+          "example": "无",
+          "member": "string",
+          "name": "SingerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手名",
+          "example": "张学友",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手性别: 男，女，组合",
+          "example": "男",
+          "member": "string",
+          "name": "Gender",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地区: 大陆，港台，欧美，日本",
+          "example": "大陆",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲数",
+          "example": "201",
+          "member": "int64",
+          "name": "MusicCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲总播放次数",
+          "example": "2000",
+          "member": "int64",
+          "name": "PlayCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2587,6 +3101,32 @@
           "name": "MusicIds",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SortBy": {
+      "document": "排序依据",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序方式，可选值：Asc（升序）、Desc（降序）",
+          "example": "Asc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
