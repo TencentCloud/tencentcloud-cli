@@ -39,7 +39,7 @@ def main():
                 return
     setup(
         name='tccli',
-        install_requires=[dep_sdk, "jmespath==0.10.0"],
+        install_requires=[dep_sdk, "jmespath==0.10.0", "six==1.8.0"],
         version=VERSION,
         description='Universal Command Line Environment for Tencent Cloud',
         long_description=open('README.rst').read(),
