@@ -66,6 +66,12 @@
       "name": "删除ACL规则",
       "output": "DeleteAclRuleResponse"
     },
+    "DeleteGroup": {
+      "document": "删除消费组",
+      "input": "DeleteGroupRequest",
+      "name": "删除消费组",
+      "output": "DeleteGroupResponse"
+    },
     "DeleteInstancePre": {
       "document": "删除预付费实例",
       "input": "DeleteInstancePreRequest",
@@ -2080,6 +2086,51 @@
           "name": "Result",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "ckafka-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消费分组",
+          "example": "testgroup",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
