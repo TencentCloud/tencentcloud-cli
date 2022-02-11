@@ -3031,6 +3031,7 @@
         {
           "default": "",
           "document": "服务商, 可选值：`UNICOM`。",
+          "example": "UNICOM",
           "member": "string",
           "name": "ServiceProvider",
           "required": true,
@@ -3039,6 +3040,7 @@
         {
           "default": "",
           "document": "表单唯一`ID`。",
+          "example": "10006",
           "member": "uint64",
           "name": "ComplianceId",
           "required": true,
@@ -3047,6 +3049,7 @@
         {
           "default": "",
           "document": "通过：`APPROVED `，拒绝：`DENY`。",
+          "example": "DENY",
           "member": "string",
           "name": "AuditBehavior",
           "required": true,

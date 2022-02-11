@@ -2916,20 +2916,20 @@
         },
         {
           "default": "",
-          "document": "文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。",
-          "example": "test.sql",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "云数据库的用户名。",
           "example": "xxxxx",
           "member": "string",
           "name": "User",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。",
+          "example": "test.sql",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
           "type": "string"
         },
         {
@@ -2947,6 +2947,15 @@
           "example": "\"\"",
           "member": "string",
           "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。",
+          "example": "XXX",
+          "member": "string",
+          "name": "CosUrl",
           "required": false,
           "type": "string"
         }

@@ -1,0 +1,1135 @@
+{
+  "actions": {
+    "CreateLibrary": {
+      "document": "创建 PaaS 服务媒体库",
+      "input": "CreateLibraryRequest",
+      "name": "创建媒体库",
+      "output": "CreateLibraryResponse"
+    },
+    "DeleteLibrary": {
+      "document": "删除 PaaS 服务媒体库",
+      "input": "DeleteLibraryRequest",
+      "name": "删除媒体库",
+      "output": "DeleteLibraryResponse"
+    },
+    "DescribeLibraries": {
+      "document": "查询 PaaS 服务媒体库列表",
+      "input": "DescribeLibrariesRequest",
+      "name": "查询媒体库",
+      "output": "DescribeLibrariesResponse"
+    },
+    "DescribeLibrarySecret": {
+      "document": "查询 PaaS 服务媒体库密钥",
+      "input": "DescribeLibrarySecretRequest",
+      "name": "查询媒体库密钥",
+      "output": "DescribeLibrarySecretResponse"
+    },
+    "DescribeOfficialInstances": {
+      "document": "查询官方云盘实例",
+      "input": "DescribeOfficialInstancesRequest",
+      "name": "查询官方实例",
+      "output": "DescribeOfficialInstancesResponse"
+    },
+    "DescribeOfficialOverview": {
+      "document": "查询官方云盘实例概览数据",
+      "input": "DescribeOfficialOverviewRequest",
+      "name": "查询官方实例概览数据",
+      "output": "DescribeOfficialOverviewResponse"
+    },
+    "DescribeTrafficPackages": {
+      "document": "查询流量资源包",
+      "input": "DescribeTrafficPackagesRequest",
+      "name": "查询流量包",
+      "output": "DescribeTrafficPackagesResponse"
+    },
+    "ModifyLibrary": {
+      "document": "修改 PaaS 服务媒体库配置项",
+      "input": "ModifyLibraryRequest",
+      "name": "修改媒体库配置项",
+      "output": "ModifyLibraryResponse"
+    },
+    "SendSmsCode": {
+      "document": "发送用于换绑官方云盘实例的超级管理员账号的短信验证码",
+      "input": "SendSmsCodeRequest",
+      "name": "发送短信验证码",
+      "output": "SendSmsCodeResponse"
+    },
+    "VerifySmsCode": {
+      "document": "验证短信验证码以换绑官方云盘实例的超级管理员账号",
+      "input": "VerifySmsCodeRequest",
+      "name": "验证短信验证码",
+      "output": "VerifySmsCodeResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-07-12",
+    "api_brief": "为 SMH 服务提供媒体库的管理",
+    "serviceNameCN": "智能媒资托管",
+    "serviceShortName": "smh"
+  },
+  "objects": {
+    "CreateLibraryRequest": {
+      "document": "CreateLibrary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体库名称，最多 50 个字符",
+          "example": "家庭云盘",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储桶全名，新建后不可更改",
+          "example": "smh-1250000000",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储桶所在地域，新建后不可更改",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体库配置项，部分参数新建后不可更改",
+          "example": "无",
+          "member": "LibraryExtension",
+          "name": "LibraryExtension",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "备注，最多 250 个字符",
+          "example": "用于家庭内部共享",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLibraryResponse": {
+      "document": "CreateLibrary返回参数结构体",
+      "members": [
+        {
+          "document": "媒体库 ID",
+          "example": "smhfoobar",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraryRequest": {
+      "document": "DeleteLibrary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体库 ID",
+          "example": "smh3ptyc9mscifdi",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLibraryResponse": {
+      "document": "DeleteLibrary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibrariesRequest": {
+      "document": "DescribeLibraries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个媒体库 ID 查询，每次请求的上限为 100 个。",
+          "example": "[ 'smh3ptyc9mscifdi', 'smh2dugfmc1jrnzd' ]",
+          "member": "string",
+          "name": "LibraryIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页码，整型，配合 PageSize 使用，默认值为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数目，整型，配合 PageNumber 使用，默认值为 20，最大值为 100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibrariesResponse": {
+      "document": "DescribeLibraries返回参数结构体",
+      "members": [
+        {
+          "document": "媒体库列表",
+          "example": "无",
+          "member": "Library",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibrarySecretRequest": {
+      "document": "DescribeLibrarySecret请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体库 ID",
+          "example": "smh3ptyc9mscifdi",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLibrarySecretResponse": {
+      "document": "DescribeLibrarySecret返回参数结构体",
+      "members": [
+        {
+          "document": "查询的媒体库 ID",
+          "example": "smh3ptyc9mscifdi",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的媒体库密钥",
+          "example": "9b04bf875752253f44505c6e4a8d3513d75a979e1faef1575a8f72e30f312a23",
+          "member": "string",
+          "name": "LibrarySecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfficialInstancesRequest": {
+      "document": "DescribeOfficialInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否查询实例绑定的超级管理员账号，默认值为 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "SuperAdminAccount",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "按照一个或者多个实例 ID 查询，每次请求的上限为 100 个。",
+          "example": "[ 'tyc9msci', 'ugfmc1jr' ]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页码，整型，配合 PageSize 使用，默认值为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数目，整型，配合 PageNumber 使用，默认值为 20，最大值为 100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfficialInstancesResponse": {
+      "document": "DescribeOfficialInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "Instance",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfficialOverviewRequest": {
+      "document": "DescribeOfficialOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOfficialOverviewResponse": {
+      "document": "DescribeOfficialOverview返回参数结构体",
+      "members": [
+        {
+          "document": "云盘实例数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "Quantity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已经使用的总存储量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "214748364800",
+          "member": "string",
+          "name": "Storage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已经分配和使用的总用户数",
+          "example": "100",
+          "member": "uint64",
+          "name": "UserCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本月外网下行流量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "209715200",
+          "member": "string",
+          "name": "InternetTraffic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficPackagesRequest": {
+      "document": "DescribeTrafficPackages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个资源 ID 查询，每次请求的上限为 100 个。",
+          "example": "[ 'tp-1201', 'tp-1202' ]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页码，整型，配合 PageSize 使用，默认值为 1。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数目，整型，配合 PageNumber 使用，默认值为 20，最大值为 100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTrafficPackagesResponse": {
+      "document": "DescribeTrafficPackages返回参数结构体",
+      "members": [
+        {
+          "document": "流量包列表",
+          "example": "无",
+          "member": "TrafficPackage",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Instance": {
+      "document": "官方云盘实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专属域名。如果实例无专属域名，则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tyc9msci.cofile.net",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生效时间",
+          "example": "2021-10-12T03:53:29Z",
+          "member": "datetime_iso",
+          "name": "EffectiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间。如果为按量计费或永久有效实例，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-12T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户数量。如果为按量计费或不限制用户数量实例，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "UserLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储容量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。如果为按量计费或不限制存储容量实例，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "107374182400",
+          "member": "string",
+          "name": "StorageLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储容量，单位为 GB。如果为按量计费或不限制存储容量实例，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "StorageLimitGB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否过期隔离",
+          "example": "false",
+          "member": "bool",
+          "name": "Isolated",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "续费标识。0：手动续费；1：自动续费；2：到期不续。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超级管理员账号，如果未选择查询实例绑定的超级管理员账号或当前实例未绑定超级管理员账号，则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18988888888",
+          "member": "string",
+          "name": "SuperAdminAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Library": {
+      "document": "PaaS 服务媒体库信息",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体库 ID",
+          "example": "smh3ptyc9mscifdi",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库友好名称",
+          "example": "个人相册",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "用于家庭内部共享",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库绑定的 COS 存储桶",
+          "example": "smh-1250000000",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库绑定的 COS 存储桶所在的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库创建时间",
+          "example": "2021-10-12T03:53:29Z",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库配置项",
+          "example": "无",
+          "member": "LibraryExtension",
+          "name": "LibraryExtension",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库用量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "182736273",
+          "member": "string",
+          "name": "Size",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库目录数，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "12",
+          "member": "string",
+          "name": "DirNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体库文件数，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "3746",
+          "member": "string",
+          "name": "FileNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LibraryExtension": {
+      "document": "媒体库配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "true 为文件类型媒体库，可存储任何类型文件；false 为媒体类型媒体库，仅可存储照片和视频类型文件。默认为 false。在媒体库创建后不能修改。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFileLibrary",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true 为多租户空间媒体库，可创建多个租户空间；false 为单租户空间媒体库，不能创建租户空间，仅可使用默认的单一租户空间。默认为 false。在媒体库创建后不能修改。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMultiSpace",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保存至 COS 对象存储的文件的存储类型，仅支持 STANDARD、STANDARD_IA、INTELLIGENT_TIERING、MAZ_STANDARD、MAZ_STANDARD_IA 和 MAZ_INTELLIGENT_TIERING，默认为 STANDARD，当使用多 AZ 存储桶时将自动使用 MAZ_ 开头的用于多 AZ 的存储类型，否则自动使用非 MAZ_ 开头的用于非多 AZ 的存储类型。当指定智能分层存储 INTELLIGENT_TIERING 或 MAZ_INTELLIGENT_TIERING 时，需要事先为存储桶开启智能分层存储，否则将返回失败。在媒体库创建后不能修改。",
+          "example": "STANDARD_IA",
+          "member": "string",
+          "name": "CosStorageClass",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启回收站功能。默认为 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "UseRecycleBin",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当开启回收站时，自动删除回收站项目的天数，不能超过 1095（3 年），指定为 0 则不自动删除，默认为 0。当未开启回收站时，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "AutoRemoveRecycledDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否启用文件路径搜索功能。默认为 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSearch",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置媒体库或租户空间配额且配额小于已使用存储量时，是否拒绝设置请求。默认为 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "DenyOnQuotaLessThanUsage",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启历史版本。默认为 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableFileHistory",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当开启历史版本时，指定单个文件保留的历史版本的数量上限，不能超过 999，指定为 0 则不限制，默认为 0。当未开启历史版本时，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "FileHistoryCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当开启历史版本时，指定历史版本保留的最长天数，不能超过 999，指定为 0 则不限制，默认为 0。当未开启历史版本时，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "uint64",
+          "name": "FileHistoryExpireDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "目录或文件名的最长长度，不能超过 255，默认为 255。修改该参数不会影响存量目录或文件名，即如果将该字段的值改小，已经存在的长度超过目标值的目录或文件名不会发生变化。",
+          "example": "200",
+          "member": "uint64",
+          "name": "MaxDirFileNameLength",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启公有读，开启后读操作无需使用访问令牌，默认为 false。仅单租户空间媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPublicRead",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体类型媒体库是否开启多相簿，开启后可创建一级目录（即相簿）且媒体文件只能保存在各相簿中，否则不能创建相簿且媒体文件只能保存在根目录。默认为 false。仅单租户空间媒体类型媒体库支持该属性，否则该属性为 null。在媒体库创建后不能修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMultiAlbum",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体类型媒体库是否允许上传照片，默认为 true。仅单租户空间媒体类型媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowPhoto",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当媒体类型媒体库允许上传照片时，指定允许的扩展名，默认为空数组，此时将根据文件扩展名对应的 MIME 类型自动判断。仅单租户空间媒体类型媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ '.jpg', '.png', '.heic' ]",
+          "member": "string",
+          "name": "AllowPhotoExtName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒体类型媒体库是否允许上传视频，默认为 true。仅单租户空间媒体类型媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowVideo",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当媒体类型媒体库允许上传视频时，指定允许的扩展名，默认为空数组，此时将根据文件扩展名对应的 MIME 类型自动判断。仅单租户空间媒体类型媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ '.mp4', '.mov' ]",
+          "member": "string",
+          "name": "AllowVideoExtName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指定文件类型媒体库允许的文件扩展名，默认为空数组，此时允许上传所有类型文件。仅单租户空间文件类型媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ '.docx', '.xslx', '.pptx' ]",
+          "member": "string",
+          "name": "AllowFileExtName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "照片上传时是否进行敏感内容鉴定，默认为 false。仅单租户空间媒体库支持该属性，否则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "RecognizeSensitiveContent",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyLibraryRequest": {
+      "document": "ModifyLibrary请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体库 ID",
+          "example": "smh3ptyc9mscifdi",
+          "member": "string",
+          "name": "LibraryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体库名称，最多 50 个字符。如不传则不修改。",
+          "example": "家庭云盘",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注，最多 250 个字符。如不传则不修改。",
+          "example": "用于家庭内部共享",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。",
+          "example": "无",
+          "member": "LibraryExtension",
+          "name": "LibraryExtension",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLibraryResponse": {
+      "document": "ModifyLibrary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsCodeRequest": {
+      "document": "SendSmsCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。",
+          "example": "BindSuperAdmin",
+          "member": "string",
+          "name": "Purpose",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "官方云盘实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。",
+          "example": "18988888888",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendSmsCodeResponse": {
+      "document": "SendSmsCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrafficPackage": {
+      "document": "流量资源包信息",
+      "members": [
+        {
+          "default": "",
+          "document": "流量资源包所抵扣的实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专属域名。如果实例无专属域名，则该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tyc9msci.cofile.net",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量资源包来源类型，0 为付费购买，1 为赠送。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总流量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "107374182400",
+          "member": "string",
+          "name": "Size",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总流量，单位为 GB",
+          "example": "100",
+          "member": "uint64",
+          "name": "SizeGB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余流量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "89017835619",
+          "member": "string",
+          "name": "Remain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用流量，单位为 Bytes，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "18356346781",
+          "member": "string",
+          "name": "Used",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用百分比，由于数字类型精度限制，该字段为 String 类型。",
+          "example": "17.10",
+          "member": "string",
+          "name": "UsedPercentage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效时间，即流量资源包的订购时间",
+          "example": "2021-10-12T03:53:29Z",
+          "member": "datetime_iso",
+          "name": "EffectiveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间，即所抵扣的实例的过期时间。如果流量资源包所抵扣的实例为按量计费或永久有效实例，该属性为 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-12T15:59:59Z",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifySmsCodeRequest": {
+      "document": "VerifySmsCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。",
+          "example": "BindSuperAdmin",
+          "member": "string",
+          "name": "Purpose",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "官方云盘实例 ID",
+          "example": "tyc9msci",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。",
+          "example": "18988888888",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "短信验证码",
+          "example": "1234",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifySmsCodeResponse": {
+      "document": "VerifySmsCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

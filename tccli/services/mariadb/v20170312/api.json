@@ -144,6 +144,12 @@
       "name": "查询慢查询日志列表",
       "output": "DescribeDBSlowLogsResponse"
     },
+    "DescribeDatabaseTable": {
+      "document": "本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。",
+      "input": "DescribeDatabaseTableRequest",
+      "name": "查询数据库表信息",
+      "output": "DescribeDatabaseTableResponse"
+    },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询云数据库实例的数据库列表。",
       "input": "DescribeDatabasesRequest",
@@ -3590,6 +3596,76 @@
       ],
       "type": "object"
     },
+    "DescribeDatabaseTableRequest": {
+      "document": "DescribeDatabaseTable请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseTableResponse": {
+      "document": "DescribeDatabaseTable返回参数结构体",
+      "members": [
+        {
+          "document": "实例名称。",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库名称。",
+          "member": "string",
+          "name": "DbName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表名称。",
+          "member": "string",
+          "name": "Table",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列信息。",
+          "member": "TableColumn",
+          "name": "Cols",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatabasesRequest": {
       "document": "DescribeDatabases请求参数结构体",
       "members": [
@@ -6340,6 +6416,30 @@
         }
       ],
       "type": "object"
+    },
+    "TableColumn": {
+      "document": "数据库列信息",
+      "members": [
+        {
+          "default": "",
+          "document": "列名称",
+          "member": "string",
+          "name": "Col",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TablePrivilege": {
       "document": "数据库表权限",

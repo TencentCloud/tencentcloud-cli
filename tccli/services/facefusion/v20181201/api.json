@@ -245,7 +245,7 @@
         },
         {
           "default": "",
-          "document": "图片Url地址",
+          "document": "图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口",
           "example": "image_url",
           "member": "string",
           "name": "Url",
@@ -474,6 +474,7 @@
         {
           "default": "",
           "document": "保留字段",
+          "example": "string",
           "member": "string",
           "name": "Field",
           "required": true,
@@ -483,6 +484,7 @@
         {
           "default": "",
           "document": "人员名称",
+          "example": "string",
           "member": "string",
           "name": "Label",
           "required": true,
@@ -491,7 +493,8 @@
         },
         {
           "default": "",
-          "document": "对应识别label的置信度，分数越高意味涉政可能性越大。 \n0到70，Suggestion建议为PASS； \n70到80，Suggestion建议为REVIEW； \n80到100，Suggestion建议为BLOCK。",
+          "document": "对应识别label的置信度，分数越高意味违法违规可能性越大。 \n0到70，Suggestion建议为PASS； \n70到80，Suggestion建议为REVIEW； \n80到100，Suggestion建议为BLOCK。",
+          "example": "1",
           "member": "float",
           "name": "Confidence",
           "required": true,
@@ -501,6 +504,7 @@
         {
           "default": "",
           "document": "识别场景的审核结论：  \nPASS：正常 \nREVIEW：疑似  \nBLOCK：违规",
+          "example": "string",
           "member": "string",
           "name": "Suggestion",
           "required": true,

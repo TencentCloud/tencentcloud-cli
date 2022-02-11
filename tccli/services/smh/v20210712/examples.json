@@ -1,0 +1,85 @@
+{
+  "actions": {
+    "CreateLibrary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLibrary\n<公共请求参数>\n\n{\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Name\": \"名称\",\n    \"Remark\": \"备注\",\n    \"LibraryExtension\": {\n        \"IsFileLibrary\": \"true\"\n    },\n    \"BucketName\": \"examplebucket-1250000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh0q8nrvsg7t6y6\",\n        \"RequestId\": \"1586674e-e04c-4315-943a-c282b5f8ed6b\"\n    }\n}",
+        "title": "创建媒体库"
+      }
+    ],
+    "DeleteLibrary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibrary\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh0q8nrvsg7t6y6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea829232-caa0-4dfe-9bbb-2f428cfae08c\"\n    }\n}",
+        "title": "删除媒体库"
+      }
+    ],
+    "DescribeLibraries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibraries\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"LibraryId\": \"smh0q8nrvsg7t6y6\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"字符串\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T06:02:26Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            },\n            {\n                \"LibraryId\": \"smh1jjexrwwoa9ok\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T09:43:07Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            },\n            {\n                \"LibraryId\": \"smh12pzokd9c6r5n\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T12:31:31Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            },\n            {\n                \"LibraryId\": \"smh3s9iq6lfsoud1\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T12:32:06Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            },\n            {\n                \"LibraryId\": \"smh1porquwr19l42\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T12:33:20Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            },\n            {\n                \"LibraryId\": \"smh32bey5u1lr6bx\",\n                \"Name\": \"字符串\",\n                \"Remark\": \"\",\n                \"BucketName\": \"smh-it-251202137\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-09-28T12:33:27Z\",\n                \"LibraryExtension\": {\n                    \"IsFileLibrary\": true,\n                    \"IsMultiSpace\": false,\n                    \"CosStorageClass\": \"INTELLIGENT_TIERING\",\n                    \"UseRecycleBin\": false,\n                    \"EnableSearch\": false,\n                    \"DenyOnQuotaLessThanUsage\": false,\n                    \"EnableFileHistory\": false,\n                    \"MaxDirFileNameLength\": 255,\n                    \"IsPublicRead\": false,\n                    \"AllowFileExtName\": [],\n                    \"RecognizeSensitiveContent\": false\n                },\n                \"Size\": \"0\",\n                \"DirNum\": \"0\",\n                \"FileNum\": \"0\"\n            }\n        ],\n        \"TotalCount\": 6,\n        \"RequestId\": \"3d486825-fc56-434f-82d0-1db782b66728\"\n    }\n}",
+        "title": "查询媒体库"
+      }
+    ],
+    "DescribeLibrarySecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibrarySecret\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh1jjexrwwoa9ok\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LibraryId\": \"smh1jjexrwwoa9ok\",\n        \"LibrarySecret\": \"5563cadd2dc2ad56********************************cb6a5d8abec16490\",\n        \"RequestId\": \"61f8e8a2-964a-49d3-ad85-12f29d79ac23\"\n    }\n}",
+        "title": "查询媒体库密钥"
+      }
+    ],
+    "DescribeOfficialInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfficialInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"InstanceId\": \"jexrwwoa\",\n                \"Domain\": \"jexrwwoa.cofile.net\",\n                \"EffectiveTime\": \"2021-11-17T03:03:45Z\",\n                \"ExpireTime\": \"2021-12-17T23:59:59Z\",\n                \"UserLimit\": 5,\n                \"StorageLimit\": \"53687091200\",\n                \"StorageLimitGB\": 50,\n                \"Isolated\": false,\n                \"AutoRenew\": 1,\n                \"SuperAdminAccount\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"27ec9933-ad39-46b0-9ea1-f863a89dd00c\"\n    }\n}",
+        "title": "查询官方实例"
+      }
+    ],
+    "DescribeOfficialOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOfficialOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Quantity\": 1,\n        \"Storage\": \"1342177280\",\n        \"UserCount\": 4,\n        \"InternetTraffic\": \"6442450944\",\n        \"RequestId\": \"0188bc60-7c75-4207-a457-898f114324a3\"\n    }\n}",
+        "title": "查询官方实例概览数据"
+      }
+    ],
+    "DescribeTrafficPackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"InstanceId\": \"jexrwwoa\",\n                \"Domain\": \"jexrwwoa.cofile.net\",\n                \"Type\": 0,\n                \"Size\": \"107374182400\",\n                \"SizeGB\": 100,\n                \"Remain\": \"89017835619\",\n                \"Used\": \"18356346781\",\n                \"UsedPercentage\": \"17.10\",\n                \"EffectiveTime\": \"2021-10-12T03:53:29Z\",\n                \"ExpireTime\": \"2021-11-12T15:59:59Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"27ec9933-ad39-46b0-9ea1-f863a89dd00c\"\n    }\n}",
+        "title": "查询官方实例"
+      }
+    ],
+    "ModifyLibrary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLibrary\n<公共请求参数>\n\n{\n    \"Remark\": \"新备注\",\n    \"LibraryId\": \"smh1jjexrwwoa9ok\",\n    \"LibraryExtension\": {\n        \"EnableFileHistory\": \"true\",\n        \"UseRecycleBin\": \"true\"\n    },\n    \"Name\": \"新名字\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dfefe57-2188-4e66-b5ef-07e493b003ce\"\n    }\n}",
+        "title": "修改媒体库配置项"
+      }
+    ],
+    "SendSmsCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSmsCode\n<公共请求参数>\n\n{\n    \"Purpose\": \"BindSuperAdmin\",\n    \"InstanceId\": \"n0v9tdme\",\n    \"PhoneNumber\": \"18999999999\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37c3c855-caee-4c44-9778-bdec5998e5f1\"\n    }\n}",
+        "title": "发送短信验证码"
+      }
+    ],
+    "VerifySmsCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifySmsCode\n<公共请求参数>\n\n{\n    \"Purpose\": \"BindSuperAdmin\",\n    \"InstanceId\": \"n0v9tdme\",\n    \"PhoneNumber\": \"18999999999\",\n    \"Code\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98a878b5-8c16-4788-a7e7-4b1a19a461db\"\n    }\n}",
+        "title": "验证短信验证码"
+      }
+    ]
+  },
+  "version": "1.0"
+}

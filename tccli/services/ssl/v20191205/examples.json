@@ -112,7 +112,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployedResources\n<公共请求参数>\n\n{\n    \"ResourceType\": \"xx\",\n    \"CertificateIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeployedResources\": [\n            {\n                \"CertificateId\": \"xx\",\n                \"Type\": \"xx\",\n                \"Count\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployedResources\": [\n            {\n                \"CertificateId\": \"xx\",\n                \"ResourceIds\": [],\n                \"Type\": \"xx\",\n                \"Count\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "证书查询关联资源"
       }
     ],

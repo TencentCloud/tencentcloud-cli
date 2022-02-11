@@ -17,6 +17,7 @@ Output:
         "DeployedResources": [
             {
                 "CertificateId": "xx",
+                "ResourceIds": [],
                 "Type": "xx",
                 "Count": 0
             }

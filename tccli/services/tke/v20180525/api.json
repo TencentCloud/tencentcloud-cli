@@ -4779,10 +4779,20 @@
         {
           "default": "",
           "document": "ClusterId（集群id）",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "·  NodePoolsName\n    按照【节点池名】进行过滤。\n    类型：String\n    必选：否\n\n·  NodePoolsId\n    按照【节点池id】进行过滤。\n    类型：String\n    必选：否\n\n·  tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4792,15 +4802,19 @@
       "members": [
         {
           "document": "NodePools（节点池列表）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NodePool",
           "name": "NodePoolSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "资源总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5058,7 +5072,7 @@
         },
         {
           "default": "",
-          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterType\n    按照【集群类型】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterStatus\n    按照【集群状态】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

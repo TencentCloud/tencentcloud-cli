@@ -192,6 +192,14 @@
         "title": "查询慢查询日志列表"
       }
     ],
+    "DescribeDatabaseTable": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDatabaseTable\r\n&<公共请求参数>\r\n&InstanceId=tdsql-e9tklsgz\r\n&DbName=test\r\n&Table=region",
+        "output": "{\n    \"Response\": {\n        \"Cols\": [\n            {\n                \"Col\": \"id\",\n                \"Type\": \"tinyint(4) unsigned\"\n            },\n            {\n                \"Col\": \"name\",\n                \"Type\": \"varchar(16)\"\n            },\n            {\n                \"Col\": \"short_name\",\n                \"Type\": \"varchar(8)\"\n            },\n            {\n                \"Col\": \"code\",\n                \"Type\": \"varchar(256)\"\n            }\n        ],\n        \"DbName\": \"test\",\n        \"InstanceId\": \"tdsql-e9tklsgz\",\n        \"RequestId\": \"2de52957-ebe4-4d7b-8985-4e415b3fb360\",\n        \"Table\": \"region\"\n    }\n}",
+        "title": "查询指定实例的表结构"
+      }
+    ],
     "DescribeDatabases": [
       {
         "document": "",
