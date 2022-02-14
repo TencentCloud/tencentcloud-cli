@@ -446,6 +446,7 @@
         {
           "default": "",
           "document": "物联卡应用ID",
+          "example": "1200168178",
           "member": "int64",
           "name": "Sdkappid",
           "required": true,
@@ -459,8 +460,10 @@
       "members": [
         {
           "document": "应用信息详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AppInfo",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

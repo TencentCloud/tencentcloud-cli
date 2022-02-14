@@ -3806,7 +3806,7 @@
       "usage": "out"
     },
     "AiReviewPornTaskInput": {
-      "document": "只能识别涉及令人反感的信息的任务输入参数类型",
+      "document": "智能识别涉及令人反感的信息的任务输入参数类型",
       "members": [
         {
           "default": "",
@@ -4428,7 +4428,7 @@
       "usage": "out"
     },
     "AiReviewTaskProhibitedAsrResult": {
-      "document": "智能识别 Asr 文字鉴任违禁务结果类型",
+      "document": "智能识别 Asr 文字鉴违禁任务结果类型",
       "members": [
         {
           "default": "",
@@ -4494,7 +4494,7 @@
       "usage": "out"
     },
     "AiReviewTaskProhibitedOcrResult": {
-      "document": "智能识别 Ocr 文字鉴任违禁务结果类型",
+      "document": "智能识别 Ocr 文字鉴违禁任务结果类型",
       "members": [
         {
           "default": "",

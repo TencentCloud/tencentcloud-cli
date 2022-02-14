@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddSubStructureTasks": {
-      "document": "中银三星需求，基于主任务批量添加结构化子任务",
+      "document": "如果主任务下的报告不满足需求，可以基于主任务批量添加子任务",
       "input": "AddSubStructureTasksRequest",
       "name": "结构化增量子任务",
       "output": "AddSubStructureTasksResponse"
@@ -31,7 +31,7 @@
       "output": "DescribeMachineUnderwriteResponse"
     },
     "DescribeReportClassify": {
-      "document": "saas页面集成了自动分类功能，该接口提供自动分类结果",
+      "document": "辅助用户对批量报告自动分类",
       "input": "DescribeReportClassifyRequest",
       "name": "报告自动分类",
       "output": "DescribeReportClassifyResponse"
@@ -666,8 +666,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态码",
-          "example": "1",
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -697,7 +697,7 @@
       "members": [
         {
           "default": "",
-          "document": "服务类型（Structured/Underwrite）",
+          "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
           "example": "Structured",
           "member": "string",
           "name": "ServiceType",
@@ -1116,8 +1116,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态码",
-          "example": "1",
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,

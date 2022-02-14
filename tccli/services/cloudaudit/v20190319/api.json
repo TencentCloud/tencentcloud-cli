@@ -18,6 +18,12 @@
       "name": "查询跟踪集详情",
       "output": "DescribeAuditResponse"
     },
+    "DescribeAuditTracks": {
+      "document": "查询云审计跟踪集列表",
+      "input": "DescribeAuditTracksRequest",
+      "name": "查询云审计跟踪集列表",
+      "output": "DescribeAuditTracksResponse"
+    },
     "DescribeEvents": {
       "document": "查询云审计日志",
       "input": "DescribeEventsRequest",
@@ -561,6 +567,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTracksRequest": {
+      "document": "DescribeAuditTracks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAuditTracksResponse": {
+      "document": "DescribeAuditTracks返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -8,6 +8,8 @@ Input:
 tccli ame SearchKTVMusics --cli-unfold-argument  \
     --Limit 10 \
     --KeyWord 周杰伦 \
+    --Sort.Field xx \
+    --Sort.Order xx \
     --Offset 0
 ```
 
@@ -21,19 +23,25 @@ Output:
                 "ComposerSet": [
                     "方文山"
                 ],
-                "MusicId": "ame-78dxxx",
-                "Duration": 120,
-                "SingerSet": [
-                    "周杰伦"
+                "SingerInfoSet": [
+                    {
+                        "SingerId": "xx",
+                        "Name": "xx"
+                    }
                 ],
-                "Name": "七里香",
-                "LyricistSet": [
+                "MusicId": "xx",
+                "SingerSet": [
                     "周杰伦"
                 ],
                 "TagSet": [
                     "华语",
                     "流行"
-                ]
+                ],
+                "Duration": 1,
+                "LyricistSet": [
+                    "周杰伦"
+                ],
+                "Name": "xx"
             }
         ],
         "RequestId": "xx"

@@ -24,6 +24,14 @@
         "title": "查询跟踪集详情"
       }
     ],
+    "DescribeAuditTracks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTracks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
+        "title": "查询云审计跟踪集列表"
+      }
+    ],
     "DescribeEvents": [
       {
         "document": "",

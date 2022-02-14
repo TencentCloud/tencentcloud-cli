@@ -209,8 +209,8 @@
     "SearchKTVMusics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"ame-78dxxx\",\n                \"Duration\": 120,\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"七里香\",\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Sort\": {\n        \"Field\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "搜索 KTV 歌曲"
       }
     ],

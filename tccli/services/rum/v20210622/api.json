@@ -1,16 +1,118 @@
 {
   "actions": {
+    "CreateLogExport": {
+      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于创建日志下载任务\n\n默认接口请求频率限制：20次/秒。",
+      "input": "CreateLogExportRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateLogExportResponse"
+    },
+    "CreateOfflineLogConfig": {
+      "document": "创建离线日志监听，对应用户的离线日志将上报",
+      "input": "CreateOfflineLogConfigRequest",
+      "name": "创建离线日志监听",
+      "output": "CreateOfflineLogConfigResponse"
+    },
     "CreateProject": {
       "document": "创建项目（归属于某个团队）",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse"
     },
+    "CreateReleaseFile": {
+      "document": "创建对应项目的文件记录",
+      "input": "CreateReleaseFileRequest",
+      "name": "创建发布文件记录",
+      "output": "CreateReleaseFileResponse"
+    },
+    "CreateStarProject": {
+      "document": "个人用户添加星标项目",
+      "input": "CreateStarProjectRequest",
+      "name": "添加星标项目",
+      "output": "CreateStarProjectResponse"
+    },
+    "CreateTawInstance": {
+      "document": "创建Rum实例",
+      "input": "CreateTawInstanceRequest",
+      "name": "创建Rum实例",
+      "output": "CreateTawInstanceResponse"
+    },
+    "CreateWhitelist": {
+      "document": "创建白名单",
+      "input": "CreateWhitelistRequest",
+      "name": "创建白名单",
+      "output": "CreateWhitelistResponse"
+    },
+    "DeleteInstance": {
+      "document": "删除实例，谨慎操作，不可恢复",
+      "input": "DeleteInstanceRequest",
+      "name": "删除实例",
+      "output": "DeleteInstanceResponse"
+    },
+    "DeleteLogExport": {
+      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于删除日志下载任务\n\n默认接口请求频率限制：20次/秒。",
+      "input": "DeleteLogExportRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteLogExportResponse"
+    },
+    "DeleteOfflineLogConfig": {
+      "document": "删除 rum 离线日志监听 - 对应用户的离线日志将不会上报",
+      "input": "DeleteOfflineLogConfigRequest",
+      "name": "删除 rum 离线日志监听",
+      "output": "DeleteOfflineLogConfigResponse"
+    },
+    "DeleteOfflineLogRecord": {
+      "document": "删除对应的离线日志记录",
+      "input": "DeleteOfflineLogRecordRequest",
+      "name": "删除离线日志记录",
+      "output": "DeleteOfflineLogRecordResponse"
+    },
+    "DeleteProject": {
+      "document": "删除给定的 rum 的项目",
+      "input": "DeleteProjectRequest",
+      "name": "删除 rum 项目",
+      "output": "DeleteProjectResponse"
+    },
+    "DeleteReleaseFile": {
+      "document": "将对应 sourcemap 文件删除",
+      "input": "DeleteReleaseFileRequest",
+      "name": "删除发布文件",
+      "output": "DeleteReleaseFileResponse"
+    },
+    "DeleteStarProject": {
+      "document": "删除用户名下的星标项目",
+      "input": "DeleteStarProjectRequest",
+      "name": "删除星标项目",
+      "output": "DeleteStarProjectResponse"
+    },
+    "DeleteWhitelist": {
+      "document": "删除白名单",
+      "input": "DeleteWhitelistRequest",
+      "name": "删除白名单",
+      "output": "DeleteWhitelistResponse"
+    },
+    "DescribeData": {
+      "document": "转发monitor查询",
+      "input": "DescribeDataRequest",
+      "name": "获取QueryData",
+      "output": "DescribeDataResponse"
+    },
+    "DescribeDataCustomUrl": {
+      "document": "获取DescribeDataCustomUrl信息",
+      "input": "DescribeDataCustomUrlRequest",
+      "name": "获取DescribeDataCustomUrl信息",
+      "output": "DescribeDataCustomUrlResponse"
+    },
     "DescribeDataEventUrl": {
       "document": "获取DescribeDataEventUrl信息",
       "input": "DescribeDataEventUrlRequest",
       "name": "获取DescribeDataEventUrl信息",
       "output": "DescribeDataEventUrlResponse"
+    },
+    "DescribeDataFetchProject": {
+      "document": "获取DescribeDataFetchProject信息",
+      "input": "DescribeDataFetchProjectRequest",
+      "name": "获取DescribeDataFetchProject信息",
+      "output": "DescribeDataFetchProjectResponse"
     },
     "DescribeDataFetchUrl": {
       "document": "获取DescribeDataFetchUrl信息",
@@ -24,6 +126,12 @@
       "name": "获取DescribeDataFetchUrlInfo信息",
       "output": "DescribeDataFetchUrlInfoResponse"
     },
+    "DescribeDataLogUrlInfo": {
+      "document": "获取loginfo信息",
+      "input": "DescribeDataLogUrlInfoRequest",
+      "name": "获取dataloginfo信息",
+      "output": "DescribeDataLogUrlInfoResponse"
+    },
     "DescribeDataLogUrlStatistics": {
       "document": "获取LogUrlStatistics信息",
       "input": "DescribeDataLogUrlStatisticsRequest",
@@ -36,11 +144,59 @@
       "name": "获取PerformancePage信息",
       "output": "DescribeDataPerformancePageResponse"
     },
+    "DescribeDataPerformanceProject": {
+      "document": "获取PerformanceProject信息",
+      "input": "DescribeDataPerformanceProjectRequest",
+      "name": "获取PerformanceProject信息",
+      "output": "DescribeDataPerformanceProjectResponse"
+    },
+    "DescribeDataPvUrlInfo": {
+      "document": "获取PvUrlInfo信息",
+      "input": "DescribeDataPvUrlInfoRequest",
+      "name": "获取PvUrlInfo信息",
+      "output": "DescribeDataPvUrlInfoResponse"
+    },
     "DescribeDataPvUrlStatistics": {
       "document": "获取DescribeDataPvUrlStatistics信息",
       "input": "DescribeDataPvUrlStatisticsRequest",
       "name": "获取DescribeDataPvUrlStatistics信息",
       "output": "DescribeDataPvUrlStatisticsResponse"
+    },
+    "DescribeDataReportCount": {
+      "document": "获取项目上报量",
+      "input": "DescribeDataReportCountRequest",
+      "name": "获取上报量",
+      "output": "DescribeDataReportCountResponse"
+    },
+    "DescribeDataSetUrlStatistics": {
+      "document": "获取DescribeDataSetUrlStatistics信息",
+      "input": "DescribeDataSetUrlStatisticsRequest",
+      "name": "获取DescribeDataSetUrlStatistics信息",
+      "output": "DescribeDataSetUrlStatisticsResponse"
+    },
+    "DescribeDataStaticProject": {
+      "document": "获取DescribeDataStaticProject信息",
+      "input": "DescribeDataStaticProjectRequest",
+      "name": "获取DescribeDataStaticProject信息",
+      "output": "DescribeDataStaticProjectResponse"
+    },
+    "DescribeDataStaticResource": {
+      "document": "获取DescribeDataStaticResource信息",
+      "input": "DescribeDataStaticResourceRequest",
+      "name": "获取DescribeDataStaticResource信息",
+      "output": "DescribeDataStaticResourceResponse"
+    },
+    "DescribeDataStaticUrl": {
+      "document": "获取DescribeDataStaticUrl信息",
+      "input": "DescribeDataStaticUrlRequest",
+      "name": "获取DescribeDataStaticUrl信息",
+      "output": "DescribeDataStaticUrlResponse"
+    },
+    "DescribeDataWebVitalsPage": {
+      "document": "获取DescribeDataWebVitalsPage信息，用户核心活动信息\n页面加载性能之Web Vitals。性能关键点",
+      "input": "DescribeDataWebVitalsPageRequest",
+      "name": "获取DescribeDataWebVitalsPage信息",
+      "output": "DescribeDataWebVitalsPageResponse"
     },
     "DescribeError": {
       "document": "获取首页错误信息",
@@ -48,11 +204,41 @@
       "name": "获取首页错误信息",
       "output": "DescribeErrorResponse"
     },
+    "DescribeLogExports": {
+      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于获取日志下载任务列表\n\n默认接口请求频率限制：20次/秒",
+      "input": "DescribeLogExportsRequest",
+      "name": "获取日志下载任务列表",
+      "output": "DescribeLogExportsResponse"
+    },
     "DescribeLogList": {
       "document": "获取项目下的日志列表（实例创建的项目下的日志列表）",
       "input": "DescribeLogListRequest",
       "name": "获取日志列表",
       "output": "DescribeLogListResponse"
+    },
+    "DescribeOfflineLogConfigs": {
+      "document": "获取设置的离线日志监听配置 - 返回设置的用户唯一标识",
+      "input": "DescribeOfflineLogConfigsRequest",
+      "name": "获取设置的离线日志监听配置",
+      "output": "DescribeOfflineLogConfigsResponse"
+    },
+    "DescribeOfflineLogRecords": {
+      "document": "获取所有离线日志记录(最多100条)",
+      "input": "DescribeOfflineLogRecordsRequest",
+      "name": "获取所有离线日志记录(最多100条)",
+      "output": "DescribeOfflineLogRecordsResponse"
+    },
+    "DescribeOfflineLogs": {
+      "document": "获取对应离线日志",
+      "input": "DescribeOfflineLogsRequest",
+      "name": "获取对应离线日志",
+      "output": "DescribeOfflineLogsResponse"
+    },
+    "DescribeProjectLimits": {
+      "document": "获取项目上报率列表",
+      "input": "DescribeProjectLimitsRequest",
+      "name": "获取项目上报率列表",
+      "output": "DescribeProjectLimitsResponse"
     },
     "DescribeProjects": {
       "document": "获取项目列表（实例创建的团队下的项目列表）",
@@ -60,11 +246,83 @@
       "name": "获取项目列表",
       "output": "DescribeProjectsResponse"
     },
+    "DescribePvList": {
+      "document": "获取项目下的PV列表",
+      "input": "DescribePvListRequest",
+      "name": "获取PV列表",
+      "output": "DescribePvListResponse"
+    },
+    "DescribeReleaseFileSign": {
+      "document": "获取上传文件存储的临时密钥",
+      "input": "DescribeReleaseFileSignRequest",
+      "name": "获取存储临时密钥",
+      "output": "DescribeReleaseFileSignResponse"
+    },
+    "DescribeReleaseFiles": {
+      "document": "获取项目对应sourcemap文件列表",
+      "input": "DescribeReleaseFilesRequest",
+      "name": "获取项目对应sourcemap文件列表",
+      "output": "DescribeReleaseFilesResponse"
+    },
     "DescribeScores": {
       "document": "获取首页分数列表",
       "input": "DescribeScoresRequest",
       "name": "获取首页分数列表",
       "output": "DescribeScoresResponse"
+    },
+    "DescribeTawAreas": {
+      "document": "查询片区信息",
+      "input": "DescribeTawAreasRequest",
+      "name": "查询片区信息",
+      "output": "DescribeTawAreasResponse"
+    },
+    "DescribeTawInstances": {
+      "document": "查询实例信息",
+      "input": "DescribeTawInstancesRequest",
+      "name": "查询实例信息",
+      "output": "DescribeTawInstancesResponse"
+    },
+    "DescribeUvList": {
+      "document": "获取项目下的UV列表",
+      "input": "DescribeUvListRequest",
+      "name": "获取UV列表",
+      "output": "DescribeUvListResponse"
+    },
+    "DescribeWhitelists": {
+      "document": "获取白名单列表",
+      "input": "DescribeWhitelistsRequest",
+      "name": "获取白名单列表",
+      "output": "DescribeWhitelistsResponse"
+    },
+    "ModifyInstance": {
+      "document": "修改实例信息",
+      "input": "ModifyInstanceRequest",
+      "name": "修改实例信息",
+      "output": "ModifyInstanceResponse"
+    },
+    "ModifyProject": {
+      "document": "修改 rum 项目信息",
+      "input": "ModifyProjectRequest",
+      "name": "修改项目",
+      "output": "ModifyProjectResponse"
+    },
+    "ModifyProjectLimit": {
+      "document": "新增修改限流",
+      "input": "ModifyProjectLimitRequest",
+      "name": "新增修改限流",
+      "output": "ModifyProjectLimitResponse"
+    },
+    "ResumeInstance": {
+      "document": "恢复实例",
+      "input": "ResumeInstanceRequest",
+      "name": "恢复实例",
+      "output": "ResumeInstanceResponse"
+    },
+    "StopInstance": {
+      "document": "停止实例",
+      "input": "StopInstanceRequest",
+      "name": "停止实例",
+      "output": "StopInstanceResponse"
     }
   },
   "metadata": {
@@ -74,6 +332,141 @@
     "serviceShortName": "rum"
   },
   "objects": {
+    "CreateLogExportRequest": {
+      "document": "CreateLogExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出起始时间",
+          "example": "2022-01-20 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出结束时间",
+          "example": "2022-01-21 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出检索语句",
+          "example": "*",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出数量, 最大值1000万",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序。desc，asc，默认为desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志导出数据格式。json，csv，默认为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogExportResponse": {
+      "document": "CreateLogExport返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出ID",
+          "example": "export-f5e4c354-2441-4ea5-848e-8fc25e0f2c24",
+          "member": "string",
+          "name": "ExportID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOfflineLogConfigRequest": {
+      "document": "CreateOfflineLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "DjkljW234R",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要监听的用户唯一标示(aid 或 uin)",
+          "example": "9580003424",
+          "member": "string",
+          "name": "UniqueID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOfflineLogConfigResponse": {
+      "document": "CreateOfflineLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateProjectRequest": {
       "document": "CreateProject请求参数结构体",
       "members": [
@@ -169,6 +562,816 @@
           "example": "RlOmCVbPrKd4",
           "member": "string",
           "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReleaseFileRequest": {
+      "document": "CreateReleaseFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件信息列表",
+          "example": "无",
+          "member": "ReleaseFile",
+          "name": "Files",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReleaseFileResponse": {
+      "document": "CreateReleaseFile返回参数结构体",
+      "members": [
+        {
+          "document": "调用结果",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStarProjectRequest": {
+      "document": "CreateStarProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID：taw-123",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStarProjectResponse": {
+      "document": "CreateStarProject返回参数结构体",
+      "members": [
+        {
+          "document": "接口返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTawInstanceRequest": {
+      "document": "CreateTawInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "片区Id，(至少大于0)",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "计费类型, (1=体验，2=预付费，3=后付费)",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据保存时间，(至少大于0)",
+          "example": "30",
+          "member": "int64",
+          "name": "DataRetentionDays",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例名称，(最大长度不超过255字节)",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例描述，(最大长度不超过1024字节)",
+          "example": "实例描述",
+          "member": "string",
+          "name": "InstanceDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每天数据上报量",
+          "example": "100",
+          "member": "string",
+          "name": "CountNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据存储时长计费",
+          "example": "30",
+          "member": "string",
+          "name": "PeriodRetain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTawInstanceResponse": {
+      "document": "CreateTawInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例Id",
+          "example": "taw-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWhitelistRequest": {
+      "document": "CreateWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID：taw-123",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "uin：业务方标识",
+          "example": "123123",
+          "member": "string",
+          "name": "WhitelistUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务方标识",
+          "example": "2222",
+          "member": "string",
+          "name": "Aid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWhitelistResponse": {
+      "document": "CreateWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "消息",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的实例id",
+          "example": "rum-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogExportRequest": {
+      "document": "DeleteLogExport请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出ID",
+          "example": "export-xxx",
+          "member": "string",
+          "name": "ExportID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogExportResponse": {
+      "document": "DeleteLogExport返回参数结构体",
+      "members": [
+        {
+          "document": "是否成功，成功则为success；失败则直接返回Error，不返回该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOfflineLogConfigRequest": {
+      "document": "DeleteOfflineLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "fd34af34fghf6",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户唯一标示(uin or aid)",
+          "example": "9535989045",
+          "member": "string",
+          "name": "UniqueID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOfflineLogConfigResponse": {
+      "document": "DeleteOfflineLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOfflineLogRecordRequest": {
+      "document": "DeleteOfflineLogRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "DjkljW234R",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "离线日志文件 id",
+          "example": "123",
+          "member": "string",
+          "name": "FileID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOfflineLogRecordResponse": {
+      "document": "DeleteOfflineLogRecord返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的项目 ID",
+          "example": "6",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "操作信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReleaseFileRequest": {
+      "document": "DeleteReleaseFile请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件 id",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReleaseFileResponse": {
+      "document": "DeleteReleaseFile返回参数结构体",
+      "members": [
+        {
+          "document": "接口请求返回字符串",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStarProjectRequest": {
+      "document": "DeleteStarProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID：taw-123",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStarProjectResponse": {
+      "document": "DeleteStarProject返回参数结构体",
+      "members": [
+        {
+          "document": "返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhitelistRequest": {
+      "document": "DeleteWhitelist请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名单ID",
+          "example": "1",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhitelistResponse": {
+      "document": "DeleteWhitelist返回参数结构体",
+      "members": [
+        {
+          "document": "消息success",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataCustomUrlRequest": {
+      "document": "DescribeDataCustomUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算方式",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义测速的key的值",
+          "example": "自定义测速",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataCustomUrlResponse": {
+      "document": "DescribeDataCustomUrl返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -388,6 +1591,240 @@
     },
     "DescribeDataEventUrlResponse": {
       "document": "DescribeDataEventUrl返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataFetchProjectRequest": {
+      "document": "DescribeDataFetchProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算方式",
+          "example": "50",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "url",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataFetchProjectResponse": {
+      "document": "DescribeDataFetchProject返回参数结构体",
       "members": [
         {
           "document": "返回值",
@@ -875,6 +2312,60 @@
       ],
       "type": "object"
     },
+    "DescribeDataLogUrlInfoRequest": {
+      "document": "DescribeDataLogUrlInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间戳",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间戳",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataLogUrlInfoResponse": {
+      "document": "DescribeDataLogUrlInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataLogUrlStatisticsRequest": {
       "document": "DescribeDataLogUrlStatistics请求参数结构体",
       "members": [
@@ -1316,6 +2807,447 @@
       ],
       "type": "object"
     },
+    "DescribeDataPerformanceProjectRequest": {
+      "document": "DescribeDataPerformanceProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "\"allcount\", \"falls\", \"samp\", \"version\", \"ext3\",\"nettype\", \"platform\",\"isp\",\"region\",\"device\",\"browser\",\"ext1\",\"ext2\"",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPerformanceProjectResponse": {
+      "document": "DescribeDataPerformanceProject返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPvUrlInfoRequest": {
+      "document": "DescribeDataPvUrlInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataPvUrlInfoResponse": {
+      "document": "DescribeDataPvUrlInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataPvUrlStatisticsRequest": {
       "document": "DescribeDataPvUrlStatistics请求参数结构体",
       "members": [
@@ -1532,6 +3464,1275 @@
       ],
       "type": "object"
     },
+    "DescribeDataReportCountRequest": {
+      "document": "DescribeDataReportCount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "上报类型",
+          "example": "custom",
+          "member": "string",
+          "name": "ReportType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "rum-vzysRe1w",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataReportCountResponse": {
+      "document": "DescribeDataReportCount返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataRequest": {
+      "document": "DescribeData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询字符串",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataResponse": {
+      "document": "DescribeData返回参数结构体",
+      "members": [
+        {
+          "document": "返回字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSetUrlStatisticsRequest": {
+      "document": "DescribeDataSetUrlStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "\"allcount\", \"falls\", \"samp\", \"version\", \"ext3\",\"nettype\", \"platform\",\"isp\",\"region\",\"device\",\"browser\",\"ext1\",\"ext2\"",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSetUrlStatisticsResponse": {
+      "document": "DescribeDataSetUrlStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticProjectRequest": {
+      "document": "DescribeDataStaticProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticProjectResponse": {
+      "document": "DescribeDataStaticProject返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticResourceRequest": {
+      "document": "DescribeDataStaticResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算方式",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticResourceResponse": {
+      "document": "DescribeDataStaticResource返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticUrlRequest": {
+      "document": "DescribeDataStaticUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算方式",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "example": "http",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataStaticUrlResponse": {
+      "document": "DescribeDataStaticUrl返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataWebVitalsPageRequest": {
+      "document": "DescribeDataWebVitalsPage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1625444040",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1625454840",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义2",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtSecond",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器引擎",
+          "example": "ie7",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "example": "中国移动",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源页面",
+          "example": "index.html",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志等级",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型暂无",
+          "example": "pagepv",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "品牌",
+          "example": "苹果",
+          "member": "string",
+          "name": "Brand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区",
+          "example": "中国",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本",
+          "example": "1.2.1",
+          "member": "string",
+          "name": "VersionNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义3",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtThird",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义1",
+          "example": "abc",
+          "member": "string",
+          "name": "ExtFirst",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网络类型",
+          "example": "2",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "三星",
+          "member": "string",
+          "name": "Device",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否海外",
+          "example": "1",
+          "member": "string",
+          "name": "IsAbroad",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作系统",
+          "example": "ios",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "浏览器",
+          "example": "ie",
+          "member": "string",
+          "name": "Browser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "耗时计算",
+          "example": "avg",
+          "member": "string",
+          "name": "CostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "prod",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataWebVitalsPageResponse": {
+      "document": "DescribeDataWebVitalsPage返回参数结构体",
+      "members": [
+        {
+          "document": "返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeErrorRequest": {
       "document": "DescribeError请求参数结构体",
       "members": [
@@ -1584,6 +4785,42 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogExportsRequest": {
+      "document": "DescribeLogExports请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogExportsResponse": {
+      "document": "DescribeLogExports返回参数结构体",
+      "members": [
+        {
+          "document": "日志导出记录列表",
+          "example": "无",
+          "member": "LogExport",
+          "name": "LogExportSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1694,6 +4931,186 @@
       ],
       "type": "object"
     },
+    "DescribeOfflineLogConfigsRequest": {
+      "document": "DescribeOfflineLogConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "DjkljW234R",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineLogConfigsResponse": {
+      "document": "DescribeOfflineLogConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户唯一标示数组",
+          "example": "['123123']",
+          "member": "string",
+          "name": "UniqueIDSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineLogRecordsRequest": {
+      "document": "DescribeOfflineLogRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "DjkljW234R",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineLogRecordsResponse": {
+      "document": "DescribeOfflineLogRecords返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录 ID 数组",
+          "example": "[\"12\"]",
+          "member": "string",
+          "name": "RecordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineLogsRequest": {
+      "document": "DescribeOfflineLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目唯一上报 key",
+          "example": "DjkljW234R",
+          "member": "string",
+          "name": "ProjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "离线日志文件 id 列表",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "FileIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOfflineLogsResponse": {
+      "document": "DescribeOfflineLogs返回参数结构体",
+      "members": [
+        {
+          "document": "接口调用返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "LogSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectLimitsRequest": {
+      "document": "DescribeProjectLimits请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "123",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectLimitsResponse": {
+      "document": "DescribeProjectLimits返回参数结构体",
+      "members": [
+        {
+          "document": "上报率数组列表",
+          "example": "无",
+          "member": "ProjectLimit",
+          "name": "ProjectLimitSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProjectsRequest": {
       "document": "DescribeProjects请求参数结构体",
       "members": [
@@ -1744,6 +5161,186 @@
           "example": "无",
           "member": "RumProject",
           "name": "ProjectSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePvListRequest": {
+      "document": "DescribePvList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "20201104",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "20201101",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "获取day：d，   获取min则不填",
+          "example": "d",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePvListResponse": {
+      "document": "DescribePvList返回参数结构体",
+      "members": [
+        {
+          "document": "pv列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RumPvInfo",
+          "name": "ProjectPvSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseFileSignRequest": {
+      "document": "DescribeReleaseFileSign请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "超时时间，不填默认是 5 分钟",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseFileSignResponse": {
+      "document": "DescribeReleaseFileSign返回参数结构体",
+      "members": [
+        {
+          "document": "临时密钥key",
+          "example": "sfdgfgfgfdf",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥 id",
+          "example": "dfdfdfdgfgfbf",
+          "member": "string",
+          "name": "SecretID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时密钥临时 token",
+          "example": "asdfdsfdsgg",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开始时间戳",
+          "example": "123787043",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "过期时间戳",
+          "example": "23435436565",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseFilesRequest": {
+      "document": "DescribeReleaseFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 id",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件版本",
+          "example": "0.0.1",
+          "member": "string",
+          "name": "FileVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReleaseFilesResponse": {
+      "document": "DescribeReleaseFiles返回参数结构体",
+      "members": [
+        {
+          "document": "文件信息列表",
+          "example": "无",
+          "member": "ReleaseFile",
+          "name": "Files",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1811,6 +5408,294 @@
       ],
       "type": "object"
     },
+    "DescribeTawAreasRequest": {
+      "document": "DescribeTawAreas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "片区Id",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "片区Key",
+          "example": "area-cn-dl",
+          "member": "string",
+          "name": "AreaKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "片区状态(1=有效，2=无效)",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaStatuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTawAreasResponse": {
+      "document": "DescribeTawAreas返回参数结构体",
+      "members": [
+        {
+          "document": "片区总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "片区列表",
+          "example": "无",
+          "member": "RumAreaInfo",
+          "name": "AreaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTawInstancesRequest": {
+      "document": "DescribeTawInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "计费状态",
+          "example": "无",
+          "member": "int64",
+          "name": "ChargeStatuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "计费类型",
+          "example": "无",
+          "member": "int64",
+          "name": "ChargeTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页Limit",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "片区Id",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceStatuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTawInstancesResponse": {
+      "document": "DescribeTawInstances返回参数结构体",
+      "members": [
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "RumInstanceInfo",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUvListRequest": {
+      "document": "DescribeUvList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "20201104",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "20201101",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "获取day：d，   min:m",
+          "example": "d",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUvListResponse": {
+      "document": "DescribeUvList返回参数结构体",
+      "members": [
+        {
+          "document": "uv列表",
+          "example": "无",
+          "member": "RumUvInfo",
+          "name": "ProjectUvSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhitelistsRequest": {
+      "document": "DescribeWhitelists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例instance-ID",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhitelistsResponse": {
+      "document": "DescribeWhitelists返回参数结构体",
+      "members": [
+        {
+          "document": "白名单列表",
+          "example": "无",
+          "member": "Whitelist",
+          "name": "WhitelistSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n· 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n· 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -1836,6 +5721,677 @@
         }
       ],
       "usage": "in"
+    },
+    "LogExport": {
+      "document": "日志导出记录",
+      "members": [
+        {
+          "default": "",
+          "document": "日志导出路径",
+          "example": "https://export.xxx.xxx.xxx.com",
+          "member": "string",
+          "name": "CosPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出任务创建时间",
+          "example": "2022-01-21 16:45:41",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出任务ID",
+          "example": "export-xxx",
+          "member": "string",
+          "name": "ExportID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出文件名",
+          "example": "log_expo",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件大小",
+          "example": "866",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出格式",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出时间排序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出查询语句",
+          "example": "*",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出起始时间",
+          "example": "2022-01-20 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志导出结束时间",
+          "example": "2022-01-21 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志下载状态。Queuing:导出正在排队中，Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）。",
+          "example": "Completed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要修改的实例id",
+          "example": "taw-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的实例名称(长度最大不超过255)",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的实例描述(长度最大不超过1024)",
+          "example": "实例描述",
+          "member": "string",
+          "name": "InstanceDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectLimitRequest": {
+      "document": "ModifyProjectLimit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目接口",
+          "example": "web",
+          "member": "string",
+          "name": "ProjectInterface",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报比例   10代表10%",
+          "example": "10",
+          "member": "int64",
+          "name": "ReportRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "上报类型 1：比例  2：上报量",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectLimitResponse": {
+      "document": "ModifyProjectLimit返回参数结构体",
+      "members": [
+        {
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目 id",
+          "example": "6",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目名(可选，不为空且最长为 200)",
+          "example": "测试项目名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目网页地址(可选，最长为 256)",
+          "example": "http://www.qq.com",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目仓库地址(可选，最长为 256)",
+          "example": "http://github.com/xxx/yyy",
+          "member": "string",
+          "name": "Repo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目需要转移到的实例 id(可选)",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目采样率(可选)",
+          "example": "10",
+          "member": "string",
+          "name": "Rate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启聚类(可选)",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableURLGroup",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目类型(可接受值为 \"web\", \"mp\", \"android\", \"ios\", \"node\", \"hippy\", \"weex\", \"viola\", \"rn\")",
+          "example": "web",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目描述(可选，最长为 1000)",
+          "example": "这是项目描述",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "操作信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "项目id",
+          "example": "6",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProjectLimit": {
+      "document": "项目接口限制类型",
+      "members": [
+        {
+          "default": "",
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "123",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接口",
+          "example": "web",
+          "member": "string",
+          "name": "ProjectInterface",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上报率",
+          "example": "10",
+          "member": "int64",
+          "name": "ReportRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上报类型 1：上报率  2：上报量限制",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReleaseFile": {
+      "document": "发布文件列表(SOURCEMAP)",
+      "members": [
+        {
+          "default": "",
+          "document": "文件版本",
+          "example": "0.0.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件唯一 key",
+          "example": "DFFDSGGSDFFDS",
+          "member": "string",
+          "name": "FileKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "example": "a.js.map",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件哈希值",
+          "example": "asdfdsfdsg/f/g",
+          "member": "string",
+          "name": "FileHash",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResumeInstanceRequest": {
+      "document": "ResumeInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要恢复的实例id",
+          "example": "rum-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeInstanceResponse": {
+      "document": "ResumeInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RumAreaInfo": {
+      "document": "Rum片区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "片区Id",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片区状态(1=有效，2=无效)",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片区名称",
+          "example": "中国大陆",
+          "member": "string",
+          "name": "AreaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片区Key",
+          "example": "area-cn-dl",
+          "member": "string",
+          "name": "AreaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RumInstanceInfo": {
+      "document": "Rum实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=已删除)",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "片区Id",
+          "example": "1",
+          "member": "int64",
+          "name": "AreaId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "taw-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例描述",
+          "example": "测试",
+          "member": "string",
+          "name": "InstanceDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费状态(1=使用中，2=已过期，3=已销毁，4=分配中，5=分配失败)",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费类型(1=免费版，2=预付费，3=后付费)",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据保留时间(天)",
+          "example": "30",
+          "member": "int64",
+          "name": "DataRetentionDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "测试",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RumProject": {
       "document": "Rum 项目信息",
@@ -1993,6 +6549,78 @@
       ],
       "usage": "out"
     },
+    "RumPvInfo": {
+      "document": "rum 日志对象",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pv访问量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "Pv",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间",
+          "example": "20201102",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RumUvInfo": {
+      "document": "RumUv 访问量",
+      "members": [
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "uv访问量",
+          "example": "222",
+          "member": "string",
+          "name": "Uv",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "20201102",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ScoreInfo": {
       "document": "project Score分数实体",
       "members": [
@@ -2122,6 +6750,145 @@
           "example": "111",
           "member": "string",
           "name": "PageDuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StopInstanceRequest": {
+      "document": "StopInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要停止的实例id",
+          "example": "rum-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstanceResponse": {
+      "document": "StopInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签value",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Whitelist": {
+      "document": "白名单",
+      "members": [
+        {
+          "default": "",
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "taw-123",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截止时间",
+          "example": "20200527221900",
+          "member": "string",
+          "name": "Ttl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "白名单自增ID",
+          "example": "12",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务唯一标识",
+          "example": "111",
+          "member": "string",
+          "name": "WhitelistUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者ID",
+          "example": "1111",
+          "member": "string",
+          "name": "CreateUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "aid标识",
+          "example": "222",
+          "member": "string",
+          "name": "Aid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "20200527221900",
+          "member": "string",
+          "name": "CreateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false

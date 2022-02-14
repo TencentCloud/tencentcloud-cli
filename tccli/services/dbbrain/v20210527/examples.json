@@ -160,6 +160,14 @@
         "title": "查询实时线程列表。"
       }
     ],
+    "DescribeProxySessionKillTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySessionKillTasks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Product\": \"xx\",\n    \"AsyncRequestIds\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"Progress\": 100,\n                \"InstProxyList\": [\n                    \"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\n                    \"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\n                    \"db0fcd29867e65eb999ce99383d7a06cd21ca077\"\n                ],\n                \"AsyncRequestId\": 7677678,\n                \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n                \"InstProxyCount\": 3,\n                \"InstanceId\": \"crs-o5chheqz\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n                \"TaskStatus\": \"finished\",\n                \"FinishedProxyList\": [\n                    \"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\n                    \"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\n                    \"db0fcd29867e65eb999ce99383d7a06cd21ca077\"\n                ],\n                \"FailedProxyList\": []\n            }\n        ]\n    }\n}",
+        "title": "查询 kill 会话任务执行结果"
+      }
+    ],
     "DescribeSecurityAuditLogDownloadUrls": [
       {
         "document": "",

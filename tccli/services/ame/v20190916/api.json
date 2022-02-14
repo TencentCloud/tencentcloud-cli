@@ -2937,7 +2937,7 @@
         },
         {
           "default": "",
-          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000。取值范围：小于5000",
+          "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2946,12 +2946,21 @@
         },
         {
           "default": "",
-          "document": "分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000。",
+          "document": "分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式。默认按照匹配度排序\n<li> Sort.Field 可选 CreateTime</li>\n<li> Sort.Order 可选 Desc </li>\n<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>",
+          "example": "\"\"",
+          "member": "SortBy",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

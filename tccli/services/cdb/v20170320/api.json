@@ -6652,6 +6652,15 @@
           "name": "EngineVersion",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "TemplateType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

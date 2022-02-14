@@ -6,6 +6,12 @@
       "name": "绑定坐席所属技能组",
       "output": "BindStaffSkillGroupListResponse"
     },
+    "CreateAutoCalloutTask": {
+      "document": "创建自动外呼任务",
+      "input": "CreateAutoCalloutTaskRequest",
+      "name": "创建自动外呼任务",
+      "output": "CreateAutoCalloutTaskResponse"
+    },
     "CreateCallOutSession": {
       "document": "创建外呼会话",
       "input": "CreateCallOutSessionRequest",
@@ -35,6 +41,12 @@
       "input": "DeleteStaffRequest",
       "name": "删除坐席信息",
       "output": "DeleteStaffResponse"
+    },
+    "DescribeAutoCalloutTask": {
+      "document": "查询自动外呼任务详情",
+      "input": "DescribeAutoCalloutTaskRequest",
+      "name": "查询自动外呼任务详情",
+      "output": "DescribeAutoCalloutTaskResponse"
     },
     "DescribeAutoCalloutTasks": {
       "document": "批量查询自动任务外呼",
@@ -114,6 +126,12 @@
       "name": "获取 PSTN 会话信息",
       "output": "DescribeTelSessionResponse"
     },
+    "StopAutoCalloutTask": {
+      "document": "停止自动外呼任务",
+      "input": "StopAutoCalloutTaskRequest",
+      "name": "停止自动外呼任务",
+      "output": "StopAutoCalloutTaskResponse"
+    },
     "UnbindStaffSkillGroupList": {
       "document": "解绑坐席所属技能组",
       "input": "UnbindStaffSkillGroupListRequest",
@@ -128,6 +146,32 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AutoCalloutTaskCalleeInfo": {
+      "document": "外呼任务被叫信息",
+      "members": [
+        {
+          "default": "",
+          "document": "被叫号码",
+          "example": "\"008613912345678\"",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "呼叫状态 0初始 1已接听 2未接听 3呼叫中 4待重试",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AutoCalloutTaskInfo": {
       "document": "自动外呼任务列表项",
       "members": [
@@ -437,6 +481,114 @@
       ],
       "usage": "out"
     },
+    "CreateAutoCalloutTaskRequest": {
+      "document": "CreateAutoCalloutTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "呼叫中心实例Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务起始时间戳，Unix 秒级时间戳",
+          "example": "1642500621",
+          "member": "int64",
+          "name": "NotBefore",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "被叫号码列表",
+          "example": "[008613912341234,008613912341235]",
+          "member": "string",
+          "name": "Callees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "主叫号码列表",
+          "example": "[008601012345678]",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "呼叫使用的Ivr",
+          "example": "3",
+          "member": "uint64",
+          "name": "IvrId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "example": "任务1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务描述",
+          "example": "任务描述1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务停止时间戳，Unix 秒级时间戳",
+          "example": "1642500622",
+          "member": "int64",
+          "name": "NotAfter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大尝试次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tries",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoCalloutTaskResponse": {
+      "document": "CreateAutoCalloutTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务Id",
+          "example": "2",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCallOutSessionRequest": {
       "document": "CreateCallOutSession请求参数结构体",
       "members": [
@@ -716,6 +868,114 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoCalloutTaskRequest": {
+      "document": "DescribeAutoCalloutTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "呼叫中心实例Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "3",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoCalloutTaskResponse": {
+      "document": "DescribeAutoCalloutTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务名",
+          "example": "任务1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务描述",
+          "example": "任务描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务起始时间戳",
+          "example": "1",
+          "member": "int64",
+          "name": "NotBefore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "NotAfter",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "主叫列表",
+          "example": "无",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被叫信息列表",
+          "example": "无",
+          "member": "AutoCalloutTaskCalleeInfo",
+          "name": "Callees",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务使用的IvrId",
+          "example": "2",
+          "member": "uint64",
+          "name": "IvrId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务状态 0初始 1运行中 2已完成 3结束中 4已终止",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3011,6 +3271,42 @@
       ],
       "usage": "out"
     },
+    "StopAutoCalloutTaskRequest": {
+      "document": "StopAutoCalloutTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "呼叫中心实例Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "StopAutoCalloutTaskResponse": {
+      "document": "StopAutoCalloutTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TelCdrInfo": {
       "document": "电话话单信息",
       "members": [
@@ -3292,6 +3588,16 @@
           "name": "IVRKeyPressedEx",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "获取录音ASR文本信息地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://api.tccc.qcloud.com/tcccadmin/cdr/getAsrText?session_id=",
+          "member": "string",
+          "name": "AsrUrl",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
