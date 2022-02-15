@@ -6,7 +6,7 @@ _locale._getdefaultlocale = (lambda *args: ['zh_CN', 'utf8'])
 import io
 import os
 import sys
-import tccli.six as six
+import six
 import signal
 from tccli.log import init
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException

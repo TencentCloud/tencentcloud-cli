@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-import sys
+import six
 import json
 import time
 import os
 import tccli.options_define as options_define
-
-
-PY2 = sys.version_info[0] == 2
 
 
 class Utils(object):
@@ -22,7 +19,7 @@ class Utils(object):
 
     @staticmethod
     def split_str_bk(pre, src, step):
-        if PY2:
+        if six.PY2:
             src = src.decode("utf-8")
         dst = ""
         strlist = src.split("\n")
@@ -38,7 +35,7 @@ class Utils(object):
 
     @staticmethod
     def split_str(pre, src, line_size):
-        if PY2:
+        if six.PY2:
             src = src.decode("utf-8")
         dst = ""
         strlist = src.split("\n")
@@ -57,7 +54,7 @@ class Utils(object):
                     lsize = 0
             dst += (line + "\n")
         dst += "\n"
-        if PY2:
+        if six.PY2:
             dst = dst.encode("utf-8")
         return dst
 

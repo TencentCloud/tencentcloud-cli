@@ -4,7 +4,7 @@
 import sys
 import argparse
 from tccli.log import init
-from tccli import six
+import six
 from difflib import get_close_matches
 from gettext import gettext
 from tccli.error_msg import USAGE

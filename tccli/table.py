@@ -4,7 +4,7 @@ import sys
 import struct
 
 from . import colorama
-from . import six
+import six
 
 PY2 = sys.version_info[0] == 2
 
