@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import sys
+import six
 import json
 from tccli import text
 from tccli.table import MultiTable
@@ -7,14 +8,11 @@ import jmespath
 import io
 
 
-PY2 = sys.version_info[0] == 2
-
-
 class Response(object):
 
     def __call__(self, command, response, stream=None):
         if stream is None:
-            if not PY2:
+            if not six.PY2:
                 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
                                               encoding='utf-8')
             stream = sys.stdout
@@ -35,13 +33,13 @@ class Response(object):
 class JSONResult(Response):
     def _format_response(self, command, response, stream=None):
         if stream is None:
-            if not PY2:
+            if not six.PY2:
                 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
                                               encoding='utf-8')
             stream = sys.stdout
         if response is not None:
             ret = json.dumps(response, ensure_ascii=False, indent=4)
-            if PY2:
+            if six.PY2:
                 import platform
                 if 'Windows' in platform.system():
                     print(ret.encode('GBK'))
@@ -55,7 +53,7 @@ class JSONResult(Response):
 class TextResult (Response):
     def __call__(self, command, response, stream=None):
         if stream is None:
-            if not PY2:
+            if not six.PY2:
                 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,
                                               encoding='utf-8')
             stream = sys.stdout

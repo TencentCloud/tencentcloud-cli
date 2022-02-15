@@ -2,13 +2,13 @@
 
 import os
 import sys
+import six
 import tccli.options_define as OptionsDefine
 from tccli.base_command import BasicCommand
 from tccli.exceptions import ConfigurationError, ParamError
 from tccli.help_command import BaseHelpCommand
 from tccli.utils import Utils
 from tccli.loaders import Loader
-PY2 = sys.version_info[0] == 2
 
 
 class BasicConfigure(BasicCommand):
@@ -404,7 +404,7 @@ class ConfigureCommand(BasicConfigure):
     def _compat_input(self, prompt):
         sys.stdout.write(prompt)
         sys.stdout.flush()
-        if PY2:
+        if six.PY2:
             return raw_input()
         else:
             return input()
