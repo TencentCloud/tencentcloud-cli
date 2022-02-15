@@ -276,7 +276,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogExports\n<公共请求参数>\n\n{\n    \"ID\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"LogExportSet\": [\n            {\n                \"CosPath\": \"https://export-gz.xxx.xxx.com\",\n                \"Count\": \"1\",\n                \"CreateTime\": \"2022-01-21 17:05:57\",\n                \"EndTime\": \"2022-01-21 00:00:00\",\n                \"ExportID\": \"export-1\",\n                \"FileName\": \"log_tar.gz\",\n                \"FileSize\": \"862\",\n                \"Format\": \"json\",\n                \"Order\": \"desc\",\n                \"Query\": \"*\",\n                \"StartTime\": \"2022-01-20 00:00:00\",\n                \"Status\": \"Completed\"\n            }\n        ],\n        \"RequestId\": \"a4c0bd54-d2d5-4045-a831-38a6f1fd294d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LogExportSet\": [\n            {\n                \"CosPath\": \"https://export-gz.xxx.xxx.com\",\n                \"Count\": 1,\n                \"CreateTime\": \"2022-01-21 17:05:57\",\n                \"EndTime\": \"2022-01-21 00:00:00\",\n                \"ExportID\": \"export-1\",\n                \"FileName\": \"log_tar.gz\",\n                \"FileSize\": 862,\n                \"Format\": \"json\",\n                \"Order\": \"desc\",\n                \"Query\": \"*\",\n                \"StartTime\": \"2022-01-20 00:00:00\",\n                \"Status\": \"Completed\"\n            }\n        ],\n        \"RequestId\": \"a4c0bd54-d2d5-4045-a831-38a6f1fd294d\"\n    }\n}",
         "title": "获取日志下载任务列表"
       }
     ],

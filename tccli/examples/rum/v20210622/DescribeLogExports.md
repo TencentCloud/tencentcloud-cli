@@ -16,12 +16,12 @@ Output:
         "LogExportSet": [
             {
                 "CosPath": "https://export-gz.xxx.xxx.com",
-                "Count": "1",
+                "Count": 1,
                 "CreateTime": "2022-01-21 17:05:57",
                 "EndTime": "2022-01-21 00:00:00",
                 "ExportID": "export-1",
                 "FileName": "log_tar.gz",
-                "FileSize": "862",
+                "FileSize": 862,
                 "Format": "json",
                 "Order": "desc",
                 "Query": "*",

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcss ModifyVirusFileStatus --cli-unfold-argument  \
-    --EventIdSet xx \
-    --Status xx \
-    --Remark xx
+    --EventIdSet 12afdwasfdasfds \
+    --Status EVENT_ADD_WHITE \
+    --Remark 加白
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "safdswwasafd"
     }
 }
 ```

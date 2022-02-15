@@ -133,3 +133,26 @@ Output:
 }
 ```
 
+**Example 7: 设置销毁模式**
+
+设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。
+
+Input: 
+
+```
+tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
+    --RobotId xxxxx \
+    --Command SetDestroyMode \
+    --SetDestroyModeCommandInput.DestroyMode Expire \
+    --SetDestroyModeCommandInput.DestroyExpireTime 120
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
+    }
+}
+```
+

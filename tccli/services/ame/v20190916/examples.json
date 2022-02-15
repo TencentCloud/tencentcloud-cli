@@ -250,6 +250,12 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetPlayMode\",\n    \"SetPlayModeCommandInput\": {\n        \"PlayMode\": \"Shuffle\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "设置播放模式"
+      },
+      {
+        "document": "设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetDestroyMode\",\n    \"SetDestroyModeCommandInput\": {\n        \"DestroyMode\": \"Expire\",\n        \"DestroyExpireTime\": 120\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设置销毁模式"
       }
     ],
     "TakeMusicOffShelves": [

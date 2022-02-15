@@ -1271,8 +1271,8 @@
     "ModifyVirusFileStatus": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyVirusFileStatus\n&EventIdSet.0=xx\n&Status=xx\n&Remark=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://tcss.tencentcloudapi.com/?Action=ModifyVirusFileStatus\n&EventIdSet.0=12afdwasfdasfds\n&Status=EVENT_ADD_WHITE\n&Remark=加白\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"safdswwasafd\"\n    }\n}",
         "title": "运行时更新木马文件事件状态"
       }
     ],
