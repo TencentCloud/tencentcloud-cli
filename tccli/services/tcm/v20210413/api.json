@@ -62,6 +62,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码格式，可选值：TEXT、JSON",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Encoding",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志格式",
+          "example": "[%START_TIME%]",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

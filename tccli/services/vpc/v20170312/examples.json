@@ -251,7 +251,7 @@
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateAddressTemplate\n&AddressTemplateName=TestName\n&Addresses.0=192.168.1.0/24\n&Addresses.1=192.168.2.0/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AddressTemplate\": {\n            \"AddressTemplateName\": \"TestName\",\n            \"AddressTemplateId\": \"ipm-ht1gkq3a\",\n            \"AddressSet\": [\n                \"192.168.1.0/24\",\n                \"192.168.2.0/24\"\n            ],\n            \"CreatedTime\": \"2018-04-03 21:38:01\",\n            \"AddressExtraSet\": [\n                {\n                    \"Description\": \"xx\",\n                    \"Address\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
-        "title": "创建IP地址模版"
+        "title": "创建IP地址模板"
       }
     ],
     "CreateAddressTemplateGroup": [

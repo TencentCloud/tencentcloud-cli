@@ -19,9 +19,9 @@
       "output": "AddIp6RulesResponse"
     },
     "AddTemplateMember": {
-      "document": "增加模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
       "input": "AddTemplateMemberRequest",
-      "name": "增加模版对象成员",
+      "name": "增加模板对象成员",
       "output": "AddTemplateMemberResponse"
     },
     "AllocateAddresses": {
@@ -145,9 +145,9 @@
       "output": "CloneSecurityGroupResponse"
     },
     "CreateAddressTemplate": {
-      "document": "本接口（CreateAddressTemplate）用于创建IP地址模版",
+      "document": "本接口（CreateAddressTemplate）用于创建IP地址模板。",
       "input": "CreateAddressTemplateRequest",
-      "name": "创建IP地址模版",
+      "name": "创建IP地址模板",
       "output": "CreateAddressTemplateResponse"
     },
     "CreateAddressTemplateGroup": {
@@ -529,9 +529,9 @@
       "output": "DeleteSubnetResponse"
     },
     "DeleteTemplateMember": {
-      "document": "删除模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
       "input": "DeleteTemplateMemberRequest",
-      "name": "删除模版对象成员",
+      "name": "删除模板对象成员",
       "output": "DeleteTemplateMemberResponse"
     },
     "DeleteVpc": {
@@ -1363,9 +1363,9 @@
       "output": "ModifySubnetAttributeResponse"
     },
     "ModifyTemplateMember": {
-      "document": "修改模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
       "input": "ModifyTemplateMemberRequest",
-      "name": "修改模版对象成员",
+      "name": "修改模板对象成员",
       "output": "ModifyTemplateMemberResponse"
     },
     "ModifyVpcAttribute": {
@@ -4124,7 +4124,7 @@
       "members": [
         {
           "default": "",
-          "document": "IP地址模版名称",
+          "document": "IP地址模板名称。",
           "example": "TestName",
           "member": "string",
           "name": "AddressTemplateName",

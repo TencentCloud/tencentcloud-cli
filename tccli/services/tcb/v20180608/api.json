@@ -399,7 +399,7 @@
     "ModifyCloudBaseRunServerVersion": {
       "document": "修改服务版本的副本数，环境变量",
       "input": "ModifyCloudBaseRunServerVersionRequest",
-      "name": "修改服务版本",
+      "name": "修改服务版本信息",
       "output": "ModifyCloudBaseRunServerVersionResponse"
     },
     "ModifyDatabaseACL": {

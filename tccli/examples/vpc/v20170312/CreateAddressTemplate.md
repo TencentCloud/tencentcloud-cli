@@ -1,4 +1,4 @@
-**Example 1: 创建IP地址模版**
+**Example 1: 创建IP地址模板**
 
 
 

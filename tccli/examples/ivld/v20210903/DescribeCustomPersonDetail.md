@@ -15,6 +15,15 @@ Output:
     "Response": {
         "PersonInfo": {
             "BasicInfo": "测试基本信息",
+            "CreateTime": "2022-01-25 10:35:47",
+            "ImageInfoSet": [
+                {
+                    "ErrorCode": "OK",
+                    "ErrorMsg": "OK",
+                    "ImageId": "image-Axgo3FYc-egMN",
+                    "ImageURL": "https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg"
+                }
+            ],
             "L1Category": "明星",
             "L2Category": "巨星",
             "Name": "测试姓名",

@@ -14545,7 +14545,8 @@
       "members": [
         {
           "default": "",
-          "document": "可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示",
+          "document": "可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -14555,6 +14556,7 @@
         {
           "default": "",
           "document": "可用区中文名称",
+          "example": "广州二区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -14564,6 +14566,7 @@
         {
           "default": "",
           "document": "实例类型是否为自定义类型",
+          "example": "true",
           "member": "bool",
           "name": "IsCustom",
           "required": true,
@@ -14573,6 +14576,7 @@
         {
           "default": "",
           "document": "是否支持灾备",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportDr",
           "required": true,
@@ -14582,6 +14586,7 @@
         {
           "default": "",
           "document": "是否支持私有网络",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportVpc",
           "required": true,
@@ -14591,6 +14596,7 @@
         {
           "default": "",
           "document": "小时计费实例最大售卖数量",
+          "example": "100",
           "member": "int64",
           "name": "HourInstanceSaleMaxNum",
           "required": true,
@@ -14600,6 +14606,7 @@
         {
           "default": "",
           "document": "是否为默认可用区",
+          "example": "true",
           "member": "bool",
           "name": "IsDefaultZone",
           "required": true,
@@ -14609,6 +14616,7 @@
         {
           "default": "",
           "document": "是否为黑石区",
+          "example": "true",
           "member": "bool",
           "name": "IsBm",
           "required": true,
@@ -14618,6 +14626,7 @@
         {
           "default": "",
           "document": "支持的付费类型。可能的返回值为：0-包年包月；1-小时计费；2-后付费",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "PayType",
           "required": true,
@@ -14627,6 +14636,7 @@
         {
           "default": "",
           "document": "数据复制类型。0-异步复制；1-半同步复制；2-强同步复制",
+          "example": "[\"0\",\"1\",\"2\"]",
           "member": "string",
           "name": "ProtectMode",
           "required": true,
@@ -14636,6 +14646,7 @@
         {
           "default": "",
           "document": "可用区名称",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -14645,6 +14656,7 @@
         {
           "default": "",
           "document": "售卖实例类型数组",
+          "example": "[]",
           "member": "SellType",
           "name": "SellType",
           "required": true,
@@ -14654,6 +14666,7 @@
         {
           "default": "",
           "document": "多可用区信息",
+          "example": "{}",
           "member": "ZoneConf",
           "name": "ZoneConf",
           "required": true,
@@ -14663,6 +14676,7 @@
         {
           "default": "",
           "document": "可支持的灾备可用区信息",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "DrZone",
           "required": true,
@@ -14672,6 +14686,7 @@
         {
           "default": "",
           "document": "是否支持跨可用区只读",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportRemoteRo",
           "required": true,
@@ -14681,10 +14696,41 @@
         {
           "default": "",
           "document": "可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "RemoteRoZone",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
+          "member": "int64",
+          "name": "ExClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享型可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "ExClusterRemoteRoZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享型多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ZoneConf",
+          "name": "ExClusterZoneConf",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

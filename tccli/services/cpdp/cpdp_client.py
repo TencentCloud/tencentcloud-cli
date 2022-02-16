@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+import six
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
@@ -15,7 +16,6 @@ from tencentcloud.cpdp.v20190820 import models as models_v20190820
 
 from jmespath import search
 import time
-from tccli import six
 
 def doQueryAssignment(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)

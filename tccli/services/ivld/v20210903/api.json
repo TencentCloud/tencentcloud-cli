@@ -678,6 +678,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人物图片信息",
+          "example": "无",
+          "member": "PersonImageInfo",
+          "name": "ImageInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义人物创建时间",
+          "example": "2022-01-25 10:35:47",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

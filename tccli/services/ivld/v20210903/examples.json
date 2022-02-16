@@ -112,7 +112,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersonDetail\n<公共请求参数>\n\n{\n    \"PersonId\": \"person-Axgo3FYc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PersonInfo\": {\n            \"BasicInfo\": \"测试基本信息\",\n            \"L1Category\": \"明星\",\n            \"L2Category\": \"巨星\",\n            \"Name\": \"测试姓名\",\n            \"PersonId\": \"person-Axgo3FYc\"\n        },\n        \"RequestId\": \"db04f25b-0d68-4cba-9171-254abc8ff3ac\",\n        \"TaskIdSet\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfo\": {\n            \"BasicInfo\": \"测试基本信息\",\n            \"CreateTime\": \"2022-01-25 10:35:47\",\n            \"ImageInfoSet\": [\n                {\n                    \"ErrorCode\": \"OK\",\n                    \"ErrorMsg\": \"OK\",\n                    \"ImageId\": \"image-Axgo3FYc-egMN\",\n                    \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n                }\n            ],\n            \"L1Category\": \"明星\",\n            \"L2Category\": \"巨星\",\n            \"Name\": \"测试姓名\",\n            \"PersonId\": \"person-Axgo3FYc\"\n        },\n        \"RequestId\": \"db04f25b-0d68-4cba-9171-254abc8ff3ac\",\n        \"TaskIdSet\": []\n    }\n}",
         "title": "成功描述人物详细信息(包括出现这个人物的任务ID列表)"
       }
     ],
@@ -126,7 +126,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomPersons\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"50\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [\n            {\n                \"BasicInfo\": \"测试基本信息\",\n                \"L1Category\": \"明星\",\n                \"L2Category\": \"巨星\",\n                \"Name\": \"测试姓名\",\n                \"PersonId\": \"person-Axgo3FYc\"\n            }\n        ],\n        \"RequestId\": \"9f5bc011-fa0b-4ad9-a4a1-2481343e9428\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PersonInfoSet\": [\n            {\n                \"BasicInfo\": \"测试基本信息\",\n                \"CreateTime\": \"2022-01-25 10:35:47\",\n                \"ImageInfoSet\": [\n                    {\n                        \"ErrorCode\": \"OK\",\n                        \"ErrorMsg\": \"OK\",\n                        \"ImageId\": \"image-Axgo3FYc-egMN\",\n                        \"ImageURL\": \"https://test-251202813.cos.ap-guangzhou.myqcloud.com/CustomImages/image-Axgo3FYc-egMN.jpeg\"\n                    }\n                ],\n                \"L1Category\": \"明星\",\n                \"L2Category\": \"巨星\",\n                \"Name\": \"测试姓名\",\n                \"PersonId\": \"person-Axgo3FYc\"\n            }\n        ],\n        \"RequestId\": \"9f5bc011-fa0b-4ad9-a4a1-2481343e9428\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "成功批量描述人物信息"
       }
     ],

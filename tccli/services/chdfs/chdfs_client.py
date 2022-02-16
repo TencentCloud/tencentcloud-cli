@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+import six
 import json
 import tccli.options_define as OptionsDefine
 import tccli.format_output as FormatOutput
@@ -17,7 +18,6 @@ from tencentcloud.chdfs.v20190718 import models as models_v20190718
 
 from jmespath import search
 import time
-from tccli import six
 
 def doCreateRestoreTasks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)

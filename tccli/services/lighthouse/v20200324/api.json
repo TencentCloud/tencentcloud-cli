@@ -42,6 +42,12 @@
       "name": "创建实例快照",
       "output": "CreateInstanceSnapshotResponse"
     },
+    "CreateInstances": {
+      "document": "本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。",
+      "input": "CreateInstancesRequest",
+      "name": "轻量应用服务器创建实例",
+      "output": "CreateInstancesResponse"
+    },
     "CreateKeyPair": {
       "document": "本接口（CreateKeyPair）用于创建一个密钥对。",
       "input": "CreateKeyPairRequest",
@@ -1025,6 +1031,32 @@
       ],
       "usage": "out"
     },
+    "ContainerEnv": {
+      "document": "容器环境变量",
+      "members": [
+        {
+          "default": "",
+          "document": "环境变量Key",
+          "example": "K1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境变量值",
+          "example": "V1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateBlueprintRequest": {
       "document": "CreateBlueprint请求参数结构体",
       "members": [
@@ -1158,6 +1190,123 @@
           "name": "SnapshotId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Lighthouse套餐ID。",
+          "example": "bundle_gen_03",
+          "member": "string",
+          "name": "BundleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Lighthouse镜像ID。",
+          "example": "lhbp-g0tn7djh",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Lighthouse实例显示名称。",
+          "example": "mylighthouse",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区列表。默认为随机可用区",
+          "example": "[\"ap-beijing-1\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
+          "example": "无",
+          "member": "LoginConfiguration",
+          "name": "LoginConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "要创建的容器配置列表。",
+          "example": "无",
+          "member": "DockerContainerConfiguration",
+          "name": "Containers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例ID。返回实例ID列表并不代表实例创建成功。\n\n可根据 DescribeInstances 接口查询返回的InstancesSet中对应实例的ID的状态来判断创建是否完成；如果实例状态由“启动中”变为“运行中”，则为创建成功。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3412,6 +3561,144 @@
       ],
       "usage": "out"
     },
+    "DockerContainerConfiguration": {
+      "document": "Docker容器创建时的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "容器镜像地址",
+          "example": "nginx",
+          "member": "string",
+          "name": "ContainerImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器名称",
+          "example": "Container1",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境变量列表",
+          "example": "[{\"Key\":\"Key1\",\"Value\":\"Value1\"}]",
+          "member": "ContainerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器端口主机端口映射列表",
+          "example": "[{\"ContainerPort\":80,\"HostPort\":8081}]",
+          "member": "DockerContainerPublishPort",
+          "name": "PublishPorts",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器加载本地卷列表",
+          "example": "[{\"ContainerPath\":\"/data/nginx\",\"HostPath\":\"/data/nginx\"}]",
+          "member": "DockerContainerVolume",
+          "name": "Volumes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行的命令",
+          "example": "ls -l",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DockerContainerPublishPort": {
+      "document": "Docker容器映射的端口",
+      "members": [
+        {
+          "default": "",
+          "document": "主机端口",
+          "example": "80",
+          "member": "int64",
+          "name": "HostPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器端口",
+          "example": "80",
+          "member": "int64",
+          "name": "ContainerPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对外绑定IP，默认0.0.0.0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议，默认tcp，支持tcp/udp/sctp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DockerContainerVolume": {
+      "document": "Docker容器挂载卷",
+      "members": [
+        {
+          "default": "",
+          "document": "容器路径",
+          "example": "/data/container",
+          "member": "string",
+          "name": "ContainerPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机路径",
+          "example": "/data/host",
+          "member": "string",
+          "name": "HostPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤名称等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以DescribeInstances接口的`Filter`为例。若我们需要查询实例名称（`instance-name`）为test ***并且*** 实例内网IP（`private-ip-address`）为10.10.10.10的实例时，可如下实现：\n```\nFilters.0.Name=instance-name\n&Filters.0.Values.0=test\n&Filters.1.Name=private-ip-address\n&Filters.1.Values.0=10.10.10.10\n```",
       "members": [
@@ -4434,6 +4721,11 @@
         }
       ],
       "usage": "out"
+    },
+    "LoginConfiguration": {
+      "document": "实例密码登录配置信息。",
+      "members": [],
+      "usage": "in"
     },
     "LoginSettings": {
       "document": "描述了实例登录相关配置与信息。",
