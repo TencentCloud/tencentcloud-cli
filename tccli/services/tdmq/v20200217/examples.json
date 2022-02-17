@@ -78,6 +78,12 @@
         "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqQueue\n&QueueName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建队列"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqQueue\n<公共请求参数>\n\n{\n    \"QueueName\": \"test789\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"864b1295-ed7e-45ed-9602-be53ac23177b\",\n        \"QueueId\": \"cmqq-rd42drdeaag9\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "CreateCmqSubscribe": [
@@ -94,6 +100,12 @@
         "input": "https://tdmq.tencentcloudapi.com/?Action=CreateCmqTopic\n&TopicName=ConnTopic\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建主题"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqTopic\n<公共请求参数>\n\n{\n    \"TopicName\": \"testtopic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae412902-bb35-4237-955d-3e1f9901e0cc\",\n        \"TopicId\": \"cmqt-7jwedr3jqb54\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "CreateEnvironment": [

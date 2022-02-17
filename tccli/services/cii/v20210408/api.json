@@ -1502,6 +1502,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务文件列表",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

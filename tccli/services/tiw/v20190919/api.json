@@ -27,7 +27,7 @@
     "DescribeOnlineRecordCallback": {
       "document": "查询实时录制回调地址",
       "input": "DescribeOnlineRecordCallbackRequest",
-      "name": "查询回调地址",
+      "name": "查询实时录制回调地址",
       "output": "DescribeOnlineRecordCallbackResponse"
     },
     "DescribeQualityMetrics": {
@@ -57,7 +57,7 @@
     "DescribeTranscodeCallback": {
       "document": "查询文档转码回调地址",
       "input": "DescribeTranscodeCallbackRequest",
-      "name": "查询回调地址",
+      "name": "查询文档转码回调地址",
       "output": "DescribeTranscodeCallbackResponse"
     },
     "DescribeVideoGenerationTask": {
@@ -81,7 +81,7 @@
     "DescribeWhiteboardPushCallback": {
       "document": "查询白板推流回调地址",
       "input": "DescribeWhiteboardPushCallbackRequest",
-      "name": "查询回调地址",
+      "name": "查询白板推流回调地址",
       "output": "DescribeWhiteboardPushCallbackResponse"
     },
     "PauseOnlineRecord": {
@@ -99,7 +99,7 @@
     "SetOnlineRecordCallback": {
       "document": "设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",
       "input": "SetOnlineRecordCallbackRequest",
-      "name": "设置回调地址",
+      "name": "设置实时录制回调地址",
       "output": "SetOnlineRecordCallbackResponse"
     },
     "SetOnlineRecordCallbackKey": {
@@ -111,7 +111,7 @@
     "SetTranscodeCallback": {
       "document": "设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
       "input": "SetTranscodeCallbackRequest",
-      "name": "设置回调地址",
+      "name": "设置文档转码回调地址",
       "output": "SetTranscodeCallbackResponse"
     },
     "SetTranscodeCallbackKey": {
@@ -135,7 +135,7 @@
     "SetWhiteboardPushCallback": {
       "document": "设置白板推流回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
       "input": "SetWhiteboardPushCallbackRequest",
-      "name": "设置回调地址",
+      "name": "设置白板推流回调地址",
       "output": "SetWhiteboardPushCallbackResponse"
     },
     "SetWhiteboardPushCallbackKey": {
@@ -524,6 +524,7 @@
         {
           "default": "",
           "document": "应用的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -537,15 +538,19 @@
       "members": [
         {
           "document": "实时录制事件回调地址，如果未设置回调地址，该字段为空字符串",
+          "example": "https://example.com/online/callback",
           "member": "string",
           "name": "Callback",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实时录制回调鉴权密钥",
+          "example": "6vg9G7Fd",
           "member": "string",
           "name": "CallbackKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -951,6 +956,7 @@
         {
           "default": "",
           "document": "应用的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -964,15 +970,19 @@
       "members": [
         {
           "document": "文档转码回调地址",
+          "example": "https://example.com/transcode/callback",
           "member": "string",
           "name": "Callback",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "文档转码回调鉴权密钥",
+          "example": "6vg9G7Fd",
           "member": "string",
           "name": "CallbackKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1225,6 +1235,7 @@
         {
           "default": "",
           "document": "应用的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -1238,15 +1249,19 @@
       "members": [
         {
           "document": "白板推流事件回调地址，如果未设置回调地址，该字段为空字符串",
+          "example": "https://example.com/online/callback",
           "member": "string",
           "name": "Callback",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "白板推流回调鉴权密钥",
+          "example": "6vg9G7Fd",
           "member": "string",
           "name": "CallbackKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1703,6 +1718,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -1711,6 +1727,7 @@
         {
           "default": "",
           "document": "实时录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",
+          "example": "https://example.com/online/callback",
           "member": "string",
           "name": "Callback",
           "required": true,
@@ -1771,6 +1788,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -1779,6 +1797,7 @@
         {
           "default": "",
           "document": "文档转码进度回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。\n回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260",
+          "example": "https://example.com/transcode/callback",
           "member": "string",
           "name": "Callback",
           "required": true,
@@ -1907,6 +1926,7 @@
         {
           "default": "",
           "document": "客户的SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -1915,6 +1935,7 @@
         {
           "default": "",
           "document": "白板推流任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头。回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257",
+          "example": "https://example.com/online/callback",
           "member": "string",
           "name": "Callback",
           "required": true,

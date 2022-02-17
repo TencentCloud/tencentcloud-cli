@@ -7056,7 +7056,7 @@
         },
         {
           "default": "",
-          "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
+          "document": "加速域名业务类型\nweb：网页小文件\ndownload：下载大文件\nmedia：音视频点播\nhybrid:  动静加速\ndynamic:  动态加速",
           "example": "web",
           "member": "string",
           "name": "ServiceType",
@@ -7590,6 +7590,16 @@
           "example": "无",
           "member": "ShareCname",
           "name": "ShareCname",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleEngine",
+          "name": "RuleEngine",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -12433,6 +12443,32 @@
       ],
       "usage": "both"
     },
+    "RuleEngine": {
+      "document": "规则引擎配置",
+      "members": [
+        {
+          "default": "",
+          "document": "规则引擎配置开关\non：开启\noff：关闭",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"[]\"",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RuleQueryString": {
       "document": "路径保留参数配置",
       "members": [
@@ -13721,6 +13757,16 @@
           "example": "备注",
           "member": "string",
           "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "upload",
+          "member": "string",
+          "name": "From",
           "required": false,
           "type": "string",
           "value_allowed_null": true

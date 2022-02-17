@@ -1617,6 +1617,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费模式：\n0: 按量计费\n1: 包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2303,6 +2313,7 @@
         {
           "default": "",
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConnectedSince",
           "required": true,
@@ -2312,6 +2323,7 @@
         {
           "default": "",
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConsumerAddr",
           "required": true,
@@ -2321,6 +2333,7 @@
         {
           "default": "",
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConsumerName",
           "required": true,
@@ -2330,10 +2343,21 @@
         {
           "default": "",
           "document": "消费者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ClientVersion",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费者连接的主题分区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2941,6 +2965,15 @@
           "name": "Trace",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3112,6 +3145,15 @@
           "name": "Trace",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "标签数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3745,15 +3787,6 @@
         },
         {
           "default": "",
-          "document": "0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列。",
-          "example": "0",
-          "member": "uint64",
-          "name": "TopicType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "备注，128字符以内。",
           "example": "2个分区的普通消息队列",
           "member": "string",
@@ -3763,12 +3796,30 @@
         },
         {
           "default": "",
+          "document": "0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TopicType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Pulsar 主题类型\n0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区",
+          "example": "0",
+          "member": "int64",
+          "name": "PulsarTopicType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10152,6 +10203,7 @@
         {
           "default": "",
           "document": "主题名称。",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -10161,6 +10213,7 @@
         {
           "default": "",
           "document": "环境（命名空间）名称。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -10170,6 +10223,7 @@
         {
           "default": "",
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConnectedSince",
           "required": true,
@@ -10179,6 +10233,7 @@
         {
           "default": "",
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConsumerAddr",
           "required": true,
@@ -10188,6 +10243,7 @@
         {
           "default": "",
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
           "member": "string",
           "name": "ConsumerCount",
           "required": true,
@@ -10197,6 +10253,7 @@
         {
           "default": "",
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "ConsumerName",
           "required": true,
@@ -10206,6 +10263,7 @@
         {
           "default": "",
           "document": "堆积的消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "MsgBacklog",
           "required": true,
@@ -10215,6 +10273,7 @@
         {
           "default": "",
           "document": "于TTL，此订阅下没有被发送而是被丢弃的比例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "MsgRateExpired",
           "required": true,
@@ -10224,6 +10283,7 @@
         {
           "default": "",
           "document": "消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "MsgRateOut",
           "required": true,
@@ -10233,6 +10293,7 @@
         {
           "default": "",
           "document": "消费者每秒消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "MsgThroughputOut",
           "required": true,
@@ -10242,6 +10303,7 @@
         {
           "default": "",
           "document": "订阅名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "SubscriptionName",
           "required": true,
@@ -10251,6 +10313,7 @@
         {
           "default": "",
           "document": "消费者集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Consumer",
           "name": "ConsumerSets",
           "required": true,
@@ -10260,6 +10323,7 @@
         {
           "default": "",
           "document": "是否在线。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsOnline",
           "required": true,
@@ -10269,6 +10333,7 @@
         {
           "default": "",
           "document": "消费进度集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ConsumersSchedule",
           "name": "ConsumersScheduleSets",
           "required": true,
@@ -10278,6 +10343,7 @@
         {
           "default": "",
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -10287,6 +10353,7 @@
         {
           "default": "",
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -10296,10 +10363,41 @@
         {
           "default": "",
           "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Shared",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否由于未 ack 数到达上限而被 block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "BlockedSubscriptionOnUnackedMsgs",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "未 ack 消息数上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "MaxUnackedMsgNum",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -10573,6 +10671,16 @@
           "name": "ConsumerLimit",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PulsarTopicType",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

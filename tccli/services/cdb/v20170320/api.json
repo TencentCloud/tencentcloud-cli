@@ -2581,6 +2581,7 @@
         {
           "default": "",
           "document": "审计规则名称。",
+          "example": "audit1",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -2589,6 +2590,7 @@
         {
           "default": "",
           "document": "审计规则描述。",
+          "example": "audit_test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2597,6 +2599,7 @@
         {
           "default": "",
           "document": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。",
+          "example": "无",
           "member": "AuditFilter",
           "name": "RuleFilters",
           "required": false,
@@ -2605,6 +2608,7 @@
         {
           "default": "",
           "document": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。",
+          "example": "true",
           "member": "bool",
           "name": "AuditAll",
           "required": false,
@@ -2618,8 +2622,10 @@
       "members": [
         {
           "document": "审计规则 ID。",
+          "example": "cdbrule-qwerasdf",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4183,6 +4189,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-qwerasdf",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -4799,6 +4806,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "rule_123",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -4807,6 +4815,7 @@
         {
           "default": "",
           "document": "审计规则名称。支持按审计规则名称进行模糊匹配查询。",
+          "example": "rule_name",
           "member": "string",
           "name": "RuleName",
           "required": false,
@@ -4815,6 +4824,7 @@
         {
           "default": "",
           "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4823,6 +4833,7 @@
         {
           "default": "",
           "document": "分页偏移量。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4836,15 +4847,19 @@
       "members": [
         {
           "document": "符合条件的审计规则个数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "审计规则详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuditRule",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9969,6 +9984,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-234",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -9977,6 +9993,7 @@
         {
           "default": "",
           "document": "审计规则名称。",
+          "example": "test",
           "member": "string",
           "name": "RuleName",
           "required": false,
@@ -9985,6 +10002,7 @@
         {
           "default": "",
           "document": "审计规则描述。",
+          "example": "audit_test2",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -9993,6 +10011,7 @@
         {
           "default": "",
           "document": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。",
+          "example": "无",
           "member": "AuditFilter",
           "name": "RuleFilters",
           "required": false,
@@ -10001,6 +10020,7 @@
         {
           "default": "",
           "document": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。",
+          "example": "true",
           "member": "bool",
           "name": "AuditAll",
           "required": false,

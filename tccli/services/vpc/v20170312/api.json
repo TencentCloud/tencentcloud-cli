@@ -951,7 +951,7 @@
     "DescribeVpcTaskResult": {
       "document": "本接口（DescribeVpcTaskResult）用于查询VPC任务执行结果。",
       "input": "DescribeVpcTaskResultRequest",
-      "name": "查询异步任务执行结果",
+      "name": "查询VPC异步任务执行结果",
       "output": "DescribeVpcTaskResultResponse"
     },
     "DescribeVpcs": {
