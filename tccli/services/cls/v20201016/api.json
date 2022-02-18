@@ -103,7 +103,7 @@
       "output": "DeleteExportResponse"
     },
     "DeleteIndex": {
-      "document": "本接口用于日志主题的索引配置",
+      "document": "本接口用于删除日志主题的索引配置，删除索引配置后将无法检索和查询采集到的日志。",
       "input": "DeleteIndexRequest",
       "name": "删除索引配置",
       "output": "DeleteIndexResponse"
@@ -602,11 +602,12 @@
       "usage": "in"
     },
     "AlarmTargetInfo": {
-      "document": "日志告警监控对线",
+      "document": "告警对象",
       "members": [
         {
           "default": "",
           "document": "日志集ID。",
+          "example": "eff86344-6a51-479a-xxxx-779aabd40a3e",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -616,6 +617,7 @@
         {
           "default": "",
           "document": "日志集名称。",
+          "example": "LogsetDemo",
           "member": "string",
           "name": "LogsetName",
           "required": true,
@@ -625,6 +627,7 @@
         {
           "default": "",
           "document": "日志主题ID。",
+          "example": "016f6eac-4c21-4857-xxxx-4adf3be7d56c",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -634,6 +637,7 @@
         {
           "default": "",
           "document": "日志主题名称。",
+          "example": "TopicDemo",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -643,6 +647,7 @@
         {
           "default": "",
           "document": "查询语句。",
+          "example": "\"jndi:ldap://\" OR \"jndi:rmi\" OR \"javax.naming.CommunicationExcep",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -652,6 +657,7 @@
         {
           "default": "",
           "document": "告警对象序号。",
+          "example": "1",
           "member": "int64",
           "name": "Number",
           "required": true,
@@ -661,6 +667,7 @@
         {
           "default": "",
           "document": "查询范围起始时间相对当前的历史时间，取值为非正，最大值为0，最小值为-1440。",
+          "example": "-240",
           "member": "int64",
           "name": "StartTimeOffset",
           "required": true,
@@ -670,6 +677,7 @@
         {
           "default": "",
           "document": "查询范围终止时间相对当前的历史时间，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "example": "0",
           "member": "int64",
           "name": "EndTimeOffset",
           "required": true,

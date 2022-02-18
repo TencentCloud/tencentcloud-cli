@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ActivateInstance": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ActivateInstance\n&ClusterId=cynosdbpg-bzxxrmtq\n&InstanceIdList.0=cynosdbpg-ins-7upukfpw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "恢复实例访问"
+      }
+    ],
     "AddInstances": [
       {
         "document": "",
@@ -8,12 +16,28 @@
         "title": "新增实例"
       }
     ],
+    "AssociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-xxxxxxxx\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-ajr1jzgj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
+        "title": "安全组批量绑定云资源"
+      }
+    ],
     "CreateClusters": [
       {
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateClusters\n&Zone=ap-guangzhou-3\n&ProjectId=0\n&VpcId=vpc-1ptuei0b\n&SubnetId=subnet-1tmw9t4o\n&DbType=POSTGRESQL\n&DbVersion=10.0\n&Cpu=2\n&Memory=4\n&Storage=100\n&ClusterName=newInstance\n&AdminPassword=passwd@admin\n&HaCount=1\n&Count=1\n&PayMode=0\n&StoragePayMode=0\n&RollbackStrategy=noneRollback\n&StorageLimit=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbpg-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
         "title": "创建集群"
+      }
+    ],
+    "DescribeAccountAllGrantPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountAllGrantPrivileges\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Host\": \"%\",\n        \"AccountName\": \"test\"\n    },\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DatabasePrivileges\": [\n            {\n                \"Db\": \"test1\",\n                \"Privileges\": [\n                    \"DROP\",\n                    \"EXECUTE\"\n                ]\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"CREATE\",\n            \"ALTER\"\n        ],\n        \"PrivilegeStatements\": [\n            \"GRANT CREATE, ALTER ON *.* TO 'test'@'%'\",\n            \"GRANT DROP, EXECUTE ON `test1`.* TO 'test'@'%'\",\n            \"GRANT UPDATE, SHOW VIEW ON `test1`.`user1` TO 'test'@'%'\"\n        ],\n        \"RequestId\": \"46bf5c40-3fc1-4030-ab84-a66355ae25ab\",\n        \"TablePrivileges\": [\n            {\n                \"Db\": \"test1\",\n                \"Privileges\": [\n                    \"UPDATE\",\n                    \"SHOW VIEW\"\n                ],\n                \"TableName\": \"user1\"\n            }\n        ]\n    }\n}",
+        "title": "账号当前权限语句"
       }
     ],
     "DescribeAccounts": [
@@ -54,6 +78,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeClusterInstanceGrps\n&ClusterId=cynosdbpg-oib3wx0i\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceGrpInfoList\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"WanDomain\": \"xx\",\n                \"InstanceSet\": [\n                    {\n                        \"ServerlessStatus\": \"xx\",\n                        \"WanStatus\": \"xx\",\n                        \"RenewFlag\": 0,\n                        \"Zone\": \"xx\",\n                        \"DbVersion\": \"xx\",\n                        \"Storage\": 0,\n                        \"StorageId\": \"xx\",\n                        \"Memory\": 0,\n                        \"ProcessingTask\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"UpdateTime\": \"2020-09-22 00:00:00\",\n                        \"VpcId\": \"xx\",\n                        \"MinCpu\": 0.0,\n                        \"MaxCpu\": 0.0,\n                        \"InstanceId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"NetType\": 0,\n                        \"SubnetId\": \"xx\",\n                        \"InstanceType\": \"xx\",\n                        \"DestroyTime\": \"xx\",\n                        \"IsolateTime\": \"2020-09-22 00:00:00\",\n                        \"DestroyDeadlineText\": \"xx\",\n                        \"ProjectId\": 0,\n                        \"Region\": \"xx\",\n                        \"PayMode\": 0,\n                        \"PeriodEndTime\": \"2020-09-22 00:00:00\",\n                        \"CynosVersion\": \"xx\",\n                        \"StatusDesc\": \"xx\",\n                        \"InstanceName\": \"xx\",\n                        \"Cpu\": 0,\n                        \"StoragePayMode\": 0,\n                        \"WanDomain\": \"xx\",\n                        \"ClusterName\": \"xx\",\n                        \"InstanceRole\": \"xx\",\n                        \"WanPort\": 0,\n                        \"Uin\": \"xx\",\n                        \"DbType\": \"xx\",\n                        \"Vip\": \"xx\",\n                        \"AppId\": 0,\n                        \"WanIP\": \"xx\",\n                        \"Vport\": 0,\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"WanPort\": 0,\n                \"ClusterId\": \"xx\",\n                \"DeletedTime\": \"2020-09-22 00:00:00\",\n                \"WanStatus\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"Vip\": \"xx\",\n                \"InstanceGrpId\": \"xx\",\n                \"AppId\": 0,\n                \"WanIP\": \"xx\",\n                \"Vport\": 0,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\"\n    }\n}",
         "title": "查询实例组"
+      }
+    ],
+    "DescribeClusterParamLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterParamLogs\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterParamLogs\": {\n            \"Status\": \"success\",\n            \"CurrentValue\": \"1024\",\n            \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdateValue\": \"1025\",\n            \"ParamName\": \"back_log\",\n            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n        },\n        \"TotalCount\": 1,\n        \"RequestId\": \"651fadd0-7daa-11ec-ae84-e3726d36ffa8\"\n    }\n}",
+        "title": "查询参数修改日志"
       }
     ],
     "DescribeClusters": [
@@ -136,6 +168,22 @@
         "title": "查询指定时间点是否看回档"
       }
     ],
+    "DisassociateSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-xxx\",\n    \"InstanceIds\": [\n        \"cynosdbmysql-xxxxxxxx\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-ajr1jzgj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
+        "title": "安全组批量绑定云资源"
+      }
+    ],
+    "GrantAccountPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantAccountPrivileges\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"DbTablePrivileges\": [\n        \"ALTER\",\n        \"DROP\"\n    ],\n    \"Account\": {\n        \"AccountName\": \"test\",\n        \"Host\": \"%\"\n    },\n    \"DbTables\": [\n        {\n            \"Db\": \"test1\",\n            \"TableName\": \"user1\"\n        },\n        {\n            \"Db\": \"test2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
+        "title": "批量授权账号权限"
+      }
+    ],
     "IsolateCluster": [
       {
         "document": "",
@@ -150,6 +198,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=IsolateInstance\n&ClusterId=cynosdbpg-ins-bzkxxrmt\n&InstanceIdList.0=cynosdbpg-ixgbd0di\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "隔离实例访问"
+      }
+    ],
+    "ModifyAccountParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountParams\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"Account\": {\n        \"AccountName\": \"test\",\n        \"Host\": \"%\"\n    },\n    \"AccountParams\": [\n        {\n            \"ParamName\": \"max_user_connections\",\n            \"ParamValue\": \"400\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
+        "title": "修改账号参数"
       }
     ],
     "ModifyBackupConfig": [
@@ -198,6 +254,38 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineInstance\n&ClusterId=cynosdbpg-bzxxrmtq\n&InstanceIdList.0=cynosdbpg-ins-7upukfpw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "隔离实例"
+      }
+    ],
+    "PauseServerless": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseServerless\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-8vcxoq75\",\n    \"ForcePause\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1008306,\n        \"RequestId\": \"37508f2e-23eb-11eb-a713-525400b7dd5a\"\n    }\n}",
+        "title": "暂停serverless集群"
+      }
+    ],
+    "ResumeServerless": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeServerless\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1008306,\n        \"RequestId\": \"37508f2e-23eb-11eb-a713-525400b7dd5a\"\n    }\n}",
+        "title": "恢复serverless集群"
+      }
+    ],
+    "RevokeAccountPrivileges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeAccountPrivileges\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Host\": \"%\",\n        \"AccountName\": \"test\"\n    },\n    \"DbTablePrivileges\": [\n        \"ALTER\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"DbTables\": [\n        {\n            \"TableName\": \"test-table\",\n            \"Db\": \"test-db\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
+        "title": "批量回收账号权限"
+      }
+    ],
+    "RollBackCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollBackCluster\n<公共请求参数>\n\n{\n    \"RollbackId\": 1,\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"ExpectTimeThresh\": 1,\n    \"RollbackStrategy\": \"snapRollback\",\n    \"RollbackTables\": [\n        {\n            \"Tables\": [\n                {\n                    \"OldTable\": \"old_table\",\n                    \"NewTable\": \"new_table\"\n                }\n            ],\n            \"Database\": \"old_db1\"\n        }\n    ],\n    \"ExpectTime\": \"2022-01-20 00:00:00\",\n    \"RollbackDatabases\": [\n        {\n            \"NewDatabase\": \"new_db2\",\n            \"OldDatabase\": \"old_db2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "title": "回档集群"
       }
     ],
     "SetRenewFlag": [

@@ -5438,6 +5438,7 @@
         {
           "default": "",
           "document": "后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPrice",
           "required": false,
@@ -5447,6 +5448,7 @@
         {
           "default": "",
           "document": "后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：<br><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "string",
           "name": "ChargeUnit",
           "required": false,
@@ -5456,6 +5458,7 @@
         {
           "default": "",
           "document": "预支合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "OriginalPrice",
           "required": false,
@@ -5465,6 +5468,7 @@
         {
           "default": "",
           "document": "预支合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountPrice",
           "required": false,
@@ -5474,135 +5478,150 @@
         {
           "default": "",
           "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.0",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscount",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPriceSecondStep",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscountSecondStep",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPriceThirdStep",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscountThirdStep",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支三年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "OriginalPriceThreeYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支三年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountPriceThreeYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支三年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountThreeYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支五年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "OriginalPriceFiveYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支五年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountPriceFiveYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支五年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountFiveYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支一年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "OriginalPriceOneYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支一年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "35.5",
           "member": "float",
           "name": "DiscountPriceOneYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预支一年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20.0",
           "member": "float",
           "name": "DiscountOneYear",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         }
