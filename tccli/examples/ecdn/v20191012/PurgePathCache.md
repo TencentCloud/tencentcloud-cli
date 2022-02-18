@@ -7,8 +7,7 @@ Input:
 ```
 tccli ecdn PurgePathCache --cli-unfold-argument  \
     --Paths http://www.test.com/test/ \
-    --FlushType flush \
-    --Area mainland
+    --FlushType flush
 ```
 
 Output: 

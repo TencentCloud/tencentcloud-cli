@@ -30,12 +30,18 @@ Output:
                 "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
                 "CloudLogState": "",
                 "FlowLogDescription": "",
+                "Enable": true,
+                "StorageType": "cls",
                 "TagSet": [
                     {
                         "Key": "city",
                         "Value": "shanghai"
                     }
                 ],
+                "FlowLogStorage": {
+                    "StorageTopic": "",
+                    "StorageId": ""
+                },
                 "CreatedTime": "0000-00-00 00:00:00"
             }
         ],

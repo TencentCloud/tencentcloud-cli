@@ -54,7 +54,8 @@ Output:
                 }
             ],
             "DBCharset": "UTF8",
-            "DBVersion": "10",
+            "DBVersion": "10.4",
+            "DBMajorVersion": "10",
             "DBKernelVersion": "v10.4_r1.0",
             "CreateTime": "2017-12-28 19:23:19",
             "UpdateTime": "2018-01-18 15:54:32",
@@ -72,7 +73,17 @@ Output:
                     "TagValue": "v1"
                 }
             ],
-            "NetworkAccessList": []
+            "NetworkAccessList": [],
+            "DBNodeSet": [
+                {
+                    "Role": "Primary",
+                    "Zone": "ap-guangzhou-2"
+                },
+                {
+                    "Role": "Standby",
+                    "Zone": "ap-guangzhou-3"
+                }
+            ]
         }
     }
 }

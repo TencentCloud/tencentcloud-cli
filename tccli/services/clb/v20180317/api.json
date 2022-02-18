@@ -31,7 +31,7 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n权限说明：\n调用克隆接口用户需要具有：CreateLoadBalancer、CreateLoadBalancerListeners、CreateListenerRules、BatchRegisterTargets、SetLoadBalancerSecurityGroups、ModifyLoadBalancerAttributes、SetLoadBalancerClsLog、DeleteLoadBalancer权限，其中DeleteLoadBalancer用于克隆失败回滚流程，如果没有该接口权限，克隆失败后可能会残留克隆失败的CLB数据。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse"
@@ -55,7 +55,7 @@
       "output": "CreateLoadBalancerResponse"
     },
     "CreateLoadBalancerSnatIps": {
-      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。",
+      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "CreateLoadBalancerSnatIpsRequest",
       "name": "添加SnatIp",
       "output": "CreateLoadBalancerSnatIpsResponse"
@@ -97,7 +97,7 @@
       "output": "DeleteLoadBalancerListenersResponse"
     },
     "DeleteLoadBalancerSnatIps": {
-      "document": "这个接口用于删除SnatPro的负载均衡的SnatIp。",
+      "document": "这个接口用于删除SnatPro的负载均衡的SnatIp。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DeleteLoadBalancerSnatIpsRequest",
       "name": "删除SnatIp",
       "output": "DeleteLoadBalancerSnatIpsResponse"
@@ -343,7 +343,7 @@
       "output": "ModifyListenerResponse"
     },
     "ModifyLoadBalancerAttributes": {
-      "document": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。",
+      "document": "修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "ModifyLoadBalancerAttributesRequest",
       "name": "修改负载均衡实例的属性",
       "output": "ModifyLoadBalancerAttributesResponse"
@@ -629,6 +629,7 @@
         {
           "default": "",
           "document": "后端服务的类型，可取：CVM、ENI",
+          "example": "CVM",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -638,6 +639,7 @@
         {
           "default": "",
           "document": "后端服务的唯一 ID，如 ins-abcd1234",
+          "example": "ins-abcd1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -647,6 +649,7 @@
         {
           "default": "",
           "document": "后端服务的监听端口",
+          "example": "80",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -656,6 +659,7 @@
         {
           "default": "",
           "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
           "required": true,
@@ -665,6 +669,7 @@
         {
           "default": "",
           "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -674,6 +679,7 @@
         {
           "default": "",
           "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": true,
@@ -683,6 +689,7 @@
         {
           "default": "",
           "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-cvm",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -692,6 +699,7 @@
         {
           "default": "",
           "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-29 14:38:50",
           "member": "string",
           "name": "RegisteredTime",
           "required": true,
@@ -701,6 +709,7 @@
         {
           "default": "",
           "document": "弹性网卡唯一ID，如 eni-1234abcd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-1234abcd",
           "member": "string",
           "name": "EniId",
           "required": true,
@@ -1657,6 +1666,15 @@
         },
         {
           "default": "",
+          "document": "性能保障规格。",
+          "example": "sla-1",
+          "member": "string",
+          "name": "SlaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "Stgw独占集群的标签。",
           "example": "test",
           "member": "string",
@@ -2111,21 +2129,21 @@
       "members": [
         {
           "default": "",
-          "document": "日志集的保存周期，单位：天，最大 90。",
-          "example": "7",
-          "member": "uint64",
-          "name": "Period",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "日志集的名字，不能和cls其他日志集重名。不填默认为clb_logset。",
           "example": "clb_logset",
           "member": "string",
           "name": "LogsetName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集的保存周期，单位：天。",
+          "example": "7",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -2548,6 +2566,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2747,6 +2774,15 @@
           "name": "TopicType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集的保存周期，单位：天，默认30天。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3079,7 +3115,7 @@
         },
         {
           "default": "",
-          "document": "要删除的转发规则的域名，已提供LocationIds参数时本参数不生效。",
+          "document": "要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
@@ -3097,7 +3133,7 @@
         },
         {
           "default": "",
-          "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名。",
+          "document": "监听器下必须配置一个默认域名，当需要删除默认域名时，可以指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。",
           "example": "www.default.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
@@ -4888,6 +4924,15 @@
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单ID。",
+          "example": "2022XXXX",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4903,6 +4948,15 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "由负载均衡实例唯一 ID 组成的数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lb-6efswuxa\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4979,6 +5033,7 @@
         {
           "default": "",
           "document": "是否开通VIP直通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "bool",
           "name": "ZhiTong",
           "required": true,
@@ -4988,6 +5043,7 @@
         {
           "default": "",
           "document": "TgwGroup名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
           "member": "string",
           "name": "TgwGroupName",
           "required": true,
@@ -5176,7 +5232,7 @@
         },
         {
           "default": "",
-          "document": "自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SourceIpType",
@@ -6586,6 +6642,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6860,7 +6926,7 @@
         },
         {
           "default": "",
-          "document": "域名（必须是已经创建的转发规则下的域名）。",
+          "document": "域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。",
           "example": "foo.net",
           "member": "string",
           "name": "Domain",
@@ -6869,7 +6935,7 @@
         },
         {
           "default": "",
-          "document": "要修改的新域名。",
+          "document": "要修改的新域名。NewDomain和NewDomains只能传一个。",
           "example": "www.new.example.com",
           "member": "string",
           "name": "NewDomain",
@@ -6905,12 +6971,21 @@
         },
         {
           "default": "",
-          "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。",
+          "document": "监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。",
           "example": "www.qcloud.example.com",
           "member": "string",
           "name": "NewDefaultServerDomain",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要修改的新域名列表。NewDomain和NewDomains只能传一个。",
+          "example": "[\"www.new.example.com\"]",
+          "member": "string",
+          "name": "NewDomains",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8033,21 +8108,21 @@
       "members": [
         {
           "default": "",
-          "document": "转发规则的域名。长度限制为：1~80。",
-          "example": "www.xxxx.com",
+          "document": "转发规则的路径。长度限制为：1~200。",
+          "example": "/xxxx",
           "member": "string",
-          "name": "Domain",
+          "name": "Url",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "转发规则的路径。长度限制为：1~200。",
-          "example": "/xxxx",
+          "document": "转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "example": "www.xxxx.com",
           "member": "string",
-          "name": "Url",
-          "required": true,
+          "name": "Domain",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8160,6 +8235,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -8170,6 +8255,7 @@
         {
           "default": "",
           "document": "转发规则的 ID",
+          "example": "loc-xxx",
           "member": "string",
           "name": "LocationId",
           "required": false,
@@ -8179,6 +8265,7 @@
         {
           "default": "",
           "document": "转发规则的域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.xxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -8188,6 +8275,7 @@
         {
           "default": "",
           "document": "转发规则的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -8197,6 +8285,7 @@
         {
           "default": "",
           "document": "会话保持时间",
+          "example": "无",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
@@ -8206,6 +8295,7 @@
         {
           "default": "",
           "document": "健康检查信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -8215,6 +8305,7 @@
         {
           "default": "",
           "document": "证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
           "required": false,
@@ -8224,6 +8315,7 @@
         {
           "default": "",
           "document": "规则的请求转发方式",
+          "example": "无",
           "member": "string",
           "name": "Scheduler",
           "required": false,
@@ -8233,6 +8325,7 @@
         {
           "default": "",
           "document": "转发规则所属的监听器 ID",
+          "example": "无",
           "member": "string",
           "name": "ListenerId",
           "required": true,
@@ -8242,6 +8335,7 @@
         {
           "default": "",
           "document": "转发规则的重定向目标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RewriteTarget",
           "name": "RewriteTarget",
           "required": true,
@@ -8251,6 +8345,7 @@
         {
           "default": "",
           "document": "是否开启gzip",
+          "example": "无",
           "member": "bool",
           "name": "HttpGzip",
           "required": true,
@@ -8260,6 +8355,7 @@
         {
           "default": "",
           "document": "转发规则是否为自动创建",
+          "example": "无",
           "member": "bool",
           "name": "BeAutoCreated",
           "required": true,
@@ -8269,6 +8365,7 @@
         {
           "default": "",
           "document": "是否作为默认域名",
+          "example": "无",
           "member": "bool",
           "name": "DefaultServer",
           "required": true,
@@ -8278,6 +8375,7 @@
         {
           "default": "",
           "document": "是否开启Http2",
+          "example": "无",
           "member": "bool",
           "name": "Http2",
           "required": true,
@@ -8287,6 +8385,7 @@
         {
           "default": "",
           "document": "负载均衡与后端服务之间的转发协议",
+          "example": "无",
           "member": "string",
           "name": "ForwardType",
           "required": true,
@@ -8296,6 +8395,7 @@
         {
           "default": "",
           "document": "转发规则的创建时间",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8305,6 +8405,7 @@
         {
           "default": "",
           "document": "后端服务器类型",
+          "example": "无",
           "member": "string",
           "name": "TargetType",
           "required": true,
@@ -8314,6 +8415,7 @@
         {
           "default": "",
           "document": "绑定的目标组基本信息；当规则绑定目标组时，会返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
           "required": true,
@@ -8323,6 +8425,7 @@
         {
           "default": "",
           "document": "WAF实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "WafDomainId",
           "required": true,
@@ -8332,6 +8435,7 @@
         {
           "default": "",
           "document": "TRPC被调服务器路由，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TrpcCallee",
           "required": true,
@@ -8341,6 +8445,7 @@
         {
           "default": "",
           "document": "TRPC调用服务接口，ForwardType为TRPC时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TrpcFunc",
           "required": true,
@@ -8350,10 +8455,21 @@
         {
           "default": "",
           "document": "QUIC状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "QuicStatus",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则的域名列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"www.xxxx.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

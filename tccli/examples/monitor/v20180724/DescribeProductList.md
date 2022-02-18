@@ -1,4 +1,4 @@
-**Example 1: 查询云监控产品列表**
+**Example 1: 分页查询产品列表**
 
 
 
@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli monitor DescribeProductList --cli-unfold-argument  \
+    --Limit 5 \
     --Module monitor \
-    --Order DESC \
-    --Offset 0 \
-    --Limit 5
+    --Offset 0
 ```
 
 Output: 
@@ -18,33 +17,33 @@ Output:
     "Response": {
         "ProductList": [
             {
-                "ProductName": "shan_17_01_policy01",
-                "ProductEnName": "shan_17_01_policy01",
-                "Namespace": "test/17_01"
+                "ProductName": "私有网络-NAT网关",
+                "ProductEnName": "NAT Gateway",
+                "Namespace": "qce/nat_qos_stats"
             },
             {
-                "ProductName": "redis测试",
-                "ProductEnName": "redis_test",
-                "Namespace": "test/redistest"
+                "ProductName": "CDN-CDN域名国内",
+                "ProductEnName": "CDN-China_CDN_Domain",
+                "Namespace": "qce/cdn"
             },
             {
-                "ProductName": "负载均衡-七层集群",
-                "ProductEnName": "Cloud Load Banlancer-Layer-7 Cluster",
-                "Namespace": "qce/loadbalance"
+                "ProductName": "CDN-CDN项目国内",
+                "ProductEnName": "CDN-China_CDN_Project",
+                "Namespace": "qce/cdn"
             },
             {
-                "ProductName": "aaaa",
-                "ProductEnName": "dddd",
-                "Namespace": "min/test23"
+                "ProductName": "云服务器-基础监控",
+                "ProductEnName": "Cloud Virtual Machine",
+                "Namespace": "qce/cvm"
             },
             {
-                "ProductName": "测试的策略类型",
-                "ProductEnName": "testpolicytype",
-                "Namespace": "qce/rabbit"
+                "ProductName": "专线接入-物理专线",
+                "ProductEnName": "Physical dedicated line",
+                "Namespace": "qce/dc"
             }
         ],
-        "RequestId": "addfaffqqn",
-        "TotalCount": 294
+        "RequestId": "28b84e33-8865-4cd3-a4ac-bdacccefbb2d",
+        "TotalCount": 446
     }
 }
 ```

@@ -1,16 +1,15 @@
-**Example 1: 根据时间获取回放文件列表(云端录制用)**
+**Example 1: 查询录像文件列表**
 
-根据时间获取回放文件列表(云端录制用)
+
 
 Input: 
 
 ```
 tccli iotvideoindustry DescribeVideoList --cli-unfold-argument  \
-    --DeviceId 99870353841320000007_99870353841320000007 \
-    --Offset 0 \
-    --Limit 10 \
-    --StartTime 1616660711 \
-    --EndTime 1616661017
+    --ChannelId 99576636581320000330_99576636581320000330 \
+    --Limit 2 \
+    --DeviceId 99576636581320000330_99576636581320000330 \
+    --Offset 0
 ```
 
 Output: 
@@ -18,29 +17,43 @@ Output:
 {
     "Response": {
         "VideoList": {
-            "EventId": 1,
+            "EventId": 0,
             "VideoUrl": "xx",
             "RecordTaskId": "xx",
-            "SceneId": 1,
-            "StartTime": 1616661013,
+            "RecordId": "xx",
+            "SceneId": 0,
+            "StartTime": 0,
             "RecordStatus": 0,
             "RecordPlanId": "xx",
-            "EndTime": 1616661314,
+            "EndTime": 0,
             "WarnId": 0
         },
-        "TotalCount": 1,
+        "TotalCount": 1752,
         "RequestId": "xx",
         "RecordList": [
             {
-                "EventId": 0,
+                "EventId": 1,
                 "VideoUrl": "xx",
                 "RecordTaskId": "xx",
-                "SceneId": 1,
-                "StartTime": 0,
-                "RecordStatus": 0,
+                "RecordId": "xx",
+                "SceneId": 0,
+                "StartTime": 1639470612,
+                "RecordStatus": 1,
                 "RecordPlanId": "xx",
                 "EndTime": 0,
-                "WarnId": 1
+                "WarnId": 0
+            },
+            {
+                "EventId": 1,
+                "VideoUrl": "xx",
+                "RecordTaskId": "xx",
+                "RecordId": "xx",
+                "SceneId": 0,
+                "StartTime": 1639470009,
+                "RecordPlanId": "xx",
+                "RecordStatus": 0,
+                "EndTime": 1639470609,
+                "WarnId": 0
             }
         ]
     }

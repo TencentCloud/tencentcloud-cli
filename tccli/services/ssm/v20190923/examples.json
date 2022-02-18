@@ -19,8 +19,8 @@
     "CreateSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=CreateSecret\r\n&SecretName=test_secret\r\n&VersionId=v1.0\r\n&Description=test create secret\r\n&SecretString=test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\"\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=CreateSecret\n&SecretName=test_secret\n&VersionId=v1.0\n&Description=test create secret\n&SecretString=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9debf284-eff9-465a-97b7-163a8b1cccaf\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"TagCode\": 1,\n        \"TagMsg\": \"xx\"\n    }\n}",
         "title": "创建新的凭据信息"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://ssm.tencentcloudapi.com/?Action=DescribeSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"xx\",\n        \"ProductName\": \"xx\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecretType\": 0,\n        \"SecretName\": \"xx\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"xxx\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"xxx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Description\": \"xx\",\n        \"CreateUin\": 1,\n        \"ResourceID\": \"xx\",\n        \"ProductName\": \"xx\",\n        \"RotationStatus\": true,\n        \"KmsKeyId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SecretType\": 0,\n        \"SecretName\": \"xx\",\n        \"RotationFrequency\": 1,\n        \"DeleteTime\": 1,\n        \"CreateTime\": 1,\n        \"ResourceName\": \"xxx\",\n        \"ProjectID\": 1,\n        \"AssociatedInstanceIDs\": [\n            \"xxx\"\n        ],\n        \"TargetUin\": 12345\n    }\n}",
         "title": "获取凭据详情信息"
       }
     ],
@@ -99,7 +99,7 @@
     "GetRegions": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=GetRegions\r\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=GetRegions\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1f030f9-35ea-4727-9867-f7b0e214feea\",\n        \"Regions\": [\n            \"ap-guangzhou\",\n            \"ap-hongkong\"\n        ]\n    }\n}",
         "title": "获取控制台展示region列表"
       }
@@ -123,15 +123,15 @@
     "GetServiceStatus": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=GetServiceStatus\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a327ad8-5fef-41d5-b1a1-73d58af83d66\",\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1\n    }\n}",
+        "input": "https://ssm.tencentcloudapi.com/?Action=GetServiceStatus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a327ad8-5fef-41d5-b1a1-73d58af83d66\",\n        \"ServiceEnabled\": true,\n        \"InvalidType\": 1,\n        \"AccessKeyEscrowEnabled\": true\n    }\n}",
         "title": "获取服务开启状态"
       }
     ],
     "ListSecretVersionIds": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecretVersionIds\r\n&SecretName=test\r\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=ListSecretVersionIds\n&SecretName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"56fe436b-16ca-402e-a9bb-83c14e9cc9e8\",\n        \"SecretName\": \"test\",\n        \"Versions\": [\n            {\n                \"VersionId\": \"v2.0\",\n                \"CreateTime\": 1574161372\n            },\n            {\n                \"VersionId\": \"v1.0\",\n                \"CreateTime\": 1574161748\n            }\n        ]\n    }\n}",
         "title": "获取指定凭据下的版本列表信息"
       }
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "https://ssm.tencentcloudapi.com/?Action=ListSecrets\n&Limit=2\n&SecretType=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SecretMetadatas\": [\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"ProjectID\": 0,\n                \"ProductName\": \"xx\",\n                \"RotationStatus\": 0,\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"SecretName\": \"xx\",\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            },\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"SecretName\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"RotationStatus\": 0,\n                \"ProjectID\": 0,\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SecretMetadatas\": [\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"ProjectID\": 0,\n                \"ProductName\": \"xx\",\n                \"RotationStatus\": 0,\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"SecretName\": \"xx\",\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1,\n                \"TargetUin\": 0\n            },\n            {\n                \"Status\": \"xx\",\n                \"Description\": \"xx\",\n                \"AssociatedInstanceIDs\": [\n                    \"xx\"\n                ],\n                \"CreateUin\": 1,\n                \"SecretName\": \"xx\",\n                \"KmsKeyType\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"SecretType\": 0,\n                \"KmsKeyId\": \"xx\",\n                \"RotationStatus\": 0,\n                \"ProjectID\": 0,\n                \"ResourceName\": \"xx\",\n                \"DeleteTime\": 1,\n                \"CreateTime\": 1,\n                \"NextRotationTime\": 1,\n                \"TargetUin\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取凭据详细信息列表"
       }
     ],
@@ -155,7 +155,7 @@
     "RestoreSecret": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=RestoreSecret\r\n&SecretName=test\r\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=RestoreSecret\n&SecretName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf199317-0d31-4dba-a5e7-217dc37df2d4\",\n        \"SecretName\": \"test\"\n    }\n}",
         "title": "恢复计划删除中的凭据"
       }
@@ -164,14 +164,14 @@
       {
         "document": "",
         "input": "https://ssm.tencentcloudapi.com/?Action=RotateProductSecret\n&SecretName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"FlowID\": 123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2609a8fd-4584-4f89-98be-8c7ae1b81ef4\",\n        \"FlowID\": 0\n    }\n}",
         "title": "轮转云产品凭据"
       }
     ],
     "UpdateDescription": [
       {
         "document": "",
-        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateDescription\r\n&SecretName=test\r\n&Description=new desc\r\n&<公共请求参数>",
+        "input": "https://ssm.tencentcloudapi.com/?Action=UpdateDescription\n&SecretName=test\n&Description=new desc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfa4908b-a586-4d44-8f76-3fad156c1be2\",\n        \"SecretName\": \"test\"\n    }\n}",
         "title": "更新凭据描述信息"
       }

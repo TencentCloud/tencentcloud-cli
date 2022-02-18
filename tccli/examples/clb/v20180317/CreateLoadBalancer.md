@@ -20,6 +20,7 @@ Output:
         "LoadBalancerIds": [
             "lb-6efswuxa"
         ],
+        "DealName": "20220101660009831340631",
         "RequestId": "9b3f0b57-fb64-4918-8dd6-ce02604fb52c"
     }
 }
@@ -47,6 +48,7 @@ Output:
         "LoadBalancerIds": [
             "lb-kmfrnqci"
         ],
+        "DealName": "20211230660009761735781",
         "RequestId": "7ffa6830-cd1b-4bc4-8e24-1688885f594a"
     }
 }

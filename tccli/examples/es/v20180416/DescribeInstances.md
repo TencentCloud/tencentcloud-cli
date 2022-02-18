@@ -163,6 +163,7 @@ Output:
                 "FrozenDiskSize": 1,
                 "SecurityType": 1,
                 "Uin": "xx",
+                "HealthStatus": 0,
                 "EsDomain": "xx",
                 "WarmDiskSize": 1,
                 "Deadline": "xx",
@@ -223,6 +224,7 @@ Output:
                 "SecurityGroups": [
                     "xx"
                 ],
+                "Deadline": "xx",
                 "SceneType": 0,
                 "KibanaPrivateUrl": "xx",
                 "InstanceType": 1,
@@ -329,7 +331,7 @@ Output:
                 "Uin": "xx",
                 "WarmDiskType": "xx",
                 "FrozenDiskType": "xx",
-                "Deadline": "xx",
+                "HealthStatus": 0,
                 "ChargeType": "xx",
                 "WarmCpuNum": 1,
                 "KibanaUrl": "xx",

@@ -18,7 +18,8 @@ Output:
                 "TemplateId": 2333,
                 "Name": "test",
                 "Description": "test",
-                "EngineVersion": "5.7"
+                "EngineVersion": "5.7",
+                "TemplateType": "HIGH_STABILITY"
             }
         ]
     }

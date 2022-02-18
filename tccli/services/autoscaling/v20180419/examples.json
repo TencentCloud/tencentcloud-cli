@@ -8,6 +8,20 @@
         "title": "添加实例到伸缩组中"
       }
     ],
+    "AttachLoadBalancers": [
+      {
+        "document": "",
+        "input": "https://as.tencentcloudapi.com/?Action=AttachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&LoadBalancerIds.0=lb-crhgatrf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
+        "title": "将传统负载均衡器lb-crhgatrf添加到伸缩组"
+      },
+      {
+        "document": "",
+        "input": "https://as.tencentcloudapi.com/?Action=AttachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
+        "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）添加到伸缩组"
+      }
+    ],
     "ClearLaunchConfigurationAttributes": [
       {
         "document": "",
@@ -316,6 +330,20 @@
         "title": "从伸缩组移出实例"
       }
     ],
+    "DetachLoadBalancers": [
+      {
+        "document": "",
+        "input": "https://as.tencentcloudapi.com/?Action=DetachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&LoadBalancerIds.0=lb-crhgatrf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
+        "title": "将传统负载均衡器lb-crhgatrf从伸缩组中移出"
+      },
+      {
+        "document": "",
+        "input": "https://as.tencentcloudapi.com/?Action=DetachLoadBalancers\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancerIdentifications.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancerIdentifications.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancerIdentifications.0.LocationId=loc-l3hmaev9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
+        "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）从伸缩组中移出"
+      }
+    ],
     "DisableAutoScalingGroup": [
       {
         "document": "",
@@ -374,6 +402,14 @@
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"LaunchConfigurationId\": \"asc-291kq6ku\",\n    \"UserData\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c027f22-3a3b-489a-a77a-89c53fc15212\"\n    }\n}",
         "title": "清空UserData"
+      }
+    ],
+    "ModifyLoadBalancerTargetAttributes": [
+      {
+        "document": "",
+        "input": "https://as.tencentcloudapi.com/?Action=ModifyLoadBalancerTargetAttributes\n&AutoScalingGroupId=asg-12wjuh0s\n&ForwardLoadBalancers.0.LoadBalancerId=lb-23aejgcv\n&ForwardLoadBalancers.0.ListenerId=lbl-ncw704sn\n&ForwardLoadBalancers.0.LocationId=loc-l3hmaev9\n&ForwardLoadBalancers.0.Region=ap-guangzhou\n&ForwardLoadBalancers.0.TargetAttributes.0.Port=8080\n&ForwardLoadBalancers.0.TargetAttributes.0.Weight=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
+        "title": "修改应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）的目标规则属性，将端口修改为8080，权重修改为20。"
       }
     ],
     "ModifyLoadBalancers": [

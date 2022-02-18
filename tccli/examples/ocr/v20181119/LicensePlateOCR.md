@@ -21,6 +21,7 @@ Output:
             "Width": 170,
             "Height": 21
         },
+        "Color": "蓝",
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }

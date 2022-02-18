@@ -8,7 +8,7 @@ Input:
 tccli cpdp QueryTransferResult --cli-unfold-argument  \
     --OrderId xx \
     --MerchantId xx \
-    --TransferType 0 \
+    --TransferType 1 \
     --TradeSerialNo xx \
     --MerchantAppId xx
 ```

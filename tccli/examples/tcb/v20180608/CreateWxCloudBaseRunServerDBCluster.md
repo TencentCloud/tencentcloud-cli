@@ -7,7 +7,8 @@ Input:
 ```
 tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
     --EnvId xx \
-    --AccountPassword xx
+    --AccountPassword xx \
+    --DbVersion 5.7
 ```
 
 Output: 
@@ -15,6 +16,29 @@ Output:
 {
     "Response": {
         "RequestId": "xx"
+    }
+}
+```
+
+**Example 2: success**
+
+
+
+Input: 
+
+```
+tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
+    --DbVersion 字符串 \
+    --WxAppId 字符串 \
+    --EnvId 字符串 \
+    --AccountPassword 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e1210cbf-f738-47f7-8e6d-2af814acece6"
     }
 }
 ```

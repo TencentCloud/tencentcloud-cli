@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc ModifyNetDetect --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetDetectId netd-12345678 \
     --NetDetectName test \
     --DetectDestinationIp 10.0.0.2 10.0.0.3 \

@@ -2266,6 +2266,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "20210920187006321686341",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -2275,6 +2276,7 @@
         {
           "default": "",
           "document": "订单状态",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -2284,6 +2286,7 @@
         {
           "default": "",
           "document": "支付者",
+          "example": "1234567",
           "member": "string",
           "name": "Payer",
           "required": true,
@@ -2293,6 +2296,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2022-01-07 12:01:01",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -2302,6 +2306,7 @@
         {
           "default": "",
           "document": "创建人",
+          "example": "1234567",
           "member": "string",
           "name": "Creator",
           "required": true,
@@ -2311,6 +2316,7 @@
         {
           "default": "",
           "document": "实际支付金额（分）",
+          "example": "10000",
           "member": "int64",
           "name": "RealTotalCost",
           "required": true,
@@ -2320,6 +2326,7 @@
         {
           "default": "",
           "document": "代金券抵扣金额（分）",
+          "example": "10000",
           "member": "int64",
           "name": "VoucherDecline",
           "required": true,
@@ -2329,6 +2336,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "12345",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -2338,6 +2346,7 @@
         {
           "default": "",
           "document": "产品分类ID",
+          "example": "1234567",
           "member": "int64",
           "name": "GoodsCategoryId",
           "required": true,
@@ -2347,6 +2356,7 @@
         {
           "default": "",
           "document": "产品详情",
+          "example": "p_xxxx",
           "member": "ProductInfo",
           "name": "ProductInfo",
           "required": true,
@@ -2356,6 +2366,7 @@
         {
           "default": "",
           "document": "时长",
+          "example": "1",
           "member": "float",
           "name": "TimeSpan",
           "required": true,
@@ -2365,6 +2376,7 @@
         {
           "default": "",
           "document": "时间单位",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -2374,6 +2386,7 @@
         {
           "default": "",
           "document": "货币单位",
+          "example": "CNY",
           "member": "string",
           "name": "Currency",
           "required": true,
@@ -2383,6 +2396,7 @@
         {
           "default": "",
           "document": "折扣率",
+          "example": "100",
           "member": "float",
           "name": "Policy",
           "required": true,
@@ -2392,6 +2406,7 @@
         {
           "default": "",
           "document": "单价（分）",
+          "example": "10000",
           "member": "float",
           "name": "Price",
           "required": true,
@@ -2401,6 +2416,7 @@
         {
           "default": "",
           "document": "原价（分）",
+          "example": "10000",
           "member": "float",
           "name": "TotalCost",
           "required": true,
@@ -2410,6 +2426,7 @@
         {
           "default": "",
           "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_xxxx",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -2419,6 +2436,7 @@
         {
           "default": "",
           "document": "子产品编码",
+          "example": "sp_xxxx",
           "member": "string",
           "name": "SubProductCode",
           "required": true,
@@ -2428,6 +2446,7 @@
         {
           "default": "",
           "document": "大订单号",
+          "example": "20210920187006321686342",
           "member": "string",
           "name": "BigDealId",
           "required": true,
@@ -2437,6 +2456,7 @@
         {
           "default": "",
           "document": "退费公式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
           "member": "string",
           "name": "Formula",
           "required": true,
@@ -2446,6 +2466,7 @@
         {
           "default": "",
           "document": "退费涉及订单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20210920187006321686342",
           "member": "string",
           "name": "RefReturnDeals",
           "required": true,
@@ -2455,11 +2476,22 @@
         {
           "default": "",
           "document": "付费模式：prePay 预付费 postPay后付费 riPay预留实例",
+          "example": "prePay",
           "member": "string",
           "name": "PayMode",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "交易类型\nmodifyNetworkMode 调整带宽模式\nmodifyNetworkSize 调整带宽大小\nrefund 退款\ndowngrade 降配\nupgrade 升配\nrenew 续费\npurchase 购买\npreMoveOut 包年包月迁出资源\npreMoveIn 包年包月迁入资源\npreToPost 预付费转后付费\npostMoveOut 按量计费迁出资源\npostMoveIn 按量计费迁入资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "purchase",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

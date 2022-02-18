@@ -6,6 +6,12 @@
       "name": "添加只读实例到只读组",
       "output": "AddDBInstanceToReadOnlyGroupResponse"
     },
+    "CloneDBInstance": {
+      "document": "用于克隆实例，支持指定备份集、指定时间点进行克隆。",
+      "input": "CloneDBInstanceRequest",
+      "name": "克隆实例",
+      "output": "CloneDBInstanceResponse"
+    },
     "CloseDBExtranetAccess": {
       "document": "本接口（CloseDBExtranetAccess）用于关闭实例外网链接。",
       "input": "CloseDBExtranetAccessRequest",
@@ -65,6 +71,24 @@
       "input": "DescribeAccountsRequest",
       "name": "获取实例用户列表",
       "output": "DescribeAccountsResponse"
+    },
+    "DescribeAvailableRecoveryTime": {
+      "document": "本接口（DescribeAvailableRecoveryTime）用于查询实例可恢复的时间范围。",
+      "input": "DescribeAvailableRecoveryTimeRequest",
+      "name": "查询实例可恢复的时间范围",
+      "output": "DescribeAvailableRecoveryTimeResponse"
+    },
+    "DescribeBackupPlans": {
+      "document": "本接口 (DescribeBackupPlans) 用于实例所有的备份计划查询",
+      "input": "DescribeBackupPlansRequest",
+      "name": "查询备份计划",
+      "output": "DescribeBackupPlansResponse"
+    },
+    "DescribeCloneDBInstanceSpec": {
+      "document": "本接口（DescribeCloneDBInstanceSpec）用于查询克隆实例可选择的最小规格，包括SpecCode和磁盘。",
+      "input": "DescribeCloneDBInstanceSpecRequest",
+      "name": "查询克隆实例购买规格",
+      "output": "DescribeCloneDBInstanceSpecResponse"
     },
     "DescribeDBBackups": {
       "document": "本接口（DescribeDBBackups）用于查询实例备份列表。",
@@ -215,6 +239,18 @@
       "input": "ModifyAccountRemarkRequest",
       "name": "修改帐号备注",
       "output": "ModifyAccountRemarkResponse"
+    },
+    "ModifyBackupPlan": {
+      "document": "本接口 (ModifyBackupPlan) 用于实例备份计划的修改，默认是在每天的凌晨开始全量备份，备份保留时长是7天。可以根据此接口指定时间进行实例的备份。",
+      "input": "ModifyBackupPlanRequest",
+      "name": "修改备份计划",
+      "output": "ModifyBackupPlanResponse"
+    },
+    "ModifyDBInstanceDeployment": {
+      "document": "本接口（ModifyDBInstanceDeployment）用于修改节点可用区部署方式，仅支持主实例。",
+      "input": "ModifyDBInstanceDeploymentRequest",
+      "name": "修改实例部署方式",
+      "output": "ModifyDBInstanceDeploymentResponse"
     },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。",
@@ -560,6 +596,250 @@
         }
       ],
       "usage": "out"
+    },
+    "BackupPlan": {
+      "document": "备份计划",
+      "members": [
+        {
+          "default": "",
+          "document": "备份周期",
+          "example": "[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]",
+          "member": "string",
+          "name": "BackupPeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "基础备份保留时长",
+          "example": "3",
+          "member": "uint64",
+          "name": "BaseBackupRetentionPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始备份的最早时间",
+          "example": "01:00:00",
+          "member": "string",
+          "name": "MinBackupStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始备份的最晚时间",
+          "example": "02:00:00",
+          "member": "string",
+          "name": "MaxBackupStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloneDBInstanceRequest": {
+      "document": "CloneDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "克隆的源实例ID。",
+          "example": "postgres-abcd1234",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "售卖规格ID。该参数可以通过调用DescribeProductConfig的返回值中的SpecCode字段来获取。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例容量大小，单位：GB。",
+          "example": "10",
+          "member": "int64",
+          "name": "Storage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值，按量计费模式下该参数传1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "续费标记：0-正常续费（默认）；1-自动续费。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "私有网络ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "已配置的私有网络中的子网ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新购实例的实例名称。",
+          "example": "ins-name-clone-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例需要绑定的Tag信息，默认为空。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "购买多可用区实例时填写。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。1（是），0（否），默认不使用。",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动ID。",
+          "example": "无",
+          "member": "int64",
+          "name": "ActivityId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "基础备份集ID。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "恢复时间点。",
+          "example": "无",
+          "member": "string",
+          "name": "RecoveryTargetTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloneDBInstanceResponse": {
+      "document": "CloneDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "订单流水号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloseDBExtranetAccessRequest": {
       "document": "CloseDBExtranetAccess请求参数结构体",
@@ -1070,6 +1350,15 @@
           "name": "DBKernelVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例节点信息，购买跨可用区实例时填写。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1568,6 +1857,7 @@
         {
           "default": "",
           "document": "备份文件唯一标识",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -1577,6 +1867,7 @@
         {
           "default": "",
           "document": "文件生成的开始时间",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1586,6 +1877,7 @@
         {
           "default": "",
           "document": "文件生成的结束时间",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -1595,6 +1887,7 @@
         {
           "default": "",
           "document": "文件大小(K)",
+          "example": "无",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -1604,6 +1897,7 @@
         {
           "default": "",
           "document": "策略（0-实例备份；1-多库备份）",
+          "example": "无",
           "member": "int64",
           "name": "Strategy",
           "required": true,
@@ -1613,6 +1907,7 @@
         {
           "default": "",
           "document": "类型（0-定时）",
+          "example": "无",
           "member": "int64",
           "name": "Way",
           "required": true,
@@ -1622,6 +1917,7 @@
         {
           "default": "",
           "document": "备份方式（1-完整）",
+          "example": "无",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -1631,6 +1927,7 @@
         {
           "default": "",
           "document": "状态（1-创建中；2-成功；3-失败）",
+          "example": "无",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -1640,6 +1937,7 @@
         {
           "default": "",
           "document": "DB列表",
+          "example": "无",
           "member": "string",
           "name": "DbList",
           "required": true,
@@ -1649,6 +1947,7 @@
         {
           "default": "",
           "document": "内网下载地址",
+          "example": "无",
           "member": "string",
           "name": "InternalAddr",
           "required": true,
@@ -1658,11 +1957,22 @@
         {
           "default": "",
           "document": "外网下载地址",
+          "example": "无",
           "member": "string",
           "name": "ExternalAddr",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2019,6 +2329,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例的节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2098,6 +2418,32 @@
         }
       ],
       "usage": "out"
+    },
+    "DBNode": {
+      "document": "描述实例节点信息，包括节点类型、节点所在可用区。",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型，值可以为：\nPrimary，代表主节点；\nStandby，代表备节点。",
+          "example": "Primary, Standby",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点所在可用区，例如 ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteReadOnlyGroupRequest": {
       "document": "DeleteReadOnlyGroup请求参数结构体",
@@ -2230,6 +2576,150 @@
           "member": "AccountInfo",
           "name": "Details",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableRecoveryTimeRequest": {
+      "document": "DescribeAvailableRecoveryTime请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-abcd1234",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableRecoveryTimeResponse": {
+      "document": "DescribeAvailableRecoveryTime返回参数结构体",
+      "members": [
+        {
+          "document": "可恢复的最早时间，时区为东八区（UTC+8）。",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "RecoveryBeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可恢复的最晚时间，时区为东八区（UTC+8）。",
+          "example": "2022-01-02 12:00:00",
+          "member": "string",
+          "name": "RecoveryEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupPlansRequest": {
+      "document": "DescribeBackupPlans请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupPlansResponse": {
+      "document": "DescribeBackupPlans返回参数结构体",
+      "members": [
+        {
+          "document": "实例的备份计划集",
+          "example": "无",
+          "member": "BackupPlan",
+          "name": "Plans",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloneDBInstanceSpecRequest": {
+      "document": "DescribeCloneDBInstanceSpec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-abcd1234",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。",
+          "example": "f22057d2-46c0-5808-ab8a-d0c3385afabc",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "恢复目标时间，此入参和BackupSetId必须选择一个传入。时区以东八区（UTC+8）为准。",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "RecoveryTargetTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloneDBInstanceSpecResponse": {
+      "document": "DescribeCloneDBInstanceSpec返回参数结构体",
+      "members": [
+        {
+          "document": "可购买的最小规格码。",
+          "example": "无",
+          "member": "string",
+          "name": "MinSpecCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可购买的最小磁盘容量，单位GB。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MinStorage",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3341,15 +3831,19 @@
       "members": [
         {
           "document": "返回的结果数量。",
+          "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "可用区信息集合。",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4007,6 +4501,132 @@
     },
     "ModifyAccountRemarkResponse": {
       "document": "ModifyAccountRemark返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupPlanRequest": {
+      "document": "ModifyBackupPlan请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例最早开始备份时间",
+          "example": "01:00:00",
+          "member": "string",
+          "name": "MinBackupStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例最晚开始备份时间",
+          "example": "02:00:00",
+          "member": "string",
+          "name": "MaxBackupStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例备份保留时长，取值范围为3-7，单位是天",
+          "example": "7",
+          "member": "uint64",
+          "name": "BaseBackupRetentionPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例备份周期，按照星期维度，格式为小写星期英文单词",
+          "example": "[\"monday\", \"tuesday\", \"wednesday\"]",
+          "member": "string",
+          "name": "BackupPeriod",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupPlanResponse": {
+      "document": "ModifyBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceDeploymentRequest": {
+      "document": "ModifyDBInstanceDeployment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-abcd1234",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例节点信息。",
+          "example": "无",
+          "member": "DBNode",
+          "name": "DBNodeSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchTag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。",
+          "example": "12:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。",
+          "example": "12:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceDeploymentResponse": {
+      "document": "ModifyDBInstanceDeployment返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6198,6 +6818,7 @@
         {
           "default": "",
           "document": "该可用区的英文名称",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6207,6 +6828,7 @@
         {
           "default": "",
           "document": "该可用区的中文名称",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -6216,6 +6838,7 @@
         {
           "default": "",
           "document": "该可用区对应的数字编号",
+          "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -6224,7 +6847,8 @@
         },
         {
           "default": "",
-          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用",
+          "document": "可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
           "required": true,
@@ -6234,11 +6858,22 @@
         {
           "default": "",
           "document": "该可用区是否支持Ipv6",
+          "example": "1",
           "member": "uint64",
           "name": "ZoneSupportIpv6",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该可用区对应的备可用区集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1,ap-guangzhou-2",
+          "member": "string",
+          "name": "StandbyZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

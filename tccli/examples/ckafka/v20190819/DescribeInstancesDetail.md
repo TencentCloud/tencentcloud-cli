@@ -21,13 +21,52 @@ Output:
             "TotalCount": 1,
             "InstanceList": [
                 {
-                    "InstanceId": "instance-will-s",
-                    "InstanceName": "treTest",
-                    "Status": 1
+                    "MaxTopicNumber": 0,
+                    "RenewFlag": 0,
+                    "DiskType": "xx",
+                    "Version": "xx",
+                    "RebalanceTime": "xx",
+                    "Status": 1,
+                    "VpcId": "xx",
+                    "Tags": [
+                        {
+                            "TagKey": "xx",
+                            "TagValue": "xx"
+                        }
+                    ],
+                    "InstanceId": "xx",
+                    "IsInternal": 0,
+                    "Vip": "xx",
+                    "TopicNum": 0,
+                    "SubnetId": "xx",
+                    "InstanceType": "xx",
+                    "PublicNetwork": 0,
+                    "Healthy": 0,
+                    "ZoneId": 0,
+                    "PublicNetworkChargeType": "xx",
+                    "Cvm": 0,
+                    "DiskSize": 0,
+                    "HealthyMessage": "xx",
+                    "InstanceName": "xx",
+                    "MaxPartitionNumber": 0,
+                    "PartitionNumber": 1,
+                    "ZoneIds": [
+                        0
+                    ],
+                    "ExpireTime": 0,
+                    "Bandwidth": 0,
+                    "Vport": "xx",
+                    "CreateTime": 0,
+                    "VipList": [
+                        {
+                            "Vip": "xx",
+                            "Vport": "xx"
+                        }
+                    ]
                 }
             ]
         },
-        "RequestId": "31740399-5d06-404b-a4b5-3652e21c8a2d"
+        "RequestId": "xx"
     }
 }
 ```

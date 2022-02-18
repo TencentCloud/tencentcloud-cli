@@ -4169,6 +4169,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5440,6 +5450,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "xxx",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

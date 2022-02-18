@@ -38,6 +38,22 @@
         "title": "创建文本邮件模板"
       }
     ],
+    "CreateReceiver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceiver\n<公共请求参数>\n\n{\n    \"ReceiversName\": \"收件人列表名称\",\n    \"Desc\": \"列表描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"ReceiverId\": 123\n    }\n}",
+        "title": "创建收件人列表"
+      }
+    ],
+    "CreateReceiverDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceiverDetail\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123,\n    \"Emails\": [\n        \"123\",\n        \"456@bc.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "创建单个收件人"
+      }
+    ],
     "DeleteBlackList": [
       {
         "document": "",
@@ -67,7 +83,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateID\": 10086\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
-        "title": "删除发信模版"
+        "title": "删除发信模板"
       }
     ],
     "GetEmailIdentity": [
@@ -138,6 +154,22 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEmailTemplates\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TotalCount\": 1,\n        \"TemplatesMetadata\": [\n            {\n                \"TemplateID\": 10091,\n                \"CreatedTimestamp\": 1607512575,\n                \"TemplateName\": \"Test Template\",\n                \"ReviewReason\": \"通过\",\n                \"TemplateStatus\": 0\n            }\n        ]\n    }\n}",
         "title": "获取模板列表"
+      }
+    ],
+    "ListReceivers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReceivers\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"KeyWord\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"ReceiversStatus\": 1,\n                \"ReceiverId\": 123,\n                \"ReceiversName\": \"name\",\n                \"CreateTime\": \"2021-09-28 16:40:35\",\n                \"Desc\": \"描述\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询收件人列表"
+      }
+    ],
+    "ListSendTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSendTasks\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"ReceiverId\": 123,\n    \"TaskType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"CacheCount\": 1,\n                \"UpdateTime\": \"2021-09-09 10:10:10\",\n                \"SendCount\": 1,\n                \"TimedParam\": {\n                    \"BeginTime\": \"2021-09-09 10:10:10\"\n                },\n                \"FromEmailAddress\": \"abc@cd.com\",\n                \"TaskStatus\": 1,\n                \"ReceiverId\": 1,\n                \"RequestCount\": 1,\n                \"TaskId\": \"123\",\n                \"TaskType\": 1,\n                \"Template\": {\n                    \"TemplateData\": \"{\\\"name\\\":\\\"name\\\"}\",\n                    \"TemplateID\": 1\n                },\n                \"CycleParam\": {\n                    \"IntervalTime\": 1,\n                    \"BeginTime\": \"2021-09-09 10:10:10\"\n                },\n                \"CreateTime\": \"2021-09-09 10:10:10\",\n                \"Subject\": \"邮件主题\",\n                \"ErrMsg\": \"\",\n                \"ReceiversName\": \"名称\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务"
       }
     ],
     "SendEmail": [

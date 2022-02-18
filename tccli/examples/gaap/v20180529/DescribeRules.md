@@ -26,6 +26,7 @@ Output:
                     }
                 ],
                 "RealServerCertificateId": "xx",
+                "BanStatus": "BANNED",
                 "CertificateAlias": "xx",
                 "ClientCertificateId": "xx",
                 "GaapCertificateId": "xx",

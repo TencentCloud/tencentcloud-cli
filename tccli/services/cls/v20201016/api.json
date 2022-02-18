@@ -18,18 +18,6 @@
       "name": "创建通知渠道组",
       "output": "CreateAlarmNoticeResponse"
     },
-    "CreateAsyncContextTask": {
-      "document": "本接口用于创建离线上下文任务",
-      "input": "CreateAsyncContextTaskRequest",
-      "name": "创建离线上下文任务",
-      "output": "CreateAsyncContextTaskResponse"
-    },
-    "CreateAsyncSearchTask": {
-      "document": "本接口用于创建离线检索任务",
-      "input": "CreateAsyncSearchTaskRequest",
-      "name": "创建离线检索任务",
-      "output": "CreateAsyncSearchTaskResponse"
-    },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
@@ -89,18 +77,6 @@
       "input": "DeleteAlarmNoticeRequest",
       "name": "删除通知渠道组",
       "output": "DeleteAlarmNoticeResponse"
-    },
-    "DeleteAsyncContextTask": {
-      "document": "本接口用于删除离线上下文任务",
-      "input": "DeleteAsyncContextTaskRequest",
-      "name": "删除离线上下文任务",
-      "output": "DeleteAsyncContextTaskResponse"
-    },
-    "DeleteAsyncSearchTask": {
-      "document": "本接口用于删除离线检索任务",
-      "input": "DeleteAsyncSearchTaskRequest",
-      "name": "删除离线检索任务",
-      "output": "DeleteAsyncSearchTaskResponse"
     },
     "DeleteConfig": {
       "document": "删除采集规则配置",
@@ -167,30 +143,6 @@
       "input": "DescribeAlarmsRequest",
       "name": "获取告警策略列表",
       "output": "DescribeAlarmsResponse"
-    },
-    "DescribeAsyncContextResult": {
-      "document": "本接口用户获取离线上下文任务的结果",
-      "input": "DescribeAsyncContextResultRequest",
-      "name": "获取离线上下文任务的结果",
-      "output": "DescribeAsyncContextResultResponse"
-    },
-    "DescribeAsyncContextTasks": {
-      "document": "本接口用于获取离线上下文任务列表",
-      "input": "DescribeAsyncContextTasksRequest",
-      "name": "获取离线上下文任务列表",
-      "output": "DescribeAsyncContextTasksResponse"
-    },
-    "DescribeAsyncSearchResult": {
-      "document": "本接口用户获取离线检索任务的结果",
-      "input": "DescribeAsyncSearchResultRequest",
-      "name": "获取离线检索任务的结果",
-      "output": "DescribeAsyncSearchResultResponse"
-    },
-    "DescribeAsyncSearchTasks": {
-      "document": "本接口用户获取离线检索任务列表",
-      "input": "DescribeAsyncSearchTasksRequest",
-      "name": "获取离线检索任务列表",
-      "output": "DescribeAsyncSearchTasksResponse"
     },
     "DescribeConfigMachineGroups": {
       "document": "获取采集规则配置所绑定的机器组",
@@ -799,248 +751,6 @@
       ],
       "type": "object"
     },
-    "AsyncContextTask": {
-      "document": "异步上下文任务",
-      "members": [
-        {
-          "default": "",
-          "document": "日志集ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "LogsetId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建时间，时间戳，精确到毫秒",
-          "example": "1623208886000",
-          "member": "int64",
-          "name": "CreateTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "状态，0表示待开始，1表示运行中，2表示已完成，-1表示失败",
-          "example": "0",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "异步上下文任务ID",
-          "example": "ac-xhijsyg",
-          "member": "string",
-          "name": "AsyncContextTaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "任务失败的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Search Timeout",
-          "member": "string",
-          "name": "ErrorMessage",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "日志包序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "528C1318606EFEB8-1A7",
-          "member": "string",
-          "name": "PkgId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "日志包内一条日志的序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "644567",
-          "member": "string",
-          "name": "PkgLogId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "日志时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1622454759000",
-          "member": "int64",
-          "name": "Time",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "任务完成时间，时间戳，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1623208886000",
-          "member": "int64",
-          "name": "FinishTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "相关联的异步检索ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "as-jilpoklu",
-          "member": "string",
-          "name": "AsyncSearchTaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "AsyncSearchTask": {
-      "document": "异步检索任务",
-      "members": [
-        {
-          "default": "",
-          "document": "日志集ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "LogsetId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "创建时间",
-          "example": "2021-04-21 16:57:08",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "状态，0表示待开始，1表示运行中，2表示已完成，-1表示失败",
-          "example": "0",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "异步检索任务ID",
-          "example": "as-xhijsyg",
-          "member": "string",
-          "name": "AsyncSearchTaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "查询语句",
-          "example": "ERROR",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
-          "example": "1608794854000",
-          "member": "int64",
-          "name": "From",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
-          "example": "1608794855000",
-          "member": "int64",
-          "name": "To",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "日志扫描顺序，可选值：asc(升序)、desc(降序)",
-          "example": "desc",
-          "member": "string",
-          "name": "Sort",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "任务失败的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Search Timeout",
-          "member": "string",
-          "name": "ErrorMessage",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "异步检索任务匹配的总日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
-          "member": "int64",
-          "name": "LogCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2021-04-21 16:57:08",
-          "member": "string",
-          "name": "FinishTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "CallBackInfo": {
       "document": "回调配置",
       "members": [
@@ -1523,159 +1233,6 @@
           "type": "string",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAsyncContextTaskRequest": {
-      "document": "CreateAsyncContextTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志时间，单位ms",
-          "example": "1622454759000",
-          "member": "int64",
-          "name": "Time",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "日志包序号",
-          "example": "528C1318606EFEB8-1A7",
-          "member": "string",
-          "name": "PkgId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志包内一条日志的序号",
-          "example": "644564",
-          "member": "string",
-          "name": "PkgLogId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志集ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "LogsetId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "异步检索任务ID",
-          "example": "as-65eff1fb-d552-4603-8966-03703e59188f",
-          "member": "string",
-          "name": "AsyncSearchTaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAsyncContextTaskResponse": {
-      "document": "CreateAsyncContextTask返回参数结构体",
-      "members": [
-        {
-          "document": "异步上下文任务ID",
-          "example": "ac-49ea31d0-1508-4528-8574-155442d1458a",
-          "member": "string",
-          "name": "AsyncContextTaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAsyncSearchTaskRequest": {
-      "document": "CreateAsyncSearchTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "日志集ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "LogsetId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志主题ID，目前仅支持StorageType为cold的日志主题",
-          "example": "f28b17c8-d339-4547-bfff-0953b7901355",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询语句，语句长度最大为1024",
-          "example": "ERROR",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
-          "example": "1608794854000",
-          "member": "int64",
-          "name": "From",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
-          "example": "1608794855000",
-          "member": "int64",
-          "name": "To",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "日志扫描顺序；可选值：asc(升序)、desc(降序)，默认为 desc",
-          "example": "desc",
-          "member": "string",
-          "name": "Sort",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAsyncSearchTaskResponse": {
-      "document": "CreateAsyncSearchTask返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2425,78 +1982,6 @@
       ],
       "type": "object"
     },
-    "DeleteAsyncContextTaskRequest": {
-      "document": "DeleteAsyncContextTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "异步上下文任务ID",
-          "example": "ac-49ea31d0-1508-4528-8574-155442d1458a",
-          "member": "string",
-          "name": "AsyncContextTaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteAsyncContextTaskResponse": {
-      "document": "DeleteAsyncContextTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteAsyncSearchTaskRequest": {
-      "document": "DeleteAsyncSearchTask请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "异步检索任务ID",
-          "example": "as-65eff1fb-d552-4603-8966-03703e59188f",
-          "member": "string",
-          "name": "AsyncSearchTaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteAsyncSearchTaskResponse": {
-      "document": "DeleteAsyncSearchTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteConfigFromMachineGroupRequest": {
       "document": "DeleteConfigFromMachineGroup请求参数结构体",
       "members": [
@@ -2875,312 +2360,6 @@
       ],
       "type": "object"
     },
-    "DescribeAsyncContextResultRequest": {
-      "document": "DescribeAsyncContextResult请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "异步检索任务ID",
-          "example": "as-xhijsyg",
-          "member": "string",
-          "name": "AsyncContextTaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志包序号",
-          "example": "528C1318606EFEB8-1A7",
-          "member": "string",
-          "name": "PkgId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志在日志包内的序号",
-          "example": "65536",
-          "member": "string",
-          "name": "PkgLogId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志主题ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "上文日志条数，默认值10",
-          "example": "10",
-          "member": "int64",
-          "name": "PrevLogs",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "下文日志条数，默认值10",
-          "example": "10",
-          "member": "int64",
-          "name": "NextLogs",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncContextResultResponse": {
-      "document": "DescribeAsyncContextResult返回参数结构体",
-      "members": [
-        {
-          "document": "上文日志是否已经返回",
-          "example": "True",
-          "member": "bool",
-          "name": "PrevOver",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "下文日志是否已经返回",
-          "example": "True",
-          "member": "bool",
-          "name": "NextOver",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "日志内容",
-          "example": "无",
-          "member": "LogInfo",
-          "name": "Results",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncContextTasksRequest": {
-      "document": "DescribeAsyncContextTasks请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "分页的偏移量，默认值为0",
-          "example": "10",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "分页单页限制数目，默认值为20，最大值100",
-          "example": "20",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "<br><li> topicId\n\n按照【日志主题ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> logsetId\n\n按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncContextTasksResponse": {
-      "document": "DescribeAsyncContextTasks返回参数结构体",
-      "members": [
-        {
-          "document": "异步上下文任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AsyncContextTask",
-          "name": "AsyncContextTasks",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "异步上下文任务的总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncSearchResultRequest": {
-      "document": "DescribeAsyncSearchResult请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "异步检索任务ID",
-          "example": "as-65eff1fb-d552-4603-8966-03703e59188f",
-          "member": "string",
-          "name": "AsyncSearchTaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志集ID",
-          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
-          "member": "string",
-          "name": "TopicId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
-          "example": "ZXhhbXBsZSBvZiBhc3luYyBzZWFyY2ggcmVzdWx0IGNvbnRleHQ=",
-          "member": "string",
-          "name": "Context",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "单次调用返回的日志条数，默认为20，最大为500",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncSearchResultResponse": {
-      "document": "DescribeAsyncSearchResult返回参数结构体",
-      "members": [
-        {
-          "document": "加载后续内容的Context",
-          "example": "EXAHVSKIHJH==",
-          "member": "string",
-          "name": "Context",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "日志查询结果是否全部返回",
-          "example": "True",
-          "member": "bool",
-          "name": "ListOver",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "日志内容",
-          "example": "无",
-          "member": "LogInfo",
-          "name": "Results",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncSearchTasksRequest": {
-      "document": "DescribeAsyncSearchTasks请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "分页的偏移量，默认值为0",
-          "example": "10",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "分页单页限制数目，默认值为20，最大值100",
-          "example": "20",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "<br><li> topicId\n\n按照【日志主题ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> logsetId\n\n按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAsyncSearchTasksResponse": {
-      "document": "DescribeAsyncSearchTasks返回参数结构体",
-      "members": [
-        {
-          "document": "异步检索任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AsyncSearchTask",
-          "name": "AsyncSearchTasks",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "异步检索任务的总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeConfigMachineGroupsRequest": {
       "document": "DescribeConfigMachineGroups请求参数结构体",
       "members": [
@@ -3483,7 +2662,7 @@
         },
         {
           "default": "",
-          "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS",
+          "document": "日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
           "name": "BTime",
@@ -3785,7 +2964,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "\b当前用户可用最新的\bLoglistener版本",
+          "document": "当前用户可用最新的Loglistener版本",
           "example": "2.2.0",
           "member": "string",
           "name": "LatestAgentVersion",
@@ -3969,7 +3148,7 @@
       "members": [
         {
           "default": "",
-          "document": "<br><li> topicName\n\n按照【日志主题名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【日志主题ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> logsetId\n\n按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。\n\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否\n\n<br><li> storageType\n\n按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）\n类型：String\n\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li> topicName按照【日志主题名称】进行过滤。类型：String必选：否<br><li> logsetName按照【日志集名称】进行过滤。类型：String必选：否<br><li> topicId按照【日志主题ID】进行过滤。类型：String必选：否<br><li> logsetId按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String必选：否<br><li> tagKey按照【标签键】进行过滤。类型：String必选：否<br><li> tag:tagKey按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。类型：String必选：否<br><li> storageType按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（离线存储）类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4597,7 +3776,8 @@
       "members": [
         {
           "default": "",
-          "document": "需要配置键值或者元字段索引的字段",
+          "document": "需要配置键值或者元字段索引的字段，元字段Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀",
+          "example": "无",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -4607,6 +3787,7 @@
         {
           "default": "",
           "document": "字段的索引描述信息",
+          "example": "无",
           "member": "ValueInfo",
           "name": "Value",
           "required": true,
@@ -5489,7 +4670,7 @@
         },
         {
           "default": "",
-          "document": "索引规则，Rule和Effective两个必须有一个参数存在",
+          "document": "索引规则",
           "example": "无",
           "member": "RuleInfo",
           "name": "Rule",
@@ -6088,11 +5269,12 @@
       "usage": "both"
     },
     "RuleTagInfo": {
-      "document": "标签索引配置信息",
+      "document": "元字段索引配置",
       "members": [
         {
           "default": "",
           "document": "是否大小写敏感",
+          "example": "无",
           "member": "bool",
           "name": "CaseSensitive",
           "required": true,
@@ -6101,7 +5283,8 @@
         },
         {
           "default": "",
-          "document": "标签索引配置中的字段信息",
+          "document": "元字段索引配置中的字段信息",
+          "example": "无",
           "member": "KeyValueInfo",
           "name": "KeyValues",
           "required": true,

@@ -13,16 +13,18 @@ Output:
     "Response": {
         "Data": [
             {
-                "Uin": 100000546533,
-                "Name": "test124",
-                "Uid": 1001774,
-                "Remark": "test",
+                "Uin": 100021969091,
+                "Name": "cam001",
+                "Uid": 11398137,
+                "Remark": "",
                 "ConsoleLogin": 1,
-                "PhoneNum": "10086",
+                "PhoneNum": "",
                 "CountryCode": "86",
-                "Email": "123@qq.com"
+                "Email": "",
+                "CreateTime": "2021-10-28 18:02:00"
             }
-        ]
+        ],
+        "RequestId": "b2c7267c-8ee5-408b-9a88-ac359f13c8b1"
     }
 }
 ```

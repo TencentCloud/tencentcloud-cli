@@ -38,7 +38,7 @@ Output:
 
 **Example 2: 创建12版本中最新内核版本的PostgreSQL实例**
 
-创建12版本中最新内核版本的PostgreSQL实例
+创建12版本中最新内核版本的PostgreSQL实例（跨可用区）
 
 Input: 
 
@@ -55,7 +55,11 @@ tccli postgres CreateInstances --cli-unfold-argument  \
     --AutoRenewFlag 1 \
     --Charset UTF8 \
     --AdminName test2313 \
-    --AdminPassword ' xxxxxxx'
+    --AdminPassword ' xxxxxxx' \
+    --DBNodeSet.0.Role Primary \
+    --DBNodeSet.0.Zone ap-guangzhou-2 \
+    --DBNodeSet.1.Role Standby \
+    --DBNodeSet.1.Zone ap-guangzhou-3
 ```
 
 Output: 

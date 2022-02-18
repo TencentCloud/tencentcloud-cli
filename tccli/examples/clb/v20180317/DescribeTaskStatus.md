@@ -14,6 +14,9 @@ Output:
 {
     "Response": {
         "Status": 0,
+        "LoadBalancerIds": [
+            "lb-6efswuxa"
+        ],
         "RequestId": "917384bc-5b8d-4b68-a0bc-a58f815e8e3b"
     }
 }

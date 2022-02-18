@@ -14,7 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "xx",
+        "FailedItems": [
+            "xx"
+        ]
     }
 }
 ```

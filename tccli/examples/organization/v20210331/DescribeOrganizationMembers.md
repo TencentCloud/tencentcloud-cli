@@ -23,6 +23,7 @@ Output:
                 "Name": "test2",
                 "NodeId": 27,
                 "NodeName": "",
+                "IsAllowQuit": "Denied",
                 "OrgPermission": [
                     {
                         "Id": 1,
@@ -36,6 +37,9 @@ Output:
                 "OrgPolicyName": "财务管理",
                 "OrgPolicyType": "Financial",
                 "Remark": "123",
+                "PayUin": "",
+                "PayName": "",
+                "OrgIdentity": [],
                 "UpdateTime": "2021-04-17 12:19:07"
             },
             {
@@ -45,6 +49,7 @@ Output:
                 "Name": "",
                 "NodeId": 26,
                 "NodeName": "",
+                "IsAllowQuit": "Denied",
                 "OrgPermission": [
                     {
                         "Id": 1,
@@ -70,6 +75,9 @@ Output:
                 "OrgPolicyName": "财务管理",
                 "OrgPolicyType": "Financial",
                 "Remark": "",
+                "PayUin": "",
+                "PayName": "",
+                "OrgIdentity": [],
                 "UpdateTime": "2021-04-16 11:49:39"
             }
         ],

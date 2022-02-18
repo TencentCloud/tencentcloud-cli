@@ -19,7 +19,7 @@
     "DeleteEcdnDomain": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DeleteEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DeleteEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "删除加速域名"
       }
@@ -27,16 +27,16 @@
     "DescribeDomains": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomains\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"104fcdb5-293c-4f6f-b63d-0c9e430264e3\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cname\": \"test.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxx\",\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomains\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"104fcdb5-293c-4f6f-b63d-0c9e430264e3\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cname\": \"test.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"Tag\": [],\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxx\",\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "查询域名简要信息"
       }
     ],
     "DescribeDomainsConfig": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomainsConfig\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"932fe708-0ce1-46ec-b403-bcd8bdb08fdd\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cache\": {\n                    \"CacheRules\": [\n                        {\n                            \"CacheType\": \"all\",\n                            \"CacheContents\": [\n                                \"*\"\n                            ],\n                            \"CacheTime\": 0\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"gif\",\n                                \"png\",\n                                \"bmp\",\n                                \"jpg\",\n                                \"jpeg\",\n                                \"mp3\",\n                                \"wma\",\n                                \"flv\",\n                                \"mp4\",\n                                \"wmv\",\n                                \"avi\",\n                                \"m3u8\",\n                                \"ts\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"doc\",\n                                \"docx\",\n                                \"xls\",\n                                \"xlsx\",\n                                \"ppt\",\n                                \"pptx\",\n                                \"txt\",\n                                \"pdf\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"exe\",\n                                \"apk\",\n                                \"ipa\",\n                                \"rar\",\n                                \"zip\",\n                                \"7z\",\n                                \"css\",\n                                \"js\",\n                                \"xml\",\n                                \"ini\",\n                                \"swf\",\n                                \"ico\"\n                            ],\n                            \"CacheTime\": 86400\n                        }\n                    ]\n                },\n                \"CacheKey\": {\n                    \"FullUrlCache\": \"on\"\n                },\n                \"Cname\": \"test.com.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"ForceRedirect\": null,\n                \"Https\": {\n                    \"Switch\": \"off\",\n                    \"Http2\": \"off\",\n                    \"Spdy\": \"off\",\n                    \"OcspStapling\": \"off\",\n                    \"VerifyClient\": \"off\",\n                    \"CertInfo\": null,\n                    \"ClientCertInfo\": null,\n                    \"SslStatus\": \"closed\"\n                },\n                \"IpFilter\": {\n                    \"Switch\": \"off\",\n                    \"FilterType\": \"blacklist\",\n                    \"Filters\": []\n                },\n                \"IpFreqLimit\": {\n                    \"Switch\": \"off\",\n                    \"Qps\": null\n                },\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxxxx\",\n                \"ResponseHeader\": {\n                    \"HeaderRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeDomainsConfig\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"932fe708-0ce1-46ec-b403-bcd8bdb08fdd\",\n        \"Domains\": [\n            {\n                \"AppId\": 1251000000,\n                \"Area\": \"mainland\",\n                \"Cache\": {\n                    \"CacheRules\": [\n                        {\n                            \"CacheType\": \"all\",\n                            \"CacheContents\": [\n                                \"*\"\n                            ],\n                            \"CacheTime\": 0\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"gif\",\n                                \"png\",\n                                \"bmp\",\n                                \"jpg\",\n                                \"jpeg\",\n                                \"mp3\",\n                                \"wma\",\n                                \"flv\",\n                                \"mp4\",\n                                \"wmv\",\n                                \"avi\",\n                                \"m3u8\",\n                                \"ts\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"doc\",\n                                \"docx\",\n                                \"xls\",\n                                \"xlsx\",\n                                \"ppt\",\n                                \"pptx\",\n                                \"txt\",\n                                \"pdf\"\n                            ],\n                            \"CacheTime\": 86400\n                        },\n                        {\n                            \"CacheType\": \"file\",\n                            \"CacheContents\": [\n                                \"exe\",\n                                \"apk\",\n                                \"ipa\",\n                                \"rar\",\n                                \"zip\",\n                                \"7z\",\n                                \"css\",\n                                \"js\",\n                                \"xml\",\n                                \"ini\",\n                                \"swf\",\n                                \"ico\"\n                            ],\n                            \"CacheTime\": 86400\n                        }\n                    ]\n                },\n                \"CacheKey\": {\n                    \"FullUrlCache\": \"on\"\n                },\n                \"Cname\": \"test.com.com.dsa.dnsv1.com\",\n                \"CreateTime\": \"2019-12-03 15:23:50\",\n                \"Disable\": \"normal\",\n                \"Domain\": \"test.com\",\n                \"ForceRedirect\": null,\n                \"Https\": {\n                    \"Switch\": \"off\",\n                    \"Http2\": \"off\",\n                    \"Spdy\": \"off\",\n                    \"OcspStapling\": \"off\",\n                    \"VerifyClient\": \"off\",\n                    \"CertInfo\": null,\n                    \"ClientCertInfo\": null,\n                    \"SslStatus\": \"closed\"\n                },\n                \"IpFilter\": {\n                    \"Switch\": \"off\",\n                    \"FilterType\": \"blacklist\",\n                    \"Filters\": []\n                },\n                \"IpFreqLimit\": {\n                    \"Switch\": \"off\",\n                    \"Qps\": null\n                },\n                \"Origin\": {\n                    \"Origins\": [\n                        \"1.1.1.1\"\n                    ],\n                    \"OriginType\": \"ip\",\n                    \"ServerName\": null,\n                    \"OriginPullProtocol\": \"http\",\n                    \"BackupOrigins\": [],\n                    \"BackupOriginType\": null\n                },\n                \"ProjectId\": 0,\n                \"Readonly\": \"normal\",\n                \"ResourceId\": \"ecdn-xxxxxx\",\n                \"ResponseHeader\": {\n                    \"HeaderRules\": [],\n                    \"Switch\": \"off\"\n                },\n                \"Status\": \"processing\",\n                \"UpdateTime\": \"2019-12-03 15:23:50\",\n                \"Tag\": [],\n                \"WebSocket\": null\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "查询域名详细配置"
       }
     ],
@@ -75,7 +75,7 @@
     "DescribePurgeQuota": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeQuota\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeQuota\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\n        \"UrlPurge\": {\n            \"Batch\": 1000,\n            \"Total\": 10000,\n            \"Available\": 10000\n        },\n        \"PathPurge\": {\n            \"Batch\": 20,\n            \"Total\": 100,\n            \"Available\": 100\n        }\n    }\n}",
         "title": "DescribePurgeQuota"
       }
@@ -83,15 +83,15 @@
     "DescribePurgeTasks": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeTasks\r\n&PurgeType=ur\r\n&TaskId=1234567\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\"\n    }\n}",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeTasks\n&PurgeType=ur\n&TaskId=1234567\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PurgeLogs\": [\n            {\n                \"TaskId\": \"153303185323131331\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"PurgeType\": \"url\",\n                \"FlushType\": \"flush\",\n                \"CreateTime\": \"2018-07-30 18:10:53\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
         "title": "刷新历史查询"
       }
     ],
     "PurgePathCache": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgePathCache\r\n&Paths.0=http://www.test.com/test/&FlushType=flush&Area=mainland\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgePathCache\n&Paths.0=http://www.test.com/test/\n&FlushType=flush\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "刷新Url目录"
       }
@@ -99,7 +99,7 @@
     "PurgeUrlsCache": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgeUrlsCache\r\n&Urls.0=http://www.test.com/1.jpg&Area=mainland\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgeUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "刷新Url"
       }
@@ -107,7 +107,7 @@
     "StartEcdnDomain": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=StartEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=StartEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
         "title": "启用加速域名"
       }
@@ -115,7 +115,7 @@
     "StopEcdnDomain": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=StopEcdnDomain\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=StopEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
         "title": "停用加速域名"
       }

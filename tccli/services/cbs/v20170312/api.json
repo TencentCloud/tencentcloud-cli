@@ -18,6 +18,12 @@
       "name": "绑定定期快照策略",
       "output": "BindAutoSnapshotPolicyResponse"
     },
+    "CopySnapshotCrossRegions": {
+      "document": "本接口（CopySnapshotCrossRegions）用于快照跨地域复制。\n\n* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。\n* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2022年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。",
+      "input": "CopySnapshotCrossRegionsRequest",
+      "name": "快照跨地域复制",
+      "output": "CopySnapshotCrossRegionsResponse"
+    },
     "CreateAutoSnapshotPolicy": {
       "document": "本接口（CreateAutoSnapshotPolicy）用于创建定期快照策略。\n\n* 每个地域可创建的定期快照策略数量限制请参考文档[定期快照](/document/product/362/8191)。\n* 每个地域可创建的快照有数量和容量的限制，具体请见腾讯云控制台快照页面提示，如果快照超配额，定期快照创建会失败。",
       "input": "CreateAutoSnapshotPolicyRequest",
@@ -73,7 +79,7 @@
       "output": "DescribeDiskOperationLogsResponse"
     },
     "DescribeDiskStoragePool": {
-      "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、集群区域名(zone)类型等信息来查询和过滤云硬盘独享集群详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
+      "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、可用区(zone)等信息来查询和过滤云硬盘独享集群详细信息，不同的过滤条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
       "input": "DescribeDiskStoragePoolRequest",
       "name": "查询云硬盘独享集群列表",
       "output": "DescribeDiskStoragePoolResponse"
@@ -119,6 +125,12 @@
       "input": "GetSnapOverviewRequest",
       "name": "获取快照概览信息",
       "output": "GetSnapOverviewResponse"
+    },
+    "InitializeDisks": {
+      "document": "重新初始化云硬盘至云硬盘初始创建时的状态。使用云硬盘的重新初始化功能时需要注意以下4点：\n1. 如果云硬盘是由快照创建的，则重新初始化会通过此快照重新回滚此云硬盘，即将云硬盘恢复为与快照一致的状态；\n2. 如果云硬盘不是通过快照创建的，则重新初始化会清空此云硬盘的数据；请在重新初始化云硬盘前检查并备份必要的数据；\n3. 当前仅未挂载的、非共享属性的数据盘云硬盘支持重新初始化；\n4. 当创建此云硬盘的原始快照被删除时，不再支持重新初始化此云硬盘。",
+      "input": "InitializeDisksRequest",
+      "name": "重新初始化云硬盘",
+      "output": "InitializeDisksResponse"
     },
     "InquirePriceModifyDiskExtraPerformance": {
       "document": "本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。",
@@ -363,7 +375,7 @@
       "type": "object"
     },
     "AutoMountConfiguration": {
-      "document": "自动初始化、挂载云盘时指定配置。",
+      "document": "描述了新购云硬盘时自动将云硬盘初始化并挂载至云服务器内部的配置。",
       "members": [
         {
           "default": "",
@@ -545,7 +557,7 @@
         },
         {
           "default": "",
-          "document": "独享集群状态。取值范围：<br><li>NORMAL:正常<br><li>CLOSED：关闭售卖<br><li>FAULT：状态异常<br><li>ISOLATED：已隔离。",
+          "document": "独享集群状态。取值范围：<br><li>NORMAL：正常；<br><li>CLOSED：关闭，此时将不可使用该独享集群创建新的云硬盘；<br><li>FAULT：独享集群状态异常，此时独享集群将不可操作，腾讯云运维团队将会及时修复该集群；<br><li>ISOLATED：因未及时续费导致独享集群被隔离，此时将不可使用该独享集群创建新的云硬盘，对应的云硬盘也将不可操作。",
           "example": "NORMAL",
           "member": "string",
           "name": "CdcState",
@@ -555,7 +567,7 @@
         },
         {
           "default": "",
-          "document": "独享集群所属的[可用区](/document/api/213/9452#zone)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shenzhen-fsi-2",
           "member": "string",
           "name": "Zone",
@@ -575,7 +587,7 @@
         },
         {
           "default": "",
-          "document": "独享集群的资源大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群的资源容量大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CdcSize",
           "name": "CdcResource",
@@ -605,7 +617,7 @@
         },
         {
           "default": "",
-          "document": "独享集群过期时间。",
+          "document": "独享集群到期时间。",
           "example": "2029-01-01 00:00:00",
           "member": "datetime",
           "name": "ExpiredTime",
@@ -641,6 +653,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CopySnapshotCrossRegionsRequest": {
+      "document": "CopySnapshotCrossRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "快照需要复制到的目标地域，各地域的标准取值可通过接口[DescribeRegions](https://cloud.tencent.com/document/product/213/9456)查询，且只能传入支持快照的地域。",
+          "example": "[\"ap-beijing\\r\\n\"]",
+          "member": "string",
+          "name": "DestinationRegions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要跨地域复制的源快照ID，可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "example": "snap-ckgjwkqh",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新复制快照的名称，如果不传，则默认取值为“Copied 源快照ID from 地域名”。",
+          "example": "snap-hfdadhusads",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopySnapshotCrossRegionsResponse": {
+      "document": "CopySnapshotCrossRegions返回参数结构体",
+      "members": [
+        {
+          "document": "快照跨地域复制的结果，如果请求下发成功，则返回相应地地域的新快照ID，否则返回Error。",
+          "example": "无",
+          "member": "SnapshotCopyResult",
+          "name": "SnapshotCopyResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAutoSnapshotPolicyRequest": {
       "document": "CreateAutoSnapshotPolicy请求参数结构体",
@@ -907,8 +973,8 @@
         },
         {
           "default": "",
-          "document": "快照的到期时间，到期后该快照将会自动删除",
-          "example": "2020-08-01 00:00:00",
+          "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00",
+          "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
           "required": false,
@@ -1286,7 +1352,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/api/213/9452#zone)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
+          "document": "过滤条件。参数不支持同时指定`CdcIds`和`Filters`。<br><li>cdc-id - Array of String - 是否必填：否 -（过滤条件）按独享集群ID过滤。<br><li>zone - Array of String - 是否必填：否 -（过滤条件）按独享集群所在[可用区](/document/product/213/15753#ZoneInfo)过滤。<br><li>cage-id - Array of String - 是否必填：否 -（过滤条件）按独享集群所在围笼的ID过滤。<br><li>disk-type - Array of String - 是否必填：否 -（过滤条件）按照云盘介质类型过滤。(CLOUD_BASIC：表示普通云硬盘 | CLOUD_PREMIUM：表示高性能云硬盘。| CLOUD_SSD：SSD表示SSD云硬盘。)",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2020,6 +2086,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteSnapshot",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2309,6 +2385,33 @@
         }
       ],
       "usage": "out"
+    },
+    "InitializeDisksRequest": {
+      "document": "InitializeDisks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待重新初始化的云硬盘ID列表， 单次初始化限制20块以内",
+          "example": "[\"disk-12sdf234\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InitializeDisksResponse": {
+      "document": "InitializeDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InquirePriceModifyDiskExtraPerformanceRequest": {
       "document": "InquirePriceModifyDiskExtraPerformance请求参数结构体",
@@ -3450,6 +3553,52 @@
       ],
       "usage": "out"
     },
+    "SnapshotCopyResult": {
+      "document": "描述快照跨地域复制的结果。",
+      "members": [
+        {
+          "default": "",
+          "document": "复制到目标地域的新快照ID。",
+          "example": "snap-hdbc13ad",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指示具体错误信息，成功时为空字符串。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，成功时取值为“Success”。",
+          "example": "\"Success\"",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "跨地复制的目标地域。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "DestinationRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SnapshotOperationLog": {
       "document": "快照操作日志。",
       "members": [
@@ -3547,6 +3696,15 @@
           "name": "DiskIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteSnapshot",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

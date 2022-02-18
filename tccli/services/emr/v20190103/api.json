@@ -1151,6 +1151,32 @@
       ],
       "usage": "in"
     },
+    "CustomServiceDefine": {
+      "document": "共用自建组件参数",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义参数key",
+          "example": "zookeeper.quorum",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数value",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "DescribeClusterNodesRequest": {
       "document": "DescribeClusterNodes请求参数结构体",
       "members": [
@@ -1833,6 +1859,52 @@
       ],
       "usage": "both"
     },
+    "ExternalService": {
+      "document": "共用组件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "共用组件类型，EMR/CUSTOM",
+          "example": "EMR",
+          "member": "string",
+          "name": "ShareType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义参数集合",
+          "example": "无",
+          "member": "CustomServiceDefine",
+          "name": "CustomServiceDefineList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "共用组件名",
+          "example": "zookeeper",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "共用组件集群",
+          "example": "emr-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HostVolumeContext": {
       "document": "Pod HostPath挂载方式描述",
       "members": [
@@ -2084,6 +2156,15 @@
           "name": "SceneName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "共用组件信息",
+          "example": "无",
+          "member": "ExternalService",
+          "name": "ExternalService",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

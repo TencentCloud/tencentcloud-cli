@@ -24,6 +24,14 @@
         "title": "给单块盘绑定定期快照策略"
       }
     ],
+    "CopySnapshotCrossRegions": [
+      {
+        "document": "",
+        "input": "https://cbs.tencentcloudapi.com/?Action=CopySnapshotCrossRegions\n&SnapshotId=snap-ckgjwkqh\n&DestinationRegions.0=ap-beijing\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SnapshotCopyResultSet\": [\n            {\n                \"SnapshotId\": \"snap-d012rm6t\",\n                \"DestinationRegion\": \"ap-beijing\",\n                \"Code\": \"Success\",\n                \"Message\": \"\"\n            }\n        ],\n        \"RequestId\": \"98f0b5f0-7d84-4d11-9819-ee7804e524a4\"\n    }\n}",
+        "title": "将快照从广州复制到北京"
+      }
+    ],
     "CreateAutoSnapshotPolicy": [
       {
         "document": "创建一个定期快照策略，绑定该定期快照策略的云盘会在每周5的0点创建快照。",
@@ -55,7 +63,7 @@
     "CreateSnapshot": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=CreateSnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotName=snap_201711301015\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateSnapshot\n&DiskId=disk-lzrg2pwi\n&SnapshotName=snap_201711301015\n&Deadline=2022-01-08T09:47:55+00:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"snap-gybrif0z\",\n        \"RequestId\": \"1bd35eca-0c9a-6e0b-938a-5a1f80511c19\"\n    }\n}",
         "title": "创建快照"
       }
@@ -176,6 +184,14 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=GetSnapOverview\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884cc\"\n    }\n}",
         "title": "查询用户的快照概览信息"
+      }
+    ],
+    "InitializeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitializeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-ixya2wzy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aafa71a0-ed62-0fac-3ebf-5a1f808d1085\"\n    }\n}",
+        "title": "重新初始化云硬盘"
       }
     ],
     "InquirePriceModifyDiskExtraPerformance": [

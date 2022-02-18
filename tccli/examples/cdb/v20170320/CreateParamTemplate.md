@@ -11,7 +11,8 @@ tccli cdb CreateParamTemplate --cli-unfold-argument  \
     --ParamList.0.Name auto_increment_increment \
     --ParamList.0.CurrentValue 1 \
     --ParamList.1.Name binlog_format \
-    --ParamList.1.CurrentValue MIXED
+    --ParamList.1.CurrentValue MIXED \
+    --TemplateType HIGH_STABILITY
 ```
 
 Output: 

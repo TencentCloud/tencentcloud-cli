@@ -1,5 +1,21 @@
 {
   "actions": {
+    "BindDevices": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=BindDevices\r\n&GatewayProductId=12345ABCDE\r\n&GatewayDeviceName=test\r\n&ProductId=ABCDE12345\r\n&DeviceNames.0=test0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee15c53-91ac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "批量绑定子设备"
+      }
+    ],
+    "BindProducts": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=BindProducts\r\n&GatewayProductId=9I5O8HSUDJ\r\n&ProductIds.0=12345ABCDE\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee15c53-91ac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "批量绑定子产品"
+      }
+    ],
     "CallDeviceActionAsync": [
       {
         "document": "异步调用设备行为，返回调用 Id 信息。",
@@ -244,12 +260,28 @@
         "title": "获取量产详情"
       }
     ],
+    "DescribeBindedProducts": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeBindedProducts\r\n&GatewayProductId=ABCDE12345\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"5SJN3W8XG6\",\n                \"ProductName\": \"nhi7qhcp_StudioProduct101\",\n                \"ProjectId\": \"5SJYTRW8XYT\",\n                \"DataProtocol\": 1\n            }\n        ],\n        \"RequestId\": \"66245d34-a39b-41b5-85fa-8f8222c3e58e\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取网关产品已经绑定的子产品"
+      }
+    ],
     "DescribeDevice": [
       {
         "document": "用于查看设备信息",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeDevice\n&ProductId=ABCDE12345\n&DeviceName=dev01\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Device\": [\n            {\n                \"DeviceName\": \"dev01\",\n                \"Status\": 3,\n                \"DevicePsk\": \"\",\n                \"FirstOnlineTime\": 0,\n                \"LoginTime\": 0\n            }\n        ],\n        \"RequestId\": \"e020416b-bc15-4563-9afc-0e5a111a5711\"\n    }\n}",
         "title": "查看设备详情"
+      }
+    ],
+    "DescribeDeviceBindGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceBindGateway\n<公共请求参数>\n\n{\n    \"ProductId\": \"LAEG4YJE\",\n    \"DeviceName\": \"subdev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayDeviceName\": \"gwdev\",\n        \"GatewayProductId\": \"NJ27OVLZ\",\n        \"RequestId\": \"ef9ec631-7337-481b-a6c3-59a34b500198\"\n    }\n}",
+        "title": "查询设备绑定的网关设备"
       }
     ],
     "DescribeDeviceData": [
@@ -298,6 +330,22 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeFirmwareTask\n&ProductID=ABCDE12345\n&FirmwareVersion=1.0.0\n&TaskId=10000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 1000175,\n        \"Status\": 3,\n        \"CreateTime\": 1589466879,\n        \"Type\": 1,\n        \"ProductName\": \"门锁\",\n        \"OriginalVersion\": \"xx\",\n        \"UpgradeMode\": \"originalVersion\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeGatewayBindDevices": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeGatewayBindDevices\r\n&GatewayProductId=12345ABCDE\r\n&GatewayDeviceName=test\r\n&Offset=0\r\n&Limit=10\r\n&ProductId=ABCDE12345\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Devices\": [\n            {\n                \"ProductId\": \"ABCDE12345\",\n                \"DeviceName\": \"test\"\n            }\n        ],\n        \"ProductName\": \"test\",\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
+        "title": "获取网关绑定的子设备列表"
+      }
+    ],
+    "DescribeGatewaySubProducts": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeGatewaySubProducts\n&GatewayProductId=M5QJPYQ\n&Offset=0\n&Limit=10\n&ProjectId=pri_211\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "用于获取网关可绑定或解绑的子产品"
       }
     ],
     "DescribeLoRaFrequency": [
@@ -434,6 +482,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFamilyDeviceUserList\n<公共请求参数>\n\n{\n    \"ProductId\": \"CR2Q0GQ\",\n    \"DeviceName\": \"device\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"UserList\": [\n            {\n                \"UserId\": \"294078350912131072\",\n                \"Role\": 1\n            },\n            {\n                \"UserId\": \"66852374529970176\",\n                \"Role\": 0\n            }\n        ]\n    }\n}",
         "title": "GetFamilyDeviceUserList"
+      }
+    ],
+    "GetGatewaySubDeviceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGatewaySubDeviceList\n<公共请求参数>\n\n{\n    \"GatewayProductId\": \"productId\",\n    \"GatewayDeviceName\": \"deviceName\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceList\": [\n            {\n                \"ProductId\": \"ZOPEBSS\",\n                \"DeviceName\": \"sub001\",\n                \"DeviceId\": \"ZOPEBSS/sub001\",\n                \"AliasName\": \"aaaaa\",\n                \"FamilyId\": \"f_9b309d\",\n                \"RoomId\": \"0\",\n                \"IconUrl\": \"\",\n                \"IconUrlGrid\": \"\",\n                \"CreateTime\": 1627472149,\n                \"UpdateTime\": 1627472149\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取指定网关设备的子设备列表"
       }
     ],
     "GetLoRaGatewayList": [
@@ -646,6 +702,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"test\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "搜索规则"
+      }
+    ],
+    "UnbindDevices": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindDevices\r\n&GatewayProductId=12345ABCDE\r\n&GatewayDeviceName=test\r\n&ProductId=ABCDE12345\r\n&DeviceNames.0=test0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee15c53-91ac-488d-855d-c02d9f5f3d91\"\n    }\n}",
+        "title": "批量解绑子设备"
+      }
+    ],
+    "UnbindProducts": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindProducts\r\n&GatewayProductId=12345ABCDE\r\n&ProductIds.0=12345ABCDE\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GatewayDeviceNames\": [\n            \"gateway_test1\"\n        ],\n        \"RequestId\": \"32150866-743e-4a1b-ade5-c690ac2cc0b5\"\n    }\n}",
+        "title": "批量解绑子产品"
       }
     ],
     "UpdateDevicesEnableState": [

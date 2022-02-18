@@ -6,6 +6,12 @@
       "name": "绑定坐席所属技能组",
       "output": "BindStaffSkillGroupListResponse"
     },
+    "CreateCallOutSession": {
+      "document": "创建外呼会话",
+      "input": "CreateCallOutSessionRequest",
+      "name": "创建外呼会话",
+      "output": "CreateCallOutSessionResponse"
+    },
     "CreateSDKLoginToken": {
       "document": "创建 SDK 登录 Token。",
       "input": "CreateSDKLoginTokenRequest",
@@ -29,6 +35,12 @@
       "input": "DeleteStaffRequest",
       "name": "删除坐席信息",
       "output": "DeleteStaffResponse"
+    },
+    "DescribeAutoCalloutTasks": {
+      "document": "批量查询自动任务外呼",
+      "input": "DescribeAutoCalloutTasksRequest",
+      "name": "批量查询自动任务外呼",
+      "output": "DescribeAutoCalloutTasksResponse"
     },
     "DescribeCCCBuyInfoList": {
       "document": "获取用户购买信息列表",
@@ -116,6 +128,82 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AutoCalloutTaskInfo": {
+      "document": "自动外呼任务列表项",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名",
+          "example": "任务1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "被叫数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "CalleeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主叫号码列表",
+          "example": "[\"008601012345678\"]]",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "起始时间戳",
+          "example": "123",
+          "member": "int64",
+          "name": "NotBefore",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "NotAfter",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务使用的IvrId",
+          "example": "5",
+          "member": "uint64",
+          "name": "IvrId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态0初始 1运行中 2已完成 3结束中 4已结束",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BindStaffSkillGroupListRequest": {
       "document": "BindStaffSkillGroupList请求参数结构体",
       "members": [
@@ -349,6 +437,87 @@
       ],
       "usage": "out"
     },
+    "CreateCallOutSessionRequest": {
+      "document": "CreateCallOutSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用 ID",
+          "example": "14000000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客服用户 ID，一般为客服邮箱",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被叫号码，须带 0086 前缀",
+          "example": "008613012345678",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主叫号码，须带 0086 前缀",
+          "example": "008610086",
+          "member": "string",
+          "name": "Caller",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否强制使用手机外呼，当前只支持 true，若为 true 请确保已配置白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "IsForceUseMobile",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自定义数据，长度限制 1024 字节",
+          "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
+          "member": "string",
+          "name": "Uui",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCallOutSessionResponse": {
+      "document": "CreateCallOutSession返回参数结构体",
+      "members": [
+        {
+          "document": "新创建的会话 ID",
+          "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSDKLoginTokenRequest": {
       "document": "CreateSDKLoginToken请求参数结构体",
       "members": [
@@ -547,6 +716,69 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoCalloutTasksRequest": {
+      "document": "DescribeAutoCalloutTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "呼叫中心实例Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoCalloutTasksResponse": {
+      "document": "DescribeAutoCalloutTasks返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务列表",
+          "example": "[]",
+          "member": "AutoCalloutTaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1483,11 +1715,12 @@
       "usage": "out"
     },
     "IMCdrInfo": {
-      "document": "全媒体服务记录信息",
+      "document": "文本会话服务记录信息",
       "members": [
         {
           "default": "",
           "document": "服务记录ID",
+          "example": "12933",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -1497,6 +1730,7 @@
         {
           "default": "",
           "document": "服务时长秒数",
+          "example": "199",
           "member": "int64",
           "name": "Duration",
           "required": true,
@@ -1505,7 +1739,8 @@
         },
         {
           "default": "",
-          "document": "结束状态",
+          "document": "结束状态\n0 异常结束\n1 正常结束\n3 无坐席在线\n17 坐席放弃接听\n100 黑名单\n101 坐席手动转接\n102 IVR阶段放弃\n108 用户超时自动结束",
+          "example": "1",
           "member": "int64",
           "name": "EndStatus",
           "required": true,
@@ -1515,6 +1750,7 @@
         {
           "default": "",
           "document": "用户昵称",
+          "example": "访客_e8d6",
           "member": "string",
           "name": "Nickname",
           "required": true,
@@ -1524,6 +1760,7 @@
         {
           "default": "",
           "document": "服务类型 1为全媒体，2为文本客服",
+          "example": "2",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -1533,6 +1770,7 @@
         {
           "default": "",
           "document": "客服ID",
+          "example": "foo@tencent.com",
           "member": "string",
           "name": "StaffId",
           "required": true,
@@ -1542,11 +1780,42 @@
         {
           "default": "",
           "document": "服务时间戳",
+          "example": "1632814604",
           "member": "int64",
           "name": "Timestamp",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "87fa1d7a-4194-4f2a-83dc-d7c293411720",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1154",
+          "member": "string",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "foo",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

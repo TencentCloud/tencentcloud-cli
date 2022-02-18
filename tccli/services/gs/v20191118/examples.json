@@ -24,12 +24,28 @@
         "title": "SaveGameArchive示例"
       }
     ],
+    "StartPublishStream": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=StartPublishStream\n&UserId=123123\n&PublishUrl=rtmp://live.stream.com/publish\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "开始云端推流"
+      }
+    ],
     "StopGame": [
       {
         "document": "",
         "input": "https://gs.tencentcloudapi.com/?Action=StopGame\n&UserId=字符串型\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"72864dc3-9537-432c-8f01-78b4d35ea18a\"\n    }\n}",
         "title": "StopGame示例"
+      }
+    ],
+    "StopPublishStream": [
+      {
+        "document": "",
+        "input": "https://gs.tencentcloudapi.com/?Action=StopPublishStream\n&UserId=123123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "停止云端推流"
       }
     ],
     "SwitchGameArchive": [

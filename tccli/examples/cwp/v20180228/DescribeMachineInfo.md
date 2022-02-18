@@ -32,7 +32,8 @@ Output:
         "MachineStatus": "xx",
         "MachineWanIp": "xx",
         "MachineType": "xx",
-        "ProVersionOpenDate": "xx"
+        "ProVersionOpenDate": "xx",
+        "ProtectType": "BASIC_VERSION"
     }
 }
 ```

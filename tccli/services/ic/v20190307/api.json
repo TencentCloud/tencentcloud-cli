@@ -623,6 +623,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "1111111",
           "member": "uint64",
           "name": "Sdkappid",
           "required": true,
@@ -631,6 +632,7 @@
         {
           "default": "",
           "document": "续费的iccid",
+          "example": "xxxxx",
           "member": "string",
           "name": "Iccids",
           "required": true,
@@ -639,6 +641,7 @@
         {
           "default": "",
           "document": "续费的周期（单位：月）",
+          "example": "1",
           "member": "uint64",
           "name": "RenewNum",
           "required": true,
@@ -652,8 +655,10 @@
       "members": [
         {
           "document": "续费成功的订单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResRenew",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

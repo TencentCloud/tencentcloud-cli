@@ -12,7 +12,7 @@ tccli cls ModifyIndex --cli-unfold-argument  \
     --Rule.Tag.CaseSensitive False \
     --Rule.Tag.KeyValues.0.Value.Type long \
     --Rule.Tag.KeyValues.0.Value.SqlFlag True \
-    --Rule.Tag.KeyValues.0.Key __TAG__.timestamp \
+    --Rule.Tag.KeyValues.0.Key timestamp \
     --Rule.KeyValue.CaseSensitive False \
     --Rule.KeyValue.KeyValues.0.Value.Type long \
     --Rule.KeyValue.KeyValues.0.Value.SqlFlag True \

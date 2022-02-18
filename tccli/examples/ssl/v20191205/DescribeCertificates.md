@@ -75,3 +75,67 @@ Output:
 }
 ```
 
+**Example 2: 证书列表**
+
+
+
+Input: 
+
+```
+tccli ssl DescribeCertificates --cli-unfold-argument  \
+    --FilterSource buy \
+    --Limit 1 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 86,
+        "Certificates": [
+            {
+                "OwnerUin": "700000141969",
+                "ProjectId": "0",
+                "From": "trustasia",
+                "PackageType": "12",
+                "CertificateType": "SVR",
+                "ProductZhName": "TrustAsia 域名型(DV)通配符",
+                "Domain": "*.ninghhuang.top",
+                "Alias": "",
+                "Status": 1,
+                "CertificateExtra": null,
+                "VulnerabilityStatus": "INACTIVE",
+                "StatusMsg": "",
+                "VerifyType": "DNS",
+                "CertBeginTime": "2022-01-12 16:00:00",
+                "CertEndTime": "2022-05-12 16:00:00",
+                "ValidityPeriod": "12",
+                "InsertTime": "2022-01-12 15:39:35",
+                "PackageTypeName": "TrustAsia 域名型(DV)通配符",
+                "CertificateId": "su5NDtqX",
+                "SubjectAltName": null,
+                "StatusName": "已通过",
+                "IsVip": true,
+                "IsDv": true,
+                "IsWildcard": true,
+                "IsVulnerability": false,
+                "RenewAble": false,
+                "Deployable": true,
+                "ProjectInfo": {
+                    "ProjectId": "0",
+                    "OwnerUin": 0,
+                    "ProjectName": "默认项目",
+                    "ProjectCreatorUin": 0,
+                    "ProjectCreateTime": "0000-00-00 00:00:00",
+                    "ProjectResume": "默认项目"
+                },
+                "BoundResource": null,
+                "Tags": []
+            }
+        ],
+        "RequestId": "e398dd3e-68c3-4a7e-be51-bc3db5631a5d"
+    }
+}
+```
+

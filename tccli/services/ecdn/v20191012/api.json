@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddEcdnDomain": {
-      "document": "本接口（AddEcdnDomain）用于创建加速域名。",
+      "document": "本接口（AddEcdnDomain）用于创建加速域名。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41123\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "AddEcdnDomainRequest",
       "name": "新增加速域名",
       "output": "AddEcdnDomainResponse"
@@ -13,19 +13,19 @@
       "output": "CreateVerifyRecordResponse"
     },
     "DeleteEcdnDomain": {
-      "document": "本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。",
+      "document": "本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/570/42471\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DeleteEcdnDomainRequest",
       "name": "删除加速域名",
       "output": "DeleteEcdnDomainResponse"
     },
     "DescribeDomains": {
-      "document": "本接口（DescribeDomains）用于查询CDN域名基本信息，包括项目id，状态，业务类型，创建时间，更新时间等。",
+      "document": "本接口（DescribeDomains）用于查询CDN域名基本信息，包括项目id，状态，业务类型，创建时间，更新时间等。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41118\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribeDomainsRequest",
       "name": "查询域名基本信息",
       "output": "DescribeDomainsResponse"
     },
     "DescribeDomainsConfig": {
-      "document": "本接口（DescribeDomainsConfig）用于查询CDN加速域名详细配置信息。",
+      "document": "本接口（DescribeDomainsConfig）用于查询CDN加速域名详细配置信息。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41117\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribeDomainsConfigRequest",
       "name": "查询域名详细配置",
       "output": "DescribeDomainsConfigResponse"
@@ -55,37 +55,37 @@
       "output": "DescribeIpStatusResponse"
     },
     "DescribePurgeQuota": {
-      "document": "查询刷新接口的用量配额。",
+      "document": "查询刷新接口的用量配额。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41956\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribePurgeQuotaRequest",
       "name": "查询刷新用量配额",
       "output": "DescribePurgeQuotaResponse"
     },
     "DescribePurgeTasks": {
-      "document": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。",
+      "document": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/37873\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribePurgeTasksRequest",
       "name": "刷新历史查询",
       "output": "DescribePurgeTasksResponse"
     },
     "PurgePathCache": {
-      "document": "PurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。",
+      "document": "PurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"\thttps://cloud.tencent.com/document/api/570/42475\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "PurgePathCacheRequest",
       "name": "刷新目录",
       "output": "PurgePathCacheResponse"
     },
     "PurgeUrlsCache": {
-      "document": "PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。",
+      "document": "PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/37870\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "PurgeUrlsCacheRequest",
       "name": "刷新 URL",
       "output": "PurgeUrlsCacheResponse"
     },
     "StartEcdnDomain": {
-      "document": "本接口（StartEcdnDomain）用于启用加速域名，待启用域名必须处于已下线状态。",
+      "document": "本接口（StartEcdnDomain）用于启用加速域名，待启用域名必须处于已下线状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41121\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "StartEcdnDomainRequest",
       "name": "启用加速域名",
       "output": "StartEcdnDomainResponse"
     },
     "StopEcdnDomain": {
-      "document": "本接口（StopCdnDomain）用于停止加速域名，待停用加速域名必须处于已上线或部署中状态。",
+      "document": "本接口（StopCdnDomain）用于停止加速域名，待停用加速域名必须处于已上线或部署中状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41120\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "StopEcdnDomainRequest",
       "name": "停用加速域名",
       "output": "StopEcdnDomainResponse"
@@ -110,6 +110,7 @@
         {
           "default": "",
           "document": "域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -118,6 +119,7 @@
         {
           "default": "",
           "document": "源站配置。",
+          "example": "无",
           "member": "Origin",
           "name": "Origin",
           "required": true,
@@ -126,6 +128,7 @@
         {
           "default": "",
           "document": "域名加速区域，mainland，overseas或global，分别表示中国境内加速，海外加速或全球加速。",
+          "example": "global",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -134,6 +137,7 @@
         {
           "default": "",
           "document": "项目id，默认0。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -142,6 +146,7 @@
         {
           "default": "",
           "document": "IP黑白名单配置。",
+          "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
@@ -150,6 +155,7 @@
         {
           "default": "",
           "document": "IP限频配置。",
+          "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
@@ -158,6 +164,7 @@
         {
           "default": "",
           "document": "源站响应头部配置。",
+          "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
@@ -166,6 +173,7 @@
         {
           "default": "",
           "document": "节点缓存配置。",
+          "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
@@ -174,6 +182,7 @@
         {
           "default": "",
           "document": "缓存规则配置。",
+          "example": "无",
           "member": "Cache",
           "name": "Cache",
           "required": false,
@@ -182,6 +191,7 @@
         {
           "default": "",
           "document": "Https配置。",
+          "example": "无",
           "member": "Https",
           "name": "Https",
           "required": false,
@@ -190,6 +200,7 @@
         {
           "default": "",
           "document": "访问协议强制跳转配置。",
+          "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
@@ -198,6 +209,7 @@
         {
           "default": "",
           "document": "域名绑定的标签",
+          "example": "无",
           "member": "Tag",
           "name": "Tag",
           "required": false,
@@ -206,6 +218,7 @@
         {
           "default": "",
           "document": "WebSocket配置",
+          "example": "无",
           "member": "WebSocket",
           "name": "WebSocket",
           "required": false,
@@ -466,6 +479,7 @@
         {
           "default": "",
           "document": "待删除域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -492,6 +506,7 @@
         {
           "default": "",
           "document": "分页查询的偏移地址，默认0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -500,6 +515,7 @@
         {
           "default": "",
           "document": "分页查询的域名个数，默认100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -508,6 +524,7 @@
         {
           "default": "",
           "document": "查询条件过滤器。",
+          "example": "无",
           "member": "DomainFilter",
           "name": "Filters",
           "required": false,
@@ -516,6 +533,7 @@
         {
           "default": "",
           "document": "查询结果排序规则。",
+          "example": "无",
           "member": "Sort",
           "name": "Sort",
           "required": false,
@@ -529,15 +547,19 @@
       "members": [
         {
           "document": "域名列表。",
+          "example": "无",
           "member": "DomainDetailInfo",
           "name": "Domains",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的域名总数，用于分页查询。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -556,6 +578,7 @@
         {
           "default": "",
           "document": "分页查询的偏移地址，默认0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -564,6 +587,7 @@
         {
           "default": "",
           "document": "分页查询的域名个数，默认100，最大支持1000。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -572,6 +596,7 @@
         {
           "default": "",
           "document": "查询条件过滤器。",
+          "example": "无",
           "member": "DomainFilter",
           "name": "Filters",
           "required": false,
@@ -585,15 +610,19 @@
       "members": [
         {
           "document": "域名信息列表。",
+          "example": "无",
           "member": "DomainBriefInfo",
           "name": "Domains",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "域名总个数。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -940,15 +969,19 @@
       "members": [
         {
           "document": "Url刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "UrlPurge",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "目录刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "PathPurge",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -967,6 +1000,7 @@
         {
           "default": "",
           "document": "查询刷新类型。url：查询 url 刷新记录；path：查询目录刷新记录。",
+          "example": "ur",
           "member": "string",
           "name": "PurgeType",
           "required": false,
@@ -975,6 +1009,7 @@
         {
           "default": "",
           "document": "开始时间，如2018-08-08 00:00:00。",
+          "example": "无",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -983,6 +1018,7 @@
         {
           "default": "",
           "document": "结束时间，如2018-08-08 23:59:59。",
+          "example": "无",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -991,6 +1027,7 @@
         {
           "default": "",
           "document": "提交时返回的任务 Id，查询时 TaskId 和起始时间必须指定一项。",
+          "example": "1234567",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -999,6 +1036,7 @@
         {
           "default": "",
           "document": "分页查询偏移量，默认为0（从第0条开始）。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1007,6 +1045,7 @@
         {
           "default": "",
           "document": "分页查询限制数目，默认为20。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1015,6 +1054,7 @@
         {
           "default": "",
           "document": "查询关键字，请输入域名或 http(s):// 开头完整 URL。",
+          "example": "无",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -1023,6 +1063,7 @@
         {
           "default": "",
           "document": "查询指定任务状态，fail表示失败，done表示成功，process表示刷新中。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1036,15 +1077,19 @@
       "members": [
         {
           "document": "刷新历史记录。",
+          "example": "无",
           "member": "PurgeTask",
           "name": "PurgeLogs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务总数，用于分页。",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1087,6 +1132,7 @@
         {
           "default": "",
           "document": "域名ID。",
+          "example": "ecdn-xxxx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1096,6 +1142,7 @@
         {
           "default": "",
           "document": "腾讯云账号ID。",
+          "example": "1251000000",
           "member": "int64",
           "name": "AppId",
           "required": true,
@@ -1105,6 +1152,7 @@
         {
           "default": "",
           "document": "CDN加速域名。",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1114,6 +1162,7 @@
         {
           "default": "",
           "document": "域名CName。",
+          "example": "test.com.dsa.dnsv1.com",
           "member": "string",
           "name": "Cname",
           "required": true,
@@ -1123,6 +1172,7 @@
         {
           "default": "",
           "document": "域名状态，pending，rejected，processing， online，offline，deleted分别表示审核中，审核未通过，审核通过部署中，已开启，已关闭，已删除。",
+          "example": "processing",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1132,6 +1182,7 @@
         {
           "default": "",
           "document": "项目ID。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -1141,6 +1192,7 @@
         {
           "default": "",
           "document": "域名创建时间。",
+          "example": "2019-12-03 15:23:50",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -1150,6 +1202,7 @@
         {
           "default": "",
           "document": "域名更新时间。",
+          "example": "2019-12-03 15:23:50",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -1159,6 +1212,7 @@
         {
           "default": "",
           "document": "源站配置详情。",
+          "example": "{\"Origins\":[\"1.1.1.1\"]}",
           "member": "Origin",
           "name": "Origin",
           "required": true,
@@ -1168,6 +1222,7 @@
         {
           "default": "",
           "document": "域名封禁状态，normal，overdue，quota，malicious，ddos，idle，unlicensed，capping，readonly分别表示 正常，欠费停服，试用客户流量包耗尽，恶意用户，ddos攻击，无流量域名，未备案，带宽封顶，只读",
+          "example": "normal",
           "member": "string",
           "name": "Disable",
           "required": true,
@@ -1177,6 +1232,7 @@
         {
           "default": "",
           "document": "加速区域，mainland，oversea或global。",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": true,
@@ -1186,11 +1242,22 @@
         {
           "default": "",
           "document": "域名锁定状态，normal、global，分别表示未被锁定、全球锁定。",
+          "example": "normal",
           "member": "string",
           "name": "Readonly",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "Tag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1910,6 +1977,7 @@
         {
           "default": "",
           "document": "要刷新的目录列表，必须包含协议头部。",
+          "example": "[\"http:\\/\\/www.test.com\\/test\\/\"]",
           "member": "string",
           "name": "Paths",
           "required": true,
@@ -1918,6 +1986,7 @@
         {
           "default": "",
           "document": "刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。",
+          "example": "flush",
           "member": "string",
           "name": "FlushType",
           "required": true,
@@ -1930,9 +1999,11 @@
       "document": "PurgePathCache返回参数结构体",
       "members": [
         {
-          "document": "刷新任务Id，前十位为提交任务时的UTC时间。",
+          "document": "刷新任务Id。",
+          "example": "1533045796-i60rfmzm",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2011,6 +2082,7 @@
         {
           "default": "",
           "document": "要刷新的Url列表，必须包含协议头部。",
+          "example": "[\"http:\\/\\/www.test.com\\/1.jpg\"]",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -2023,9 +2095,11 @@
       "document": "PurgeUrlsCache返回参数结构体",
       "members": [
         {
-          "document": "刷新任务Id，前十位为提交任务时的UTC时间。",
+          "document": "刷新任务Id。",
+          "example": "1533045796-i60rfmzm",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2218,6 +2292,7 @@
         {
           "default": "",
           "document": "待启用域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -2244,6 +2319,7 @@
         {
           "default": "",
           "document": "待停用域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,

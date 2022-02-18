@@ -547,9 +547,15 @@
     "ModifyDBInstanceNetwork": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBInstanceNetwork\n&InstanceId=mssql-p2yli7gv\n&NewVpcId=vpc-ilki4qdp\n&NewSubnetId=subnet-lru6dhh8\n&OldIpRetainTime=12\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBInstanceNetwork\n&InstanceId=mssql-p2yli7gv\n&NewVpcId=vpc-ilki4qdp\n&NewSubnetId=subnet-lru6dhh8\n&Vip=127.0.0.1\n&OldIpRetainTime=12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"20db6661-2a85-49d9-8a37-976b931649fb\",\n        \"FlowId\": 100125\n    }\n}",
         "title": "修改实例网络"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceNetwork\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-e720ieef\",\n    \"NewVpcId\": \"vpc-kw88teud\",\n    \"NewSubnetId\": \"subnet-8z5n8tcg\",\n    \"OldIpRetainTime\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1011581,\n        \"RequestId\": \"bdac237c-b9b7-4050-9284-97898cca5883\"\n    }\n}",
+        "title": "转网"
       }
     ],
     "ModifyDBInstanceProject": [

@@ -1,103 +1,103 @@
 {
   "actions": {
     "CreateCosToken": {
-      "document": "生成Cos临时秘钥",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n生成Cos临时秘钥",
       "input": "CreateCosTokenRequest",
       "name": "生成Cos临时秘钥",
       "output": "CreateCosTokenResponse"
     },
     "CreateCosTokenV2": {
-      "document": "生成Cos临时秘钥",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n生成Cos临时秘钥",
       "input": "CreateCosTokenV2Request",
       "name": "生成Cos临时秘钥V2",
       "output": "CreateCosTokenV2Response"
     },
     "CreateNamespace": {
-      "document": "创建环境",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n创建环境",
       "input": "CreateNamespaceRequest",
       "name": "创建命名空间",
       "output": "CreateNamespaceResponse"
     },
     "CreateResource": {
-      "document": "绑定云资源",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n绑定云资源",
       "input": "CreateResourceRequest",
       "name": "绑定云资源",
       "output": "CreateResourceResponse"
     },
     "CreateServiceV2": {
-      "document": "创建服务",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n创建服务",
       "input": "CreateServiceV2Request",
       "name": "创建服务",
       "output": "CreateServiceV2Response"
     },
     "DeleteIngress": {
-      "document": "删除 Ingress 规则",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n删除 Ingress 规则",
       "input": "DeleteIngressRequest",
       "name": "删除 Ingress 规则",
       "output": "DeleteIngressResponse"
     },
     "DeployServiceV2": {
-      "document": "服务部署",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n服务部署",
       "input": "DeployServiceV2Request",
       "name": "服务部署",
       "output": "DeployServiceV2Response"
     },
     "DescribeIngress": {
-      "document": "查询 Ingress 规则",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n查询 Ingress 规则",
       "input": "DescribeIngressRequest",
       "name": "查询 Ingress 规则",
       "output": "DescribeIngressResponse"
     },
     "DescribeIngresses": {
-      "document": "查询 Ingress 规则列表",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n查询 Ingress 规则列表",
       "input": "DescribeIngressesRequest",
       "name": "查询 Ingress 规则列表",
       "output": "DescribeIngressesResponse"
     },
     "DescribeNamespaces": {
-      "document": "获取租户环境列表",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n获取租户环境列表",
       "input": "DescribeNamespacesRequest",
       "name": "获取租户命名空间列表",
       "output": "DescribeNamespacesResponse"
     },
     "DescribeRelatedIngresses": {
-      "document": "查询服务关联的 Ingress 规则列表",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n查询服务关联的 Ingress 规则列表",
       "input": "DescribeRelatedIngressesRequest",
       "name": "查询服务关联的 Ingress 规则列表",
       "output": "DescribeRelatedIngressesResponse"
     },
     "DescribeServiceRunPodListV2": {
-      "document": "获取服务下面运行pod列表",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n获取服务下面运行pod列表",
       "input": "DescribeServiceRunPodListV2Request",
       "name": "获取服务下面运行pod列表",
       "output": "DescribeServiceRunPodListV2Response"
     },
     "GenerateDownloadUrl": {
-      "document": "生成包预签名下载链接",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n生成包预签名下载链接",
       "input": "GenerateDownloadUrlRequest",
       "name": "生成包预签名下载链接",
       "output": "GenerateDownloadUrlResponse"
     },
     "ModifyIngress": {
-      "document": "创建或者更新 Ingress 规则",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n创建或者更新 Ingress 规则",
       "input": "ModifyIngressRequest",
       "name": "创建或者更新 Ingress 规则",
       "output": "ModifyIngressResponse"
     },
     "ModifyNamespace": {
-      "document": "编辑环境",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n编辑环境",
       "input": "ModifyNamespaceRequest",
       "name": "编辑命名空间",
       "output": "ModifyNamespaceResponse"
     },
     "ModifyServiceInfo": {
-      "document": "修改服务基本信息",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n修改服务基本信息",
       "input": "ModifyServiceInfoRequest",
       "name": "修改服务基本信息",
       "output": "ModifyServiceInfoResponse"
     },
     "RestartServiceRunPod": {
-      "document": "重启实例",
+      "document": "2020-12-21已经下线，请使用2021-07-01\n\n重启实例",
       "input": "RestartServiceRunPodRequest",
       "name": "重启实例",
       "output": "RestartServiceRunPodResponse"

@@ -30,10 +30,10 @@ Output:
                 "MaxSplitPartitions": 0,
                 "Period": 0,
                 "AutoSplit": true,
-                "LogsetId": "xx",
+                "TopicName": "xx",
                 "Index": true,
                 "CreateTime": "xx",
-                "TopicName": "xx"
+                "LogsetId": "xx"
             }
         ],
         "RequestId": "xx"

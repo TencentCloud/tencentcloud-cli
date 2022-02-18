@@ -18,7 +18,9 @@ Output:
     "Response": {
         "RequestId": "9debf284-eff9-465a-97b7-163a8b1cccaf",
         "SecretName": "test_secret",
-        "VersionId": "v1.0"
+        "VersionId": "v1.0",
+        "TagCode": 1,
+        "TagMsg": "xx"
     }
 }
 ```

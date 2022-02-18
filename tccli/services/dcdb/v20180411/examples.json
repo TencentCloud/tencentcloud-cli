@@ -236,7 +236,7 @@
       {
         "document": "",
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeProjectSecurityGroups\n&Product=dcdb\n&ProjectId=11954\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 11988,\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"dcdb\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 11988,\n                \"CreateTime\": \"2017-04-13 15:00:06\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupName\": \"dcdb\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询项目安全组信息"
       }
     ],
@@ -404,6 +404,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=ResetAccountPassword\r\n&InstanceId=dcdbt-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Password=abcd8765_.\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7b1680d-db03-4f20-8684-a865ce7bcd38\"\n    }\n}",
         "title": "修改云数据库账号的密码"
+      }
+    ],
+    "SwitchDBInstanceHA": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=SwitchDBInstanceHA\n&InstanceId=tdsql-f35wr6wj\n&Zone=ap-guangzhou-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 145623\n    }\n}",
+        "title": "请求示例DEMO"
       }
     ],
     "UpgradeDCDBInstance": [

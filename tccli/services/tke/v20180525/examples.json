@@ -103,7 +103,7 @@
     "CreateClusterNodePool": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterNodePool\n&ClusterId=cls-xxxxxx\n&AutoScalingGroupPara={\"AutoScalingGroupName\":\"\",\"MaxSize\":1,\"MinSize\":0,\"DesiredCapacity\":1,\"VpcId\":\"vpc-xxx\",\"SubnetIds\":[\"subnet-xxx\"],\"RetryPolicy\":\"IMMEDIATE_RETRY\",\"ServiceSettings\":{\"ScalingMode\":\"CLASSIC_SCALING\"}}\n&LaunchConfigurePara={\"LaunchConfigurationName\":\"\",\"InstanceType\":\"SA2.SMALL1\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":0,\"PublicIpAssigned\":false},\"LoginSettings\":{\"Password\":\"xxx\"},\"SecurityGroupIds\":[\"sg-xxx\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}},\"InstanceChargeType\":\"POSTPAID_BY_HOUR\"}\n&InstanceAdvancedSettings.MountTarget=xxx\n&EnableAutoscale=true\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterNodePool\n&ClusterId=cls-xxxxxx\n&AutoScalingGroupPara={\"AutoScalingGroupName\":\"\",\"MaxSize\":1,\"MinSize\":0,\"DesiredCapacity\":1,\"VpcId\":\"vpc-xxx\",\"SubnetIds\":[\"subnet-xxx\"],\"RetryPolicy\":\"IMMEDIATE_RETRY\",\"ServiceSettings\":{\"ScalingMode\":\"CLASSIC_SCALING\"}}\n&LaunchConfigurePara={\"LaunchConfigurationName\":\"\",\"InstanceType\":\"SA2.SMALL1\",\"SystemDisk\":{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":50},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":0,\"PublicIpAssigned\":false},\"LoginSettings\":{\"Password\":\"xxx\"},\"SecurityGroupIds\":[\"sg-xxx\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}},\"InstanceChargeType\":\"POSTPAID_BY_HOUR\"}\n&InstanceAdvancedSettings.MountTarget=xxx\n&EnableAutoscale=true\n&InstanceAdvancedSettings.DesiredPodNumber=0\n&InstanceAdvancedSettings.PreStartUserScript=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NodePoolId\": \"np-xxx\",\n        \"RequestId\": \"xxx-xxx-xxxx-xxx-xxxxx\"\n    }\n}",
         "title": "创建节点池"
       }
@@ -394,6 +394,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterSecurity\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"UserName\": \"xxxxx\",\n        \"CertificationAuthority\": \"xxxxxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
         "title": "集群的密钥信息"
+      }
+    ],
+    "DescribeClusterStatus": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterStatus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterStatusSet\": [\n            {\n                \"ClusterClosingNodeNum\": 0,\n                \"ClusterAuditEnabled\": true,\n                \"ClusterDeletionProtection\": true,\n                \"ClusterId\": \"xx\",\n                \"ClusterBMonitor\": true,\n                \"ClusterInitNodeNum\": 0,\n                \"ClusterState\": \"xx\",\n                \"ClusterClosedNodeNum\": 0,\n                \"ClusterInstanceState\": \"xx\",\n                \"ClusterRunningNodeNum\": 0,\n                \"ClusterFailedNodeNum\": 0\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "获取集群当前状态"
       }
     ],
     "DescribeClusters": [

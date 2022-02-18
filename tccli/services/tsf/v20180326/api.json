@@ -271,7 +271,7 @@
       "output": "DeleteUnitRuleResponse"
     },
     "DeployContainerGroup": {
-      "document": "部署容器应用",
+      "document": "部署容器应用-更新",
       "input": "DeployContainerGroupRequest",
       "name": "部署容器应用",
       "output": "DeployContainerGroupResponse"
@@ -3679,6 +3679,26 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据卷信息，list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "VolumeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载信息，list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5822,6 +5842,7 @@
         {
           "default": "",
           "document": "工作流名称",
+          "example": "exec-6g4rq8z6",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -5830,6 +5851,7 @@
         {
           "default": "",
           "document": "触发方式",
+          "example": "无",
           "member": "TaskRule",
           "name": "TriggerRule",
           "required": true,
@@ -5838,6 +5860,7 @@
         {
           "default": "",
           "document": "工作流任务节点列表",
+          "example": "无",
           "member": "TaskFlowEdge",
           "name": "FlowEdges",
           "required": true,
@@ -5846,10 +5869,20 @@
         {
           "default": "",
           "document": "工作流执行超时时间",
+          "example": "3000",
           "member": "uint64",
           "name": "TimeOut",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5858,11 +5891,13 @@
       "document": "CreateTaskFlow返回参数结构体",
       "members": [
         {
-          "document": "工作流 ID",
+          "document": "工作流 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6010,6 +6045,15 @@
           "name": "TaskArgument",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6018,13 +6062,13 @@
       "document": "CreateTask返回参数结构体",
       "members": [
         {
-          "document": "任务ID",
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "task-12345678",
           "member": "string",
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7042,7 +7086,7 @@
         },
         {
           "default": "",
-          "document": "数据卷信息",
+          "document": "数据卷信息-废弃，请用VolumeInfoList参数",
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfos",
@@ -7051,12 +7095,39 @@
         },
         {
           "default": "",
-          "document": "数据卷挂载点信息",
+          "document": "数据卷挂载点信息-废弃，请用VolumeMountInfoList参数",
           "example": "无",
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfos",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "数据卷信息，list",
+          "example": "无",
+          "member": "VolumeInfo",
+          "name": "VolumeInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据卷挂载点信息，list",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否清除数据卷信息，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "VolumeClean",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11547,6 +11618,15 @@
           "name": "ExecuteType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11555,13 +11635,13 @@
       "document": "DescribeTaskRecords返回参数结构体",
       "members": [
         {
-          "document": "任务记录列表",
+          "document": "任务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskRecordPage",
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15519,6 +15599,15 @@
           "name": "TaskArgument",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15527,13 +15616,13 @@
       "document": "ModifyTask返回参数结构体",
       "members": [
         {
-          "document": "更新是否成功",
+          "document": "更新是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

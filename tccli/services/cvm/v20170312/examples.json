@@ -43,7 +43,7 @@
     "CreateKeyPair": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=CreateKeyPair\r\n&KeyName=Tencent\r\n&ProjectId=0\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=CreateKeyPair\n&KeyName=Tencent\n&ProjectId=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"skey-mv9yzyjj\",\n            \"KeyName\": \"Tencent\",\n            \"ProjectId\": 0,\n            \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n            \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIICXgIBAAKBgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZK\\nAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/X\\nUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCwIDAQAB\\nAoGBAJEvSu5SaCD02hs0F2C4Aln2E2/qjMoDEa7spcEVfUhdaNX8ZLvk5pUvnikm\\nwfSb7a71QUIcFu66zKxBK4kVcirBRCR8nTAQbQ6AhXQYP+y6ihZ9Z/g6BBEeqCpV\\nuGPmKnhdxdJ8Al2huEZKJFUQhKM8XdP7dqn6yFDm0L2sTK6RAkEA9IbhP4/2CVSC\\n6d8j5nj3ejPx25R3wc4G+st1tZn1O/TRqUknbVEvsxZC63bRjHiw086QIWr61L8f\\nqQBLZ58DMwJBANmRv3aHVxv5sMlV0F3hD5ZgWEDIIjxD7oiBzU1rqvF6OpTQc1cF\\nrnwxAXDtYYJ75B8qQEL1ph/zIE5YW0hlfckCQQCyVTwpUyCopU3kqqxQBaDXKtMU\\nxS6h1VQZzBDIpMPJOj8+Ku/qNe+HuJCNkVY6EDtF/bv340GTrt+0LVbQ95MpAkEA\\nxcvwUdTXB9LnuxKuHTsoDaFHepW4MivcJvRC7njM7z4dFf+wbFP4/mUbF0xoUtVJ\\nXl/uDjH/tpo1K6S+UEIcqQJAfLQywCQdZ/qOJn0PwxiOhwniikSnZuZPNSw8T+kg\\n/oxijESOLAJBnt3S/g+D530Enjitvfc9mEB7mh0VmwWvPg==\\n-----END RSA PRIVATE KEY-----\\n\"\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建密钥对"
       }
@@ -147,7 +147,7 @@
     "DescribeImageSharePermission": [
       {
         "document": "查看镜像img-6pb6lrmy的分享信息。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImageSharePermission\r\n&ImageId=img-6pb6lrmy\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImageSharePermission\n&ImageId=img-6pb6lrmy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SharePermissionSet\": [\n            {\n                \"CreatedTime\": \"2018-06-10T11:02:50Z\",\n                \"AccountId\": \"101104350000\"\n            },\n            {\n                \"CreatedTime\": \"2018-06-13T15:03:25Z\",\n                \"AccountId\": \"101104350001\"\n            }\n        ],\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "查看指定镜像的分享信息"
       }
@@ -471,7 +471,7 @@
     "ModifyImageAttribute": [
       {
         "document": "修改镜像img-6pb6lrmy的名称为sample",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageAttribute\r\n&ImageId=img-6pb6lrmy\r\n&ImageName=sample\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageAttribute\n&ImageId=img-6pb6lrmy\n&ImageName=sample\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "修改镜像名称"
       }
@@ -479,7 +479,7 @@
     "ModifyImageSharePermission": [
       {
         "document": "共享镜像img-6pb6lrmy给账户1038493875",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageSharePermission\r\n&ImageId=img-6pb6lrmy\r\n&AccountIds.0=1038493875\r\n&Permission=SHARE\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageSharePermission\n&ImageId=img-6pb6lrmy\n&AccountIds.0=1038493875\n&Permission=SHARE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "共享镜像"
       }
@@ -558,6 +558,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=ModifyLaunchTemplateDefaultVersion\n&LaunchTemplateId=lt-34vaef8fe\n&DefaultVersion=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec311\"\n    }\n}",
         "title": "修改默认实例启动模板版本号"
+      }
+    ],
+    "ProgramFpgaImage": [
+      {
+        "document": "本示例将由客户提供的FPGA镜像文件烧录到实例上的两块FPGA卡",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ProgramFpgaImage\n&InstanceId=ins-r8hr2upy\n&FPGAUrl=fpga-test-123456.cos.ap-guangzhou.myqcloud.com/test.xclbin\n&DBDFs.0=0000:00:08.0\n&DBDFs.1=0000:00:09.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270dfafb54a7\"\n    }\n}",
+        "title": "在线烧录FPGA镜像"
       }
     ],
     "PurchaseReservedInstancesOffering": [

@@ -226,6 +226,15 @@
           "name": "ClsTopicId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志采集类型 2：CLS；3：COS",
+          "example": "2",
+          "member": "int64",
+          "name": "LogCollectType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

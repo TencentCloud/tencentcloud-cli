@@ -19,21 +19,32 @@ Output:
                 "ZoneName": "广州二区",
                 "ZoneId": 100002,
                 "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0
+                "ZoneSupportIpv6": 0,
+                "StandbyZoneSet": [
+                    "ap-guangzhou-2",
+                    "ap-guangzhou-3"
+                ]
             },
             {
                 "Zone": "ap-guangzhou-3",
                 "ZoneName": "广州三区",
                 "ZoneId": 100003,
                 "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0
+                "ZoneSupportIpv6": 0,
+                "StandbyZoneSet": [
+                    "ap-guangzhou-2",
+                    "ap-guangzhou-3"
+                ]
             },
             {
                 "Zone": "ap-guangzhou-4",
                 "ZoneName": "广州四区",
                 "ZoneId": 100004,
                 "ZoneState": "AVAILABLE",
-                "ZoneSupportIpv6": 0
+                "ZoneSupportIpv6": 0,
+                "StandbyZoneSet": [
+                    "ap-guangzhou-4"
+                ]
             }
         ]
     }

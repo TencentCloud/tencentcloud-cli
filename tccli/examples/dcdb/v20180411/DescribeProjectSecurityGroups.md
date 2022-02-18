@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "Total": 1,
         "RequestId": "31a60135-7057-47ae-8fd3-7a0617deca38",
         "Groups": [
             {

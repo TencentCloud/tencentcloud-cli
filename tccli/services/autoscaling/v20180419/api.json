@@ -6,6 +6,12 @@
       "name": "添加 CVM 实例到伸缩组",
       "output": "AttachInstancesResponse"
     },
+    "AttachLoadBalancers": {
+      "document": "此接口（AttachLoadBalancers）用于将负载均衡器添加到伸缩组。",
+      "input": "AttachLoadBalancersRequest",
+      "name": "添加负载均衡器",
+      "output": "AttachLoadBalancersResponse"
+    },
     "ClearLaunchConfigurationAttributes": {
       "document": "本接口（ClearLaunchConfigurationAttributes）用于将启动配置内的特定属性完全清空。",
       "input": "ClearLaunchConfigurationAttributesRequest",
@@ -174,6 +180,12 @@
       "name": "从伸缩组移出 CVM 实例",
       "output": "DetachInstancesResponse"
     },
+    "DetachLoadBalancers": {
+      "document": "本接口（DetachLoadBalancers）用于从伸缩组移出负载均衡器，本接口不会销毁负载均衡器。",
+      "input": "DetachLoadBalancersRequest",
+      "name": "移出负载均衡器",
+      "output": "DetachLoadBalancersResponse"
+    },
     "DisableAutoScalingGroup": {
       "document": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。",
       "input": "DisableAutoScalingGroupRequest",
@@ -209,6 +221,12 @@
       "input": "ModifyLaunchConfigurationAttributesRequest",
       "name": "修改启动配置属性",
       "output": "ModifyLaunchConfigurationAttributesResponse"
+    },
+    "ModifyLoadBalancerTargetAttributes": {
+      "document": "本接口（ModifyLoadBalancerTargetAttributes）用于修改伸缩组内负载均衡器的目标规则属性。",
+      "input": "ModifyLoadBalancerTargetAttributesRequest",
+      "name": "修改负载均衡器目标规则属性",
+      "output": "ModifyLoadBalancerTargetAttributesResponse"
     },
     "ModifyLoadBalancers": {
       "document": "本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。\n\n* 本接口用于为伸缩组指定新的负载均衡器配置，采用`完全覆盖`风格，无论之前配置如何，`统一按照接口参数配置为新的负载均衡器`。\n* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。\n* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。",
@@ -532,6 +550,60 @@
         {
           "document": "伸缩活动ID",
           "example": "asa-q59zikez",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachLoadBalancersRequest": {
+      "document": "AttachLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "example": "asg-12wjuh0s",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传统型负载均衡器ID列表，每个伸缩组绑定传统型负载均衡器数量上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "[\"lb-crhgatrf\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "应用型负载均衡器列表，每个伸缩组绑定应用型负载均衡器数量上限为50，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
+          "example": "无",
+          "member": "ForwardLoadBalancer",
+          "name": "ForwardLoadBalancers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachLoadBalancersResponse": {
+      "document": "AttachLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩活动ID",
+          "example": "asa-67izy66g",
           "member": "string",
           "name": "ActivityId",
           "required": true,
@@ -1341,7 +1413,7 @@
         },
         {
           "default": "",
-          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3（按照PRIORITY策略），会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。\n<br><li> 无论使用哪种策略，单次伸缩活动总是优先保持使用一种具体配置（机型 * 可用区/子网）。",
+          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：扩容出的实例会打散到多个可用区/子网，保证扩容后的各个可用区/子网实例数相对均衡。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 按照 PRIORITY 策略创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3，会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。",
           "example": "PRIORITY ",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
@@ -2460,6 +2532,7 @@
         {
           "default": "",
           "document": "待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。",
+          "example": "[\"ins-1fswxz1m\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -2468,6 +2541,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2476,6 +2550,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2483,7 +2558,8 @@
         },
         {
           "default": "",
-          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "document": "返回数量，默认为20，最大值为2000。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2497,15 +2573,19 @@
       "members": [
         {
           "document": "实例详细信息列表。",
+          "example": "无",
           "member": "Instance",
           "name": "AutoScalingInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2955,6 +3035,60 @@
       ],
       "type": "object"
     },
+    "DetachLoadBalancersRequest": {
+      "document": "DetachLoadBalancers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "example": "asg-12wjuh0s",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个",
+          "example": "[\"lb-crhgatrf\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个",
+          "example": "无",
+          "member": "ForwardLoadBalancerIdentification",
+          "name": "ForwardLoadBalancerIdentifications",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachLoadBalancersResponse": {
+      "document": "DetachLoadBalancers返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩活动ID",
+          "example": "asa-67izy66g",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailedStatusMessage": {
       "document": "伸缩活动状态详细描述。",
       "members": [
@@ -3230,6 +3364,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ForwardLoadBalancerIdentification": {
+      "document": "应用型负载均衡器标识信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡器ID",
+          "example": "lb-ceqnq5xk",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用型负载均衡监听器 ID",
+          "example": "lbl-lqf523ih",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发规则ID，注意：针对七层监听器此参数必填",
+          "example": "loc-0xbavbfi",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "HostNameSettings": {
       "document": "云服务器主机名（HostName）的相关设置",
@@ -4200,7 +4370,7 @@
         },
         {
           "default": "",
-          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：每次选择当前实例数最少的可用区/子网进行扩容，使得每个可用区/子网都有机会发生扩容，多次扩容出的实例会打散到多个可用区/子网。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3（按照PRIORITY策略），会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。\n<br><li> 无论使用哪种策略，单次伸缩活动总是优先保持使用一种具体配置（机型 * 可用区/子网）。",
+          "document": "多可用区/子网策略，取值包括 PRIORITY 和 EQUALITY，默认为 PRIORITY。\n<br><li> PRIORITY，按照可用区/子网列表的顺序，作为优先级来尝试创建实例，如果优先级最高的可用区/子网可以创建成功，则总在该可用区/子网创建。\n<br><li> EQUALITY：扩容出的实例会打散到多个可用区/子网，保证扩容后的各个可用区/子网实例数相对均衡。\n\n与本策略相关的注意点：\n<br><li> 当伸缩组为基础网络时，本策略适用于多可用区；当伸缩组为VPC网络时，本策略适用于多子网，此时不再考虑可用区因素，例如四个子网ABCD，其中ABC处于可用区1，D处于可用区2，此时考虑子网ABCD进行排序，而不考虑可用区1、2。\n<br><li> 本策略适用于多可用区/子网，不适用于启动配置的多机型。多机型按照优先级策略进行选择。\n<br><li> 按照 PRIORITY 策略创建实例时，先保证多机型的策略，后保证多可用区/子网的策略。例如多机型A、B，多子网1、2、3，会按照A1、A2、A3、B1、B2、B3 进行尝试，如果A1售罄，会尝试A2（而非B1）。",
           "example": "无",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
@@ -4273,6 +4443,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-nvnlpbb8",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4281,6 +4452,7 @@
         {
           "default": "",
           "document": "期望实例数",
+          "example": "2",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": true,
@@ -4456,6 +4628,15 @@
           "name": "EnhancedService",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
+          "example": "无",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4463,6 +4644,51 @@
     "ModifyLaunchConfigurationAttributesResponse": {
       "document": "ModifyLaunchConfigurationAttributes返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerTargetAttributesRequest": {
+      "document": "ModifyLoadBalancerTargetAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "伸缩组ID",
+          "example": "asg-12wjuh0s",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50",
+          "example": "无",
+          "member": "ForwardLoadBalancer",
+          "name": "ForwardLoadBalancers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerTargetAttributesResponse": {
+      "document": "ModifyLoadBalancerTargetAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "伸缩活动ID",
+          "example": "asa-67izy66g",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
