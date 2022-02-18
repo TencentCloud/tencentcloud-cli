@@ -30,6 +30,12 @@
       "name": "查询机器核保任务数据",
       "output": "DescribeMachineUnderwriteResponse"
     },
+    "DescribeQualityScore": {
+      "document": "获取图片质量分",
+      "input": "DescribeQualityScoreRequest",
+      "name": "获取图片质量分",
+      "output": "DescribeQualityScoreResponse"
+    },
     "DescribeReportClassify": {
       "document": "辅助用户对批量报告自动分类",
       "input": "DescribeReportClassifyRequest",
@@ -681,6 +687,42 @@
           "name": "UnderwriteResults",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityScoreRequest": {
+      "document": "DescribeQualityScore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件二进制数据",
+          "example": "无",
+          "member": "binary",
+          "name": "File",
+          "required": true,
+          "type": "binary"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityScoreResponse": {
+      "document": "DescribeQualityScore返回参数结构体",
+      "members": [
+        {
+          "document": "质量分",
+          "example": "1",
+          "member": "float",
+          "name": "QualityScore",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -1584,6 +1626,76 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1-2",
+          "member": "string",
+          "name": "Range",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "报告时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ReportDate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "healthReport",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检查项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "血糖",
+          "member": "string",
+          "name": "InspectProject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空腹血葡萄糖",
+          "member": "string",
+          "name": "OriginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "阴阳性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "+",
+          "member": "string",
+          "name": "YinYang",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
