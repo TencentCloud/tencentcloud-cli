@@ -52,6 +52,42 @@
       ],
       "usage": "in"
     },
+    "Context": {
+      "document": "加速策略关键数据",
+      "members": [
+        {
+          "default": "",
+          "document": "测速数据",
+          "example": "略",
+          "member": "NetworkData",
+          "name": "NetworkData",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户期望最低门限",
+          "example": "略",
+          "member": "ExpectedThreshold",
+          "name": "ExpectedLowThreshold",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户期望最高门限",
+          "example": "略",
+          "member": "ExpectedThreshold",
+          "name": "ExpectedHighThreshold",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateQosRequest": {
       "document": "CreateQos请求参数结构体",
       "members": [
@@ -126,6 +162,24 @@
           "name": "Protocol",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加速策略关键数据",
+          "example": "{\"NetworkData\":{\"RTT\":[30,25,51],\"Loss\":0.02,\"Jitter\":50.5,\"Inte",
+          "member": "Context",
+          "name": "Context",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签名",
+          "example": "af4764571f217a9bd2c50d8e97c54239bcacb15c835100e59fda84cb33603d14",
+          "member": "string",
+          "name": "Extern",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -343,6 +397,88 @@
           "member": "uint64",
           "name": "Wireless",
           "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExpectedThreshold": {
+      "document": "用户期望门限",
+      "members": [
+        {
+          "default": "",
+          "document": "期望发起加速的时延阈值",
+          "example": "60",
+          "member": "float",
+          "name": "RTT",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "期望发起加速的丢包率阈值",
+          "example": "0.02",
+          "member": "float",
+          "name": "Loss",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "期望发起加速的抖动阈值",
+          "example": "60",
+          "member": "float",
+          "name": "Jitter",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "NetworkData": {
+      "document": "测速数据",
+      "members": [
+        {
+          "default": "",
+          "document": "时延数组，最大长度30",
+          "example": "[10,20,30]",
+          "member": "float",
+          "name": "RTT",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "丢包率",
+          "example": "0.02",
+          "member": "float",
+          "name": "Loss",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "抖动",
+          "example": "50.5",
+          "member": "float",
+          "name": "Jitter",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "10位秒级时间戳",
+          "example": "1644891913",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         }

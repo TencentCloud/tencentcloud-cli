@@ -2994,6 +2994,7 @@
         {
           "default": "",
           "document": "模块名，这里填“monitor”",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -3002,6 +3003,7 @@
         {
           "default": "",
           "document": "告警通知模板 id",
+          "example": "notice-2g892hg8",
           "member": "string",
           "name": "NoticeId",
           "required": true,
@@ -3015,8 +3017,10 @@
       "members": [
         {
           "document": "告警通知模板详细信息",
+          "example": "无",
           "member": "AlarmNotice",
           "name": "Notice",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3214,7 +3218,7 @@
         },
         {
           "default": "",
-          "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：\n`[ {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555g\"}}, {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555h\"}} ]`\n具体也可以参考下方的示例 2。\n\n不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)",
+          "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：\n`[ {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555g\"}}, {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555h\"}} ]`\n具体也可以参考下方的示例 2。\n\n不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)\n\n注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时",
           "example": "[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]",
           "member": "string",
           "name": "Dimensions",

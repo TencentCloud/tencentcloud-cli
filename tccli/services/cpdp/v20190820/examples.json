@@ -88,6 +88,14 @@
         "title": "绑定银行卡请求示例"
       }
     ],
+    "BindOpenBankExternalSubMerchantBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOpenBankExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"ChannelSubMerchantId\": \"CM12345678\",\n    \"ExternalSubMerchantBindBankAccountData\": \"{\\\"AccountBank\\\":\\\"COMM\\\",\\\"AccountName\\\":\\\"测试\\\",\\\"AccountNumber\\\":\\\"12345678\\\",\\\"AccountType\\\":\\\"COLLECT_MONEY\\\",\\\"BankBranchId\\\":\\\"12345678\\\"}\",\n    \"OutApplyId\": \"202102181633\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93888c91-f4cd-45d0-9bb5-71ad1ee06fb1\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID580433254176370688\",\n            \"BindStatus\": \"SUCCESS\",\n            \"BindMessage\": \"success\",\n            \"BindSerialNo\": null,\n            \"ExternalSubMerchantBankAccountReturnData\": \"{}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "BindOpenBankExternalSubMerchantBankAccount"
+      }
+    ],
     "BindRelateAccReUnionPay": [
       {
         "document": "",
@@ -126,6 +134,20 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=CheckAmount\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&TranNetMemberCode= YAPI100016&TakeCashAcctNo= 6231582000409285123&AuthAmt=0.01&Ccy=RMB",
         "output": "{\n    \"Response\": {\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"a9baed23-dac5-48ff-b02a-085618d9c7db\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"FrontSeqNo\": \"1912060087178757\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831912061575632834\"\n    }\n}",
         "title": "CheckAmount"
+      }
+    ],
+    "CloseOpenBankPaymentOrder": [
+      {
+        "document": "关闭订单成功示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"OutOrderId\": \"test0039\",\n    \"ChannelOrderId\": \"20220203575005249744556032\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"OutOrderId\": \"test0039\"\n        }\n    }\n}",
+        "title": "关闭订单成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"Environment\": \"20220218580408557254664192\",\n    \"OutOrderId\": \"test202202180004\",\n    \"ChannelOrderId\": \"字符串\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bee4957-16d7-4791-a829-664d27d4f22d\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"记录不存在:test202202180004\"\n    }\n}",
+        "title": "关单订单不存在"
       }
     ],
     "CloseOrder": [
@@ -222,6 +244,36 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=CreateMerchant\n&InvoicePlatformId=0\n&BankName=银行名称\n&BankAccount=621281240305123200\n&Drawer=drawer\n&Payee=payee\n&Reviewer=reviewer\n&State=1\n&TaxpayerNum=111212222233338\n&TaxpayerName=测试名称\n&LegalPersonName=测试名称\n&ContactsName=联系人\n&Email=test@email.com\n&Phone=11111111111\n&RegionCode=44\n&CityName=深圳市\n&Address=地址\n&TaxRegistrationCertificate=营业执照base64编码文件\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"CPDP-1585012073321\",\n        \"Result\": {\n            \"Message\": \"success\",\n            \"Data\": {\n                \"SerialNo\": \"CPDP\",\n                \"TaxpayerNum\": \"\",\n                \"TaxpayerName\": \"\"\n            },\n            \"Code\": 0\n        }\n    }\n}",
         "title": "CreateMerchant"
+      }
+    ],
+    "CreateOpenBankExternalSubMerchantRegistration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankExternalSubMerchantRegistration\n<公共请求参数>\n\n{\n    \"BusinessLicenseNumber\": \"12345678\",\n    \"ChannelMerchantId\": \"12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"LegalName\": \"测试\",\n    \"OutRegistrationNo\": \"202102181612\",\n    \"OutSubMerchantId\": \"sub_test_20220218\",\n    \"OutSubMerchantName\": \"测试\",\n    \"OutSubMerchantShortName\": \"测试\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"RegistrationStatus\": \"SUCCESS\",\n            \"RegistrationMessage\": \"success\",\n            \"ChannelRegistrationNo\": \"R1234567\",\n            \"ChannelSubMerchantId\": \"CM12345678\",\n            \"ExternalReturnData\": null\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "CreateOpenBankExternalSubMerchantRegistration"
+      }
+    ],
+    "CreateOpenBankMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankMerchant\n<公共请求参数>\n\n{\n    \"ChannelName\": \"TENPAY\",\n    \"ExternalMerchantInfo\": \"{\\\"PlatformCode\\\":\\\"12345678\\\",\\\"PlatformName\\\":\\\"平台名称\\\",\\\"PlatformPublicKey\\\":\\\"PlatformPublicKey\\\",\\\"PlatformPrivateKey\\\":\\\"PlatformPrivateKey\\\",\\\"PlatformCertSerialNo\\\":\\\"12345678\\\",\\\"ThirdPublicKey\\\":\\\"ThirdPublicKey\\\",\\\"ThirdCertSerialNo\\\":\\\"12345678\\\"}\",\n    \"OutMerchantDescription\": \"测试\",\n    \"OutMerchantId\": \"test_20220218\",\n    \"OutMerchantName\": \"测试\",\n    \"OutMerchantShortName\": \"测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85515359-a2ca-4f57-b782-62ed91fa2a6d\",\n        \"Result\": {\n            \"ChannelMerchantId\": \"CM12345678\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "CreateOpenBankMerchant"
+      }
+    ],
+    "CreateOpenBankPaymentOrder": [
+      {
+        "document": "支付下单接口成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\",\n    \"OutOrderId\": \"test0039\",\n    \"TotalAmount\": 2,\n    \"PaymentMode\": \"DIRECT\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notify\",\n    \"Remark\": \"test\",\n    \"Currency\": \"CNY\",\n    \"ExpireTime\": \"2022-02-02 11:10:44\",\n    \"FrontUrl\": \"http://127.0.0.1/pay/redirect\",\n    \"RefreshUrl\": \"http://127.0.0.1/pay/refresh\",\n    \"Attachment\": \"test123\",\n    \"ProfitShareFlag\": \"NO_NEED_SHARE\",\n    \"ProfitShareInfoList\": [],\n    \"GoodsInfo\": {\n        \"GoodsName\": \"测试商品\",\n        \"GoodsDetail\": \"测试商品123456\",\n        \"GoodsDescription\": \"测试测试测试测试\"\n    },\n    \"PayerInfo\": {\n        \"PayerId\": \"test00003\",\n        \"PayerName\": \"test00003\"\n    },\n    \"PayeeInfo\": {\n        \"PayeeId\": \"test00002\",\n        \"PayeeName\": \"test00002\"\n    },\n    \"SceneInfo\": {\n        \"DeviceId\": \"deviceId0001\",\n        \"PayerClientIp\": \"127.0.0.1\",\n        \"PayerUa\": \"user agent\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"订单提交成功\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "支付下单成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"remark\",\n    \"ChannelName\": \"TENPAY\",\n    \"ProfitShareFlag\": \"NO_NEED_SHARE\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"GoodsInfo\": {\n        \"GoodsName\": \"测试商品\",\n        \"GoodsDescription\": \"试测试测试\",\n        \"GoodsDetail\": \"测试商品123456\"\n    },\n    \"PaymentMode\": \"DIRECT\",\n    \"PayerInfo\": {\n        \"PayerId\": \"test00003\",\n        \"BindSerialNo\": \"test\",\n        \"PayerName\": \"test00003\"\n    },\n    \"RefreshUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ExpireTime\": \"2022-02-18 11:10:44\",\n    \"OutOrderId\": \"testyunapi2022021809\",\n    \"ProfitShareInfoList\": [\n        {\n            \"RecvId\": \"test\",\n            \"ProfitShareFee\": \"1\"\n        }\n    ],\n    \"SceneInfo\": {\n        \"PayerUa\": \"user agent\",\n        \"PayerClientIp\": \"127.0.0.1\",\n        \"DeviceId\": \"deviceId0001\"\n    },\n    \"PayeeInfo\": {\n        \"PayeeId\": \"test00002\",\n        \"PayeeName\": \"test00002\",\n        \"BankBranchId\": \"test\",\n        \"BankAccountNumber\": \"test\",\n        \"BankBranchName\": \"test\"\n    },\n    \"FrontUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"TotalAmount\": \"1\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\",\n    \"Attachment\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c151fea1-2ad8-4eeb-b27c-a4fca7ed85a7\",\n        \"Result\": null,\n        \"ErrCode\": \"FailedOperation.SystemError\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "创建订单支付服务系统异常"
       }
     ],
     "CreateOrder": [
@@ -742,6 +794,66 @@
         "title": "查询商户支付方式结果成功示例"
       }
     ],
+    "QueryOpenBankBindExternalSubMerchantBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankBindExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelApplyId\": \"AID12345678\",\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelSubMerchantId\": \"CM12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d69a4d94-c402-40c6-94da-70b6f32a3c0c\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID12345678\",\n            \"BindStatus\": \"SUCCESS\",\n            \"BindMessage\": \"success\",\n            \"BindSerialNo\": \"\",\n            \"ExternalSubMerchantBankAccountReturnData\": \"{\\\"AccountBank\\\":\\\"COMM\\\",\\\"AccountNumberLastFour\\\":\\\"\\\",\\\"AccountType\\\":\\\"COLLECT_MONEY\\\",\\\"BankBranchId\\\":\\\"12345678\\\"}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankBindExternalSubMerchantBankAccount"
+      }
+    ],
+    "QueryOpenBankDownLoadUrl": [
+      {
+        "document": "查询对账单下载url成功示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"BillDate\": \"2020-10-08\",\n    \"BillType\": \"TRADE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"https://xxx.cloud.xxx.com/finance/api/billdownload/file?token=xxx\",\n            \"HashValue\": \"79bb0f45fc4c42234a918000b2668d689e2bde04\",\n            \"HashType\": \"SHA256\"\n        }\n    }\n}",
+        "title": "查询对账单下载url成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"BillType\": \"TRADE\",\n    \"BillDate\": \"2022-02-12\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0de6aef6-4e1d-463e-a793-057491ca1bcf\",\n        \"Result\": {\n            \"DownloadUrl\": \"\",\n            \"HashValue\": \"\",\n            \"HashType\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询账单下载成功示例"
+      }
+    ],
+    "QueryOpenBankExternalSubMerchantBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"ChannelSubMerchantId\": \"CM12345678\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be5be48b-3ae6-4619-98a5-6e7235b73b5f\",\n        \"Result\": {\n            \"AccountList\": [\n                {\n                    \"AccountBank\": \"COMM\",\n                    \"BindSerialNo\": \"12345678\",\n                    \"AccountType\": \"COLLECT_MONEY\",\n                    \"BankBranchId\": \"12345678\",\n                    \"AccountNumberLastFour\": \"4940\"\n                }\n            ]\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankExternalSubMerchantBankAccount"
+      }
+    ],
+    "QueryOpenBankExternalSubMerchantRegistration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankExternalSubMerchantRegistration\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelRegistrationNo\": \"R12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68359316-3032-4f5d-91b6-c628eb2ba378\",\n        \"Result\": {\n            \"RegistrationStatus\": \"SUCCESS\",\n            \"RegistrationMessage\": \"success\",\n            \"ChannelRegistrationNo\": \"R12345678\",\n            \"ChannelSubMerchantId\": \"CM12345678\",\n            \"OutSubMerchantName\": \"测试\",\n            \"ChannelName\": \"TENPAY\",\n            \"PaymentMethod\": \"EBANK_PAYMENT\",\n            \"BusinessLicenseNumber\": \"12345678\",\n            \"LegalName\": \"测试\",\n            \"ExternalReturnData\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankExternalSubMerchantRegistration"
+      }
+    ],
+    "QueryOpenBankPaymentOrder": [
+      {
+        "document": "查询订单成功实例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"OutOrderId\": \"test0039\",\n    \"ChannelOrderId\": \"20220203575005249744556032\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"OutOrderId\": \"test0039\",\n            \"ChannelOrderId\": \"20220203575005249744556032\"\n        }\n    }\n}",
+        "title": "查询订单成功实例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"Environment\": \"20220218580408557254664192\",\n    \"OutOrderId\": \"test202202180004\",\n    \"ChannelOrderId\": \"字符串\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77898adf-26af-4ac0-983c-d542ef6bacca\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_ERROR\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "查询订单结果内部异常"
+      }
+    ],
+    "QueryOpenBankUnbindExternalSubMerchantBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankUnbindExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelApplyId\": \"AID12345678\",\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelSubMerchantId\": \"CM12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8a55ef5-05c0-4e90-981f-e5117a6f8918\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID12345678\",\n            \"UnbindStatus\": \"SUCCESS\",\n            \"UnbindMessage\": \"success\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankUnbindExternalSubMerchantBankAccount"
+      }
+    ],
     "QueryOrder": [
       {
         "document": "适用于单个订单查询状态的场景",
@@ -1002,6 +1114,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=UnBindAcct\n&MidasAppId=your_midas_app_id\n&SubAppId=your_sub_app_id\n&SettleAcctNo=encrypted_account_no\n&MidasSecretId=your_midas_secret_id\n&MidasSignature=your_midas_signature\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51171073-5762-41af-a8a2-ccb291840539\"\n    }\n}",
         "title": "解绑银行卡请求示例"
+      }
+    ],
+    "UnbindOpenBankExternalSubMerchantBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindOpenBankExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"BindSerialNo\": \"1234567\",\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"ChannelSubMerchantId\": \"CM12345678\",\n    \"OutApplyId\": \"202102181646\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d31240-a4c9-45c2-9273-e7c58b62a847\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID12345678\",\n            \"UnbindStatus\": \"SUCCESS\",\n            \"UnbindMessage\": \"success\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "UnbindOpenBankExternalSubMerchantBankAccount"
       }
     ],
     "UnbindRelateAcct": [

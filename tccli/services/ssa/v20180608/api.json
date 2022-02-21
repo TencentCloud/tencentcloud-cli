@@ -112,7 +112,7 @@
   "metadata": {
     "apiVersion": "2018-06-08",
     "api_brief": "介绍如何使用 API 对安全运营中心部分数据进行检索，包括攻击面测绘，安全配置管理，漏洞管理，合规管理，安全事件，泄露检测等。",
-    "serviceNameCN": "态势感知",
+    "serviceNameCN": "安全运营中心",
     "serviceShortName": "ssa"
   },
   "objects": {

@@ -128,6 +128,7 @@ Output:
                     "use",
                     "usw"
                 ],
+                "FilterDimensionsParam": "",
                 "NamespaceShowName": "云服务器-基础监控",
                 "CanSetDefault": 1,
                 "InstanceGroupId": 0,
@@ -297,6 +298,7 @@ Output:
                     "use",
                     "usw"
                 ],
+                "FilterDimensionsParam": "",
                 "NamespaceShowName": "云服务器-基础监控",
                 "CanSetDefault": 1,
                 "InstanceGroupId": 0,

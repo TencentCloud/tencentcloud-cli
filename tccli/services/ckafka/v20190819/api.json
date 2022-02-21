@@ -24,6 +24,12 @@
       "name": "添加 ACL 策略",
       "output": "CreateAclResponse"
     },
+    "CreateConsumer": {
+      "document": "创建消费者",
+      "input": "CreateConsumerRequest",
+      "name": "创建消费者",
+      "output": "CreateConsumerResponse"
+    },
     "CreateInstancePre": {
       "document": "创建实例(预付费包年包月)",
       "input": "CreateInstancePreRequest",
@@ -35,6 +41,12 @@
       "input": "CreatePartitionRequest",
       "name": "增加主题分区",
       "output": "CreatePartitionResponse"
+    },
+    "CreateRoute": {
+      "document": "添加实例路由",
+      "input": "CreateRouteRequest",
+      "name": "添加实例路由",
+      "output": "CreateRouteResponse"
     },
     "CreateTopic": {
       "document": "创建ckafka主题",
@@ -1376,6 +1388,69 @@
       ],
       "type": "object"
     },
+    "CreateConsumerRequest": {
+      "document": "CreateConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ckafka-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "group名称",
+          "example": "group-xxx",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic名称",
+          "example": "topic-xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topic名称数组",
+          "example": "topic-xxx",
+          "member": "string",
+          "name": "TopicNameList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerResponse": {
+      "document": "CreateConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "创建group描述",
+          "example": "data",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInstancePreData": {
       "document": "创建预付费接口返回的Data",
       "members": [
@@ -1666,6 +1741,114 @@
           "document": "返回的结果集",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRouteRequest": {
+      "document": "CreateRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vpc网络Id",
+          "example": "1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc子网id",
+          "example": "1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "访问类型",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否需要权限管理",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "调用方appId",
+          "example": "1",
+          "member": "int64",
+          "name": "CallerAppid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公网带宽",
+          "example": "3",
+          "member": "int64",
+          "name": "PublicNetwork",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vip地址",
+          "example": "1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRouteResponse": {
+      "document": "CreateRoute返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

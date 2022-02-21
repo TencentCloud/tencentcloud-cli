@@ -1,9 +1,9 @@
 {
   "actions": {
     "CheckRule": {
-      "document": "规则检验",
+      "document": "检验规则",
       "input": "CheckRuleRequest",
-      "name": "规则检验",
+      "name": "检验规则",
       "output": "CheckRuleResponse"
     },
     "CheckTransformation": {
