@@ -3264,7 +3264,7 @@
         },
         {
           "default": "",
-          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。该值默认为0。",
           "example": "1",
           "member": "int64",
           "name": "AutoSyncFlag",
@@ -3624,7 +3624,7 @@
         },
         {
           "default": "",
-          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。该值默认为0。",
           "example": "1",
           "member": "int64",
           "name": "AutoSyncFlag",
@@ -5143,6 +5143,7 @@
         {
           "default": "",
           "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -5150,7 +5151,8 @@
         },
         {
           "default": "",
-          "document": "分页查询数据的偏移量。",
+          "document": "分页查询数据的偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5158,7 +5160,8 @@
         },
         {
           "default": "",
-          "document": "分页查询数据的条目限制，默认值为20。",
+          "document": "分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5166,7 +5169,8 @@
         },
         {
           "default": "",
-          "document": "指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。",
+          "document": "指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。",
+          "example": "BackupVolume",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -5174,7 +5178,8 @@
         },
         {
           "default": "",
-          "document": "指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。",
+          "document": "指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -5188,15 +5193,19 @@
       "members": [
         {
           "document": "实例备份统计条目。",
+          "example": "无",
           "member": "BackupSummaryItem",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "实例备份统计总条目数。",
+          "example": "50",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6389,7 +6398,7 @@
         },
         {
           "default": "",
-          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "document": "该值默认为False，表示当传入只读实例ID时，查询操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True。",
           "example": "False",
           "member": "bool",
           "name": "ForReadonlyInstance",
@@ -7730,6 +7739,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7737,7 +7747,8 @@
         },
         {
           "default": "",
-          "document": "偏移量，最小值为0。",
+          "document": "偏移量，默认值为0，最小值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7746,6 +7757,7 @@
         {
           "default": "",
           "document": "分页大小，默认值为20，最小值为1，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7759,15 +7771,19 @@
       "members": [
         {
           "document": "符合查询条件的慢查询日志总数。",
+          "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的慢查询日志详情。",
+          "example": "无",
           "member": "SlowLogInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10480,6 +10496,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10487,7 +10504,8 @@
         },
         {
           "default": "",
-          "document": "实例名称。",
+          "document": "修改后的实例名称。",
+          "example": "我是中文",
           "member": "string",
           "name": "InstanceName",
           "required": true,

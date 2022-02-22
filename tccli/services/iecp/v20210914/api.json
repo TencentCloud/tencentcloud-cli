@@ -31,9 +31,9 @@
       "output": "CreateEdgeNodeGroupResponse"
     },
     "CreateEdgeNodeUnitTemplate": {
-      "document": "创建边缘单元NodeUnit模版",
+      "document": "创建边缘单元NodeUnit模板",
       "input": "CreateEdgeNodeUnitTemplateRequest",
-      "name": "创建边缘单元NodeUnit模版",
+      "name": "创建边缘单元NodeUnit模板",
       "output": "CreateEdgeNodeUnitTemplateResponse"
     },
     "CreateEdgeUnitApplicationVisualization": {
@@ -91,9 +91,9 @@
       "output": "DeleteEdgeNodeGroupResponse"
     },
     "DeleteEdgeNodeUnitTemplates": {
-      "document": "删除边缘单元NodeUnit模版",
+      "document": "删除边缘单元NodeUnit模板",
       "input": "DeleteEdgeNodeUnitTemplatesRequest",
-      "name": "删除边缘单元NodeUnit模版",
+      "name": "删除边缘单元NodeUnit模板",
       "output": "DeleteEdgeNodeUnitTemplatesResponse"
     },
     "DeleteEdgeNodes": {
@@ -337,9 +337,9 @@
       "output": "DescribeEdgeUnitNodeGroupResponse"
     },
     "DescribeEdgeUnitNodeUnitTemplates": {
-      "document": "查询边缘单元EdgeUnit模版列表",
+      "document": "查询边缘单元EdgeUnit模板列表",
       "input": "DescribeEdgeUnitNodeUnitTemplatesRequest",
-      "name": "查询边缘单元EdgeUnit模版列表",
+      "name": "查询边缘单元EdgeUnit模板列表",
       "output": "DescribeEdgeUnitNodeUnitTemplatesResponse"
     },
     "DescribeEdgeUnitsCloud": {
@@ -379,9 +379,9 @@
       "output": "DescribeNodeUnitResponse"
     },
     "DescribeNodeUnitTemplateOnNodeGroup": {
-      "document": "查询指定NodeGroup下NodeUnit模版列表",
+      "document": "查询指定NodeGroup下NodeUnit模板列表",
       "input": "DescribeNodeUnitTemplateOnNodeGroupRequest",
-      "name": "查询指定NodeGroup下NodeUnit模版列表",
+      "name": "查询指定NodeGroup下NodeUnit模板列表",
       "output": "DescribeNodeUnitTemplateOnNodeGroupResponse"
     },
     "DescribeSecret": {
@@ -469,9 +469,9 @@
       "output": "ModifyEdgeUnitDeployGridItemResponse"
     },
     "ModifyNodeUnitTemplate": {
-      "document": "修改边缘单元NodeUnit模版",
+      "document": "修改边缘单元NodeUnit模板",
       "input": "ModifyNodeUnitTemplateRequest",
-      "name": "修改边缘单元NodeUnit模版",
+      "name": "修改边缘单元NodeUnit模板",
       "output": "ModifyNodeUnitTemplateResponse"
     },
     "ModifySecret": {
@@ -1452,7 +1452,7 @@
         },
         {
           "default": "",
-          "document": "NodeUnit模版名称",
+          "document": "NodeUnit模板名称",
           "example": "abc",
           "member": "string",
           "name": "Name",
@@ -2164,7 +2164,7 @@
         },
         {
           "default": "",
-          "document": "删除的NodeUnit模版ID列表",
+          "document": "删除的NodeUnit模板ID列表",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "NodeUnitTemplateIDs",
@@ -5066,7 +5066,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "NodeUnit模版列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NodeUnit模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeUnitTemplate",
           "name": "NodeUnitTemplates",
@@ -5615,7 +5615,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "NodeUnit模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NodeUnit模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NodeGroupNodeUnitTemplateInfo",
           "name": "NodeUnitTemplates",
@@ -8274,7 +8274,7 @@
         },
         {
           "default": "",
-          "document": "NodeUnit模版ID",
+          "document": "NodeUnit模板ID",
           "example": "1",
           "member": "uint64",
           "name": "NodeUnitTemplateID",

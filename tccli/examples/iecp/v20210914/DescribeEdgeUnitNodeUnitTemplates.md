@@ -1,4 +1,4 @@
-**Example 1: 创建边缘单元EdgeUnit模版**
+**Example 1: 创建边缘单元EdgeUnit模板**
 
 
 

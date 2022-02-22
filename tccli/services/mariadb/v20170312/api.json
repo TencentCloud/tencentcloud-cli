@@ -144,6 +144,12 @@
       "name": "查询慢查询日志列表",
       "output": "DescribeDBSlowLogsResponse"
     },
+    "DescribeDatabaseObjects": {
+      "document": "本接口（DescribeDatabaseObjects）用于查询云数据库实例的数据库中的对象列表，包含表、存储过程、视图和函数。",
+      "input": "DescribeDatabaseObjectsRequest",
+      "name": "查询数据库对象列表",
+      "output": "DescribeDatabaseObjectsResponse"
+    },
     "DescribeDatabaseTable": {
       "document": "本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。",
       "input": "DescribeDatabaseTableRequest",
@@ -2211,6 +2217,21 @@
       ],
       "usage": "out"
     },
+    "DatabaseFunction": {
+      "document": "数据库函数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "函数名称",
+          "member": "string",
+          "name": "Func",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DatabasePrivilege": {
       "document": "数据库权限",
       "members": [
@@ -2236,6 +2257,51 @@
         }
       ],
       "usage": "in"
+    },
+    "DatabaseProcedure": {
+      "document": "数据库存储过程信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储过程名称",
+          "member": "string",
+          "name": "Proc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseTable": {
+      "document": "数据库表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "表名",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseView": {
+      "document": "数据库视图信息",
+      "members": [
+        {
+          "default": "",
+          "document": "视图名称",
+          "member": "string",
+          "name": "View",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DcnDetailItem": {
       "document": "DCN详情条目",
@@ -3585,6 +3651,82 @@
           "member": "float",
           "name": "QueryTimeSum",
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsRequest": {
+      "document": "DescribeDatabaseObjects请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsResponse": {
+      "document": "DescribeDatabaseObjects返回参数结构体",
+      "members": [
+        {
+          "document": "透传入参。",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "数据库名称。",
+          "member": "string",
+          "name": "DbName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "表列表。",
+          "member": "DatabaseTable",
+          "name": "Tables",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "视图列表。",
+          "member": "DatabaseView",
+          "name": "Views",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "存储过程列表。",
+          "member": "DatabaseProcedure",
+          "name": "Procs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "函数列表。",
+          "member": "DatabaseFunction",
+          "name": "Funcs",
+          "type": "list",
           "value_allowed_null": false
         },
         {

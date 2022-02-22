@@ -258,6 +258,12 @@
       "name": "查询配额",
       "output": "DescribeQuotaResponse"
     },
+    "DescribeResources": {
+      "document": "查询用户在当前地域支持可用区列表和资源列表。",
+      "input": "DescribeResourcesRequest",
+      "name": "查询用户在当前地域支持可用区列表和资源列表",
+      "output": "DescribeResourcesResponse"
+    },
     "DescribeRewrite": {
       "document": "DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。",
       "input": "DescribeRewriteRequest",
@@ -4544,6 +4550,69 @@
       ],
       "type": "object"
     },
+    "DescribeResourcesRequest": {
+      "document": "DescribeResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回可用区资源列表数目，默认20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回可用区资源列表起始偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询可用区资源列表条件，详细的过滤条件如下：\n<li> zone - String - 是否必填：否 - （过滤条件）按照 可用区 过滤，如：\"ap-guangzhou-1\"（广州一区）。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\"。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesResponse": {
+      "document": "DescribeResources返回参数结构体",
+      "members": [
+        {
+          "document": "可用区支持的资源列表。",
+          "example": "无",
+          "member": "ZoneResource",
+          "name": "ZoneResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区资源列表数目。",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRewriteRequest": {
       "document": "DescribeRewrite请求参数结构体",
       "members": [
@@ -7893,6 +7962,32 @@
       ],
       "type": "object"
     },
+    "Resource": {
+      "document": "资源详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "运营商内具体资源信息，如\"CMCC\", \"CUCC\", \"CTCC\", \"BGP\", \"INTERNAL\"。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商信息，如\"CMCC\", \"CUCC\", \"CTCC\", \"BGP\", \"INTERNAL\"。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "Isp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RewriteLocationMap": {
       "document": "转发规则之间的重定向关系",
       "members": [
@@ -9296,6 +9391,72 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneResource": {
+      "document": "可用区资源列表",
+      "members": [
+        {
+          "default": "",
+          "document": "主可用区，如\"ap-guangzhou-1\"。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "MasterZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "ResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备可用区，如\"ap-guangzhou-2\"，单可用区时，备可用区为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP版本，如IPv4，IPv6，IPv6_Nat。",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IPVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区所属地域，如：ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ZoneRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区是否是LocalZone可用区，如：false",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalZone",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

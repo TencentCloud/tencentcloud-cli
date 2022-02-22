@@ -1,4 +1,4 @@
-**Example 1: 查询指定NodeGroup下NodeUnit模版列表**
+**Example 1: 查询指定NodeGroup下NodeUnit模板列表**
 
 
 

@@ -317,7 +317,7 @@
     "DescribeBackupSummaries": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupSummaries\r\n&Product=mysql\r\n&Limit=1\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupSummaries\n&Product=mysql\n&Limit=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AutoBackupCount\": 5,\n                \"AutoBackupVolume\": 10000,\n                \"BackupVolume\": 50000,\n                \"BinlogBackupCount\": 2,\n                \"BinlogBackupVolume\": 20000,\n                \"DataBackupCount\": 15,\n                \"DataBackupVolume\": 30000,\n                \"InstanceId\": \"cdb-01wa5l0v\",\n                \"ManualBackupCount\": 10,\n                \"ManualBackupVolume\": 20000\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 50\n    }\n}",
         "title": "查询备份实时统计"
       }
@@ -619,7 +619,7 @@
     "DescribeSlowLogs": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogs\r\n&InstanceId=cdb-c1nl9rpv\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeSlowLogs\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 3,\n        \"Items\": [\n            {\n                \"Name\": \"ivansqwutestdr_slowlog_20170425.log\",\n                \"IntranetUrl\": \"\",\n                \"Date\": \"2017-04-26 00:00:08\",\n                \"InternetUrl\": \"\",\n                \"Type\": \"slowlog\",\n                \"Size\": 0\n            },\n            {\n                \"Name\": \"ivansqwutestdr_slowlog_20170426.log\",\n                \"IntranetUrl\": \"http://gz.xxxxxxxxxx\",\n                \"Date\": \"2017-04-27 00:00:07\",\n                \"InternetUrl\": \"http://gz.xxxxxxxxxx\",\n                \"Type\": \"slowlog\",\n                \"Size\": 212\n            },\n            {\n                \"Name\": \"ivansqwutestdr_slowlog_20170427.log\",\n                \"IntranetUrl\": \"\",\n                \"Date\": \"2017-04-28 00:00:09\",\n                \"InternetUrl\": \"\",\n                \"Type\": \"slowlog\",\n                \"Size\": 0\n            }\n        ]\n    }\n}",
         "title": "查询慢查询日志"
       }
@@ -819,7 +819,7 @@
     "ModifyDBInstanceName": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceName\r\n&InstanceId=cdb-f35wr6wj\r\n&InstanceName=我是中文\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceName\n&InstanceId=cdb-f35wr6wj\n&InstanceName=我是中文\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "修改云数据库实例名"
       }

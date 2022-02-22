@@ -45,7 +45,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeUnitTemplate\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"Name\": \"auto-code1\",\n    \"Namespace\": \"default\",\n    \"Nodes\": [\n        \"logofox\",\n        \"node2\",\n        \"dev00311\"\n    ],\n    \"Description\": \"Description\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
-        "title": "创建边缘单元NodeUnit模版"
+        "title": "创建边缘单元NodeUnit模板"
       }
     ],
     "CreateEdgeUnitApplicationVisualization": [
@@ -131,7 +131,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeNodeUnitTemplates\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeUnitTemplateIDs\": [\n        100000,\n        100003\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
-        "title": "删除边缘单元NodeUnit模版"
+        "title": "删除边缘单元NodeUnit模板"
       }
     ],
     "DeleteEdgeNodes": [
@@ -471,7 +471,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeUnitNodeUnitTemplates\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"Namespace\": \"default\",\n    \"NameFilter\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Total\": 2,\n        \"NodeUnitTemplates\": [\n            {\n                \"ID\": 100003,\n                \"Name\": \"auto-code1\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeGroups\": [\n                    \"dsdsdsd-group\"\n                ],\n                \"NodeList\": [\n                    {\n                        \"ID\": 82955,\n                        \"NodeName\": \"test-node1\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    },\n                    {\n                        \"ID\": 82957,\n                        \"NodeName\": \"dev005\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:52:40\",\n                \"CreateTime\": \"2021-08-11 08:52:40\"\n            },\n            {\n                \"ID\": 100002,\n                \"Name\": \"auto-code\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeGroups\": [\n                    \"dsdsdsd-group\"\n                ],\n                \"NodeList\": [\n                    {\n                        \"ID\": 82958,\n                        \"NodeName\": \"logofox\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:50:27\",\n                \"CreateTime\": \"2021-08-11 08:50:27\"\n            }\n        ]\n    }\n}",
-        "title": "创建边缘单元EdgeUnit模版"
+        "title": "创建边缘单元EdgeUnit模板"
       }
     ],
     "DescribeEdgeUnitsCloud": [
@@ -533,7 +533,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeUnitTemplateOnNodeGroup\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeGroupName\": \"test-group\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Total\": 2,\n        \"NodeUnitTemplates\": [\n            {\n                \"ID\": 100003,\n                \"Name\": \"auto-code1\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeList\": [\n                    {\n                        \"ID\": 82955,\n                        \"NodeName\": \"test-node1\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    },\n                    {\n                        \"ID\": 82957,\n                        \"NodeName\": \"dev005\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:52:40\",\n                \"CreateTime\": \"2021-08-11 08:52:40\",\n                \"Relation\": true\n            },\n            {\n                \"ID\": 100002,\n                \"Name\": \"auto-code\",\n                \"Namespace\": \"default\",\n                \"Description\": \"Description\",\n                \"NodeList\": [\n                    {\n                        \"ID\": 82958,\n                        \"NodeName\": \"logofox\"\n                    },\n                    {\n                        \"ID\": 82956,\n                        \"NodeName\": \"dev00311\"\n                    }\n                ],\n                \"UpdateTime\": \"2021-08-11 08:50:27\",\n                \"CreateTime\": \"2021-08-11 08:50:27\",\n                \"Relation\": true\n            }\n        ]\n    }\n}",
-        "title": "查询指定NodeGroup下NodeUnit模版列表"
+        "title": "查询指定NodeGroup下NodeUnit模板列表"
       }
     ],
     "DescribeSecret": [
@@ -653,7 +653,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeUnitTemplate\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 8367274,\n    \"NodeUnitTemplateID\": 100003,\n    \"Nodes\": [\n        \"test-node1\",\n        \"dev00311\",\n        \"dev005\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
-        "title": "修改边缘单元NodeUnit模版"
+        "title": "修改边缘单元NodeUnit模板"
       }
     ],
     "ModifySecret": [

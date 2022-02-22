@@ -84,6 +84,12 @@
       "name": "删除设备",
       "output": "DeleteDeviceResponse"
     },
+    "DeleteDeviceResource": {
+      "document": "本接口（DeleteDeviceResource）用于删除设备资源",
+      "input": "DeleteDeviceResourceRequest",
+      "name": "删除设备资源",
+      "output": "DeleteDeviceResourceResponse"
+    },
     "DeleteLoraDevice": {
       "document": "删除lora类型的设备",
       "input": "DeleteLoraDeviceRequest",
@@ -257,6 +263,12 @@
       "input": "DisableTopicRuleRequest",
       "name": "禁用规则",
       "output": "DisableTopicRuleResponse"
+    },
+    "DownloadDeviceResource": {
+      "document": "本接口（DownloadDeviceResource）用于下载设备资源",
+      "input": "DownloadDeviceResourceRequest",
+      "name": "下载设备资源",
+      "output": "DownloadDeviceResourceResponse"
     },
     "EditFirmware": {
       "document": "编辑固件信息",
@@ -1459,6 +1471,51 @@
           "member": "string",
           "name": "Skey",
           "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResourceRequest": {
+      "document": "DeleteDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResourceResponse": {
+      "document": "DeleteDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
           "type": "string"
         }
       ],
@@ -3883,6 +3940,60 @@
     "DisableTopicRuleResponse": {
       "document": "DisableTopicRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadDeviceResourceRequest": {
+      "document": "DownloadDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadDeviceResourceResponse": {
+      "document": "DownloadDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "设备资源的cos链接",
+          "example": "https://xxx.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
