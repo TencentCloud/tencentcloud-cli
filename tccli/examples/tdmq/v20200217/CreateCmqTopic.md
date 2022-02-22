@@ -19,3 +19,24 @@ Output:
 }
 ```
 
+**Example 2: 示例**
+
+
+
+Input: 
+
+```
+tccli tdmq CreateCmqTopic --cli-unfold-argument  \
+    --TopicName testtopic
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "ae412902-bb35-4237-955d-3e1f9901e0cc",
+        "TopicId": "cmqt-7jwedr3jqb54"
+    }
+}
+```
+

@@ -10,7 +10,7 @@ tccli organization CreateOrganizationMember --cli-unfold-argument  \
     --Name test \
     --NodeId 27 \
     --AccountName test \
-    --PermissionIds 1 \
+    --PermissionIds 1 2 \
     --PolicyType Finical \
     --PayUin  \
     --IdentityRoleID 1

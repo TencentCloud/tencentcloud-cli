@@ -6,9 +6,7 @@ Input:
 
 ```
 tccli cdb ModifyAuditRule --cli-unfold-argument  \
-    --RuleId cdbrule-234 \
-    --Description audit_test2 \
-    --AuditAll true
+    --RuleId "cdbrule-qwerasdf"
 ```
 
 Output: 

@@ -120,6 +120,12 @@
       "name": "查询实时线程列表",
       "output": "DescribeMySqlProcessListResponse"
     },
+    "DescribeProxySessionKillTasks": {
+      "document": "用于查询 redis 执行 kill 会话任务后代理节点的执行结果，入参异步任务 ID 从接口 CreateProxySessionKillTask 调用成功后取得。当前 product 只支持：redis。",
+      "input": "DescribeProxySessionKillTasksRequest",
+      "name": "查询代理节点 kill 会话任务执行状态",
+      "output": "DescribeProxySessionKillTasksResponse"
+    },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
       "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
@@ -1809,6 +1815,69 @@
           "name": "ProcessList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxySessionKillTasksRequest": {
+      "document": "DescribeProxySessionKillTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "crs-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。",
+          "example": "[1234]",
+          "member": "int64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProxySessionKillTasksResponse": {
+      "document": "DescribeProxySessionKillTasks返回参数结构体",
+      "members": [
+        {
+          "document": "kill 任务的详情。",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4680,6 +4749,122 @@
           "name": "SeriesData",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskInfo": {
+      "document": "展示 redis kill 会话任务状态。",
+      "members": [
+        {
+          "default": "",
+          "document": "异步任务 ID。",
+          "example": "1234",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前实例所有 proxy 列表。",
+          "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
+          "member": "string",
+          "name": "InstProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前实例所有 proxy 数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "InstProxyCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "\"2022-02-11 10:22:46\"",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务启动时间。",
+          "example": "\"2022-02-11 10:22:46\"",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的状态，支持的取值包括：\"created\" - 新建；\"chosen\" - 待执行； \"running\" - 执行中；\"failed\" - 失败；\"finished\" - 已完成。",
+          "example": "\"finished\"",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完成 kill 任务的 proxyId。",
+          "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
+          "member": "string",
+          "name": "FinishedProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "kill 任务实行失败的 proxyId。",
+          "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
+          "member": "string",
+          "name": "FailedProxyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结束时间。",
+          "example": "\"2022-02-11 10:22:46\"",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行进度。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID。",
+          "example": "crs-test1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -84,6 +84,12 @@
       "name": "查询实例安全组信息",
       "output": "DescribeDBSecurityGroupsResponse"
     },
+    "DescribeDBSlowLogs": {
+      "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
+      "input": "DescribeDBSlowLogsRequest",
+      "name": "查询慢查询日志列表",
+      "output": "DescribeDBSlowLogsResponse"
+    },
     "DescribeDBSyncMode": {
       "document": "本接口（DescribeDBSyncMode）用于查询云数据库实例的同步模式。",
       "input": "DescribeDBSyncModeRequest",
@@ -2825,6 +2831,139 @@
       ],
       "type": "object"
     },
+    "DescribeDBSlowLogsRequest": {
+      "document": "DescribeDBSlowLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，形如：dcdbt-hw0qj6m1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从结果的第几条数据开始返回",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回的结果条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的起始时间，形如2016-07-23 14:55:20",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例的分片ID，形如shard-53ima8ln",
+          "member": "string",
+          "name": "ShardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的结束时间，形如2016-08-22 14:55:20。如果不填，那么查询结束时间就是当前时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的具体数据库名称",
+          "member": "string",
+          "name": "Db",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序指标，取值为query_time_sum或者query_count。不填默认按照query_time_sum排序",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型，desc（降序）或者asc（升序）。不填默认desc排序",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否查询从机的慢查询，0-主机; 1-从机。不填默认查询主机慢查询",
+          "member": "int64",
+          "name": "Slave",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSlowLogsResponse": {
+      "document": "DescribeDBSlowLogs返回参数结构体",
+      "members": [
+        {
+          "document": "所有语句锁时间总和",
+          "member": "float",
+          "name": "LockTimeSum",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有语句查询总次数",
+          "member": "int64",
+          "name": "QueryCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总记录数",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "所有语句查询时间总和",
+          "member": "float",
+          "name": "QueryTimeSum",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢查询日志数据",
+          "member": "SlowLogData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSyncModeRequest": {
       "document": "DescribeDBSyncMode请求参数结构体",
       "members": [
@@ -5500,6 +5639,202 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogData": {
+      "document": "慢查询条目信息",
+      "members": [
+        {
+          "default": "",
+          "document": "语句校验和，用于查询详情",
+          "example": "无",
+          "member": "string",
+          "name": "CheckSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "无",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "抽象的SQL语句",
+          "example": "无",
+          "member": "string",
+          "name": "FingerPrint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均的锁时间",
+          "example": "无",
+          "member": "string",
+          "name": "LockTimeAvg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大锁时间",
+          "example": "无",
+          "member": "string",
+          "name": "LockTimeMax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小锁时间",
+          "example": "无",
+          "member": "string",
+          "name": "LockTimeMin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁时间总和",
+          "example": "无",
+          "member": "string",
+          "name": "LockTimeSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询次数",
+          "example": "无",
+          "member": "string",
+          "name": "QueryCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均查询时间",
+          "example": "无",
+          "member": "string",
+          "name": "QueryTimeAvg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大查询时间",
+          "example": "无",
+          "member": "string",
+          "name": "QueryTimeMax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小查询时间",
+          "example": "无",
+          "member": "string",
+          "name": "QueryTimeMin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询时间总和",
+          "example": "无",
+          "member": "string",
+          "name": "QueryTimeSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描行数",
+          "example": "无",
+          "member": "string",
+          "name": "RowsExaminedSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送行数",
+          "example": "无",
+          "member": "string",
+          "name": "RowsSentSum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后执行时间",
+          "example": "无",
+          "member": "string",
+          "name": "TsMax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次执行时间",
+          "example": "无",
+          "member": "string",
+          "name": "TsMin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "帐号",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExampleSql",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "账户的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

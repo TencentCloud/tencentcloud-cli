@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "SubAccountUin": "xx",
-        "Status": 1,
+        "Status": 0,
         "RequestId": "xx",
         "Uin": "xx",
         "UnderwriteResults": [

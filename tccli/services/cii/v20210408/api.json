@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddSubStructureTasks": {
-      "document": "中银三星需求，基于主任务批量添加结构化子任务",
+      "document": "如果主任务下的报告不满足需求，可以基于主任务批量添加子任务",
       "input": "AddSubStructureTasksRequest",
       "name": "结构化增量子任务",
       "output": "AddSubStructureTasksResponse"
@@ -30,8 +30,14 @@
       "name": "查询机器核保任务数据",
       "output": "DescribeMachineUnderwriteResponse"
     },
+    "DescribeQualityScore": {
+      "document": "获取图片质量分",
+      "input": "DescribeQualityScoreRequest",
+      "name": "获取图片质量分",
+      "output": "DescribeQualityScoreResponse"
+    },
     "DescribeReportClassify": {
-      "document": "saas页面集成了自动分类功能，该接口提供自动分类结果",
+      "document": "辅助用户对批量报告自动分类",
       "input": "DescribeReportClassifyRequest",
       "name": "报告自动分类",
       "output": "DescribeReportClassifyResponse"
@@ -666,8 +672,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态码",
-          "example": "1",
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -692,12 +698,48 @@
       ],
       "type": "object"
     },
+    "DescribeQualityScoreRequest": {
+      "document": "DescribeQualityScore请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件二进制数据",
+          "example": "无",
+          "member": "binary",
+          "name": "File",
+          "required": true,
+          "type": "binary"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityScoreResponse": {
+      "document": "DescribeQualityScore返回参数结构体",
+      "members": [
+        {
+          "document": "质量分",
+          "example": "1",
+          "member": "float",
+          "name": "QualityScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReportClassifyRequest": {
       "document": "DescribeReportClassify请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "服务类型（Structured/Underwrite）",
+          "document": "服务类型\nStructured 仅结构化\nUnderwrite 结构化+核保",
           "example": "Structured",
           "member": "string",
           "name": "ServiceType",
@@ -1116,8 +1158,8 @@
           "value_allowed_null": false
         },
         {
-          "document": "状态码",
-          "example": "1",
+          "document": "结果状态：\n0：返回成功\n1：结果未生成\n2：结果生成失败",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -1502,6 +1544,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务文件列表",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFiles",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1574,6 +1626,76 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参考范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1-2",
+          "member": "string",
+          "name": "Range",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "报告时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ReportDate",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "healthReport",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检查项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "血糖",
+          "member": "string",
+          "name": "InspectProject",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空腹血葡萄糖",
+          "member": "string",
+          "name": "OriginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "阴阳性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "+",
+          "member": "string",
+          "name": "YinYang",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

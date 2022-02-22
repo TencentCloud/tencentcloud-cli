@@ -16,23 +16,49 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
+                "DiscountPrice": 0.0,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
                 "UnitPrice": 0.2,
                 "UnitPriceThirdStep": 0.1,
-                "Discount": 40,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
                 "UnitPriceDiscountThirdStep": 0.06,
                 "UnitPriceSecondStep": 0.12,
-                "UnitPriceDiscount": 0.08,
+                "OriginalPrice": 0.0,
+                "DiscountThreeYear": 0.0,
                 "UnitPriceDiscountSecondStep": 0.06,
-                "ChargeUnit": "HOUR"
+                "UnitPriceDiscount": 0.08,
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             },
             "BandwidthPrice": {
-                "ChargeUnit": "GB",
-                "UnitPrice": 0,
-                "Discount": 65,
-                "UnitPriceDiscount": 0
+                "DiscountPrice": 0.0,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
+                "UnitPrice": 0.0,
+                "UnitPriceThirdStep": 0.0,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
+                "UnitPriceDiscountThirdStep": 0.0,
+                "UnitPriceSecondStep": 0.0,
+                "OriginalPrice": 0.0,
+                "DiscountThreeYear": 0.0,
+                "UnitPriceDiscountSecondStep": 0.0,
+                "UnitPriceDiscount": 0.0,
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "xx"
     }
 }
 ```
@@ -72,17 +98,48 @@ Output:
         "Price": {
             "InstancePrice": {
                 "DiscountPrice": 1804.9,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
+                "UnitPrice": 0.0,
+                "UnitPriceThirdStep": 0.0,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
+                "UnitPriceDiscountThirdStep": 0.0,
+                "UnitPriceSecondStep": 0.0,
                 "OriginalPrice": 8884.5,
-                "Discount": 20
+                "DiscountThreeYear": 0.0,
+                "UnitPriceDiscountSecondStep": 0.0,
+                "UnitPriceDiscount": 0.0,
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             },
             "BandwidthPrice": {
-                "ChargeUnit": "GB",
+                "DiscountPrice": 0.0,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
                 "UnitPrice": 0.8,
+                "UnitPriceThirdStep": 0.0,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
+                "UnitPriceDiscountThirdStep": 0.0,
+                "UnitPriceSecondStep": 0.0,
+                "OriginalPrice": 0.0,
+                "DiscountThreeYear": 0.0,
+                "UnitPriceDiscountSecondStep": 0.0,
                 "UnitPriceDiscount": 0.52,
-                "Discount": 65
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "xx"
     }
 }
 ```
@@ -119,23 +176,49 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
+                "DiscountPrice": 0.0,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
                 "UnitPrice": 16.09,
                 "UnitPriceThirdStep": 16.09,
-                "Discount": 21,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
                 "UnitPriceDiscountThirdStep": 3.33,
                 "UnitPriceSecondStep": 16.09,
-                "UnitPriceDiscount": 3.33,
+                "OriginalPrice": 0.0,
+                "DiscountThreeYear": 0.0,
                 "UnitPriceDiscountSecondStep": 3.33,
-                "ChargeUnit": "HOUR"
+                "UnitPriceDiscount": 3.33,
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             },
             "BandwidthPrice": {
-                "ChargeUnit": "GB",
+                "DiscountPrice": 0.0,
+                "OriginalPriceThreeYear": 0.0,
+                "DiscountOneYear": 0.0,
                 "UnitPrice": 0.8,
-                "Discount": 65,
-                "UnitPriceDiscount": 0.52
+                "UnitPriceThirdStep": 0.0,
+                "OriginalPriceFiveYear": 0.0,
+                "Discount": 0.0,
+                "DiscountFiveYear": 0.0,
+                "UnitPriceDiscountThirdStep": 0.0,
+                "UnitPriceSecondStep": 0.0,
+                "OriginalPrice": 0.0,
+                "DiscountThreeYear": 0.0,
+                "UnitPriceDiscountSecondStep": 0.0,
+                "UnitPriceDiscount": 0.52,
+                "DiscountPriceFiveYear": 0.0,
+                "OriginalPriceOneYear": 0.0,
+                "ChargeUnit": "xx",
+                "DiscountPriceThreeYear": 0.0,
+                "DiscountPriceOneYear": 0.0
             }
         },
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "xx"
     }
 }
 ```

@@ -21,6 +21,7 @@ tccli monitor ModifyAlarmNotice --cli-unfold-argument  \
     --UserNotices.0.PhoneCircleTimes 2 \
     --UserNotices.0.PhoneInnerInterval 60 \
     --UserNotices.0.NeedPhoneArriveNotice 1 \
+    --UserNotices.0.PhoneCallType CIRCLE \
     --URLNotices.0.URL http://www.test.com
 ```
 

@@ -56,6 +56,14 @@
         "title": "创建实例快照"
       }
     ],
+    "CreateInstances": [
+      {
+        "document": "用户可以通过调用此接口，创建预付费的轻量应用服务器。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"BundleId\": \"bundle_gen_03\",\n    \"BlueprintId\": \"lhbp-g0tn7djh\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": \"1\",\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"lhins-hx5wjw4g\"\n        ],\n        \"RequestId\": \"232b2817-ec08-43f3-8d78-41b1bfb6082c\"\n    }\n}",
+        "title": "通过API创建轻量应用服务器"
+      }
+    ],
     "CreateKeyPair": [
       {
         "document": "",

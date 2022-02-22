@@ -8,6 +8,14 @@
         "title": "绑定坐席所属技能组示例"
       }
     ],
+    "CreateAutoCalloutTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400123455,\n    \"NotBefore\": 1642500621,\n    \"Callees\": [\n        \"008613012345678\"\n    ],\n    \"Callers\": [\n        \"008602012345678\"\n    ],\n    \"IvrId\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "创建任务"
+      }
+    ],
     "CreateCallOutSession": [
       {
         "document": "在不加载前端 SDK 的场景下，可以通过在后台触发此接口进行外呼，当前只支持通过手机端回拨外呼（先拨通客服手机），并且确认已经申请并通过添加外呼白名单。",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStaff\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffList\": [\n        \"staff1@xxx.com\",\n        \"staff2@xxx.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"OnlineStaffList\": null\n    }\n}",
         "title": "删除坐席信息示例"
+      }
+    ],
+    "DescribeAutoCalloutTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"TaskId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"IvrId\": 1,\n        \"Name\": \"xx\",\n        \"NotBefore\": 1,\n        \"NotAfter\": 0,\n        \"State\": 1,\n        \"Callers\": [\n            \"008610086\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Callees\": [\n            {\n                \"State\": 1,\n                \"Callee\": \"xx\"\n            }\n        ],\n        \"Description\": \"xx\"\n    }\n}",
+        "title": "查询任务"
       }
     ],
     "DescribeAutoCalloutTasks": [
@@ -150,6 +166,14 @@
         "input": "https://ccc.tencentcloudapi.com/?Action=DescribeTelSession\n&SdkAppId=1400000000\n&SessionId=0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"53bccf04-0870-4520-8614-f4bdddfd68df\",\n        \"Session\": {\n            \"SessionID\": \"0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\",\n            \"RoomID\": \"32929373\",\n            \"Caller\": \"00864009282737\",\n            \"Callee\": \"00864001783747\",\n            \"StartTimestamp\": 1607702199,\n            \"RingTimestamp\": 1607702299,\n            \"AcceptTimestamp\": 1607702329,\n            \"StaffEmail\": \"foo@tencent.com\",\n            \"StaffNumber\": \"1007\",\n            \"SessionStatus\": \"inProgress\",\n            \"Direction\": 1,\n            \"OutBoundCaller\": \"\",\n            \"OutBoundCallee\": \"\"\n        }\n    }\n}",
         "title": "获取 PSTN 会话信息"
+      }
+    ],
+    "StopAutoCalloutTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "停止任务"
       }
     ],
     "UnbindStaffSkillGroupList": [

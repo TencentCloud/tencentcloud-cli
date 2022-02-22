@@ -20,6 +20,7 @@ tccli monitor CreateAlarmNotice --cli-unfold-argument  \
     --UserNotices.0.PhoneCircleTimes 2 \
     --UserNotices.0.PhoneInnerInterval 60 \
     --UserNotices.0.NeedPhoneArriveNotice 1 \
+    --UserNotices.0.PhoneCallType CIRCLE \
     --URLNotices.0.URL https://www.mytest.com/validate
 ```
 

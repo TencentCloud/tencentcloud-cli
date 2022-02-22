@@ -43,7 +43,8 @@ Output:
                     "PhoneCircleTimes": 2,
                     "PhoneInnerInterval": 60,
                     "PhoneCircleInterval": 60,
-                    "NeedPhoneArriveNotice": 1
+                    "NeedPhoneArriveNotice": 1,
+                    "PhoneCallType": "CIRCLE"
                 }
             ],
             "URLNotices": [

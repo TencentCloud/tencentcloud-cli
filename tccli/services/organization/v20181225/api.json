@@ -709,8 +709,10 @@
       "members": [
         {
           "document": "企业组织单元列表",
+          "example": "无",
           "member": "OrgNode",
           "name": "Nodes",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

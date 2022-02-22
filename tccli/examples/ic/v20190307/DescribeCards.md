@@ -7,7 +7,7 @@ Input:
 ```
 tccli ic DescribeCards --cli-unfold-argument  \
     --Limit 0 \
-    --Sdkappid xx \
+    --Sdkappid 1400168178 \
     --Offset 0
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "124145i30913",
+        "RequestId": "5facf6b3-9bd5-480b-98c9-51d7285cf064",
         "Data": {
             "Total": "10",
             "List": [

@@ -139,6 +139,10 @@ include tccli/services/emr/v20190103/api.json
 include tccli/services/emr/v20190103/examples.json
 include tccli/services/es/v20180416/api.json
 include tccli/services/es/v20180416/examples.json
+include tccli/services/essbasic/v20210526/api.json
+include tccli/services/essbasic/v20210526/examples.json
+include tccli/services/essbasic/v20201222/api.json
+include tccli/services/essbasic/v20201222/examples.json
 include tccli/services/facefusion/v20181201/api.json
 include tccli/services/facefusion/v20181201/examples.json
 include tccli/services/faceid/v20180301/api.json
@@ -237,6 +241,8 @@ include tccli/services/postgres/v20170312/api.json
 include tccli/services/postgres/v20170312/examples.json
 include tccli/services/privatedns/v20201028/api.json
 include tccli/services/privatedns/v20201028/examples.json
+include tccli/services/pts/v20210728/api.json
+include tccli/services/pts/v20210728/examples.json
 include tccli/services/rce/v20201103/api.json
 include tccli/services/rce/v20201103/examples.json
 include tccli/services/redis/v20180412/api.json

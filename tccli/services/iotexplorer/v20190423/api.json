@@ -228,6 +228,12 @@
       "name": "获取网关绑定的子设备列表",
       "output": "DescribeGatewayBindDevicesResponse"
     },
+    "DescribeGatewaySubDeviceList": {
+      "document": "查询绑定到家庭的网关设备的子设备列表",
+      "input": "DescribeGatewaySubDeviceListRequest",
+      "name": "查询绑定到家庭的网关设备的子设备列表",
+      "output": "DescribeGatewaySubDeviceListResponse"
+    },
     "DescribeGatewaySubProducts": {
       "document": "用于获取网关可绑定或解绑的子产品",
       "input": "DescribeGatewaySubProductsRequest",
@@ -3072,6 +3078,78 @@
           "name": "ProductName",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewaySubDeviceListRequest": {
+      "document": "DescribeGatewaySubDeviceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关产品ID",
+          "example": "productId",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备名称",
+          "example": "deviceName",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewaySubDeviceListResponse": {
+      "document": "DescribeGatewaySubDeviceList返回参数结构体",
+      "members": [
+        {
+          "document": "设备的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilySubDevice",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

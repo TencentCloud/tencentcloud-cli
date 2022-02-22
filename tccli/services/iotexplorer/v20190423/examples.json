@@ -340,6 +340,14 @@
         "title": "获取网关绑定的子设备列表"
       }
     ],
+    "DescribeGatewaySubDeviceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewaySubDeviceList\n<公共请求参数>\n\n{\n    \"GatewayProductId\": \"productId\",\n    \"GatewayDeviceName\": \"deviceName\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceList\": [\n            {\n                \"ProductId\": \"ZOPEBSS\",\n                \"DeviceName\": \"sub001\",\n                \"DeviceId\": \"ZOPEBSS/sub001\",\n                \"AliasName\": \"aaaaa\",\n                \"FamilyId\": \"f_9b309d\",\n                \"RoomId\": \"0\",\n                \"IconUrl\": \"\",\n                \"IconUrlGrid\": \"\",\n                \"CreateTime\": 1627472149,\n                \"UpdateTime\": 1627472149\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询绑定到家庭的网关设备的子设备列表"
+      }
+    ],
     "DescribeGatewaySubProducts": [
       {
         "document": "",

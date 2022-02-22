@@ -2581,6 +2581,7 @@
         {
           "default": "",
           "document": "审计规则名称。",
+          "example": "audit1",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -2589,6 +2590,7 @@
         {
           "default": "",
           "document": "审计规则描述。",
+          "example": "audit_test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2597,6 +2599,7 @@
         {
           "default": "",
           "document": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。",
+          "example": "无",
           "member": "AuditFilter",
           "name": "RuleFilters",
           "required": false,
@@ -2605,6 +2608,7 @@
         {
           "default": "",
           "document": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。",
+          "example": "true",
           "member": "bool",
           "name": "AuditAll",
           "required": false,
@@ -2618,8 +2622,10 @@
       "members": [
         {
           "document": "审计规则 ID。",
+          "example": "cdbrule-qwerasdf",
           "member": "string",
           "name": "RuleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2916,20 +2922,20 @@
         },
         {
           "default": "",
-          "document": "文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。",
-          "example": "test.sql",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "云数据库的用户名。",
           "example": "xxxxx",
           "member": "string",
           "name": "User",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件名称。该文件是指用户已上传到腾讯云的文件，仅支持.sql文件。",
+          "example": "test.sql",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
           "type": "string"
         },
         {
@@ -2947,6 +2953,15 @@
           "example": "\"\"",
           "member": "string",
           "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "腾讯云COS文件链接。 用户需要指定 FileName 或者 CosUrl 其中一个。 COS文件需要是 .sql 文件。",
+          "example": "XXX",
+          "member": "string",
+          "name": "CosUrl",
           "required": false,
           "type": "string"
         }
@@ -3249,7 +3264,7 @@
         },
         {
           "default": "",
-          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。该值默认为0。",
           "example": "1",
           "member": "int64",
           "name": "AutoSyncFlag",
@@ -3609,7 +3624,7 @@
         },
         {
           "default": "",
-          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。",
+          "document": "是否自动发起灾备同步功能。该参数仅对购买灾备实例生效。 可选值为：0 - 不自动发起灾备同步；1 - 自动发起灾备同步。该值默认为0。",
           "example": "1",
           "member": "int64",
           "name": "AutoSyncFlag",
@@ -4174,6 +4189,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-qwerasdf",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -4790,6 +4806,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "rule_123",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -4798,6 +4815,7 @@
         {
           "default": "",
           "document": "审计规则名称。支持按审计规则名称进行模糊匹配查询。",
+          "example": "rule_name",
           "member": "string",
           "name": "RuleName",
           "required": false,
@@ -4806,6 +4824,7 @@
         {
           "default": "",
           "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4814,6 +4833,7 @@
         {
           "default": "",
           "document": "分页偏移量。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4827,15 +4847,19 @@
       "members": [
         {
           "document": "符合条件的审计规则个数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "审计规则详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuditRule",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5119,6 +5143,7 @@
         {
           "default": "",
           "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -5126,7 +5151,8 @@
         },
         {
           "default": "",
-          "document": "分页查询数据的偏移量。",
+          "document": "分页查询数据的偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5134,7 +5160,8 @@
         },
         {
           "default": "",
-          "document": "分页查询数据的条目限制，默认值为20。",
+          "document": "分页查询数据的条目限制，默认值为20。最小值为1，最大值为100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5142,7 +5169,8 @@
         },
         {
           "default": "",
-          "document": "指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。",
+          "document": "指定按某一项排序，可选值包括： BackupVolume: 备份容量， DataBackupVolume: 数据备份容量， BinlogBackupVolume: 日志备份容量， AutoBackupVolume: 自动备份容量， ManualBackupVolume: 手动备份容量。默认按照BackupVolume排序。",
+          "example": "BackupVolume",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -5150,7 +5178,8 @@
         },
         {
           "default": "",
-          "document": "指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。",
+          "document": "指定排序方向，可选值包括： ASC: 正序， DESC: 逆序。默认值为 ASC。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -5164,15 +5193,19 @@
       "members": [
         {
           "document": "实例备份统计条目。",
+          "example": "无",
           "member": "BackupSummaryItem",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "实例备份统计总条目数。",
+          "example": "50",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6365,7 +6398,7 @@
         },
         {
           "default": "",
-          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "document": "该值默认为False，表示当传入只读实例ID时，查询操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True。",
           "example": "False",
           "member": "bool",
           "name": "ForReadonlyInstance",
@@ -6642,6 +6675,15 @@
           "member": "string",
           "name": "EngineVersion",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "example": "HIGH_STABILITY",
+          "member": "string",
+          "name": "TemplateType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -7697,6 +7739,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7704,7 +7747,8 @@
         },
         {
           "default": "",
-          "document": "偏移量，最小值为0。",
+          "document": "偏移量，默认值为0，最小值为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7713,6 +7757,7 @@
         {
           "default": "",
           "document": "分页大小，默认值为20，最小值为1，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7726,15 +7771,19 @@
       "members": [
         {
           "document": "符合查询条件的慢查询日志总数。",
+          "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的慢查询日志详情。",
+          "example": "无",
           "member": "SlowLogInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9833,7 +9882,7 @@
         },
         {
           "default": "",
-          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，不传该参数表示清除该权限。",
           "example": "[\"SELECT\\n\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -9951,6 +10000,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-234",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -9959,6 +10009,7 @@
         {
           "default": "",
           "document": "审计规则名称。",
+          "example": "test",
           "member": "string",
           "name": "RuleName",
           "required": false,
@@ -9967,6 +10018,7 @@
         {
           "default": "",
           "document": "审计规则描述。",
+          "example": "audit_test2",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -9975,6 +10027,7 @@
         {
           "default": "",
           "document": "审计规则过滤条件。若设置了过滤条件，则不会开启全审计。",
+          "example": "无",
           "member": "AuditFilter",
           "name": "RuleFilters",
           "required": false,
@@ -9983,6 +10036,7 @@
         {
           "default": "",
           "document": "是否开启全审计。支持值包括：false – 不开启全审计，true – 开启全审计。用户未设置审计规则过滤条件时，默认开启全审计。",
+          "example": "true",
           "member": "bool",
           "name": "AuditAll",
           "required": false,
@@ -10442,6 +10496,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10449,7 +10504,8 @@
         },
         {
           "default": "",
-          "document": "实例名称。",
+          "document": "修改后的实例名称。",
+          "example": "我是中文",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -14527,7 +14583,8 @@
       "members": [
         {
           "default": "",
-          "document": "可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示",
+          "document": "可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -14537,6 +14594,7 @@
         {
           "default": "",
           "document": "可用区中文名称",
+          "example": "广州二区",
           "member": "string",
           "name": "ZoneName",
           "required": true,
@@ -14546,6 +14604,7 @@
         {
           "default": "",
           "document": "实例类型是否为自定义类型",
+          "example": "true",
           "member": "bool",
           "name": "IsCustom",
           "required": true,
@@ -14555,6 +14614,7 @@
         {
           "default": "",
           "document": "是否支持灾备",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportDr",
           "required": true,
@@ -14564,6 +14624,7 @@
         {
           "default": "",
           "document": "是否支持私有网络",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportVpc",
           "required": true,
@@ -14573,6 +14634,7 @@
         {
           "default": "",
           "document": "小时计费实例最大售卖数量",
+          "example": "100",
           "member": "int64",
           "name": "HourInstanceSaleMaxNum",
           "required": true,
@@ -14582,6 +14644,7 @@
         {
           "default": "",
           "document": "是否为默认可用区",
+          "example": "true",
           "member": "bool",
           "name": "IsDefaultZone",
           "required": true,
@@ -14591,6 +14654,7 @@
         {
           "default": "",
           "document": "是否为黑石区",
+          "example": "true",
           "member": "bool",
           "name": "IsBm",
           "required": true,
@@ -14600,6 +14664,7 @@
         {
           "default": "",
           "document": "支持的付费类型。可能的返回值为：0-包年包月；1-小时计费；2-后付费",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "PayType",
           "required": true,
@@ -14609,6 +14674,7 @@
         {
           "default": "",
           "document": "数据复制类型。0-异步复制；1-半同步复制；2-强同步复制",
+          "example": "[\"0\",\"1\",\"2\"]",
           "member": "string",
           "name": "ProtectMode",
           "required": true,
@@ -14618,6 +14684,7 @@
         {
           "default": "",
           "document": "可用区名称",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -14627,6 +14694,7 @@
         {
           "default": "",
           "document": "售卖实例类型数组",
+          "example": "[]",
           "member": "SellType",
           "name": "SellType",
           "required": true,
@@ -14636,6 +14704,7 @@
         {
           "default": "",
           "document": "多可用区信息",
+          "example": "{}",
           "member": "ZoneConf",
           "name": "ZoneConf",
           "required": true,
@@ -14645,6 +14714,7 @@
         {
           "default": "",
           "document": "可支持的灾备可用区信息",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "DrZone",
           "required": true,
@@ -14654,6 +14724,7 @@
         {
           "default": "",
           "document": "是否支持跨可用区只读",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportRemoteRo",
           "required": true,
@@ -14663,10 +14734,41 @@
         {
           "default": "",
           "document": "可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "RemoteRoZone",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
+          "member": "int64",
+          "name": "ExClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享型可支持的跨可用区只读区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "ExClusterRemoteRoZone",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "独享型多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ZoneConf",
+          "name": "ExClusterZoneConf",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

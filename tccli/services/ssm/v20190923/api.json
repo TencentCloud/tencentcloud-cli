@@ -1302,7 +1302,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "true表示用户已经可以使用云API密钥安全托管功能，\nfalse表示用户暂时不能使用云API密钥安全托管功能。",
+          "document": "true表示用户已经可以使用密钥安全托管功能，\nfalse表示用户暂时不能使用密钥安全托管功能。",
           "example": "true",
           "member": "bool",
           "name": "AccessKeyEscrowEnabled",
@@ -1655,7 +1655,7 @@
       "document": "RotateProductSecret返回参数结构体",
       "members": [
         {
-          "document": "当凭据类型为云产品凭据时（即SecretType为1，如Mysq、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。",
+          "document": "当凭据类型为云产品凭据时（即SecretType为1，如MySQL、Tdsql等托管凭据）此字段有效，返回轮转异步任务ID号。",
           "example": "1",
           "member": "int64",
           "name": "FlowID",

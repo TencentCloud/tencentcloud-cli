@@ -118,6 +118,14 @@
         "title": "删除设备"
       }
     ],
+    "DeleteDeviceResource": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteDeviceResource\n&ProductID=xxxx\n&Name=test\n&DeviceName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
+        "title": "删除设备资源"
+      }
+    ],
     "DeleteLoraDevice": [
       {
         "document": "",
@@ -348,6 +356,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DisableTopicRule\n&RuleName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "禁用接口示例"
+      }
+    ],
+    "DownloadDeviceResource": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DownloadDeviceResource\n&ProductID=xxxx\n&Name=test\n&DeviceName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Url\": \"https://xxx.cos.ap-guangzhou.myqcloud.com\",\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
+        "title": "下载设备资源"
       }
     ],
     "EditFirmware": [

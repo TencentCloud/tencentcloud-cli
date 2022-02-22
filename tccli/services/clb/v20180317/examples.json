@@ -428,6 +428,14 @@
         "title": "查询配额"
       }
     ],
+    "DescribeResources": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeResources\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"ZoneResourceSet\": [\n            {\n                \"LocalZone\": false,\n                \"SlaveZone\": null,\n                \"MasterZone\": \"ap-guangzhou-1\",\n                \"IPVersion\": \"IPv4\",\n                \"ZoneRegion\": \"ap-guangzhou\",\n                \"ResourceSet\": [\n                    {\n                        \"Isp\": \"BGP\",\n                        \"Type\": [\n                            \"BGP\"\n                        ]\n                    },\n                    {\n                        \"Isp\": \"CMCC\",\n                        \"Type\": [\n                            \"CMCC\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d09b91ba-a81e-4ca3-b423-c64e60127c64\"\n    }\n}",
+        "title": "查询用户在当前地域支持可用区列表和资源列表"
+      }
+    ],
     "DescribeRewrite": [
       {
         "document": "",

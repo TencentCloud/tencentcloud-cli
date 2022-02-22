@@ -100,7 +100,7 @@
         },
         {
           "default": "",
-          "document": "关系权限",
+          "document": "关系权限 取值：1-查看账单、2-查看余额、3-资金划拨、4-合并出账、5-开票 ，1、2 默认必须",
           "example": "无",
           "member": "uint64",
           "name": "PermissionIds",
@@ -109,7 +109,7 @@
         },
         {
           "default": "",
-          "document": "需要调节的节点",
+          "document": "成员所属部门的节点ID",
           "example": "1001",
           "member": "int64",
           "name": "NodeId",

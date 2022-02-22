@@ -19,7 +19,7 @@
       "output": "CreateEmailIdentityResponse"
     },
     "CreateEmailTemplate": {
-      "document": "创建模板，该模板可以是TXT或者HTML，请注意如果HTML不要包含外部文件的CSS。模板中的变量使用 {{变量名}} 表示。\n注意：模版需要审核通过才可以使用。",
+      "document": "创建模板，该模板可以是TXT或者HTML，请注意如果HTML不要包含外部文件的CSS。模板中的变量使用 {{变量名}} 表示。\n注意：模板需要审核通过才可以使用。",
       "input": "CreateEmailTemplateRequest",
       "name": "创建邮件模板",
       "output": "CreateEmailTemplateResponse"
@@ -409,6 +409,7 @@
         {
           "default": "",
           "document": "模板名称",
+          "example": "TestName",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -417,6 +418,7 @@
         {
           "default": "",
           "document": "模板内容",
+          "example": "无",
           "member": "TemplateContent",
           "name": "TemplateContent",
           "required": true,

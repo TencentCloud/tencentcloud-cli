@@ -657,6 +657,26 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前实例鉴权是否开启",
+          "example": "true",
+          "member": "bool",
+          "name": "AuthOpen",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该实例支持的功能，鉴权就是 Auth",
+          "example": "[\"Auth\"]",
+          "member": "string",
+          "name": "Features",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

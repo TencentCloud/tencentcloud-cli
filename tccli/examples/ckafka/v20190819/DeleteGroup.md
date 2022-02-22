@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok[apply success]",
+            "ReturnMessage": "group delete success",
             "Data": null
         },
         "RequestId": "7118b7f95-43de-4d27-8sdadsa-dsadsadsa"
