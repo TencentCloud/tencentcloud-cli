@@ -257,9 +257,9 @@
     "CreateAddressTemplateGroup": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAddressTemplateGroup\r\n&Version=2017-03-12\r\n&AddressTemplateGroupName=TestName\r\n&AddressTemplateIds.0=ipm-88t6207k\r\n&AddressTemplateIds.1=ipm-mdunqeb6\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressTemplateGroup\": {\n            \"AddressTemplateGroupName\": \"TestName\",\n            \"AddressTemplateGroupId\": \"ipmg-dih8xdbq\",\n            \"AddressTemplateIdSet\": [\n                \"ipm-88t6207k\",\n                \"ipm-mdunqeb6\"\n            ],\n            \"CreatedTime\": \"2018-04-03 21:51:02\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
-        "title": "创建IP地址模版集合"
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAddressTemplateGroup\n&AddressTemplateGroupName=TestName\n&AddressTemplateIds.0=ipm-88t6207k\n&AddressTemplateIds.1=ipm-mdunqeb6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AddressTemplateGroup\": {\n            \"AddressTemplateGroupName\": \"TestName\",\n            \"AddressTemplateGroupId\": \"ipmg-dih8xdbq\",\n            \"AddressTemplateIdSet\": [\n                \"ipm-88t6207k\",\n                \"ipm-mdunqeb6\"\n            ],\n            \"AddressTemplateSet\": [\n                {\n                    \"To\": \"10.1.1.2/22\",\n                    \"From\": \"10.1.1.3/22\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 21:51:02\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "创建IP地址模板集合"
       }
     ],
     "CreateAndAttachNetworkInterface": [
@@ -910,7 +910,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressTemplates\n&Filters.0.Name=address-template-name\n&Filters.0.Values.0=TestName\n&Filters.1.Name=address-template-id\n&Filters.1.Values.0=ipm-mdunqeb6\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressTemplateSet\": [\n            {\n                \"AddressTemplateName\": \"TestName\",\n                \"AddressTemplateId\": \"ipm-mdunqeb6\",\n                \"AddressSet\": [\n                    \"192.168.0.0/16\",\n                    \"192.128.8.8/17\"\n                ],\n                \"CreatedTime\": \"2017-12-31 10:06:05\"\n            }\n        ],\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressTemplateSet\": [\n            {\n                \"AddressTemplateName\": \"TestName\",\n                \"AddressTemplateId\": \"ipm-mdunqeb6\",\n                \"AddressSet\": [\n                    \"192.168.0.0/16\",\n                    \"192.128.8.8/17\"\n                ],\n                \"AddressExtraSet\": [\n                    {\n                        \"Description\": \"desc\",\n                        \"Address\": \"192.168.0.0/16\"\n                    },\n                    {\n                        \"Description\": \"desc\",\n                        \"Address\": \"192.128.8.8/17\"\n                    }\n                ],\n                \"CreatedTime\": \"2017-12-31 10:06:05\"\n            }\n        ],\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "查询IP地址模板"
       }
     ],

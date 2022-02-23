@@ -25,6 +25,16 @@ Output:
                     "192.168.0.0/16",
                     "192.128.8.8/17"
                 ],
+                "AddressExtraSet": [
+                    {
+                        "Description": "desc",
+                        "Address": "192.168.0.0/16"
+                    },
+                    {
+                        "Description": "desc",
+                        "Address": "192.128.8.8/17"
+                    }
+                ],
                 "CreatedTime": "2017-12-31 10:06:05"
             }
         ],

@@ -48,6 +48,12 @@
       "name": "创建独享集群DCDB实例",
       "output": "CreateDedicatedClusterDCDBInstanceResponse"
     },
+    "CreateHourDCDBInstance": {
+      "document": "创建DCDB后付费实例",
+      "input": "CreateHourDCDBInstanceRequest",
+      "name": "创建DCDB后付费实例",
+      "output": "CreateHourDCDBInstanceResponse"
+    },
     "DeleteAccount": {
       "document": "本接口（DeleteAccount）用于删除云数据库账号。用户名+host唯一确定一个账号。",
       "input": "DeleteAccountRequest",
@@ -1286,6 +1292,231 @@
     "CreateDedicatedClusterDCDBInstanceResponse": {
       "document": "CreateDedicatedClusterDCDBInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHourDCDBInstanceRequest": {
+      "document": "CreateHourDCDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardMemory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "10",
+          "member": "int64",
+          "name": "ShardStorage",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单个分片节点个数，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardNodeCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "欲购买实例的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "项目 ID，可以通过查看项目列表获取，不传则关联到默认项目",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "虚拟私有网络 ID，不传或传空表示创建为基础网络",
+          "example": "0",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟私有网络子网 ID，VpcId不为空时必填",
+          "example": "0",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片cpu大小，单位：核，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据库引擎版本，当前可选：10.0.10，10.1.9，5.7.17。\n10.0.10 - Mariadb 10.0.10；\n10.1.9 - Mariadb 10.1.9；\n5.7.17 - Percona 5.7.17。\n如果不填的话，默认为10.1.9，表示Mariadb 10.1.9。",
+          "example": "5.7.17",
+          "member": "string",
+          "name": "DbVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "安全组id",
+          "example": "sg-12345",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称， 可以通过该字段自主的设置实例的名字",
+          "example": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否支持IPv6",
+          "example": "0",
+          "member": "int64",
+          "name": "Ipv6Flag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签键值对数组",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "DCN源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DcnRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DCN源实例ID",
+          "example": "tdsqlshard-123",
+          "member": "string",
+          "name": "DcnInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步可退化）。",
+          "example": "无",
+          "member": "DBParamValue",
+          "name": "InitParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要回档的源实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "RollbackInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回档时间",
+          "example": "无",
+          "member": "string",
+          "name": "RollbackTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组ids，安全组可以传数组形式，兼容之前SecurityGroupId参数",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHourDCDBInstanceResponse": {
+      "document": "CreateHourDCDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。",
+          "example": "[\"tdsql-xxxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "流程id，可以根据流程id查询创建进度",
+          "example": "1122",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

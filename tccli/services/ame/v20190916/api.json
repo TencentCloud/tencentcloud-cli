@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BatchDescribeKTVMusicDetails": {
+      "document": "根据 Id 列表查询歌曲的详细信息，包含基础信息及播放信息。",
+      "input": "BatchDescribeKTVMusicDetailsRequest",
+      "name": "批量查询直播互动曲目详情",
+      "output": "BatchDescribeKTVMusicDetailsResponse"
+    },
     "CreateKTVRobot": {
       "document": "创建机器人，支持进入 RTC 房间，播放直播互动曲库歌曲。",
       "input": "CreateKTVRobotRequest",
@@ -292,6 +298,51 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchDescribeKTVMusicDetailsRequest": {
+      "document": "BatchDescribeKTVMusicDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id列表，注：列表最大长度为50",
+          "example": "无",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeKTVMusicDetailsResponse": {
+      "document": "BatchDescribeKTVMusicDetails返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲详情列表信息",
+          "example": "无",
+          "member": "KTVMusicDetailInfo",
+          "name": "KTVMusicDetailInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不存在的歌曲 ID 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "NotExistMusicIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ChorusClip": {
       "document": "副歌片段信息",
@@ -1861,6 +1912,72 @@
           "name": "Size",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicDetailInfo": {
+      "document": "即使广播曲库歌曲信息详情列表",
+      "members": [
+        {
+          "default": "",
+          "document": "即使广播曲库歌曲基础信息",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放凭证",
+          "example": "无",
+          "member": "string",
+          "name": "PlayToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌词下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "LyricsUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲规格信息列表",
+          "example": "无",
+          "member": "KTVMusicDefinitionInfo",
+          "name": "DefinitionInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音高数据文件下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "MidiJsonUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副歌片段数据列表",
+          "example": "无",
+          "member": "ChorusClip",
+          "name": "ChorusClipSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
