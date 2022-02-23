@@ -64,6 +64,14 @@
         "title": "input demo1"
       }
     ],
+    "CreateHourDCDBInstance": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=CreateHourDCDBInstance\n&ShardMemory=2\n&ShardStorage=10\n&ShardNodeCount=2\n&ShardCount=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"InstanceIds\": [\n            \"tdsql-xxxxxx\"\n        ],\n        \"FlowId\": 1122\n    }\n}",
+        "title": "无"
+      }
+    ],
     "DeleteAccount": [
       {
         "document": "",

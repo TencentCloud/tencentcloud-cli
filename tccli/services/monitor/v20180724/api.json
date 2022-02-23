@@ -156,6 +156,12 @@
       "name": "获取已绑定对象列表",
       "output": "DescribeBindingPolicyObjectListResponse"
     },
+    "DescribeConditionsTemplateList": {
+      "document": "获取条件模板列表",
+      "input": "DescribeConditionsTemplateListRequest",
+      "name": "获取条件模板列表",
+      "output": "DescribeConditionsTemplateListResponse"
+    },
     "DescribeMonitorTypes": {
       "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
@@ -1522,6 +1528,102 @@
           "document": "Dashboard中的唯一表示",
           "member": "string",
           "name": "DashboardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Condition": {
+      "document": "告警条件",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知频率",
+          "member": "int64",
+          "name": "AlarmNotifyPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）",
+          "member": "int64",
+          "name": "AlarmNotifyType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CalcType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CalcValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ContinueTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标ID",
+          "member": "int64",
+          "name": "MetricID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标展示名称（对外）",
+          "member": "string",
+          "name": "MetricDisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "周期",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "int64",
+          "name": "RuleID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标单位",
+          "member": "string",
+          "name": "Unit",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4252,6 +4354,105 @@
       ],
       "type": "object"
     },
+    "DescribeConditionsTemplateListRequest": {
+      "document": "DescribeConditionsTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "固定值，为\"monitor\"",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ViewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据触发条件模板名称过滤查询",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据触发条件模板ID过滤查询",
+          "example": " 1998658",
+          "member": "string",
+          "name": "GroupID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，每页返回的数量，取值1~100，默认20",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数，页偏移量，从0开始计数，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定按更新时间的排序方式，asc=升序, desc=降序",
+          "example": "desc",
+          "member": "string",
+          "name": "UpdateTimeOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConditionsTemplateListResponse": {
+      "document": "DescribeConditionsTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "模板总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TemplateGroup",
+          "name": "TemplateGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMonitorTypesRequest": {
       "document": "DescribeMonitorTypes请求参数结构体",
       "members": [
@@ -6651,6 +6852,57 @@
       ],
       "usage": "out"
     },
+    "EventCondition": {
+      "document": "事件告警条件",
+      "members": [
+        {
+          "default": "",
+          "document": "告警通知频率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlarmNotifyPeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AlarmNotifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件ID",
+          "member": "string",
+          "name": "EventID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件展示名称（对外）",
+          "member": "string",
+          "name": "EventDisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetMonitorDataRequest": {
       "document": "GetMonitorData请求参数结构体",
       "members": [
@@ -7838,6 +8090,279 @@
       ],
       "usage": "out"
     },
+    "PolicyGroup": {
+      "document": "策略组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否可设为默认告警策略",
+          "member": "bool",
+          "name": "CanSetDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略组ID",
+          "member": "int64",
+          "name": "GroupID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "InsertTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为默认告警策略",
+          "member": "int64",
+          "name": "IsDefault",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略启用状态",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改人UIN",
+          "member": "int64",
+          "name": "LastEditUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未屏蔽的实例数",
+          "member": "int64",
+          "name": "NoShieldedInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "父策略组ID",
+          "member": "int64",
+          "name": "ParentGroupID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属项目ID",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警接收对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PolicyGroupReceiverInfo",
+          "name": "ReceiverInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总绑定实例数",
+          "member": "int64",
+          "name": "TotalInstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为与关系规则",
+          "member": "int64",
+          "name": "IsUnionRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyGroupReceiverInfo": {
+      "document": "2018版策略模板列表接收人信息",
+      "members": [
+        {
+          "default": "",
+          "document": "有效时段结束时间",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要发送通知",
+          "member": "int64",
+          "name": "NeedSendNotice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警接收渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NotifyWay",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警对个人间隔（秒）",
+          "member": "int64",
+          "name": "PersonInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消息接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReceiverGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "接受者类型",
+          "member": "string",
+          "name": "ReceiverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接收人列表。通过平台接口查询到的接收人id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "ReceiverUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警恢复通知方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RecoverNotify",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警每轮间隔（秒）",
+          "member": "int64",
+          "name": "RoundInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话告警轮数",
+          "member": "int64",
+          "name": "RoundNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SendFor",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "有效时段开始时间",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话告警接收者uid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "UIDList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PolicyTag": {
       "document": "策略标签",
       "members": [
@@ -8807,6 +9332,111 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateGroup": {
+      "document": "模板列表",
+      "members": [
+        {
+          "default": "",
+          "document": "指标告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Condition",
+          "name": "Conditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EventCondition",
+          "name": "EventConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联告警策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PolicyGroup",
+          "name": "PolicyGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板策略组ID",
+          "member": "int64",
+          "name": "GroupID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板策略组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "int64",
+          "name": "InsertTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后修改人UIN",
+          "member": "int64",
+          "name": "LastEditUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视图",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为与关系",
+          "member": "int64",
+          "name": "IsUnionRule",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

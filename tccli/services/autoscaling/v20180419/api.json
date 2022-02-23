@@ -4457,6 +4457,24 @@
           "name": "DesiredCapacity",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最小实例数，取值范围为0-2000。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大实例数，取值范围为0-2000。",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

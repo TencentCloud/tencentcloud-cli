@@ -151,9 +151,9 @@
       "output": "CreateAddressTemplateResponse"
     },
     "CreateAddressTemplateGroup": {
-      "document": "本接口（CreateAddressTemplateGroup）用于创建IP地址模版集合",
+      "document": "本接口（CreateAddressTemplateGroup）用于创建IP地址模板集合",
       "input": "CreateAddressTemplateGroupRequest",
-      "name": "创建IP地址模版集合",
+      "name": "创建IP地址模板集合",
       "output": "CreateAddressTemplateGroupResponse"
     },
     "CreateAndAttachNetworkInterface": {
@@ -2141,18 +2141,22 @@
         {
           "default": "",
           "document": "起始地址。",
+          "example": "10.1.1.2/22",
           "member": "string",
           "name": "From",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "结束地址。",
+          "example": "10.1.1.3/22",
           "member": "string",
           "name": "To",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4083,7 +4087,8 @@
       "members": [
         {
           "default": "",
-          "document": "IP地址模版集合名称。",
+          "document": "IP地址模板集合名称。",
+          "example": "TestName",
           "member": "string",
           "name": "AddressTemplateGroupName",
           "required": true,
@@ -4091,7 +4096,8 @@
         },
         {
           "default": "",
-          "document": "IP地址模版实例ID，例如：ipm-mdunqeb6。",
+          "document": "IP地址模板实例ID，例如：ipm-mdunqeb6。",
+          "example": "[\"ipm-88t6207k\\r\\n\",\"ipm-mdunqeb6\\r\\n\"]",
           "member": "string",
           "name": "AddressTemplateIds",
           "required": true,
@@ -4105,8 +4111,10 @@
       "members": [
         {
           "document": "IP地址模板集合对象。",
+          "example": "无",
           "member": "AddressTemplateGroup",
           "name": "AddressTemplateGroup",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8205,7 +8213,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "IP地址模版。",
+          "document": "IP地址模板。",
           "example": "无",
           "member": "AddressTemplate",
           "name": "AddressTemplateSet",

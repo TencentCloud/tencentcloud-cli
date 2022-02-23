@@ -603,7 +603,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "卡性质：1. 借记卡；2. 贷记卡",
+          "document": "卡性质：1. 借记卡；2. 贷记卡；3. 预付费卡；4. 准贷记卡",
           "example": "1",
           "member": "int64",
           "name": "AccountType",

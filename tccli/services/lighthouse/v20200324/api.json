@@ -145,9 +145,9 @@
       "output": "DescribeFirewallRulesResponse"
     },
     "DescribeFirewallRulesTemplate": {
-      "document": "本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模版。",
+      "document": "本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模板。",
       "input": "DescribeFirewallRulesTemplateRequest",
-      "name": "查询防火墙规则模版",
+      "name": "查询防火墙规则模板",
       "output": "DescribeFirewallRulesTemplateResponse"
     },
     "DescribeGeneralResourceQuotas": {

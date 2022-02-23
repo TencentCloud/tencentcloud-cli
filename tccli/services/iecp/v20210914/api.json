@@ -1659,21 +1659,21 @@
         },
         {
           "default": "",
-          "document": "基本信息",
-          "example": "无",
-          "member": "ApplicationBasicInfo",
-          "name": "BasicInfo",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "Yaml配置",
+          "document": "base64后的Yaml配置",
           "example": "无",
           "member": "string",
           "name": "Yaml",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "基本信息",
+          "example": "无",
+          "member": "ApplicationBasicInfo",
+          "name": "BasicInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7670,6 +7670,26 @@
           "name": "WorkloadVisualConfig",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "DetailUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "Installed",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
