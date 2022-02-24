@@ -199,6 +199,8 @@ include tccli/services/lighthouse/v20200324/api.json
 include tccli/services/lighthouse/v20200324/examples.json
 include tccli/services/live/v20180801/api.json
 include tccli/services/live/v20180801/examples.json
+include tccli/services/lowcode/v20210108/api.json
+include tccli/services/lowcode/v20210108/examples.json
 include tccli/services/lp/v20200224/api.json
 include tccli/services/lp/v20200224/examples.json
 include tccli/services/mariadb/v20170312/api.json
@@ -295,6 +297,8 @@ include tccli/services/tcb/v20180608/api.json
 include tccli/services/tcb/v20180608/examples.json
 include tccli/services/tcex/v20200727/api.json
 include tccli/services/tcex/v20200727/examples.json
+include tccli/services/tcm/v20210413/api.json
+include tccli/services/tcm/v20210413/examples.json
 include tccli/services/tcr/v20190924/api.json
 include tccli/services/tcr/v20190924/examples.json
 include tccli/services/tdid/v20210519/api.json

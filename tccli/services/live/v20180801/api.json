@@ -120,6 +120,12 @@
       "name": "创建录制任务（新）",
       "output": "CreateRecordTaskResponse"
     },
+    "CreateScreenshotTask": {
+      "document": "创建一个在指定时间启动、结束的截图任务，并使用指定截图模板ID对应的配置进行截图。\n- 注意事项\n1. 断流会结束当前截图。在结束时间到达之前任务仍然有效，期间只要正常推流都会正常截图，与是否多次推、断流无关。\n2. 使用上避免创建时间段相互重叠的截图任务。若同一条流当前存在多个时段重叠的任务，为避免重复系统将启动最多3个截图任务。\n3. 创建的截图任务记录在平台侧只保留3个月。\n4. 当前截图任务管理API（CreateScreenshotTask/StopScreenshotTask/DeleteScreenshotTask）与旧API（CreateLiveInstantSnapshot/StopLiveInstantSnapshot）不兼容，两套接口不能混用。\n5. 避免 创建截图任务 与 推流 操作同时进行，可能导致因截图任务未生效而引起任务延迟启动问题，两者操作间隔建议大于3秒。",
+      "input": "CreateScreenshotTaskRequest",
+      "name": "创建截图任务",
+      "output": "CreateScreenshotTaskResponse"
+    },
     "DeleteLiveCallbackRule": {
       "document": "删除回调规则。",
       "input": "DeleteLiveCallbackRuleRequest",
@@ -215,6 +221,12 @@
       "input": "DeleteRecordTaskRequest",
       "name": "删除录制任务（新）",
       "output": "DeleteRecordTaskResponse"
+    },
+    "DeleteScreenshotTask": {
+      "document": "删除截图任务配置。删除操作不影响正在运行当中的任务，仅对删除之后新的推流有效。",
+      "input": "DeleteScreenshotTaskRequest",
+      "name": "删除截图任务",
+      "output": "DeleteScreenshotTaskResponse"
     },
     "DescribeAllStreamPlayInfoList": {
       "document": "输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。",
@@ -528,6 +540,12 @@
       "name": "查询截图张数",
       "output": "DescribeScreenShotSheetNumListResponse"
     },
+    "DescribeScreenshotTask": {
+      "document": "查询指定时间段范围内启动和结束的截图任务列表。\n- 使用前提\n1. 仅用于查询由 CreateScreenshotTask接口创建的截图任务。\n2. 不能查询被 DeleteScreenshotTask接口删除以及已过期（平台侧保留3个月）的截图任务。",
+      "input": "DescribeScreenshotTaskRequest",
+      "name": "查询截图任务列表",
+      "output": "DescribeScreenshotTaskResponse"
+    },
     "DescribeStreamDayPlayInfoList": {
       "document": "查询天维度每条流的播放数据，包括总流量等。",
       "input": "DescribeStreamDayPlayInfoListRequest",
@@ -689,6 +707,12 @@
       "input": "StopRecordTaskRequest",
       "name": "终止录制任务（新）",
       "output": "StopRecordTaskResponse"
+    },
+    "StopScreenshotTask": {
+      "document": "提前结束截图，中止运行中的截图任务。任务被成功终止后，本次任务将不再启动。",
+      "input": "StopScreenshotTaskRequest",
+      "name": "终止截图任务",
+      "output": "StopScreenshotTaskResponse"
     },
     "UnBindLiveDomainCert": {
       "document": "解绑域名证书",
@@ -3211,6 +3235,105 @@
       ],
       "type": "object"
     },
+    "CreateScreenshotTaskRequest": {
+      "document": "CreateScreenshotTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "livetest",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "5000.live.push.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流路径。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。",
+          "example": "1589904000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "截图模板ID，CreateLiveSnapshotTemplate 返回值。如果传入错误ID，则不拉起截图。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。",
+          "example": "1589889600",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "推流类型，默认0。取值：\n0-直播推流。\n1-合成流，即 A+B=C 类型混流。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StreamType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩展字段，暂无定义。默认为空。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScreenshotTaskResponse": {
+      "document": "CreateScreenshotTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID，全局唯一标识截图任务。返回TaskId字段说明截图任务创建成功。",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DayStreamPlayInfo": {
       "document": "流播放信息",
       "members": [
@@ -3859,6 +3982,33 @@
     },
     "DeleteRecordTaskResponse": {
       "document": "DeleteRecordTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScreenshotTaskRequest": {
+      "document": "DeleteScreenshotTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID，CreateScreenshotTask返回。删除TaskId指定的截图任务。",
+          "example": "UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScreenshotTaskResponse": {
+      "document": "DeleteScreenshotTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7346,6 +7496,96 @@
           "example": "无",
           "member": "TimeValue",
           "name": "DataInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScreenshotTaskRequest": {
+      "document": "DescribeScreenshotTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询任务开始时间，Unix 时间戳。设置时间不早于当前时间之前90天的时间，且查询时间跨度不超过一周。",
+          "example": "1595779200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询任务结束时间，Unix 时间戳。EndTime 必须大于 StartTime，设置时间不早于当前时间之前90天的时间，且查询时间跨度不超过一周。（注意：任务开始结束时间必须在查询时间范围内）。",
+          "example": "1595865600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "livetest",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "5000.live.push.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流路径。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
+          "example": "RF1bV9tRVVEW=",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScreenshotTaskResponse": {
+      "document": "DescribeScreenshotTask返回参数结构体",
+      "members": [
+        {
+          "document": "翻页标识，当请求未返回所有数据，该字段表示下一条记录的 Token。当该字段为空，说明已无更多数据。",
+          "example": "RF1bV9tRVVEW=",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "截图任务列表。当该字段为空，说明已返回所有数据。",
+          "example": "无",
+          "member": "ScreenshotTask",
+          "name": "TaskList",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -11430,6 +11670,92 @@
       ],
       "usage": "out"
     },
+    "ScreenshotTask": {
+      "document": "截图任务",
+      "members": [
+        {
+          "default": "",
+          "document": "截图任务ID。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "推流路径。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流名称。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务开始时间，Unix时间戳。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务结束时间，Unix时间戳。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "截图模板ID。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用 StopScreenshotTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Stopped",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SnapshotTemplateInfo": {
       "document": "截图模板信息。",
       "members": [
@@ -11595,6 +11921,33 @@
     },
     "StopRecordTaskResponse": {
       "document": "StopRecordTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopScreenshotTaskRequest": {
+      "document": "StopScreenshotTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "截图任务ID。",
+          "example": "UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopScreenshotTaskResponse": {
+      "document": "StopScreenshotTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

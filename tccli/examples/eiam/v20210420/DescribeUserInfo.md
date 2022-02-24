@@ -24,16 +24,16 @@ Output:
             "xx",
             "xx"
         ],
+        "AdminFlag": 1,
         "UserId": "xx",
-        "ActivationTime": "xx",
         "Phone": "xx",
         "OrgNodeId": "xx",
         "DataSource": "xx",
-        "ExpirationTime": "xx",
         "Email": "xx",
+        "ExpirationTime": "xx",
+        "ActivationTime": "xx",
         "PwdNeedReset": true,
-        "RequestId": "xx",
-        "AdminFlag": 1
+        "RequestId": "xx"
     }
 }
 ```

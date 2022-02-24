@@ -35,8 +35,8 @@
     "CreateOrgNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrgNode\n<公共请求参数>\n\n{\n    \"DisplayName\": \"广州分部\",\n    \"Description\": \"接口创建组织机构\",\n    \"CustomizedOrgNodeId\": \"gz1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aed983a7-8347-48b8-a6ef-b04d0b6c1641\",\n        \"OrgNodeId\": \"b266a1d6-0cfd-4d8d-aad1-1e5b26b0914e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrgNode\n<公共请求参数>\n\n{\n    \"DisplayName\": \"广州分部\",\n    \"Description\": \"分机构\",\n    \"CustomizedOrgNodeId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aed983a7-8347-****-a6ef-b04d0b6c1641\",\n        \"OrgNodeId\": \"b266a1d6-0cfd-****-aad1-1e5b26b0914e\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -172,7 +172,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"UserName\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"SecondaryOrgNodeIdList\": [\n            \"xx\"\n        ],\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"UserId\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"Email\": \"xx\",\n        \"PwdNeedReset\": true,\n        \"RequestId\": \"xx\",\n        \"AdminFlag\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Status\": \"xx\",\n        \"DisplayName\": \"xx\",\n        \"Description\": \"xx\",\n        \"SecondaryOrgNodeIdList\": [\n            \"xx\"\n        ],\n        \"UserGroupIds\": [\n            \"xx\",\n            \"xx\"\n        ],\n        \"AdminFlag\": 1,\n        \"UserId\": \"xx\",\n        \"Phone\": \"xx\",\n        \"OrgNodeId\": \"xx\",\n        \"DataSource\": \"xx\",\n        \"Email\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"ActivationTime\": \"xx\",\n        \"PwdNeedReset\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
