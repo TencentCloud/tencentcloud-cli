@@ -178,6 +178,14 @@
         "title": "示例"
       }
     ],
+    "CreateScreenshotTask": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateScreenshotTask\n&AppName=live\n&DomainName=5000.live.push.com\n&StreamName=livetest\n&StartTime=1589889600\n&EndTime=1589904000\n&TemplateId=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteLiveCallbackRule": [
       {
         "document": "",
@@ -302,6 +310,14 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DeleteRecordTask\r\n&TaskId=UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteScreenshotTask": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DeleteScreenshotTask\n&TaskId=UZZUVbQ1FSQFlvKxYSBxUVGzB00UEFTZU5RlNURlhR1FDUVBFUWpCkNbUUBKb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -722,6 +738,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeScreenshotTask": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=DescribeScreenshotTask\n&AppName=live\n&DomainName=5000.live.push.com\n&StreamName=livetest\n&StartTime=1595779200\n&EndTime=1595865600\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ScrollToken\": \"\",\n        \"TaskList\": [\n            {\n                \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb\",\n                \"DomainName\": \"5000.live.push.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"livetest\",\n                \"StartTime\": 1595779900,\n                \"EndTime\": 1595789900,\n                \"TemplateId\": 123,\n                \"Stopped\": 1595783500\n            },\n            {\n                \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLFszdDWW9EUb\",\n                \"DomainName\": \"5000.live.push.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"livetest\",\n                \"StartTime\": 1595789900,\n                \"EndTime\": 1595799900,\n                \"TemplateId\": 0,\n                \"Stopped\": 0\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeStreamDayPlayInfoList": [
       {
         "document": "",
@@ -934,6 +958,14 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=StopRecordTask\n&TaskId=UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopScreenshotTask": [
+      {
+        "document": "",
+        "input": "https://live.tencentcloudapi.com/?Action=StopScreenshotTask\n&TaskId=UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

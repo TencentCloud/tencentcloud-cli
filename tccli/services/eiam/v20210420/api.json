@@ -986,7 +986,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。",
+          "document": "机构代码。如果为空，则默认生成机构代码。如果为非空，则校验机构代码的唯一性。",
           "example": "无",
           "member": "string",
           "name": "CustomizedOrgNodeId",
@@ -2143,7 +2143,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
@@ -2206,7 +2206,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "数据来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DataSource",
@@ -3990,7 +3990,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义可选填的机构节点对外ID，如果非空则校验此ID的唯一性。",
+          "document": "机构代码。如果非空则校验此ID的唯一性。",
           "example": "id",
           "member": "string",
           "name": "CustomizedOrgNodeId",
