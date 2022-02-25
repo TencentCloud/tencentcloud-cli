@@ -2216,11 +2216,12 @@
       "usage": "both"
     },
     "AddressTemplateSpecification": {
-      "document": "IP地址模版",
+      "document": "IP地址模板",
       "members": [
         {
           "default": "",
           "document": "IP地址ID，例如：ipm-2uw6ujo6。",
+          "example": "ipm-2uw6ujo6",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -2230,6 +2231,7 @@
         {
           "default": "",
           "document": "IP地址组ID，例如：ipmg-2uw6ujo6。",
+          "example": "ipmg-2uw6ujo6",
           "member": "string",
           "name": "AddressGroupId",
           "required": true,
@@ -20942,11 +20944,12 @@
       "usage": "out"
     },
     "ServiceTemplateSpecification": {
-      "document": "协议端口模版",
+      "document": "协议端口模板",
       "members": [
         {
           "default": "",
           "document": "协议端口ID，例如：ppm-f5n1f8da。",
+          "example": "ppm-f5n1f8da",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -20956,6 +20959,7 @@
         {
           "default": "",
           "document": "协议端口组ID，例如：ppmg-f5n1f8da。",
+          "example": "ppmg-f5n1f8da",
           "member": "string",
           "name": "ServiceGroupId",
           "required": true,

@@ -510,6 +510,12 @@
       "name": "云鉴-查询对账单下载地址接口",
       "output": "QueryDownloadBillURLResponse"
     },
+    "QueryExceedingInfo": {
+      "document": "灵云-查询超额信息",
+      "input": "QueryExceedingInfoRequest",
+      "name": "灵云-查询超额信息",
+      "output": "QueryExceedingInfoResponse"
+    },
     "QueryExchangeRate": {
       "document": "跨境-查询汇率",
       "input": "QueryExchangeRateRequest",
@@ -13284,6 +13290,30 @@
       ],
       "usage": "in"
     },
+    "Paging": {
+      "document": "分页参数",
+      "members": [
+        {
+          "default": "",
+          "document": "页码",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页长",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "PayDataResult": {
       "document": "pay支付方式json数据",
       "members": [
@@ -16377,6 +16407,170 @@
         }
       ],
       "type": "object"
+    },
+    "QueryExceedingInfoData": {
+      "document": "超额信息数据",
+      "members": [
+        {
+          "default": "",
+          "document": "代理商ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理商名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主播ID。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主播名称。当入参Dimension为ANCHOR或ORDER时，该字段才会有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单号。当入参Dimension为ORDER时，该字段才会有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "超额类型。目前支持 AGENT_EXCEED_100 和 ANCHOR_EXCEED_100_12 两种类型。",
+          "example": "无",
+          "member": "string",
+          "name": "ExceedingType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryExceedingInfoRequest": {
+      "document": "QueryExceedingInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "超额日期。格式为yyyy-MM-dd。",
+          "example": "2022-01-01",
+          "member": "string",
+          "name": "TimeStr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "维度。目前支持三个维度: AGENT, ANCHOR, ORDER。不填默认使用AGENT维度。",
+          "example": "AGENT",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页信息。不填默认Index为1，Count为100。",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryExceedingInfoResponse": {
+      "document": "QueryExceedingInfo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "超额信息结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryExceedingInfoResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryExceedingInfoResult": {
+      "document": "超额信息结果",
+      "members": [
+        {
+          "default": "",
+          "document": "记录总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超额信息数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryExceedingInfoData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "QueryExchangeRateRequest": {
       "document": "QueryExchangeRate请求参数结构体",

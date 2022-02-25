@@ -13,18 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "Clients": [
             {
-                "Count": 15,
-                "IP": "10.xx.xx.xx"
+                "Count": 1,
+                "IP": "xx",
+                "InternalService": true
             },
             {
-                "Count": 15,
-                "IP": "10.xx.xx.xx"
+                "Count": 1,
+                "IP": "xx",
+                "InternalService": true
             }
         ],
-        "RequestId": "c61fd6e2-c505-4fb9-9f30-edd8e897b236"
+        "RequestId": "xx"
     }
 }
 ```

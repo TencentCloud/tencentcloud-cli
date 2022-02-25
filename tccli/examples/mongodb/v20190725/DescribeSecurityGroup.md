@@ -13,44 +13,60 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "xx",
         "Groups": [
             {
-                "CreateTime": "2021-01-07 16:38:48",
-                "Inbound": [
-                    {
-                        "Action": "DROP",
-                        "CidrIp": "0.0.0.0/0",
-                        "IpProtocol": "ALL",
-                        "PortRange": "ALL"
-                    },
-                    {
-                        "Action": "DROP",
-                        "CidrIp": "::/0",
-                        "IpProtocol": "ALL",
-                        "PortRange": "ALL"
-                    }
-                ],
                 "Outbound": [
                     {
-                        "Action": "DROP",
-                        "CidrIp": "0.0.0.0/0",
-                        "IpProtocol": "ALL",
-                        "PortRange": "ALL"
+                        "PortRange": "xx",
+                        "CidrIp": "xx",
+                        "ServiceModule": "xx",
+                        "AddressModule": "xx",
+                        "Action": "xx",
+                        "IpProtocol": "xx",
+                        "Id": "xx",
+                        "Desc": "xx"
                     },
                     {
-                        "Action": "DROP",
-                        "CidrIp": "",
-                        "IpProtocol": "ALL",
-                        "PortRange": "ALL"
+                        "PortRange": "xx",
+                        "CidrIp": "xx",
+                        "Action": "xx",
+                        "AddressModule": "xx",
+                        "ServiceModule": "xx",
+                        "IpProtocol": "xx",
+                        "Id": "xx",
+                        "Desc": "xx"
+                    }
+                ],
+                "SecurityGroupName": "xx",
+                "Inbound": [
+                    {
+                        "PortRange": "xx",
+                        "CidrIp": "xx",
+                        "ServiceModule": "xx",
+                        "AddressModule": "xx",
+                        "Action": "xx",
+                        "IpProtocol": "xx",
+                        "Id": "xx",
+                        "Desc": "xx"
+                    },
+                    {
+                        "PortRange": "xx",
+                        "CidrIp": "xx",
+                        "Action": "xx",
+                        "AddressModule": "xx",
+                        "ServiceModule": "xx",
+                        "IpProtocol": "xx",
+                        "Id": "xx",
+                        "Desc": "xx"
                     }
                 ],
                 "ProjectId": 0,
-                "SecurityGroupId": "sg-7pw2qq97",
-                "SecurityGroupName": "全拒绝",
-                "SecurityGroupRemark": "暴露全部端口到公网和内网，有一定安全风险"
+                "SecurityGroupId": "xx",
+                "SecurityGroupRemark": "xx",
+                "CreateTime": "xx"
             }
-        ],
-        "RequestId": "b1886334-acfe-4445-8429-e11a6e7b3851"
+        ]
     }
 }
 ```

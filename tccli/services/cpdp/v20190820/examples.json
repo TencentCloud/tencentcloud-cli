@@ -698,6 +698,14 @@
         "title": "查询对账单下载地址正常示例"
       }
     ],
+    "QueryExceedingInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryExceedingInfo\n<公共请求参数>\n\n{\n    \"TimeStr\": \"2021-01-01\",\n    \"PageNumber\": {\n        \"Count\": 10,\n        \"Index\": 0\n    },\n    \"Dimension\": \"AGENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"RequestId\": \"5073a4f3-44cc-43d1-a6e5-55d750278bbd\",\n        \"Result\": {\n            \"Count\": 0,\n            \"Data\": {\n                \"AgentId\": \"Agent1\",\n                \"AgentName\": \"Agent1Name\",\n                \"ExceedingType\": \"AGENT_EXCEED_100\",\n                \"OrderId\": null,\n                \"AnchorId\": null,\n                \"AnchorName\": null\n            }\n        }\n    }\n}",
+        "title": "QueryExceedingInfo"
+      }
+    ],
     "QueryExchangeRate": [
       {
         "document": "",

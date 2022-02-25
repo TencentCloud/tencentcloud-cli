@@ -2627,7 +2627,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询密钥ID列表",
+          "document": "查询密钥ID列表。最多支持10个。",
           "example": "[\"id1\",\"id2\"]",
           "member": "string",
           "name": "SecretIdList",
