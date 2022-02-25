@@ -6,7 +6,21 @@ Input:
 
 ```
 tccli mongodb DescribeDBInstances --cli-unfold-argument  \
-    --Limit 1
+    --Status 0 \
+    --OrderBy xx \
+    --InstanceIds xx \
+    --VpcId xx \
+    --Tags.TagKey xx \
+    --Tags.TagValue xx \
+    --ClusterType 0 \
+    --PayMode 0 \
+    --Limit 1 \
+    --SearchKey xx \
+    --Offset 1 \
+    --SubnetId xx \
+    --OrderByType xx \
+    --InstanceType 0 \
+    --ProjectIds 1
 ```
 
 Output: 

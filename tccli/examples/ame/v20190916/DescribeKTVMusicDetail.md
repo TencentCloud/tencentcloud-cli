@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "LyricsUrl": "xx",
+        "PreludeInterval": 0,
         "DefinitionInfoSet": [
             {
                 "Definition": "xx",

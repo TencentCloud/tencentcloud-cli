@@ -13,8 +13,21 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "302530d2-ee57-495e-89d0-51e03b11815e",
-        "TotalCount": 19
+        "TotalCount": 1,
+        "CurrentOps": [
+            {
+                "ReplicaSetName": "xx",
+                "NodeName": "xx",
+                "State": "xx",
+                "MicrosecsRunning": 1,
+                "Query": "xx",
+                "OpId": 0,
+                "Ns": "xx",
+                "Operation": "xx",
+                "Op": "xx"
+            }
+        ],
+        "RequestId": "xx"
     }
 }
 ```

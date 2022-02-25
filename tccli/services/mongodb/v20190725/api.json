@@ -194,6 +194,7 @@
         {
           "default": "",
           "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "[\"cmgo-eqmoa5sf\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -201,7 +202,8 @@
         },
         {
           "default": "",
-          "document": "项目ID",
+          "document": "项目ID，用户已创建项目的唯一ID,非自定义",
+          "example": "12",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -215,8 +217,10 @@
       "members": [
         {
           "document": "返回的异步任务ID列表",
+          "example": "[1081]",
           "member": "uint64",
           "name": "FlowIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -337,6 +341,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件备份类型，0-逻辑备份，1-物理备份",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起备份时指定的备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "我的备份",
+          "member": "string",
+          "name": "BackupDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -520,6 +544,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "cmgo-ayxpky6l",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -528,6 +553,7 @@
         {
           "default": "",
           "document": "0-逻辑备份，1-物理备份",
+          "example": "0",
           "member": "int64",
           "name": "BackupMethod",
           "required": true,
@@ -536,6 +562,7 @@
         {
           "default": "",
           "document": "备份备注",
+          "example": "remarkInfo",
           "member": "string",
           "name": "BackupRemark",
           "required": false,
@@ -549,8 +576,10 @@
       "members": [
         {
           "document": "查询备份流程的状态",
+          "example": "4773",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1388,7 +1417,7 @@
         },
         {
           "default": "",
-          "document": "指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间",
+          "document": "指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
           "name": "StartTime",
@@ -1397,7 +1426,7 @@
         },
         {
           "default": "",
-          "document": "指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间",
+          "document": "指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间",
           "example": "2021-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
@@ -1488,6 +1517,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoaxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1495,7 +1525,8 @@
         },
         {
           "default": "",
-          "document": "查询返回记录条数，默认为10000。",
+          "document": "单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1504,6 +1535,7 @@
         {
           "default": "",
           "document": "偏移量，默认值为0。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1517,15 +1549,19 @@
       "members": [
         {
           "document": "客户端连接信息，包括客户端IP和对应IP的连接数量。",
+          "example": "无",
           "member": "ClientConnection",
           "name": "Clients",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "满足条件的记录总条数，可用于分页查询。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1544,6 +1580,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-p8vnipr5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1552,6 +1589,7 @@
         {
           "default": "",
           "document": "筛选条件，操作所属的命名空间namespace，格式为db.collection",
+          "example": "无",
           "member": "string",
           "name": "Ns",
           "required": false,
@@ -1560,6 +1598,7 @@
         {
           "default": "",
           "document": "筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]",
+          "example": "无",
           "member": "uint64",
           "name": "MillisecondRunning",
           "required": false,
@@ -1568,6 +1607,7 @@
         {
           "default": "",
           "document": "筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors",
+          "example": "无",
           "member": "string",
           "name": "Op",
           "required": false,
@@ -1576,6 +1616,7 @@
         {
           "default": "",
           "document": "筛选条件，分片名称",
+          "example": "无",
           "member": "string",
           "name": "ReplicaSetName",
           "required": false,
@@ -1584,6 +1625,7 @@
         {
           "default": "",
           "document": "筛选条件，节点状态，可能的取值为：primary\nsecondary",
+          "example": "无",
           "member": "string",
           "name": "State",
           "required": false,
@@ -1592,6 +1634,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，默认值为100，取值范围为[0,100]",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1600,6 +1643,7 @@
         {
           "default": "",
           "document": "偏移量，默认值为0，取值范围为[0,10000]",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1608,6 +1652,7 @@
         {
           "default": "",
           "document": "返回结果集排序的字段，目前支持：\"MicrosecsRunning\"/\"microsecsrunning\"，默认为升序排序",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1616,6 +1661,7 @@
         {
           "default": "",
           "document": "返回结果集排序方式，可能的取值：\"ASC\"/\"asc\"或\"DESC\"/\"desc\"",
+          "example": "无",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -1629,15 +1675,19 @@
       "members": [
         {
           "document": "符合查询条件的操作总数",
+          "example": "19",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前操作列表",
+          "example": "无",
           "member": "CurrentOp",
           "name": "CurrentOps",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1656,6 +1706,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-f555zzzz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1664,6 +1715,7 @@
         {
           "default": "",
           "document": "备份方式，当前支持：0-逻辑备份，1-物理备份，2-所有备份。默认为逻辑备份。",
+          "example": "1",
           "member": "int64",
           "name": "BackupMethod",
           "required": false,
@@ -1672,6 +1724,7 @@
         {
           "default": "",
           "document": "分页大小，最大值为100，不设置默认查询所有。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1680,6 +1733,7 @@
         {
           "default": "",
           "document": "分页偏移量，最小值为0，默认值为0。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1693,15 +1747,19 @@
       "members": [
         {
           "document": "备份列表",
+          "example": "无",
           "member": "BackupInfo",
           "name": "BackupList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "备份总数",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1720,6 +1778,7 @@
         {
           "default": "",
           "document": "订单ID，通过CreateDBInstance等接口返回",
+          "example": "20200420111635",
           "member": "string",
           "name": "DealId",
           "required": true,
@@ -1733,29 +1792,37 @@
       "members": [
         {
           "document": "订单状态，1：未支付，2：已支付，3：发货中，4：发货成功，5：发货失败，6：退款，7：订单关闭，8：超时未支付关闭。",
+          "example": "4",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "订单原价。",
+          "example": "1116.67",
           "member": "float",
           "name": "OriginalPrice",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "订单折扣价格。",
+          "example": "759.33",
           "member": "float",
           "name": "DiscountPrice",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "订单行为，purchase：新购，renew：续费，upgrade：升配，downgrade：降配，refund：退货退款。",
+          "example": "purchase",
           "member": "string",
           "name": "Action",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1774,6 +1841,7 @@
         {
           "default": "",
           "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-hcscymcl",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1782,6 +1850,7 @@
         {
           "default": "",
           "document": "实例类型，取值范围：0-所有实例,1-正式实例，2-临时实例, 3-只读实例，-1-正式实例+只读+灾备实例",
+          "example": "0",
           "member": "int64",
           "name": "InstanceType",
           "required": false,
@@ -1790,6 +1859,7 @@
         {
           "default": "",
           "document": "集群类型，取值范围：0-副本集实例，1-分片实例，-1-所有实例",
+          "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "required": false,
@@ -1798,6 +1868,7 @@
         {
           "default": "",
           "document": "实例状态，取值范围：0-待初始化，1-流程执行中，2-实例有效，-2-已隔离（包年包月实例），-3-已隔离（按量计费实例）",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1806,6 +1877,7 @@
         {
           "default": "",
           "document": "私有网络的ID，基础网络则不传该参数",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1814,6 +1886,7 @@
         {
           "default": "",
           "document": "私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId",
+          "example": "1",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1822,6 +1895,7 @@
         {
           "default": "",
           "document": "付费类型，取值范围：0-按量计费，1-包年包月，-1-按量计费+包年包月",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": false,
@@ -1830,6 +1904,7 @@
         {
           "default": "",
           "document": "单次请求返回的数量，最小值为1，最大值为100，默认值为20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1838,6 +1913,7 @@
         {
           "default": "",
           "document": "偏移量，默认值为0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1846,6 +1922,7 @@
         {
           "default": "",
           "document": "返回结果集排序的字段，目前支持：\"ProjectId\", \"InstanceName\", \"CreateTime\"，默认为升序排序",
+          "example": "无",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1854,6 +1931,7 @@
         {
           "default": "",
           "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"",
+          "example": "无",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -1862,6 +1940,7 @@
         {
           "default": "",
           "document": "项目 ID",
+          "example": "无",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -1870,6 +1949,7 @@
         {
           "default": "",
           "document": "搜索关键词，支持实例ID、实例名称、完整IP",
+          "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -1878,6 +1958,7 @@
         {
           "default": "",
           "document": "Tag信息",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
@@ -1891,15 +1972,19 @@
       "members": [
         {
           "document": "符合查询条件的实例总数",
+          "example": "19",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例详细信息列表",
+          "example": "无",
           "member": "InstanceDetail",
           "name": "InstanceDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2284,6 +2369,7 @@
         {
           "default": "",
           "document": "实例所属区域名称，格式如：ap-guangzhou-2",
+          "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -2291,7 +2377,8 @@
         },
         {
           "default": "",
-          "document": "每个副本集内节点个数，当前副本集节点数固定为3，分片从节点数可选，具体参照查询云数据库的售卖规格返回参数",
+          "document": "每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数",
+          "example": "3",
           "member": "int64",
           "name": "NodeNum",
           "required": true,
@@ -2300,6 +2387,7 @@
         {
           "default": "",
           "document": "实例内存大小，单位：GB",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -2308,6 +2396,7 @@
         {
           "default": "",
           "document": "实例硬盘大小，单位：GB",
+          "example": "100",
           "member": "int64",
           "name": "Volume",
           "required": true,
@@ -2316,6 +2405,7 @@
         {
           "default": "",
           "document": "版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本",
+          "example": "MONGO_36_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -2323,7 +2413,8 @@
         },
         {
           "default": "",
-          "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；STDS5：标准型",
+          "document": "机器类型，HIO：高IO型；HIO10G：高IO万兆型；",
+          "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -2332,6 +2423,7 @@
         {
           "default": "",
           "document": "实例数量, 最小值1，最大值为10",
+          "example": "2",
           "member": "int64",
           "name": "GoodsNum",
           "required": true,
@@ -2340,6 +2432,7 @@
         {
           "default": "",
           "document": "实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -2348,6 +2441,7 @@
         {
           "default": "",
           "document": "实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点",
+          "example": "REPLSET",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -2356,6 +2450,7 @@
         {
           "default": "",
           "document": "副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0",
+          "example": "1",
           "member": "int64",
           "name": "ReplicateSetNum",
           "required": true,
@@ -2369,8 +2464,10 @@
       "members": [
         {
           "document": "价格",
+          "example": "无",
           "member": "DBInstancePrice",
           "name": "Price",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2389,6 +2486,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cmgo-8oij5631",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2397,6 +2495,7 @@
         {
           "default": "",
           "document": "变更配置后实例内存大小，单位：GB。",
+          "example": "8",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -2405,9 +2504,28 @@
         {
           "default": "",
           "document": "变更配置后实例磁盘大小，单位：GB。",
+          "example": "200",
           "member": "int64",
           "name": "Volume",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数",
+          "example": "2",
+          "member": "int64",
+          "name": "ReplicateSetNum",
+          "required": false,
           "type": "int"
         }
       ],
@@ -2418,8 +2536,10 @@
       "members": [
         {
           "document": "价格。",
+          "example": "无",
           "member": "DBInstancePrice",
           "name": "Price",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2884,7 +3004,7 @@
         },
         {
           "default": "",
-          "document": "是否需要重启后生效，\"1\"需要，\"0\"无需重启",
+          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
           "example": "\"0\"",
           "member": "string",
           "name": "NeedRestart",
@@ -2924,7 +3044,7 @@
         },
         {
           "default": "",
-          "document": "是否获取到参数，1为获取，前端正常显示，0:前段显示loading",
+          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -2980,7 +3100,7 @@
         },
         {
           "default": "",
-          "document": "是否徐亚哦重启后生效 1:需要重启；0:无需重启",
+          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
@@ -3020,7 +3140,7 @@
         },
         {
           "default": "",
-          "document": "是否正常获取到，1：未正常获取；0：正常获取，仅对前端有实际意义；",
+          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3030,7 +3150,7 @@
         },
         {
           "default": "",
-          "document": "暂时未用到，前端使用redis侧代码，为了兼容，保留该参数",
+          "document": "冗余字段，可忽略",
           "example": "\"\"",
           "member": "string",
           "name": "Unit",
@@ -3076,7 +3196,7 @@
         },
         {
           "default": "",
-          "document": "是否需要重启",
+          "document": "是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；",
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
@@ -3096,7 +3216,7 @@
         },
         {
           "default": "",
-          "document": "状态值",
+          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
           "example": "\"1\"",
           "member": "uint64",
           "name": "Status",
@@ -3116,7 +3236,7 @@
         },
         {
           "default": "",
-          "document": "值类型，multi混合类型",
+          "document": "当前值的类型描述，默认为multi",
           "example": "\"multi\"",
           "member": "string",
           "name": "ValueType",
@@ -3132,7 +3252,7 @@
       "members": [
         {
           "default": "",
-          "document": "当前值(暂未使用)",
+          "document": "当前值",
           "example": "\"\"",
           "member": "string",
           "name": "CurrentValue",
@@ -3142,7 +3262,7 @@
         },
         {
           "default": "",
-          "document": "默认值(暂未使用)",
+          "document": "默认值",
           "example": "\"\"",
           "member": "string",
           "name": "DefaultValue",
@@ -3152,7 +3272,7 @@
         },
         {
           "default": "",
-          "document": "是否需要重启(暂未使用)",
+          "document": "是否需要重启",
           "example": "\"\"",
           "member": "string",
           "name": "NeedRestart",
@@ -3162,7 +3282,7 @@
         },
         {
           "default": "",
-          "document": "参数名称(暂未使用)",
+          "document": "参数名称",
           "example": "\"\"",
           "member": "string",
           "name": "ParamName",
@@ -3172,7 +3292,7 @@
         },
         {
           "default": "",
-          "document": "text类型值(暂未使用)",
+          "document": "text类型值",
           "example": "\"\"",
           "member": "string",
           "name": "TextValue",
@@ -3182,7 +3302,7 @@
         },
         {
           "default": "",
-          "document": "说明(暂未使用)",
+          "document": "参数说明",
           "example": "\"\"",
           "member": "string",
           "name": "Tips",
@@ -3192,7 +3312,7 @@
         },
         {
           "default": "",
-          "document": "值类型(暂未使用)",
+          "document": "值类型说明",
           "example": "\"\"",
           "member": "string",
           "name": "ValueType",
@@ -3202,7 +3322,7 @@
         },
         {
           "default": "",
-          "document": "值获取状态(暂未使用)",
+          "document": "是否为运行中参数值 1:运行中参数值；0：非运行中参数值；",
           "example": "\"\"",
           "member": "string",
           "name": "Status",
@@ -3219,6 +3339,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-f555zzzz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3232,8 +3353,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "28920",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3252,6 +3375,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-p8vnipr5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3260,6 +3384,7 @@
         {
           "default": "",
           "document": "待终止的操作",
+          "example": "无",
           "member": "Operation",
           "name": "Operations",
           "required": true,
@@ -3376,6 +3501,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-f555zzzz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3389,8 +3515,10 @@
       "members": [
         {
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "example": "28920",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3442,6 +3570,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoa5sf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3449,7 +3578,8 @@
         },
         {
           "default": "",
-          "document": "实例名称",
+          "document": "自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -",
+          "example": "test_name",
           "member": "string",
           "name": "NewName",
           "required": true,
@@ -3476,6 +3606,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
+          "example": "[\"cmgo-gzo03o75\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3484,6 +3615,7 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
@@ -3526,6 +3658,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3534,6 +3667,7 @@
         {
           "default": "",
           "document": "实例账号名",
+          "example": "rwuser",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -3541,7 +3675,8 @@
         },
         {
           "default": "",
-          "document": "新密码",
+          "document": "新密码，新密码长度不能少于8位",
+          "example": "111111",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -3555,8 +3690,10 @@
       "members": [
         {
           "document": "异步请求Id，用户查询该流程的运行状态",
+          "example": "4769",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
