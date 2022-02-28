@@ -159,6 +159,8 @@ include tccli/services/emr/v20190103/api.json
 include tccli/services/emr/v20190103/examples.json
 include tccli/services/es/v20180416/api.json
 include tccli/services/es/v20180416/examples.json
+include tccli/services/ess/v20201111/api.json
+include tccli/services/ess/v20201111/examples.json
 include tccli/services/essbasic/v20210526/api.json
 include tccli/services/essbasic/v20210526/examples.json
 include tccli/services/essbasic/v20201222/api.json
