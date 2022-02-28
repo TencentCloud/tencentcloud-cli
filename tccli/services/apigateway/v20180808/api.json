@@ -2499,6 +2499,7 @@
         {
           "default": "",
           "document": "待绑定的使用计划唯一 ID。",
+          "example": "usagePlan-quqxvett",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -2507,6 +2508,7 @@
         {
           "default": "",
           "document": "待绑定的密钥 ID 数组。",
+          "example": "[\"AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob\\n\"]",
           "member": "string",
           "name": "AccessKeyIds",
           "required": true,
@@ -2520,8 +2522,10 @@
       "members": [
         {
           "document": "绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },

@@ -664,11 +664,20 @@
         },
         {
           "default": "",
-          "document": "Clb所在地域，例如：ap-hongkong。",
+          "document": "CLB所在地域，例如：ap-hongkong。",
           "example": "ap-hongkong",
           "member": "string",
           "name": "LoadBalancerRegion",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLB内网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
           "type": "string"
         }
       ],

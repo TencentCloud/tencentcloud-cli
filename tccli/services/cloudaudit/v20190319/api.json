@@ -6,11 +6,23 @@
       "name": "创建跟踪集",
       "output": "CreateAuditResponse"
     },
+    "CreateAuditTrack": {
+      "document": "创建跟踪集",
+      "input": "CreateAuditTrackRequest",
+      "name": "创建云审计跟踪集",
+      "output": "CreateAuditTrackResponse"
+    },
     "DeleteAudit": {
       "document": "删除跟踪集",
       "input": "DeleteAuditRequest",
       "name": "删除跟踪集",
       "output": "DeleteAuditResponse"
+    },
+    "DeleteAuditTrack": {
+      "document": "删除云审计跟踪集",
+      "input": "DeleteAuditTrackRequest",
+      "name": "删除云审计跟踪集",
+      "output": "DeleteAuditTrackResponse"
     },
     "DescribeAudit": {
       "document": "查询跟踪集详情",
@@ -71,6 +83,12 @@
       "input": "LookUpEventsRequest",
       "name": "检索日志",
       "output": "LookUpEventsResponse"
+    },
+    "ModifyAuditTrack": {
+      "document": "修改云审计跟踪",
+      "input": "ModifyAuditTrackRequest",
+      "name": "修改云审计跟踪",
+      "output": "ModifyAuditTrackResponse"
     },
     "StartLogging": {
       "document": "开启跟踪集",
@@ -396,6 +414,23 @@
       ],
       "type": "object"
     },
+    "CreateAuditTrackRequest": {
+      "document": "CreateAuditTrack请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateAuditTrackResponse": {
+      "document": "CreateAuditTrack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAuditRequest": {
       "document": "DeleteAudit请求参数结构体",
       "members": [
@@ -423,6 +458,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditTrackRequest": {
+      "document": "DeleteAuditTrack请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteAuditTrackResponse": {
+      "document": "DeleteAuditTrack返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1250,6 +1302,23 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyAuditTrackRequest": {
+      "document": "ModifyAuditTrack请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyAuditTrackResponse": {
+      "document": "ModifyAuditTrack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Resource": {
       "document": "资源类型",

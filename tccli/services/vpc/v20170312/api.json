@@ -20693,7 +20693,7 @@
         },
         {
           "default": "",
-          "document": "端口(all, 离散port,  range)。",
+          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
           "example": "22",
           "member": "string",
           "name": "Port",
