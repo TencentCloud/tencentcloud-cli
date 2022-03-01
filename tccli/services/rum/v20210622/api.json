@@ -4891,7 +4891,7 @@
         },
         {
           "default": "",
-          "document": "查询语句，语句长度最大为4096",
+          "document": "查询语句，参考控制台请求参数，语句长度最大为4096",
           "example": "id:100",
           "member": "string",
           "name": "Query",

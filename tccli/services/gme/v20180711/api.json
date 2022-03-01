@@ -42,6 +42,12 @@
       "name": "查询识别结果列表",
       "output": "DescribeFilterResultListResponse"
     },
+    "DescribeRealtimeScanConfig": {
+      "document": "获取用户自定义送检信息",
+      "input": "DescribeRealtimeScanConfigRequest",
+      "name": "获取用户自定义送检信息",
+      "output": "DescribeRealtimeScanConfigResponse"
+    },
     "DescribeRoomInfo": {
       "document": "获取房间内用户信息",
       "input": "DescribeRoomInfoRequest",
@@ -77,6 +83,18 @@
       "input": "ScanVoiceRequest",
       "name": "提交语音检测任务",
       "output": "ScanVoiceResponse"
+    },
+    "UpdateScanRooms": {
+      "document": "更新自定义送检房间号",
+      "input": "UpdateScanRoomsRequest",
+      "name": "更新送检房间号",
+      "output": "UpdateScanRoomsResponse"
+    },
+    "UpdateScanUsers": {
+      "document": "更新自定义送检用户号",
+      "input": "UpdateScanUsersRequest",
+      "name": "更新送检用户号",
+      "output": "UpdateScanUsersResponse"
     },
     "VoiceFilter": {
       "document": "本接口用于识别涉黄等违规音频，成功会回调配置在应用的回调地址。回调示例如下：\n{\"BizId\":0,\"FileId\":\"test_file_id\",\"FileName\":\"test_file_name\",\"FileUrl\":\"test_file_url\",\"OpenId\":\"test_open_id\",\"TimeStamp\":\"0000-00-00 00:00:00\",\"Data\":[{\"Type\":1,\"Word\":\"xx\"}]}\nType表示过滤类型，1：色情，2：谩骂",
@@ -858,6 +876,96 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeScanConfigRequest": {
+      "document": "DescribeRealtimeScanConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeScanConfigResponse": {
+      "document": "DescribeRealtimeScanConfig返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "送检类型",
+          "example": "0",
+          "member": "int64",
+          "name": "AuditType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户号正则",
+          "example": "[\"0\"]",
+          "member": "string",
+          "name": "UserIdRegex",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间号正则",
+          "example": "[\"0\"]",
+          "member": "string",
+          "name": "RoomIdRegex",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户号字符串，逗号分隔",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "UserIdString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "房间号字符串，逗号分隔",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "RoomIdString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1793,6 +1901,114 @@
         }
       ],
       "usage": "in"
+    },
+    "UpdateScanRoomsRequest": {
+      "document": "UpdateScanRooms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字符串房间号，逗号分隔",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "RoomIdString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "正则表达式房间号，[\"^6.*\"]6开头的房间号",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "RoomIdRegex",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateScanRoomsResponse": {
+      "document": "UpdateScanRooms返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateScanUsersRequest": {
+      "document": "UpdateScanUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字符串用户号，逗号分隔",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "UserIdString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "正则表达式用户号，[\"^6.*\"]6开头的用户号",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "UserIdRegex",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateScanUsersResponse": {
+      "document": "UpdateScanUsers返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VoiceFilter": {
       "document": "过滤结果",

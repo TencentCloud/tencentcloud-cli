@@ -84,6 +84,12 @@
       "name": "创建服务",
       "output": "CreateServiceResponse"
     },
+    "CreateUpstream": {
+      "document": "用于创建创建VPC通道",
+      "input": "CreateUpstreamRequest",
+      "name": "创建VPC通道",
+      "output": "CreateUpstreamResponse"
+    },
     "CreateUsagePlan": {
       "document": "本接口（CreateUsagePlan）用于创建使用计划。\n用户在使用 API 网关时，需要创建使用计划并将其绑定到服务的环境中使用。",
       "input": "CreateUsagePlanRequest",
@@ -137,6 +143,12 @@
       "input": "DeleteServiceSubDomainMappingRequest",
       "name": "删除自定义域名的路径映射",
       "output": "DeleteServiceSubDomainMappingResponse"
+    },
+    "DeleteUpstream": {
+      "document": "删除VPC通道，需要注意有api绑定时，不允许删除",
+      "input": "DeleteUpstreamRequest",
+      "name": "删除VPC通道",
+      "output": "DeleteUpstreamResponse"
     },
     "DeleteUsagePlan": {
       "document": "本接口（DeleteUsagePlan）用于删除使用计划。",
@@ -348,6 +360,18 @@
       "name": "查询服务列表",
       "output": "DescribeServicesStatusResponse"
     },
+    "DescribeUpstreamBindApis": {
+      "document": "查询VPC通道绑定的api列表",
+      "input": "DescribeUpstreamBindApisRequest",
+      "name": "查询VPC通道绑定的api列表",
+      "output": "DescribeUpstreamBindApisResponse"
+    },
+    "DescribeUpstreams": {
+      "document": "查询VPC通道列表详情",
+      "input": "DescribeUpstreamsRequest",
+      "name": "查询VPC通道列表详情",
+      "output": "DescribeUpstreamsResponse"
+    },
     "DescribeUsagePlan": {
       "document": "本接口（DescribeUsagePlan）用于查询一个使用计划的详细信息，包括名称、QPS、创建时间绑定的环境等。",
       "input": "DescribeUsagePlanRequest",
@@ -461,6 +485,12 @@
       "input": "ModifySubDomainRequest",
       "name": "服务修改自定义域名",
       "output": "ModifySubDomainResponse"
+    },
+    "ModifyUpstream": {
+      "document": "修改VPC通道",
+      "input": "ModifyUpstreamRequest",
+      "name": "修改VPC通道",
+      "output": "ModifyUpstreamResponse"
     },
     "ModifyUsagePlan": {
       "document": "本接口（ModifyUsagePlan）用于修改使用计划的名称，描述及 QPS。",
@@ -2371,6 +2401,62 @@
       ],
       "type": "object"
     },
+    "BindApiInfo": {
+      "document": "vpc通道绑定的api信息",
+      "members": [
+        {
+          "default": "",
+          "document": "api唯一id",
+          "example": "api-sadasd",
+          "member": "string",
+          "name": "ApiId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Service唯一id",
+          "example": "service-asdaada",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "api名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sajsnda",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定时间",
+          "example": "2018-10-30T04:24:19Z",
+          "member": "datetime_iso",
+          "name": "BindTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BindEnvironmentRequest": {
       "document": "BindEnvironment请求参数结构体",
       "members": [
@@ -3768,6 +3854,114 @@
       ],
       "type": "object"
     },
+    "CreateUpstreamRequest": {
+      "document": "CreateUpstream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "后端协议，HTTP, HTTPS其中之一",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡算法目前支持ROUND_ROBIN",
+          "example": "Algorithm",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC唯一ID",
+          "example": "UniqVpcId",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC通道名字",
+          "example": "test",
+          "member": "string",
+          "name": "UpstreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC通道描述",
+          "example": "test",
+          "member": "string",
+          "name": "UpstreamDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求重试次数，默认3次",
+          "example": "3",
+          "member": "uint64",
+          "name": "Retries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求到后端的，host头",
+          "example": "UpstreamHost",
+          "member": "string",
+          "name": "UpstreamHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端节点",
+          "example": "无",
+          "member": "UpstreamNode",
+          "name": "Nodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "k8s服务的配置",
+          "example": "无",
+          "member": "K8sService",
+          "name": "K8sService",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUpstreamResponse": {
+      "document": "CreateUpstream返回参数结构体",
+      "members": [
+        {
+          "document": "创建返回的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "upstream-0c96l2bo",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUsagePlanRequest": {
       "document": "CreateUsagePlan请求参数结构体",
       "members": [
@@ -4141,6 +4335,42 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUpstreamRequest": {
+      "document": "DeleteUpstream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的VPC通道唯一ID",
+          "example": "\"upstream-xxxx\"",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUpstreamResponse": {
+      "document": "DeleteUpstream返回参数结构体",
+      "members": [
+        {
+          "document": "成功删除的vpc通道id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "upstream-sasdsa",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6627,6 +6857,175 @@
       ],
       "type": "object"
     },
+    "DescribeUpstreamBindApis": {
+      "document": "查询vpc通道绑定api列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定的api信息",
+          "example": "无",
+          "member": "BindApiInfo",
+          "name": "BindApiSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeUpstreamBindApisRequest": {
+      "document": "DescribeUpstreamBindApis请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "vpc通道Id",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ServiceId和ApiId过滤查询",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpstreamBindApisResponse": {
+      "document": "DescribeUpstreamBindApis返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果",
+          "example": "无",
+          "member": "DescribeUpstreamBindApis",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpstreamInfo": {
+      "document": "查询vpc通道返回信息",
+      "members": [
+        {
+          "default": "",
+          "document": "查询总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询列表",
+          "example": "无",
+          "member": "UpstreamInfo",
+          "name": "UpstreamSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeUpstreamsRequest": {
+      "document": "DescribeUpstreams请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpstreamsResponse": {
+      "document": "DescribeUpstreams返回参数结构体",
+      "members": [
+        {
+          "document": "查询结果",
+          "example": "无",
+          "member": "DescribeUpstreamInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUsagePlanEnvironmentsRequest": {
       "document": "DescribeUsagePlanEnvironments请求参数结构体",
       "members": [
@@ -7814,6 +8213,108 @@
           "member": "string",
           "name": "Value",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "K8sLabel": {
+      "document": "k8s Label",
+      "members": [
+        {
+          "default": "",
+          "document": "Label的Key",
+          "example": "app",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Label的Value",
+          "example": "web",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "K8sService": {
+      "document": "k8s 服务的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "权重",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s集群ID",
+          "example": "cls-ehovttb4",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器服务的名字",
+          "example": "web",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务的端口",
+          "example": "8088",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外选择的Pod的Label",
+          "example": "[{\"Key\": \"app\", \"Value\": \"web\"}]",
+          "member": "K8sLabel",
+          "name": "ExtraLabels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义的服务名字，可选",
+          "example": "TestServiceName",
+          "member": "string",
+          "name": "Name",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9040,6 +9541,123 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUpstreamRequest": {
+      "document": "ModifyUpstream请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC通道唯一ID",
+          "example": "upstream-0c96l2bo",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC通道名字",
+          "example": "xxxx",
+          "member": "string",
+          "name": "UpstreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC通道描述",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UpstreamDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端协议，HTTP, HTTPS其中之一",
+          "example": "HTTP, HTTPS",
+          "member": "string",
+          "name": "Scheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡算法目前支持ROUND_ROBIN",
+          "example": "Algorithm",
+          "member": "string",
+          "name": "Algorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC唯一ID",
+          "example": "UniqVpcId",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求重试次数，默认3次",
+          "example": "Retries",
+          "member": "uint64",
+          "name": "Retries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求到后端的，host头",
+          "example": "UpstreamHost",
+          "member": "string",
+          "name": "UpstreamHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端节点列表",
+          "example": "无",
+          "member": "UpstreamNode",
+          "name": "Nodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "k8s服务配置",
+          "example": "无",
+          "member": "K8sService",
+          "name": "K8sService",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUpstreamResponse": {
+      "document": "ModifyUpstream返回参数结构体",
+      "members": [
+        {
+          "document": "返回修改后的vpc通道信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10979,6 +11597,399 @@
         }
       ],
       "type": "object"
+    },
+    "UpstreamHealthChecker": {
+      "document": "VPC通道健康检查参数配置",
+      "members": [
+        {
+          "default": "",
+          "document": "标识是否开启主动健康检查。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableActiveCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标识是否开启被动健康检查。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePassiveCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查时，判断为成功请求的 HTTP 状态码。",
+          "example": "200,201,202",
+          "member": "string",
+          "name": "HealthyHttpStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查时，判断为失败请求的 HTTP 状态码。",
+          "example": "500,502,503,504",
+          "member": "string",
+          "name": "UnhealthyHttpStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TCP连续错误阈值。0 表示禁用 TCP 检查。取值范围：[0, 254]。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TcpFailureThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "连续超时阈值。0 表示禁用超时检查。取值范围：[0, 254]。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TimeoutThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTP连续错误阈值。0 表示禁用HTTP检查。取值范围：[0, 254]。",
+          "example": "3",
+          "member": "uint64",
+          "name": "HttpFailureThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主动健康检查时探测请求的路径。默认为\"/\"。",
+          "example": "/",
+          "member": "string",
+          "name": "ActiveCheckHttpPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主动健康检查的探测请求超时，单位秒。默认为5秒。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ActiveCheckTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主动健康检查的时间间隔，默认5秒。",
+          "example": "5",
+          "member": "uint64",
+          "name": "ActiveCheckInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主动健康检查时探测请求的的请求头。",
+          "example": "None",
+          "member": "UpstreamHealthCheckerReqHeaders",
+          "name": "ActiveRequestHeader",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "异常节点的状态自动恢复时间，单位秒。当只开启被动检查的话，必须设置为 > 0 的值，否则被动异常节点将无法恢复。默认30秒。",
+          "example": "30",
+          "member": "uint64",
+          "name": "UnhealthyTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamHealthCheckerReqHeaders": {
+      "document": "VPC通道主动健康检查的请求头配置",
+      "members": [],
+      "usage": "both"
+    },
+    "UpstreamInfo": {
+      "document": "VPC通道信息集合",
+      "members": [
+        {
+          "default": "",
+          "document": "VPC通道唯一ID",
+          "example": "x x",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC通道名字",
+          "example": "x x x",
+          "member": "string",
+          "name": "UpstreamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC通道描述",
+          "example": "x x",
+          "member": "string",
+          "name": "UpstreamDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "写意",
+          "example": "x x",
+          "member": "string",
+          "name": "Scheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡算法",
+          "example": "x x",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vpc唯一ID",
+          "example": "x x",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求重拾次数",
+          "example": "x x",
+          "member": "uint64",
+          "name": "Retries",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "后端节点",
+          "example": "x x",
+          "member": "UpstreamNode",
+          "name": "Nodes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "x x",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHealthChecker",
+          "name": "HealthChecker",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Upstream的类型",
+          "example": "K8S",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s服务配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "K8sService",
+          "name": "K8sServices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "vpc通道的Host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpstreamHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpstreamNode": {
+      "document": "VPC通道后端节点元数据",
+      "members": [
+        {
+          "default": "",
+          "document": "IP（domain）",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口[0, 65535]",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重[0, 100], 0为禁用",
+          "example": "10",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vm实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-123456",
+          "member": "string",
+          "name": "VmInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "染色标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"release\",\"test\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFF",
+          "member": "string",
+          "name": "Healthy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "k8s服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "web",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "k8s命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "NameSpace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "TKE集群的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Node的来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "K8S",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API网关内部记录唯一的服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/upstream-xxxx/cls-xxx/default/web",
+          "member": "string",
+          "name": "UniqueServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UsagePlan": {
       "document": "usagePlan详情",

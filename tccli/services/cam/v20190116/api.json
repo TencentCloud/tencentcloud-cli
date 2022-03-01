@@ -252,6 +252,12 @@
       "name": "查询子用户",
       "output": "GetUserResponse"
     },
+    "GetUserAppId": {
+      "document": "获取用户AppId",
+      "input": "GetUserAppIdRequest",
+      "name": "获取用户AppId",
+      "output": "GetUserAppIdResponse"
+    },
     "GetUserPermissionBoundary": {
       "document": "获取用户权限边界",
       "input": "GetUserPermissionBoundaryRequest",
@@ -2702,6 +2708,44 @@
           "name": "ServiceName",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserAppIdRequest": {
+      "document": "GetUserAppId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserAppIdResponse": {
+      "document": "GetUserAppId返回参数结构体",
+      "members": [
+        {
+          "document": "当前账号Uin",
+          "member": "string",
+          "name": "Uin",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前账号OwnerUin",
+          "member": "string",
+          "name": "OwnerUin",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前账号AppId",
+          "member": "uint64",
+          "name": "AppId",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
