@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ActivateHourDBInstance": {
+      "document": "解隔离后付费实例",
+      "input": "ActivateHourDBInstanceRequest",
+      "name": "解隔离后付费实例",
+      "output": "ActivateHourDBInstanceResponse"
+    },
     "AssociateSecurityGroups": {
       "document": "本接口 (AssociateSecurityGroups) 用于安全组批量绑定云资源。",
       "input": "AssociateSecurityGroupsRequest",
@@ -264,6 +270,12 @@
       "name": "初始化实例",
       "output": "InitDBInstancesResponse"
     },
+    "IsolateHourDBInstance": {
+      "document": "隔离后付费实例",
+      "input": "IsolateHourDBInstanceRequest",
+      "name": "隔离后付费实例",
+      "output": "IsolateHourDBInstanceResponse"
+    },
     "KillSession": {
       "document": "本接口（KillSession）用于杀死指定会话。",
       "input": "KillSessionRequest",
@@ -405,6 +417,46 @@
         }
       ],
       "usage": "in"
+    },
+    "ActivateHourDBInstanceRequest": {
+      "document": "ActivateHourDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateHourDBInstanceResponse": {
+      "document": "ActivateHourDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "隔离成功的实例id列表",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "隔离失败的实例id列表",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",
@@ -4795,6 +4847,46 @@
         }
       ],
       "usage": "both"
+    },
+    "IsolateHourDBInstanceRequest": {
+      "document": "IsolateHourDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateHourDBInstanceResponse": {
+      "document": "IsolateHourDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "解隔离成功的实例id列表",
+          "member": "string",
+          "name": "SuccessInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解隔离失败的实例id列表",
+          "member": "string",
+          "name": "FailedInstanceIds",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "KillSessionRequest": {
       "document": "KillSession请求参数结构体",

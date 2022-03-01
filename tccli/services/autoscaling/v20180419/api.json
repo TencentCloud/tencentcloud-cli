@@ -3247,6 +3247,7 @@
         {
           "default": "",
           "document": "告警伸缩策略ID",
+          "example": "asp-f59pppuh",
           "member": "string",
           "name": "AutoScalingPolicyId",
           "required": true,
@@ -3255,6 +3256,7 @@
         {
           "default": "",
           "document": "是否检查伸缩组活动处于冷却时间内，默认值为false",
+          "example": "false",
           "member": "bool",
           "name": "HonorCooldown",
           "required": false,
@@ -3263,6 +3265,7 @@
         {
           "default": "",
           "document": "执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。",
+          "example": "API",
           "member": "string",
           "name": "TriggerSource",
           "required": false,
@@ -3276,8 +3279,10 @@
       "members": [
         {
           "document": "伸缩活动ID",
+          "example": "asa-o4v87ae9",
           "member": "string",
           "name": "ActivityId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

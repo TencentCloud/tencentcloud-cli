@@ -301,9 +301,9 @@
       "output": "RetryShipperTaskResponse"
     },
     "SearchLog": {
-      "document": "本接口用于搜索日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过15",
+      "document": "本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。",
       "input": "SearchLogRequest",
-      "name": "搜索日志",
+      "name": "检索分析日志",
       "output": "SearchLogResponse"
     },
     "SplitPartition": {
@@ -5307,7 +5307,7 @@
       "members": [
         {
           "default": "",
-          "document": "要查询的日志主题ID",
+          "document": "要检索分析的日志主题ID",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -5316,7 +5316,7 @@
         },
         {
           "default": "",
-          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
           "example": "1608794854000",
           "member": "int64",
           "name": "From",
@@ -5325,7 +5325,7 @@
         },
         {
           "default": "",
-          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
           "example": "1608794855000",
           "member": "int64",
           "name": "To",
@@ -5334,7 +5334,7 @@
         },
         {
           "default": "",
-          "document": "查询语句，语句长度最大为12KB\n查询语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code>|</code>及SQL语句",
+          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句",
           "example": "http_status:200",
           "member": "string",
           "name": "Query",
@@ -5343,7 +5343,7 @@
         },
         {
           "default": "",
-          "document": "仅当查询语句(Query)不包含SQL时有效\n表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数\nSQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "document": "表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -5352,7 +5352,7 @@
         },
         {
           "default": "",
-          "document": "仅当查询语句(Query)不包含SQL时有效\n透传上次接口返回的Context值，可获取后续日志，总计最多可获取1万条原始日志。过期时间1小时\nSQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "context",
           "member": "string",
           "name": "Context",
@@ -5361,7 +5361,7 @@
         },
         {
           "default": "",
-          "document": "仅当查询语句(Query)不包含SQL时有效。\n原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\nSQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY 语法</a>",
+          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
           "example": "asc",
           "member": "string",
           "name": "Sort",
@@ -5370,7 +5370,7 @@
         },
         {
           "default": "",
-          "document": "为true代表使用新的检索结果返回方式，响应参数AnalysisRecords和Columns有效；为false时代表使用老检索结果返回方式, AnalysisResults和ColNames有效",
+          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效\n为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效\n两种返回方式在编码格式上有少量区别，建议使用true",
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
@@ -5384,7 +5384,7 @@
       "document": "SearchLog返回参数结构体",
       "members": [
         {
-          "document": "加载后续内容的Context，过期时间1小时",
+          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时",
           "example": "context",
           "member": "string",
           "name": "Context",
@@ -5393,7 +5393,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义",
+          "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志\n注意：仅当检索分析语句(Query)不包含SQL时有效",
           "example": "1",
           "member": "bool",
           "name": "ListOver",
@@ -5402,7 +5402,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "返回的是否为分析结果",
+          "document": "返回的是否为统计分析（即SQL）结果",
           "example": "false",
           "member": "bool",
           "name": "Analysis",
@@ -5411,16 +5411,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
-          "member": "string",
-          "name": "ColNames",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配检索条件的原始日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
@@ -5429,7 +5420,16 @@
           "value_allowed_null": true
         },
         {
-          "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ColNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "日志统计分析结果\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
@@ -5438,7 +5438,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "新的日志分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
           "name": "AnalysisRecords",
@@ -5447,7 +5447,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "日志分析的列属性; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志统计分析结果的列属性\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Column",
           "name": "Columns",

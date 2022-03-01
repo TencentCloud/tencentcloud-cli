@@ -43,7 +43,7 @@
     "DescribeSlowLog": [
       {
         "document": "客户需要通过API查询云数据库MongoDB实例慢日志",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLog\r\n&InstanceId=cmgo-eqmoa5sf\r\n&StartTime=2019-06-04 20:21:00\r\n&EndTime=2019-06-04 20:22:00\r\n&SlowMS=200\r\n&Offset=20\r\n&Limit=20\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSlowLog\n&InstanceId=cmgo-eqmoa5sf\n&StartTime=2019-06-04 20:21:00\n&EndTime=2019-06-04 20:22:00\n&SlowMS=200\n&Offset=20\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"302530d2-ee57-495e-89d0-51e03b11815e\",\n        \"SlowLogList\": [\n            \"Tue Jun  4 17:52:39.247 I COMMAND  [conn2898] xxxx\"\n        ]\n    }\n}",
         "title": "查询云数据库MongoDB实例慢日志"
       }
@@ -75,7 +75,7 @@
     "SetPassword": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=SetPassword\r\n&InstanceId=cmgo-eqmoa5sf\r\n&UserName=test_user\r\n&Password=test_password123\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetPassword\n&InstanceId=cmgo-eqmoa5sf\n&UserName=test_user\n&Password=test_password123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1082,\n        \"RequestId\": \"a02372cf-5e09-4d17-ab79-2ee3f60e86ff\"\n    }\n}",
         "title": "设置云数据库实例账户密码"
       }

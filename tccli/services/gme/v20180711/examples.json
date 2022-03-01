@@ -56,6 +56,14 @@
         "title": "查询识别结果列表"
       }
     ],
+    "DescribeRealtimeScanConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealtimeScanConfig\n<公共请求参数>\n\n{\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BizId\": 1,\n        \"UserIdRegex\": [\n            \"xx\"\n        ],\n        \"UserIdString\": \"xx\",\n        \"ErrorCode\": 0,\n        \"AuditType\": 0,\n        \"RequestId\": \"xx\",\n        \"RoomIdRegex\": [\n            \"xx\"\n        ],\n        \"RoomIdString\": \"xx\"\n    }\n}",
+        "title": "获取用户自定义送检信息"
+      }
+    ],
     "DescribeRoomInfo": [
       {
         "document": "",
@@ -120,6 +128,22 @@
         "input": "https://gme.tencentcloudapi.com/?Action=ScanVoice\n&BizId=1400000000\n&Scenes.0=default\n&Live=false\n&Callback=https://0.0.0.0/user_callback\n&Tasks.0.DataId=1400000000_test_data_id\n&Tasks.0.Url=http://xxxx/audio_store/xxxx.mp3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"xxx-xxx-xxx\"\n            }\n        ],\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "提交语音文件检测任务"
+      }
+    ],
+    "UpdateScanRooms": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanRooms\n<公共请求参数>\n\n{\n    \"RoomIdRegex\": [\n        \"xx\"\n    ],\n    \"RoomIdString\": \"xx\",\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新用户自定义送检房间号"
+      }
+    ],
+    "UpdateScanUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanUsers\n<公共请求参数>\n\n{\n    \"UserIdRegex\": [\n        \"xx\"\n    ],\n    \"UserIdString\": \"xx\",\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新用户自定义送检用户号"
       }
     ],
     "VoiceFilter": [

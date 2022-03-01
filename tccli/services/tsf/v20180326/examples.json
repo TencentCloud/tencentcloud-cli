@@ -696,6 +696,54 @@
         "title": "DescribeImageTags"
       }
     ],
+    "DescribeInovcationIndicators": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInovcationIndicators\r\n&Dimension=service\r\n&StartTime=2019-05-28 17:33:47\r\n&EndTime=2019-05-29 17:33:47\r\n&NamespaceId=namespace-by8j6mak\r\n&ServiceId=ms-opy5kjy4\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af44be89-38f9-4103-a6d1-0869e450012a\",\n        \"Result\": {\n            \"InvocationQuantity\": null,\n            \"InvocationSuccessRate\": null,\n            \"InvocationAvgDuration\": null,\n            \"InvocationQuantityDistribution\": null,\n            \"InvocationSuccessDistribution\": null,\n            \"InvocationFailedDistribution\": null,\n            \"InvocationStatusDistribution\": null,\n            \"InvocationDurationDistribution\": null\n        }\n    }\n}",
+        "title": "查询调用监控指标"
+      }
+    ],
+    "DescribeInvocationMetricDataCurve": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInvocationMetricDataCurve\n&StartTime=2020-06-03 17:11:49\n&EndTime=2020-06-03 17:21:49\n&MetricDimensions.0.Name=NamespaceId\n&MetricDimensions.0.Value=test\n&Metrics.0.Name=request_count\n&Metrics.0.Function=sum\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"868d5e4f-0839-49a1-927e-5d275edc7bbe\",\n        \"Result\": [\n            {\n                \"MetricName\": \"request_count\",\n                \"MetricFunction\": \"sum\",\n                \"MetricDataPoints\": [\n                    {}\n                ]\n            }\n        ]\n    }\n}",
+        "title": "DescribeInvocationMetricDataCurve"
+      }
+    ],
+    "DescribeInvocationMetricDataDimension": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocationMetricDataDimension\n<公共请求参数>\n\n{\n    \"StartTime\": \"xx\",\n    \"DimensionName\": \"xx\",\n    \"Limit\": 0,\n    \"SearchWord\": \"xx\",\n    \"Offset\": 0,\n    \"EndTime\": \"xx\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                \"xx\"\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeInvocationMetricDataPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocationMetricDataPoint\n<公共请求参数>\n\n{\n    \"Metrics\": [\n        {\n            \"Function\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"xx\",\n    \"StartTime\": \"xx\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"MetricDataValue\": \"xx\",\n                \"MetricFunction\": \"xx\",\n                \"MetricName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
+    "DescribeInvocationMetricScatterPlot": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInvocationMetricScatterPlot\n&StartTime=2020-06-03 17:11:49\n&EndTime=2020-06-03 17:21:49\n&MetricDimensions.0.Name=NamespaceId\n&MetricDimensions.0.Value=test\n&Metrics.0.Name=request_count\n&Metrics.0.Function=sum\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"EndTime\": 0,\n            \"Period\": 0,\n            \"StartTime\": 0,\n            \"DataPoints\": [\n                {\n                    \"PointKeys\": [\n                        \"xx\"\n                    ],\n                    \"Points\": [\n                        {\n                            \"Values\": [\n                                0.0\n                            ]\n                        }\n                    ],\n                    \"MetricName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeInvocationMetricDataCurve"
+      }
+    ],
+    "DescribeJvmMonitor": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeJvmMonitor\r\n&InstanceIds=ins-1vogaxgk\r\n&ApplicationId=application-evjmv9vb\r\n&TimeGranularity=60\r\n&From=2020-03-20 10:20:00\r\n&To=2020-03-20 11:20:00\r\n&RequiredPictures=[heapMemory,nonHeapMemory,edenSpace,survivorSpace]\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a56a559-be75-4a4e-afeb-245c65dff7e5\",\n        \"Result\": [\n            {}\n        ]\n    }\n}",
+        "title": "查询java实例jvm监控数据"
+      }
+    ],
     "DescribeLaneRules": [
       {
         "document": "",
@@ -734,6 +782,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeMsApiList\r\n&Offset=0\r\n&Limit=20\r\n&MicroserviceId=ms-opy5kjy4\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"056cc966-4963-4506-ac4c-c4e7209a41e3\",\n        \"Result\": {\n            \"TotalCount\": 4,\n            \"Content\": [\n                {\n                    \"Path\": \"/echo-async-rest/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/echo-rest/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/user-feign\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/echo-feign/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询服务API列表"
+      }
+    ],
+    "DescribeOverviewInvocation": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeOverviewInvocation\n&StartTime=2019-05-28 17:45:43\n&EndTime=2019-05-29 17:45:43\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2903f230-fabc-4dff-b4c4-1fbe0fd73ebe\",\n        \"Result\": []\n    }\n}",
+        "title": "服务调用监控统计概览"
       }
     ],
     "DescribePathRewrite": [
@@ -886,6 +942,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeSimpleNamespaces\n&Offset=0\n&Limit=50\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44c883b4-9500-43f1-bd42-5bdbfcd5d3f5\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
         "title": "查询简单命名空间列表"
+      }
+    ],
+    "DescribeStatistics": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeStatistics\n&NamespaceId=\"test\"\n&Type=\"test\"\n&TimeStep=60\n&OrderBy=\"AvgTimeConsuming\"\n&StartTime=2020-06-02 16:37:30\n&EndTime=2020-06-02 17:37:30\n&Offset=0\n&Limit=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4517c1fc-3c2b-44fa-a7c8-aa45b6c91ed6\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": null\n        }\n    }\n}",
+        "title": "服务统计"
       }
     ],
     "DescribeTaskDetail": [

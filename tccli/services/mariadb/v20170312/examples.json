@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ActivateHourDBInstance": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ActivateHourDBInstance\r\n&InstanceIds[0]=tdsql-rlye31jd\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\",\n        \"SuccessInstanceIds\": [\n            \"tdsql-rlye31jd\"\n        ]\n    }\n}",
+        "title": "解隔离后付费实例"
+      }
+    ],
     "AssociateSecurityGroups": [
       {
         "document": "",
@@ -356,6 +364,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=InitDBInstances\r\n&InstanceIds.0=tdsql-fdpjf5zh\r\n&InstanceIds.1=tdsql-avw0207d\r\n&Params.0.Param=lower_case_table_names\r\n&Params.0.Value=1\r\n&Params.1.Param=innodb_page_size\r\n&Params.1.Value=16384\r\n&Params.2.Param=character_set_server\r\n&Params.2.Value=utf8\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d94ef093-ff84-4851-b2e0-a5c5920d618e\",\n        \"InstanceIds\": [\n            \"tdsql-fdpjf5zh\",\n            \"tdsql-avw0207d\"\n        ],\n        \"FlowId\": 3340\n    }\n}",
         "title": "批量初始化云数据库实例"
+      }
+    ],
+    "IsolateHourDBInstance": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=IsolateHourDBInstance\r\n&InstanceIds[0]=tdsql-cq3ndzu7\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FailedInstanceIds\": [],\n        \"RequestId\": \"8ce27ff0-7fe1-11ea-8469-525400542aa6\",\n        \"SuccessInstanceIds\": []\n    }\n}",
+        "title": "隔离后付费实例"
       }
     ],
     "KillSession": [

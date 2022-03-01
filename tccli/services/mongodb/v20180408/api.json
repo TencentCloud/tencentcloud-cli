@@ -55,7 +55,7 @@
       "output": "SetAutoRenewResponse"
     },
     "SetPassword": {
-      "document": "本接口(SetPassword)用于设置云数据库账户的密码。\n\n",
+      "document": "本接口(SetPassword)用于设置（初始化）MongoDB云数据库实例账户密码。\n\n",
       "input": "SetPasswordRequest",
       "name": "修改云数据库实例的账户密码",
       "output": "SetPasswordResponse"
@@ -598,6 +598,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoa5sf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -606,6 +607,7 @@
         {
           "default": "",
           "document": "慢日志起始时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
+          "example": "2019-06-04 20:21:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -614,6 +616,7 @@
         {
           "default": "",
           "document": "慢日志终止时间，格式：yyyy-mm-dd hh:mm:ss，如：2019-06-02 12:00:00。查询起止时间间隔不能超过24小时，只允许查询最近7天内慢日志。",
+          "example": "2019-06-04 20:22:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -622,6 +625,7 @@
         {
           "default": "",
           "document": "慢日志执行时间阈值，返回执行时间超过该阈值的慢日志，单位为毫秒(ms)，最小为100毫秒。",
+          "example": "200",
           "member": "uint64",
           "name": "SlowMS",
           "required": true,
@@ -630,6 +634,7 @@
         {
           "default": "",
           "document": "偏移量，最小值为0，最大值为10000，默认值为0。",
+          "example": "20",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -638,6 +643,7 @@
         {
           "default": "",
           "document": "分页大小，最小值为1，最大值为100，默认值为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -651,15 +657,19 @@
       "members": [
         {
           "document": "符合查询条件的慢查询日志总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合查询条件的慢查询日志详情。",
+          "example": "[\"Tue Jun  4 17:52:39.247 I COMMAND  [conn2898] xxxx\"]",
           "member": "string",
           "name": "SlowLogList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1229,6 +1239,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoa5sf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1236,7 +1247,8 @@
         },
         {
           "default": "",
-          "document": "实例账户名称",
+          "document": "实例账户名。初始化实例密码，本参数传mongouser。",
+          "example": "test_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -1245,6 +1257,7 @@
         {
           "default": "",
           "document": "实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符",
+          "example": "test_password123",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1258,8 +1271,10 @@
       "members": [
         {
           "document": "返回的异步任务ID",
+          "example": "1082",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

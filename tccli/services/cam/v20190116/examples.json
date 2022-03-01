@@ -342,6 +342,14 @@
         "title": "查询子用户"
       }
     ],
+    "GetUserAppId": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUserAppId\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": \"12345678\",\n        \"OwnerUin\": \"12345678\",\n        \"AppId\": 1250000000,\n        \"RequestId\": \"6fd84cee-0df1-4003-88c9-029acc082ad1\"\n    }\n}",
+        "title": "获取用户appId"
+      }
+    ],
     "GetUserPermissionBoundary": [
       {
         "document": "",
