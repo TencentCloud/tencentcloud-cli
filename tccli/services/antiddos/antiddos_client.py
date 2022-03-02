@@ -17,6 +17,54 @@ from tencentcloud.antiddos.v20200309 import models as models_v20200309
 from jmespath import search
 import time
 
+def doDescribeListPacketFilterConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeListPacketFilterConfigRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeListPacketFilterConfig(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doAssociateDDoSEipAddress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -161,7 +209,7 @@ def doDescribeListProtocolBlockConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCCReqLimitPolicy(args, parsed_globals):
+def doCreateCcBlackWhiteIpList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -186,11 +234,59 @@ def doModifyCCReqLimitPolicy(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCCReqLimitPolicyRequest()
+    model = models.CreateCcBlackWhiteIpListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyCCReqLimitPolicy(model)
+        rsp = client.CreateCcBlackWhiteIpList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteBlackWhiteIpList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteBlackWhiteIpListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteBlackWhiteIpList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -641,6 +737,54 @@ def doModifyPortAclConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateCcGeoIPBlockConfig(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCcGeoIPBlockConfigRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateCcGeoIPBlockConfig(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeListIPAlarmConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -833,7 +977,7 @@ def doDescribeListBlackWhiteIpList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyNewDomainRules(args, parsed_globals):
+def doDeleteCCThresholdPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -858,11 +1002,11 @@ def doModifyNewDomainRules(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyNewDomainRulesRequest()
+    model = models.DeleteCCThresholdPolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyNewDomainRules(model)
+        rsp = client.DeleteCCThresholdPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -881,7 +1025,7 @@ def doModifyNewDomainRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCcBlackWhiteIpList(args, parsed_globals):
+def doDeleteWaterPrintConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -906,11 +1050,59 @@ def doModifyCcBlackWhiteIpList(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCcBlackWhiteIpListRequest()
+    model = models.DeleteWaterPrintConfigRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyCcBlackWhiteIpList(model)
+        rsp = client.DeleteWaterPrintConfig(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyCCReqLimitPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyCCReqLimitPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyCCReqLimitPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1025,7 +1217,7 @@ def doCreateDefaultAlarmThreshold(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateProtocolBlockConfig(args, parsed_globals):
+def doDescribeCCLevelPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1050,59 +1242,11 @@ def doCreateProtocolBlockConfig(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateProtocolBlockConfigRequest()
+    model = models.DescribeCCLevelPolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateProtocolBlockConfig(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCcGeoIPBlockConfigList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCcGeoIPBlockConfigListRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeCcGeoIPBlockConfigList(model)
+        rsp = client.DescribeCCLevelPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1265,7 +1409,7 @@ def doDescribeListSchedulingDomain(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteWaterPrintKey(args, parsed_globals):
+def doModifyNewDomainRules(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1290,11 +1434,11 @@ def doDeleteWaterPrintKey(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteWaterPrintKeyRequest()
+    model = models.ModifyNewDomainRulesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteWaterPrintKey(model)
+        rsp = client.ModifyNewDomainRules(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1505,6 +1649,54 @@ def doDescribeBlackWhiteIpList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCCLevelList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCLevelListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeCCLevelList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyDDoSBlackWhiteIpList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1649,7 +1841,7 @@ def doDescribeCCReqLimitPolicyList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDDoSBlackWhiteIpList(args, parsed_globals):
+def doModifyCcBlackWhiteIpList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1674,11 +1866,11 @@ def doCreateDDoSBlackWhiteIpList(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDDoSBlackWhiteIpListRequest()
+    model = models.ModifyCcBlackWhiteIpListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateDDoSBlackWhiteIpList(model)
+        rsp = client.ModifyCcBlackWhiteIpList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1745,7 +1937,7 @@ def doCreateDDoSSpeedLimitConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCCTrend(args, parsed_globals):
+def doDescribeCCThresholdList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1770,11 +1962,11 @@ def doDescribeCCTrend(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCCTrendRequest()
+    model = models.DescribeCCThresholdListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCCTrend(model)
+        rsp = client.DescribeCCThresholdList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1841,7 +2033,7 @@ def doCreateIPAlarmThresholdConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCCPrecisionPolicy(args, parsed_globals):
+def doDeleteCCLevelPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1866,11 +2058,11 @@ def doCreateCCPrecisionPolicy(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCCPrecisionPolicyRequest()
+    model = models.DeleteCCLevelPolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCCPrecisionPolicy(model)
+        rsp = client.DeleteCCLevelPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1937,7 +2129,7 @@ def doDescribeL7RulesBySSLCertId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeListPacketFilterConfig(args, parsed_globals):
+def doDeleteWaterPrintKey(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1962,11 +2154,11 @@ def doDescribeListPacketFilterConfig(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeListPacketFilterConfigRequest()
+    model = models.DeleteWaterPrintKeyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeListPacketFilterConfig(model)
+        rsp = client.DeleteWaterPrintKey(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2063,6 +2255,54 @@ def doDeleteCcGeoIPBlockConfig(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteCcGeoIPBlockConfig(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDDoSConnectLimitList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDDoSConnectLimitListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDDoSConnectLimitList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2753,7 +2993,7 @@ def doDescribeDDoSTrend(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteBlackWhiteIpList(args, parsed_globals):
+def doModifyL7RulesEdge(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2778,11 +3018,11 @@ def doDeleteBlackWhiteIpList(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteBlackWhiteIpListRequest()
+    model = models.ModifyL7RulesEdgeRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteBlackWhiteIpList(model)
+        rsp = client.ModifyL7RulesEdge(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2897,7 +3137,7 @@ def doCreatePortAclConfigList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteWaterPrintConfig(args, parsed_globals):
+def doCreateDDoSBlackWhiteIpList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2922,11 +3162,11 @@ def doDeleteWaterPrintConfig(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteWaterPrintConfigRequest()
+    model = models.CreateDDoSBlackWhiteIpListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteWaterPrintConfig(model)
+        rsp = client.CreateDDoSBlackWhiteIpList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2945,7 +3185,7 @@ def doDeleteWaterPrintConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDDoSConnectLimitList(args, parsed_globals):
+def doDescribeCcGeoIPBlockConfigList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2970,11 +3210,11 @@ def doDescribeDDoSConnectLimitList(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDDoSConnectLimitListRequest()
+    model = models.DescribeCcGeoIPBlockConfigListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeDDoSConnectLimitList(model)
+        rsp = client.DescribeCcGeoIPBlockConfigList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3329,6 +3569,54 @@ def doModifyDDoSLevel(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeCCTrend(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeCCTrendRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeCCTrend(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisassociateDDoSEipAddress(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3377,7 +3665,7 @@ def doDisassociateDDoSEipAddress(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyL7RulesEdge(args, parsed_globals):
+def doCreateProtocolBlockConfig(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3402,11 +3690,11 @@ def doModifyL7RulesEdge(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyL7RulesEdgeRequest()
+    model = models.CreateProtocolBlockConfigRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyL7RulesEdge(model)
+        rsp = client.CreateProtocolBlockConfig(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3617,7 +3905,7 @@ def doCreateWaterPrintKey(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCcGeoIPBlockConfig(args, parsed_globals):
+def doCreateCCPrecisionPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3642,11 +3930,11 @@ def doCreateCcGeoIPBlockConfig(args, parsed_globals):
     client = mod.AntiddosClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCcGeoIPBlockConfigRequest()
+    model = models.CreateCCPrecisionPolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCcGeoIPBlockConfig(model)
+        rsp = client.CreateCCPrecisionPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3772,10 +4060,12 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
+    "DescribeListPacketFilterConfig": doDescribeListPacketFilterConfig,
     "AssociateDDoSEipAddress": doAssociateDDoSEipAddress,
     "ModifyDDoSThreshold": doModifyDDoSThreshold,
     "DescribeListProtocolBlockConfig": doDescribeListProtocolBlockConfig,
-    "ModifyCCReqLimitPolicy": doModifyCCReqLimitPolicy,
+    "CreateCcBlackWhiteIpList": doCreateCcBlackWhiteIpList,
+    "DeleteBlackWhiteIpList": doDeleteBlackWhiteIpList,
     "DeleteDDoSSpeedLimitConfig": doDeleteDDoSSpeedLimitConfig,
     "ModifyDDoSSpeedLimitConfig": doModifyDDoSSpeedLimitConfig,
     "DescribeBizTrend": doDescribeBizTrend,
@@ -3785,36 +4075,39 @@ ACTION_MAP = {
     "ModifyCCLevelPolicy": doModifyCCLevelPolicy,
     "CreatePacketFilterConfig": doCreatePacketFilterConfig,
     "ModifyPortAclConfig": doModifyPortAclConfig,
+    "CreateCcGeoIPBlockConfig": doCreateCcGeoIPBlockConfig,
     "DescribeListIPAlarmConfig": doDescribeListIPAlarmConfig,
     "DescribeListBGPIPInstances": doDescribeListBGPIPInstances,
     "DescribeDefaultAlarmThreshold": doDescribeDefaultAlarmThreshold,
     "DescribeListBlackWhiteIpList": doDescribeListBlackWhiteIpList,
-    "ModifyNewDomainRules": doModifyNewDomainRules,
-    "ModifyCcBlackWhiteIpList": doModifyCcBlackWhiteIpList,
+    "DeleteCCThresholdPolicy": doDeleteCCThresholdPolicy,
+    "DeleteWaterPrintConfig": doDeleteWaterPrintConfig,
+    "ModifyCCReqLimitPolicy": doModifyCCReqLimitPolicy,
     "DescribeDDoSBlackWhiteIpList": doDescribeDDoSBlackWhiteIpList,
     "CreateDefaultAlarmThreshold": doCreateDefaultAlarmThreshold,
-    "CreateProtocolBlockConfig": doCreateProtocolBlockConfig,
-    "DescribeCcGeoIPBlockConfigList": doDescribeCcGeoIPBlockConfigList,
+    "DescribeCCLevelPolicy": doDescribeCCLevelPolicy,
     "ModifyCCThresholdPolicy": doModifyCCThresholdPolicy,
     "CreateBoundIP": doCreateBoundIP,
     "DescribeListSchedulingDomain": doDescribeListSchedulingDomain,
-    "DeleteWaterPrintKey": doDeleteWaterPrintKey,
+    "ModifyNewDomainRules": doModifyNewDomainRules,
     "DescribeCcBlackWhiteIpList": doDescribeCcBlackWhiteIpList,
     "CreateWaterPrintConfig": doCreateWaterPrintConfig,
     "CreateDDoSGeoIPBlockConfig": doCreateDDoSGeoIPBlockConfig,
     "DescribeBlackWhiteIpList": doDescribeBlackWhiteIpList,
+    "DescribeCCLevelList": doDescribeCCLevelList,
     "ModifyDDoSBlackWhiteIpList": doModifyDDoSBlackWhiteIpList,
     "DescribeListDDoSAI": doDescribeListDDoSAI,
     "DescribeCCReqLimitPolicyList": doDescribeCCReqLimitPolicyList,
-    "CreateDDoSBlackWhiteIpList": doCreateDDoSBlackWhiteIpList,
+    "ModifyCcBlackWhiteIpList": doModifyCcBlackWhiteIpList,
     "CreateDDoSSpeedLimitConfig": doCreateDDoSSpeedLimitConfig,
-    "DescribeCCTrend": doDescribeCCTrend,
+    "DescribeCCThresholdList": doDescribeCCThresholdList,
     "CreateIPAlarmThresholdConfig": doCreateIPAlarmThresholdConfig,
-    "CreateCCPrecisionPolicy": doCreateCCPrecisionPolicy,
+    "DeleteCCLevelPolicy": doDeleteCCLevelPolicy,
     "DescribeL7RulesBySSLCertId": doDescribeL7RulesBySSLCertId,
-    "DescribeListPacketFilterConfig": doDescribeListPacketFilterConfig,
+    "DeleteWaterPrintKey": doDeleteWaterPrintKey,
     "DeletePortAclConfig": doDeletePortAclConfig,
     "DeleteCcGeoIPBlockConfig": doDeleteCcGeoIPBlockConfig,
+    "DescribeDDoSConnectLimitList": doDescribeDDoSConnectLimitList,
     "DeleteCcBlackWhiteIpList": doDeleteCcBlackWhiteIpList,
     "DescribeListProtectThresholdConfig": doDescribeListProtectThresholdConfig,
     "CreatePortAclConfig": doCreatePortAclConfig,
@@ -3829,11 +4122,11 @@ ACTION_MAP = {
     "DescribeListDDoSSpeedLimitConfig": doDescribeListDDoSSpeedLimitConfig,
     "DescribeListDDoSGeoIPBlockConfig": doDescribeListDDoSGeoIPBlockConfig,
     "DescribeDDoSTrend": doDescribeDDoSTrend,
-    "DeleteBlackWhiteIpList": doDeleteBlackWhiteIpList,
+    "ModifyL7RulesEdge": doModifyL7RulesEdge,
     "ModifyCCPrecisionPolicy": doModifyCCPrecisionPolicy,
     "CreatePortAclConfigList": doCreatePortAclConfigList,
-    "DeleteWaterPrintConfig": doDeleteWaterPrintConfig,
-    "DescribeDDoSConnectLimitList": doDescribeDDoSConnectLimitList,
+    "CreateDDoSBlackWhiteIpList": doCreateDDoSBlackWhiteIpList,
+    "DescribeCcGeoIPBlockConfigList": doDescribeCcGeoIPBlockConfigList,
     "CreateCCReqLimitPolicy": doCreateCCReqLimitPolicy,
     "CreateDDoSAI": doCreateDDoSAI,
     "DeletePacketFilterConfig": doDeletePacketFilterConfig,
@@ -3841,13 +4134,14 @@ ACTION_MAP = {
     "DescribeListWaterPrintConfig": doDescribeListWaterPrintConfig,
     "CreateSchedulingDomain": doCreateSchedulingDomain,
     "ModifyDDoSLevel": doModifyDDoSLevel,
+    "DescribeCCTrend": doDescribeCCTrend,
     "DisassociateDDoSEipAddress": doDisassociateDDoSEipAddress,
-    "ModifyL7RulesEdge": doModifyL7RulesEdge,
+    "CreateProtocolBlockConfig": doCreateProtocolBlockConfig,
     "DeleteDDoSBlackWhiteIpList": doDeleteDDoSBlackWhiteIpList,
     "CreateL7RuleCerts": doCreateL7RuleCerts,
     "DescribeListPortAclList": doDescribeListPortAclList,
     "CreateWaterPrintKey": doCreateWaterPrintKey,
-    "CreateCcGeoIPBlockConfig": doCreateCcGeoIPBlockConfig,
+    "CreateCCPrecisionPolicy": doCreateCCPrecisionPolicy,
     "DescribeListListener": doDescribeListListener,
     "ModifyDDoSGeoIPBlockConfig": doModifyDDoSGeoIPBlockConfig,
 

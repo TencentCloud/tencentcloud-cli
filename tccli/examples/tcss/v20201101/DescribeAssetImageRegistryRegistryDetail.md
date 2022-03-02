@@ -22,7 +22,8 @@ Output:
         "RegistryVersion": "v2",
         "NetType": "public",
         "RegistryRegion": "default",
-        "SpeedLimit": 1
+        "SpeedLimit": 1,
+        "Insecure": 0
     }
 }
 ```

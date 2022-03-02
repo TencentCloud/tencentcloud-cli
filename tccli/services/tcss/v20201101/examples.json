@@ -512,7 +512,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAssetImageRegistryRegistryDetail\n&RegistryId=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5187d432-1753-4376-81b6-12e1f7e6ecf5\",\n        \"Name\": \"test\",\n        \"Username\": \"xxx\",\n        \"Password\": \"xxx\",\n        \"Url\": \"https://127.0.0.1:8080\",\n        \"RegistryType\": \"harbor\",\n        \"RegistryVersion\": \"v2\",\n        \"NetType\": \"public\",\n        \"RegistryRegion\": \"default\",\n        \"SpeedLimit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5187d432-1753-4376-81b6-12e1f7e6ecf5\",\n        \"Name\": \"test\",\n        \"Username\": \"xxx\",\n        \"Password\": \"xxx\",\n        \"Url\": \"https://127.0.0.1:8080\",\n        \"RegistryType\": \"harbor\",\n        \"RegistryVersion\": \"v2\",\n        \"NetType\": \"public\",\n        \"RegistryRegion\": \"default\",\n        \"SpeedLimit\": 1,\n        \"Insecure\": 0\n    }\n}",
         "title": "运行时访问控制事件详细信息"
       }
     ],

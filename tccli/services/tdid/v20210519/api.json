@@ -18,6 +18,30 @@
       "name": "创建机构DID",
       "output": "CreateTDidResponse"
     },
+    "CreateTDidByPublicKey": {
+      "document": " 新建DID根据公钥生成Tdid",
+      "input": "CreateTDidByPublicKeyRequest",
+      "name": "新建DID根据公钥生成Tdid",
+      "output": "CreateTDidByPublicKeyResponse"
+    },
+    "GetAuthorityIssuer": {
+      "document": "获取权威机构信息",
+      "input": "GetAuthorityIssuerRequest",
+      "name": "获取权威机构信息",
+      "output": "GetAuthorityIssuerResponse"
+    },
+    "GetDidDocument": {
+      "document": "查看DID文档\n",
+      "input": "GetDidDocumentRequest",
+      "name": "查看DID文档",
+      "output": "GetDidDocumentResponse"
+    },
+    "SetCredentialStatus": {
+      "document": "设置凭证链上状态",
+      "input": "SetCredentialStatusRequest",
+      "name": "设置凭证链上状态",
+      "output": "SetCredentialStatusResponse"
+    },
     "VerifyCredential": {
       "document": "验证凭证",
       "input": "VerifyCredentialRequest",
@@ -61,6 +85,15 @@
           "name": "VersionCredential",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否未签名",
+          "example": "true",
+          "member": "bool",
+          "name": "UnSigned",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -131,6 +164,69 @@
       ],
       "type": "object"
     },
+    "CreateTDidByPublicKeyRequest": {
+      "document": "CreateTDidByPublicKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ID",
+          "example": "bcos-fmtkyt8xne",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "群组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "身份公钥",
+          "example": "test1",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加密公钥",
+          "example": "test",
+          "member": "string",
+          "name": "EncryptPubKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTDidByPublicKeyResponse": {
+      "document": "CreateTDidByPublicKey返回参数结构体",
+      "members": [
+        {
+          "document": "did具体信息",
+          "example": "did:tdid:1:0x4b5edc27dd8a20ebaae6d427f3142b24fbf687ff",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTDidRequest": {
       "document": "CreateTDid请求参数结构体",
       "members": [
@@ -185,6 +281,72 @@
       ],
       "type": "object"
     },
+    "CredentialStatus": {
+      "document": "凭证链上状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "凭证唯一id",
+          "example": "a",
+          "member": "string",
+          "name": "CredentialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证状态（0：吊销；1：有效）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证颁发者Did",
+          "example": "a",
+          "member": "string",
+          "name": "Issuer",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "凭证摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Digest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "凭证签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "Signature",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FunctionArg": {
       "document": "创建凭证入参的FunctionArg",
       "members": [
@@ -230,6 +392,141 @@
         }
       ],
       "usage": "in"
+    },
+    "GetAuthorityIssuerRequest": {
+      "document": "GetAuthorityIssuer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tdid",
+          "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthorityIssuerResponse": {
+      "document": "GetAuthorityIssuer返回参数结构体",
+      "members": [
+        {
+          "document": "名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链网络id",
+          "example": "s",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "区块链群组id",
+          "example": "1",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "权威机构did",
+          "example": "a",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机构备注信息",
+          "example": "a",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "注册时间",
+          "example": "2022-02-28 17:58:32",
+          "member": "string",
+          "name": "RegisterTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "认证时间",
+          "example": "2022-02-28 17:58:32",
+          "member": "string",
+          "name": "RecognizeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidDocumentRequest": {
+      "document": "GetDidDocument请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "tdid",
+          "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
+          "member": "string",
+          "name": "Did",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDidDocumentResponse": {
+      "document": "GetDidDocument返回参数结构体",
+      "members": [
+        {
+          "document": "名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DID文档",
+          "example": "s",
+          "member": "string",
+          "name": "Document",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Proof": {
       "document": "验证凭证签名",
@@ -286,6 +583,33 @@
         }
       ],
       "usage": "in"
+    },
+    "SetCredentialStatusRequest": {
+      "document": "SetCredentialStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "凭证状态",
+          "example": "test1a152",
+          "member": "CredentialStatus",
+          "name": "CredentialStatus",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetCredentialStatusResponse": {
+      "document": "SetCredentialStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TransactionArg": {
       "document": "创建凭证第二个",
