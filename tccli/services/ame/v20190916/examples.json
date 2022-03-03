@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerCategories\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"GenderSet\": [\n            {}\n        ],\n        \"AreaSet\": [\n            {}\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GenderSet\": [\n            {\n                \"EnglishName\": \"MALE\",\n                \"ChineseName\": \"男\"\n            }\n        ],\n        \"AreaSet\": [\n            {\n                \"EnglishName\": \"CH\",\n                \"ChineseName\": \"中国大陆\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取直播互动曲库歌手分类信息"
       }
     ],
@@ -100,7 +100,7 @@
       {
         "document": "获取歌手下歌曲列表",
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerMusics\n<公共请求参数>\n\n{\n    \"SingerId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"xx\"\n                ],\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"xx\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取歌手下歌曲列表"
       }
     ],

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: api.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Limit\": 5,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 39,\n        \"Products\": [\n            {\n                \"Name\": \"cvm\"\n            },\n            {\n                \"Name\": \"vpc\"\n            },\n            {\n                \"Name\": \"faceid\"\n            },\n            {\n                \"Name\": \"cp\"\n            },\n            {\n                \"Name\": \"cls\"\n            }\n        ],\n        \"RequestId\": \"bae5aa6f-f179-4fd6-95a1-e939c3c0b253\"\n    }\n}",
+        "title": "查询产品信息"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "",

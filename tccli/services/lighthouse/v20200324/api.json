@@ -4793,6 +4793,7 @@
         {
           "default": "",
           "document": "更改实例套餐后需要补的差价。",
+          "example": "{}",
           "member": "Price",
           "name": "ModifyPrice",
           "required": true,
@@ -4802,6 +4803,7 @@
         {
           "default": "",
           "document": "变更套餐状态。取值：\n<li>SOLD_OUT：套餐售罄</li>\n<li>AVAILABLE：支持套餐变更</li>\n<li>UNAVAILABLE：暂不支持套餐变更</li>",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "ModifyBundleState",
           "required": true,
@@ -4811,11 +4813,22 @@
         {
           "default": "",
           "document": "套餐信息。",
+          "example": "{}",
           "member": "Bundle",
           "name": "Bundle",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "NotSupportModifyMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

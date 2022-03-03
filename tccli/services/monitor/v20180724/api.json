@@ -6620,6 +6620,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照【计费类型】进行过滤。\n<li>2：包年包月</li>\n<li>3：按量</li>",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

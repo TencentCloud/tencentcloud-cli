@@ -144,6 +144,12 @@
       "name": "终止数据库实例特定操作",
       "output": "KillOpsResponse"
     },
+    "ModifyDBInstanceSecurityGroup": {
+      "document": "修改实例绑定的安全组",
+      "input": "ModifyDBInstanceSecurityGroupRequest",
+      "name": "修改实例安全组",
+      "output": "ModifyDBInstanceSecurityGroupResponse"
+    },
     "ModifyDBInstanceSpec": {
       "document": "本接口(ModifyDBInstanceSpec)用于调整MongoDB云数据库实例配置。接口支持的售卖规格，可从查询云数据库的售卖规格（DescribeSpecInfo）获取。",
       "input": "ModifyDBInstanceSpecRequest",
@@ -3395,6 +3401,42 @@
     },
     "KillOpsResponse": {
       "document": "KillOps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupRequest": {
+      "document": "ModifyDBInstanceSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标安全组id",
+          "example": "[\"sg-a\", \"sg-b\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSecurityGroupResponse": {
+      "document": "ModifyDBInstanceSecurityGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

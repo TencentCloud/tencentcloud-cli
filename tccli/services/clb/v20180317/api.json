@@ -354,6 +354,12 @@
       "name": "修改负载均衡实例的属性",
       "output": "ModifyLoadBalancerAttributesResponse"
     },
+    "ModifyLoadBalancerMixIpTarget": {
+      "document": "修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
+      "input": "ModifyLoadBalancerMixIpTargetRequest",
+      "name": "修改IPv6FullChain负载均衡7层监听器支持混绑目标特性。",
+      "output": "ModifyLoadBalancerMixIpTargetResponse"
+    },
     "ModifyLoadBalancerSla": {
       "document": "支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。",
       "input": "ModifyLoadBalancerSlaRequest",
@@ -7323,6 +7329,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerMixIpTargetRequest": {
+      "document": "ModifyLoadBalancerMixIpTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID数组。",
+          "example": "[\"lb-1234abcd\\r\\n\",\"lb-5678wwqq\\r\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
+          "example": "true",
+          "member": "bool",
+          "name": "MixIpTarget",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerMixIpTargetResponse": {
+      "document": "ModifyLoadBalancerMixIpTarget返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

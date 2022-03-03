@@ -3,7 +3,7 @@
     "BatchDescribeKTVMusicDetails": {
       "document": "根据 Id 列表查询歌曲的详细信息，包含基础信息及播放信息。",
       "input": "BatchDescribeKTVMusicDetailsRequest",
-      "name": "批量查询直播互动曲目详情",
+      "name": "批量获取直播互动曲目详情",
       "output": "BatchDescribeKTVMusicDetailsResponse"
     },
     "CreateKTVRobot": {
@@ -45,7 +45,7 @@
     "DescribeKTVMusicDetail": {
       "document": "根据 Id 查询歌曲的详细信息，包含基础信息及播放信息。",
       "input": "DescribeKTVMusicDetailRequest",
-      "name": "查询直播互动曲目详情",
+      "name": "获取直播互动曲目详情",
       "output": "DescribeKTVMusicDetailResponse"
     },
     "DescribeKTVPlaylistDetail": {
@@ -61,9 +61,9 @@
       "output": "DescribeKTVPlaylistsResponse"
     },
     "DescribeKTVRobots": {
-      "document": "查询机器人列表，支持 Id、状态等过滤条件。",
+      "document": "获取机器人列表，支持 Id、状态等过滤条件。",
       "input": "DescribeKTVRobotsRequest",
-      "name": "查询直播互动机器人信息",
+      "name": "获取直播互动机器人信息",
       "output": "DescribeKTVRobotsResponse"
     },
     "DescribeKTVSingerCategories": {

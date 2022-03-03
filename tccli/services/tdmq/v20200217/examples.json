@@ -376,7 +376,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPVHosts\n&NameKeyword=test\n&ClusterId=amqp-dsadasd\n&Limit=1\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"VHosts\": [\n            {\n                \"Username\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Password\": \"xx\",\n                \"UpdateTime\": 1,\n                \"MsgTtl\": 1,\n                \"VHostId\": \"test\",\n                \"CreateTime\": 1560000000\n            }\n        ],\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VHosts\": [\n            {\n                \"Username\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Password\": \"xx\",\n                \"UpdateTime\": 1,\n                \"MsgTtl\": 1,\n                \"Status\": 0,\n                \"VHostId\": \"test\",\n                \"CreateTime\": 1560000000\n            }\n        ],\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取Amqp Vhost列表"
       }
     ],

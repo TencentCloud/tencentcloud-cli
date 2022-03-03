@@ -86,6 +86,14 @@
         "title": "删除媒资文件失败-媒资文件不存在"
       }
     ],
+    "DeleteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-kRB7j9e6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d04776d-f95c-4c7e-be5b-f3bd8ece7219\"\n    }\n}",
+        "title": "成功删除任务"
+      }
+    ],
     "DescribeCustomCategories": [
       {
         "document": "",
@@ -188,6 +196,22 @@
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-news-6mins.mp4\",\n    \"Name\": \"demo-video-0\"\n}",
         "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-a1b2c3d4\",\n        \"RequestId\": \"50f3df82-beae-4f5f-9b47-23e8302f62ae\"\n    }\n}",
         "title": "发起导入任务成功"
+      }
+    ],
+    "ModifyCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCallback\n<公共请求参数>\n\n{\n    \"TaskFinishNotifyURL\": \"https://callback.com\",\n    \"MediaFinishNotifyURL\": \"https://callback.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\"\n    }\n}",
+        "title": "成功设置回调地址"
+      }
+    ],
+    "QueryCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCallback\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"705f6aed-f46b-4f43-aeef-31167885d938\",\n        \"TaskFinishNotifyURL\": \"https://callback.com\",\n        \"MediaFinishNotifyURL\": \"https://callback.com\"\n    }\n}",
+        "title": "成功查询用户回调地址"
       }
     ],
     "UpdateCustomCategory": [

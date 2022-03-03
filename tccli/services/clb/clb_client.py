@@ -641,7 +641,7 @@ def doBatchDeregisterTargets(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterTargetGroupInstances(args, parsed_globals):
+def doModifyLoadBalancerMixIpTarget(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -666,11 +666,11 @@ def doRegisterTargetGroupInstances(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterTargetGroupInstancesRequest()
+    model = models.ModifyLoadBalancerMixIpTargetRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RegisterTargetGroupInstances(model)
+        rsp = client.ModifyLoadBalancerMixIpTarget(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3041,6 +3041,54 @@ def doModifyLoadBalancerAttributes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyTargetGroupInstancesWeight(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyTargetGroupInstancesWeightRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyTargetGroupInstancesWeight(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateClsLogSet(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3137,7 +3185,7 @@ def doDescribeClassicalLBByInstanceId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReplaceCertForLoadBalancers(args, parsed_globals):
+def doRegisterTargetGroupInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3162,11 +3210,11 @@ def doReplaceCertForLoadBalancers(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReplaceCertForLoadBalancersRequest()
+    model = models.RegisterTargetGroupInstancesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ReplaceCertForLoadBalancers(model)
+        rsp = client.RegisterTargetGroupInstances(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3473,7 +3521,7 @@ def doManualRewrite(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyTargetGroupInstancesWeight(args, parsed_globals):
+def doReplaceCertForLoadBalancers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3498,11 +3546,11 @@ def doModifyTargetGroupInstancesWeight(args, parsed_globals):
     client = mod.ClbClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyTargetGroupInstancesWeightRequest()
+    model = models.ReplaceCertForLoadBalancersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyTargetGroupInstancesWeight(model)
+        rsp = client.ReplaceCertForLoadBalancers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3593,7 +3641,7 @@ ACTION_MAP = {
     "DeleteListener": doDeleteListener,
     "SetSecurityGroupForLoadbalancers": doSetSecurityGroupForLoadbalancers,
     "BatchDeregisterTargets": doBatchDeregisterTargets,
-    "RegisterTargetGroupInstances": doRegisterTargetGroupInstances,
+    "ModifyLoadBalancerMixIpTarget": doModifyLoadBalancerMixIpTarget,
     "CreateRule": doCreateRule,
     "DescribeExclusiveClusters": doDescribeExclusiveClusters,
     "AutoRewrite": doAutoRewrite,
@@ -3643,16 +3691,17 @@ ACTION_MAP = {
     "ModifyLoadBalancerSla": doModifyLoadBalancerSla,
     "DescribeClusterResources": doDescribeClusterResources,
     "ModifyLoadBalancerAttributes": doModifyLoadBalancerAttributes,
+    "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
     "CreateClsLogSet": doCreateClsLogSet,
     "DescribeClassicalLBByInstanceId": doDescribeClassicalLBByInstanceId,
-    "ReplaceCertForLoadBalancers": doReplaceCertForLoadBalancers,
+    "RegisterTargetGroupInstances": doRegisterTargetGroupInstances,
     "CloneLoadBalancer": doCloneLoadBalancer,
     "ModifyTargetGroupInstancesPort": doModifyTargetGroupInstancesPort,
     "BatchModifyTargetWeight": doBatchModifyTargetWeight,
     "DescribeQuota": doDescribeQuota,
     "DescribeTargetHealth": doDescribeTargetHealth,
     "ManualRewrite": doManualRewrite,
-    "ModifyTargetGroupInstancesWeight": doModifyTargetGroupInstancesWeight,
+    "ReplaceCertForLoadBalancers": doReplaceCertForLoadBalancers,
     "CreateLoadBalancerSnatIps": doCreateLoadBalancerSnatIps,
 
 }

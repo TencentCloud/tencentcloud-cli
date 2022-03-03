@@ -244,6 +244,15 @@
           "name": "PythonVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -343,6 +352,15 @@
           "name": "FlinkVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -374,6 +392,7 @@
         {
           "default": "",
           "document": "资源ID",
+          "example": "resource-xxx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -382,6 +401,7 @@
         {
           "default": "",
           "document": "位置信息",
+          "example": "[]",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
           "required": true,
@@ -390,6 +410,7 @@
         {
           "default": "",
           "document": "资源描述信息",
+          "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -398,10 +419,20 @@
         {
           "default": "",
           "document": "1： 资源版本达到上限，自动删除最早可删除的版本",
+          "example": "0",
           "member": "int64",
           "name": "AutoDelete",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -411,8 +442,10 @@
       "members": [
         {
           "document": "资源版本ID",
+          "example": "1",
           "member": "int64",
           "name": "Version",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -481,6 +514,15 @@
           "name": "FolderId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1237",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -535,6 +577,15 @@
           "name": "ResourceConfigVersions",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -562,6 +613,15 @@
           "name": "ResourceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -584,6 +644,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -592,6 +653,7 @@
         {
           "default": "",
           "document": "调试作业ID",
+          "example": "123",
           "member": "int64",
           "name": "DebugId",
           "required": true,
@@ -600,9 +662,19 @@
         {
           "default": "",
           "document": "表名",
+          "example": "a",
           "member": "string",
           "name": "TableName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -676,6 +748,15 @@
           "name": "OnlyDraft",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -724,7 +805,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId。每次请求的 Filters 个数的上限为 3，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
+          "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -748,6 +829,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -838,6 +928,15 @@
           "name": "JobId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -919,6 +1018,15 @@
           "name": "ResourceConfigVersion",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -991,6 +1099,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1627,6 +1744,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mysqItemSpace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2157,6 +2294,15 @@
           "name": "RunJobDescriptions",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1237",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2179,6 +2325,7 @@
         {
           "default": "",
           "document": "作业Id",
+          "example": "1",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2188,6 +2335,7 @@
         {
           "default": "",
           "document": "停止类型，1 停止 2 暂停",
+          "example": "1",
           "member": "int64",
           "name": "StopType",
           "required": true,
@@ -2203,10 +2351,20 @@
         {
           "default": "",
           "document": "批量停止作业的描述信息",
+          "example": "无",
           "member": "StopJobDescription",
           "name": "StopJobDescriptions",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1237",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

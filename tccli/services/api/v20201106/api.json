@@ -1,5 +1,11 @@
 {
   "actions": {
+    "DescribeProducts": {
+      "document": "本接口(DescribeProducts)用于查询各个支持地域列表查询的产品信息。",
+      "input": "DescribeProductsRequest",
+      "name": "查询支持地域列表查询的产品",
+      "output": "DescribeProductsResponse"
+    },
     "DescribeRegions": {
       "document": "本接口(DescribeRegions)用于查询各个产品支持地域信息。",
       "input": "DescribeRegionsRequest",
@@ -20,6 +26,60 @@
     "serviceShortName": "api"
   },
   "objects": {
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "document": "产品详细信息列表。",
+          "example": "无",
+          "member": "RegionProduct",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
       "members": [
@@ -136,6 +196,22 @@
           "document": "地域是否可用状态",
           "member": "string",
           "name": "RegionState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionProduct": {
+      "document": "地域管理系统支持的产品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称，如cvm",
+          "example": "cvm",
+          "member": "string",
+          "name": "Name",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddCustomPersonImage": {
-      "document": "增加自定义人脸图片，每个自定义人物最多可包含5张人脸图片\n\n请注意，与创建自定义人物一样，图片数据优先级优于图片URL优先级",
+      "document": "增加自定义人脸图片，每个自定义人物最多可包含10张人脸图片\n\n请注意，与创建自定义人物一样，图片数据优先级优于图片URL优先级",
       "input": "AddCustomPersonImageRequest",
       "name": "增加自定义人脸图片",
       "output": "AddCustomPersonImageResponse"
@@ -59,6 +59,12 @@
       "input": "DeleteMediaRequest",
       "name": "删除媒资文件",
       "output": "DeleteMediaResponse"
+    },
+    "DeleteTask": {
+      "document": "删除任务信息\n\n请注意，本接口**不会**删除媒资文件\n\n只有已完成(成功或者失败)的任务可以删除，**正在执行中的任务不支持删除**",
+      "input": "DeleteTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteTaskResponse"
     },
     "DescribeCustomCategories": {
       "document": "批量描述自定义人物分类信息",
@@ -119,6 +125,18 @@
       "input": "ImportMediaRequest",
       "name": "导入媒资文件",
       "output": "ImportMediaResponse"
+    },
+    "ModifyCallback": {
+      "document": "用户设置对应事件的回调地址\n\n### 回调事件消息通知协议\n\n#### 网络协议\n- 回调接口协议目前仅支持http/https协议；\n- 请求：HTTP POST 请求，包体内容为 JSON，每一种消息的具体包体内容参见后文。\n- 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： `{\"code\":0}`\n\n#### 通知可靠性\n\n事件通知服务具备重试能力，事件通知失败后会总计重试3次；\n为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：\n- 长时间（20 秒）未回包应答。\n- 应答 HTTP STATUS 不为200。\n\n\n#### 回调接口协议\n\n##### 分析任务完成消息回调\n| 参数名称 | 必选 | 类型 | 描述 |\n|---------|---------|---------|---------|\n| EventType | 是 | int | 回调时间类型，1-任务分析完成，2-媒资导入完成 |\n| TaskId | 是 | String | 任务ID |\n| TaskStatus | 是 | [TaskStatus](/document/product/1611/63373?!preview&preview_docmenu=1&lang=cn&!document=1#TaskStatus) | 任务执行状态 |\n| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |\n\n\n##### 导入媒资完成消息回调\n| 参数名称 | 必选 | 类型 | 描述 |\n|---------|---------|---------|---------|\n| EventType | 是 | int | 回调时间类型，1-任务分析完成，2-媒资导入完成 |\n| MediaId | 是 | String | 媒资ID |\n| MediaStatus | 是 | [MediaStatus](/document/product/1611/63373?!preview&preview_docmenu=1&lang=cn&!document=1#MediaStatus) | 媒资导入状态|\n| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |",
+      "input": "ModifyCallbackRequest",
+      "name": "编辑回调地址",
+      "output": "ModifyCallbackResponse"
+    },
+    "QueryCallback": {
+      "document": "查询用户回调设置",
+      "input": "QueryCallbackRequest",
+      "name": "查询回调设置",
+      "output": "QueryCallbackResponse"
     },
     "UpdateCustomCategory": {
       "document": "更新自定义人物分类\n\n当L2Category为空时，代表更新CategoryId对应的一级自定义人物类型以及所有二级自定义人物类型所从属的一级自定义人物类型；\n当L2Category非空时，仅更新CategoryId对应的二级自定义人物类型",
@@ -519,6 +537,24 @@
           "name": "UploadVideo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自定义标签，可用于查询",
+          "example": "tag",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务分析完成的回调地址，该设置优先级高于控制台全局的设置；",
+          "example": "http;//xxx",
+          "member": "string",
+          "name": "CallbackURL",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -861,6 +897,33 @@
     },
     "DeleteMediaResponse": {
       "document": "DeleteMedia返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskRequest": {
+      "document": "DeleteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "task-abcdef",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskResponse": {
+      "document": "DeleteTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1339,6 +1402,33 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)",
+          "example": "https://bucket/path/",
+          "member": "string",
+          "name": "WriteBackCosPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义标签，可用于查询",
+          "example": "tag",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；",
+          "example": "http;//xxx",
+          "member": "string",
+          "name": "CallbackURL",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1524,6 +1614,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资自定义标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tag1\"]",
+          "member": "string",
+          "name": "LabelSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1599,6 +1699,16 @@
           "name": "Progress",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"tag\"",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1736,6 +1846,42 @@
       ],
       "usage": "both"
     },
+    "ModifyCallbackRequest": {
+      "document": "ModifyCallback请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务分析完成后回调地址",
+          "example": "http://xxxx.com",
+          "member": "string",
+          "name": "TaskFinishNotifyURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "媒体导入完成后回调地址",
+          "example": "http://xxxx.com",
+          "member": "string",
+          "name": "MediaFinishNotifyURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCallbackResponse": {
+      "document": "ModifyCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MultiLevelTag": {
       "document": "标签信息结构体\n\n包含多级(最多三级)标签结果，以及这些标签在识别结果中的出现位置",
       "members": [
@@ -1807,6 +1953,41 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryCallbackRequest": {
+      "document": "QueryCallback请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "QueryCallbackResponse": {
+      "document": "QueryCallback返回参数结构体",
+      "members": [
+        {
+          "document": "任务分析完成后回调地址",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "TaskFinishNotifyURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "媒体导入完成后回调地址",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "MediaFinishNotifyURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ShowInfo": {
       "document": "视频结构化结果",
@@ -2052,6 +2233,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒资自定义标签数组",
+          "example": "[\"tag1\"]",
+          "member": "string",
+          "name": "LabelSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2165,6 +2356,16 @@
           "example": "\"test-video\"",
           "member": "string",
           "name": "MediaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"tag\"",
+          "member": "string",
+          "name": "Label",
           "required": true,
           "type": "string",
           "value_allowed_null": true

@@ -25,6 +25,12 @@ Output:
                 "SingerSet": [
                     "xx"
                 ],
+                "SingerInfoSet": [
+                    {
+                        "SingerId": "xx",
+                        "Name": "xx"
+                    }
+                ],
                 "TagSet": [
                     "xx"
                 ],

@@ -32,6 +32,14 @@
         "title": "关闭serverless外网"
       }
     ],
+    "CreateDBInstanceNetworkAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateDBInstanceNetworkAccess\n&DBInstanceId=postgres-6bwgamo3\n&VpcId=vpc-gaestjaf\n&SubnetId=subnet-4s9dejli\n&IsAssignVip=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "添加实例网络"
+      }
+    ],
     "CreateDBInstances": [
       {
         "document": "",
@@ -76,6 +84,14 @@
         "title": "创建只读组"
       }
     ],
+    "CreateReadOnlyGroupNetworkAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=CreateReadOnlyGroupNetworkAccess\n&ReadOnlyGroupId=pgro-4t9c6g7k\n&VpcId=vpc-gaestjaf\n&SubnetId=subnet-4s9dejli\n&IsAssignVip=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "添加RO组网络"
+      }
+    ],
     "CreateServerlessDBInstance": [
       {
         "document": "创建一个实例名为“serverlessdb-test”的serverless实例，实例数据库版本为10.4，服务端database字符集为UTF8。",
@@ -84,12 +100,28 @@
         "title": "创建serverlessDB实例"
       }
     ],
+    "DeleteDBInstanceNetworkAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DeleteDBInstanceNetworkAccess\n&DBInstanceId=postgres-6bwgamo3\n&VpcId=vpc-gaestjaf\n&SubnetId=subnet-4s9dejli\n&Vip=127.0.01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "删除实例网络"
+      }
+    ],
     "DeleteReadOnlyGroup": [
       {
         "document": "",
         "input": "https://postgres.tencentcloudapi.com/?Action=DeleteReadOnlyGroup\n&ReadOnlyGroupId=\"pgrogrp-k95qzetn\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1000,\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "删除只读组"
+      }
+    ],
+    "DeleteReadOnlyGroupNetworkAccess": [
+      {
+        "document": "",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DeleteReadOnlyGroupNetworkAccess\n&ReadOnlyGroupId=pgro-4t9c6g7k\n&VpcId=vpc-gaestjaf\n&SubnetId=subnet-4s9dejli\n&Vip=127.0.0.1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
+        "title": "删除RO组网络"
       }
     ],
     "DeleteServerlessDBInstance": [

@@ -2638,6 +2638,15 @@
           "name": "Schema",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL；\"dbbrain-mysql\" - 自建 MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
