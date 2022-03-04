@@ -56,6 +56,20 @@
         "title": "重新提现请求"
       }
     ],
+    "ApplyReconciliationFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyReconciliationFile\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"xx\",\n    \"ApplyFileType\": \"xx\",\n    \"BankAccountNumber\": \"xx\",\n    \"ApplyFileDate\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abb4aa8b-6dfa-47eb-9c4a-de464da32e68\",\n        \"Result\": {\n            \"ApplyFileId\": \"xx\",\n            \"ApplyStatus\": \"S\",\n            \"ApplyMessage\": \"1\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "ApplyReconciliationFile"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyReconciliationFile\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"development\",\n    \"ApplyFileType\": \"YE\",\n    \"BankAccountNumber\": \"15000101075856\",\n    \"ApplyFileDate\": \"20220302\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4de7245d-3c88-4d7d-8116-31e1ec145a16\",\n        \"Result\": {\n            \"ApplyFileId\": \"20220303181840234585170504588894208\",\n            \"ApplyStatus\": \"I\",\n            \"ApplyMessage\": \"申请中\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "聚鑫-申请对账文件-成功"
+      }
+    ],
     "ApplyTrade": [
       {
         "document": "",
@@ -714,6 +728,14 @@
         "title": "QueryExchangeRate"
       }
     ],
+    "QueryFundsTransactionDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFundsTransactionDetails\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"development\",\n    \"PageOffSet\": \"1\",\n    \"QueryDateType\": \"2\",\n    \"QueryStartDate\": \"20220301\",\n    \"QueryEndDate\": \"20220302\",\n    \"QueryTranType\": \"2\",\n    \"SubAccountNumber\": \"2031000000096048\",\n    \"BankAccountNumber\": \"15000101075856\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f1e4537-16d2-40fd-bdf5-6ed22be524d5\",\n        \"Result\": {\n            \"ResultCount\": 1,\n            \"TotalCount\": 1,\n            \"EndFlag\": \"1\",\n            \"TranItemArray\": [\n                {\n                    \"TransType\": \"1\",\n                    \"BankBookingMessage\": \"提现\",\n                    \"TranStatus\": \"0\",\n                    \"TransNetMemberCode\": \"20211202B\",\n                    \"SubAccountNumber\": \"2031000000096048\",\n                    \"SubAccountName\": \"曹盈\",\n                    \"TransAmount\": \"222.22\",\n                    \"TransFee\": \"0.0\",\n                    \"TransDate\": \"20220302\",\n                    \"TransTime\": \"141028\",\n                    \"BankSequenceNumber\": \"2203020174101096\",\n                    \"Remark\": \"H190482203020792346770\"\n                }\n            ]\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "聚鑫-查询会员资金交易信息列表"
+      }
+    ],
     "QueryInvoice": [
       {
         "document": "",
@@ -752,6 +774,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMemberTransaction\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&FunctionFlag=9&OutSubAcctNo= 1234000000021018&OutMemberCode= YAPI100015&OutSubAcctName=demo&InSubAcctNo= 1234000000021028&InMemberCode= YAPI100016&InSubAcctName=demo&TranAmt=10&TranFee=0&TranType=01&Ccy=RMB&OrderNo=O2019120667",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5db16324-2c31-4848-adde-d45ea658fbbb\"\n    }\n}",
         "title": "会员间交易-不验证"
+      }
+    ],
+    "QueryMemberTransactionDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMemberTransactionDetails\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"development\",\n    \"PageOffSet\": \"1\",\n    \"QueryDateType\": \"2\",\n    \"QueryStartDate\": \"20220201\",\n    \"QueryEndDate\": \"20220302\",\n    \"QueryTranType\": \"1\",\n    \"SubAccountNumber\": \"2031000000001000\",\n    \"BankAccountNumber\": \"15000101075856\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abb4aa8b-6dfa-47eb-9c4a-de464da32e68\",\n        \"Result\": {\n            \"ResultCount\": 2,\n            \"TotalCount\": 2,\n            \"EndFlag\": \"1\",\n            \"TranItemArray\": [\n                {\n                    \"TransType\": \"1\",\n                    \"TranStatus\": \"0\",\n                    \"TransAmount\": \"222.22\",\n                    \"TransDate\": \"20220302\",\n                    \"TransTime\": \"140916\",\n                    \"BankSequenceNumber\": \"2203020174100913\",\n                    \"BankBookingType\": \"1\",\n                    \"InSubAccountNumber\": \"2031000000096048\",\n                    \"OutSubAccountNumber\": \"2031000000001000\",\n                    \"Remark\": \"\"\n                },\n                {\n                    \"TransType\": \"2\",\n                    \"TranStatus\": \"0\",\n                    \"TransAmount\": \"222.22\",\n                    \"TransDate\": \"20220302\",\n                    \"TransTime\": \"140708\",\n                    \"BankSequenceNumber\": \"2203020174100837\",\n                    \"BankBookingType\": \"4\",\n                    \"InSubAccountNumber\": \"2031000000001000\",\n                    \"OutSubAccountNumber\": \"2031000000000002\",\n                    \"Remark\": \"\"\n                }\n            ]\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "聚鑫-查询会员间交易信息列表"
       }
     ],
     "QueryMerchant": [
@@ -900,6 +930,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryReconciliationDocument\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&FileType=CZ&FileDate=20191018",
         "output": "{\n    \"Response\": {\n        \"TranItemArray\": [\n            {\n                \"FilePath\": \"/ejzb/1234/12345678910.txt.enc\",\n                \"RandomPassword\": \"12345678910\",\n                \"FileName\": \"CZ201910183691.ok.enc\",\n                \"DrawCode\": \"96fbef7e-109c-4a08-a58e-7f556fb00d30\"\n            }\n        ],\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"a39ac57e-17cd-4c7d-80c6-6e9a59b616f0\",\n        \"ResultNum\": \"1\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831911061573032178\"\n    }\n}",
         "title": "查询对账文件信息"
+      }
+    ],
+    "QueryReconciliationFileApplyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryReconciliationFileApplyInfo\n<公共请求参数>\n\n{\n    \"ApplyFileId\": \"20220303181840234585170504588894208\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"102b8eeb-689f-4e06-b1c1-96b752cf204c\",\n        \"Result\": {\n            \"ApplyFileId\": \"20220303181840234585170504588894208\",\n            \"ApplyStatus\": \"S\",\n            \"ApplyMessage\": \"申请成功\",\n            \"FileUrlArray\": [\n                \"https://snake-account-dev-1258344699.cos.ap-guangzhou.myqcloud.com/20220303181840234585170504588894208-YE2022030220311.txt?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDxiQKyTvz1pRJ1UtxvdCZooZ72pTwoE4f%26q-sign-time%3D1646302788%3B1646389188%26q-key-time%3D1646302788%3B1646389188%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3De28ee3331305fd6db5884675d0d161fbc307858b\"\n            ]\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "聚鑫-查询对账文件申请结果-成功"
       }
     ],
     "QueryRefund": [

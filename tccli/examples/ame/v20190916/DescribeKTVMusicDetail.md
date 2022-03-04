@@ -13,26 +13,26 @@ Output:
 ```
 {
     "Response": {
-        "LyricsUrl": "xx",
-        "PreludeInterval": 0,
+        "LyricsUrl": "http://125xxx.myqcloud.com/ly.vtt",
+        "PreludeInterval": 24000,
         "DefinitionInfoSet": [
             {
-                "Definition": "xx",
+                "Definition": "audio/lo",
                 "Bitrate": 64000,
                 "Size": 3298220
             }
         ],
         "KTVMusicBaseInfo": {
             "ComposerSet": [
-                "周杰伦"
+                "方文山"
             ],
             "SingerInfoSet": [
                 {
-                    "SingerId": "xx",
-                    "Name": "xx"
+                    "SingerId": "sid-88djjdd",
+                    "Name": "周杰伦"
                 }
             ],
-            "MusicId": "xx",
+            "MusicId": "mid-1287djxxjx",
             "SingerSet": [
                 "周杰伦"
             ],
@@ -40,21 +40,21 @@ Output:
                 "华语",
                 "流行"
             ],
-            "Duration": 1,
+            "Duration": 241,
             "LyricistSet": [
                 "方文山"
             ],
-            "Name": "xx"
+            "Name": "七里香"
         },
         "ChorusClipSet": [
             {
-                "EndTime": 0,
-                "StartTime": 0
+                "EndTime": 48000,
+                "StartTime": 24000
             }
         ],
-        "MidiJsonUrl": "xx",
-        "PlayToken": "xx",
-        "RequestId": "xx"
+        "MidiJsonUrl": "http://125xxx.myqcloud.com/midi.json",
+        "PlayToken": "e1173xx993311ddx3h3gg3d9gjg4j",
+        "RequestId": "1901xx-233xxx-221-xx"
     }
 }
 ```

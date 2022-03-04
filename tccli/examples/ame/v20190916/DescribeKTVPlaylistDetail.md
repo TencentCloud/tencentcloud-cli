@@ -16,29 +16,35 @@ Output:
 {
     "Response": {
         "PlaylistBaseInfo": {
-            "Description": "xx",
-            "MusicNum": 0,
-            "PlaylistId": "xx",
-            "Title": "xx"
+            "Description": "国内热门",
+            "MusicNum": 1,
+            "PlaylistId": "pid-xxfdds1",
+            "Title": "国内热门"
         },
-        "RequestId": "xx",
+        "RequestId": "998d8d-11223-xxxd1-192j",
         "KTVMusicInfoSet": [
             {
                 "ComposerSet": [
-                    "xx"
+                    "方文山"
                 ],
-                "MusicId": "xx",
+                "MusicId": "mid-xd998aa",
                 "SingerSet": [
-                    "xx"
+                    "周杰伦"
+                ],
+                "SingerInfoSet": [
+                    {
+                        "SingerId": "sid-19xjf8d",
+                        "Name": "周杰伦"
+                    }
                 ],
                 "TagSet": [
-                    "xx"
+                    "情歌"
                 ],
-                "Duration": 1,
+                "Duration": 241,
                 "LyricistSet": [
-                    "xx"
+                    "方文山"
                 ],
-                "Name": "xx"
+                "Name": "七里香"
             }
         ]
     }

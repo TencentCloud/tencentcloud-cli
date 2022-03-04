@@ -31,7 +31,7 @@
       "output": "CreateConsumerResponse"
     },
     "CreateExport": {
-      "document": "本接口用于创建日志下载任务",
+      "document": "本接口用于创建日志下载任务，导出原始日志",
       "input": "CreateExportRequest",
       "name": "创建日志下载任务",
       "output": "CreateExportResponse"
@@ -1399,7 +1399,7 @@
       "members": [
         {
           "default": "",
-          "document": "日志主题",
+          "document": "日志主题ID",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -1408,21 +1408,21 @@
         },
         {
           "default": "",
-          "document": "日志导出检索语句",
-          "example": "status:200",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "日志导出数量,  最大值1000万",
+          "document": "日志导出数量,  最大值5000万",
           "example": "100",
           "member": "uint64",
           "name": "Count",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志导出检索语句，不支持<a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>",
+          "example": "status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
         },
         {
           "default": "",
@@ -5225,6 +5225,7 @@
         {
           "default": "",
           "document": "全文索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "FullTextInfo",
           "name": "FullText",
           "required": false,
@@ -5234,6 +5235,7 @@
         {
           "default": "",
           "document": "键值索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "RuleKeyValueInfo",
           "name": "KeyValue",
           "required": false,
@@ -5243,6 +5245,7 @@
         {
           "default": "",
           "document": "元字段索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
           "member": "RuleTagInfo",
           "name": "Tag",
           "required": false,

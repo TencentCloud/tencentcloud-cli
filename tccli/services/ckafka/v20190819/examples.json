@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AuthorizeToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthorizeToken\n<公共请求参数>\n\n{\n    \"User\": \"testUser\",\n    \"InstanceId\": \"ckafka-xxxasa\",\n    \"Tokens\": \"asdadsda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "实例token授权"
+      }
+    ],
     "BatchCreateAcl": [
       {
         "document": "",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTopicAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Topic\": [\n        {\n            \"UncleanLeaderElectionEnable\": true,\n            \"PartitionNum\": 0,\n            \"MinInsyncReplicas\": 0,\n            \"ReplicaNum\": 0,\n            \"CleanUpPolicy\": \"xx\",\n            \"Note\": \"xx\",\n            \"SegmentMs\": 0,\n            \"RetentionMs\": 0,\n            \"MaxMessageBytes\": 0,\n            \"TopicName\": \"xx\",\n            \"RetentionBytes\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"InstanceId\": \"ckafka-jam3ao99\",\n                \"TopicName\": \"test\",\n                \"ReturnCode\": \"20018\",\n                \"Message\": \"get topic information fail\"\n            },\n            {\n                \"InstanceId\": \"ckafka-jam3ao99\",\n                \"TopicName\": \"test1\",\n                \"ReturnCode\": \"20018\",\n                \"Message\": \"get topic information fail\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx0001\"\n    }\n}",
         "title": "批量设置主题属性"
+      }
+    ],
+    "CancelAuthorizationToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAuthorizationToken\n<公共请求参数>\n\n{\n    \"User\": \"testUser\",\n    \"InstanceId\": \"ckafka-xxxasa\",\n    \"Tokens\": \"asdadsda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": 0,\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "实例token授权"
       }
     ],
     "CreateAcl": [
@@ -62,6 +78,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=CreateRoute\n&InstanceId=xxx\n&VipType=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\"\n    }\n}",
         "title": "成功请求"
+      }
+    ],
+    "CreateToken": [
+      {
+        "document": "生产的时候clentId带上token 可以绕过acl(需要提工单升级broker版本)",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateToken\n<公共请求参数>\n\n{\n    \"User\": \"testUser\",\n    \"InstanceId\": \"ckafka-xxxasa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"904b75130b4b4102bdeb071a7f48523a\",\n        \"RequestId\": \"20e995ed-75b9-43bb-84c0-35676567e1a8\"\n    }\n}",
+        "title": "创建token"
       }
     ],
     "CreateTopic": [
