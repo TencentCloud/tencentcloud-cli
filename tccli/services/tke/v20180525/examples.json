@@ -580,6 +580,14 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "DescribeTKEEdgeScript": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeScript\n&ClusterId=cls123\n&NodeName=node\n&Interface=eth0\n&Config={}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘脚本链接"
+      }
+    ],
     "DescribeVersions": [
       {
         "document": "",

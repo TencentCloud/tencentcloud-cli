@@ -1,0 +1,117 @@
+{
+  "actions": {
+    "CopyCryptoColumnPolicy": {
+      "document": "同region下 根据用户输入的CasbId,MetaDataId 复制策略到DstCasbId,MetaDataId中。\n场景1：\n相同CasbId，不同MetadataId 下策略复制\n场景2：\n不同Casbid,不同MetaDataId 下策略复制\n场景3:\n相同CasbId,相同MetaDataId 且 DatabaseName不同 策略复制\n",
+      "input": "CopyCryptoColumnPolicyRequest",
+      "name": "复制字段策略",
+      "output": "CopyCryptoColumnPolicyResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-05-07",
+    "api_brief": null,
+    "serviceNameCN": "云数据加密代理网关",
+    "serviceShortName": "casb"
+  },
+  "objects": {
+    "CopyCryptoColumnPolicyRequest": {
+      "document": "CopyCryptoColumnPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "casb-00000000",
+          "member": "string",
+          "name": "CasbId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "元数据id",
+          "example": "meta-00000000",
+          "member": "string",
+          "name": "MetaDataId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标实例Id 如果和实例Id相同则为同CasbId下的策略复制",
+          "example": "casb-11111111",
+          "member": "string",
+          "name": "DstCasbId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标实例Id 如果和[元数据id]相同则为同元数据下的策略复制",
+          "example": "meta-00000000",
+          "member": "string",
+          "name": "DstMetaDataId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选来源数据库的表",
+          "example": "无",
+          "member": "CryptoCopyColumnPolicyTableFilter",
+          "name": "SrcTableFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "复制同元数据下的策略，需要填写目标数据库名",
+          "example": "db-01",
+          "member": "string",
+          "name": "DstDatabaseName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CopyCryptoColumnPolicyResponse": {
+      "document": "CopyCryptoColumnPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CryptoCopyColumnPolicyTableFilter": {
+      "document": "策略迁移表信息筛选",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "db01",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "example": "无",
+          "member": "string",
+          "name": "TableNameSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

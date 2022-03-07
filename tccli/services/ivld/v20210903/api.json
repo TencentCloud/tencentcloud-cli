@@ -329,6 +329,32 @@
       ],
       "usage": "out"
     },
+    "ClassifiedPersonInfo": {
+      "document": "已分类的人物信息",
+      "members": [
+        {
+          "default": "",
+          "document": "人物分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "演员",
+          "member": "string",
+          "name": "ClassifyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "符合特定分类的人物信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PersonInfo",
+          "name": "PersonInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateCustomCategoryRequest": {
       "document": "CreateCustomCategory请求参数结构体",
       "members": [
@@ -1954,6 +1980,52 @@
       ],
       "usage": "out"
     },
+    "PersonInfo": {
+      "document": "人物信息",
+      "members": [
+        {
+          "default": "",
+          "document": "公众人物姓名",
+          "example": "陈好",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公众人物职务",
+          "example": "演员",
+          "member": "string",
+          "name": "Job",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "首次出现模态，可选值为[1,3]，详细参见AppearIndex定义",
+          "example": "1",
+          "member": "int64",
+          "name": "FirstAppear",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人物出现信息",
+          "example": "无",
+          "member": "AppearInfo",
+          "name": "AppearInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryCallbackRequest": {
       "document": "QueryCallback请求参数结构体",
       "members": [],
@@ -2078,6 +2150,16 @@
           "example": "无",
           "member": "TextInfo",
           "name": "TextInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已分类人物信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassifiedPersonInfo",
+          "name": "ClassifiedPersonInfoSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true

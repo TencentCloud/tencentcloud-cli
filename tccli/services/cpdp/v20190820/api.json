@@ -606,6 +606,12 @@
       "name": "云支付-查询商户支付方式列表",
       "output": "QueryMerchantPayWayListResponse"
     },
+    "QueryOpenBankBankBranchList": {
+      "document": "云企付-查询联行号",
+      "input": "QueryOpenBankBankBranchListRequest",
+      "name": "云企付-查询联行号",
+      "output": "QueryOpenBankBankBranchListResponse"
+    },
     "QueryOpenBankBindExternalSubMerchantBankAccount": {
       "document": "云企付-子商户银行卡绑定结果查询",
       "input": "QueryOpenBankBindExternalSubMerchantBankAccountRequest",
@@ -635,6 +641,12 @@
       "input": "QueryOpenBankPaymentOrderRequest",
       "name": "云企付-查询订单支付结果",
       "output": "QueryOpenBankPaymentOrderResponse"
+    },
+    "QueryOpenBankSupportBankList": {
+      "document": "云企付-查询支持银行列表",
+      "input": "QueryOpenBankSupportBankListRequest",
+      "name": "云企付-查询支持银行列表",
+      "output": "QueryOpenBankSupportBankListResponse"
     },
     "QueryOpenBankUnbindExternalSubMerchantBankAccount": {
       "document": "云企付-子商户银行卡解绑结果查询",
@@ -3716,6 +3728,52 @@
           "example": "无",
           "member": "string",
           "name": "AgentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BankBranchInfo": {
+      "document": "支行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "银行名称。",
+          "example": "招商银行/中信银行/工商银行",
+          "member": "string",
+          "name": "BankName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "银行简称。",
+          "example": "ICBC",
+          "member": "string",
+          "name": "BankAbbreviation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支行名。",
+          "example": "无",
+          "member": "string",
+          "name": "BankBranchName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联行号。",
+          "example": "无",
+          "member": "string",
+          "name": "BankBranchId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13226,6 +13284,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收款方绑卡序列号。\n当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。",
+          "example": "10232043567",
+          "member": "string",
+          "name": "BindSerialNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -18760,6 +18828,140 @@
       ],
       "type": "object"
     },
+    "QueryOpenBankBankBranchListRequest": {
+      "document": "QueryOpenBankBankBranchList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户ID。",
+          "example": "CM28698939401",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "example": "TENPAY",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式。\n__EBANK_PAYMENT__:ebank付款\n__OPENBANK_PAYMENT__: openbank付款",
+          "example": "OPENBANK_PAYMENT",
+          "member": "string",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支行名称。",
+          "example": "10232043567",
+          "member": "string",
+          "name": "BankBranchName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "银行简称。",
+          "example": "CMB/CITIC/ICBC/OTHERS",
+          "member": "string",
+          "name": "BankAbbreviation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码。Index和Count必须大于等于1。",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankBankBranchListResponse": {
+      "document": "QueryOpenBankBankBranchList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。\n__SUCCESS__: 成功\n__其他__: 见附录-错误码表",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryOpenBankBankBranchListResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankBankBranchListResult": {
+      "document": "查询联行号返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "支行列表。",
+          "example": "无",
+          "member": "BankBranchInfo",
+          "name": "BankBranchList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "列表总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryOpenBankBindExternalSubMerchantBankAccountRequest": {
       "document": "QueryOpenBankBindExternalSubMerchantBankAccount请求参数结构体",
       "members": [
@@ -19585,6 +19787,103 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryOpenBankSupportBankListRequest": {
+      "document": "QueryOpenBankSupportBankList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户ID。",
+          "example": "CM28698939401",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "example": "TENPAY",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付方式。\n__EBANK_PAYMENT__:ebank付款\n__OPENBANK_PAYMENT__: openbank付款",
+          "example": "OPENBANK_PAYMENT",
+          "member": "string",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "sandbox",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSupportBankListResponse": {
+      "document": "QueryOpenBankSupportBankList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。\n__SUCCESS__: 成功\n__其他__: 见附录-错误码表",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryOpenBankSupportBankListResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryOpenBankSupportBankListResult": {
+      "document": "查询支持的银行列表返回结果",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的银行列表",
+          "example": "无",
+          "member": "SupportBankInfo",
+          "name": "SupportBankList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -25184,6 +25483,52 @@
           "example": "your_ip",
           "member": "string",
           "name": "UserClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SupportBankInfo": {
+      "document": "支持的银行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "银行简称。",
+          "example": "CMB/CITIC/ICBC",
+          "member": "string",
+          "name": "BankCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "银行名称。",
+          "example": "招商银行/中信银行/工商银行",
+          "member": "string",
+          "name": "BankName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态。\n__MAINTAINING__: 维护中\n__WORKING__: 正常工作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WORKING",
+          "member": "string",
+          "name": "MaintainStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "银行渠道维护公告。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BankNotice",
           "required": true,
           "type": "string",
           "value_allowed_null": true

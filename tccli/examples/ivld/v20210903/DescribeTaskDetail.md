@@ -24,6 +24,7 @@ Output:
                         "Tag": ""
                     }
                 ],
+                "ClassifiedPersonInfoSet": [],
                 "Column": "",
                 "CoverImageURL": "https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/%E6%98%9F%E8%A7%86%E9%A2%91.mp4_2021-11-04T12:14:17/cover/show_g8rktHiE.jpg",
                 "Date": "",

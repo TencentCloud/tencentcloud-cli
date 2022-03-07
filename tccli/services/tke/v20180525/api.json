@@ -426,6 +426,12 @@
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
     },
+    "DescribeTKEEdgeScript": {
+      "document": "获取边缘脚本链接",
+      "input": "DescribeTKEEdgeScriptRequest",
+      "name": "获取边缘脚本链接",
+      "output": "DescribeTKEEdgeScriptResponse"
+    },
     "DescribeVersions": {
       "document": "获取集群版本信息",
       "input": "DescribeVersionsRequest",
@@ -6401,6 +6407,60 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeScriptRequest": {
+      "document": "DescribeTKEEdgeScript请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网卡名",
+          "example": "eth0",
+          "member": "string",
+          "name": "Interface",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点名字",
+          "example": "node",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "json格式的节点配置",
+          "example": "{}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeScriptResponse": {
+      "document": "DescribeTKEEdgeScript返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

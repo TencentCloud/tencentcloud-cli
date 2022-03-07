@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "CopyCryptoColumnPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: casb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyCryptoColumnPolicy\n<公共请求参数>\n\n{\n    \"CasbId\": \"casb-1\",\n    \"MetaDataId\": \"meta-1\",\n    \"DstCasbId\": \"casb-1\",\n    \"DstMetaDataId\": \"meta-2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f7310c2-5459-460f-a56d-2e7d501c8313\"\n    }\n}",
+        "title": "CopyCryptoColumnPolicy"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: casb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyCryptoColumnPolicy\n<公共请求参数>\n\n{\n    \"DstDatabaseName\": \"casbtest0\",\n    \"CasbId\": \"casb-mln08msg\",\n    \"DstMetaDataId\": \"metadata-ea1lr450\",\n    \"MetaDataId\": \"metadata-ea1lr450\",\n    \"SrcTableFilter\": [\n        {\n            \"TableNameSet\": [\n                \"beian_subject\"\n            ],\n            \"DatabaseName\": \"casb\"\n        }\n    ],\n    \"DstCasbId\": \"casb-mln08msg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6474d57-6002-4c7a-a0a3-16fc83b6a309\"\n    }\n}",
+        "title": "复制同一数据库实例不同DB的表策略"
+      }
+    ]
+  },
+  "version": "1.0"
+}
