@@ -832,6 +832,20 @@
         "title": "查询商户支付方式结果成功示例"
       }
     ],
+    "QueryOpenBankBankAccountBalance": [
+      {
+        "document": "余额查询示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankBankAccountBalance\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ChannelSubMerchantId\": \"sub0001\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"OPENBANK_PAYMENT\",\n    \"BindSerialNo\": \"123243556\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"TotalBalance\": 500,\n            \"YesterdayBalance\": 300\n        }\n    }\n}",
+        "title": "余额查询示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankBankAccountBalance\n<公共请求参数>\n\n{\n    \"BindSerialNo\": \"1123\",\n    \"ChannelMerchantId\": \"123\",\n    \"Environment\": \"sandbox\",\n    \"ChannelSubMerchantId\": \"sub123456\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f26233a4-9f61-4d4b-9279-8a8fa137861f\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_ERROR\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "查询异常示例"
+      }
+    ],
     "QueryOpenBankBankBranchList": [
       {
         "document": "余额查询示例",
@@ -846,6 +860,20 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankBindExternalSubMerchantBankAccount\n<公共请求参数>\n\n{\n    \"ChannelApplyId\": \"AID12345678\",\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelSubMerchantId\": \"CM12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d69a4d94-c402-40c6-94da-70b6f32a3c0c\",\n        \"Result\": {\n            \"ChannelApplyId\": \"AID12345678\",\n            \"BindStatus\": \"SUCCESS\",\n            \"BindMessage\": \"success\",\n            \"BindSerialNo\": \"\",\n            \"ExternalSubMerchantBankAccountReturnData\": \"{\\\"AccountBank\\\":\\\"COMM\\\",\\\"AccountNumberLastFour\\\":\\\"\\\",\\\"AccountType\\\":\\\"COLLECT_MONEY\\\",\\\"BankBranchId\\\":\\\"12345678\\\"}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "QueryOpenBankBindExternalSubMerchantBankAccount"
+      }
+    ],
+    "QueryOpenBankDailyReceiptDownloadUrl": [
+      {
+        "document": "回单查询示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDailyReceiptDownloadUrl\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ChannelSubMerchantId\": \"sub0001\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"OPENBANK_PAYMENT\",\n    \"BindSerialNo\": \"123243556\",\n    \"QueryDate\": \"2020-01-11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"991304d7-1084-4c98-9baa-fa1e8d2a223\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"http://127.0.0.1/receipt/download\",\n            \"ExpireTime\": \"2020-01-11 14:11:10\",\n            \"ReceiptStatus\": \"READY\"\n        }\n    }\n}",
+        "title": "回单查询示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDailyReceiptDownloadUrl\n<公共请求参数>\n\n{\n    \"BindSerialNo\": \"23445\",\n    \"ChannelMerchantId\": \"123\",\n    \"Environment\": \"sandbox\",\n    \"ChannelSubMerchantId\": \"3456\",\n    \"QueryDate\": \"2020-01-17\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dabb2484-a71a-4a0c-b172-506b451f706e\",\n        \"Result\": null,\n        \"ErrCode\": \"FailedOperation.SystemError\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "查询异常示例"
       }
     ],
     "QueryOpenBankDownLoadUrl": [

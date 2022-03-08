@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ame DescribeKTVSingerMusics --cli-unfold-argument  \
-    --SingerId xx \
-    --Limit 0 \
+    --SingerId sid-38xhhdd0 \
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -19,29 +19,29 @@ Output:
         "KTVMusicInfoSet": [
             {
                 "ComposerSet": [
-                    "xx"
+                    "方文山"
                 ],
-                "MusicId": "xx",
+                "MusicId": "mid-399x9e91",
                 "SingerSet": [
-                    "xx"
+                    "周杰伦"
                 ],
                 "SingerInfoSet": [
                     {
-                        "SingerId": "xx",
-                        "Name": "xx"
+                        "SingerId": "sid-38xhhdd0",
+                        "Name": "周杰伦"
                     }
                 ],
                 "TagSet": [
-                    "xx"
+                    "伤感"
                 ],
-                "Duration": 1,
+                "Duration": 241,
                 "LyricistSet": [
-                    "xx"
+                    "方文山"
                 ],
-                "Name": "xx"
+                "Name": "七里香"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "c163a5b7-b4c9-4b71-9202-81532d9c69dc"
     }
 }
 ```

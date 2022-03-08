@@ -10,10 +10,10 @@ tccli ess CreateDocument --cli-unfold-argument  \
     --Operator.ClientIp 1.1.1.1 \
     --Operator.OpenId 321654 \
     --Operator.ProxyIp 2.2.2.2 \
-    --Operator.UserId 11234567890123456789012345678901 \
+    --Operator.UserId 112345678********45678901 \
     --FileNames 123 456 \
     --FlowId 1234 \
-    --TemplateId 111234 \
+    --TemplateId 00033ed4d1********a82a9 \
     --ClientToken 我是token \
     --FormFields.0.ComponentValue 控件填充内容 \
     --FormFields.0.ComponentId 控件ID
@@ -24,7 +24,7 @@ Output:
 {
     "Response": {
         "RequestId": "xx",
-        "DocumentId": "string"
+        "DocumentId": "yDxM6**********KAMwutBsRy"
     }
 }
 ```

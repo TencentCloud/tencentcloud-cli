@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli ess CreateFlowByFiles --cli-unfold-argument  \
-    --Operator.UserId 11910aa00cdded2eb389595ed05f5a7b \
-    --Operator.ClientIp  \
+    --Operator.UserId 19561039******de6a \
+    --Operator.ClientIp 8.8.8.8 \
     --Operator.Channel  \
     --Operator.OpenId  \
     --Operator.ProxyIp  \
     --FlowName 测试 \
     --FlowDescription 测试流程的描述信息 \
     --Unordered False \
-    --FlowType 合同 \
+    --FlowType 劳动合同 \
     --Deadline 1604912664 \
     --Approvers.0.ApproverType 0 \
-    --Approvers.0.OrganizationName 腾讯云计算（西安）有限责任公司 \
+    --Approvers.0.OrganizationName xxx有限公司 \
     --Approvers.0.ApproverName  \
     --Approvers.0.ApproverMobile  \
     --Approvers.0.SignComponents.0.ComponentValue SealId \
@@ -56,7 +56,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.1.SignComponents.1.ComponentPage 1 \
     --Approvers.1.SignComponents.1.ComponentPosX 120.0 \
     --Approvers.1.SignComponents.1.ComponentHeight 120.0 \
-    --FileIds ResourceId1 ResourceId2 \
+    --FileIds 61a82f0*******c2d0d807 yDxM6********wutBsRy \
     --Components.0.ComponentValue 自定义单行文本内容 \
     --Components.0.ComponentPosY 100.0 \
     --Components.0.ComponentWidth 100.0 \
@@ -81,8 +81,8 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": "429b82b40900a9f870a90d45c715bad7",
-        "RequestId": "be3e7fcc21f2714926d2caca4ca5d02c"
+        "FlowId": "61a82f0c********0d807",
+        "RequestId": "requestId-xxx"
     }
 }
 ```

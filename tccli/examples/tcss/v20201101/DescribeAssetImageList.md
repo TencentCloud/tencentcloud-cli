@@ -21,6 +21,7 @@ Output:
                 "ContainerCnt": 0,
                 "ScanTime": "2021-01-29T06:10:12.021Z",
                 "VulCnt": 5,
+                "ComponentCnt": 1,
                 "VirusCnt": 11,
                 "RiskCnt": 7,
                 "IsTrustImage": true,
@@ -31,7 +32,8 @@ Output:
                 "ScanVirusError": "",
                 "ScanVulError": "",
                 "ScanRiskError": "",
-                "IsSuggest": 0
+                "IsSuggest": 0,
+                "IsAuthorized": 1
             }
         ],
         "RequestId": "9c2d0eee-b4b8-4954-98ab-be69f503f77d",

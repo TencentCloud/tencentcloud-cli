@@ -11,9 +11,7 @@ tccli cls ModifyAlarmNotice --cli-unfold-argument  \
     --Type All \
     --WebCallbacks.0.CallbackType Http \
     --WebCallbacks.0.Url http://www.testnotice.com/callback \
-    --WebCallbacks.0.Method POST \
-    --WebCallbacks.0.Headers Content-Type:appliction/json \
-    --WebCallbacks.0.Body {"Uin":"${UIN}","AlarmId":"${AlarmId}"}
+    --WebCallbacks.0.Method POST
 ```
 
 Output: 

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ess CreateSchemeUrl --cli-unfold-argument  \
-    --FlowId dasdai2231289d1daslkdjasqqok \
+    --FlowId 1956103*****20fde6a \
     --PathType 1 \
     --Name 国大橙子 \
     --Mobile 13888888888 \
-    --Operator.UserId 65fb0c591044be8a1f60aa382cc5ed0e \
-    --Operator.ClientIp  \
+    --Operator.UserId 00033e********4aa82a9 \
+    --Operator.ClientIp 8.8.8.8 \
     --Operator.Channel  \
     --Operator.OpenId  \
     --Operator.ProxyIp 

@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli ess DescribeFlowBriefs --cli-unfold-argument  \
-    --Operator.UserId 65fb0c591044be8a1f60aa382cc5ed0e \
-    --Operator.ClientIp  \
+    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
+    --Operator.ClientIp 8.8.8.8 \
     --Operator.Channel  \
     --Operator.OpenId  \
     --Operator.ProxyIp  \
-    --FlowIds ce00a136469d1e634184bd44937d5810 23b242602fce2e9ec2789304116c6864
+    --FlowIds c7b5ca37ae*******2b4c6644 61a82f0c1******d0d807
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ce00a136469d1e634184bd44937d5810",
+        "RequestId": "s123456789",
         "FlowBriefs": [
             {
-                "FlowId": "ce00a136469d1e634184bd44937d5810",
-                "FlowName": "160491079769864798616:33:18",
+                "FlowId": "c7b5ca37ae*******2b4c6644",
+                "FlowName": "测试合同-1",
                 "FlowDescription": "测试流程的描述信息",
                 "FlowType": "合同",
                 "FlowStatus": 1,
@@ -30,8 +30,8 @@ Output:
                 "FlowMessage": ""
             },
             {
-                "FlowId": "23b242602fce2e9ec2789304116c6864",
-                "FlowName": "160491079769864798616:33:17",
+                "FlowId": "61a82f0c1******d0d807",
+                "FlowName": "测试合同-2",
                 "FlowDescription": "测试流程的描述信息",
                 "FlowType": "合同",
                 "FlowStatus": 1,

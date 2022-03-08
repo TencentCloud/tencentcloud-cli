@@ -10,10 +10,10 @@ tccli ess DescribeFileUrls --cli-unfold-argument  \
     --Operator.ClientIp 1.1.1.1 \
     --Operator.OpenId 321654 \
     --Operator.ProxyIp 2.2.2.2 \
-    --Operator.UserId 11234567890123456789012345678901 \
+    --Operator.UserId userId1 \
     --FileType PDF \
     --BusinessType DOCUMENT \
-    --FileName 西安合同 \
+    --FileName 合同 \
     --Limit 0 \
     --Offset 0 \
     --BusinessIds 11114444 11114444555 12315215515 12415251512
@@ -25,19 +25,19 @@ Output:
     "Response": {
         "FileUrls": [
             {
-                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/11114444555/0/0.PDF?key=1a153dbfb56f46c8653b901a60009589",
+                "Url": "https://file.ess.myqcloud.com/file/xxxx.PDF?key=abc",
                 "Option": ""
             },
             {
-                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/12315215515/0/0.PDF?key=1a153dbfb56f46c8653b901a60009589",
+                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/xxxx.PDF?key=abc",
                 "Option": ""
             },
             {
-                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/12415251512/0/0.PDF?key=1a153dbfb56f46c8653b901a60009589",
+                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc",
                 "Option": ""
             },
             {
-                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/11114444/0/0.PDF?key=1a153dbfb56f46c8653b901a60009589",
+                "Url": "https://file.ess.myqcloud.com/file/DOCUMENT/xxx.PDF?key=abc",
                 "Option": ""
             }
         ],
@@ -59,13 +59,13 @@ tccli ess DescribeFileUrls --cli-unfold-argument  \
     --Operator.ClientIp 1.1.1.1 \
     --Operator.OpenId 321654 \
     --Operator.ProxyIp 2.2.2.2 \
-    --Operator.UserId 11234567890123456789012345678901 \
+    --Operator.UserId f2d8********f56b7 \
     --FileType ZIP \
     --BusinessType DOCUMENT \
-    --FileName 西安合同 \
+    --FileName 合同 \
     --Limit 0 \
     --Offset 0 \
-    --BusinessIds 11114444555 12315215515 12415251512
+    --BusinessIds e1a5****dfabfdbec6 670d****590d4dcd dc3df****07f8323
 ```
 
 Output: 
@@ -74,7 +74,7 @@ Output:
     "Response": {
         "FileUrls": [
             {
-                "Url": "https://file.ess.myqcloud.com/files/DOCUMENT/11114444555,12315215515,12415251512/0/0.ZIP?key=1a153dbfb56f46c8653b901a60009589",
+                "Url": "https://file.ess.myqcloud.com/files/DOCUMENT/xxxx.ZIP?key=key********1234",
                 "Option": ""
             }
         ],

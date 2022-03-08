@@ -16531,6 +16531,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ComponentCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -99,16 +99,16 @@
     "DescribeKTVSingerMusics": [
       {
         "document": "获取歌手下歌曲列表",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerMusics\n<公共请求参数>\n\n{\n    \"SingerId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"xx\"\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"xx\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"TagSet\": [\n                    \"xx\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingerMusics\n<公共请求参数>\n\n{\n    \"SingerId\": \"sid-38xhhdd0\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"mid-399x9e91\",\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"sid-38xhhdd0\",\n                        \"Name\": \"周杰伦\"\n                    }\n                ],\n                \"TagSet\": [\n                    \"伤感\"\n                ],\n                \"Duration\": 241,\n                \"LyricistSet\": [\n                    \"方文山\"\n                ],\n                \"Name\": \"七里香\"\n            }\n        ],\n        \"RequestId\": \"c163a5b7-b4c9-4b71-9202-81532d9c69dc\"\n    }\n}",
         "title": "获取歌手下歌曲列表"
       }
     ],
     "DescribeKTVSingers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Field\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Genders\": [\n        \"MALE\"\n    ],\n    \"SingerIds\": [\n        \"xx\"\n    ],\n    \"Areas\": [\n        \"CH\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVSingerInfoSet\": [\n            {\n                \"SingerId\": \"xx\",\n                \"Name\": \"xx\",\n                \"Area\": \"xx\",\n                \"Gender\": \"xx\",\n                \"PlayCount\": 10,\n                \"MusicCount\": 10\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Field\": \"PlayCount\",\n        \"Order\": \"Desc\"\n    },\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"Genders\": [\n        \"MALE\"\n    ],\n    \"Areas\": [\n        \"CH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVSingerInfoSet\": [\n            {\n                \"SingerId\": \"sid-8h3h3gs\",\n                \"Name\": \"周杰伦\",\n                \"Area\": \"港台\",\n                \"Gender\": \"男\",\n                \"PlayCount\": 10,\n                \"MusicCount\": 10\n            }\n        ],\n        \"RequestId\": \"2hs73j3-2fur9j4-3jke44-hdhh2\"\n    }\n}",
         "title": "获取直播互动曲库歌手"
       }
     ],

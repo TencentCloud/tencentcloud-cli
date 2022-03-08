@@ -3507,6 +3507,7 @@
         {
           "default": "",
           "document": "日志主题名称",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3515,6 +3516,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "57460798-8723-45e3-9c75-a0599ef9143a",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -3522,7 +3524,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -3531,6 +3534,7 @@
         {
           "default": "",
           "document": "域名区域信息",
+          "example": "无",
           "member": "DomainAreaConfig",
           "name": "DomainAreaConfigs",
           "required": false,
@@ -3544,8 +3548,10 @@
       "members": [
         {
           "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123-456-789",
           "member": "string",
           "name": "TopicId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4137,6 +4143,7 @@
         {
           "default": "",
           "document": "日志主题ID",
+          "example": "6d04373b-ba59-4a4f-a96e-242424",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4145,6 +4152,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -4152,7 +4160,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -7844,6 +7853,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -7852,6 +7862,7 @@
         {
           "default": "",
           "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -7859,7 +7870,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -8089,7 +8101,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download或media。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
+          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download，media，hybrid或dynamic。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
           "example": "domainType",
           "member": "string",
           "name": "Name",
@@ -8291,6 +8303,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -8299,6 +8312,7 @@
         {
           "default": "",
           "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8306,7 +8320,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -9168,7 +9183,7 @@
       "members": [
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
           "example": "cdn",
           "member": "string",
           "name": "Channel",
@@ -9223,6 +9238,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -9231,6 +9247,7 @@
         {
           "default": "",
           "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -9238,7 +9255,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -9252,50 +9270,64 @@
       "members": [
         {
           "document": "开发者ID",
+          "example": "12345678901",
           "member": "uint64",
           "name": "AppId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "渠道",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "域名区域配置，其中可能含有已删除的域名，如果要再传回ManageClsTopicDomains接口，需要结合ListCdnDomains接口排除掉已删除的域名",
+          "example": "无",
           "member": "DomainAreaConfig",
           "name": "DomainAreaConfigs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "日志主题名称",
+          "example": "xx",
           "member": "string",
           "name": "TopicName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志主题最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9792,7 +9824,7 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
           "example": "cdn",
           "member": "string",
           "name": "Channel",
@@ -10579,6 +10611,7 @@
         {
           "default": "",
           "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -10587,6 +10620,7 @@
         {
           "default": "",
           "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -10594,7 +10628,8 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
           "member": "string",
           "name": "Channel",
           "required": false,
@@ -10603,6 +10638,7 @@
         {
           "default": "",
           "document": "域名区域配置，注意：如果此字段为空，则表示解绑对应主题下的所有域名",
+          "example": "无",
           "member": "DomainAreaConfig",
           "name": "DomainAreaConfigs",
           "required": false,
@@ -13600,7 +13636,7 @@
         },
         {
           "default": "",
-          "document": "接入渠道，默认值为cdn",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
           "example": "CDN",
           "member": "string",
           "name": "Channel",

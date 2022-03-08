@@ -335,6 +335,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格ID",
+          "example": "spec-xx",
+          "member": "string",
+          "name": "SpecId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境的节点数",
+          "example": "3",
+          "member": "int64",
+          "name": "EnvReplica",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境运行的节点数",
+          "example": "3",
+          "member": "int64",
+          "name": "RunningCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

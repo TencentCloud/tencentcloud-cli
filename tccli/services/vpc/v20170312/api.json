@@ -343,7 +343,7 @@
       "output": "CreateVpcEndPointResponse"
     },
     "CreateVpcEndPointService": {
-      "document": "创建终端节点服务。",
+      "document": "本接口(CreateVpcEndPointService)用于创建终端节点服务。",
       "input": "CreateVpcEndPointServiceRequest",
       "name": "创建终端节点服务",
       "output": "CreateVpcEndPointServiceResponse"

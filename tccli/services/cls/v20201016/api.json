@@ -13,7 +13,7 @@
       "output": "CreateAlarmResponse"
     },
     "CreateAlarmNotice": {
-      "document": "该接口用户创建通知渠道组。",
+      "document": "该接口用于创建通知渠道组。",
       "input": "CreateAlarmNoticeRequest",
       "name": "创建通知渠道组",
       "output": "CreateAlarmNoticeResponse"
@@ -1066,7 +1066,7 @@
       "members": [
         {
           "default": "",
-          "document": "告警模板名称。",
+          "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -1075,7 +1075,7 @@
         },
         {
           "default": "",
-          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -1084,7 +1084,7 @@
         },
         {
           "default": "",
-          "document": "告警模板接收者信息。",
+          "document": "通知接收对象。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
@@ -1093,7 +1093,7 @@
         },
         {
           "default": "",
-          "document": "告警模板回调信息。",
+          "document": "接口回调信息（包括企业微信）。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -1941,7 +1941,7 @@
       "members": [
         {
           "default": "",
-          "document": "告警通知模板",
+          "document": "通知渠道组ID",
           "example": "notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -2247,7 +2247,7 @@
       "members": [
         {
           "default": "",
-          "document": "<br><li> name\n\n按照【告警通知模板名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> alarmNoticeId\n\n按照【告警通知模板ID】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> uid\n\n按照【接收用户ID】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> groupId\n\n按照【用户组ID】进行过滤。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4318,7 +4318,7 @@
       "members": [
         {
           "default": "",
-          "document": "告警通知模板ID。",
+          "document": "通知渠道组ID。",
           "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -4327,7 +4327,7 @@
         },
         {
           "default": "",
-          "document": "告警模板名称。",
+          "document": "通知渠道组名称。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -4336,7 +4336,7 @@
         },
         {
           "default": "",
-          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -4345,7 +4345,7 @@
         },
         {
           "default": "",
-          "document": "告警模板接收者信息。",
+          "document": "通知接收对象。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
@@ -4354,7 +4354,7 @@
         },
         {
           "default": "",
-          "document": "告警模板回调信息。",
+          "document": "接口回调信息（包括企业微信）。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -6018,7 +6018,7 @@
         },
         {
           "default": "",
-          "document": "回调的类型。可选值：\n<br><li> WeCom\n<br><li> Http",
+          "document": "回调的类型。可选值：\n<li> WeCom\n<li> Http",
           "example": "WeCom",
           "member": "string",
           "name": "CallbackType",
@@ -6028,7 +6028,7 @@
         },
         {
           "default": "",
-          "document": "回调方法。可选值：\n<br><li> POST\n<br><li> PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调方法。可选值：\n<li> POST\n<li> PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POST",
           "member": "string",
           "name": "Method",
@@ -6038,7 +6038,7 @@
         },
         {
           "default": "",
-          "document": "请求头。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求头。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求头。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Headers",
@@ -6048,7 +6048,7 @@
         },
         {
           "default": "",
-          "document": "请求内容。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求内容。\n注意：该参数已废弃，请在<a href=\"https://cloud.tencent.com/document/product/614/56466\">创建告警策略</a>接口CallBack参数中指定请求内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Body",
