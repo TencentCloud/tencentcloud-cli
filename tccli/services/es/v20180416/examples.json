@@ -161,7 +161,7 @@
     "UpgradeInstance": [
       {
         "document": "",
-        "input": "https://es.tencentcloudapi.com/?Action=UpgradeInstance\r\n&InstanceId=es-xxxxxxxx\r\n&EsVersion=6.4.3\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=UpgradeInstance\n&InstanceId=es-xxxxxxxx\n&EsVersion=6.4.3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "升级ES集群版本"
       }

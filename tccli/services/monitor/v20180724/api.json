@@ -7655,7 +7655,8 @@
       "members": [
         {
           "default": "",
-          "document": "模块名，这里填“monitor”",
+          "document": "模块名，这里填“monitor”。",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -7663,17 +7664,28 @@
         },
         {
           "default": "",
-          "document": "告警策略 ID",
+          "document": "告警策略 ID，如果该参数与PolicyIds参数同时存在，则以PolicyIds为准。",
+          "example": "policy-asgh3gb2",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "告警通知模板 ID 列表",
+          "document": "告警通知模板 ID 列表。",
+          "example": "[\"notice-bv9b4ghqbg\",\"notice-gj2n9wnt29\"]",
           "member": "string",
           "name": "NoticeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警策略ID数组，支持给多个告警策略批量绑定通知模板。最多30个。",
+          "example": "[\"policy-asgh3gb2\", \"policy-2vh28fhb\"]",
+          "member": "string",
+          "name": "PolicyIds",
           "required": false,
           "type": "list"
         }

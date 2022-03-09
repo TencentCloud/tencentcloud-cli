@@ -21244,11 +21244,12 @@
       "usage": "in"
     },
     "SimpleAesEdkPair": {
-      "document": "简单加密加解密秘钥对。",
+      "document": "简单加密加解密密钥对。",
       "members": [
         {
           "default": "",
           "document": "加密后的数据密钥。",
+          "example": "无",
           "member": "string",
           "name": "Edk",
           "required": true,
@@ -21258,6 +21259,7 @@
         {
           "default": "",
           "document": "数据密钥。返回的数据密钥 DK 为 Base64 编码字符串。",
+          "example": "无",
           "member": "string",
           "name": "Dk",
           "required": true,

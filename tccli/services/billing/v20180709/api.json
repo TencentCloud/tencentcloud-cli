@@ -102,6 +102,18 @@
       "name": "按日期获取产品用量明细",
       "output": "DescribeDosageDetailByDateResponse"
     },
+    "DescribeVoucherInfo": {
+      "document": "获取代金券相关信息",
+      "input": "DescribeVoucherInfoRequest",
+      "name": "获取代金券相关信息",
+      "output": "DescribeVoucherInfoResponse"
+    },
+    "DescribeVoucherUsageDetails": {
+      "document": "获取代金券使用记录",
+      "input": "DescribeVoucherUsageDetailsRequest",
+      "name": "获取代金券使用记录",
+      "output": "DescribeVoucherUsageDetailsResponse"
+    },
     "PayDeals": {
       "document": "支付订单",
       "input": "PayDealsRequest",
@@ -205,6 +217,32 @@
           "example": "0.00",
           "member": "string",
           "name": "TotalCost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicableProducts": {
+      "document": "适用商品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "适用商品名称，值为“全产品通用”或商品名称组成的string，以\",\"分割。",
+          "example": "全产品通用",
+          "member": "string",
+          "name": "GoodsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。如GoodsName为多个商品名以\",\"分割组成的string，而PayMode为\"*\"，表示每一件商品的模式都为\"*\"。",
+          "example": "*",
+          "member": "string",
+          "name": "PayMode",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4213,6 +4251,267 @@
       ],
       "type": "object"
     },
+    "DescribeVoucherInfoRequest": {
+      "document": "DescribeVoucherInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一页多少条数据，默认是20条，最大不超过1000",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第多少页，默认是1",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue",
+          "example": "unUsed",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代金券id",
+          "example": "123",
+          "member": "string",
+          "name": "VoucherId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代金券订单id",
+          "example": "123",
+          "member": "string",
+          "name": "CodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品码",
+          "example": "a",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "活动id",
+          "example": "123",
+          "member": "string",
+          "name": "ActivityId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代金券名称",
+          "example": "aa",
+          "member": "string",
+          "name": "VoucherName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发放开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "TimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "发放结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "TimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间",
+          "example": "BeginTime",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定升序降序：desc、asc",
+          "example": "desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费模式，postPay后付费/prePay预付费/riPay预留实例/\"\"或者\"*\"表示全部模式，如果payMode为\"\"或\"*\"，那么productCode与subProductCode必须传空",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
+          "example": "*",
+          "member": "string",
+          "name": "PayScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作人，默认就是用户uin",
+          "example": "aa",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoucherInfoResponse": {
+      "document": "DescribeVoucherInfo返回参数结构体",
+      "members": [
+        {
+          "document": "券总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总余额（微分）",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalBalance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代金券相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoucherInfos",
+          "name": "VoucherInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoucherUsageDetailsRequest": {
+      "document": "DescribeVoucherUsageDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一页多少条数据，默认是20条，最大不超过1000",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "第多少页，默认是1",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代金券id",
+          "example": "123",
+          "member": "string",
+          "name": "VoucherId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作人，默认就是用户uin",
+          "example": "aa",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoucherUsageDetailsResponse": {
+      "document": "DescribeVoucherUsageDetails返回参数结构体",
+      "members": [
+        {
+          "document": "券总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总已用金额（微分）",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalUsedAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代金券使用记录细节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageRecords",
+          "name": "UsageRecords",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailPoint": {
       "document": "由时间和值组成的数据结构",
       "members": [
@@ -4266,6 +4565,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExcludedProducts": {
+      "document": "不适用商品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "不适用商品名称",
+          "example": "某产品",
+          "member": "string",
+          "name": "GoodsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。",
+          "example": "*",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4720,6 +5045,184 @@
           "name": "TotalCost",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageDetails": {
+      "document": "购买商品信息",
+      "members": [
+        {
+          "default": "",
+          "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "某产品",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商品细节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "某子产品",
+          "member": "string",
+          "name": "SubProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageRecords": {
+      "document": "使用记录",
+      "members": [
+        {
+          "default": "",
+          "document": "使用金额（微分）",
+          "example": "123",
+          "member": "int64",
+          "name": "UsedAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用时间",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "UsedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用记录细节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageDetails",
+          "name": "UsageDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoucherInfos": {
+      "document": "代金券相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "代金券拥有者",
+          "example": "aa",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue",
+          "example": "unUsed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券面额（微分）",
+          "example": "10000",
+          "member": "int64",
+          "name": "NominalValue",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余金额（微分）",
+          "example": "10000",
+          "member": "int64",
+          "name": "Balance",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代金券id",
+          "example": "aa",
+          "member": "string",
+          "name": "VoucherId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者'*'表示全部模式",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
+          "example": "*",
+          "member": "string",
+          "name": "PayScene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效期生效时间",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效期截止时间",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicableProducts",
+          "name": "ApplicableProducts",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExcludedProducts",
+          "name": "ExcludedProducts",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

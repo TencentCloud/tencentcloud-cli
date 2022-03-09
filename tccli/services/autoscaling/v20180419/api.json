@@ -2096,6 +2096,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteWithInstance",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2531,7 +2541,7 @@
       "members": [
         {
           "default": "",
-          "document": "待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。",
+          "document": "待查询云服务器（CVM）的实例ID。每次请求的上限为100。参数不支持同时指定InstanceIds和Filters。",
           "example": "[\"ins-1fswxz1m\\n\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -2558,7 +2568,7 @@
         },
         {
           "default": "",
-          "document": "返回数量，默认为20，最大值为2000。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2604,6 +2614,7 @@
         {
           "default": "",
           "document": "按照一个或者多个启动配置ID查询。启动配置ID形如：`asc-ouy1ax38`。每次请求的上限为100。参数不支持同时指定`LaunchConfigurationIds`和`Filters`",
+          "example": "[\"asc-fa28v4in\"]",
           "member": "string",
           "name": "LaunchConfigurationIds",
           "required": false,
@@ -2612,6 +2623,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称过滤。</li>\n<li> vague-launch-configuration-name - String - 是否必填：否 -（过滤条件）按照启动配置名称模糊搜索。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchConfigurationIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2620,6 +2632,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2628,6 +2641,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2641,15 +2655,19 @@
       "members": [
         {
           "document": "符合条件的启动配置数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "启动配置详细信息列表。",
+          "example": "无",
           "member": "LaunchConfiguration",
           "name": "LaunchConfigurationSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2932,6 +2950,7 @@
         {
           "default": "",
           "document": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。",
+          "example": "[\"asst-caa5ha40\\n\"]",
           "member": "string",
           "name": "ScheduledActionIds",
           "required": false,
@@ -2940,6 +2959,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2948,6 +2968,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2956,6 +2977,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2969,15 +2991,19 @@
       "members": [
         {
           "document": "符合条件的定时任务数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "定时任务详细信息列表。",
+          "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledActionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5364,6 +5390,7 @@
         {
           "default": "",
           "document": "定时任务ID。",
+          "example": "asst-jf898dps",
           "member": "string",
           "name": "ScheduledActionId",
           "required": true,
@@ -5373,6 +5400,7 @@
         {
           "default": "",
           "document": "定时任务名称。",
+          "example": "test",
           "member": "string",
           "name": "ScheduledActionName",
           "required": true,
@@ -5382,6 +5410,7 @@
         {
           "default": "",
           "document": "定时任务所在伸缩组ID。",
+          "example": "asg-keqt9eg1",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -5391,6 +5420,7 @@
         {
           "default": "",
           "document": "定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。",
+          "example": "2022-02-22T16:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -5400,6 +5430,7 @@
         {
           "default": "",
           "document": "定时任务的重复方式。",
+          "example": "0 23 */1 * *",
           "member": "string",
           "name": "Recurrence",
           "required": true,
@@ -5409,6 +5440,7 @@
         {
           "default": "",
           "document": "定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。",
+          "example": "2023-02-23T16:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -5418,6 +5450,7 @@
         {
           "default": "",
           "document": "定时任务设置的最大实例数。",
+          "example": "20",
           "member": "uint64",
           "name": "MaxSize",
           "required": true,
@@ -5427,6 +5460,7 @@
         {
           "default": "",
           "document": "定时任务设置的期望实例数。",
+          "example": "5",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": true,
@@ -5436,6 +5470,7 @@
         {
           "default": "",
           "document": "定时任务设置的最小实例数。",
+          "example": "1",
           "member": "uint64",
           "name": "MinSize",
           "required": true,
@@ -5445,8 +5480,19 @@
         {
           "default": "",
           "document": "定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2022-02-21T02:19:52Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定时任务的执行类型。取值范围：<br><li>CRONTAB：代表定时任务为重复执行。<br><li>ONCE：代表定时任务为单次执行。",
+          "example": "CRONTAB",
+          "member": "string",
+          "name": "ScheduledType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
