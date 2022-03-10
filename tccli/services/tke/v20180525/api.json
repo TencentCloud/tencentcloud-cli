@@ -102,6 +102,12 @@
       "name": "创建容器实例",
       "output": "CreateEKSContainerInstancesResponse"
     },
+    "CreateImageCache": {
+      "document": "创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。",
+      "input": "CreateImageCacheRequest",
+      "name": "创建镜像缓存",
+      "output": "CreateImageCacheResponse"
+    },
     "CreatePrometheusAlertRule": {
       "document": "创建告警规则",
       "input": "CreatePrometheusAlertRuleRequest",
@@ -179,6 +185,12 @@
       "input": "DeleteEKSContainerInstancesRequest",
       "name": "删除容器实例",
       "output": "DeleteEKSContainerInstancesResponse"
+    },
+    "DeleteImageCaches": {
+      "document": "批量删除镜像缓存",
+      "input": "DeleteImageCachesRequest",
+      "name": "删除镜像缓存",
+      "output": "DeleteImageCachesResponse"
     },
     "DeletePrometheusAlertRule": {
       "document": "删除告警规则",
@@ -354,6 +366,12 @@
       "name": "获取导入第三方集群YAML定义",
       "output": "DescribeExternalClusterSpecResponse"
     },
+    "DescribeImageCaches": {
+      "document": "查询镜像缓存信息接口",
+      "input": "DescribeImageCachesRequest",
+      "name": "查询镜像缓存信息",
+      "output": "DescribeImageCachesResponse"
+    },
     "DescribeImages": {
       "document": "获取镜像信息",
       "input": "DescribeImagesRequest",
@@ -473,6 +491,12 @@
       "input": "ForwardApplicationRequestV3Request",
       "name": "操作TKE集群的addon",
       "output": "ForwardApplicationRequestV3Response"
+    },
+    "GetMostSuitableImageCache": {
+      "document": "根据镜像列表，查询匹配的镜像缓存",
+      "input": "GetMostSuitableImageCacheRequest",
+      "name": "查询匹配的镜像缓存",
+      "output": "GetMostSuitableImageCacheResponse"
     },
     "GetTkeAppChartList": {
       "document": "获取TKE支持的App列表",
@@ -599,6 +623,12 @@
       "input": "UpdateEKSContainerInstanceRequest",
       "name": "更新容器实例",
       "output": "UpdateEKSContainerInstanceResponse"
+    },
+    "UpdateImageCache": {
+      "document": "更新镜像缓存接口",
+      "input": "UpdateImageCacheRequest",
+      "name": "更新镜像缓存",
+      "output": "UpdateImageCacheResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -3508,6 +3538,132 @@
       ],
       "type": "object"
     },
+    "CreateImageCacheRequest": {
+      "document": "CreateImageCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于制作镜像缓存的容器镜像列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Images",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例所属子网Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所属VPC Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "安全组Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "镜像仓库凭证数组",
+          "example": "\"\"",
+          "member": "ImageRegistryCredential",
+          "name": "ImageRegistryCredentials",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用来绑定容器实例的已有EIP",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExistedEipId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否为容器实例自动创建EIP，默认为false。若传true，则此参数和ExistedEipIds互斥",
+          "example": "\"\"",
+          "member": "bool",
+          "name": "AutoCreateEip",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "自动创建EIP的可选参数。若传此参数，则会自动创建EIP。\n另外此参数和ExistedEipIds互斥",
+          "example": "\"\"",
+          "member": "EipAttribute",
+          "name": "AutoCreateEipAttribute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存的大小。默认为20 GiB。取值范围参考[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)中的高性能云盘类型的大小限制。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "ImageCacheSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageCacheResponse": {
+      "document": "CreateImageCache返回参数结构体",
+      "members": [
+        {
+          "document": "镜像缓存Id",
+          "example": "[]",
+          "member": "string",
+          "name": "ImageCacheId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertRuleRequest": {
       "document": "CreatePrometheusAlertRule请求参数结构体",
       "members": [
@@ -4132,6 +4288,33 @@
     },
     "DeleteEKSContainerInstancesResponse": {
       "document": "DeleteEKSContainerInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageCachesRequest": {
+      "document": "DeleteImageCaches请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像缓存Id数组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImageCachesResponse": {
+      "document": "DeleteImageCaches返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5734,6 +5917,87 @@
           "name": "Expiration",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageCachesRequest": {
+      "document": "DescribeImageCaches请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像缓存Id数组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存名称数组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限定此次返回资源的数量。如果不设定，默认返回20，最大不能超过50",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，可选条件：\n(1)实例名称\nKeyName: image-cache-name\n类型：String",
+          "example": "\"\"",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageCachesResponse": {
+      "document": "DescribeImageCaches返回参数结构体",
+      "members": [
+        {
+          "document": "镜像缓存总数",
+          "example": "[]",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "镜像缓存信息列表",
+          "example": "[]",
+          "member": "ImageCache",
+          "name": "ImageCaches",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7725,6 +7989,51 @@
       ],
       "type": "object"
     },
+    "GetMostSuitableImageCacheRequest": {
+      "document": "GetMostSuitableImageCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "容器镜像列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Images",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMostSuitableImageCacheResponse": {
+      "document": "GetMostSuitableImageCache返回参数结构体",
+      "members": [
+        {
+          "document": "是否有匹配的镜像缓存",
+          "example": "[]",
+          "member": "bool",
+          "name": "Found",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "匹配的镜像缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ImageCache",
+          "name": "ImageCache",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTkeAppChartListRequest": {
       "document": "GetTkeAppChartList请求参数结构体",
       "members": [
@@ -7924,6 +8233,178 @@
         }
       ],
       "usage": "both"
+    },
+    "ImageCache": {
+      "document": "镜像缓存的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像缓存Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存大小。单位：GiB",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "ImageCacheSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存包含的镜像列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Images",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CreationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExpireDateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存事件信息",
+          "example": "\"\"",
+          "member": "ImageCacheEvent",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最新一次匹配到镜像缓存的时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LastMatchedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存对应的快照Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "镜像缓存状态，可能取值：\nPending：创建中\nReady：创建完成\nFailed：创建失败\nUpdating：更新中\nUpdateFailed：更新失败\n只有状态为Ready时，才能正常使用镜像缓存",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageCacheEvent": {
+      "document": "镜像缓存的事件",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像缓存Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型, Normal或者Warning",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件原因简述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件原因详述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件第一次出现时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FirstTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次出现时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LastTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ImageInstance": {
       "document": "镜像信息",
@@ -11559,6 +12040,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateImageCacheRequest": {
+      "document": "UpdateImageCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "镜像缓存Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像缓存名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ImageCacheName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateImageCacheResponse": {
+      "document": "UpdateImageCache返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

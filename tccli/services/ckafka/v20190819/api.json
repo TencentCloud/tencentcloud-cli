@@ -5003,6 +5003,32 @@
       ],
       "usage": "out"
     },
+    "InstanceQuotaConfigResp": {
+      "document": "实例 / topic 维度限流策略",
+      "members": [
+        {
+          "default": "",
+          "document": "生产限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaProducerByteRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaConsumerByteRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceResponse": {
       "document": "聚合的实例状态返回结果",
       "members": [
@@ -5478,6 +5504,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生产限流，单位 MB/s",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaProducerByteRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消费限流，单位 MB/s",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaConsumerByteRate",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6076,6 +6120,16 @@
           "name": "AclRuleList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic 限流策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "InstanceQuotaConfigResp",
+          "name": "QuotaConfig",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -48,6 +48,12 @@
       "name": "获取直播互动曲目详情",
       "output": "DescribeKTVMusicDetailResponse"
     },
+    "DescribeKTVMusicTags": {
+      "document": "获取直播互动曲库标签分组信息和标签信息",
+      "input": "DescribeKTVMusicTagsRequest",
+      "name": "获取直播互动曲库标签信息",
+      "output": "DescribeKTVMusicTagsResponse"
+    },
     "DescribeKTVPlaylistDetail": {
       "document": "根据歌单 Id 获取歌单详情，包括歌单的基础信息以及歌曲列表。",
       "input": "DescribeKTVPlaylistDetailRequest",
@@ -83,6 +89,12 @@
       "input": "DescribeKTVSingersRequest",
       "name": "获取直播互动曲库歌手",
       "output": "DescribeKTVSingersResponse"
+    },
+    "DescribeKTVSuggestions": {
+      "document": "获取直播互动曲库联想词",
+      "input": "DescribeKTVSuggestionsRequest",
+      "name": "获取直播互动曲库联想词",
+      "output": "DescribeKTVSuggestionsResponse"
     },
     "DescribeKTVTopList": {
       "document": "获取直播互动曲库歌曲的周榜和月榜",
@@ -205,6 +217,52 @@
         }
       ],
       "usage": "out"
+    },
+    "ApplicationLicenseInput": {
+      "document": "用户license基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称，注：后面三个字段AndroidPackageName、IOSBundleId、PcIdentifier，三者选填一个",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "app的安卓包名",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidPackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "app的IOS的BundleId名",
+          "example": "无",
+          "member": "string",
+          "name": "IOSBundleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PC标识名",
+          "example": "无",
+          "member": "string",
+          "name": "PcIdentifier",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Artist": {
       "document": "Artist",
@@ -389,6 +447,15 @@
           "member": "JoinRoomInput",
           "name": "JoinRoomInput",
           "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "license基础信息",
+          "example": "无",
+          "member": "ApplicationLicenseInput",
+          "name": "ApplicationLicenseInput",
+          "required": false,
           "type": "object"
         }
       ],
@@ -871,6 +938,32 @@
       ],
       "type": "object"
     },
+    "DescribeKTVMusicTagsRequest": {
+      "document": "DescribeKTVMusicTags请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeKTVMusicTagsResponse": {
+      "document": "DescribeKTVMusicTags返回参数结构体",
+      "members": [
+        {
+          "document": "标签分组列表",
+          "example": "无",
+          "member": "KTVMusicTagGroup",
+          "name": "TagGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeKTVPlaylistDetailRequest": {
       "document": "DescribeKTVPlaylistDetail请求参数结构体",
       "members": [
@@ -1244,6 +1337,42 @@
           "example": "无",
           "member": "KTVSingerInfo",
           "name": "KTVSingerInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsRequest": {
+      "document": "DescribeKTVSuggestions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "联想关键词",
+          "example": "\"\"",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsResponse": {
+      "document": "DescribeKTVSuggestions返回参数结构体",
+      "members": [
+        {
+          "document": "联想词信息列表。返回总数最大为10。",
+          "example": "无",
+          "member": "KTVSuggestionInfo",
+          "name": "KTVSuggestionInfoSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2002,6 +2131,68 @@
       ],
       "usage": "out"
     },
+    "KTVMusicTagGroup": {
+      "document": "即使广播曲库歌曲标签分组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签分组英文名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EnglishGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签分组中文名",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ChineseGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签分类下标签列表",
+          "example": "\"\"",
+          "member": "KTVMusicTagInfo",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicTagInfo": {
+      "document": "即使广播曲库歌曲标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签Id",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KTVMusicTopInfo": {
       "document": "排行榜结构",
       "members": [
@@ -2333,6 +2524,22 @@
           "name": "PlayCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSuggestionInfo": {
+      "document": "即使广播曲库联想词信息",
+      "members": [
+        {
+          "default": "",
+          "document": "联想词",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3097,6 +3304,15 @@
           "name": "Sort",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "标签 ID 集合，匹配集合指定所有 ID 。\n<li>数组长度限制：10。</li>",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

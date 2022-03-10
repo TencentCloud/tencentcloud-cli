@@ -64,6 +64,14 @@
         "title": "查询 KTV 曲目详情"
       }
     ],
+    "DescribeKTVMusicTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicTags\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TagGroupSet\": [\n            {\n                \"EnglishGroupName\": \"language\",\n                \"ChineseGroupName\": \"语种\",\n                \"TagSet\": [\n                    {\n                        \"TagId\": \"12\",\n                        \"TagName\": \"国语\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取直播互动曲库标签信息"
+      }
+    ],
     "DescribeKTVPlaylistDetail": [
       {
         "document": "获取即时广播歌单接口",
@@ -110,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSingers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Field\": \"PlayCount\",\n        \"Order\": \"Desc\"\n    },\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"Genders\": [\n        \"MALE\"\n    ],\n    \"Areas\": [\n        \"CH\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVSingerInfoSet\": [\n            {\n                \"SingerId\": \"sid-8h3h3gs\",\n                \"Name\": \"周杰伦\",\n                \"Area\": \"港台\",\n                \"Gender\": \"男\",\n                \"PlayCount\": 10,\n                \"MusicCount\": 10\n            }\n        ],\n        \"RequestId\": \"2hs73j3-2fur9j4-3jke44-hdhh2\"\n    }\n}",
         "title": "获取直播互动曲库歌手"
+      }
+    ],
+    "DescribeKTVSuggestions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVSuggestions\n<公共请求参数>\n\n{\n    \"KeyWord\": \"zhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KTVSuggestionInfoSet\": [\n            {\n                \"Suggestion\": \"周杰伦\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取直播互动曲库联想词"
       }
     ],
     "DescribeKTVTopList": [
@@ -217,7 +233,7 @@
     "SearchKTVMusics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Sort\": {\n        \"Field\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKTVMusics\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"KeyWord\": \"周杰伦\",\n    \"Sort\": {\n        \"Field\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"Offset\": 0,\n    \"TagIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"xx\",\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"MusicId\": \"xx\",\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"TagSet\": [\n                    \"华语\",\n                    \"流行\"\n                ],\n                \"Duration\": 1,\n                \"LyricistSet\": [\n                    \"周杰伦\"\n                ],\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "搜索 KTV 歌曲"
       }

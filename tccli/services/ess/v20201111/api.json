@@ -132,7 +132,7 @@
         },
         {
           "default": "",
-          "document": "证件类型 ID_CARD 身份证",
+          "document": "证件类型 \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -1222,20 +1222,20 @@
         },
         {
           "default": "",
-          "document": "签署方经办人证件类型，ID_CARD表示身份证",
+          "document": "签署方经办人证件号码",
           "example": "无",
           "member": "string",
-          "name": "ApproverIdCardType",
+          "name": "ApproverIdCardNumber",
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "签署方经办人证件号码",
+          "document": "签署方经办人证件类型ID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
           "example": "无",
           "member": "string",
-          "name": "ApproverIdCardNumber",
+          "name": "ApproverIdCardType",
           "required": false,
           "type": "string",
           "value_allowed_null": false

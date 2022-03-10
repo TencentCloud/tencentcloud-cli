@@ -10,7 +10,8 @@ tccli ame SearchKTVMusics --cli-unfold-argument  \
     --KeyWord 周杰伦 \
     --Sort.Field xx \
     --Sort.Order xx \
-    --Offset 0
+    --Offset 0 \
+    --TagIds xx
 ```
 
 Output: 

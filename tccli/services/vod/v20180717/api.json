@@ -564,6 +564,12 @@
       "name": "修改媒体文件属性",
       "output": "ModifyMediaInfoResponse"
     },
+    "ModifyMediaStorageClass": {
+      "document": "修改媒体文件的存储类型。\n当媒体文件的存储类型为标准存储时，可以修改为以下类型：\n<li>低频存储</li>\n<li>归档存储</li>\n<li>深度归档存储</li>\n当媒体文件的当前存储类型为低频存储时，可以修改为以下类型：\n<li>标准存储</li>\n<li>归档存储</li>\n<li>深度归档存储</li>\n当媒体文件的当前存储类型为归档存储时，可以修改为以下类型：\n<li>标准存储</li>\n当媒体文件的当前存储类型为深度归档存储时，可以修改为以下类型：\n<li>标准存储</li>",
+      "input": "ModifyMediaStorageClassRequest",
+      "name": "修改媒体文件存储类型",
+      "output": "ModifyMediaStorageClassResponse"
+    },
     "ModifyPersonSample": {
       "document": "该接口用于根据素材 ID，修改素材样本信息，包括名称、描述的修改，以及五官、标签的添加、删除、重置操作。五官删除操作需保证至少剩余 1 张图片，否则，请使用重置操作。",
       "input": "ModifyPersonSampleRequest",
@@ -1213,6 +1219,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "极速高清转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "TEHDConfig",
+          "name": "TEHDConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17425,6 +17441,60 @@
       ],
       "type": "object"
     },
+    "ModifyMediaStorageClassRequest": {
+      "document": "ModifyMediaStorageClass请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件唯一标识列表。",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "目标存储类型。可选值有：\n<li> STANDARD：标准存储。</li>\n<li> STANDARD_IA：低频存储。</li>\n<li> ARCHIVE：归档存储。</li>\n<li> DEEP_ARCHIVE：深度归档存储。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "StorageClass",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "取回模式。当文件的存储类型从归档或深度归档转换为标准存储时，需要指定取回（也称为解冻）操作的模式，具体说明请参考[数据取回及取回模式](https://cloud.tencent.com/document/product/266/56196#retake)。\n当媒体文件目前的存储类型为归档存储时，有以下取值：\n<li>Expedited：极速模式。</li>\n<li>Standard：标准模式。</li>\n<li>Bulk：批量模式。</li>\n当媒体文件目前的存储类型为深度归档存储时，有以下取值：\n<li>Standard：标准模式。</li>\n<li>Bulk：批量模式。</li>",
+          "example": "Standard",
+          "member": "string",
+          "name": "RestoreTier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMediaStorageClassResponse": {
+      "document": "ModifyMediaStorageClass返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPersonSampleRequest": {
       "document": "ModifyPersonSample请求参数结构体",
       "members": [
@@ -22227,7 +22297,8 @@
       "members": [
         {
           "default": "",
-          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100。</li>\n不填代表不启用极速高清。",
+          "document": "极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示 OFF。",
+          "example": "TEHD-100",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -22237,6 +22308,7 @@
         {
           "default": "",
           "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
+          "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
           "required": false,
@@ -22251,7 +22323,8 @@
       "members": [
         {
           "default": "",
-          "document": "极速高清类型，可选值：\n<li>TEHD-100：极速高清-100。</li>\n不填代表不修改。",
+          "document": "极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。",
+          "example": "TEHD-100",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -22261,6 +22334,7 @@
         {
           "default": "",
           "document": "视频码率上限，不填代表不修改。",
+          "example": "1000",
           "member": "uint64",
           "name": "MaxVideoBitrate",
           "required": false,

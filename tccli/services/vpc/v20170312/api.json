@@ -3512,6 +3512,7 @@
         {
           "default": "",
           "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-ef5nufih",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -3521,6 +3522,7 @@
         {
           "default": "",
           "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-12-18 20:11:37",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -3530,6 +3532,7 @@
         {
           "default": "",
           "document": "实例的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-01-18 20:11:37",
           "member": "string",
           "name": "ExpiredTime",
           "required": true,
@@ -3539,6 +3542,7 @@
         {
           "default": "",
           "document": "带宽实例的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fcr-6fda09za",
           "member": "string",
           "name": "RegionFlowControlId",
           "required": true,
@@ -3548,6 +3552,7 @@
         {
           "default": "",
           "document": "带宽是否自动续费的标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -3557,10 +3562,21 @@
         {
           "default": "",
           "document": "描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimit",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云市场实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MarketId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3628,6 +3644,7 @@
         {
           "default": "",
           "document": "地域，例如：ap-guangzhou",
+          "example": "无",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -3637,6 +3654,7 @@
         {
           "default": "",
           "document": "出带宽上限，单位：Mbps",
+          "example": "无",
           "member": "uint64",
           "name": "BandwidthLimit",
           "required": true,
@@ -3644,8 +3662,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "false",
+          "default": "",
           "document": "是否黑石地域，默认`false`。",
+          "example": "无",
           "member": "bool",
           "name": "IsBm",
           "required": false,
@@ -3655,6 +3674,7 @@
         {
           "default": "",
           "document": "目的地域，例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DstRegion",
           "required": false,
@@ -3662,8 +3682,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "false",
+          "default": "",
           "document": "目的地域是否为黑石地域，默认`false`。",
+          "example": "无",
           "member": "bool",
           "name": "DstIsBm",
           "required": false,
@@ -6850,6 +6871,7 @@
         {
           "default": "",
           "document": "服务商，可选值：`UNICOM`。",
+          "example": "无",
           "member": "string",
           "name": "ServiceProvider",
           "required": true,
@@ -6859,6 +6881,7 @@
         {
           "default": "",
           "document": "合规化审批单`ID`。",
+          "example": "无",
           "member": "uint64",
           "name": "ComplianceId",
           "required": true,
@@ -6868,6 +6891,7 @@
         {
           "default": "",
           "document": "公司全称。",
+          "example": "无",
           "member": "string",
           "name": "Company",
           "required": true,
@@ -6877,6 +6901,7 @@
         {
           "default": "",
           "document": "统一社会信用代码。",
+          "example": "无",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "required": true,
@@ -6886,6 +6911,7 @@
         {
           "default": "",
           "document": "法定代表人。",
+          "example": "无",
           "member": "string",
           "name": "LegalPerson",
           "required": true,
@@ -6895,6 +6921,7 @@
         {
           "default": "",
           "document": "发证机关。",
+          "example": "无",
           "member": "string",
           "name": "IssuingAuthority",
           "required": true,
@@ -6904,6 +6931,7 @@
         {
           "default": "",
           "document": "营业执照。",
+          "example": "无",
           "member": "string",
           "name": "BusinessLicense",
           "required": true,
@@ -6913,6 +6941,7 @@
         {
           "default": "",
           "document": "营业执照住所。",
+          "example": "无",
           "member": "string",
           "name": "BusinessAddress",
           "required": true,
@@ -6922,6 +6951,7 @@
         {
           "default": "",
           "document": "邮编。",
+          "example": "无",
           "member": "uint64",
           "name": "PostCode",
           "required": true,
@@ -6931,6 +6961,7 @@
         {
           "default": "",
           "document": "经办人。",
+          "example": "无",
           "member": "string",
           "name": "Manager",
           "required": true,
@@ -6940,6 +6971,7 @@
         {
           "default": "",
           "document": "经办人身份证号。",
+          "example": "无",
           "member": "string",
           "name": "ManagerId",
           "required": true,
@@ -6949,6 +6981,7 @@
         {
           "default": "",
           "document": "经办人身份证。",
+          "example": "无",
           "member": "string",
           "name": "ManagerIdCard",
           "required": true,
@@ -6958,6 +6991,7 @@
         {
           "default": "",
           "document": "经办人身份证地址。",
+          "example": "无",
           "member": "string",
           "name": "ManagerAddress",
           "required": true,
@@ -6967,6 +7001,7 @@
         {
           "default": "",
           "document": "经办人联系电话。",
+          "example": "无",
           "member": "string",
           "name": "ManagerTelephone",
           "required": true,
@@ -6976,6 +7011,7 @@
         {
           "default": "",
           "document": "电子邮箱。",
+          "example": "无",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -6985,6 +7021,7 @@
         {
           "default": "",
           "document": "服务受理单。",
+          "example": "无",
           "member": "string",
           "name": "ServiceHandlingForm",
           "required": true,
@@ -6994,6 +7031,7 @@
         {
           "default": "",
           "document": "授权函。",
+          "example": "无",
           "member": "string",
           "name": "AuthorizationLetter",
           "required": true,
@@ -7003,6 +7041,7 @@
         {
           "default": "",
           "document": "信息安全承诺书。",
+          "example": "无",
           "member": "string",
           "name": "SafetyCommitment",
           "required": true,
@@ -7012,6 +7051,7 @@
         {
           "default": "",
           "document": "服务开始时间。",
+          "example": "无",
           "member": "date",
           "name": "ServiceStartDate",
           "required": true,
@@ -7021,6 +7061,7 @@
         {
           "default": "",
           "document": "服务截止时间。",
+          "example": "无",
           "member": "date",
           "name": "ServiceEndDate",
           "required": true,
@@ -7030,6 +7071,7 @@
         {
           "default": "",
           "document": "状态。待审批：`PENDING`，已通过：`APPROVED`，已拒绝：`DENY`。",
+          "example": "无",
           "member": "string",
           "name": "State",
           "required": true,
@@ -7039,6 +7081,7 @@
         {
           "default": "",
           "document": "审批单创建时间。",
+          "example": "无",
           "member": "datetime",
           "name": "CreatedTime",
           "required": true,
@@ -16164,6 +16207,7 @@
         {
           "default": "",
           "document": "云联网实例ID。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -16172,6 +16216,7 @@
         {
           "default": "",
           "document": "云联网限速类型，INTER_REGION_LIMIT：地域间限速，OUTER_REGION_LIMIT：地域出口限速。",
+          "example": "OUTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
           "required": false,
