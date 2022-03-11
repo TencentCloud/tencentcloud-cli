@@ -456,14 +456,6 @@
         "title": "修改定时任务"
       }
     ],
-    "PreviewPaiDomainName": [
-      {
-        "document": "预览PAI实例域名，返回一个可用于创建PAI实例的域名。",
-        "input": "https://as.tencentcloudapi.com/?Action=PreviewPaiDomainName\n&DomainNameType=tcb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DomainName\": \"salmonberry-ey5t3l0k.pai.tcloudbase.com\",\n        \"RequestId\": \"cea75193-a9fb-4811-aa0b-b4d2096ef0d9\"\n    }\n}",
-        "title": "预览PAI实例域名"
-      }
-    ],
     "RemoveInstances": [
       {
         "document": "",

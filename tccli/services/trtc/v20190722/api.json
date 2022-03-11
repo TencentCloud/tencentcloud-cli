@@ -60,12 +60,6 @@
       "name": "查询历史房间列表",
       "output": "DescribeRoomInformationResponse"
     },
-    "DescribeTrtcInteractiveTime": {
-      "document": "查询音视频互动计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
-      "input": "DescribeTrtcInteractiveTimeRequest",
-      "name": "查询音视频互动计费时长",
-      "output": "DescribeTrtcInteractiveTimeResponse"
-    },
     "DescribeTrtcMcuTranscodeTime": {
       "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
@@ -958,60 +952,6 @@
       ],
       "type": "object"
     },
-    "DescribeTrtcInteractiveTimeRequest": {
-      "document": "DescribeTrtcInteractiveTime请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "查询开始时间，格式为YYYY-MM-DD。",
-          "example": "2020-09-07",
-          "member": "date",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
-          "example": "2020-09-08",
-          "member": "date",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回所有应用的合计值。",
-          "example": "1400123456",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTrtcInteractiveTimeResponse": {
-      "document": "DescribeTrtcInteractiveTime返回参数结构体",
-      "members": [
-        {
-          "document": "应用的用量信息数组。",
-          "example": "无",
-          "member": "OneSdkAppIdUsagesInfo",
-          "name": "Usages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeTrtcMcuTranscodeTimeRequest": {
       "document": "DescribeTrtcMcuTranscodeTime请求参数结构体",
       "members": [
@@ -1645,39 +1585,6 @@
       ],
       "usage": "out"
     },
-    "OneSdkAppIdUsagesInfo": {
-      "document": "单个SdkAppId的音视频互动计费时长用量数组和数组长度。",
-      "members": [
-        {
-          "default": "",
-          "document": "该 SdkAppId 对应的用量记录数长度",
-          "member": "uint64",
-          "name": "TotalNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用量数组",
-          "member": "SdkAppIdTrtcUsage",
-          "name": "SdkAppIdTrtcTimeUsages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "应用ID",
-          "member": "string",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "OutputParams": {
       "document": "MCU混流的输出参数",
       "members": [
@@ -2267,66 +2174,6 @@
           "document": "视频时长-全高清FHD，单位：秒。",
           "member": "uint64",
           "name": "VideoTimeFhd",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SdkAppIdTrtcUsage": {
-      "document": "查询音视频互动时长的输出数据。\n查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
-          "member": "string",
-          "name": "TimeKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "语音时长，单位：秒。",
-          "member": "uint64",
-          "name": "AudioTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "音视频时长，单位：秒。\n2019年10月11日前注册，没有变更为 [新计费模式](https://cloud.tencent.com/document/product/647/17157) 的用户才会返回此值。",
-          "member": "uint64",
-          "name": "AudioVideoTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清SD，单位：秒。",
-          "member": "uint64",
-          "name": "VideoTimeSd",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-高清HD，单位：秒。",
-          "member": "uint64",
-          "name": "VideoTimeHd",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-超清HD，单位：秒。",
-          "member": "uint64",
-          "name": "VideoTimeHdp",
           "required": true,
           "type": "int",
           "value_allowed_null": false
