@@ -17,16 +17,17 @@ Output:
         "TotalCount": 1,
         "ScheduledActionSet": [
             {
-                "ScheduledActionId": "asst-caa5ha40",
-                "ScheduledActionName": "testv2-0",
-                "AutoScalingGroupId": "asg-2nr9xh8h",
-                "StartTime": "2018-09-28T00:00:00+08:00",
+                "ScheduledActionId": "asst-jf898dps",
+                "ScheduledActionName": "test",
+                "AutoScalingGroupId": "asg-keqt9eg1",
+                "StartTime": "2022-02-22T16:00:00+08:00",
                 "Recurrence": "0 0 * * *",
-                "EndTime": "2018-09-28T23:59:59+08:00",
-                "MaxSize": 10,
-                "DesiredCapacity": 0,
-                "MinSize": 0,
-                "CreatedTime": "2018-09-24T07:41:54Z"
+                "EndTime": "2024-02-22T16:00:00+08:00",
+                "MaxSize": 15,
+                "DesiredCapacity": 1,
+                "MinSize": 1,
+                "CreatedTime": "2022-02-21T02:19:52Z",
+                "ScheduledType": "CRONTAB"
             }
         ]
     }

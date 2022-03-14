@@ -12,10 +12,16 @@ Output:
 {
     "Response": {
         "GenderSet": [
-            {}
+            {
+                "EnglishName": "MALE",
+                "ChineseName": "男"
+            }
         ],
         "AreaSet": [
-            {}
+            {
+                "EnglishName": "CH",
+                "ChineseName": "中国大陆"
+            }
         ],
         "RequestId": "xx"
     }

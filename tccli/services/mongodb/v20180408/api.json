@@ -92,6 +92,7 @@
         {
           "default": "",
           "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "[\"cmgo-eqmoa5sf\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -100,6 +101,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "12",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -113,8 +115,10 @@
       "members": [
         {
           "document": "返回的异步任务ID列表",
+          "example": "[1081]",
           "member": "uint64",
           "name": "FlowIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -445,6 +449,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoaxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -458,9 +463,20 @@
       "members": [
         {
           "document": "客户端连接信息，包括客户端IP和对应IP的连接数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClientConnection",
           "name": "Clients",
+          "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "连接数总结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -1171,6 +1187,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmoa5sf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1178,7 +1195,8 @@
         },
         {
           "default": "",
-          "document": "实例名称",
+          "document": "实例自定义名称",
+          "example": "test_name",
           "member": "string",
           "name": "NewName",
           "required": true,
@@ -1205,6 +1223,7 @@
         {
           "default": "",
           "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "[\"cmgo-8l3r6yyt\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1213,6 +1232,7 @@
         {
           "default": "",
           "document": "续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": true,

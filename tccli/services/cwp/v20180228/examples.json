@@ -1520,6 +1520,14 @@
         "title": "修改爆破阻断模式"
       }
     ],
+    "ModifyInquireRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInquireRenewFlag\n<公共请求参数>\n\n{\n    \"Status\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyMalwareTimingScanSettings": [
       {
         "document": "",

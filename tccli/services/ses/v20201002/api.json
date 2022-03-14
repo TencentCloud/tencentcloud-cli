@@ -36,6 +36,12 @@
       "name": "添加收件人地址",
       "output": "CreateReceiverDetailResponse"
     },
+    "CreateReceiverDetailWithData": {
+      "document": "添加收件人地址附带模板参数",
+      "input": "CreateReceiverDetailWithDataRequest",
+      "name": "添加收件人地址附带模板参数",
+      "output": "CreateReceiverDetailWithDataResponse"
+    },
     "DeleteBlackList": {
       "document": "邮箱被拉黑之后，用户如果确认收件邮箱有效或者已经处于激活状态，可以从腾讯云地址库中删除该黑名单之后继续投递。",
       "input": "DeleteBlackListRequest",
@@ -465,6 +471,42 @@
     },
     "CreateReceiverDetailResponse": {
       "document": "CreateReceiverDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverDetailWithDataRequest": {
+      "document": "CreateReceiverDetailWithData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人列表ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "收信人邮箱以及模板参数，数组形式",
+          "example": "无",
+          "member": "ReceiverInputData",
+          "name": "Datas",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceiverDetailWithDataResponse": {
+      "document": "CreateReceiverDetailWithData返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1386,6 +1428,32 @@
         }
       ],
       "usage": "out"
+    },
+    "ReceiverInputData": {
+      "document": "收件人明细输入参数，包含收件人邮箱，以及模板参数",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人邮箱",
+          "example": "abc@ef.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板中的变量参数，请使用json.dump将json对象格式化为string类型。该对象是一组键值对，每个Key代表模板中的一个变量，模板中的变量使用{{键}}表示，相应的值在发送时会被替换为{{值}}。\n注意：参数值不能是html等复杂类型的数据。",
+          "example": "{\"name\":\"xxx\",\"age\":\"xx\"}",
+          "member": "string",
+          "name": "TemplateData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SendEmailRequest": {
       "document": "SendEmail请求参数结构体",

@@ -314,6 +314,52 @@
       ],
       "usage": "out"
     },
+    "ClusterExternalServiceInfo": {
+      "document": "当前集群共用组件与集群对应关系",
+      "members": [
+        {
+          "default": "",
+          "document": "依赖关系，0:被其他集群依赖，1:依赖其他集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DependType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共用组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zookeeper",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共用集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "共用集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterInstancesInfo": {
       "document": "集群实例信息",
       "members": [
@@ -675,6 +721,16 @@
           "name": "SubnetName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群依赖关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterExternalServiceInfo",
+          "name": "ClusterExternalServiceInfo",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1090,6 +1146,15 @@
           "name": "SceneName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "共享组件信息",
+          "example": "无",
+          "member": "ExternalService",
+          "name": "ExternalService",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1830,6 +1895,16 @@
           "name": "SecurityGroups",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "SSH密钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skey-xxxxxxxx",
+          "member": "string",
+          "name": "PublicKeyId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

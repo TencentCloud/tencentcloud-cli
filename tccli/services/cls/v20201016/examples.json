@@ -19,7 +19,7 @@
     "CreateAlarmNotice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmNotice\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\",\n            \"Headers\": [\n                \"Content-Type:appliction/json\"\n            ],\n            \"Body\": \"{\\\"Uin\\\":\\\"${UIN}\\\",\\\"AlarmId\\\":\\\"alarm-xxxxxxxxx\\\"}\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmNotice\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AlarmNoticeId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建通知渠道组"
       }
@@ -331,7 +331,7 @@
     "ModifyAlarmNotice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89\",\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\",\n            \"Headers\": [\n                \"Content-Type:appliction/json\"\n            ],\n            \"Body\": \"{\\\"Uin\\\":\\\"${UIN}\\\",\\\"AlarmId\\\":\\\"${AlarmId}\\\"}\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89\",\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改通知渠道组"
       }

@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AuthorizeToken": {
+      "document": "给实例授权token",
+      "input": "AuthorizeTokenRequest",
+      "name": "实例授权token",
+      "output": "AuthorizeTokenResponse"
+    },
     "BatchCreateAcl": {
       "document": "批量添加ACL策略",
       "input": "BatchCreateAclRequest",
@@ -17,6 +23,12 @@
       "input": "BatchModifyTopicAttributesRequest",
       "name": "批量设置主题属性",
       "output": "BatchModifyTopicAttributesResponse"
+    },
+    "CancelAuthorizationToken": {
+      "document": "取消授权token",
+      "input": "CancelAuthorizationTokenRequest",
+      "name": "取消授权token",
+      "output": "CancelAuthorizationTokenResponse"
     },
     "CreateAcl": {
       "document": "添加 ACL 策略",
@@ -47,6 +59,12 @@
       "input": "CreateRouteRequest",
       "name": "添加实例路由",
       "output": "CreateRouteResponse"
+    },
+    "CreateToken": {
+      "document": "创建最高权限的token",
+      "input": "CreateTokenRequest",
+      "name": "创建token",
+      "output": "CreateTokenResponse"
     },
     "CreateTopic": {
       "document": "创建ckafka主题",
@@ -586,6 +604,60 @@
       ],
       "usage": "out"
     },
+    "AuthorizeTokenRequest": {
+      "document": "AuthorizeToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "token串",
+          "example": "无",
+          "member": "string",
+          "name": "Tokens",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthorizeTokenResponse": {
+      "document": "AuthorizeToken返回参数结构体",
+      "members": [
+        {
+          "document": "0 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchContent": {
       "document": "批量发送消息内容",
       "members": [
@@ -944,6 +1016,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelAuthorizationTokenRequest": {
+      "document": "CancelAuthorizationToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "token串",
+          "example": "无",
+          "member": "string",
+          "name": "Tokens",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAuthorizationTokenResponse": {
+      "document": "CancelAuthorizationToken返回参数结构体",
+      "members": [
+        {
+          "document": "0 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ClusterInfo": {
       "document": "集群信息实体",
@@ -1857,6 +1983,51 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenRequest": {
+      "document": "CreateToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenResponse": {
+      "document": "CreateToken返回参数结构体",
+      "members": [
+        {
+          "document": "token串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "904b75130b4b4102bdeb071a7f48523a",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4883,6 +5054,32 @@
       ],
       "usage": "out"
     },
+    "InstanceQuotaConfigResp": {
+      "document": "实例 / topic 维度限流策略",
+      "members": [
+        {
+          "default": "",
+          "document": "生产限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaProducerByteRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "消费限流大小，单位 MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaConsumerByteRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceResponse": {
       "document": "聚合的实例状态返回结果",
       "members": [
@@ -5394,6 +5591,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生产限流，单位 MB/s",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaProducerByteRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "消费限流，单位 MB/s",
+          "example": "30",
+          "member": "int64",
+          "name": "QuotaConsumerByteRate",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5992,6 +6207,16 @@
           "name": "AclRuleList",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "topic 限流策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "InstanceQuotaConfigResp",
+          "name": "QuotaConfig",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

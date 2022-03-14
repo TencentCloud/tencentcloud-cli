@@ -905,7 +905,7 @@
       "document": "DescribeRealtimeScanConfig返回参数结构体",
       "members": [
         {
-          "document": "返回结果码",
+          "document": "返回结果码，0正常，非0失败",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -923,7 +923,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "送检类型",
+          "document": "送检类型，0: 全量送审，1: 自定义送审",
           "example": "0",
           "member": "int64",
           "name": "AuditType",
@@ -932,7 +932,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户号正则",
+          "document": "用户号正则表达式",
           "example": "[\"0\"]",
           "member": "string",
           "name": "UserIdRegex",
@@ -941,7 +941,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "房间号正则",
+          "document": "房间号正则表达式",
           "example": "[\"0\"]",
           "member": "string",
           "name": "RoomIdRegex",
@@ -950,7 +950,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户号字符串，逗号分隔",
+          "document": "用户号字符串，逗号分隔，示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
           "name": "UserIdString",
@@ -959,7 +959,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "房间号字符串，逗号分隔",
+          "document": "房间号字符串，逗号分隔，示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
           "name": "RoomIdString",
@@ -1916,7 +1916,7 @@
         },
         {
           "default": "",
-          "document": "字符串房间号，逗号分隔",
+          "document": "需要送检的所有房间号。多个房间号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
           "name": "RoomIdString",
@@ -1925,7 +1925,7 @@
         },
         {
           "default": "",
-          "document": "正则表达式房间号，[\"^6.*\"]6开头的房间号",
+          "document": "符合此正则表达式规则的房间号将被送检。示例：[\"^6.*\"] 表示所有以6开头的房间号将被送检",
           "example": "[\"1\"]",
           "member": "string",
           "name": "RoomIdRegex",
@@ -1970,7 +1970,7 @@
         },
         {
           "default": "",
-          "document": "字符串用户号，逗号分隔",
+          "document": "需要送检的所有用户号。多个用户号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
           "member": "string",
           "name": "UserIdString",
@@ -1979,7 +1979,7 @@
         },
         {
           "default": "",
-          "document": "正则表达式用户号，[\"^6.*\"]6开头的用户号",
+          "document": "符合此正则表达式规则的用户号将被送检。示例：[\"^6.*\"] 表示所有以6开头的用户号将被送检",
           "example": "[\"1\"]",
           "member": "string",
           "name": "UserIdRegex",

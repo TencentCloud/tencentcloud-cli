@@ -1395,6 +1395,7 @@
         {
           "default": "",
           "document": "审计策略 ID。",
+          "example": "cdbpolicy-g78s8xn6",
           "member": "string",
           "name": "PolicyId",
           "required": true,
@@ -1404,6 +1405,7 @@
         {
           "default": "",
           "document": "审计策略的状态。可能返回的值为：\n\"creating\" - 创建中;\n\"running\" - 运行中;\n\"paused\" - 暂停中;\n\"failed\" - 创建失败。",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1413,6 +1415,7 @@
         {
           "default": "",
           "document": "数据库实例 ID。",
+          "example": "cdb-pr1rb3j9",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1422,6 +1425,7 @@
         {
           "default": "",
           "document": "审计策略创建时间。格式为 : \"2019-03-20 17:09:13\"。",
+          "example": "2021-02-15 15:24:22",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -1431,6 +1435,7 @@
         {
           "default": "",
           "document": "审计策略最后修改时间。格式为 : \"2019-03-20 17:09:13\"。",
+          "example": "2022-01-15 15:24:22",
           "member": "string",
           "name": "ModifyTime",
           "required": true,
@@ -1440,6 +1445,7 @@
         {
           "default": "",
           "document": "审计策略名称。",
+          "example": "fullaudit",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -1449,6 +1455,7 @@
         {
           "default": "",
           "document": "审计规则 ID。",
+          "example": "cdbrule-11o5fvz2",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -1458,8 +1465,19 @@
         {
           "default": "",
           "document": "审计规则名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "allrule",
           "member": "string",
           "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据库实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

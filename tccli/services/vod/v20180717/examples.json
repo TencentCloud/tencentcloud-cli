@@ -1046,6 +1046,14 @@
         "title": "增加媒资文件的字幕"
       }
     ],
+    "ModifyMediaStorageClass": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyMediaStorageClass\n&FileIds.0=5285485487985271487\n&StorageClass=STANDARD_IA\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "将媒体文件从标准存储修改为低频存储"
+      }
+    ],
     "ModifyPersonSample": [
       {
         "document": "修改素材名称、描述。",

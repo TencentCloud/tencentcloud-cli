@@ -31,7 +31,7 @@
       "output": "BatchRegisterTargetsResponse"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n权限说明：\n调用克隆接口用户需要具有：CreateLoadBalancer、CreateLoadBalancerListeners、CreateListenerRules、BatchRegisterTargets、SetLoadBalancerSecurityGroups、ModifyLoadBalancerAttributes、SetLoadBalancerClsLog、DeleteLoadBalancer权限，其中DeleteLoadBalancer用于克隆失败回滚流程，如果没有该接口权限，克隆失败后可能会残留克隆失败的CLB数据。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n不支持基础网络和传统型负载均衡、IPv6和NAT64\n不支持包年包月CLB\n不支持监听器为 QUIC、端口段\n不支持后端类型为 目标组、SCF云函数\n个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse"
@@ -353,6 +353,12 @@
       "input": "ModifyLoadBalancerAttributesRequest",
       "name": "修改负载均衡实例的属性",
       "output": "ModifyLoadBalancerAttributesResponse"
+    },
+    "ModifyLoadBalancerMixIpTarget": {
+      "document": "修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
+      "input": "ModifyLoadBalancerMixIpTargetRequest",
+      "name": "修改IPv6FullChain负载均衡7层监听器支持混绑目标特性。",
+      "output": "ModifyLoadBalancerMixIpTargetResponse"
     },
     "ModifyLoadBalancerSla": {
       "document": "支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。",
@@ -7323,6 +7329,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerMixIpTargetRequest": {
+      "document": "ModifyLoadBalancerMixIpTarget请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡实例ID数组。",
+          "example": "[\"lb-1234abcd\\r\\n\",\"lb-5678wwqq\\r\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "开启/关闭IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
+          "example": "true",
+          "member": "bool",
+          "name": "MixIpTarget",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancerMixIpTargetResponse": {
+      "document": "ModifyLoadBalancerMixIpTarget返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

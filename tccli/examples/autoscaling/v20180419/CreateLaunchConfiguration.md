@@ -36,6 +36,7 @@ tccli as CreateLaunchConfiguration --cli-unfold-argument  \
     --SystemDisk.DiskSize 50 \
     --DataDisks.0.DiskType CLOUD_BASIC \
     --DataDisks.0.DiskSize 100 \
+    --DataDisks.0.DeleteWithInstance TRUE \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 5 \
     --InternetAccessible.PublicIpAssigned TRUE \

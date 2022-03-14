@@ -9,7 +9,9 @@ tccli oceanus RunJobs --cli-unfold-argument  \
     --RunJobDescriptions.0.RunType 0 \
     --RunJobDescriptions.0.JobConfigVersion 1 \
     --RunJobDescriptions.0.StartMode xx \
-    --RunJobDescriptions.0.JobId xx
+    --RunJobDescriptions.0.JobId xx \
+    --RunJobDescriptions.0.SavepointId cql-asdf5678 \
+    --RunJobDescriptions.0.SavepointPath cosn://xxxx
 ```
 
 Output: 

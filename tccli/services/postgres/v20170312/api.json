@@ -24,6 +24,12 @@
       "name": "关闭serverlessDB实例外网",
       "output": "CloseServerlessDBExtranetAccessResponse"
     },
+    "CreateDBInstanceNetworkAccess": {
+      "document": "可对实例进行网络的添加操作。",
+      "input": "CreateDBInstanceNetworkAccessRequest",
+      "name": "添加实例网络",
+      "output": "CreateDBInstanceNetworkAccessResponse"
+    },
     "CreateDBInstances": {
       "document": "本接口 (CreateDBInstances) 用于创建一个或者多个PostgreSQL实例,仅发货实例不会进行初始化。",
       "input": "CreateDBInstancesRequest",
@@ -48,17 +54,35 @@
       "name": "创建只读组",
       "output": "CreateReadOnlyGroupResponse"
     },
+    "CreateReadOnlyGroupNetworkAccess": {
+      "document": "可对RO组进行网络的添加操作。",
+      "input": "CreateReadOnlyGroupNetworkAccessRequest",
+      "name": "添加RO组网络",
+      "output": "CreateReadOnlyGroupNetworkAccessResponse"
+    },
     "CreateServerlessDBInstance": {
       "document": "本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
       "input": "CreateServerlessDBInstanceRequest",
       "name": "创建ServerlessDB实例",
       "output": "CreateServerlessDBInstanceResponse"
     },
+    "DeleteDBInstanceNetworkAccess": {
+      "document": "可对实例进行网络的删除操作。",
+      "input": "DeleteDBInstanceNetworkAccessRequest",
+      "name": "删除实例网络",
+      "output": "DeleteDBInstanceNetworkAccessResponse"
+    },
     "DeleteReadOnlyGroup": {
       "document": "本接口(DeleteReadOnlyGroup)用于删除指定的只读组",
       "input": "DeleteReadOnlyGroupRequest",
       "name": "删除只读组",
       "output": "DeleteReadOnlyGroupResponse"
+    },
+    "DeleteReadOnlyGroupNetworkAccess": {
+      "document": "可对RO组进行网络的删除操作。",
+      "input": "DeleteReadOnlyGroupNetworkAccessRequest",
+      "name": "删除RO组网络",
+      "output": "DeleteReadOnlyGroupNetworkAccessResponse"
     },
     "DeleteServerlessDBInstance": {
       "document": "本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
@@ -916,6 +940,78 @@
       ],
       "type": "object"
     },
+    "CreateDBInstanceNetworkAccessRequest": {
+      "document": "CreateDBInstanceNetworkAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如：postgres-6bwgamo3。",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID。",
+          "example": "vpc-gaestjaf",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID。",
+          "example": "subnet-4s9dejli",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否指定分配vip true-指定分配  false-自动分配。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAssignVip",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "目标VIP地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDBInstanceNetworkAccessResponse": {
+      "document": "CreateDBInstanceNetworkAccess返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDBInstancesRequest": {
       "document": "CreateDBInstances请求参数结构体",
       "members": [
@@ -1617,6 +1713,78 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupNetworkAccessRequest": {
+      "document": "CreateReadOnlyGroupNetworkAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RO组ID，形如：pgro-4t9c6g7k。",
+          "example": "pgro-4t9c6g7k",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID。",
+          "example": "vpc-gaestjaf",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID。",
+          "example": "subnet-4s9dejli",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否指定分配vip true-指定分配  false-自动分配。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAssignVip",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "目标VIP地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReadOnlyGroupNetworkAccessResponse": {
+      "document": "CreateReadOnlyGroupNetworkAccess返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2444,6 +2612,132 @@
         }
       ],
       "usage": "both"
+    },
+    "DeleteDBInstanceNetworkAccessRequest": {
+      "document": "DeleteDBInstanceNetworkAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如：postgres-6bwgamo3。",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID，若是基础网络则传\"0\"。",
+          "example": "vpc-gaestjaf",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID，若是基础网络则传\"0\"。",
+          "example": "subnet-4s9dejli",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标VIP地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDBInstanceNetworkAccessResponse": {
+      "document": "DeleteDBInstanceNetworkAccess返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReadOnlyGroupNetworkAccessRequest": {
+      "document": "DeleteReadOnlyGroupNetworkAccess请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RO组ID，形如：pgro-4t9c6g7k。",
+          "example": "pgro-4t9c6g7k",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私有网络统一 ID，若是基础网络则传\"0\"。",
+          "example": "vpc-gaestjaf",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网ID，若是基础网络则传\"0\"。",
+          "example": "subnet-4s9dejli",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标VIP地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReadOnlyGroupNetworkAccessResponse": {
+      "document": "DeleteReadOnlyGroupNetworkAccess返回参数结构体",
+      "members": [
+        {
+          "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteReadOnlyGroupRequest": {
       "document": "DeleteReadOnlyGroup请求参数结构体",

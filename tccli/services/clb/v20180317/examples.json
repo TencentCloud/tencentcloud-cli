@@ -580,6 +580,14 @@
         "title": "设置负载均衡实例的跨域属性"
       }
     ],
+    "ModifyLoadBalancerMixIpTarget": [
+      {
+        "document": "开启混绑IP功能",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyLoadBalancerMixIpTarget\n&LoadBalancerIds.0=lb-1234abcd\n&LoadBalancerIds.1=lb-5678wwqq\n&MixIpTarget=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "开启混绑IP功能"
+      }
+    ],
     "ModifyLoadBalancerSla": [
       {
         "document": "",

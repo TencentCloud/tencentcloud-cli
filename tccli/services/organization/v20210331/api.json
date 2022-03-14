@@ -588,6 +588,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全信息绑定状态  未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Unbound",
+          "member": "string",
+          "name": "BindStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

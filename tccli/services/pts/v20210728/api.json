@@ -381,6 +381,15 @@
           "name": "Plugins",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名解析配置",
+          "example": "无",
+          "member": "DomainNameConfig",
+          "name": "DomainNameConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -405,6 +414,22 @@
         }
       ],
       "type": "object"
+    },
+    "DNSConfig": {
+      "document": "施压机 DNS 配置",
+      "members": [
+        {
+          "default": "",
+          "document": "DNS IP 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"0.0.0.0\"]",
+          "member": "string",
+          "name": "Nameservers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteJobsRequest": {
       "document": "DeleteJobs请求参数结构体",
@@ -747,6 +772,32 @@
       ],
       "type": "object"
     },
+    "DomainNameConfig": {
+      "document": "施压机的域名解析相关配置",
+      "members": [
+        {
+          "default": "",
+          "document": "域名绑定配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostAlias",
+          "name": "HostAliases",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DNS 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DNSConfig",
+          "name": "DNSConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FileInfo": {
       "document": "文件基本信息",
       "members": [
@@ -825,6 +876,32 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HostAlias": {
+      "document": "施压机域名绑定配置",
+      "members": [
+        {
+          "default": "",
+          "document": "需绑定的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"example.com\"]",
+          "member": "string",
+          "name": "HostNames",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需绑定的 IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1761,6 +1838,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名解析配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainNameConfig",
+          "name": "DomainNameConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2297,6 +2384,15 @@
           "name": "Plugins",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名解析配置",
+          "example": "无",
+          "member": "DomainNameConfig",
+          "name": "DomainNameConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

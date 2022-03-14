@@ -3,7 +3,7 @@
     "AssignProject": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\r\n&InstanceIds.0=cmgo-eqmoa5sf\r\n&ProjectId=12\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\n&InstanceIds.0=cmgo-eqmoa5sf\n&ProjectId=12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowIds\": [\n            1081\n        ],\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\n    }\n}",
         "title": "指定云数据库实例的所属项目"
       }
@@ -27,8 +27,8 @@
     "DescribeClientConnections": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\r\n&InstanceId=cmgo-eqmoaxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Clients\": [\n            {\n                \"Count\": 15,\n                \"IP\": \"10.xx.xx.xx\"\n            },\n            {\n                \"Count\": 15,\n                \"IP\": \"10.xx.xx.xx\"\n            }\n        ],\n        \"RequestId\": \"c61fd6e2-c505-4fb9-9f30-edd8e897b236\"\n    }\n}",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\n&InstanceId=cmgo-eqmoaxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Clients\": [\n            {\n                \"Count\": 1,\n                \"IP\": \"xx\"\n            },\n            {\n                \"Count\": 1,\n                \"IP\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询云数据库实例的客户端连接情况"
       }
     ],
@@ -59,7 +59,7 @@
     "RenameInstance": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=RenameInstance\r\n&InstanceId=cmgo-eqmoa5sf\r\n&NewName=test_name\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=RenameInstance\n&InstanceId=cmgo-eqmoa5sf\n&NewName=test_name\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\n    }\n}",
         "title": "重命名云数据库实例"
       }
@@ -67,7 +67,7 @@
     "SetAutoRenew": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=SetAutoRenew\r\n&InstanceIds.0=cmgo-8l3r6yyt\r\n&AutoRenewFlag=1\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetAutoRenew\n&InstanceIds.0=cmgo-8l3r6yyt\n&AutoRenewFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d0d55f9-15ee-4f00-b460-7b645a62cc3a\"\n    }\n}",
         "title": "设置包年包月实例的续费选项"
       }

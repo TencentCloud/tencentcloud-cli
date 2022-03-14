@@ -786,6 +786,7 @@
         {
           "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiAppName",
           "required": true,
@@ -795,6 +796,7 @@
         {
           "default": "",
           "document": "应用ID",
+          "example": "无",
           "member": "string",
           "name": "ApiAppId",
           "required": true,
@@ -804,6 +806,7 @@
         {
           "default": "",
           "document": "Api的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -813,6 +816,7 @@
         {
           "default": "",
           "document": "Api名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiName",
           "required": true,
@@ -822,6 +826,7 @@
         {
           "default": "",
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -831,6 +836,7 @@
         {
           "default": "",
           "document": "授权绑定时间，按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "AuthorizedTime",
           "required": true,
@@ -840,6 +846,7 @@
         {
           "default": "",
           "document": "Api所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ApiRegion",
           "required": true,
@@ -849,6 +856,7 @@
         {
           "default": "",
           "document": "授权绑定的环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -3764,6 +3772,15 @@
           "example": "instance-12345",
           "member": "string",
           "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc属性",
+          "example": "vpc-quyenan",
+          "member": "string",
+          "name": "UniqVpcId",
           "required": false,
           "type": "string"
         }

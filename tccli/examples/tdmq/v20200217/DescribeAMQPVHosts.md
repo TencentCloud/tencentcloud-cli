@@ -23,6 +23,7 @@ Output:
                 "Password": "xx",
                 "UpdateTime": 1,
                 "MsgTtl": 1,
+                "Status": 0,
                 "VHostId": "test",
                 "CreateTime": 1560000000
             }

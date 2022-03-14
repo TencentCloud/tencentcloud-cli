@@ -1140,6 +1140,12 @@
       "name": "修改暴力破解规则",
       "output": "ModifyBruteAttackRulesResponse"
     },
+    "ModifyInquireRenewFlag": {
+      "document": "设置旗舰版试用订单到期新购状态",
+      "input": "ModifyInquireRenewFlagRequest",
+      "name": "设置旗舰版试用订单到期新购状态",
+      "output": "ModifyInquireRenewFlagResponse"
+    },
     "ModifyMalwareTimingScanSettings": {
       "document": "定时扫描设置",
       "input": "ModifyMalwareTimingScanSettingsRequest",
@@ -20613,6 +20619,33 @@
     },
     "ModifyBruteAttackRulesResponse": {
       "document": "ModifyBruteAttackRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInquireRenewFlagRequest": {
+      "document": "ModifyInquireRenewFlag请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设置自动开通状态。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInquireRenewFlagResponse": {
+      "document": "ModifyInquireRenewFlag返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

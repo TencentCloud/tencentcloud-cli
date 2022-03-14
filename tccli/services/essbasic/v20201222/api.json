@@ -4175,6 +4175,15 @@
           "name": "IsDefault",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "印章样式，取值 cycle:圆形印章，ellipse:椭圆印章，默认圆形印章",
+          "example": "ellipse",
+          "member": "string",
+          "name": "SealStyle",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

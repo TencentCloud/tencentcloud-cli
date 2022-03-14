@@ -544,7 +544,7 @@
         },
         {
           "default": "",
-          "document": "搜索的类型有：none，tags，grade，brand，code，hash，limit。\n选tags，入参请填Tag，\n选grade，入参请填Grade，\n选brand，入参请填Brand，\n选code，入参请填Code，\n选hash，入参请填Hash\n选limit，标识只返回数量信息",
+          "document": "搜索的类型有：none，tags，grade，brand，code，hash，limit，domain。\n选tags，入参请填Tag，\n选grade，入参请填Grade，\n选brand，入参请填Brand，\n选code，入参请填Code，\n选hash，入参请填Hash\n选limit，标识只返回数量信息\n选domain，入参请填Domain",
           "example": "none",
           "member": "string",
           "name": "SearchType",
@@ -611,6 +611,15 @@
           "example": "无",
           "member": "string",
           "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
           "required": false,
           "type": "string"
         }

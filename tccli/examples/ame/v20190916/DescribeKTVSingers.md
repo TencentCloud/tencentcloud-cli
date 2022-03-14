@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli ame DescribeKTVSingers --cli-unfold-argument  \
-    --Sort.Field xx \
-    --Sort.Order xx \
-    --Limit 0 \
+    --Sort.Field PlayCount \
+    --Sort.Order Desc \
+    --Limit 1 \
     --Offset 0 \
     --Genders MALE \
-    --SingerIds xx \
     --Areas CH
 ```
 
@@ -22,15 +21,15 @@ Output:
         "TotalCount": 1,
         "KTVSingerInfoSet": [
             {
-                "SingerId": "xx",
-                "Name": "xx",
-                "Area": "xx",
-                "Gender": "xx",
+                "SingerId": "sid-8h3h3gs",
+                "Name": "周杰伦",
+                "Area": "港台",
+                "Gender": "男",
                 "PlayCount": 10,
                 "MusicCount": 10
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "2hs73j3-2fur9j4-3jke44-hdhh2"
     }
 }
 ```

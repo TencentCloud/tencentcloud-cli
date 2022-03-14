@@ -24,6 +24,38 @@
         "title": "创建DID"
       }
     ],
+    "CreateTDidByPublicKey": [
+      {
+        "document": "根据公私钥生成Tdid",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDidByPublicKey\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1,\n    \"PublicKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\",\n    \"EncryptPubKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"did:tdid:1:0x4b5edc27dd8a20ebaae6d427f3142b24fbf687ff\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "CreateTDidByPublicKey"
+      }
+    ],
+    "GetAuthorityIssuer": [
+      {
+        "document": "查看DID文档",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAuthorityIssuer\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Did\": \"\",\n        \"Name\": \"test\",\n        \"ClusterId\": \"bcos-ch0wjx6ub4\",\n        \"GroupId\": 2,\n        \"Remark\": \"\",\n        \"RegisterTime\": \"2022-02-28 17:58:32\",\n        \"RecognizeTime\": \"2022-02-28 17:58:32\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "GetAuthorityIssuer"
+      }
+    ],
+    "GetDidDocument": [
+      {
+        "document": "查看DID文档",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDidDocument\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"test\",\n        \"Document\": \"aaa\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "GetDidDocument"
+      }
+    ],
+    "SetCredentialStatus": [
+      {
+        "document": "新建标签",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCredentialStatus\n<公共请求参数>\n\n{\n    \"CredentialStatus\": {\n        \"CredentialId\": \"0a581276-35e8-4835-ae5d-66705c76335d\",\n        \"Status\": 1,\n        \"Issuer\": \"did:tdid:15:0xbd7345b2ff8d1dbf1e330a6c5dcf20c675b6c484\",\n        \"Digest\": \"XXXXXXXXXXXXXXXXXX\",\n        \"Signature\": \"XXXXXXXXXXXXXXXXXX\",\n        \"TimeStamp\": 1645670370\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "SetCredentialStatus"
+      }
+    ],
     "VerifyCredential": [
       {
         "document": "验证凭证",

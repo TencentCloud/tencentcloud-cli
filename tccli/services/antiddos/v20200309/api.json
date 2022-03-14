@@ -36,6 +36,12 @@
       "name": "新增CC频率限制策略",
       "output": "CreateCCReqLimitPolicyResponse"
     },
+    "CreateCcBlackWhiteIpList": {
+      "document": "新建CC四层黑白名单",
+      "input": "CreateCcBlackWhiteIpListRequest",
+      "name": "新建CC四层黑白名单",
+      "output": "CreateCcBlackWhiteIpListResponse"
+    },
     "CreateCcGeoIPBlockConfig": {
       "document": "新建cc防护的地域封禁配置",
       "input": "CreateCcGeoIPBlockConfigRequest",
@@ -138,6 +144,12 @@
       "name": "删除DDoS防护的IP黑白名单",
       "output": "DeleteBlackWhiteIpListResponse"
     },
+    "DeleteCCLevelPolicy": {
+      "document": "删除CC分级策略",
+      "input": "DeleteCCLevelPolicyRequest",
+      "name": "删除CC分级策略",
+      "output": "DeleteCCLevelPolicyResponse"
+    },
     "DeleteCCPrecisionPolicy": {
       "document": "删除CC精准防护策略",
       "input": "DeleteCCPrecisionPolicyRequest",
@@ -149,6 +161,12 @@
       "input": "DeleteCCRequestLimitPolicyRequest",
       "name": "删除CC频率限制策略",
       "output": "DeleteCCRequestLimitPolicyResponse"
+    },
+    "DeleteCCThresholdPolicy": {
+      "document": "删除CC清洗阈值策略",
+      "input": "DeleteCCThresholdPolicyRequest",
+      "name": "删除CC清洗阈值策略",
+      "output": "DeleteCCThresholdPolicyResponse"
     },
     "DeleteCcBlackWhiteIpList": {
       "document": "删除CC四层黑白名单",
@@ -222,6 +240,18 @@
       "name": "获取DDoS防护的IP黑白名单",
       "output": "DescribeBlackWhiteIpListResponse"
     },
+    "DescribeCCLevelList": {
+      "document": "获取CC防护等级列表",
+      "input": "DescribeCCLevelListRequest",
+      "name": "获取CC防护等级列表",
+      "output": "DescribeCCLevelListResponse"
+    },
+    "DescribeCCLevelPolicy": {
+      "document": "获取CC分级策略",
+      "input": "DescribeCCLevelPolicyRequest",
+      "name": "获取CC分级策略",
+      "output": "DescribeCCLevelPolicyResponse"
+    },
     "DescribeCCPrecisionPlyList": {
       "document": "获取CC精准防护列表",
       "input": "DescribeCCPrecisionPlyListRequest",
@@ -233,6 +263,12 @@
       "input": "DescribeCCReqLimitPolicyListRequest",
       "name": "获取CC频率限制策略列表",
       "output": "DescribeCCReqLimitPolicyListResponse"
+    },
+    "DescribeCCThresholdList": {
+      "document": "获取CC清洗阈值列表",
+      "input": "DescribeCCThresholdListRequest",
+      "name": "获取CC清洗阈值列表",
+      "output": "DescribeCCThresholdListResponse"
     },
     "DescribeCCTrend": {
       "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
@@ -1313,6 +1349,75 @@
       ],
       "usage": "both"
     },
+    "CCLevelPolicy": {
+      "document": "CC分级策略",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护等级，可取值default表示默认策略，loose表示宽松，strict表示严格",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CCPrecisionPlyRecord": {
       "document": "CC精准防护配置项",
       "members": [
@@ -1601,6 +1706,82 @@
         }
       ],
       "usage": "both"
+    },
+    "CCThresholdPolicy": {
+      "document": "CC清洗阈值策略",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "bgp-0000000a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ip地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "清洗阈值",
+          "example": "1000",
+          "member": "int64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-06-16 21:00:44",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-06-17 14:38:12",
+          "member": "datetime",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CcBlackWhiteIpPolicy": {
       "document": "CC四层黑白名单列表",
@@ -2239,6 +2420,78 @@
     },
     "CreateCCReqLimitPolicyResponse": {
       "document": "CreateCCReqLimitPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcBlackWhiteIpListRequest": {
+      "document": "CreateCcBlackWhiteIpList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgpip-00001001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP列表",
+          "example": "无",
+          "member": "IpSegment",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IP类型，取值[black(黑名单IP), white(白名单IP)]",
+          "example": "black",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Ip地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.xx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "bgp-multip",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcBlackWhiteIpListResponse": {
+      "document": "CreateCcBlackWhiteIpList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3089,6 +3342,60 @@
       ],
       "type": "object"
     },
+    "DeleteCCLevelPolicyRequest": {
+      "document": "DeleteCCLevelPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置策略的IP",
+          "example": "1.1.1.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议，可取值http",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCCLevelPolicyResponse": {
+      "document": "DeleteCCLevelPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCCPrecisionPolicyRequest": {
       "document": "DeleteCCPrecisionPolicy请求参数结构体",
       "members": [
@@ -3151,6 +3458,60 @@
     },
     "DeleteCCRequestLimitPolicyResponse": {
       "document": "DeleteCCRequestLimitPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCCThresholdPolicyRequest": {
+      "document": "DeleteCCThresholdPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置策略的IP",
+          "example": "1.1.1.3",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议，可取值http",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCCThresholdPolicyResponse": {
+      "document": "DeleteCCThresholdPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3683,6 +4044,141 @@
       ],
       "type": "object"
     },
+    "DescribeCCLevelListRequest": {
+      "document": "DescribeCCLevelList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgp-multip表示高防包）",
+          "example": "bgp-multip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定实例Id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCLevelListResponse": {
+      "document": "DescribeCCLevelList返回参数结构体",
+      "members": [
+        {
+          "document": "分级策略列表总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分级策略列表详情",
+          "example": "无",
+          "member": "CCLevelPolicy",
+          "name": "LevelList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCLevelPolicyRequest": {
+      "document": "DescribeCCLevelPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例Id",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP值",
+          "example": "1.3.2.5",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "1.sca.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议，可取值HTTP，HTTPS",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCLevelPolicyResponse": {
+      "document": "DescribeCCLevelPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "CC防护等级，可取值loose表示宽松，strict表示严格，normal表示适中， emergency表示攻击紧急， sup_loose表示超级宽松，default表示默认策略（无频控配置下发），customized表示自定义策略",
+          "example": "loose",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCCPrecisionPlyListRequest": {
       "document": "DescribeCCPrecisionPlyList请求参数结构体",
       "members": [
@@ -3868,6 +4364,78 @@
           "example": "无",
           "member": "CCReqLimitPolicy",
           "name": "RequestLimitPolicyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCThresholdListRequest": {
+      "document": "DescribeCCThresholdList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgp-multip表示高防包）",
+          "example": "bgp-multip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定实例Id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCThresholdListResponse": {
+      "document": "DescribeCCThresholdList返回参数结构体",
+      "members": [
+        {
+          "document": "清洗阈值策略列表总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "清洗阈值策略列表详情",
+          "example": "无",
+          "member": "CCThresholdPolicy",
+          "name": "ThresholdList",
           "required": true,
           "type": "list",
           "value_allowed_null": false

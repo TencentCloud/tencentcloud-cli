@@ -22,6 +22,7 @@ Output:
                 "Remark": "xx",
                 "CreatorUin": "xx",
                 "DefaultParallelism": 1,
+                "ClsTopicId": "xx",
                 "ResourceRefDetails": [
                     {
                         "ResourceId": "xx",
@@ -32,10 +33,12 @@ Output:
                     }
                 ],
                 "COSBucket": "xx",
+                "TaskManagerSpec": 0.0,
                 "UpdateTime": "xx",
                 "JobId": "xx",
                 "EntrypointClass": "xx",
                 "Version": 1,
+                "ClsLogsetId": "xx",
                 "Properties": [
                     {
                         "Value": "xx",
@@ -43,7 +46,9 @@ Output:
                     }
                 ],
                 "LogCollect": 0,
+                "JobManagerSpec": 0.0,
                 "MaxParallelism": 1,
+                "PythonVersion": "xx",
                 "CreateTime": "xx"
             }
         ]
