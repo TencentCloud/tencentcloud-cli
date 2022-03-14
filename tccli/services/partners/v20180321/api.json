@@ -249,7 +249,7 @@
         },
         {
           "default": "",
-          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量已关联)/old_newchecking(存量-新关联考核中)/old_newnotpass(存量-新关联未达标)/direct(直销)/direct_newopp(直销(新商机))/空",
+          "document": "客户类型：可以为new(自拓)/assign(指派)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空",
           "example": "old",
           "member": "string",
           "name": "ClientType",
@@ -306,6 +306,7 @@
         {
           "default": "",
           "document": "代理商账号ID",
+          "example": "123456",
           "member": "string",
           "name": "Uin",
           "required": true,
@@ -315,6 +316,7 @@
         {
           "default": "",
           "document": "订单号，仅对预付费账单有意义",
+          "example": "20195122445215",
           "member": "string",
           "name": "OrderId",
           "required": true,
@@ -324,6 +326,7 @@
         {
           "default": "",
           "document": "代客账号ID",
+          "example": "123456",
           "member": "string",
           "name": "ClientUin",
           "required": true,
@@ -333,6 +336,7 @@
         {
           "default": "",
           "document": "代客备注名称",
+          "example": "xxx客户",
           "member": "string",
           "name": "ClientRemark",
           "required": true,
@@ -342,6 +346,7 @@
         {
           "default": "",
           "document": "支付时间",
+          "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "PayTime",
           "required": true,
@@ -351,6 +356,7 @@
         {
           "default": "",
           "document": "云产品名称",
+          "example": "cvm",
           "member": "string",
           "name": "GoodsType",
           "required": true,
@@ -360,6 +366,7 @@
         {
           "default": "",
           "document": "预付费/后付费",
+          "example": "预付费",
           "member": "string",
           "name": "PayMode",
           "required": true,
@@ -369,6 +376,7 @@
         {
           "default": "",
           "document": "支付月份",
+          "example": "2019-01-01 00:00:00",
           "member": "string",
           "name": "SettleMonth",
           "required": true,
@@ -378,6 +386,7 @@
         {
           "default": "",
           "document": "支付金额，单位分",
+          "example": "10000",
           "member": "int64",
           "name": "Amt",
           "required": true,
@@ -387,6 +396,7 @@
         {
           "default": "",
           "document": "agentpay：代付；selfpay：自付",
+          "example": "selfpay",
           "member": "string",
           "name": "PayerMode",
           "required": true,
@@ -395,7 +405,8 @@
         },
         {
           "default": "",
-          "document": "客户类型：可以为new(新拓)/assign(指定)/old(存量)/空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户类型：可以为new(自拓)/assign(指定)/old(官网)/direct(直销)/direct_newopp(直销(新商机))/空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "new",
           "member": "string",
           "name": "ClientType",
           "required": true,
@@ -405,6 +416,7 @@
         {
           "default": "",
           "document": "项目类型：可以为self(自拓项目)/platform(合作项目)/repeat(复算项目  )/空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "self",
           "member": "string",
           "name": "ProjectType",
           "required": true,
@@ -414,6 +426,7 @@
         {
           "default": "",
           "document": "活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
           "member": "string",
           "name": "ActivityId",
           "required": true,
@@ -734,7 +747,7 @@
         },
         {
           "default": "",
-          "document": "客户类型（new：新拓；old：存量；assign：指派）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "new",
           "member": "string",
           "name": "ClientType",
@@ -1020,7 +1033,7 @@
         },
         {
           "default": "",
-          "document": "客户类型（new：新拓；old：存量；assign：指派）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户类型（new：自拓；old：官网；assign：指派；direct：直销；direct_newopp：直销(新商机)）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "new",
           "member": "string",
           "name": "ClientType",

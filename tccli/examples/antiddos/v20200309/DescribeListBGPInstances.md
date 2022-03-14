@@ -18,51 +18,52 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d362f93-9a48-4194-995f-d3dd377c770d",
+        "Total": 1,
         "InstanceList": [
             {
-                "InstanceDetail": {
-                    "EipList": [
-                        "1.1.1.1"
-                    ],
-                    "InstanceId": "bgp-00000001"
-                },
-                "PackInfo": {
-                    "PackId": "",
-                    "PackType": ""
-                },
-                "SpecificationLimit": {
-                    "ProtectBandwidth": 20000,
-                    "ProtectCountLimit": 0,
-                    "ProtectIPNumberLimit": 5,
-                    "AutoRenewFlag": 0
-                },
-                "Usage": {
-                    "ProtectCountUsage": 0,
-                    "ProtectIPNumberUsage": 0,
-                    "Last7DayAttackCount": 0
-                },
-                "Region": {
-                    "Region": "ap-guangzhou"
-                },
-                "Name": "123test",
-                "DDoSLevel": "low",
-                "CCEnable": 1,
-                "Status": "idle",
-                "ExpiredTime": "2020-04-11 14:28:55",
-                "CreatedTime": "2020-03-11 14:28:55",
+                "Status": "xx",
                 "EipProductInfos": [
                     {
-                        "Ip": "1.1.1.1",
-                        "BizType": "public",
-                        "DeviceType": "cvm",
-                        "InstanceId": "ins-f2f9ssbo"
+                        "BizType": "xx",
+                        "Ip": "xx",
+                        "InstanceId": "xx",
+                        "DeviceType": "xx"
                     }
                 ],
-                "BoundStatus": "idle"
+                "Name": "xx",
+                "CCEnable": 1,
+                "Region": {
+                    "Region": "xx"
+                },
+                "InstanceDetail": {
+                    "InstanceId": "xx",
+                    "EipList": [
+                        "1.1.1.1"
+                    ]
+                },
+                "CreatedTime": "2020-09-22 00:00:00",
+                "ExpiredTime": "2020-09-22 00:00:00",
+                "Usage": {
+                    "ProtectCountUsage": 1,
+                    "ProtectIPNumberUsage": 1,
+                    "Last7DayAttackCount": 1
+                },
+                "DDoSLevel": "xx",
+                "PackInfo": {
+                    "PackId": "xx",
+                    "PackType": "xx"
+                },
+                "SpecificationLimit": {
+                    "UnionPackFlag": 1,
+                    "AutoRenewFlag": 1,
+                    "ProtectBandwidth": 1,
+                    "ProtectIPNumberLimit": 1,
+                    "ProtectCountLimit": 1
+                },
+                "BoundStatus": "xx"
             }
         ],
-        "Total": 1
+        "RequestId": "xx"
     }
 }
 ```

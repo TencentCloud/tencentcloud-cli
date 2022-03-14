@@ -1178,6 +1178,7 @@
         {
           "default": "",
           "document": "保底防护峰值，单位Gbps",
+          "example": "1",
           "member": "uint64",
           "name": "ProtectBandwidth",
           "required": true,
@@ -1187,6 +1188,7 @@
         {
           "default": "",
           "document": "防护次数，单位次",
+          "example": "10",
           "member": "uint64",
           "name": "ProtectCountLimit",
           "required": true,
@@ -1196,6 +1198,7 @@
         {
           "default": "",
           "document": "防护IP数，单位个",
+          "example": "10",
           "member": "uint64",
           "name": "ProtectIPNumberLimit",
           "required": true,
@@ -1205,11 +1208,22 @@
         {
           "default": "",
           "document": "自动续费状态，取值[\n0：没有开启自动续费\n1：开启了自动续费\n]",
+          "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "联合产品标记，0代表普通高防包，1代表联合高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UnionPackFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

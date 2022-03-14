@@ -1,6 +1,8 @@
 LICENSE
 include tccli/services/aa/v20200224/api.json
 include tccli/services/aa/v20200224/examples.json
+include tccli/services/account/v20181225/api.json
+include tccli/services/account/v20181225/examples.json
 include tccli/services/af/v20200226/api.json
 include tccli/services/af/v20200226/examples.json
 include tccli/services/afc/v20200226/api.json

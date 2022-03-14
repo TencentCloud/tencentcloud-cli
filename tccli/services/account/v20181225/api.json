@@ -1,0 +1,437 @@
+{
+  "actions": {
+    "DescribeNickname": {
+      "document": "获取用户昵称",
+      "input": "DescribeNicknameRequest",
+      "name": "获取用户昵称",
+      "output": "DescribeNicknameResponse"
+    },
+    "GetBackUpValidate": {
+      "document": "获取备选校验方式",
+      "input": "GetBackUpValidateRequest",
+      "name": "获取备选校验方式",
+      "output": "GetBackUpValidateResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-25",
+    "api_brief": "",
+    "serviceNameCN": "账号中心",
+    "serviceShortName": "account"
+  },
+  "objects": {
+    "DescribeNicknameRequest": {
+      "document": "DescribeNickname请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNicknameResponse": {
+      "document": "DescribeNickname返回参数结构体",
+      "members": [
+        {
+          "document": "昵称",
+          "member": "string",
+          "name": "Nickname",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "展示昵称",
+          "member": "string",
+          "name": "DisplayName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FaceIdData": {
+      "document": "人脸参数",
+      "members": [
+        {
+          "default": "",
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Id标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdCard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FaceIdValidInfo": {
+      "document": "人脸备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人脸相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "FaceIdData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetBackUpValidateRequest": {
+      "document": "GetBackUpValidate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端UA",
+          "example": "chrome",
+          "member": "string",
+          "name": "ClientUA",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接口名",
+          "example": "getInfo",
+          "member": "string",
+          "name": "Interface",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "登陆的skey",
+          "example": "LpZhb4CdVm5*HP9w1vji6xn3u4QIg3i*4czhRfifHI0",
+          "member": "string",
+          "name": "Skey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端IP",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "ClientIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主账号",
+          "example": "1000023434",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBackUpValidateResponse": {
+      "document": "GetBackUpValidate返回参数结构体",
+      "members": [
+        {
+          "document": "人脸校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FaceIdValidInfo",
+          "name": "FaceId",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "手机校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhoneValidInfo",
+          "name": "Phone",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "微信校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WeChatValidInfo",
+          "name": "Wechat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TokenValidInfo",
+          "name": "Token",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "软Token校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StokenValidInfo",
+          "name": "Stoken",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "邮箱校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MailValidInfo",
+          "name": "Mail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MailValidInfo": {
+      "document": "邮箱备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PhoneData": {
+      "document": "备选电话详情",
+      "members": [
+        {
+          "default": "",
+          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PhoneValidInfo": {
+      "document": "电话备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PhoneData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StokenData": {
+      "document": "软token参数",
+      "members": [
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "联合Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "UionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StokenValidInfo": {
+      "document": "软Token备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "软token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "StokenData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenData": {
+      "document": "Token参数",
+      "members": [
+        {
+          "default": "",
+          "document": "token sn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tokensn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenValidInfo": {
+      "document": "Token备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TokenData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WeChatData": {
+      "document": "微信参数",
+      "members": [
+        {
+          "default": "",
+          "document": "微信临时code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tmpcode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NickName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否有openId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "HasOpenId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WeChatValidInfo": {
+      "document": "微信备选验证详情",
+      "members": [
+        {
+          "default": "",
+          "document": "能否校验",
+          "member": "uint64",
+          "name": "CanAuth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "WeChatData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -739,6 +739,15 @@
           "name": "PeriodRetain",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例购买渠道(\"cdn\" 等)",
+          "example": "\"\"",
+          "member": "string",
+          "name": "BuyingChannel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -26,12 +26,15 @@ Output:
                             }
                         ],
                         "Status": "xx",
+                        "SpecId": "xx",
                         "EnableConfigInternet": true,
                         "ConfigServiceIp": "xx",
                         "StorageCapacity": 0,
                         "EnvName": "xx",
+                        "EnvReplica": 0,
                         "ConfigInternetServiceIp": "xx",
-                        "AdminServiceIp": "xx"
+                        "AdminServiceIp": "xx",
+                        "RunningCount": 0
                     }
                 ],
                 "Type": "xx",
@@ -49,6 +52,7 @@ Output:
                 "InstanceId": "xx",
                 "EnableConsoleInternet": true,
                 "EngineRegion": "xx",
+                "ConfigInfoVisible": true,
                 "Name": "xx",
                 "ServiceGovernanceInfos": [
                     {
@@ -65,7 +69,11 @@ Output:
                                 "BoundClusterType": "xx"
                             }
                         ],
-                        "EngineRegion": "xx"
+                        "AuthOpen": true,
+                        "EngineRegion": "xx",
+                        "Features": [
+                            "xx"
+                        ]
                     }
                 ],
                 "StorageCapacity": 0,

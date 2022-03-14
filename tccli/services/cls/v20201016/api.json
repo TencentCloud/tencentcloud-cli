@@ -24,6 +24,12 @@
       "name": "创建采集规则配置",
       "output": "CreateConfigResponse"
     },
+    "CreateConfigExtra": {
+      "document": "本接口用于创建特殊采集配置任务",
+      "input": "CreateConfigExtraRequest",
+      "name": "创建特殊采集配置任务",
+      "output": "CreateConfigExtraResponse"
+    },
     "CreateConsumer": {
       "document": "本接口用于创建投递任务",
       "input": "CreateConsumerRequest",
@@ -84,6 +90,12 @@
       "name": "删除采集规则配置",
       "output": "DeleteConfigResponse"
     },
+    "DeleteConfigExtra": {
+      "document": "本接口用于删除特殊采集规则配置",
+      "input": "DeleteConfigExtraRequest",
+      "name": "删除特殊采集规则配置",
+      "output": "DeleteConfigExtraResponse"
+    },
     "DeleteConfigFromMachineGroup": {
       "document": "删除应用到机器组的采集配置",
       "input": "DeleteConfigFromMachineGroupRequest",
@@ -143,6 +155,12 @@
       "input": "DescribeAlarmsRequest",
       "name": "获取告警策略列表",
       "output": "DescribeAlarmsResponse"
+    },
+    "DescribeConfigExtras": {
+      "document": "本接口用于获取特殊采集配置",
+      "input": "DescribeConfigExtrasRequest",
+      "name": "获取特殊采集配置",
+      "output": "DescribeConfigExtrasResponse"
     },
     "DescribeConfigMachineGroups": {
       "document": "获取采集规则配置所绑定的机器组",
@@ -257,6 +275,12 @@
       "input": "ModifyConfigRequest",
       "name": "修改采集规则配置",
       "output": "ModifyConfigResponse"
+    },
+    "ModifyConfigExtra": {
+      "document": "本接口用于修改特殊采集配置任务",
+      "input": "ModifyConfigExtraRequest",
+      "name": "修改特殊采集配置任务",
+      "output": "ModifyConfigExtraResponse"
     },
     "ModifyConsumer": {
       "document": "本接口用于修改投递任务",
@@ -893,6 +917,202 @@
       ],
       "usage": "both"
     },
+    "ConfigExtraInfo": {
+      "document": "特殊采集规则配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "采集规则扩展配置ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "ConfigExtraId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采集规则名称",
+          "example": "tb-xxx1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型：container_stdout、container_file、host_file",
+          "example": "container_stdout",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点文件配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostFileInfo",
+          "name": "HostFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器文件路径信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerFileInfo",
+          "name": "ContainerFile",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器标准输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerStdoutInfo",
+          "name": "ContainerStdout",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRule",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采集黑名单路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExcludePathInfo",
+          "name": "ExcludePaths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2020-02-16 17:01:50",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2020-02-16 17:01:50",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自建采集配置标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "label_k8s",
+          "member": "string",
+          "name": "ConfigFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志集name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "LogsetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志主题name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ConfigInfo": {
       "document": "采集规则配置信息",
       "members": [
@@ -1020,6 +1240,224 @@
           "name": "MetaFields",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "TagJsonNotTiled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerFileInfo": {
+      "document": "自建k8s-容器文件路径信息",
+      "members": [
+        {
+          "default": "",
+          "document": "namespace可以多个，用分隔号分割,例如A,B",
+          "example": "kube-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器名称",
+          "example": "container1",
+          "member": "string",
+          "name": "Container",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件夹",
+          "example": "/var/log/tmep",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志名称",
+          "example": "*.log",
+          "member": "string",
+          "name": "FilePattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1=value1\"]",
+          "member": "string",
+          "name": "IncludeLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerWorkLoadInfo",
+          "name": "WorkLoad",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kube-system",
+          "member": "string",
+          "name": "ExcludeNamespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1=value1\"]",
+          "member": "string",
+          "name": "ExcludeLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerStdoutInfo": {
+      "document": "自建k8s-容器标准输出信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否所有容器",
+          "example": "true / false",
+          "member": "bool",
+          "name": "AllContainers",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "container为空表所有的，不为空采集指定的容器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kube-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1=value1\"]",
+          "member": "string",
+          "name": "IncludeLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerWorkLoadInfo",
+          "name": "WorkLoads",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kube-system",
+          "member": "string",
+          "name": "ExcludeNamespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "需要排除的pod标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1=value1\"]",
+          "member": "string",
+          "name": "ExcludeLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerWorkLoadInfo": {
+      "document": "自建k8s-工作负载信息",
+      "members": [
+        {
+          "default": "",
+          "document": "工作负载的类型",
+          "example": "daemonset",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作负载的名称",
+          "example": "tke-log-agent",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kube-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1237,6 +1675,186 @@
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigExtraRequest": {
+      "document": "CreateConfigExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
+          "example": "table-xxx1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型：container_stdout、container_file、host_file",
+          "example": "container_stdout",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "采集配置标",
+          "example": "label_k8s",
+          "member": "string",
+          "name": "ConfigFlag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集name",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "LogsetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点文件配置信息",
+          "example": "无",
+          "member": "HostFileInfo",
+          "name": "HostFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器文件路径信息",
+          "example": "无",
+          "member": "ContainerFileInfo",
+          "name": "ContainerFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器标准输出信息",
+          "example": "无",
+          "member": "ContainerStdoutInfo",
+          "name": "ContainerStdout",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "日志格式化方式",
+          "example": "无",
+          "member": "string",
+          "name": "LogFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "采集黑名单路径列表",
+          "example": "无",
+          "member": "ExcludePathInfo",
+          "name": "ExcludePaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户自定义采集规则，Json格式序列化的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定的机器组id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定的机器组id列表",
+          "example": "[\"11\",\"22\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigExtraResponse": {
+      "document": "CreateConfigExtra返回参数结构体",
+      "members": [
+        {
+          "document": "采集配置扩展信息ID",
+          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "ConfigExtraId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1990,6 +2608,33 @@
       ],
       "type": "object"
     },
+    "DeleteConfigExtraRequest": {
+      "document": "DeleteConfigExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "采集规则扩展配置ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "ConfigExtraId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigExtraResponse": {
+      "document": "DeleteConfigExtra返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConfigFromMachineGroupRequest": {
       "document": "DeleteConfigFromMachineGroup请求参数结构体",
       "members": [
@@ -2354,6 +2999,69 @@
           "document": "符合查询条件的告警策略数目。",
           "example": "0",
           "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigExtrasRequest": {
+      "document": "DescribeConfigExtras请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "支持的key： topicId,name, configExtraId, machineGroupId",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页的限制数目，默认值为20，最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigExtrasResponse": {
+      "document": "DescribeConfigExtras返回参数结构体",
+      "members": [
+        {
+          "document": "采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigExtraInfo",
+          "name": "Configs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "过滤到的总数目",
+          "example": "1",
+          "member": "uint64",
           "name": "TotalCount",
           "required": true,
           "type": "int",
@@ -3729,6 +4437,42 @@
       ],
       "type": "object"
     },
+    "HostFileInfo": {
+      "document": "自建k8s-节点文件配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志文件夹",
+          "example": "/xxx/xxx",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志文件名",
+          "example": "**.log",
+          "member": "string",
+          "name": "FilePattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "metadata信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key1=value1\",\"key2=value2\"]",
+          "member": "string",
+          "name": "CustomLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "JsonInfo": {
       "document": "JSON类型描述",
       "members": [
@@ -4502,6 +5246,177 @@
       ],
       "type": "object"
     },
+    "ModifyConfigExtraRequest": {
+      "document": "ModifyConfigExtra请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "采集配置扩展信息id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "ConfigExtraId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
+          "example": "table-xxx1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点文件配置信息",
+          "example": "无",
+          "member": "HostFileInfo",
+          "name": "HostFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器文件路径信息",
+          "example": "无",
+          "member": "ContainerFileInfo",
+          "name": "ContainerFile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器标准输出信息",
+          "example": "无",
+          "member": "ContainerStdoutInfo",
+          "name": "ContainerStdout",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志格式化方式",
+          "example": "无",
+          "member": "string",
+          "name": "LogFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "采集黑名单路径列表",
+          "example": "无",
+          "member": "ExcludePathInfo",
+          "name": "ExcludePaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户自定义采集规则，Json格式序列化的字符串",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型：container_stdout、container_file、host_file",
+          "example": "container_stdout",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "机器组ID",
+          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自建采集配置标",
+          "example": "label_k8s",
+          "member": "string",
+          "name": "ConfigFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集ID",
+          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志集name",
+          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题name",
+          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigExtraResponse": {
+      "document": "ModifyConfigExtra返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyConfigRequest": {
       "document": "ModifyConfig请求参数结构体",
       "members": [
@@ -4606,7 +5521,7 @@
         },
         {
           "default": "",
-          "document": "投递任务是否生效",
+          "document": "投递任务是否生效，默认不生效",
           "example": "false",
           "member": "bool",
           "name": "Effective",

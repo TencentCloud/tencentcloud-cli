@@ -7784,6 +7784,7 @@
         {
           "default": "",
           "document": "网络探测实例`ID`。形如：`netd-12345678`",
+          "example": "netd-12345678",
           "member": "string",
           "name": "NetDetectId",
           "required": true,

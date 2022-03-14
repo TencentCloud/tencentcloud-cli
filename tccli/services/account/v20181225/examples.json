@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeNickname": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=DescribeNickname\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Nickname\": \"nick\",\n        \"DisplayName\": \"nick\",\n        \"RequestId\": \"5ffd9f57-c6d6-4ad4-abf3-9defbe5ee73a\"\n    }\n}",
+        "title": "获取用户昵称"
+      }
+    ],
+    "GetBackUpValidate": [
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=GetBackUpValidate\n&OwnerUin=100000012\n&Interface=getInfo\n&ClientUA=chrome\n&Skey=LpZhb4CdVm5\n&ClientIP=0.0.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FaceId\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Phone\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Wechat\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Token\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Stoken\": {\n            \"CanAuth\": 1,\n            \"Data\": null\n        },\n        \"Mail\": {\n            \"CanAuth\": 1\n        },\n        \"RequestId\": \"69633ebf-4770-4024-a5f9-3b85d17e1cd0\"\n    }\n}",
+        "title": "获取备选校验方式"
+      }
+    ]
+  },
+  "version": "1.0"
+}

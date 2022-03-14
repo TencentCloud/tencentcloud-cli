@@ -888,6 +888,12 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"BillType\": \"TRADE\",\n    \"BillDate\": \"2022-02-12\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0de6aef6-4e1d-463e-a793-057491ca1bcf\",\n        \"Result\": {\n            \"DownloadUrl\": \"\",\n            \"HashValue\": \"\",\n            \"HashType\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "查询账单下载成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"Environment\": \"字符串\",\n    \"BillType\": \"字符串\",\n    \"BillDate\": \"字符串\",\n    \"ChannelMerchantId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2fe8f90-667d-4593-a57f-c345e69af8b2\",\n        \"Result\": {\n            \"DownloadUrl\": \"\",\n            \"HashValue\": \"\",\n            \"HashType\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "下载成功的示例"
       }
     ],
     "QueryOpenBankExternalSubMerchantBankAccount": [

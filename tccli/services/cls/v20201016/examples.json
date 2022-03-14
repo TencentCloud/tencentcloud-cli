@@ -32,6 +32,14 @@
         "title": "创建采集规则配置"
       }
     ],
+    "CreateConfigExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigExtra\n<公共请求参数>\n\n{\n    \"Name\": \"testname\",\n    \"TopicId\": \"xxxxxx-xxx-xxxxxx\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"UserDefineRule\": \"xxxxxx\",\n    \"GroupId\": \"xxxxx\",\n    \"ConfigFlag\": \"label_k8s\",\n    \"LogsetId\": \"xxxxx\",\n    \"LogsetName\": \"xxxxxx\",\n    \"TopicName\": \"xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigExtraId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建特殊采集配置任务"
+      }
+    ],
     "CreateConsumer": [
       {
         "document": "",
@@ -112,6 +120,14 @@
         "title": "删除采集规则配置"
       }
     ],
+    "DeleteConfigExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"xxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除特殊采集规则配置"
+      }
+    ],
     "DeleteConfigFromMachineGroup": [
       {
         "document": "",
@@ -190,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarms\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Alarms\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取告警策略列表"
+      }
+    ],
+    "DescribeConfigExtras": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigExtras\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"configExtraId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigExtraId\": \"xxxx-xx-xx-xx-yyyyyyy1\",\n                \"Name\": \"testname\",\n                \"TopicId\": \"xxxxxx-xxx-xxxxxx\",\n                \"Type\": \"host_file\",\n                \"HostFile\": {\n                    \"LogPath\": \"/var/log/tmep\",\n                    \"FilePattern\": \"*.log\",\n                    \"CustomLabels\": [\n                        \"key1=value1\",\n                        \"key=value2\"\n                    ]\n                },\n                \"LogType\": \"minimalist_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"date\",\n                    \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n                    \"Delimiter\": \"|\",\n                    \"LogRegex\": \".*\",\n                    \"BeginRegex\": \"^\",\n                    \"Keys\": [\n                        \"date\",\n                        \"\",\n                        \"content\"\n                    ],\n                    \"FilterKeyRegex\": [\n                        {\n                            \"Key\": \"xxx\",\n                            \"Regex\": \"ssss\"\n                        }\n                    ],\n                    \"UnMatchLogKey\": \"testlog\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Backtracking\": -1\n                },\n                \"ExcludePaths\": [\n                    {\n                        \"Type\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"UserDefineRule\": \"xxxxxx\",\n                \"UpdateTime\": \"2017-08-08 12:12:12\",\n                \"CreateTime\": \"2017-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取特殊采集配置"
       }
     ],
     "DescribeConfigMachineGroups": [
@@ -342,6 +366,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"Name\": \"testname\",\n    \"Path\": \"/data/nginx/log/access.log\",\n    \"LogType\": \"delimiter_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"xxxx\"\n            }\n        ],\n        \"UnMatchUpLoadSwitch\": true,\n        \"UnMatchLogKey\": \"testlog\",\n        \"Backtracking\": 1048576\n    },\n    \"UserDefineRule\": \"xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改采集规则配置"
+      }
+    ],
+    "ModifyConfigExtra": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"Name\": \"testname\",\n    \"TopicId\": \"xxxxxx-xxx-xxxxxx\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"UserDefineRule\": \"xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\"\n    }\n}",
+        "title": "修改特殊采集配置任务"
       }
     ],
     "ModifyConsumer": [

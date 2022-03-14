@@ -13217,7 +13217,7 @@
           "example": "商品支付",
           "member": "string",
           "name": "GoodsName",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13299,7 +13299,7 @@
         },
         {
           "default": "",
-          "document": "收款方绑卡序列号。\n当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付平台时，下发的绑卡序列号。",
+          "document": "收款方绑卡序列号。\n当渠道为TENPAY，付款方式为EBANK_PAYMENT时，必填，上送收款方入驻云企付平台时，下发的绑卡序列号。",
           "example": "10232043567",
           "member": "string",
           "name": "BindSerialNo",
@@ -13457,7 +13457,7 @@
           "example": "14.17.22.32",
           "member": "string",
           "name": "PayerClientIp",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13467,7 +13467,7 @@
           "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.3",
           "member": "string",
           "name": "PayerUa",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19453,13 +19453,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "查询对账文件下载响应对象。",
+          "document": "查询对账文件下载响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QueryOpenBankDownLoadUrlResult",
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
