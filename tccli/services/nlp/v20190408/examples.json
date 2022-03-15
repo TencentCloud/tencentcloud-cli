@@ -206,6 +206,14 @@
         "title": "句子相似度示例"
       }
     ],
+    "TextSimilarityPro": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=TextSimilarityPro\n&SrcText=\"北京到上海的火车票\"\n&TargetText.0=\"北京到上海的飞机票\"\n&TargetText.1=\"北京到上海的高铁票\"\n&TargetText.2=\"上海到北京的火车票\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Similarity\": [\n            {\n                \"Score\": 0.9943903139727261,\n                \"Text\": \"北京到上海的飞机票\"\n            },\n            {\n                \"Score\": 0.9823085983303148,\n                \"Text\": \"北京到上海的高铁票\"\n            },\n            {\n                \"Score\": 0.6515947587356785,\n                \"Text\": \"上海到北京的火车票\"\n            }\n        ],\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\"\n    }\n}",
+        "title": "句子相似度示例"
+      }
+    ],
     "UpdateDict": [
       {
         "document": "",

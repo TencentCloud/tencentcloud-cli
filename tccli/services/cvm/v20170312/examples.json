@@ -379,7 +379,7 @@
     "InquiryPriceModifyInstancesChargeType": [
       {
         "document": "本示例用于切换一个实例的计费模式询价。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceModifyInstancesChargeType\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceChargeType=PREPAID\r\n&InstanceChargePrepaid.Period=1\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 720,\n                \"DiscountPrice\": 720\n            }\n        },\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "切换实例的计费模式询价"
       }

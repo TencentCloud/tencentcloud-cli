@@ -132,6 +132,12 @@
       "name": "句子相似度",
       "output": "TextSimilarityResponse"
     },
+    "TextSimilarityPro": {
+      "document": "句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过128字符）的相似度计算，长文本的相似度计算也即将推出。\n\n鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。\n\n接口将以句子数量为单位消耗资源包，而不是调用接口次数为单位。",
+      "input": "TextSimilarityProRequest",
+      "name": "句子相似度高级版",
+      "output": "TextSimilarityProResponse"
+    },
     "UpdateDict": {
       "document": "修改自定义词库元数据信息，包括名称、描述。",
       "input": "UpdateDictRequest",
@@ -1573,6 +1579,51 @@
           "member": "string",
           "name": "ResultText",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextSimilarityProRequest": {
+      "document": "TextSimilarityPro请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要与目标句子计算相似度的源句子（仅支持UTF-8格式，不超过128字符）",
+          "example": "天气不错",
+          "member": "string",
+          "name": "SrcText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标句子（仅支持UTF-8格式，不超过128字符）",
+          "example": "你好",
+          "member": "string",
+          "name": "TargetText",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TextSimilarityProResponse": {
+      "document": "TextSimilarityPro返回参数结构体",
+      "members": [
+        {
+          "document": "每个目标句子与源句子的相似度分值，按照分值降序排列",
+          "example": "无",
+          "member": "Similarity",
+          "name": "Similarity",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

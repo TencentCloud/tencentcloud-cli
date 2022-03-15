@@ -4036,6 +4036,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4043,7 +4044,8 @@
         },
         {
           "default": "",
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -4051,7 +4053,8 @@
         },
         {
           "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。<dx-alert infotype=\"explain\" title=\"\">若指定实例的付费模式为预付费则该参数必传。</dx-alert>",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -4065,8 +4068,10 @@
       "members": [
         {
           "document": "该参数表示对应配置实例转换计费模式的价格。",
+          "example": "无",
           "member": "Price",
           "name": "Price",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6526,7 +6531,7 @@
         },
         {
           "default": "",
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
