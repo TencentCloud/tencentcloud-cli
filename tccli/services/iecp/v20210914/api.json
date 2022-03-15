@@ -1755,6 +1755,15 @@
           "name": "ServiceCIDR",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启监控。目前内存中权限开启联系产品开通白名单",
+          "example": "无",
+          "member": "bool",
+          "name": "OpenCloudMonitor",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

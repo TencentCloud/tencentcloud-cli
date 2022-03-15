@@ -56,3 +56,33 @@ Output:
 }
 ```
 
+**Example 3: 下载成功的示例**
+
+
+
+Input: 
+
+```
+tccli cpdp QueryOpenBankDownLoadUrl --cli-unfold-argument  \
+    --Environment 字符串 \
+    --BillType 字符串 \
+    --BillDate 字符串 \
+    --ChannelMerchantId 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "f2fe8f90-667d-4593-a57f-c345e69af8b2",
+        "Result": {
+            "DownloadUrl": "",
+            "HashValue": "",
+            "HashType": ""
+        },
+        "ErrCode": "SUCCESS",
+        "ErrMessage": "成功"
+    }
+}
+```
+

@@ -26,6 +26,7 @@ Output:
                 "HostId": "host-ey16rkyg",
                 "HostType": "HS1",
                 "HostName": "bibibibib-111",
+                "CageId": "",
                 "HostChargeType": "PREPAID",
                 "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
                 "CreatedTime": "2018-01-04T09:45:39Z",

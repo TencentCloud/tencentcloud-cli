@@ -131,8 +131,8 @@
     "DescribeHosts": [
       {
         "document": "查询一个或多个CDH实例的详细信息",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHosts\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-2\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HostSet\": [\n            {\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"ProjectId\": 0\n                },\n                \"HostId\": \"host-ey16rkyg\",\n                \"HostType\": \"HS1\",\n                \"HostName\": \"bibibibib-111\",\n                \"HostChargeType\": \"PREPAID\",\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"CreatedTime\": \"2018-01-04T09:45:39Z\",\n                \"ExpiredTime\": \"2025-05-04T09:45:42Z\",\n                \"InstanceIds\": [],\n                \"HostState\": \"RUNNING\",\n                \"HostResource\": {\n                    \"CpuTotal\": 24,\n                    \"CpuAvailable\": 24,\n                    \"MemTotal\": 56.0,\n                    \"MemAvailable\": 56.0,\n                    \"DiskTotal\": 1200,\n                    \"DiskAvailable\": 1200,\n                    \"DiskType\": \"LOCAL_BASIC\"\n                }\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHosts\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-2\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HostSet\": [\n            {\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"ProjectId\": 0\n                },\n                \"HostId\": \"host-ey16rkyg\",\n                \"HostType\": \"HS1\",\n                \"HostName\": \"bibibibib-111\",\n                \"CageId\": \"\",\n                \"HostChargeType\": \"PREPAID\",\n                \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n                \"CreatedTime\": \"2018-01-04T09:45:39Z\",\n                \"ExpiredTime\": \"2025-05-04T09:45:42Z\",\n                \"InstanceIds\": [],\n                \"HostState\": \"RUNNING\",\n                \"HostResource\": {\n                    \"CpuTotal\": 24,\n                    \"CpuAvailable\": 24,\n                    \"MemTotal\": 56.0,\n                    \"MemAvailable\": 56.0,\n                    \"DiskTotal\": 1200,\n                    \"DiskAvailable\": 1200,\n                    \"DiskType\": \"LOCAL_BASIC\"\n                }\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询CDH实例列表"
       }
     ],
@@ -245,7 +245,7 @@
     "DescribeInstancesStatus": [
       {
         "document": "本示例用于查看实例状态列表中的两个实例。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstancesStatus\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&Offset=0\r\n&Limit=2\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstancesStatus\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&Offset=0\n&Limit=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceStatusSet\": [\n            {\n                \"InstanceId\": \"ins-r8hr2upy\",\n                \"InstanceState\": \"RUNNING\"\n            },\n            {\n                \"InstanceId\": \"ins-5d8a23rs\",\n                \"InstanceState\": \"STOPPED\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查看实例状态列表"
       }
@@ -379,7 +379,7 @@
     "InquiryPriceModifyInstancesChargeType": [
       {
         "document": "本示例用于切换一个实例的计费模式询价。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceModifyInstancesChargeType\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceChargeType=PREPAID\r\n&InstanceChargePrepaid.Period=1\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 720,\n                \"DiscountPrice\": 720\n            }\n        },\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "切换实例的计费模式询价"
       }

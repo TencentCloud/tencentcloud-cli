@@ -50,3 +50,26 @@ Output:
 }
 ```
 
+**Example 3: 创建边缘集群**
+
+
+
+Input: 
+
+```
+tccli iecp CreateEdgeUnitCloud --cli-unfold-argument  \
+    --Name ddddqq \
+    --K8sVersion 1.18.2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "dbcda022-d686-4972-a359-9707eeaca26d",
+        "ClusterId": "cls-jpc2ub99",
+        "EdgeUnitId": 100027
+    }
+}
+```
+

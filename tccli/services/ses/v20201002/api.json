@@ -66,6 +66,12 @@
       "name": "删除发信模板",
       "output": "DeleteEmailTemplateResponse"
     },
+    "DeleteReceiver": {
+      "document": "根据收件id删除收件人列表,同时删除列表中的所有收件邮箱",
+      "input": "DeleteReceiverRequest",
+      "name": "删除收件人列表",
+      "output": "DeleteReceiverResponse"
+    },
     "GetEmailIdentity": {
       "document": "获取某个发信域名的配置详情",
       "input": "GetEmailIdentityRequest",
@@ -734,6 +740,33 @@
     },
     "DeleteEmailTemplateResponse": {
       "document": "DeleteEmailTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReceiverRequest": {
+      "document": "DeleteReceiver请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收件人列表id，创建收件人列表时会返回",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReceiverResponse": {
+      "document": "DeleteReceiver返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

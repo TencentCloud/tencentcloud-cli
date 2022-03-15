@@ -76,6 +76,12 @@
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"VpcId\": \"\",\n    \"ServiceCIDR\": \"\",\n    \"Name\": \"test\",\n    \"K8sVersion\": \"1.16.7\",\n    \"PodCIDR\": \"\",\n    \"Description\": \"测试字符串\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9db252c-5dd2-448c-a440-86310ca3df22\",\n        \"ClusterId\": \"cls-f3cj2nxz\",\n        \"EdgeUnitId\": 3\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitCloud\n<公共请求参数>\n\n{\n    \"Name\": \"ddddqq\",\n    \"K8sVersion\": \"1.18.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbcda022-d686-4972-a359-9707eeaca26d\",\n        \"ClusterId\": \"cls-jpc2ub99\",\n        \"EdgeUnitId\": 100027\n    }\n}",
+        "title": "创建边缘集群"
       }
     ],
     "CreateNamespace": [

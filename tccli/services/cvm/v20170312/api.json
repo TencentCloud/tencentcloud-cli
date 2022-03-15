@@ -1975,6 +1975,7 @@
         {
           "default": "",
           "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>project-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。项目ID形如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>host-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>CDH实例状态</strong>】进行过滤。（PENDING：创建中 | LAUNCH_FAILURE：创建失败 | RUNNING：运行中 | EXPIRED：已过期）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1983,6 +1984,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1991,6 +1993,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2004,15 +2007,19 @@
       "members": [
         {
           "document": "符合查询条件的cdh实例总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "cdh实例详细信息列表",
+          "example": "无",
           "member": "HostItem",
           "name": "HostSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2493,6 +2500,7 @@
         {
           "default": "",
           "document": "按照一个或者多个实例ID查询。实例ID形如：`ins-11112222`。此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`ids.N`一节）。每次请求的实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -2501,6 +2509,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2509,6 +2518,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "2",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2522,15 +2532,19 @@
       "members": [
         {
           "document": "符合条件的实例状态数量。",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "[实例状态](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) 列表。",
+          "example": "无",
           "member": "InstanceStatus",
           "name": "InstanceStatusSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4022,6 +4036,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4029,7 +4044,8 @@
         },
         {
           "default": "",
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -4037,7 +4053,8 @@
         },
         {
           "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。<dx-alert infotype=\"explain\" title=\"\">若指定实例的付费模式为预付费则该参数必传。</dx-alert>",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -4051,8 +4068,10 @@
       "members": [
         {
           "document": "该参数表示对应配置实例转换计费模式的价格。",
+          "example": "无",
           "member": "Price",
           "name": "Price",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6512,7 +6531,7 @@
         },
         {
           "default": "",
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",

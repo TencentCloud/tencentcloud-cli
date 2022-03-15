@@ -94,6 +94,14 @@
         "title": "删除发信模板"
       }
     ],
+    "DeleteReceiver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReceiver\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除收件人列表"
+      }
+    ],
     "GetEmailIdentity": [
       {
         "document": "",

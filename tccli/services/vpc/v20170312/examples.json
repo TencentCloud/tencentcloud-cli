@@ -721,7 +721,7 @@
     "DeleteNetDetect": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetDetect\r\n&Version=2017-03-12\r\n&NetDetectId=netd-12345678\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetDetect\n&NetDetectId=netd-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa316a4-07d2-4355-b87d-40b7f22972b0\"\n    }\n}",
         "title": "根据ID删除网络探测"
       }

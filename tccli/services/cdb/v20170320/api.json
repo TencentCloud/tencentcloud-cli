@@ -5482,7 +5482,7 @@
         },
         {
           "default": "",
-          "document": "代理ID",
+          "document": "代理组ID",
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",
