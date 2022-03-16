@@ -333,7 +333,7 @@
     "CreateDhcpIp": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDhcpIp\r\n&VpcId=vpc-12345678\r\n&SubnetId=subnet-12345678\r\n&DhcpIpName=test\r\n&SecondaryPrivateIpAddressCount=1\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDhcpIp\n&VpcId=vpc-12345678\n&SubnetId=subnet-12345678\n&DhcpIpName=test\n&SecondaryPrivateIpAddressCount=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "创建DhcpIp"
       }
@@ -1079,19 +1079,19 @@
     "DescribeDhcpIps": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "查询DhcpIp列表"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\r\n&DhcpIpIds.0=dhcpip-12345678\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&DhcpIpIds.0=dhcpip-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "根据DhcpIpIds查询DhcpIp列表"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\r\n&Filters.0.dhcpip-id.0=dhcpip-12345678\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&Filters.0.Name=dhcpip-id\n&Filters.0.Values.0=dhcpip-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "根据Filters查询DhcpIp列表"
       }

@@ -229,7 +229,7 @@
       "output": "DescribeApiKeyResponse"
     },
     "DescribeApiKeysStatus": {
-      "document": "本接口（DescribeApiKeysStatus）用于查询密钥列表。\n当用户创建了多个密钥对时，可使用本接口查询一个或多个 API 密钥信息，本接口不会显示密钥 Key。",
+      "document": "本接口（DescribeApiKeysStatus）用于查询密钥列表。\n当用户创建了多个密钥对时，可使用本接口查询一个或多个 API 密钥信息。",
       "input": "DescribeApiKeysStatusRequest",
       "name": "查询密钥列表",
       "output": "DescribeApiKeysStatusResponse"
@@ -5212,6 +5212,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5220,6 +5221,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5228,6 +5230,7 @@
         {
           "default": "",
           "document": "过滤条件。支持AccessKeyId、AccessKeySecret、SecretName、NotUsagePlanId、Status、KeyWord（ 可以匹配name或者path）。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5241,8 +5244,10 @@
       "members": [
         {
           "document": "密钥列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiKeysStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

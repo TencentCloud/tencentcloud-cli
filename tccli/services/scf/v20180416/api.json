@@ -4541,6 +4541,7 @@
         {
           "default": "",
           "document": "函数数组",
+          "example": "func1",
           "member": "string",
           "name": "Functions",
           "required": true,
@@ -4550,6 +4551,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -4559,11 +4561,32 @@
         {
           "default": "",
           "document": "命名空间函数个数",
+          "example": "1",
           "member": "int64",
           "name": "FunctionsCount",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命名空间配额总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalConcurrencyMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间配额使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalAllocatedConcurrencyMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

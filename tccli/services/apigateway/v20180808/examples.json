@@ -307,7 +307,7 @@
     "DescribeApiKeysStatus": [
       {
         "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeApiKeysStatus\r\n&AccessKeyId=AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83\r\n&<公共请求参数>",
+        "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeApiKeysStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ApiKeySet\": [\n                {\n                    \"AccessKeyId\": \"AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD\",\n                    \"AccessKeySecret\": \"qYSyjJAn6BNAmoRpFs93HhtchFCGy4K3zrC2WjR\",\n                    \"AccessKeyType\": \"auto\",\n                    \"SecretName\": \"dd\",\n                    \"Status\": 1,\n                    \"CreatedTime\": \"2020-02-26T06:09:44Z\",\n                    \"ModifiedTime\": \"2020-02-26T06:09:44Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"6096c75d-1562-44be-a4af-75b5e235d319\"\n    }\n}",
         "title": "DescribeApiKeysStatus"
       }

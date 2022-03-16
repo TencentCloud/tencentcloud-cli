@@ -52,6 +52,10 @@ Output:
             "yDxMqUyKQDAIJ2UuO4zjE1trvvaigGvi",
             "yDxMqUyKQDAIJ2UuO4zjE1trvvaigGv2"
         ],
+        "PreviewUrls": [
+            "",
+            ""
+        ],
         "ErrorMessages": [
             "",
             ""
@@ -96,14 +100,15 @@ Output:
 {
     "Response": {
         "CustomerData": [
-            "",
             ""
         ],
         "FlowIds": [
             "yDxMqUyKQDAIJ2UuO4zjE1trvvaigGvi"
         ],
+        "PreviewUrls": [
+            ""
+        ],
         "ErrorMessages": [
-            "",
             ""
         ],
         "RequestId": "s1629442787650001803"

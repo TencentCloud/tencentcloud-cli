@@ -4729,6 +4729,7 @@
         {
           "default": "",
           "document": "私有网络`ID`。",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4737,6 +4738,7 @@
         {
           "default": "",
           "document": "子网`ID`。",
+          "example": "subnet-12345678",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -4745,6 +4747,7 @@
         {
           "default": "",
           "document": "`DhcpIp`名称。",
+          "example": "test",
           "member": "string",
           "name": "DhcpIpName",
           "required": true,
@@ -4753,6 +4756,7 @@
         {
           "default": "",
           "document": "新申请的内网IP地址个数。总数不能超过64个。",
+          "example": "1",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
           "required": false,
@@ -4766,8 +4770,10 @@
       "members": [
         {
           "document": "新创建的`DhcpIp`信息",
+          "example": "无",
           "member": "DhcpIp",
           "name": "DhcpIpSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9203,6 +9209,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li>vpc-id - String - （过滤条件）VPC实例ID。</li>\n<li>vm-ip - String - （过滤条件）基础网络云服务器IP。</li>",
+          "example": "无",
           "member": "FilterObject",
           "name": "Filters",
           "required": false,
@@ -9211,6 +9218,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -9219,6 +9227,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "20",
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -9232,15 +9241,19 @@
       "members": [
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "私有网络和基础网络互通设备。",
+          "example": "无",
           "member": "ClassicLinkInstance",
           "name": "ClassicLinkInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9544,6 +9557,7 @@
         {
           "default": "",
           "document": "DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。",
+          "example": "[\"dhcpip-12345678\"]",
           "member": "string",
           "name": "DhcpIpIds",
           "required": false,
@@ -9552,6 +9566,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定DhcpIpIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>\n<li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>\n<li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9560,6 +9575,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9568,6 +9584,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9581,15 +9598,19 @@
       "members": [
         {
           "document": "实例详细信息列表。",
+          "example": "无",
           "member": "DhcpIp",
           "name": "DhcpIpSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -415,7 +415,7 @@
         },
         {
           "default": "",
-          "document": "图库类型， 默认为通用。\n类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。\n3: 针对电商（通用品类）和logo优化。",
+          "document": "图库类型， 默认为通用。\n类型： \n1: 通用图库，以用户输入图提取特征。\n2: 灰度图库，输入图和搜索图均转为灰度图提取特征。\n3: 针对电商（通用品类）和logo优化。\n4: 通用图库v2。\n5: 电商模型。",
           "example": "1",
           "member": "uint64",
           "name": "GroupType",
@@ -460,7 +460,7 @@
         },
         {
           "default": "",
-          "document": "图片名称，最多支持64个字符， \n同一个EntityId，最大支持5张图。如果图片名称已存在，则会更新库中的图片。",
+          "document": "图片名称，最多支持64个字符， \n同一个EntityId，最大支持10张图。如果图片名称已存在，则会更新库中的图片。",
           "example": "name",
           "member": "string",
           "name": "PicName",
@@ -469,7 +469,7 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过2M。  \nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片分辨率不超过1920*1080。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片分辨率不超过4096*4096。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "test.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -478,7 +478,7 @@
         },
         {
           "default": "",
-          "document": "图片 base64 数据，base64 编码后大小不可超过2M。 \n图片分辨率不超过1920*1080。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n图片分辨率不超过4096*4096。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "base64",
           "member": "string",
           "name": "ImageBase64",

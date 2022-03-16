@@ -417,7 +417,7 @@
       "document": "CreateConsoleLoginUrl返回参数结构体",
       "members": [
         {
-          "document": "控制台url",
+          "document": "控制台url，此链接5分钟内有效，且只能访问一次",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -472,6 +472,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -502,6 +511,15 @@
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "ErrorMessages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "预览模式下返回的预览文件url数组",
+          "example": "[\"xx\",\"yy\"]",
+          "member": "string",
+          "name": "PreviewUrls",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -556,7 +574,7 @@
         },
         {
           "default": "",
-          "document": "签署完成后H5引导页跳转URL",
+          "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效",
           "example": "“https://qq.com”",
           "member": "string",
           "name": "JumpUrl",
@@ -1158,6 +1176,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。\n默认为false，即签署人位于同一个渠道应用号下；",
+          "example": "false",
+          "member": "bool",
+          "name": "NotChannelOrganization",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1273,7 +1301,7 @@
         },
         {
           "default": "",
-          "document": "签署截止时间戳，超过有效签署时间则该签署流程失败",
+          "document": "签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年",
           "example": "截止时间",
           "member": "int64",
           "name": "Deadline",
@@ -1313,7 +1341,7 @@
         },
         {
           "default": "",
-          "document": "多个签署人信息",
+          "document": "多个签署人信息，渠道侧目前不支持超过5个签署方信息",
           "example": "签署人信息",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -1872,7 +1900,7 @@
         },
         {
           "default": "",
-          "document": "链接失效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "链接失效时间,默认30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
