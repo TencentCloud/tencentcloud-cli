@@ -15,6 +15,7 @@ tccli ess CreateDocument --cli-unfold-argument  \
     --FlowId 1234 \
     --TemplateId 00033ed4d1********a82a9 \
     --ClientToken 我是token \
+    --NeedPreview True \
     --FormFields.0.ComponentValue 控件填充内容 \
     --FormFields.0.ComponentId 控件ID
 ```
@@ -24,7 +25,8 @@ Output:
 {
     "Response": {
         "RequestId": "xx",
-        "DocumentId": "yDxM6**********KAMwutBsRy"
+        "DocumentId": "yDxM6**********KAMwutBsRy",
+        "PreviewFileUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/xxxxxxxxx"
     }
 }
 ```

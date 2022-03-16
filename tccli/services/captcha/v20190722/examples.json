@@ -67,7 +67,7 @@
     "DescribeCaptchaOperData": [
       {
         "document": "",
-        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaOperData\r\n&CaptchaAppId=201111111\r\n&Start=20191129\r\n&Type=1\r\n&<公共请求参数>",
+        "input": "https://captcha.tencentcloudapi.com/?Action=DescribeCaptchaOperData\n&CaptchaAppId=201111111\n&Start=20191129\n&End=20191129\n&Type=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dab64b7-d526-4a5f-bed6-4c59b53b6d11\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"\",\n        \"Data\": {\n            \"OperDataLoadTimeUnitArray\": [\n                {\n                    \"DateKey\": \"20191202\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 0.9\n                },\n                {\n                    \"DateKey\": \"20191204\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1\n                },\n                {\n                    \"DateKey\": \"20191210\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.2\n                },\n                {\n                    \"DateKey\": \"20191219\",\n                    \"MarketLoadTime\": 0,\n                    \"AppIdLoadTime\": 1.3\n                }\n            ],\n            \"OperDataInterceptUnitArray\": null,\n            \"OperDataTryTimesUnitArray\": null,\n            \"OperDataTryTimesDistributeUnitArray\": null\n        }\n    }\n}",
         "title": "请求和返回示例"
       }

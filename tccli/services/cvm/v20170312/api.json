@@ -4059,6 +4059,15 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。",
+          "example": "false",
+          "member": "bool",
+          "name": "ModifyPortableDataDisk",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6546,6 +6555,15 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。",
+          "example": "无",
+          "member": "bool",
+          "name": "ModifyPortableDataDisk",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

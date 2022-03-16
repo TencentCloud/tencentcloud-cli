@@ -74,7 +74,8 @@ Input:
 
 ```
 tccli vpc DescribeDhcpIps --cli-unfold-argument  \
-    --Filters.0.dhcpip-id dhcpip-12345678
+    --Filters.0.Name dhcpip-id \
+    --Filters.0.Values dhcpip-12345678
 ```
 
 Output: 

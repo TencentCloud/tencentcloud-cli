@@ -144,6 +144,12 @@
       "name": "新手引导扫描接口信息",
       "output": "DescribeGuideScanInfoResponse"
     },
+    "DescribeIPStatusList": {
+      "document": "ip防护状态查询",
+      "input": "DescribeIPStatusListRequest",
+      "name": "ip防护状态查询",
+      "output": "DescribeIPStatusListResponse"
+    },
     "DescribeNatFwInfoCount": {
       "document": "获取当前用户接入nat防火墙的所有子网数及natfw实例个数",
       "input": "DescribeNatFwInfoCountRequest",
@@ -2561,6 +2567,60 @@
       ],
       "type": "object"
     },
+    "DescribeIPStatusListRequest": {
+      "document": "DescribeIPStatusList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产Id",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "IPList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPStatusListResponse": {
+      "document": "DescribeIPStatusList返回参数结构体",
+      "members": [
+        {
+          "document": "ip状态信息",
+          "example": "无",
+          "member": "IPDefendStatus",
+          "name": "StatusList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态码",
+          "example": "1",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态信息",
+          "example": "Success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNatFwInfoCountRequest": {
       "document": "DescribeNatFwInfoCount请求参数结构体",
       "members": [],
@@ -3841,6 +3901,32 @@
         }
       ],
       "type": "object"
+    },
+    "IPDefendStatus": {
+      "document": "ip防护状态",
+      "members": [
+        {
+          "default": "",
+          "document": "ip地址",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护状态   1:防护打开; -1:地址错误; 其他:未防护",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstanceInfo": {
       "document": "// InstanceInfo 实例详情结果\ntype InstanceInfo struct {\n\tAppID        string `json:\"AppId\" gorm:\"column:appid\"`\n\tRegion       string `json:\"Region\" gorm:\"column:region\"`\n\tVPCID        string `json:\"VpcId\" gorm:\"column:vpc_id\"`\n\tSubNetID     string `json:\"SubnetId\" gorm:\"column:subnet_id\"`\n\tInstanceID   string `json:\"InstanceId\" gorm:\"column:instance_id\"`\n\tInstanceName string `json:\"InstanceName\" gorm:\"column:instance_name\"`\n\t//InsType common.CVM 3是cvm实例,4是clb实例,5是eni实例,6是mysql,7是redis,8是NAT,9是VPN,10是ES,11是MARIADB,12是KAFKA\n\tInsType   int    `json:\"InsType\" gorm:\"column:instance_type\"`\n\tPublicIP  string `json:\"PublicIp\" gorm:\"column:public_ip\"`\n\tPrivateIP string `json:\"PrivateIp\" gorm:\"column:ip\"`\n\n\t//规则下发无需管，前端展示用\n\tPortNum          string `json:\"PortNum\" gorm:\"column:port_num\"`\n\tLeakNum          string `json:\"LeakNum\" gorm:\"column:leak_num\"`\n\tResourceGroupNum int    `json:\"ResourceGroupNum\"`\n\tVPCName          string `json:\"VPCName\" gorm:\"column:VPCName\"`\n}\n",

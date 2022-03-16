@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli apigateway DescribeApiKeysStatus --cli-unfold-argument  \
-    --AccessKeyId AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83
-```
+tccli apigateway DescribeApiKeysStatus --cli-unfold-argument ```
 
 Output: 
 ```

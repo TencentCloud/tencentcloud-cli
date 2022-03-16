@@ -10835,7 +10835,7 @@
         },
         {
           "default": "",
-          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主源站类型\n入参支持以下几种类型：\ndomain：域名类型\ndomainv6：域名解析V6类型\ncos：对象存储源站\nip：IP 列表作为源站\nipv6：源站列表为一个单独的 IPv6 地址\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_domain: 支持IP和域名形式源站混填（白名单功能）\nip_domainv6：源站列表为多个 IPv4 地址以及域名解析v6地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nipv6_domainv6：源站列表为多个 IPv6 地址以及域名解析v6地址\ndomain_domainv6：源站列表为多个域名解析v4 地址以及域名解析v6地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\nip_ipv6_domainv6：源站列表为多个 IPv4 地址IPv6 地址以及域名解析v6地址\nip_domain_domainv6：源站列表为多个 IPv4 地址域名解析v4 地址以及域名解析v6地址\nipv6_domain_domainv6：源站列表为多个 域名解析v4 地址IPv6 地址以及域名解析v6地址\nip_ipv6_domain_domainv6：源站列表为多个 IPv4 地址IPv6 地址 域名解析v4 地址以及域名解析v6地址\n出参增加以下几种类型：\nimage：数据万象源站\nftp：历史 FTP 托管源源站，现已不维护\n修改 Origins 时需要同时填充对应的 OriginType\nIPv6 功能目前尚未全量，需要先申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "OriginType",

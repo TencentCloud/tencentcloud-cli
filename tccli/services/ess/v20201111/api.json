@@ -484,6 +484,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要生成预览文件 默认不生成",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -499,6 +508,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewFileUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -610,6 +628,15 @@
           "name": "CcInfos",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否需要预览，true：预览模式，false：非预览（默认）",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -625,6 +652,15 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "合同预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreviewUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

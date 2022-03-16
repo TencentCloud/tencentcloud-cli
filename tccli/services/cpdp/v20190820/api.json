@@ -19869,7 +19869,7 @@
         },
         {
           "default": "",
-          "document": "外部商户订单号。与ChannelOrderId不能同时为空字符串。",
+          "document": "外部商户订单号。与ChannelOrderId二者选一。",
           "example": "202022167824350112001",
           "member": "string",
           "name": "OutOrderId",
@@ -19878,7 +19878,7 @@
         },
         {
           "default": "",
-          "document": "云平台订单号。与OutOrderId不能同时为空字符串。",
+          "document": "云平台订单号。与OutOrderId二者选一。",
           "example": "202022167824350112001",
           "member": "string",
           "name": "ChannelOrderId",
