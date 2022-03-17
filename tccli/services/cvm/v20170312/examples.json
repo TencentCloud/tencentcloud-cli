@@ -83,7 +83,7 @@
     "DeleteKeyPairs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteKeyPairs\r\n&KeyIds.0=skey-mv9yzyjj\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DeleteKeyPairs\n&KeyIds.0=skey-mv9yzyjj\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除密钥对"
       }
@@ -517,7 +517,7 @@
     "ModifyInstancesProject": [
       {
         "document": "本示例用于修改两个实例所属的项目为指定的项目。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesProject\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&ProjectId=1045\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesProject\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ProjectId=1045\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改两个实例所属的项目"
       }
@@ -541,13 +541,13 @@
     "ModifyKeyPairAttribute": [
       {
         "document": "本示例用于修改密钥对名称。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyKeyPairAttribute\r\n&KeyId=skey-mv9yzyjj\r\n&KeyName=Tencent\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyKeyPairAttribute\n&KeyId=skey-mv9yzyjj\n&KeyName=Tencent\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改密钥对名称"
       },
       {
         "document": "本示例用于修改密钥对描述信息。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyKeyPairAttribute\r\n&KeyId=skey-mv9yzyjj\r\n&Description=Tencent\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyKeyPairAttribute\n&KeyId=skey-mv9yzyjj\n&Description=Tencent\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aea2227b-fbb7-4cc7-bf29-d49b2b6db97c\"\n    }\n}",
         "title": "修改密钥对描述信息"
       }

@@ -30,6 +30,7 @@ Output:
                     }
                 ],
                 "UserId": "1248065439",
+                "UserType": "ADMIN",
                 "IsOwner": true,
                 "UserDescription": "Test User",
                 "WorkGroupSet": [

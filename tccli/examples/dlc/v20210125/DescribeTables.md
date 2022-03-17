@@ -43,7 +43,9 @@ Output:
                 "Location": "",
                 "CreateTime": "1630495521000",
                 "ModifiedTime": "1630495521000",
-                "InputFormat": ""
+                "InputFormat": "",
+                "StorageSize": 1024,
+                "RecordCount": 10
             }
         ],
         "TotalCount": 2

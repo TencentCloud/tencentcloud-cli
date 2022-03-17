@@ -1052,6 +1052,26 @@
         "title": "查询基础网络互通列表"
       }
     ],
+    "DescribeCrossBorderCcnRegionBandwidthLimits": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"405d200b-ad2a-486d-9541-d5f47a506827\"\n    }\n}",
+        "title": "无入参查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ef886fc-e394-4eba-8da6-b1ae8f88fe61\"\n    }\n}",
+        "title": "根据云联网ID查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5cf93d0-d717-4e89-8a51-e1418b43d9f9\"\n    }\n}",
+        "title": "根据账户ID查询"
+      }
+    ],
     "DescribeCrossBorderCompliance": [
       {
         "document": "",
@@ -1454,6 +1474,26 @@
         "title": "查询参数模板配额列表"
       }
     ],
+    "DescribeTenantCcns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff8a76ff-8900-4169-b126-ff59fdb39b6c\"\n    }\n}",
+        "title": "根据ccn-ids过滤查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c72d2a1-b60c-464e-b782-ca6efe7c1dd6\"\n    }\n}",
+        "title": "根据user-account-id过滤查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
+        "title": "根据is-security-lock过滤查询"
+      }
+    ],
     "DescribeVpcEndPoint": [
       {
         "document": "",
@@ -1834,6 +1874,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceResetVpnGatewayInternetMaxBandwidth\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InternetMaxBandwidthOut=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 460.27,\n                \"DiscountPrice\": 460.27\n            }\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "调整VPN网关带宽上限询价"
+      }
+    ],
+    "LockCcnBandwidths": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockCcnBandwidths\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64fb0c22-3122-4a99-840e-19db26df5e04\"\n    }\n}",
+        "title": "封锁限速实例"
+      }
+    ],
+    "LockCcns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockCcns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"443c2024-74b1-4b34-9f98-5ac50d34b7fe\"\n    }\n}",
+        "title": "封禁云联网"
       }
     ],
     "MigrateNetworkInterface": [
@@ -2462,6 +2518,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=UnassignPrivateIpAddresses\n&NetworkInterfaceId=eni-afo43z61\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.32.111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡退还内网 IP"
+      }
+    ],
+    "UnlockCcnBandwidths": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockCcnBandwidths\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"098a99f2-d82c-47d4-8532-9322a315c8b4\"\n    }\n}",
+        "title": "解封限速实例"
+      }
+    ],
+    "UnlockCcns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockCcns\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4c3b75e-6d01-4f81-8d31-618f2eae444d\"\n    }\n}",
+        "title": "解封云联网实例"
       }
     ],
     "WithdrawNotifyRoutes": [

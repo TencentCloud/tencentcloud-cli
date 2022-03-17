@@ -599,7 +599,7 @@
     "ModifyWordSample": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyWordSample\n&Keyword=格斗\n&Usages.0=Review\n&TagOperationInfo.Type=reset\n&TagOperationInfo.Tags.0=涉暴\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyWordSample\n&Keyword=格斗\n&Usages.0=Review\n&TagOperationInfo.Type=reset\n&TagOperationInfo.Tags.0=敏感信息\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改关键词样本"
       }
