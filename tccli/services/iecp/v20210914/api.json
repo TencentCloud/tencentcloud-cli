@@ -24,6 +24,12 @@
       "name": "创建边缘节点",
       "output": "CreateEdgeNodeResponse"
     },
+    "CreateEdgeNodeBatch": {
+      "document": "批量预注册节点",
+      "input": "CreateEdgeNodeBatchRequest",
+      "name": "批量预注册节点",
+      "output": "CreateEdgeNodeBatchResponse"
+    },
     "CreateEdgeNodeGroup": {
       "document": "创建边缘单元NodeGroup",
       "input": "CreateEdgeNodeGroupRequest",
@@ -71,6 +77,12 @@
       "input": "CreateUpdateNodeUnitRequest",
       "name": "创建或更新边缘单元NodeUnit",
       "output": "CreateUpdateNodeUnitResponse"
+    },
+    "CreateUserToken": {
+      "document": "创建token",
+      "input": "CreateUserTokenRequest",
+      "name": "创建token",
+      "output": "CreateUserTokenResponse"
     },
     "DeleteApplications": {
       "document": "删除应用模板",
@@ -216,6 +228,12 @@
       "name": "查询节点Pod列表",
       "output": "DescribeEdgeNodePodsResponse"
     },
+    "DescribeEdgeNodeRemarkList": {
+      "document": "获取节点备注信息列表",
+      "input": "DescribeEdgeNodeRemarkListRequest",
+      "name": "获取节点备注信息列表",
+      "output": "DescribeEdgeNodeRemarkListResponse"
+    },
     "DescribeEdgeNodes": {
       "document": "查询边缘节点列表",
       "input": "DescribeEdgeNodesRequest",
@@ -233,6 +251,12 @@
       "input": "DescribeEdgePodRequest",
       "name": "查询边缘单元Pod",
       "output": "DescribeEdgePodResponse"
+    },
+    "DescribeEdgeSnNodes": {
+      "document": "查询预注册节点列表",
+      "input": "DescribeEdgeSnNodesRequest",
+      "name": "查询预注册节点列表",
+      "output": "DescribeEdgeSnNodesResponse"
     },
     "DescribeEdgeUnitApplicationEvents": {
       "document": "获取应用事件列表",
@@ -402,6 +426,12 @@
       "name": "获取Secrets列表",
       "output": "DescribeSecretsResponse"
     },
+    "DescribeYeheResourceLimit": {
+      "document": "查询用户的资源限制",
+      "input": "DescribeYeheResourceLimitRequest",
+      "name": "查询用户的资源限制",
+      "output": "DescribeYeheResourceLimitResponse"
+    },
     "GetMarketComponent": {
       "document": "获取组件市场的组件信息",
       "input": "GetMarketComponentRequest",
@@ -432,6 +462,12 @@
       "name": "修改ConfigMap",
       "output": "ModifyConfigMapResponse"
     },
+    "ModifyEdgeDracoNode": {
+      "document": "编辑draco设备信息",
+      "input": "ModifyEdgeDracoNodeRequest",
+      "name": "编辑draco设备信息",
+      "output": "ModifyEdgeDracoNodeResponse"
+    },
     "ModifyEdgeNodeLabels": {
       "document": "编辑边缘节点标签",
       "input": "ModifyEdgeNodeLabelsRequest",
@@ -461,6 +497,12 @@
       "input": "ModifyEdgeUnitApplicationYamlRequest",
       "name": "Yaml方式修改应用配置",
       "output": "ModifyEdgeUnitApplicationYamlResponse"
+    },
+    "ModifyEdgeUnitCloudApi": {
+      "document": "更新边缘单元信息",
+      "input": "ModifyEdgeUnitCloudApiRequest",
+      "name": "更新边缘单元信息",
+      "output": "ModifyEdgeUnitCloudApiResponse"
     },
     "ModifyEdgeUnitDeployGridItem": {
       "document": "修改边缘单元Grid部署应用副本数",
@@ -1339,6 +1381,42 @@
       ],
       "type": "object"
     },
+    "CreateEdgeNodeBatchRequest": {
+      "document": "CreateEdgeNodeBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘单元ID",
+          "example": "222",
+          "member": "uint64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点信息",
+          "example": "无",
+          "member": "DracoNodeInfo",
+          "name": "Nodes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeNodeBatchResponse": {
+      "document": "CreateEdgeNodeBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEdgeNodeGroupRequest": {
       "document": "CreateEdgeNodeGroup请求参数结构体",
       "members": [
@@ -1987,6 +2065,42 @@
     "CreateUpdateNodeUnitResponse": {
       "document": "CreateUpdateNodeUnit返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserTokenRequest": {
+      "document": "CreateUserToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Second",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserTokenResponse": {
+      "document": "CreateUserToken返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3274,6 +3388,42 @@
       ],
       "type": "object"
     },
+    "DescribeEdgeNodeRemarkListRequest": {
+      "document": "DescribeEdgeNodeRemarkList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘单元ID",
+          "example": "2222",
+          "member": "uint64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeNodeRemarkListResponse": {
+      "document": "DescribeEdgeNodeRemarkList返回参数结构体",
+      "members": [
+        {
+          "document": "边缘单元内的备注列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remarks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEdgeNodeRequest": {
       "document": "DescribeEdgeNode请求参数结构体",
       "members": [
@@ -3632,6 +3782,96 @@
           "name": "Pod",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeSnNodesRequest": {
+      "document": "DescribeEdgeSnNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘单元ID",
+          "example": "2222",
+          "member": "uint64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "根据节点名称模糊匹配",
+          "example": "dd",
+          "member": "string",
+          "name": "NamePattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据设备SN模糊匹配",
+          "example": "dd",
+          "member": "string",
+          "name": "SNPattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "根据备注批次信息模糊匹配",
+          "example": "dd",
+          "member": "string",
+          "name": "RemarkPattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认20",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeSnNodesResponse": {
+      "document": "DescribeEdgeSnNodes返回参数结构体",
+      "members": [
+        {
+          "document": "满足条件的总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EdgeDracoNodeInfo",
+          "name": "NodeSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -5884,6 +6124,68 @@
       ],
       "type": "object"
     },
+    "DescribeYeheResourceLimitRequest": {
+      "document": "DescribeYeheResourceLimit请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeYeheResourceLimitResponse": {
+      "document": "DescribeYeheResourceLimit返回参数结构体",
+      "members": [
+        {
+          "document": "用户父账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12121",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "允许创建的节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreateNodeLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "允许创建的集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreateClusterLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否有监控开启权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePermMonitor",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点是否有admin的所有权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePermAdminNode",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DockerConfig": {
       "document": "docker配置",
       "members": [
@@ -5919,6 +6221,42 @@
         }
       ],
       "usage": "both"
+    },
+    "DracoNodeInfo": {
+      "document": "Draco 设备预录入信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备SN。SN仅支持大写字母、数字，长度限制为1~32个字符",
+          "example": "121212",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点名称。长度限制为1~63个字符，节点名称只支持小写英文、数字、中横线、英文句号",
+          "example": "sssss",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点备注",
+          "example": "ddd",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "EdgeCloudCluster": {
       "document": "获取边缘集群列表",
@@ -6052,6 +6390,72 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EdgeDracoNodeInfo": {
+      "document": "预注册节点的信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点ID",
+          "example": "2222",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点名称",
+          "example": "sss",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已激活",
+          "example": "false",
+          "member": "bool",
+          "name": "IsUsed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "xxxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注信息，如批次",
+          "example": "sss",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SN 设备号",
+          "example": "sss",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7920,6 +8324,60 @@
       ],
       "type": "object"
     },
+    "ModifyEdgeDracoNodeRequest": {
+      "document": "ModifyEdgeDracoNode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘单元ID",
+          "example": "2222",
+          "member": "uint64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "边缘节点ID",
+          "example": "22",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "节点信息",
+          "example": "无",
+          "member": "DracoNodeInfo",
+          "name": "NodeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否重置draco设备",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReset",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeDracoNodeResponse": {
+      "document": "ModifyEdgeDracoNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEdgeNodeLabelsRequest": {
       "document": "ModifyEdgeNodeLabels请求参数结构体",
       "members": [
@@ -8171,6 +8629,60 @@
     },
     "ModifyEdgeUnitApplicationYamlResponse": {
       "document": "ModifyEdgeUnitApplicationYaml返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeUnitCloudApiRequest": {
+      "document": "ModifyEdgeUnitCloudApi请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘单元ID",
+          "example": "11111",
+          "member": "uint64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "边缘单元名称，64字符内",
+          "example": "ssss",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述，200字符内",
+          "example": "ssssssss",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启监控",
+          "example": "false",
+          "member": "bool",
+          "name": "OpenCloudMonitor",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeUnitCloudApiResponse": {
+      "document": "ModifyEdgeUnitCloudApi返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

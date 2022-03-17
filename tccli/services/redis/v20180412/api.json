@@ -4241,7 +4241,7 @@
       "document": "InquiryPriceCreateInstance返回参数结构体",
       "members": [
         {
-          "document": "价格，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格，单位：分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30400",
           "member": "float",
           "name": "Price",

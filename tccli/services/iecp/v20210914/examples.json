@@ -32,6 +32,14 @@
         "title": "创建边缘节点"
       }
     ],
+    "CreateEdgeNodeBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeBatch\n<公共请求参数>\n\n{\n    \"Nodes\": [\n        {\n            \"Remark\": \"20220911\",\n            \"SN\": \"SN2232323\",\n            \"Name\": \"snnode\"\n        }\n    ],\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82b8436a-1d51-4e33-8036-6a6c5b854056\"\n    }\n}",
+        "title": "批量预添加节点"
+      }
+    ],
     "CreateEdgeNodeGroup": [
       {
         "document": "",
@@ -106,6 +114,14 @@
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUpdateNodeUnit\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Namespace\": \"default\",\n    \"NodeGroupName\": \"test\",\n    \"NodeUnitName\": \"testunit\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb461dbc-de1a-4618-9536-f1d3d18a2e1e\"\n    }\n}",
         "title": "创建NodeUnit"
+      }
+    ],
+    "CreateUserToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserToken\n<公共请求参数>\n\n{\n    \"Second\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateUserToken"
       }
     ],
     "DeleteApplications": [
@@ -306,6 +322,14 @@
         "title": "查询节点Pod列表"
       }
     ],
+    "DescribeEdgeNodeRemarkList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeNodeRemarkList\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b15640f7-a4e4-4ce4-b418-1b864ba7569d\",\n        \"Remarks\": [\n            \"20220911\"\n        ]\n    }\n}",
+        "title": "获取边缘集群节点备注列表"
+      }
+    ],
     "DescribeEdgeNodes": [
       {
         "document": "",
@@ -328,6 +352,14 @@
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePod\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"Name\": \"aaa-apex\",\n    \"Namespace\": \"default\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cfcaee48-cac8-43e0-8dfe-fa3d5a38809f\",\n        \"Pod\": {\n            \"Name\": \"aaa-apex\",\n            \"Status\": \"Running\",\n            \"NodeIp\": \"10.0.0.0\",\n            \"Ip\": \"172.0.0.1\",\n            \"CpuRequest\": \"250m\",\n            \"MemoryRequest\": \"256Mi\",\n            \"Namespace\": \"default\",\n            \"WorkloadType\": \"ReplicaSet\",\n            \"WorkloadName\": \"aaa-apex\",\n            \"StartTime\": \"2021-01-01 00:00:00\",\n            \"RestartCount\": 0,\n            \"ClusterID\": \"cls-xxxxxx\"\n        }\n    }\n}",
         "title": "查询边缘单元Pod"
+      }
+    ],
+    "DescribeEdgeSnNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeSnNodes\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100026\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9f0bda5-0644-4eac-8d95-f4732eb78e8d\",\n        \"TotalCount\": 1,\n        \"NodeSet\": [\n            {\n                \"Id\": 91,\n                \"Name\": \"snnode\",\n                \"IsUsed\": false,\n                \"CreateTime\": \"2022-03-09 17:48:15\",\n                \"Remark\": \"20220911\",\n                \"SN\": \"SN2232323\"\n            }\n        ]\n    }\n}",
+        "title": "查询预添加节点"
       }
     ],
     "DescribeEdgeUnitApplicationEvents": [
@@ -566,6 +598,20 @@
         "title": "DescribeSecrets"
       }
     ],
+    "DescribeYeheResourceLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeYeheResourceLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\",\n        \"Uin\": \"12345\",\n        \"CreateNodeLimit\": 3,\n        \"CreateClusterLimit\": 2551,\n        \"EnablePermMonitor\": false,\n        \"EnablePermAdminNode\": false\n    }\n}",
+        "title": "获取用户配置限制"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeYeheResourceLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c17c5e2-61a7-4428-8778-b9051e4ef042\",\n        \"Uin\": \"600000559632\",\n        \"CreateNodeLimit\": 200,\n        \"CreateClusterLimit\": 1,\n        \"EnablePermMonitor\": false,\n        \"EnablePermAdminNode\": false\n    }\n}",
+        "title": "获取用户限制列表"
+      }
+    ],
     "GetMarketComponent": [
       {
         "document": "",
@@ -606,6 +652,14 @@
         "title": "ModifyConfigMap"
       }
     ],
+    "ModifyEdgeDracoNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeDracoNode\n<公共请求参数>\n\n{\n    \"IsReset\": \"true\",\n    \"EdgeUnitId\": \"100026\",\n    \"NodeId\": \"91\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9070f725-d837-450e-b95e-115dd41accbb\"\n    }\n}",
+        "title": "修改draco设备信息"
+      }
+    ],
     "ModifyEdgeNodeLabels": [
       {
         "document": "",
@@ -644,6 +698,14 @@
         "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitApplicationYaml\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 1,\n    \"ApplicationId\": 1,\n    \"Yaml\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
         "title": "ModifyEdgeUnitApplicationYaml"
+      }
+    ],
+    "ModifyEdgeUnitCloudApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeUnitCloudApi\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": \"100022\",\n    \"Name\": \"wwww11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f1f5564-b038-4c8c-b965-f91c0a394f88\"\n    }\n}",
+        "title": "修改单元名称"
       }
     ],
     "ModifyEdgeUnitDeployGridItem": [

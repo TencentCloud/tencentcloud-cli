@@ -2850,6 +2850,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "API后端COS的路径匹配模式，可选值：\nBackEndPath ： 后端路径匹配\nFullPath ： 全路径匹配\n\n默认值为：BackEndPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FullPath",
+          "member": "string",
+          "name": "PathMatchMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3520,6 +3530,7 @@
         {
           "default": "",
           "document": "api id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api-sdfsdf",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -3528,7 +3539,8 @@
         },
         {
           "default": "",
-          "document": "path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -3537,7 +3549,8 @@
         },
         {
           "default": "",
-          "document": "method\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -3547,8 +3560,39 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-02T14:27:56Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "api name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api-xxxxx",
+          "member": "string",
+          "name": "ApiName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10628,7 +10672,7 @@
       "members": [
         {
           "default": "",
-          "document": "后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道",
+          "document": "后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream",
           "example": "clb",
           "member": "string",
           "name": "Product",

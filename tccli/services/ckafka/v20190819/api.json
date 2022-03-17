@@ -1759,6 +1759,24 @@
           "name": "DiskType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "跨可用区，zoneIds必填",
+          "example": "true",
+          "member": "bool",
+          "name": "MultiZoneFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "可用区列表",
+          "example": "[100006,100007]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

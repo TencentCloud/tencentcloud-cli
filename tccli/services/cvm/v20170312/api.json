@@ -1717,6 +1717,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。",
+          "example": "[\"skey-mv9yzyjj\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -6586,6 +6587,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6594,6 +6596,7 @@
         {
           "default": "",
           "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/doc/api/403/4398)接口创建。可通过[`DescribeProject`](https://cloud.tencent.com/document/product/378/4400) API返回值中的`projectId`获取。后续使用[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例时，项目ID可用于过滤结果。",
+          "example": "1045",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -6620,6 +6623,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "[\"ins-r8hr2upy\\n\",\"ins-5d8a23rs\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6628,6 +6632,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": true,
@@ -6704,6 +6709,7 @@
         {
           "default": "",
           "document": "密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。",
+          "example": "skey-mv9yzyjj",
           "member": "string",
           "name": "KeyId",
           "required": true,
@@ -6712,6 +6718,7 @@
         {
           "default": "",
           "document": "修改后的密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。",
+          "example": "Tencent",
           "member": "string",
           "name": "KeyName",
           "required": false,
@@ -6720,6 +6727,7 @@
         {
           "default": "",
           "document": "修改后的密钥对描述信息。可任意命名，但不得超过60个字符。",
+          "example": "KeyPair",
           "member": "string",
           "name": "Description",
           "required": false,

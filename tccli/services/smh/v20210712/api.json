@@ -313,6 +313,42 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "对指定列进行排序",
+          "example": "'effectiveTime'",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "'desc'",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "续费管理筛选类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "超级管理管理员账号是否绑定了手机号",
+          "example": "true",
+          "member": "bool",
+          "name": "BindPhone",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -427,6 +463,33 @@
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "对指定列进行排序",
+          "example": "effectiveTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源类型筛选",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
           "required": false,
           "type": "int"
         }
