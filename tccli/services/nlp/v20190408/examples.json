@@ -198,6 +198,14 @@
         "title": "文本纠错示例"
       }
     ],
+    "TextCorrectionPro": [
+      {
+        "document": "",
+        "input": "https://nlp.tencentcloudapi.com/?Action=TextCorrectionPro\n&Text=\"令天天气很好，我们很早起床，去学小读书。\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8dd99adb-5144-43ca-8213-f6a929ce5075\",\n        \"CCITokens\": [\n            {\n                \"BeginOffset\": 0,\n                \"Word\": \"令\",\n                \"CorrectWord\": \"今\"\n            },\n            {\n                \"BeginOffset\": 16,\n                \"Word\": \"小\",\n                \"CorrectWord\": \"校\"\n            }\n        ],\n        \"ResultText\": \"今天天气很好，我们很早起床，去学校读书。\"\n    }\n}",
+        "title": "文本纠错示例"
+      }
+    ],
     "TextSimilarity": [
       {
         "document": "",

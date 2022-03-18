@@ -763,6 +763,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推送cls渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSNotice",
+          "name": "CLSNotices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1457,6 +1467,52 @@
       ],
       "type": "object"
     },
+    "CLSNotice": {
+      "document": "告警通知中的推送CLS操作",
+      "members": [
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集Id",
+          "example": "logset-28hg48g2",
+          "member": "string",
+          "name": "LogSetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主题Id",
+          "example": "topic-2ingu2bg",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启停状态，可不传，默认启用。0=停用，1=启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CommonNamespace": {
       "document": "统一的命名空间信息",
       "members": [
@@ -1718,6 +1774,15 @@
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "推送CLS日志服务的操作 最多1个",
+          "example": "无",
+          "member": "CLSNotice",
+          "name": "CLSNotices",
           "required": false,
           "type": "list"
         }
@@ -3434,6 +3499,15 @@
           "name": "NeedCorrespondence",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照触发任务（例如弹性伸缩）过滤策略。最多10个",
+          "example": "无",
+          "member": "AlarmPolicyTriggerTask",
+          "name": "TriggerTasks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7501,6 +7575,15 @@
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "告警通知推送到CLS服务 最多1个",
+          "example": "无",
+          "member": "CLSNotice",
+          "name": "CLSNotices",
           "required": false,
           "type": "list"
         }

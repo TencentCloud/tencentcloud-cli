@@ -1104,7 +1104,7 @@
         },
         {
           "default": "",
-          "document": "描述说明",
+          "document": "描述说明，最大支持256位。",
           "example": "proxy代理",
           "member": "string",
           "name": "Desc",
@@ -2187,7 +2187,7 @@
         },
         {
           "default": "",
-          "document": "是否只关闭读写分离，取值：\"true\" | \"false\"",
+          "document": "是否只关闭读写分离，取值：\"true\" | \"false\"，默认为\"false\"",
           "example": "false",
           "member": "bool",
           "name": "OnlyCloseRW",
@@ -3840,7 +3840,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -4850,7 +4850,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移量。",
+          "document": "分页偏移量。默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7189,7 +7189,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -9936,7 +9936,7 @@
         },
         {
           "default": "",
-          "document": "该参数不为空时，为批量修改权限。可选值为：grant，revoke。",
+          "document": "该参数不为空时，为批量修改权限。可选值为：grant - 授予权限，revoke - 回收权限。",
           "example": "无",
           "member": "string",
           "name": "ModifyAction",

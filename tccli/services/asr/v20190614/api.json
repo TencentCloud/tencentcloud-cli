@@ -529,12 +529,12 @@
         },
         {
           "default": "",
-          "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
-          "example": "无",
-          "member": "string",
-          "name": "HotwordId",
+          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
+          "example": "0",
+          "member": "int64",
+          "name": "ConvertNumMode",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
@@ -547,21 +547,21 @@
         },
         {
           "default": "",
-          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
-          "example": "0",
-          "member": "int64",
-          "name": "FilterModal",
+          "document": "热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。",
+          "example": "无",
+          "member": "string",
+          "name": "HotwordId",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
-          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
-          "example": "0",
-          "member": "int64",
-          "name": "ConvertNumMode",
+          "document": "自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomizationId",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -578,6 +578,15 @@
           "example": "0",
           "member": "int64",
           "name": "FilterPunc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "FilterModal",
           "required": false,
           "type": "int"
         }

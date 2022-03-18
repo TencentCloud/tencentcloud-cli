@@ -3945,6 +3945,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "最下方第一行 MRZ Code 序列",
+          "example": "P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<",
+          "member": "string",
+          "name": "CodeSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最下方第二行 MRZ Code 序列",
+          "example": "JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04",
+          "member": "string",
+          "name": "CodeCrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

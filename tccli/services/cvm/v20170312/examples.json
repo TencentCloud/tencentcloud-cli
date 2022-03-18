@@ -11,7 +11,7 @@
     "AssociateInstancesKeyPairs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateInstancesKeyPairs\r\n&InstanceIds.0=ins-1e4r6y8i\r\n&InstanceIds.1=ins-3e56fg78\r\n&KeyIds.0=skey-4e5ty7i8\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateInstancesKeyPairs\n&InstanceIds.0=ins-1e4r6y8i\n&InstanceIds.1=ins-3e56fg78\n&KeyIds.0=skey-4e5ty7i8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "绑定云服务器密钥对"
       }
@@ -339,7 +339,7 @@
     "DisassociateInstancesKeyPairs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateInstancesKeyPairs\r\n&InstanceIds.0=ins-w34e5rl9\r\n&KeyIds.0=skey-e3r6y7ji\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateInstancesKeyPairs\n&InstanceIds.0=ins-w34e5rl9\n&KeyIds.0=skey-e3r6y7ji\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "解除实例的密钥绑定关系"
       }
@@ -363,7 +363,7 @@
     "ImportKeyPair": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ImportKeyPair\r\n&KeyName=operation_key\r\n&ProjectId=0\r\n&PublicKey=ssh-rsa XXXXXXXXXXXX== skey_45071\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ImportKeyPair\n&KeyName=operation_key\n&ProjectId=0\n&PublicKey=ssh-rsa XXXXXXXXXXXX== skey_45071\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"KeyId\": \"skey-4e5ty7i8\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "导入密钥对"
       }
@@ -464,7 +464,7 @@
       {
         "document": "本示例用于用户修改指定CDH实例的HostName属性。",
         "input": "https://cvm.tencentcloudapi.com/?Action=ModifyHostsAttribute\n&HostIds.0=host-ey16rkyg\n&HostName=webserver\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改CDH实例的属性"
       }
     ],

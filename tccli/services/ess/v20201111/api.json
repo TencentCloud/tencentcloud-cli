@@ -162,7 +162,7 @@
         },
         {
           "default": "",
-          "document": "认证方式：\nWEIXINAPP - 微信小程序；\nVERIFYCODE - 验证码；\n\n可以选择多个, 按照顺序进行优先级选择\n注：使用验证码方式认证签署时，请传入[\"VERIFYCODE\",\"WEIXINAPP\"]",
+          "document": "签署意愿确认渠道,WEIXINAPP:人脸识别",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannel",

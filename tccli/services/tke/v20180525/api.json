@@ -1299,7 +1299,7 @@
         },
         {
           "default": "",
-          "document": "集群状态 (Running 运行中  Creating 创建中 Abnormal 异常  )",
+          "document": "集群状态 (Running 运行中  Creating 创建中 Idling 闲置中  Abnormal 异常  )",
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
@@ -4028,6 +4028,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4036,6 +4037,7 @@
         {
           "default": "",
           "document": "主机InstanceId列表",
+          "example": "[\"ins-xxxxx\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4044,6 +4046,7 @@
         {
           "default": "",
           "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
+          "example": "terminate",
           "member": "string",
           "name": "InstanceDeleteMode",
           "required": false,
@@ -4052,6 +4055,7 @@
         {
           "default": "",
           "document": "是否强制删除(当节点在初始化时，可以指定参数为TRUE)",
+          "example": "false",
           "member": "bool",
           "name": "ForceDelete",
           "required": false,
@@ -4065,22 +4069,28 @@
       "members": [
         {
           "document": "删除成功的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [\"xxx\"]",
           "member": "string",
           "name": "SuccInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "删除失败的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [\"xxx\"]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "未匹配到的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [\"xxx\"]",
           "member": "string",
           "name": "NotFoundInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4519,6 +4529,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "cls-xxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4527,6 +4538,7 @@
         {
           "default": "",
           "document": "伸缩组ID列表，如果为空，表示拉取集群关联的所有伸缩组。",
+          "example": "[xxxx]",
           "member": "string",
           "name": "AutoScalingGroupIds",
           "required": false,
@@ -4535,6 +4547,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4543,6 +4556,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4556,15 +4570,19 @@
       "members": [
         {
           "document": "集群关联的伸缩组总数",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "集群关联的伸缩组列表",
+          "example": "无",
           "member": "ClusterAsGroup",
           "name": "ClusterAsGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5111,6 +5129,7 @@
         {
           "default": "",
           "document": "集群 ID，请填写 查询集群列表 接口中返回的 clusterId 字段",
+          "example": "\"cls-xxxxxxxx\"",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5124,64 +5143,82 @@
       "members": [
         {
           "document": "集群的账号名称",
+          "example": "\"admin\"",
           "member": "string",
           "name": "UserName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群的访问密码",
+          "example": "\"xxiE6lEtexG8Lba7YQSoX97bPaMGNGQU\"",
           "member": "string",
           "name": "Password",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问CA证书",
+          "example": "\"xx\"",
           "member": "string",
           "name": "CertificationAuthority",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问的地址",
+          "example": "\"xx\"",
           "member": "string",
           "name": "ClusterExternalEndpoint",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问的域名",
+          "example": "\"xx\"",
           "member": "string",
           "name": "Domain",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群Endpoint地址",
+          "example": "\"xx\"",
           "member": "string",
           "name": "PgwEndpoint",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "集群访问策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xx\",\"yy\"]",
           "member": "string",
           "name": "SecurityPolicy",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "集群Kubeconfig文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
           "member": "string",
           "name": "Kubeconfig",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "集群JnsGw的访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
           "member": "string",
           "name": "JnsGwEndpoint",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6029,15 +6066,19 @@
       "members": [
         {
           "document": "镜像数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6621,15 +6662,19 @@
       "members": [
         {
           "document": "地域的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionInstance",
           "name": "RegionInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6648,6 +6693,7 @@
         {
           "default": "",
           "document": "路由表CIDR",
+          "example": "10.4.0.0/16",
           "member": "string",
           "name": "RouteTableCidrBlock",
           "required": true,
@@ -6656,6 +6702,7 @@
         {
           "default": "",
           "document": "路由表绑定的VPC",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -6669,15 +6716,19 @@
       "members": [
         {
           "document": "路由表是否冲突。",
+          "example": "true",
           "member": "bool",
           "name": "HasConflict",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "路由表冲突列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RouteTableConflict",
           "name": "RouteTableConflictSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },

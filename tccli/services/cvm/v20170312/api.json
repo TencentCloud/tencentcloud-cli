@@ -687,6 +687,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的`InstanceId`获取实例ID。",
+          "example": "[\"ins-1e4r6y8i\\r\\n\",\"ins-3e56fg78\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -695,6 +696,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的密钥对ID，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-3glfot13`。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的`KeyId`获取密钥对ID。",
+          "example": "[\"skey-4e5ty7i8\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -703,6 +705,7 @@
         {
           "default": "",
           "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再绑定密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br>默认取值：FALSE。",
+          "example": "TRUE",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -3104,6 +3107,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br><br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。",
+          "example": "[\"ins-w34e5rl9\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3112,6 +3116,7 @@
         {
           "default": "",
           "document": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-11112222`。<br><br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。",
+          "example": "[\"skey-e3r6y7ji\\r\\n\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -3120,6 +3125,7 @@
         {
           "default": "",
           "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。",
+          "example": "TRUE",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -3923,6 +3929,7 @@
         {
           "default": "",
           "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。",
+          "example": "operation_key",
           "member": "string",
           "name": "KeyName",
           "required": true,
@@ -3931,6 +3938,7 @@
         {
           "default": "",
           "document": "密钥对创建后所属的[项目](https://cloud.tencent.com/document/product/378/10861)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。\n\n如果是默认项目，直接填0就可以。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -3939,6 +3947,7 @@
         {
           "default": "",
           "document": "密钥对的公钥内容，`OpenSSH RSA` 格式。",
+          "example": "ssh-rsa XXXXXXXXXXXX== skey_45071",
           "member": "string",
           "name": "PublicKey",
           "required": true,
@@ -3952,8 +3961,10 @@
       "members": [
         {
           "document": "密钥对ID。",
+          "example": "skey-4e5ty7i8",
           "member": "string",
           "name": "KeyId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6294,6 +6305,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的CDH实例ID。",
+          "example": "[\"host-ey16rkyg\\n\"]",
           "member": "string",
           "name": "HostIds",
           "required": true,
@@ -6302,6 +6314,7 @@
         {
           "default": "",
           "document": "CDH实例显示名称。可任意命名，但不得超过60个字符。",
+          "example": "webserver",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -6310,6 +6323,7 @@
         {
           "default": "",
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -6318,6 +6332,7 @@
         {
           "default": "",
           "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/doc/api/403/4398)接口创建。可通过[`DescribeProject`](https://cloud.tencent.com/document/product/378/4400) API返回值中的`projectId`获取。后续使用[DescribeHosts](https://cloud.tencent.com/document/api/213/16474)接口查询实例时，项目ID可用于过滤结果。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,

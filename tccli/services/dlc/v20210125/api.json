@@ -926,6 +926,24 @@
           "name": "PolicySet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON",
+          "example": "Admin",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定到用户的工作组ID集合。",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -969,6 +987,15 @@
           "example": "无",
           "member": "Policy",
           "name": "PolicySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要绑定到工作组的用户Id集合",
+          "example": "[\"123456\"]",
+          "member": "string",
+          "name": "UserIds",
           "required": false,
           "type": "list"
         }
