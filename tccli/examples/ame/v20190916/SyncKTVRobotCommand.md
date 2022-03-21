@@ -156,3 +156,25 @@ Output:
 }
 ```
 
+**Example 8: 设置音量**
+
+
+
+Input: 
+
+```
+tccli ame SyncKTVRobotCommand --cli-unfold-argument  \
+    --RobotId xxxxx \
+    --Command SetDestroyMode \
+    --SetVolumeCommandInput.Volume 50
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
+    }
+}
+```
+

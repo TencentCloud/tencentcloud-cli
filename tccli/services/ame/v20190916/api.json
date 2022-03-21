@@ -2370,7 +2370,7 @@
         },
         {
           "default": "",
-          "document": "音频参数",
+          "document": "音频参数。",
           "example": "无",
           "member": "SetAudioParamCommandInput",
           "name": "SetAudioParamInput",
@@ -2380,7 +2380,7 @@
         },
         {
           "default": "",
-          "document": "进房信息",
+          "document": "进房信息。",
           "example": "无",
           "member": "JoinRoomInput",
           "name": "JoinRoomInput",
@@ -2404,6 +2404,16 @@
           "example": "无",
           "member": "SetPlayModeCommandInput",
           "name": "SetPlayModeInput",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音量，范围 0~100，默认为 50。",
+          "example": "无",
+          "member": "SetVolumeCommandInput",
+          "name": "SetVolumeInput",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -3503,6 +3513,22 @@
       ],
       "usage": "in"
     },
+    "SetVolumeCommandInput": {
+      "document": "设置音量。",
+      "members": [
+        {
+          "default": "",
+          "document": "音量大小，取值范围为 0~100，默认值为 50。",
+          "example": "50",
+          "member": "int64",
+          "name": "Volume",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SortBy": {
       "document": "排序依据",
       "members": [
@@ -3594,7 +3620,7 @@
         },
         {
           "default": "",
-          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
+          "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li>SetVolume：设置音量</li>",
           "example": "Play",
           "member": "string",
           "name": "Command",
@@ -3661,6 +3687,15 @@
           "example": "无",
           "member": "SetDestroyModeCommandInput",
           "name": "SetDestroyModeCommandInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "音量，当Command取SetVolume时，必填。",
+          "example": "无",
+          "member": "SetVolumeCommandInput",
+          "name": "SetVolumeCommandInput",
           "required": false,
           "type": "object"
         }

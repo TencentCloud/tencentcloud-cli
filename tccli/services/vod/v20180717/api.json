@@ -642,6 +642,12 @@
       "name": "解析视频索引文件",
       "output": "ParseStreamingManifestResponse"
     },
+    "ProcessImage": {
+      "document": "对点播中的图片文件发起处理任务，功能包括：\n\n1. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）;\n\n><li>图片文件大小支持：文件 < 5M；</li>\n><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响识别效果；</li>\n><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>\n",
+      "input": "ProcessImageRequest",
+      "name": "图片处理",
+      "output": "ProcessImageResponse"
+    },
     "ProcessMedia": {
       "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
       "input": "ProcessMediaRequest",
@@ -6526,6 +6532,128 @@
         }
       ],
       "type": "object"
+    },
+    "ContentReviewOcrResult": {
+      "document": "图片Ocr 文字鉴别信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别结果的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的嫌疑关键词列表。",
+          "example": "无",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContentReviewResult": {
+      "document": "图片智能内容识别任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "结果类型，取值范围：\n<li>Porn.Image：图片画面中的鉴别令人反感的信息结果；</li>\n<li>Terrorism.Image：图片画面中的鉴别令人不安全的信息结果；</li>\n<li>Political.Image：图片画面中的鉴别令人不适宜信息结果；</li>\n<li>Porn.Ocr：图片 OCR 文字中的鉴别令人反感的信息结果；</li>\n<li>Terrorism.Ocr：图片 OCR 文字中的鉴别令人不安全的信息结果；</li>\n<li>Political.Ocr：图片 OCR 文字中的鉴别令人不适宜信息结果。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PornImageResult",
+          "name": "PornImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TerrorismImageResult",
+          "name": "TerrorismImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PoliticalImageResult",
+          "name": "PoliticalImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "PornOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "TerrorismOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "PoliticalOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ContentReviewTemplateItem": {
       "document": "智能识别模板详情",
@@ -13116,6 +13244,22 @@
       ],
       "usage": "in"
     },
+    "ImageContentReviewInput": {
+      "document": "图片智能内容识别任务输入",
+      "members": [
+        {
+          "default": "",
+          "document": "图片智能内容审核模板 ID。当前只支持：\n<li>10：所有审核类型均打开。</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ImageOperation": {
       "document": "单个图片处理操作。",
       "members": [
@@ -18927,6 +19071,52 @@
       ],
       "usage": "in"
     },
+    "PoliticalImageResult": {
+      "document": "图片画面智能识别涉及令人不适宜信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人不适宜信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不适宜信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及令人不适宜的信息、违规图标名字。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PoliticalImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人不适宜的信息的任务控制参数",
       "members": [
@@ -19234,6 +19424,42 @@
         }
       ],
       "usage": "in"
+    },
+    "PornImageResult": {
+      "document": "图片画面智能识别涉及令人反感的信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的结果标签，取值范围：\n<li>porn：色情；</li>\n<li>sexy：性感；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PornImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人反感的信息的任务控制参数",
@@ -19670,6 +19896,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ProcessImageRequest": {
+      "document": "ProcessImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型。现在仅支持填 ContentReview，表示内容智能识别。",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。",
+          "example": "无",
+          "member": "ImageContentReviewInput",
+          "name": "ContentReviewInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessImageResponse": {
+      "document": "ProcessImage返回参数结构体",
+      "members": [
+        {
+          "document": "图片内容智能识别任务结果。",
+          "example": "无",
+          "member": "ContentReviewResult",
+          "name": "ContentReviewResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessMediaByProcedureRequest": {
       "document": "ProcessMediaByProcedure请求参数结构体",
@@ -22647,6 +22936,42 @@
         }
       ],
       "usage": "in"
+    },
+    "TerrorismImageResult": {
+      "document": "图片画面智能识别涉及令人不安全的信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的结果标签，取值范围：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>police：警察部队；</li>\n<li>bloody：血腥画面；</li>\n<li>banners：暴恐旗帜；</li>\n<li>explosion：爆炸火灾；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TerrorismImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人不安全的信息的任务控制参数",

@@ -4891,6 +4891,42 @@
           "name": "TriggerActions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预置类型，\n静态预置：Default\n动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking\n预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。\n\n动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProvisionedType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标追踪的并发利用率。设置范围(0,1)",
+          "example": "0",
+          "member": "float",
+          "name": "TrackingTarget",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "default": "",
+          "document": "缩容时的最小值, 最小值为1",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinCapacity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "扩容时的最大值",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxCapacity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

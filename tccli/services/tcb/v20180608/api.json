@@ -390,6 +390,12 @@
       "name": "创建或修改安全网关路由",
       "output": "EstablishWxGatewayRouteResponse"
     },
+    "FreezeCloudBaseRunServers": {
+      "document": "批量冻结",
+      "input": "FreezeCloudBaseRunServersRequest",
+      "name": "批量冻结",
+      "output": "FreezeCloudBaseRunServersResponse"
+    },
     "ModifyCloudBaseRunServerFlowConf": {
       "document": "修改容器内的版本流量配置",
       "input": "ModifyCloudBaseRunServerFlowConfRequest",
@@ -455,6 +461,12 @@
       "input": "TurnOnStandaloneGatewayRequest",
       "name": "开启小租户网关",
       "output": "TurnOnStandaloneGatewayResponse"
+    },
+    "UnfreezeCloudBaseRunServers": {
+      "document": "批量解冻服务",
+      "input": "UnfreezeCloudBaseRunServersRequest",
+      "name": "批量解冻服务",
+      "output": "UnfreezeCloudBaseRunServersResponse"
     }
   },
   "metadata": {
@@ -8131,6 +8143,60 @@
       ],
       "usage": "out"
     },
+    "FreezeCloudBaseRunServersRequest": {
+      "document": "FreezeCloudBaseRunServers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "env",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名列表",
+          "example": "[\"xxxx\",\"xxx\"]",
+          "member": "string",
+          "name": "ServerNameList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "FreezeCloudBaseRunServersResponse": {
+      "document": "FreezeCloudBaseRunServers返回参数结构体",
+      "members": [
+        {
+          "document": "批量状态状态\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "冻结失败服务列表\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[“xxx”,\"xxx\"]",
+          "member": "string",
+          "name": "FailServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FunctionInfo": {
       "document": "函数的信息",
       "members": [
@@ -10147,6 +10213,60 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfreezeCloudBaseRunServersRequest": {
+      "document": "UnfreezeCloudBaseRunServers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境ID",
+          "example": "xxxa",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名称列表",
+          "example": "[]",
+          "member": "string",
+          "name": "ServerNameList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfreezeCloudBaseRunServersResponse": {
+      "document": "UnfreezeCloudBaseRunServers返回参数结构体",
+      "members": [
+        {
+          "document": "批量执行结果\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "解冻失败列表\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "FailServerList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

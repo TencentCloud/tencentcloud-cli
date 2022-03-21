@@ -5149,6 +5149,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否为demo模式（1=是，2=否）",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDemo",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5392,6 +5401,15 @@
           "name": "ID",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否为demo模式（1=是，2=否）",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDemo",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5572,6 +5590,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否为demo模式（1=是，2=否）",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDemo",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6096,26 +6123,6 @@
       "members": [
         {
           "default": "",
-          "document": "主键ID",
-          "example": "1",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "项目ID",
-          "example": "123",
-          "member": "int64",
-          "name": "ProjectID",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "接口",
           "example": "web",
           "member": "string",
@@ -6143,9 +6150,29 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "123",
+          "member": "int64",
+          "name": "ProjectID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ReleaseFile": {
       "document": "发布文件列表(SOURCEMAP)",
@@ -6551,6 +6578,16 @@
           "example": "1",
           "member": "int64",
           "name": "IsStar",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ProjectStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true

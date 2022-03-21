@@ -8,7 +8,7 @@ Input:
 tccli cdb DescribeProxyCustomConf --cli-unfold-argument  \
     --InstanceId xx \
     --Limit 1 \
-    --Offset 1
+    --Offset 0
 ```
 
 Output: 

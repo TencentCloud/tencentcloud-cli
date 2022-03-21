@@ -24,3 +24,25 @@ Output:
 }
 ```
 
+**Example 2: 撤销流程样例**
+
+
+
+Input: 
+
+```
+tccli ess CancelFlow --cli-unfold-argument  \
+    --Operator.UserId yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk \
+    --FlowId yDR1HUUgygjb689nUuO4zjE8imAxVxl3 \
+    --CancelMessage 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "85b29b26-a081-44a4-a1dd-104fa651ecc8"
+    }
+}
+```
+

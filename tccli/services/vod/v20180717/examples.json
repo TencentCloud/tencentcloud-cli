@@ -1174,6 +1174,14 @@
         "title": "解析索引文件"
       }
     ],
+    "ProcessImage": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ProcessImage\n&FileId=5285485487985271487\n&Operation=ContentReview\n&ContentReviewInput.Definition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ContentReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
+        "title": "发起图片处理智能识别任务"
+      }
+    ],
     "ProcessMedia": [
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40。",

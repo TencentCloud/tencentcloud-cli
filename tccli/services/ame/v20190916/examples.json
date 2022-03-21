@@ -280,6 +280,12 @@
         "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetDestroyMode\",\n    \"SetDestroyModeCommandInput\": {\n        \"DestroyMode\": \"Expire\",\n        \"DestroyExpireTime\": 120\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "设置销毁模式"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"RobotId\": \"xxxxx\",\n    \"Command\": \"SetDestroyMode\",\n    \"SetVolumeCommandInput\": {\n        \"Volume\": 50\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "设置音量"
       }
     ],
     "TakeMusicOffShelves": [

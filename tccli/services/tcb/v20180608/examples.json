@@ -526,6 +526,14 @@
         "title": "创建微信网关"
       }
     ],
+    "FreezeCloudBaseRunServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ServerNameList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"xx\"\n        ],\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量冻结"
+      }
+    ],
     "ModifyCloudBaseRunServerFlowConf": [
       {
         "document": "",
@@ -612,6 +620,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOnStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "开启小租户网关"
+      }
+    ],
+    "UnfreezeCloudBaseRunServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ServerNameList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"xx\"\n        ],\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量解冻服务"
       }
     ]
   },

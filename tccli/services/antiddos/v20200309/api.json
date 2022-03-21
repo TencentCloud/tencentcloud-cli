@@ -3138,7 +3138,7 @@
       "members": [
         {
           "default": "",
-          "document": "区域类型，取值[\noversea(海外)\nchina(国内)\ncustomized(自定义地区)\n]",
+          "document": "区域类型，取值[\noversea(境外)\nchina(国内)\ncustomized(自定义地区)\n]",
           "example": "oversea",
           "member": "string",
           "name": "RegionType",

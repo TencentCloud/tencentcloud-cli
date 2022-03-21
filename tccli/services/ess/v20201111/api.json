@@ -21,7 +21,7 @@
     "CreateFlowByFiles": {
       "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建流程。",
       "input": "CreateFlowByFilesRequest",
-      "name": "创建流程",
+      "name": "用PDF文件创建流程",
       "output": "CreateFlowByFilesResponse"
     },
     "CreateSchemeUrl": {
@@ -197,15 +197,6 @@
         },
         {
           "default": "",
-          "document": "应用相关信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "流程id",
           "example": "flow-id",
           "member": "string",
@@ -221,6 +212,15 @@
           "name": "CancelMessage",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1324,6 +1324,16 @@
           "name": "NotifyType",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署意愿确认渠道,WEIXINAPP:人脸识别",
+          "example": "[\"WEIXINAPP\"]",
+          "member": "string",
+          "name": "VerifyChannel",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

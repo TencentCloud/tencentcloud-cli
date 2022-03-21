@@ -7310,7 +7310,7 @@
         },
         {
           "default": "",
-          "document": "分页查询偏移量",
+          "document": "分页",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7319,7 +7319,7 @@
         },
         {
           "default": "",
-          "document": "分页查询限制",
+          "document": "限制",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -10360,7 +10360,7 @@
         },
         {
           "default": "",
-          "document": "是否开始延迟剔除，取值：\"true\" | \"false\"",
+          "document": "是否开始延迟剔除，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "IsKickout",
@@ -10369,7 +10369,7 @@
         },
         {
           "default": "",
-          "document": "最少保留数",
+          "document": "最少保留数，最小为0，最大为实例数量",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -10405,7 +10405,7 @@
         },
         {
           "default": "",
-          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"true\" | \"false\"",
+          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "FailOver",
@@ -10414,7 +10414,7 @@
         },
         {
           "default": "",
-          "document": "是否自动添加只读实例，取值：\"true\" | \"false\"",
+          "document": "是否自动添加只读实例，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "AutoAddRo",
@@ -14104,7 +14104,7 @@
         },
         {
           "default": "",
-          "document": "代理节点个数",
+          "document": "代理节点个数，实际规格支持数",
           "example": "2",
           "member": "int64",
           "name": "ProxyCount",
@@ -14113,7 +14113,7 @@
         },
         {
           "default": "",
-          "document": "代理节点核数",
+          "document": "代理节点核数，实际规格支持数",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
