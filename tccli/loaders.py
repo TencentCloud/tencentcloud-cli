@@ -265,22 +265,26 @@ class Loader(object):
         param_info[para["name"]]["members"] = member
         return param_info
 
-    def _get_param_info(self, param_model, object_model):
+    def _get_param_info(self, param_model, object_model, object_set=[]):
         param_info = {}
         for para in param_model:
             if para["type"] == "list":
-                if para["member"] not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE and para["member"] not in object_set:
+                    object_set.append(para["member"])
                     self._filling_param_info(
                         param_info, para, "list",
-                        [self._get_param_info(object_model[para["member"]]["members"], object_model)])
+                        [self._get_param_info(object_model[para["member"]]["members"], object_model, object_set)])
+                    object_set.pop()
                 else:
                     self._filling_param_info(
                         param_info, para, "list", [para["member"]])
             else:
-                if para["member"] not in BASE_TYPE:
+                if para["member"] not in BASE_TYPE and para["member"] not in object_set:
+                    object_set.append(para["member"])
                     param_info = self._filling_param_info(
                         param_info, para, para["member"],
-                        self._get_param_info(object_model[para["member"]]["members"], object_model))
+                        self._get_param_info(object_model[para["member"]]["members"], object_model, object_set))
+                    object_set.pop()
                 else:
                     self._filling_param_info(param_info, para, para["member"], para["member"])
         return param_info
@@ -295,19 +299,29 @@ class Loader(object):
         param_model = service_model["objects"]
         return self._get_param_info(param_model[action + "Response"]["members"], param_model)
 
-    def _generate_param_skeleton(self, param_model, name):
+    def _generate_param_skeleton(self, param_model, name, object_set=[]):
         param_skeleton = {}
         for para in param_model:
             if para["type"] == "list":
                 if para["member"] not in BASE_TYPE:
+                    if para["member"] in object_set:
+                        param_skeleton[para["name"]] = [para["member"]]
+                        continue
+                    object_set.append(para["member"])
                     param_skeleton[para["name"]] = \
-                        [self._generate_param_skeleton(name[para["member"]]["members"], name)]
+                        [self._generate_param_skeleton(name[para["member"]]["members"], name, object_set)]
+                    object_set.pop()
                 else:
                     param_skeleton[para["name"]] = [PARAM_TYPE_MAP[para["member"]]]
             else:
                 if para["member"] not in BASE_TYPE:
+                    if para["member"] in object_set:
+                        param_skeleton[para["name"]] = para["member"]
+                        continue
+                    object_set.append(para["member"])
                     param_skeleton[para["name"]] = \
-                        self._generate_param_skeleton(name[para["member"]]["members"], name)
+                        self._generate_param_skeleton(name[para["member"]]["members"], name, object_set)
+                    object_set.pop()
                 else:
                     param_skeleton[para["name"]] = PARAM_TYPE_MAP[para["member"]]
         return param_skeleton
@@ -347,19 +361,21 @@ class Loader(object):
                         all_param_list.append(tmp)
         return all_param_list
 
-    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list):
+    def _recur_get_unfold_param_info(self, param_model, object_model, return_param_list, param_list, object_set):
         for para in param_model:
-            self._get_unfold_param_info(object_model, return_param_list, param_list, para)
+            self._get_unfold_param_info(object_model, return_param_list, param_list, para, object_set)
         if param_list.pop().isdigit():
             param_list.pop()
 
-    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para):
+    def _get_unfold_param_info(self, object_model, return_param_list, param_list, para, object_set=[]):
         param_list.append(para["name"])
         if para["type"] == "list" and para["member"] not in BASE_TYPE:
             param_list.append('0')
-        if para["member"] not in BASE_TYPE:
+        if para["member"] not in BASE_TYPE and para["member"] not in object_set:
+            object_set.append(para["member"])
             self._recur_get_unfold_param_info(object_model[para["member"]]["members"],
-                                              object_model, return_param_list, param_list)
+                                              object_model, return_param_list, param_list, object_set)
+            object_set.pop()
         else:
             tmp = copy.deepcopy(param_list)
             return_param_list.append(tmp)
@@ -513,4 +529,3 @@ class Loader(object):
         # null array
         else:
             pass
-
