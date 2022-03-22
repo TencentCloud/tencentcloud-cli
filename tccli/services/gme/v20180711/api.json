@@ -12,6 +12,18 @@
       "name": "创建GME应用",
       "output": "CreateAppResponse"
     },
+    "CreateScanUser": {
+      "document": "新增自定义送检用户",
+      "input": "CreateScanUserRequest",
+      "name": "新增自定义送检用户",
+      "output": "CreateScanUserResponse"
+    },
+    "DeleteScanUser": {
+      "document": "删除自定义送检用户",
+      "input": "DeleteScanUserRequest",
+      "name": "删除自定义送检用户",
+      "output": "DeleteScanUserResponse"
+    },
     "DescribeAgeDetectTask": {
       "document": "查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
       "input": "DescribeAgeDetectTaskRequest",
@@ -575,6 +587,96 @@
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScanUserRequest": {
+      "document": "CreateScanUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要新增送检的用户号。示例：1234",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScanUserResponse": {
+      "document": "CreateScanUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScanUserRequest": {
+      "document": "DeleteScanUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
+          "example": "1",
+          "member": "uint64",
+          "name": "BizId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要删除送检的用户号。示例：1234",
+          "example": "1",
+          "member": "uint64",
+          "name": "UserId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScanUserResponse": {
+      "document": "DeleteScanUser返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果码",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -43,7 +43,7 @@
     "CopyAccountPrivileges": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=CopyAccountPrivileges\r\n&InstanceId=tdsql-fdpjf5zh\r\n&DstUserName=testuser2\r\n&DstHost=%\r\n&SrcUserName=testuser1\r\n&SrcHost=172.17.%\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=CopyAccountPrivileges\n&InstanceId=tdsql-fdpjf5zh\n&DstUserName=testuser2\n&DstHost=%\n&SrcUserName=testuser1\n&SrcHost=172.17.%\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"95208d7c-66dc-446c-bc03-856738604611\"\n    }\n}",
         "title": "复制云数据库账号权限"
       }
@@ -91,7 +91,7 @@
     "DeleteAccount": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=DeleteAccount\r\n&InstanceId=tdsql-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DeleteAccount\n&InstanceId=tdsql-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9405fe4-65af-4936-a465-038578636567\"\n    }\n}",
         "title": "删除云数据库账号"
       }
@@ -385,7 +385,7 @@
     "ModifyAccountDescription": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyAccountDescription\r\n&InstanceId=tdsql-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Description=用于测试的账号\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyAccountDescription\n&InstanceId=tdsql-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&Description=用于测试的账号\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aef9be24-4d49-4358-8022-3405a361fd3b\"\n    }\n}",
         "title": "修改云数据库账号备注"
       }
@@ -489,7 +489,7 @@
     "ResetAccountPassword": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=ResetAccountPassword\r\n&InstanceId=tdsql-fdpjf5zh\r\n&UserName=testuser1\r\n&Host=172.17.%\r\n&Password=abcd8765_.\r\n&<公共请求参数>",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ResetAccountPassword\n&InstanceId=tdsql-fdpjf5zh\n&UserName=testuser1\n&Host=172.17.%\n&Password=abcd8765_.\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7b1680d-db03-4f20-8684-a865ce7bcd38\"\n    }\n}",
         "title": "修改云数据库账号的密码"
       }

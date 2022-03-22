@@ -6286,7 +6286,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -12357,7 +12357,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。",
+          "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -20835,7 +20835,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。",
+          "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",

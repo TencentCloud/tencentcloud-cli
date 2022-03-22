@@ -71,6 +71,12 @@
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "同步企业经办人列表",
       "output": "SyncProxyOrganizationOperatorsResponse"
+    },
+    "UploadFiles": {
+      "document": "此接口（UploadFiles）用于文件上传。\n调用时需要设置Domain 为 file.ess.tencent.cn",
+      "input": "UploadFilesRequest",
+      "name": "文件上传",
+      "output": "UploadFilesResponse"
     }
   },
   "metadata": {
@@ -2277,6 +2283,111 @@
         }
       ],
       "usage": "out"
+    },
+    "UploadFile": {
+      "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64编码后的文件内容",
+          "member": "string",
+          "name": "FileBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadFilesRequest": {
+      "document": "UploadFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模版； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息，若是渠道版调用 appid 和proxyappid 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "上传文件内容数组，最多支持20个文件",
+          "example": "FileInfos",
+          "member": "UploadFile",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesResponse": {
+      "document": "UploadFiles返回参数结构体",
+      "members": [
+        {
+          "document": "文件id数组",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传成功文件数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件Url",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UsageDetail": {
       "document": "用量明细",

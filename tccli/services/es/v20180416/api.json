@@ -72,6 +72,12 @@
       "name": "更新智能运维配置",
       "output": "UpdateDiagnoseSettingsResponse"
     },
+    "UpdateDictionaries": {
+      "document": "更新ES集群词典",
+      "input": "UpdateDictionariesRequest",
+      "name": "更新ES集群词典",
+      "output": "UpdateDictionariesResponse"
+    },
     "UpdateInstance": {
       "document": "对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeInfoList: 修改节点配置（节点横向扩缩容，纵向扩缩容，增加主节点，增加冷节点等）\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
       "input": "UpdateInstanceRequest",
@@ -2970,6 +2976,87 @@
     },
     "UpdateDiagnoseSettingsResponse": {
       "document": "UpdateDiagnoseSettings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDictionariesRequest": {
+      "document": "UpdateDictionaries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IK分词主词典COS地址",
+          "example": "[https://cos_address/dict.txt]",
+          "member": "string",
+          "name": "IkMainDicts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "IK分词停用词词典COS地址",
+          "example": "[https://cos_address/dict.txt]",
+          "member": "string",
+          "name": "IkStopwords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "同义词词典COS地址",
+          "example": "[https://cos_address/dict.txt]",
+          "member": "string",
+          "name": "Synonym",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "QQ分词词典COS地址",
+          "example": "[https://cos_address/dict.txt]",
+          "member": "string",
+          "name": "QQDict",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "0：安装；1：删除",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdateType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否强制重启集群",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceRestart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDictionariesResponse": {
+      "document": "UpdateDictionaries返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

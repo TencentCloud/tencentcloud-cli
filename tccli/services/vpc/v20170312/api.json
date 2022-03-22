@@ -1569,7 +1569,7 @@
     "ReplaceSecurityGroupPolicy": {
       "document": "本接口（ReplaceSecurityGroupPolicy）用于替换单条安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
-      "name": "替换单条安全组路由规则",
+      "name": "替换单条安全组规则",
       "output": "ReplaceSecurityGroupPolicyResponse"
     },
     "ResetAttachCcnInstances": {
@@ -7546,6 +7546,7 @@
         {
           "default": "",
           "document": "专线网关ID，形如：dcg-prpqlmg1",
+          "example": "dcg-prpqlmg1",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -7554,6 +7555,7 @@
         {
           "default": "",
           "document": "路由ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -9690,6 +9692,7 @@
         {
           "default": "",
           "document": "专线网关ID，形如：`dcg-prpqlmg1`。",
+          "example": "dcg-prpqlmg1",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -9698,6 +9701,7 @@
         {
           "default": "",
           "document": "云联网路由学习类型，可选值：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置，默认值。</li>",
+          "example": "BGP",
           "member": "string",
           "name": "CcnRouteType",
           "required": false,
@@ -9706,6 +9710,7 @@
         {
           "default": "",
           "document": "偏移量。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9714,6 +9719,7 @@
         {
           "default": "",
           "document": "返回数量。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9727,15 +9733,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "云联网路由（IDC网段）列表。",
+          "example": "无",
           "member": "DirectConnectGatewayCcnRoute",
           "name": "RouteSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11171,7 +11181,8 @@
       "members": [
         {
           "default": "",
-          "document": "查询的网络产品名称，如vpc、ccn等",
+          "document": "查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。",
+          "example": "vpc",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -11185,15 +11196,19 @@
       "members": [
         {
           "document": "ProductQuota对象数组",
+          "example": "无",
           "member": "ProductQuota",
           "name": "ProductQuotaSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的产品类型个数",
+          "example": "53",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13329,6 +13344,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -13337,6 +13353,7 @@
         {
           "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -13815,6 +13832,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -13823,6 +13841,7 @@
         {
           "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -19289,6 +19308,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -19297,6 +19317,7 @@
         {
           "default": "",
           "document": "拒绝关联实例列表。",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -19669,6 +19690,7 @@
         {
           "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -19677,6 +19699,7 @@
         {
           "default": "",
           "document": "安全组规则集合对象。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
@@ -19685,6 +19708,7 @@
         {
           "default": "",
           "document": "旧的安全组规则集合对象，可选，日志记录用。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "OriginalSecurityGroupPolicySet",
           "required": false,
@@ -19711,6 +19735,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -19719,6 +19744,7 @@
         {
           "default": "",
           "document": "CCN所属UIN（根账号）。",
+          "example": "979137",
           "member": "string",
           "name": "CcnUin",
           "required": true,
@@ -19727,6 +19753,7 @@
         {
           "default": "",
           "document": "重新申请关联网络实例列表。",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,

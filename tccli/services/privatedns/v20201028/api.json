@@ -84,6 +84,12 @@
       "name": "查询私有域解析开通状态",
       "output": "DescribePrivateZoneServiceResponse"
     },
+    "DescribeQuotaUsage": {
+      "document": "查询额度使用情况",
+      "input": "DescribeQuotaUsageRequest",
+      "name": "查询额度使用情况",
+      "output": "DescribeQuotaUsageResponse"
+    },
     "DescribeRequestData": {
       "document": "获取私有域解析请求量",
       "input": "DescribeRequestDataRequest",
@@ -1130,6 +1136,32 @@
       ],
       "type": "object"
     },
+    "DescribeQuotaUsageRequest": {
+      "document": "DescribeQuotaUsage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeQuotaUsageResponse": {
+      "document": "DescribeQuotaUsage返回参数结构体",
+      "members": [
+        {
+          "document": "Tld额度使用情况",
+          "example": "无",
+          "member": "TldQuota",
+          "name": "TldQuota",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRequestDataRequest": {
       "document": "DescribeRequestData请求参数结构体",
       "members": [
@@ -1818,6 +1850,52 @@
         }
       ],
       "usage": "both"
+    },
+    "TldQuota": {
+      "document": "Tld额度",
+      "members": [
+        {
+          "default": "",
+          "document": "总共额度",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已使用额度",
+          "example": "1",
+          "member": "int64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库存",
+          "example": "5000",
+          "member": "int64",
+          "name": "Stock",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户限额",
+          "example": "100",
+          "member": "int64",
+          "name": "Quota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VpcInfo": {
       "document": "Vpc信息",

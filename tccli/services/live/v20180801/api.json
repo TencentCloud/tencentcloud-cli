@@ -2276,6 +2276,24 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 主直播源拉流中断时，自动使用备源进行拉流。\n3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
+          "example": "PullLivePushLive",
+          "member": "string",
+          "name": "BackupSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源 URL。\n只允许填一个备源 URL",
+          "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
+          "member": "string",
+          "name": "BackupSourceUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9455,6 +9473,24 @@
           "example": "备注",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 主直播源拉流中断时，自动使用备源进行拉流。\n3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
+          "example": "PullLivePushLive",
+          "member": "string",
+          "name": "BackupSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源 URL。\n只允许填一个备源 URL",
+          "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
+          "member": "string",
+          "name": "BackupSourceUrl",
           "required": false,
           "type": "string"
         }

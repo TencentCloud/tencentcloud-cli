@@ -657,7 +657,7 @@
     "DeleteDirectConnectGatewayCcnRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteDirectConnectGatewayCcnRoutes\r\n&<公共请求参数>\r\n&DirectConnectGatewayId=dcg-prpqlmg1\r\n&RouteIds.0=ccnr-bvipc87w\r\n&RouteIds.1=ccnr-oc61so0o",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteDirectConnectGatewayCcnRoutes\n&DirectConnectGatewayId=dcg-prpqlmg1\n&RouteIds.0=ccnr-bvipc87w\n&RouteIds.1=ccnr-oc61so0o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "删除专线网关云联网路由"
       }
@@ -1119,8 +1119,8 @@
     "DescribeDirectConnectGatewayCcnRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDirectConnectGatewayCcnRoutes\r\n&DirectConnectGatewayId=dcg-prpqlmg1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"ccnr-bvipc87w\",\n                \"DestinationCidrBlock\": \"10.33.0.0/24\",\n                \"ASPath\": [\n                    \"1000\",\n                    \"2000\",\n                    \"3000\"\n                ]\n            },\n            {\n                \"RouteId\": \"ccnr-oc61so0o\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"ASPath\": []\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDirectConnectGatewayCcnRoutes\n&DirectConnectGatewayId=dcg-prpqlmg1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RouteSet\": [\n            {\n                \"RouteId\": \"ccnr-bvipc87w\",\n                \"DestinationCidrBlock\": \"10.33.0.0/24\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"ASPath\": [\n                    \"1000\",\n                    \"2000\",\n                    \"3000\"\n                ]\n            },\n            {\n                \"RouteId\": \"ccnr-oc61so0o\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"ASPath\": []\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "查询专线网关云联网路由"
       }
     ],
@@ -1655,7 +1655,7 @@
     "DisableCcnRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisableCcnRoutes\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l\r\n&RouteIds.0=ccnr-bvipc87w\r\n&RouteIds.1=ccnr-oc61so0o",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableCcnRoutes\n&CcnId=ccn-gree226l\n&RouteIds.0=ccnr-bvipc87w\n&RouteIds.1=ccnr-oc61so0o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "禁用多条路由策略"
       }
@@ -1765,7 +1765,7 @@
     "EnableCcnRoutes": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=EnableCcnRoutes\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l\r\n&RouteIds.0=ccnr-bvipc87w\r\n&RouteIds.1=ccnr-oc61so0o",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableCcnRoutes\n&CcnId=ccn-gree226l\n&RouteIds.0=ccnr-bvipc87w\n&RouteIds.1=ccnr-oc61so0o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "启用多条路由策略"
       }
@@ -2429,7 +2429,7 @@
     "ResetAttachCcnInstances": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ResetAttachCcnInstances\r\n&<公共请求参数>\r\n&CcnId=ccn-gree226l\r\n&CcnUin=979137\r\n&Instances.0.InstanceType=VPC\r\n&Instances.0.InstanceId=vpc-3dr1zrr9\r\n&Instances.0.InstanceRegion=ap-guangzhou",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetAttachCcnInstances\n&CcnId=ccn-gree226l\n&CcnUin=979137\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "重新申请关联实例"
       }

@@ -107,6 +107,14 @@
         "output": "{\n    \"Response\": {\n        \"FailedList\": [\n            {\n                \"Id\": \"11498cc8500be9cxxxxxxx3aff766cac\",\n                \"Message\": \"手机号码不合法\"\n            }\n        ],\n        \"RequestId\": \"s1631673278484637219\",\n        \"Status\": 2\n    }\n}",
         "title": "同步渠道合作企业经办人列表"
       }
+    ],
+    "UploadFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFiles\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"xx\",\n            \"ClientIp\": \"xx\",\n            \"CustomUserId\": \"xx\",\n            \"ProxyIp\": \"xx\",\n            \"Channel\": \"xx\"\n        },\n        \"ProxyOrganizationId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"BusinessType\": \"TEMPLATE\",\n    \"FileInfos\": [\n        {\n            \"FileBody\": \"iVBORw0KGgoAAAANSUhEUgAAATsAAALGCAYAAAA6ODadAAAgAElEQVR4Xu3dbah1W5eQ7HmoAAAAASUVORK5CYII=\",\n            \"FileName\": \"a.pdf\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FileIds\": [\n            \"d54e3caec25ad0ea6be24406762b7562\"\n        ],\n        \"FileUrls\": [\n            \"https://a.b.com/d54e3caec25ad0ea6be24406762b7562\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4fecde8c3137d320e8a3c8136bdbb7e5\"\n    }\n}",
+        "title": "多文件上传接口"
+      }
     ]
   },
   "version": "1.0"

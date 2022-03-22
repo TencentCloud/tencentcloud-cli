@@ -731,6 +731,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -739,6 +740,7 @@
         {
           "default": "",
           "document": "源用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "SrcUserName",
           "required": true,
@@ -747,6 +749,7 @@
         {
           "default": "",
           "document": "源用户允许的访问 host",
+          "example": "172.17.%",
           "member": "string",
           "name": "SrcHost",
           "required": true,
@@ -755,6 +758,7 @@
         {
           "default": "",
           "document": "目的用户名",
+          "example": "testuser2",
           "member": "string",
           "name": "DstUserName",
           "required": true,
@@ -763,6 +767,7 @@
         {
           "default": "",
           "document": "目的用户允许的访问 host",
+          "example": "%",
           "member": "string",
           "name": "DstHost",
           "required": true,
@@ -771,6 +776,7 @@
         {
           "default": "",
           "document": "源账号的 ReadOnly 属性",
+          "example": "无",
           "member": "string",
           "name": "SrcReadOnly",
           "required": false,
@@ -779,6 +785,7 @@
         {
           "default": "",
           "document": "目的账号的 ReadOnly 属性",
+          "example": "无",
           "member": "string",
           "name": "DstReadOnly",
           "required": false,
@@ -2607,6 +2614,7 @@
         {
           "default": "",
           "document": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2615,6 +2623,7 @@
         {
           "default": "",
           "document": "用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2623,6 +2632,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -4981,6 +4991,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4989,6 +5000,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4997,6 +5009,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -5005,6 +5018,7 @@
         {
           "default": "",
           "document": "新的账号备注，长度 0~256。",
+          "example": "用于测试的账号",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5961,6 +5975,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5969,6 +5984,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -5977,6 +5993,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -5985,6 +6002,7 @@
         {
           "default": "",
           "document": "新密码，由字母、数字或常见符号组成，不能包含分号、单引号和双引号，长度为6~32位。",
+          "example": "abcd8765_.",
           "member": "string",
           "name": "Password",
           "required": true,

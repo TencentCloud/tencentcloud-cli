@@ -49,8 +49,8 @@
     "CreateTarget": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-l65vlc2\",\n    \"Type\": \"scf\",\n    \"TargetDescription\": {\n        \"ResourceDescription\": \"qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1\"\n    },\n    \"RuleId\": \"rule-fdltium8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\",\n        \"TargetId\": \"target-o5yx01oq\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxxx\",\n    \"Type\": \"scf\",\n    \"TargetDescription\": {\n        \"ResourceDescription\": \"qcs::scf:ap-guangzhou:uin/xxxxxxxx:namespace/xxxxxx/function/xxxxx/x\"\n    },\n    \"RuleId\": \"rule-xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\",\n        \"TargetId\": \"target-xxxxxx\"\n    }\n}",
         "title": "创建目标"
       }
     ],

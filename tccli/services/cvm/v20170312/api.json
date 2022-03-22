@@ -606,6 +606,7 @@
         {
           "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -614,6 +615,7 @@
         {
           "default": "",
           "document": "用于保证请求幂等性的字符串。",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -622,6 +624,7 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
           "member": "ChargePrepaid",
           "name": "HostChargePrepaid",
           "required": false,
@@ -630,6 +633,7 @@
         {
           "default": "",
           "document": "实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式），默认为：'PREPAID'。",
+          "example": "PREPAID",
           "member": "string",
           "name": "HostChargeType",
           "required": false,
@@ -638,6 +642,7 @@
         {
           "default": "",
           "document": "CDH实例机型，默认为：'HS1'。",
+          "example": "HS1",
           "member": "string",
           "name": "HostType",
           "required": false,
@@ -646,6 +651,7 @@
         {
           "default": "",
           "document": "购买CDH实例数量，默认为：1。",
+          "example": "1",
           "member": "uint64",
           "name": "HostCount",
           "required": false,
@@ -654,6 +660,7 @@
         {
           "default": "",
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -667,8 +674,10 @@
       "members": [
         {
           "document": "新创建云子机的实例id列表。",
+          "example": "[\"host-lan4lb2k\"]",
           "member": "string",
           "name": "HostIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -732,6 +741,7 @@
         {
           "default": "",
           "document": "要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。",
+          "example": "[\"sg-9id3l839\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -740,6 +750,7 @@
         {
           "default": "",
           "document": "被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。",
+          "example": "[\"ins-2zvpghhc\\r\\n\",\"ins-915zrb0p\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3152,6 +3163,7 @@
         {
           "default": "",
           "document": "要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。",
+          "example": "[\"sg-9id3l839\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -3160,6 +3172,7 @@
         {
           "default": "",
           "document": "被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。",
+          "example": "[\"ins-2zvpghhc\\r\\n\",\"ins-915zrb0p\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

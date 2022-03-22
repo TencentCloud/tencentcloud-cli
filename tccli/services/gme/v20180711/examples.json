@@ -16,6 +16,22 @@
         "title": "使用自定义配置，创建一个GME应用"
       }
     ],
+    "CreateScanUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 1234,\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增自定义送检用户"
+      }
+    ],
+    "DeleteScanUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 0,\n    \"BizId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除自定义送检用户"
+      }
+    ],
     "DescribeAgeDetectTask": [
       {
         "document": "",

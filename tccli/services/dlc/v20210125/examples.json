@@ -48,6 +48,22 @@
         "title": "生成建库SQL语句"
       }
     ],
+    "CreateExportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExportTask\n<公共请求参数>\n\n{\n    \"InputType\": \"taskResult\",\n    \"InputConf\": [\n        {\n            \"Key\": \"taskId\",\n            \"Value\": \"b99e07e08a3811ec8e8f525400afd9d2\"\n        }\n    ],\n    \"OutputType\": \"cos\",\n    \"OutputConf\": [\n        {\n            \"Key\": \"path\",\n            \"Value\": \"cosn://@dlcda57--0205-4299-82a3/\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xxx\",\n        \"RequestId\": \"123-abc\"\n    }\n}",
+        "title": "创建数据导出任务"
+      }
+    ],
+    "CreateImportTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImportTask\n<公共请求参数>\n\n{\n    \"InputType\": \"cos\",\n    \"InputConf\": [\n        {\n            \"Key\": \"fileType\",\n            \"Value\": \"CSV\"\n        },\n        {\n            \"Key\": \"sep\",\n            \"Value\": \",\"\n        },\n        {\n            \"Key\": \"quote\",\n            \"Value\": \"\\\"\"\n        },\n        {\n            \"Key\": \"header\",\n            \"Value\": \"true\"\n        },\n        {\n            \"Key\": \"paths\",\n            \"Value\": \"lakefs://@dlcda57--0205-4299-82a3/\"\n        }\n    ],\n    \"OutputType\": \"lakefsStorage\",\n    \"OutputConf\": [\n        {\n            \"Key\": \"databaseName\",\n            \"Value\": \"test_import\"\n        },\n        {\n            \"Key\": \"tableName\",\n            \"Value\": \"test_csv\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xxx\",\n        \"RequestId\": \"123-abc\"\n    }\n}",
+        "title": "创建数据导入任务"
+      }
+    ],
     "CreateScript": [
       {
         "document": "",

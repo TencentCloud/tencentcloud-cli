@@ -136,6 +136,14 @@
         "title": "开通私有域解析"
       }
     ],
+    "DescribeQuotaUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotaUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89aa867e-74db-4fce-9cab-add371622723\",\n        \"TldQuota\": {\n            \"Total\": 1,\n            \"Used\": 1,\n            \"Stock\": 5000,\n            \"Quota\": 100\n        }\n    }\n}",
+        "title": "查询用户额度使用情况"
+      }
+    ],
     "DescribeRequestData": [
       {
         "document": "",

@@ -36,6 +36,18 @@
       "name": "生成建库SQL语句",
       "output": "CreateDatabaseResponse"
     },
+    "CreateExportTask": {
+      "document": "该接口（CreateExportTask）用于创建导出任务",
+      "input": "CreateExportTaskRequest",
+      "name": "创建导出任务",
+      "output": "CreateExportTaskResponse"
+    },
+    "CreateImportTask": {
+      "document": "该接口（CreateImportTask）用于创建导入任务",
+      "input": "CreateImportTaskRequest",
+      "name": "创建导入任务",
+      "output": "CreateImportTaskResponse"
+    },
     "CreateScript": {
       "document": "该接口（CreateScript）用于创建sql脚本。",
       "input": "CreateScriptRequest",
@@ -571,6 +583,132 @@
           "name": "Execution",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskRequest": {
+      "document": "CreateExportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据来源，lakefsStorage、taskResult",
+          "example": "lakefsStorage、taskResult",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出任务输入配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "InputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出任务输出配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "OutputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "目标数据源的类型，目前支持导出到cos",
+          "example": "cos",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskResponse": {
+      "document": "CreateExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "24343434",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImportTaskRequest": {
+      "document": "CreateImportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据来源，cos",
+          "example": "cos",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "InputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "输出配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "OutputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "目标数据源的类型，目前支持导入到托管存储，即lakefsStorage",
+          "example": "lakefsStorage",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImportTaskResponse": {
+      "document": "CreateImportTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "24343434",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
