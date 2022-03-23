@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -17,6 +19,7 @@ Output:
         "RuleDetail": {
             "RuleId": "6045899634b9a9000c4ae5bb",
             "IsEnable": true,
+            "IsDefault": false,
             "RuleName": "kkkkk",
             "ChildRules": [
                 {
@@ -81,7 +84,9 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --ImageId xxx
+    --ImageId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -92,6 +97,7 @@ Output:
         "RuleDetail": {
             "RuleId": "6045899634b9a9000c4ae5bb",
             "IsEnable": true,
+            "IsDefault": false,
             "RuleName": "kkkkk",
             "ChildRules": [
                 {
@@ -156,7 +162,9 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -167,6 +175,7 @@ Output:
         "RuleDetail": {
             "RuleId": "60484042d620f3f9012c521e",
             "IsEnable": true,
+            "IsDefault": true,
             "RuleName": "kkkkk",
             "ChildRules": [],
             "SystemChildRules": [
@@ -207,7 +216,9 @@ Input:
 
 ```
 tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -218,6 +229,7 @@ Output:
         "RuleDetail": {
             "RuleId": "60484042d620f3f9012c521e",
             "IsEnable": true,
+            "IsDefault": true,
             "RuleName": "kkkkk",
             "ChildRules": [],
             "SystemChildRules": [

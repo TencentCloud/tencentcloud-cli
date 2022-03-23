@@ -640,6 +640,14 @@
         "title": "只获取媒体基础信息"
       }
     ],
+    "DescribeMediaPlayStatDetails": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeMediaPlayStatDetails\n&FileId=5285485487985271487\n&StartTime=2021-01-01T00:00:00+08:00\n&EndTime=2021-01-01T02:00:00+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PlayStatInfoSet\": [\n            {\n                \"FileId\": \"5285485487985271487\",\n                \"Time\": \"2021-01-01T00:00:00+08:00\",\n                \"PlayTimes\": 13,\n                \"Traffic\": 23434\n            },\n            {\n                \"FileId\": \"5285485487985271487\",\n                \"Time\": \"2021-01-01T01:00:00+08:00\",\n                \"PlayTimes\": 3,\n                \"Traffic\": 2334\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "查询从2021-01-01 00:00:00 到2021-01-01 02:00:00的媒体文件5285485487985271487的播放统计数据"
+      }
+    ],
     "DescribeMediaProcessUsageData": [
       {
         "document": "",

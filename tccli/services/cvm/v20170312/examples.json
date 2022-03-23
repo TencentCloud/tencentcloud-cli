@@ -587,8 +587,8 @@
     "RenewHosts": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=RenewHosts\r\n&HostChargePrepaid.Period=1\r\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&HostIds.0=host-ey16rkyg\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=RenewHosts\n&HostChargePrepaid.Period=1\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&HostIds.0=host-ey16rkyg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "续费CDH实例"
       }
     ],

@@ -2883,6 +2883,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-mdbjfr0y",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -2891,6 +2892,7 @@
         {
           "default": "",
           "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP, 其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "1",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
@@ -2899,6 +2901,7 @@
         {
           "default": "",
           "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "[\"139.199.232.212\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
@@ -2907,10 +2910,29 @@
         {
           "default": "",
           "document": "弹性IP可用区，自动分配弹性IP时传递。",
+          "example": "10003",
           "member": "string",
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "StockPublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "PublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5359,6 +5381,24 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "StockPublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "PublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18292,6 +18332,7 @@
         {
           "default": "",
           "document": "弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。",
+          "example": "eip-11112222",
           "member": "string",
           "name": "AddressId",
           "required": false,
@@ -18301,6 +18342,7 @@
         {
           "default": "",
           "document": "外网IP地址，形如：`123.121.34.33`。",
+          "example": "123.121.34.3",
           "member": "string",
           "name": "PublicIpAddress",
           "required": false,
@@ -18310,6 +18352,7 @@
         {
           "default": "",
           "document": "资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。",
+          "example": "true",
           "member": "bool",
           "name": "IsBlocked",
           "required": false,

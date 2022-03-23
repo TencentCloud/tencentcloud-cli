@@ -285,6 +285,15 @@
           "name": "Unsubscribe",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面",
+          "example": "0",
+          "member": "uint64",
+          "name": "ADLocation",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

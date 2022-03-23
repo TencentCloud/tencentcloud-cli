@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --RuleId xxx
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -67,7 +69,9 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --ImageId xxx
+    --ImageId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -128,7 +132,9 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --RuleId xxx
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -139,6 +145,7 @@ Output:
         "RuleDetail": {
             "RuleId": "6048403bd620f3f9012c521d",
             "IsEnable": true,
+            "IsDefault": true,
             "RuleName": "系统策略",
             "ChildRules": [],
             "SystemChildRules": [
@@ -201,7 +208,9 @@ Input:
 
 ```
 tccli tcss DescribeAbnormalProcessRuleDetail --cli-unfold-argument  \
-    --ImageId xxx
+    --ImageId xxx \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -212,6 +221,7 @@ Output:
         "RuleDetail": {
             "RuleId": "6048403bd620f3f9012c521d",
             "IsEnable": true,
+            "IsDefault": true,
             "RuleName": "系统策略",
             "ChildRules": [],
             "SystemChildRules": [

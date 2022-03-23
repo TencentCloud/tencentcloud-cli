@@ -138,6 +138,12 @@
       "name": "删除指定pod",
       "output": "DeleteEdgeUnitPodResponse"
     },
+    "DeleteIotDeviceBatch": {
+      "document": "批量删除设备",
+      "input": "DeleteIotDeviceBatchRequest",
+      "name": "批量删除设备",
+      "output": "DeleteIotDeviceBatchResponse"
+    },
     "DeleteNamespace": {
       "document": "删除命名空间",
       "input": "DeleteNamespaceRequest",
@@ -197,6 +203,12 @@
       "input": "DescribeConfigMapsRequest",
       "name": "获取ConfigMap列表",
       "output": "DescribeConfigMapsResponse"
+    },
+    "DescribeDracoEdgeNodeInstaller": {
+      "document": "自动获取Draco设备的安装包",
+      "input": "DescribeDracoEdgeNodeInstallerRequest",
+      "name": "自动获取Draco设备的安装包",
+      "output": "DescribeDracoEdgeNodeInstallerResponse"
     },
     "DescribeEdgeAgentNodeInstaller": {
       "document": "获取节点安装信息",
@@ -2507,6 +2519,33 @@
       ],
       "type": "object"
     },
+    "DeleteIotDeviceBatchRequest": {
+      "document": "DeleteIotDeviceBatch请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "uint64",
+          "name": "DeviceIDList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIotDeviceBatchResponse": {
+      "document": "DeleteIotDeviceBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNamespaceRequest": {
       "document": "DeleteNamespace请求参数结构体",
       "members": [
@@ -3153,6 +3192,42 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDracoEdgeNodeInstallerRequest": {
+      "document": "DescribeDracoEdgeNodeInstaller请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备SN",
+          "example": "2222",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDracoEdgeNodeInstallerResponse": {
+      "document": "DescribeDracoEdgeNodeInstaller返回参数结构体",
+      "members": [
+        {
+          "document": "在线安装命名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sssss",
+          "member": "string",
+          "name": "OnlineInstallationCommand",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

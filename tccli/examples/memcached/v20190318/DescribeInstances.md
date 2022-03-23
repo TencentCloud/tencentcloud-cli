@@ -1,4 +1,4 @@
-**Example 1: **
+**Example 1: 请求示例**
 
 
 
@@ -6,14 +6,17 @@ Input:
 
 ```
 tccli memcached DescribeInstances --cli-unfold-argument  \
-    --Limit 无符号整型 \
-    --OrderBy 字符串型 \
-    --OrderType 有符号整型 \
-    --Offset 无符号整型 \
+    --OrderBy xx \
     --SearchKeys 字符串型 \
-    --ProjectIds 有符号整型 \
-    --InstanceIds 有符号整型 \
-    --InstanceNames 字符串型
+    --UniqSubnetIds xx \
+    --Vips xx \
+    --OrderType 0 \
+    --InstanceNames 字符串型 \
+    --UniqVpcIds xx \
+    --Limit 1 \
+    --Offset 1 \
+    --ProjectIds 0 \
+    --InstanceIds 有符号整型
 ```
 
 Output: 
@@ -45,8 +48,54 @@ Output:
                 "UniqVpcId": "",
                 "UniqSubnetId": "",
                 "DeadlineTimeStamp": "0001-01-01 08:05:52",
-                "SetId": 0,
-                "InstanceAlias": ""
+                "SetId": 0
+            }
+        ]
+    }
+}
+```
+
+**Example 2: 测试返回**
+
+
+
+Input: 
+
+```
+tccli memcached DescribeInstances --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "50084d05-cbd9-4fd6-9ee6-03504521a1f2",
+        "TotalNum": 1,
+        "InstanceList": [
+            {
+                "InstanceId": "cmem-nksuaveq",
+                "InstanceName": "cmem-nksuaveq",
+                "AppId": 251009545,
+                "ProjectId": 10,
+                "InstanceDesc": "cmem-nksuaveq",
+                "Vip": "",
+                "Vport": 9101,
+                "Status": 0,
+                "AutoRenewFlag": 0,
+                "VpcId": 0,
+                "SubnetId": 0,
+                "PayMode": 0,
+                "ZoneId": 100002,
+                "Expire": 0,
+                "RegionId": 1,
+                "AddTimeStamp": "2022-02-11 11:12:45",
+                "ModTimeStamp": "2022-02-11 11:12:45",
+                "IsolateTimeStamp": "2022-02-11 11:12:45",
+                "UniqVpcId": "",
+                "UniqSubnetId": "",
+                "DeadlineTimeStamp": "0001-01-01 08:05:43",
+                "SetId": 500728,
+                "CmemId": 0,
+                "Tags": []
             }
         ]
     }

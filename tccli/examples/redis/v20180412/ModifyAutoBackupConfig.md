@@ -16,12 +16,13 @@ Output:
 ```
 {
     "Response": {
+        "BackupStorageDays": 0,
         "AutoBackupType": 1,
         "WeekDays": [
             "Wednesday"
         ],
-        "TimePeriod": "00:00-01:00",
-        "RequestId": "ac750a85-9a55-4a42-a9de-8c2ca1f4ff12"
+        "RequestId": "xx",
+        "TimePeriod": "xx"
     }
 }
 ```

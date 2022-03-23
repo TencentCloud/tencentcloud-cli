@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Status": true,
+        "Vip": "192.168.1.1",
+        "VpcId": "vpc-hu6khgap",
+        "SubnetId": "subnet-6mt7lir6",
         "RequestId": "f1b5aabe-806a-4886-b839-9907baa24c85"
     }
 }

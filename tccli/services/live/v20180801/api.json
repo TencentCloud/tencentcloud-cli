@@ -2561,6 +2561,15 @@
           "name": "Mp3Param",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印，类型为慢直播时此参数无效。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9650,6 +9659,15 @@
           "name": "Mp3Param",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印，类型为慢直播时此参数无效。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11504,6 +11522,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除水印。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

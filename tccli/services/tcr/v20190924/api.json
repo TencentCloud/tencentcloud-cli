@@ -726,6 +726,7 @@
         {
           "default": "",
           "document": "仓库名称数组",
+          "example": "[\"dockerhub\\/test\\r\\n\",\"testns\\/test1\\r\\n\"]",
           "member": "string",
           "name": "RepoNames",
           "required": true,

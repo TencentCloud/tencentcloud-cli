@@ -26,3 +26,31 @@ Output:
 }
 ```
 
+**Example 2: 示例**
+
+
+
+Input: 
+
+```
+tccli live CreateLiveRecordTemplate --cli-unfold-argument  \
+    --RemoveWatermark false \
+    --FlvParam.StorageTime 2 \
+    --FlvParam.VodSubAppId 251195406 \
+    --FlvParam.Enable 1 \
+    --FlvParam.RecordInterval 2222 \
+    --IsDelayLive 0 \
+    --Description 字符串 \
+    --TemplateName 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "74ed2203-278d-4ec8-8c67-65626a94daef",
+        "TemplateId": 362894
+    }
+}
+```
+

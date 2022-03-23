@@ -4642,6 +4642,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5288,6 +5289,7 @@
         {
           "default": "",
           "document": "待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "[\"tdsql-fdpjf5zh\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5296,6 +5298,7 @@
         {
           "default": "",
           "document": "要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,

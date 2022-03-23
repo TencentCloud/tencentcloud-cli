@@ -1102,6 +1102,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-01 00:00:00",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1374,6 +1384,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是系统默认策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1532,6 +1552,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-01 00:00:00",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1833,6 +1863,16 @@
           "name": "SystemChildRules",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是系统默认策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -5555,7 +5595,7 @@
       "members": [
         {
           "document": "事件基本信息",
-          "example": "{}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "required": true,
@@ -5564,7 +5604,7 @@
         },
         {
           "document": "进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "required": true,
@@ -5573,7 +5613,7 @@
         },
         {
           "document": "父进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "required": true,
@@ -5582,12 +5622,21 @@
         },
         {
           "document": "事件描述",
-          "example": "{}",
+          "example": "无",
           "member": "AbnormalProcessEventDescription",
           "name": "EventDetail",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "祖先进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "AncestorProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5780,6 +5829,24 @@
           "name": "ImageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5987,7 +6054,7 @@
       "members": [
         {
           "document": "事件基本信息",
-          "example": "{}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "required": true,
@@ -5996,7 +6063,7 @@
         },
         {
           "document": "进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "required": true,
@@ -6005,7 +6072,7 @@
         },
         {
           "document": "被篡改信息",
-          "example": "{}",
+          "example": "无",
           "member": "FileAttributeInfo",
           "name": "TamperedFileInfo",
           "required": true,
@@ -6014,12 +6081,30 @@
         },
         {
           "document": "事件描述",
-          "example": "{}",
+          "example": "无",
           "member": "AccessControlEventDescription",
           "name": "EventDetail",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "父进程信息",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "ParentProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "祖先进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "AncestorProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6212,6 +6297,24 @@
           "name": "ImageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11647,7 +11750,7 @@
       "members": [
         {
           "document": "事件基本信息",
-          "example": "{}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "required": true,
@@ -11656,7 +11759,7 @@
         },
         {
           "document": "进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "required": true,
@@ -11665,12 +11768,30 @@
         },
         {
           "document": "事件描述",
-          "example": "{}",
+          "example": "无",
           "member": "EscapeEventDescription",
           "name": "EventDetail",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "父进程信息",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "ParentProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "祖先进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "AncestorProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12531,7 +12652,7 @@
       "members": [
         {
           "document": "事件基本信息",
-          "example": "{}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "required": true,
@@ -12540,7 +12661,7 @@
         },
         {
           "document": "进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "required": true,
@@ -12549,7 +12670,7 @@
         },
         {
           "document": "父进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "required": true,
@@ -12558,12 +12679,21 @@
         },
         {
           "document": "事件描述",
-          "example": "{}",
+          "example": "无",
           "member": "ReverseShellEventDescription",
           "name": "EventDetail",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "祖先进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "AncestorProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12963,7 +13093,7 @@
       "members": [
         {
           "document": "事件基本信息",
-          "example": "{}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "required": true,
@@ -12972,7 +13102,7 @@
         },
         {
           "document": "进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "required": true,
@@ -12981,7 +13111,7 @@
         },
         {
           "document": "父进程信息",
-          "example": "{}",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "required": true,
@@ -12990,12 +13120,21 @@
         },
         {
           "document": "事件描述",
-          "example": "{}",
+          "example": "无",
           "member": "RiskSyscallEventDescription",
           "name": "EventDetail",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "祖先进程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessBaseInfo",
+          "name": "AncestorProcessInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13903,6 +14042,87 @@
           "value_allowed_null": true
         },
         {
+          "document": "父进程启动用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "父进程用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "父进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "父进程命令行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "祖先进程启动用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "祖先进程用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "祖先进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "祖先进程命令行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AncestorProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -14507,7 +14727,7 @@
         {
           "default": "",
           "document": "事件规则",
-          "example": "xxx容器中xxx进程执行了系统调用chroot，该系统调用在容器security option中明确禁止",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -14517,7 +14737,7 @@
         {
           "default": "",
           "document": "解决方案",
-          "example": "检查容器对应镜像是否存在安全漏洞、木马或提权类黑客工具",
+          "example": "无",
           "member": "string",
           "name": "Solution",
           "required": true,
@@ -14527,9 +14747,19 @@
         {
           "default": "",
           "document": "事件备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "事件备注",
+          "example": "无",
           "member": "string",
           "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperationTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -17721,6 +17951,52 @@
       ],
       "usage": "out"
     },
+    "ProcessBaseInfo": {
+      "document": "运行时安全，进程基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "进程启动用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ProcessStartUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "ProcessUserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/home/work",
+          "member": "string",
+          "name": "ProcessPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程命令行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/bin/sh -i",
+          "member": "string",
+          "name": "ProcessParam",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ProcessDetailBaseInfo": {
       "document": "运行是安全详情，进程基础信息",
       "members": [
@@ -18114,6 +18390,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-01 00:00:00",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18478,6 +18764,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件最后一次处理的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-01 00:00:00",
+          "member": "string",
+          "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

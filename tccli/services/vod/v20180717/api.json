@@ -372,6 +372,12 @@
       "name": "获取媒体详细信息",
       "output": "DescribeMediaInfosResponse"
     },
+    "DescribeMediaPlayStatDetails": {
+      "document": "该接口用于查询媒体文件按指定时间粒度统计的播放数据\n* 可以查询最近一年的播放统计数据。\n* 时间粒度为小时，结束时间和起始时间的跨度最大为7天。\n* 时间粒度为天，结束时间和起始时间的跨度最大为90天。",
+      "input": "DescribeMediaPlayStatDetailsRequest",
+      "name": "查询媒体文件按指定时间粒度统计的播放数据",
+      "output": "DescribeMediaPlayStatDetailsResponse"
+    },
     "DescribeMediaProcessUsageData": {
       "document": "该接口返回查询时间范围内每天使用的视频处理用量信息。\n   1. 可以查询最近365天内的视频处理统计数据。\n   2. 查询时间跨度不超过90天。",
       "input": "DescribeMediaProcessUsageDataRequest",
@@ -10578,6 +10584,78 @@
       ],
       "type": "object"
     },
+    "DescribeMediaPlayStatDetailsRequest": {
+      "document": "DescribeMediaPlayStatDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID。",
+          "example": "5285485487985271487",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-07T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计时间粒度，有效值：\n<li>Hour：以小时为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于1天以小时为粒度，大于等于1天则以天为粒度。",
+          "example": "Day",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "1450001234",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaPlayStatDetailsResponse": {
+      "document": "DescribeMediaPlayStatDetails返回参数结构体",
+      "members": [
+        {
+          "document": "播放统计数据。",
+          "example": "无",
+          "member": "PlayStatInfo",
+          "name": "PlayStatInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMediaProcessUsageDataRequest": {
       "document": "DescribeMediaProcessUsageData请求参数结构体",
       "members": [
@@ -18808,6 +18886,52 @@
           "name": "Url",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PlayStatInfo": {
+      "document": "播放统计信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。\n<li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>\n<li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放次数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PlayTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放流量，单位：字节。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Traffic",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

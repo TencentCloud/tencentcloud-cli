@@ -120,6 +120,12 @@
         "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate\n&TemplateName=templat\n&Description=test\n&FlvParam.Enable=0\n&FlvParam.RecordInterval=1800\n&FlvParam.StorageTime=600\n&HlsParam.Enable=1\n&HlsParam.RecordInterval=1800\n&HlsParam.StorageTime=600\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveRecordTemplate\n<公共请求参数>\n\n{\n    \"RemoveWatermark\": \"false\",\n    \"FlvParam\": {\n        \"StorageTime\": \"2\",\n        \"VodSubAppId\": \"251195406\",\n        \"Enable\": \"1\",\n        \"RecordInterval\": \"2222\"\n    },\n    \"IsDelayLive\": \"0\",\n    \"Description\": \"字符串\",\n    \"TemplateName\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74ed2203-278d-4ec8-8c67-65626a94daef\",\n        \"TemplateId\": 362894\n    }\n}",
+        "title": "示例"
       }
     ],
     "CreateLiveSnapshotRule": [

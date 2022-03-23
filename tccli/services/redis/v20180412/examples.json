@@ -145,7 +145,7 @@
     "DescribeInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceAccount\r\n&InstanceId=crs-5a4py64p\r\n&Limit=10\r\n&Offset=0\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceAccount\n&InstanceId=crs-5a4py64p\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Accounts\": [\n            {\n                \"InstanceId\": \"crs-fdjfkldf\",\n                \"AccountName\": \"test\",\n                \"Remark\": \"test\",\n                \"Privilege\": \"rw\",\n                \"ReadonlyPolicy\": [\n                    \"master\"\n                ],\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
@@ -350,6 +350,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeReplicationGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationGroup\n<公共请求参数>\n\n{\n    \"SearchKey\": \"xx\",\n    \"Limit\": 20,\n    \"GroupId\": \"xx\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Groups\": [\n            {\n                \"Status\": 0,\n                \"Remark\": \"xx\",\n                \"InstanceCount\": 1,\n                \"Instances\": [\n                    {\n                        \"Engine\": \"xx\",\n                        \"Vip6\": \"xx\",\n                        \"UpdateTime\": \"xx\",\n                        \"VpcID\": 16770550,\n                        \"InstanceId\": \"xx\",\n                        \"RedisShardSize\": 1024,\n                        \"RegionId\": 1,\n                        \"RedisShardNum\": 1,\n                        \"Status\": 1,\n                        \"Vip\": \"xx\",\n                        \"DiskSize\": 0,\n                        \"CreateTime\": \"xx\",\n                        \"ProductType\": 9,\n                        \"AppId\": 0,\n                        \"Role\": \"xx\",\n                        \"VPort\": 6379,\n                        \"ZoneId\": 1,\n                        \"InstanceName\": \"xx\",\n                        \"RedisReplicasNum\": 1,\n                        \"GrocerySysId\": 1000259\n                    }\n                ],\n                \"RegionId\": 1,\n                \"GroupName\": \"xx\",\n                \"AppId\": 0,\n                \"GroupId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeSlowLog": [
       {
         "document": "",
@@ -474,7 +482,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=ModifyAutoBackupConfig\n&InstanceId=crs-5a4py64p\n&TimePeriod=00%3A00-01%3A00\n&AutoBackupType=1\n&WeekDays.0=Wednesday\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Wednesday\"\n        ],\n        \"TimePeriod\": \"00:00-01:00\",\n        \"RequestId\": \"ac750a85-9a55-4a42-a9de-8c2ca1f4ff12\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupStorageDays\": 0,\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Wednesday\"\n        ],\n        \"RequestId\": \"xx\",\n        \"TimePeriod\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -529,8 +537,8 @@
     "ModifyNetworkConfig": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyNetworkConfig\r\n&InstanceId=crs-5a4py64p\r\n&Operation=changeVip\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1b5aabe-806a-4886-b839-9907baa24c85\"\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyNetworkConfig\n&InstanceId=crs-5a4py64p\n&Operation=changeVip\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"Vip\": \"192.168.1.1\",\n        \"VpcId\": \"vpc-hu6khgap\",\n        \"SubnetId\": \"subnet-6mt7lir6\",\n        \"RequestId\": \"f1b5aabe-806a-4886-b839-9907baa24c85\"\n    }\n}",
         "title": "请求修改实例VIP示例"
       }
     ],
