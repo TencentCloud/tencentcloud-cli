@@ -35,7 +35,7 @@
     "CleanUpInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=CleanUpInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=CleanUpInstance\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
         "title": "请求示例"
       }
@@ -43,7 +43,7 @@
     "ClearInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ClearInstance\r\n&InstanceId=crs-5a4py64p\r\n&Password=zy456987\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ClearInstance\n&InstanceId=crs-5a4py64p\n&Password=zy456987\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 16658,\n        \"RequestId\": \"d893c0ac-db57-4e5c-8335-e787b77403b2\"\n    }\n}",
         "title": "请求示例"
       }
@@ -89,7 +89,7 @@
     "DeleteInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DeleteInstanceAccount\r\n&InstanceId=crs-5a4py64p\r\n&AccountName=test\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DeleteInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
@@ -113,8 +113,8 @@
     "DescribeAutoBackupConfig": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeAutoBackupConfig\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925559\",\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Monday\",\n            \"Tuesday\"\n        ],\n        \"TimePeriod\": \"01:00-02:00\"\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeAutoBackupConfig\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925559\",\n        \"BackupStorageDays\": 7,\n        \"BinlogStorageDays\": 7,\n        \"AutoBackupType\": 1,\n        \"WeekDays\": [\n            \"Monday\",\n            \"Tuesday\"\n        ],\n        \"TimePeriod\": \"01:00-02:00\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -138,7 +138,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&InstanceId=crs-eb2w7dto\n&Product=redis\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A1\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VIP\": \"10.10.0.1\",\n        \"VPort\": \"6379\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A1\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"Redis安全组\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ajr1jzgj\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
         "title": "示例"
       }
     ],
@@ -153,15 +153,15 @@
     "DescribeInstanceBackups": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceBackups\r\n&Limit=5&Offset=0\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"TotalCount\": 2\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceBackups\n&Limit=5\n&Offset=0\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"TotalCount\": 2,\n        \"BackupSet\": [\n            {\n                \"StartTime\": \"2018-09-04 12:51:21\",\n                \"BackupId\": \"2e4127f8-affe-11e8-941e-4846fb00c75d\",\n                \"BackupType\": \"0\",\n                \"Status\": 2,\n                \"Remark\": \"测试使用\",\n                \"Locked\": 0,\n                \"BackupSize\": 543534435,\n                \"FullBackup\": 0,\n                \"InstanceType\": 6\n            },\n            {\n                \"StartTime\": \"2018-09-04 12:53:06\",\n                \"BackupId\": \"6cbbf53a-affe-11e8-905b-4846fb00c75d\",\n                \"BackupType\": \"0\",\n                \"Status\": 2,\n                \"Remark\": \"xxx\",\n                \"Locked\": 0,\n                \"BackupSize\": 3124324,\n                \"FullBackup\": 0,\n                \"InstanceType\": 7\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeInstanceDTSInfo": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceDTSInfo\r\n&InstanceId=crs-6ia1c1c3\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceDTSInfo\n&InstanceId=crs-6ia1c1c3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CutDownTime\": \"2019-08-16 17:10:13\",\n        \"DstInfo\": {\n            \"InstanceId\": \"crs-jufvqtt7\",\n            \"InstanceName\": \"dtsdsttest28\",\n            \"RegionId\": 1,\n            \"SetId\": 15005,\n            \"Status\": 1,\n            \"Type\": 2,\n            \"Vip\": \"172.16.16.48\",\n            \"ZoneId\": 100002\n        },\n        \"JobId\": \"dts-l2g434lt\",\n        \"JobName\": \"redis_dts_test28\",\n        \"Offset\": 0,\n        \"RequestId\": \"f5ff1c8e-7ea4-40a8-b179-8a99c6f7085b\",\n        \"SrcInfo\": {\n            \"InstanceId\": \"crs-6ia1c1c3\",\n            \"InstanceName\": \"dtsSrctest28\",\n            \"RegionId\": 1,\n            \"SetId\": 15005,\n            \"Status\": -4,\n            \"Type\": 2,\n            \"Vip\": \"172.16.16.9\",\n            \"ZoneId\": 100002\n        },\n        \"Status\": 10,\n        \"StatusDesc\": \"已失败\"\n    }\n}",
         "title": "请求示例"
       }
@@ -249,7 +249,7 @@
     "DescribeInstanceParamRecords": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceParamHistory\": [\n            {\n                \"ModifyTime\": \"2019-01-07 11:28:58\",\n                \"NewValue\": \"511\",\n                \"ParamName\": \"hash-max-ziplist-entries\",\n                \"PreValue\": \"512\",\n                \"Status\": 2\n            },\n            {\n                \"ModifyTime\": \"2019-01-07 11:28:48\",\n                \"NewValue\": \"15001\",\n                \"ParamName\": \"cluster-node-timeout\",\n                \"PreValue\": \"15000\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询参数修改历史列表"
       }
@@ -265,7 +265,7 @@
     "DescribeInstanceSecurityGroup": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceSecurityGroup\r\n&InstanceIds.0=crs-f2ho5rsz\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceSecurityGroup\n&InstanceIds.0=crs-f2ho5rsz\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceSecurityGroupsDetail\": [\n            {\n                \"InstanceId\": \"crs-f2ho5rsz\",\n                \"SecurityGroupDetails\": [\n                    {\n                        \"CreateTime\": \"2018-01-30 15:58:00\",\n                        \"InboundRule\": [\n                            {\n                                \"Action\": \"ACCEPT\",\n                                \"Ip\": \"0.0.0.0/0\",\n                                \"Port\": \"ALL\",\n                                \"Proto\": \"ALL\"\n                            },\n                            {\n                                \"Action\": \"ACCEPT\",\n                                \"Ip\": \"0.0.0.0/0\",\n                                \"Port\": \"ALL\",\n                                \"Proto\": \"ALL\"\n                            }\n                        ],\n                        \"OutboundRule\": [\n                            {\n                                \"Action\": \"ACCEPT\",\n                                \"Ip\": \"0.0.0.0/0\",\n                                \"Port\": \"ALL\",\n                                \"Proto\": \"ALL\"\n                            }\n                        ],\n                        \"ProjectId\": 0,\n                        \"SecurityGroupId\": \"sg-gl1egaj1\",\n                        \"SecurityGroupName\": \"all\",\n                        \"SecurityGroupRemark\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
         "title": "查询实例安全组信息"
       }
@@ -282,15 +282,15 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceZoneInfo\n&InstanceId=crs-6tl7uxxd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ReplicaGroups\": [\n            {\n                \"GroupId\": 125101,\n                \"GroupName\": \"\",\n                \"ZoneId\": \"ap-guangzhou-2\",\n                \"Role\": \"master\",\n                \"RedisNodes\": [\n                    {\n                        \"Keys\": 39,\n                        \"Slot\": \"0-16383\",\n                        \"Status\": \"normal\",\n                        \"NodeId\": \"5f83a663d58f092f4791630065cb3a76c50b40a5\"\n                    }\n                ]\n            },\n            {\n                \"GroupId\": 125102,\n                \"GroupName\": \"ng-1\",\n                \"ZoneId\": \"ap-guangzhou-3\",\n                \"Role\": \"replica\",\n                \"RedisNodes\": [\n                    {\n                        \"Keys\": 0,\n                        \"Slot\": \"\",\n                        \"Status\": \"normal\",\n                        \"NodeId\": \"bdc6d645f4741948cf51f93f7013edd64f44c3ba\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReplicaGroups\": [\n            {\n                \"GroupId\": 125101,\n                \"GroupName\": \"\",\n                \"ZoneId\": \"ap-guangzhou-2\",\n                \"Role\": \"master\",\n                \"RedisNodes\": [\n                    {\n                        \"Keys\": 39,\n                        \"Slot\": \"0-16383\",\n                        \"Status\": \"normal\",\n                        \"Role\": \"master\",\n                        \"NodeId\": \"5f83a663d58f092f4791630065cb3a76c50b40a5\"\n                    }\n                ]\n            },\n            {\n                \"GroupId\": 125102,\n                \"GroupName\": \"ng-1\",\n                \"ZoneId\": \"ap-guangzhou-3\",\n                \"Role\": \"replica\",\n                \"RedisNodes\": [\n                    {\n                        \"Keys\": 0,\n                        \"Slot\": \"\",\n                        \"Status\": \"normal\",\n                        \"Role\": \"replica\",\n                        \"NodeId\": \"bdc6d645f4741948cf51f93f7013edd64f44c3ba\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeInstances": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstances\r\n&Offset=0&Limit=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"Appid\": 1251006373,\n                \"AutoRenewFlag\": 0,\n                \"BillingMode\": 0,\n                \"CloseTime\": \"0000-00-00 00:00:00\",\n                \"Createtime\": \"0000-00-00 00:00:00\",\n                \"DeadlineTime\": \"0000-00-00 00:00:00\",\n                \"Engine\": \"社区版Redis\",\n                \"InstanceId\": \"crs-7ponppu3\",\n                \"InstanceName\": \"crs-7ponppu3\",\n                \"InstanceNode\": [],\n                \"InstanceTags\": [\n                    {\n                        \"TagKey\": \"aaa\",\n                        \"TagValue\": \"111\"\n                    }\n                ],\n                \"InstanceTitle\": \"实例运行中\",\n                \"OfflineTime\": \"\",\n                \"Port\": 6379,\n                \"PriceId\": 13380,\n                \"ProductType\": \"Redis4.0集群版\",\n                \"ProjectId\": 0,\n                \"RedisReplicasNum\": 1,\n                \"RedisShardNum\": 3,\n                \"RedisShardSize\": 1024,\n                \"RegionId\": 1,\n                \"Size\": 3072,\n                \"SizeUsed\": 0,\n                \"SlaveReadWeight\": 0,\n                \"Status\": 2,\n                \"SubStatus\": 19,\n                \"SubnetId\": 0,\n                \"Tags\": [],\n                \"Type\": 7,\n                \"UniqSubnetId\": \"\",\n                \"UniqVpcId\": \"\",\n                \"VpcId\": 0,\n                \"WanIp\": \"10.66.153.160\",\n                \"ZoneId\": 100002\n            }\n        ],\n        \"RequestId\": \"e3d683fc-f2ff-43c9-980d-fae7a1166abc\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstances\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"RedisShardSize\": 1024,\n                \"RedisShardNum\": 3,\n                \"MonitorVersion\": \"xx\",\n                \"AutoRenewFlag\": 0,\n                \"InstanceTitle\": \"xx\",\n                \"ProductType\": \"xx\",\n                \"PriceId\": 13380,\n                \"Type\": 7,\n                \"Status\": 2,\n                \"Vip6\": \"xx\",\n                \"VpcId\": 0,\n                \"InstanceNode\": [\n                    {\n                        \"InstanceClusterNode\": [\n                            {\n                                \"Status\": 0,\n                                \"Name\": \"xx\",\n                                \"Keys\": 0,\n                                \"Storage\": 0,\n                                \"StorageSlope\": 0.0,\n                                \"QpsSlope\": 0.0,\n                                \"Connected\": 0,\n                                \"RunId\": \"xx\",\n                                \"DownTime\": \"xx\",\n                                \"Qps\": 0,\n                                \"Slots\": \"xx\",\n                                \"CreateTime\": \"xx\",\n                                \"Role\": 0\n                            }\n                        ],\n                        \"Id\": 0\n                    }\n                ],\n                \"Tags\": [\n                    \"xx\"\n                ],\n                \"InstanceId\": \"xx\",\n                \"ClientLimitMax\": 0,\n                \"RegionId\": 1,\n                \"SubStatus\": 19,\n                \"SlaveReadWeight\": 0,\n                \"OfflineTime\": \"xx\",\n                \"SubnetId\": 0,\n                \"NodeSet\": [\n                    {\n                        \"ZoneName\": \"xx\",\n                        \"NodeType\": 0,\n                        \"NodeId\": 0,\n                        \"ZoneId\": 1\n                    }\n                ],\n                \"Engine\": \"xx\",\n                \"SizeUsed\": 0.0,\n                \"InstanceTags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"Region\": \"xx\",\n                \"DeadlineTime\": \"xx\",\n                \"CloseTime\": \"xx\",\n                \"ZoneId\": 100002,\n                \"PasswordFree\": 0,\n                \"DiskSize\": 0,\n                \"NoAuth\": true,\n                \"Appid\": 1251006373,\n                \"WanIp\": \"xx\",\n                \"NetLimit\": 0,\n                \"InstanceName\": \"xx\",\n                \"Createtime\": \"xx\",\n                \"ClientLimit\": 0,\n                \"UniqVpcId\": \"xx\",\n                \"DtsStatus\": 0,\n                \"ProjectName\": \"xx\",\n                \"BillingMode\": 0,\n                \"RemainBandwidthDuration\": \"xx\",\n                \"ReadOnly\": 0,\n                \"UniqSubnetId\": \"xx\",\n                \"ClientLimitMin\": 0,\n                \"RedisReplicasNum\": 1,\n                \"Port\": 6379,\n                \"Size\": 0.0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -329,7 +329,7 @@
     "DescribeProjectSecurityGroup": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeProjectSecurityGroup\r\n&SecurityGroupId=sg-gl1egaj1\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeProjectSecurityGroup\n&SecurityGroupId=sg-gl1egaj1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4cc888c8-cc1c-4a77-9259-dd0f6907b559\",\n        \"SecurityGroupDetails\": [\n            {\n                \"CreateTime\": \"2018-01-30 15:58:00\",\n                \"InboundRule\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Port\": \"ALL\",\n                        \"Proto\": \"ALL\"\n                    },\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Port\": \"ALL\",\n                        \"Proto\": \"ALL\"\n                    }\n                ],\n                \"OutboundRule\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"Ip\": \"0.0.0.0/0\",\n                        \"Port\": \"ALL\",\n                        \"Proto\": \"ALL\"\n                    }\n                ],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-gl1egaj1\",\n                \"SecurityGroupName\": \"all\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询项目安全组信息"
       }
@@ -369,7 +369,7 @@
     "DescribeTaskInfo": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskInfo\r\n&TaskId=18215\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTaskInfo\n&TaskId=18215\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"succeed\",\n        \"StartTime\": \"2018-11-01 17:25:14\",\n        \"TaskType\": \"redis缓存清空流程\",\n        \"InstanceId\": \"crs-09u2u96z\",\n        \"TaskMessage\": \"\",\n        \"RequestId\": \"81120ab8-fea0-41ab-af7e-283c0348c4fc\"\n    }\n}",
         "title": "请求示例"
       }
@@ -393,7 +393,7 @@
     "DestroyPostpaidInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPostpaidInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPostpaidInstance\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "按量计费实例销毁"
       }
@@ -401,7 +401,7 @@
     "DestroyPrepaidInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPrepaidInstance\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DestroyPrepaidInstance\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"DealId\": \"6977675\"\n    }\n}",
         "title": "包年包月实例退还"
       }
@@ -425,8 +425,8 @@
     "EnableReplicaReadonly": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=EnableReplicaReadonly\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"Status\": \"OK\"\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=EnableReplicaReadonly\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"Status\": \"OK\",\n        \"TaskId\": 21312\n    }\n}",
         "title": "启用读写分离"
       }
     ],
@@ -465,7 +465,7 @@
     "ManualBackupInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ManualBackupInstance\r\n&InstanceId=crs-5a4py64p\r\n&Remark=xxxx\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ManualBackupInstance\n&InstanceId=crs-5a4py64p\n&Remark=xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "请求示例"
       }
@@ -505,7 +505,7 @@
     "ModifyInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstance\r\n&Operation=rename&InstanceIds.0=crs-r3nqjq3n&InstanceNames.0=newname1&InstanceIds.1=crs-9bvd9b8v&InstanceNames.1=newname2\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstance\n&Operation=rename\n&InstanceIds.0=crs-r3nqjq3n\n&InstanceNames.0=newname1\n&InstanceIds.1=crs-9bvd9b8v\n&InstanceNames.1=newname2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d1e8909-496a-4f27-ad0d-2e4a069b52c0\"\n    }\n}",
         "title": "请求示例"
       }
@@ -513,7 +513,7 @@
     "ModifyInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceAccount\r\n&InstanceId=crs-5a4py64p\r\n&AccountName=test\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
@@ -529,7 +529,7 @@
     "ModifyMaintenanceWindow": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyMaintenanceWindow\r\n&InstanceId=crs-5a4py64p\r\n&StartTime=03:00\r\n&EndTime=06:00\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyMaintenanceWindow\n&InstanceId=crs-5a4py64p\n&StartTime=03:00\n&EndTime=06:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "示例"
       }
@@ -553,7 +553,7 @@
     "RenewInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=RenewInstance\r\n&Period=12\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=RenewInstance\n&Period=12\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"6954225\",\n        \"RequestId\": \"495d8e9f-61bf-465e-aa4e-14be54a9095a\"\n    }\n}",
         "title": "请求示例"
       }
@@ -561,7 +561,7 @@
     "ResetPassword": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ResetPassword\r\n&Password=zy456987\r\n&InstanceId=crs-5a4py64p\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ResetPassword\n&Password=zy456987\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"137c2607-07d1-4df0-9978-4b57a7ca3465\",\n        \"TaskId\": 16657\n    }\n}",
         "title": "请求示例"
       }
@@ -569,7 +569,7 @@
     "RestoreInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=RestoreInstance\r\n&InstanceId=crs-5a4py64p\r\n&Password=mypassword\r\n&BackupId=678362566696298532848117\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=RestoreInstance\n&InstanceId=crs-5a4py64p\n&Password=mypassword\n&BackupId=678362566696298532848117\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "恢复 CRS 实例"
       }
@@ -577,7 +577,7 @@
     "StartupInstance": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=StartupInstance\r\n&InstanceId=crs-7ponppu3&Password=12345678a\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=StartupInstance\n&InstanceId=crs-7ponppu3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e96ecad-23db-4fa8-ac41-af9b8e015b26\",\n        \"TaskId\": 1203\n    }\n}",
         "title": "请求示例"
       }
@@ -585,7 +585,7 @@
     "SwitchInstanceVip": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=SwitchInstanceVip\r\n&SrcInstanceId=crs-5a4py64p\r\n&DstInstanceId=crs-1kl0iy0v\r\n&ForceSwitch=1\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=SwitchInstanceVip\n&SrcInstanceId=crs-5a4py64p\n&DstInstanceId=crs-1kl0iy0v\n&ForceSwitch=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a6bd110-20fc-4e08-b77b-a5656cb6150c\",\n        \"TaskId\": 18491\n    }\n}",
         "title": "请求示例"
       }
@@ -609,7 +609,7 @@
     "UpgradeVersionToMultiAvailabilityZones": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeVersionToMultiAvailabilityZones\n&InstanceId=crs-5qlrlhux\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeVersionToMultiAvailabilityZones\n&InstanceId=crs-5qlrlhux\n&UpgradeProxyAndRedisServer=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"140171780\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "请求示例"
       }

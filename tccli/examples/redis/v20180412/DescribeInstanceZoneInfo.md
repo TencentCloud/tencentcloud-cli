@@ -24,6 +24,7 @@ Output:
                         "Keys": 39,
                         "Slot": "0-16383",
                         "Status": "normal",
+                        "Role": "master",
                         "NodeId": "5f83a663d58f092f4791630065cb3a76c50b40a5"
                     }
                 ]
@@ -38,6 +39,7 @@ Output:
                         "Keys": 0,
                         "Slot": "",
                         "Status": "normal",
+                        "Role": "replica",
                         "NodeId": "bdc6d645f4741948cf51f93f7013edd64f44c3ba"
                     }
                 ]

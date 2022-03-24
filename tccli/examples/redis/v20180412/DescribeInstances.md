@@ -16,49 +16,94 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "Appid": 1251006373,
+                "RedisShardSize": 1024,
+                "RedisShardNum": 3,
+                "MonitorVersion": "xx",
                 "AutoRenewFlag": 0,
-                "BillingMode": 0,
-                "CloseTime": "0000-00-00 00:00:00",
-                "Createtime": "0000-00-00 00:00:00",
-                "DeadlineTime": "0000-00-00 00:00:00",
-                "Engine": "社区版Redis",
-                "InstanceId": "crs-7ponppu3",
-                "InstanceName": "crs-7ponppu3",
-                "InstanceNode": [],
-                "InstanceTags": [
+                "InstanceTitle": "xx",
+                "ProductType": "xx",
+                "PriceId": 13380,
+                "Type": 7,
+                "Status": 2,
+                "Vip6": "xx",
+                "VpcId": 0,
+                "InstanceNode": [
                     {
-                        "TagKey": "aaa",
-                        "TagValue": "111"
+                        "InstanceClusterNode": [
+                            {
+                                "Status": 0,
+                                "Name": "xx",
+                                "Keys": 0,
+                                "Storage": 0,
+                                "StorageSlope": 0.0,
+                                "QpsSlope": 0.0,
+                                "Connected": 0,
+                                "RunId": "xx",
+                                "DownTime": "xx",
+                                "Qps": 0,
+                                "Slots": "xx",
+                                "CreateTime": "xx",
+                                "Role": 0
+                            }
+                        ],
+                        "Id": 0
                     }
                 ],
-                "InstanceTitle": "实例运行中",
-                "OfflineTime": "",
-                "Port": 6379,
-                "PriceId": 13380,
-                "ProductType": "Redis4.0集群版",
-                "ProjectId": 0,
-                "RedisReplicasNum": 1,
-                "RedisShardNum": 3,
-                "RedisShardSize": 1024,
+                "Tags": [
+                    "xx"
+                ],
+                "InstanceId": "xx",
+                "ClientLimitMax": 0,
                 "RegionId": 1,
-                "Size": 3072,
-                "SizeUsed": 0,
-                "SlaveReadWeight": 0,
-                "Status": 2,
                 "SubStatus": 19,
+                "SlaveReadWeight": 0,
+                "OfflineTime": "xx",
                 "SubnetId": 0,
-                "Tags": [],
-                "Type": 7,
-                "UniqSubnetId": "",
-                "UniqVpcId": "",
-                "VpcId": 0,
-                "WanIp": "10.66.153.160",
-                "ZoneId": 100002
+                "NodeSet": [
+                    {
+                        "ZoneName": "xx",
+                        "NodeType": 0,
+                        "NodeId": 0,
+                        "ZoneId": 1
+                    }
+                ],
+                "Engine": "xx",
+                "SizeUsed": 0.0,
+                "InstanceTags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
+                "ProjectId": 0,
+                "Region": "xx",
+                "DeadlineTime": "xx",
+                "CloseTime": "xx",
+                "ZoneId": 100002,
+                "PasswordFree": 0,
+                "DiskSize": 0,
+                "NoAuth": true,
+                "Appid": 1251006373,
+                "WanIp": "xx",
+                "NetLimit": 0,
+                "InstanceName": "xx",
+                "Createtime": "xx",
+                "ClientLimit": 0,
+                "UniqVpcId": "xx",
+                "DtsStatus": 0,
+                "ProjectName": "xx",
+                "BillingMode": 0,
+                "RemainBandwidthDuration": "xx",
+                "ReadOnly": 0,
+                "UniqSubnetId": "xx",
+                "ClientLimitMin": 0,
+                "RedisReplicasNum": 1,
+                "Port": 6379,
+                "Size": 0.0
             }
         ],
-        "RequestId": "e3d683fc-f2ff-43c9-980d-fae7a1166abc",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```

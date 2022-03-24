@@ -13208,6 +13208,32 @@
       ],
       "usage": "out"
     },
+    "OpenBankApprovalGuideInfo": {
+      "document": "银行复核指引。银行侧返回网银授权指引链接，一般PC网银，手机网银链接",
+      "members": [
+        {
+          "default": "",
+          "document": "PC网银指引",
+          "example": "无",
+          "member": "string",
+          "name": "PcGuideUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机网银指引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MobileGuideUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OpenBankGoodsInfo": {
       "document": "云企付-商品信息",
       "members": [
@@ -20061,12 +20087,22 @@
         },
         {
           "default": "",
-          "document": "第三方渠道返回信息，见渠道特殊说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方渠道返回信息，见渠道特殊说明,详情见附录-复杂类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ExternalReturnData",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "银行复核指引。当TENPAY下OPENBANT_PAYMENT时，下单受理成功是返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankApprovalGuideInfo",
+          "name": "BankApprovalGuideInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

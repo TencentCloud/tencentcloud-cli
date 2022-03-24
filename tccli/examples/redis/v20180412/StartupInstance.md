@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli redis StartupInstance --cli-unfold-argument  \
-    --InstanceId crs-7ponppu3 \
-    --Password 12345678a
+    --InstanceId crs-7ponppu3
 ```
 
 Output: 

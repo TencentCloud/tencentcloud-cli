@@ -19,13 +19,13 @@
     "CheckSimilarPerson": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\r\n&UniquePersonControl=1\r\n&GroupIds.0=MyGroup1\r\n&GroupIds.1=MyGroup2\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\n&UniquePersonControl=1\n&GroupIds.0=MyGroup1\n&GroupIds.1=MyGroup2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"YP6v5v32pvyBqLyz\",\n        \"RequestId\": \"5cec97ca-4a86-466b-a437-82df71d625a7\"\n    }\n}",
         "title": "人员查重接口调用成功"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\r\n&UniquePersonControl=1\r\n&GroupIds.0=MyGroup11111\r\n&GroupIds.1=MyGroup22222\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\n&UniquePersonControl=1\n&GroupIds.0=MyGroup11111\n&GroupIds.1=MyGroup22222\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f08f36f9-671f-4448-a973-dae899aaeb10\"\n    }\n}",
         "title": "人员查重接口调用失败"
       }
