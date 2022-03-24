@@ -7,8 +7,7 @@ Input:
 ```
 tccli iai CreateFace --cli-unfold-argument  \
     --PersonId 1001 \
-    --Urls http://test.image.myqcloud.com/testA.jpg \
-    --Version 2018-03-01
+    --Urls http://test.image.myqcloud.com/testA.jpg
 ```
 
 Output: 
@@ -22,6 +21,18 @@ Output:
         "RetCode": [
             0
         ],
+        "SucIndexes": [
+            0
+        ],
+        "SucFaceRects": [
+            {
+                "X": 135,
+                "Y": 42,
+                "Width": 98,
+                "Height": 136
+            }
+        ],
+        "FaceModelVersion": "2.0",
         "RequestId": "07d63403-a199-4bbe-b9e0-692356ac738d"
     }
 }
@@ -36,8 +47,7 @@ Input:
 ```
 tccli iai CreateFace --cli-unfold-argument  \
     --PersonId 1001 \
-    --Urls http://test.image.myqcloud.com/testB.jpg http://test.image.myqcloud.com/testC.jpg http://test.image.myqcloud.com/testD.jpg http://test.image.myqcloud.com/testE.jpg http://test.image.myqcloud.com/testF.jpg \
-    --Version 2018-03-01
+    --Urls http://test.image.myqcloud.com/testB.jpg http://test.image.myqcloud.com/testC.jpg http://test.image.myqcloud.com/testD.jpg http://test.image.myqcloud.com/testE.jpg http://test.image.myqcloud.com/testF.jpg
 ```
 
 Output: 

@@ -8409,6 +8409,7 @@
         {
           "default": "",
           "document": "直播域名。",
+          "example": "abc.com",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8418,6 +8419,7 @@
         {
           "default": "",
           "document": "域名类型:\n0: 推流。\n1: 播放。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -8427,6 +8429,7 @@
         {
           "default": "",
           "document": "域名状态:\n0: 停用。\n1: 启用。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -8436,6 +8439,7 @@
         {
           "default": "",
           "document": "添加时间。",
+          "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8445,6 +8449,7 @@
         {
           "default": "",
           "document": "是否有 CName 到固定规则域名:\n0: 否。\n1: 是。",
+          "example": "1",
           "member": "uint64",
           "name": "BCName",
           "required": true,
@@ -8454,6 +8459,7 @@
         {
           "default": "",
           "document": "cname 对应的域名。",
+          "example": "abc.com",
           "member": "string",
           "name": "TargetDomain",
           "required": true,
@@ -8463,6 +8469,7 @@
         {
           "default": "",
           "document": "播放区域，只在 Type=1 时该参数有意义。\n1: 国内。\n2: 全球。\n3: 海外。",
+          "example": "2",
           "member": "int64",
           "name": "PlayType",
           "required": true,
@@ -8472,6 +8479,7 @@
         {
           "default": "",
           "document": "是否慢直播:\n0: 普通直播。\n1: 慢直播。",
+          "example": "0",
           "member": "int64",
           "name": "IsDelayLive",
           "required": true,
@@ -8481,6 +8489,7 @@
         {
           "default": "",
           "document": "当前客户使用的 cname 信息。",
+          "example": "abc.com",
           "member": "string",
           "name": "CurrentCName",
           "required": true,
@@ -8490,6 +8499,7 @@
         {
           "default": "",
           "document": "失效参数，可忽略。",
+          "example": "a",
           "member": "int64",
           "name": "RentTag",
           "required": true,
@@ -8499,6 +8509,7 @@
         {
           "default": "",
           "document": "失效参数，可忽略。",
+          "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "RentExpireTime",
           "required": true,
@@ -8508,6 +8519,7 @@
         {
           "default": "",
           "document": "0: 标准直播。\n1: 小程序直播。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IsMiniProgramLive",
           "required": true,

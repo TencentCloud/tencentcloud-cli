@@ -809,6 +809,7 @@
         {
           "default": "",
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
           "required": false,
@@ -817,6 +818,7 @@
         {
           "default": "",
           "document": "分页Offset",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -825,6 +827,7 @@
         {
           "default": "",
           "document": "分页Limit",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -838,15 +841,19 @@
       "members": [
         {
           "document": "热词表列表",
+          "example": "无",
           "member": "Vocab",
           "name": "VocabList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "热词列表总数",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

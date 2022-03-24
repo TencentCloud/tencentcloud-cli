@@ -438,6 +438,14 @@
         "title": "泰国身份证识别示例代码"
       }
     ],
+    "RecognizeTravelCardOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeTravelCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RiskArea\": [\n            \"xx\"\n        ],\n        \"ReachedCity\": [\n            \"xx\"\n        ],\n        \"Color\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Time\": \"XXXX - XX - XX XX: XX: XX\"\n    }\n}",
+        "title": "通信行程卡识别示例代码"
+      }
+    ],
     "ResidenceBookletOCR": [
       {
         "document": "",

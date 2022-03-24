@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb IsolateHourDBInstance --cli-unfold-argument  \
-    --InstanceIds[0] tdsql-cq3ndzu7
+    --InstanceIds tdsql-cq3ndzu7
 ```
 
 Output: 

@@ -24,6 +24,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "CreateAccounts": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=xxx\n&Accounts.0.AccountName=xx\n&Accounts.0.AccountPassword=xxx\n&Accounts.0.Description=xxx\n&Accounts.0.Host=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
+        "title": "创建新账号"
+      }
+    ],
     "CreateClusters": [
       {
         "document": "",

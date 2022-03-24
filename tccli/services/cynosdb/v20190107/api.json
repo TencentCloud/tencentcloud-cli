@@ -18,6 +18,12 @@
       "name": "安全组批量绑定云资源",
       "output": "AssociateSecurityGroupsResponse"
     },
+    "CreateAccounts": {
+      "document": "创建账号",
+      "input": "CreateAccountsRequest",
+      "name": "创建账号",
+      "output": "CreateAccountsResponse"
+    },
     "CreateClusters": {
       "document": "创建集群",
       "input": "CreateClustersRequest",
@@ -853,6 +859,42 @@
       ],
       "usage": "out"
     },
+    "CreateAccountsRequest": {
+      "document": "CreateAccounts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新账户列表",
+          "example": "无",
+          "member": "NewAccount",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountsResponse": {
+      "document": "CreateAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClustersRequest": {
       "document": "CreateClusters请求参数结构体",
       "members": [
@@ -1272,7 +1314,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群状态",
+          "document": "集群状态， 可选值如下:\ncreating: 创建中\nrunning:运行中\nisolating:隔离中\nisolated:已隔离\nactivating:解隔离中\nofflining:下线中\nofflined:已下线\ndeleting:删除中\ndeleted:已删除",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -4357,6 +4399,48 @@
       ],
       "usage": "out"
     },
+    "NewAccount": {
+      "document": "\b新创建的账号",
+      "members": [
+        {
+          "default": "",
+          "document": "账户名",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ObjectTask": {
       "document": "任务信息",
       "members": [
@@ -5101,6 +5185,7 @@
         {
           "default": "",
           "document": "标签键",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -5110,6 +5195,7 @@
         {
           "default": "",
           "document": "标签值",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
           "required": true,

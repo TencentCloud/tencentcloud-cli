@@ -740,6 +740,14 @@
         "title": "回溯消息"
       }
     ],
+    "ResetRocketMQConsumerOffSet": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?\nAction=ResetRocketMQConsumerOffSet\n&ClusterId=ocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&GroupId=group-example\n&Topic=example-topic\n&Type=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"def4f676-27fc-4437-b4a3-cf1509726f98\"\n    }\n}",
+        "title": "重置消费位点"
+      }
+    ],
     "RewindCmqQueue": [
       {
         "document": "",

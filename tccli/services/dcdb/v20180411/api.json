@@ -350,6 +350,7 @@
         {
           "default": "",
           "document": "待升级的实例ID列表。形如：[\"dcdbt-ow728lmc\"]，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "[]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -363,15 +364,19 @@
       "members": [
         {
           "document": "解隔离成功的实例id列表",
+          "example": "[\"tdsqlshard-cq3ndzu7\"]",
           "member": "string",
           "name": "SuccessInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "解隔离失败的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -540,6 +545,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "dcdbt-ovulpcjf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -548,6 +554,7 @@
         {
           "default": "",
           "document": "源用户账户名",
+          "example": "testuser1",
           "member": "string",
           "name": "SrcUser",
           "required": true,
@@ -556,6 +563,7 @@
         {
           "default": "",
           "document": "源用户HOST",
+          "example": "172.17.%",
           "member": "string",
           "name": "SrcHost",
           "required": true,
@@ -564,6 +572,7 @@
         {
           "default": "",
           "document": "目的用户账户名",
+          "example": "testuser1",
           "member": "string",
           "name": "DstUser",
           "required": true,
@@ -572,6 +581,7 @@
         {
           "default": "",
           "document": "目的用户HOST",
+          "example": "172.20.%",
           "member": "string",
           "name": "DstHost",
           "required": true,
@@ -580,6 +590,7 @@
         {
           "default": "",
           "document": "目的用户账户描述",
+          "example": "testclone",
           "member": "string",
           "name": "DstDesc",
           "required": false,
@@ -593,8 +604,10 @@
       "members": [
         {
           "document": "异步任务流程ID",
+          "example": "4127",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2777,6 +2790,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2785,6 +2799,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2793,6 +2808,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -2801,6 +2817,7 @@
         {
           "default": "",
           "document": "数据库名。如果为 \\*，表示查询全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数",
+          "example": "*",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -2809,6 +2826,7 @@
         {
           "default": "",
           "document": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示查询该数据库权限（即db.\\*），此时忽略 Object 参数",
+          "example": "*",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -2817,6 +2835,7 @@
         {
           "default": "",
           "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
+          "example": "*",
           "member": "string",
           "name": "Object",
           "required": false,
@@ -2825,6 +2844,7 @@
         {
           "default": "",
           "document": "当 Type=table 时，ColName 为 \\* 表示查询表的权限，如果为具体字段名，表示查询对应字段的权限",
+          "example": "*",
           "member": "string",
           "name": "ColName",
           "required": false,
@@ -2838,29 +2858,37 @@
       "members": [
         {
           "document": "实例ID",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "权限列表。",
+          "example": "[\"SELECT\",\"UPDATE\"]",
           "member": "string",
           "name": "Privileges",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "数据库账号用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库账号Host",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2879,6 +2907,7 @@
         {
           "default": "",
           "document": "实例ID，形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2892,15 +2921,19 @@
       "members": [
         {
           "document": "实例ID，透传入参。",
+          "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实例用户列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DBAccount",
           "name": "Users",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3027,6 +3060,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3040,15 +3074,19 @@
       "members": [
         {
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "请求DB的当前参数值",
+          "example": "无",
           "member": "ParamDesc",
           "name": "Params",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3130,6 +3168,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-hw0qj6m1",
+          "example": "tdsql-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3138,6 +3177,7 @@
         {
           "default": "",
           "document": "从结果的第几条数据开始返回",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -3146,6 +3186,7 @@
         {
           "default": "",
           "document": "返回的结果条数",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -3154,6 +3195,7 @@
         {
           "default": "",
           "document": "查询的起始时间，形如2016-07-23 14:55:20",
+          "example": "2016-07-23 14:55:20",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -3162,6 +3204,7 @@
         {
           "default": "",
           "document": "实例的分片ID，形如shard-53ima8ln",
+          "example": "shard-xxx",
           "member": "string",
           "name": "ShardId",
           "required": true,
@@ -3170,6 +3213,7 @@
         {
           "default": "",
           "document": "查询的结束时间，形如2016-08-22 14:55:20。如果不填，那么查询结束时间就是当前时间",
+          "example": "2016-08-22 14:55:20",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -3178,6 +3222,7 @@
         {
           "default": "",
           "document": "要查询的具体数据库名称",
+          "example": "dbname",
           "member": "string",
           "name": "Db",
           "required": false,
@@ -3186,6 +3231,7 @@
         {
           "default": "",
           "document": "排序指标，取值为query_time_sum或者query_count。不填默认按照query_time_sum排序",
+          "example": "query_count",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3194,6 +3240,7 @@
         {
           "default": "",
           "document": "排序类型，desc（降序）或者asc（升序）。不填默认desc排序",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3202,6 +3249,7 @@
         {
           "default": "",
           "document": "是否查询从机的慢查询，0-主机; 1-从机。不填默认查询主机慢查询",
+          "example": "0",
           "member": "int64",
           "name": "Slave",
           "required": false,
@@ -3215,36 +3263,46 @@
       "members": [
         {
           "document": "所有语句锁时间总和",
+          "example": "1",
           "member": "float",
           "name": "LockTimeSum",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "所有语句查询总次数",
+          "example": "1",
           "member": "int64",
           "name": "QueryCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总记录数",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "所有语句查询时间总和",
+          "example": "1",
           "member": "float",
           "name": "QueryTimeSum",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "慢查询日志数据",
+          "example": "无",
           "member": "SlowLogData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3578,6 +3636,7 @@
         {
           "default": "",
           "document": "欲新购实例的可用区ID。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3586,6 +3645,7 @@
         {
           "default": "",
           "document": "欲购买实例的数量，目前支持购买1-10个实例",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -3594,6 +3654,7 @@
         {
           "default": "",
           "document": "欲购买的时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -3602,6 +3663,7 @@
         {
           "default": "",
           "document": "单个分片节点个数大小，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "3",
           "member": "int64",
           "name": "ShardNodeCount",
           "required": true,
@@ -3610,6 +3672,7 @@
         {
           "default": "",
           "document": "分片内存大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "2",
           "member": "int64",
           "name": "ShardMemory",
           "required": true,
@@ -3618,6 +3681,7 @@
         {
           "default": "",
           "document": "分片存储空间大小，单位：GB，可以通过 DescribeShardSpec\n 查询实例规格获得。",
+          "example": "10",
           "member": "int64",
           "name": "ShardStorage",
           "required": true,
@@ -3626,6 +3690,7 @@
         {
           "default": "",
           "document": "实例分片个数，可选范围2-8，可以通过升级实例进行新增分片到最多64个分片。",
+          "example": "2",
           "member": "int64",
           "name": "ShardCount",
           "required": true,
@@ -3634,6 +3699,7 @@
         {
           "default": "",
           "document": "付费类型。postpaid：按量付费   prepaid：预付费",
+          "example": "prepaid",
           "member": "string",
           "name": "Paymode",
           "required": false,
@@ -3647,15 +3713,19 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "42240",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "42240",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3674,14 +3744,16 @@
         {
           "default": "",
           "document": "待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdvt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "1",
+          "default": "",
           "document": "续费时长，单位：月。不传则默认为1个月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -3695,15 +3767,19 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "42240",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "42240",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3726,8 +3802,10 @@
       "members": [
         {
           "document": "可售卖地域信息列表",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3746,6 +3824,7 @@
         {
           "default": "",
           "document": "实例ID，形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-ovulpcjf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3754,6 +3833,7 @@
         {
           "default": "",
           "document": "分片ID列表。",
+          "example": "[]",
           "member": "string",
           "name": "ShardInstanceIds",
           "required": false,
@@ -3762,6 +3842,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3770,6 +3851,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3778,6 +3860,7 @@
         {
           "default": "",
           "document": "排序字段， 目前仅支持 createtime",
+          "example": "createtime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3786,6 +3869,7 @@
         {
           "default": "",
           "document": "排序类型， desc 或者 asc",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3799,22 +3883,28 @@
       "members": [
         {
           "document": "符合条件的分片数量",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "分片信息列表",
+          "example": "无",
           "member": "DCDBShardInfo",
           "name": "Shards",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "灾备标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "DcnFlag",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3923,6 +4013,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3931,6 +4022,7 @@
         {
           "default": "",
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -3944,43 +4036,55 @@
       "members": [
         {
           "document": "透传入参。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库名称。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "表列表。",
+          "example": "无",
           "member": "DatabaseTable",
           "name": "Tables",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "视图列表。",
+          "example": "无",
           "member": "DatabaseView",
           "name": "Views",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "存储过程列表。",
+          "example": "无",
           "member": "DatabaseProcedure",
           "name": "Procs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "函数列表。",
+          "example": "无",
           "member": "DatabaseFunction",
           "name": "Funcs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3999,6 +4103,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4007,6 +4112,7 @@
         {
           "default": "",
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -4015,6 +4121,7 @@
         {
           "default": "",
           "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
+          "example": "persons",
           "member": "string",
           "name": "Table",
           "required": true,
@@ -4028,29 +4135,37 @@
       "members": [
         {
           "document": "实例名称。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库名称。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "表名称。",
+          "example": "persons",
           "member": "string",
           "name": "Table",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "列信息。",
+          "example": "无",
           "member": "TableColumn",
           "name": "Cols",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4069,6 +4184,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4082,15 +4198,19 @@
       "members": [
         {
           "document": "该实例上的数据库列表。",
+          "example": "无",
           "member": "Database",
           "name": "Databases",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "透传入参。",
+          "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4359,8 +4479,10 @@
       "members": [
         {
           "document": "按机型分类的可售卖规格列表",
+          "example": "无",
           "member": "SpecConfig",
           "name": "SpecConfig",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4463,6 +4585,7 @@
         {
           "default": "",
           "document": "任务的状态列表。0-任务启动中；1-任务运行中；2-任务成功；3-任务失败",
+          "example": "无",
           "member": "int64",
           "name": "Statuses",
           "required": false,
@@ -4471,6 +4594,7 @@
         {
           "default": "",
           "document": "实例ID列表",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -4479,6 +4603,7 @@
         {
           "default": "",
           "document": "任务类型列表，当前支持的任务类型有：0-回档任务；1-创建实例任务；2-扩容任务；3-迁移任务；4-删除实例任务；5-重启任务",
+          "example": "无",
           "member": "int64",
           "name": "FlowTypes",
           "required": false,
@@ -4487,6 +4612,7 @@
         {
           "default": "",
           "document": "任务的创建时间",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -4495,6 +4621,7 @@
         {
           "default": "",
           "document": "任务的结束时间",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -4503,6 +4630,7 @@
         {
           "default": "",
           "document": "任务ID的数组",
+          "example": "无",
           "member": "int64",
           "name": "UTaskIds",
           "required": false,
@@ -4511,6 +4639,7 @@
         {
           "default": "",
           "document": "每次最多返回多少条任务，取值范围为(0,100]，不传的话默认值为20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4519,6 +4648,7 @@
         {
           "default": "",
           "document": "返回任务默认是按照创建时间降序排列，从偏移值Offset处开始返回",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4532,15 +4662,19 @@
       "members": [
         {
           "document": "任务总数",
+          "example": "6",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务列表",
+          "example": "无",
           "member": "UserTaskInfo",
           "name": "FlowSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4847,6 +4981,7 @@
         {
           "default": "",
           "document": "待初始化的实例ID列表，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "[\"dcdbt-fdpjf5zh\\r\\n\",\"dcdbt-avw0207d\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4855,6 +4990,7 @@
         {
           "default": "",
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。",
+          "example": "无",
           "member": "DBParamValue",
           "name": "Params",
           "required": true,
@@ -4868,15 +5004,19 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "[3340,3341]",
           "member": "uint64",
           "name": "FlowIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "透传入参。",
+          "example": "[\"dcdbt-fdpjf5zh\",\"dcdbt-avw0207d\"]",
           "member": "string",
           "name": "InstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4895,6 +5035,7 @@
         {
           "default": "",
           "document": "实例uuid列表",
+          "example": "[]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4908,15 +5049,19 @@
       "members": [
         {
           "document": "隔离成功的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "SuccessInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "隔离失败的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5175,6 +5320,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5183,6 +5329,7 @@
         {
           "default": "",
           "document": "参数列表，每一个元素是Param和Value的组合",
+          "example": "无",
           "member": "DBParamValue",
           "name": "Params",
           "required": true,
@@ -5196,15 +5343,19 @@
       "members": [
         {
           "document": "实例 ID，形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "各参数修改结果",
+          "example": "无",
           "member": "ParamModifyResult",
           "name": "Result",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5223,6 +5374,7 @@
         {
           "default": "",
           "document": "待修改同步模式的实例ID。形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5231,6 +5383,7 @@
         {
           "default": "",
           "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
+          "example": "0",
           "member": "int64",
           "name": "SyncMode",
           "required": true,
@@ -5244,8 +5397,10 @@
       "members": [
         {
           "document": "异步任务Id，可通过 DescribeFlow 查询任务状态。",
+          "example": "3521",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5300,6 +5455,7 @@
         {
           "default": "",
           "document": "待开放外网访问的实例ID。形如：dcdbt-ow728lmc。",
+          "example": "dcdbt-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5308,6 +5464,7 @@
         {
           "default": "",
           "document": "是否IPv6，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
@@ -5321,8 +5478,10 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "3023",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5383,6 +5542,7 @@
         {
           "default": "",
           "document": "参数名字",
+          "example": "long_query_time",
           "member": "string",
           "name": "Param",
           "required": true,
@@ -5392,6 +5552,7 @@
         {
           "default": "",
           "document": "当前参数值",
+          "example": "1",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -5401,6 +5562,7 @@
         {
           "default": "",
           "document": "设置过的值，参数生效后，该值和value一样。未设置过就不返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "SetValue",
           "required": true,
@@ -5410,6 +5572,7 @@
         {
           "default": "",
           "document": "系统默认值",
+          "example": "1",
           "member": "string",
           "name": "Default",
           "required": true,
@@ -5419,6 +5582,7 @@
         {
           "default": "",
           "document": "参数限制",
+          "example": "无",
           "member": "ParamConstraint",
           "name": "Constraint",
           "required": true,
@@ -5428,8 +5592,19 @@
         {
           "default": "",
           "document": "是否有设置过值，false:没有设置过值，true:有设置过值。",
+          "example": "true",
           "member": "bool",
           "name": "HaveSetValue",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启生效，false:不需要重启，\ntrue:需要重启",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedRestart",
           "required": true,
           "type": "bool",
           "value_allowed_null": false

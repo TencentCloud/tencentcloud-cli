@@ -151,7 +151,7 @@
     "AssociateNetworkAclSubnets": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateNetworkAclSubnets\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&SubnetIds.0=subnet-12345678\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateNetworkAclSubnets\n&NetworkAclId=acl-12345678\n&SubnetIds.0=subnet-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "网络ACL关联子网"
       }
@@ -427,8 +427,8 @@
     "CreateNetworkAcl": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNetworkAcl\r\n&Version=2017-03-12\r\n&VpcId=vpc-12345678\r\n&NetworkAclName=test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NetworkAcl\": {\n            \"NetworkAclId\": \"acl-12345678\",\n            \"VpcId\": \"vpc-12345678\",\n            \"NetworkAclName\": \"test\",\n            \"CreatedTime\": \"2020-01-01 10:00:00\"\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNetworkAcl\n&VpcId=vpc-12345678\n&NetworkAclName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NetworkAcl\": {\n            \"NetworkAclId\": \"acl-12345678\",\n            \"VpcId\": \"vpc-12345678\",\n            \"NetworkAclName\": \"test\",\n            \"CreatedTime\": \"2020-01-01 10:00:00\",\n            \"SubnetSet\": [],\n            \"IngressEntries\": [],\n            \"EgressEntries\": []\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建网络ACL"
       }
     ],
@@ -729,7 +729,7 @@
     "DeleteNetworkAcl": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetworkAcl\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetworkAcl\n&NetworkAclId=acl-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "删除网络ACL"
       }
@@ -1165,7 +1165,7 @@
     "DescribeGatewayFlowQos": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowQos\r\n&<公共请求参数>\r\n&GatewayId=vpngw-4je9dgin",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowQos\n&GatewayId=vpngw-4je9dgin\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayQosSet\": [\n            {\n                \"VpcId\": \"vpc-mrzkofih\",\n                \"IpAddress\": \"10.0.0.12\",\n                \"Bandwidth\": 10,\n                \"CreateTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "示例1 查询VPN网关来访IP流控带宽"
       }
@@ -1663,7 +1663,7 @@
     "DisableGatewayFlowMonitor": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisableGatewayFlowMonitor\r\n&<公共请求参数>\r\n&GatewayId=vpngw-gree226l",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableGatewayFlowMonitor\n&GatewayId=vpngw-gree226l\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "示例1 关闭VPN网关流量监控"
       }
@@ -1773,7 +1773,7 @@
     "EnableGatewayFlowMonitor": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=EnableGatewayFlowMonitor\r\n&<公共请求参数>\r\n&GatewayId=vpngw-gree226l",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableGatewayFlowMonitor\n&GatewayId=vpngw-gree226l\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "示例1 开启VPN网关流量监控"
       }
@@ -2035,7 +2035,7 @@
     "ModifyGatewayFlowQos": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyGatewayFlowQos\r\n&<公共请求参数>\r\n&GatewayId=vpngw-gree226l\r\n&Bandwidth=10\r\n&IpAddresses.0=10.0.0.12",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyGatewayFlowQos\n&GatewayId=vpngw-gree226l\n&Bandwidth=10\n&IpAddresses.0=10.0.0.12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "示例1 调整VPN网关流控带宽"
       }
@@ -2123,7 +2123,7 @@
     "ModifyNetworkAclAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclAttribute\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&NetworkAclName=test modify\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclAttribute\n&NetworkAclId=acl-12345678\n&NetworkAclName=test modify\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "修改网络ACL名称"
       }
@@ -2131,19 +2131,19 @@
     "ModifyNetworkAclEntries": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\r\n&NetworkAclEntrySet.Ingress.0.Port=80\r\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\r\n&NetworkAclEntrySet.Ingress.0.Action=Accept\r\n&NetworkAclEntrySet.Ingress.0.Description=test\r\n&NetworkAclEntrySet.Egress.0.Protocol=TCP\r\n&NetworkAclEntrySet.Egress.0.Port=80\r\n&NetworkAclEntrySet.Egress.0.CidrBlock=192.168.1.0/24\r\n&NetworkAclEntrySet.Egress.0.Action=Accept\r\n&NetworkAclEntrySet.Egress.0.Description=test\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\n&NetworkAclId=acl-12345678\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\n&NetworkAclEntrySet.Ingress.0.Port=80\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\n&NetworkAclEntrySet.Ingress.0.Action=Accept\n&NetworkAclEntrySet.Ingress.0.Description=test\n&NetworkAclEntrySet.Ingress.0.ModifyTime=xx\n&NetworkAclEntrySet.Egress.0.Protocol=TCP\n&NetworkAclEntrySet.Egress.0.Port=80\n&NetworkAclEntrySet.Egress.0.CidrBlock=192.168.1.0/24\n&NetworkAclEntrySet.Egress.0.Action=Accept\n&NetworkAclEntrySet.Egress.0.Description=test\n&NetworkAclEntrySet.Egress.0.ModifyTime=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "网络ACL添加入站规则和出站规则"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\r\n&NetworkAclEntrySet.Ingress.0.Port=80\r\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\r\n&NetworkAclEntrySet.Ingress.0.Action=Accept\r\n&NetworkAclEntrySet.Ingress.0.Description=test\r\n&NetworkAclEntrySet.Ingress.1.Protocol=TCP\r\n&NetworkAclEntrySet.Ingress.1.Port=442\r\n&NetworkAclEntrySet.Ingress.1.CidrBlock=192.168.1.0/24\r\n&NetworkAclEntrySet.Ingress.1.Action=Accept\r\n&NetworkAclEntrySet.Ingress.1.Description=test\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\n&NetworkAclId=acl-12345678\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\n&NetworkAclEntrySet.Ingress.0.Port=80\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\n&NetworkAclEntrySet.Ingress.0.Action=Accept\n&NetworkAclEntrySet.Ingress.0.Description=test\n&NetworkAclEntrySet.Ingress.0.ModifyTime=xx\n&NetworkAclEntrySet.Ingress.1.Protocol=TCP\n&NetworkAclEntrySet.Ingress.1.Port=442\n&NetworkAclEntrySet.Ingress.1.CidrBlock=192.168.1.0/24\n&NetworkAclEntrySet.Ingress.1.Action=Accept\n&NetworkAclEntrySet.Ingress.1.Description=test\n&NetworkAclEntrySet.Ingress.1.ModifyTime=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "网络ACL只添加入站规则"
       },
       {
         "document": "传参只传需要保留的规则，待删除的规则不传即可。比如实例acl-12345678当前有两条入站规则：\n* 规则1：TCP 192.168.1.0/24 80 Accept\n* 规则2：TCP 192.168.1.0/24 443 Accept\n<br/>比如，此时需要删除入站规则2，按照下面实例传参。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\r\n&Version=2017-03-12\r\n&NetworkAclId=acl-12345678\r\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\r\n&NetworkAclEntrySet.Ingress.0.Port=80\r\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\r\n&NetworkAclEntrySet.Ingress.0.Action=Accept\r\n&NetworkAclEntrySet.Ingress.0.Description=test\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyNetworkAclEntries\n&NetworkAclId=acl-12345678\n&NetworkAclEntrySet.Ingress.0.Protocol=TCP\n&NetworkAclEntrySet.Ingress.0.Port=80\n&NetworkAclEntrySet.Ingress.0.CidrBlock=192.168.1.0/24\n&NetworkAclEntrySet.Ingress.0.Action=Accept\n&NetworkAclEntrySet.Ingress.0.Description=test\n&NetworkAclEntrySet.Ingress.0.ModifyTime=xx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "网络ACL删除入站规则"
       }

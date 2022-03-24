@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mariadb ActivateHourDBInstance --cli-unfold-argument  \
-    --InstanceIds[0] tdsql-rlye31jd
+    --InstanceIds tdsql-rlye31jd
 ```
 
 Output: 

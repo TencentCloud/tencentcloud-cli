@@ -54,11 +54,12 @@ Output:
                     "PackType": "xx"
                 },
                 "SpecificationLimit": {
-                    "UnionPackFlag": 1,
+                    "ServiceBandWidth": 1,
                     "AutoRenewFlag": 1,
                     "ProtectBandwidth": 1,
-                    "ProtectIPNumberLimit": 1,
-                    "ProtectCountLimit": 1
+                    "ProtectCountLimit": 1,
+                    "UnionPackFlag": 1,
+                    "ProtectIPNumberLimit": 1
                 },
                 "BoundStatus": "xx"
             }

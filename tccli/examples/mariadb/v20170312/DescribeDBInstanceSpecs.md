@@ -22,28 +22,9 @@ Output:
                         "Machine": "TS85",
                         "MaxStorage": 3000,
                         "Memory": 64,
+                        "Cpu": 1,
                         "NodeCount": 3,
                         "Qps": 33000,
-                        "MinStorage": 10
-                    },
-                    {
-                        "SuitInfo": "日独立用户数上千万人的大型应用",
-                        "Pid": 10820,
-                        "Machine": "TS85",
-                        "MaxStorage": 3000,
-                        "Memory": 96,
-                        "NodeCount": 3,
-                        "Qps": 49000,
-                        "MinStorage": 10
-                    },
-                    {
-                        "SuitInfo": "日独立用户数上千万人的大型应用",
-                        "Pid": 10820,
-                        "Machine": "TS85",
-                        "MaxStorage": 3000,
-                        "Memory": 120,
-                        "NodeCount": 3,
-                        "Qps": 61000,
                         "MinStorage": 10
                     }
                 ]

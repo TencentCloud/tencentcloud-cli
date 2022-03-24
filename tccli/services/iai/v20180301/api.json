@@ -322,6 +322,7 @@
         {
           "default": "",
           "document": "检测模式。0 为检测所有出现的人脸， 1 为检测面积最大的人脸。默认为 0。最多返回 10 张人脸的五官定位（人脸关键点）具体信息。",
+          "example": "0",
           "member": "uint64",
           "name": "Mode",
           "required": false,
@@ -330,6 +331,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -338,6 +340,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -346,6 +349,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -354,6 +358,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -367,29 +372,37 @@
       "members": [
         {
           "document": "请求的图片宽度。",
+          "example": "550",
           "member": "uint64",
           "name": "ImageWidth",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求的图片高度。",
+          "example": "366",
           "member": "uint64",
           "name": "ImageHeight",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "五官定位（人脸关键点）具体信息。",
+          "example": "无",
           "member": "FaceShape",
           "name": "FaceShapeSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -492,6 +505,7 @@
         {
           "default": "",
           "document": "待整理的人员库列表。 \n人员库总人数不可超过200万，人员库个数不可超过10个。",
+          "example": "[\"MyGroup1\\r\\n\",\"MyGroup2\\r\\n\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -499,7 +513,8 @@
         },
         {
           "default": "",
-          "document": "人员查重整理力度的控制。\n1：力度较高的档案整理，能够消除更多的重复身份，对应稍高的非重复身份误清除率；\n2：力度较低的档案整理，非重复身份的误清除率较低，对应稍低的重复身份消除率。",
+          "document": "人员查重整理力度的控制。\n1：力度较高的人员整理，能够消除更多的重复身份，对应稍高的非重复身份误清除率；\n2：力度较低的人员整理，非重复身份的误清除率较低，对应稍低的重复身份消除率。",
+          "example": "1",
           "member": "int64",
           "name": "UniquePersonControl",
           "required": true,
@@ -513,8 +528,10 @@
       "members": [
         {
           "document": "查重任务ID，用于查询、获取查重的进度和结果。",
+          "example": "YP6v5v32pvyBqLyz",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -533,6 +550,7 @@
         {
           "default": "",
           "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "ImageA",
           "required": false,
@@ -541,6 +559,7 @@
         {
           "default": "",
           "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "ImageB",
           "required": false,
@@ -549,6 +568,7 @@
         {
           "default": "",
           "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "UrlA",
           "required": false,
@@ -557,6 +577,7 @@
         {
           "default": "",
           "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "UrlB",
           "required": false,
@@ -565,6 +586,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -573,6 +595,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -581,6 +604,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -594,15 +618,19 @@
       "members": [
         {
           "document": "两张图片中人脸的相似度分数。\n不同算法版本返回的相似度分数不同。 \n若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。  一般超过50分则可认定为同一人。 \n2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。 \n若需要验证两张图片中的人脸是否为同一人，建议使用人脸验证接口。",
+          "example": "0.999",
           "member": "float",
           "name": "Score",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -669,6 +697,7 @@
         {
           "default": "",
           "document": "人员ID。",
+          "example": "1001",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -677,6 +706,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Images",
           "required": false,
@@ -685,6 +715,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
+          "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\r\\n\"]",
           "member": "string",
           "name": "Urls",
           "required": false,
@@ -693,6 +724,7 @@
         {
           "default": "",
           "document": "只有和该人员已有的人脸相似度超过FaceMatchThreshold值的人脸，才能增加人脸成功。 \n默认值60分。取值范围[0,100] 。",
+          "example": "60",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -701,6 +733,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -709,6 +742,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -722,43 +756,55 @@
       "members": [
         {
           "document": "加入成功的人脸数量",
+          "example": "1",
           "member": "uint64",
           "name": "SucFaceNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "加入成功的人脸ID列表",
+          "example": "[\"2875186538564559728\"]",
           "member": "string",
           "name": "SucFaceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "每张人脸图片添加结果，-1101 代表未检测到人脸，-1102 代表图片解码失败， \n-1601代表不符合图片质量控制要求, -1604 代表人脸相似度没有超过FaceMatchThreshold。 \n其他非 0 值代表算法服务异常。 \nRetCode的顺序和入参中 Images 或 Urls 的顺序一致。",
+          "example": "[0]",
           "member": "int64",
           "name": "RetCode",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 \n例， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。",
+          "example": "无",
           "member": "uint64",
           "name": "SucIndexes",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "加入成功的人脸框位置。顺序和入参中 Images 或 Urls 的顺序一致。",
+          "example": "无",
           "member": "FaceRect",
           "name": "SucFaceRects",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "无",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -777,6 +823,7 @@
         {
           "default": "",
           "document": "人员库名称，[1,60]个字符，可修改，不可重复。",
+          "example": "腾讯深圳员工库",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -785,6 +832,7 @@
         {
           "default": "",
           "document": "人员库 ID，不可修改，不可重复。支持英文、数字、-%@#&_，长度限制64B。",
+          "example": "TencentShenZhenEmployee",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -793,6 +841,7 @@
         {
           "default": "",
           "document": "人员库自定义描述字段，用于描述人员库中人员属性，该人员库下所有人员将拥有此描述字段。 \n最多可以创建5个。 \n每个自定义描述字段支持[1,30]个字符。 \n在同一人员库中自定义描述字段不可重复。 \n例： 设置某人员库“自定义描述字段”为[\"学号\",\"工号\",\"手机号\"]， \n则该人员库下所有人员将拥有名为“学号”、“工号”、“手机号”的描述字段， \n可在对应人员描述字段中填写内容，登记该人员的学号、工号、手机号等信息。",
+          "example": "[\"\\u4e8b\\u4e1a\\u7fa4\\n\",\"\\u90e8\\u95e8\\u540d\\n\",\"\\u7ec4\\u540d\\n\"]",
           "member": "string",
           "name": "GroupExDescriptions",
           "required": false,
@@ -801,6 +850,7 @@
         {
           "default": "",
           "document": "人员库信息备注，[0，40]个字符。",
+          "example": "不含实习生",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -809,6 +859,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -822,8 +873,10 @@
       "members": [
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1270,6 +1323,7 @@
         {
           "default": "",
           "document": "最多处理的人脸数目。 \n默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 \n此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -1278,6 +1332,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1286,6 +1341,7 @@
         {
           "default": "",
           "document": "图片的 Url 。 \n对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1294,6 +1350,7 @@
         {
           "default": "",
           "document": "是否返回年龄、性别、情绪等属性。 \n合法值为（大小写不敏感）：None、Age、Beauty、Emotion、Eye、Eyebrow \nGender、Hair、Hat、Headpose、Mask、Mouth、Moustache、Nose、Shape、Skin、Smile。 \nNone为不需要返回。默认为 None。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 AttributesInfo 不具备参考意义。",
+          "example": "eye",
           "member": "string",
           "name": "FaceAttributesType",
           "required": false,
@@ -1302,6 +1359,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -1310,6 +1368,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。本接口仅支持“3.0”输入",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -1323,29 +1382,37 @@
       "members": [
         {
           "document": "请求的图片宽度。",
+          "example": "550",
           "member": "uint64",
           "name": "ImageWidth",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求的图片高度。",
+          "example": "366",
           "member": "uint64",
           "name": "ImageHeight",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "人脸信息列表。",
+          "example": "无",
           "member": "FaceDetailInfo",
           "name": "FaceDetailInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1364,6 +1431,7 @@
         {
           "default": "",
           "document": "最多处理的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为120。 \n此参数用于控制处理待检测图片中的人脸个数，值越小，处理速度越快。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -1372,6 +1440,7 @@
         {
           "default": "",
           "document": "人脸长和宽的最小尺寸，单位为像素。\n默认为34。建议不低于34。\n低于MinFaceSize值的人脸不会被检测。",
+          "example": "40",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -1380,6 +1449,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1388,6 +1458,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1396,6 +1467,7 @@
         {
           "default": "",
           "document": "是否需要返回人脸属性信息（FaceAttributesInfo）。0 为不需要返回，1 为需要返回。默认为 0。 \n非 1 值均视为不需要返回，此时 FaceAttributesInfo 不具备参考意义。  \n最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 FaceAttributesInfo 不具备参考意义。  \n提取人脸属性信息较为耗时，如不需要人脸属性信息，建议关闭此项功能，加快人脸检测速度。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedFaceAttributes",
           "required": false,
@@ -1404,6 +1476,7 @@
         {
           "default": "",
           "document": "是否开启质量检测。0 为关闭，1 为开启。默认为 0。 \n非 1 值均视为不进行质量检测。\n最多返回面积最大的 30 张人脸质量分信息，超过 30 张人脸（第 31 张及以后的人脸）的 FaceQualityInfo不具备参考意义。  \n建议：人脸入库操作建议开启此功能。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedQualityDetection",
           "required": false,
@@ -1412,6 +1485,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。目前入参支持 “2.0”和“3.0“ 两个输入。  \n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。 \n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -1420,6 +1494,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -1433,29 +1508,37 @@
       "members": [
         {
           "document": "请求的图片宽度。",
+          "example": "640",
           "member": "int64",
           "name": "ImageWidth",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "请求的图片高度。",
+          "example": "440",
           "member": "int64",
           "name": "ImageHeight",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "人脸信息列表。包含人脸坐标信息、属性信息（若需要）、质量分信息（若需要）。",
+          "example": "无",
           "member": "FaceInfo",
           "name": "FaceInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1474,6 +1557,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M（图片的宽高比请接近3:4，不符合宽高比的图片返回的分值不具备参考意义）。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1482,6 +1566,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n（图片的宽高比请接近 3:4，不符合宽高比的图片返回的分值不具备参考意义） \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1490,6 +1575,7 @@
         {
           "default": "",
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -1503,22 +1589,28 @@
       "members": [
         {
           "document": "活体打分，取值范围 [0,100]，分数一般落于[80, 100]区间内，0分也为常见值。推荐相大于 87 时可判断为活体。可根据具体场景自行调整阈值。\n本字段当且仅当FaceModelVersion为2.0时才具备参考意义。",
+          "example": "99",
           "member": "float",
           "name": "Score",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "活体检测是否通过。\n本字段只有FaceModelVersion为3.0时才具备参考意义。",
+          "example": "1",
           "member": "bool",
           "name": "IsLiveness",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2373,6 +2465,7 @@
         {
           "default": "",
           "document": "起始序号，默认值为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2381,6 +2474,7 @@
         {
           "default": "",
           "document": "返回数量，默认值为10，最大值为1000",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2394,15 +2488,19 @@
       "members": [
         {
           "document": "返回的人员库信息",
+          "example": "无",
           "member": "GroupInfo",
           "name": "GroupInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人员库总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "GroupNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3432,6 +3530,7 @@
         {
           "default": "",
           "document": "希望搜索的人员库列表，上限100个。",
+          "example": "[\"TencentShenZhenEmployee\\r\\n\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -3440,6 +3539,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -3448,6 +3548,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -3456,6 +3557,7 @@
         {
           "default": "",
           "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。 \nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。 \n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -3464,6 +3566,7 @@
         {
           "default": "",
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34的人脸图片无法被识别。建议设置为80。",
+          "example": "40",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -3472,6 +3575,7 @@
         {
           "default": "",
           "document": "单张被识别的人脸返回的最相似人员数量。默认值为5，最大值为100。 \n例，设MaxFaceNum为1，MaxPersonNum为8，则返回Top8相似的人员信息。\n值越大，需要处理的时间越长。建议不要超过10。",
+          "example": "5",
           "member": "uint64",
           "name": "MaxPersonNum",
           "required": false,
@@ -3480,6 +3584,7 @@
         {
           "default": "",
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
+          "example": "0",
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
@@ -3488,6 +3593,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -3496,6 +3602,7 @@
         {
           "default": "",
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
+          "example": "0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -3504,6 +3611,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -3517,22 +3625,28 @@
       "members": [
         {
           "document": "识别结果。",
+          "example": "无",
           "member": "Result",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "搜索的人员库中包含的人脸数。",
+          "example": "1",
           "member": "uint64",
           "name": "FaceNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "无",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3551,6 +3665,7 @@
         {
           "default": "",
           "document": "希望搜索的人员库列表，上限60个。",
+          "example": "[\"TencentShenZhenEmployee\\r\\n\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -3559,6 +3674,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -3567,6 +3683,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -3575,6 +3692,7 @@
         {
           "default": "",
           "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。\nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。\n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -3583,6 +3701,7 @@
         {
           "default": "",
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34将影响搜索精度。建议设置为80。",
+          "example": "40",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -3591,6 +3710,7 @@
         {
           "default": "",
           "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNum为5，则最多可能返回3*5=15个人员。",
+          "example": "5",
           "member": "uint64",
           "name": "MaxPersonNumPerGroup",
           "required": false,
@@ -3599,6 +3719,7 @@
         {
           "default": "",
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
+          "example": "0",
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
@@ -3607,6 +3728,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -3615,6 +3737,7 @@
         {
           "default": "",
           "document": "出参Score中，只有大于等于FaceMatchThreshold值的结果才会返回。\n默认为0。\n取值范围[0.0,100.0) 。",
+          "example": "0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -3623,6 +3746,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -3636,22 +3760,28 @@
       "members": [
         {
           "document": "搜索的人员库中包含的人脸数。",
+          "example": "1",
           "member": "uint64",
           "name": "FaceNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "识别结果。",
+          "example": "无",
           "member": "ResultsReturnsByGroup",
           "name": "ResultsReturnsByGroup",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "无",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3670,6 +3800,7 @@
         {
           "default": "",
           "document": "希望搜索的人员库列表，上限100个。",
+          "example": "[\"TencentShenZhenEmployee\\r\\n\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -3678,6 +3809,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -3686,6 +3818,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -3694,6 +3827,7 @@
         {
           "default": "",
           "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。\nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。\n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -3702,6 +3836,7 @@
         {
           "default": "",
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34将影响搜索精度。建议设置为80。",
+          "example": "40",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -3710,6 +3845,7 @@
         {
           "default": "",
           "document": "单张被识别的人脸返回的最相似人员数量。默认值为5，最大值为100。\n例，设MaxFaceNum为1，MaxPersonNum为8，则返回Top8相似的人员信息。\n值越大，需要处理的时间越长。建议不要超过10。",
+          "example": "3",
           "member": "uint64",
           "name": "MaxPersonNum",
           "required": false,
@@ -3718,6 +3854,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -3726,6 +3863,7 @@
         {
           "default": "",
           "document": "出参Score中，只有大于等于FaceMatchThreshold值的结果才会返回。默认为0。取值范围[0.0,100.0) 。",
+          "example": "0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -3734,6 +3872,7 @@
         {
           "default": "",
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
+          "example": "0",
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
@@ -3742,6 +3881,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -3755,22 +3895,28 @@
       "members": [
         {
           "document": "识别结果。",
+          "example": "无",
           "member": "Result",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。",
+          "example": "5",
           "member": "uint64",
           "name": "PersonNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4013,6 +4159,7 @@
         {
           "default": "",
           "document": "待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。",
+          "example": "11111111",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -4021,6 +4168,7 @@
         {
           "default": "",
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -4029,6 +4177,7 @@
         {
           "default": "",
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -4037,6 +4186,7 @@
         {
           "default": "",
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -4045,6 +4195,7 @@
         {
           "default": "",
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -4058,22 +4209,28 @@
       "members": [
         {
           "document": "给定的人脸图片与 PersonId 对应人脸的相似度。若 PersonId 下有多张人脸（Face），返回相似度最大的分数。\n\n不同算法版本返回的相似度分数不同。\n若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。 一般超过50分则可认定为同一人。\n2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。",
+          "example": "100",
           "member": "float",
           "name": "Score",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "是否为同一人的判断。",
+          "example": "1",
           "member": "bool",
           "name": "IsMatch",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "人脸识别所用的算法模型版本。",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

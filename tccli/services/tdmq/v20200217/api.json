@@ -546,6 +546,12 @@
       "name": "消息回溯",
       "output": "ResetMsgSubOffsetByTimestampResponse"
     },
+    "ResetRocketMQConsumerOffSet": {
+      "document": "重置指定Group的消费位点到指定时间戳",
+      "input": "ResetRocketMQConsumerOffSetRequest",
+      "name": "重置RocketMQ消费位点",
+      "output": "ResetRocketMQConsumerOffSetResponse"
+    },
     "RewindCmqQueue": {
       "document": "回溯cmq队列",
       "input": "RewindCmqQueueRequest",
@@ -9301,6 +9307,78 @@
           "type": "bool",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRocketMQConsumerOffSetRequest": {
+      "document": "ResetRocketMQConsumerOffSet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重置方式，0表示从最新位点开始，1表示从指定时间点开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRocketMQConsumerOffSetResponse": {
+      "document": "ResetRocketMQConsumerOffSet返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

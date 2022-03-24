@@ -6289,7 +6289,8 @@
       "members": [
         {
           "default": "",
-          "document": "变量的名称",
+          "document": "变量的名称，不可为空字符",
+          "example": "testKey",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -6298,7 +6299,8 @@
         },
         {
           "default": "",
-          "document": "变量的值",
+          "document": "变量的值，不可为空字符",
+          "example": "testValue",
           "member": "string",
           "name": "Value",
           "required": false,
