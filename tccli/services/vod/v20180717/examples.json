@@ -853,7 +853,7 @@
       },
       {
         "document": "对一个 ID 为 99873 的直播录制流，剪辑从 2018-09-20 的 10:00:00 到 11:00:00 的片段，生成一个新的点播视频",
-        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.StartTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.EndTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-clipMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的一个流进行剪辑，生成一个新的视频"
       },
@@ -865,7 +865,7 @@
       },
       {
         "document": "将 ID 为 99873，99874 和 99875 的 3 个直播录制流，分别剪辑出从 2018-09-20 的 10:00:00 到 11:00:00 的片段，拼接后生成一个新的点播视频",
-        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.StartTime=2018-09-20T11:00:00Z\n&StreamInfos.1.StreamId=99874\n&StreamInfos.1.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.1.StartTime=2018-09-20T11:00:00Z\n&StreamInfos.2.StreamId=99875\n&StreamInfos.2.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.2.StartTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.EndTime=2018-09-20T11:00:00Z\n&StreamInfos.1.StreamId=99874\n&StreamInfos.1.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.1.EndTime=2018-09-20T11:00:00Z\n&StreamInfos.2.StreamId=99875\n&StreamInfos.2.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.2.EndTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-clipMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的多个流进行剪辑，然后拼接，生成一个新的视频"
       },

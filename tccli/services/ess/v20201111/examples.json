@@ -9,7 +9,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk\"\n    },\n    \"FlowId\": \"yDR1HUUgygjb689nUuO4zjE8imAxVxl3\",\n    \"CancelMessage\": \"字符串\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxMkUy***************JmKxPkk\"\n    },\n    \"FlowId\": \"yDR1HUU***************JjE8imAxVxl3\",\n    \"CancelMessage\": \"字符串\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b29b26-a081-44a4-a1dd-104fa651ecc8\"\n    }\n}",
         "title": "撤销流程样例"
       }

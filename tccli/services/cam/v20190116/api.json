@@ -139,9 +139,9 @@
       "output": "DescribeRoleListResponse"
     },
     "DescribeSafeAuthFlag": {
-      "document": "查询安全设置",
+      "document": "查询用户安全设置",
       "input": "DescribeSafeAuthFlagRequest",
-      "name": "查询安全设置",
+      "name": "查询用户安全设置",
       "output": "DescribeSafeAuthFlagResponse"
     },
     "DescribeSafeAuthFlagColl": {
@@ -1930,23 +1930,38 @@
       "members": [
         {
           "document": "登录保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "LoginFlag",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "敏感操作保护设置",
+          "example": "无",
           "member": "LoginActionFlag",
           "name": "ActionFlag",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "异地登录保护设置",
+          "example": "无",
           "member": "OffsiteFlag",
           "name": "OffsiteFlag",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "1: 提示7天信任设备 0: 不提示",
+          "example": "1",
+          "member": "uint64",
+          "name": "PromptTrust",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4175,6 +4190,7 @@
         {
           "default": "",
           "document": "手机",
+          "example": "0",
           "member": "uint64",
           "name": "Phone",
           "required": false,
@@ -4184,6 +4200,7 @@
         {
           "default": "",
           "document": "硬token",
+          "example": "0",
           "member": "uint64",
           "name": "Token",
           "required": false,
@@ -4193,6 +4210,7 @@
         {
           "default": "",
           "document": "软token",
+          "example": "0",
           "member": "uint64",
           "name": "Stoken",
           "required": false,
@@ -4202,6 +4220,7 @@
         {
           "default": "",
           "document": "微信",
+          "example": "0",
           "member": "uint64",
           "name": "Wechat",
           "required": false,
@@ -4211,6 +4230,7 @@
         {
           "default": "",
           "document": "自定义",
+          "example": "0",
           "member": "uint64",
           "name": "Custom",
           "required": false,

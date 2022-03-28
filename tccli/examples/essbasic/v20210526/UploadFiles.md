@@ -24,13 +24,13 @@ Output:
 {
     "Response": {
         "FileIds": [
-            "d54e3caec25ad0ea6be24406762b7562"
+            "d54e****************A2b7562"
         ],
         "FileUrls": [
-            "https://a.b.com/d54e3caec25ad0ea6be24406762b7562"
+            "https://a.b.com/d5****************2b7562"
         ],
         "TotalCount": 1,
-        "RequestId": "4fecde8c3137d320e8a3c8136bdbb7e5"
+        "RequestId": "4fecd****************bdbb7e5"
     }
 }
 ```

@@ -108,7 +108,8 @@ Input:
 tccli vod EditMedia --cli-unfold-argument  \
     --InputType Stream \
     --StreamInfos.0.StreamId 99873 \
-    --StreamInfos.0.StartTime 2018-09-20T11:00:00Z
+    --StreamInfos.0.StartTime 2018-09-20T10:00:00Z \
+    --StreamInfos.0.EndTime 2018-09-20T11:00:00Z
 ```
 
 Output: 
@@ -155,11 +156,14 @@ Input:
 tccli vod EditMedia --cli-unfold-argument  \
     --InputType Stream \
     --StreamInfos.0.StreamId 99873 \
-    --StreamInfos.0.StartTime 2018-09-20T11:00:00Z \
+    --StreamInfos.0.StartTime 2018-09-20T10:00:00Z \
+    --StreamInfos.0.EndTime 2018-09-20T11:00:00Z \
     --StreamInfos.1.StreamId 99874 \
-    --StreamInfos.1.StartTime 2018-09-20T11:00:00Z \
+    --StreamInfos.1.StartTime 2018-09-20T10:00:00Z \
+    --StreamInfos.1.EndTime 2018-09-20T11:00:00Z \
     --StreamInfos.2.StreamId 99875 \
-    --StreamInfos.2.StartTime 2018-09-20T11:00:00Z
+    --StreamInfos.2.StartTime 2018-09-20T10:00:00Z \
+    --StreamInfos.2.EndTime 2018-09-20T11:00:00Z
 ```
 
 Output: 

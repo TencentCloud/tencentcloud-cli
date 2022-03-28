@@ -32,8 +32,8 @@ Input:
 
 ```
 tccli ess CancelFlow --cli-unfold-argument  \
-    --Operator.UserId yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk \
-    --FlowId yDR1HUUgygjb689nUuO4zjE8imAxVxl3 \
+    --Operator.UserId yDxMkUy***************JmKxPkk \
+    --FlowId yDR1HUU***************JjE8imAxVxl3 \
     --CancelMessage 字符串
 ```
 

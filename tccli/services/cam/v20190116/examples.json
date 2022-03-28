@@ -188,7 +188,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=DescribeSafeAuthFlag\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LoginFlag\": {\n            \"Phone\": 1,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"ActionFlag\": {\n            \"Phone\": 0,\n            \"Token\": 0,\n            \"Stoken\": 0,\n            \"Wechat\": 0,\n            \"Custom\": 0\n        },\n        \"OffsiteFlag\": {\n            \"VerifyFlag\": 0,\n            \"NotifyPhone\": 1,\n            \"NotifyEmail\": 1,\n            \"NotifyWechat\": 1,\n            \"Tips\": 0\n        },\n        \"PromptTrust\": 1,\n        \"RequestId\": \"9626da03-4645-4c54-ba90-74836284af0c\"\n    }\n}",
         "title": "查询安全设置"
       }
     ],

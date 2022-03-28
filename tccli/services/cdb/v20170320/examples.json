@@ -515,7 +515,7 @@
     "DescribeInstanceParamRecords": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\r\n&InstanceId=cdb-f35wr6wj\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\",\n        \"TotalCount\": \"28\",\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-1234asdf\",\n                \"ParamName\": \"lower_case_table_names\",\n                \"OldValue\": \"0\",\n                \"NewValue\": \"1\",\n                \"IsSucess\": true,\n                \"ModifyTime\": \"2019-01-15 18:59:40\"\n            }\n        ]\n    }\n}",
         "title": "查询实例参数修改历史"
       }

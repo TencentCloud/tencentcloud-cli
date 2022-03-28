@@ -12168,6 +12168,7 @@
         {
           "default": "",
           "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "无",
           "member": "string",
           "name": "MediaName",
           "required": false,
@@ -12177,6 +12178,7 @@
         {
           "default": "",
           "document": "输出文件格式，可选值：mp4、hls。默认是 mp4。",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -12186,6 +12188,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "无",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -12195,10 +12198,31 @@
         {
           "default": "",
           "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的视频信息。",
+          "example": "无",
+          "member": "EditMediaVideoStream",
+          "name": "VideoStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "极速高清转码参数。",
+          "example": "无",
+          "member": "EditMediaTEHDConfig",
+          "name": "TEHDConfig",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -12210,6 +12234,7 @@
         {
           "default": "",
           "document": "输入视频的类型，可以取的值为  File，Stream 两种。",
+          "example": "File",
           "member": "string",
           "name": "InputType",
           "required": true,
@@ -12218,6 +12243,7 @@
         {
           "default": "",
           "document": "输入的视频文件信息，当 InputType 为 File 时必填。",
+          "example": "无",
           "member": "EditMediaFileInfo",
           "name": "FileInfos",
           "required": false,
@@ -12226,6 +12252,7 @@
         {
           "default": "",
           "document": "输入的流信息，当 InputType 为 Stream 时必填。",
+          "example": "无",
           "member": "EditMediaStreamInfo",
           "name": "StreamInfos",
           "required": false,
@@ -12233,7 +12260,8 @@
         },
         {
           "default": "",
-          "document": "编辑模板 ID，取值有 10，20，不填代表使用 10 模板。\n<li>10：拼接时，以分辨率最高的输入为基准；</li>\n<li>20：拼接时，以码率最高的输入为基准；</li>",
+          "document": "编辑模板 ID，取值有 10，20，不填代表使用 10 模板。\n<li>10：拼接时，以分辨率最高的输入为基准；</li>\n<li>20：拼接时，以码率最高的输入为基准。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": false,
@@ -12242,6 +12270,7 @@
         {
           "default": "",
           "document": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。",
+          "example": "无",
           "member": "string",
           "name": "ProcedureName",
           "required": false,
@@ -12250,6 +12279,7 @@
         {
           "default": "",
           "document": "编辑后生成的文件配置。",
+          "example": "无",
           "member": "EditMediaOutputConfig",
           "name": "OutputConfig",
           "required": false,
@@ -12258,6 +12288,7 @@
         {
           "default": "",
           "document": "标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -12266,6 +12297,7 @@
         {
           "default": "",
           "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -12274,6 +12306,7 @@
         {
           "default": "",
           "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -12282,6 +12315,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -12290,6 +12324,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -12303,8 +12338,10 @@
       "members": [
         {
           "document": "编辑视频的任务 ID，可以通过该 ID 查询编辑任务（任务类型为 EditMedia）的状态。",
+          "example": "125xxx65-EditMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12344,6 +12381,22 @@
           "member": "string",
           "name": "EndTime",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EditMediaTEHDConfig": {
+      "document": "视频编辑极速高清参数配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示 OFF。",
+          "example": "TEHD-100",
+          "member": "string",
+          "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12574,6 +12627,42 @@
         }
       ],
       "usage": "out"
+    },
+    "EditMediaVideoStream": {
+      "document": "视频流配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "无",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率取基准分辨率；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按基准分辨率比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按基准分辨率比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率取基准分辨率；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按基准分辨率比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按基准分辨率比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "EmptyTrackItem": {
       "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
@@ -21318,6 +21407,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -21327,6 +21417,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -21336,6 +21427,7 @@
         {
           "default": "",
           "document": "采样截图模板名称。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -21345,6 +21437,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -21354,6 +21447,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1920",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -21363,6 +21457,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -21372,6 +21467,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -21381,6 +21477,7 @@
         {
           "default": "",
           "document": "图片格式。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -21390,6 +21487,7 @@
         {
           "default": "",
           "document": "采样截图类型。",
+          "example": "Time",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -21399,6 +21497,7 @@
         {
           "default": "",
           "document": "采样间隔。",
+          "example": "1",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -21408,6 +21507,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -21417,6 +21517,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -21425,7 +21526,8 @@
         },
         {
           "default": "",
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "document": "填充方式，当截图配置宽高参数与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black",
           "member": "string",
           "name": "FillType",
           "required": true,
@@ -21954,6 +22056,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -21963,6 +22066,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -21972,6 +22076,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板名称。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -21981,6 +22086,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -21990,6 +22096,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1920",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -21999,6 +22106,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -22008,6 +22116,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -22017,6 +22126,7 @@
         {
           "default": "",
           "document": "图片格式。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -22026,6 +22136,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -22035,6 +22146,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -22043,7 +22155,8 @@
         },
         {
           "default": "",
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>black：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>black：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "document": "填充方式，当截图配置宽高参数与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black",
           "member": "string",
           "name": "FillType",
           "required": true,

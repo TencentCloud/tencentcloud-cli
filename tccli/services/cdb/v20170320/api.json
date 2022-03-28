@@ -6976,6 +6976,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6983,7 +6984,8 @@
         },
         {
           "default": "",
-          "document": "分页偏移量。",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6991,7 +6993,8 @@
         },
         {
           "default": "",
-          "document": "分页大小。",
+          "document": "分页大小，默认值：20。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7005,15 +7008,19 @@
       "members": [
         {
           "document": "符合条件的记录数。",
+          "example": "28",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数修改记录。",
+          "example": "无",
           "member": "ParamRecord",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10899,7 +10906,7 @@
         },
         {
           "default": "",
-          "document": "模板名称。",
+          "document": "模板名称，长度不超过64。",
           "example": "\"\"",
           "member": "string",
           "name": "Name",
@@ -10908,7 +10915,7 @@
         },
         {
           "default": "",
-          "document": "模板描述。",
+          "document": "模板描述，长度不超过255。",
           "example": "\"\"",
           "member": "string",
           "name": "Description",
@@ -11239,6 +11246,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11248,6 +11256,7 @@
         {
           "default": "",
           "document": "参数名称",
+          "example": "\"\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -11257,6 +11266,7 @@
         {
           "default": "",
           "document": "参数修改前的值",
+          "example": "\"\"",
           "member": "string",
           "name": "OldValue",
           "required": true,
@@ -11266,6 +11276,7 @@
         {
           "default": "",
           "document": "参数修改后的值",
+          "example": "\"\"",
           "member": "string",
           "name": "NewValue",
           "required": true,
@@ -11275,6 +11286,7 @@
         {
           "default": "",
           "document": "参数是否修改成功",
+          "example": "true",
           "member": "bool",
           "name": "IsSucess",
           "required": true,
@@ -11284,6 +11296,7 @@
         {
           "default": "",
           "document": "修改时间",
+          "example": "\"\"",
           "member": "string",
           "name": "ModifyTime",
           "required": true,
