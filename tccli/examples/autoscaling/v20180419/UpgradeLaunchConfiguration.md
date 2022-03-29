@@ -38,6 +38,7 @@ tccli as UpgradeLaunchConfiguration --cli-unfold-argument  \
     --DataDisks.0.DiskType CLOUD_BASIC \
     --DataDisks.0.DiskSize 100 \
     --DataDisks.0.DeleteWithInstance TRUE \
+    --DataDisks.0.Encrypt FALSE \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 5 \
     --InternetAccessible.PublicIpAssigned TRUE \

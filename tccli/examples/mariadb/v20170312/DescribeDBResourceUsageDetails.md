@@ -16,82 +16,112 @@ Output:
 {
     "Response": {
         "Slave1": {
-            "BinlogDiskAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+            "MemAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
             "CpuUsageRate": {
-                "EndTime": "2018-03-24 23:59:59",
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
-            "MemAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+            "BinlogDiskAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
             "DataDiskAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             }
         },
         "Master": {
-            "BinlogDiskAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+            "MemAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
             "CpuUsageRate": {
-                "EndTime": "2018-03-24 23:59:59",
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
-            "MemAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+            "BinlogDiskAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             },
             "DataDiskAvailable": {
-                "EndTime": "2018-03-24 23:59:59",
+                "EndTime": "2020-09-22 00:00:00",
                 "Data": [
                     1,
                     1,
                     1
                 ],
-                "StartTime": "2018-03-24 00:00:00"
+                "StartTime": "2020-09-22 00:00:00"
             }
         },
-        "RequestId": "6ce468ba-206a-4ad1-a1e6-7f2194657649"
+        "RequestId": "xx",
+        "Slave2": {
+            "MemAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
+                "Data": [
+                    0.0
+                ],
+                "StartTime": "2020-09-22 00:00:00"
+            },
+            "CpuUsageRate": {
+                "EndTime": "2020-09-22 00:00:00",
+                "Data": [
+                    0.0
+                ],
+                "StartTime": "2020-09-22 00:00:00"
+            },
+            "BinlogDiskAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
+                "Data": [
+                    0.0
+                ],
+                "StartTime": "2020-09-22 00:00:00"
+            },
+            "DataDiskAvailable": {
+                "EndTime": "2020-09-22 00:00:00",
+                "Data": [
+                    0.0
+                ],
+                "StartTime": "2020-09-22 00:00:00"
+            }
+        }
     }
 }
 ```

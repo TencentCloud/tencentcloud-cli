@@ -3251,6 +3251,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3259,6 +3260,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3267,6 +3269,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3275,6 +3278,7 @@
         {
           "default": "",
           "document": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay",
+          "example": "long_query",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3288,22 +3292,28 @@
       "members": [
         {
           "document": "主节点性能监控数据",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Master",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "备机1性能监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Slave1",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "备机2性能监控数据，如果实例是一主一从，则没有该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Slave2",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3322,6 +3332,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3330,6 +3341,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3338,6 +3350,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3346,6 +3359,7 @@
         {
           "default": "",
           "document": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay",
+          "example": "long_query",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3359,71 +3373,91 @@
       "members": [
         {
           "document": "慢查询数",
+          "example": "无",
           "member": "MonitorData",
           "name": "LongQuery",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "查询操作数SELECT",
+          "example": "无",
           "member": "MonitorData",
           "name": "SelectTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "更新操作数UPDATE",
+          "example": "无",
           "member": "MonitorData",
           "name": "UpdateTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "插入操作数INSERT",
+          "example": "无",
           "member": "MonitorData",
           "name": "InsertTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "删除操作数DELETE",
+          "example": "无",
           "member": "MonitorData",
           "name": "DeleteTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "缓存命中率",
+          "example": "无",
           "member": "MonitorData",
           "name": "MemHitRate",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "磁盘每秒IO次数",
+          "example": "无",
           "member": "MonitorData",
           "name": "DiskIops",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "活跃连接数",
+          "example": "无",
           "member": "MonitorData",
           "name": "ConnActive",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "是否发生主备切换，1为发生，0否",
+          "example": "无",
           "member": "MonitorData",
           "name": "IsMasterSwitched",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "主备延迟",
+          "example": "无",
           "member": "MonitorData",
           "name": "SlaveDelay",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3442,6 +3476,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3450,6 +3485,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3458,6 +3494,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3466,6 +3503,7 @@
         {
           "default": "",
           "document": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate",
+          "example": "data_disk_available",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3479,22 +3517,28 @@
       "members": [
         {
           "document": "主节点资源使用情况监控数据",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Master",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "备机1资源使用情况监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Slave1",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "备机2资源使用情况监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Slave2",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3513,6 +3557,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3521,6 +3566,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3529,6 +3575,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3537,6 +3584,7 @@
         {
           "default": "",
           "document": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate",
+          "example": "data_disk_available",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3550,29 +3598,37 @@
       "members": [
         {
           "document": "binlog日志磁盘可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "BinlogDiskAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "磁盘可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "DataDiskAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CPU利用率",
+          "example": "无",
           "member": "MonitorData",
           "name": "CpuUsageRate",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "内存可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "MemAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4239,6 +4295,7 @@
         {
           "default": "",
           "document": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。",
+          "example": "[\"20171103110035\\r\\n\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
@@ -4252,15 +4309,19 @@
       "members": [
         {
           "document": "返回的订单数量。",
+          "example": "[1]",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "订单信息列表。",
+          "example": "无",
           "member": "Deal",
           "name": "Deals",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4512,6 +4573,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-6a0lwzzj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4520,6 +4582,7 @@
         {
           "default": "",
           "document": "SQL日志偏移。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4528,6 +4591,7 @@
         {
           "default": "",
           "document": "拉取数量（0-10000，为0时拉取总数信息）。",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4541,43 +4605,55 @@
       "members": [
         {
           "document": "当前消息队列中的sql日志条目数。",
+          "example": "2205945",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志起始偏移。",
+          "example": "53560502",
           "member": "uint64",
           "name": "StartOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志结束偏移。",
+          "example": "55766447",
           "member": "uint64",
           "name": "EndOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的第一条sql日志的偏移。",
+          "example": "53560502",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的sql日志数量。",
+          "example": "0",
           "member": "uint64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "Sql日志列表。",
+          "example": "无",
           "member": "SqlLogItem",
           "name": "SqlItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6100,6 +6176,7 @@
         {
           "default": "",
           "document": "待续费的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6108,14 +6185,16 @@
         {
           "default": "",
           "document": "续费时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
           "type": "int"
         },
         {
-          "default": "false",
+          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -6124,6 +6203,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -6137,8 +6217,10 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20171103110253",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

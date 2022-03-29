@@ -23,7 +23,7 @@ Output:
 
 **Example 2: 详细参数创建**
 
-启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。
+启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，实例销毁时不保留数据盘，数据盘不加密，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。
 
 Input: 
 
@@ -37,6 +37,7 @@ tccli as CreateLaunchConfiguration --cli-unfold-argument  \
     --DataDisks.0.DiskType CLOUD_BASIC \
     --DataDisks.0.DiskSize 100 \
     --DataDisks.0.DeleteWithInstance TRUE \
+    --DataDisks.0.Encrypt FALSE \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 5 \
     --InternetAccessible.PublicIpAssigned TRUE \

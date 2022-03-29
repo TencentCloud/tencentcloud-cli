@@ -2091,7 +2091,7 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "token过期时间，有效值是1~300秒",
           "example": "无",
           "member": "int64",
           "name": "Second",

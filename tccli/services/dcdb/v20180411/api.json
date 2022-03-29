@@ -4355,6 +4355,7 @@
         {
           "default": "",
           "document": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。",
+          "example": "[\"20181103110163\\r\\n\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
@@ -4368,15 +4369,19 @@
       "members": [
         {
           "document": "返回的订单数量。",
+          "example": "[1]",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "订单信息列表。",
+          "example": "无",
           "member": "Deal",
           "name": "Deals",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4501,6 +4506,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-ovulpcjf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4509,6 +4515,7 @@
         {
           "default": "",
           "document": "SQL日志偏移。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4517,6 +4524,7 @@
         {
           "default": "",
           "document": "拉取数量（0-10000，为0时拉取总数信息）。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4530,43 +4538,55 @@
       "members": [
         {
           "document": "当前消息队列中的sql日志条目数。",
+          "example": "63",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志起始偏移。",
+          "example": "0",
           "member": "uint64",
           "name": "StartOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志结束偏移。",
+          "example": "63",
           "member": "uint64",
           "name": "EndOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的第一条sql日志的偏移。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的sql日志数量。",
+          "example": "0",
           "member": "uint64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "Sql日志列表。",
+          "example": "无",
           "member": "SqlLogItem",
           "name": "SqlItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5798,6 +5818,7 @@
         {
           "default": "",
           "document": "待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。",
+          "example": "dcdbt-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5806,14 +5827,16 @@
         {
           "default": "",
           "document": "续费时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
           "type": "int"
         },
         {
-          "default": "false",
+          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "false",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -5822,6 +5845,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "无",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -5835,8 +5859,10 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20171103110253",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

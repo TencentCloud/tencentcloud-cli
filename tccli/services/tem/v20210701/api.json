@@ -352,7 +352,7 @@
         },
         {
           "default": "",
-          "document": "是否启用调用链功能",
+          "document": "是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭",
           "example": "1",
           "member": "int64",
           "name": "EnableTracing",
@@ -583,6 +583,24 @@
           "name": "SourceChannel",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资源来源，目前支持：existing，已有资源；creating，自动创建",
+          "example": "existing",
+          "member": "string",
+          "name": "ResourceFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设置 resource 的额外配置",
+          "example": "{}",
+          "member": "string",
+          "name": "ResourceConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1169,6 +1187,15 @@
           "name": "OsFlavour",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启prometheus 业务指标监控",
+          "example": "{}",
+          "member": "EnablePrometheusConf",
+          "name": "EnablePrometheusConf",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1371,7 +1398,7 @@
         },
         {
           "default": "",
-          "document": "分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的",
+          "document": "分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布",
           "example": "1",
           "member": "int64",
           "name": "DeployStrategyType",
@@ -1971,6 +1998,32 @@
       ],
       "usage": "both"
     },
+    "EnablePrometheusConf": {
+      "document": "开启prometheus监控配置",
+      "members": [
+        {
+          "default": "",
+          "document": "应用开放的监听端口",
+          "example": "9090",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务指标暴露的url path",
+          "example": "/metrics",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EsInfo": {
       "document": "弹性伸缩配置",
       "members": [
@@ -2334,6 +2387,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向模式，可选值：\n- AUTO（自动重定向http到https）\n- NONE（不使用重定向）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RewriteType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2809,6 +2872,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密配置名称",
+          "example": "1",
+          "member": "string",
+          "name": "SecretDataName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2898,6 +2971,16 @@
           "example": "configName",
           "member": "string",
           "name": "Config",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "加密配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Secret",
           "required": false,
           "type": "string",
           "value_allowed_null": true

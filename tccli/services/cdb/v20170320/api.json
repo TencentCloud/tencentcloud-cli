@@ -4744,6 +4744,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-qwerasdf",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -4752,6 +4753,7 @@
         {
           "default": "",
           "document": "审计策略 ID。",
+          "example": "cdbpolicy-asdfqwer",
           "member": "string",
           "name": "PolicyId",
           "required": false,
@@ -4760,6 +4762,7 @@
         {
           "default": "",
           "document": "审计策略名称。支持按审计策略名称进行模糊匹配查询。",
+          "example": "full",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -4768,6 +4771,7 @@
         {
           "default": "",
           "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4776,6 +4780,7 @@
         {
           "default": "",
           "document": "分页偏移量。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4784,8 +4789,18 @@
         {
           "default": "",
           "document": "审计规则 ID。可使用该审计规则 ID 查询到其关联的审计策略。\n注意，参数 RuleId，InstanceId，PolicyId，PolicyName 必须至少传一个。",
+          "example": "test",
           "member": "string",
           "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceName",
           "required": false,
           "type": "string"
         }
@@ -4797,15 +4812,19 @@
       "members": [
         {
           "document": "符合条件的审计策略个数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "审计策略详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuditPolicy",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8754,6 +8773,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8762,6 +8782,7 @@
         {
           "default": "",
           "document": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。",
+          "example": "Gx18ux23F^X",
           "member": "string",
           "name": "NewPassword",
           "required": true,
@@ -8770,6 +8791,7 @@
         {
           "default": "",
           "document": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。",
+          "example": "无",
           "member": "ParamInfo",
           "name": "Parameters",
           "required": true,
@@ -8778,6 +8800,7 @@
         {
           "default": "",
           "document": "实例的端口，取值范围为[1024, 65535]",
+          "example": "无",
           "member": "int64",
           "name": "Vport",
           "required": false,
@@ -8791,8 +8814,10 @@
       "members": [
         {
           "document": "异步任务的请求ID数组，可使用此ID查询异步任务的执行结果",
+          "example": "[\"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"]",
           "member": "string",
           "name": "AsyncRequestIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

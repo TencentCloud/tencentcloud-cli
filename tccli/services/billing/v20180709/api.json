@@ -2550,6 +2550,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "订单对应的资源id, 查询参数Limit超过200，将返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins-12454fgd\"]",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4016,6 +4026,7 @@
         {
           "default": "",
           "document": "开始时间",
+          "example": "2016-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -4024,6 +4035,7 @@
         {
           "default": "",
           "document": "结束时间",
+          "example": "2016-02-01 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -4032,6 +4044,7 @@
         {
           "default": "",
           "document": "一页多少条数据，默认是20条，最大不超过1000",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -4040,6 +4053,7 @@
         {
           "default": "",
           "document": "第多少页，从0开始，默认是0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4048,6 +4062,7 @@
         {
           "default": "",
           "document": "订单状态,默认为4（成功的订单）\n订单的状态\n1：未支付\n2：已支付3：发货中\n4：已发货\n5：发货失败\n6：已退款\n7：已关单\n8：订单过期\n9：订单已失效\n10：产品已失效\n11：代付拒绝\n12：支付中",
+          "example": "4",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -4056,6 +4071,7 @@
         {
           "default": "",
           "document": "订单号",
+          "example": "202202021234567",
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -4064,8 +4080,18 @@
         {
           "default": "",
           "document": "大订单号",
+          "example": "202202021234566",
           "member": "string",
           "name": "BigDealId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源id",
+          "example": "ins-a2bb34",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }
@@ -4077,15 +4103,19 @@
       "members": [
         {
           "document": "订单列表",
+          "example": "无",
           "member": "Deal",
           "name": "Deals",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "订单总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

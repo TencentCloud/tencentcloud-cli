@@ -269,8 +269,8 @@
     "DescribeAuditPolicies": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditPolicies\r\n&InstanceId=cdb-qwerasdf\r\n&PolicyId=cdbpolicy-asdfqwer\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditPolicies\n&InstanceId=cdb-qwerasdf\n&PolicyId=cdbpolicy-asdfqwer\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"InstanceName\": \"test\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
         "title": "查询审计策略"
       }
     ],
@@ -683,7 +683,7 @@
     "InitDBInstances": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=InitDBInstances\r\n&InstanceIds.0=cdb-f35wr6wj\r\n&NewPassword=Gx18ux23F^X\r\n&Parameters.0.name=lower_case_table_names\r\n&Parameters.0.value=1\r\n&Parameters.1.name=character_set_server\r\n&Parameters.1.value=utf8\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDBInstances\n<公共请求参数>\n\n{\n    \"NewPassword\": \"xx\",\n    \"Vport\": 0,\n    \"Parameters\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Name\": \"character_set_server\",\n            \"Value\": \"utf8\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestIds\": [\n            \"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"\n        ]\n    }\n}",
         "title": "初始化新实例"
       }

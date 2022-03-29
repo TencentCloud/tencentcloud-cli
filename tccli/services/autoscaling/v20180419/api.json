@@ -187,7 +187,7 @@
       "output": "DetachLoadBalancersResponse"
     },
     "DisableAutoScalingGroup": {
-      "document": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。",
+      "document": "本接口（DisableAutoScalingGroup）用于停用指定伸缩组。\n* 停用伸缩组后，自动触发的伸缩活动不再进行，包括：\n    - 告警策略触发的伸缩活动\n    - 匹配期望实例数的伸缩活动\n    - 不健康实例替换活动\n    - 定时任务\n* 停用伸缩组后，手动触发的伸缩活动允许进行，包括：\n    - 指定数量扩容实例（ScaleOutInstances）\n    - 指定数量缩容实例（ScaleInInstances）\n    - 从伸缩组中移出 CVM 实例（DetachInstances）\n    - 从伸缩组中删除 CVM 实例（RemoveInstances）\n    - 添加 CVM 实例到伸缩组（AttachInstances）\n    - 关闭伸缩组内 CVM 实例（StopAutoScalingInstances）\n    - 开启伸缩组内 CVM 实例（StartAutoScalingInstances）",
       "input": "DisableAutoScalingGroupRequest",
       "name": "停用伸缩组",
       "output": "DisableAutoScalingGroupResponse"
@@ -259,13 +259,13 @@
       "output": "RemoveInstancesResponse"
     },
     "ScaleInInstances": {
-      "document": "为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)\n* 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口\n* 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数\n* 缩容如果失败或者部分成功，最后期望实例数只会扣减实际缩容成功的实例数量",
+      "document": "为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围\n* 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)\n* 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口\n* 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数\n* 缩容如果失败或者部分成功，最后期望实例数只会扣减实际缩容成功的实例数量",
       "input": "ScaleInInstancesRequest",
       "name": "指定数量缩容实例",
       "output": "ScaleInInstancesResponse"
     },
     "ScaleOutInstances": {
-      "document": "为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数\n* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量",
+      "document": "为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围\n* 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数\n* 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量",
       "input": "ScaleOutInstancesRequest",
       "name": "指定数量扩容实例",
       "output": "ScaleOutInstancesResponse"
@@ -2100,6 +2100,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Encrypt",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3191,6 +3201,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-nvnlpbb8",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,

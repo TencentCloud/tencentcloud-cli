@@ -270,6 +270,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录节点概览。",
+          "example": "无",
+          "member": "LoginNodeOverview",
+          "name": "LoginNodeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "登录节点数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "LoginNodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -731,6 +751,22 @@
         }
       ],
       "usage": "in"
+    },
+    "LoginNodeOverview": {
+      "document": "登录节点概览。",
+      "members": [
+        {
+          "default": "",
+          "document": "登录节点ID。",
+          "example": "ins-jfhc307q",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LoginSettings": {
       "document": "描述了实例登录相关配置与信息。",

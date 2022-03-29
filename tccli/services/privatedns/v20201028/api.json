@@ -1034,7 +1034,7 @@
         },
         {
           "default": "",
-          "document": "分页限制数目， 最大100，默认20",
+          "document": "分页限制数目， 最大200，默认20",
           "example": "200",
           "member": "int64",
           "name": "Limit",
@@ -1683,6 +1683,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自定义TLD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCustomTld",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1693,6 +1703,7 @@
         {
           "default": "",
           "document": "记录id",
+          "example": "12076",
           "member": "string",
           "name": "RecordId",
           "required": true,
@@ -1702,6 +1713,7 @@
         {
           "default": "",
           "document": "私有域id: zone-xxxxxxxx",
+          "example": "zone-pckv03qy",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1711,6 +1723,7 @@
         {
           "default": "",
           "document": "子域名",
+          "example": "www",
           "member": "string",
           "name": "SubDomain",
           "required": true,
@@ -1720,6 +1733,7 @@
         {
           "default": "",
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
+          "example": "A",
           "member": "string",
           "name": "RecordType",
           "required": true,
@@ -1729,6 +1743,7 @@
         {
           "default": "",
           "document": "记录值",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "RecordValue",
           "required": true,
@@ -1738,6 +1753,7 @@
         {
           "default": "",
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
+          "example": "300",
           "member": "int64",
           "name": "TTL",
           "required": true,
@@ -1747,6 +1763,7 @@
         {
           "default": "",
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "MX",
           "required": true,
@@ -1756,6 +1773,7 @@
         {
           "default": "",
           "document": "记录状态：ENABLED",
+          "example": "enabled",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1765,6 +1783,7 @@
         {
           "default": "",
           "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "int64",
           "name": "Weight",
           "required": true,
@@ -1774,6 +1793,7 @@
         {
           "default": "",
           "document": "记录创建时间",
+          "example": "2021-09-07 19:00:58",
           "member": "datetime",
           "name": "CreatedOn",
           "required": true,
@@ -1783,6 +1803,7 @@
         {
           "default": "",
           "document": "记录更新时间",
+          "example": "2021-09-07 19:00:58",
           "member": "datetime",
           "name": "UpdatedOn",
           "required": true,
@@ -1792,6 +1813,7 @@
         {
           "default": "",
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Extra",
           "required": true,

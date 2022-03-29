@@ -251,8 +251,8 @@
     "DescribeOrders": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeOrders\r\n&DealNames.0=20181103110163\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": 1,\n        \"Deals\": [\n            {\n                \"DealName\": \"20181103110163\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"dcdbt-avw0207d\"\n                ]\n            }\n        ]\n    }\n}",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20181103110163\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": [\n            1\n        ],\n        \"Deals\": [\n            {\n                \"DealName\": \"20181103110163\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"dcdbt-avw0207d\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询订单信息"
       }
     ],
@@ -283,13 +283,13 @@
     "DescribeSqlLogs": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\r\n&InstanceId=dcdbt-ovulpcjf\r\n&Limit=0\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\n&InstanceId=dcdbt-ovulpcjf\n&Limit=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ce0cbb4-3863-4214-b7b2-d060a3f530d8\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 0,\n        \"Count\": 0,\n        \"SqlItems\": []\n    }\n}",
         "title": "拉取SQL日志起始偏移及日志数量"
       },
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\r\n&InstanceId=tdsql-6a0lwzzj\r\n&Offset=53560502\r\n&Limit=1\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\n&InstanceId=tdsql-6a0lwzzj\n&Offset=53560502\n&Limit=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c08964d6-e5c2-4a50-9936-2c4a6e0bb640\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 1,\n        \"Count\": 1,\n        \"SqlItems\": [\n            {\n                \"Offset\": 1,\n                \"User\": \"testaccount\",\n                \"Client\": \"172.16.0.5:47503\",\n                \"DbName\": \"\",\n                \"Sql\": \"select @@version_comment limit 1\",\n                \"SelectRowNum\": 1,\n                \"AffectRowNum\": 0,\n                \"Timestamp\": 1537932957,\n                \"TimeCostMs\": 0,\n                \"ResultCode\": 0\n            }\n        ]\n    }\n}",
         "title": "拉取SQL日志"
       }
@@ -425,7 +425,7 @@
     "RenewDCDBInstance": [
       {
         "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=RenewDCDBInstance\r\n&InstanceId=dcdbt-avw0207d\r\n&Period=1\r\n&AutoVoucher=false\r\n&<公共请求参数>",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=RenewDCDBInstance\n&InstanceId=dcdbt-avw0207d\n&Period=1\n&AutoVoucher=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e87698f2-4576-730e-cba6-59fabe133cf8\",\n        \"DealName\": \"20171103110253\"\n    }\n}",
         "title": "续费分布式数据库实例"
       }
