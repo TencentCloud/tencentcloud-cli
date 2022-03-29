@@ -3562,6 +3562,15 @@
           "name": "SubNetIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否打开云调用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenCloudInvoke",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

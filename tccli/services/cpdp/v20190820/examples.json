@@ -488,6 +488,14 @@
         "title": "会员间交易"
       }
     ],
+    "GetBillDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBillDownloadUrl\n<公共请求参数>\n\n{\n    \"OpenId\": \"OpenId123\",\n    \"OpenKey\": \"OpenKey123\",\n    \"Day\": \"20220322\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3402a086-bd77-4ee9-bc9a-4cf0c87b6c64\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"https://tencent.com/Fileup1/orderexport/download?key=123\"\n        }\n    }\n}",
+        "title": "获取机构账单文件下载地址成功示例"
+      }
+    ],
     "MigrateOrderRefund": [
       {
         "document": "用于系统迁移时存量订单退款",

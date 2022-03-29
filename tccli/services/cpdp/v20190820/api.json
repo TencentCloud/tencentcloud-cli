@@ -348,6 +348,12 @@
       "name": "会员间交易接口",
       "output": "ExecuteMemberTransactionResponse"
     },
+    "GetBillDownloadUrl": {
+      "document": "调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：\n订单号,订单归属日期,机构编号,订单描述,交易类型,订单状态,支付场景,原始金额,折扣金额,实际交易金额,支付渠道优惠金额,抹零金额,币种,下单时间,付款成功时间,商户编号,门店编号,付款方式编号,付款方式名称,商户手续费T1,商户扣率,是否信用卡交易,原始订单号,用户账号,外部订单号,订单备注",
+      "input": "GetBillDownloadUrlRequest",
+      "name": "云支付-获取机构账单文件下载地址",
+      "output": "GetBillDownloadUrlResponse"
+    },
     "MigrateOrderRefund": {
       "document": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。",
       "input": "MigrateOrderRefundRequest",
@@ -3894,6 +3900,22 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillDownloadUrlResult": {
+      "document": "机构账单文件下载地址响应对象",
+      "members": [
+        {
+          "default": "",
+          "document": "对账单下载地址。GET方式访问，返回zip包，解压后为csv格式文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.tencent.com/download?key=nkaOrSxpEnW",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12262,6 +12284,78 @@
         }
       ],
       "usage": "out"
+    },
+    "GetBillDownloadUrlRequest": {
+      "document": "GetBillDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "OpenId123",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "OpenKey123",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "清算日期（YYYYMMDD，今天传昨天的日期，每日下午1点后出前一日的账单）",
+          "example": "20220322",
+          "member": "string",
+          "name": "Day",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBillDownloadUrlResponse": {
+      "document": "GetBillDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账单文件下载地址响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillDownloadUrlResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MemberTransactionItem": {
       "document": "会员间交易明细信息",

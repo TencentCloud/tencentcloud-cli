@@ -7838,7 +7838,7 @@
         },
         {
           "default": "",
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "document": "起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。",
           "example": "2019-06-21 12:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7847,7 +7847,7 @@
         },
         {
           "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。",
+          "document": "结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。",
           "example": "2019-06-21 12:01:02",
           "member": "string",
           "name": "EndTime",
@@ -11221,6 +11221,26 @@
           "name": "StreamParam",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽，单位Mbps。",
+          "example": "0.1",
+          "member": "float",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量，单位MB。",
+          "example": "0.1",
+          "member": "float",
+          "name": "Flux",
+          "required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

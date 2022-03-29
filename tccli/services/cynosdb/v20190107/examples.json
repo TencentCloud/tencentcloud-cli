@@ -224,6 +224,14 @@
         "title": "修改集群备份配置"
       }
     ],
+    "ModifyClusterName": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterName\n&ClusterId=cynosdbpg-5804k48e\n&ClusterName=newName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"148561\"\n    }\n}",
+        "title": "修改集群名称"
+      }
+    ],
     "ModifyClusterParam": [
       {
         "document": "",
@@ -238,6 +246,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyDBInstanceSecurityGroups\n&Zone=ap-guangzhou-3\n&InstanceId=cynosdbpg-ins-4senc2fm\n&SecurityGroupIds.0=sg-ajr1jzgj\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "修改云数据库安全组"
+      }
+    ],
+    "ModifyInstanceName": [
+      {
+        "document": "",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyInstanceName\n&InstanceId=cynosdb-ins-dokydbam\n&InstanceName=newName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"148561\"\n    }\n}",
+        "title": "修改实例名称"
       }
     ],
     "ModifyMaintainPeriodConfig": [

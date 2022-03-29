@@ -264,6 +264,14 @@
         "title": "检索上下文日志"
       }
     ],
+    "DescribeLogHistogram": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogHistogram\n<公共请求参数>\n\n{\n    \"TopicId\": \"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\",\n    \"From\": 1608794855000,\n    \"To\": 1608794855000,\n    \"Query\": \"select *from a\",\n    \"Interval\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Interval\": 10,\n        \"TotalCount\": 15,\n        \"HistogramInfos\": [\n            {\n                \"Count\": 5,\n                \"BTime\": 1619331870\n            },\n            {\n                \"Count\": 10,\n                \"BTime\": 1619332410\n            }\n        ],\n        \"RequestId\": \"b276cb6e-4687-11eb-b378-0242ac130002\"\n    }\n}",
+        "title": "获取直方图信息"
+      }
+    ],
     "DescribeLogsets": [
       {
         "document": "",

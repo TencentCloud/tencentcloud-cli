@@ -168,6 +168,12 @@
       "name": "修改备份配置",
       "output": "ModifyBackupConfigResponse"
     },
+    "ModifyClusterName": {
+      "document": "修改集群名称",
+      "input": "ModifyClusterNameRequest",
+      "name": "修改集群名称",
+      "output": "ModifyClusterNameResponse"
+    },
     "ModifyClusterParam": {
       "document": "修改集群参数",
       "input": "ModifyClusterParamRequest",
@@ -179,6 +185,12 @@
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
       "output": "ModifyDBInstanceSecurityGroupsResponse"
+    },
+    "ModifyInstanceName": {
+      "document": "本接口(ModifyInstanceName)用于修改实例名称。",
+      "input": "ModifyInstanceNameRequest",
+      "name": "修改实例名称",
+      "output": "ModifyInstanceNameResponse"
     },
     "ModifyMaintainPeriodConfig": {
       "document": "修改维护时间配置",
@@ -1017,7 +1029,7 @@
         },
         {
           "default": "",
-          "document": "购买个数，目前只支持传1（不传默认为1）",
+          "document": "购买集群数，可选值范围[1,50]，默认为1",
           "example": "1",
           "member": "int64",
           "name": "Count",
@@ -4190,6 +4202,42 @@
       ],
       "type": "object"
     },
+    "ModifyClusterNameRequest": {
+      "document": "ModifyClusterName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbpg-5804k48e",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名",
+          "example": "newName",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterNameResponse": {
+      "document": "ModifyClusterName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterParamRequest": {
       "document": "ModifyClusterParam请求参数结构体",
       "members": [
@@ -4279,6 +4327,42 @@
     },
     "ModifyDBInstanceSecurityGroupsResponse": {
       "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameRequest": {
+      "document": "ModifyInstanceName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cynosdb-ins-dokydbam",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "newName",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameResponse": {
+      "document": "ModifyInstanceName返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

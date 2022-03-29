@@ -28,13 +28,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateContent\": {\n        \"Html\": \"PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+\"\n    },\n    \"TemplateName\": \"TestName\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TemplateID\": 123\n    }\n}",
         "title": "创建HTML邮件模板"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmailTemplate\n<公共请求参数>\n\n{\n    \"TemplateContent\": {\n        \"Text\": \"dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX0=\"\n    },\n    \"TemplateName\": \"TestName\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"TemplateID\": 123\n    }\n}",
         "title": "创建文本邮件模板"
       }
     ],

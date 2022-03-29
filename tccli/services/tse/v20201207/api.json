@@ -42,6 +42,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务同步模式，all为全量同步，demand为按需同步\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demand",
+          "member": "string",
+          "name": "SyncMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -661,6 +671,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎实例控制台默认密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nacosxx",
+          "member": "string",
+          "name": "ConsoleDefaultPwd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -716,6 +736,16 @@
           "name": "Features",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账户名默认为 polaris，该值为主账户的默认密码",
+          "example": "主账户密码",
+          "member": "string",
+          "name": "MainPassword",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

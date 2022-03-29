@@ -198,6 +198,12 @@
       "name": "上下文检索",
       "output": "DescribeLogContextResponse"
     },
+    "DescribeLogHistogram": {
+      "document": "本接口用于构建直方图",
+      "input": "DescribeLogHistogramRequest",
+      "name": "获取直方图",
+      "output": "DescribeLogHistogramResponse"
+    },
     "DescribeLogsets": {
       "document": "本接口用于获取日志集信息列表。",
       "input": "DescribeLogsetsRequest",
@@ -3463,6 +3469,96 @@
       ],
       "type": "object"
     },
+    "DescribeLogHistogramRequest": {
+      "document": "DescribeLogHistogram请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间间隔: 单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogHistogramResponse": {
+      "document": "DescribeLogHistogram返回参数结构体",
+      "members": [
+        {
+          "document": "统计周期： 单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命中关键字的日志总条数",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "周期内统计结果详情",
+          "example": "无",
+          "member": "HistogramInfo",
+          "name": "HistogramInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogsetsRequest": {
       "document": "DescribeLogsets请求参数结构体",
       "members": [
@@ -4436,6 +4532,32 @@
         }
       ],
       "type": "object"
+    },
+    "HistogramInfo": {
+      "document": "直方图详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "统计周期内的日志条数",
+          "example": "15",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按 period 取整后的 unix timestamp： 单位毫秒",
+          "example": "2021-04-25 14:25:00.000",
+          "member": "int64",
+          "name": "BTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "HostFileInfo": {
       "document": "自建k8s-节点文件配置信息",

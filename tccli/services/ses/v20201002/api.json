@@ -452,6 +452,15 @@
       "document": "CreateEmailTemplate返回参数结构体",
       "members": [
         {
+          "document": "模板id",
+          "example": "123",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2079,6 +2088,7 @@
         {
           "default": "",
           "document": "模板内容",
+          "example": "无",
           "member": "TemplateContent",
           "name": "TemplateContent",
           "required": true,
@@ -2087,6 +2097,7 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "10091",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
@@ -2094,7 +2105,8 @@
         },
         {
           "default": "",
-          "document": "模版名字",
+          "document": "模板名字",
+          "example": "xx",
           "member": "string",
           "name": "TemplateName",
           "required": true,
