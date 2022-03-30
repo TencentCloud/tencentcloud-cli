@@ -85,9 +85,9 @@
       "output": "GetEmailTemplateResponse"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询30天之内的数据",
+      "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
       "input": "GetSendEmailStatusRequest",
-      "name": "获取邮件发送的状态",
+      "name": "获取邮件发送的状态（废弃）",
       "output": "GetSendEmailStatusResponse"
     },
     "GetStatisticsReport": {

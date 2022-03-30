@@ -7388,6 +7388,7 @@
         {
           "default": "",
           "document": "开始备份的时间",
+          "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -7397,6 +7398,7 @@
         {
           "default": "",
           "document": "备份ID",
+          "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
           "name": "BackupId",
           "required": true,
@@ -7405,7 +7407,8 @@
         },
         {
           "default": "",
-          "document": "备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份",
+          "document": "备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份",
+          "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
           "required": true,
@@ -7415,6 +7418,7 @@
         {
           "default": "",
           "document": "备份状态。  1:\"备份被其它流程锁定\";  2:\"备份正常，没有被任何流程锁定\";  -1:\"备份已过期\"； 3:\"备份正在被导出\";  4:\"备份导出成功\"",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -7424,6 +7428,7 @@
         {
           "default": "",
           "document": "备份的备注信息",
+          "example": "\"\"",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -7433,6 +7438,7 @@
         {
           "default": "",
           "document": "备份是否被锁定，0：未被锁定；1：已被锁定",
+          "example": "0",
           "member": "int64",
           "name": "Locked",
           "required": true,
@@ -7442,6 +7448,7 @@
         {
           "default": "",
           "document": "内部字段，用户可忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "BackupSize",
           "required": true,
@@ -7451,6 +7458,7 @@
         {
           "default": "",
           "document": "内部字段，用户可忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "FullBackup",
           "required": true,
@@ -7460,6 +7468,7 @@
         {
           "default": "",
           "document": "内部字段，用户可忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "InstanceType",
           "required": true,

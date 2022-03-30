@@ -1610,7 +1610,7 @@
         },
         {
           "default": "",
-          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。",
+          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于`DescribeInstances`接口。",
           "example": "无",
           "member": "string",
           "name": "DiskId",

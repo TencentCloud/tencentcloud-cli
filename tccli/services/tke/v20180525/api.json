@@ -3945,7 +3945,7 @@
         },
         {
           "default": "",
-          "document": "挂载设备名或分区名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂载设备名或分区名，当且仅当添加已有节点时需要\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/dev/vdb",
           "member": "string",
           "name": "DiskPartition",

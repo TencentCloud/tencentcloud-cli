@@ -75,6 +75,8 @@ include tccli/services/cdn/v20180606/api.json
 include tccli/services/cdn/v20180606/examples.json
 include tccli/services/cds/v20180420/api.json
 include tccli/services/cds/v20180420/examples.json
+include tccli/services/cfg/v20210820/api.json
+include tccli/services/cfg/v20210820/examples.json
 include tccli/services/cfs/v20190719/api.json
 include tccli/services/cfs/v20190719/examples.json
 include tccli/services/cfw/v20190904/api.json

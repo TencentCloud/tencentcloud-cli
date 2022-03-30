@@ -10660,6 +10660,7 @@
         {
           "default": "",
           "document": "NAT网关ID。",
+          "example": "[\"nat-3isn9hr0\\r\\n\"]",
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -10668,6 +10669,7 @@
         {
           "default": "",
           "document": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10676,6 +10678,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10684,6 +10687,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10697,15 +10701,19 @@
       "members": [
         {
           "document": "NAT网关端口转发规则对象数组。",
+          "example": "无",
           "member": "NatGatewayDestinationIpPortTranslationNatRule",
           "name": "NatGatewayDestinationIpPortTranslationNatRuleSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的NAT网关端口转发规则对象数目。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10796,6 +10804,7 @@
         {
           "default": "",
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -10804,6 +10813,7 @@
         {
           "default": "",
           "document": "过滤条件:\n<li> resource-id，Subnet的ID或者Cvm ID，如`subnet-0yi4hekt`</li>\n<li> public-ip-address，弹性IP，如`139.199.232.238`</li>\n<li>description，规则描述。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10812,6 +10822,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10820,6 +10831,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10833,15 +10845,19 @@
       "members": [
         {
           "document": "NAT网关SNAT规则对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRuleSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "符合条件的NAT网关端口转发规则对象数目。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10860,6 +10876,7 @@
         {
           "default": "",
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "example": "[\"nat-3isn9hr0\\r\\n\",\"nat-mxkohguo\\r\\n\"]",
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -10868,6 +10885,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10876,6 +10894,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10884,6 +10903,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10897,15 +10917,19 @@
       "members": [
         {
           "document": "NAT网关对象数组。",
+          "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的NAT网关对象个数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13680,6 +13704,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-mdbjfr0y",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -13688,6 +13713,7 @@
         {
           "default": "",
           "document": "待解绑NAT网关的弹性IP数组。",
+          "example": "[\"139.199.232.212\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -17002,6 +17028,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -17010,6 +17037,7 @@
         {
           "default": "",
           "document": "NAT网关的名称，形如：`test_nat`。",
+          "example": "测试nat网关",
           "member": "string",
           "name": "NatGatewayName",
           "required": false,
@@ -17018,6 +17046,7 @@
         {
           "default": "",
           "document": "NAT网关最大外网出带宽(单位:Mbps)。",
+          "example": "500",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -17026,6 +17055,7 @@
         {
           "default": "",
           "document": "是否修改NAT网关绑定的安全组。",
+          "example": "true",
           "member": "bool",
           "name": "ModifySecurityGroup",
           "required": false,
@@ -17034,6 +17064,7 @@
         {
           "default": "",
           "document": "NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`",
+          "example": "['sg-1n232323']",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -17060,6 +17091,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -17068,6 +17100,7 @@
         {
           "default": "",
           "document": "源NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "SourceNatRule",
           "required": true,
@@ -17076,6 +17109,7 @@
         {
           "default": "",
           "document": "目的NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationNatRule",
           "required": true,
@@ -17102,6 +17136,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df453454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -17110,6 +17145,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT转换规则。",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRule",
           "required": true,

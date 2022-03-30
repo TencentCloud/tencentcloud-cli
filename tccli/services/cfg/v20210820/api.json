@@ -1,0 +1,2180 @@
+{
+  "actions": {
+    "CreateTaskFromTemplate": {
+      "document": "从经验库创建演练",
+      "input": "CreateTaskFromTemplateRequest",
+      "name": "从经验库创建演练",
+      "output": "CreateTaskFromTemplateResponse"
+    },
+    "DeleteTask": {
+      "document": "删除任务",
+      "input": "DeleteTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteTaskResponse"
+    },
+    "DescribeTask": {
+      "document": "查询任务",
+      "input": "DescribeTaskRequest",
+      "name": "查询任务",
+      "output": "DescribeTaskResponse"
+    },
+    "DescribeTaskExecuteLogs": {
+      "document": "获取演练过程中的所有日志",
+      "input": "DescribeTaskExecuteLogsRequest",
+      "name": "获取演练过程日志",
+      "output": "DescribeTaskExecuteLogsResponse"
+    },
+    "DescribeTaskList": {
+      "document": "查询任务列表",
+      "input": "DescribeTaskListRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTaskListResponse"
+    },
+    "DescribeTemplate": {
+      "document": "查询经验库",
+      "input": "DescribeTemplateRequest",
+      "name": "查询经验库",
+      "output": "DescribeTemplateResponse"
+    },
+    "DescribeTemplateList": {
+      "document": "查询经验库列表",
+      "input": "DescribeTemplateListRequest",
+      "name": "查询经验库列表",
+      "output": "DescribeTemplateListResponse"
+    },
+    "ExecuteTask": {
+      "document": "执行任务",
+      "input": "ExecuteTaskRequest",
+      "name": "执行任务",
+      "output": "ExecuteTaskResponse"
+    },
+    "ExecuteTaskInstance": {
+      "document": "触发混沌演练任务的动作，对于实例进行演练操作",
+      "input": "ExecuteTaskInstanceRequest",
+      "name": "执行任务动作实例",
+      "output": "ExecuteTaskInstanceResponse"
+    },
+    "ModifyTaskRunStatus": {
+      "document": "修改任务运行状态",
+      "input": "ModifyTaskRunStatusRequest",
+      "name": "修改任务运行状态",
+      "output": "ModifyTaskRunStatusResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-20",
+    "api_brief": "介绍如何使用API对混沌工程平台进行操作，包括创建演练、创建演练分组、创建经验库等",
+    "serviceNameCN": "混沌演练平台",
+    "serviceShortName": "cfg"
+  },
+  "objects": {
+    "CreateTaskFromTemplateRequest": {
+      "document": "CreateTaskFromTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "从经验库中查询到的经验模版ID",
+          "example": "11",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "演练的配置参数",
+          "example": "无",
+          "member": "TaskConfig",
+          "name": "TaskConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFromTemplateResponse": {
+      "document": "CreateTaskFromTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "创建成功的演练ID",
+          "example": "50",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskRequest": {
+      "document": "DeleteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskResponse": {
+      "document": "DeleteTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicy": {
+      "document": "查询-保护策略",
+      "members": [
+        {
+          "default": "",
+          "document": "保护策略ID列表",
+          "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
+          "member": "string",
+          "name": "TaskPolicyIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护策略状态",
+          "example": "已触发",
+          "member": "string",
+          "name": "TaskPolicyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略规则",
+          "example": "or",
+          "member": "string",
+          "name": "TaskPolicyRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护栏策略生效处理策略 1:顺序执行，2:暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskPolicyDealType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTaskExecuteLogsRequest": {
+      "document": "DescribeTaskExecuteLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回的内容行数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志起始的行数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskExecuteLogsResponse": {
+      "document": "DescribeTaskExecuteLogs返回参数结构体",
+      "members": [
+        {
+          "document": "日志数据",
+          "example": "“测试数据”",
+          "member": "string",
+          "name": "LogMessage",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskListRequest": {
+      "document": "DescribeTaskList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "演练名称",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "TaskTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "TaskTag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间，固定格式%Y-%m-%d %H:%M:%S",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "TaskStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，固定格式%Y-%m-%d %H:%M:%S",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "TaskEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签对",
+          "example": "无",
+          "member": "TagWithDescribe",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskListResponse": {
+      "document": "DescribeTaskList返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "TaskListItem",
+          "name": "TaskList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskRequest": {
+      "document": "DescribeTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResponse": {
+      "document": "DescribeTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务信息",
+          "example": "无",
+          "member": "Task",
+          "name": "Task",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateListRequest": {
+      "document": "DescribeTemplateList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页Limit, 最大值100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "演练名称",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态，1---使用中， 2---停用",
+          "example": "1",
+          "member": "int64",
+          "name": "IsUsed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签对",
+          "example": "无",
+          "member": "TagWithDescribe",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateListResponse": {
+      "document": "DescribeTemplateList返回参数结构体",
+      "members": [
+        {
+          "document": "经验库列表",
+          "example": "无",
+          "member": "TemplateListItem",
+          "name": "TemplateList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "列表数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateRequest": {
+      "document": "DescribeTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "经验库ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateResponse": {
+      "document": "DescribeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "经验库详情",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteTaskInstanceRequest": {
+      "document": "ExecuteTaskInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务动作ID",
+          "example": "20",
+          "member": "uint64",
+          "name": "TaskActionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务动作实例ID",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "TaskInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否操作整个任务",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOperateAll",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作类型：（1--启动   2--执行  3--跳过   5--重试）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动作组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteTaskInstanceResponse": {
+      "document": "ExecuteTaskInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteTaskRequest": {
+      "document": "ExecuteTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要执行的任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteTaskResponse": {
+      "document": "ExecuteTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskRunStatusRequest": {
+      "document": "ModifyTaskRunStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束",
+          "example": "1002",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExpect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "演习结论（当演习状态转变为执行结束时，需要填写此字段）",
+          "example": "演练总结",
+          "member": "string",
+          "name": "Summary",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskRunStatusResponse": {
+      "document": "ModifyTaskRunStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagWithCreate": {
+      "document": "用于传入创建、编辑标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "test",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "mytest",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagWithDescribe": {
+      "document": "展示标签列表",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "test",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "mytest",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Task": {
+      "document": "任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务标题",
+          "example": "任务标题",
+          "member": "string",
+          "name": "TaskTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务描述",
+          "example": "任务描述",
+          "member": "string",
+          "name": "TaskDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义标签",
+          "member": "string",
+          "name": "TaskTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结束状态，表明任务以何种状态结束: 0 -- 尚未结束，1 -- 成功，2-- 失败，3--终止",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskStatusType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "TaskProtectStrategy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务动作组",
+          "example": "无",
+          "member": "TaskGroup",
+          "name": "TaskGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否符合预期。1：符合预期，2：不符合预期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "是否符合预期",
+          "member": "int64",
+          "name": "TaskExpect",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "演习记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "演习记录",
+          "member": "string",
+          "name": "TaskSummary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务模式。1:手工执行，2:自动执行",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动暂停时长。单位分钟",
+          "example": "60",
+          "member": "int64",
+          "name": "TaskPauseDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练创建者Uin",
+          "example": "6000000000",
+          "member": "string",
+          "name": "TaskOwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskRegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskMonitor",
+          "name": "TaskMonitors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribePolicy",
+          "name": "TaskPolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagWithDescribe",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskConfig": {
+      "document": "从经验模版创建演练时需要配置的任务参数",
+      "members": [
+        {
+          "default": "",
+          "document": "动作组配置，需要保证配置个数和经验中的动作组个数一致",
+          "example": "无",
+          "member": "TaskGroupConfig",
+          "name": "TaskGroupsConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更改后的演练名称，不填则默认取经验名称",
+          "example": "演练名称",
+          "member": "string",
+          "name": "TaskTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更改后的演练描述，不填则默认取经验描述",
+          "example": "演练描述",
+          "member": "string",
+          "name": "TaskDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间",
+          "example": "60",
+          "member": "uint64",
+          "name": "TaskPauseDuration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练标签信息，不填则默认取经验标签",
+          "example": "[]",
+          "member": "TagWithCreate",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskGroup": {
+      "document": "任务分组",
+      "members": [
+        {
+          "default": "",
+          "document": "任务动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组标题",
+          "example": "1",
+          "member": "string",
+          "name": "TaskGroupTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TaskGroupDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务分组顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ObjectTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务分组创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务分组更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作分组动作列表",
+          "example": "无",
+          "member": "TaskGroupAction",
+          "name": "TaskGroupActions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例列表",
+          "example": "[]",
+          "member": "string",
+          "name": "TaskGroupInstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行模式。1 --- 顺序执行，2 --- 阶段执行",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskGroupAction": {
+      "document": "任务分组动作",
+      "members": [
+        {
+          "default": "",
+          "document": "任务分组动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupActionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务分组动作实例列表",
+          "example": "无",
+          "member": "TaskGroupInstance",
+          "name": "TaskGroupInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组动作顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupActionOrder",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "TaskGroupActionGeneralConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "TaskGroupActionCustomConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组动作状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupActionStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作分组创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupActionCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作分组更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupActionUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作名称",
+          "example": "关机",
+          "member": "string",
+          "name": "ActionTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskGroupActionStatusType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "RandomId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "TaskGroupActionRandomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "RecoverId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "TaskGroupActionRecoverId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ExecuteId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "TaskGroupActionExecuteId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用api类型，0:tat, 1:云api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ActionApiType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1:故障，2:恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionAttribute",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作类型：平台、自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "平台",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskGroupActionConfig": {
+      "document": "动作组中的动作参数",
+      "members": [
+        {
+          "default": "",
+          "document": "该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskGroupActionOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
+          "example": "无",
+          "member": "string",
+          "name": "TaskGroupActionGeneralConfiguration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
+          "example": "无",
+          "member": "string",
+          "name": "TaskGroupActionCustomConfiguration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskGroupConfig": {
+      "document": "动作组的配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "动作组所关联的实例对象",
+          "example": "[\"ins-y5hy9gnh\", \"ins-y5hy9g21\"]",
+          "member": "string",
+          "name": "TaskGroupInstances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作组标题，不填默认取经验中的动作组名称",
+          "example": "动作组标题",
+          "member": "string",
+          "name": "TaskGroupTitle",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作组描述，不填默认取经验中的动作组描述",
+          "example": "动作组描述",
+          "member": "string",
+          "name": "TaskGroupDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskGroupMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作",
+          "example": "[]",
+          "member": "TaskGroupActionConfig",
+          "name": "TaskGroupActionsConfig",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskGroupInstance": {
+      "document": "任务分组动作实例",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupInstanceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins_d1fr3",
+          "member": "string",
+          "name": "TaskGroupInstanceObjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例动作执行状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupInstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "TaskGroupInstanceExecuteLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupInstanceCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupInstanceUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskGroupInstanceStatusType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupInstanceStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskGroupInstanceEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskListItem": {
+      "document": "任务列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务标题",
+          "example": "“任务标题”",
+          "member": "string",
+          "name": "TaskTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务描述",
+          "example": "“任务描述”",
+          "member": "string",
+          "name": "TaskDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“任务标签”",
+          "member": "string",
+          "name": "TaskTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TaskUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskMonitor": {
+      "document": "监控指标",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMonitorId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对象类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMonitorObjectTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标名称",
+          "example": "io",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例ID列表",
+          "example": "[\"ins1\",\"ins2\"]",
+          "member": "string",
+          "name": "InstancesIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中文指标",
+          "member": "string",
+          "name": "MetricChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "%",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Template": {
+      "document": "经验库",
+      "members": [
+        {
+          "default": "",
+          "document": "经验库ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库标题",
+          "example": "任务标题",
+          "member": "string",
+          "name": "TemplateTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库描述",
+          "example": "任务描述",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义标签",
+          "member": "string",
+          "name": "TemplateTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用状态。1 ---- 使用中，2 --- 停用",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateIsUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TemplateCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TemplateUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库模式。1:手工执行，2:自动执行",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动暂停时长。单位分钟",
+          "example": "60",
+          "member": "int64",
+          "name": "TemplatePauseDuration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "演练创建者Uin",
+          "example": "6000000000",
+          "member": "string",
+          "name": "TemplateOwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateRegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作组",
+          "example": "无",
+          "member": "TemplateGroup",
+          "name": "TemplateGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标",
+          "example": "无",
+          "member": "TemplateMonitor",
+          "name": "TemplateMonitors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护栏监控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TemplatePolicy",
+          "name": "TemplatePolicy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagWithDescribe",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateGroup": {
+      "document": "任务分组",
+      "members": [
+        {
+          "default": "",
+          "document": "经验库动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库动作分组动作列表",
+          "example": "无",
+          "member": "TemplateGroupAction",
+          "name": "TemplateGroupActions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组标题",
+          "example": "1",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行模式。1 --- 顺序执行，2 --- 阶段执行",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "对象类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ObjectTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateGroupAction": {
+      "document": "任务分组动作",
+      "members": [
+        {
+          "default": "",
+          "document": "经验库分组动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateGroupActionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组动作顺序",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "GeneralConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "CustomConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作分组创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作分组更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "动作名称",
+          "example": "关机",
+          "member": "string",
+          "name": "ActionTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自身随机id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "RandomId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "恢复动作id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "RecoverId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行动作id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "int64",
+          "name": "ExecuteId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用api类型，0:tat, 1:云api\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ActionApiType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "1:故障，2:恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionAttribute",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作类型：平台和自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "平台",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateListItem": {
+      "document": "经验库列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "经验库ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库标题",
+          "example": "“标题”",
+          "member": "string",
+          "name": "TemplateTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库描述",
+          "example": "“描述”",
+          "member": "string",
+          "name": "TemplateDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“标签”",
+          "member": "string",
+          "name": "TemplateTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "经验库状态。1 -- 使用中，2 -- 停用",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateIsUsed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库创建时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TemplateCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库更新时间",
+          "example": "\"2021-08-17 20:05:04\"",
+          "member": "string",
+          "name": "TemplateUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经验库关联的任务数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateUsedNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateMonitor": {
+      "document": "监控指标",
+      "members": [
+        {
+          "default": "",
+          "document": "监控指标ID",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "监控指标对象类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ObjectTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标名称",
+          "example": "io",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中文指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中文指标",
+          "member": "string",
+          "name": "MetricChineseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplatePolicy": {
+      "document": "保护策略",
+      "members": [
+        {
+          "default": "",
+          "document": "保护策略ID列表",
+          "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
+          "member": "string",
+          "name": "TemplatePolicyIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略规则",
+          "example": "or",
+          "member": "string",
+          "name": "TemplatePolicyRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "护栏策略生效处理策略 1:顺序执行，2:暂停",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplatePolicyDealType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}
