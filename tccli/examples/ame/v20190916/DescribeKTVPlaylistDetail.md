@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ame DescribeKTVPlaylistDetail --cli-unfold-argument  \
-    --PlaylistId xx \
+    --PlaylistId AME-201803241 \
     --Limit 0 \
     --Offset 10
 ```

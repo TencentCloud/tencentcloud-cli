@@ -156,12 +156,6 @@
       "name": "查询通知",
       "output": "DescribeNotificationConfigurationsResponse"
     },
-    "DescribePaiInstances": {
-      "document": "本接口（DescribePaiInstances）用于查询PAI实例信息。\n\n* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。",
-      "input": "DescribePaiInstancesRequest",
-      "name": "查询PAI实例",
-      "output": "DescribePaiInstancesResponse"
-    },
     "DescribeScalingPolicies": {
       "document": "本接口（DescribeScalingPolicies）用于查询告警触发策略。",
       "input": "DescribeScalingPoliciesRequest",
@@ -2820,70 +2814,6 @@
       ],
       "type": "object"
     },
-    "DescribePaiInstancesRequest": {
-      "document": "DescribePaiInstances请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "依据PAI实例的实例ID进行查询。",
-          "member": "string",
-          "name": "InstanceIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "过滤条件。",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认为20，最大值为100。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量，默认为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePaiInstancesResponse": {
-      "document": "DescribePaiInstances返回参数结构体",
-      "members": [
-        {
-          "document": "符合条件的PAI实例数量",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "PAI实例详细信息",
-          "member": "PaiInstance",
-          "name": "PaiInstanceSet",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeScalingPoliciesRequest": {
       "document": "DescribeScalingPolicies请求参数结构体",
       "members": [
@@ -5076,39 +5006,6 @@
         }
       ],
       "usage": "both"
-    },
-    "PaiInstance": {
-      "document": "PAI实例",
-      "members": [
-        {
-          "default": "",
-          "document": "实例ID",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "实例域名",
-          "member": "string",
-          "name": "DomainName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "PAI管理页面URL",
-          "member": "string",
-          "name": "PaiMateUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "RemoveInstancesRequest": {
       "document": "RemoveInstances请求参数结构体",

@@ -989,6 +989,7 @@
         {
           "default": "",
           "document": "图片中的物体名称。",
+          "example": "string",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -998,6 +999,7 @@
         {
           "default": "",
           "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定。",
+          "example": "1",
           "member": "int64",
           "name": "Confidence",
           "required": true,
@@ -1007,6 +1009,7 @@
         {
           "default": "",
           "document": "标签的一级分类",
+          "example": "string",
           "member": "string",
           "name": "FirstCategory",
           "required": true,
@@ -1016,6 +1019,7 @@
         {
           "default": "",
           "document": "标签的二级分类",
+          "example": "string",
           "member": "string",
           "name": "SecondCategory",
           "required": true,

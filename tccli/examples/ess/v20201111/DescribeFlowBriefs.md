@@ -7,10 +7,6 @@ Input:
 ```
 tccli ess DescribeFlowBriefs --cli-unfold-argument  \
     --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.Channel  \
-    --Operator.OpenId  \
-    --Operator.ProxyIp  \
     --FlowIds c7b5ca37ae*******2b4c6644 61a82f0c1******d0d807
 ```
 

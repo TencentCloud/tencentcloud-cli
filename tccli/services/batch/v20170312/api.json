@@ -406,6 +406,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-nuydksjj",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -414,6 +415,7 @@
         {
           "default": "",
           "document": "加入计算环境实例列表",
+          "example": "无",
           "member": "Instance",
           "name": "Instances",
           "required": true,
@@ -1010,6 +1012,7 @@
         {
           "default": "",
           "document": "任务模板名称",
+          "example": "A",
           "member": "string",
           "name": "TaskTemplateName",
           "required": true,
@@ -1018,6 +1021,7 @@
         {
           "default": "",
           "document": "任务模板内容，参数要求与任务一致",
+          "example": "无",
           "member": "Task",
           "name": "TaskTemplateInfo",
           "required": true,
@@ -1026,6 +1030,7 @@
         {
           "default": "",
           "document": "任务模板描述",
+          "example": "test",
           "member": "string",
           "name": "TaskTemplateDescription",
           "required": false,
@@ -1034,6 +1039,7 @@
         {
           "default": "",
           "document": "标签列表。通过指定该参数可以支持绑定标签到任务模板。每个任务模板最多绑定10个标签。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1047,8 +1053,10 @@
       "members": [
         {
           "document": "任务模板ID",
+          "example": "task-tmpl-7vtx96n2",
           "member": "string",
           "name": "TaskTemplateId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1163,6 +1171,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-3dhmblr3",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1216,6 +1225,7 @@
         {
           "default": "",
           "document": "用于删除任务模板信息",
+          "example": "[\"task-tmpl-7vtx96n2\\r\\n\"]",
           "member": "string",
           "name": "TaskTemplateIds",
           "required": true,
@@ -1297,6 +1307,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1305,6 +1316,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1313,6 +1325,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1321,6 +1334,7 @@
         {
           "default": "",
           "document": "过滤条件\n<li> compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1334,15 +1348,19 @@
       "members": [
         {
           "document": "计算环境中的活动列表",
+          "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "活动数量",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1361,6 +1379,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1374,78 +1393,100 @@
       "members": [
         {
           "document": "计算环境 ID",
+          "example": "env-qleawxzt",
           "member": "string",
           "name": "EnvId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算环境名称",
+          "example": "test compute env",
           "member": "string",
           "name": "EnvName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test compute env",
           "member": "string",
           "name": "EnvDescription",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "计算环境类型，仅支持“MANAGED”类型",
+          "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算环境参数",
+          "example": "无",
           "member": "EnvData",
           "name": "EnvData",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "数据盘挂载选项",
+          "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "输入映射",
+          "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "授权信息",
+          "example": "无",
           "member": "Authentication",
           "name": "Authentications",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "通知信息",
+          "example": "无",
           "member": "Notification",
           "name": "Notifications",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "计算节点期望个数",
+          "example": "2",
           "member": "int64",
           "name": "DesiredComputeNodeCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "计算环境绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1464,6 +1505,7 @@
         {
           "default": "",
           "document": "计算环境ID列表，与Filters参数不能同时指定。",
+          "example": "无",
           "member": "string",
           "name": "EnvIds",
           "required": false,
@@ -1472,6 +1514,7 @@
         {
           "default": "",
           "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n与EnvIds参数不能同时指定。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1480,6 +1523,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1488,6 +1532,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1501,15 +1546,19 @@
       "members": [
         {
           "document": "计算环境数量",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "计算环境创建信息列表",
+          "example": "无",
           "member": "ComputeEnvCreateInfo",
           "name": "ComputeEnvCreateInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1528,6 +1577,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1541,85 +1591,109 @@
       "members": [
         {
           "document": "计算环境ID",
+          "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算环境名称",
+          "example": "test compute env",
           "member": "string",
           "name": "EnvName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "位置信息",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "计算环境创建时间",
+          "example": "2018-03-08T11:48:43Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算节点列表信息",
+          "example": "无",
           "member": "ComputeNode",
           "name": "ComputeNodeSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "计算节点统计指标",
+          "example": "无",
           "member": "ComputeNodeMetrics",
           "name": "ComputeNodeMetrics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "计算节点期望个数",
+          "example": "2",
           "member": "uint64",
           "name": "DesiredComputeNodeCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "计算环境类型",
+          "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "计算环境资源类型，当前为CVM和CPM（黑石）",
+          "example": "CVM",
           "member": "string",
           "name": "ResourceType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "下一步动作",
+          "example": "xx",
           "member": "string",
           "name": "NextAction",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "用户添加到计算环境中的计算节点个数",
+          "example": "0",
           "member": "uint64",
           "name": "AttachedComputeNodeCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "计算环境绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1638,6 +1712,7 @@
         {
           "default": "",
           "document": "计算环境ID列表，与Filters参数不能同时指定。",
+          "example": "[\"env-lcx7qbbr\\n\"]",
           "member": "string",
           "name": "EnvIds",
           "required": false,
@@ -1646,6 +1721,7 @@
         {
           "default": "",
           "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与EnvIds参数不能同时指定。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1654,6 +1730,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1662,6 +1739,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1675,15 +1753,19 @@
       "members": [
         {
           "document": "计算环境列表",
+          "example": "无",
           "member": "ComputeEnvView",
           "name": "ComputeEnvSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "计算环境数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1702,6 +1784,7 @@
         {
           "default": "",
           "document": "黑石设备类型代号。 可以从[DescribeDeviceClass](https://cloud.tencent.com/document/api/386/32911)查询设备类型列表。",
+          "example": "无",
           "member": "string",
           "name": "DeviceClassCode",
           "required": false,
@@ -1715,8 +1798,10 @@
       "members": [
         {
           "document": "操作系统信息列表。",
+          "example": "无",
           "member": "OsInfo",
           "name": "OsInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1792,6 +1877,7 @@
         {
           "default": "",
           "document": "作业标识",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -1805,99 +1891,127 @@
       "members": [
         {
           "document": "作业ID",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业名称",
+          "example": "test job",
           "member": "string",
           "name": "JobName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "可用区信息",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业优先级",
+          "example": "1",
           "member": "int64",
           "name": "Priority",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "作业状态",
+          "example": "SUCCEED",
           "member": "string",
           "name": "JobState",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "创建时间",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "结束时间",
+          "example": "2018-02-07T09:33:01Z",
           "member": "string",
           "name": "EndTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务视图信息",
+          "example": "无",
           "member": "TaskView",
           "name": "TaskSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务间依赖信息",
+          "example": "无",
           "member": "Dependence",
           "name": "DependenceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务统计指标",
+          "example": "无",
           "member": "TaskMetrics",
           "name": "TaskMetrics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "任务实例统计指标",
+          "example": "无",
           "member": "TaskInstanceMetrics",
           "name": "TaskInstanceMetrics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "作业失败原因",
+          "example": "无",
           "member": "string",
           "name": "StateReason",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "下一步动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NextAction",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1916,6 +2030,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -1929,50 +2044,64 @@
       "members": [
         {
           "document": "作业ID",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业名称",
+          "example": "test job",
           "member": "string",
           "name": "JobName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业描述",
+          "example": "xxx",
           "member": "string",
           "name": "JobDescription",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级",
+          "example": "1",
           "member": "int64",
           "name": "Priority",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务信息",
+          "example": "无",
           "member": "Task",
           "name": "Tasks",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "依赖信息",
+          "example": "无",
           "member": "Dependence",
           "name": "Dependences",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "作业绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1991,6 +2120,7 @@
         {
           "default": "",
           "document": "作业ID列表，与Filters参数不能同时指定。",
+          "example": "[\"job-7e7evk2x\\n\",\"job-3n2weaqt\\n\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -1999,6 +2129,7 @@
         {
           "default": "",
           "document": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与JobIds参数不能同时指定。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2007,6 +2138,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2015,6 +2147,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2028,15 +2161,19 @@
       "members": [
         {
           "document": "作业列表",
+          "example": "无",
           "member": "JobView",
           "name": "JobSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的作业数量",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2055,6 +2192,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-mawzp3ja",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2063,6 +2201,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "task",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -2071,6 +2210,7 @@
         {
           "default": "",
           "document": "任务实例集合",
+          "example": "[\"0\\r\\n\",\"1\\r\\n\"]",
           "member": "uint64",
           "name": "TaskInstanceIndexes",
           "required": false,
@@ -2079,6 +2219,7 @@
         {
           "default": "",
           "document": "起始任务实例",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2087,6 +2228,7 @@
         {
           "default": "",
           "document": "最大任务实例数",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2100,15 +2242,19 @@
       "members": [
         {
           "document": "任务实例总数",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务实例日志详情集合",
+          "example": "无",
           "member": "TaskInstanceLog",
           "name": "TaskInstanceLogSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2127,6 +2273,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2135,6 +2282,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "A",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -2143,6 +2291,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2151,6 +2300,7 @@
         {
           "default": "",
           "document": "返回数量。默认取值100，最大取值1000。",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2159,6 +2309,7 @@
         {
           "default": "",
           "document": "过滤条件，详情如下：\n<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2172,57 +2323,73 @@
       "members": [
         {
           "document": "作业ID",
+          "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务名称",
+          "example": "A",
           "member": "string",
           "name": "TaskName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务状态",
+          "example": "SUCCEED",
           "member": "string",
           "name": "TaskState",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "创建时间",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "结束时间",
+          "example": "2018-02-07T09:30:31Z",
           "member": "string",
           "name": "EndTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "任务实例总数",
+          "example": "2",
           "member": "int64",
           "name": "TaskInstanceTotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务实例信息",
+          "example": "无",
           "member": "TaskInstanceView",
           "name": "TaskInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务实例统计指标",
+          "example": "无",
           "member": "TaskInstanceMetrics",
           "name": "TaskInstanceMetrics",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2241,6 +2408,7 @@
         {
           "default": "",
           "document": "任务模板ID列表，与Filters参数不能同时指定。",
+          "example": "[\"task-tmpl-pq24rq1e\\n\",\"task-tmpl-606i415o\\n\"]",
           "member": "string",
           "name": "TaskTemplateIds",
           "required": false,
@@ -2249,6 +2417,7 @@
         {
           "default": "",
           "document": "过滤条件\n<li> task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与TaskTemplateIds参数不能同时指定。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2257,6 +2426,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2265,6 +2435,7 @@
         {
           "default": "",
           "document": "返回数量",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2278,15 +2449,19 @@
       "members": [
         {
           "document": "任务模板列表",
+          "example": "无",
           "member": "TaskTemplateView",
           "name": "TaskTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务模板数量",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2305,6 +2480,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-1mekuyxs",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -2313,6 +2489,7 @@
         {
           "default": "",
           "document": "实例ID列表",
+          "example": "[\"ins-kjoossv5\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3779,6 +3956,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -3787,6 +3965,7 @@
         {
           "default": "",
           "document": "计算节点期望个数",
+          "example": "2",
           "member": "int64",
           "name": "DesiredComputeNodeCount",
           "required": false,
@@ -3795,6 +3974,7 @@
         {
           "default": "",
           "document": "计算环境名称",
+          "example": "test-env",
           "member": "string",
           "name": "EnvName",
           "required": false,
@@ -3803,6 +3983,7 @@
         {
           "default": "",
           "document": "计算环境描述",
+          "example": "test-env",
           "member": "string",
           "name": "EnvDescription",
           "required": false,
@@ -3811,6 +3992,7 @@
         {
           "default": "",
           "document": "计算环境属性数据",
+          "example": "无",
           "member": "ComputeEnvData",
           "name": "EnvData",
           "required": false,
@@ -3837,6 +4019,7 @@
         {
           "default": "",
           "document": "任务模板ID",
+          "example": "task-tmpl-606i415o",
           "member": "string",
           "name": "TaskTemplateId",
           "required": true,
@@ -3845,6 +4028,7 @@
         {
           "default": "",
           "document": "任务模板名称",
+          "example": "A",
           "member": "string",
           "name": "TaskTemplateName",
           "required": false,
@@ -3853,6 +4037,7 @@
         {
           "default": "",
           "document": "任务模板描述",
+          "example": "test",
           "member": "string",
           "name": "TaskTemplateDescription",
           "required": false,
@@ -3861,6 +4046,7 @@
         {
           "default": "",
           "document": "任务模板信息",
+          "example": "无",
           "member": "Task",
           "name": "TaskTemplateInfo",
           "required": false,
@@ -4018,7 +4204,7 @@
         },
         {
           "default": "",
-          "document": "对于实例创建失败或异常退还的计算节点，定期重新创建实例资源的最大重试次数，最大值11，如果不设置的话，系统会设置一个默认值，当前为7",
+          "document": "对于实例创建失败或异常退还的计算节点，定期重新创建实例资源的最大重试次数，最大值100，如果不设置的话，系统会设置一个默认值，当前为7",
           "example": "1",
           "member": "int64",
           "name": "ResourceMaxRetryCount",
@@ -4144,7 +4330,7 @@
         },
         {
           "default": "",
-          "document": "对于实例创建失败或异常退还的计算节点，定期重新创建实例资源的最大重试次数，最大值11，如果不设置的话，系统会设置一个默认值，当前为7",
+          "document": "对于实例创建失败或异常退还的计算节点，定期重新创建实例资源的最大重试次数，最大值100，如果不设置的话，系统会设置一个默认值，当前为7。",
           "example": "1",
           "member": "int64",
           "name": "ResourceMaxRetryCount",
@@ -4454,6 +4640,7 @@
         {
           "default": "",
           "document": "作业ID列表。",
+          "example": "[\"job-rybewp57\\r\\n\",\"job-97zcl3wt\\r\\n\"]",
           "member": "string",
           "name": "JobIds",
           "required": true,
@@ -4706,6 +4893,7 @@
         {
           "default": "",
           "document": "应用程序信息",
+          "example": "无",
           "member": "Application",
           "name": "Application",
           "required": true,
@@ -4715,6 +4903,7 @@
         {
           "default": "",
           "document": "任务名称，在一个作业内部唯一",
+          "example": "test-task",
           "member": "string",
           "name": "TaskName",
           "required": false,
@@ -4724,6 +4913,7 @@
         {
           "default": "",
           "document": "任务实例运行个数",
+          "example": "1",
           "member": "uint64",
           "name": "TaskInstanceNum",
           "required": false,
@@ -4733,6 +4923,7 @@
         {
           "default": "",
           "document": "运行环境信息，ComputeEnv 和 EnvId 必须指定一个（且只有一个）参数。",
+          "example": "无",
           "member": "AnonymousComputeEnv",
           "name": "ComputeEnv",
           "required": false,
@@ -4742,6 +4933,7 @@
         {
           "default": "",
           "document": "计算环境ID，ComputeEnv 和 EnvId 必须指定一个（且只有一个）参数。",
+          "example": "env_238swek2",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -4751,6 +4943,7 @@
         {
           "default": "",
           "document": "重定向信息",
+          "example": "无",
           "member": "RedirectInfo",
           "name": "RedirectInfo",
           "required": false,
@@ -4760,6 +4953,7 @@
         {
           "default": "",
           "document": "重定向本地信息",
+          "example": "无",
           "member": "RedirectLocalInfo",
           "name": "RedirectLocalInfo",
           "required": false,
@@ -4769,6 +4963,7 @@
         {
           "default": "",
           "document": "输入映射",
+          "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
           "required": false,
@@ -4778,6 +4973,7 @@
         {
           "default": "",
           "document": "输出映射",
+          "example": "无",
           "member": "OutputMapping",
           "name": "OutputMappings",
           "required": false,
@@ -4787,6 +4983,7 @@
         {
           "default": "",
           "document": "输出映射配置",
+          "example": "无",
           "member": "OutputMappingConfig",
           "name": "OutputMappingConfigs",
           "required": false,
@@ -4796,6 +4993,7 @@
         {
           "default": "",
           "document": "自定义环境变量",
+          "example": "无",
           "member": "EnvVar",
           "name": "EnvVars",
           "required": false,
@@ -4805,6 +5003,7 @@
         {
           "default": "",
           "document": "授权信息",
+          "example": "无",
           "member": "Authentication",
           "name": "Authentications",
           "required": false,
@@ -4814,6 +5013,7 @@
         {
           "default": "",
           "document": "TaskInstance失败后处理方式，取值包括TERMINATE（默认）、INTERRUPT、FAST_INTERRUPT。",
+          "example": "TERMINATE",
           "member": "string",
           "name": "FailedAction",
           "required": false,
@@ -4823,6 +5023,7 @@
         {
           "default": "",
           "document": "任务失败后的最大重试次数，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "MaxRetryCount",
           "required": false,
@@ -4832,6 +5033,7 @@
         {
           "default": "",
           "document": "任务启动后的超时时间，单位秒，默认为86400秒",
+          "example": "86400",
           "member": "uint64",
           "name": "Timeout",
           "required": false,
@@ -4841,6 +5043,7 @@
         {
           "default": "",
           "document": "任务最大并发数限制，默认没有限制。",
+          "example": "100",
           "member": "uint64",
           "name": "MaxConcurrentNum",
           "required": false,
@@ -4850,6 +5053,7 @@
         {
           "default": "",
           "document": "任务完成后，重启计算节点。适用于指定计算环境执行任务。",
+          "example": "false",
           "member": "bool",
           "name": "RestartComputeNode",
           "required": false,
@@ -4858,7 +5062,8 @@
         },
         {
           "default": "",
-          "document": "启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。",
+          "document": "启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。",
+          "example": "1",
           "member": "uint64",
           "name": "ResourceMaxRetryCount",
           "required": false,
@@ -5290,6 +5495,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcx7qbbr",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5298,6 +5504,7 @@
         {
           "default": "",
           "document": "计算节点ID",
+          "example": "node-lcpcej85",
           "member": "string",
           "name": "ComputeNodeId",
           "required": true,
@@ -5324,6 +5531,7 @@
         {
           "default": "",
           "document": "计算环境ID",
+          "example": "env-lcx7qbbr",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5332,6 +5540,7 @@
         {
           "default": "",
           "document": "计算节点ID列表",
+          "example": "无",
           "member": "string",
           "name": "ComputeNodeIds",
           "required": true,
@@ -5358,6 +5567,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-rybewp57",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -5384,6 +5594,7 @@
         {
           "default": "",
           "document": "作业ID",
+          "example": "job-rybewp57",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -5392,6 +5603,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "A",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -5400,6 +5612,7 @@
         {
           "default": "",
           "document": "任务实例索引",
+          "example": "0",
           "member": "int64",
           "name": "TaskInstanceIndex",
           "required": true,

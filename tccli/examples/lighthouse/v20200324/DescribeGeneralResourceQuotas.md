@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse DescribeGeneralResourceQuotas --cli-unfold-argument  \
-    --ResourceNames INSTANCE
+    --ResourceNames GENERAL_BUNDLE_INSTANCE
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "GeneralResourceQuotaSet": [
             {
-                "ResourceName": "INSTANCE",
+                "ResourceName": "GENERAL_BUNDLE_INSTANCE",
                 "ResourceQuotaAvailable": 9,
                 "ResourceQuotaTotal": 10
             }

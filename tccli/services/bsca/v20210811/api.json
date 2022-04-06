@@ -1,0 +1,1013 @@
+{
+  "actions": {
+    "DescribeKBComponent": {
+      "document": "本接口(DescribeKBComponent)用于在知识库中查询开源组件信息。本接口根据用户输入的PURL在知识库中寻找对应的开源组件，其中Name为必填字段。",
+      "input": "DescribeKBComponentRequest",
+      "name": "查询知识库组件信息",
+      "output": "DescribeKBComponentResponse"
+    },
+    "DescribeKBComponentVulnerability": {
+      "document": "本接口(DescribeKBComponentVulnerability)用于在知识库中查询开源组件的漏洞信息。",
+      "input": "DescribeKBComponentVulnerabilityRequest",
+      "name": "查询知识库组件漏洞",
+      "output": "DescribeKBComponentVulnerabilityResponse"
+    },
+    "DescribeKBLicense": {
+      "document": "本接口(DescribeKBLicense)用于在知识库中查询许可证信息。",
+      "input": "DescribeKBLicenseRequest",
+      "name": "查询知识库许可证信息",
+      "output": "DescribeKBLicenseResponse"
+    },
+    "DescribeKBVulnerability": {
+      "document": "本接口(DescribeKBVulnerability)用于在知识库中查询漏洞详细信息，支持根据CVE ID查询或者根据Vul ID查询。",
+      "input": "DescribeKBVulnerabilityRequest",
+      "name": "查询知识库漏洞详情列表",
+      "output": "DescribeKBVulnerabilityResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-11",
+    "api_brief": "介绍如何使用API对二进制软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
+    "serviceNameCN": "二进制软件成分分析",
+    "serviceShortName": "bsca"
+  },
+  "objects": {
+    "CVSSV2Info": {
+      "document": "CVSSv2.0详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE评分。",
+          "example": "6.8",
+          "member": "float",
+          "name": "CVSS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AccessVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>",
+          "example": "LOCAL",
+          "member": "string",
+          "name": "AccessVector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AccessComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>MEDIUM 中</li>\n<li>LOW 低</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "AccessComplexity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Authentication 身份验证。\n取值范围：\n<li>MULTIPLE 多系统认证</li>\n<li>SINGLE 单系统认证</li>\n<li>NONE 无</li>",
+          "example": "MULTIPLE",
+          "member": "string",
+          "name": "Authentication",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "ConImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "IntegrityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>PARTIAL 部分</li>\n<li>COMPLETE 完整</li>",
+          "example": "PARTIAL",
+          "member": "string",
+          "name": "AvailabilityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CVSSV3Info": {
+      "document": "Cvssv3.0详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE评分。",
+          "example": "5.5",
+          "member": "float",
+          "name": "CVSS",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AttackVector 攻击途径。\n取值范围：\n<li>NETWORK 远程</li>\n<li>ADJACENT_NETWORK 近邻</li>\n<li>LOCAL 本地</li>\n<li>PHYSICAL 物理</li>",
+          "example": "NETWORK",
+          "member": "string",
+          "name": "AttackVector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AttackComplexity 攻击复杂度。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "AttackComplexity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "PrivilegesRequired 触发特权。\n取值范围：\n<li>HIGH 高</li>\n<li>LOW 低</li>\n<li>NONE 无</li>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "PrivilegesRequired",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UserInteraction 交互必要性。\n取值范围：\n<li>NONE 无</li>\n<li>REQUIRED 需要</li>",
+          "example": "REQUIRED",
+          "member": "string",
+          "name": "UserInteraction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Scope 绕过安全边界。\n取值范围：\n<li>UNCHANGED 否</li>\n<li>CHANGED 能</li>",
+          "example": "UNCHANGED",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ConfidentialityImpact 机密性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "ConImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IntegrityImpact 完整性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "IntegrityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "AvailabilityImpact 可用性影响。\n取值范围：\n<li>NONE 无</li>\n<li>LOW 低</li>\n<li>HIGH 高</li>",
+          "example": "LOW",
+          "member": "string",
+          "name": "AvailabilityImpact",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Component": {
+      "document": "描述一个第三方组件的源信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方组件的PURL",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方组件的主页",
+          "example": "http://example.com",
+          "member": "string",
+          "name": "Homepage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方组件的简介",
+          "example": "OpenSSL is a toolkit for supporting cryptography.",
+          "member": "string",
+          "name": "Summary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方组件的别名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NicknameList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方组件的代码位置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CodeLocationList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方组件的许可证表达式",
+          "example": "apache-2.0",
+          "member": "string",
+          "name": "LicenseExpression",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComponentVulnerabilitySummary": {
+      "document": "与输入组件相关的漏洞信息摘要信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "用于匹配漏洞的PURL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该组件是否包含修复漏洞的官方补丁",
+          "example": "true",
+          "member": "bool",
+          "name": "CanBeFixed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修复漏洞的组件版本号",
+          "example": ">1.1.1c",
+          "member": "string",
+          "name": "FixedVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞影响的组件版本号",
+          "example": "1.1.1",
+          "member": "string",
+          "name": "AffectedVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞影响组件",
+          "example": "openssl",
+          "member": "string",
+          "name": "AffectedComponent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞在该产品中的风险等级\n<li>Critical</li>\n<li>High</li>\n<li>Medium</li>\n<li>Low</li>",
+          "example": "Medium",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComponentVulnerabilityUnion": {
+      "document": "描述组件漏洞相关概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞概览信息",
+          "example": "无",
+          "member": "VulnerabilitySummary",
+          "name": "Summary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与组件相关的漏洞概览信息",
+          "example": "无",
+          "member": "ComponentVulnerabilitySummary",
+          "name": "SummaryInComponent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeKBComponentRequest": {
+      "document": "DescribeKBComponent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组件的PURL",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBComponentResponse": {
+      "document": "DescribeKBComponent返回参数结构体",
+      "members": [
+        {
+          "document": "匹配的组件信息",
+          "example": "无",
+          "member": "Component",
+          "name": "Component",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBComponentVulnerabilityRequest": {
+      "document": "DescribeKBComponentVulnerability请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "组件的PURL，其中Name和Version为必填字段",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBComponentVulnerabilityResponse": {
+      "document": "DescribeKBComponentVulnerability返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComponentVulnerabilityUnion",
+          "name": "VulnerabilityList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBLicenseRequest": {
+      "document": "DescribeKBLicense请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "License表达式",
+          "example": "apache-2.0",
+          "member": "string",
+          "name": "LicenseExpression",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBLicenseResponse": {
+      "document": "DescribeKBLicense返回参数结构体",
+      "members": [
+        {
+          "document": "许可证列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LicenseUnion",
+          "name": "LicenseList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用于匹配的License表达式",
+          "example": "apache-2.0",
+          "member": "string",
+          "name": "NormalizedLicenseExpression",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBVulnerabilityRequest": {
+      "document": "DescribeKBVulnerability请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CVE ID列表（不能与Vul ID同时存在）",
+          "example": "[\"CVE-2020-1971\", \"CVE-2019-1551\"]",
+          "member": "string",
+          "name": "CVEID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Vul ID列表（不能与CVE ID 同时存在）",
+          "example": "[\"pcmgr-303514\"]",
+          "member": "string",
+          "name": "VulID",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBVulnerabilityResponse": {
+      "document": "DescribeKBVulnerability返回参数结构体",
+      "members": [
+        {
+          "document": "漏洞详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VulnerabilityUnion",
+          "name": "VulnerabilityDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LicenseDetail": {
+      "document": "描述许可证的详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "许可证内容",
+          "example": " TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION...",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证允许信息列表",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "ConditionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证要求信息列表",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "ForbiddenSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证禁止信息列表",
+          "example": "无",
+          "member": "LicenseRestriction",
+          "name": "PermissionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseRestriction": {
+      "document": "License约束信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "license约束的名称。",
+          "example": "Commercial Use",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "license约束的描述。",
+          "example": "The licensed material",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseSummary": {
+      "document": "描述许可证的概览信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "许可证标识符",
+          "example": "apache-2.0",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证的SPDX标识符，见 https://spdx.org/licenses/",
+          "example": "Apache-2.0",
+          "member": "string",
+          "name": "SPDXKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证短名称",
+          "example": "Apache 2.0",
+          "member": "string",
+          "name": "ShortName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证完整名称",
+          "example": "Apache License 2.0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "License风险等级\n<li>NotDefined</li>\n<li>LowRisk</li>\n<li>MediumRisk</li>\n<li>HighRisk</li>",
+          "example": "LowRisk",
+          "member": "string",
+          "name": "Risk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证来源URL",
+          "example": "https://spdx.org/licenses/Apache-2.0.html",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LicenseUnion": {
+      "document": "许可证详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "许可证概览信息",
+          "example": "无",
+          "member": "LicenseSummary",
+          "name": "LicenseSummary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "许可证详细信息",
+          "example": "无",
+          "member": "LicenseDetail",
+          "name": "LicenseDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PURL": {
+      "document": "PURL(Package URL)用于定位一个产品或组件，见 https://github.com/package-url/purl-spec。",
+      "members": [
+        {
+          "default": "",
+          "document": "组件名称",
+          "example": "curl",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件所属的类型，如：github, gitlab, generic, deb, rpm, maven 等",
+          "example": "deb",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件名的前缀名，如github和gitlab的用户名，deb的操作系统，maven包的group id等",
+          "example": "debian",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修饰组件的额外属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Qualifier",
+          "name": "Qualifiers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "相对于组件包根位置的子目录",
+          "example": "/release",
+          "member": "string",
+          "name": "Subpath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "组件版本号",
+          "example": "7.50.3",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Qualifier": {
+      "document": "PURL下的Qualifier属性类型，用于定义第三方组件的额外属性，见 https://github.com/package-url/purl-spec。",
+      "members": [
+        {
+          "default": "",
+          "document": "额外属性的名称。",
+          "example": "distro_version",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "额外属性的值。",
+          "example": "14.04",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VulnerabilityDetail": {
+      "document": "描述漏洞详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞类别",
+          "example": "其他",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞分类",
+          "example": "web应用漏洞",
+          "member": "string",
+          "name": "CategoryType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞描述",
+          "example": "漏洞描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞官方解决方案",
+          "example": "升级到最新无漏洞版本",
+          "member": "string",
+          "name": "OfficialSolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞信息参考列表",
+          "example": "无",
+          "member": "string",
+          "name": "ReferenceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞防御方案",
+          "example": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://www.openssl.org/news/secadv/2019",
+          "member": "string",
+          "name": "DefenseSolution",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞CVSSv2信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CVSSV2Info",
+          "name": "CVSSv2Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞CVSSv3信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CVSSV3Info",
+          "name": "CVSSv3Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞提交时间",
+          "example": "2019-09-11 01:15:00",
+          "member": "string",
+          "name": "SubmitTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CWE编号",
+          "example": "CWE-311",
+          "member": "string",
+          "name": "CWEID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞CVSSv2向量",
+          "example": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
+          "member": "string",
+          "name": "CVSSv2Vector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞CVSSv3向量",
+          "example": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          "member": "string",
+          "name": "CVSSv3Vector",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulnerabilitySummary": {
+      "document": "描述漏洞的摘要信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞ID",
+          "example": "pcmgr-303514",
+          "member": "string",
+          "name": "VulID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞所属CVE编号",
+          "example": "CVE-2019-11236",
+          "member": "string",
+          "name": "CVEID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞所属CNVD编号",
+          "example": "CNVD-XXX",
+          "member": "string",
+          "name": "CNVDID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞所属CNNVD编号",
+          "example": "CNNVD-202012-579",
+          "member": "string",
+          "name": "CNNVDID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞名称",
+          "example": "OpenSSL 拒绝服务漏洞",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该漏洞是否是需重点关注的漏洞",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSuggest",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞风险等级\n<li>Critical</li>\n<li>High</li>\n<li>Medium</li>\n<li>Low</li>",
+          "example": "Low",
+          "member": "string",
+          "name": "Severity",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VulnerabilityUnion": {
+      "document": "描述漏洞的详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "漏洞概览信息",
+          "example": "无",
+          "member": "VulnerabilitySummary",
+          "name": "Summary",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "漏洞详细信息",
+          "example": "无",
+          "member": "VulnerabilityDetail",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

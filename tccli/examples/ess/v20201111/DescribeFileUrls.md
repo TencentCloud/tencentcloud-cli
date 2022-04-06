@@ -6,11 +6,7 @@ Input:
 
 ```
 tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.Channel string \
-    --Operator.ClientIp 1.1.1.1 \
-    --Operator.OpenId 321654 \
-    --Operator.ProxyIp 2.2.2.2 \
-    --Operator.UserId userId1 \
+    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
     --FileType PDF \
     --BusinessType DOCUMENT \
     --FileName 合同 \
@@ -55,10 +51,6 @@ Input:
 
 ```
 tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.Channel string \
-    --Operator.ClientIp 1.1.1.1 \
-    --Operator.OpenId 321654 \
-    --Operator.ProxyIp 2.2.2.2 \
     --Operator.UserId f2d8********f56b7 \
     --FileType ZIP \
     --BusinessType DOCUMENT \

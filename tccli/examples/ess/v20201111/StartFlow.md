@@ -6,13 +6,8 @@ Input:
 
 ```
 tccli ess StartFlow --cli-unfold-argument  \
-    --Operator.Channel string \
-    --Operator.ClientIp string \
-    --Operator.OpenId string \
-    --Operator.ProxyIp string \
-    --Operator.UserId string \
-    --FlowId 1111 \
-    --ClientToken 我是Token
+    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
+    --FlowId c7b5ca37ae*******2b4c6644
 ```
 
 Output: 
@@ -20,7 +15,7 @@ Output:
 {
     "Response": {
         "Status": "START",
-        "RequestId": "xx"
+        "RequestId": "s123456789"
     }
 }
 ```

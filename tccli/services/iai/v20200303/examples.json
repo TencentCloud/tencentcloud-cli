@@ -409,21 +409,15 @@
     "ModifyPersonBaseInfo": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=2001\r\n&PersonName=JunlyWang\r\n&Gender=1\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\n&PersonId=2001\n&PersonName=JunlyWang\n&Gender=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
         "title": "修改人员基础信息接口"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&PersonName=EvanLiao\r\n&Gender=1\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\n&PersonId=1001\n&PersonName=EvanLiao\n&Gender=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
         "title": "修改人员基础信息接口-2"
-      },
-      {
-        "document": "人员性别设置错误",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&Gender=-1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f40bf659-0283-4773-abe8-945f643d5015\"\n    }\n}",
-        "title": "错误示例"
       }
     ],
     "ModifyPersonGroupInfo": [

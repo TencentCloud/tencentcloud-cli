@@ -2901,6 +2901,15 @@
           "name": "CageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID，默认项目ID0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10660,7 +10669,8 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c2nl9rpv 或者 cdbrg-c3nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10669,6 +10679,7 @@
         {
           "default": "",
           "document": "目标 IP。该参数和 DstPort 参数，两者必传一个。",
+          "example": "10.0.1.1",
           "member": "string",
           "name": "DstIp",
           "required": false,
@@ -10677,6 +10688,7 @@
         {
           "default": "",
           "document": "目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。",
+          "example": "1025",
           "member": "int64",
           "name": "DstPort",
           "required": false,
@@ -10685,6 +10697,7 @@
         {
           "default": "",
           "document": "私有网络统一 ID。",
+          "example": "11357",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -10693,6 +10706,7 @@
         {
           "default": "",
           "document": "子网统一 ID。",
+          "example": "23789",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -10701,6 +10715,7 @@
         {
           "default": "",
           "document": "进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。",
+          "example": "12",
           "member": "int64",
           "name": "ReleaseDuration",
           "required": false,
@@ -10714,8 +10729,10 @@
       "members": [
         {
           "document": "异步任务ID。(该返回字段目前已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

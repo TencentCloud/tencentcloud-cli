@@ -7,11 +7,7 @@ Input:
 ```
 tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Operator.UserId 19561039******de6a \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.Channel  \
-    --Operator.OpenId  \
-    --Operator.ProxyIp  \
-    --FlowName 测试 \
+    --FlowName 合同名称 \
     --NeedPreview False \
     --FlowDescription 测试流程的描述信息 \
     --Unordered False \
@@ -19,8 +15,8 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Deadline 1604912664 \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName xxx有限公司 \
-    --Approvers.0.ApproverName  \
-    --Approvers.0.ApproverMobile  \
+    --Approvers.0.ApproverName 张三 \
+    --Approvers.0.ApproverMobile 15912345678 \
     --Approvers.0.SignComponents.0.ComponentValue SealId \
     --Approvers.0.SignComponents.0.ComponentPosY 100 \
     --Approvers.0.SignComponents.0.ComponentWidth 100 \
@@ -38,8 +34,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.SignComponents.1.ComponentPosX 120 \
     --Approvers.0.SignComponents.1.ComponentHeight 120 \
     --Approvers.1.ApproverType 1 \
-    --Approvers.1.OrganizationName  \
-    --Approvers.1.ApproverName 呱呱叫 \
+    --Approvers.1.ApproverName 李四 \
     --Approvers.1.ApproverMobile 185111111111 \
     --Approvers.1.SignComponents.0.ComponentValue  \
     --Approvers.1.SignComponents.0.ComponentPosY 100 \
@@ -57,7 +52,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.1.SignComponents.1.ComponentPage 1 \
     --Approvers.1.SignComponents.1.ComponentPosX 120 \
     --Approvers.1.SignComponents.1.ComponentHeight 120 \
-    --FileIds 61a82f0*******c2d0d807 yDxM6********wutBsRy \
+    --FileIds 61a82f0*******c2d0d807 \
     --Components.0.ComponentValue 自定义单行文本内容 \
     --Components.0.ComponentPosY 100 \
     --Components.0.ComponentWidth 100 \

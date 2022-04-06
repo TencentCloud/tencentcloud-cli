@@ -6302,7 +6302,7 @@
         },
         {
           "default": "",
-          "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白",
+          "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -6750,6 +6750,16 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0：待处理，1：忽略，5：已处理，6：加入白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DataStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11661,7 +11671,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>\n<li>UserName - String - 是否必填：否 - UserName筛选</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 首次攻击时间筛选，开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 首次攻击时间筛选，结束时间</li>\n<li>ModifyBeginTime - String - 是否必填：否 - 最近攻击时间筛选，开始时间</li>\n<li>ModifyEndTime - String - 是否必填：否 - 最近攻击时间筛选，结束时间</li>\n<li>Banned - String - 是否必填：否 - 阻断状态筛选，多个用\",\"分割：0-未阻断（全局ZK开关关闭），82-未阻断(非专业版)，83-未阻断(已加白名单)，1-已阻断，2-未阻断-程序异常，3-未阻断-内网攻击暂不支持阻断，4-未阻断-安平暂不支持阻断</li>",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>\n<li>UserName - String - 是否必填：否 - UserName筛选</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 首次攻击时间筛选，开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 首次攻击时间筛选，结束时间</li>\n<li>ModifyBeginTime - String - 是否必填：否 - 最近攻击时间筛选，开始时间</li>\n<li>ModifyEndTime - String - 是否必填：否 - 最近攻击时间筛选，结束时间</li>\n<li>Banned - String - 是否必填：否 - 阻断状态筛选，多个用\",\"分割：0-未阻断（全局ZK开关关闭），82-未阻断(非专业版)，83-未阻断(已加白名单)，1-已阻断，2-未阻断-程序异常，3-未阻断-内网攻击暂不支持阻断，4-未阻断-安平暂不支持阻断</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -12595,7 +12605,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -12834,7 +12844,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "用户批量导入失败的机器列表（比如机器不存在等...）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户批量导入失败的机器列表（例如机器不存在等...）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "InvalidMachineList",
@@ -13165,7 +13175,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "云主机类型。\n<li>CVM: 腾讯云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
+          "document": "云服务器类型。\n<li>CVM: 腾讯云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -19392,7 +19402,7 @@
         },
         {
           "default": "",
-          "document": "1:正常登录；2异地登录； 5已加白",
+          "document": "1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -21330,7 +21340,7 @@
       "members": [
         {
           "default": "",
-          "document": "云主机类型。(当前参数已作废,可以留空值 )",
+          "document": "云服务器类型。(当前参数已作废,可以留空值 )",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -21606,7 +21616,7 @@
         },
         {
           "default": "",
-          "document": "处理状态：0-待处理 2-白名单",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -22604,7 +22614,7 @@
         },
         {
           "default": "",
-          "document": "处理状态：0-待处理 2-白名单",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -22825,7 +22835,7 @@
         },
         {
           "default": "",
-          "document": "状态；0-待处理，2-已加白，3-非信任状态",
+          "document": "状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略",
           "example": "0",
           "member": "uint64",
           "name": "Status",

@@ -144,6 +144,12 @@
       "name": "终止数据库实例特定操作",
       "output": "KillOpsResponse"
     },
+    "ModifyDBInstanceNetworkAddress": {
+      "document": "本接口(ModifyDBInstanceNetworkAddress)用于修改云数据库实例的网络信息，可进行基础网络转VPC网络和VPC网络之间的变换。",
+      "input": "ModifyDBInstanceNetworkAddressRequest",
+      "name": "修改云数据库实例网络信息",
+      "output": "ModifyDBInstanceNetworkAddressResponse"
+    },
     "ModifyDBInstanceSecurityGroup": {
       "document": "修改实例绑定的安全组",
       "input": "ModifyDBInstanceSecurityGroupRequest",
@@ -3411,6 +3417,69 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceNetworkAddressRequest": {
+      "document": "ModifyDBInstanceNetworkAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP",
+          "example": "0",
+          "member": "uint64",
+          "name": "OldIpExpiredTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空",
+          "example": "vpc-****",
+          "member": "string",
+          "name": "NewUniqVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "切换后IP地址所属子网统一ID，若为基础网络，该字段为空",
+          "example": "subnet-****",
+          "member": "string",
+          "name": "NewUniqSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改IP信息",
+          "example": "无",
+          "member": "ModifyNetworkAddress",
+          "name": "NetworkAddresses",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNetworkAddressResponse": {
+      "document": "ModifyDBInstanceNetworkAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupRequest": {
       "document": "ModifyDBInstanceSecurityGroup请求参数结构体",
       "members": [
@@ -3536,6 +3605,30 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyNetworkAddress": {
+      "document": "修改数据库地址",
+      "members": [
+        {
+          "default": "",
+          "document": "新IP地址。",
+          "member": "string",
+          "name": "NewIPAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原IP地址。",
+          "member": "string",
+          "name": "OldIpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "OfflineIsolatedDBInstanceRequest": {
       "document": "OfflineIsolatedDBInstance请求参数结构体",

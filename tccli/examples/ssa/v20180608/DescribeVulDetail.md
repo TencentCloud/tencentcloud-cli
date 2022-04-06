@@ -29,6 +29,7 @@ Output:
         "Level": 2,
         "ImpactAssetName": "xx",
         "VulUrl": "xx",
+        "VulPath": "xx",
         "RequestId": "xx",
         "Cve": "xx",
         "ReleaseTime": "xx",

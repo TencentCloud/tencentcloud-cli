@@ -45,7 +45,7 @@
     "CreateInstances": {
       "document": "本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。",
       "input": "CreateInstancesRequest",
-      "name": "轻量应用服务器创建实例",
+      "name": "创建实例",
       "output": "CreateInstancesResponse"
     },
     "CreateKeyPair": {
@@ -289,7 +289,7 @@
       "output": "InquirePriceRenewDisksResponse"
     },
     "InquirePriceRenewInstances": {
-      "document": "本接口（InquirePriceCreateInstances）用于续费实例询价。",
+      "document": "本接口（InquirePriceRenewInstances）用于续费实例询价。",
       "input": "InquirePriceRenewInstancesRequest",
       "name": "续费实例询价",
       "output": "InquirePriceRenewInstancesResponse"
@@ -1206,7 +1206,7 @@
       "members": [
         {
           "default": "",
-          "document": "Lighthouse套餐ID。",
+          "document": "套餐ID。",
           "example": "bundle_gen_03",
           "member": "string",
           "name": "BundleId",
@@ -1215,7 +1215,7 @@
         },
         {
           "default": "",
-          "document": "Lighthouse镜像ID。",
+          "document": "镜像ID。",
           "example": "lhbp-g0tn7djh",
           "member": "string",
           "name": "BlueprintId",
@@ -1224,7 +1224,7 @@
         },
         {
           "default": "",
-          "document": "当前Lighthouse实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
+          "document": "当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -1233,7 +1233,7 @@
         },
         {
           "default": "",
-          "document": "Lighthouse实例显示名称。",
+          "document": "实例显示名称。",
           "example": "mylighthouse",
           "member": "string",
           "name": "InstanceName",
@@ -1242,7 +1242,7 @@
         },
         {
           "default": "",
-          "document": "购买Lighthouse实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
+          "document": "购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
@@ -2229,8 +2229,8 @@
       "members": [
         {
           "default": "",
-          "document": "资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。",
-          "example": "[\"INSTANCE\\n\"]",
+          "document": "资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。",
+          "example": "[\"GENERAL_BUNDLE_INSTANCE\\n\"]",
           "member": "string",
           "name": "ResourceNames",
           "required": true,
@@ -4339,7 +4339,7 @@
         },
         {
           "default": "",
-          "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li>",
+          "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li>",
           "example": "无",
           "member": "string",
           "name": "InstanceState",
@@ -4465,6 +4465,16 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例封禁状态。取值范围：\n<li>NORMAL实例正常。</li><li>NETWORK_RESTRICT：网络封禁。</li>",
+          "example": "NETWORK_RESTRICT",
+          "member": "string",
+          "name": "InstanceRestrictState",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

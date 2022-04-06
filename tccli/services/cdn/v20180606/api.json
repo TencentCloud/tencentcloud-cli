@@ -385,7 +385,7 @@
       "output": "ModifyPurgeFetchTaskStatusResponse"
     },
     "PurgePathCache": {
-      "document": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 20 条。",
+      "document": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 500 条。",
       "input": "PurgePathCacheRequest",
       "name": "刷新目录",
       "output": "PurgePathCacheResponse"
@@ -397,7 +397,7 @@
       "output": "PurgeUrlsCacheResponse"
     },
     "PushUrlsCache": {
-      "document": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。",
+      "document": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 500 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。",
       "input": "PushUrlsCacheRequest",
       "name": "预热 URL",
       "output": "PushUrlsCacheResponse"
@@ -4963,6 +4963,7 @@
         {
           "default": "",
           "document": "报告ID",
+          "example": "123",
           "member": "string",
           "name": "ReportId",
           "required": true,
@@ -4976,59 +4977,84 @@
       "members": [
         {
           "document": "诊断报告基础信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "BaskInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CNAME检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "CnameInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "客户端检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "ClientInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "DNS检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "DnsInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "网络检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "NetworkInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "边缘节点检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "OcNodeInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "中间源节点检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "MidNodeInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "源站检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "OriginInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "刷新检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagnoseData",
+          "name": "PurgeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14847,21 +14873,21 @@
         },
         {
           "default": "",
-          "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
-          "example": "web",
-          "member": "string",
-          "name": "ServiceType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "地域属性特殊配置\n适用于域名境内加速、境外加速配置不一致场景",
           "example": "无",
           "member": "SpecificConfig",
           "name": "SpecificConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
+          "example": "web",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",

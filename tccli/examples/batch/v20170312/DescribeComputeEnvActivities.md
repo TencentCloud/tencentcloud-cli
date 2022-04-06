@@ -18,6 +18,7 @@ Output:
             {
                 "ComputeNodeId": "node-9yzd5jei",
                 "EnvId": "env-lcpcej85",
+                "InstanceId": "ins-x23sd8xk",
                 "ActivityState": "SUCCEED",
                 "ActivityId": "act-83xvnt5p",
                 "StartTime": "2018-03-09T13:14:34Z",
@@ -29,6 +30,7 @@ Output:
             {
                 "ComputeNodeId": "node-noa8vefu",
                 "EnvId": "env-lcpcej85",
+                "InstanceId": "ins-x23sdiwd",
                 "ActivityState": "SUCCEED",
                 "ActivityId": "act-ezle9e7v",
                 "StartTime": "2018-03-08T11:48:43Z",

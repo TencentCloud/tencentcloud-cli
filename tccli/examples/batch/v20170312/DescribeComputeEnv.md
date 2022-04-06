@@ -27,6 +27,7 @@ Output:
         "EnvType": "MANAGED",
         "CreateTime": "2018-03-08T11:48:43Z",
         "EnvName": "test compute env",
+        "NextAction": "",
         "Placement": {
             "Zone": "ap-guangzhou-2"
         },
@@ -41,7 +42,13 @@ Output:
                 "ComputeNodeInstanceId": "ins-0kj3gz6s",
                 "AgentVersion": "1.1.9",
                 "TaskInstanceNumAvailable": 1,
-                "Cpu": 1
+                "Cpu": 1,
+                "PublicIpAddresses": [
+                    "132.20.19.18"
+                ],
+                "PrivateIpAddresses": [
+                    "10.10.8.3"
+                ]
             },
             {
                 "ComputeNodeId": "node-9yzd5jei",
@@ -53,7 +60,13 @@ Output:
                 "ComputeNodeInstanceId": "ins-jyafz2sk",
                 "AgentVersion": "1.1.9",
                 "TaskInstanceNumAvailable": 1,
-                "Cpu": 1
+                "Cpu": 1,
+                "PublicIpAddresses": [
+                    "132.20.19.18"
+                ],
+                "PrivateIpAddresses": [
+                    "10.10.8.3"
+                ]
             }
         ],
         "DesiredComputeNodeCount": 2,

@@ -270,6 +270,18 @@
       "name": "获取集群kubeconfig文件",
       "output": "DescribeClusterKubeconfigResponse"
     },
+    "DescribeClusterLevelAttribute": {
+      "document": "获取集群规模",
+      "input": "DescribeClusterLevelAttributeRequest",
+      "name": "获取集群规模",
+      "output": "DescribeClusterLevelAttributeResponse"
+    },
+    "DescribeClusterLevelChangeRecords": {
+      "document": "查询集群变配记录",
+      "input": "DescribeClusterLevelChangeRecordsRequest",
+      "name": "查询集群变配记录",
+      "output": "DescribeClusterLevelChangeRecordsResponse"
+    },
     "DescribeClusterNodePoolDetail": {
       "document": "查询节点池详情",
       "input": "DescribeClusterNodePoolDetailRequest",
@@ -438,6 +450,12 @@
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
     },
+    "DescribeResourceUsage": {
+      "document": "获取集群资源使用量",
+      "input": "DescribeResourceUsageRequest",
+      "name": "获取集群资源使用量",
+      "output": "DescribeResourceUsageResponse"
+    },
     "DescribeRouteTableConflicts": {
       "document": "查询路由表冲突列表",
       "input": "DescribeRouteTableConflictsRequest",
@@ -491,6 +509,12 @@
       "input": "ForwardApplicationRequestV3Request",
       "name": "操作TKE集群的addon",
       "output": "ForwardApplicationRequestV3Response"
+    },
+    "GetClusterLevelPrice": {
+      "document": "获取集群规模价格",
+      "input": "GetClusterLevelPriceRequest",
+      "name": "获取集群规模价格",
+      "output": "GetClusterLevelPriceResponse"
     },
     "GetMostSuitableImageCache": {
       "document": "根据镜像列表，查询匹配的镜像缓存",
@@ -2084,6 +2108,188 @@
         }
       ],
       "usage": "in"
+    },
+    "ClusterLevelAttribute": {
+      "document": "托管集群等级属性",
+      "members": [
+        {
+          "default": "",
+          "document": "集群等级",
+          "example": "L500",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "等级名称",
+          "example": "500节点",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Pod数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "PodCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Configmap数量",
+          "example": "200",
+          "member": "uint64",
+          "name": "ConfigMapCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CRD数量",
+          "example": "500",
+          "member": "uint64",
+          "name": "CRDCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "其他资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "uint64",
+          "name": "OtherCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterLevelChangeRecord": {
+      "document": "集群等级变配记录",
+      "members": [
+        {
+          "default": "",
+          "document": "记录ID",
+          "example": "xxxx-xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变配状态：trading 发货中,upgrading 变配中,success 变配成功,failed 变配失败。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "余额不足",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变配前规模",
+          "example": "L5",
+          "member": "string",
+          "name": "OldLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变配后规模",
+          "example": "L20",
+          "member": "string",
+          "name": "NewLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变配触发类型：manual 手动,auto 自动",
+          "example": "manual",
+          "member": "string",
+          "name": "TriggerType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2022-02-01 00:00:00",
+          "member": "string",
+          "name": "StartedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2022-02-01 00:00:00",
+          "member": "string",
+          "name": "EndedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ClusterNetworkSettings": {
       "document": "集群网络相关的参数",
@@ -4985,6 +5191,132 @@
       ],
       "type": "object"
     },
+    "DescribeClusterLevelAttributeRequest": {
+      "document": "DescribeClusterLevelAttribute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID，变配时使用",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLevelAttributeResponse": {
+      "document": "DescribeClusterLevelAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群规模",
+          "example": "无",
+          "member": "ClusterLevelAttribute",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLevelChangeRecordsRequest": {
+      "document": "DescribeClusterLevelChangeRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2022-02-01 00:00:00",
+          "member": "string",
+          "name": "StartAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2022-02-01 23:00:00",
+          "member": "string",
+          "name": "EndAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLevelChangeRecordsResponse": {
+      "document": "DescribeClusterLevelChangeRecords返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群规模",
+          "example": "无",
+          "member": "ClusterLevelChangeRecord",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterNodePoolDetailRequest": {
       "document": "DescribeClusterNodePoolDetail请求参数结构体",
       "members": [
@@ -6732,6 +7064,69 @@
       ],
       "type": "object"
     },
+    "DescribeResourceUsageRequest": {
+      "document": "DescribeResourceUsage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUsageResponse": {
+      "document": "DescribeResourceUsage返回参数结构体",
+      "members": [
+        {
+          "document": "CRD使用量",
+          "example": "无",
+          "member": "ResourceUsage",
+          "name": "CRDUsage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Pod使用量",
+          "example": "100",
+          "member": "uint64",
+          "name": "PodUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ConfigMap使用量",
+          "example": "100",
+          "member": "uint64",
+          "name": "ConfigMapUsage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "其他资源使用量",
+          "example": "无",
+          "member": "ResourceUsage",
+          "name": "OtherUsage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteTableConflictsRequest": {
       "document": "DescribeRouteTableConflicts请求参数结构体",
       "members": [
@@ -8084,6 +8479,51 @@
           "name": "ResponseBody",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterLevelPriceRequest": {
+      "document": "GetClusterLevelPrice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群规格，托管集群询价",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetClusterLevelPriceResponse": {
+      "document": "GetClusterLevelPrice返回参数结构体",
+      "members": [
+        {
+          "document": "询价结果，单位：分，打折后",
+          "example": "8",
+          "member": "uint64",
+          "name": "Cost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "询价结果，单位：分，折扣前",
+          "example": "8",
+          "member": "uint64",
+          "name": "TotalCost",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -11267,6 +11707,68 @@
         }
       ],
       "usage": "in"
+    },
+    "ResourceUsage": {
+      "document": "集群资源使用量",
+      "members": [
+        {
+          "default": "",
+          "document": "资源类型",
+          "example": "Pod",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源使用量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Usage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源使用详情",
+          "example": "无",
+          "member": "ResourceUsageDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceUsageDetail": {
+      "document": "资源使用明细",
+      "members": [
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "clusterrolebindings",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源使用量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Usage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RestartEKSContainerInstancesRequest": {
       "document": "RestartEKSContainerInstances请求参数结构体",

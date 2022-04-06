@@ -372,6 +372,22 @@
         "title": "获取集群kubeconfig文件"
       }
     ],
+    "DescribeClusterLevelAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterLevelAttribute\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"Name\": \"L5\",\n                \"Alias\": \"500节点\",\n                \"NodeCount\": 500,\n                \"PodCount\": 1000,\n                \"ConfigMapCount\": 200,\n                \"CRDCount\": 1,\n                \"OtherCount\": 1,\n                \"Enable\": true\n            }\n        ]\n    }\n}",
+        "title": "获取托管集群规模"
+      }
+    ],
+    "DescribeClusterLevelChangeRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterLevelChangeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"ClusterID\": \"xx\",\n    \"EndAt\": \"xx\",\n    \"StartAt\": \"xx\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"Status\": \"xx\",\n                \"EndedAt\": \"xx\",\n                \"ClusterID\": \"xx\",\n                \"TriggerType\": \"xx\",\n                \"NewLevel\": \"xx\",\n                \"OldLevel\": \"xx\",\n                \"StartedAt\": \"xx\",\n                \"Message\": \"xx\",\n                \"ID\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询集群变配记录"
+      }
+    ],
     "DescribeClusterNodePoolDetail": [
       {
         "document": "",
@@ -596,6 +612,14 @@
         "title": "获取地域列表"
       }
     ],
+    "DescribeResourceUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUsage\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CRDUsage\": {\n            \"Details\": [\n                {\n                    \"Name\": \"tkeserviceconfigs\",\n                    \"Usage\": 0\n                }\n            ],\n            \"Name\": \"CRD\",\n            \"Usage\": 0\n        },\n        \"ConfigMapUsage\": 14,\n        \"OtherUsage\": {\n            \"Details\": [\n                {\n                    \"Name\": \"clusterrolebindings\",\n                    \"Usage\": 47\n                },\n                {\n                    \"Name\": \"endpoints\",\n                    \"Usage\": 4\n                }\n            ],\n            \"Name\": \"Other\",\n            \"Usage\": 51\n        },\n        \"PodUsage\": 3,\n        \"RequestId\": \"c7ad171e-3604-4662-b3b8-cd10b818a407\"\n    }\n}",
+        "title": "获取集群资源使用量"
+      }
+    ],
     "DescribeRouteTableConflicts": [
       {
         "document": "",
@@ -666,6 +690,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=ForwardApplicationRequestV3\n&Method=GET\n&Path=/api/v1/namespaces\n&ClusterName=cls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResponseBody\": \"[]\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "操作TKE集群的addon"
+      }
+    ],
+    "GetClusterLevelPrice": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=GetClusterLevelPrice\n&ClusterLevel=3600\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Cost\": 6,\n        \"TotalCost\": 6\n    }\n}",
+        "title": "获取集群规模价格"
       }
     ],
     "GetMostSuitableImageCache": [

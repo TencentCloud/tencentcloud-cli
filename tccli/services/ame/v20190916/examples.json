@@ -75,7 +75,7 @@
     "DescribeKTVPlaylistDetail": [
       {
         "document": "获取即时广播歌单接口",
-        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylistDetail\n<公共请求参数>\n\n{\n    \"PlaylistId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: ame.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVPlaylistDetail\n<公共请求参数>\n\n{\n    \"PlaylistId\": \"AME-201803241\",\n    \"Limit\": 0,\n    \"Offset\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"PlaylistBaseInfo\": {\n            \"Description\": \"国内热门\",\n            \"MusicNum\": 1,\n            \"PlaylistId\": \"pid-xxfdds1\",\n            \"Title\": \"国内热门\"\n        },\n        \"RequestId\": \"998d8d-11223-xxxd1-192j\",\n        \"KTVMusicInfoSet\": [\n            {\n                \"ComposerSet\": [\n                    \"方文山\"\n                ],\n                \"MusicId\": \"mid-xd998aa\",\n                \"SingerSet\": [\n                    \"周杰伦\"\n                ],\n                \"SingerInfoSet\": [\n                    {\n                        \"SingerId\": \"sid-19xjf8d\",\n                        \"Name\": \"周杰伦\"\n                    }\n                ],\n                \"TagSet\": [\n                    \"情歌\"\n                ],\n                \"Duration\": 241,\n                \"LyricistSet\": [\n                    \"方文山\"\n                ],\n                \"Name\": \"七里香\"\n            }\n        ]\n    }\n}",
         "title": "获取即时广播歌单接口"
       }

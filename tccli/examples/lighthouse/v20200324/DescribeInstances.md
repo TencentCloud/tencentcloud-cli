@@ -54,6 +54,7 @@ Output:
                     }
                 ],
                 "InstanceState": "RUNNING",
+                "InstanceRestrictState": "NORMAL",
                 "Uuid": "1322d32a-2641-45f3-a244-559405b32228",
                 "LatestOperation": "StartInstances",
                 "LatestOperationState": "SUCCESS",

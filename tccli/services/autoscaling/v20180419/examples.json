@@ -298,14 +298,6 @@
         "title": "查询通知"
       }
     ],
-    "DescribePaiInstances": [
-      {
-        "document": "通过PAI实例ID查询",
-        "input": "https://as.tencentcloudapi.com/?Action=DescribePaiInstances\n&InstanceIds.0=ins-6he2sztp\n&InstanceIds.1=ins-0xdrree5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"PaiInstanceSet\": [\n            {\n                \"InstanceId\": \"ins-6he2sztp\",\n                \"PaiMateUrl\": \"https://plumcot-j99466wb.pai.tcloudbase.com:5523\",\n                \"DomainName\": \"plumcot-j99466wb.pai.tcloudbase.com\"\n            },\n            {\n                \"InstanceId\": \"ins-0xdrree5\",\n                \"PaiMateUrl\": \"https://berry-kotucbu9.pai.tcloudbase.com:5523\",\n                \"DomainName\": \"berry-kotucbu9.pai.tcloudbase.com\"\n            }\n        ],\n        \"RequestId\": \"61a4c56f-c216-42f0-8238-eeabe338633e\"\n    }\n}",
-        "title": "查询PAI实例"
-      }
-    ],
     "DescribeScalingPolicies": [
       {
         "document": "",

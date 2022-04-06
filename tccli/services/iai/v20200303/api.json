@@ -3390,6 +3390,7 @@
         {
           "default": "",
           "document": "人员ID，取值为创建人员接口中的PersonId",
+          "example": "2001",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -3398,6 +3399,7 @@
         {
           "default": "",
           "document": "需要修改的人员名称",
+          "example": "JunlyWang",
           "member": "string",
           "name": "PersonName",
           "required": false,
@@ -3406,6 +3408,7 @@
         {
           "default": "",
           "document": "需要修改的人员性别，1代表男性，2代表女性",
+          "example": "1",
           "member": "int64",
           "name": "Gender",
           "required": false,

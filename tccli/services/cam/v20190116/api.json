@@ -72,6 +72,12 @@
       "name": "创建服务相关角色",
       "output": "CreateServiceLinkedRoleResponse"
     },
+    "CreateUserOIDCConfig": {
+      "document": "创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。",
+      "input": "CreateUserOIDCConfigRequest",
+      "name": "创建用户OIDC配置",
+      "output": "CreateUserOIDCConfigResponse"
+    },
     "CreateUserSAMLConfig": {
       "document": "创建用户SAML配置",
       "input": "CreateUserSAMLConfigRequest",
@@ -162,6 +168,12 @@
       "name": "通过子用户UIN列表查询子用户",
       "output": "DescribeSubAccountsResponse"
     },
+    "DescribeUserOIDCConfig": {
+      "document": "查询用户OIDC配置",
+      "input": "DescribeUserOIDCConfigRequest",
+      "name": "查询用户OIDC配置",
+      "output": "DescribeUserOIDCConfigResponse"
+    },
     "DescribeUserSAMLConfig": {
       "document": "查询用户SAML配置",
       "input": "DescribeUserSAMLConfigRequest",
@@ -185,6 +197,12 @@
       "input": "DetachUserPolicyRequest",
       "name": "解除绑定到用户的策略",
       "output": "DetachUserPolicyResponse"
+    },
+    "DisableUserSSO": {
+      "document": "禁用用户SSO",
+      "input": "DisableUserSSORequest",
+      "name": "禁用用户SSO",
+      "output": "DisableUserSSOResponse"
     },
     "GetAccountSummary": {
       "document": "查询账户摘要 ",
@@ -431,6 +449,12 @@
       "input": "UpdateUserRequest",
       "name": "更新子用户",
       "output": "UpdateUserResponse"
+    },
+    "UpdateUserOIDCConfig": {
+      "document": "修改用户OIDC配置",
+      "input": "UpdateUserOIDCConfigRequest",
+      "name": "修改用户OIDC配置",
+      "output": "UpdateUserOIDCConfigResponse"
     },
     "UpdateUserSAMLConfig": {
       "document": "修改用户SAML配置",
@@ -1466,6 +1490,105 @@
       ],
       "type": "object"
     },
+    "CreateUserOIDCConfigRequest": {
+      "document": "CreateUserOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份提供商URL。OpenID Connect身份提供商标识。\n对应企业IdP提供的Openid-configuration中\"issuer\"字段的值。",
+          "example": "https://xulongliang.authing.cn/oidc",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端ID，在OpenID Connect身份提供商注册的客户端ID。",
+          "example": "61adcf00620c31e3ddbc9546",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中\"authorization_endpoint\"字段的值。",
+          "example": "https://console.authing.cn/console/get-started/61adcf00620c31e3d",
+          "member": "string",
+          "name": "AuthorizationEndpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Response type，固定值id_token",
+          "example": "id_token",
+          "member": "string",
+          "name": "ResponseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。",
+          "example": "fragment",
+          "member": "string",
+          "name": "ResponseMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段",
+          "example": "sub",
+          "member": "string",
+          "name": "MappingFiled",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
+          "example": "无",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserOIDCConfigResponse": {
+      "document": "CreateUserOIDCConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserSAMLConfigRequest": {
       "document": "CreateUserSAMLConfig请求参数结构体",
       "members": [
@@ -2009,6 +2132,122 @@
       ],
       "type": "object"
     },
+    "DescribeUserOIDCConfigRequest": {
+      "document": "DescribeUserOIDCConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserOIDCConfigResponse": {
+      "document": "DescribeUserOIDCConfig返回参数结构体",
+      "members": [
+        {
+          "document": "身份提供商类型。 12：用户OIDC身份提供商",
+          "example": "11",
+          "member": "uint64",
+          "name": "ProviderType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份提供商URL",
+          "example": "11",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签名公钥",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端id",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态：0:未设置，11:已开启，2:已禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权请求Endpoint",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizationEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权请求Scope",
+          "example": "无",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权请求Response type",
+          "example": "无",
+          "member": "string",
+          "name": "ResponseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权请求Response mode",
+          "example": "无",
+          "member": "string",
+          "name": "ResponseMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "映射字段名称",
+          "example": "无",
+          "member": "string",
+          "name": "MappingFiled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserSAMLConfigRequest": {
       "document": "DescribeUserSAMLConfig请求参数结构体",
       "members": [],
@@ -2156,6 +2395,23 @@
     },
     "DetachUserPolicyResponse": {
       "document": "DetachUserPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableUserSSORequest": {
+      "document": "DisableUserSSO请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DisableUserSSOResponse": {
+      "document": "DisableUserSSO返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5452,6 +5708,105 @@
     },
     "UpdateSAMLProviderResponse": {
       "document": "UpdateSAMLProvider返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserOIDCConfigRequest": {
+      "document": "UpdateUserOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份提供商URL。OpenID Connect身份提供商标识。\n对应企业IdP提供的Openid-configuration中\"issuer\"字段的值。",
+          "example": "https://xulongliang.authing.cn/oidc",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端ID，在OpenID Connect身份提供商注册的客户端ID。",
+          "example": "61adcf00620c31e3ddbc9546",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Endpoint，OpenID Connect身份提供商授权地址。对应企业IdP提供的Openid-configuration中\"authorization_endpoint\"字段的值。",
+          "example": "https://console.authing.cn/console/get-started/61adcf00620c31e3d",
+          "member": "string",
+          "name": "AuthorizationEndpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Response type，固定值id_token。",
+          "example": "id_token",
+          "member": "string",
+          "name": "ResponseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Response mode。授权请求返回模式，form_post和fragment两种可选模式，推荐选择form_post模式。",
+          "example": "fragment",
+          "member": "string",
+          "name": "ResponseMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "映射字段名称。IdP的id_token中哪一个字段映射到子用户的用户名，通常是sub或者name字段",
+          "example": "sub",
+          "member": "string",
+          "name": "MappingFiled",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
+          "example": "无",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserOIDCConfigResponse": {
+      "document": "UpdateUserOIDCConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

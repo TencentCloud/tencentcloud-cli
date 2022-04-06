@@ -403,7 +403,7 @@
     "CreateNatGatewayDestinationIpPortTranslationNatRule": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNatGatewayDestinationIpPortTranslationNatRule\r\n&NatGatewayId=nat-3isn9hr0\r\n&DestinationIpPortTranslationNatRules.0.IpProtocol=TCP\r\n&DestinationIpPortTranslationNatRules.0.PublicIpAddress=139.199.232.238\r\n&DestinationIpPortTranslationNatRules.0.PublicPort=8989\r\n&DestinationIpPortTranslationNatRules.0.PrivateIpAddress=10.80.80.41\r\n&DestinationIpPortTranslationNatRules.0.PrivatePort=8989\r\n&DestinationIpPortTranslationNatRules.0.Description=test_dnapt\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNatGatewayDestinationIpPortTranslationNatRule\n&NatGatewayId=nat-3isn9hr0\n&DestinationIpPortTranslationNatRules.0.IpProtocol=TCP\n&DestinationIpPortTranslationNatRules.0.PublicIpAddress=139.199.232.238\n&DestinationIpPortTranslationNatRules.0.PublicPort=8989\n&DestinationIpPortTranslationNatRules.0.PrivateIpAddress=10.80.80.41\n&DestinationIpPortTranslationNatRules.0.PrivatePort=8989\n&DestinationIpPortTranslationNatRules.0.Description=test_dnapt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f7ea4e-8452-4742-84b5-5a3aee304967\"\n    }\n}",
         "title": "创建NAT的转发规则"
       }
@@ -697,7 +697,7 @@
     "DeleteNatGateway": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNatGateway\r\n&NatGatewayId=nat-ig8xpno8\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNatGateway\n&NatGatewayId=nat-ig8xpno8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "删除NAT网关"
       }
@@ -705,7 +705,7 @@
     "DeleteNatGatewayDestinationIpPortTranslationNatRule": [
       {
         "document": "删除NAT的端口转发规则，只需要传递DestinationIpPortTranslationNatRule结构体中的IpProtocol，PublicIpAddress，PublicPort字段。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNatGatewayDestinationIpPortTranslationNatRule\r\n&NatGatewayId=nat-3isn9hr0\r\n&DestinationIpPortTranslationNatRules.0.IpProtocol=TCP\r\n&DestinationIpPortTranslationNatRules.0.PublicIpAddress=139.199.232.238\r\n&DestinationIpPortTranslationNatRules.0.PublicPort=8989\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-3isn9hr0\",\n    \"DestinationIpPortTranslationNatRules\": [\n        {\n            \"Description\": \"xx\",\n            \"PublicIpAddress\": \"139.199.232.238\",\n            \"PrivatePort\": 9999,\n            \"IpProtocol\": \"TCP\",\n            \"PublicPort\": 999,\n            \"PrivateIpAddress\": \"10.0.9.2\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "删除NAT的端口转发规则"
       }

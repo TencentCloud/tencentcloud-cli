@@ -72,6 +72,22 @@
         "title": "查询线索列表接口"
       }
     ],
+    "QueryCrmStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCrmStatistics\n<公共请求参数>\n\n{\n    \"SalesId\": \"xx\",\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1,\n    \"OrgId\": 1,\n    \"EndTime\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"LeadCnt\": 0,\n                \"BuildCnt\": 0,\n                \"InvitedCnt\": 0,\n                \"OrderedCnt\": 0,\n                \"DeliveredCnt\": 0,\n                \"DefeatCnt\": 0,\n                \"NewContactCnt\": 0,\n                \"StatisticalTime\": \"String\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询CRM统计数据接口"
+      }
+    ],
+    "QueryCustomerEventDetailStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"EventCode\": \"1000\",\n                \"EventType\": 1,\n                \"EventSource\": 1,\n                \"MaterialType\": 1,\n                \"MaterialId\": 1348495383617208321,\n                \"ExternalUserId\": \"wmQIM2CwAAL1ZKqK-icQG9XAMa3AhP-A\",\n                \"EventTime\": 1647573600,\n                \"SalesId\": 1323253932850728968\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询外部联系人SaaS使用明细数据接口"
+      }
+    ],
     "QueryDealerInfoList": [
       {
         "document": "",
@@ -96,6 +112,14 @@
         "title": "查询外部联系人列表"
       }
     ],
+    "QueryExternalUserEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryExternalUserEventList\n<公共请求参数>\n\n{\n    \"Cursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n    \"Limit\": 100,\n    \"BeginTime\": 1647187200,\n    \"EndTime\": 1647273600\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"EventCode\": \"ADD_EXTERNAL_CUSTOMER\",\n                \"ExternalUserId\": \"woQIM2CwAA8BPLSVDDBZUYIlviX3_9DQ\",\n                \"SalesId\": \"1323253932850728968\",\n                \"EventTime\": 1614923098\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "title": "查询外部联系人事件明细列表接口"
+      }
+    ],
     "QueryExternalUserMappingInfo": [
       {
         "document": "",
@@ -112,12 +136,36 @@
         "title": "查询license信息接口"
       }
     ],
+    "QueryMaterialList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMaterialList\n<公共请求参数>\n\n{\n    \"Cursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n    \"Limit\": 100,\n    \"MaterialType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"MaterialId\": 0,\n                \"MaterialName\": \"素材名称\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "title": "获取企业素材列表接口"
+      }
+    ],
     "QueryMiniAppCodeList": [
       {
         "document": "",
         "input": "https://wav.tencentcloudapi.com/?Action=QueryMiniAppCodeList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"MiniAdminUrl\": \"https://weworksaas-web-dev.map.qq.com/\",\n                \"State\": 1,\n                \"CreateTime\": 1618556502,\n                \"UpdateTime\": 1618556507,\n                \"MiniAppName\": \"官方小程序\",\n                \"MiniAppLogo\": \"https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.com/media/9b2bfb85-9d3a-41d2-a6cb-2ac95b11af68.jpg\",\n                \"Id\": 10\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
         "title": "查询小程序码列表"
+      }
+    ],
+    "QueryStaffEventDetailStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryStaffEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"EventCode\": \"1000\",\n                \"EventType\": 1,\n                \"EventSource\": 1,\n                \"MaterialType\": 1,\n                \"MaterialId\": 1348495383617208321,\n                \"EventTime\": 1647573600,\n                \"SalesId\": 1323253932850728968\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
+        "title": "查询企业成员SaaS使用明细数据接口"
+      }
+    ],
+    "QueryUserInfoList": [
+      {
+        "document": "",
+        "input": "https://wav.tencentcloudapi.com/?Action=QueryUserInfoList\n&Cursor=+1H24tK0tELjSiTOR10DzA==\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"UserId\": 0,\n                \"UserName\": \"杨过\",\n                \"UserOpenId\": \"YangGuo\",\n                \"DealerId\": 0,\n                \"ShopId\": 0,\n                \"Phone\": \"134****1234\",\n                \"OrgIds\": \"2,3\",\n                \"MainDepartment\": \"1\",\n                \"IsLeaderInDept\": \"1,0\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"4d48312c-a062-4875-a5d5-69f0f11baf96\"\n    }\n}",
+        "title": "查询企业成员信息列表"
       }
     ],
     "QueryVehicleInfoList": [

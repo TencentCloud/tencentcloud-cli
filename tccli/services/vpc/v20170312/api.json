@@ -5001,7 +5001,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -5281,6 +5281,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -5289,6 +5290,7 @@
         {
           "default": "",
           "document": "NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRules",
           "required": true,
@@ -5459,6 +5461,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：\"nat-df45454\"",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -5467,6 +5470,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT转换规则",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRules",
           "required": true,
@@ -7808,6 +7812,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7816,6 +7821,7 @@
         {
           "default": "",
           "document": "NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRules",
           "required": true,
@@ -7842,6 +7848,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7868,6 +7875,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7876,6 +7884,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT ID列表，形如：`snat-df43254`。",
+          "example": "[\"snat-3ixd0hr0\\n\"]",
           "member": "string",
           "name": "NatGatewaySnatIds",
           "required": true,
@@ -14437,7 +14446,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",

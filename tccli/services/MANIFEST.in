@@ -53,6 +53,8 @@ include tccli/services/bmvpc/v20180625/api.json
 include tccli/services/bmvpc/v20180625/examples.json
 include tccli/services/bri/v20190328/api.json
 include tccli/services/bri/v20190328/examples.json
+include tccli/services/bsca/v20210811/api.json
+include tccli/services/bsca/v20210811/examples.json
 include tccli/services/btoe/v20210514/api.json
 include tccli/services/btoe/v20210514/examples.json
 include tccli/services/btoe/v20210303/api.json
@@ -361,6 +363,8 @@ include tccli/services/tem/v20210701/api.json
 include tccli/services/tem/v20210701/examples.json
 include tccli/services/tem/v20201221/api.json
 include tccli/services/tem/v20201221/examples.json
+include tccli/services/thpc/v20220401/api.json
+include tccli/services/thpc/v20220401/examples.json
 include tccli/services/thpc/v20211109/api.json
 include tccli/services/thpc/v20211109/examples.json
 include tccli/services/tia/v20180226/api.json
