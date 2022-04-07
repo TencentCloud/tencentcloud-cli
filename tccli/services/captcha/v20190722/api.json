@@ -37,9 +37,9 @@
       "output": "DescribeCaptchaMiniOperDataResponse"
     },
     "DescribeCaptchaMiniResult": {
-      "document": "核查验证码小程序插件票据结果",
+      "document": "核查验证码票据结果(小程序插件) ",
       "input": "DescribeCaptchaMiniResultRequest",
-      "name": "核查验证码小程序插件票据结果",
+      "name": "核查验证码票据结果(小程序插件)",
       "output": "DescribeCaptchaMiniResultResponse"
     },
     "DescribeCaptchaMiniRiskResult": {
@@ -55,9 +55,9 @@
       "output": "DescribeCaptchaOperDataResponse"
     },
     "DescribeCaptchaResult": {
-      "document": "核查验证码票据结果",
+      "document": "核查验证码票据结果(Web|APP)",
       "input": "DescribeCaptchaResultRequest",
-      "name": "核查验证码票据结果",
+      "name": "核查验证码票据结果(Web|APP)",
       "output": "DescribeCaptchaResultResponse"
     },
     "DescribeCaptchaTicketData": {
@@ -951,7 +951,7 @@
         },
         {
           "default": "",
-          "document": "验证码应用APPID",
+          "document": "验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。",
           "example": "201111111",
           "member": "uint64",
           "name": "CaptchaAppId",
@@ -960,7 +960,7 @@
         },
         {
           "default": "",
-          "document": "用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方",
+          "document": "验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。",
           "example": "xxxxxx",
           "member": "string",
           "name": "AppSecretKey",
@@ -1302,7 +1302,7 @@
         },
         {
           "default": "",
-          "document": "验证码应用ID",
+          "document": "验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。",
           "example": "201111111",
           "member": "uint64",
           "name": "CaptchaAppId",
@@ -1311,7 +1311,7 @@
         },
         {
           "default": "",
-          "document": "用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方",
+          "document": "验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。",
           "example": "xxxxxx",
           "member": "string",
           "name": "AppSecretKey",

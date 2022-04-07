@@ -1293,6 +1293,15 @@
           "name": "Containers",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否自动使用代金券。默认不使用。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

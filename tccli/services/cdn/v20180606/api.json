@@ -3944,6 +3944,7 @@
         {
           "default": "",
           "document": "要取回的域名",
+          "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3957,22 +3958,28 @@
       "members": [
         {
           "document": "子解析",
+          "example": "_cdnauth",
           "member": "string",
           "name": "SubDomain",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解析值",
+          "example": "202009071516044acd018wf498457628cn75ba018ec9cv",
           "member": "string",
           "name": "Record",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解析类型",
+          "example": "TXT",
           "member": "string",
           "name": "RecordType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4131,6 +4138,7 @@
         {
           "default": "",
           "document": "域名\n域名状态需要为【已停用】",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4760,6 +4768,7 @@
         {
           "default": "",
           "document": "需要查询的 IP 列表",
+          "example": "[\"1.1.1.1\\n\"]",
           "member": "string",
           "name": "Ips",
           "required": true,
@@ -4773,8 +4782,10 @@
       "members": [
         {
           "document": "查询的节点归属详情。",
+          "example": "无",
           "member": "CdnIp",
           "name": "Ips",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5867,15 +5878,19 @@
       "members": [
         {
           "document": "URL刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "UrlPurge",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "目录刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "PathPurge",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6015,8 +6030,10 @@
       "members": [
         {
           "document": "Url预热用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "UrlPush",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6467,6 +6484,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6480,43 +6498,55 @@
       "members": [
         {
           "document": "自定义防护策略配置",
+          "example": "无",
           "member": "ScdnAclConfig",
           "name": "Acl",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "Web 攻击防护（WAF）配置",
+          "example": "无",
           "member": "ScdnWafConfig",
           "name": "Waf",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CC 防护配置",
+          "example": "无",
           "member": "ScdnConfig",
           "name": "CC",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "DDOS 防护配置",
+          "example": "无",
           "member": "ScdnDdosConfig",
           "name": "Ddos",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "BOT 防护配置",
+          "example": "无",
           "member": "ScdnBotConfig",
           "name": "Bot",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "当前状态，取值online | offline\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6716,7 +6746,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的起点时刻",
+          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为起始日期\n返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00\n仅支持 90 天内数据查询",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -6725,7 +6755,7 @@
         },
         {
           "default": "",
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的结束时刻",
+          "document": "查询结束日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为结束日期\n返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59\nEndTime 需要大于等于 StartTime",
           "example": "2021-01-01 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -6779,7 +6809,7 @@
         },
         {
           "default": "",
-          "document": "地域，目前可不填，默认是大陆",
+          "document": "指定服务地域查询，不填充表示查询中国境内 CDN 数据\nmainland：指定查询中国境内 CDN 数据\noverseas：指定查询中国境外 CDN 数据",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -6788,7 +6818,7 @@
         },
         {
           "default": "",
-          "document": "产品名，目前仅可使用cdn",
+          "document": "指定查询的产品数据，目前仅可使用cdn",
           "example": "cdn",
           "member": "string",
           "name": "Product",
@@ -14193,6 +14223,7 @@
         {
           "default": "",
           "document": "域名\n域名需要为【已启动】状态",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15208,6 +15239,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15216,6 +15248,7 @@
         {
           "default": "",
           "document": "Web 攻击防护（WAF）配置",
+          "example": "无",
           "member": "ScdnWafConfig",
           "name": "Waf",
           "required": false,
@@ -15224,6 +15257,7 @@
         {
           "default": "",
           "document": "自定义防护策略配置",
+          "example": "无",
           "member": "ScdnAclConfig",
           "name": "Acl",
           "required": false,
@@ -15232,6 +15266,7 @@
         {
           "default": "",
           "document": "CC 防护配置，目前 CC 防护默认开启",
+          "example": "无",
           "member": "ScdnConfig",
           "name": "CC",
           "required": false,
@@ -15240,6 +15275,7 @@
         {
           "default": "",
           "document": "DDOS 防护配置，目前 DDoS 防护默认开启",
+          "example": "无",
           "member": "ScdnDdosConfig",
           "name": "Ddos",
           "required": false,
@@ -15248,6 +15284,7 @@
         {
           "default": "",
           "document": "BOT 防护配置",
+          "example": "无",
           "member": "ScdnBotConfig",
           "name": "Bot",
           "required": false,
@@ -15261,8 +15298,10 @@
       "members": [
         {
           "document": "提交结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

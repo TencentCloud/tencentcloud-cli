@@ -462,6 +462,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-2duawe5v",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -470,6 +471,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -478,6 +480,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "[\"139.199.40.16\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": false,
@@ -486,6 +489,7 @@
         {
           "default": "",
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "2",
           "member": "uint64",
           "name": "AutoAllocEipNum",
           "required": false,
@@ -499,8 +503,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18413",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4232,6 +4238,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-2duawe5v",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -4240,6 +4247,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4248,6 +4256,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表",
+          "example": "[\"139.199.40.16\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": true,
@@ -4261,8 +4270,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18417",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

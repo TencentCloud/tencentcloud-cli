@@ -24,6 +24,14 @@
         "title": "创建标签"
       }
     ],
+    "CreateTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTags\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092211\"\n        },\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092212\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb60900d-8e00-4bfd-bb92-64a*********\"\n    }\n}",
+        "title": "创建标签"
+      }
+    ],
     "DeleteResourceTag": [
       {
         "document": "",
@@ -37,6 +45,14 @@
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DeleteTag\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除标签"
+      }
+    ],
+    "DeleteTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTags\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092211\"\n        },\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092212\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"131fd253-b2de-4190-a1c1-13ce*********\"\n    }\n}",
         "title": "删除标签"
       }
     ],
@@ -142,6 +158,38 @@
         "title": "解绑多个广州地域的云主机实例关联的某个标签"
       }
     ],
+    "GetResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/100000558920:instance/ins-123\",\n        \"qcs::cvm:ap-shanghai:uin/100000558920:instance/ins-345\"\n    ],\n    \"TagFilters\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": [\n                \"11\"\n            ]\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": [\n                \"22\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"\",\n        \"ResourceTagMappingList\": [\n            {\n                \"Resource\": \"qcs::cvm:ap-beijing:uin/100000558920:instance/ins-123\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"22\",\n                        \"TagValue\": \"22\"\n                    },\n                    {\n                        \"TagKey\": \"11\",\n                        \"TagValue\": \"11\"\n                    }\n                ]\n            },\n            {\n                \"Resource\": \"qcs::cvm:ap-shanghai:uin/100000558920:instance/ins-345\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"22\",\n                        \"TagValue\": \"22\"\n                    },\n                    {\n                        \"TagKey\": \"11\",\n                        \"TagValue\": \"11\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"07cfd251-4ed1-426c-8133-e04a583063c0\"\n    }\n}",
+        "title": "查询资源标签列表"
+      }
+    ],
+    "GetTagKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagKeys\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"oaWvQ5SFPGhUtWMA3LKTKgryBtKrDB215AUhaE**********\",\n    \"MaxResults\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"kF-AjkqVQoB_9GwaBebsjvXudAjBadBTakA1WqPbwR66KjGE0INYQhQ**********\",\n        \"TagKeys\": [\n            \"testKey1\",\n            \"testKey2\"\n        ],\n        \"RequestId\": \"104eeaa2-c268-43e5-b073-0fade*******\"\n    }\n}",
+        "title": "查询标签键列表"
+      }
+    ],
+    "GetTagValues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTagValues\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"CvHxL9Up8UzmIeLZKL-pSEjfF0aDNyMkn5kyTyn2M*********\",\n    \"TagKeys\": [\n        \"key1\"\n    ],\n    \"MaxResults\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"j5YP3W_BJau_FcWBKPPHzvDItG01rHqMuKyxW*********\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"value1\"\n            }\n        ],\n        \"RequestId\": \"7337c479-d89b-4c4c-be6d-c7*********\"\n    }\n}",
+        "title": "查询标签值列表"
+      }
+    ],
+    "GetTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTags\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"Ab9jDQQcwdAXTyU2IUabQzkIKltlrX19nJCB8MIuJD9Ck8*********\",\n    \"MaxResults\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"t1eWpVGSKbAxvaIwRPttZIQq-Eu7e2hWKvN5iMyULmtF*********\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"value1\"\n            },\n            {\n                \"TagKey\": \"key2\",\n                \"TagValue\": \"value2\"\n            }\n        ],\n        \"RequestId\": \"0ba573a8-0fdc-44eb-96d7-8f7f*********\"\n    }\n}",
+        "title": "查询标签列表"
+      }
+    ],
     "ModifyResourceTags": [
       {
         "document": "",
@@ -162,6 +210,22 @@
         "input": "https://tag.tencentcloudapi.com/?Action=ModifyResourcesTagValue\n&ServiceType=cvm\n&ResourceRegion=ap-guangzhou\n&TagKey=t1\n&TagValue=v1\n&ResourcePrefix=instance\n&ResourceIds.0=ins-001\n&ResourceIds.1=ins-002\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc9a1529-edd3-4cf1-b2d1-4cd0ee2708cb\"\n    }\n}",
         "title": "修改广州地域多个云主机实例关联的某个标签键对应的标签值"
+      }
+    ],
+    "TagResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/ins-****\",\n        \"qcs::cvm:ap-shanghai:uin/10000055****:volme/volme-****\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": \"11\"\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": \"22\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"a4c9f540-b04e-47c4-a267-4a398b70d2f5\"\n    }\n}",
+        "title": "为资源绑定标签"
+      }
+    ],
+    "UnTagResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnTagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\",\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\"\n    ],\n    \"TagKeys\": [\n        \"RWFGaltFlR\",\n        \"LbDKGjeagV\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"cbc7b26c-3fff-4a3c-82f0-c6ebc2ff31e3\"\n    }\n}",
+        "title": "为资源解绑标签"
       }
     ],
     "UpdateResourceTagValue": [

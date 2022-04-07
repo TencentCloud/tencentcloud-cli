@@ -583,9 +583,9 @@
       "output": "DescribeVisitTopSumInfoListResponse"
     },
     "DropLiveStream": {
-      "document": "断开推流连接，但可以重新推流。",
+      "document": "断开推流连接，但可以重新推流。\n注：对已经不活跃的流，调用该断流接口时，接口返回成功。",
       "input": "DropLiveStreamRequest",
-      "name": "断开直播流",
+      "name": "断开直播推流",
       "output": "DropLiveStreamResponse"
     },
     "EnableLiveDomain": {
@@ -8559,6 +8559,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -8567,6 +8568,7 @@
         {
           "default": "",
           "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8575,6 +8577,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,

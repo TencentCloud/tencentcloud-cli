@@ -4803,7 +4803,7 @@
         },
         {
           "default": "",
-          "document": "指定特定实例Id",
+          "document": "指定特定实例ID",
           "example": "bgpip-0000011x",
           "member": "string",
           "name": "InstanceId",
@@ -4812,7 +4812,7 @@
         },
         {
           "default": "",
-          "document": "IP地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",

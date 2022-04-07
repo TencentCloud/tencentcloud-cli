@@ -364,7 +364,13 @@ Output:
                 },
                 "VideoSeek": {
                     "Switch": "off"
-                }
+                },
+                "OssPrivateAccess": null,
+                "WebSocket": null,
+                "RemoteAuthentication": null,
+                "ShareCname": null,
+                "ParentHost": null,
+                "RuleEngine": null
             }
         ],
         "TotalNumber": 1

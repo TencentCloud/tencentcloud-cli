@@ -1637,6 +1637,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站  默认值是 0",
+          "example": "0",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -1645,6 +1646,7 @@
         {
           "default": "",
           "document": "VPC间防火墙开关ID  全部删除 EdgeId和Area只填写一个，不填写则不删除vpc间防火墙开关 ，默认值为‘’",
+          "example": "1",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -1653,6 +1655,7 @@
         {
           "default": "",
           "document": "nat地域 全部删除 EdgeId和Area只填写一个，不填写则不删除nat防火墙开关 默认值为‘’",
+          "example": "name",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -1666,15 +1669,19 @@
       "members": [
         {
           "document": "状态值 0: 修改成功, !0: 修改失败",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "删除了几条访问控制规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Info",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2244,6 +2251,24 @@
           "example": "1",
           "member": "string",
           "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc间防火墙开关边id",
+          "example": "cfws-id",
+          "member": "string",
+          "name": "EdgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志来源 move：vpc间防火墙",
+          "example": "move",
+          "member": "string",
+          "name": "LogSource",
           "required": false,
           "type": "string"
         }
@@ -4260,6 +4285,7 @@
         {
           "default": "",
           "document": "状态，0：全部停用，1：全部启用",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -4268,6 +4294,7 @@
         {
           "default": "",
           "document": "方向，0：出站，1：入站",
+          "example": "1",
           "member": "uint64",
           "name": "Direction",
           "required": false,
@@ -4276,6 +4303,7 @@
         {
           "default": "",
           "document": "Edge ID值",
+          "example": "1",
           "member": "string",
           "name": "EdgeId",
           "required": false,
@@ -4284,6 +4312,7 @@
         {
           "default": "",
           "document": "NAT地域",
+          "example": "name",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -4297,8 +4326,10 @@
       "members": [
         {
           "document": "0: 修改成功, 其他: 修改失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7366,6 +7397,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "vpc间防火墙实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VpcFwCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

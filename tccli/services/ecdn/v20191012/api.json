@@ -13,7 +13,7 @@
       "output": "CreateVerifyRecordResponse"
     },
     "DeleteEcdnDomain": {
-      "document": "本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/570/42471\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
+      "document": "本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41122\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DeleteEcdnDomainRequest",
       "name": "删除加速域名",
       "output": "DeleteEcdnDomainResponse"
@@ -641,6 +641,7 @@
         {
           "default": "",
           "document": "待查询域名。",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -649,6 +650,7 @@
         {
           "default": "",
           "document": "日志起始时间。如：2019-10-01 00:00:00",
+          "example": "2019-09-04 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -657,6 +659,7 @@
         {
           "default": "",
           "document": "日志结束时间，只支持最近30天内日志查询。2019-10-02 00:00:00",
+          "example": "2019-09-04 12:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -665,6 +668,7 @@
         {
           "default": "",
           "document": "日志链接列表分页起始地址，默认0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -673,6 +677,7 @@
         {
           "default": "",
           "document": "日志链接列表分页记录条数，默认100，最大1000。",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -686,15 +691,19 @@
       "members": [
         {
           "document": "日志链接列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DomainLogs",
           "name": "DomainLogs",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "日志链接总条数。",
+          "example": "300",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

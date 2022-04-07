@@ -6,6 +6,12 @@
       "name": "使用组件市场中的组件",
       "output": "ApplyMarketComponentResponse"
     },
+    "BuildMessageRoute": {
+      "document": "建立消息路由",
+      "input": "BuildMessageRouteRequest",
+      "name": "建立消息路由",
+      "output": "BuildMessageRouteResponse"
+    },
     "CreateApplicationVisualization": {
       "document": "创建可视化创建应用模板",
       "input": "CreateApplicationVisualizationRequest",
@@ -59,6 +65,24 @@
       "input": "CreateEdgeUnitCloudRequest",
       "name": "创建边缘单元",
       "output": "CreateEdgeUnitCloudResponse"
+    },
+    "CreateEdgeUnitDevices": {
+      "document": "批量绑定设备到单元",
+      "input": "CreateEdgeUnitDevicesRequest",
+      "name": "批量绑定设备到单元",
+      "output": "CreateEdgeUnitDevicesResponse"
+    },
+    "CreateIotDevice": {
+      "document": "创建子设备",
+      "input": "CreateIotDeviceRequest",
+      "name": "创建子设备",
+      "output": "CreateIotDeviceResponse"
+    },
+    "CreateMessageRoute": {
+      "document": "创建消息路由",
+      "input": "CreateMessageRouteRequest",
+      "name": "创建消息路由",
+      "output": "CreateMessageRouteResponse"
     },
     "CreateNamespace": {
       "document": "创建命名空间",
@@ -132,17 +156,35 @@
       "name": "重新部署边缘单元指定Grid下应用",
       "output": "DeleteEdgeUnitDeployGridItemResponse"
     },
+    "DeleteEdgeUnitDevices": {
+      "document": "批量解绑单元设备",
+      "input": "DeleteEdgeUnitDevicesRequest",
+      "name": "批量解绑单元设备",
+      "output": "DeleteEdgeUnitDevicesResponse"
+    },
     "DeleteEdgeUnitPod": {
       "document": "删除指定pod",
       "input": "DeleteEdgeUnitPodRequest",
       "name": "删除指定pod",
       "output": "DeleteEdgeUnitPodResponse"
     },
+    "DeleteIotDevice": {
+      "document": "删除设备",
+      "input": "DeleteIotDeviceRequest",
+      "name": "删除设备",
+      "output": "DeleteIotDeviceResponse"
+    },
     "DeleteIotDeviceBatch": {
       "document": "批量删除设备",
       "input": "DeleteIotDeviceBatchRequest",
       "name": "批量删除设备",
       "output": "DeleteIotDeviceBatchResponse"
+    },
+    "DeleteMessageRoute": {
+      "document": "删除消息路由",
+      "input": "DeleteMessageRouteRequest",
+      "name": "删除消息路由",
+      "output": "DeleteMessageRouteResponse"
     },
     "DeleteNamespace": {
       "document": "删除命名空间",
@@ -384,6 +426,24 @@
       "name": "查询边缘单元列表",
       "output": "DescribeEdgeUnitsCloudResponse"
     },
+    "DescribeIotDevice": {
+      "document": "获取设备信息",
+      "input": "DescribeIotDeviceRequest",
+      "name": "获取设备信息",
+      "output": "DescribeIotDeviceResponse"
+    },
+    "DescribeIotDevices": {
+      "document": "获取设备列表信息",
+      "input": "DescribeIotDevicesRequest",
+      "name": "获取设备列表信息",
+      "output": "DescribeIotDevicesResponse"
+    },
+    "DescribeMessageRouteList": {
+      "document": "获取消息路由列表",
+      "input": "DescribeMessageRouteListRequest",
+      "name": "获取消息路由列表",
+      "output": "DescribeMessageRouteListResponse"
+    },
     "DescribeMonitorMetrics": {
       "document": "查询边缘单元监控数据",
       "input": "DescribeMonitorMetricsRequest",
@@ -522,6 +582,12 @@
       "name": "修改边缘单元Grid部署应用副本数",
       "output": "ModifyEdgeUnitDeployGridItemResponse"
     },
+    "ModifyIotDevice": {
+      "document": "修改设备信息",
+      "input": "ModifyIotDeviceRequest",
+      "name": "修改设备信息",
+      "output": "ModifyIotDeviceResponse"
+    },
     "ModifyNodeUnitTemplate": {
       "document": "修改边缘单元NodeUnit模板",
       "input": "ModifyNodeUnitTemplateRequest",
@@ -539,6 +605,12 @@
       "input": "RedeployEdgeUnitApplicationRequest",
       "name": "单元应用重部署",
       "output": "RedeployEdgeUnitApplicationResponse"
+    },
+    "SetRouteOnOff": {
+      "document": "开关消息路由",
+      "input": "SetRouteOnOffRequest",
+      "name": "开关消息路由",
+      "output": "SetRouteOnOffResponse"
     }
   },
   "metadata": {
@@ -925,6 +997,96 @@
     },
     "ApplyMarketComponentResponse": {
       "document": "ApplyMarketComponent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildMessageRouteRequest": {
+      "document": "BuildMessageRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由名字",
+          "example": "无",
+          "member": "string",
+          "name": "RouteName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源产品id",
+          "example": "无",
+          "member": "string",
+          "name": "SourceProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源设备名列表",
+          "example": "无",
+          "member": "string",
+          "name": "SourceDeviceNameList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "第一个字符为 \"0\"或\"1\"，\"1\"表示自定义topic",
+          "example": "无",
+          "member": "string",
+          "name": "TopicFilter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "http或mqtt-broker",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源单元id列表",
+          "example": "无",
+          "member": "string",
+          "name": "SourceUnitIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Descript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "TargetOptions",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildMessageRouteResponse": {
+      "document": "BuildMessageRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1888,6 +2050,150 @@
       ],
       "type": "object"
     },
+    "CreateEdgeUnitDevicesRequest": {
+      "document": "CreateEdgeUnitDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeUnitDevicesResponse": {
+      "document": "CreateEdgeUnitDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIotDeviceRequest": {
+      "document": "CreateIotDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备所属的产品id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "UnitID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIotDeviceResponse": {
+      "document": "CreateIotDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMessageRouteRequest": {
+      "document": "CreateMessageRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "路由名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "RouteName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Descript",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMessageRouteResponse": {
+      "document": "CreateMessageRoute返回参数结构体",
+      "members": [
+        {
+          "document": "路由id",
+          "example": "100000",
+          "member": "int64",
+          "name": "RouteID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNamespaceRequest": {
       "document": "CreateNamespace请求参数结构体",
       "members": [
@@ -2474,6 +2780,68 @@
       ],
       "type": "object"
     },
+    "DeleteEdgeUnitDevicesDevice": {
+      "document": "从单元批量解绑设备",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteEdgeUnitDevicesRequest": {
+      "document": "DeleteEdgeUnitDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "EdgeUnitId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "DeleteEdgeUnitDevicesDevice",
+          "name": "Devices",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeUnitDevicesResponse": {
+      "document": "DeleteEdgeUnitDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEdgeUnitPodRequest": {
       "document": "DeleteEdgeUnitPod请求参数结构体",
       "members": [
@@ -2536,6 +2904,60 @@
     },
     "DeleteIotDeviceBatchResponse": {
       "document": "DeleteIotDeviceBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIotDeviceRequest": {
+      "document": "DeleteIotDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备id",
+          "example": "1000010",
+          "member": "int64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIotDeviceResponse": {
+      "document": "DeleteIotDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageRouteRequest": {
+      "document": "DeleteMessageRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "RouteID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageRouteResponse": {
+      "document": "DeleteMessageRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5479,6 +5901,393 @@
       ],
       "type": "object"
     },
+    "DescribeIotDeviceRequest": {
+      "document": "DescribeIotDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备id，传0值表示此参数无效",
+          "example": "100012",
+          "member": "int64",
+          "name": "DeviceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIotDeviceResponse": {
+      "document": "DescribeIotDevice返回参数结构体",
+      "members": [
+        {
+          "document": "设备id",
+          "example": "100021",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "版本号",
+          "example": "1.1.2",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ssl证书",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ssl私钥",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "psk认证密钥",
+          "example": "xxx",
+          "member": "string",
+          "name": "Psk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备是否打开",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Disabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备日志",
+          "example": "1",
+          "member": "int64",
+          "name": "LogSetting",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备日志级别",
+          "example": "1",
+          "member": "int64",
+          "name": "LogLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "mqtt参数",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "mqtt参数",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "mqtt参数",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClientID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "16进制的psk格式",
+          "example": "xxx",
+          "member": "string",
+          "name": "PskHex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备在线状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "UnitID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "UnitName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIotDevicesRequest": {
+      "document": "DescribeIotDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "页偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品id",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称模糊查找",
+          "example": "xxx",
+          "member": "string",
+          "name": "NamePattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "版本列表",
+          "example": "xxx",
+          "member": "string",
+          "name": "Versions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ASC 或 DESC",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIotDevicesResponse": {
+      "document": "DescribeIotDevices返回参数结构体",
+      "members": [
+        {
+          "document": "符合查找条件的总数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备列表",
+          "example": "无",
+          "member": "IotDevicesInfo",
+          "name": "DeviceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageRouteListRequest": {
+      "document": "DescribeMessageRouteList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageRouteListResponse": {
+      "document": "DescribeMessageRouteList返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "RouteInfo",
+          "name": "RouteList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMonitorMetricsRequest": {
       "document": "DescribeMonitorMetrics请求参数结构体",
       "members": [
@@ -7969,6 +8778,132 @@
       ],
       "usage": "both"
     },
+    "IotDevicesInfo": {
+      "document": "子设备列表信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备id",
+          "example": "100010",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备打开状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Disabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备创建时间",
+          "example": "2021-12-01",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后在线时间",
+          "example": "2021-12-01",
+          "member": "string",
+          "name": "LastOnlineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备是否绑定到节点",
+          "example": "true",
+          "member": "bool",
+          "name": "IsBound",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "UnitID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "UnitName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Job": {
       "document": "Job配置",
       "members": [
@@ -8866,6 +9801,69 @@
     },
     "ModifyEdgeUnitResponse": {
       "document": "ModifyEdgeUnit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIotDeviceRequest": {
+      "document": "ModifyIotDevice请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备id",
+          "example": "100000",
+          "member": "int64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备是否开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Disabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "日志设置",
+          "example": "1",
+          "member": "int64",
+          "name": "LogSetting",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "日志级别",
+          "example": "1",
+          "member": "int64",
+          "name": "LogLevel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIotDeviceResponse": {
+      "document": "ModifyIotDevice返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9871,6 +10869,172 @@
       ],
       "usage": "both"
     },
+    "RouteInfo": {
+      "document": "消息路由",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "RouteID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "RouteName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SourceProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "TopicFilter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "TargetOptions",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Descript",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Healthy",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "MessageLastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SourceProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SourceUnitIDList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SourceUnitNameList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SourceDeviceNameList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SecretItem": {
       "document": "Secret信息",
       "members": [
@@ -10044,6 +11208,42 @@
         }
       ],
       "usage": "both"
+    },
+    "SetRouteOnOffRequest": {
+      "document": "SetRouteOnOff请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "RouteID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "on 或 off",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRouteOnOffResponse": {
+      "document": "SetRouteOnOff返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Sort": {
       "document": "查询结果排序条件",

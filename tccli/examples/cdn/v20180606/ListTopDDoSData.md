@@ -26,6 +26,7 @@ Output:
                 "Province": "广东省",
                 "Country": "中国",
                 "Isp": "中国电信",
+                "AttackCount": 100,
                 "AttackIP": "10.32.1.3"
             }
         ]

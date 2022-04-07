@@ -201,7 +201,7 @@
     "DescribeInstanceVncUrl": [
       {
         "document": "本示例用于查询实例管理终端地址。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceVncUrl\r\n&Region=ap-beijing\r\n&InstanceId=ins-r9hr2upy\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceVncUrl\n&InstanceId=ins-r9hr2upy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceVncUrl\": \"wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查询实例管理终端地址"
       }
