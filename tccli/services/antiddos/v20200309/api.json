@@ -411,7 +411,7 @@
     "ModifyCCLevelPolicy": {
       "document": "修改CC防护等级",
       "input": "ModifyCCLevelPolicyRequest",
-      "name": "修改CC防护等级",
+      "name": "修改CC的防护等级",
       "output": "ModifyCCLevelPolicyResponse"
     },
     "ModifyCCPrecisionPolicy": {
@@ -3032,7 +3032,17 @@
     },
     "CreateSchedulingDomainRequest": {
       "document": "CreateSchedulingDomain请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "代表是否混合云本地化的产品。\nhybrid: 宙斯盾本地化\n不填写：其他",
+          "example": "hybrid",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateSchedulingDomainResponse": {
@@ -4208,7 +4218,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4244,7 +4254,7 @@
         },
         {
           "default": "",
-          "document": "ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4253,7 +4263,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
@@ -4262,7 +4272,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4307,7 +4317,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgp-multip表示高防包，bgpip表示高防ip）",
+          "document": "大禹子产品代号（bgp-multip表示高防包，bgpip表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4343,7 +4353,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4352,7 +4362,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4361,7 +4371,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4649,7 +4659,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgp-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgp-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4685,7 +4695,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4694,7 +4704,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4703,7 +4713,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4712,7 +4722,7 @@
         },
         {
           "default": "",
-          "document": "筛选ip，需要筛选黑白名单ip时传该字段",
+          "document": "筛选IP，需要筛选黑白名单IP时传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "FilterIp",
@@ -4766,7 +4776,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4802,7 +4812,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防ip要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4811,7 +4821,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4820,7 +4830,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -7153,7 +7163,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址",
+          "document": "IP地址",
           "example": "1.3.2.6",
           "member": "string",
           "name": "Ip",
@@ -7315,7 +7325,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址",
+          "document": "IP地址",
           "example": "1.3.2.6",
           "member": "string",
           "name": "Ip",

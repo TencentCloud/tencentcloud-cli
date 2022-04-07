@@ -48,6 +48,14 @@
         "title": "创建投递任务"
       }
     ],
+    "CreateDataTransform": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"xx\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"xx\",\n            \"DstTopicId\": \"xx\",\n            \"LogContent\": \"xx\",\n            \"Time\": \"xx\"\n        }\n    ],\n    \"SrcTopicId\": \"xx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"xx\",\n            \"Alias\": \"xx\"\n        }\n    ],\n    \"EtlContent\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建数据加工任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "",
@@ -144,6 +152,14 @@
         "title": "删除投递配置"
       }
     ],
+    "DeleteDataTransform": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除数据加工任务"
+      }
+    ],
     "DeleteExport": [
       {
         "document": "",
@@ -238,6 +254,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8888\",\n            \"InstanceId\": \"xxxxx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx\",\n            \"TopicName\": \"xxxxx\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ]\n        },\n        \"NeedContent\": true\n    }\n}",
         "title": "获取投递配置"
+      }
+    ],
+    "DescribeDataTransformInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTransformInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataTransformTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"xx\",\n                \"LastEnableTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"LogsetId\": \"xx\",\n                \"SrcTopicName\": \"xx\",\n                \"SrcTopicId\": \"xx\",\n                \"DstResources\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Alias\": \"xx\"\n                    }\n                ],\n                \"TaskId\": \"xx\",\n                \"EtlContent\": \"xx\",\n                \"Type\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取数据加工任务基本信息"
       }
     ],
     "DescribeExports": [
@@ -390,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Effective\": true,\n    \"Ckafka\": {\n        \"Vip\": \"10.123.123.123\",\n        \"Vport\": \"8888\",\n        \"InstanceId\": \"xxxxx\",\n        \"InstanceName\": \"myname\",\n        \"TopicId\": \"xxxxx\",\n        \"TopicName\": \"xxxxx\"\n    },\n    \"Content\": {\n        \"EnableTag\": true,\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    },\n    \"NeedContent\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
         "title": "修改投递任务"
+      }
+    ],
+    "ModifyDataTransform": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"xx\",\n            \"Alias\": \"xx\"\n        }\n    ],\n    \"EnableFlag\": 0,\n    \"EtlContent\": \"xx\",\n    \"Name\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建数据加工任务"
       }
     ],
     "ModifyIndex": [

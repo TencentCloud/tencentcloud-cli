@@ -163,7 +163,7 @@
     "CreateSchedulingDomain": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateSchedulingDomain\n&<公共请求参数>",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateSchedulingDomain\n&Product=hybrid\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Domain\": \"test123.anever.cn\"\n    }\n}",
         "title": "创建调度的域名"
       }

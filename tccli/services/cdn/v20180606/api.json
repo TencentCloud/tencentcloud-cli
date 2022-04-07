@@ -247,9 +247,9 @@
       "output": "DescribeTopDataResponse"
     },
     "DescribeTrafficPackages": {
-      "document": "DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。",
+      "document": "DescribeTrafficPackages 用于查询 CDN 流量包详情。",
       "input": "DescribeTrafficPackagesRequest",
-      "name": "中国境内流量包查询",
+      "name": "流量包查询",
       "output": "DescribeTrafficPackagesResponse"
     },
     "DescribeUrlViolations": {
@@ -5413,6 +5413,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "test.tencent.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5426,22 +5427,28 @@
       "members": [
         {
           "document": "WebpAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WebpAdapter",
           "name": "WebpAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TpgAdapter",
           "name": "TpgAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5613,6 +5620,7 @@
         {
           "default": "",
           "document": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份（中国境内）、国家/地区（中国境外）映射查询",
+          "example": "isp",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5626,22 +5634,28 @@
       "members": [
         {
           "document": "映射关系数组。",
+          "example": "无",
           "member": "MapInfo",
           "name": "MapInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "服务端区域id和子区域id的映射关系。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionMapRelation",
           "name": "ServerRegionRelation",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "客户端区域id和子区域id的映射关系。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionMapRelation",
           "name": "ClientRegionRelation",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6811,6 +6825,7 @@
         {
           "default": "",
           "document": "分页查询起始地址，默认 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6819,10 +6834,20 @@
         {
           "default": "",
           "document": "分页查询记录个数，默认100，最大1000",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流量包排序方式，支持以下值：\nexpireTimeDesc：默认值，按过期时间倒序\nexpireTimeAsc：按过期时间正序\ncreateTimeDesc：按创建时间倒序\ncreateTimeAsc：按创建时间正序\nstatus：按状态排序，正常抵扣>未生效>已用尽>已过期\nchannel：按来源排序，主动购买>自动续订>CDN赠送",
+          "example": "status",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6832,29 +6857,46 @@
       "members": [
         {
           "document": "流量包总个数",
+          "example": "40",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "流量包详情",
+          "example": "无",
           "member": "TrafficPackage",
           "name": "TrafficPackages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "即将过期的流量包个数（7天内）",
+          "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "有效流量包个数",
+          "example": "40",
           "member": "int64",
           "name": "EnabledCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "付费流量包个数",
+          "example": "20",
+          "member": "int64",
+          "name": "PaidCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6873,6 +6915,7 @@
         {
           "default": "",
           "document": "分页查询偏移量，默认为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6881,6 +6924,7 @@
         {
           "default": "",
           "document": "分页查询限制数目，默认为 100",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6889,6 +6933,7 @@
         {
           "default": "",
           "document": "指定的域名查询",
+          "example": "无",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -6902,15 +6947,19 @@
       "members": [
         {
           "document": "违规 URL 详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ViolationUrl",
           "name": "UrlRecordList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "记录总数，用于分页",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14060,6 +14109,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14073,8 +14123,10 @@
       "members": [
         {
           "document": "开启结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14167,6 +14219,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14180,8 +14233,10 @@
       "members": [
         {
           "document": "关闭结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15416,6 +15471,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15429,8 +15485,10 @@
       "members": [
         {
           "document": "是否验证成功",
+          "example": "ok",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

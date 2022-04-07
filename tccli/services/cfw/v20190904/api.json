@@ -2059,7 +2059,7 @@
       "document": "DescribeAddrTemplateList返回参数结构体",
       "members": [
         {
-          "document": "模版总数",
+          "document": "模板总数",
           "example": "100",
           "member": "int64",
           "name": "Total",
@@ -2068,7 +2068,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "模版列表数据",
+          "document": "模板列表数据",
           "example": "无",
           "member": "TemplateListInfo",
           "name": "Data",
@@ -2077,7 +2077,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "模版名称列表",
+          "document": "模板名称列表",
           "example": "['name']",
           "member": "string",
           "name": "NameList",

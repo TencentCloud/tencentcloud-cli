@@ -43,8 +43,8 @@ Output:
                 {
                     "Key": "cname",
                     "KeyText": "解析配置",
-                    "Value": "CNAME www.test.com.cdn.dnsv1.com&lt;br&gt;",
-                    "ValueText": "CNAME www.test.com.cdn.dnsv1.com&lt;br&gt;"
+                    "Value": "CNAME www.test.com.cdn.dnsv1.com<br>",
+                    "ValueText": "CNAME www.test.com.cdn.dnsv1.com<br>"
                 }
             ]
         },
@@ -76,8 +76,8 @@ Output:
                 {
                     "Key": "dns",
                     "KeyText": "DNS IP",
-                    "Value": "183.3.229.15 广东省-中国电信&lt;br&gt;219.133.40.12 广东省-中国电信&lt;br&gt;",
-                    "ValueText": "183.3.229.15 广东省-中国电信&lt;br&gt;219.133.40.12 广东省-中国电信&lt;br&gt;"
+                    "Value": "183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>",
+                    "ValueText": "183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>"
                 }
             ],
             "Status": "ok"

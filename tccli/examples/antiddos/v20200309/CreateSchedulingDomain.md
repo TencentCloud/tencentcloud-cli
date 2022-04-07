@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli antiddos CreateSchedulingDomain --cli-unfold-argument ```
+tccli antiddos CreateSchedulingDomain --cli-unfold-argument  \
+    --Product hybrid
+```
 
 Output: 
 ```

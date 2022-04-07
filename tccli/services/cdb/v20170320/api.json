@@ -6129,7 +6129,7 @@
         },
         {
           "default": "",
-          "document": "是否锁定标记。",
+          "document": "是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "CdbErrors",
@@ -6250,6 +6250,33 @@
           "example": "[\"cage-test\"]",
           "member": "string",
           "name": "CageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "[\"a12\",\"v22\"]",
+          "member": "string",
+          "name": "TagValues",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络字符型vpcId",
+          "example": "[\"vpc-saxa\",\"vpc-sss\"]",
+          "member": "string",
+          "name": "UniqueVpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络字符型subnetId",
+          "example": "[\"subnet-kkai\"]",
+          "member": "string",
+          "name": "UniqSubnetIds",
           "required": false,
           "type": "list"
         }

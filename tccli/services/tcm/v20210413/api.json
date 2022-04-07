@@ -1648,7 +1648,7 @@
         },
         {
           "default": "",
-          "document": "资源限制",
+          "document": "资源配置",
           "example": "无",
           "member": "ResourceRequirements",
           "name": "Resources",

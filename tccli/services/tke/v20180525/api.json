@@ -1426,6 +1426,26 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动变配集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoUpgradeClusterLevel",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
