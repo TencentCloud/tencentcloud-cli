@@ -24,10 +24,13 @@ Output:
             "ProductDesc": "desc",
             "ProjectId": "prj-zunfat46",
             "DevStatus": "dev",
+            "EnableProductScript": "xx",
             "CreateTime": 1560341975,
             "UpdateTime": 1560341975,
             "Region": "gz",
-            "ModuleId": 0
+            "ModuleId": 0,
+            "CreateUserId": 1,
+            "CreatorNickName": "test"
         },
         "RequestId": "1c469fbf-d80c-4299-9b54-31340898b839"
     }

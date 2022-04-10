@@ -23,13 +23,16 @@ Output:
         "Exchanges": [
             {
                 "Remark": "xx",
-                "Name": "test",
+                "AlternateExchangeDeleteMark": true,
+                "Name": "xx",
+                "AlternateExchange": "xx",
                 "DestBindedNum": 1,
                 "UpdateTime": 1,
                 "SourceBindedNum": 1,
                 "Internal": true,
-                "Type": "Topic",
-                "CreateTime": 100000000
+                "DelayType": "xx",
+                "Type": "xx",
+                "CreateTime": 1
             }
         ]
     }

@@ -27,11 +27,14 @@ Output:
                 "MaxDispatchTps": 1,
                 "UpdateTime": 1,
                 "MaxTopics": 0,
+                "MaxRetentionSizeInMB": 1,
                 "ClusterName": "xx",
                 "MaxMsgBacklogSize": 1,
                 "UsedTopics": 0,
                 "CustomerUin": "xx",
                 "UsedNamespaces": 0,
+                "MaxPublishRateInBytes": 1,
+                "CreateTime": 1,
                 "MaxNamespaces": 0,
                 "UsedPartitions": 0,
                 "CustomerAppId": "xx",
@@ -39,7 +42,7 @@ Output:
                 "MaxPartitions": 0,
                 "TenantId": "xx",
                 "Type": "xx",
-                "CreateTime": 1,
+                "MaxDispatchRateInBytes": 1,
                 "MaxPublishTps": 1
             }
         ],

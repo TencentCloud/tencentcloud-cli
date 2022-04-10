@@ -17,12 +17,26 @@ Output:
         "RequestId": "xx",
         "TopicSets": [
             {
-                "EnvironmentId": "xx",
-                "Remark": "xx",
+                "PulsarTopicType": 0,
                 "TopicType": 1,
                 "ProducerCount": "xx",
+                "ConsumerLimit": "xx",
+                "ConsumerCount": "xx",
+                "LastLedgerCreatedTimestamp": "xx",
+                "MsgThroughputIn": "xx",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "AverageMsgSize": "xx",
+                "Partitions": 1,
+                "Remark": "xx",
                 "LastConfirmedEntry": "xx",
                 "TotalSize": "xx",
+                "NumberOfEntries": "xx",
+                "MsgRateOut": "xx",
+                "ProducerLimit": "xx",
+                "EnvironmentId": "xx",
+                "TopicName": "xx",
+                "MsgRateIn": "xx",
+                "MsgThroughputOut": "xx",
                 "SubTopicSets": [
                     {
                         "TopicType": 1,
@@ -40,20 +54,7 @@ Output:
                         "MsgThroughputOut": "xx"
                     }
                 ],
-                "NumberOfEntries": "xx",
-                "ConsumerCount": "xx",
-                "MsgRateOut": "xx",
-                "UpdateTime": "2020-09-22 00:00:00",
-                "CreateTime": "2020-09-22 00:00:00",
-                "ConsumerLimit": "xx",
-                "AverageMsgSize": "xx",
-                "MsgThroughputIn": "xx",
-                "MsgRateIn": "xx",
-                "Partitions": 1,
-                "ProducerLimit": "xx",
-                "LastLedgerCreatedTimestamp": "xx",
-                "TopicName": "xx",
-                "MsgThroughputOut": "xx"
+                "CreateTime": "2020-09-22 00:00:00"
             }
         ]
     }

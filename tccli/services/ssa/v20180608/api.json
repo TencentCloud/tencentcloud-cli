@@ -66,6 +66,12 @@
       "name": "获取泄露列表",
       "output": "DescribeLeakDetectionListResponse"
     },
+    "DescribeMappingResults": {
+      "document": "获取测绘列表",
+      "input": "DescribeMappingResultsRequest",
+      "name": "获取测绘列表",
+      "output": "DescribeMappingResultsResponse"
+    },
     "DescribeSafetyEventList": {
       "document": "获取安全事件列表",
       "input": "DescribeSafetyEventListRequest",
@@ -1164,6 +1170,58 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetQueryFilter": {
+      "document": "资产查询过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "查询参数",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询连接符，1 and  ，2 or",
+          "example": "无",
+          "member": "uint64",
+          "name": "Logic",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AssetTypeStatistic": {
+      "document": "资产测绘结果统计",
+      "members": [
+        {
+          "default": "",
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AssetCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3096,6 +3154,78 @@
       ],
       "type": "object"
     },
+    "DescribeMappingResultsRequest": {
+      "document": "DescribeMappingResults请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件，FilterKey 取值范围：AssetId，AssetIp，PrivateIp，Protocol，Service，OS，Process，Component，AssetType，Domain，Port，LastMappingTime，MappingType，Disposal，Vpc",
+          "example": "无",
+          "member": "AssetQueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序条件，SortKey取值范围：CreateTime，LastMappingTime",
+          "example": "无",
+          "member": "QuerySort",
+          "name": "Sorter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小，默认大小20",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMappingResultsResponse": {
+      "document": "DescribeMappingResults返回参数结构体",
+      "members": [
+        {
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Results",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSafetyEventListRequest": {
       "document": "DescribeSafetyEventList请求参数结构体",
       "members": [
@@ -3647,6 +3777,192 @@
       ],
       "usage": "in"
     },
+    "MappingResult": {
+      "document": "测绘记录",
+      "members": [
+        {
+          "default": "",
+          "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Component",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "进程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Process",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OS",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测绘时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastMappingTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处置建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisposalRecommendations",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处置建议详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisposalRecommendationDetails",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测绘状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MappingStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "安全防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityStatus",
+          "name": "SecurityStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QueryFilter": {
       "document": "查询参数",
       "members": [
@@ -3672,7 +3988,7 @@
         },
         {
           "default": "",
-          "document": "匹配类型，枚举见pb",
+          "document": "匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配",
           "example": "1",
           "member": "int64",
           "name": "FilterOperatorType",
@@ -3708,6 +4024,52 @@
         }
       ],
       "usage": "in"
+    },
+    "Results": {
+      "document": "测绘结果",
+      "members": [
+        {
+          "default": "",
+          "document": "测绘类型统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetTypeStatistic",
+          "name": "Statistics",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测绘结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MappingResult",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "测绘任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大测绘任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskMaxCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SaDivulgeDataQueryPub": {
       "document": "查询_通用字段",
@@ -4003,6 +4365,11 @@
         }
       ],
       "type": "object"
+    },
+    "SecurityStatus": {
+      "document": "安全放回状态",
+      "members": [],
+      "usage": "out"
     },
     "SocCheckItem": {
       "document": "SocCheckItem类型",

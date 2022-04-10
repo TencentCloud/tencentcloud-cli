@@ -6,6 +6,12 @@
       "name": "应用采集配置到指定机器组",
       "output": "ApplyConfigToMachineGroupResponse"
     },
+    "CloseKafkaConsumer": {
+      "document": "关闭Kafka协议消费",
+      "input": "CloseKafkaConsumerRequest",
+      "name": "关闭Kafka协议消费",
+      "output": "CloseKafkaConsumerResponse"
+    },
     "CreateAlarm": {
       "document": "本接口用于创建告警策略。",
       "input": "CreateAlarmRequest",
@@ -347,6 +353,12 @@
       "input": "ModifyTopicRequest",
       "name": "修改日志主题",
       "output": "ModifyTopicResponse"
+    },
+    "OpenKafkaConsumer": {
+      "document": "打开kafka协议消费",
+      "input": "OpenKafkaConsumerRequest",
+      "name": "打开kafka协议消费",
+      "output": "OpenKafkaConsumerResponse"
     },
     "RetryShipperTask": {
       "document": "重试失败的投递任务",
@@ -910,6 +922,33 @@
         }
       ],
       "usage": "both"
+    },
+    "CloseKafkaConsumerRequest": {
+      "document": "CloseKafkaConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CLS对应的topic标识",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "FromTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseKafkaConsumerResponse": {
+      "document": "CloseKafkaConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Column": {
       "document": "日志分析的列属性",
@@ -6621,6 +6660,42 @@
         }
       ],
       "usage": "both"
+    },
+    "OpenKafkaConsumerRequest": {
+      "document": "OpenKafkaConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CLS控制台创建的TopicId",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "FromTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenKafkaConsumerResponse": {
+      "document": "OpenKafkaConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "待消费TopicId",
+          "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PartitionInfo": {
       "document": "日志主题分区信息",

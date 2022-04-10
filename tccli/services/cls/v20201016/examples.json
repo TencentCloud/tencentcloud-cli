@@ -8,6 +8,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "CloseKafkaConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "关闭Kafka消费"
+      }
+    ],
     "CreateAlarm": [
       {
         "document": "",
@@ -462,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"
+      }
+    ],
+    "OpenKafkaConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicID\": \"out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "打开kafka消费功能"
       }
     ],
     "RetryShipperTask": [

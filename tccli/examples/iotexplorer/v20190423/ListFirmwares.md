@@ -24,7 +24,10 @@ Output:
                 "Description": "xx",
                 "Version": "1.0.0",
                 "Md5sum": "ahbdjshfuisdfoisjfos",
-                "CreateTime": "147873872173"
+                "CreateTime": "147873872173",
+                "FwType": "xx",
+                "CreateUserId": 0,
+                "CreatorNickName": "xx"
             }
         ],
         "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"

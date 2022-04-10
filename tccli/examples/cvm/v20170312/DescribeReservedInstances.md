@@ -18,7 +18,9 @@ Output:
         "TotalCount": 1,
         "ReservedInstancesSet": [
             {
-                "ReservedInstancesId": "13d8e599-b8dc-4e8a-80b4-7dce9eb27043",
+                "ReservedInstanceId": "ri-rtbh4han",
+                "ReservedInstancesId": "ri-rtbh4han",
+                "ReservedInstanceName": "riname-01",
                 "InstanceType": "S3.16XLARGE256",
                 "InstanceFamily": "S3",
                 "Zone": "ap-guangzhou-1",

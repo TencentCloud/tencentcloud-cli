@@ -88,6 +88,14 @@
         "title": "获取泄露列表"
       }
     ],
+    "DescribeMappingResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMappingResults\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"Filter\": [\n                {\n                    \"FilterValue\": \"ins-3u7e8ki2\",\n                    \"FilterOperatorType\": \"1\",\n                    \"FilterKey\": \"AssetId\"\n                }\n            ],\n            \"Logic\": \"1\"\n        }\n    ],\n    \"PageIndex\": \"1\",\n    \"PageSize\": \"1\",\n    \"Sorter\": [\n        {\n            \"SortType\": \"1\",\n            \"SortKey\": \"LastMappingTime\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskMaxCount\": 2,\n            \"TaskCount\": 0,\n            \"Statistics\": [\n                {\n                    \"AssetCount\": 1,\n                    \"AssetType\": \"cvm\"\n                }\n            ],\n            \"Result\": [\n                {\n                    \"Component\": \"OpenSSH\",\n                    \"Protocol\": \"TCP\",\n                    \"DisposalRecommendations\": \"限制访问\",\n                    \"SecurityStatus\": [\n                        {},\n                        {}\n                    ],\n                    \"Region\": \"ap-guangzhou\",\n                    \"Port\": \"22\",\n                    \"AssetType\": \"cvm\",\n                    \"MappingStatus\": 2,\n                    \"LastMappingTime\": \"2022-04-08 02:35:00\",\n                    \"PrivateIp\": \"172.16.16.29\",\n                    \"Domain\": \"22\",\n                    \"AssetId\": \"ins-3u7e8ki2\",\n                    \"Process\": \"sshd\",\n                    \"Service\": \"ssh\",\n                    \"AssetIp\": \"106.55.242.82\",\n                    \"OS\": \"CentOS 7.7 64位\",\n                    \"DisposalRecommendationDetails\": \"<li>1、通知业务方说明端口互联网暴露的必要性和需要面向哪些场景暴露</li><li>2、如果是业务端口，需要确保建议的安全防护均已具备</li><li>3、如果是远程运维用端口，应能关则关，改为使用堡垒机等手段运维。</li><li>4、如果是必须开放的端口，尽可能配置安全组入站规则或使用 <a target=\\\"_blank\\\" rel=\\\"noreferrer\\\" href=\\\"https://console.cloud.tencent.com/cfw/ac/auth?tab=user\\\">云防火墙微信远程运维</a> 来对端口访问做控制</li><li>5、无法关闭的端口，需要检查安全防护状态，尽可能保证所有建议的安全防护均已具备</li><li>6、可鼠标悬浮安全防护状态查看具体说明和建议</li>\",\n                    \"AssetName\": \"数据安全组virustotal检测6\"\n                }\n            ]\n        },\n        \"Total\": 1,\n        \"RequestId\": \"fd1ed4b0-5534-406d-a2ff-cdf486536761\"\n    }\n}",
+        "title": "DescribeMappingResults"
+      }
+    ],
     "DescribeSafetyEventList": [
       {
         "document": "",

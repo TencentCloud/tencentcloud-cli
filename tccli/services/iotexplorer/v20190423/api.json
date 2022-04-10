@@ -327,7 +327,7 @@
     "GetDeviceList": {
       "document": "用于查询某个产品下的设备列表",
       "input": "GetDeviceListRequest",
-      "name": "获取设备列表",
+      "name": "获取产品的设备列表",
       "output": "GetDeviceListResponse"
     },
     "GetDeviceLocationHistory": {
@@ -1468,6 +1468,7 @@
         {
           "default": "",
           "document": "LoRa 网关Id",
+          "example": "ff00000000000002",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -1476,6 +1477,7 @@
         {
           "default": "",
           "document": "网关名称",
+          "example": "ddgws",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1484,6 +1486,7 @@
         {
           "default": "",
           "document": "详情描述",
+          "example": "fortest",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1492,6 +1495,7 @@
         {
           "default": "",
           "document": "位置坐标",
+          "example": "无",
           "member": "LoRaGatewayLocation",
           "name": "Location",
           "required": true,
@@ -1500,6 +1504,7 @@
         {
           "default": "",
           "document": "位置信息",
+          "example": "tfine",
           "member": "string",
           "name": "Position",
           "required": false,
@@ -1508,6 +1513,7 @@
         {
           "default": "",
           "document": "位置详情",
+          "example": "fyd",
           "member": "string",
           "name": "PositionDetails",
           "required": false,
@@ -1516,6 +1522,7 @@
         {
           "default": "",
           "document": "是否公开",
+          "example": "true",
           "member": "bool",
           "name": "IsPublic",
           "required": false,
@@ -1524,6 +1531,7 @@
         {
           "default": "",
           "document": "频点ID",
+          "example": "无",
           "member": "string",
           "name": "FrequencyId",
           "required": false,
@@ -1537,8 +1545,10 @@
       "members": [
         {
           "document": "LoRa 网关信息",
+          "example": "无",
           "member": "LoRaGatewayItem",
           "name": "Gateway",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1692,6 +1702,7 @@
         {
           "default": "",
           "document": "项目名称",
+          "example": "TestProjectName",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -1700,6 +1711,7 @@
         {
           "default": "",
           "document": "项目描述",
+          "example": "projcet_desc",
           "member": "string",
           "name": "ProjectDesc",
           "required": true,
@@ -1708,6 +1720,7 @@
         {
           "default": "",
           "document": "实例ID，不带实例ID，默认为公共实例",
+          "example": "instance_id",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1721,8 +1734,10 @@
       "members": [
         {
           "document": "返回信息",
+          "example": "无",
           "member": "ProjectEntry",
           "name": "Project",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2077,6 +2092,7 @@
         {
           "default": "",
           "document": "LoRa 网关 Id",
+          "example": "ff00000000000002",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -2166,6 +2182,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-z6j2tyr0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2278,6 +2295,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "R32ONVL0EU",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2286,6 +2304,7 @@
         {
           "default": "",
           "document": "量产ID",
+          "example": "LC-ya6zinv9",
           "member": "string",
           "name": "BatchProductionId",
           "required": true,
@@ -2299,43 +2318,55 @@
       "members": [
         {
           "document": "量产数量。",
+          "example": "3",
           "member": "int64",
           "name": "BatchCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "烧录方式。",
+          "example": "0",
           "member": "int64",
           "name": "BurnMethod",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "创建时间。",
+          "example": "1572233486",
           "member": "int64",
           "name": "CreateTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "下载URL。",
+          "example": "https://batch-productions-test-1256872341.cos.ap-guangzhou.myqcloud.com/100000546882%2FR32ONVL0EU_LC-6mgj9akp.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDMUM9hdmn35rHZe72Y6UfliNo1PYQFZln%26q-sign-time%3D1572233867%3B1572234767%26q-key-time%3D1572233867%3B1572234767%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Da31f6ed1e25d3dc753516b74ee33559d37cbc7f2",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "生成方式。",
+          "example": "0",
           "member": "int64",
           "name": "GenerationMethod",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "上传URL。",
+          "example": "无",
           "member": "string",
           "name": "UploadUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2354,6 +2385,7 @@
         {
           "default": "",
           "document": "网关产品ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -2362,6 +2394,7 @@
         {
           "default": "",
           "document": "分页偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -2370,6 +2403,7 @@
         {
           "default": "",
           "document": "分页大小",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -2383,15 +2417,19 @@
       "members": [
         {
           "document": "当前分页的子产品数组",
+          "example": "无",
           "member": "BindProductInfo",
           "name": "Products",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "绑定的子产品总数量",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2464,6 +2502,7 @@
         {
           "default": "",
           "document": "区间开始时间（Unix 时间戳，毫秒级）",
+          "example": "1548677099000",
           "member": "uint64",
           "name": "MinTime",
           "required": true,
@@ -2472,6 +2511,7 @@
         {
           "default": "",
           "document": "区间结束时间（Unix 时间戳，毫秒级）",
+          "example": "1548763499000",
           "member": "uint64",
           "name": "MaxTime",
           "required": true,
@@ -2480,6 +2520,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "LJ0INDNU7U",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2488,6 +2529,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "light1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -2496,6 +2538,7 @@
         {
           "default": "",
           "document": "属性字段名称，对应数据模板中功能属性的标识符",
+          "example": "color",
           "member": "string",
           "name": "FieldName",
           "required": true,
@@ -2504,6 +2547,7 @@
         {
           "default": "",
           "document": "返回条数",
+          "example": "5",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2512,6 +2556,7 @@
         {
           "default": "",
           "document": "检索上下文",
+          "example": "xxx",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -2525,29 +2570,37 @@
       "members": [
         {
           "document": "属性字段名称，对应数据模板中功能属性的标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "color",
           "member": "string",
           "name": "FieldName",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "数据是否已全部返回，true 表示数据全部返回，false 表示还有数据待返回，可将 Context 作为入参，继续查询返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "document": "检索上下文，当 ListOver 为false时，可以用此上下文，继续读取后续数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "历史数据结果数组，返回对应时间点及取值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DeviceDataHistoryItem",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2566,6 +2619,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "LJ0INDNU7U",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2574,6 +2628,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "light1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -2582,6 +2637,7 @@
         {
           "default": "",
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName",
+          "example": "LK7LIPL6GE",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -2595,8 +2651,10 @@
       "members": [
         {
           "document": "设备数据",
+          "example": "无",
           "member": "string",
           "name": "Data",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3015,6 +3073,7 @@
         {
           "default": "",
           "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -3023,6 +3082,7 @@
         {
           "default": "",
           "document": "网关设备的设备名",
+          "example": "test",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -3031,6 +3091,7 @@
         {
           "default": "",
           "document": "子产品的ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3039,6 +3100,7 @@
         {
           "default": "",
           "document": "分页的偏移",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -3047,6 +3109,7 @@
         {
           "default": "",
           "document": "分页的页大小",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -3060,22 +3123,28 @@
       "members": [
         {
           "document": "子设备信息。",
+          "example": "无",
           "member": "BindDeviceInfo",
           "name": "Devices",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "子设备总数。",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "子设备所属的产品名。",
+          "example": "test",
           "member": "string",
           "name": "ProductName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3487,6 +3556,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "M5AWDSEUYO",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3500,8 +3570,10 @@
       "members": [
         {
           "document": "产品详情",
+          "example": "无",
           "member": "ProductEntry",
           "name": "Product",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3575,6 +3647,7 @@
         {
           "default": "",
           "document": "规则名称。",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -3588,8 +3661,10 @@
       "members": [
         {
           "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TopicRule",
           "name": "Rule",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4607,6 +4682,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-pq00mstg",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4615,6 +4691,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4623,6 +4700,7 @@
         {
           "default": "",
           "document": "返回数量限制",
+          "example": "3",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4636,15 +4714,19 @@
       "members": [
         {
           "document": "返回详情信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BatchProductionInfo",
           "name": "BatchProductions",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "返回数量。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4716,7 +4798,7 @@
       "members": [
         {
           "default": "",
-          "document": "需要查看设备列表的产品 ID",
+          "document": "需要查看设备列表的产品ID, -1代表ProjectId来筛选",
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
@@ -4996,6 +5078,7 @@
         {
           "default": "",
           "document": "是否是社区网关",
+          "example": "true",
           "member": "bool",
           "name": "IsCommunity",
           "required": true,
@@ -5004,6 +5087,7 @@
         {
           "default": "",
           "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5012,6 +5096,7 @@
         {
           "default": "",
           "document": "限制个数",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5025,15 +5110,19 @@
       "members": [
         {
           "document": "返回总数",
+          "example": "2",
           "member": "uint64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回详情项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "LoRaGatewayItem",
           "name": "Gateways",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5214,6 +5303,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-zunfat46",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -5222,6 +5312,7 @@
         {
           "default": "",
           "document": "产品DevStatus",
+          "example": "dev",
           "member": "string",
           "name": "DevStatus",
           "required": false,
@@ -5229,7 +5320,8 @@
         },
         {
           "default": "",
-          "document": "Offset",
+          "document": "偏移量",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5237,7 +5329,8 @@
         },
         {
           "default": "",
-          "document": "Limit",
+          "document": "数量限制",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5251,15 +5344,19 @@
       "members": [
         {
           "document": "产品列表",
+          "example": "无",
           "member": "ProductEntry",
           "name": "Products",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "产品数量",
+          "example": "2",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5278,6 +5375,7 @@
         {
           "default": "",
           "document": "请求的页数",
+          "example": "1",
           "member": "int64",
           "name": "PageNum",
           "required": true,
@@ -5286,6 +5384,7 @@
         {
           "default": "",
           "document": "分页的大小",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -5299,15 +5398,19 @@
       "members": [
         {
           "document": "规则总数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "规则列表",
+          "example": "无",
           "member": "TopicRuleInfo",
           "name": "Rules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5326,6 +5429,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "QDA1PZLBNB",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -5334,6 +5438,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "dev01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -5342,6 +5447,7 @@
         {
           "default": "",
           "document": "搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件",
+          "example": "1",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -5350,6 +5456,7 @@
         {
           "default": "",
           "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
+          "example": "1560355200",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -5358,6 +5465,7 @@
         {
           "default": "",
           "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
+          "example": "1601196327",
           "member": "uint64",
           "name": "EndTime",
           "required": false,
@@ -5366,6 +5474,7 @@
         {
           "default": "",
           "document": "搜索上下文, 用作查询游标",
+          "example": "f",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -5374,6 +5483,7 @@
         {
           "default": "",
           "document": "单次获取的历史数据项目的最大数量, 缺省10",
+          "example": "50",
           "member": "int64",
           "name": "Size",
           "required": false,
@@ -5382,6 +5492,7 @@
         {
           "default": "",
           "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
+          "example": "low_voltage",
           "member": "string",
           "name": "EventId",
           "required": false,
@@ -5395,29 +5506,37 @@
       "members": [
         {
           "document": "搜索上下文, 用作查询游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "document": "搜索结果数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "document": "搜索结果是否已经结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "document": "搜集结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EventHistoryItem",
           "name": "EventHistory",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5741,25 +5860,8 @@
       "members": [
         {
           "default": "",
-          "document": "准确度",
-          "member": "float",
-          "name": "Accuracy",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "海拔",
-          "member": "float",
-          "name": "Altitude",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "纬度",
+          "example": "0.0",
           "member": "float",
           "name": "Latitude",
           "required": true,
@@ -5769,9 +5871,30 @@
         {
           "default": "",
           "document": "精度",
+          "example": "0.0",
           "member": "float",
           "name": "Longitude",
           "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "准确度",
+          "example": "0.0",
+          "member": "float",
+          "name": "Accuracy",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "海拔",
+          "example": "0.0",
+          "member": "float",
+          "name": "Altitude",
+          "required": false,
           "type": "float",
           "value_allowed_null": false
         }
@@ -5928,6 +6051,7 @@
         {
           "default": "",
           "document": "描述信息",
+          "example": "fortest3",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5936,6 +6060,7 @@
         {
           "default": "",
           "document": "LoRa网关Id",
+          "example": "ff00000000000003",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -5944,6 +6069,7 @@
         {
           "default": "",
           "document": "LoRa网关位置坐标",
+          "example": "无",
           "member": "LoRaGatewayLocation",
           "name": "Location",
           "required": true,
@@ -5952,6 +6078,7 @@
         {
           "default": "",
           "document": "LoRa网关名称",
+          "example": "gw3",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5960,6 +6087,7 @@
         {
           "default": "",
           "document": "是否公开可见",
+          "example": "false",
           "member": "bool",
           "name": "IsPublic",
           "required": false,
@@ -5968,6 +6096,7 @@
         {
           "default": "",
           "document": "位置信息",
+          "example": "tfine",
           "member": "string",
           "name": "Position",
           "required": false,
@@ -5976,6 +6105,7 @@
         {
           "default": "",
           "document": "位置详情",
+          "example": "fyd",
           "member": "string",
           "name": "PositionDetails",
           "required": false,
@@ -5984,6 +6114,7 @@
         {
           "default": "",
           "document": "频点ID",
+          "example": "xxx",
           "member": "string",
           "name": "FrequencyId",
           "required": false,
@@ -5997,8 +6128,10 @@
       "members": [
         {
           "document": "返回网关数据",
+          "example": "无",
           "member": "LoRaGatewayItem",
           "name": "Gateway",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7642,6 +7775,7 @@
         {
           "default": "",
           "document": "网关产品ID",
+          "example": "12345ABCDE",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -7650,6 +7784,7 @@
         {
           "default": "",
           "document": "待解绑的子产品ID数组",
+          "example": "[\"12345ABCDE\\r\\n\"]",
           "member": "string",
           "name": "ProductIds",
           "required": true,
@@ -7663,8 +7798,10 @@
       "members": [
         {
           "document": "绑定了待解绑的LoRa产品下的设备的网关设备列表",
+          "example": "[\"gateway_test1\"]",
           "member": "string",
           "name": "GatewayDeviceNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

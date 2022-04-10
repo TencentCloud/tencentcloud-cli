@@ -2238,7 +2238,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源名列表，取值为：USER_KEY_PAIR、GENERAL_BUNDLE_INSTANCE、STORAGE_BUNDLE_INSTANCE、ENTERPRISE_BUNDLE_INSTANCE、EXCLUSIVE_BUNDLE_INSTANCE、BEFAST_BUNDLE_INSTANCE、SNAPSHOT、BLUEPRINT、FREE_BLUEPRINT、DATA_DISK、ATTACHED_DATA_DISK、FIREWALL_RULE。",
+          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘\n- FIREWALL_RULE 防火墙规则",
           "example": "[\"GENERAL_BUNDLE_INSTANCE\\n\"]",
           "member": "string",
           "name": "ResourceNames",

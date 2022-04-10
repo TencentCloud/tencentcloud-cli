@@ -11930,6 +11930,15 @@
           "name": "ParseM3U8",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否关闭Range回源\n注意事项：\n此功能灰度发布中，敬请期待",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableRange",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

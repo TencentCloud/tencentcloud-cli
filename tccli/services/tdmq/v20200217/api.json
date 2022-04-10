@@ -423,7 +423,7 @@
     "DescribeSubscriptions": {
       "document": "查询指定环境和主题下的订阅者列表",
       "input": "DescribeSubscriptionsRequest",
-      "name": "消费订阅列表",
+      "name": "获取消费订阅列表",
       "output": "DescribeSubscriptionsResponse"
     },
     "DescribeTopics": {
@@ -1085,6 +1085,16 @@
           "example": "test",
           "member": "string",
           "name": "DeadLetterRoutingKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Queue对应的Topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5024,7 +5034,7 @@
         {
           "default": "",
           "document": "查询偏移量",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5132,7 +5142,7 @@
         {
           "default": "",
           "document": "查询偏移量",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,

@@ -26,6 +26,7 @@ Output:
                 "UpdateTime": 1,
                 "DeadLetterExchange": "xx",
                 "Tps": 1,
+                "TopicName": "xx",
                 "DeadLetterRoutingKey": "xx",
                 "OnlineConsumerNum": 1,
                 "CreateTime": 156851400000,
