@@ -920,7 +920,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeProVersionInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2021-05-01 00:00:00\",\n        \"CoresCnt\": 1,\n        \"MaxPostPayCoresCnt\": 1,\n        \"StartTime\": \"2021-05-31 00:00:00\",\n        \"ResourceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2021-05-01 00:00:00\",\n        \"CoresCnt\": 1,\n        \"MaxPostPayCoresCnt\": 1,\n        \"StartTime\": \"2021-05-31 00:00:00\",\n        \"ResourceId\": \"xx\",\n        \"BuyStatus\": \"Normal\",\n        \"IsPurchased\": false,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询专业版需购买信息"
       }
     ],

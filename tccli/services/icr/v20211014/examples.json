@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "GetIndustryV1HomeMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: icr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIndustryV1HomeMembers\n<公共请求参数>\n\n{\n    \"Payload\": {\n        \"ID\": \"xx\"\n    },\n    \"Metadata\": {\n        \"AppKey\": \"xx\",\n        \"LBS\": {\n            \"Latitude\": 0.0,\n            \"Longitude\": 0.0\n        },\n        \"ChannelID\": \"xx\",\n        \"BusinessName\": \"xx\",\n        \"Vagrants\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            }\n        ],\n        \"GUID\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Payload\": {\n            \"DataList\": [\n                {\n                    \"Status\": 0,\n                    \"Remark\": \"xx\",\n                    \"ProductList\": {\n                        \"AppKey\": \"xx\",\n                        \"Remark\": \"xx\",\n                        \"Image\": \"xx\",\n                        \"TemplateList\": \"xx\",\n                        \"ProductName\": \"xx\",\n                        \"OperatorList\": \"xx\",\n                        \"CreateTime\": \"xx\",\n                        \"Industry\": [\n                            {\n                                \"IndustryName\": \"xx\",\n                                \"ID\": \"xx\"\n                            }\n                        ],\n                        \"EditTime\": \"xx\"\n                    },\n                    \"TypeList\": {\n                        \"TypeName\": \"xx\",\n                        \"Type\": \"xx\"\n                    },\n                    \"FeatureList\": {\n                        \"FeatureName\": \"xx\",\n                        \"ID\": \"xx\"\n                    },\n                    \"MemberNum\": 0,\n                    \"UserAccount\": \"xx\",\n                    \"ID\": \"xx\",\n                    \"IndustryType\": \"xx\",\n                    \"EditTime\": 0\n                }\n            ],\n            \"AccountLevel\": \"xx\",\n            \"Total\": 0,\n            \"Limit\": 0,\n            \"Offset\": 0\n        },\n        \"RequestId\": \"xx\",\n        \"Metadata\": {\n            \"Message\": \"xx\",\n            \"Code\": 0,\n            \"SessionID\": \"xx\",\n            \"SessionDelta\": \"xx\"\n        }\n    }\n}",
+        "title": "拉取问答对列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

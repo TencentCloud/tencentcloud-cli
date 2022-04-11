@@ -2305,6 +2305,24 @@
           "name": "Status",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3798,6 +3816,24 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6222,6 +6258,24 @@
           "name": "Rule",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

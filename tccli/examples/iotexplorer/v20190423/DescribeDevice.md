@@ -14,16 +14,29 @@ Output:
 ```
 {
     "Response": {
-        "Device": [
-            {
-                "DeviceName": "dev01",
-                "Status": 3,
-                "DevicePsk": "",
-                "FirstOnlineTime": 0,
-                "LoginTime": 0
-            }
-        ],
-        "RequestId": "e020416b-bc15-4563-9afc-0e5a111a5711"
+        "Device": {
+            "Status": 0,
+            "DeviceName": "xx",
+            "NwkSKey": "xx",
+            "Version": "xx",
+            "DevicePsk": "xx",
+            "DevAddr": "xx",
+            "LogLevel": 0,
+            "CreatorNickName": "xx",
+            "AppSKey": "xx",
+            "EnableState": 0,
+            "LoginTime": 0,
+            "ProductName": "xx",
+            "CreateUserId": 0,
+            "FirstOnlineTime": 0,
+            "DeviceType": "xx",
+            "DeviceCert": "xx",
+            "DevEUI": "xx",
+            "CreateTime": 0,
+            "AppKey": "xx",
+            "ProductId": "xx"
+        },
+        "RequestId": "xx"
     }
 }
 ```

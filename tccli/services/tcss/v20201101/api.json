@@ -12520,6 +12520,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "购买状态\n待购: Pending\n已购: Normal\n隔离: Isolate",
+          "example": "Normal",
+          "member": "string",
+          "name": "BuyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否曾经购买过(false:未曾 true:曾经购买过)",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPurchased",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

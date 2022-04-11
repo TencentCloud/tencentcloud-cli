@@ -723,6 +723,7 @@
         {
           "default": "",
           "document": "网关设备的产品ID。",
+          "example": "12345ABCDE",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -731,6 +732,7 @@
         {
           "default": "",
           "document": "网关设备的设备名。",
+          "example": "test",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -739,6 +741,7 @@
         {
           "default": "",
           "document": "被绑定设备的产品ID。",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -747,6 +750,7 @@
         {
           "default": "",
           "document": "被绑定的多个设备名。",
+          "example": "[\"test0\\n\"]",
           "member": "string",
           "name": "DeviceNames",
           "required": true,
@@ -859,6 +863,7 @@
         {
           "default": "",
           "document": "网关产品ID。",
+          "example": "9I5O8HSUDJ",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -867,6 +872,7 @@
         {
           "default": "",
           "document": "待绑定的子产品ID数组。",
+          "example": "[\"12345ABCDE\\r\\n\"]",
           "member": "string",
           "name": "ProductIds",
           "required": true,
@@ -1046,6 +1052,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "BKTTNGIQOG",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1054,6 +1061,7 @@
         {
           "default": "",
           "document": "设备名称",
+          "example": "devtest01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1062,6 +1070,7 @@
         {
           "default": "",
           "document": "属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义",
+          "example": "{\"brightness\":1}",
           "member": "string",
           "name": "Data",
           "required": true,
@@ -1070,6 +1079,7 @@
         {
           "default": "",
           "document": "请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性",
+          "example": "desired",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -1078,6 +1088,7 @@
         {
           "default": "",
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写",
+          "example": "BKTTNGIQOG/devtest01",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -1086,6 +1097,7 @@
         {
           "default": "",
           "document": "上报数据UNIX时间戳(毫秒), 仅对Method:reported有效",
+          "example": "1642127909000",
           "member": "int64",
           "name": "DataTimestamp",
           "required": false,
@@ -1099,15 +1111,19 @@
       "members": [
         {
           "document": "返回信息",
+          "example": "\"\"",
           "member": "string",
           "name": "Data",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "JSON字符串， 返回下发控制的结果信息, \nSent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "JSON字符串， 返回下发控制的结果信息, \nSent = 1 表示设备已经在线并且订阅了控制下发的mqtt topic.\npushResult 是表示发送结果，其中 0 表示成功， 23101 表示设备未在线或没有订阅相关的 MQTT Topic。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Sent\":1,\"pushResult\":0}",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1756,6 +1772,7 @@
         {
           "default": "",
           "document": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}",
+          "example": "name",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -1764,6 +1781,7 @@
         {
           "default": "",
           "document": "产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)",
+          "example": "10",
           "member": "int64",
           "name": "CategoryId",
           "required": true,
@@ -1772,6 +1790,7 @@
         {
           "default": "",
           "document": "产品类型 填写 ( 0 普通产品 )",
+          "example": "0",
           "member": "int64",
           "name": "ProductType",
           "required": true,
@@ -1780,6 +1799,7 @@
         {
           "default": "",
           "document": "加密类型 加密类型，1表示证书认证，2表示签名认证。",
+          "example": "1",
           "member": "string",
           "name": "EncryptionType",
           "required": true,
@@ -1788,6 +1808,7 @@
         {
           "default": "",
           "document": "连接类型 可以填写 wifi cellular else",
+          "example": "wifi",
           "member": "string",
           "name": "NetType",
           "required": true,
@@ -1796,6 +1817,7 @@
         {
           "default": "",
           "document": "数据协议 (1 使用物模型 2 为自定义)",
+          "example": "1",
           "member": "int64",
           "name": "DataProtocol",
           "required": true,
@@ -1804,6 +1826,7 @@
         {
           "default": "",
           "document": "产品描述",
+          "example": "desc",
           "member": "string",
           "name": "ProductDesc",
           "required": true,
@@ -1812,6 +1835,7 @@
         {
           "default": "",
           "document": "产品的项目ID",
+          "example": "prj-zunfat46",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1825,8 +1849,10 @@
       "members": [
         {
           "document": "产品描述",
+          "example": "无",
           "member": "ProductEntry",
           "name": "Product",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1887,6 +1913,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -1895,6 +1922,7 @@
         {
           "default": "",
           "document": "规则内容",
+          "example": "无",
           "member": "TopicRulePayload",
           "name": "TopicRulePayload",
           "required": true,
@@ -2209,6 +2237,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "AVBRC1R7QS",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2269,6 +2298,7 @@
         {
           "default": "",
           "document": "规则名",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -2483,6 +2513,15 @@
           "example": "deviceName",
           "member": "string",
           "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "网关产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gatewayName",
+          "member": "string",
+          "name": "GatewayName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2745,6 +2784,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2753,6 +2793,7 @@
         {
           "default": "",
           "document": "设备名",
+          "example": "dev01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -2761,6 +2802,7 @@
         {
           "default": "",
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName",
+          "example": "ABCDE12345/dev01",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -2774,8 +2816,10 @@
       "members": [
         {
           "document": "设备信息",
+          "example": "无",
           "member": "DeviceInfo",
           "name": "Device",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3442,6 +3486,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-4r2kajtp",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3455,8 +3500,10 @@
       "members": [
         {
           "document": "返回信息",
+          "example": "无",
           "member": "ProjectEntryEx",
           "name": "Project",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4154,6 +4201,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4180,6 +4228,7 @@
         {
           "default": "",
           "document": "规则名称",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -6150,6 +6199,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "LJ0INDNU7U",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6158,6 +6208,7 @@
         {
           "default": "",
           "document": "数据模板定义",
+          "example": "{\"version\":\"1.0\",\"profile\":{\"productID\":\"9IEQWQY47W\"},\"properties\":[{\"id\":\"power_switch\",\"name\":\"电灯开关\",\"desc\":\"控制电灯开灭\",\"required\":true,\"mode\":\"rw\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"关\",\"1\":\"开\"}}},{\"id\":\"color\",\"name\":\"颜色1\",\"required\":false,\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"enum\",\"mapping\":{\"0\":\"Red\",\"1\":\"Green\",\"2\":\"Blue\"}}},{\"id\":\"brightness\",\"name\":\"颜色\",\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"int\",\"unit\":\"%\",\"step\":\"1\",\"min\":\"0\",\"max\":\"100\"}},{\"id\":\"name\",\"name\":\"灯位置名称\",\"desc\":\"灯位置名称：书房、客厅等\",\"mode\":\"rw\",\"required\":true,\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}],\"events\":[{\"id\":\"status_report\",\"name\":\"DeviceStatus\",\"desc\":\"Report the device status我是中文\",\"type\":\"info\",\"required\":true,\"params\":[{\"id\":\"status\",\"name\":\"running_state\",\"desc\":\"Report current device running state\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"normal\",\"1\":\"fault\"}}},{\"id\":\"message\",\"name\":\"Message\",\"desc\":\"Some extra message\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}]},{\"id\":\"low_voltage\",\"name\":\"LowVoltage\",\"desc\":\"Alert for device voltage is low\",\"type\":\"alert\",\"required\":false,\"params\":[{\"id\":\"voltage\",\"name\":\"Voltage\",\"desc\":\"Current voltage\",\"define\":{\"type\":\"float\",\"unit\":\"V\",\"step\":\"1\",\"min\":\"0.0\",\"max\":\"24.0\"}}]},{\"id\":\"hardware_fault\",\"name\":\"Hardware_fault\",\"desc\":\"Report hardware fault\",\"type\":\"fault\",\"required\":false,\"params\":[{\"id\":\"name\",\"name\":\"Name\",\"desc\":\"Name like: memory,tf card, censors ...\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}},{\"id\":\"error_code\",\"name\":\"Error_Code\",\"desc\":\"Error code for fault\",\"define\":{\"type\":\"int\",\"unit\":\"\",\"step\":\"1\",\"min\":\"0\",\"max\":\"2000\"}}]}]}",
           "member": "string",
           "name": "ModelSchema",
           "required": true,
@@ -6273,6 +6324,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "prj-4r2kajtp",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6281,6 +6333,7 @@
         {
           "default": "",
           "document": "项目名称",
+          "example": "name",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -6289,6 +6342,7 @@
         {
           "default": "",
           "document": "项目描述",
+          "example": "desc",
           "member": "string",
           "name": "ProjectDesc",
           "required": true,
@@ -6302,8 +6356,10 @@
       "members": [
         {
           "document": "项目详情",
+          "example": "无",
           "member": "ProjectEntry",
           "name": "Project",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6367,6 +6423,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "4GDIU5HTEN",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6375,6 +6432,7 @@
         {
           "default": "",
           "document": "产品名称",
+          "example": "testProduct",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -6383,6 +6441,7 @@
         {
           "default": "",
           "document": "产品描述",
+          "example": "Pdesc",
           "member": "string",
           "name": "ProductDesc",
           "required": true,
@@ -6391,6 +6450,7 @@
         {
           "default": "",
           "document": "模型ID",
+          "example": "0",
           "member": "int64",
           "name": "ModuleId",
           "required": true,
@@ -6399,6 +6459,7 @@
         {
           "default": "",
           "document": "是否打开二进制转Json功能, 取值为字符串 true/false",
+          "example": "\"\"",
           "member": "string",
           "name": "EnableProductScript",
           "required": false,
@@ -6412,8 +6473,10 @@
       "members": [
         {
           "document": "产品描述",
+          "example": "无",
           "member": "ProductEntry",
           "name": "Product",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7306,6 +7369,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "BJQM4UXMKN",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -7314,6 +7378,7 @@
         {
           "default": "",
           "document": "产品DevStatus",
+          "example": "released",
           "member": "string",
           "name": "DevStatus",
           "required": true,
@@ -7526,6 +7591,7 @@
         {
           "default": "",
           "document": "规则名",
+          "example": "test_create",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -7539,15 +7605,19 @@
       "members": [
         {
           "document": "搜索到的规则总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCnt",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "规则信息列表",
+          "example": "无",
           "member": "TopicRuleInfo",
           "name": "Rules",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7725,6 +7795,7 @@
         {
           "default": "",
           "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -7733,6 +7804,7 @@
         {
           "default": "",
           "document": "网关设备的设备名",
+          "example": "test",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -7741,6 +7813,7 @@
         {
           "default": "",
           "document": "产品ID",
+          "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -7749,6 +7822,7 @@
         {
           "default": "",
           "document": "设备名列表",
+          "example": "[\"test0\\n\"]",
           "member": "string",
           "name": "DeviceNames",
           "required": true,

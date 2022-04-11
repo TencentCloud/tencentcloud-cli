@@ -199,6 +199,8 @@ include tccli/services/iai/v20180301/api.json
 include tccli/services/iai/v20180301/examples.json
 include tccli/services/ic/v20190307/api.json
 include tccli/services/ic/v20190307/examples.json
+include tccli/services/icr/v20211014/api.json
+include tccli/services/icr/v20211014/examples.json
 include tccli/services/ie/v20200304/api.json
 include tccli/services/ie/v20200304/examples.json
 include tccli/services/iecp/v20210914/api.json

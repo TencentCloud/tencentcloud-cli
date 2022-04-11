@@ -1211,6 +1211,7 @@
         {
           "default": "",
           "document": "单句最终识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好，测试",
           "member": "string",
           "name": "FinalSentence",
           "required": true,
@@ -1220,6 +1221,7 @@
         {
           "default": "",
           "document": "单句中间识别结果，使用空格拆分为多个词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好 测试",
           "member": "string",
           "name": "SliceSentence",
           "required": true,
@@ -1229,6 +1231,7 @@
         {
           "default": "",
           "document": "单句开始时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "StartMs",
           "required": true,
@@ -1238,6 +1241,7 @@
         {
           "default": "",
           "document": "单句结束时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
           "member": "int64",
           "name": "EndMs",
           "required": true,
@@ -1247,6 +1251,7 @@
         {
           "default": "",
           "document": "单句中词个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "int64",
           "name": "WordsNum",
           "required": true,
@@ -1256,6 +1261,7 @@
         {
           "default": "",
           "document": "单句中词详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"OffsetStartMs\": 120}]",
           "member": "SentenceWords",
           "name": "Words",
           "required": true,
@@ -1265,10 +1271,21 @@
         {
           "default": "",
           "document": "单句语速，单位：字数/秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5.9",
           "member": "float",
           "name": "SpeechSpeed",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

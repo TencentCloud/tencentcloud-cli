@@ -16,6 +16,8 @@ Output:
         "MaxPostPayCoresCnt": 1,
         "StartTime": "2021-05-31 00:00:00",
         "ResourceId": "xx",
+        "BuyStatus": "Normal",
+        "IsPurchased": false,
         "RequestId": "xx"
     }
 }

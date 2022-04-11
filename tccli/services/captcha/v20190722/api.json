@@ -55,9 +55,9 @@
       "output": "DescribeCaptchaOperDataResponse"
     },
     "DescribeCaptchaResult": {
-      "document": "核查验证码票据结果(Web|APP)",
+      "document": "核查验证码票据结果(Web及APP)",
       "input": "DescribeCaptchaResultRequest",
-      "name": "核查验证码票据结果(Web|APP)",
+      "name": "核查验证码票据结果(Web及APP)",
       "output": "DescribeCaptchaResultResponse"
     },
     "DescribeCaptchaTicketData": {

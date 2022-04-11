@@ -9303,7 +9303,7 @@
         },
         {
           "default": "",
-          "document": "Yaml配置",
+          "document": "Yaml配置, base64之后的串",
           "example": "无",
           "member": "string",
           "name": "Yaml",
