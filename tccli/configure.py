@@ -5,7 +5,7 @@ import sys
 import six
 import tccli.options_define as OptionsDefine
 from tccli.base_command import BasicCommand
-from tccli.exceptions import ConfigurationError, ParamError
+from tccli.exceptions import ConfigurationError, ParamError, UnknownArgumentError
 from tccli.help_command import BaseHelpCommand
 from tccli.utils import Utils
 from tccli.loaders import Loader
@@ -419,6 +419,14 @@ class ConfigureHelp(BaseHelpCommand):
 
     def _get_document_handler(self):
         return ConfigureDocumentHandler(self.doc, self.command_obj)
+
+    def __call__(self, args, parsed_globals):
+        if args:
+            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
+
+        document_handle = self._get_document_handler()
+        document_handle.doc_help()
+        sys.stdout.write(self.doc.getvalue())
 
 
 class ConfigureDocumentHandler(object):
