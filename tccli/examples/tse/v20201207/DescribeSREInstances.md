@@ -66,16 +66,19 @@ Output:
                         "BoundK8SInfos": [
                             {
                                 "BoundClusterId": "xx",
+                                "SyncMode": "xx",
                                 "BoundClusterType": "xx"
                             }
                         ],
-                        "AuthOpen": true,
-                        "EngineRegion": "xx",
                         "Features": [
                             "xx"
-                        ]
+                        ],
+                        "AuthOpen": true,
+                        "EngineRegion": "xx",
+                        "MainPassword": "xx"
                     }
                 ],
+                "ConsoleDefaultPwd": "xx",
                 "StorageCapacity": 0,
                 "EKSClusterID": "xx",
                 "VpcInfos": [

@@ -6752,7 +6752,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -7372,7 +7372,7 @@
         },
         {
           "default": "",
-          "document": "分页",
+          "document": "分页查询偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7381,7 +7381,7 @@
         },
         {
           "default": "",
-          "document": "限制",
+          "document": "分页查询限制",
           "example": "10",
           "member": "int64",
           "name": "Limit",

@@ -228,6 +228,14 @@
         "title": "创建指定时间点截图模板"
       }
     ],
+    "CreateStorageRegion": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "开通重庆地域的存储"
+      }
+    ],
     "CreateSubAppId": [
       {
         "document": "",
@@ -726,6 +734,14 @@
         "title": "查询点播存储统计数据"
       }
     ],
+    "DescribeStorageRegions": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageRegions\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"StorageRegionInfos\": [\n            {\n                \"Region\": \"ap-chongqing\",\n                \"Description\": \"重庆\",\n                \"Status\": \"opened\",\n                \"IsDefault\": true\n            }\n        ]\n    }\n}",
+        "title": "查询存储桶地域列表"
+      }
+    ],
     "DescribeSubAppIds": [
       {
         "document": "",
@@ -996,6 +1012,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=sexy\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改内容智能识别模板，开启令人反感的信息的智能识别任务并指定过滤标签及分数阈值"
+      }
+    ],
+    "ModifyDefaultStorageRegion": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyDefaultStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "设置重庆为默认的存储桶地域"
       }
     ],
     "ModifyEventConfig": [

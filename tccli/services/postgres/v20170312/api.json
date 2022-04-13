@@ -1323,7 +1323,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例",
+          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。",
           "example": "12.4",
           "member": "string",
           "name": "DBVersion",
@@ -1431,7 +1431,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例",
+          "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
@@ -1440,7 +1440,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例",
+          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。",
           "example": "v12.4_r1.0",
           "member": "string",
           "name": "DBKernelVersion",
@@ -1455,6 +1455,33 @@
           "name": "DBNodeSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否需要支持数据透明加密，1：是，0：否（默认）。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NeedSupportTDE",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。",
+          "example": "无",
+          "member": "string",
+          "name": "KMSKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KMSRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1665,7 +1692,7 @@
         },
         {
           "default": "",
-          "document": "实例需要绑定的Tag信息，默认为空",
+          "document": "实例需要绑定的Tag信息，默认为空（该类型为Tag数组类型）",
           "example": "空",
           "member": "Tag",
           "name": "TagList",
@@ -2506,6 +2533,16 @@
           "name": "DBNodeSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例是否支持TDE数据加密  0：不支持，1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSupportTDE",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3679,6 +3716,7 @@
         {
           "default": "",
           "document": "可用区名称",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -3692,8 +3730,10 @@
       "members": [
         {
           "document": "售卖规格列表。",
+          "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6755,26 +6795,42 @@
         {
           "default": "",
           "document": "地域英文编码，对应RegionSet的Region字段",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "区域英文编码，对应ZoneSet的Zone字段",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "default": "",
           "document": "规格详细信息列表",
+          "example": "空",
           "member": "SpecItemInfo",
           "name": "SpecItemInfoList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持KMS的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "SupportKMSRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6900,6 +6956,16 @@
           "name": "KernelVersion",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持TDE数据加密功能，0-不支持，1-支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSupportTDE",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

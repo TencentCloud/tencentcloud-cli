@@ -37,7 +37,7 @@
       "output": "CreateDisksResponse"
     },
     "CreateSnapshot": {
-      "document": "本接口（CreateSnapshot）用于对指定云盘创建快照。\n\n* 只有具有快照能力的云硬盘才能创建快照。云硬盘是否具有快照能力可由[DescribeDisks](/document/product/362/16315)接口查询，见SnapshotAbility字段。\n* 可创建快照数量限制见[产品使用限制](https://cloud.tencent.com/doc/product/362/5145)。",
+      "document": "本接口（CreateSnapshot）用于对指定云盘创建快照。\n\n* 只有具有快照能力的云硬盘才能创建快照。云硬盘是否具有快照能力可由[DescribeDisks](/document/product/362/16315)接口查询，见SnapshotAbility字段。\n* 可创建快照数量限制见[产品使用限制](https://cloud.tencent.com/doc/product/362/5145)。\n* 当前支持将备份点转化为普通快照，转化之后可能会收取快照使用费用，备份点不保留，其占用的备份点配额也将被释放。",
       "input": "CreateSnapshotRequest",
       "name": "创建快照",
       "output": "CreateSnapshotResponse"
@@ -925,6 +925,15 @@
           "name": "AutoMountConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "指定云硬盘备份点配额。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -977,6 +986,15 @@
           "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点ID。传入此参数时，将通过备份点创建快照。",
+          "example": "bak-xxxxxxxx",
+          "member": "string",
+          "name": "DiskBackupId",
           "required": false,
           "type": "string"
         }
@@ -2096,6 +2114,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘备份点已使用的数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DiskBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS",
+          "example": "CVM",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2459,7 +2497,17 @@
       "members": [
         {
           "default": "",
+          "document": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "DiskChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
+          "example": "CLOUD_TSSD",
           "member": "string",
           "name": "DiskType",
           "required": true,
@@ -2468,6 +2516,7 @@
         {
           "default": "",
           "document": "云硬盘大小，单位为GB。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
+          "example": "500",
           "member": "uint64",
           "name": "DiskSize",
           "required": true,
@@ -2475,31 +2524,8 @@
         },
         {
           "default": "",
-          "document": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费",
-          "member": "string",
-          "name": "DiskChargeType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。",
-          "member": "DiskChargePrepaid",
-          "name": "DiskChargePrepaid",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "购买云盘的数量。不填则默认为1。",
-          "member": "uint64",
-          "name": "DiskCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "云盘所属项目ID。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -2507,9 +2533,37 @@
         },
         {
           "default": "",
+          "document": "购买云盘的数量。不填则默认为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）",
+          "example": "100",
           "member": "uint64",
           "name": "ThroughputPerformance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。",
+          "example": "无",
+          "member": "DiskChargePrepaid",
+          "name": "DiskChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "指定云硬盘备份点配额。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DiskBackupQuota",
           "required": false,
           "type": "int"
         }
@@ -2521,8 +2575,10 @@
       "members": [
         {
           "document": "描述了新购云盘的价格。",
+          "example": "无",
           "member": "Price",
           "name": "DiskPrice",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3181,16 +3237,18 @@
       "members": [
         {
           "default": "",
-          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
           "member": "float",
-          "name": "OriginalPrice",
-          "required": false,
+          "name": "UnitPriceDiscount",
+          "required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "default": "",
           "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
           "required": false,
@@ -3200,6 +3258,7 @@
         {
           "default": "",
           "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
           "required": true,
@@ -3208,43 +3267,8 @@
         },
         {
           "default": "",
-          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "ChargeUnit",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "float",
-          "name": "UnitPriceDiscount",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "高精度预付费云盘预支费用的原价, 单位：元\t。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "OriginalPriceHigh",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "高精度预付费云盘预支费用的折扣价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "DiscountPriceHigh",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
           "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceHigh",
           "required": true,
@@ -3253,9 +3277,50 @@
         },
         {
           "default": "",
+          "document": "高精度预付费云盘预支费用的原价, 单位：元\t。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "OriginalPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高精度预付费云盘预支费用的折扣价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
+          "member": "string",
+          "name": "DiscountPriceHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1.00\"",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"h\"",
+          "member": "string",
+          "name": "ChargeUnit",
           "required": true,
           "type": "string",
           "value_allowed_null": true

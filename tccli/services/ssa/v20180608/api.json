@@ -90,6 +90,12 @@
       "name": "告警列表",
       "output": "DescribeSocAlertListResponse"
     },
+    "DescribeSocCheckItemList": {
+      "document": "云安全配置检查项列表",
+      "input": "DescribeSocCheckItemListRequest",
+      "name": "云安全配置检查项列表",
+      "output": "DescribeSocCheckItemListResponse"
+    },
     "DescribeSocCspmCompliance": {
       "document": "合规详情项",
       "input": "DescribeSocCspmComplianceRequest",
@@ -3448,6 +3454,23 @@
       ],
       "type": "object"
     },
+    "DescribeSocCheckItemListRequest": {
+      "document": "DescribeSocCheckItemList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSocCheckItemListResponse": {
+      "document": "DescribeSocCheckItemList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSocCspmComplianceRequest": {
       "document": "DescribeSocCspmCompliance请求参数结构体",
       "members": [],
@@ -4250,7 +4273,8 @@
       "members": [
         {
           "default": "",
-          "document": "模糊查询字段",
+          "document": "模糊查询字段(针对appid或者uin)",
+          "example": "2312131",
           "member": "string",
           "name": "QueryKey",
           "required": true,
@@ -4259,6 +4283,7 @@
         {
           "default": "",
           "document": "安全事件名称",
+          "example": "test",
           "member": "string",
           "name": "EventName",
           "required": true,
@@ -4266,7 +4291,8 @@
         },
         {
           "default": "",
-          "document": "监控源",
+          "document": "监控源  0:全部 1:GitHub 2:暗网 默认值1",
+          "example": "1",
           "member": "string",
           "name": "DivulgeSoure",
           "required": true,
@@ -4275,6 +4301,7 @@
         {
           "default": "",
           "document": "受影响资产",
+          "example": "\"\"",
           "member": "string",
           "name": "Asset",
           "required": true,
@@ -4283,6 +4310,7 @@
         {
           "default": "",
           "document": "命中主题集下的规则topic名称",
+          "example": "test",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4291,6 +4319,7 @@
         {
           "default": "",
           "document": "命中主题集下的规则topic唯一id",
+          "example": "\"0\"",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -4298,7 +4327,8 @@
         },
         {
           "default": "",
-          "document": "风险等级",
+          "document": "风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重",
+          "example": "1,2,3,4",
           "member": "string",
           "name": "Level",
           "required": true,
@@ -4306,7 +4336,8 @@
         },
         {
           "default": "",
-          "document": "安全事件状态",
+          "document": "安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任",
+          "example": "1",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -4315,6 +4346,7 @@
         {
           "default": "",
           "document": "起始时间",
+          "example": "2020-04-10 16:01:14",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4323,6 +4355,7 @@
         {
           "default": "",
           "document": "结束时间",
+          "example": "2022-04-12 10:56:16",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4331,6 +4364,7 @@
         {
           "default": "",
           "document": "查询起始地址",
+          "example": "1",
           "member": "string",
           "name": "Offset",
           "required": true,
@@ -4339,6 +4373,7 @@
         {
           "default": "",
           "document": "查询个数",
+          "example": "20",
           "member": "string",
           "name": "Limit",
           "required": true,
@@ -4351,9 +4386,11 @@
       "document": "SaDivulgeDataQueryPub返回参数结构体",
       "members": [
         {
-          "document": "结果",
+          "document": "自定义泄露事件列表",
+          "example": "无",
           "member": "SaDivulgeDataQueryPubList",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

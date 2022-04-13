@@ -19,3 +19,24 @@ Output:
 }
 ```
 
+**Example 2: 修改通道组名**
+
+
+
+Input: 
+
+```
+tccli gaap ModifyProxyGroupAttribute --cli-unfold-argument  \
+    --GroupName test \
+    --GroupId lg-pheemncl
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e26d0984-af79-4403-8c51-11d075b7c1e8"
+    }
+}
+```
+

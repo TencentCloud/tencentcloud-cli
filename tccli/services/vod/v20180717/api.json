@@ -108,6 +108,12 @@
       "name": "创建指定时间点截图模板",
       "output": "CreateSnapshotByTimeOffsetTemplateResponse"
     },
+    "CreateStorageRegion": {
+      "document": "该接口用于开通某地域的存储。\n  1. 用户开通点播业务时，系统默认为用户开通了部分地域的存储，用户如果需要开通其它地域的存储，可以通过该接口进行开通。\n  2. 通过 DescribeStorageRegions 接口可以查询到所有存储地域及已经开通的地域。",
+      "input": "CreateStorageRegionRequest",
+      "name": "开通某地域的存储",
+      "output": "CreateStorageRegionResponse"
+    },
     "CreateSubAppId": {
       "document": "该接口用于创建点播子应用。",
       "input": "CreateSubAppIdRequest",
@@ -432,6 +438,12 @@
       "name": "查询存储空间数据详情",
       "output": "DescribeStorageDetailsResponse"
     },
+    "DescribeStorageRegions": {
+      "document": "该接口用于：\n  1. 查询点播可开通的所有存储园区列表。\n  2. 查询已经开通的园区列表。\n  3. 查询默认使用的存储园区。",
+      "input": "DescribeStorageRegionsRequest",
+      "name": "查询存储地域列表",
+      "output": "DescribeStorageRegionsResponse"
+    },
     "DescribeSubAppIds": {
       "document": "该接口用于获取当前账号的子应用列表，包含主应用。",
       "input": "DescribeSubAppIdsRequest",
@@ -545,6 +557,12 @@
       "input": "ModifyContentReviewTemplateRequest",
       "name": "修改视频内容智能识别模板",
       "output": "ModifyContentReviewTemplateResponse"
+    },
+    "ModifyDefaultStorageRegion": {
+      "document": "该接口用于设置默认的存储地域。上传文件时如果没有指定地域，将上传到默认地域。",
+      "input": "ModifyDefaultStorageRegionRequest",
+      "name": "设置默认的存储地域",
+      "output": "ModifyDefaultStorageRegionResponse"
     },
     "ModifyEventConfig": {
       "document": "腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。\n\n开发者可以通过调用本接口来实现：\n- 设置接收回调通知的类型，目前有[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/33779) 和 [基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/33779) 两种类型。\n- 对于[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/33779)，可设置 3.0 格式回调的地址。3.0 格式回调的说明参见 [历史格式回调](https://cloud.tencent.com/document/product/266/33796)。\n- 对具体事件服务的通知事件选择设置接收或者忽略。",
@@ -8144,6 +8162,40 @@
       ],
       "type": "object"
     },
+    "CreateStorageRegionRequest": {
+      "document": "CreateStorageRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待开通的存储地域，必须是系统支持的地域。",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageRegionResponse": {
+      "document": "CreateStorageRegion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSubAppIdRequest": {
       "document": "CreateSubAppId请求参数结构体",
       "members": [
@@ -11242,6 +11294,39 @@
           "member": "StatDataItem",
           "name": "Data",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageRegionsRequest": {
+      "document": "DescribeStorageRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageRegionsResponse": {
+      "document": "DescribeStorageRegions返回参数结构体",
+      "members": [
+        {
+          "document": "存储地域信息列表。",
+          "member": "StorageRegionInfo",
+          "name": "StorageRegionInfos",
           "type": "list",
           "value_allowed_null": false
         },
@@ -17314,6 +17399,40 @@
       ],
       "type": "object"
     },
+    "ModifyDefaultStorageRegionRequest": {
+      "document": "ModifyDefaultStorageRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认的存储地域，必须是已经开通的地域」，建议改成「默认的存储地域，必须是已经开通的地域（通过 DescribeStorageRegions 接口查询）。",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultStorageRegionResponse": {
+      "document": "ModifyDefaultStorageRegion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEventConfigRequest": {
       "document": "ModifyEventConfig请求参数结构体",
       "members": [
@@ -22643,6 +22762,48 @@
         }
       ],
       "usage": "both"
+    },
+    "StorageRegionInfo": {
+      "document": "存储地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储地域描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，是否开通，取值有：\n<li>opened：已经开通。</li>\n<li>unopened：未开通。</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否默认的存储地域，true：是；false：否",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StorageStatData": {
       "document": "云点播存储用量的分区统计数据",

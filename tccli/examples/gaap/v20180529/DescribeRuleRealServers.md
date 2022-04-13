@@ -13,39 +13,45 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RealServerSet": [
             {
-                "ProjectId": 0,
-                "RealServerId": "rs-04v3s12c",
-                "RealServerName": "",
-                "RealServerIP": "4.4.4.4"
+                "ProjectId": 1,
+                "RealServerId": "xx",
+                "InBanBlacklist": 0,
+                "RealServerName": "xx",
+                "RealServerIP": "xx"
             },
             {
-                "ProjectId": 0,
-                "RealServerId": "rs-04v3s12t",
-                "RealServerName": "",
-                "RealServerIP": "119.28.69.101"
+                "ProjectId": 1,
+                "RealServerId": "xx",
+                "InBanBlacklist": 0,
+                "RealServerName": "xx",
+                "RealServerIP": "xx"
             }
         ],
-        "BindRealServerTotalCount": 2,
-        "RequestId": "aca97028-559f-4cfb-9c33-3fc2baed13b8",
+        "BindRealServerTotalCount": 1,
+        "RequestId": "xx",
         "BindRealServerSet": [
             {
                 "RealServerStatus": 1,
                 "RealServerPort": 234,
-                "RealServerId": "rs-04v3s12c",
-                "DownIPList": [],
+                "RealServerId": "xx",
+                "DownIPList": [
+                    "xx"
+                ],
                 "RealServerWeight": 1,
-                "RealServerIP": "4.4.4.4"
+                "RealServerIP": "xx"
             },
             {
                 "RealServerStatus": 1,
                 "RealServerPort": 424,
-                "RealServerId": "rs-10vtt5en",
-                "DownIPList": [],
+                "RealServerId": "xx",
                 "RealServerWeight": 1,
-                "RealServerIP": "5.5.5.6"
+                "DownIPList": [
+                    "xx"
+                ],
+                "RealServerIP": "xx"
             }
         ]
     }

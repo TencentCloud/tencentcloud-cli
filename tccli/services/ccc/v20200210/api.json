@@ -1790,11 +1790,20 @@
         },
         {
           "default": "",
+          "document": "实例 ID（deprecated）",
+          "example": "11",
+          "member": "int64",
+          "name": "InstanceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "返回数据条数，上限（deprecated）",
           "example": "0",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -1803,15 +1812,6 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "实例 ID（deprecated）",
-          "example": "11",
-          "member": "int64",
-          "name": "InstanceId",
           "required": false,
           "type": "int"
         },

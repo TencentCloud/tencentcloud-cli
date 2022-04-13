@@ -93,7 +93,7 @@
     "CreateProxyGroupDomain": {
       "document": "本接口（CreateProxyGroupDomain）用于创建通道组域名，并开启域名解析。",
       "input": "CreateProxyGroupDomainRequest",
-      "name": "开通通道组域名",
+      "name": "开通通道组域名（废弃）",
       "output": "CreateProxyGroupDomainResponse"
     },
     "CreateRule": {
@@ -243,7 +243,7 @@
     "DescribeGroupDomainConfig": {
       "document": "本接口（DescribeGroupDomainConfig）用于获取通道组域名解析配置详情。",
       "input": "DescribeGroupDomainConfigRequest",
-      "name": "获取通道组域名解析配置详情",
+      "name": "获取通道组域名解析配置详情（废弃）",
       "output": "DescribeGroupDomainConfigResponse"
     },
     "DescribeHTTPListeners": {
@@ -423,7 +423,7 @@
     "ModifyGroupDomainConfig": {
       "document": "本接口（ModifyGroupDomainConfig）用于配置通道组就近接入域名。",
       "input": "ModifyGroupDomainConfigRequest",
-      "name": "配置通道组就近接入域名",
+      "name": "配置通道组就近接入域名（废弃）",
       "output": "ModifyGroupDomainConfigResponse"
     },
     "ModifyHTTPListenerAttribute": {
@@ -7867,7 +7867,7 @@
         },
         {
           "default": "",
-          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中。",
+          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nRECOVERING表示通道维护中。",
           "example": "\"RUNNING\"",
           "member": "string",
           "name": "Status",

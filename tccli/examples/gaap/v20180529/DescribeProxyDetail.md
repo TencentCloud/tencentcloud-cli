@@ -15,54 +15,157 @@ Output:
     "Response": {
         "ProxyDetail": {
             "AccessRegionInfo": {
-                "RegionId": "SoutheastAsia",
-                "RegionName": "新加坡",
-                "RegionArea": "NorthChina",
-                "RegionAreaName": "中国大陆-华北",
-                "IDCType": "dc"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             },
-            "RelatedGlobalDomains": [],
-            "Version": "3.0",
-            "PolicyId": "",
+            "RelatedGlobalDomains": [
+                "xx"
+            ],
+            "Version": "xx",
+            "PolicyId": "xx",
             "Scalarable": 1,
-            "Status": "RUNNING",
-            "ProxyType": 100,
-            "ForwardIP": "154.8.156.36;140.143.138.143;",
-            "InstanceId": "link-ibqy8dqv",
-            "RealServerRegion": "NorthChina",
+            "IPList": [
+                {
+                    "IP": "xx",
+                    "Bandwidth": 0,
+                    "Provider": "xx"
+                }
+            ],
+            "Status": "xx",
+            "ProxyType": 1,
+            "ForwardIP": "xx",
+            "ProxyId": "xx",
+            "RealServerRegion": "xx",
             "Concurrent": 2,
             "RealServerRegionInfo": {
-                "RegionId": "NorthChina",
-                "RegionName": "中国大陆-华北大区",
-                "RegionArea": "NorthChina",
-                "RegionAreaName": "中国大陆-华北",
-                "IDCType": "dc"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             },
-            "IP": "129.226.3.36",
-            "IPList": [],
-            "AccessRegion": "SoutheastAsia",
+            "IP": "xx",
+            "Http3Supported": 0,
+            "InBanBlacklist": 0,
+            "AccessRegion": "xx",
             "ProjectId": 0,
             "BillingType": 0,
             "SupportProtocols": [
                 "TCP",
                 "UDP"
             ],
-            "PackageType": "Thunder",
-            "Domain": "link-ibqy8dqv.gaapqcloud.com",
-            "CreateTime": 1598417633,
-            "ProxyId": "link-ibqy8dqv",
+            "PackageType": "xx",
+            "Domain": "xx",
+            "IPAddressVersion": "xx",
+            "BanStatus": "xx",
+            "CreateTime": 1,
+            "InstanceId": "xx",
             "Bandwidth": 10,
             "SupportSecurity": 1,
-            "TagSet": [],
-            "BanStatus": "xx",
-            "ProxyName": "p_weidzhao_test",
-            "NetworkType": "",
-            "ModifyConfigTime": 1598417633,
-            "GroupId": "",
-            "ClientIPMethod": 1,
-            "IPAddressVersion": "IPv4"
+            "TagSet": [
+                {
+                    "TagKey": "xx",
+                    "TagValue": "xx"
+                }
+            ],
+            "ClientIPMethod": [
+                0
+            ],
+            "ProxyName": "xx",
+            "NetworkType": "xx",
+            "ModifyConfigTime": 1,
+            "GroupId": "xx"
         },
-        "RequestId": "2a3ba5c4-aa37-4f01-825a-04140b4b25da"
+        "RequestId": "xx"
+    }
+}
+```
+
+**Example 2: 查询通道详情2**
+
+
+
+Input: 
+
+```
+tccli gaap DescribeProxyDetail --cli-unfold-argument  \
+    --ProxyId link-4m6fx36h
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "fe6deb4c-3bf9-4b92-9bec-047d44d8d7c4",
+        "ProxyDetail": {
+            "InstanceId": "link-4m6fx36h",
+            "ProxyId": "link-4m6fx36h",
+            "CreateTime": 1646712299,
+            "ProjectId": 0,
+            "ProxyName": "test8",
+            "ProxyType": 100,
+            "AccessRegion": "Guangzhou",
+            "RealServerRegion": "Shanghai",
+            "Bandwidth": 10,
+            "NetworkType": "normal",
+            "Concurrent": 2,
+            "Status": "RUNNING",
+            "Domain": "link-4m6fx36h.gaapacc.com.cn",
+            "IP": "1.14.225.21",
+            "IPList": [
+                {
+                    "IP": "1.14.225.21",
+                    "Provider": "BGP",
+                    "Bandwidth": 10
+                }
+            ],
+            "AccessRegionInfo": {
+                "RegionId": "Guangzhou",
+                "RegionName": "广州（原中国大陆-华南大区）",
+                "RegionArea": "SouthChina",
+                "RegionAreaName": "SouthChina",
+                "IDCType": "dc",
+                "FeatureBitmap": 79
+            },
+            "RealServerRegionInfo": {
+                "RegionId": "Shanghai",
+                "RegionName": "上海（原中国大陆-华东大区）",
+                "RegionArea": "EastChina",
+                "RegionAreaName": "EastChina",
+                "IDCType": "dc",
+                "FeatureBitmap": 79
+            },
+            "TagSet": [],
+            "ModifyConfigTime": 1646712299,
+            "IPAddressVersion": "IPv4",
+            "PackageType": "Thunder",
+            "BanStatus": "RECOVER",
+            "Http3Supported": 0,
+            "InBanBlacklist": 0,
+            "ClientIPMethod": [
+                0,
+                1
+            ],
+            "GroupId": null,
+            "PolicyId": "sp-nahrld9t",
+            "Version": "3.0",
+            "SupportProtocols": [
+                "TCP",
+                "UDP"
+            ],
+            "Scalarable": 1,
+            "SupportSecurity": 1,
+            "BillingType": 0,
+            "RelatedGlobalDomains": [
+                "gd-rv1p5ak9.gaapacc.com.cn"
+            ],
+            "ForwardIP": "124.222.196.15;124.221.127.42;"
+        }
     }
 }
 ```

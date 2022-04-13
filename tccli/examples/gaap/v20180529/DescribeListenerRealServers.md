@@ -18,12 +18,14 @@ Output:
             {
                 "ProjectId": 1,
                 "RealServerId": "xx",
+                "InBanBlacklist": 0,
                 "RealServerName": "xx",
                 "RealServerIP": "xx"
             },
             {
                 "ProjectId": 1,
                 "RealServerId": "xx",
+                "InBanBlacklist": 0,
                 "RealServerName": "xx",
                 "RealServerIP": "xx"
             }

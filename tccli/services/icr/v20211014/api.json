@@ -491,7 +491,7 @@
       "members": [
         {
           "default": "",
-          "document": "无",
+          "document": "纬度",
           "example": "无",
           "member": "float",
           "name": "Latitude",
@@ -501,7 +501,7 @@
         },
         {
           "default": "",
-          "document": "无",
+          "document": "经度",
           "example": "无",
           "member": "float",
           "name": "Longitude",
