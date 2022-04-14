@@ -176,6 +176,20 @@
         "title": "车辆识别示例代码"
       }
     ],
+    "RecognizeCarPro": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CarTags\": [\n            {\n                \"PlateContent\": {\n                    \"Color\": \"蓝色\",\n                    \"PlateLocation\": [\n                        {\n                            \"Y\": 727,\n                            \"X\": 508\n                        },\n                        {\n                            \"Y\": 634,\n                            \"X\": 508\n                        },\n                        {\n                            \"Y\": 634,\n                            \"X\": 777\n                        },\n                        {\n                            \"X\": 777,\n                            \"Y\": 727\n                        }\n                    ],\n                    \"Plate\": \"粤BT****\",\n                    \"Type\": \"普通蓝牌\"\n                },\n                \"Serial\": \"飞驰\",\n                \"Brand\": \"宾利\",\n                \"Type\": \"轿车\",\n                \"Color\": \"黑\",\n                \"Confidence\": 99,\n                \"Year\": 0,\n                \"CarLocation\": [\n                    {\n                        \"X\": 135,\n                        \"Y\": 826\n                    },\n                    {\n                        \"Y\": 191,\n                        \"X\": 135\n                    },\n                    {\n                        \"Y\": 191,\n                        \"X\": 1116\n                    },\n                    {\n                        \"X\": 1116,\n                        \"Y\": 826\n                    }\n                ]\n            },\n            {\n                \"CarLocation\": [\n                    {\n                        \"X\": 0,\n                        \"Y\": 488\n                    },\n                    {\n                        \"X\": 0,\n                        \"Y\": 368\n                    },\n                    {\n                        \"X\": 125,\n                        \"Y\": 368\n                    },\n                    {\n                        \"X\": 125,\n                        \"Y\": 488\n                    }\n                ],\n                \"PlateContent\": {\n                    \"PlateLocation\": [],\n                    \"Plate\": \"\",\n                    \"Type\": \"\",\n                    \"Color\": \"\"\n                },\n                \"Serial\": \"五菱之光\",\n                \"Brand\": \"东风\",\n                \"Type\": \"面包车\",\n                \"Color\": \"黄\",\n                \"Confidence\": 0,\n                \"Year\": 0\n            }\n        ],\n        \"RequestId\": \"dabc3980-1f8d-4e8a-a943-4412d82e5df9\",\n        \"CarCoords\": [\n            {\n                \"X\": 135,\n                \"Y\": 826\n            },\n            {\n                \"X\": 135,\n                \"Y\": 191\n            },\n            {\n                \"X\": 1116,\n                \"Y\": 191\n            },\n            {\n                \"X\": 1116,\n                \"Y\": 826\n            }\n        ]\n    }\n}",
+        "title": "车辆识别示例代码"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "title": "调用失败示例"
+      }
+    ],
     "SearchImage": [
       {
         "document": "",

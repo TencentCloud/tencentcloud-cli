@@ -818,6 +818,7 @@
         {
           "default": "",
           "document": "转发模式，其中0表示IP方式，1表示网段方式；通过cidr方式可支持更多的IP接入到NAT网关",
+          "example": "1",
           "member": "string",
           "name": "ForwardMode",
           "required": true,
@@ -826,6 +827,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -834,6 +836,7 @@
         {
           "default": "",
           "document": "NAT名称",
+          "example": "test",
           "member": "string",
           "name": "NatName",
           "required": true,
@@ -842,6 +845,7 @@
         {
           "default": "",
           "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
+          "example": "10000000",
           "member": "uint64",
           "name": "MaxConcurrent",
           "required": true,
@@ -850,6 +854,7 @@
         {
           "default": "",
           "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
+          "example": "[\"subnet-d3668cur\\r\\n\",\"subnet-dipbsl5n\\r\\n\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -858,6 +863,7 @@
         {
           "default": "",
           "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效；IpInfoSet和SubnetIds中的子网ID不能同时存在",
+          "example": "无",
           "member": "IpInfo",
           "name": "IpInfoSet",
           "required": false,
@@ -866,6 +872,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表, AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "[\"139.199.40.59\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": false,
@@ -874,6 +881,7 @@
         {
           "default": "",
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP, AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "1",
           "member": "uint64",
           "name": "AutoAllocEipNum",
           "required": false,
@@ -882,6 +890,7 @@
         {
           "default": "",
           "document": "独占标识，取值为0和1，默认值为0；0和1分别表示创建共享型NAT网关和独占NAT型网关；由于同一个VPC网络内，指向NAT集群的默认路由只有一条，因此VPC内只能创建一种类型NAT网关；创建独占型NAT网关时，需联系对应架构师进行独占NAT集群搭建，否则无法创建独占型NAT网关。",
+          "example": "0",
           "member": "uint64",
           "name": "Exclusive",
           "required": false,
@@ -895,8 +904,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18403",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1391,6 +1402,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-kdm476mp",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -1399,6 +1411,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1412,8 +1425,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18407",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

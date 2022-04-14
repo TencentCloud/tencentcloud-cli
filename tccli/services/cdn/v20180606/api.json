@@ -871,6 +871,24 @@
           "name": "OssPrivateAccess",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2063,6 +2081,26 @@
           "example": "dsfds13m",
           "member": "string",
           "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "Bucket",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7741,6 +7779,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9000,6 +9058,52 @@
           "name": "TlsVersion",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "HwPrivateAccess": {
+      "document": " 华为云对象存储回源鉴权",
+      "members": [
+        {
+          "default": "",
+          "document": "开关 on/off",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SYWKY0DAR8I5NXZO93YT",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5Hhn0uss213Szfgysb6nOkWaGA6Z4V956n8NtSmg",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-1-163",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10730,6 +10834,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11071,6 +11195,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对象存储回源厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "OriginCompany",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11221,6 +11355,26 @@
           "example": "abc",
           "member": "string",
           "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "Bucket",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11963,6 +12117,42 @@
         }
       ],
       "type": "object"
+    },
+    "QnPrivateAccess": {
+      "document": "七牛元对象存储回源鉴权配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开关 on/off",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ousbDM5xlzuAZJEhhwcLj8makXkYiaAvciZHqAQj",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥",
+          "example": "c109ES08UcSUNdSA1rN04tSBJ8I45BrxMZQn3vtL",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "QueryStringKey": {
       "document": "组成CacheKey的一部分",
@@ -15134,6 +15324,24 @@
           "example": "无",
           "member": "ShareCname",
           "name": "ShareCname",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
           "required": false,
           "type": "object"
         }

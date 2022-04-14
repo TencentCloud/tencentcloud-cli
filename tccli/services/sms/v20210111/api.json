@@ -1986,7 +1986,7 @@
         },
         {
           "default": "",
-          "document": "结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。\n注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。",
+          "document": "结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。\n注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。",
           "example": "2021050123",
           "member": "string",
           "name": "EndTime",

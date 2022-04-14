@@ -81,13 +81,13 @@
     "CreateNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=1\r\n&VpcId=vpc-mi51u7gs\r\n&NatName=test\r\n&MaxConcurrent=10000000\r\n&AssignedEips.0=139.199.40.59\r\n&SubnetIds.0=subnet-d3668cur\r\n&SubnetIds.1=subnet-dipbsl5n\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\n&ForwardMode=1\n&VpcId=vpc-mi51u7gs\n&NatName=test\n&MaxConcurrent=10000000\n&AssignedEips.0=139.199.40.59\n&SubnetIds.0=subnet-d3668cur\n&SubnetIds.1=subnet-dipbsl5n\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18403,\n        \"RequestId\": \"6e9f212d-b3cb-417e-b78e-3ae6ec690e4d\"\n    }\n}",
         "title": "网段方式创建NAT网关"
       },
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=0\r\n&VpcId=vpc-mi51u7gs\r\n&SubnetIds.0=subnet-kmoq5ugh\r\n&SubnetIds.1=subnet-j74dmsz5\r\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\r\n&IpInfoSet.0.Ips.0=192.168.88.2\r\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\r\n&IpInfoSet.1.Ips.0=192.168.222.2\r\n&IpInfoSet.1.Ips.1=192.168.222.3\r\n&NatName=test\r\n&MaxConcurrent=1000000\r\n&AutoAllocEipNum=1\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\n&ForwardMode=0\n&VpcId=vpc-mi51u7gs\n&SubnetIds.0=subnet-kmoq5ugh\n&SubnetIds.1=subnet-j74dmsz5\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\n&IpInfoSet.0.Ips.0=192.168.88.2\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\n&IpInfoSet.1.Ips.0=192.168.222.2\n&IpInfoSet.1.Ips.1=192.168.222.3\n&NatName=test\n&MaxConcurrent=1000000\n&AutoAllocEipNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18405,\n        \"RequestId\": \"7d18fca8-4b3c-4bc6-818e-ec291764b8fb\"\n    }\n}",
         "title": "IP方式创建NAT网关"
       }
@@ -167,7 +167,7 @@
     "DeleteNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteNatGateway\r\n&NatId=nat-kdm476mp\r\n&VpcId=vpc-mi51u7gs\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteNatGateway\n&NatId=nat-kdm476mp\n&VpcId=vpc-mi51u7gs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18407,\n        \"RequestId\": \"fb836c6d-487f-4ea5-8742-549be18aca77\"\n    }\n}",
         "title": "删除NAT网关"
       }

@@ -3,7 +3,7 @@
     "AddTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=AddTimeWindow\n&InstanceId=cdb-eb2w7dto\n&Monday.0=02:00-03:00\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=AddTimeWindow\n&InstanceId=cdb-eb2w7dto\n&Monday.0=02:00-03:00\n&MaxDelayTime=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "添加维护时间窗口"
       }
@@ -659,8 +659,8 @@
     "DescribeTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTimeWindow\r\n&InstanceId=cdb-eb2w7dto\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Monday\": [\n            \"19:00-20:00\"\n        ],\n        \"Tuesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Friday\": [\n            \"18:00-20:00\"\n        ],\n        \"Wednesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Thursday\": [\n            \"18:00-20:00\"\n        ],\n        \"Sunday\": [\n            \"18:00-20:00\",\n            \"21:30-22:00\"\n        ],\n        \"Saturday\": [\n            \"18:00-20:00\"\n        ]\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTimeWindow\n&InstanceId=cdb-eb2w7dto\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"MaxDelayTime\": 10,\n        \"Monday\": [\n            \"19:00-20:00\"\n        ],\n        \"Tuesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Friday\": [\n            \"18:00-20:00\"\n        ],\n        \"Wednesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Thursday\": [\n            \"18:00-20:00\"\n        ],\n        \"Sunday\": [\n            \"18:00-20:00\",\n            \"21:30-22:00\"\n        ],\n        \"Saturday\": [\n            \"18:00-20:00\"\n        ]\n    }\n}",
         "title": "查询维护时间窗口"
       }
     ],
@@ -905,7 +905,7 @@
     "ModifyTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyTimeWindow\r\n&InstanceId=cdb-eb2w7dto\r\n&TimeRanges.0=03:00-03:30\r\n&Weekdays.0=monday\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyTimeWindow\n&InstanceId=cdb-eb2w7dto\n&TimeRanges.0=03:00-03:30\n&Weekdays.0=monday\n&MaxDelayTime=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "更新维护时间窗口"
       }
@@ -964,6 +964,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=RenewDBInstance\r\n&InstanceId=cdb-ezq1vzem\r\n&TimeSpan=12\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
+      }
+    ],
+    "ResetRootAccount": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ResetRootAccount\n&InstanceId=cdb-ksixa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "重置root账号权限"
       }
     ],
     "RestartDBInstances": [

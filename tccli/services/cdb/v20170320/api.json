@@ -702,6 +702,12 @@
       "name": "续费云数据库实例",
       "output": "RenewDBInstanceResponse"
     },
+    "ResetRootAccount": {
+      "document": "重置实例ROOT账，初始化账号权限",
+      "input": "ResetRootAccountRequest",
+      "name": "重置ROOT账号",
+      "output": "ResetRootAccountResponse"
+    },
     "RestartDBInstances": {
       "document": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。",
       "input": "RestartDBInstancesRequest",
@@ -904,6 +910,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -912,6 +919,7 @@
         {
           "default": "",
           "document": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。",
+          "example": "[\"02:00-03:00\\n\"]",
           "member": "string",
           "name": "Monday",
           "required": false,
@@ -920,6 +928,7 @@
         {
           "default": "",
           "document": "星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Tuesday",
           "required": false,
@@ -928,6 +937,7 @@
         {
           "default": "",
           "document": "星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Wednesday",
           "required": false,
@@ -936,6 +946,7 @@
         {
           "default": "",
           "document": "星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Thursday",
           "required": false,
@@ -944,6 +955,7 @@
         {
           "default": "",
           "document": "星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Friday",
           "required": false,
@@ -952,6 +964,7 @@
         {
           "default": "",
           "document": "星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Saturday",
           "required": false,
@@ -960,10 +973,20 @@
         {
           "default": "",
           "document": "星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Sunday",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "最大延迟阈值，仅对主实例和灾备实例有效",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3237,7 +3260,7 @@
         },
         {
           "default": "",
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "*******",
           "member": "string",
           "name": "ClientToken",
@@ -3333,6 +3356,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
+          "example": "[]",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3597,7 +3629,7 @@
         },
         {
           "default": "",
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "********",
           "member": "string",
           "name": "ClientToken",
@@ -3693,6 +3725,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
+          "example": "[]",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8176,6 +8217,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8189,51 +8231,74 @@
       "members": [
         {
           "document": "星期一的可维护时间列表。",
+          "example": "[\"19:00-20:00\"]",
           "member": "string",
           "name": "Monday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期二的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Tuesday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期三的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Wednesday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期四的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Thursday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期五的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Friday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期六的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Saturday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期日的可维护时间列表。",
+          "example": "[\"18:00-20:00\",\"21:30-22:00\"]",
           "member": "string",
           "name": "Sunday",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最大数据延迟阈值",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9968,7 +10033,7 @@
         },
         {
           "default": "",
-          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，不传该参数表示清除该权限。",
+          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "[\"SELECT\\n\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -9977,7 +10042,7 @@
         },
         {
           "default": "",
-          "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
@@ -9986,7 +10051,7 @@
         },
         {
           "default": "",
-          "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
@@ -9995,7 +10060,7 @@
         },
         {
           "default": "",
-          "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
@@ -11093,6 +11158,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11101,6 +11167,7 @@
         {
           "default": "",
           "document": "修改后的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起止时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；起止时间范围为：[00:00, 24:00]。",
+          "example": "[\"03:00-03:30\\r\\n\"]",
           "member": "string",
           "name": "TimeRanges",
           "required": true,
@@ -11109,10 +11176,20 @@
         {
           "default": "",
           "document": "指定修改哪一天的客户时间段，可能的取值为：monday，tuesday，wednesday，thursday，friday，saturday，sunday。如果不指定该值或者为空，则默认一周七天都修改。",
+          "example": "[\"monday\\r\\n\"]",
           "member": "string",
           "name": "Weekdays",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12190,6 +12267,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRootAccountRequest": {
+      "document": "ResetRootAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "cdb-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRootAccountResponse": {
+      "document": "ResetRootAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
