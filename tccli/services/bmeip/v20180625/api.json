@@ -483,6 +483,7 @@
         {
           "default": "",
           "document": "Eip实例ID列表",
+          "example": "[\"eip-k5zjz4yy\\r\\n\"]",
           "member": "string",
           "name": "EipIds",
           "required": true,
@@ -496,8 +497,10 @@
       "members": [
         {
           "document": "任务Id",
+          "example": "2488125",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

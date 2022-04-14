@@ -108,6 +108,12 @@
       "name": "云鉴-验证鉴权金额",
       "output": "CheckAmountResponse"
     },
+    "CloseCloudOrder": {
+      "document": "通过此接口关闭此前已创建的订单。关闭后，用户将无法继续付款，仅能关闭创建后未支付的订单。",
+      "input": "CloseCloudOrderRequest",
+      "name": "聚鑫V2-关闭订单",
+      "output": "CloseCloudOrderResponse"
+    },
     "CloseOpenBankPaymentOrder": {
       "document": "云企付-关闭订单",
       "input": "CloseOpenBankPaymentOrderRequest",
@@ -155,6 +161,12 @@
       "input": "CreateBatchPaymentRequest",
       "name": "灵云-批量主播转账接口",
       "output": "CreateBatchPaymentResponse"
+    },
+    "CreateCloudSubMerchant": {
+      "document": "创建子商户",
+      "input": "CreateCloudSubMerchantRequest",
+      "name": "聚鑫V2-创建子商户",
+      "output": "CreateCloudSubMerchantResponse"
     },
     "CreateCustAcctId": {
       "document": "会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。\n平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。",
@@ -480,6 +492,24 @@
       "name": "云支付-查询城市编码接口",
       "output": "QueryCityCodeResponse"
     },
+    "QueryCloudChannelData": {
+      "document": "发起支付等渠道操作后，可以调用该接口查询渠道的数据。",
+      "input": "QueryCloudChannelDataRequest",
+      "name": "聚鑫V2-查询第三方渠道数据",
+      "output": "QueryCloudChannelDataResponse"
+    },
+    "QueryCloudOrder": {
+      "document": "根据订单号或用户ID，查询支付订单状态。",
+      "input": "QueryCloudOrderRequest",
+      "name": "聚鑫V2-查询订单",
+      "output": "QueryCloudOrderResponse"
+    },
+    "QueryCloudRefundOrder": {
+      "document": "提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。",
+      "input": "QueryCloudRefundOrderRequest",
+      "name": "聚鑫V2-查询退款",
+      "output": "QueryCloudRefundOrderResponse"
+    },
     "QueryCommonTransferRecharge": {
       "document": "查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。",
       "input": "QueryCommonTransferRechargeRequest",
@@ -786,6 +816,12 @@
       "name": "聚鑫-退款接口",
       "output": "RefundResponse"
     },
+    "RefundCloudOrder": {
+      "document": "如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 ",
+      "input": "RefundCloudOrderRequest",
+      "name": "聚鑫V2-退款申请",
+      "output": "RefundCloudOrderResponse"
+    },
     "RefundMemberTransaction": {
       "document": "会员间交易退款",
       "input": "RefundMemberTransactionRequest",
@@ -881,6 +917,12 @@
       "input": "UnbindRelateAcctRequest",
       "name": "云鉴-会员解绑提现账户",
       "output": "UnbindRelateAcctResponse"
+    },
+    "UnifiedCloudOrder": {
+      "document": "应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
+      "input": "UnifiedCloudOrderRequest",
+      "name": "聚鑫V2-统一下单",
+      "output": "UnifiedCloudOrderResponse"
     },
     "UnifiedOrder": {
       "document": "应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。",
@@ -5157,6 +5199,60 @@
       ],
       "usage": "out"
     },
+    "CloseCloudOrderRequest": {
+      "document": "CloseCloudOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Id，长度不小于5位，仅支持字母和数字的组合",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseCloudOrderResponse": {
+      "document": "CloseCloudOrder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloseOpenBankPaymentOrderRequest": {
       "document": "CloseOpenBankPaymentOrder请求参数结构体",
       "members": [
@@ -5347,6 +5443,1010 @@
         }
       ],
       "type": "object"
+    },
+    "CloudAttachmentInfo": {
+      "document": "附加项信息对象",
+      "members": [
+        {
+          "default": "",
+          "document": "附加项金额。\n附加项的金额（必须是正数，单位：分），代表积分的数量、抵扣的金额、溢价的金额、补贴的金额",
+          "example": "无",
+          "member": "int64",
+          "name": "AttachmentAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加项类型。\nAdd：加项；\nSub：减项；\nPoint：积分项；\nSubsidy：补贴项。",
+          "example": "无",
+          "member": "string",
+          "name": "AttachmentType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加项名称。\n当银行作为收单机构可能会对该字段有要求，请向米大师确认。",
+          "example": "无",
+          "member": "string",
+          "name": "AttachmentName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加项编号。\n当银行作为收单机构可能会对该字段有要求，请向米大师确认。",
+          "example": "无",
+          "member": "string",
+          "name": "AttachmentCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudChannelExternalUserInfo": {
+      "document": "渠道方用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道方用户类型，枚举值:\nWX_OPENID 微信支付类型\nALIPAY_BUYERID 支付宝支付类型",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalUserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道方用户Id",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudClientInfo": {
+      "document": "客户端信息",
+      "members": [
+        {
+          "default": "",
+          "document": "场景类型。\nwechat_ecommerce渠道 - h5支付方式，此字段必填；\n枚举值：\nCLIENT_TYPE_UNKNOWN 未知;\nCLIENT_TYPE_IOS ios系统;\nCLIENT_TYPE_ANDROID 安卓系统;\nCLIENT_TYPE_WAP WAP场景;\nCLIENT_TYPE_H5 H5场景;",
+          "example": "无",
+          "member": "string",
+          "name": "ClientType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网站URL。",
+          "example": "无",
+          "member": "string",
+          "name": "AppUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "IOS平台BundleID。",
+          "example": "无",
+          "member": "string",
+          "name": "BundleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Android平台PackageName",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudExternalChannelData": {
+      "document": "第三方渠道数据信息",
+      "members": [
+        {
+          "default": "",
+          "document": "第三方渠道数据名。\nPAYMENT_ORDER_EXTERNAL_REQUEST_DATA: 支付下单请求数据\nPAYMENT_ORDER_EXTERNAL_RETURN_DATA: 支付下单返回数据\nPAYMENT_ORDER_EXTERNAL_NOTIFY_DATA: 支付通知数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalChannelDataName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "第三方渠道数据值。\n当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://midas-juxin-next.pages.woa.com/apidocs/external-channel-data/QueryExternalChannelData.html#ExternalChannelPaymentDataValue)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalChannelDataValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudExternalPromptGroup": {
+      "document": "渠道扩展促销信息",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道名。\n为米大师定义的枚举值：\nwechat 微信渠道",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "渠道扩展促销信息列表，由各个渠道自行定义。\nChannelName为wechat时，组成为 <Wechat-ExternalPromptInfo>",
+          "example": "无",
+          "member": "CloudExternalPromptInfo",
+          "name": "ExternalPromptInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudExternalPromptInfo": {
+      "document": "渠道扩展促销信息",
+      "members": [
+        {
+          "default": "",
+          "document": "优惠商品信息类型。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPromptType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠商品信息数据。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPromptValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优惠商品名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalPromptName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudGlobalPayTimeInfo": {
+      "document": "全局支付时间信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单开始时间。\n不指定时默认为当前时间。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单结束时间。\n逾期将会拒绝下单。不指定时默认为当前时间的7天后结束。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时区。\n不指定时默认为28800，表示北京时间（东八区）。",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeOffset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudOrderReturn": {
+      "document": "返回订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开发者支付订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调用下单接口传进来的子单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudSubOrderReturn",
+          "name": "SubOrderList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调用下单接口获取的米大师交易订单号",
+          "example": "无",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户Id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付渠道\nwechat:微信支付",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物品Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发货标识，由开发者在调用下单接口的时候传入",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ISO货币代码",
+          "example": "无",
+          "member": "string",
+          "name": "CurrencyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付金额，单位：分",
+          "example": "无",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态\n0:初始状态，获取米大师交易订单成功\n1:拉起米大师支付页面成功，用户未支付\n2:用户支付成功，正在发货\n3:用户支付成功，发货失败\n4:用户支付成功，发货成功\n5:关单中\n6:已关单",
+          "example": "无",
+          "member": "string",
+          "name": "OrderState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下单时间，unix时间戳",
+          "example": "无",
+          "member": "string",
+          "name": "OrderTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付时间，unix时间戳",
+          "example": "无",
+          "member": "string",
+          "name": "PayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付回调时间，unix时间戳",
+          "example": "无",
+          "member": "string",
+          "name": "CallBackTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付机构订单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师内部渠道订单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否曾退款",
+          "example": "无",
+          "member": "string",
+          "name": "RefundFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户支付金额",
+          "example": "无",
+          "member": "string",
+          "name": "CashAmt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "抵扣券金额",
+          "example": "无",
+          "member": "string",
+          "name": "CouponAmt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结算信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudSettleInfo",
+          "name": "SettleInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "附加项信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudAttachmentInfo",
+          "name": "AttachmentInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道方返回的用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudChannelExternalUserInfo",
+          "name": "ChannelExternalUserInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道扩展促销列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudExternalPromptGroup",
+          "name": "ExternalReturnPromptGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "场景扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudSettleInfo": {
+      "document": "结算信息对象",
+      "members": [
+        {
+          "default": "",
+          "document": "是否需要支付确认。\n0: 不需要支付确认\n1: 需要支付确认\n传1时，需要在支付完成后成功调用了《支付确认》接口，该笔订单才会被清分出去",
+          "example": "无",
+          "member": "int64",
+          "name": "NeedToBeConfirmed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否指定分账。\n0: 不指定分账\n1: 指定分账",
+          "example": "无",
+          "member": "int64",
+          "name": "ProfitSharing",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudStoreInfo": {
+      "document": "门店信息",
+      "members": [
+        {
+          "default": "",
+          "document": "门店ID。",
+          "example": "无",
+          "member": "string",
+          "name": "StoreId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "门店名称。",
+          "example": "无",
+          "member": "string",
+          "name": "StoreName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "门店地址。",
+          "example": "无",
+          "member": "string",
+          "name": "StoreAddress",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "门店地区代码。",
+          "example": "无",
+          "member": "string",
+          "name": "StoreAreaCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备ID。\nwechat_ecommerce渠道 - h5支付方式，此字段必填。",
+          "example": "无",
+          "member": "string",
+          "name": "StoreDeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudSubOrder": {
+      "document": "子订单对象",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单号。\n长度32个字符供参考，部分渠道存在长度更短的情况接入时请联系开发咨询。",
+          "example": "无",
+          "member": "string",
+          "name": "SubOutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付子商户ID。\n米大师计费SubAppId，代表子商户。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品名称。\n业务自定义的子订单商品名称，无需URL编码，长度限制以具体所接入渠道为准。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品详情。\n业务自定义的子订单商品详情，无需URL编码，长度限制以具体所接入渠道为准。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台应收。\n子订单平台应收金额，单位：分，需要注意的是Amt = PlatformIncome+SubMchIncome。",
+          "example": "无",
+          "member": "int64",
+          "name": "PlatformIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商户应收。\n子订单结算应收金额，单位：分，需要注意的是Amt = PlatformIncome+SubMchIncome。",
+          "example": "无",
+          "member": "int64",
+          "name": "SubMchIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "透传字段。\n发货标识，由开发者在调用米大师下单接口的 时候下发。",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付金额。\n子订单支付金额，需要注意的是Amt = PlatformIncome+SubMchIncome。",
+          "example": "无",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "原始金额。\n子订单原始金额，OriginalAmt>=Amt。",
+          "example": "无",
+          "member": "int64",
+          "name": "OriginalAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信子商户号。",
+          "example": "无",
+          "member": "string",
+          "name": "WxSubMchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结算信息。\n例如是否需要分账、是否需要支付确认等。",
+          "example": "无",
+          "member": "CloudSettleInfo",
+          "name": "SettleInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加项信息列表。\n例如溢价信息、抵扣信息、积分信息、补贴信息\n通过该字段可以实现渠道方的优惠抵扣补贴等营销功能。",
+          "example": "无",
+          "member": "CloudAttachmentInfo",
+          "name": "AttachmentInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudSubOrderRefund": {
+      "document": "退款子单",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单退款金额",
+          "example": "无",
+          "member": "int64",
+          "name": "RefundAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台应退金额",
+          "example": "无",
+          "member": "int64",
+          "name": "PlatformRefundAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商家应退金额",
+          "example": "无",
+          "member": "int64",
+          "name": "SubMchRefundAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单号",
+          "example": "无",
+          "member": "string",
+          "name": "SubOutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子退款单号，调用方需要保证全局唯一性",
+          "example": "无",
+          "member": "string",
+          "name": "SubRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudSubOrderReturn": {
+      "document": "子订单详情",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单号",
+          "example": "无",
+          "member": "string",
+          "name": "SubOutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "米大师计费SubAppId，代表子商户",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单商品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单商品详情",
+          "example": "无",
+          "member": "string",
+          "name": "ProductDetail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单平台应收金额，单位：分",
+          "example": "无",
+          "member": "int64",
+          "name": "PlatformIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单结算应收金额，单位：分",
+          "example": "无",
+          "member": "int64",
+          "name": "SubMchIncome",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单支付金额",
+          "example": "无",
+          "member": "int64",
+          "name": "Amt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单原始金额",
+          "example": "无",
+          "member": "int64",
+          "name": "OriginalAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核销状态，1表示核销，0表示未核销",
+          "example": "无",
+          "member": "int64",
+          "name": "SettleCheck",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结算信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudSettleInfo",
+          "name": "SettleInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "透传字段，由开发者在调用米大师下单接口的时候下发",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附加项信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudAttachmentInfo",
+          "name": "AttachmentInfoList",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道方应答的订单号，透传处理",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalSubOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信子商户号",
+          "example": "无",
+          "member": "string",
+          "name": "WxSubMchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudSubRefundItem": {
+      "document": "子单退款信息",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道方应答的退款ID，透传处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道方应答的订单号，透传处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子单退款金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RefundAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子单订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubOutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子单退款id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道子单支付订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道子退款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ConfirmOrderRequest": {
       "document": "ConfirmOrder请求参数结构体",
@@ -6856,6 +7956,123 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudSubMerchantRequest": {
+      "document": "CreateCloudSubMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId，根应用Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "父应用Id。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子商户名。",
+          "example": "无",
+          "member": "string",
+          "name": "SubMchName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子商户描述。",
+          "example": "无",
+          "member": "string",
+          "name": "SubMchDescription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子应用Id，为空则自动创建子应用id。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子商户名缩写。",
+          "example": "无",
+          "member": "string",
+          "name": "SubMchShortName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务平台自定义的子商户Id，唯一。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudSubMerchantResponse": {
+      "document": "CreateCloudSubMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "子应用Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道子商户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "层级，从0开始。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15946,6 +17163,402 @@
       ],
       "type": "object"
     },
+    "QueryCloudChannelDataRequest": {
+      "document": "QueryCloudChannelData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务订单号，外部订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据类型\nPAYMENT:支付",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalChannelDataType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道订单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道名称，指定渠道查询\nwechat:微信支付",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCloudChannelDataResponse": {
+      "document": "QueryCloudChannelData返回参数结构体",
+      "members": [
+        {
+          "document": "外部订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "第三方渠道数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalChannelDataType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "第三方渠道数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudExternalChannelData",
+          "name": "ExternalChannelDataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "子应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "米大师分配的支付主MidasAppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCloudOrderRequest": {
+      "document": "QueryCloudOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Id，长度不小于5位，仅支持字母和数字的组合",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询类型\nby_order:根据订单号查订单",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者的主订单号",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCloudOrderResponse": {
+      "document": "QueryCloudOrder返回参数结构体",
+      "members": [
+        {
+          "document": "订单数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudOrderReturn",
+          "name": "OrderList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCloudRefundOrderRequest": {
+      "document": "QueryCloudRefundOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Id，长度不小于5位，仅支持字母和数字的组合",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "无",
+          "member": "string",
+          "name": "RefundId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCloudRefundOrderResponse": {
+      "document": "QueryCloudRefundOrder返回参数结构体",
+      "members": [
+        {
+          "document": "该笔退款订单对应的UnifiedOrder下单时传入的OutTradeNo",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该笔退款订单对应的支付成功后支付机构返回的支付订单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该笔退款订单退款后支付机构返回的退款单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelExternalRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "内部请求微信支付、银行等支付机构的订单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "请求退款时传的退款ID后查询退款时传的RefundId",
+          "example": "无",
+          "member": "string",
+          "name": "RefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "被使用的RefundId，业务可忽略该字段",
+          "example": "无",
+          "member": "string",
+          "name": "UsedRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "退款总金额",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalRefundAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ISO货币代码",
+          "example": "无",
+          "member": "string",
+          "name": "CurrencyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "退款状态码，退款提交成功后返回\n1:退款中\n2:退款成功\n3:退款失败",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子单退款信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudSubRefundItem",
+          "name": "SubRefundList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "透传字段，退款成功回调透传给应用，用于开发者透传自定义内容",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "米大师分配的支付主MidasAppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "该笔退款订单退款后内部返回的退款单号",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelRefundId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryCommonTransferRechargeRequest": {
       "document": "QueryCommonTransferRecharge请求参数结构体",
       "members": [
@@ -23839,6 +25452,141 @@
       ],
       "type": "object"
     },
+    "RefundCloudOrderRequest": {
+      "document": "RefundCloudOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Id，长度不小于5位，仅支持字母和数字的组合",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "无",
+          "member": "string",
+          "name": "RefundId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "退款金额，单位：分\n当该字段为空或者为0时，系统会默认使用订单当实付金额做为退款金额",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalRefundAmt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商品订单，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台应收金额，单位：分",
+          "example": "无",
+          "member": "int64",
+          "name": "PlatformRefundAmt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结算应收金额，单位：分",
+          "example": "无",
+          "member": "int64",
+          "name": "MchRefundAmt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "支持多个子订单批量退款单个子订单退款支持传SubOutTradeNo\n也支持传SubOrderRefundList，都传的时候以SubOrderRefundList为准。\n如果传了子单退款细节，外部不需要再传退款金额，平台应退，商户应退金额",
+          "example": "无",
+          "member": "CloudSubOrderRefund",
+          "name": "SubOrderRefundList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "渠道订单号，当出现重复支付时，可以将重复支付订单的渠道订单号传入，以进行退款（注意：目前该重复支付订单的渠道订单号仅能通过米大师内部获取），更多重复支付订单退款说明，请参考[重复支付订单退款说明](https://dev.tke.midas.qq.com/juxin-doc-next/apidocs/receive-order/Refund.html#%E9%87%8D%E5%A4%8D%E6%94%AF%E4%BB%98%E8%AE%A2%E5%8D%95%E9%80%80%E6%AC%BE%E8%AF%B4%E6%98%8E)",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知地址",
+          "example": "无",
+          "member": "string",
+          "name": "RefundNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段，退款成功回调透传给应用，用于开发者透传自定义内容",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道扩展退款促销列表，可将各个渠道的退款促销信息放于该列表",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalRefundPromptGroupList",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefundCloudOrderResponse": {
+      "document": "RefundCloudOrder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RefundMemberTransactionRequest": {
       "document": "RefundMemberTransaction请求参数结构体",
       "members": [
@@ -27145,6 +28893,411 @@
           "document": "STRING(1027)，保留域\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ReservedMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnifiedCloudOrderRequest": {
+      "document": "UnifiedCloudOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "米大师分配的支付主MidasAppId",
+          "example": "无",
+          "member": "string",
+          "name": "MidasAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户Id。\n长度不小于5位，仅支持字母和数字的组合，长度限制以具体接入渠道为准",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开发者主订单号。\n支付订单号，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合，长度供参考，部分渠道存在长度更短的情况接入时请联系开发咨询",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "货币类型。\nISO货币代码，CNY",
+          "example": "无",
+          "member": "string",
+          "name": "CurrencyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品Id。\n业务自定义的商品id，仅支持数字、字母、下划线（_）、横杠字符（-）、点（.）的组合。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品名称。\n业务自定义的商品名称，无需URL编码，长度限制以具体所接入渠道为准。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商品详情。\n业务自定义的商品详情，无需URL编码，长度限制以具体所接入渠道为准。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductDetail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始金额。\n单位：分，需要注意的是，OriginalAmt>=TotalAmt",
+          "example": "无",
+          "member": "int64",
+          "name": "OriginalAmt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "支付金额。\n单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalAmt",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "release",
+          "member": "string",
+          "name": "MidasEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付SubAppId。\n米大师计费SubAppId，代表子商户。指定使用该商户的商户号下单时必传。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "顶层支付渠道。\n银行收单:\nopenbank_ccb: 建设银行\nopenbank_icbc: 工商银行\nopenbank_cmb: 招商银行\nopenbank_ping: 平安银行\nopenbank_icbc_jft：工商银行聚付通\n非银行收单，可以为空",
+          "example": "无",
+          "member": "string",
+          "name": "RealChannel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付渠道。\nwechat：微信支付\nwechat_ecommerce: 微信电商收付通\nopen_alipay: 支付宝\nopen_quickpass: 银联云闪付\nicbc_epay: 工银e支付\nforeign_cardpay: 外卡支付\nicbc_jft_wechat: 工行聚付通-微信\nicbc_jft_alipay: 工行聚付通-支付宝\nicbc_jft_epay: 工行聚付通-e支付\n指定渠道下单时必传",
+          "example": "无",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "透传字段。\n支付成功回调透传给应用，用于开发者透传自定义内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数量。\n购买数量,不传默认为1。",
+          "example": "无",
+          "member": "int64",
+          "name": "Quantity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Web端回调地址。\nWeb端网页回调地址，仅当Web端SDK使用页面跳转方式时有效。",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付取消地址。",
+          "example": "无",
+          "member": "string",
+          "name": "CancelUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信AppId。\nwechat渠道或wchat_ecommerce渠道可以指定下单时的wxappid。",
+          "example": "无",
+          "member": "string",
+          "name": "WxAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信SubAppId。\nwechat渠道可以指定下单时的sub_appid。",
+          "example": "无",
+          "member": "string",
+          "name": "WxSubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信公众号/小程序OpenId。\n微信公众号/小程序支付时为必选，需要传微信下的openid。",
+          "example": "无",
+          "member": "string",
+          "name": "WxOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信公众号/小程序SubOpenId。\n在服务商模式下，微信公众号/小程序支付时wx_sub_openid和wx_openid二选一。",
+          "example": "无",
+          "member": "string",
+          "name": "WxSubOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "平台应收金额。\n单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalPlatformIncome",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结算应收金额。\n单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalMchIncome",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "子订单列表。\n格式：子订单号、子应用Id、金额。压缩后最长不可超过32K字节(去除空格，换行，制表符等无意义字符)。",
+          "example": "无",
+          "member": "CloudSubOrder",
+          "name": "SubOrderList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "结算信息。\n例如是否需要分账、是否需要支付确认等，\n注意：如果子单列表中传入了SettleInfo，在主单中不可再传入SettleInfo字段。",
+          "example": "无",
+          "member": "CloudSettleInfo",
+          "name": "SettleInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "附加项信息列表。\n例如溢价信息、抵扣信息、积分信息、补贴信息\n通过该字段可以实现渠道方的优惠抵扣补贴等营销功能\n注意：当传SubOrderList时，请在子单信息中传附加项信息，不要在主单中传该字段。",
+          "example": "无",
+          "member": "CloudAttachmentInfo",
+          "name": "AttachmentInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "支付通知地址。\n调用方可通过该字段传入自定义支付通知地址。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支付场景。\n需要结合 RealChannel和Channel字段使用可选值:\nwechat-app 微信APP支付方式\nwechat-mini 微信小程序支付，示例：当 RealChannel=wechat Channel=wechat PayScene=wechat-mini时，内部会直接以小程序方式调用微信统一下单接口。",
+          "example": "无",
+          "member": "string",
+          "name": "PayScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "语言代码。\n(BCP-47格式)，取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext",
+          "example": "无",
+          "member": "string",
+          "name": "LocaleCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地区代码。\n取值请参考https://mpay.pages.woa.com/zh/api/objectdefinitions/objects/#mpayapisordersapplicationcontextapplicationcontext",
+          "example": "无",
+          "member": "string",
+          "name": "RegionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户IP。\n请求用户的IP地址，特定的渠道或特定的支付方式，此字段为必填\nwechat_ecommerce渠道 - h5支付方式，此字段必填。",
+          "example": "无",
+          "member": "string",
+          "name": "UserClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道订单号生成模式。\n枚举值。决定请求渠道方时的订单号的生成模式，详情请联系米大师沟通。不指定时默认为由米大师自行生成。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelOrderIdMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "全局支付时间信息。",
+          "example": "无",
+          "member": "CloudGlobalPayTimeInfo",
+          "name": "GlobalPayTimeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道应用Id取用方式。\nUSE_APPID 使用渠道应用Id;\nUSE_SUB_APPID 使用子渠道应用Id;\nUSE_APPID_AND_SUB_APPID 既使用渠道应用Id也使用子渠道应用ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelAppIdPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "门店信息。\n特定的渠道或特定的支付方式，此字段为必填\nwechat_ecommerce渠道 - h5支付方式，此字段必填",
+          "example": "无",
+          "member": "CloudStoreInfo",
+          "name": "StoreInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "客户端信息。\n特定的渠道或特定的支付方式，此字段为必填\nwechat_ecommerce渠道 - h5支付方式，此字段必填",
+          "example": "无",
+          "member": "CloudClientInfo",
+          "name": "ClientInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "渠道扩展促销列表。\n可将各个渠道的促销信息放于该列表。",
+          "example": "无",
+          "member": "CloudExternalPromptGroup",
+          "name": "ExternalPromptGroupList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "收单模式。\nORDER_RECEIVE_MODE_COMMON - 普通支付\nORDER_RECEIVE_MODE_COMBINE - 合单支付\nORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付\n若不传入该字段，则会根据是否传入子单来判断是 普通支付 还是 合单支付",
+          "example": "无",
+          "member": "string",
+          "name": "OrderReceiveMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnifiedCloudOrderResponse": {
+      "document": "UnifiedCloudOrder返回参数结构体",
+      "members": [
+        {
+          "document": "米大师的交易订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TransactionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "开发者的支付订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OutTradeNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "SDK的支付参数。\n支付参数透传给米大师SDK（原文透传给SDK即可，不需要解码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "支付金额，单位：分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalAmt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "渠道信息，用于拉起渠道支付。j\nson字符串，注意此字段仅会在传入正确的PayScene入参时才会有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelInfo",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },

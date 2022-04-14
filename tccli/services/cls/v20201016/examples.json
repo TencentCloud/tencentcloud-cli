@@ -59,7 +59,7 @@
     "CreateDataTransform": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"xx\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"xx\",\n            \"DstTopicId\": \"xx\",\n            \"LogContent\": \"xx\",\n            \"Time\": \"xx\"\n        }\n    ],\n    \"SrcTopicId\": \"xx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"xx\",\n            \"Alias\": \"xx\"\n        }\n    ],\n    \"EtlContent\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"xx\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"errorcode\",\n            \"DstTopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"LogContent\": \"XXXX\",\n            \"Time\": \"2017-08-08 12:12:12\"\n        }\n    ],\n    \"SrcTopicId\": \"xx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EtlContent\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建数据加工任务"
       }
@@ -163,7 +163,7 @@
     "DeleteDataTransform": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除数据加工任务"
       }
@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTransformInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataTransformTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"xx\",\n                \"LastEnableTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"LogsetId\": \"xx\",\n                \"SrcTopicName\": \"xx\",\n                \"SrcTopicId\": \"xx\",\n                \"DstResources\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Alias\": \"xx\"\n                    }\n                ],\n                \"TaskId\": \"xx\",\n                \"EtlContent\": \"xx\",\n                \"Type\": 0,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataTransformTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"2021-08-08 12:12:12\",\n                \"LastEnableTime\": \"xx\",\n                \"Name\": \"我的加工任务\",\n                \"LogsetId\": \"xx\",\n                \"SrcTopicName\": \"我的日志主题\",\n                \"SrcTopicId\": \"61b9XXXX-971a-48c7-984d-ca147cf242c1\",\n                \"DstResources\": [\n                    {\n                        \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n                        \"Alias\": \"别名\"\n                    }\n                ],\n                \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\",\n                \"EtlContent\": \"ields_set()\",\n                \"Type\": 0,\n                \"CreateTime\": \"2021-08-0712: 12: 12\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取数据加工任务基本信息"
       }
     ],
@@ -427,9 +427,9 @@
     "ModifyDataTransform": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"xx\",\n            \"Alias\": \"xx\"\n        }\n    ],\n    \"EnableFlag\": 0,\n    \"EtlContent\": \"xx\",\n    \"Name\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EnableFlag\": 0,\n    \"EtlContent\": \"fields_set()\",\n    \"Name\": \"我的数据加工\",\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "创建数据加工任务"
+        "title": "修改数据加工任务"
       }
     ],
     "ModifyIndex": [

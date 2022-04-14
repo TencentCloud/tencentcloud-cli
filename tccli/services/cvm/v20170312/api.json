@@ -3675,6 +3675,7 @@
         {
           "default": "",
           "document": "镜像ID",
+          "example": "img-19mu3fy3",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -3684,6 +3685,7 @@
         {
           "default": "",
           "document": "镜像操作系统",
+          "example": "CentOS 8.0 64位",
           "member": "string",
           "name": "OsName",
           "required": false,
@@ -3693,6 +3695,7 @@
         {
           "default": "",
           "document": "镜像类型",
+          "example": "PRIVATE_IMAGE",
           "member": "string",
           "name": "ImageType",
           "required": false,
@@ -3702,6 +3705,7 @@
         {
           "default": "",
           "document": "镜像创建时间",
+          "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -3711,6 +3715,7 @@
         {
           "default": "",
           "document": "镜像名称",
+          "example": "test",
           "member": "string",
           "name": "ImageName",
           "required": true,
@@ -3720,6 +3725,7 @@
         {
           "default": "",
           "document": "镜像描述",
+          "example": "test",
           "member": "string",
           "name": "ImageDescription",
           "required": true,
@@ -3729,6 +3735,7 @@
         {
           "default": "",
           "document": "镜像大小",
+          "example": "50",
           "member": "int64",
           "name": "ImageSize",
           "required": true,
@@ -3738,6 +3745,7 @@
         {
           "default": "",
           "document": "镜像架构",
+          "example": "x86_64",
           "member": "string",
           "name": "Architecture",
           "required": true,
@@ -3747,6 +3755,7 @@
         {
           "default": "",
           "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nUSING-使用中\nSYNCING-同步中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
+          "example": "NORMAL",
           "member": "string",
           "name": "ImageState",
           "required": true,
@@ -3756,6 +3765,7 @@
         {
           "default": "",
           "document": "镜像来源平台",
+          "example": "CentOS",
           "member": "string",
           "name": "Platform",
           "required": false,
@@ -3765,6 +3775,7 @@
         {
           "default": "",
           "document": "镜像创建者",
+          "example": "xxx",
           "member": "string",
           "name": "ImageCreator",
           "required": false,
@@ -3774,6 +3785,7 @@
         {
           "default": "",
           "document": "镜像来源",
+          "example": "CREATE_IMAGE",
           "member": "string",
           "name": "ImageSource",
           "required": false,
@@ -3783,6 +3795,7 @@
         {
           "default": "",
           "document": "同步百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "int64",
           "name": "SyncPercent",
           "required": true,
@@ -3792,6 +3805,7 @@
         {
           "default": "",
           "document": "镜像是否支持cloud-init\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportCloudinit",
           "required": true,
@@ -3801,8 +3815,19 @@
         {
           "default": "",
           "document": "镜像关联的快照信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "Snapshot",
           "name": "SnapshotSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
           "required": true,
           "type": "list",
           "value_allowed_null": true

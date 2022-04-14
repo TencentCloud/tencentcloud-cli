@@ -457,6 +457,15 @@
           "name": "ApplicationLicenseInput",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "创建机器人时初始化参数。",
+          "example": "无",
+          "member": "SyncRobotCommand",
+          "name": "SyncRobotCommands",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3722,6 +3731,102 @@
         }
       ],
       "type": "object"
+    },
+    "SyncRobotCommand": {
+      "document": "KTV 机器人初始化参数，在创建后自动完成相关初始化工作。",
+      "members": [
+        {
+          "default": "",
+          "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li>SetVolume：设置音量</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放参数。",
+          "example": "无",
+          "member": "PlayCommandInput",
+          "name": "PlayCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
+          "example": "无",
+          "member": "SetPlaylistCommandInput",
+          "name": "SetPlaylistCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放进度，当Command取Seek时，必填。",
+          "example": "无",
+          "member": "SeekCommandInput",
+          "name": "SeekCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频参数，当Command取SetAudioParam时，必填。",
+          "example": "无",
+          "member": "SetAudioParamCommandInput",
+          "name": "SetAudioParamCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义消息，当Command取SendMessage时，必填。",
+          "example": "无",
+          "member": "SendMessageCommandInput",
+          "name": "SendMessageCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放模式，当Command取SetPlayMode时，必填。",
+          "example": "无",
+          "member": "SetPlayModeCommandInput",
+          "name": "SetPlayModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销毁模式，当Command取SetDestroyMode时，必填。",
+          "example": "无",
+          "member": "SetDestroyModeCommandInput",
+          "name": "SetDestroyModeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音量，当Command取SetVolume时，必填。",
+          "example": "无",
+          "member": "SetVolumeCommandInput",
+          "name": "SetVolumeCommandInput",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TRTCJoinRoomInput": {
       "document": "TRTC推流进房信息",

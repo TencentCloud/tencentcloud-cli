@@ -263,7 +263,7 @@
     "DescribeRoutePolicies": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\r\n&RouteTableId=rtb-afg8md3c\r\n&RoutePolicyIds.0=rti-q1j48dkd\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\n&RouteTableId=rtb-afg8md3c\n&RoutePolicyIds.0=rti-q1j48dkd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoutePolicySet\": [\n            {\n                \"RoutePolicyId\": \"Local\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"Local\",\n                \"GatewayType\": \"LOCAL\",\n                \"GatewayId\": \"Local\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            },\n            {\n                \"RoutePolicyId\": \"rti-q9eyoybe\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"169.254.0.0/23\",\n                \"GatewayType\": \"SSHSSLVPN\",\n                \"GatewayId\": \"sslvpngw-o7tpr54i\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
         "title": "查询黑石路由表条目"
       }
@@ -391,7 +391,7 @@
     "ModifyRoutePolicy": [
       {
         "document": "修改路由表路由条目",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRoutePolicy\r\n&RouteTableId=rtb-19yps3nz\r\n&RoutePolicy.DestinationCidrBlock=10.151.0.0/16\r\n&RoutePolicy.GatewayType=CPM\r\n&RoutePolicy.GatewayId=10.1.10.2\r\n&RoutePolicy.RouteDescription=test\r\n&RoutePolicy.RoutePolicyId=rti-3xx8yzru\r\n&RoutePolicy.RoutePolicyType=USER\r\n&RoutePolicy.Enabled=true\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRoutePolicy\n&RouteTableId=rtb-19yps3nz\n&RoutePolicy.DestinationCidrBlock=10.151.0.0/16\n&RoutePolicy.GatewayType=CPM\n&RoutePolicy.GatewayId=10.1.10.2\n&RoutePolicy.RouteDescription=test\n&RoutePolicy.RoutePolicyId=rti-3xx8yzru\n&RoutePolicy.RoutePolicyType=USER\n&RoutePolicy.Enabled=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
         "title": "修改路由表路由条目"
       }

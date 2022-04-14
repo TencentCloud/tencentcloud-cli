@@ -10,14 +10,14 @@ tccli cls CreateDataTransform --cli-unfold-argument  \
     --Name xx \
     --FuncType 0 \
     --PreviewLogStatistics.0.LineNum 0 \
-    --PreviewLogStatistics.0.FailReason xx \
-    --PreviewLogStatistics.0.DstTopicId xx \
-    --PreviewLogStatistics.0.LogContent xx \
-    --PreviewLogStatistics.0.Time xx \
+    --PreviewLogStatistics.0.FailReason errorcode \
+    --PreviewLogStatistics.0.DstTopicId 81XXXXe5-e39e-4a1e-b2d4-a778df97d825 \
+    --PreviewLogStatistics.0.LogContent XXXX \
+    --PreviewLogStatistics.0.Time 2017-08-08 12:12:12 \
     --SrcTopicId xx \
     --TaskType 0 \
-    --DstResources.0.TopicId xx \
-    --DstResources.0.Alias xx \
+    --DstResources.0.TopicId 3d9bXXXX-05a4-4435-ac65-f43e684329b3 \
+    --DstResources.0.Alias 别名 \
     --EtlContent xx
 ```
 

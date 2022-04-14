@@ -1969,6 +1969,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-afg8md3c。",
+          "example": "rtb-afg8md3c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -1977,6 +1978,7 @@
         {
           "default": "",
           "document": "路由策略实例ID，例如：rti-azd4dt1c。",
+          "example": "[\"rti-q1j48dkd\\r\\n\"]",
           "member": "string",
           "name": "RoutePolicyIds",
           "required": false,
@@ -1985,22 +1987,25 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定RoutePolicyIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nroute-policy-id - String - （过滤条件）路由策略ID。\nroute-policy-description-like - String -（过滤条件）路由项备注。\nroute-policy-type - String - （过滤条件）路由项策略类型。\ndestination-cidr-like - String - （过滤条件）路由项目的地址。\ngateway-id-like - String - （过滤条件）路由项下一跳网关。\ngateway-type - String - （过滤条件）路由项下一条网关类型。\nenable - Bool - （过滤条件）路由策略是否启用。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "初始行的偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "每页行数，默认为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2014,15 +2019,19 @@
       "members": [
         {
           "document": "路由策略数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "路由策略列表",
+          "example": "无",
           "member": "RoutePolicy",
           "name": "RoutePolicySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3160,6 +3169,7 @@
         {
           "default": "",
           "document": "路由表ID",
+          "example": "rtb-19yps3nz",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -3168,6 +3178,7 @@
         {
           "default": "",
           "document": "修改的路由",
+          "example": "无",
           "member": "RoutePolicy",
           "name": "RoutePolicy",
           "required": true,
@@ -3181,8 +3192,10 @@
       "members": [
         {
           "document": "异步任务ID",
+          "example": "12312",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -84,6 +84,12 @@
       "name": "获取 PSTN 活动会话列表",
       "output": "DescribePSTNActiveSessionListResponse"
     },
+    "DescribeProtectedTelCdr": {
+      "document": "获取主被叫受保护的电话服务记录与录音",
+      "input": "DescribeProtectedTelCdrRequest",
+      "name": "获取主被叫受保护的电话服务记录与录音",
+      "output": "DescribeProtectedTelCdrResponse"
+    },
     "DescribeSeatUserList": {
       "document": "废弃接口下架\n\n获取坐席用户列表（废弃）",
       "input": "DescribeSeatUserListRequest",
@@ -1434,6 +1440,87 @@
       ],
       "type": "object"
     },
+    "DescribeProtectedTelCdrRequest": {
+      "document": "DescribeProtectedTelCdr请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间戳，Unix 秒级时间戳",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间戳，Unix 秒级时间戳",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "EndTimeStamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "应用 ID，可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页尺寸，上限 100",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectedTelCdrResponse": {
+      "document": "DescribeProtectedTelCdr返回参数结构体",
+      "members": [
+        {
+          "document": "话单记录总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "话单记录",
+          "example": "无",
+          "member": "TelCdrInfo",
+          "name": "TelCdrs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSeatUserListRequest": {
       "document": "DescribeSeatUserList请求参数结构体",
       "members": [
@@ -1772,7 +1859,7 @@
       "members": [
         {
           "default": "",
-          "document": "起始时间戳，Unix 时间戳",
+          "document": "起始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimeStamp",
@@ -1781,7 +1868,7 @@
         },
         {
           "default": "",
-          "document": "结束时间戳，Unix 时间戳",
+          "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631881",
           "member": "int64",
           "name": "EndTimeStamp",
@@ -1790,7 +1877,7 @@
         },
         {
           "default": "",
-          "document": "实例 ID（deprecated）",
+          "document": "实例 ID（废弃）",
           "example": "11",
           "member": "int64",
           "name": "InstanceId",
@@ -1799,7 +1886,7 @@
         },
         {
           "default": "",
-          "document": "返回数据条数，上限（deprecated）",
+          "document": "返回数据条数，上限（废弃）",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -1808,7 +1895,7 @@
         },
         {
           "default": "",
-          "document": "偏移（deprecated）",
+          "document": "偏移（废弃）",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1817,7 +1904,7 @@
         },
         {
           "default": "",
-          "document": "应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1826,7 +1913,7 @@
         },
         {
           "default": "",
-          "document": "分页尺寸，上限 100",
+          "document": "分页尺寸（必填），上限 100",
           "example": "100",
           "member": "int64",
           "name": "PageSize",
@@ -1835,7 +1922,7 @@
         },
         {
           "default": "",
-          "document": "分页页码，从 0 开始",
+          "document": "分页页码（必填），从 0 开始",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",

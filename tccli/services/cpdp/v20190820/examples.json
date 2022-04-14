@@ -150,6 +150,14 @@
         "title": "CheckAmount"
       }
     ],
+    "CloseCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseCloudOrder\n<公共请求参数>\n\n{\n    \"OutTradeNo\": \"1183110364214208944\",\n    \"MidasAppId\": \"demo001\",\n    \"UserId\": \"66661877211\",\n    \"MidasEnvironment\": \"sandbox\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6df49681-f654-4a1c-87ab-b83cdbdeb2e7\"\n    }\n}",
+        "title": "聚鑫-关闭订单"
+      }
+    ],
     "CloseOpenBankPaymentOrder": [
       {
         "document": "关闭订单成功示例",
@@ -218,6 +226,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchPayment\n<公共请求参数>\n\n{\n    \"RecipientList\": [\n        {\n            \"OrderId\": \"xx\",\n            \"Remark\": \"xx\",\n            \"TransferAmount\": 0,\n            \"AnchorName\": \"xx\",\n            \"Uid\": \"xx\",\n            \"AnchorId\": \"xx\",\n            \"ReqReserved\": \"xx\"\n        }\n    ],\n    \"NotifyUrl\": \"xx\",\n    \"TransferType\": 0,\n    \"ReqReserved\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"BatchId\": \"xx\",\n            \"BatchInfoList\": [\n                {\n                    \"OrderId\": \"xx\",\n                    \"Status\": 0,\n                    \"AgentId\": \"xx\",\n                    \"TradeSerialNo\": \"xx\",\n                    \"AgentName\": \"xx\",\n                    \"StatusDesc\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "CreateBatchPayment"
+      }
+    ],
+    "CreateCloudSubMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSubMerchant\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"SubMchDescription\": \"xxx\",\n    \"SubMchName\": \"demos001\",\n    \"SubMchShortName\": \"ds001\",\n    \"OutSubMerchantId\": \"osm001\",\n    \"ParentAppId\": \"demo001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Level\": 1,\n        \"RequestId\": \"dd242838-4241-459b-b138-8f29e4fabbaa\",\n        \"SubAppId\": \"sub-11297\",\n        \"ChannelSubMerchantId\": \"abc001220413\"\n    }\n}",
+        "title": "聚鑫-创建子商户"
       }
     ],
     "CreateCustAcctId": [
@@ -664,6 +680,30 @@
         "title": "查询城市编码接口成功示例"
       }
     ],
+    "QueryCloudChannelData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudChannelData\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"ChannelOrderId\": \"202204120001300008\",\n    \"OutOrderNo\": \"1183110364214208944\",\n    \"ExternalChannelDataType\": \"PAYMENT\",\n    \"Channel\": \"wechat\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OutOrderNo\": \"1183110364214208944\",\n        \"ChannelOrderId\": \"202204120001300008\",\n        \"ExternalChannelDataType\": \"PAYMENT\",\n        \"SubAppId\": \"\",\n        \"AppId\": \"demo001\",\n        \"RequestId\": \"9a4fdad2-e1ef-408c-91da-2623b8658858\",\n        \"ExternalChannelDataList\": [\n            {\n                \"ExternalChannelDataValue\": \"xxx\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA\"\n            },\n            {\n                \"ExternalChannelDataValue\": \"yyy\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_RESPONSE_DATA\"\n            },\n            {\n                \"ExternalChannelDataValue\": \"zzz\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_REQUEST_DATA\"\n            }\n        ],\n        \"Channel\": \"wechat\"\n    }\n}",
+        "title": "聚鑫-查询第三方渠道数据"
+      }
+    ],
+    "QueryCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudOrder\n<公共请求参数>\n\n{\n    \"Type\": \"by_order\",\n    \"MidasEnvironment\": \"sandbox\",\n    \"UserId\": \"66661875951\",\n    \"MidasAppId\": \"demo001\",\n    \"OutTradeNo\": \"1183110364214208944\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"OrderList\": [\n            {\n                \"SceneInfo\": \"{}\",\n                \"CashAmt\": \"\",\n                \"CallBackTime\": \"\",\n                \"ExternalReturnPromptGroupList\": null,\n                \"OrderTime\": \"\",\n                \"OrderState\": \"4\",\n                \"AppId\": \"demo001\",\n                \"ChannelExternalUserInfoList\": null,\n                \"Channel\": \"wechat\",\n                \"CurrencyType\": \"CNY\",\n                \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n                \"ProductId\": \"1183110364214208944\",\n                \"TransactionId\": \"202204120001300008\",\n                \"ChannelOrderId\": \"202204120001300008\",\n                \"SettleInfo\": {\n                    \"ProfitSharing\": 0,\n                    \"NeedToBeConfirmed\": 0\n                },\n                \"AttachmentInfoList\": null,\n                \"CouponAmt\": \"\",\n                \"OutTradeNo\": \"1183110364214208944\",\n                \"PayTime\": \"1649778083\",\n                \"SubOrderList\": [\n                    {\n                        \"ProductName\": \"商品\",\n                        \"ChannelExternalSubOrderId\": \"\",\n                        \"SettleInfo\": {\n                            \"NeedToBeConfirmed\": 0,\n                            \"ProfitSharing\": 0\n                        },\n                        \"Amt\": 562,\n                        \"Metadata\": \"1183110364415535792\",\n                        \"ProductDetail\": \"\",\n                        \"SettleCheck\": 0,\n                        \"SubMchIncome\": 562,\n                        \"OriginalAmt\": 562,\n                        \"PlatformIncome\": 0,\n                        \"SubAppId\": \"sub-11214\",\n                        \"AttachmentInfoList\": null,\n                        \"WxSubMchId\": \"\",\n                        \"SubOutTradeNo\": \"4805X1183110364415535792X\"\n                    }\n                ],\n                \"Amt\": 562,\n                \"RefundFlag\": \"1\",\n                \"UserId\": \"66661877211\",\n                \"ProductName\": \"商品\",\n                \"Metadata\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"9e7b2c2f-c29f-4bae-9aea-9328b83cc232\"\n    }\n}",
+        "title": "聚鑫-查询订单"
+      }
+    ],
+    "QueryCloudRefundOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudRefundOrder\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"UserId\": \"66661877211\",\n    \"RefundId\": \"545464656565656122\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n        \"CurrencyType\": \"CNY\",\n        \"ChannelOrderId\": \"202204120001300008\",\n        \"TotalRefundAmt\": 500,\n        \"ChannelExternalRefundId\": \"50300201302022041319287908513\",\n        \"SubRefundList\": [\n            {\n                \"ChannelSubOrderId\": \"202204120001300009\",\n                \"SubOutTradeNo\": \"4805X1183110364415535792X\",\n                \"ChannelExternalOrderId\": \"\",\n                \"SubAppId\": \"\",\n                \"RefundAmt\": 500,\n                \"ChannelSubRefundId\": \"545464656565656122\",\n                \"SubRefundId\": \"545464656565656122\",\n                \"ChannelExternalRefundId\": \"\"\n            }\n        ],\n        \"RefundId\": \"545464656565656122\",\n        \"UsedRefundId\": \"545464656565656122\",\n        \"RequestId\": \"c34493c8-5d0d-4ee0-8ab0-369330691c1f\",\n        \"Metadata\": \"\",\n        \"AppId\": \"\",\n        \"OutTradeNo\": \"1183110364214208944\",\n        \"ChannelRefundId\": \"545464656565656122\",\n        \"State\": \"2\"\n    }\n}",
+        "title": "聚鑫-查询退款"
+      }
+    ],
     "QueryCommonTransferRecharge": [
       {
         "document": "",
@@ -1108,6 +1148,14 @@
         "title": "退款请求示例"
       }
     ],
+    "RefundCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundCloudOrder\n<公共请求参数>\n\n{\n    \"TotalRefundAmt\": \"1\",\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"SubOrderRefundList\": [\n        {\n            \"SubOutTradeNo\": \"4805X1183110364415535792X\",\n            \"PlatformRefundAmt\": \"0\",\n            \"SubRefundId\": \"545464656565656124\",\n            \"SubMchRefundAmt\": \"1\",\n            \"RefundAmt\": \"1\"\n        }\n    ],\n    \"UserId\": \"66661877211\",\n    \"MchRefundAmt\": \"1\",\n    \"OutTradeNo\": \"1183110364214208944\",\n    \"RefundNotifyUrl\": \"RefundNotifyUrl\",\n    \"RefundId\": \"545464656565656124\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98faef15-832d-4402-9283-a6031f13d12e\"\n    }\n}",
+        "title": "聚鑫-退款申请"
+      }
+    ],
     "RefundMemberTransaction": [
       {
         "document": "会员间交易退款",
@@ -1234,6 +1282,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=UnbindRelateAcct\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&FunctionFlag=1&TranNetMemberCode=YAPI100000&MemberAcctNo= 6230582000059121234",
         "output": "{\n    \"Response\": {\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"01f7c43c-7429-4a0f-9e56-583a0746c0d5\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"FrontSeqNo\": \"1911060076987819\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831911061573031795\"\n    }\n}",
         "title": "UnbindRelateAcct"
+      }
+    ],
+    "UnifiedCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnifiedCloudOrder\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"PaymentNotifyUrl\": \"https://xxx.com/pay_notify\",\n    \"OrderReceiveMode\": \"ORDER_RECEIVE_MODE_V_COMBINE\",\n    \"TotalAmt\": \"4\",\n    \"UserId\": \"66661875951\",\n    \"TotalPlatformIncome\": \"2\",\n    \"SubOrderList\": [\n        {\n            \"SubMchIncome\": \"1\",\n            \"SubOutTradeNo\": \"6505X556277899700908678X\",\n            \"PlatformIncome\": \"1\",\n            \"ProductName\": \"商品\",\n            \"SubAppId\": \"sub-11214\",\n            \"ProductDetail\": \"商品\",\n            \"OriginalAmt\": \"2\",\n            \"Amt\": \"2\",\n            \"Metadata\": \"556277899700908678\"\n        },\n        {\n            \"SubMchIncome\": \"1\",\n            \"SubOutTradeNo\": \"6640X556362437709978742X\",\n            \"PlatformIncome\": \"1\",\n            \"ProductName\": \"商品\",\n            \"SubAppId\": \"sub-11214\",\n            \"ProductDetail\": \"商品\",\n            \"OriginalAmt\": \"2\",\n            \"Amt\": \"2\",\n            \"Metadata\": \"556362437709978742\"\n        }\n    ],\n    \"ProductName\": \"商品\",\n    \"OutTradeNo\": \"98545656565623260000\",\n    \"WxAppId\": \"wxa384c55535723da0\",\n    \"RealChannel\": \"wechat\",\n    \"ProductDetail\": \"商品\",\n    \"TotalMchIncome\": \"2\",\n    \"OriginalAmt\": \"4\",\n    \"Metadata\": \"xxx\",\n    \"CurrencyType\": \"CNY\",\n    \"Channel\": \"wechat\",\n    \"ProductId\": \"98545656565623265656\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PayInfo\": \"data=xxx\",\n        \"OutTradeNo\": \"98545656565623260000\",\n        \"TransactionId\": \"\",\n        \"TotalAmt\": 4,\n        \"ChannelInfo\": \"\",\n        \"RequestId\": \"dc6743f5-5b2c-4c55-bc69-d56ec9c51422\"\n    }\n}",
+        "title": "聚鑫-统一下单"
       }
     ],
     "UnifiedOrder": [

@@ -87,7 +87,7 @@
     "GetSendEmailStatus": {
       "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
       "input": "GetSendEmailStatusRequest",
-      "name": "获取邮件发送的状态（废弃）",
+      "name": "获取邮件发送的状态（待废弃）",
       "output": "GetSendEmailStatusResponse"
     },
     "GetStatisticsReport": {
@@ -1218,7 +1218,8 @@
       "members": [
         {
           "default": "",
-          "document": "获取模版数据量，用于分页",
+          "document": "获取模板数据量，用于分页",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1226,7 +1227,8 @@
         },
         {
           "default": "",
-          "document": "获取模版偏移值，用于分页",
+          "document": "获取模板偏移值，用于分页",
+          "example": "10",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1240,15 +1242,19 @@
       "members": [
         {
           "document": "邮件模板列表",
+          "example": "无",
           "member": "TemplatesMetadata",
           "name": "TemplatesMetadata",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "模版总数量",
+          "document": "模板总数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

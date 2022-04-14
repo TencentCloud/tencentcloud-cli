@@ -51,7 +51,7 @@
     "DeleteEip": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=DeleteEip\r\n&EipIds.0=eip-k5zjz4yy\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=DeleteEip\n&EipIds.0=eip-k5zjz4yy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 2488125,\n        \"RequestId\": \"e904469e-4b85-4673-82be-34e24a07ffc7\"\n    }\n}",
         "title": "删除黑石EIP"
       }
