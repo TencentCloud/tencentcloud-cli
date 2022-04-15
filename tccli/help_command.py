@@ -29,6 +29,15 @@ class BaseHelpCommand(object):
                 raise Exception("available versions: %s" % " ".join(available_version_list))
             self._version = version
 
+    def __call__(self, args, parsed_globals):
+        if args:
+            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
+
+        self._get_service_version(parsed_globals)
+        document_handle = self._get_document_handler()
+        document_handle.doc_help(parsed_globals.detail)
+        sys.stdout.write(self.doc.getvalue())
+
 
 class CLIHelpCommand(BaseHelpCommand):
 
@@ -40,15 +49,6 @@ class CLIHelpCommand(BaseHelpCommand):
 
     def _get_document_handler(self):
         return CLIDocumentHandler(self.doc)
-
-    def __call__(self, args, parsed_globals):
-        if args:
-            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
-
-        self._get_service_version(parsed_globals)
-        document_handle = self._get_document_handler()
-        document_handle.doc_help(parsed_globals.detail)
-        sys.stdout.write(self.doc.getvalue())
 
 
 class ServiceHelpCommand(BaseHelpCommand):
@@ -64,15 +64,6 @@ class ServiceHelpCommand(BaseHelpCommand):
     def _get_document_handler(self):
         return ServiceDocumentHandler(self.doc, self._service_name, self._version)
 
-    def __call__(self, args, parsed_globals):
-        if args:
-            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
-
-        self._get_service_version(parsed_globals)
-        document_handle = self._get_document_handler()
-        document_handle.doc_help(parsed_globals.detail)
-        sys.stdout.write(self.doc.getvalue())
-
 
 class ActionHelpCommand(BaseHelpCommand):
 
@@ -87,14 +78,4 @@ class ActionHelpCommand(BaseHelpCommand):
 
     def _get_document_handler(self):
         return ActionDocumentHandler(self.doc, self._service_name, self._version, self._action_name)
-
-    def __call__(self, args, parsed_globals):
-        if args:
-            raise UnknownArgumentError("Unknown options: %s" % ', '.join(args))
-
-        self._get_service_version(parsed_globals)
-        document_handle = self._get_document_handler()
-        document_handle.doc_help(parsed_globals.detail)
-        sys.stdout.write(self.doc.getvalue())
-
 
