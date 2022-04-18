@@ -664,6 +664,14 @@
         "title": "修改规则"
       }
     ],
+    "PublishBroadcastMessage": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=PublishBroadcastMessage\n&ProductId=LK7LIPL6GE\n&Payload=123456\n&Qos=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"TaskId\": 1000523\n    }\n}",
+        "title": "发布广播消息"
+      }
+    ],
     "PublishMessage": [
       {
         "document": "",

@@ -128,6 +128,14 @@
         "title": "检查项列表"
       }
     ],
+    "DescribeSocCheckResultList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSocCheckResultList\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"FilterValue\": \"1023115\",\n            \"FilterOperatorType\": \"1\",\n            \"FilterKey\": \" PloyId\"\n        }\n    ],\n    \"PageIndex\": \"1\",\n    \"PageSize\": \"3\",\n    \"Sorter\": [\n        {\n            \"SortType\": \"1\",\n            \"SortKey\": \"RiskCount\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"NormalTotal\": 124,\n            \"MiddleTotal\": 72,\n            \"Total\": 269,\n            \"LowTotal\": 20,\n            \"HighTotal\": 53,\n            \"List\": [\n                {\n                    \"TotalAssetNum\": 7,\n                    \"FailAssetNum\": 0,\n                    \"Name\": \"关系型数据库-MariaDB应该启用备份\",\n                    \"Result\": \"正常\",\n                    \"PloyName\": \"腾讯云默认安全规范检查\",\n                    \"PloyId\": 1022732,\n                    \"Type\": \"数据安全\",\n                    \"CheckId\": \"00fe63c2-94c7-11ea-89eb-6c92bf621820\",\n                    \"DealUrl\": \"\",\n                    \"AssetType\": \"mariadb\"\n                },\n                {\n                    \"TotalAssetNum\": 32,\n                    \"FailAssetNum\": 0,\n                    \"Name\": \"CLB不应转发高危端口\",\n                    \"Result\": \"正常\",\n                    \"PloyName\": \"腾讯云默认安全规范检查\",\n                    \"PloyId\": 1022732,\n                    \"Type\": \"网络访问控制\",\n                    \"CheckId\": \"12a8e83e-ddbd-4bb4-8d87-88da71facedf\",\n                    \"DealUrl\": \"\",\n                    \"AssetType\": \"clb\"\n                },\n                {\n                    \"TotalAssetNum\": 8,\n                    \"FailAssetNum\": 0,\n                    \"Name\": \"Nosql数据库-Redis应该开启自动备份\",\n                    \"Result\": \"正常\",\n                    \"PloyName\": \"腾讯云默认安全规范检查\",\n                    \"PloyId\": 1022732,\n                    \"Type\": \"数据安全\",\n                    \"CheckId\": \"3c6d8565-94c4-11ea-89eb-6c92bf621820\",\n                    \"DealUrl\": \"\",\n                    \"AssetType\": \"redis\"\n                }\n            ]\n        },\n        \"RequestId\": \"8e668163-32f4-4a77-b248-9b14cbee1232\"\n    }\n}",
+        "title": "配置检测详情列表"
+      }
+    ],
     "DescribeSocCspmCompliance": [
       {
         "document": "",

@@ -1,4 +1,4 @@
-**Example 1: 打开kafka消费功能**
+**Example 1: 打开Kafka协议消费功能**
 
 
 

@@ -1761,6 +1761,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份",
+          "example": "save_mode_regular",
+          "member": "string",
+          "name": "SaveMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4965,6 +4975,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4978,44 +4989,101 @@
       "members": [
         {
           "document": "自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
+          "example": "10",
           "member": "int64",
           "name": "StartTimeMin",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
+          "example": "14",
           "member": "int64",
           "name": "StartTimeMax",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备份文件保留时间，单位为天。",
+          "example": "7",
           "member": "int64",
           "name": "BackupExpireDays",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份。",
+          "example": "physical",
           "member": "string",
           "name": "BackupMethod",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "Binlog 文件保留时间，单位为天。",
+          "example": "7",
           "member": "int64",
           "name": "BinlogExpireDays",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例自动备份的时间窗。",
+          "example": "无",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodSave",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留最长天数，最小值：90，最大值：3650，默认值：1080",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackupPeriodSaveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly",
+          "example": "weekly",
+          "member": "string",
+          "name": "BackupPeriodSaveInterval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupPeriodSaveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss",
+          "example": "1970-01-01 00:00:01",
+          "member": "string",
+          "name": "StartBackupPeriodSaveDate",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -10248,6 +10316,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10256,6 +10325,7 @@
         {
           "default": "",
           "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为732天。",
+          "example": "10",
           "member": "int64",
           "name": "ExpireDays",
           "required": false,
@@ -10264,6 +10334,7 @@
         {
           "default": "",
           "document": "(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -10272,6 +10343,7 @@
         {
           "default": "",
           "document": "自动备份方式，仅支持：physical - 物理冷备",
+          "example": "logical",
           "member": "string",
           "name": "BackupMethod",
           "required": false,
@@ -10280,6 +10352,7 @@
         {
           "default": "",
           "document": "binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。",
+          "example": "8",
           "member": "int64",
           "name": "BinlogExpireDays",
           "required": false,
@@ -10288,10 +10361,65 @@
         {
           "default": "",
           "document": "备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{\"Monday\": \"\", \"Tuesday\": \"10:00-14:00\", \"Wednesday\": \"\", \"Thursday\": \"\", \"Friday\": \"\", \"Saturday\": \"\", \"Sunday\": \"10:00-14:00\"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）",
+          "example": "无",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodSave",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodLongTermSave",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期保留最长天数，最小值：90，最大值：3650，默认值：1080",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackupPeriodSaveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly",
+          "example": "weekly",
+          "member": "string",
+          "name": "BackupPeriodSaveInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupPeriodSaveCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss",
+          "example": "1970-01-01 00:00:01",
+          "member": "string",
+          "name": "StartBackupPeriodSaveDate",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

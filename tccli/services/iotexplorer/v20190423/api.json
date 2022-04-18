@@ -462,6 +462,12 @@
       "name": "修改规则",
       "output": "ModifyTopicRuleResponse"
     },
+    "PublishBroadcastMessage": {
+      "document": "发布广播消息",
+      "input": "PublishBroadcastMessageRequest",
+      "name": "发布广播消息",
+      "output": "PublishBroadcastMessageResponse"
+    },
     "PublishMessage": {
       "document": "本接口（PublishMessage）用于使用自定义透传协议进行设备远控",
       "input": "PublishMessageRequest",
@@ -7233,6 +7239,69 @@
         }
       ],
       "usage": "out"
+    },
+    "PublishBroadcastMessageRequest": {
+      "document": "PublishBroadcastMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "LK7LIPL6GE",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "example": "1234561",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息质量等级",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishBroadcastMessageResponse": {
+      "document": "PublishBroadcastMessage返回参数结构体",
+      "members": [
+        {
+          "document": "广播消息任务Id",
+          "example": "100523",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PublishMessageRequest": {
       "document": "PublishMessage请求参数结构体",

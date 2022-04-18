@@ -8,6 +8,14 @@
         "title": "增加自定义规则"
       }
     ],
+    "AddDomainWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDomainWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Rules\": [\n        2\n    ],\n    \"Url\": \"/aa\",\n    \"Function\": \"prefix\",\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdf\",\n        \"Id\": 111\n    }\n}",
+        "title": "增加域名规则白名单"
+      }
+    ],
     "CreateAccessExport": [
       {
         "document": "",
@@ -40,12 +48,28 @@
         "title": "删除攻击日志下载任务记录"
       }
     ],
+    "DeleteDomainWhiteRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainWhiteRules\n<公共请求参数>\n\n{\n    \"Ids\": [\n        111,\n        222\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
+        "title": "删除域名规则白名单"
+      }
+    ],
     "DeleteDownloadRecord": [
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=DeleteDownloadRecord\n&Flow=xxxxxx-xxxxxx-xxxxxx \n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx\"\n    }\n}",
         "title": "删除下载记录"
+      }
+    ],
+    "DeleteIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControl\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Items\": [\n        \"1.2.3.4\"\n    ],\n    \"DeleteAll\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"FailedItems\": \"\",\n        \"RequestId\": \"9fbb7be2-214b-44df-a5b9-6a69ca456409\"\n    }\n}",
+        "title": "Waf IP黑白名单Delete接口"
       }
     ],
     "DeleteSession": [
@@ -80,6 +104,14 @@
         "title": "访问日志索引配置信息"
       }
     ],
+    "DescribeAutoDenyIP": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoDenyIP\n<公共请求参数>\n\n{\n    \"Count\": 0,\n    \"Category\": \"xx\",\n    \"Domain\": \"xx\",\n    \"Name\": \"xx\",\n    \"Ip\": \"xx\",\n    \"VtsMax\": 1,\n    \"VtsMin\": 1,\n    \"Sort\": \"xx\",\n    \"Limit\": 1,\n    \"CtsMin\": 1,\n    \"Skip\": 1,\n    \"CtsMax\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
+        "title": "描述WAF自动封禁IP 详情"
+      }
+    ],
     "DescribeCustomRules": [
       {
         "document": "",
@@ -94,6 +126,14 @@
         "title": "带过滤参数返回结果为0的场景"
       }
     ],
+    "DescribeDomainWhiteRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainWhiteRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"abc\",\n        \"RuleList\": [\n            {\n                \"Id\": 1,\n                \"Rules\": [\n                    2,\n                    3,\n                    4\n                ],\n                \"Url\": \"/abc\",\n                \"Function\": \"eq\",\n                \"Time\": \"2020-08-20 00:00:00\",\n                \"Status\": 1\n            }\n        ]\n    }\n}",
+        "title": "获取域名的规则白名单"
+      }
+    ],
     "DescribeFlowTrend": [
       {
         "document": "",
@@ -102,12 +142,52 @@
         "title": "获取流量趋势数据"
       }
     ],
+    "DescribeIpAccessControl": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeIpAccessControl\r\n&Domain=www.test.com\r\n&Count=1\r\n&ActionType=42\r\n&Limit=20\r\n&OffSet=0\r\n&Sort=ts_version:-1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 42,\n                    \"Ip\": \"1.1.1.1\",\n                    \"Note\": \"\",\n                    \"Source\": \"custom\",\n                    \"TsVersion\": 1579074751421,\n                    \"ValidTs\": 1579017599\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"c937ce96-cf53-4df8-b288-07c6e092072d\"\n    }\n}",
+        "title": "Waf ip黑白名单查询"
+      }
+    ],
+    "DescribeIpHitItems": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeIpHitItems\r\n&Domain=www.test.com\r\n&Category=cc\r\n&Skip=0\r\n&Limit=10\r\n&Sort=ts_version:-1\r\n&Count=1\r\n&CtsMin=1578468704000\r\n&CtsMax=1578499199000\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
+        "title": "Waf  IP封堵状态查询"
+      }
+    ],
     "DescribeUserClbWafRegions": [
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeUserClbWafRegions\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"ap-guangzhou\",\n            \"ap-shanghai\"\n        ],\n        \"RequestId\": \"4c8827fc-839c-4ecc-8ac5-d39456d163b9\"\n    }\n}",
         "title": "获取对客户已经开放的负载均衡型WAF的地域"
+      }
+    ],
+    "DescribeWafAutoDenyRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafAutoDenyRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TimeThreshold\": 0,\n        \"DenyTimeThreshold\": 0,\n        \"AttackThreshold\": 0,\n        \"DefenseStatus\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取ip惩罚详细信息"
+      }
+    ],
+    "DescribeWafAutoDenyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafAutoDenyStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"WafAutoDenyDetails\": {\n            \"TimeThreshold\": 0,\n            \"AttackThreshold\": 0,\n            \"AttackTags\": [\n                \"123\"\n            ],\n            \"DefenseStatus\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "描述WAF自动封禁模块详情"
+      }
+    ],
+    "DescribeWafThreatenIntelligence": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafThreatenIntelligence\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"global\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "描述WAF威胁情报封禁模块详情"
       }
     ],
     "ModifyAccessPeriod": [
@@ -126,12 +206,52 @@
         "title": "切换自定义规则的开关"
       }
     ],
+    "ModifyDomainWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Id\": 111,\n    \"Rules\": [\n        2\n    ],\n    \"Url\": \"/aa\",\n    \"Function\": \"suffix\",\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
+        "title": "更改某一条规则"
+      }
+    ],
+    "ModifyWafAutoDenyRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafAutoDenyRules\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"TimeThreshold\": 0,\n    \"DenyTimeThreshold\": 0,\n    \"AttackThreshold\": 0,\n    \"DefenseStatus\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改ip惩罚配置"
+      }
+    ],
+    "ModifyWafAutoDenyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafAutoDenyStatus\n<公共请求参数>\n\n{\n    \"WafAutoDenyDetails\": {\n        \"TimeThreshold\": 0,\n        \"AttackThreshold\": 0,\n        \"AttackTags\": [\n            \"123\"\n        ],\n        \"DefenseStatus\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WafAutoDenyDetails\": {\n            \"TimeThreshold\": 0,\n            \"AttackThreshold\": 0,\n            \"AttackTags\": [\n                \"123\"\n            ],\n            \"DefenseStatus\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "配置WAF自动情报封禁模块详情"
+      }
+    ],
+    "ModifyWafThreatenIntelligence": [
+      {
+        "document": "配置管理WAF 威胁情报封禁模块",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafThreatenIntelligence\n<公共请求参数>\n\n{\n    \"WafThreatenIntelligenceDetails\": {\n        \"DefenseStatus\": 0,\n        \"Tags\": [\n            \"xx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WafThreatenIntelligenceDetails\": {\n            \"DefenseStatus\": 0,\n            \"LastUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Tags\": [\n                \"xx\"\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "配置WAF威胁情报封禁模块详情"
+      }
+    ],
     "SearchAccessLog": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAccessLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n    \"From\": 1625395948532,\n    \"To\": 1626000748532,\n    \"Query\": \"\",\n    \"Limit\": 2,\n    \"Context\": \"\",\n    \"Sort\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC1jMDhiYjAyMy1mMjZmLTQ1NjUtOTEzMy1iZjIwYWUzNmY1MzMxNjI2MTU5NDU4MjQy\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": null,\n        \"Results\": [\n            {\n                \"Time\": 1625995282703,\n                \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n                \"LogJson\": \"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\\"\\\",\\\"ipinfo_state\\\":\\\"\\\",\\\"ipinfo_city\\\":\\\"\\\",\\\"edition\\\":\\\"sparta-waf\\\",\\\"ipinfo_dimensionality\\\":\\\"\\\",\\\"language\\\":\\\"\\\",\\\"body\\\":\\\"\\\",\\\"uuid\\\":\\\"b285a612f62f5b76478fce8960d2327e-c613c8e835f1d2a48221efa4a21c4247\\\",\\\"upstream_status\\\":\\\"200\\\",\\\"request_time\\\":\\\"0.141\\\",\\\"content_type\\\":\\\"\\\",\\\"host\\\":\\\"bangskt.qcloudwaf.com\\\",\\\"client\\\":\\\"100.88.193.73\\\",\\\"connection\\\":\\\"\\\",\\\"ipinfo_nation\\\":\\\"共享地址\\\",\\\"user_agent\\\":\\\"TSecWaf_AccessCheckClient\\\",\\\"headers\\\":\\\"Accept-Encoding: \\\",\\\"upstream\\\":\\\"119.29.90.203:80\\\",\\\"cookie\\\":\\\"\\\",\\\"method\\\":\\\"GET\\\",\\\"query\\\":\\\"\\\",\\\"ipinfo_detail\\\":\\\"\\\",\\\"encoding\\\":\\\"\\\",\\\"ipinfo_isp\\\":\\\"\\\",\\\"bytes_sent\\\":\\\"718\\\",\\\"url\\\":\\\"/\\\",\\\"accept\\\":\\\"\\\",\\\"x_forwarded_for\\\":\\\"\\\",\\\"upstream_connect_time\\\":\\\"0.036\\\",\\\"request_length\\\":\\\"86\\\",\\\"appid\\\":\\\"251011484\\\",\\\"domain\\\":\\\"bangskt.qcloudwaf.com\\\",\\\"msec\\\":\\\"1625995282.703\\\",\\\"upstream_response_time\\\":\\\"0.068\\\",\\\"time\\\":\\\"11/Jul/2021:17:21:22 +0800\\\",\\\"ipinfo_longitude\\\":\\\"\\\",\\\"status\\\":\\\"200\\\"}\"\n            },\n            {\n                \"Time\": 1625968977668,\n                \"TopicId\": \"1ae37c76-df99-4e2b-998c-20f39eba6226\",\n                \"LogJson\": \"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\\"\\\",\\\"ipinfo_state\\\":\\\"\\\",\\\"ipinfo_city\\\":\\\"\\\",\\\"edition\\\":\\\"sparta-waf\\\",\\\"ipinfo_dimensionality\\\":\\\"\\\",\\\"language\\\":\\\"\\\",\\\"body\\\":\\\"\\\",\\\"uuid\\\":\\\"577cd8369f7e153a04ded334b6880595-c96150599abcedfc3459c880a1922987\\\",\\\"upstream_status\\\":\\\"200\\\",\\\"request_time\\\":\\\"0.134\\\",\\\"content_type\\\":\\\"\\\",\\\"host\\\":\\\"attack_log.qcloudwaf.com\\\",\\\"client\\\":\\\"100.88.193.73\\\",\\\"connection\\\":\\\"\\\",\\\"ipinfo_nation\\\":\\\"共享地址\\\",\\\"user_agent\\\":\\\"TSecWaf_AccessCheckClient\\\",\\\"headers\\\":\\\"Accept-Encoding: \\\",\\\"upstream\\\":\\\"119.29.90.203:80\\\",\\\"cookie\\\":\\\"\\\",\\\"method\\\":\\\"GET\\\",\\\"query\\\":\\\"\\\",\\\"ipinfo_detail\\\":\\\"\\\",\\\"encoding\\\":\\\"\\\",\\\"ipinfo_isp\\\":\\\"\\\",\\\"bytes_sent\\\":\\\"718\\\",\\\"url\\\":\\\"/\\\",\\\"accept\\\":\\\"\\\",\\\"x_forwarded_for\\\":\\\"\\\",\\\"upstream_connect_time\\\":\\\"0.032\\\",\\\"request_length\\\":\\\"89\\\",\\\"appid\\\":\\\"251011484\\\",\\\"domain\\\":\\\"attack_log.qcloudwaf.com\\\",\\\"msec\\\":\\\"1625968977.668\\\",\\\"upstream_response_time\\\":\\\"0.060\\\",\\\"time\\\":\\\"11/Jul/2021:10:02:57 +0800\\\",\\\"ipinfo_longitude\\\":\\\"\\\",\\\"status\\\":\\\"200\\\"}\"\n            }\n        ],\n        \"AnalysisResults\": null,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "搜索访问日志"
+      }
+    ],
+    "UpsertIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertIpAccessControl\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Items\": [\n        \"{\\\"ip\\\":\\\"1.2.3.4\\\",\\\"source\\\":\\\"custom\\\",\\\"note\\\":\\\"test\\\",\\\"action\\\":42,\\\"valid_ts\\\":1650095068}\"\n    ],\n    \"Edition\": \"clb-waf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"FailedItems\": \"\",\n        \"RequestId\": \"fea2e723-002b-40e6-8297-7c54455cb7d6\"\n    }\n}",
+        "title": "UpsertIpAccessControl"
       }
     ]
   },

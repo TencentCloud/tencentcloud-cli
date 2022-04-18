@@ -1,4 +1,4 @@
-**Example 1: 关闭Kafka消费**
+**Example 1: 关闭Kafka协议消费**
 
 
 

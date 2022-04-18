@@ -7919,6 +7919,46 @@
       "members": [
         {
           "default": "",
+          "document": "转发协议，取值[http, https]",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "LbType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "会话保持时间，单位秒",
           "example": "无",
           "member": "uint64",
@@ -7929,10 +7969,10 @@
         },
         {
           "default": "",
-          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "example": "无",
           "member": "uint64",
-          "name": "LbType",
+          "name": "SourceType",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7949,52 +7989,92 @@
         },
         {
           "default": "",
-          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "document": "区域码",
           "example": "无",
           "member": "uint64",
-          "name": "KeepEnable",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "转发域名",
-          "example": "无",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "转发协议，取值[http, https]",
-          "example": "无",
-          "member": "string",
-          "name": "Protocol",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
-          "example": "无",
-          "member": "uint64",
-          "name": "SourceType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
-          "example": "无",
-          "member": "uint64",
-          "name": "HttpsToHttpEnable",
+          "name": "Region",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源Ip",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "example": "无",
+          "member": "uint64",
+          "name": "CertType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8009,12 +8089,12 @@
         },
         {
           "default": "",
-          "document": "HTTPS协议的CC防护等级",
+          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
           "example": "无",
-          "member": "string",
-          "name": "CCLevel",
+          "member": "uint64",
+          "name": "CCStatus",
           "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8039,30 +8119,10 @@
         },
         {
           "default": "",
-          "document": "区域码",
-          "example": "无",
-          "member": "uint64",
-          "name": "Region",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "规则描述",
+          "document": "HTTPS协议的CC防护等级",
           "example": "无",
           "member": "string",
-          "name": "RuleName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
-          "member": "string",
-          "name": "Cert",
+          "name": "CCLevel",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8079,40 +8139,10 @@
         },
         {
           "default": "",
-          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
-          "example": "无",
-          "member": "string",
-          "name": "RuleId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "资源Ip",
-          "example": "无",
-          "member": "string",
-          "name": "Ip",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
-          "member": "string",
-          "name": "PrivateKey",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "example": "无",
           "member": "uint64",
-          "name": "CertType",
+          "name": "HttpsToHttpEnable",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8129,32 +8159,22 @@
         },
         {
           "default": "",
-          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
+          "document": "http强制跳转https，1表示打开，0表示关闭",
           "example": "无",
           "member": "uint64",
-          "name": "CCStatus",
+          "name": "RewriteHttps",
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "document": "规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期",
           "example": "无",
-          "member": "string",
-          "name": "SSLId",
+          "member": "uint64",
+          "name": "ErrCode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "资源Id",
-          "example": "无",
-          "member": "string",
-          "name": "Id",
-          "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -27,6 +27,11 @@ Output:
             "Tuesday": "10:00-14:00",
             "Wednesday": "10:00-14:00"
         },
+        "EnableBackupPeriodSave": "off",
+        "BackupPeriodSaveDays": 1080,
+        "BackupPeriodSaveInterval": "monthly",
+        "BackupPeriodSaveCount": 1,
+        "StartBackupPeriodSaveDate": "2021-12-12 00:00:00",
         "RequestId": "9d73ec37-89b8-4d36-9f40-123123123"
     }
 }

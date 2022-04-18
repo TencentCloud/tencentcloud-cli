@@ -355,9 +355,9 @@
       "output": "ModifyTopicResponse"
     },
     "OpenKafkaConsumer": {
-      "document": "打开kafka协议消费",
+      "document": "打开Kafka协议消费功能",
       "input": "OpenKafkaConsumerRequest",
-      "name": "打开kafka协议消费",
+      "name": "打开Kafka协议消费",
       "output": "OpenKafkaConsumerResponse"
     },
     "RetryShipperTask": {

@@ -96,6 +96,12 @@
       "name": "云安全配置检查项列表",
       "output": "DescribeSocCheckItemListResponse"
     },
+    "DescribeSocCheckResultList": {
+      "document": "云安全配置检查项结果列表",
+      "input": "DescribeSocCheckResultListRequest",
+      "name": "云安全配置检查项结果列表",
+      "output": "DescribeSocCheckResultListResponse"
+    },
     "DescribeSocCspmCompliance": {
       "document": "合规详情项",
       "input": "DescribeSocCspmComplianceRequest",
@@ -3543,6 +3549,144 @@
       ],
       "usage": "out"
     },
+    "DescribeSocCheckResultListRequest": {
+      "document": "DescribeSocCheckResultList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询参数,可支持的查询参数：\nName,Type,AssetType,Result,PloyName,PloyId",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序参数,可支持的排序参数：CheckStatus,RiskCount",
+          "example": "无",
+          "member": "QuerySort",
+          "name": "Sorter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当前页码数据，默认值为10",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页面索引，默认值为0",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资产id",
+          "example": "无",
+          "member": "string",
+          "name": "AssetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSocCheckResultListResponse": {
+      "document": "DescribeSocCheckResultList返回参数结构体",
+      "members": [
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeSocCheckResultListRspRsp",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSocCheckResultListRspRsp": {
+      "document": "检查项结果详情列表",
+      "members": [
+        {
+          "default": "",
+          "document": "具体检查项详情",
+          "example": "无",
+          "member": "SocCheckResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查结果总数",
+          "example": "30",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "低危个数",
+          "example": "10",
+          "member": "int64",
+          "name": "LowTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "中危个数",
+          "example": "10",
+          "member": "int64",
+          "name": "MiddleTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高危个数",
+          "example": "5",
+          "member": "int64",
+          "name": "HighTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正常个数",
+          "example": "5",
+          "member": "int64",
+          "name": "NormalTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeSocCspmComplianceRequest": {
       "document": "DescribeSocCspmCompliance请求参数结构体",
       "members": [],
@@ -4619,6 +4763,112 @@
         }
       ],
       "usage": "both"
+    },
+    "SocCheckResult": {
+      "document": "云安全配置检测结果",
+      "members": [
+        {
+          "default": "",
+          "document": "检查项的uuid",
+          "example": "00fe63c2-94c7-11ea-89eb-6c92bf621820",
+          "member": "string",
+          "name": "CheckId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置要求",
+          "example": "关系型数据库-MariaDB应该启用备份",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查项的类型",
+          "example": "数据安全",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查对象",
+          "example": "mariadb",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略名",
+          "example": "00-all",
+          "member": "string",
+          "name": "PloyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略id",
+          "example": "1016203",
+          "member": "int64",
+          "name": "PloyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "正常,低危,中危,高危",
+          "example": "正常",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不符合数",
+          "example": "12",
+          "member": "int64",
+          "name": "FailAssetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "24",
+          "member": "int64",
+          "name": "TotalAssetNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处置建议url链接",
+          "example": "无",
+          "member": "string",
+          "name": "DealUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SocComplianceInfoResp": {
       "document": "返回结构",

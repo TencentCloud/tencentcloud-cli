@@ -6,6 +6,12 @@
       "name": "增加自定义策略",
       "output": "AddCustomRuleResponse"
     },
+    "AddDomainWhiteRule": {
+      "document": "增加域名规则白名单",
+      "input": "AddDomainWhiteRuleRequest",
+      "name": "增加域名规则白名单",
+      "output": "AddDomainWhiteRuleResponse"
+    },
     "CreateAccessExport": {
       "document": "本接口用于创建访问日志导出",
       "input": "CreateAccessExportRequest",
@@ -30,11 +36,23 @@
       "name": "删除攻击日志下载任务记录",
       "output": "DeleteAttackDownloadRecordResponse"
     },
+    "DeleteDomainWhiteRules": {
+      "document": "删除域名规则白名单\n\n",
+      "input": "DeleteDomainWhiteRulesRequest",
+      "name": "删除域名规则白名单",
+      "output": "DeleteDomainWhiteRulesResponse"
+    },
     "DeleteDownloadRecord": {
       "document": "删除访问日志下载记录",
       "input": "DeleteDownloadRecordRequest",
       "name": "删除访问日志下载记录",
       "output": "DeleteDownloadRecordResponse"
+    },
+    "DeleteIpAccessControl": {
+      "document": "Waf IP黑白名单Delete接口",
+      "input": "DeleteIpAccessControlRequest",
+      "name": "Waf IP黑白名单Delete接口",
+      "output": "DeleteIpAccessControlResponse"
     },
     "DeleteSession": {
       "document": "删除CC攻击的session设置",
@@ -60,11 +78,23 @@
       "name": "获取访问日志索引配置信息",
       "output": "DescribeAccessIndexResponse"
     },
+    "DescribeAutoDenyIP": {
+      "document": "描述WAF自动封禁IP详情,对齐自动封堵状态",
+      "input": "DescribeAutoDenyIPRequest",
+      "name": "描述WAF自动封禁IP详情",
+      "output": "DescribeAutoDenyIPResponse"
+    },
     "DescribeCustomRules": {
       "document": "获取防护配置中的自定义策略列表",
       "input": "DescribeCustomRulesRequest",
       "name": "获取防护配置中的自定义策略列表",
       "output": "DescribeCustomRulesResponse"
+    },
+    "DescribeDomainWhiteRules": {
+      "document": "获取域名的规则白名单\n\n",
+      "input": "DescribeDomainWhiteRulesRequest",
+      "name": "获取域名的规则白名单",
+      "output": "DescribeDomainWhiteRulesResponse"
     },
     "DescribeFlowTrend": {
       "document": "获取waf流量访问趋势",
@@ -72,11 +102,41 @@
       "name": "获取waf流量访问趋势",
       "output": "DescribeFlowTrendResponse"
     },
+    "DescribeIpAccessControl": {
+      "document": "Waf ip黑白名单查询",
+      "input": "DescribeIpAccessControlRequest",
+      "name": "Waf ip黑白名单查询",
+      "output": "DescribeIpAccessControlResponse"
+    },
+    "DescribeIpHitItems": {
+      "document": "Waf  IP封堵状态查询",
+      "input": "DescribeIpHitItemsRequest",
+      "name": "Waf  IP封堵状态查询",
+      "output": "DescribeIpHitItemsResponse"
+    },
     "DescribeUserClbWafRegions": {
       "document": "在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserClbWafRegionsRequest",
       "name": "获取对客户已经开放的负载均衡型WAF(clb-waf)的地域",
       "output": "DescribeUserClbWafRegionsResponse"
+    },
+    "DescribeWafAutoDenyRules": {
+      "document": "返回ip惩罚规则详细信息",
+      "input": "DescribeWafAutoDenyRulesRequest",
+      "name": "查询ip惩罚规则",
+      "output": "DescribeWafAutoDenyRulesResponse"
+    },
+    "DescribeWafAutoDenyStatus": {
+      "document": "描述WAF自动封禁模块详情",
+      "input": "DescribeWafAutoDenyStatusRequest",
+      "name": "描述WAF自动封禁模块详情",
+      "output": "DescribeWafAutoDenyStatusResponse"
+    },
+    "DescribeWafThreatenIntelligence": {
+      "document": "描述WAF威胁情报封禁模块配置详情",
+      "input": "DescribeWafThreatenIntelligenceRequest",
+      "name": "描述WAF威胁情报封禁模块配置详情",
+      "output": "DescribeWafThreatenIntelligenceResponse"
     },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限",
@@ -90,11 +150,41 @@
       "name": "开启或禁用自定义策略",
       "output": "ModifyCustomRuleStatusResponse"
     },
+    "ModifyDomainWhiteRule": {
+      "document": "更改某一条规则",
+      "input": "ModifyDomainWhiteRuleRequest",
+      "name": "更改某一条规则",
+      "output": "ModifyDomainWhiteRuleResponse"
+    },
+    "ModifyWafAutoDenyRules": {
+      "document": "修改ip惩罚规则",
+      "input": "ModifyWafAutoDenyRulesRequest",
+      "name": "修改ip惩罚规则",
+      "output": "ModifyWafAutoDenyRulesResponse"
+    },
+    "ModifyWafAutoDenyStatus": {
+      "document": "配置WAF自动封禁模块状态",
+      "input": "ModifyWafAutoDenyStatusRequest",
+      "name": "配置WAF自动封禁模块状态",
+      "output": "ModifyWafAutoDenyStatusResponse"
+    },
+    "ModifyWafThreatenIntelligence": {
+      "document": "配置WAF威胁情报封禁模块详情",
+      "input": "ModifyWafThreatenIntelligenceRequest",
+      "name": "配置WAF威胁情报封禁模块详情",
+      "output": "ModifyWafThreatenIntelligenceResponse"
+    },
     "SearchAccessLog": {
       "document": "本接口用于搜索WAF访问日志",
       "input": "SearchAccessLogRequest",
       "name": "搜索访问日志",
       "output": "SearchAccessLogResponse"
+    },
+    "UpsertIpAccessControl": {
+      "document": "Waf IP黑白名单Upsert接口",
+      "input": "UpsertIpAccessControlRequest",
+      "name": "Waf IP黑白名单Upsert接口",
+      "output": "UpsertIpAccessControlResponse"
     }
   },
   "metadata": {
@@ -545,6 +635,131 @@
       ],
       "type": "object"
     },
+    "AddDomainWhiteRuleRequest": {
+      "document": "AddDomainWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要添加的域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要添加的规则",
+          "member": "uint64",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要添加的规则url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则的方法",
+          "member": "string",
+          "name": "Function",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则的开关",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddDomainWhiteRuleResponse": {
+      "document": "AddDomainWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则id",
+          "member": "uint64",
+          "name": "Id",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AutoDenyDetail": {
+      "document": "Waf 攻击自动封禁详情",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击封禁类型标签",
+          "member": "string",
+          "name": "AttackTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击次数阈值",
+          "member": "int64",
+          "name": "AttackThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动封禁状态",
+          "member": "int64",
+          "name": "DefenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击时间阈值",
+          "member": "int64",
+          "name": "TimeThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动封禁时间",
+          "member": "int64",
+          "name": "DenyTimeThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "datetime_iso",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotStatPointItem": {
       "document": "bot的趋势图对象",
       "members": [
@@ -852,6 +1067,47 @@
       ],
       "type": "object"
     },
+    "DeleteDomainWhiteRulesRequest": {
+      "document": "DeleteDomainWhiteRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的规则域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要删除的白名单规则",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainWhiteRulesResponse": {
+      "document": "DeleteDomainWhiteRules返回参数结构体",
+      "members": [
+        {
+          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDownloadRecordRequest": {
       "document": "DeleteDownloadRecord请求参数结构体",
       "members": [
@@ -870,6 +1126,69 @@
     "DeleteDownloadRecordResponse": {
       "document": "DeleteDownloadRecord返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpAccessControlRequest": {
+      "document": "DeleteIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除的ip数组",
+          "example": "无",
+          "member": "string",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除对应的域名下的所有黑/白IP名额单",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteAll",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpAccessControlResponse": {
+      "document": "DeleteIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "document": "删除失败的条目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedItems",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "删除失败的条目数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1094,6 +1413,127 @@
       ],
       "type": "object"
     },
+    "DescribeAutoDenyIPRequest": {
+      "document": "DescribeAutoDenyIP请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询IP自动封禁状态",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计数标识",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类别",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有效时间最小时间戳",
+          "member": "uint64",
+          "name": "VtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "有效时间最大时间戳",
+          "member": "uint64",
+          "name": "VtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最小时间戳",
+          "member": "uint64",
+          "name": "CtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最大时间戳",
+          "member": "uint64",
+          "name": "CtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "uint64",
+          "name": "Skip",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制条数",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名字",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序参数",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoDenyIPResponse": {
+      "document": "DescribeAutoDenyIP返回参数结构体",
+      "members": [
+        {
+          "document": "查询IP封禁状态返回结果",
+          "member": "IpHitItemsData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCustomRulesPagingInfo": {
       "document": "DescribeCustomRules接口的翻页参数",
       "members": [
@@ -1295,6 +1735,96 @@
       ],
       "usage": "out"
     },
+    "DescribeDomainWhiteRulesRequest": {
+      "document": "DescribeDomainWhiteRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查询的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求的白名单匹配路径",
+          "example": "/test",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "翻到多少页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页展示的条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "16",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainWhiteRulesResponse": {
+      "document": "DescribeDomainWhiteRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则列表",
+          "example": "无",
+          "member": "RuleList",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则的数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowTrendRequest": {
       "document": "DescribeFlowTrend请求参数结构体",
       "members": [
@@ -1349,6 +1879,248 @@
       ],
       "type": "object"
     },
+    "DescribeIpAccessControlRequest": {
+      "document": "DescribeIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计数标识",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动作",
+          "member": "uint64",
+          "name": "ActionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "有效时间最小时间戳",
+          "member": "uint64",
+          "name": "VtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "有效时间最大时间戳",
+          "member": "uint64",
+          "name": "VtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最小时间戳",
+          "member": "uint64",
+          "name": "CtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最大时间戳",
+          "member": "uint64",
+          "name": "CtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "member": "uint64",
+          "name": "OffSet",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序参数",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpAccessControlResponse": {
+      "document": "DescribeIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "document": "输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "IpAccessControlData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpHitItemsRequest": {
+      "document": "DescribeIpHitItems请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计数标识",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "类别",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "有效时间最小时间戳",
+          "member": "uint64",
+          "name": "VtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "有效时间最大时间戳",
+          "member": "uint64",
+          "name": "VtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最小时间戳",
+          "member": "uint64",
+          "name": "CtsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "创建时间最大时间戳",
+          "member": "uint64",
+          "name": "CtsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移参数",
+          "member": "uint64",
+          "name": "Skip",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制数目",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序参数",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIpHitItemsResponse": {
+      "document": "DescribeIpHitItems返回参数结构体",
+      "members": [
+        {
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "IpHitItemsData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserClbWafRegionsRequest": {
       "document": "DescribeUserClbWafRegions请求参数结构体",
       "members": [],
@@ -1365,6 +2137,117 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafAutoDenyRulesRequest": {
+      "document": "DescribeWafAutoDenyRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafAutoDenyRulesResponse": {
+      "document": "DescribeWafAutoDenyRules返回参数结构体",
+      "members": [
+        {
+          "document": "攻击次数阈值",
+          "example": "无",
+          "member": "int64",
+          "name": "AttackThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击时间阈值",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动封禁时间",
+          "example": "无",
+          "member": "int64",
+          "name": "DenyTimeThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动封禁状态",
+          "example": "无",
+          "member": "int64",
+          "name": "DefenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafAutoDenyStatusRequest": {
+      "document": "DescribeWafAutoDenyStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWafAutoDenyStatusResponse": {
+      "document": "DescribeWafAutoDenyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "WAF 自动封禁详情",
+          "member": "AutoDenyDetail",
+          "name": "WafAutoDenyDetails",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafThreatenIntelligenceRequest": {
+      "document": "DescribeWafThreatenIntelligence请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWafThreatenIntelligenceResponse": {
+      "document": "DescribeWafThreatenIntelligence返回参数结构体",
+      "members": [
+        {
+          "document": "WAF 威胁情报封禁信息",
+          "member": "WafThreatenIntelligenceDetails",
+          "name": "WafThreatenIntelligenceDetails",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1501,6 +2384,174 @@
       ],
       "usage": "out"
     },
+    "IpAccessControlData": {
+      "document": "数据封装",
+      "members": [
+        {
+          "default": "",
+          "document": "ip黑白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "IpAccessControlItem",
+          "name": "Res",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpAccessControlItem": {
+      "document": "ip黑白名单",
+      "members": [
+        {
+          "default": "",
+          "document": "动作",
+          "member": "uint64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TsVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "有效截止时间戳",
+          "member": "uint64",
+          "name": "ValidTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpHitItem": {
+      "document": "ip封堵状态数据",
+      "members": [
+        {
+          "default": "",
+          "document": "动作",
+          "member": "uint64",
+          "name": "Action",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类别",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ip",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳",
+          "member": "uint64",
+          "name": "TsVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "有效截止时间戳",
+          "member": "uint64",
+          "name": "ValidTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpHitItemsData": {
+      "document": "封装参数",
+      "members": [
+        {
+          "default": "",
+          "document": "数组封装",
+          "member": "IpHitItem",
+          "name": "Res",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数目",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAccessPeriodRequest": {
       "document": "ModifyAccessPeriod请求参数结构体",
       "members": [
@@ -1600,6 +2651,210 @@
       ],
       "type": "object"
     },
+    "ModifyDomainWhiteRuleRequest": {
+      "document": "ModifyDomainWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要更改的规则的域名",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "白名单id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则的id列表",
+          "member": "uint64",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "规则匹配路径",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则匹配方法",
+          "member": "string",
+          "name": "Function",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则的开关状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainWhiteRuleResponse": {
+      "document": "ModifyDomainWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafAutoDenyRulesRequest": {
+      "document": "ModifyWafAutoDenyRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "攻击次数阈值",
+          "example": "100",
+          "member": "int64",
+          "name": "AttackThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "攻击时间阈值",
+          "example": "60",
+          "member": "int64",
+          "name": "TimeThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动封禁时间",
+          "example": "120",
+          "member": "int64",
+          "name": "DenyTimeThreshold",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动封禁状态",
+          "example": "1",
+          "member": "int64",
+          "name": "DefenseStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafAutoDenyRulesResponse": {
+      "document": "ModifyWafAutoDenyRules返回参数结构体",
+      "members": [
+        {
+          "document": "成功的状态码，需要JSON解码后再使用，返回的格式是{\"域名\":\"状态\"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafAutoDenyStatusRequest": {
+      "document": "ModifyWafAutoDenyStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "WAF 自动封禁配置项",
+          "member": "AutoDenyDetail",
+          "name": "WafAutoDenyDetails",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafAutoDenyStatusResponse": {
+      "document": "ModifyWafAutoDenyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "WAF 自动封禁配置项",
+          "member": "AutoDenyDetail",
+          "name": "WafAutoDenyDetails",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafThreatenIntelligenceRequest": {
+      "document": "ModifyWafThreatenIntelligence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置WAF威胁情报封禁模块详情",
+          "member": "WafThreatenIntelligenceDetails",
+          "name": "WafThreatenIntelligenceDetails",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafThreatenIntelligenceResponse": {
+      "document": "ModifyWafThreatenIntelligence返回参数结构体",
+      "members": [
+        {
+          "document": "当前WAF威胁情报封禁模块详情",
+          "member": "WafThreatenIntelligenceDetails",
+          "name": "WafThreatenIntelligenceDetails",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResponseCode": {
       "document": "响应体的返回码",
       "members": [
@@ -1619,6 +2874,66 @@
           "name": "Message",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleList": {
+      "document": "规则白名单",
+      "members": [
+        {
+          "default": "",
+          "document": "规则Id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则列表的id",
+          "member": "uint64",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "请求的方法",
+          "member": "string",
+          "name": "Function",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间戳",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开关状态",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1800,6 +3115,102 @@
         }
       ],
       "usage": "in"
+    },
+    "UpsertIpAccessControlRequest": {
+      "document": "UpsertIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ip 参数列表，json数组由ip，source，note，action，valid_ts组成。ip对应配置的ip地址，source固定为custom值，note为注释，action值42为黑名单，40为白名单，valid_ts为有效日期，值为秒级时间戳",
+          "example": "[{ip:1.2.3.4,source:custom,note:test,action:42,valid_ts:165009}]",
+          "member": "string",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "clb-waf或者sparta-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpsertIpAccessControlResponse": {
+      "document": "UpsertIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "document": "添加或修改失败的条目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FailedItems",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "添加或修改失败的数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WafThreatenIntelligenceDetails": {
+      "document": "Waf 威胁情报封禁模块配置详情",
+      "members": [
+        {
+          "default": "",
+          "document": "封禁模组启用状态",
+          "member": "int64",
+          "name": "DefenseStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封禁属性标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后更新时间",
+          "member": "datetime_iso",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

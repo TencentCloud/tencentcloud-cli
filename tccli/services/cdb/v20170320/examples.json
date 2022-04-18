@@ -285,8 +285,8 @@
     "DescribeBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupConfig\r\n&InstanceId=cdb-c1nl9rpv\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
         "title": "查询云数据库备份配置信息"
       }
     ],
@@ -771,7 +771,7 @@
     "ModifyBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupConfig\r\n&InstanceId=cdb-c1nl9rpv\r\n&ExpireDays=10\r\n&BinlogExpireDays=8\r\n&StartTime=02:00-06:00\r\n&BackupMethod=logical\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&ExpireDays=10\n&BinlogExpireDays=8\n&StartTime=02:00-06:00\n&BackupMethod=logical\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改数据库备份配置"
       }
