@@ -139,10 +139,10 @@ class ArgMapArgParser(BaseArgParser):
             self.add_argument('subcommand', action=CustomAction, command_map=command_map, nargs='?')
 
     def parse_known_args(self, args=None, namespace=None):
-        if len(args) == 1 and args[0] == 'help':
+        if len(args) > 0 and args[0] == 'help':
             namespace = argparse.Namespace()
             namespace.help = 'help'
-            return namespace, []
+            return namespace, args[1:]
         else:
             return super(ArgMapArgParser, self).parse_known_args(
                 args, namespace)
