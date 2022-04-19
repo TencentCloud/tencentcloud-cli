@@ -12,6 +12,12 @@
       "name": "增加域名规则白名单",
       "output": "AddDomainWhiteRuleResponse"
     },
+    "AddSpartaProtection": {
+      "document": "添加Spart防护域名",
+      "input": "AddSpartaProtectionRequest",
+      "name": "添加Spart防护域名",
+      "output": "AddSpartaProtectionResponse"
+    },
     "CreateAccessExport": {
       "document": "本接口用于创建访问日志导出",
       "input": "CreateAccessExportRequest",
@@ -691,6 +697,231 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpartaProtectionRequest": {
+      "document": "AddSpartaProtection请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要防御的域名",
+          "example": "test1.qcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
+          "example": "0",
+          "member": "int64",
+          "name": "CertType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表示是否开启了CDN代理，1：有部署CDN，0：未部署CDN",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCdn",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启WebSocket支持，1表示开启，0不开启",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWebsocket",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "负载均衡策略，0表示轮徇，1表示IP hash",
+          "example": "0",
+          "member": "string",
+          "name": "LoadBalance",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CertType=1时，需要填次参数，表示证书内容",
+          "example": "sldfjsl",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CertType=1时，需要填次参数，表示证书的私钥",
+          "example": "jskljflks",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CertType=2时，需要填次参数，表示证书的ID",
+          "example": "23424",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Waf的资源ID",
+          "example": "slkdfjsldk",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTPS回源协议，填http或者https",
+          "example": "https",
+          "member": "string",
+          "name": "UpstreamScheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
+          "example": "80",
+          "member": "string",
+          "name": "HttpsUpstreamPort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启灰度，0表示不开启灰度",
+          "example": "0",
+          "member": "int64",
+          "name": "IsGray",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "灰度的地区",
+          "example": "[\"gz\",\"bj\"]",
+          "member": "string",
+          "name": "GrayAreas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "UpstreamType=1时，填次字段表示回源域名",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "UpstreamDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UpstreamType=0时，填次字段表示回源ip",
+          "example": "[\"1.1.1.1\\n\"]",
+          "member": "string",
+          "name": "SrcList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否开启HTTP2,开启HTTP2需要HTTPS支持",
+          "example": "0",
+          "member": "int64",
+          "name": "IsHttp2",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "表示是否强制跳转到HTTPS，1强制跳转Https，0不强制跳转",
+          "example": "1",
+          "member": "int64",
+          "name": "HttpsRewrite",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务有多端口需要设置此字段",
+          "example": "无",
+          "member": "PortItem",
+          "name": "Ports",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "版本：sparta-waf、clb-waf、cdn-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效",
+          "example": "1",
+          "member": "string",
+          "name": "IsKeepAlive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例id，上线之后带上此字段",
+          "example": "waf-sldfjsl",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "anycast ip类型开关： 0 普通ip 1 Anycast ip",
+          "example": "0",
+          "member": "int64",
+          "name": "Anycast",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpartaProtectionResponse": {
+      "document": "AddSpartaProtection返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2854,6 +3085,57 @@
         }
       ],
       "type": "object"
+    },
+    "PortItem": {
+      "document": "防护域名端口配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "监听端口配置",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与Port一一对应，表示端口对应的协议",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与Port一一对应,  表示回源端口",
+          "member": "string",
+          "name": "UpstreamPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "与Port一一对应,  表示回源协议",
+          "member": "string",
+          "name": "UpstreamProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Nginx的服务器ID",
+          "member": "string",
+          "name": "NginxServerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ResponseCode": {
       "document": "响应体的返回码",

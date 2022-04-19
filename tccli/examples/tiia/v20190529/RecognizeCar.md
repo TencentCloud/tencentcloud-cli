@@ -56,7 +56,8 @@ Output:
                         "X": 780,
                         "Y": 651
                     }
-                ]
+                ],
+                "PlateContent": null
             },
             {
                 "Serial": "君越",
@@ -82,7 +83,8 @@ Output:
                         "X": 313,
                         "Y": 658
                     }
-                ]
+                ],
+                "PlateContent": null
             },
             {
                 "Serial": "神行者2",
@@ -108,7 +110,8 @@ Output:
                         "X": 1202,
                         "Y": 580
                     }
-                ]
+                ],
+                "PlateContent": null
             }
         ],
         "RequestId": "81235fb9-d91e-4a40-91ac-9ef5675954a2"

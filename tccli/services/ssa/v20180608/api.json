@@ -4405,7 +4405,7 @@
         },
         {
           "default": "",
-          "document": "扫描监测url\"",
+          "document": "扫描监测url",
           "example": "无",
           "member": "string",
           "name": "ScanUrl",

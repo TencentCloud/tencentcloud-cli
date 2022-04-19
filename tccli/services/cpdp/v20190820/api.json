@@ -5587,7 +5587,7 @@
         },
         {
           "default": "",
-          "document": "第三方渠道数据值。\n当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://midas-juxin-next.pages.woa.com/apidocs/external-channel-data/QueryExternalChannelData.html#ExternalChannelPaymentDataValue)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方渠道数据值。\n当ExternalChannelDataType=PAYMENT时，反序列化格式请参考[ExternalChannelPaymentDataValue](https://dev.tke.midas.qq.com/juxin-doc-next/apidocs/external-channel-data/QueryExternalChannelData.html#externalchannelpaymentdatavalue)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ExternalChannelDataValue",
@@ -15914,6 +15914,7 @@
         {
           "default": "",
           "document": "子商户类型：\n个人: personal\n企业：enterprise\n缺省： enterprise",
+          "example": "无",
           "member": "string",
           "name": "SubMchType",
           "required": true,
@@ -15923,6 +15924,7 @@
         {
           "default": "",
           "document": "子商户名称",
+          "example": "无",
           "member": "string",
           "name": "SubMchName",
           "required": true,
@@ -15931,7 +15933,8 @@
         },
         {
           "default": "",
-          "document": "子账号号",
+          "document": "子账号",
+          "example": "无",
           "member": "string",
           "name": "SubAcctNo",
           "required": true,
@@ -15941,6 +15944,7 @@
         {
           "default": "",
           "document": "不填则默认子商户名称",
+          "example": "无",
           "member": "string",
           "name": "ShortName",
           "required": true,
@@ -15950,6 +15954,7 @@
         {
           "default": "",
           "document": "业务平台的子商户Id，唯一",
+          "example": "无",
           "member": "string",
           "name": "SubMchId",
           "required": true,
@@ -15959,6 +15964,7 @@
         {
           "default": "",
           "document": "聚鑫计费SubAppId，代表子商户",
+          "example": "无",
           "member": "string",
           "name": "SubAppId",
           "required": true,
@@ -15968,6 +15974,7 @@
         {
           "default": "",
           "document": "子商户联系人\n<敏感信息>",
+          "example": "无",
           "member": "string",
           "name": "Contact",
           "required": true,
@@ -15977,6 +15984,7 @@
         {
           "default": "",
           "document": "子商户地址",
+          "example": "无",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -15986,6 +15994,7 @@
         {
           "default": "",
           "document": "联系人手机号\n<敏感信息>",
+          "example": "无",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -15995,6 +16004,7 @@
         {
           "default": "",
           "document": "邮箱 \n<敏感信息>",
+          "example": "无",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -16004,6 +16014,7 @@
         {
           "default": "",
           "document": "子商户会员类型：\ngeneral:普通子账户\nmerchant:商户子账户\n缺省： general\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SubMerchantMemberType",
           "required": true,
@@ -25484,7 +25495,7 @@
         },
         {
           "default": "",
-          "document": "退款金额，单位：分\n当该字段为空或者为0时，系统会默认使用订单当实付金额做为退款金额",
+          "document": "退款金额，单位：分\n当该字段为空或者为0时，系统会默认使用订单当实付金额作为退款金额",
           "example": "无",
           "member": "int64",
           "name": "TotalRefundAmt",

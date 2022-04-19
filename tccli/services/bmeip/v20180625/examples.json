@@ -35,7 +35,7 @@
     "CreateEip": [
       {
         "document": "",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=CreateEip\r\n&VpcId=vpc-bjh0qd20\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=CreateEip\n&VpcId=vpc-bjh0qd20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"EipIds\": [\n            \"eip-k5zjz4yy\"\n        ],\n        \"TaskId\": 2488124,\n        \"RequestId\": \"b2c6a502-66f1-4101-a40a-387ac764f09e\"\n    }\n}",
         "title": "申请黑石EIP"
       }
@@ -155,7 +155,7 @@
     "UnbindVpcIp": [
       {
         "document": "此接口用于解绑黑石弹性公网IP到黑石私有网络的IP（非黑石物理机IP）",
-        "input": "https://bmeip.tencentcloudapi.com/?Action=UnbindVpcIp\r\n&EipId=eip-fz3yvdzi\r\n&VpcId=vpc-bjh0qd20\r\n&VpcIp=10.1.0.11\r\n&<公共请求参数>",
+        "input": "https://bmeip.tencentcloudapi.com/?Action=UnbindVpcIp\n&EipId=eip-fz3yvdzi\n&VpcId=vpc-bjh0qd20\n&VpcIp=10.1.0.11\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 2488352,\n        \"RequestId\": \"a28288f8-a78c-4b15-8e97-b5b9126819e3\"\n    }\n}",
         "title": "黑石EIP解绑VPCIP"
       }

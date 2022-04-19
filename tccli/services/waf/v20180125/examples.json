@@ -16,6 +16,20 @@
         "title": "增加域名规则白名单"
       }
     ],
+    "AddSpartaProtection": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddSpartaProtection\n&Domain=test1.qcloud.com\n&CertType=0\n&IsCdn=0\n&IsGray=0\n&UpstreamType=0\n&IsHttp2=0\n&IsWebsocket=0\n&LoadBalance=0\n&SrcList.0=1.1.1.1\n&Ports.0.Port=80\n&Ports.0.Protocol=http\n&Ports.0.UpstreamPort=80\n&Ports.0.UpstreamProtocol=http\n&Ports.0.NginxServerId=0\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
+        "title": "添加Spart防护域名"
+      },
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddSpartaProtection\n&Domain=test.qcloud.com\n&CertType=0\n&IsCdn=0\n&IsGray=0\n&UpstreamType=0\n&IsHttp2=0\n&IsWebsocket=0\n&LoadBalance=0\n&SrcList.0=1.1.1.1\n&Ports.0.Port=80\n&Ports.0.Protocol=http\n&Ports.0.UpstreamPort=80\n&Ports.0.UpstreamProtocol=http\n&Ports.0.NginxServerId=0\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
+        "title": "重复添加的场景"
+      }
+    ],
     "CreateAccessExport": [
       {
         "document": "",

@@ -366,40 +366,45 @@
       "document": "CreateEip请求参数结构体",
       "members": [
         {
-          "default": "1",
+          "default": "",
           "document": "申请数量，默认为1, 最大 20",
+          "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
           "required": false,
           "type": "int"
         },
         {
-          "default": "flow",
+          "default": "",
           "document": "EIP计费方式，flow-流量计费；bandwidth-带宽计费",
+          "example": "flow",
           "member": "string",
           "name": "PayMode",
           "required": false,
           "type": "string"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "带宽设定值（只在带宽计费时生效）",
+          "example": "10",
           "member": "uint64",
           "name": "Bandwidth",
           "required": false,
           "type": "int"
         },
         {
-          "default": "fullnat",
+          "default": "",
           "document": "EIP模式，目前支持tunnel和fullnat",
+          "example": "fullnat",
           "member": "string",
           "name": "SetType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "是否使用独占集群，0：不使用，1：使用。默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Exclusive",
           "required": false,
@@ -408,6 +413,7 @@
         {
           "default": "",
           "document": "EIP归属私有网络ID，例如vpc-k7j1t2x1",
+          "example": "vpc-bjh0qd20",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -416,6 +422,7 @@
         {
           "default": "",
           "document": "指定申请的IP列表",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -429,15 +436,19 @@
       "members": [
         {
           "document": "EIP列表",
+          "example": "[\"eip-k5zjz4yy\"]",
           "member": "string",
           "name": "EipIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "任务ID",
+          "example": "2488124",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1607,6 +1618,7 @@
         {
           "default": "",
           "document": "Eip实例ID",
+          "example": "eip-fz3yvdzi",
           "member": "string",
           "name": "EipId",
           "required": true,
@@ -1615,6 +1627,7 @@
         {
           "default": "",
           "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
+          "example": "vpc-bjh0qd20",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1623,6 +1636,7 @@
         {
           "default": "",
           "document": "绑定的VPC内IP地址",
+          "example": "10.1.0.11",
           "member": "string",
           "name": "VpcIp",
           "required": true,
@@ -1636,8 +1650,10 @@
       "members": [
         {
           "document": "绑定黑石物理机异步任务ID，可以通过查询EIP任务状态查询任务状态",
+          "example": "2488352",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

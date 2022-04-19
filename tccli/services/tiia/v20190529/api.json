@@ -91,13 +91,13 @@
       "output": "EnhanceImageResponse"
     },
     "RecognizeCar": {
-      "document": "腾讯云车辆属性识别可对汽车车身及车辆属性进行检测与识别，目前支持11种车身颜色、20多种车型、300多种品牌、4000多种车系+年款的识别，同时支持对车辆的位置进行检测。如果图片中存在多辆车，会分别输出每辆车的车型和坐标。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "车辆识别可对图片中车辆的车型进行识别，可识别7000多种车型，输出车辆的品牌（如路虎）、车系（如神行者2）、类型（如中型SUV）、颜色、年份和坐标等信息，覆盖轿车、SUV、大型客车等市面常见车。如果图片中存在多辆车，会分别输出每辆车的车型和坐标。\n\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "RecognizeCarRequest",
       "name": "车辆识别",
       "output": "RecognizeCarResponse"
     },
     "RecognizeCarPro": {
-      "document": "车辆识别（增强版）可对图片中汽车的车型和车牌进行识别，可识别7000多种车型，覆盖轿车、SUV、大型客车等市面常见车，输出车辆的车身颜色、品牌、车系、年份、车牌和位置等信息。如果图片中存在多辆车，会分别输出每辆车的车型、车牌和坐标。\n\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "document": "车辆识别（增强版）可对图片中车辆的车型和车牌进行识别，输出车辆的车牌，以及品牌（如路虎）、车系（如神行者2）、类型（如中型SUV）、颜色和坐标等信息，覆盖轿车、SUV、大型客车等市面常见车。如果图片中存在多辆车，会分别输出每辆车的车型、车牌和坐标。\n\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "RecognizeCarProRequest",
       "name": "车辆识别（增强版）",
       "output": "RecognizeCarProResponse"
@@ -1934,6 +1934,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1942,6 +1943,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**\n支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。",
+          "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1955,15 +1957,19 @@
       "members": [
         {
           "document": "汽车的四个矩形顶点坐标，如果图片中存在多辆车，则输出最大车辆的坐标。",
+          "example": "无",
           "member": "Coord",
           "name": "CarCoords",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "车辆属性识别的结果数组，如果识别到多辆车，则会输出每辆车的top1结果。",
+          "example": "无",
           "member": "CarTagItem",
           "name": "CarTags",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

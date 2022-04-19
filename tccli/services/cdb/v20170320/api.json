@@ -703,7 +703,7 @@
       "output": "RenewDBInstanceResponse"
     },
     "ResetRootAccount": {
-      "document": "重置实例ROOT账，初始化账号权限",
+      "document": "重置实例ROOT账号，初始化账号权限",
       "input": "ResetRootAccountRequest",
       "name": "重置ROOT账号",
       "output": "ResetRootAccountResponse"
@@ -3342,7 +3342,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板，默认值是：\"HIGH_STABILITY\"。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "ParamTemplateType",
@@ -10324,7 +10324,7 @@
         },
         {
           "default": "",
-          "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为732天。",
+          "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。",
           "example": "10",
           "member": "int64",
           "name": "ExpireDays",
@@ -10351,7 +10351,7 @@
         },
         {
           "default": "",
-          "document": "binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。",
+          "document": "binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。",
           "example": "8",
           "member": "int64",
           "name": "BinlogExpireDays",
