@@ -1,10 +1,36 @@
 # 本版本更新包含以下内容：
 
-## 云监控(monitor) 版本：2018-07-24
+## API网关(apigateway) 版本：2018-08-08
 
-### 第 43 次发布
+### 第 29 次发布
 
-发布时间：2022-04-19 06:13:47
+发布时间：2022-04-20 06:02:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApi](https://cloud.tencent.com/document/api/628/45243)
+
+	* 新增入参：Owner
+
+
+修改数据结构：
+
+* [ServiceConfig](https://cloud.tencent.com/document/api/628/45244#ServiceConfig)
+
+	* 新增成员：UpstreamId
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 15 次发布
+
+发布时间：2022-04-20 06:13:52
 
 本次发布包含了以下内容：
 
@@ -12,34 +38,34 @@
 
 修改数据结构：
 
-* [URLNotice](https://cloud.tencent.com/document/api/248/30354#URLNotice)
+* [AbnormalProcessChildRuleInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessChildRuleInfo)
 
-	* 新增成员：Weekday
+	* 新增成员：RuleLevel
 
-* [UserNotice](https://cloud.tencent.com/document/api/248/30354#UserNotice)
+* [AbnormalProcessEventDescription](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessEventDescription)
 
-	* 新增成员：Weekday
+	* 新增成员：GroupName
 
+* [AbnormalProcessEventInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessEventInfo)
 
+	* 新增成员：MatchGroupName, MatchRuleLevel
 
+* [AbnormalProcessSystemChildRuleInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessSystemChildRuleInfo)
 
-## Web 应用防火墙(waf) 版本：2018-01-25
+	* 新增成员：RuleLevel
 
-### 第 7 次发布
+* [EscapeEventInfo](https://cloud.tencent.com/document/api/1285/65614#EscapeEventInfo)
 
-发布时间：2022-04-19 06:20:51
+	* 新增成员：NodeIP, HostID
 
-本次发布包含了以下内容：
+* [EscapeRule](https://cloud.tencent.com/document/api/1285/65614#EscapeRule)
 
-改善已有的文档。
+	* 新增成员：Group
 
-新增接口：
+* [RunTimeEventBaseInfo](https://cloud.tencent.com/document/api/1285/65614#RunTimeEventBaseInfo)
 
-* [AddSpartaProtection](https://cloud.tencent.com/document/api/627/72689)
+	* 新增成员：ContainerNetStatus, ContainerNetSubStatus, ContainerIsolateOperationSrc
 
-新增数据结构：
-
-* [PortItem](https://cloud.tencent.com/document/api/627/53609#PortItem)
 
 
 
@@ -2115,6 +2141,28 @@
 
 
 ## API网关(apigateway) 版本：2018-08-08
+
+### 第 29 次发布
+
+发布时间：2022-04-20 06:02:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApi](https://cloud.tencent.com/document/api/628/45243)
+
+	* 新增入参：Owner
+
+
+修改数据结构：
+
+* [ServiceConfig](https://cloud.tencent.com/document/api/628/45244#ServiceConfig)
+
+	* 新增成员：UpstreamId
+
 
 ### 第 28 次发布
 
@@ -48331,6 +48379,23 @@
 
 ## 文字识别(ocr) 版本：2018-11-19
 
+### 第 65 次发布
+
+发布时间：2022-04-19 19:47:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecognizeHealthCodeOCR](https://cloud.tencent.com/document/api/866/68580)
+
+	* 新增入参：Type
+
+	* 新增出参：IDNumber, TestingInterval, TestingResult, TestingTime
+
+
 ### 第 64 次发布
 
 发布时间：2022-03-24 17:13:23
@@ -60228,6 +60293,45 @@
 
 
 ## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 15 次发布
+
+发布时间：2022-04-20 06:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AbnormalProcessChildRuleInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessChildRuleInfo)
+
+	* 新增成员：RuleLevel
+
+* [AbnormalProcessEventDescription](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessEventDescription)
+
+	* 新增成员：GroupName
+
+* [AbnormalProcessEventInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessEventInfo)
+
+	* 新增成员：MatchGroupName, MatchRuleLevel
+
+* [AbnormalProcessSystemChildRuleInfo](https://cloud.tencent.com/document/api/1285/65614#AbnormalProcessSystemChildRuleInfo)
+
+	* 新增成员：RuleLevel
+
+* [EscapeEventInfo](https://cloud.tencent.com/document/api/1285/65614#EscapeEventInfo)
+
+	* 新增成员：NodeIP, HostID
+
+* [EscapeRule](https://cloud.tencent.com/document/api/1285/65614#EscapeRule)
+
+	* 新增成员：Group
+
+* [RunTimeEventBaseInfo](https://cloud.tencent.com/document/api/1285/65614#RunTimeEventBaseInfo)
+
+	* 新增成员：ContainerNetStatus, ContainerNetSubStatus, ContainerIsolateOperationSrc
+
 
 ### 第 14 次发布
 
@@ -75044,11 +75148,11 @@
 
 新增接口：
 
-* [[AddSpartaProtection](https://cloud.tencent.com/document/api/627/72689)](https://cloud.tencent.com/document/api/#/#)
+* [AddSpartaProtection](https://cloud.tencent.com/document/api/627/72689)
 
 新增数据结构：
 
-* [[PortItem](https://cloud.tencent.com/document/api/627/53609#PortItem)](https://cloud.tencent.com/document/api/627/53609#[PortItem](https://cloud.tencent.com/document/api/627/53609#PortItem))
+* [PortItem](https://cloud.tencent.com/document/api/627/53609#PortItem)
 
 ### 第 6 次发布
 

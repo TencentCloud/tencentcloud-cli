@@ -16,6 +16,10 @@ Output:
         "Name": "京XX",
         "Time": "XXXX - XX - XX XX: XX: XX",
         "Color": "绿色",
+        "TestingResult": "48小时阴性",
+        "TestingInterval": "xx",
+        "TestingTime": "xx",
+        "IDNumber": "xx",
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }

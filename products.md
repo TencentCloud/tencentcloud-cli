@@ -11,7 +11,7 @@
 | apcas | [汽车精准获客服务](https://cloud.tencent.com/document/product/1244) | 2022-04-04 06:05:36 |
 | ape | [正版图库直通车](https://cloud.tencent.com/document/product/1181) | 2022-04-04 06:05:40 |
 | api | [云 API](https://cloud.tencent.com/document/product/1278) | 2022-04-08 06:01:32 |
-| apigateway | [API网关](https://cloud.tencent.com/document/product/628) | 2022-04-04 06:05:47 |
+| apigateway | [API网关](https://cloud.tencent.com/document/product/628) | 2022-04-20 06:02:43 |
 | apm | [应用性能观测](https://cloud.tencent.com/document/product/1463) | 2022-04-07 06:08:19 |
 | as | [弹性伸缩](https://cloud.tencent.com/document/product/377) | 2022-04-08 06:01:46 |
 | asr | [语音识别](https://cloud.tencent.com/document/product/1093) | 2022-04-12 06:06:07 |
@@ -45,7 +45,7 @@
 | cim | [](https://cloud.tencent.com/document/product) | 2019-05-16 17:21:18 |
 | cis | [](https://cloud.tencent.com/document/product) | 2018-06-07 15:01:42 |
 | ckafka | [消息队列 Ckafka](https://cloud.tencent.com/document/product/597) | 2022-04-18 06:08:40 |
-| clb | [负载均衡](https://cloud.tencent.com/document/product/214) | 2022-04-08 06:04:17 |
+| clb | [负载均衡](https://cloud.tencent.com/document/product/214) | 2022-04-20 06:05:11 |
 | cloudaudit | [云审计](https://cloud.tencent.com/document/product/629) | 2022-04-04 06:21:08 |
 | cloudhsm | [云加密机](https://cloud.tencent.com/document/product/639) | 2022-04-04 06:21:17 |
 | cls | [日志服务](https://cloud.tencent.com/document/product/614) | 2022-04-18 06:09:09 |
@@ -124,7 +124,7 @@
 | nlp | [自然语言处理](https://cloud.tencent.com/document/product/271) | 2022-04-13 07:00:13 |
 | npp | [号码保护](https://cloud.tencent.com/document/product) | 2020-04-22 08:00:22 |
 | oceanus | [流计算 Oceanus](https://cloud.tencent.com/document/product/849) | 2022-04-08 06:10:55 |
-| ocr | [文字识别](https://cloud.tencent.com/document/product/866) | 2022-04-08 06:10:59 |
+| ocr | [文字识别](https://cloud.tencent.com/document/product/866) | 2022-04-19 20:30:49 |
 | organization | [企业组织](https://cloud.tencent.com/document/product/850) | 2022-04-04 07:01:46 |
 | partners | [渠道合作伙伴](https://cloud.tencent.com/document/product/563) | 2022-04-04 07:01:49 |
 | pds | [私域安全](https://cloud.tencent.com/document/product/1473) | 2022-04-04 07:02:02 |
@@ -161,7 +161,7 @@
 | tci | [腾讯智学课堂分析](https://cloud.tencent.com/document/product) | 2020-08-24 08:06:03 |
 | tcm | [服务网格](https://cloud.tencent.com/document/product/1261) | 2022-04-07 07:10:53 |
 | tcr | [容器镜像服务](https://cloud.tencent.com/document/product/1141) | 2022-04-08 06:13:14 |
-| tcss | [容器安全服务](https://cloud.tencent.com/document/product/1285) | 2022-04-12 06:21:48 |
+| tcss | [容器安全服务](https://cloud.tencent.com/document/product/1285) | 2022-04-20 06:13:52 |
 | tdcpg | [TDSQL-C PostgreSQL 版](https://cloud.tencent.com/document/product/1556) | 2022-04-04 07:15:36 |
 | tdid | [分布式身份](https://cloud.tencent.com/document/product/1439) | 2022-04-04 07:15:50 |
 | tdmq | [分布式消息队列](https://cloud.tencent.com/document/product/1179) | 2022-04-14 06:18:12 |
