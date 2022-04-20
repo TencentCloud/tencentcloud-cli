@@ -37,6 +37,7 @@ Output:
                 "UserSet": [
                     {
                         "UserDescription": "test user",
+                        "UserAlias": "testname",
                         "UserId": "1248065439",
                         "CreateTime": "2021-07-28 16:19:32",
                         "Creator": "1248065439"

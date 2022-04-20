@@ -8,6 +8,14 @@
         "title": "添加邮件发送联系人信息"
       }
     ],
+    "CancelKillTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelKillTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"09299b00-b878-11eb-b0b4-959ba47770cf\"\n    }\n}",
+        "title": "终止中断会话任务"
+      }
+    ],
     "CreateDBDiagReportTask": [
       {
         "document": "",
@@ -64,12 +72,28 @@
         "title": "创建安全审计日志导出任务"
       }
     ],
+    "CreateSqlFilter": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateSqlFilter\n&InstanceId=cdb-test\n&SessionToken=cAuth\n&SqlType=SELECT\n&FilterKey=t1,t2\n&MaxConcurrency=1\n&Duration=300\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FilterId\": 7011,\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\"\n    }\n}",
+        "title": "创建实例SQL限流任务"
+      }
+    ],
     "DeleteSecurityAuditLogExportTasks": [
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DeleteSecurityAuditLogExportTasks\n&SecAuditGroupId=sag-01z37k3f\n&AsyncRequestIds.0=1\n&Product=mysql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fdab910-5c9e-11eb-a610-8717ee1b1000\"\n    }\n}",
         "title": "删除安全审计日志导出任务"
+      }
+    ],
+    "DeleteSqlFilters": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DeleteSqlFilters\n&InstanceId=cdb-test\n&SessionToken=cAuth\n&FilterIds.0=1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\"\n    }\n}",
+        "title": "删除实例SQL限流任务"
       }
     ],
     "DescribeAllUserContact": [
@@ -160,12 +184,28 @@
         "title": "查询实时线程列表。"
       }
     ],
+    "DescribeNoPrimaryKeyTables": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeNoPrimaryKeyTables\n&InstanceId=cdb-test\n&Date=2022-04-12\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"NoPrimaryKeyTables\": [\n            {\n                \"TableSchema\": \"test\",\n                \"TableName\": \"test\",\n                \"Engine\": \"InnoDB\",\n                \"TotalLength\": 0,\n                \"TableRows\": 0\n            }\n        ],\n        \"NoPrimaryKeyTableRecordCount\": 8,\n        \"NoPrimaryKeyTableCount\": 8,\n        \"NoPrimaryKeyTableCountDiff\": 0,\n        \"Timestamp\": 1649872593\n    }\n}",
+        "title": "查询实例无主键表"
+      }
+    ],
     "DescribeProxySessionKillTasks": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySessionKillTasks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Product\": \"xx\",\n    \"AsyncRequestIds\": [\n        0\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"Progress\": 100,\n                \"InstProxyList\": [\n                    \"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\n                    \"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\n                    \"db0fcd29867e65eb999ce99383d7a06cd21ca077\"\n                ],\n                \"AsyncRequestId\": 7677678,\n                \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n                \"InstProxyCount\": 3,\n                \"InstanceId\": \"crs-o5chheqz\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n                \"TaskStatus\": \"finished\",\n                \"FinishedProxyList\": [\n                    \"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\n                    \"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\n                    \"db0fcd29867e65eb999ce99383d7a06cd21ca077\"\n                ],\n                \"FailedProxyList\": []\n            }\n        ]\n    }\n}",
         "title": "查询 kill 会话任务执行结果"
+      }
+    ],
+    "DescribeRedisTopBigKeys": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeRedisTopBigKeys\n&InstanceId=cdb-test\n&Date=2022-04-12\n&Product=redis\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"TopKeys\": [\n            {\n                \"Key\": \"test\",\n                \"Type\": \"string\",\n                \"Encoding\": \"string\",\n                \"ExpireTime\": 0,\n                \"Length\": 72,\n                \"ItemCount\": 1,\n                \"MaxElementSize\": 10\n            }\n        ],\n        \"Timestamp\": 162072183\n    }\n}",
+        "title": "查询redis实例大key列表"
       }
     ],
     "DescribeSecurityAuditLogDownloadUrls": [
@@ -206,6 +246,22 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSlowLogUserHostStats\n&Product=mysql\n&InstanceId=cdb-c1nl9rpv\n&StartTime=2020-09-21T00:00:00+00:00\n&EndTime=2020-09-22T00:00:00+00:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"e2a51350-8c9f-11eb-bc0f-c9f5ab88d057\",\n        \"Items\": [\n            {\n                \"UserHost\": \"10.3.1.1\",\n                \"Ratio\": 50,\n                \"Count\": 29\n            },\n            {\n                \"UserHost\": \"10.3.1.2\",\n                \"Ratio\": 50,\n                \"Count\": 29\n            }\n        ]\n    }\n}",
         "title": "获取慢日志来源地址统计分布图"
+      }
+    ],
+    "DescribeSqlFilters": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSqlFilters\n&InstanceId=cdb-test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Id\": 1234,\n                \"ExpireTime\": \"2020-04-20T10:10:00+08:00\",\n                \"CurrentTime\": \"2020-04-20T10:05:00+08:00\",\n                \"CreateTime\": \"2020-04-20T10:00:00+08:00\",\n                \"Status\": \"RUNNING\",\n                \"MaxConcurrency\": 10,\n                \"CurrentConcurrency\": 5,\n                \"RejectedSqlCount\": 1000,\n                \"SqlType\": \"SELECT\",\n                \"OriginRule\": \"xxxx\",\n                \"OriginKeys\": \"k1,k2\"\n            }\n        ],\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\",\n        \"TotalCount\": 339\n    }\n}",
+        "title": "DescribeSqlFilters"
+      }
+    ],
+    "DescribeSqlTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlTemplate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Schema\": \"test\",\n    \"SqlText\": \"select * from test limit 10\",\n    \"Product\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a837a5ce-b48f-4548-9a6b-a6e0917d8e5c\",\n        \"Schema\": \"test\",\n        \"SqlText\": \"select * from test limit 10\",\n        \"SqlType\": \"Select\",\n        \"SqlTemplate\": \"select * from test limit ?\",\n        \"SqlId\": -5602209514906915428\n    }\n}",
+        "title": "查询SQL模版"
       }
     ],
     "DescribeTopSpaceSchemaTimeSeries": [
@@ -268,6 +324,22 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=ModifyDiagDBInstanceConf\n&InstanceIds.0=cdb-fyclrp7r\n&InstanceConfs.DailyInspection=Yes\n&Regions=All\n&Product=mysql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\n    }\n}",
         "title": "修改实例巡检状态"
+      }
+    ],
+    "ModifySqlFilters": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=ModifySqlFilters\n&InstanceId=cdb-test\n&SessionToken=cAuth\n&FilterIds.0=1234\n&Status=TERMINATED\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\"\n    }\n}",
+        "title": "ModifySqlFilters"
+      }
+    ],
+    "VerifyUserAccount": [
+      {
+        "document": "",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=VerifyUserAccount\n&InstanceId=cdb-test\n&User=root\n&Password=t123456\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SessionToken\": \"QCth1234567890\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "验证用户账号权限"
       }
     ]
   },

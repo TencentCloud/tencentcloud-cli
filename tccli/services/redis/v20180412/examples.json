@@ -8,6 +8,14 @@
         "title": "请求示例"
       }
     ],
+    "AllocateWanAddress": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=AllocateWanAddress\n&InstanceId=crs-5qlrlhux\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 327,\n        \"WanStatus\": \"外网开通中\",\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "开通外网实例"
+      }
+    ],
     "ApplyParamsTemplate": [
       {
         "document": "",
@@ -548,6 +556,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"ParamList\": [\n        {\n            \"Value\": \"120\",\n            \"Key\": \"timeout\"\n        }\n    ],\n    \"TemplateId\": \"crs-cfg-sa23d5d3\",\n    \"Description\": \"MyCustomParamTemplate\",\n    \"Name\": \"CustomParamTemplate\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ReleaseWanAddress": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=ReleaseWanAddress\n&InstanceId=crs-5qlrlhux\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 327,\n        \"WanStatus\": \"外网关闭中\",\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "关闭外网实例"
       }
     ],
     "RenewInstance": [

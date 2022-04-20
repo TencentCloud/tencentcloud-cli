@@ -15,70 +15,151 @@ Output:
 {
     "Response": {
         "Result": {
-            "ServiceId": "service-ody35h5e",
-            "ServiceName": "mytest",
-            "ServiceDesc": "mytesttest",
-            "ApiId": "api-3v4tzy3u",
-            "ApiDesc": "get a user info",
-            "CreatedTime": "2019-12-23T09:15:16Z",
-            "ModifiedTime": "2020-02-22T02:05:29Z",
-            "ApiName": "test1",
-            "ApiType": "NORMAL",
-            "Protocol": "HTTP",
-            "AuthType": "NONE",
-            "AuthRelationApiId": "api-e92i2jds",
-            "OauthConfig": null,
-            "IsDebugAfterCharge": false,
-            "RequestConfig": {
-                "Path": "/users/{name}",
-                "Method": "GET"
-            },
-            "ResponseType": "",
-            "ResponseSuccessExample": "",
-            "ResponseFailExample": "",
-            "ResponseErrorCodes": [],
-            "RequestParameters": [],
-            "ServiceTimeout": 15,
-            "ServiceType": "MOCK",
-            "ServiceConfig": null,
-            "ServiceParameters": null,
-            "ConstantParameters": null,
-            "ServiceMockReturnMessage": "Hello Serverless Framework.",
-            "ServiceScfFunctionName": null,
-            "ServiceScfFunctionNamespace": null,
-            "ServiceScfFunctionQualifier": null,
-            "ServiceScfIsIntegratedResponse": null,
-            "ServiceWebsocketRegisterFunctionName": null,
-            "ServiceWebsocketRegisterFunctionNamespace": null,
-            "ServiceWebsocketRegisterFunctionQualifier": null,
-            "ServiceWebsocketCleanupFunctionName": null,
-            "ServiceWebsocketCleanupFunctionNamespace": null,
-            "ServiceWebsocketCleanupFunctionQualifier": null,
-            "InternalDomain": null,
-            "ServiceWebsocketTransportFunctionName": null,
-            "ServiceWebsocketTransportFunctionNamespace": null,
-            "ServiceWebsocketTransportFunctionQualifier": null,
-            "MicroServices": null,
-            "MicroServicesInfo": null,
-            "ServiceTsfLoadBalanceConf": null,
-            "ServiceTsfHealthCheckConf": null,
             "EnableCORS": false,
-            "Tags": [],
-            "Environments": [],
-            "IsBase64Encoded": false,
-            "IsBase64Trigger": false,
+            "ServiceDesc": "xx",
+            "RequestParameters": [
+                {
+                    "Name": "xx",
+                    "DefaultValue": "xx",
+                    "Required": true,
+                    "Position": "xx",
+                    "Type": "xx",
+                    "Desc": "xx"
+                }
+            ],
+            "InternalDomain": "xx",
+            "ServiceWebsocketRegisterFunctionName": "xx",
+            "ServiceWebsocketRegisterFunctionQualifier": "xx",
+            "MicroServices": [
+                {
+                    "MicroServiceName": "xx",
+                    "ClusterId": "xx",
+                    "NamespaceId": "xx"
+                }
+            ],
+            "ServiceWebsocketRegisterFunctionNamespace": "xx",
+            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "ConstantParameters": [
+                {
+                    "Position": "xx",
+                    "DefaultValue": "xx",
+                    "Name": "xx",
+                    "Desc": "xx"
+                }
+            ],
+            "ServiceTsfLoadBalanceConf": {
+                "SessionStickRequired": true,
+                "IsLoadBalance": true,
+                "SessionStickTimeout": 0,
+                "Method": "xx"
+            },
+            "ServiceWebsocketTransportFunctionNamespace": "xx",
+            "ServiceScfFunctionQualifier": "xx",
+            "ServiceScfIsIntegratedResponse": true,
+            "ServiceWebsocketTransportFunctionName": "xx",
+            "ResponseSuccessExample": "xx",
+            "ServiceConfig": {
+                "Product": "xx",
+                "UniqVpcId": "xx",
+                "Url": "xx",
+                "CosConfig": {
+                    "Action": "xx",
+                    "PathMatchMode": "xx",
+                    "BucketName": "xx",
+                    "Authorization": true
+                },
+                "UpstreamId": "xx",
+                "Path": "xx",
+                "Method": "xx"
+            },
+            "Tags": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ],
+            "ServiceParameters": [
+                {
+                    "RelevantRequestParameterPosition": "xx",
+                    "Name": "xx",
+                    "RelevantRequestParameterDesc": "xx",
+                    "DefaultValue": "xx",
+                    "RelevantRequestParameterType": "xx",
+                    "RelevantRequestParameterName": "xx",
+                    "Position": "xx"
+                }
+            ],
+            "ServiceScfFunctionNamespace": "xx",
+            "RequestConfig": {
+                "Path": "xx",
+                "Method": "xx"
+            },
+            "ServiceWebsocketTransportFunctionQualifier": "xx",
+            "IsDebugAfterCharge": false,
+            "ApiBusinessType": "xx",
+            "ApiName": "xx",
             "Base64EncodedTriggerRules": [
                 {
-                    "Name": "Accept",
-                    "Value": []
+                    "Name": "xx",
+                    "Value": [
+                        "xx"
+                    ]
                 },
                 {
-                    "Name": "Content_Type",
-                    "Value": []
+                    "Name": "xx",
+                    "Value": [
+                        "xx"
+                    ]
                 }
-            ]
+            ],
+            "ResponseFailExample": "xx",
+            "ResponseType": "xx",
+            "AuthType": "xx",
+            "ServiceTimeout": 15,
+            "ServiceName": "xx",
+            "ApiDesc": "xx",
+            "ServiceWebsocketCleanupFunctionQualifier": "xx",
+            "OauthConfig": {
+                "PublicKey": "xx",
+                "LoginRedirectUrl": "xx",
+                "TokenLocation": "xx"
+            },
+            "IsBase64Trigger": false,
+            "ServiceScfFunctionName": "xx",
+            "ServiceTsfHealthCheckConf": {
+                "RequestVolumeThreshold": 0,
+                "SleepWindowInMilliseconds": 0,
+                "ErrorThresholdPercentage": 0,
+                "IsHealthCheck": true
+            },
+            "ServiceMockReturnMessage": "xx",
+            "ResponseErrorCodes": [
+                {
+                    "Msg": "xx",
+                    "NeedConvert": true,
+                    "Code": 0,
+                    "ConvertedCode": 0,
+                    "Desc": "xx"
+                }
+            ],
+            "ServiceType": "xx",
+            "AuthRelationApiId": "xx",
+            "ModifiedTime": "2020-09-22T00:00:00+00:00",
+            "MicroServicesInfo": [
+                0
+            ],
+            "ApiId": "xx",
+            "Environments": [
+                "xx"
+            ],
+            "ApiType": "xx",
+            "ServiceId": "xx",
+            "ServiceWebsocketCleanupFunctionName": "xx",
+            "Protocol": "xx",
+            "IsBase64Encoded": false,
+            "ServiceWebsocketCleanupFunctionNamespace": "xx"
         },
-        "RequestId": "b1fb681f-fc43-41cc-a8bc-c3400270c2f9"
+        "RequestId": "xx"
     }
 }
 ```

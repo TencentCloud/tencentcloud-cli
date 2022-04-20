@@ -17,28 +17,37 @@ Output:
             "TotalCount": 1,
             "ApiIdStatusSet": [
                 {
-                    "ServiceId": "service-ody35h5e",
-                    "ApiId": "api-k3ezsaoi",
-                    "ApiDesc": "desc",
-                    "Path": "/lkjdszfhbgv",
-                    "Method": "GET",
-                    "CreatedTime": "2020-02-28T11:26:33Z",
-                    "ModifiedTime": "2020-02-28T11:26:33Z",
-                    "ApiName": "name",
-                    "VpcId": -1,
-                    "UniqVpcId": "",
-                    "ApiType": "NORMAL",
-                    "Protocol": "HTTP",
+                    "RelationBuniessApiIds": [
+                        "xx"
+                    ],
+                    "CreatedTime": "2020-09-22T00:00:00+00:00",
+                    "Method": "xx",
+                    "VpcId": 0,
+                    "Tags": [
+                        "xx"
+                    ],
                     "IsDebugAfterCharge": false,
-                    "AuthType": "NONE",
-                    "AuthRelationApiId": "",
-                    "OauthConfig": null,
-                    "RelationBuniessApiIds": null,
-                    "Tags": []
+                    "ApiBusinessType": "xx",
+                    "ApiName": "xx",
+                    "Path": "xx",
+                    "AuthType": "xx",
+                    "ApiDesc": "xx",
+                    "OauthConfig": {
+                        "PublicKey": "xx",
+                        "LoginRedirectUrl": "xx",
+                        "TokenLocation": "xx"
+                    },
+                    "AuthRelationApiId": "xx",
+                    "Protocol": "xx",
+                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                    "UniqVpcId": "xx",
+                    "ApiId": "xx",
+                    "ApiType": "xx",
+                    "ServiceId": "xx"
                 }
             ]
         },
-        "RequestId": "d617a773-cfbd-47a7-8762-b213dcb681f0"
+        "RequestId": "xx"
     }
 }
 ```

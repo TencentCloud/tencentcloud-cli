@@ -31,7 +31,13 @@ Output:
                 "IsSupportCloudinit": true,
                 "Platform": "CentOS",
                 "Architecture": "x86_64",
-                "SnapshotSet": []
+                "SnapshotSet": [],
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
+                    }
+                ]
             }
         ],
         "RequestId": "db145873-3128-4079-8cec-65e05a7c9f89"
@@ -74,6 +80,12 @@ Output:
                         "SnapshotId": "snap-gqa37j2p",
                         "DiskUsage": "SYSTEM_DISK",
                         "DiskSize": 20
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Value": "xx",
+                        "Key": "xx"
                     }
                 ],
                 "Architecture": "x86_64",

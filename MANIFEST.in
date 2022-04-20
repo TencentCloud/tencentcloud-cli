@@ -63,6 +63,8 @@ include tccli/services/cam/v20190116/api.json
 include tccli/services/cam/v20190116/examples.json
 include tccli/services/captcha/v20190722/api.json
 include tccli/services/captcha/v20190722/examples.json
+include tccli/services/car/v20220110/api.json
+include tccli/services/car/v20220110/examples.json
 include tccli/services/casb/v20200507/api.json
 include tccli/services/casb/v20200507/examples.json
 include tccli/services/cat/v20180409/api.json

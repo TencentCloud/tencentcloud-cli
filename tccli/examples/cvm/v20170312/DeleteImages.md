@@ -18,3 +18,25 @@ Output:
 }
 ```
 
+**Example 2: 检测镜像是否允许删除**
+
+
+
+Input: 
+
+```
+tccli cvm DeleteImages --cli-unfold-argument  \
+    --ImageIds img-mfih409y \
+    --DryRun True \
+    --DeleteBindedSnap True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "f24aca43-5135-4c9b-81fb-734969ce4c78"
+    }
+}
+```
+

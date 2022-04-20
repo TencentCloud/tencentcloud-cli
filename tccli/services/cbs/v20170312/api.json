@@ -992,7 +992,7 @@
         {
           "default": "",
           "document": "云硬盘备份点ID。传入此参数时，将通过备份点创建快照。",
-          "example": "bak-xxxxxxxx",
+          "example": "dbp-xxxxxxxx",
           "member": "string",
           "name": "DiskBackupId",
           "required": false,

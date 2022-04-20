@@ -3432,7 +3432,7 @@
         {
           "default": "",
           "document": "原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "OldIpExpiredTime",
           "required": true,
@@ -3440,7 +3440,7 @@
         },
         {
           "default": "",
-          "document": "切换后IP地址所属私有网络统一ID，若为基础网络，该字段为空",
+          "document": "切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空",
           "example": "vpc-****",
           "member": "string",
           "name": "NewUniqVpcId",
@@ -3449,7 +3449,7 @@
         },
         {
           "default": "",
-          "document": "切换后IP地址所属子网统一ID，若为基础网络，该字段为空",
+          "document": "切换后IP地址的归属子网统一ID，若为基础网络，该字段为空",
           "example": "subnet-****",
           "member": "string",
           "name": "NewUniqSubnetId",

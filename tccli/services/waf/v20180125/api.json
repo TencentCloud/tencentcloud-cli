@@ -102,6 +102,12 @@
       "name": "获取域名的规则白名单",
       "output": "DescribeDomainWhiteRulesResponse"
     },
+    "DescribeDomains": {
+      "document": "查询用户所有域名的详细信息",
+      "input": "DescribeDomainsRequest",
+      "name": "查询用户所有域名的详细信息",
+      "output": "DescribeDomainsResponse"
+    },
     "DescribeFlowTrend": {
       "document": "获取waf流量访问趋势",
       "input": "DescribeFlowTrendRequest",
@@ -846,7 +852,7 @@
         },
         {
           "default": "",
-          "document": "UpstreamType=0时，填次字段表示回源ip",
+          "document": "UpstreamType=0时，填次字段表示回源IP",
           "example": "[\"1.1.1.1\\n\"]",
           "member": "string",
           "name": "SrcList",
@@ -909,12 +915,21 @@
         },
         {
           "default": "",
-          "document": "anycast ip类型开关： 0 普通ip 1 Anycast ip",
+          "document": "anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "src权重",
+          "example": "[1.1.1]",
+          "member": "int64",
+          "name": "Weights",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2056,6 +2071,69 @@
       ],
       "type": "object"
     },
+    "DescribeDomainsRequest": {
+      "document": "DescribeDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "容量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤数组",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainsResponse": {
+      "document": "DescribeDomains返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "domain列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainInfo",
+          "name": "Domains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowTrendRequest": {
       "document": "DescribeFlowTrend请求参数结构体",
       "members": [
@@ -2489,6 +2567,11 @@
       ],
       "type": "object"
     },
+    "DomainInfo": {
+      "document": "域名的详细信息",
+      "members": [],
+      "usage": "both"
+    },
     "ExportAccessInfo": {
       "document": "DescribeAccessExports接口",
       "members": [
@@ -2614,6 +2697,42 @@
         }
       ],
       "usage": "out"
+    },
+    "FiltersItemNew": {
+      "document": "实例入参过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名",
+          "example": "InstanceType",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤值",
+          "example": "[\"clb\",\"saas\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否精确查找",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "IpAccessControlData": {
       "document": "数据封装",

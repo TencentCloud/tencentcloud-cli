@@ -148,6 +148,14 @@
         "title": "获取域名的规则白名单"
       }
     ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Edition\",\n            \"Values\": [\n                \"sparta_waf\"\n            ],\n            \"ExactMatch\": true\n        },\n        {\n            \"Name\": \"InstanceId\",\n            \"Values\": [\n                \"waf_000000002\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"Total\": 8,\n        \"Domains\": [\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {}\n        ]\n    }\n}",
+        "title": "查询用户所有实例的详细信息"
+      }
+    ],
     "DescribeFlowTrend": [
       {
         "document": "",

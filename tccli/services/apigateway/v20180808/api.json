@@ -85,9 +85,9 @@
       "output": "CreateServiceResponse"
     },
     "CreateUpstream": {
-      "document": "用于创建创建VPC通道",
+      "document": "用于创建创建后端通道",
       "input": "CreateUpstreamRequest",
-      "name": "创建VPC通道",
+      "name": "创建后端通道",
       "output": "CreateUpstreamResponse"
     },
     "CreateUsagePlan": {
@@ -145,9 +145,9 @@
       "output": "DeleteServiceSubDomainMappingResponse"
     },
     "DeleteUpstream": {
-      "document": "删除VPC通道，需要注意有api绑定时，不允许删除",
+      "document": "删除后端通道，需要注意有API绑定时，不允许删除",
       "input": "DeleteUpstreamRequest",
-      "name": "删除VPC通道",
+      "name": "删除后端通道",
       "output": "DeleteUpstreamResponse"
     },
     "DeleteUsagePlan": {
@@ -357,19 +357,19 @@
     "DescribeServicesStatus": {
       "document": "本接口（DescribeServicesStatus）用于搜索查询某一个服务或多个服务的列表，并返回服务相关的域名、时间等信息。",
       "input": "DescribeServicesStatusRequest",
-      "name": "查询服务列表",
+      "name": "查询服务列表状态",
       "output": "DescribeServicesStatusResponse"
     },
     "DescribeUpstreamBindApis": {
-      "document": "查询VPC通道绑定的api列表",
+      "document": "查询后端通道所绑定的API列表",
       "input": "DescribeUpstreamBindApisRequest",
-      "name": "查询VPC通道绑定的api列表",
+      "name": "查询后端通道所绑定的API列表",
       "output": "DescribeUpstreamBindApisResponse"
     },
     "DescribeUpstreams": {
-      "document": "查询VPC通道列表详情",
+      "document": "查询后端通道列表详情",
       "input": "DescribeUpstreamsRequest",
-      "name": "查询VPC通道列表详情",
+      "name": "查询后端通道列表详情",
       "output": "DescribeUpstreamsResponse"
     },
     "DescribeUsagePlan": {
@@ -487,9 +487,9 @@
       "output": "ModifySubDomainResponse"
     },
     "ModifyUpstream": {
-      "document": "修改VPC通道",
+      "document": "修改后端通道",
       "input": "ModifyUpstreamRequest",
-      "name": "修改VPC通道",
+      "name": "修改后端通道",
       "output": "ModifyUpstreamResponse"
     },
     "ModifyUsagePlan": {
@@ -2471,6 +2471,7 @@
         {
           "default": "",
           "document": "待绑定的使用计划唯一 ID 列表。",
+          "example": "[\"usagePlan-quqxvett\\r\\n\"]",
           "member": "string",
           "name": "UsagePlanIds",
           "required": true,
@@ -2479,6 +2480,7 @@
         {
           "default": "",
           "document": "绑定类型，取值为API、SERVICE，默认值为SERVICE。",
+          "example": "SERVICE",
           "member": "string",
           "name": "BindType",
           "required": true,
@@ -2487,6 +2489,7 @@
         {
           "default": "",
           "document": "待绑定的环境。",
+          "example": "test",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -2495,6 +2498,7 @@
         {
           "default": "",
           "document": "待绑定的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2503,6 +2507,7 @@
         {
           "default": "",
           "document": "API唯一ID数组，当bindType=API时，需要传入此参数。",
+          "example": "xx",
           "member": "string",
           "name": "ApiIds",
           "required": false,
@@ -2516,8 +2521,10 @@
       "members": [
         {
           "document": "绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2536,6 +2543,7 @@
         {
           "default": "",
           "document": "待绑定的IP策略所属的服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -2544,6 +2552,7 @@
         {
           "default": "",
           "document": "待绑定的IP策略唯一ID。",
+          "example": "IPStrategy-0ez0c8to",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -2552,6 +2561,7 @@
         {
           "default": "",
           "document": "IP策略待绑定的环境。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -2560,6 +2570,7 @@
         {
           "default": "",
           "document": "IP策略待绑定的API列表。",
+          "example": "[\"api-e92i2jds\\r\\n\"]",
           "member": "string",
           "name": "BindApiIds",
           "required": true,
@@ -2573,8 +2584,10 @@
       "members": [
         {
           "document": "绑定操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2978,6 +2991,7 @@
         {
           "default": "",
           "document": "用户自定义密钥名称。",
+          "example": "test",
           "member": "string",
           "name": "SecretName",
           "required": true,
@@ -2986,6 +3000,7 @@
         {
           "default": "",
           "document": "密钥类型，支持 auto 和 manual（自定义密钥），默认为 auto。",
+          "example": "xx",
           "member": "string",
           "name": "AccessKeyType",
           "required": false,
@@ -2994,6 +3009,7 @@
         {
           "default": "",
           "document": "用户自定义密钥 ID，AccessKeyType 为 manual 时必传。长度为5 - 50字符，由字母、数字、英文下划线组成。",
+          "example": "xx",
           "member": "string",
           "name": "AccessKeyId",
           "required": false,
@@ -3002,6 +3018,7 @@
         {
           "default": "",
           "document": "用户自定义密钥 Key，AccessKeyType 为 manual 时必传。长度为10 - 50字符，由字母、数字、英文下划线。",
+          "example": "xx",
           "member": "string",
           "name": "AccessKeySecret",
           "required": false,
@@ -3015,8 +3032,10 @@
       "members": [
         {
           "document": "新增的密钥详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiKey",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3686,7 +3705,7 @@
         },
         {
           "default": "",
-          "document": "插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter。",
+          "document": "插件类型。目前支持IPControl, TrafficControl, Cors, CustomReq, CustomAuth，Routing，TrafficControlByParameter, CircuitBreaker, ProxyCache。",
           "example": "IPControl",
           "member": "string",
           "name": "PluginType",
@@ -3710,6 +3729,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3929,7 +3957,7 @@
       "members": [
         {
           "default": "",
-          "document": "后端协议，HTTP, HTTPS其中之一",
+          "document": "后端协议，取值范围：HTTP, HTTPS",
           "example": "HTTP",
           "member": "string",
           "name": "Scheme",
@@ -3938,8 +3966,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡算法目前支持ROUND_ROBIN",
-          "example": "Algorithm",
+          "document": "负载均衡算法，取值范围：ROUND-ROBIN",
+          "example": "ROUND-ROBIN",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -3948,7 +3976,7 @@
         {
           "default": "",
           "document": "VPC唯一ID",
-          "example": "UniqVpcId",
+          "example": "vpc-123456",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -3956,8 +3984,8 @@
         },
         {
           "default": "",
-          "document": "VPC通道名字",
-          "example": "test",
+          "document": "后端通道名字",
+          "example": "test_upstream",
           "member": "string",
           "name": "UpstreamName",
           "required": false,
@@ -3965,10 +3993,19 @@
         },
         {
           "default": "",
-          "document": "VPC通道描述",
-          "example": "test",
+          "document": "后端通道描述",
+          "example": "description",
           "member": "string",
           "name": "UpstreamDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后端访问类型，取值范围：IP_PORT, K8S",
+          "example": "IP_PORT",
+          "member": "string",
+          "name": "UpstreamType",
           "required": false,
           "type": "string"
         },
@@ -3983,8 +4020,8 @@
         },
         {
           "default": "",
-          "document": "请求到后端的，host头",
-          "example": "UpstreamHost",
+          "document": "网关转发到后端的Host请求头",
+          "example": "example.com",
           "member": "string",
           "name": "UpstreamHost",
           "required": false,
@@ -4001,7 +4038,25 @@
         },
         {
           "default": "",
-          "document": "k8s服务的配置",
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "健康检查配置，目前只支持VPC通道",
+          "example": "无",
+          "member": "UpstreamHealthChecker",
+          "name": "HealthChecker",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "K8S容器服务的配置",
           "example": "无",
           "member": "K8sService",
           "name": "K8sService",
@@ -4015,7 +4070,7 @@
       "document": "CreateUpstream返回参数结构体",
       "members": [
         {
-          "document": "创建返回的唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建返回的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "upstream-0c96l2bo",
           "member": "string",
           "name": "UpstreamId",
@@ -4038,6 +4093,7 @@
         {
           "default": "",
           "document": "用户自定义的使用计划名称。",
+          "example": "xx",
           "member": "string",
           "name": "UsagePlanName",
           "required": true,
@@ -4046,6 +4102,7 @@
         {
           "default": "",
           "document": "用户自定义的使用计划描述。",
+          "example": "xx",
           "member": "string",
           "name": "UsagePlanDesc",
           "required": false,
@@ -4054,6 +4111,7 @@
         {
           "default": "",
           "document": "请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。",
+          "example": "xx",
           "member": "int64",
           "name": "MaxRequestNum",
           "required": false,
@@ -4062,6 +4120,7 @@
         {
           "default": "",
           "document": "每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。",
+          "example": "xx",
           "member": "int64",
           "name": "MaxRequestNumPreSec",
           "required": false,
@@ -4075,8 +4134,10 @@
       "members": [
         {
           "document": "使用计划详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4167,6 +4228,7 @@
         {
           "default": "",
           "document": "待删除的密钥 ID。",
+          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -4180,8 +4242,10 @@
       "members": [
         {
           "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4245,6 +4309,7 @@
         {
           "default": "",
           "document": "待删除的IP策略所属的服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4253,6 +4318,7 @@
         {
           "default": "",
           "document": "待删除的IP策略唯一ID。",
+          "example": "IPStrategy-4xj4r1ou",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -4266,8 +4332,10 @@
       "members": [
         {
           "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4420,8 +4488,8 @@
       "members": [
         {
           "default": "",
-          "document": "待删除的VPC通道唯一ID",
-          "example": "\"upstream-xxxx\"",
+          "document": "待删除的后端通道ID",
+          "example": "upstream-xxxx",
           "member": "string",
           "name": "UpstreamId",
           "required": true,
@@ -4434,8 +4502,8 @@
       "document": "DeleteUpstream返回参数结构体",
       "members": [
         {
-          "document": "成功删除的vpc通道id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "upstream-sasdsa",
+          "document": "成功删除的后端通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "upstream-xxxx",
           "member": "string",
           "name": "UpstreamId",
           "required": true,
@@ -4457,6 +4525,7 @@
         {
           "default": "",
           "document": "待删除的使用计划唯一 ID。",
+          "example": "usagePlan-bxtnltfd",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -4470,8 +4539,10 @@
       "members": [
         {
           "document": "删除操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4490,6 +4561,7 @@
         {
           "default": "",
           "document": "使用计划ID。",
+          "example": "usagePlan-bxtnltfd",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -4498,6 +4570,7 @@
         {
           "default": "",
           "document": "待降级的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -4506,6 +4579,7 @@
         {
           "default": "",
           "document": "环境名称。",
+          "example": "test",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -4519,8 +4593,10 @@
       "members": [
         {
           "document": "降级操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5113,6 +5189,7 @@
         {
           "default": "",
           "document": "API所属服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5121,6 +5198,7 @@
         {
           "default": "",
           "document": "环境列表。",
+          "example": "[\"test\\r\\n\"]",
           "member": "string",
           "name": "EnvironmentNames",
           "required": false,
@@ -5129,6 +5207,7 @@
         {
           "default": "",
           "document": "API唯一ID。",
+          "example": "XX",
           "member": "string",
           "name": "ApiId",
           "required": false,
@@ -5137,6 +5216,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "XX",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5145,6 +5225,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "XX",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5158,8 +5239,10 @@
       "members": [
         {
           "document": "api绑定策略详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiEnvironmentStrategyStataus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5232,6 +5315,7 @@
         {
           "default": "",
           "document": "API 密钥 ID。",
+          "example": "AKID1IGx7Tu5mk150ds6fhbdi1RqD8KlI6dW32MD",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -5245,8 +5329,10 @@
       "members": [
         {
           "document": "密钥详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiKey",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5345,6 +5431,7 @@
           "example": " 见输出示例",
           "member": "ApiInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5363,6 +5450,7 @@
         {
           "default": "",
           "document": "待查询的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5371,6 +5459,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5379,6 +5468,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5392,8 +5482,10 @@
       "members": [
         {
           "document": "api绑定使用计划列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiUsagePlanSet",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5412,6 +5504,7 @@
         {
           "default": "",
           "document": "API 所在的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5420,6 +5513,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5428,6 +5522,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5436,6 +5531,7 @@
         {
           "default": "",
           "document": "API过滤条件。支持ApiId、ApiName、ApiPath、ApiType、AuthRelationApiId、AuthType、ApiBuniessType、NotUsagePlanId、Environment、Tags (values为 $tag_key:tag_value的列表)、TagKeys （values 为 tag key的列表）。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5449,8 +5545,10 @@
       "members": [
         {
           "document": "API 详情列表。",
+          "example": "无",
           "member": "ApisStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5559,6 +5657,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5567,6 +5666,7 @@
         {
           "default": "",
           "document": "策略唯一ID。",
+          "example": "IPStrategy-0ez0c8to",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -5575,6 +5675,7 @@
         {
           "default": "",
           "document": "策略所在环境。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -5583,6 +5684,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5591,6 +5693,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5599,6 +5702,7 @@
         {
           "default": "",
           "document": "过滤条件。支持 ApiPath、ApiName、KeyWord（模糊查询Path 和Name）。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5612,8 +5716,10 @@
       "members": [
         {
           "document": "环境绑定API列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IPStrategyApiStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5632,6 +5738,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5640,6 +5747,7 @@
         {
           "default": "",
           "document": "IP 策略唯一ID。",
+          "example": "IPStrategy-0ez0c8to",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -5648,6 +5756,7 @@
         {
           "default": "",
           "document": "策略关联的环境。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": false,
@@ -5656,6 +5765,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5664,6 +5774,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5672,6 +5783,7 @@
         {
           "default": "",
           "document": "过滤条件。预留字段，目前不支持过滤。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5685,8 +5797,10 @@
       "members": [
         {
           "document": "IP策略详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IPStrategy",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5705,6 +5819,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5713,6 +5828,7 @@
         {
           "default": "",
           "document": "过滤条件。支持StrategyName。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5726,8 +5842,10 @@
       "members": [
         {
           "document": "符合条件的策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IPStrategysStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5746,6 +5864,7 @@
         {
           "default": "",
           "document": "日志开始时间",
+          "example": "2020-05-28 22:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -5754,6 +5873,7 @@
         {
           "default": "",
           "document": "日志结束时间",
+          "example": "2020-05-28 23:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -5762,6 +5882,7 @@
         {
           "default": "",
           "document": "服务id",
+          "example": "service-8xipv0ua",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -5770,6 +5891,7 @@
         {
           "default": "",
           "document": "保留字段",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5778,6 +5900,7 @@
         {
           "default": "",
           "document": "单次要返回的日志条数，单次返回的最大条数为100",
+          "example": "xx",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5786,6 +5909,7 @@
         {
           "default": "",
           "document": "根据上次返回的ConText，获取后续的内容，最多可获取10000条",
+          "example": "xx",
           "member": "string",
           "name": "ConText",
           "required": false,
@@ -5794,6 +5918,7 @@
         {
           "default": "",
           "document": "按时间排序 asc（升序）或者 desc（降序），默认为 desc",
+          "example": "xx",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -5802,6 +5927,7 @@
         {
           "default": "",
           "document": "保留字段",
+          "example": "xx",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -5810,6 +5936,7 @@
         {
           "default": "",
           "document": "检索条件,支持的检索条件如下：\nreq_id：“=”\napi_id：“=”\ncip：“=”\nuip：“:”\nerr_msg：“:”\nrsp_st：“=” 、“!=” 、 “:” 、 “>” 、 “<”\nreq_t：”>=“ 、 ”<=“\n\n说明：\n“:”表示包含，“!=”表示不等于，字段含义见输出参数的LogSet说明",
+          "example": "无",
           "member": "LogQuery",
           "name": "LogQuerys",
           "required": false,
@@ -5823,22 +5950,28 @@
       "members": [
         {
           "document": "获取更多检索结果的游标，值为\"\"表示无后续结果",
+          "example": "xxxxxxxx",
           "member": "string",
           "name": "ConText",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "由0或多条日志组成，每条日志格式如下：\n'[$app_id][$env_name][$service_id][$http_host][$api_id][$uri][$scheme][rsp_st:$status][ups_st:$upstream_status]'\n'[cip:$remote_addr][uip:$upstream_addr][vip:$server_addr][rsp_len:$bytes_sent][req_len:$request_length]'\n'[req_t:$request_time][ups_rsp_t:$upstream_response_time][ups_conn_t:$upstream_connect_time][ups_head_t:$upstream_header_time]’\n'[err_msg:$err_msg][tcp_rtt:$tcpinfo_rtt][$pid][$time_local][req_id:$request_id]';\n\n说明：\napp_id： 用户 ID。\nenv_name：环境名称。\nservice_id： 服务 ID。\nhttp_host： 域名。\napi_id： API 的 ID。\nuri：请求的路径。\nscheme： HTTP/HTTPS 协议。\nrsp_st： 请求响应状态码。\nups_st： 后端业务服务器的响应状态码（如果请求透传到后端，改变量不为空。如果请求在 APIGW 就被拦截了，那么该变量显示为 -）。\ncip： 客户端 IP。\nuip： 后端业务服务（upstream）的 IP。\nvip： 请求访问的 VIP。\nrsp_len： 响应长度。\nreq_len： 请求长度。\nreq_t： 请求响应的总时间。\nups_rsp_t： 后端响应的总时间（apigw 建立连接到接收到后端响应的时间）。\nups_conn_t: 与后端业务服务器连接建立成功时间。\nups_head_t：后端响应的头部到达时间。\nerr_msg： 错误信息。\ntcp_rtt： 客户端 TCP 连接信息，RTT（Round Trip Time）由三部分组成：链路的传播时间（propagation delay）、末端系统的处理时间、路由器缓存中的排队和处理时间（queuing delay）。\nreq_id：请求id。",
+          "example": "[\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12500][20260][28\\/May\\/2020:22:42:42 +0800][req_id:a26f8eaf6ef7e4ef466a25036332139a]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:13500][20247][28\\/May\\/2020:22:42:41 +0800][req_id:53500963839556bc40ae185c2a135353]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12500][20244][28\\/May\\/2020:22:42:41 +0800][req_id:e4a934687379333230168e4674655b00]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12500][20261][28\\/May\\/2020:22:42:41 +0800][req_id:74ddc940596054cd16fc7b2ccfa6b36d]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:14000][20240][28\\/May\\/2020:22:42:40 +0800][req_id:ad1f06dd126d10930dbed41c2dbcd90a]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:14500][20253][28\\/May\\/2020:22:42:40 +0800][req_id:56865fe7631a4ca9efaaeeeebe739707]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:14000][20249][28\\/May\\/2020:22:42:39 +0800][req_id:51a305fc4f84248695b0313f58002e54]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:15500][20273][28\\/May\\/2020:22:42:39 +0800][req_id:81cc0eb9d1cabe580c0f91e4cd514b6a]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:16000][20254][28\\/May\\/2020:22:42:38 +0800][req_id:138467bbff388882dadf7d101ff321e0]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:14500][20236][28\\/May\\/2020:22:42:38 +0800][req_id:bd80236f63a0cc276b3e37596aadd41b]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:11500][20259][28\\/May\\/2020:22:42:37 +0800][req_id:a9f65829cf6e6b89f1ac1667eb1f7917]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:11500][20246][28\\/May\\/2020:22:42:37 +0800][req_id:946d51c39f23bdc99f1949420aab32cb]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:11500][20252][28\\/May\\/2020:22:42:36 +0800][req_id:e762ac1b039098de1d140b4369c3e478]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:11500][20235][28\\/May\\/2020:22:42:36 +0800][req_id:0b353eac83a78dbdaa6366f5ec5dedfc]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12500][20247][28\\/May\\/2020:22:42:35 +0800][req_id:55371f19fb83913ff86755c2ae52362c]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12000][20268][28\\/May\\/2020:22:42:35 +0800][req_id:32ab8e63e7dfaa8b553ba58085fd754c]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12500][20232][28\\/May\\/2020:22:42:34 +0800][req_id:21c6c7c1e21bc7e39c290bf3d56bd3ba]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12000][20263][28\\/May\\/2020:22:42:33 +0800][req_id:3970867bbb023265a03b86d49ef52b59]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:12000][20255][28\\/May\\/2020:22:42:33 +0800][req_id:caaa1b83b0bcd7a5b1325281769b9364]\",\"[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][\\/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:8500][20246][28\\/May\\/2020:22:42:32 +0800][req_id:64866292cce1f59504e4ae30796d3731]\"]",
           "member": "string",
           "name": "LogSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "单次搜索返回的日志条数，TotalCount <= Limit",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6046,6 +6179,7 @@
         {
           "default": "",
           "document": "待查询的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6054,6 +6188,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6062,6 +6197,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6075,8 +6211,10 @@
       "members": [
         {
           "document": "服务绑定环境详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceEnvironmentSet",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6095,6 +6233,7 @@
         {
           "default": "",
           "document": "待查询的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6103,6 +6242,7 @@
         {
           "default": "",
           "document": "环境名称。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -6111,6 +6251,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6119,6 +6260,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6132,8 +6274,10 @@
       "members": [
         {
           "document": "服务发布历史。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceReleaseHistory",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6152,6 +6296,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6160,6 +6305,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6168,6 +6314,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6181,8 +6328,10 @@
       "members": [
         {
           "document": "限流策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceEnvironmentStrategyStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6426,6 +6575,7 @@
         {
           "default": "",
           "document": "待查询的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6434,6 +6584,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6442,6 +6593,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "xx",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6455,8 +6607,10 @@
       "members": [
         {
           "document": "服务发布版本列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceReleaseVersion",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6713,7 +6867,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "特殊用途\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "特殊用途, NULL和DEFAULT表示无特殊用途，其他用途如HTTP_DNS等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DEFAULT",
           "member": "string",
           "name": "SpecialUse",
@@ -6835,6 +6989,7 @@
         {
           "default": "",
           "document": "待查询的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -6843,6 +6998,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "XX",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6851,6 +7007,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "XX",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6864,8 +7021,10 @@
       "members": [
         {
           "document": "服务绑定使用计划列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ServiceUsagePlanSet",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6963,8 +7122,8 @@
       "members": [
         {
           "default": "",
-          "document": "分页",
-          "example": "1",
+          "document": "分页大小",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6972,7 +7131,7 @@
         },
         {
           "default": "",
-          "document": "分页",
+          "document": "分页起始位置",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6981,7 +7140,7 @@
         },
         {
           "default": "",
-          "document": "vpc通道Id",
+          "document": "后端通道ID",
           "example": "xxxxx",
           "member": "string",
           "name": "UpstreamId",
@@ -7022,7 +7181,7 @@
       "type": "object"
     },
     "DescribeUpstreamInfo": {
-      "document": "查询vpc通道返回信息",
+      "document": "查询后端通道返回信息",
       "members": [
         {
           "default": "",
@@ -7052,8 +7211,8 @@
       "members": [
         {
           "default": "",
-          "document": "分页",
-          "example": "1",
+          "document": "分页大小",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -7061,7 +7220,7 @@
         },
         {
           "default": "",
-          "document": "分页",
+          "document": "分页起始位置",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -7070,7 +7229,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件",
+          "document": "过滤条件，支持后端通道ID（UpstreamId）、后端通道名字（UpstreamName）过滤查询",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7107,6 +7266,7 @@
         {
           "default": "",
           "document": "待查询的使用计划唯一 ID。",
+          "example": "usagePlan-quqxvett",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -7115,6 +7275,7 @@
         {
           "default": "",
           "document": "定类型，取值为 API、SERVICE，默认值为 SERVICE。",
+          "example": "API",
           "member": "string",
           "name": "BindType",
           "required": true,
@@ -7123,6 +7284,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7131,6 +7293,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7144,8 +7307,10 @@
       "members": [
         {
           "document": "使用计划绑定详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanEnvironmentStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7164,6 +7329,7 @@
         {
           "default": "",
           "document": "待查询的使用计划唯一 ID。",
+          "example": "usagePlan-bxtnltfd",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -7177,8 +7343,10 @@
       "members": [
         {
           "document": "使用计划详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7197,6 +7365,7 @@
         {
           "default": "",
           "document": "绑定的使用计划唯一 ID。",
+          "example": "usagePlan-quqxvett",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -7205,6 +7374,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "xx",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7213,6 +7383,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "xx",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7226,8 +7397,10 @@
       "members": [
         {
           "document": "使用计划绑定的密钥列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanBindSecretStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7246,6 +7419,7 @@
         {
           "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7254,6 +7428,7 @@
         {
           "default": "",
           "document": "偏移量，默认为 0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7262,6 +7437,7 @@
         {
           "default": "",
           "document": "使用计划过滤条件。支持UsagePlanId、UsagePlanName、NotServiceId、NotApiId、Environment。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -7275,8 +7451,10 @@
       "members": [
         {
           "document": "使用计划列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlansStatus",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7358,6 +7536,7 @@
         {
           "default": "",
           "document": "待禁用的密钥 ID。",
+          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -7371,8 +7550,10 @@
       "members": [
         {
           "document": "禁用密钥操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7525,6 +7706,7 @@
         {
           "default": "",
           "document": "待启用的密钥 ID。",
+          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -7538,8 +7720,10 @@
       "members": [
         {
           "document": "启动密钥操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7711,6 +7895,7 @@
         {
           "default": "",
           "document": "待创建文档的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -7719,6 +7904,7 @@
         {
           "default": "",
           "document": "待创建 SDK 的服务所在环境。",
+          "example": "release",
           "member": "string",
           "name": "GenEnvironment",
           "required": true,
@@ -7727,6 +7913,7 @@
         {
           "default": "",
           "document": "待创建 SDK 的语言。当前只支持 Python 和 JavaScript。",
+          "example": "Python",
           "member": "string",
           "name": "GenLanguage",
           "required": true,
@@ -7740,8 +7927,10 @@
       "members": [
         {
           "document": "api文档&sdk链接。",
+          "example": "无",
           "member": "DocumentSDK",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8627,6 +8816,7 @@
         {
           "default": "",
           "document": "服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -8635,6 +8825,7 @@
         {
           "default": "",
           "document": "限流值。",
+          "example": "3",
           "member": "int64",
           "name": "Strategy",
           "required": true,
@@ -8643,6 +8834,7 @@
         {
           "default": "",
           "document": "环境名。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -8651,6 +8843,7 @@
         {
           "default": "",
           "document": "API列表。",
+          "example": "[\"api-e92i2jds\\n\"]",
           "member": "string",
           "name": "ApiIds",
           "required": true,
@@ -8664,8 +8857,10 @@
       "members": [
         {
           "document": "修改操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8684,6 +8879,7 @@
         {
           "default": "",
           "document": "服务ID",
+          "example": "xx",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -8692,6 +8888,7 @@
         {
           "default": "",
           "document": "接口ID",
+          "example": "xx",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -8700,6 +8897,7 @@
         {
           "default": "",
           "document": "需要修改的API auth类型(可选择OAUTH-授权API)",
+          "example": "xx",
           "member": "string",
           "name": "BusinessType",
           "required": true,
@@ -8708,6 +8906,7 @@
         {
           "default": "",
           "document": "oauth接口需要修改的公钥值",
+          "example": "xx",
           "member": "string",
           "name": "PublicKey",
           "required": false,
@@ -8716,6 +8915,7 @@
         {
           "default": "",
           "document": "oauth接口重定向地址",
+          "example": "xx",
           "member": "string",
           "name": "LoginRedirectUrl",
           "required": false,
@@ -9309,6 +9509,7 @@
         {
           "default": "",
           "document": "待修改的策略所属服务的唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -9317,6 +9518,7 @@
         {
           "default": "",
           "document": "待修改的策略唯一ID。",
+          "example": "IPStrategy-0ez0c8to",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -9325,6 +9527,7 @@
         {
           "default": "",
           "document": "待修改的策略详情。",
+          "example": "3.3.3.3",
           "member": "string",
           "name": "StrategyData",
           "required": true,
@@ -9338,8 +9541,10 @@
       "members": [
         {
           "document": "修改操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9421,6 +9626,7 @@
         {
           "default": "",
           "document": "服务的唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -9429,6 +9635,7 @@
         {
           "default": "",
           "document": "限流值。",
+          "example": "3",
           "member": "int64",
           "name": "Strategy",
           "required": true,
@@ -9437,6 +9644,7 @@
         {
           "default": "",
           "document": "环境列表。",
+          "example": "[\"test\\n\"]",
           "member": "string",
           "name": "EnvironmentNames",
           "required": true,
@@ -9450,8 +9658,10 @@
       "members": [
         {
           "document": "修改操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9631,7 +9841,7 @@
       "members": [
         {
           "default": "",
-          "document": "VPC通道唯一ID",
+          "document": "后端通道唯一ID",
           "example": "upstream-0c96l2bo",
           "member": "string",
           "name": "UpstreamId",
@@ -9640,8 +9850,8 @@
         },
         {
           "default": "",
-          "document": "VPC通道名字",
-          "example": "xxxx",
+          "document": "后端通道名字",
+          "example": "upstream_a",
           "member": "string",
           "name": "UpstreamName",
           "required": false,
@@ -9649,8 +9859,8 @@
         },
         {
           "default": "",
-          "document": "VPC通道描述",
-          "example": "xxxxx",
+          "document": "后端通道描述",
+          "example": "description",
           "member": "string",
           "name": "UpstreamDescription",
           "required": false,
@@ -9658,8 +9868,8 @@
         },
         {
           "default": "",
-          "document": "后端协议，HTTP, HTTPS其中之一",
-          "example": "HTTP, HTTPS",
+          "document": "后端协议，取值范围：HTTP, HTTPS",
+          "example": "HTTP",
           "member": "string",
           "name": "Scheme",
           "required": false,
@@ -9667,8 +9877,17 @@
         },
         {
           "default": "",
-          "document": "负载均衡算法目前支持ROUND_ROBIN",
-          "example": "Algorithm",
+          "document": "后端访问类型，取值范围：IP_PORT, K8S",
+          "example": "IP_PORT",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡算法，取值范围：ROUND_ROBIN",
+          "example": "ROUND_ROBIN",
           "member": "string",
           "name": "Algorithm",
           "required": false,
@@ -9677,7 +9896,7 @@
         {
           "default": "",
           "document": "VPC唯一ID",
-          "example": "UniqVpcId",
+          "example": "vpc-123456",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -9686,7 +9905,7 @@
         {
           "default": "",
           "document": "请求重试次数，默认3次",
-          "example": "Retries",
+          "example": "3",
           "member": "uint64",
           "name": "Retries",
           "required": false,
@@ -9694,8 +9913,8 @@
         },
         {
           "default": "",
-          "document": "请求到后端的，host头",
-          "example": "UpstreamHost",
+          "document": "网关转发到后端的 Host 请求头",
+          "example": "example.com",
           "member": "string",
           "name": "UpstreamHost",
           "required": false,
@@ -9712,7 +9931,16 @@
         },
         {
           "default": "",
-          "document": "k8s服务配置",
+          "document": "健康检查配置，目前只支持VPC通道",
+          "example": "无",
+          "member": "UpstreamHealthChecker",
+          "name": "HealthChecker",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "容器服务配置",
           "example": "无",
           "member": "K8sService",
           "name": "K8sService",
@@ -9726,7 +9954,7 @@
       "document": "ModifyUpstream返回参数结构体",
       "members": [
         {
-          "document": "返回修改后的vpc通道信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回修改后的后端通道信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UpstreamInfo",
           "name": "Result",
@@ -9749,6 +9977,7 @@
         {
           "default": "",
           "document": "使用计划唯一 ID。",
+          "example": "usagePlan-bxtnltfd",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -9757,6 +9986,7 @@
         {
           "default": "",
           "document": "修改后的用户自定义的使用计划名称。",
+          "example": "xx",
           "member": "string",
           "name": "UsagePlanName",
           "required": false,
@@ -9765,6 +9995,7 @@
         {
           "default": "",
           "document": "修改后的用户自定义的使用计划描述。",
+          "example": "xx",
           "member": "string",
           "name": "UsagePlanDesc",
           "required": false,
@@ -9773,6 +10004,7 @@
         {
           "default": "",
           "document": "请求配额总数，取值范围为-1或者[1, 99999999]，默认为-1，表示不开启。",
+          "example": "xx",
           "member": "int64",
           "name": "MaxRequestNum",
           "required": false,
@@ -9781,6 +10013,7 @@
         {
           "default": "",
           "document": "每秒请求限制数，取值范围为-1或者[1, 2000]，默认-1，表示不开启。",
+          "example": "xx",
           "member": "int64",
           "name": "MaxRequestNumPreSec",
           "required": false,
@@ -9794,8 +10027,10 @@
       "members": [
         {
           "document": "使用计划详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "UsagePlanInfo",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11211,6 +11446,7 @@
         {
           "default": "",
           "document": "绑定类型，取值为 API、SERVICE，默认值为 SERVICE。",
+          "example": "SERVICE",
           "member": "string",
           "name": "BindType",
           "required": true,
@@ -11219,6 +11455,7 @@
         {
           "default": "",
           "document": "待绑定的使用计划唯一 ID 列表。",
+          "example": "[\"usagePlan-quqxvett\\r\\n\"]",
           "member": "string",
           "name": "UsagePlanIds",
           "required": true,
@@ -11227,6 +11464,7 @@
         {
           "default": "",
           "document": "待解绑的服务环境。",
+          "example": "test",
           "member": "string",
           "name": "Environment",
           "required": true,
@@ -11235,6 +11473,7 @@
         {
           "default": "",
           "document": "待解绑的服务唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -11243,6 +11482,7 @@
         {
           "default": "",
           "document": "API 唯一 ID 数组，当 BindType=API 时，需要传入此参数。",
+          "example": "xx",
           "member": "string",
           "name": "ApiIds",
           "required": false,
@@ -11256,8 +11496,10 @@
       "members": [
         {
           "document": "解绑操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11276,6 +11518,7 @@
         {
           "default": "",
           "document": "待解绑的服务唯一ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -11284,6 +11527,7 @@
         {
           "default": "",
           "document": "待解绑的IP策略唯一ID。",
+          "example": "IPStrategy-0ez0c8to",
           "member": "string",
           "name": "StrategyId",
           "required": true,
@@ -11292,6 +11536,7 @@
         {
           "default": "",
           "document": "待解绑的环境。",
+          "example": "test",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -11300,6 +11545,7 @@
         {
           "default": "",
           "document": "待解绑的 API 列表。",
+          "example": "[\"api-e92i2jds\\r\\n\"]",
           "member": "string",
           "name": "UnBindApiIds",
           "required": true,
@@ -11313,8 +11559,10 @@
       "members": [
         {
           "document": "解绑操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11333,6 +11581,7 @@
         {
           "default": "",
           "document": "待解绑的使用计划唯一 ID。",
+          "example": "usagePlan-quqxvett",
           "member": "string",
           "name": "UsagePlanId",
           "required": true,
@@ -11341,6 +11590,7 @@
         {
           "default": "",
           "document": "待解绑的密钥 ID 数组。",
+          "example": "[\"AKIDmyE2z0gvi2p6i9lWr3bbetpTaquaxQ8s8iob\\n\"]",
           "member": "string",
           "name": "AccessKeyIds",
           "required": true,
@@ -11354,8 +11604,10 @@
       "members": [
         {
           "document": "解绑操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11419,6 +11671,7 @@
         {
           "default": "",
           "document": "待下线服务的唯一 ID。",
+          "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
@@ -11427,6 +11680,7 @@
         {
           "default": "",
           "document": "待下线的环境名称，当前支持三个环境，test（测试环境）、prepub（预发布环境）和 release（发布环境）。",
+          "example": "prepub",
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
@@ -11435,6 +11689,7 @@
         {
           "default": "",
           "document": "保留字段，待下线的API列表。",
+          "example": "api-hnetytr6",
           "member": "string",
           "name": "ApiIds",
           "required": false,
@@ -11448,8 +11703,10 @@
       "members": [
         {
           "document": "下线操作是否成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11585,6 +11842,7 @@
         {
           "default": "",
           "document": "待更换的密钥 ID。",
+          "example": "AKID8my5MRr9i6VM98F3dZG9zV0KuBq5ID7pMG83",
           "member": "string",
           "name": "AccessKeyId",
           "required": true,
@@ -11593,6 +11851,7 @@
         {
           "default": "",
           "document": "待更换的密钥 Key，更新自定义密钥时，该字段为必传。长度10 - 50字符，包括字母、数字、英文下划线。",
+          "example": "xx",
           "member": "string",
           "name": "AccessKeySecret",
           "required": false,
@@ -11606,8 +11865,10 @@
       "members": [
         {
           "document": "更换后的密钥详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ApiKey",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11684,7 +11945,7 @@
       "type": "object"
     },
     "UpstreamHealthChecker": {
-      "document": "VPC通道健康检查参数配置",
+      "document": "后端通道健康检查参数配置",
       "members": [
         {
           "default": "",
@@ -11810,17 +12071,17 @@
       "usage": "both"
     },
     "UpstreamHealthCheckerReqHeaders": {
-      "document": "VPC通道主动健康检查的请求头配置",
+      "document": "后端通道主动健康检查的请求头配置",
       "members": [],
       "usage": "both"
     },
     "UpstreamInfo": {
-      "document": "VPC通道信息集合",
+      "document": "后端通道详细信息",
       "members": [
         {
           "default": "",
-          "document": "VPC通道唯一ID",
-          "example": "x x",
+          "document": "后端通道唯一ID",
+          "example": "upstream-xxxx",
           "member": "string",
           "name": "UpstreamId",
           "required": true,
@@ -11829,8 +12090,8 @@
         },
         {
           "default": "",
-          "document": "VPC通道名字",
-          "example": "x x x",
+          "document": "后端通道名字",
+          "example": "test_upstream",
           "member": "string",
           "name": "UpstreamName",
           "required": true,
@@ -11839,8 +12100,8 @@
         },
         {
           "default": "",
-          "document": "VPC通道描述",
-          "example": "x x",
+          "document": "后端通道描述",
+          "example": "description",
           "member": "string",
           "name": "UpstreamDescription",
           "required": true,
@@ -11849,8 +12110,8 @@
         },
         {
           "default": "",
-          "document": "写意",
-          "example": "x x",
+          "document": "后端协议，取值范围：HTTP, HTTPS",
+          "example": "HTTP",
           "member": "string",
           "name": "Scheme",
           "required": true,
@@ -11859,8 +12120,8 @@
         },
         {
           "default": "",
-          "document": "负载均衡算法",
-          "example": "x x",
+          "document": "负载均衡算法，取值范围：ROUND_ROBIN",
+          "example": "ROUND_ROBIN",
           "member": "string",
           "name": "Algorithm",
           "required": true,
@@ -11869,8 +12130,8 @@
         },
         {
           "default": "",
-          "document": "vpc唯一ID",
-          "example": "x x",
+          "document": "VPC唯一ID",
+          "example": "vpc-123456",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -11879,8 +12140,8 @@
         },
         {
           "default": "",
-          "document": "请求重拾次数",
-          "example": "x x",
+          "document": "请求重试次数",
+          "example": "3",
           "member": "uint64",
           "name": "Retries",
           "required": true,
@@ -11929,7 +12190,7 @@
         },
         {
           "default": "",
-          "document": "Upstream的类型",
+          "document": "后端的类型，取值范围：IP_PORT, K8S",
           "example": "K8S",
           "member": "string",
           "name": "UpstreamType",
@@ -11939,7 +12200,7 @@
         },
         {
           "default": "",
-          "document": "k8s服务配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "K8S容器服务配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "K8sService",
           "name": "K8sServices",
@@ -11949,7 +12210,7 @@
         },
         {
           "default": "",
-          "document": "vpc通道的Host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关转发给后端的Host请求头\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UpstreamHost",
@@ -11961,11 +12222,11 @@
       "usage": "out"
     },
     "UpstreamNode": {
-      "document": "VPC通道后端节点元数据",
+      "document": "后端通道后端节点元数据",
       "members": [
         {
           "default": "",
-          "document": "IP（domain）",
+          "document": "IP或域名",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Host",
@@ -11995,7 +12256,7 @@
         },
         {
           "default": "",
-          "document": "vm实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-123456",
           "member": "string",
           "name": "VmInstanceId",
@@ -12015,7 +12276,7 @@
         },
         {
           "default": "",
-          "document": "节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点健康状态，创建、编辑时不需要传该参数。OFF：关闭，HEALTHY：健康，UNHEALTHY：异常，NO_DATA：数据未上报。目前只支持VPC通道。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OFF",
           "member": "string",
           "name": "Healthy",
@@ -12025,7 +12286,7 @@
         },
         {
           "default": "",
-          "document": "k8s服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "K8S容器服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "web",
           "member": "string",
           "name": "ServiceName",
@@ -12035,7 +12296,7 @@
         },
         {
           "default": "",
-          "document": "k8s命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "K8S命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "NameSpace",
@@ -12055,7 +12316,7 @@
         },
         {
           "default": "",
-          "document": "Node的来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Node的来源，取值范围：K8S\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "K8S",
           "member": "string",
           "name": "Source",

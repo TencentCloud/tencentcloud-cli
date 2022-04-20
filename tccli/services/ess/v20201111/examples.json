@@ -71,7 +71,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAuthCode\n<公共请求参数>\n\n{\n    \"AuthCode\": \"yDxAxUyKQDAd4jUyxgEv8RLE4JGgr8S5\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAuthCode\n<公共请求参数>\n\n{\n    \"AuthCode\": \"yDxAxU*******E4JGgr8S5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80905521-1203-41b1-9203-1eb2973cc488\",\n        \"VerifyStatus\": \"VERIFIED\"\n    }\n}",
         "title": "测试用例"
       }

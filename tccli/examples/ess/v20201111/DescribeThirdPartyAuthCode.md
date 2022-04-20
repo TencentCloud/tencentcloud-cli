@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli ess DescribeThirdPartyAuthCode --cli-unfold-argument  \
-    --AuthCode yDxAxUyKQDAd4jUyxgEv8RLE4JGgr8S5
+    --AuthCode yDxAxU*******E4JGgr8S5
 ```
 
 Output: 

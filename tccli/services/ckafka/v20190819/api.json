@@ -2194,7 +2194,7 @@
         },
         {
           "default": "",
-          "document": "可消息选。保留时间，单位ms，当前最小值为60000ms",
+          "document": "可选参数。消息保留时间，单位ms，当前最小值为60000ms",
           "example": "60000",
           "member": "int64",
           "name": "RetentionMs",
@@ -2207,6 +2207,15 @@
           "example": "360000",
           "member": "int64",
           "name": "SegmentMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。",
+          "example": "1024",
+          "member": "int64",
+          "name": "MaxMessageBytes",
           "required": false,
           "type": "int"
         },
@@ -3211,7 +3220,7 @@
         },
         {
           "default": "",
-          "document": "过滤器。",
+          "document": "过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3226,6 +3235,15 @@
           "name": "InstanceIds",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照实例ID过滤",
+          "example": "[instance-will-s]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

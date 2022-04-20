@@ -433,7 +433,7 @@
         },
         {
           "default": "",
-          "document": "用户上传的模版ID",
+          "document": "用户上传的模板ID",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -487,7 +487,7 @@
         },
         {
           "default": "",
-          "document": "是否需要生成预览文件 默认不生成",
+          "document": "是否需要生成预览文件 默认不生成；\n预览链接有效期300秒；",
           "example": "无",
           "member": "bool",
           "name": "NeedPreview",

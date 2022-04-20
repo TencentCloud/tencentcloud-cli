@@ -2760,6 +2760,32 @@
       ],
       "usage": "both"
     },
+    "CacheConfig": {
+      "document": "启发式自定义时间缓存配置",
+      "members": [
+        {
+          "default": "",
+          "document": "on 代表开启自定义启发式缓存时间\noff 代表关闭自定义启发式缓存时间",
+          "example": "on",
+          "member": "string",
+          "name": "HeuristicCacheTimeSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位 秒.",
+          "example": "10",
+          "member": "int64",
+          "name": "HeuristicCacheTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CacheConfigCache": {
       "document": "路径缓存缓存配置",
       "members": [
@@ -2828,6 +2854,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启发式缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeuristicCache",
+          "name": "HeuristicCache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4361,6 +4397,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4665,6 +4710,15 @@
           "example": "cdn",
           "member": "string",
           "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "required": false,
           "type": "string"
         }
@@ -5789,6 +5843,15 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "required": false,
           "type": "string"
         }
@@ -8834,6 +8897,32 @@
         }
       ],
       "usage": "both"
+    },
+    "HeuristicCache": {
+      "document": "启发式缓存配置",
+      "members": [
+        {
+          "default": "",
+          "document": "on 代表开启启发式缓存\noff 代表关闭启发式缓存",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义启发式缓存时间配置",
+          "example": "无",
+          "member": "CacheConfig",
+          "name": "CacheConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Hsts": {
       "document": "HSTS 配置。",
@@ -15299,6 +15388,15 @@
           "example": "无",
           "member": "OriginCombine",
           "name": "OriginCombine",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "POST请求传输配置",
+          "example": "无",
+          "member": "PostSize",
+          "name": "PostMaxSize",
           "required": false,
           "type": "object"
         },

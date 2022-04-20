@@ -194,7 +194,7 @@
     ],
     "ModifyDBInstanceNetworkAddress": [
       {
-        "document": "如需修改云数据库实例的网络信息，如基础网络转VPC网络和VPC网络之间的变换。",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceNetworkAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"NetworkAddresses\": [\n        {\n            \"OldIpAddress\": \"xx\",\n            \"NewIPAddress\": \"xx\"\n        }\n    ],\n    \"OldIpExpiredTime\": 1,\n    \"NewUniqVpcId\": \"xx\",\n    \"NewUniqSubnetId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改云数据库实例网络信息"

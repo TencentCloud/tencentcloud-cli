@@ -1082,6 +1082,15 @@
           "name": "WorkGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户别名，字符长度小50",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1900,7 +1909,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）\ntask-kind - string （任务类型过滤）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2035,7 +2044,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，支持如下字段类型，user-type：根据用户类型过滤。",
+          "document": "过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3316,6 +3325,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3713,6 +3732,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "username",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3756,6 +3785,16 @@
           "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户别名",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
           "required": true,
           "type": "string",
           "value_allowed_null": false

@@ -5207,6 +5207,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5290,6 +5300,16 @@
           "example": "{\"content\":\"test\"}",
           "member": "string",
           "name": "LogJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
           "required": true,
           "type": "string",
           "value_allowed_null": true

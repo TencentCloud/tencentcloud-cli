@@ -1,0 +1,166 @@
+{
+  "actions": {
+    "ApplyConcurrent": {
+      "document": "申请并发",
+      "input": "ApplyConcurrentRequest",
+      "name": "申请并发",
+      "output": "ApplyConcurrentResponse"
+    },
+    "CreateSession": {
+      "document": "创建会话",
+      "input": "CreateSessionRequest",
+      "name": "创建会话",
+      "output": "CreateSessionResponse"
+    },
+    "DestroySession": {
+      "document": "销毁会话",
+      "input": "DestroySessionRequest",
+      "name": "销毁会话",
+      "output": "DestroySessionResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-01-10",
+    "api_brief": "应用云渲染 API 为您提供请求调度并发资源的能力。",
+    "serviceNameCN": "应用云渲染",
+    "serviceShortName": "car"
+  },
+  "objects": {
+    "ApplyConcurrentRequest": {
+      "document": "ApplyConcurrent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户IP",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用版本ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyConcurrentResponse": {
+      "document": "ApplyConcurrent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionRequest": {
+      "document": "CreateSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户IP",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端session信息，从SDK请求中获得",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClientSession",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSessionResponse": {
+      "document": "CreateSession返回参数结构体",
+      "members": [
+        {
+          "document": "服务端session信息，返回给SDK",
+          "example": "xxx",
+          "member": "string",
+          "name": "ServerSession",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroySessionRequest": {
+      "document": "DestroySession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroySessionResponse": {
+      "document": "DestroySession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

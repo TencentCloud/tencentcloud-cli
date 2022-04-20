@@ -6,6 +6,12 @@
       "name": "添加联系人信息",
       "output": "AddUserContactResponse"
     },
+    "CancelKillTask": {
+      "document": "终止中断会话任务。",
+      "input": "CancelKillTaskRequest",
+      "name": "终止中断会话任务",
+      "output": "CancelKillTaskResponse"
+    },
     "CreateDBDiagReportTask": {
       "document": "创建健康报告，并可以选择是否发送邮件。",
       "input": "CreateDBDiagReportTaskRequest",
@@ -48,11 +54,23 @@
       "name": "创建安全审计日志导出任务",
       "output": "CreateSecurityAuditLogExportTaskResponse"
     },
+    "CreateSqlFilter": {
+      "document": "创建实例SQL限流任务。",
+      "input": "CreateSqlFilterRequest",
+      "name": "创建实例SQL限流任务",
+      "output": "CreateSqlFilterResponse"
+    },
     "DeleteSecurityAuditLogExportTasks": {
       "document": "删除安全审计日志导出任务。",
       "input": "DeleteSecurityAuditLogExportTasksRequest",
       "name": "删除安全审计日志导出任务",
       "output": "DeleteSecurityAuditLogExportTasksResponse"
+    },
+    "DeleteSqlFilters": {
+      "document": "删除实例SQL限流任务。",
+      "input": "DeleteSqlFiltersRequest",
+      "name": "删除实例SQL限流任务",
+      "output": "DeleteSqlFiltersResponse"
     },
     "DescribeAllUserContact": {
       "document": "获取邮件发送中联系人的相关信息。",
@@ -120,11 +138,23 @@
       "name": "查询实时线程列表",
       "output": "DescribeMySqlProcessListResponse"
     },
+    "DescribeNoPrimaryKeyTables": {
+      "document": "查询实例无主键表。",
+      "input": "DescribeNoPrimaryKeyTablesRequest",
+      "name": "查询实例无主键表",
+      "output": "DescribeNoPrimaryKeyTablesResponse"
+    },
     "DescribeProxySessionKillTasks": {
       "document": "用于查询 redis 执行 kill 会话任务后代理节点的执行结果，入参异步任务 ID 从接口 CreateProxySessionKillTask 调用成功后取得。当前 product 只支持：redis。",
       "input": "DescribeProxySessionKillTasksRequest",
       "name": "查询代理节点 kill 会话任务执行状态",
       "output": "DescribeProxySessionKillTasksResponse"
+    },
+    "DescribeRedisTopBigKeys": {
+      "document": "查询redis实例大key列表。",
+      "input": "DescribeRedisTopBigKeysRequest",
+      "name": "查询redis实例大key列表",
+      "output": "DescribeRedisTopBigKeysResponse"
     },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
@@ -155,6 +185,18 @@
       "input": "DescribeSlowLogUserHostStatsRequest",
       "name": "获取慢日志来源地址统计分布图",
       "output": "DescribeSlowLogUserHostStatsResponse"
+    },
+    "DescribeSqlFilters": {
+      "document": "查询实例SQL限流任务列表。",
+      "input": "DescribeSqlFiltersRequest",
+      "name": "查询实例SQL限流任务列表",
+      "output": "DescribeSqlFiltersResponse"
+    },
+    "DescribeSqlTemplate": {
+      "document": "查询SQL模版。",
+      "input": "DescribeSqlTemplateRequest",
+      "name": "查询SQL模版",
+      "output": "DescribeSqlTemplateResponse"
     },
     "DescribeTopSpaceSchemaTimeSeries": {
       "document": "获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。",
@@ -197,6 +239,18 @@
       "input": "ModifyDiagDBInstanceConfRequest",
       "name": "修改实例巡检开关状态",
       "output": "ModifyDiagDBInstanceConfResponse"
+    },
+    "ModifySqlFilters": {
+      "document": "更改实例限流任务状态，目前仅用于终止限流。",
+      "input": "ModifySqlFiltersRequest",
+      "name": "更改实例限流任务状态",
+      "output": "ModifySqlFiltersResponse"
+    },
+    "VerifyUserAccount": {
+      "document": "验证用户数据库账号权限，获取会话token。",
+      "input": "VerifyUserAccountRequest",
+      "name": "验证用户数据库账号权限",
+      "output": "VerifyUserAccountResponse"
     }
   },
   "metadata": {
@@ -247,6 +301,51 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelKillTaskRequest": {
+      "document": "CancelKillTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelKillTaskResponse": {
+      "document": "CancelKillTask返回参数结构体",
+      "members": [
+        {
+          "document": "kill会话任务终止成功返回1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -809,6 +908,96 @@
       ],
       "type": "object"
     },
+    "CreateSqlFilterRequest": {
+      "document": "CreateSqlFilter请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cAuth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。",
+          "example": "SELECT",
+          "member": "string",
+          "name": "SqlType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关键字，用于筛选SQL语句，多个关键字用英文逗号分隔，逗号不能作为关键词，多个关键词之间的关系为“逻辑与”。",
+          "example": "test",
+          "member": "string",
+          "name": "FilterKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大并发度，取值不能小于0，如果该值设为 0，则表示限制所有匹配的SQL执行。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限流时长，单位秒，支持-1和小于2147483647的正整数，-1表示永不过期。",
+          "example": "300",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSqlFilterResponse": {
+      "document": "CreateSqlFilter返回参数结构体",
+      "members": [
+        {
+          "document": "限流任务ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "FilterId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSecurityAuditLogExportTasksRequest": {
       "document": "DeleteSecurityAuditLogExportTasks请求参数结构体",
       "members": [
@@ -844,6 +1033,51 @@
     },
     "DeleteSecurityAuditLogExportTasksResponse": {
       "document": "DeleteSecurityAuditLogExportTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSqlFiltersRequest": {
+      "document": "DeleteSqlFilters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限流任务ID列表。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FilterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSqlFiltersResponse": {
+      "document": "DeleteSqlFilters返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1826,6 +2060,114 @@
       ],
       "type": "object"
     },
+    "DescribeNoPrimaryKeyTablesRequest": {
+      "document": "DescribeNoPrimaryKeyTables请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询日期，最早为30天前的日期。",
+          "example": "2022-04-14",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询数目，默认为20，最大为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNoPrimaryKeyTablesResponse": {
+      "document": "DescribeNoPrimaryKeyTables返回参数结构体",
+      "members": [
+        {
+          "document": "无主键表总数。",
+          "example": "10000",
+          "member": "int64",
+          "name": "NoPrimaryKeyTableCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "与昨日扫描无主键表的差值，正数为增加，负数为减少，0为无变化。",
+          "example": "0",
+          "member": "int64",
+          "name": "NoPrimaryKeyTableCountDiff",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录的无主键表总数（不超过无主键表总数），可用于分页查询。",
+          "example": "1000",
+          "member": "int64",
+          "name": "NoPrimaryKeyTableRecordCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "无主键表列表。",
+          "example": "无",
+          "member": "Table",
+          "name": "NoPrimaryKeyTables",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采集时间戳（秒）。",
+          "example": "1618890295",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProxySessionKillTasksRequest": {
       "document": "DescribeProxySessionKillTasks请求参数结构体",
       "members": [
@@ -1876,6 +2218,96 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopBigKeysRequest": {
+      "document": "DescribeRedisTopBigKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询日期，最早可为前30天的日期。",
+          "example": "2022-04-12",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。",
+          "example": "Capacity",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。",
+          "example": "string",
+          "member": "string",
+          "name": "KeyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询数目，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopBigKeysResponse": {
+      "document": "DescribeRedisTopBigKeys返回参数结构体",
+      "members": [
+        {
+          "document": "top key列表。",
+          "example": "无",
+          "member": "RedisKeySpaceData",
+          "name": "TopKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "采集时间戳（秒）。",
+          "example": "1618890295",
+          "member": "int64",
+          "name": "Timestamp",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2292,6 +2724,186 @@
           "name": "Items",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSqlFiltersRequest": {
+      "document": "DescribeSqlFilters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID列表，用于筛选任务列表。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FilterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务状态列表，用于筛选任务列表，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSqlFiltersResponse": {
+      "document": "DescribeSqlFilters返回参数结构体",
+      "members": [
+        {
+          "document": "限流任务总数目。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "限流任务列表。",
+          "example": "无",
+          "member": "SQLFilter",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSqlTemplateRequest": {
+      "document": "DescribeSqlTemplate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL语句。",
+          "example": "select * from test limit 10",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSqlTemplateResponse": {
+      "document": "DescribeSqlTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "数据库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Schema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL语句。",
+          "example": "select * from test limit 10",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL类型。",
+          "example": "Select",
+          "member": "string",
+          "name": "SqlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL模版内容。",
+          "example": "select * from test limit ?",
+          "member": "string",
+          "name": "SqlTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SQL模版ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "SqlId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3747,6 +4359,69 @@
       ],
       "type": "object"
     },
+    "ModifySqlFiltersRequest": {
+      "document": "ModifySqlFilters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "example": "cauth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SQL限流任务ID列表。",
+          "example": "1234",
+          "member": "int64",
+          "name": "FilterIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "限流任务状态，取值支持TERMINATED - 终止。",
+          "example": "TERMINATED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySqlFiltersResponse": {
+      "document": "ModifySqlFilters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MonitorFloatMetric": {
       "document": "监控数据（浮点型）",
       "members": [
@@ -3982,6 +4657,198 @@
         }
       ],
       "usage": "both"
+    },
+    "RedisKeySpaceData": {
+      "document": "redis key空间信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "key名。",
+          "example": "test",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key类型。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key编码方式。",
+          "example": "string",
+          "member": "string",
+          "name": "Encoding",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key过期时间戳（毫秒），0代表未设置过期时间。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "key内存大小，单位Byte。",
+          "example": "72",
+          "member": "int64",
+          "name": "Length",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "元素个数。",
+          "example": "1",
+          "member": "int64",
+          "name": "ItemCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大元素长度。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxElementSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SQLFilter": {
+      "document": "实例SQL限流任务。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID。",
+          "example": "1234",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。",
+          "example": "SELECT",
+          "member": "string",
+          "name": "SqlType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "筛选SQL的关键词，多个关键词用英文逗号拼接。",
+          "example": "t1",
+          "member": "string",
+          "name": "OriginKeys",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "筛选SQL的规则。",
+          "example": "SELECT, t1",
+          "member": "string",
+          "name": "OriginRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已拒绝SQL数目。",
+          "example": "100",
+          "member": "int64",
+          "name": "RejectedSqlCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前并发数。",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentConcurrency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大并发数。",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间。",
+          "example": "2022-04-14 14:00:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前时间。",
+          "example": "2022-04-14 15:00:00",
+          "member": "datetime_iso",
+          "name": "CurrentTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "限流过期时间。",
+          "example": "2022-04-14 14:30:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SchemaItem": {
       "document": "SchemaItem数组",
@@ -4611,6 +5478,62 @@
       ],
       "usage": "out"
     },
+    "Table": {
+      "document": "表结构。",
+      "members": [
+        {
+          "default": "",
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名。",
+          "example": "test",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "库表的存储引擎。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行数。",
+          "example": "2000",
+          "member": "int64",
+          "name": "TableRows",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总使用空间（MB）。",
+          "example": "0.02",
+          "member": "float",
+          "name": "TotalLength",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TableSpaceData": {
       "document": "库表空间统计数据。",
       "members": [
@@ -4960,6 +5883,69 @@
         }
       ],
       "usage": "out"
+    },
+    "VerifyUserAccountRequest": {
+      "document": "VerifyUserAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库账号名。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库账号密码。",
+          "example": "t123456",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyUserAccountResponse": {
+      "document": "VerifyUserAccount返回参数结构体",
+      "members": [
+        {
+          "document": "会话token，有效期为5分钟。",
+          "example": "QCth",
+          "member": "string",
+          "name": "SessionToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

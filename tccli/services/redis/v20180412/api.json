@@ -6,6 +6,12 @@
       "name": "添加复制组成员",
       "output": "AddReplicationInstanceResponse"
     },
+    "AllocateWanAddress": {
+      "document": "开通外网",
+      "input": "AllocateWanAddressRequest",
+      "name": "开通外网接口",
+      "output": "AllocateWanAddressResponse"
+    },
     "ApplyParamsTemplate": {
       "document": "应用参数模板到实例",
       "input": "ApplyParamsTemplateRequest",
@@ -408,6 +414,12 @@
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse"
     },
+    "ReleaseWanAddress": {
+      "document": "关闭外网",
+      "input": "ReleaseWanAddressRequest",
+      "name": "关闭外网接口",
+      "output": "ReleaseWanAddressResponse"
+    },
     "RenewInstance": {
       "document": "续费实例",
       "input": "RenewInstanceRequest",
@@ -567,6 +579,51 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateWanAddressRequest": {
+      "document": "AllocateWanAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dvchdv5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateWanAddressResponse": {
+      "document": "AllocateWanAddress返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "开通外网的状态",
+          "example": "\"外网开通中\"",
+          "member": "string",
+          "name": "WanStatus",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7822,6 +7879,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ReleaseWanAddressRequest": {
+      "document": "ReleaseWanAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dvchdv5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseWanAddressResponse": {
+      "document": "ReleaseWanAddress返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "关闭外网的状态",
+          "example": "\"外网关闭中\"",
+          "member": "string",
+          "name": "WanStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RenewInstanceRequest": {
       "document": "RenewInstance请求参数结构体",
