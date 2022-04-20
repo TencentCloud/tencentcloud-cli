@@ -35,6 +35,7 @@ tccli tcss AddEditAbnormalProcessRule --cli-unfold-argument  \
     --RuleInfo.ChildRules.0.RuleMode RULE_MODE_RELEASE \
     --RuleInfo.ChildRules.0.ProcessPath xxxx \
     --RuleInfo.ChildRules.0.RuleId xxx \
+    --RuleInfo.ChildRules.0.RuleLevel LOW \
     --RuleInfo.RuleName xxxx \
     --RuleInfo.RuleId 6038e07298dab13d32bc34ec
 ```

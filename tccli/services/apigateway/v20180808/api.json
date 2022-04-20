@@ -3499,6 +3499,15 @@
           "name": "EIAMAppId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源的Owner",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6924,7 +6933,7 @@
       "type": "object"
     },
     "DescribeUpstreamBindApis": {
-      "document": "查询vpc通道绑定api列表",
+      "document": "查询后端通道绑定API列表",
       "members": [
         {
           "default": "",
@@ -6938,7 +6947,7 @@
         },
         {
           "default": "",
-          "document": "绑定的api信息",
+          "document": "绑定的API信息",
           "example": "无",
           "member": "BindApiInfo",
           "name": "BindApiSet",
@@ -10719,6 +10728,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当绑定vpc通道才需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "upstream-sadad",
+          "member": "string",
+          "name": "UpstreamId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "default": "",

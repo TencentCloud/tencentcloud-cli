@@ -24,32 +24,38 @@ Output:
                 {
                     "RuleId": "6020e81134b9a9000c50b56a",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/bin/ptest"
+                    "ProcessPath": "/bin/ptest",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60212ddd98dab16785dfeab2",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/ps"
+                    "ProcessPath": "/usr/bin/ps",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "6021472934b9a9000c358fa3",
                     "RuleMode": "RULE_MODE_RELEASE",
-                    "ProcessPath": "/usr/bin/top"
+                    "ProcessPath": "/usr/bin/top",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "602f603d34b9a9000cb2b405",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/tail"
+                    "ProcessPath": "/usr/bin/tail",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60326e4434b9a9000c0897a8",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/busybox"
+                    "ProcessPath": "/usr/bin/busybox",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60337df034b9a9000c2240c8",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/sss"
+                    "ProcessPath": "/usr/bin/sss",
+                    "RuleLevel": "MIDDLE"
                 }
             ],
             "SystemChildRules": [],
@@ -87,32 +93,38 @@ Output:
                 {
                     "RuleId": "6020e81134b9a9000c50b56a",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/bin/ptest"
+                    "ProcessPath": "/bin/ptest",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60212ddd98dab16785dfeab2",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/ps"
+                    "ProcessPath": "/usr/bin/ps",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "6021472934b9a9000c358fa3",
                     "RuleMode": "RULE_MODE_RELEASE",
-                    "ProcessPath": "/usr/bin/top"
+                    "ProcessPath": "/usr/bin/top",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "602f603d34b9a9000cb2b405",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/tail"
+                    "ProcessPath": "/usr/bin/tail",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60326e4434b9a9000c0897a8",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/busybox"
+                    "ProcessPath": "/usr/bin/busybox",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "60337df034b9a9000c2240c8",
                     "RuleMode": "RULE_MODE_ALERT",
-                    "ProcessPath": "/usr/bin/sss"
+                    "ProcessPath": "/usr/bin/sss",
+                    "RuleLevel": "MIDDLE"
                 }
             ],
             "SystemChildRules": [],
@@ -153,43 +165,50 @@ Output:
                     "RuleId": "100000000000000000000001",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "PROXY_TOOL"
+                    "RuleType": "PROXY_TOOL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000002",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "TRANSFER_CONTROL"
+                    "RuleType": "TRANSFER_CONTROL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000003",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "ATTACK_CMD"
+                    "RuleType": "ATTACK_CMD",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000004",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "REVERSE_SHELL"
+                    "RuleType": "REVERSE_SHELL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000005",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "FILELESS"
+                    "RuleType": "FILELESS",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000006",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "RISK_CMD"
+                    "RuleType": "RISK_CMD",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000007",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "ABNORMAL_CHILD_PROC"
+                    "RuleType": "ABNORMAL_CHILD_PROC",
+                    "RuleLevel": "MIDDLE"
                 }
             ],
             "ImageIds": [
@@ -229,43 +248,50 @@ Output:
                     "RuleId": "100000000000000000000001",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "PROXY_TOOL"
+                    "RuleType": "PROXY_TOOL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000002",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "TRANSFER_CONTROL"
+                    "RuleType": "TRANSFER_CONTROL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000003",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "ATTACK_CMD"
+                    "RuleType": "ATTACK_CMD",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000004",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "REVERSE_SHELL"
+                    "RuleType": "REVERSE_SHELL",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000005",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "FILELESS"
+                    "RuleType": "FILELESS",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000006",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "RISK_CMD"
+                    "RuleType": "RISK_CMD",
+                    "RuleLevel": "MIDDLE"
                 },
                 {
                     "RuleId": "100000000000000000000007",
                     "IsEnable": true,
                     "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "ABNORMAL_CHILD_PROC"
+                    "RuleType": "ABNORMAL_CHILD_PROC",
+                    "RuleLevel": "MIDDLE"
                 }
             ],
             "ImageIds": [

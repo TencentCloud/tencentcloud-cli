@@ -11,14 +11,15 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "RuleSet": [
             {
+                "Group": "xx",
                 "Type": "xx",
                 "Name": "xx",
                 "IsEnable": true
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

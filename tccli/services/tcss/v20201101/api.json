@@ -1036,6 +1036,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "威胁等级，HIGH:高，MIDDLE:中，LOW:低\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MIDDLE",
+          "member": "string",
+          "name": "RuleLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1085,7 +1095,7 @@
         },
         {
           "default": "",
-          "document": "命中规则名字",
+          "document": "命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则",
           "example": "myrule",
           "member": "string",
           "name": "RuleName",
@@ -1109,6 +1119,16 @@
           "example": "2021-05-01 00:00:00",
           "member": "string",
           "name": "OperationTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1141,8 +1161,8 @@
         },
         {
           "default": "",
-          "document": "命中规则",
-          "example": "mytestrule",
+          "document": "命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则",
+          "example": "USER_DEFINED_RULE",
           "member": "string",
           "name": "MatchRuleName",
           "required": true,
@@ -1318,6 +1338,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字",
+          "example": "无",
+          "member": "string",
+          "name": "MatchGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。",
+          "example": "无",
+          "member": "string",
+          "name": "MatchRuleLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1440,6 +1480,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "威胁等级，HIGH:高，MIDDLE:中，LOW:低\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MIDDLE",
+          "member": "string",
+          "name": "RuleLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11855,7 +11905,7 @@
         },
         {
           "default": "",
-          "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
+          "document": "过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -14850,7 +14900,7 @@
         },
         {
           "default": "",
-          "document": "状态\n     EVENT_UNDEAL:事件未处理\n     EVENT_DEALED:事件已经处理\n     EVENT_INGNORE：事件忽略",
+          "document": "状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略",
           "example": "EVENT_INGNORE",
           "member": "string",
           "name": "Status",
@@ -14967,6 +15017,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15002,6 +15072,16 @@
           "name": "IsEnable",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则组别。RISK_CONTAINER：风险容器，PROCESS_PRIVILEGE：程序特权，CONTAINER_ESCAPE：容器逃逸",
+          "example": "RISK_CONTAINER",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -17462,7 +17542,7 @@
         },
         {
           "default": "",
-          "document": "标记事件的状态\n   EVENT_DEALED:事件已经处理\n     EVENT_INGNORE：事件忽略\n     EVENT_DEL:事件删除",
+          "document": "标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除",
           "example": "EVENT_DEALED",
           "member": "string",
           "name": "Status",
@@ -19369,6 +19449,36 @@
           "example": "xxx",
           "member": "string",
           "name": "ClientIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
           "required": true,
           "type": "string",
           "value_allowed_null": true

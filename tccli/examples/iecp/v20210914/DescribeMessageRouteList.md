@@ -6,46 +6,42 @@ Input:
 
 ```
 tccli iecp DescribeMessageRouteList --cli-unfold-argument  \
-    --Filter xx \
-    --Limit 0 \
+    --Filter a \
+    --Limit 10 \
     --StartTime xx \
     --Offset 0 \
-    --EndTime xx \
-    --Order xx
+    --EndTime - \
+    --Order DESC
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "RouteList": [
             {
-                "Status": "xx",
-                "SourceUnitIDList": [
-                    "xx"
-                ],
-                "SourceUnitNameList": [
-                    "xx"
-                ],
+                "Status": "off",
+                "SourceUnitIDList": [],
+                "SourceUnitNameList": [],
                 "MessageCount": 0,
-                "TopicFilter": "xx",
-                "SourceProductName": "xx",
-                "Descript": "xx",
-                "MessageLastTime": "xx",
-                "RouteID": 0,
-                "Healthy": "xx",
-                "RouteName": "xx",
-                "SourceProductID": "xx",
-                "Mode": "xx",
-                "TargetOptions": "xx",
+                "TopicFilter": "0data",
+                "SourceProductName": "cp",
+                "Descript": "",
+                "MessageLastTime": "",
+                "RouteID": 1000000,
+                "Healthy": "yes",
+                "RouteName": "a",
+                "SourceProductID": "KMUOZ5EOXH",
+                "Mode": "topic-datasource",
+                "TargetOptions": "{\"DataSourceId\":1000000}",
                 "SourceDeviceNameList": [
-                    "xx"
+                    "cpp"
                 ],
-                "CreateTime": "xx"
+                "CreateTime": "2022-02-25 11:31:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "6aab2bdf-5f76-464b-859f-470e765d29e8"
     }
 }
 ```

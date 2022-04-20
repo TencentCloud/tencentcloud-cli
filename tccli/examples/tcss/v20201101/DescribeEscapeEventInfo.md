@@ -18,18 +18,20 @@ Output:
             {
                 "Status": "xx",
                 "EventId": "xx",
+                "HostID": "xx",
                 "ContainerId": "xx",
                 "ContainerName": "xx",
                 "EventType": "xx",
+                "EventCount": 0,
                 "Solution": "xx",
                 "FoundTime": "2020-09-22 00:00:00",
-                "LatestFoundTime": "2020-09-22 00:00:00",
                 "ImageId": "xx",
                 "EventName": "xx",
                 "ImageName": "xx",
-                "PodName": "xx",
                 "Description": "xx",
-                "EventCount": 0,
+                "PodName": "xx",
+                "NodeIP": "xx",
+                "LatestFoundTime": "2020-09-22 00:00:00",
                 "NodeName": "xx"
             }
         ],

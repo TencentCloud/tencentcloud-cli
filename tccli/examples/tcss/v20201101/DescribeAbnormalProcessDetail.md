@@ -46,11 +46,13 @@ Output:
             "MatchRule": {
                 "ProcessPath": "xx",
                 "RuleMode": "xx",
+                "RuleLevel": "xx",
                 "RuleId": "xx"
             },
             "Description": "xx",
             "RuleId": "xx",
             "Solution": "xx",
+            "GroupName": "xx",
             "RuleName": "xx",
             "OperationTime": "xx"
         },

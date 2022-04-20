@@ -66,6 +66,7 @@ Output:
                 "Product": "xx",
                 "UniqVpcId": "xx",
                 "Url": "xx",
+                "UpstreamId": "xx",
                 "Path": "xx",
                 "Method": "xx"
             },
