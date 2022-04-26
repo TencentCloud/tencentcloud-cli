@@ -19,7 +19,7 @@
       "output": "CheckBashRuleParamsResponse"
     },
     "CloseProVersion": {
-      "document": "本接口 (CloseProVersion) 用于关闭专业版。",
+      "document": "本接口 (CloseProVersion) 已全面改为授权模式,该接口只能解绑授权.",
       "input": "CloseProVersionRequest",
       "name": "关闭专业版",
       "output": "CloseProVersionResponse"
@@ -16973,7 +16973,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>HostIp- string - 是否必填：否 - 主机ip</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -21340,7 +21340,7 @@
       "members": [
         {
           "default": "",
-          "document": "云服务器类型。(当前参数已作废,可以留空值 )",
+          "document": "云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -21349,7 +21349,7 @@
         },
         {
           "default": "",
-          "document": "机器所属地域。(当前参数已作废,可以留空值 )",
+          "document": "机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",

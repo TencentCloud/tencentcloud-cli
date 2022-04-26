@@ -305,7 +305,9 @@ Output:
             "TaskProgress": 0,
             "TaskStartTime": "2021-11-04T12:14:18+08:00",
             "TaskStatus": 8,
-            "TaskTimeCost": 110
+            "TaskTimeCost": 110,
+            "CallbackURL": "xx",
+            "Label": "xxx"
         }
     }
 }

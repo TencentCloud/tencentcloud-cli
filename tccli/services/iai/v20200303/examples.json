@@ -16,20 +16,6 @@
         "title": "五官定位接口"
       }
     ],
-    "CheckSimilarPerson": [
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\n&UniquePersonControl=1\n&GroupIds.0=MyGroup1\n&GroupIds.1=MyGroup2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"YP6v5v32pvyBqLyz\",\n        \"RequestId\": \"5cec97ca-4a86-466b-a437-82df71d625a7\"\n    }\n}",
-        "title": "人员查重接口调用成功"
-      },
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CheckSimilarPerson\n&UniquePersonControl=1\n&GroupIds.0=MyGroup11111\n&GroupIds.1=MyGroup22222\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f08f36f9-671f-4448-a973-dae899aaeb10\"\n    }\n}",
-        "title": "人员查重接口调用失败"
-      }
-    ],
     "CompareFace": [
       {
         "document": "",
@@ -220,34 +206,6 @@
         "title": "人脸静态活体检测（高精度版）接口"
       }
     ],
-    "EstimateCheckSimilarPersonCostTime": [
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=EstimateCheckSimilarPersonCostTime\n&GroupIds.0=MyGroup1\n&GroupIds.1=MyGroup2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EstimatedTimeCost\": 1,\n        \"RequestId\": \"14252604-a4ce-432e-9cb3-4ca15bf88e0d\"\n    }\n}",
-        "title": "获取人员查重预估需要时间接口调用成功"
-      },
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=EstimateCheckSimilarPersonCostTime\n&GroupIds.0=AAAAAAA\n&GroupIds.1=bbbbbbb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b590639d-b84f-4821-9d53-bc7351daf5d0\"\n    }\n}",
-        "title": "获取人员查重预估需要时间接口调用失败"
-      }
-    ],
-    "GetCheckSimilarPersonJobIdList": [
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetCheckSimilarPersonJobIdList\r\n&Limit=2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobIdInfos\": [\n            {\n                \"JobId\": \"d6dGLOcFSISPtIfy\",\n                \"StartTime\": 1576567050654,\n                \"JobStatus\": 0\n            },\n            {\n                \"JobId\": \"251006443_merge_person_1576565489_wjBy9I3B\",\n                \"StartTime\": 1576565489239,\n                \"JobStatus\": 2\n            }\n        ],\n        \"JobIdNum\": 408,\n        \"RequestId\": \"6434816c-3b15-4f26-b909-8f5a8452cd58\"\n    }\n}",
-        "title": "调用成功示例"
-      },
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetCheckSimilarPersonJobIdList\r\n&Limit=1001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bc56633-5efd-4cff-8dfb-08ac6f88a8b9\"\n    }\n}",
-        "title": "调用失败示例"
-      }
-    ],
     "GetGroupInfo": [
       {
         "document": "",
@@ -336,20 +294,6 @@
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonListNum\n&GroupId=Tencent\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2865a458-4db1-46bd-ae52-b7507c9f4e62\"\n    }\n}",
         "title": "错误示例"
-      }
-    ],
-    "GetSimilarPersonResult": [
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetSimilarPersonResult\n&JobId=YP6v5v32pvyAqLyz\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"SimilarPersonsUrl\": \"https://sendto-mergeperson-result-test-1254418846.cos.ap-guangzhou.myqcloud.com/251006443_YP6v5v32pvyAqLyz.json?q-sign-algorithm=sha1&q-ak=AKIDl23oKapR0JM8zkElxta1EI7f3GSWDFiv&q-sign-time=1574996201;1574996501&q-key-time=1574996201;1574996501&q-header-list=&q-url-param-list=&q-signature=323f6d761675189ae2285faf04fa8fcef32a6f76\",\n        \"RequestId\": \"9cf173a5-4ae5-46fb-9898-6c876263780d\"\n    }\n}",
-        "title": "获取查重结果调用成功"
-      },
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetSimilarPersonResult\n&JobId=AAAAAAAAAAAA\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0b17778-2f4a-4286-9896-5b1732513c71\"\n    }\n}",
-        "title": "获取查重结果调用失败"
       }
     ],
     "GetUpgradeGroupFaceModelVersionJobList": [

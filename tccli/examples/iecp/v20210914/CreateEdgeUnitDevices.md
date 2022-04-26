@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli iecp CreateEdgeUnitDevices --cli-unfold-argument  \
-    --DeviceNames xx \
-    --EdgeUnitId 0 \
-    --ProductId xx
+    --DeviceNames link02 link01 \
+    --EdgeUnitId 100067 \
+    --ProductId SA4RZ3NLIM
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "f1ba65ee-80cd-4462-80ff-79620c149c12"
     }
 }
 ```

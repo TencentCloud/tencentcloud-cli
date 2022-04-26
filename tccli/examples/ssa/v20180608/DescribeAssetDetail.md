@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssa DescribeAssetDetail --cli-unfold-argument  \
-    --Params xxx
+    --Params {"id":"xxx"}
 ```
 
 Output: 

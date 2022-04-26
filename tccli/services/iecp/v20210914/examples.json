@@ -11,7 +11,7 @@
     "BuildMessageRoute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildMessageRoute\n<公共请求参数>\n\n{\n    \"SourceUnitIDList\": [\n        0\n    ],\n    \"TopicFilter\": \"xx\",\n    \"Descript\": \"xx\",\n    \"RouteName\": \"xx\",\n    \"SourceDeviceNameList\": [\n        \"xx\"\n    ],\n    \"Mode\": \"xx\",\n    \"SourceProductID\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildMessageRoute\n<公共请求参数>\n\n{\n    \"SourceUnitIDList\": [\n        0\n    ],\n    \"TopicFilter\": \"0event\",\n    \"Descript\": \"\",\n    \"RouteName\": \"test\",\n    \"SourceDeviceNameList\": [\n        \"link02\"\n    ],\n    \"Mode\": \"topic-datasource\",\n    \"SourceProductID\": \"SA4RZ3NLIM\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
         "title": "BuildMessageRoute"
       }
@@ -103,15 +103,15 @@
     "CreateEdgeUnitDevices": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"DeviceNames\": [\n        \"xx\"\n    ],\n    \"EdgeUnitId\": 0,\n    \"ProductId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"DeviceNames\": [\n        \"link02\",\n        \"link01\"\n    ],\n    \"EdgeUnitId\": 100067,\n    \"ProductId\": \"SA4RZ3NLIM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1ba65ee-80cd-4462-80ff-79620c149c12\"\n    }\n}",
         "title": "CreateEdgeUnitDevices"
       }
     ],
     "CreateIotDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIotDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"Description\": \"xx\",\n    \"ProductId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIotDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"link\",\n    \"Description\": \"测试\",\n    \"ProductId\": \"SA4RZ3NLIM\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
         "title": "创建子设备"
       }
@@ -119,8 +119,8 @@
     "CreateMessageRoute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageRoute\n<公共请求参数>\n\n{\n    \"RouteName\": \"xx\",\n    \"Descript\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RouteID\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageRoute\n<公共请求参数>\n\n{\n    \"RouteName\": \"\",\n    \"Descript\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6b8f9ff-b3c2-4faa-af7c-4574ac612f89\",\n        \"RouteID\": 1000008\n    }\n}",
         "title": "CreateMessageRoute"
       }
     ],
@@ -223,8 +223,8 @@
     "DeleteEdgeUnitDevices": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 0,\n    \"Devices\": [\n        {\n            \"DeviceName\": \"xx\",\n            \"ProductId\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEdgeUnitDevices\n<公共请求参数>\n\n{\n    \"EdgeUnitId\": 100067,\n    \"Devices\": [\n        {\n            \"DeviceName\": \"link02\",\n            \"ProductId\": \"SA4RZ3NLIM\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6aa02c8e-6f5f-4b7d-819a-4d1ef1ad210f\"\n    }\n}",
         "title": "DeleteEdgeUnitDevices"
       }
     ],
@@ -247,8 +247,8 @@
     "DeleteIotDeviceBatch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIotDeviceBatch\n<公共请求参数>\n\n{\n    \"DeviceIDList\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIotDeviceBatch\n<公共请求参数>\n\n{\n    \"DeviceIDList\": [\n        100048\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"857cc235-24f6-47aa-a8af-278cb22c6a60\"\n    }\n}",
         "title": "DeleteIotDeviceBatch"
       }
     ],
@@ -601,16 +601,16 @@
     "DescribeIotDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": 8367274\n}",
-        "output": "{\n    \"Response\": {\n        \"UserName\": \"xx\",\n        \"Psk\": \"xx\",\n        \"Version\": \"xx\",\n        \"Name\": \"xx\",\n        \"UnitName\": \"xx\",\n        \"LogLevel\": 1,\n        \"Region\": \"xx\",\n        \"PrivateKey\": \"xx\",\n        \"ClientID\": \"xx\",\n        \"Status\": 1,\n        \"Disabled\": true,\n        \"Cert\": \"xx\",\n        \"PskHex\": \"xx\",\n        \"LogSetting\": 1,\n        \"RequestId\": \"xx\",\n        \"UnitID\": 0,\n        \"Password\": \"xx\",\n        \"Id\": 8367274,\n        \"Description\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": 100049\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"SA4RZ3NLIMlink01;21010406;MPWMB;1965121722\",\n        \"Psk\": \"TTM5RjJCRTdSQUxOQkk3SA==\",\n        \"Version\": \"\",\n        \"Name\": \"link01\",\n        \"UnitName\": \"ccccx\",\n        \"LogLevel\": 1,\n        \"Region\": \"ap-guangzhou\",\n        \"PrivateKey\": \"\",\n        \"ClientID\": \"SA4RZ3NLIMlink01\",\n        \"Status\": 1,\n        \"Disabled\": true,\n        \"Cert\": \"\",\n        \"PskHex\": \"4d3339463242453752414c4e42493748\",\n        \"LogSetting\": 1,\n        \"RequestId\": \"50f25270-9083-4e99-ae16-3ebd172bf89c\",\n        \"UnitID\": 0,\n        \"Password\": \"2dace9889aaa987ba1975d76b90eaed5cfa28d3d7337c83df56028d76e0359ba;hmacsha256\",\n        \"Id\": 100049,\n        \"Description\": \"测试\"\n    }\n}",
         "title": "DescribeIotDevice"
       }
     ],
     "DescribeIotDevices": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevices\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"NamePattern\": \"xx\",\n    \"ProductId\": \"xx\",\n    \"Limit\": 10,\n    \"Versions\": [\n        \"xx\",\n        \"yy\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"DeviceSet\": [\n            {\n                \"Status\": 0,\n                \"LastOnlineTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"IsBound\": true,\n                \"Id\": 0,\n                \"Disabled\": true,\n                \"Version\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIotDevices\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"NamePattern\": \"01\",\n    \"ProductId\": \"SA4RZ3NLIM\",\n    \"Limit\": 10,\n    \"Versions\": [\n        \"xx\",\n        \"yy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"bd51b03d-e10e-4c8f-a3f9-e773fd9e4a18\",\n        \"DeviceSet\": [\n            {\n                \"Status\": 0,\n                \"LastOnlineTime\": \"-\",\n                \"Description\": \"测试\",\n                \"IsBound\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"UnitName\": \"ccccx\",\n                \"Id\": 0,\n                \"Disabled\": true,\n                \"Version\": \"\",\n                \"UnitID\": 100067,\n                \"CreateTime\": \"2022-04-12 18:51:34\",\n                \"Name\": \"link01\"\n            }\n        ]\n    }\n}",
         "title": "DescribeIotDevices"
       }
     ],
@@ -815,7 +815,7 @@
     "ModifyIotDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIotDevice\n<公共请求参数>\n\n{\n    \"Disabled\": true,\n    \"LogSetting\": 0,\n    \"LogLevel\": 0,\n    \"Description\": \"xx\",\n    \"DeviceId\": 100100\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIotDevice\n<公共请求参数>\n\n{\n    \"Disabled\": true,\n    \"LogSetting\": 0,\n    \"LogLevel\": 0,\n    \"Description\": \"测试\",\n    \"DeviceId\": 100049\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
         "title": "ModifyIotDevice"
       }
@@ -847,7 +847,7 @@
     "SetRouteOnOff": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetRouteOnOff\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"RouteID\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: iecp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetRouteOnOff\n<公共请求参数>\n\n{\n    \"Status\": \"off\",\n    \"RouteID\": 1000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebf13a2-f925-4ba7-adff-ddbc21d355e3\"\n    }\n}",
         "title": "SetRouteOnOff"
       }

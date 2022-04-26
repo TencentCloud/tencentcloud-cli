@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli iecp DeleteIotDeviceBatch --cli-unfold-argument  \
-    --DeviceIDList 1
+    --DeviceIDList 100048
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "857cc235-24f6-47aa-a8af-278cb22c6a60"
     }
 }
 ```

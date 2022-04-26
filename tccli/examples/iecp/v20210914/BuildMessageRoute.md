@@ -7,12 +7,12 @@ Input:
 ```
 tccli iecp BuildMessageRoute --cli-unfold-argument  \
     --SourceUnitIDList 0 \
-    --TopicFilter xx \
-    --Descript xx \
-    --RouteName xx \
-    --SourceDeviceNameList xx \
-    --Mode xx \
-    --SourceProductID xx
+    --TopicFilter 0event \
+    --Descript  \
+    --RouteName test \
+    --SourceDeviceNameList link02 \
+    --Mode topic-datasource \
+    --SourceProductID SA4RZ3NLIM
 ```
 
 Output: 

@@ -265,9 +265,9 @@
       "output": "RecognizeContainerOCRResponse"
     },
     "RecognizeHealthCodeOCR": {
-      "document": "本接口支持深圳粤康码、上海随申码、北京健康宝的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，七个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上的具体信息为准。",
+      "document": "本接口支持深圳粤康码、广州穗康码、上海随申码、北京健康宝的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，七个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。",
       "input": "RecognizeHealthCodeOCRRequest",
-      "name": "防疫健康码识别",
+      "name": "健康码识别",
       "output": "RecognizeHealthCodeOCRResponse"
     },
     "RecognizeOnlineTaxiItineraryOCR": {
@@ -5438,7 +5438,7 @@
         },
         {
           "default": "",
-          "document": "需要识别的健康码类型列表，为空或不填表示默认为粤康码。\n\n1:粤康码\n\n2:随申码\n\n3:健康宝",
+          "document": "需要识别的健康码类型列表，为空或不填表示默认为自动识别。\n0:自动识别\n\n1:粤康码\n\n2:随申码\n\n3:健康宝\n\n4.穗康码",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -5470,7 +5470,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "健康码更新时间，格式为：XXXX-XX-XX XX:XX:XX",
+          "document": "健康码更新时间",
           "example": "无",
           "member": "string",
           "name": "Time",
@@ -5506,7 +5506,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "核酸检测时间，格式为：XXXX-XX-XX XX:XX",
+          "document": "核酸检测时间",
           "example": "无",
           "member": "string",
           "name": "TestingTime",

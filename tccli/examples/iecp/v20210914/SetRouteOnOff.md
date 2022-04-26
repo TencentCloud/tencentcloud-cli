@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iecp SetRouteOnOff --cli-unfold-argument  \
-    --Status xx \
-    --RouteID 0
+    --Status off \
+    --RouteID 1000001
 ```
 
 Output: 

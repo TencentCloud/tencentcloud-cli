@@ -240,6 +240,14 @@
         "title": "拉取数据库列表"
       }
     ],
+    "DescribeEncryptionKeys": [
+      {
+        "document": "获取实例的密钥信息列表。",
+        "input": "https://postgres.tencentcloudapi.com/?Action=DescribeEncryptionKeys\n&DBInstanceId= postgres-abcdefg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EncryptionKeys\": [\n            {\n                \"CreateTime\": \"2022-03-24 10:39:14\",\n                \"DEKCipherTextBlob\": \"xxxxxxxxxxx\",\n                \"IsEnabled\": 1,\n                \"KeyAlias\": \"PGSQL-KMS\",\n                \"KeyId\": \" f4d88aa7-ae72-11ec-9fcc-5254007ffd46\",\n                \"KeyRegion\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "DescribeEncryptionKeys"
+      }
+    ],
     "DescribeOrders": [
       {
         "document": "",

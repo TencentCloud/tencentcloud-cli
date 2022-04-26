@@ -253,7 +253,7 @@
       "output": "DescribeBinlogsResponse"
     },
     "DescribeCDBProxy": {
-      "document": "查询数据库代理",
+      "document": "查询数据库代理（待下线，替换接口QueryCDBProxy）",
       "input": "DescribeCDBProxyRequest",
       "name": "查询数据库代理",
       "output": "DescribeCDBProxyResponse"
@@ -14418,7 +14418,7 @@
         },
         {
           "default": "",
-          "document": "代理节点个数，实际规格支持数",
+          "document": "代理节点个数",
           "example": "2",
           "member": "int64",
           "name": "ProxyCount",
@@ -14427,7 +14427,7 @@
         },
         {
           "default": "",
-          "document": "代理节点核数，实际规格支持数",
+          "document": "代理节点核数",
           "example": "4",
           "member": "int64",
           "name": "Cpu",

@@ -1,13 +1,13 @@
 {
   "actions": {
     "CreateGroup": {
-      "document": "用于创建一个空的人体库，如果人体库已存在返回错误。\n\n1个APPID下最多有2000W个人体轨迹（Trace），最多1W个人体库（Group）。\n\n单个人体库（Group）最多10W个人体轨迹（Trace）。\n\n单个人员（Person）最多添加 5 个人体轨迹（Trace）。",
+      "document": "用于创建一个空的人体库，如果人体库已存在返回错误。\n\n1个APPID下最多有2000W个人体动作轨迹（Trace），最多1W个人体库（Group）。\n\n单个人体库（Group）最多10W个人体动作轨迹（Trace）。\n\n单个人员（Person）最多添加 5 个人体动作轨迹（Trace）。",
       "input": "CreateGroupRequest",
       "name": "创建人体库",
       "output": "CreateGroupResponse"
     },
     "CreatePerson": {
-      "document": "创建人员，添加对应人员的人体轨迹信息。\n\n请注意：\n- 我们希望您的输入为 严格符合轨迹图片 要求的图片。如果您输入的图片不符合轨迹图片要求，会对最终效果产生较大负面影响。请您尽量保证一个Trace中的图片人体清晰、无遮挡、连贯；\n- 一个人体轨迹（Trace）可以包含1-5张人体图片。提供越多质量高的人体图片有助于提升最终识别结果；\n- 无论您在单个Trace中提供了多少张人体图片，我们都将生成一个对应的轨迹（Trace）信息。即，Trace仅和本次输入的图片序列相关，和图片的个数无关；\n- 输入的图片组中，若有部分图片输入不合法（如图片大小过大、分辨率过大、无法解码等），我们将舍弃这部分图片，确保合法图片被正确搜索。即，我们将尽可能保证请求成功，去除不合法的输入；\n- 构成人体轨迹单张图片大小不得超过2M，分辨率不得超过1920*1080。",
+      "document": "创建人员，添加对应人员的人体动作轨迹信息。\n\n请注意：\n- 我们希望您的输入为 严格符合动作轨迹图片 要求的图片。如果您输入的图片不符合动作轨迹图片要求，会对最终效果产生较大负面影响。请您尽量保证一个Trace中的图片人体清晰、无遮挡、连贯；\n- 一个人体动作轨迹（Trace）可以包含1-5张人体图片。提供越多质量高的人体图片有助于提升最终识别结果；\n- 无论您在单个Trace中提供了多少张人体图片，我们都将生成一个对应的动作轨迹（Trace）信息。即，Trace仅和本次输入的图片序列相关，和图片的个数无关；\n- 输入的图片组中，若有部分图片输入不合法（如图片大小过大、分辨率过大、无法解码等），我们将舍弃这部分图片，确保合法图片被正确搜索。即，我们将尽可能保证请求成功，去除不合法的输入；\n- 构成人体动作轨迹单张图片大小不得超过2M，分辨率不得超过1920*1080。",
       "input": "CreatePersonRequest",
       "name": "创建人员",
       "output": "CreatePersonResponse"
@@ -19,9 +19,9 @@
       "output": "CreateSegmentationTaskResponse"
     },
     "CreateTrace": {
-      "document": "将一个人体轨迹添加到一个人员中。一个人员最多允许包含 5 个人体轨迹。同一人的人体轨迹越多，搜索识别效果越好。\n\n>请注意：\n- 我们希望您的输入为 严格符合轨迹图片 要求的图片。如果您输入的图片不符合轨迹图片要求，会对最终效果产生较大负面影响。请您尽量保证一个Trace中的图片人体清晰、无遮挡、连贯。\n- 一个人体轨迹（Trace）可以包含1-5张人体图片。提供越多质量高的人体图片有助于提升最终识别结果。\n- 无论您在单个Trace中提供了多少张人体图片，我们都将生成一个对应的轨迹（Trace）信息。即，Trace仅和本次输入的图片序列相关，和图片的个数无关。\n- 输入的图片组中，若有部分图片输入不合法（如图片大小过大、分辨率过大、无法解码等），我们将舍弃这部分图片，确保合法图片被正确搜索。即，我们将尽可能保证请求成功，去除不合法的输入；\n- 构成人体轨迹单张图片大小限制为2M，分辨率限制为1920*1080。",
+      "document": "将一个人体动作轨迹添加到一个人员中。一个人员最多允许包含 5 个人体动作轨迹。同一人的人体动作轨迹越多，搜索识别效果越好。\n\n>请注意：\n- 我们希望您的输入为 严格符合动作轨迹图片 要求的图片。如果您输入的图片不符合动作轨迹图片要求，会对最终效果产生较大负面影响。请您尽量保证一个Trace中的图片人体清晰、无遮挡、连贯。\n- 一个人体动作轨迹（Trace）可以包含1-5张人体图片。提供越多质量高的人体图片有助于提升最终识别结果。\n- 无论您在单个Trace中提供了多少张人体图片，我们都将生成一个对应的动作轨迹（Trace）信息。即，Trace仅和本次输入的图片序列相关，和图片的个数无关。\n- 输入的图片组中，若有部分图片输入不合法（如图片大小过大、分辨率过大、无法解码等），我们将舍弃这部分图片，确保合法图片被正确搜索。即，我们将尽可能保证请求成功，去除不合法的输入；\n- 构成人体动作轨迹单张图片大小限制为2M，分辨率限制为1920*1080。",
       "input": "CreateTraceRequest",
-      "name": "增加人员轨迹",
+      "name": "增加人员动作轨迹",
       "output": "CreateTraceResponse"
     },
     "DeleteGroup": {
@@ -85,7 +85,7 @@
       "output": "ModifyPersonInfoResponse"
     },
     "SearchTrace": {
-      "document": "本接口用于对一组待识别的人体轨迹（Trace）图片，在人体库中识别出最相似的 TopK 人体，按照相似度从大到小排列。\n\n人体轨迹（Trace）图片要求：图片中当且仅包含一个人体。人体完整、无遮挡。\n\n> 请注意：\n- 我们希望您的输入为严格符合轨迹图片要求的图片。如果您输入的图片不符合轨迹图片要求，会对最终效果产生较大负面影响；\n- 人体轨迹，是一个包含1-5张图片的图片序列。您可以输入1张图片作为轨迹，也可以输入多张。单个轨迹中包含越多符合质量的图片，搜索效果越好。\n- 构成人体轨迹单张图片大小不得超过2M，分辨率不得超过1920*1080。",
+      "document": "本接口用于对一组待识别的人体动作轨迹（Trace）图片，在人体库中识别出最相似的 TopK 人体，按照相似度从大到小排列。\n\n人体动作轨迹（Trace）图片要求：图片中当且仅包含一个人体。人体完整、无遮挡。\n\n> 请注意：\n- 我们希望您的输入为严格符合动作轨迹图片要求的图片。如果您输入的图片不符合动作轨迹图片要求，会对最终效果产生较大负面影响；\n- 人体动作轨迹，是一个包含1-5张图片的图片序列。您可以输入1张图片作为动作轨迹，也可以输入多张。单个动作轨迹中包含越多符合质量的图片，搜索效果越好。\n- 构成人体动作轨迹单张图片大小不得超过2M，分辨率不得超过1920*1080。",
       "input": "SearchTraceRequest",
       "name": "人体搜索",
       "output": "SearchTraceResponse"
@@ -440,6 +440,7 @@
         {
           "default": "",
           "document": "人员ID。",
+          "example": "xxxxx",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -448,7 +449,8 @@
         },
         {
           "default": "",
-          "document": "人体轨迹ID。",
+          "document": "人体动作轨迹ID。",
+          "example": "xxxxx",
           "member": "string",
           "name": "TraceId",
           "required": true,
@@ -458,6 +460,7 @@
         {
           "default": "",
           "document": "候选者的匹配得分。 \n十万人体库下，误识率百分之五对应的分数为70分；误识率百分之二对应的分数为80分；误识率百分之一对应的分数为90分。\n \n二十万人体库下，误识率百分之五对应的分数为80分；误识率百分之二对应的分数为90分；误识率百分之一对应的分数为95分。\n \n通常情况建议使用分数80分（保召回）。若希望获得较高精度，建议使用分数90分（保准确）。",
+          "example": "xxxxx",
           "member": "float",
           "name": "Score",
           "required": true,
@@ -473,6 +476,7 @@
         {
           "default": "",
           "document": "人体库名称，[1,60]个字符，可修改，不可重复。",
+          "example": "testG3",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -481,6 +485,7 @@
         {
           "default": "",
           "document": "人体库 ID，不可修改，不可重复。支持英文、数字、-%@#&_，长度限制64B。",
+          "example": "testG3",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -489,6 +494,7 @@
         {
           "default": "",
           "document": "人体库信息备注，[0，40]个字符。",
+          "example": "TestG3T3",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -497,6 +503,7 @@
         {
           "default": "",
           "document": "人体识别所用的算法模型版本。 \n目前入参仅支持 “1.0”1个输入。 默认为\"1.0\"。  \n不同算法模型版本对应的人体识别算法不同，新版本的整体效果会优于旧版本，后续我们将推出更新版本。",
+          "example": "2.0",
           "member": "string",
           "name": "BodyModelVersion",
           "required": false,
@@ -523,6 +530,7 @@
         {
           "default": "",
           "document": "待加入的人员库ID。",
+          "example": "testG3",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -531,6 +539,7 @@
         {
           "default": "",
           "document": "人员名称。[1，60]个字符，可修改，可重复。",
+          "example": "string",
           "member": "string",
           "name": "PersonName",
           "required": true,
@@ -539,6 +548,7 @@
         {
           "default": "",
           "document": "人员ID，单个腾讯云账号下不可修改，不可重复。 \n支持英文、数字、-%@#&_，，长度限制64B。",
+          "example": "string",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -546,7 +556,8 @@
         },
         {
           "default": "",
-          "document": "人体轨迹信息。",
+          "document": "人体动作轨迹信息。",
+          "example": "无",
           "member": "Trace",
           "name": "Trace",
           "required": true,
@@ -559,30 +570,38 @@
       "document": "CreatePerson返回参数结构体",
       "members": [
         {
-          "document": "人员轨迹唯一标识。",
+          "document": "人员动作轨迹唯一标识。",
+          "example": "string",
           "member": "string",
           "name": "TraceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "人体识别所用的算法模型版本。",
+          "example": "string",
           "member": "string",
           "name": "BodyModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成轨迹。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成动作轨迹。",
+          "example": "-1001",
           "member": "int64",
           "name": "InputRetCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:轨迹中有非同人图片。-2024: 轨迹提取失败。-2025: 人体检测失败。\nRetCode 的顺序和入参中Images 或 Urls 的顺序一致。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。\nRetCode 的顺序和入参中Images 或 Urls 的顺序一致。",
+          "example": "[-1102]",
           "member": "int64",
           "name": "InputRetCodeDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -664,6 +683,7 @@
         {
           "default": "",
           "document": "人员ID。",
+          "example": "3333333333333",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -671,7 +691,8 @@
         },
         {
           "default": "",
-          "document": "人体轨迹信息。",
+          "document": "人体动作轨迹信息。",
+          "example": "无",
           "member": "Trace",
           "name": "Trace",
           "required": true,
@@ -684,30 +705,38 @@
       "document": "CreateTrace返回参数结构体",
       "members": [
         {
-          "document": "人员轨迹唯一标识。",
+          "document": "人员动作轨迹唯一标识。",
+          "example": "无",
           "member": "string",
           "name": "TraceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "人体识别所用的算法模型版本。",
+          "example": "无",
           "member": "string",
           "name": "BodyModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成轨迹。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成轨迹。",
+          "example": "无",
           "member": "int64",
           "name": "InputRetCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:轨迹中有非同人图片。-2024: 轨迹提取失败。-2025: 人体检测失败。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。",
+          "example": "无",
           "member": "int64",
           "name": "InputRetCodeDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1481,6 +1510,7 @@
         {
           "default": "",
           "document": "人员名称。",
+          "example": "xxxxx",
           "member": "string",
           "name": "PersonName",
           "required": true,
@@ -1490,6 +1520,7 @@
         {
           "default": "",
           "document": "人员ID。",
+          "example": "xxxxx",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -1498,7 +1529,8 @@
         },
         {
           "default": "",
-          "document": "包含的人体轨迹图片信息列表。",
+          "document": "包含的人体动作轨迹图片信息列表。",
+          "example": "xxxxx",
           "member": "TraceInfo",
           "name": "TraceInfos",
           "required": true,
@@ -1514,6 +1546,7 @@
         {
           "default": "",
           "document": "希望搜索的人体库ID。",
+          "example": "12311111111",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -1521,7 +1554,8 @@
         },
         {
           "default": "",
-          "document": "人体轨迹信息。",
+          "document": "人体动作轨迹信息。",
+          "example": "无",
           "member": "Trace",
           "name": "Trace",
           "required": true,
@@ -1529,7 +1563,8 @@
         },
         {
           "default": "",
-          "document": "单张被识别的人体轨迹返回的最相似人员数量。\n默认值为5，最大值为100。\n 例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。",
+          "document": "单张被识别的人体动作轨迹返回的最相似人员数量。\n默认值为5，最大值为100。\n 例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。",
+          "example": "2",
           "member": "uint64",
           "name": "MaxPersonNum",
           "required": false,
@@ -1538,6 +1573,7 @@
         {
           "default": "",
           "document": "出参Score中，只有超过TraceMatchThreshold值的结果才会返回。\n默认为0。范围[0, 100.0]。",
+          "example": "无",
           "member": "float",
           "name": "TraceMatchThreshold",
           "required": false,
@@ -1551,29 +1587,37 @@
       "members": [
         {
           "document": "识别出的最相似候选人。",
+          "example": "无",
           "member": "Candidate",
           "name": "Candidates",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成轨迹。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果。\n只有为0时结果才有意义。\n-1001: 输入图片不合法。-1002: 输入图片不能构成动作轨迹。",
+          "example": "无",
           "member": "int64",
           "name": "InputRetCode",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "输入的人体轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:轨迹中有非同人图片。-2024: 轨迹提取失败。-2025: 人体检测失败。",
+          "document": "输入的人体动作轨迹图片中的合法性校验结果详情。 \n-1101:图片无效，-1102:url不合法。-1103:图片过大。-1104:图片下载失败。-1105:图片解码失败。-1109:图片分辨率过高。-2023:动作轨迹中有非同人图片。-2024: 动作轨迹提取失败。-2025: 人体检测失败。",
+          "example": "无",
           "member": "int64",
           "name": "InputRetCodeDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "人体识别所用的算法模型版本。",
+          "example": "无",
           "member": "string",
           "name": "BodyModelVersion",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1925,11 +1969,12 @@
       "type": "object"
     },
     "Trace": {
-      "document": "人体轨迹信息",
+      "document": "人体动作轨迹信息",
       "members": [
         {
           "default": "",
-          "document": "人体轨迹图片 Base64 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "人体动作轨迹图片 Base64 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "xxxxx",
           "member": "string",
           "name": "Images",
           "required": false,
@@ -1938,7 +1983,8 @@
         },
         {
           "default": "",
-          "document": "人体轨迹图片 Url 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \nUrls、Images必须提供一个，如果都提供，只使用 Urls。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "人体动作轨迹图片 Url 数组。 \n数组长度最小为1最大为5。 \n单个图片 base64 编码后大小不可超过2M。 \nUrls、Images必须提供一个，如果都提供，只使用 Urls。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "xxxxx",
           "member": "string",
           "name": "Urls",
           "required": false,
@@ -1948,6 +1994,7 @@
         {
           "default": "",
           "document": "若输入的Images 和 Urls 是已经裁剪后的人体小图，则可以忽略本参数。 \n若否，或图片中包含多个人体，则需要通过本参数来指定图片中的人体框。 \n顺序对应 Images 或 Urls 中的顺序。  \n当不输入本参数时，我们将认为输入图片已是经过裁剪后的人体小图，不会进行人体检测而直接进行特征提取处理。",
+          "example": "无",
           "member": "BodyRect",
           "name": "BodyRects",
           "required": false,
@@ -1958,11 +2005,12 @@
       "usage": "both"
     },
     "TraceInfo": {
-      "document": "人体轨迹信息。",
+      "document": "人体动作轨迹信息。",
       "members": [
         {
           "default": "",
-          "document": "人体轨迹ID。",
+          "document": "人体动作轨迹ID。",
+          "example": "xxxxx",
           "member": "string",
           "name": "TraceId",
           "required": true,
@@ -1971,7 +2019,8 @@
         },
         {
           "default": "",
-          "document": "包含的人体轨迹图片Id列表。",
+          "document": "包含的人体动作轨迹图片Id列表。",
+          "example": "xxxxx",
           "member": "string",
           "name": "BodyIds",
           "required": true,

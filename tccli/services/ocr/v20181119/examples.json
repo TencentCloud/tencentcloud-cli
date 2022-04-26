@@ -410,8 +410,8 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeHealthCodeOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"京XX\",\n        \"Time\": \"XXXX - XX - XX XX: XX: XX\",\n        \"Color\": \"绿色\",\n        \"TestingResult\": \"48小时阴性\",\n        \"TestingInterval\": \"xx\",\n        \"TestingTime\": \"xx\",\n        \"IDNumber\": \"xx\",\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
-        "title": "防疫健康码识别示例代码"
+        "output": "{\n    \"Response\": {\n        \"Name\": \"京XX\",\n        \"Time\": \"XX - XX XX: XX: XX\",\n        \"Color\": \"绿色\",\n        \"TestingResult\": \"48小时阴性\",\n        \"TestingInterval\": \"xx\",\n        \"TestingTime\": \"xx\",\n        \"IDNumber\": \"xx\",\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
+        "title": "健康码识别示例代码"
       }
     ],
     "RecognizeOnlineTaxiItineraryOCR": [

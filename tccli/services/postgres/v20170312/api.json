@@ -162,6 +162,12 @@
       "name": "拉取数据库列表",
       "output": "DescribeDatabasesResponse"
     },
+    "DescribeEncryptionKeys": {
+      "document": "获取实例的密钥信息列表。",
+      "input": "DescribeEncryptionKeysRequest",
+      "name": "实例密钥信息列表",
+      "output": "DescribeEncryptionKeysResponse"
+    },
     "DescribeOrders": {
       "document": "本接口（DescribeOrders）用于获取订单信息。",
       "input": "DescribeOrdersRequest",
@@ -3625,6 +3631,42 @@
       ],
       "type": "object"
     },
+    "DescribeEncryptionKeysRequest": {
+      "document": "DescribeEncryptionKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "postgres-xxxxxxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEncryptionKeysResponse": {
+      "document": "DescribeEncryptionKeys返回参数结构体",
+      "members": [
+        {
+          "document": "实例密钥信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EncryptionKey",
+          "name": "EncryptionKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOrdersRequest": {
       "document": "DescribeOrders请求参数结构体",
       "members": [
@@ -4329,6 +4371,72 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EncryptionKey": {
+      "document": "KMS密钥信息",
+      "members": [
+        {
+          "default": "",
+          "document": "KMS实例加密的KeyId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KMS实例加密Key的别名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PGSQL-KMS",
+          "member": "string",
+          "name": "KeyAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例加密密钥DEK的密文。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空",
+          "member": "string",
+          "name": "DEKCipherTextBlob",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥是否启用，1-启用， 0-未启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KMS密钥所在地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "DEK密钥创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

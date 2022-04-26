@@ -12,12 +12,6 @@
       "name": "五官定位",
       "output": "AnalyzeFaceResponse"
     },
-    "CheckSimilarPerson": {
-      "document": "对指定的人员库进行人员查重，给出疑似相同人的信息。\n\n可以使用本接口对已有的单个人员库进行人员查重，避免同一人在单个人员库中拥有多个身份；也可以使用本接口对已有的多个人员库进行人员查重，查询同一人是否同时存在多个人员库中。\n\n不支持跨算法模型版本查重，且目前仅支持算法模型为3.0的人员库使用查重功能。\n\n>     \n- 若对完全相同的指定人员库进行查重操作，需等待上次操作完成才可。即，若两次请求输入的 GroupIds 相同，第一次请求若未完成，第二次请求将返回失败。\n\n>     \n- 查重的人员库状态为腾讯云开始进行查重任务的那一刻，即您可以理解为当您发起查重请求后，若您的查重任务需要排队，在排队期间您对人员库的增删操作均会会影响查重的结果。腾讯云将以开始进行查重任务的那一刻人员库的状态进行查重。查重任务开始后，您对人员库的任何操作均不影响查重任务的进行。但建议查重任务开始后，请不要对人员库中人员和人脸进行增删操作。",
-      "input": "CheckSimilarPersonRequest",
-      "name": "人员查重",
-      "output": "CheckSimilarPersonResponse"
-    },
     "CompareFace": {
       "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n若您需要判断 “此人是否是某人”，即验证某张图片中的人是否是已知身份的某人，如常见的人脸登录场景，建议使用[人脸验证](https://cloud.tencent.com/document/product/867/44983)或[人员验证](https://cloud.tencent.com/document/product/867/44982)接口。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "CompareFaceRequest",
@@ -25,9 +19,9 @@
       "output": "CompareFaceResponse"
     },
     "CompareMaskFace": {
-      "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n戴口罩人脸比对接口可在人脸戴口罩情况下使用，口罩遮挡程度最高可以遮挡鼻尖。\n\n如图片人脸不存在戴口罩情况，建议使用人脸比对服务。",
+      "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n防疫场景人脸比对接口可在人脸戴口罩情况下使用，口罩遮挡程度最高可以遮挡鼻尖。\n\n如图片人脸不存在防疫场景下戴口罩的情况，建议使用人脸比对服务。",
       "input": "CompareMaskFaceRequest",
-      "name": "戴口罩人脸比对",
+      "name": "防疫场景人脸比对",
       "output": "CompareMaskFaceResponse"
     },
     "CopyPerson": {
@@ -102,18 +96,6 @@
       "name": "人脸静态活体检测（高精度版）",
       "output": "DetectLiveFaceAccurateResponse"
     },
-    "EstimateCheckSimilarPersonCostTime": {
-      "document": "获取若要开始一个人员查重任务，这个任务结束的预估时间。\n\n若EndTimestamp符合您预期，请您尽快发起人员查重请求，否则导致可能需要更多处理时间。\n\n若预估时间超过5小时，则无法使用人员查重功能。",
-      "input": "EstimateCheckSimilarPersonCostTimeRequest",
-      "name": "获取人员查重预估需要时间",
-      "output": "EstimateCheckSimilarPersonCostTimeResponse"
-    },
-    "GetCheckSimilarPersonJobIdList": {
-      "document": "获取人员查重任务列表，按任务创建时间逆序（最新的在前面）。\n\n只保留最近1年的数据。",
-      "input": "GetCheckSimilarPersonJobIdListRequest",
-      "name": "获取人员查重任务列表",
-      "output": "GetCheckSimilarPersonJobIdListResponse"
-    },
     "GetGroupInfo": {
       "document": "获取人员库信息。",
       "input": "GetGroupInfoRequest",
@@ -149,12 +131,6 @@
       "input": "GetPersonListNumRequest",
       "name": "获取人员列表长度",
       "output": "GetPersonListNumResponse"
-    },
-    "GetSimilarPersonResult": {
-      "document": "获取人员查重接口（CheckSimilarPerson）结果。",
-      "input": "GetSimilarPersonResultRequest",
-      "name": "人员查重结果查询",
-      "output": "GetSimilarPersonResultResponse"
     },
     "GetUpgradeGroupFaceModelVersionJobList": {
       "document": "获取人员库升级任务列表\n",
@@ -510,51 +486,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CheckSimilarPersonRequest": {
-      "document": "CheckSimilarPerson请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "待整理的人员库列表。 \n人员库总人数不可超过200万，人员库个数不可超过10个。\n数组元素取值为创建人员库接口中的GroupId",
-          "example": "[\"MyGroup1\\r\\n\",\"MyGroup2\\r\\n\"]",
-          "member": "string",
-          "name": "GroupIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "人员查重整理力度的控制。\n1：力度较高的人员整理，能够消除更多的重复身份，对应稍高的非重复身份误清除率；\n2：力度较低的人员整理，非重复身份的误清除率较低，对应稍低的重复身份消除率。",
-          "example": "1",
-          "member": "int64",
-          "name": "UniquePersonControl",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CheckSimilarPersonResponse": {
-      "document": "CheckSimilarPerson返回参数结构体",
-      "members": [
-        {
-          "document": "查重任务ID，用于查询、获取查重的进度和结果。",
-          "example": "YP6v5v32pvyBqLyz",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CompareFaceRequest": {
       "document": "CompareFace请求参数结构体",
@@ -1806,39 +1737,6 @@
       ],
       "type": "object"
     },
-    "EstimateCheckSimilarPersonCostTimeRequest": {
-      "document": "EstimateCheckSimilarPersonCostTime请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "待整理的人员库列表。 \n人员库总人数不可超过200万，人员库个数不可超过10个。\n数组元素取值为创建人员库接口中的GroupId",
-          "member": "string",
-          "name": "GroupIds",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "EstimateCheckSimilarPersonCostTimeResponse": {
-      "document": "EstimateCheckSimilarPersonCostTime返回参数结构体",
-      "members": [
-        {
-          "document": "人员查重任务预估需要耗费时间。 单位为分钟。",
-          "member": "uint64",
-          "name": "EstimatedTimeCost",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Eye": {
       "document": "眼睛信息",
       "members": [
@@ -2526,54 +2424,6 @@
       ],
       "usage": "out"
     },
-    "GetCheckSimilarPersonJobIdListRequest": {
-      "document": "GetCheckSimilarPersonJobIdList请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "起始序号，默认值为0。",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "返回数量，默认值为10，最大值为1000。",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "GetCheckSimilarPersonJobIdListResponse": {
-      "document": "GetCheckSimilarPersonJobIdList返回参数结构体",
-      "members": [
-        {
-          "document": "人员查重任务信息列表。",
-          "member": "JobIdInfo",
-          "name": "JobIdInfos",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "查重任务总数量。",
-          "member": "uint64",
-          "name": "JobIdNum",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GetGroupInfoRequest": {
       "document": "GetGroupInfo请求参数结构体",
       "members": [
@@ -2906,46 +2756,6 @@
           "name": "FaceModelVersion",
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetSimilarPersonResultRequest": {
-      "document": "GetSimilarPersonResult请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "查重任务ID，用于查询、获取查重的进度和结果。取值为人员查重接口返回的JobId",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetSimilarPersonResultResponse": {
-      "document": "GetSimilarPersonResult返回参数结构体",
-      "members": [
-        {
-          "document": "查重任务完成进度。取值[0.0，100.0]。当且仅当值为100时，SimilarPersons才有意义。",
-          "member": "float",
-          "name": "Progress",
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "疑似同一人的人员信息文件临时下载链接， 有效时间为5分钟，结果文件实际保存90天。\n文件内容由 SimilarPerson 的数组组成。",
-          "member": "string",
-          "name": "SimilarPersonsUrl",
-          "type": "string",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3294,39 +3104,6 @@
           "document": "平面旋转[-180,180]。",
           "member": "int64",
           "name": "Roll",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "JobIdInfo": {
-      "document": "查重任务信息",
-      "members": [
-        {
-          "default": "",
-          "document": "查重任务ID，用于查询、获取查重的进度和结果。",
-          "member": "string",
-          "name": "JobId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "查重起始时间。 \nStartTime的值是自 Unix 纪元时间到Group创建时间的毫秒数。 \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。 \n有关更多信息，请参阅 Unix 时间。",
-          "member": "uint64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "查重任务是否已完成。0: 成功 1: 未完成 2: 失败",
-          "member": "int64",
-          "name": "JobStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": false

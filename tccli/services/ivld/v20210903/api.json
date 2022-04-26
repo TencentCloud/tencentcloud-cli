@@ -1265,13 +1265,13 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务信息，不包含任务结果",
+          "document": "任务信息，不包含任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "任务结果数据，只在任务结束时返回",
@@ -1431,7 +1431,7 @@
         },
         {
           "default": "",
-          "document": "当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)",
+          "document": "当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。\n推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败",
           "example": "https://bucket/path/",
           "member": "string",
           "name": "WriteBackCosPath",
@@ -1733,6 +1733,16 @@
           "example": "\"tag\"",
           "member": "string",
           "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "媒资导入完成后的回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"http://callback.com/callback\"",
+          "member": "string",
+          "name": "CallbackURL",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2448,6 +2458,16 @@
           "example": "\"tag\"",
           "member": "string",
           "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务分析完成后的后调地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"http://callback.com/callback\"",
+          "member": "string",
+          "name": "CallbackURL",
           "required": true,
           "type": "string",
           "value_allowed_null": true

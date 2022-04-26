@@ -261,7 +261,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlTemplate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Schema\": \"test\",\n    \"SqlText\": \"select * from test limit 10\",\n    \"Product\": \"mysql\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a837a5ce-b48f-4548-9a6b-a6e0917d8e5c\",\n        \"Schema\": \"test\",\n        \"SqlText\": \"select * from test limit 10\",\n        \"SqlType\": \"Select\",\n        \"SqlTemplate\": \"select * from test limit ?\",\n        \"SqlId\": -5602209514906915428\n    }\n}",
-        "title": "查询SQL模版"
+        "title": "查询SQL模板"
       }
     ],
     "DescribeTopSpaceSchemaTimeSeries": [

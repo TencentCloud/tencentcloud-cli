@@ -2611,6 +2611,7 @@
         {
           "default": "",
           "document": "查询过滤参数",
+          "example": "{\"id\":\"xxx\"}",
           "member": "string",
           "name": "Params",
           "required": true,
@@ -2624,8 +2625,10 @@
       "members": [
         {
           "document": "资产详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssetDetail",
           "name": "Data",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },

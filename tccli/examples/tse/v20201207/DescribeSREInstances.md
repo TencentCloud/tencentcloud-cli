@@ -37,10 +37,13 @@ Output:
                         "RunningCount": 0
                     }
                 ],
+                "TradeType": 0,
+                "CurDeadline": "xx",
+                "AutoRenewFlag": 0,
                 "Type": "xx",
                 "Edition": "xx",
                 "Status": "xx",
-                "EnableConsoleIntranet": true,
+                "EnableInternet": true,
                 "VpcId": "xx",
                 "SpecId": "xx",
                 "Tags": [
@@ -51,6 +54,7 @@ Output:
                 ],
                 "InstanceId": "xx",
                 "EnableConsoleInternet": true,
+                "EnableConsoleIntranet": true,
                 "EngineRegion": "xx",
                 "ConfigInfoVisible": true,
                 "Name": "xx",
@@ -95,7 +99,6 @@ Output:
                 "Paymode": "xx",
                 "EnableStorage": true,
                 "Replica": 3,
-                "EnableInternet": true,
                 "CreateTime": "xx"
             }
         ],

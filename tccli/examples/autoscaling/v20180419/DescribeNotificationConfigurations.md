@@ -16,6 +16,9 @@ Output:
         "TotalCount": 1,
         "AutoScalingNotificationSet": [
             {
+                "TargetType": "USER_GROUP",
+                "TopicName": "topicname",
+                "QueueName": "queuename",
                 "AutoScalingGroupId": "asg-2umy3jbd",
                 "NotificationUserGroupIds": [
                     "1678"

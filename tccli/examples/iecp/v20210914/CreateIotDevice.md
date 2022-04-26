@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iecp CreateIotDevice --cli-unfold-argument  \
-    --DeviceName xx \
-    --Description xx \
-    --ProductId xx
+    --DeviceName link \
+    --Description 测试 \
+    --ProductId SA4RZ3NLIM
 ```
 
 Output: 

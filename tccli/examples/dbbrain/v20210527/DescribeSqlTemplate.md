@@ -1,4 +1,4 @@
-**Example 1: 查询SQL模版**
+**Example 1: 查询SQL模板**
 
 
 

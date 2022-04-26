@@ -1,4 +1,4 @@
-**Example 1: 防疫健康码识别示例代码**
+**Example 1: 健康码识别示例代码**
 
 
 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Name": "京XX",
-        "Time": "XXXX - XX - XX XX: XX: XX",
+        "Time": "XX - XX XX: XX: XX",
         "Color": "绿色",
         "TestingResult": "48小时阴性",
         "TestingInterval": "xx",

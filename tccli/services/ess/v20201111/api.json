@@ -53,6 +53,12 @@
       "input": "StartFlowRequest",
       "name": "发起流程",
       "output": "StartFlowResponse"
+    },
+    "UploadFiles": {
+      "document": "此接口（UploadFiles）用于文件上传。\n调用时需要设置Domain 为 file.ess.tencent.cn，设置Version为2020-12-22",
+      "input": "UploadFilesRequest",
+      "name": "多文件上传",
+      "output": "UploadFilesResponse"
     }
   },
   "metadata": {
@@ -178,6 +184,52 @@
           "name": "PreReadTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Caller": {
+      "document": "此结构体 (Caller) 用于描述调用方属性。",
+      "members": [
+        {
+          "default": "",
+          "document": "应用号",
+          "example": "c17bdf9c2a7bdcb88811f4d0200fee3d",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机构ID",
+          "example": "732aaefa78c439d726f999b89c49e022",
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下属机构ID",
+          "example": "dasdasdhjksdjk2938hein",
+          "member": "string",
+          "name": "SubOrganizationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人的用户ID",
+          "example": "88fb0c591044be771f60aa382cc5ed0e",
+          "member": "string",
+          "name": "OperatorId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1427,6 +1479,131 @@
           "name": "Status",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFile": {
+      "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64编码后的文件内容",
+          "example": "无",
+          "member": "string",
+          "name": "FileBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "example": "test.pdf",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadFilesRequest": {
+      "document": "UploadFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "调用方信息",
+          "example": "Caller",
+          "member": "Caller",
+          "name": "Caller",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模版； 文件类型：.pdf/.html\n2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html\n3. FLOW - 签署过程 文件类型：.pdf/.html\n4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png\n5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png\n6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上传文件内容数组，最多支持20个文件",
+          "example": "FileInfos",
+          "member": "UploadFile",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "上传文件链接数组，最多支持20个URL",
+          "example": "FileUrls",
+          "member": "string",
+          "name": "FileUrls",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否将pdf灰色矩阵置白\ntrue--是，处理置白\nfalse--否，不处理",
+          "example": "true",
+          "member": "bool",
+          "name": "CoverRect",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "特殊文件类型需要指定文件类型：\nHTML-- .html文件",
+          "example": "HTML",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户自定义ID数组，与上传文件一一对应",
+          "example": "无",
+          "member": "string",
+          "name": "CustomIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesResponse": {
+      "document": "UploadFiles返回参数结构体",
+      "members": [
+        {
+          "document": "文件id数组",
+          "example": "d54e3caec25ad0ea6be24406762b7562",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传成功文件数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

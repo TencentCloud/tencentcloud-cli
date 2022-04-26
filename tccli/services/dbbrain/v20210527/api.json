@@ -193,9 +193,9 @@
       "output": "DescribeSqlFiltersResponse"
     },
     "DescribeSqlTemplate": {
-      "document": "查询SQL模版。",
+      "document": "查询SQL模板。",
       "input": "DescribeSqlTemplateRequest",
-      "name": "查询SQL模版",
+      "name": "查询SQL模板",
       "output": "DescribeSqlTemplateResponse"
     },
     "DescribeTopSpaceSchemaTimeSeries": {
@@ -2074,7 +2074,7 @@
         },
         {
           "default": "",
-          "document": "查询日期，最早为30天前的日期。",
+          "document": "查询日期，如2021-05-27，最早为30天前的日期。",
           "example": "2022-04-14",
           "member": "date",
           "name": "Date",
@@ -2245,7 +2245,7 @@
         },
         {
           "default": "",
-          "document": "查询日期，最早可为前30天的日期。",
+          "document": "查询日期，如2021-05-27，最早可为前30天的日期。",
           "example": "2022-04-12",
           "member": "date",
           "name": "Date",
@@ -2263,7 +2263,7 @@
         },
         {
           "default": "",
-          "document": "排序字段，取值包括Capacity - 内存，ItemCount - 元素数量。",
+          "document": "排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。",
           "example": "Capacity",
           "member": "string",
           "name": "SortBy",

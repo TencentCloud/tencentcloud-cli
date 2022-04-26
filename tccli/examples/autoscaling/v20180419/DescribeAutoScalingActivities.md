@@ -19,13 +19,14 @@ Output:
             {
                 "Description": "Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).",
                 "AutoScalingGroupId": "asg-2umy3jbd",
-                "LifecycleActionResultSet": [],
                 "ActivityRelatedInstanceSet": [
                     {
                         "InstanceId": "ins-q3ss14yo",
                         "InstanceStatus": "SUCCESSFUL"
                     }
                 ],
+                "LifecycleActionResultSet": [],
+                "DetailedStatusMessageSet": [],
                 "ActivityType": "SCALE_OUT",
                 "ActivityId": "asa-o4v87ae9",
                 "StartTime": "2018-11-20T08:33:56Z",
@@ -69,6 +70,7 @@ Output:
                     }
                 ],
                 "LifecycleActionResultSet": [],
+                "DetailedStatusMessageSet": [],
                 "ActivityType": "SCALE_OUT",
                 "ActivityId": "asa-o4v87ae9",
                 "StartTime": "2018-11-20T08:33:56Z",

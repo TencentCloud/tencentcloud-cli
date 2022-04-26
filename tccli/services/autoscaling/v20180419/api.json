@@ -216,6 +216,12 @@
       "name": "修改启动配置属性",
       "output": "ModifyLaunchConfigurationAttributesResponse"
     },
+    "ModifyLifecycleHook": {
+      "document": "此接口用于修改生命周期挂钩。",
+      "input": "ModifyLifecycleHookRequest",
+      "name": "修改生命周期挂钩",
+      "output": "ModifyLifecycleHookResponse"
+    },
     "ModifyLoadBalancerTargetAttributes": {
       "document": "本接口（ModifyLoadBalancerTargetAttributes）用于修改伸缩组内负载均衡器的目标规则属性。",
       "input": "ModifyLoadBalancerTargetAttributesRequest",
@@ -622,6 +628,16 @@
         },
         {
           "default": "",
+          "document": "伸缩组警告级别。取值范围：<br>\n<li>NORMAL：正常<br>\n<li>WARNING：警告级别<br>\n<li>CRITICAL：严重级别<br>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "伸缩组配置建议集合。",
           "example": "无",
           "member": "Advice",
@@ -658,7 +674,7 @@
         },
         {
           "default": "",
-          "document": "伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>",
+          "document": "伸缩组当前状态。取值范围：<br>\n<li>NORMAL：正常<br>\n<li>CVM_ABNORMAL：启动配置异常<br>\n<li>LB_ABNORMAL：负载均衡器异常<br>\n<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>\n<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>\n<li>VPC_ABNORMAL：VPC网络异常<br>\n<li>SUBNET_ABNORMAL：VPC子网异常<br>\n<li>INSUFFICIENT_BALANCE：余额不足<br>\n<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>\n<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配",
           "example": "NORMAL",
           "member": "string",
           "name": "AutoScalingGroupStatus",
@@ -1109,6 +1125,7 @@
         {
           "default": "",
           "document": "生命周期挂钩ID",
+          "example": "ash-fbjiexz7",
           "member": "string",
           "name": "LifecycleHookId",
           "required": true,
@@ -1117,6 +1134,7 @@
         {
           "default": "",
           "document": "生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”",
+          "example": "CONTINUE",
           "member": "string",
           "name": "LifecycleActionResult",
           "required": true,
@@ -1125,6 +1143,7 @@
         {
           "default": "",
           "document": "实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个",
+          "example": "ins-ni8bpmve",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1133,6 +1152,7 @@
         {
           "default": "",
           "document": "“InstanceId”和“LifecycleActionToken”必须填充其中一个",
+          "example": "无",
           "member": "string",
           "name": "LifecycleActionToken",
           "required": false,
@@ -1969,6 +1989,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-2nr9xh8h",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -1977,6 +1998,7 @@
         {
           "default": "",
           "document": "定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。",
+          "example": "scheduled-action-0",
           "member": "string",
           "name": "ScheduledActionName",
           "required": true,
@@ -1985,6 +2007,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组最大实例数。",
+          "example": "10",
           "member": "uint64",
           "name": "MaxSize",
           "required": true,
@@ -1993,6 +2016,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组最小实例数。",
+          "example": "4",
           "member": "uint64",
           "name": "MinSize",
           "required": true,
@@ -2001,6 +2025,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组期望实例数。",
+          "example": "6",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": true,
@@ -2009,6 +2034,7 @@
         {
           "default": "",
           "document": "定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。",
+          "example": "2018-08-28T23:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -2017,6 +2043,7 @@
         {
           "default": "",
           "document": "定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。",
+          "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -2025,6 +2052,7 @@
         {
           "default": "",
           "document": "定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。",
+          "example": "无",
           "member": "string",
           "name": "Recurrence",
           "required": false,
@@ -2038,8 +2066,10 @@
       "members": [
         {
           "document": "定时任务ID",
+          "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2168,6 +2198,7 @@
         {
           "default": "",
           "document": "生命周期挂钩ID",
+          "example": "ash-5rynk2n5",
           "member": "string",
           "name": "LifecycleHookId",
           "required": true,
@@ -2194,6 +2225,7 @@
         {
           "default": "",
           "document": "待删除的通知ID。",
+          "example": "asn-2sestqbr",
           "member": "string",
           "name": "AutoScalingNotificationId",
           "required": false,
@@ -2220,6 +2252,7 @@
         {
           "default": "",
           "document": "待删除的告警策略ID。",
+          "example": "asp-lnfqbsoq",
           "member": "string",
           "name": "AutoScalingPolicyId",
           "required": true,
@@ -2246,6 +2279,7 @@
         {
           "default": "",
           "document": "待删除的定时任务ID。",
+          "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
           "required": true,
@@ -2276,29 +2310,37 @@
       "members": [
         {
           "document": "用户账户被允许创建的启动配置最大数量",
+          "example": "20",
           "member": "int64",
           "name": "MaxNumberOfLaunchConfigurations",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户账户启动配置的当前数量",
+          "example": "15",
           "member": "int64",
           "name": "NumberOfLaunchConfigurations",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户账户被允许创建的伸缩组最大数量",
+          "example": "30",
           "member": "int64",
           "name": "MaxNumberOfAutoScalingGroups",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "用户账户伸缩组的当前数量",
+          "example": "25",
           "member": "int64",
           "name": "NumberOfAutoScalingGroups",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2443,6 +2485,7 @@
         {
           "default": "",
           "document": "伸缩组ID列表",
+          "example": "[\"asg-2umy3jbd\\n\"]",
           "member": "string",
           "name": "AutoScalingGroupIds",
           "required": true,
@@ -2456,8 +2499,10 @@
       "members": [
         {
           "document": "符合条件的伸缩活动信息集合。说明：伸缩组伸缩活动不存在的则不返回，如传50个伸缩组ID，返回45条数据，说明其中有5个伸缩组伸缩活动不存在。",
+          "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2476,6 +2521,7 @@
         {
           "default": "",
           "document": "按照一个或者多个伸缩组ID查询。伸缩组ID形如：`asg-nkdwoui0`。每次请求的上限为100。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。",
+          "example": "[\"asg-nkdwoui0\\n\"]",
           "member": "string",
           "name": "AutoScalingGroupIds",
           "required": false,
@@ -2484,6 +2530,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称过滤。</li>\n<li> vague-auto-scaling-group-name - String - 是否必填：否 -（过滤条件）按照伸缩组名称模糊搜索。</li>\n<li> launch-configuration-id - String - 是否必填：否 -（过滤条件）按照启动配置ID过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2492,6 +2539,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2500,6 +2548,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2513,15 +2562,19 @@
       "members": [
         {
           "document": "伸缩组详细信息列表。",
+          "example": "无",
           "member": "AutoScalingGroup",
           "name": "AutoScalingGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的伸缩组数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2756,6 +2809,7 @@
         {
           "default": "",
           "document": "按照一个或者多个通知ID查询。实例ID形如：asn-2sestqbr。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。",
+          "example": "[\"asn-9bhwvxqh\\n\"]",
           "member": "string",
           "name": "AutoScalingNotificationIds",
           "required": false,
@@ -2764,6 +2818,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> auto-scaling-notification-id - String - 是否必填：否 -（过滤条件）按照通知ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2772,6 +2827,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2780,6 +2836,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2793,15 +2850,19 @@
       "members": [
         {
           "document": "符合条件的通知数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "弹性伸缩事件通知详细信息列表。",
+          "example": "无",
           "member": "AutoScalingNotification",
           "name": "AutoScalingNotificationSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2820,6 +2881,7 @@
         {
           "default": "",
           "document": "按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
+          "example": "[\"asp-5zffv598\\n\"]",
           "member": "string",
           "name": "AutoScalingPolicyIds",
           "required": false,
@@ -2828,6 +2890,7 @@
         {
           "default": "",
           "document": "过滤条件。\n<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2836,6 +2899,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2844,6 +2908,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2857,15 +2922,19 @@
       "members": [
         {
           "document": "弹性伸缩告警触发策略详细信息列表。",
+          "example": "无",
           "member": "ScalingPolicy",
           "name": "ScalingPolicySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的通知数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3158,6 +3227,7 @@
         {
           "default": "",
           "document": "伸缩组ID",
+          "example": "asg-nvnlpbb8",
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
@@ -4637,6 +4707,96 @@
       ],
       "type": "object"
     },
+    "ModifyLifecycleHookRequest": {
+      "document": "ModifyLifecycleHook请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "生命周期挂钩ID。",
+          "example": "ash-je1esoo9",
+          "member": "string",
+          "name": "LifecycleHookId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生命周期挂钩名称。",
+          "example": "hook-test",
+          "member": "string",
+          "name": "LifecycleHookName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进入生命周期挂钩场景，取值包括：\n<li> INSTANCE_LAUNCHING：实例启动后\n<li> INSTANCE_TERMINATING：实例销毁前",
+          "example": "INSTANCE_LAUNCHING",
+          "member": "string",
+          "name": "LifecycleTransition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：\n<li> CONTINUE： 超时后继续伸缩活动\n<li> ABANDON：超时后终止伸缩活动",
+          "example": "CONTINUE",
+          "member": "string",
+          "name": "DefaultResult",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从 30 到 7200 秒。",
+          "example": "30",
+          "member": "uint64",
+          "name": "HeartbeatTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "弹性伸缩向通知目标发送的附加信息。",
+          "example": "test",
+          "member": "string",
+          "name": "NotificationMetadata",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "进行生命周期挂钩的场景类型，取值范围包括`NORMAL`和 `EXTENSION`。说明：设置为`EXTENSION`值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为`NORMAL`则不会在这些接口中触发生命周期挂钩。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "LifecycleTransitionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "通知目标信息。",
+          "example": "无",
+          "member": "NotificationTarget",
+          "name": "NotificationTarget",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLifecycleHookResponse": {
+      "document": "ModifyLifecycleHook返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLoadBalancerTargetAttributesRequest": {
       "document": "ModifyLoadBalancerTargetAttributes请求参数结构体",
       "members": [
@@ -4895,6 +5055,7 @@
         {
           "default": "",
           "document": "待修改的定时任务ID",
+          "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
           "required": true,
@@ -4903,6 +5064,7 @@
         {
           "default": "",
           "document": "定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。",
+          "example": "scheduled-action-0",
           "member": "string",
           "name": "ScheduledActionName",
           "required": false,
@@ -4911,6 +5073,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组最大实例数。",
+          "example": "5",
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
@@ -4919,6 +5082,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组最小实例数。",
+          "example": "0",
           "member": "uint64",
           "name": "MinSize",
           "required": false,
@@ -4927,6 +5091,7 @@
         {
           "default": "",
           "document": "当定时任务触发时，设置的伸缩组期望实例数。",
+          "example": "3",
           "member": "uint64",
           "name": "DesiredCapacity",
           "required": false,
@@ -4935,6 +5100,7 @@
         {
           "default": "",
           "document": "定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。",
+          "example": "2018-08-28T23:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -4943,6 +5109,7 @@
         {
           "default": "",
           "document": "定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。",
+          "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -4951,6 +5118,7 @@
         {
           "default": "",
           "document": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。",
+          "example": "无",
           "member": "string",
           "name": "Recurrence",
           "required": false,

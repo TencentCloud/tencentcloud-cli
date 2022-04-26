@@ -15,6 +15,7 @@ tccli dts ModifyMigrateJob --cli-unfold-argument  \
     --MigrateOption.ConsistencyType 5 \
     --MigrateOption.IsOverrideRoot 0 \
     --DstInfo.ReadOnly 0 \
+    --DstInfo.Region ap-guangzhou \
     --SrcInfo.Supplier others
 ```
 

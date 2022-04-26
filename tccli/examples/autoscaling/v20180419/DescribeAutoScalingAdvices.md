@@ -16,6 +16,7 @@ Output:
         "AutoScalingAdviceSet": [
             {
                 "AutoScalingGroupId": "asg-2pvrsyog",
+                "Level": "WARNING",
                 "Advices": [
                     {
                         "Problem": "InvalidInstanceType",

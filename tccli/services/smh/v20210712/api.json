@@ -1011,11 +1011,20 @@
         },
         {
           "default": "",
-          "document": "将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。",
+          "document": "将作为超级管理员账号的手机号码",
           "example": "18988888888",
           "member": "string",
           "name": "PhoneNumber",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将作为超级管理员账号的手机号码的国家代码。默认为 +86。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1162,7 +1171,7 @@
         },
         {
           "default": "",
-          "document": "将作为超级管理员账号的手机号码，仅限中国境内手机号，无需国家代码“+86”。",
+          "document": "将作为超级管理员账号的手机号码",
           "example": "18988888888",
           "member": "string",
           "name": "PhoneNumber",
@@ -1176,6 +1185,15 @@
           "member": "string",
           "name": "Code",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "将作为超级管理员账号的手机号码的国家代码。默认为 +86。",
+          "example": "+86",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
           "type": "string"
         }
       ],

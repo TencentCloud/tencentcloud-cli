@@ -13,24 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 2,
         "ImageProcessingTemplateSet": [
             {
                 "Definition": 1008,
+                "Comment": "",
+                "Name": "",
+                "Type": "Custom",
+                "CreateTime": "2018-10-01T10:00:00Z",
                 "Operations": [
                     {
-                        "Type": "CenterCut"
+                        "Type": "CenterCut",
+                        "CenterCut": {
+                            "Type": "Circle",
+                            "Radius": 30
+                        }
                     },
                     {
-                        "Type": "Scale"
+                        "Type": "Scale",
+                        "Scale": {
+                            "Type": "ShortEdgeFirst",
+                            "ShortEdge": 100
+                        }
                     }
                 ]
             },
             {
                 "Definition": 1009,
+                "Comment": "",
+                "Name": "",
+                "Type": "Custom",
+                "CreateTime": "2018-10-01T10:00:00Z",
                 "Operations": [
                     {
-                        "Type": "Scale"
+                        "Type": "Scale",
+                        "Scale": {
+                            "Type": "WidthFirst",
+                            "Width": 200
+                        }
                     }
                 ]
             }

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ChannelCreateFlowByFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowByFiles\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"Agent\": {\n        \"ProxyAppId\": \"xx\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOrganizationOpenId\": \"xx\",\n        \"AppId\": \"xx\"\n    },\n    \"FlowApprovers\": [\n        {\n            \"OpenId\": \"xx\",\n            \"OrganizationName\": \"xx\",\n            \"Name\": \"xx\",\n            \"ApproverType\": \"xx\",\n            \"Mobile\": \"xx\",\n            \"OrganizationOpenId\": \"xx\",\n            \"SignComponents\": [\n                {\n                    \"ComponentValue\": \"xx\",\n                    \"GenerateMode\": \"xx\",\n                    \"ComponentWidth\": 0.0,\n                    \"FileIndex\": 0,\n                    \"ComponentName\": \"xx\",\n                    \"ComponentDateFontSize\": 0,\n                    \"ComponentExtra\": \"xx\",\n                    \"ComponentType\": \"xx\",\n                    \"ComponentPage\": 1,\n                    \"ComponentDescription\": \"xx\",\n                    \"ComponentRequired\": true,\n                    \"ComponentPosX\": 0.0,\n                    \"ComponentPosY\": 0.0,\n                    \"ComponentId\": \"xx\",\n                    \"DocumentId\": \"xx\",\n                    \"ComponentHeight\": 0.0\n                }\n            ]\n        }\n    ],\n    \"Components\": [\n        {\n            \"ComponentValue\": \"xx\",\n            \"GenerateMode\": \"xx\",\n            \"ComponentWidth\": 0.0,\n            \"FileIndex\": 0,\n            \"ComponentName\": \"xx\",\n            \"ComponentDateFontSize\": 0,\n            \"ComponentExtra\": \"xx\",\n            \"ComponentType\": \"xx\",\n            \"ComponentPage\": 0,\n            \"ComponentDescription\": \"xx\",\n            \"ComponentRequired\": true,\n            \"ComponentPosX\": 0.0,\n            \"ComponentPosY\": 0.0,\n            \"ComponentId\": \"xx\",\n            \"DocumentId\": \"xx\",\n            \"ComponentHeight\": 0.0\n        }\n    ],\n    \"CallbackUrl\": \"xx\",\n    \"FileIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "使用文件创建流程"
+      }
+    ],
     "CreateConsoleLoginUrl": [
       {
         "document": "",
@@ -20,6 +28,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowsByTemplates\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"FlowInfos\": [\n        {\n            \"FlowName\": \"测试流程一\",\n            \"TemplateId\": \"005c7f6b062a70e0c3982c84f7f64e8c\",\n            \"FlowDescription\": \"测试流程一的描述信息\",\n            \"FlowType\": \"合同\",\n            \"Deadline\": 1604910797,\n            \"CallbackUrl\": \"\",\n            \"FormFields\": [\n                {\n                    \"ComponentName\": \"姓名\",\n                    \"ComponentValue\": \"李四\"\n                }\n            ],\n            \"FlowApprovers\": [\n                {\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n                    \"RecipientId\": \"yDxjbUUgydjm5r95UuO4zjEuCkSaxt8n\"\n                },\n                {\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"OpenId\": \"eezi_openid\",\n                    \"OrganizationOpenId\": \"organization1_open_id\",\n                    \"OrganizationName\": \"鹅鹅子的企业\",\n                    \"RecipientId\": \"yDxjbUUgydjm52hzUuO4zjEChJBkK7qS\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CustomerData\": [\n            \"\"\n        ],\n        \"FlowIds\": [\n            \"yDxMqUyKQDAIJ2UuO4zjE1trvvaigGvi\"\n        ],\n        \"PreviewUrls\": [\n            \"\"\n        ],\n        \"ErrorMessages\": [\n            \"\"\n        ],\n        \"RequestId\": \"s1629442787650001803\"\n    }\n}",
         "title": "B2B 模板发起示例"
+      }
+    ],
+    "CreateSealByImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n            \"ClientIp\": \"8.8.8.8\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"\",\n        \"RequestId\": \"s1629442787650001803\"\n    }\n}",
+        "title": "渠道通过图片为子客代创建印章"
       }
     ],
     "CreateSignUrls": [

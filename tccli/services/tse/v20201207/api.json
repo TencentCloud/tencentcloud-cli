@@ -138,6 +138,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InternetBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "控制台公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ConsoleInternetBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -678,6 +696,46 @@
           "example": "nacosxx",
           "member": "string",
           "name": "ConsoleDefaultPwd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易付费类型，0后付费/1预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TradeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-08 16:20:58",
+          "member": "string",
+          "name": "CurDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "隔离开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-08 16:20:58",
+          "member": "string",
+          "name": "IsolateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": true

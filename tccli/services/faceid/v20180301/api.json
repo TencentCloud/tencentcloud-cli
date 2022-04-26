@@ -31,7 +31,7 @@
       "output": "CheckEidTokenStatusResponse"
     },
     "CheckIdCardInformation": {
-      "document": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与公安权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。",
+      "document": "传入身份证人像面照片，识别身份证照片上的信息，并将姓名、身份证号、身份证人像照片与权威库的证件照进行比对，是否属于同一个人，从而验证身份证信息的真实性。",
       "input": "CheckIdCardInformationRequest",
       "name": "身份证人像照片验真",
       "output": "CheckIdCardInformationResponse"
@@ -145,7 +145,7 @@
       "output": "IdCardVerificationResponse"
     },
     "ImageRecognition": {
-      "document": "传入照片和身份信息，判断该照片与公安权威库的证件照是否属于同一个人。",
+      "document": "传入照片和身份信息，判断该照片与权威库的证件照是否属于同一个人。",
       "input": "ImageRecognitionRequest",
       "name": "照片人脸核身",
       "output": "ImageRecognitionResponse"
@@ -163,7 +163,7 @@
       "output": "LivenessCompareResponse"
     },
     "LivenessRecognition": {
-      "document": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与公安权威库的证件照是否属于同一个人。",
+      "document": "传入视频和身份信息，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与权威库的证件照是否属于同一个人。",
       "input": "LivenessRecognitionRequest",
       "name": "活体人脸核身",
       "output": "LivenessRecognitionResponse"
@@ -2680,7 +2680,7 @@
       "document": "IdCardOCRVerification返回参数结构体",
       "members": [
         {
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录\n-6: 公安比对系统升级中，请稍后再试\n-7: 认证次数超过当日限制",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录\n-6: 权威比对系统升级中，请稍后再试\n-7: 认证次数超过当日限制",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -2797,7 +2797,7 @@
       "document": "IdCardVerification返回参数结构体",
       "members": [
         {
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录\n-6: 公安比对系统升级中，请稍后再试\n-7: 认证次数超过当日限制",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 姓名和身份证号一致\n-1: 姓名和身份证号不一致\n不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）\n-3: 非法姓名（长度、格式等不正确）\n-4: 证件库服务异常\n-5: 证件库中无此身份证记录\n-6: 权威比对系统升级中，请稍后再试\n-7: 认证次数超过当日限制",
           "example": "0",
           "member": "string",
           "name": "Result",

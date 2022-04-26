@@ -125,7 +125,7 @@
     "ModifyMigrateJob": [
       {
         "document": "修改dts-1kl0iy0v迁移任务配置",
-        "input": "https://dts.tencentcloudapi.com/?Action=ModifyMigrateJob\r\n&JobId=dts-1kl0iy0v\r\n&JobName=userdts\r\n&DatabaseInfo=[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]\r\n&MigrateOption.RunMode=1\r\n&MigrateOption.MigrateType=2\r\n&MigrateOption.MigrateObject=2\r\n&MigrateOption.ConsistencyType=5\r\n&MigrateOption.IsOverrideRoot=0\r\n&DstInfo.ReadOnly=0\r\n&SrcInfo.Supplier=others \r\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifyMigrateJob\n&JobId=dts-1kl0iy0v\n&JobName=userdts\n&DatabaseInfo=[{\"Database\":\"test\",\"Table\":[\"user\",\"log\"]}]\n&MigrateOption.RunMode=1\n&MigrateOption.MigrateType=2\n&MigrateOption.MigrateObject=2\n&MigrateOption.ConsistencyType=5\n&MigrateOption.IsOverrideRoot=0\n&DstInfo.ReadOnly=0\n&DstInfo.Region=ap-guangzhou\n&SrcInfo.Supplier=others \n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"27ef2b7c-a786-48b4-9404-2f9baf3f4916\"\n    }\n}",
         "title": "修改数据迁移任务"
       }

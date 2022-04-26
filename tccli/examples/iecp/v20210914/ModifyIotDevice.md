@@ -9,8 +9,8 @@ tccli iecp ModifyIotDevice --cli-unfold-argument  \
     --Disabled True \
     --LogSetting 0 \
     --LogLevel 0 \
-    --Description xx \
-    --DeviceId 100100
+    --Description 测试 \
+    --DeviceId 100049
 ```
 
 Output: 
