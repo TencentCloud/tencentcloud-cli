@@ -704,6 +704,14 @@
         "title": "查询调用监控指标"
       }
     ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInstances\r\n&Filters.0.Name=name\r\n&Filters.0.Values.0=pepy\r\n&Filters.0.Values.1=zeni\r\n&<公共请求参数>",
+        "output": "{\r\n  \"RequestId\": \"1f2a5c1d-d94b-4296-9b1a-208b237b64da\",\r\n  \"Result\": {\r\n    \"TotalCount\": 1,\r\n    \"Content\": [\r\n      {\r\n        \"ClusterType\": \"V\",\r\n        \"ApplicationType\": \"V\",\r\n        \"GroupId\": \"group-gvklblao\",\r\n        \"ClusterId\": \"cluster-by8mnkak\",\r\n        \"InstanceStatus\": \"Running\",\r\n        \"InstanceName\": \"zeni_2\",\r\n        \"WanIp\": \"111.231.188.89\",\r\n        \"GroupName\": \"rocketmq-consumer\",\r\n        \"InstanceId\": \"ins-0wud1su6\",\r\n        \"NamespaceId\": \"namespace-nalpdwyq\",\r\n        \"VpcId\": \"vpc-imscnlpv\",\r\n        \"InstanceAvailableStatus\": \"Running\",\r\n        \"ClusterName\": \"zeni-rocketmq\",\r\n        \"ApplicationId\": \"application-maejqev3\",\r\n        \"ApplicationName\": \"zeni-rocketmq\",\r\n        \"NamespaceName\": \"zeni-rocketmq_default\",\r\n        \"LanIp\": \"172.30.0.68\"\r\n      }\r\n    ]\r\n  }\r\n}",
+        "title": "查询机器列表"
+      }
+    ],
     "DescribeInvocationMetricDataCurve": [
       {
         "document": "",

@@ -3,7 +3,7 @@
     "AddTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=AddTimeWindow\n&InstanceId=cdb-eb2w7dto\n&Monday.0=02:00-03:00\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=AddTimeWindow\n&InstanceId=cdb-eb2w7dto\n&Monday.0=02:00-03:00\n&MaxDelayTime=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "添加维护时间窗口"
       }
@@ -269,8 +269,8 @@
     "DescribeAuditPolicies": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditPolicies\r\n&InstanceId=cdb-qwerasdf\r\n&PolicyId=cdbpolicy-asdfqwer\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditPolicies\n&InstanceId=cdb-qwerasdf\n&PolicyId=cdbpolicy-asdfqwer\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"InstanceName\": \"test\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
         "title": "查询审计策略"
       }
     ],
@@ -285,8 +285,8 @@
     "DescribeBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupConfig\r\n&InstanceId=cdb-c1nl9rpv\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BackupMethod\": \"physical\",\n        \"BinlogExpireDays\": 7,\n        \"BackupExpireDays\": 7,\n        \"StartTimeMin\": 10,\n        \"StartTimeMax\": 14,\n        \"BackupTimeWindow\": {\n            \"Friday\": \"10:00-14:00\",\n            \"Monday\": \"10:00-14:00\",\n            \"Saturday\": \"10:00-14:00\",\n            \"Sunday\": \"10:00-14:00\",\n            \"Thursday\": \"10:00-14:00\",\n            \"Tuesday\": \"10:00-14:00\",\n            \"Wednesday\": \"10:00-14:00\"\n        },\n        \"EnableBackupPeriodSave\": \"off\",\n        \"BackupPeriodSaveDays\": 1080,\n        \"BackupPeriodSaveInterval\": \"monthly\",\n        \"BackupPeriodSaveCount\": 1,\n        \"StartBackupPeriodSaveDate\": \"2021-12-12 00:00:00\",\n        \"RequestId\": \"9d73ec37-89b8-4d36-9f40-123123123\"\n    }\n}",
         "title": "查询云数据库备份配置信息"
       }
     ],
@@ -515,7 +515,7 @@
     "DescribeInstanceParamRecords": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\r\n&InstanceId=cdb-f35wr6wj\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\",\n        \"TotalCount\": \"28\",\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-1234asdf\",\n                \"ParamName\": \"lower_case_table_names\",\n                \"OldValue\": \"0\",\n                \"NewValue\": \"1\",\n                \"IsSucess\": true,\n                \"ModifyTime\": \"2019-01-15 18:59:40\"\n            }\n        ]\n    }\n}",
         "title": "查询实例参数修改历史"
       }
@@ -571,7 +571,7 @@
     "DescribeProxyCustomConf": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyCustomConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyCustomConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 3,\n        \"CustomConf\": [\n            {\n                \"Cpu\": 2,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 4000,\n                \"Type\": \"高可用版本\"\n            },\n            {\n                \"Cpu\": 4,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 8000,\n                \"Type\": \"高可用版本\"\n            },\n            {\n                \"Cpu\": 8,\n                \"Device\": \"Z3\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 16000,\n                \"Type\": \"高可用版本\"\n            }\n        ],\n        \"RequestId\": \"9bd2a785-2dc0-47dc-b285-2b154a218ea1\",\n        \"WeightRule\": [\n            {\n                \"LessThan\": 2000,\n                \"Weight\": 1\n            },\n            {\n                \"LessThan\": 8000,\n                \"Weight\": 2\n            },\n            {\n                \"LessThan\": 16000,\n                \"Weight\": 4\n            },\n            {\n                \"LessThan\": 32000,\n                \"Weight\": 8\n            },\n            {\n                \"LessThan\": 48000,\n                \"Weight\": 10\n            },\n            {\n                \"LessThan\": 64000,\n                \"Weight\": 12\n            },\n            {\n                \"LessThan\": 96000,\n                \"Weight\": 14\n            },\n            {\n                \"LessThan\": 128000,\n                \"Weight\": 16\n            },\n            {\n                \"LessThan\": 192000,\n                \"Weight\": 24\n            },\n            {\n                \"LessThan\": 256000,\n                \"Weight\": 30\n            },\n            {\n                \"LessThan\": 488000,\n                \"Weight\": 50\n            },\n            {\n                \"LessThan\": 690000,\n                \"Weight\": 75\n            },\n            {\n                \"LessThan\": -1,\n                \"Weight\": 100\n            }\n        ]\n    }\n}",
         "title": "查询数据库代理规格配置"
       }
@@ -659,8 +659,8 @@
     "DescribeTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTimeWindow\r\n&InstanceId=cdb-eb2w7dto\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Monday\": [\n            \"19:00-20:00\"\n        ],\n        \"Tuesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Friday\": [\n            \"18:00-20:00\"\n        ],\n        \"Wednesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Thursday\": [\n            \"18:00-20:00\"\n        ],\n        \"Sunday\": [\n            \"18:00-20:00\",\n            \"21:30-22:00\"\n        ],\n        \"Saturday\": [\n            \"18:00-20:00\"\n        ]\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeTimeWindow\n&InstanceId=cdb-eb2w7dto\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"MaxDelayTime\": 10,\n        \"Monday\": [\n            \"19:00-20:00\"\n        ],\n        \"Tuesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Friday\": [\n            \"18:00-20:00\"\n        ],\n        \"Wednesday\": [\n            \"18:00-20:00\"\n        ],\n        \"Thursday\": [\n            \"18:00-20:00\"\n        ],\n        \"Sunday\": [\n            \"18:00-20:00\",\n            \"21:30-22:00\"\n        ],\n        \"Saturday\": [\n            \"18:00-20:00\"\n        ]\n    }\n}",
         "title": "查询维护时间窗口"
       }
     ],
@@ -683,7 +683,7 @@
     "InitDBInstances": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=InitDBInstances\r\n&InstanceIds.0=cdb-f35wr6wj\r\n&NewPassword=Gx18ux23F^X\r\n&Parameters.0.name=lower_case_table_names\r\n&Parameters.0.value=1\r\n&Parameters.1.name=character_set_server\r\n&Parameters.1.value=utf8\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitDBInstances\n<公共请求参数>\n\n{\n    \"NewPassword\": \"xx\",\n    \"Vport\": 0,\n    \"Parameters\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Name\": \"character_set_server\",\n            \"Value\": \"utf8\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestIds\": [\n            \"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"\n        ]\n    }\n}",
         "title": "初始化新实例"
       }
@@ -771,7 +771,7 @@
     "ModifyBackupConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupConfig\r\n&InstanceId=cdb-c1nl9rpv\r\n&ExpireDays=10\r\n&BinlogExpireDays=8\r\n&StartTime=02:00-06:00\r\n&BackupMethod=logical\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&InstanceId=cdb-c1nl9rpv\n&ExpireDays=10\n&BinlogExpireDays=8\n&StartTime=02:00-06:00\n&BackupMethod=logical\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改数据库备份配置"
       }
@@ -843,7 +843,7 @@
     "ModifyDBInstanceVipVport": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceVipVport\r\n&InstanceId=cdb-f35wr6wj\r\n&DstIp=10.0.1.1\r\n&DstPort=1025\r\n&UniqVpcId=11357\r\n&UniqSubnetId=23789\r\n&ReleaseDuration=12\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceVipVport\n&InstanceId=cdb-f35wr6wj\n&DstIp=10.0.1.1\n&DstPort=1025\n&UniqVpcId=11357\n&UniqSubnetId=23789\n&ReleaseDuration=12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"d2baf2fb-cbae62df-7dd0d736-9cbd3e31\"\n    }\n}",
         "title": "修改云数据库实例的IP和端口号"
       }
@@ -905,7 +905,7 @@
     "ModifyTimeWindow": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyTimeWindow\r\n&InstanceId=cdb-eb2w7dto\r\n&TimeRanges.0=03:00-03:30\r\n&Weekdays.0=monday\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyTimeWindow\n&InstanceId=cdb-eb2w7dto\n&TimeRanges.0=03:00-03:30\n&Weekdays.0=monday\n&MaxDelayTime=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "更新维护时间窗口"
       }
@@ -964,6 +964,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=RenewDBInstance\r\n&InstanceId=cdb-ezq1vzem\r\n&TimeSpan=12\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
+      }
+    ],
+    "ResetRootAccount": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ResetRootAccount\n&InstanceId=cdb-ksixa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "重置root账号权限"
       }
     ],
     "RestartDBInstances": [

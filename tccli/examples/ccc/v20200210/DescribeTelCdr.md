@@ -9,8 +9,6 @@ tccli ccc DescribeTelCdr --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --StartTimeStamp 1590547606 \
     --EndTimeStamp 1590147606 \
-    --Limit 0 \
-    --Offset 0 \
     --PageSize 10 \
     --PageNumber 0
 ```
@@ -25,9 +23,11 @@ Output:
                 "ProtectedCaller": "xx",
                 "EndStatus": 1,
                 "SessionId": "xx",
-                "ProtectedCallee": "xx",
+                "CustomRecordURL": "xx",
+                "SkillGroupId": 100,
                 "Direction": 0,
                 "StartTimestamp": 1590547606,
+                "AsrUrl": "xx",
                 "HungUpSide": "xx",
                 "ServeParticipants": [
                     {
@@ -46,6 +46,7 @@ Output:
                         "RingTimestamp": 0,
                         "Type": "xx",
                         "StartTimestamp": 0,
+                        "CustomRecordURL": "xx",
                         "SkillGroupId": 0
                     }
                 ],
@@ -56,6 +57,7 @@ Output:
                     }
                 ],
                 "EndStatusString": "xx",
+                "Uui": "xx",
                 "QueuedSkillGroupId": 100,
                 "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
@@ -77,21 +79,29 @@ Output:
                 },
                 "RecordURL": "xx",
                 "QueuedTimestamp": 1610627284,
+                "ProtectedCallee": "xx",
                 "IVRDuration": 5,
                 "SkillGroup": "xx",
                 "Duration": 60,
                 "IVRKeyPressed": [
                     "5"
                 ],
-                "SkillGroupId": 100
+                "IVRKeyPressedEx": [
+                    {
+                        "Key": "xx",
+                        "Label": "xx"
+                    }
+                ]
             },
             {
                 "ProtectedCaller": "xx",
                 "EndStatus": 1,
                 "SessionId": "xx",
-                "ProtectedCallee": "xx",
+                "CustomRecordURL": "xx",
+                "SkillGroupId": 100,
                 "Direction": 0,
                 "StartTimestamp": 1590547630,
+                "AsrUrl": "xx",
                 "HungUpSide": "xx",
                 "ServeParticipants": [
                     {
@@ -110,6 +120,7 @@ Output:
                         "RingTimestamp": 0,
                         "Type": "xx",
                         "StartTimestamp": 0,
+                        "CustomRecordURL": "xx",
                         "SkillGroupId": 0
                     }
                 ],
@@ -120,6 +131,7 @@ Output:
                     }
                 ],
                 "EndStatusString": "xx",
+                "Uui": "xx",
                 "QueuedSkillGroupId": 100,
                 "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
@@ -141,13 +153,19 @@ Output:
                 },
                 "RecordURL": "xx",
                 "QueuedTimestamp": 1610627284,
+                "ProtectedCallee": "xx",
                 "IVRDuration": 5,
                 "SkillGroup": "xx",
                 "Duration": 62,
                 "IVRKeyPressed": [
                     "5"
                 ],
-                "SkillGroupId": 100
+                "IVRKeyPressedEx": [
+                    {
+                        "Key": "xx",
+                        "Label": "xx"
+                    }
+                ]
             }
         ],
         "RequestId": "xx"

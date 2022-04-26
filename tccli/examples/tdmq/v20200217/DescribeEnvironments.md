@@ -23,12 +23,16 @@ Output:
                 "NamespaceName": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "NamespaceId": "xx",
+                "RetentionPolicy": {
+                    "TimeInMinutes": 0,
+                    "SizeInMB": 0
+                },
                 "TopicNum": 0,
                 "MsgTTL": 0,
                 "CreateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "2235829c-2c9d-44b0-bce4-0ce0a147cce0"
+        "RequestId": "xx"
     }
 }
 ```

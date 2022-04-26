@@ -6,12 +6,13 @@ Input:
 
 ```
 tccli cdb InitDBInstances --cli-unfold-argument  \
-    --InstanceIds cdb-f35wr6wj \
-    --NewPassword Gx18ux23F^X \
-    --Parameters.0.name lower_case_table_names \
-    --Parameters.0.value 1 \
-    --Parameters.1.name character_set_server \
-    --Parameters.1.value utf8
+    --NewPassword xx \
+    --Vport 0 \
+    --Parameters.0.Name lower_case_table_names \
+    --Parameters.0.Value 1 \
+    --Parameters.1.Name character_set_server \
+    --Parameters.1.Value utf8 \
+    --InstanceIds cdb-f35wr6wj
 ```
 
 Output: 

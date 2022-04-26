@@ -90,6 +90,12 @@
       "name": "获取凭据明文",
       "output": "GetSecretValueResponse"
     },
+    "GetSecretValueInternal": {
+      "document": "对于用户自定义凭据，通过指定凭据名称和版本来获取凭据的明文信息；\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
+      "input": "GetSecretValueInternalRequest",
+      "name": "获取凭据明文（内部接口）",
+      "output": "GetSecretValueInternalResponse"
+    },
     "GetServiceStatus": {
       "document": "该接口用户获取用户SecretsManager服务开通状态。",
       "input": "GetServiceStatusRequest",
@@ -1192,6 +1198,96 @@
           "name": "SSHKeyName",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSecretValueInternalRequest": {
+      "document": "GetSecretValueInternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "指定凭据的名称。",
+          "example": "test_secret",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
+          "example": "v1.0",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求来源客户端信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSecretValueInternalResponse": {
+      "document": "GetSecretValueInternal返回参数结构体",
+      "members": [
+        {
+          "document": "凭据的名称。",
+          "example": "test_secret",
+          "member": "string",
+          "name": "SecretName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "该凭据对应的版本号。",
+          "example": "v1.0",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。\nSecretBinary和SecretString只有一个不为空。",
+          "example": "test",
+          "member": "string",
+          "name": "SecretBinary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。\nSecretBinary和SecretString只有一个不为空。",
+          "example": "test",
+          "member": "string",
+          "name": "SecretString",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "下一次轮转的Unix时间戳。",
+          "example": "654321",
+          "member": "int64",
+          "name": "NextRotateBeginTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

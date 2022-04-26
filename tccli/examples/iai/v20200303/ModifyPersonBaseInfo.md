@@ -42,24 +42,3 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
-
-人员性别设置错误
-
-Input: 
-
-```
-tccli iai ModifyPersonBaseInfo --cli-unfold-argument  \
-    --PersonId 1001 \
-    --Gender -1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "f40bf659-0283-4773-abe8-945f643d5015"
-    }
-}
-```
-

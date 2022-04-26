@@ -78,6 +78,12 @@
       "name": "域名价格列表",
       "output": "DescribeDomainPriceListResponse"
     },
+    "DescribeDomainSimpleInfo": {
+      "document": "获取域名实名信息详情",
+      "input": "DescribeDomainSimpleInfoRequest",
+      "name": "获取域名实名信息",
+      "output": "DescribeDomainSimpleInfoResponse"
+    },
     "DescribePhoneEmailList": {
       "document": "本接口用于获取已验证的手机邮箱列表",
       "input": "DescribePhoneEmailListRequest",
@@ -1139,6 +1145,51 @@
       ],
       "type": "object"
     },
+    "DescribeDomainSimpleInfoRequest": {
+      "document": "DescribeDomainSimpleInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "域名",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainSimpleInfoResponse": {
+      "document": "DescribeDomainSimpleInfo返回参数结构体",
+      "members": [
+        {
+          "document": "域名信息",
+          "example": "无",
+          "member": "DomainSimpleInfo",
+          "name": "DomainInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "账号ID",
+          "example": "123456",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePhoneEmailListRequest": {
       "document": "DescribePhoneEmailList请求参数结构体",
       "members": [
@@ -1653,6 +1704,202 @@
           "document": "域名购买状态。\nok：正常\nAboutToExpire: 即将到期\nRegisterPending：注册中\nRegisterDoing：注册中\nRegisterFailed：注册失败\nRenewPending：续费期\nRenewDoing：续费中\nRedemptionPending：赎回期\nRedemptionDoing：赎回中\nTransferPending：转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
           "member": "string",
           "name": "BuyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainSimpleInfo": {
+      "document": "获取域名基础模板信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名资源ID。",
+          "example": "domain-12345",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名名称。",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名实名认证状态。\nNotUpload：未实名认证\nInAudit：实名审核中\nApproved：实名审核通过\nReject：实名审核失败\nNoAudit: 无需实名认证",
+          "example": "InAudit",
+          "member": "string",
+          "name": "RealNameAuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "证件照片不清晰",
+          "member": "string",
+          "name": "RealNameAuditUnpassReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名命名审核状态。\nNotAudit：命名审核未上传\nPending：命名审核待上传\nAuditing：域名命名审核中\nApproved：域名命名审核通过\nRejected：域名命名审核拒绝",
+          "example": "Pending",
+          "member": "string",
+          "name": "DomainNameAuditStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "域名包含非法字符",
+          "member": "string",
+          "name": "DomainNameAuditUnpassReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "注册时间。",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2020-01-01",
+          "member": "string",
+          "name": "ExpirationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除",
+          "example": "ok",
+          "member": "string",
+          "name": "DomainStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名购买状态。\nok：正常\nRegisterPending：待注册\nRegisterDoing：注册中\nRegisterFailed：注册失败\nAboutToExpire: 即将过期\nRenewPending：已进入续费期，需要进行续费\nRenewDoing：续费中\nRedemptionPending：已进入赎回期，需要进行续费\nRedemptionDoing：赎回中\nTransferPending：待转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
+          "example": "ok",
+          "member": "string",
+          "name": "BuyStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "注册商类型\nepp: DNSPod, Inc.（烟台帝思普网络科技有限公司）\nqcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）\nyunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）\nxinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）",
+          "example": "epp",
+          "member": "string",
+          "name": "RegistrarType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名绑定的ns",
+          "example": "[\"new.dnspod.net\", \"oat.dnspod.net\"]",
+          "member": "string",
+          "name": "NameServer",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "true：开启锁定\nfalse：关闭锁定",
+          "example": "false",
+          "member": "bool",
+          "name": "LockTransfer",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁定结束时间",
+          "example": "2021-08-31 18:17:32",
+          "member": "string",
+          "name": "LockEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证类型：I=个人，E=企业",
+          "example": "I",
+          "member": "string",
+          "name": "RegistrantType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名所有者，中文",
+          "example": "张三",
+          "member": "string",
+          "name": "OrganizationNameCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名所有者，英文",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名联系人，中文",
+          "example": "张三",
+          "member": "string",
+          "name": "RegistrantNameCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名联系人，英文",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "RegistrantName",
           "required": true,
           "type": "string",
           "value_allowed_null": false

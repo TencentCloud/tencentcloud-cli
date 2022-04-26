@@ -7,7 +7,8 @@ Input:
 ```
 tccli cdb AddTimeWindow --cli-unfold-argument  \
     --InstanceId cdb-eb2w7dto \
-    --Monday 02:00-03:00
+    --Monday 02:00-03:00 \
+    --MaxDelayTime 10
 ```
 
 Output: 

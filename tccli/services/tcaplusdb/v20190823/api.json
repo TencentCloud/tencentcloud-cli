@@ -896,6 +896,36 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TxhBackupExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群Ulog备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UlogBackupExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsReadOnlyUlogBackupExpireDay",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1753,7 +1783,7 @@
         },
         {
           "default": "",
-          "document": "分页",
+          "document": "分页，限制当前返回多少条记录，大于等于10",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -1762,7 +1792,7 @@
         },
         {
           "default": "",
-          "document": "分页",
+          "document": "分页，从多少条数据开始返回",
           "example": "12",
           "member": "uint64",
           "name": "Offset",
@@ -1771,7 +1801,7 @@
         },
         {
           "default": "",
-          "document": "申请单状态，用于过滤",
+          "document": "申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回",
           "example": "0",
           "member": "int64",
           "name": "CensorStatus",
@@ -1807,7 +1837,7 @@
         },
         {
           "default": "",
-          "document": "申请类型，用于过滤",
+          "document": "申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档",
           "example": "0",
           "member": "int64",
           "name": "ApplyType",
@@ -1831,7 +1861,7 @@
         },
         {
           "document": "申请单个数",
-          "example": "0",
+          "example": "92",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -5276,6 +5306,16 @@
           "name": "DbClusterInfoStruct",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TxhBackupExpireDay",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

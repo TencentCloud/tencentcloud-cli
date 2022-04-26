@@ -25,7 +25,7 @@
       "output": "CreateCustomizationResponse"
     },
     "CreateRecTask": {
-      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n• 支持中文普通话、英语、粤语、日语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n• 支持通用、音视频领域\n• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式\n• 支持语音 URL 和本地语音文件两种请求方式\n• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n• 本地语音文件不能大于5MB\n• 提交录音文件识别请求后，在5小时内完成识别（半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n• 支持中文普通话、英语、粤语、日语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n• 支持通用、音视频领域\n• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式\n• 支持语音 URL 和本地语音文件两种请求方式\n• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n• 本地语音文件不能大于5MB\n• 提交录音文件识别请求后，在3小时内完成识别（半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "CreateRecTaskRequest",
       "name": "录音文件识别请求",
       "output": "CreateRecTaskResponse"
@@ -529,12 +529,12 @@
         },
         {
           "default": "",
-          "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
-          "example": "无",
-          "member": "string",
-          "name": "HotwordId",
+          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
+          "example": "0",
+          "member": "int64",
+          "name": "ConvertNumMode",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "default": "",
@@ -547,21 +547,21 @@
         },
         {
           "default": "",
-          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
-          "example": "0",
-          "member": "int64",
-          "name": "FilterModal",
+          "document": "热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。",
+          "example": "无",
+          "member": "string",
+          "name": "HotwordId",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
-          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
-          "example": "0",
-          "member": "int64",
-          "name": "ConvertNumMode",
+          "document": "自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomizationId",
           "required": false,
-          "type": "int"
+          "type": "string"
         },
         {
           "default": "",
@@ -578,6 +578,15 @@
           "example": "0",
           "member": "int64",
           "name": "FilterPunc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "FilterModal",
           "required": false,
           "type": "int"
         }
@@ -800,6 +809,7 @@
         {
           "default": "",
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
           "required": false,
@@ -808,6 +818,7 @@
         {
           "default": "",
           "document": "分页Offset",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -816,6 +827,7 @@
         {
           "default": "",
           "document": "分页Limit",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -829,15 +841,19 @@
       "members": [
         {
           "document": "热词表列表",
+          "example": "无",
           "member": "Vocab",
           "name": "VocabList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "热词列表总数",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1195,6 +1211,7 @@
         {
           "default": "",
           "document": "单句最终识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好，测试",
           "member": "string",
           "name": "FinalSentence",
           "required": true,
@@ -1204,6 +1221,7 @@
         {
           "default": "",
           "document": "单句中间识别结果，使用空格拆分为多个词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好 测试",
           "member": "string",
           "name": "SliceSentence",
           "required": true,
@@ -1213,6 +1231,7 @@
         {
           "default": "",
           "document": "单句开始时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "StartMs",
           "required": true,
@@ -1222,6 +1241,7 @@
         {
           "default": "",
           "document": "单句结束时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
           "member": "int64",
           "name": "EndMs",
           "required": true,
@@ -1231,6 +1251,7 @@
         {
           "default": "",
           "document": "单句中词个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "int64",
           "name": "WordsNum",
           "required": true,
@@ -1240,6 +1261,7 @@
         {
           "default": "",
           "document": "单句中词详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"OffsetStartMs\": 120}]",
           "member": "SentenceWords",
           "name": "Words",
           "required": true,
@@ -1249,10 +1271,21 @@
         {
           "default": "",
           "document": "单句语速，单位：字数/秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5.9",
           "member": "float",
           "name": "SpeechSpeed",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

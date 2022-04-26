@@ -528,6 +528,12 @@
       "name": "查询调用监控指标",
       "output": "DescribeInovcationIndicatorsResponse"
     },
+    "DescribeInstances": {
+      "document": "无",
+      "input": "DescribeInstancesRequest",
+      "name": "查询机器列表",
+      "output": "DescribeInstancesResponse"
+    },
     "DescribeInvocationMetricDataCurve": {
       "document": "查询调用指标数据变化曲线",
       "input": "DescribeInvocationMetricDataCurveRequest",
@@ -3291,6 +3297,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KubeInjectEnable值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "KubeInjectEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3746,6 +3762,16 @@
           "name": "VolumeMountInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KubeInjectEnable值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "KubeInjectEnable",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -9969,6 +9995,55 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页个数，默认为20，最大100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "机器列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceEnrichedInfoPage",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInvocationMetricDataCurveRequest": {
       "document": "DescribeInvocationMetricDataCurve请求参数结构体",
       "members": [
@@ -13609,6 +13684,30 @@
       ],
       "usage": "out"
     },
+    "Filter": {
+      "document": "用于请求参数中的条件过滤字段",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件名",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤条件匹配值，几个条件间是或关系",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "GatewayApiGroupVo": {
       "document": "网关分组简单信息",
       "members": [
@@ -14733,12 +14832,22 @@
         },
         {
           "default": "",
-          "document": "ApplicationName值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ApplicationName值（废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScalableRule",
           "name": "ApplicationName",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "ApplicationName值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationNameReal",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -15407,6 +15516,189 @@
         }
       ],
       "usage": "both"
+    },
+    "InstanceEnrichedInfo": {
+      "document": "包含虚拟机所在TSF中的位置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "机器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "WanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器所在VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器运行状态 Pending Running Stopped Rebooting Starting Stopping Abnormal Unknown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器可用状态（表示机器上的Agent在线）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceAvailableStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "机器所在部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceEnrichedInfoPage": {
+      "document": "InstanceEnrichedInfo列表结构",
+      "members": [
+        {
+          "default": "",
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "InstanceEnrichedInfo",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InvocationIndicator": {
       "document": "服务调用监控指标",
@@ -17377,6 +17669,7 @@
         {
           "default": "",
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -17386,6 +17679,7 @@
         {
           "default": "",
           "document": "命名空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceCode",
           "required": true,
@@ -17395,6 +17689,7 @@
         {
           "default": "",
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -17404,6 +17699,7 @@
         {
           "default": "",
           "document": "命名空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceDesc",
           "required": true,
@@ -17413,6 +17709,7 @@
         {
           "default": "",
           "document": "默认命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "IsDefault",
           "required": true,
@@ -17422,6 +17719,7 @@
         {
           "default": "",
           "document": "命名空间状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceStatus",
           "required": true,
@@ -17431,6 +17729,7 @@
         {
           "default": "",
           "document": "删除标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "DeleteFlag",
           "required": true,
@@ -17440,6 +17739,7 @@
         {
           "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -17449,6 +17749,7 @@
         {
           "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -17458,6 +17759,7 @@
         {
           "default": "",
           "document": "集群数组，仅携带集群ID，集群名称，集群类型等基础信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Cluster",
           "name": "ClusterList",
           "required": true,
@@ -17467,6 +17769,7 @@
         {
           "default": "",
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -17476,6 +17779,7 @@
         {
           "default": "",
           "document": "集群资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceResourceType",
           "required": true,
@@ -17485,6 +17789,7 @@
         {
           "default": "",
           "document": "命名空间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "NamespaceType",
           "required": true,
@@ -17494,10 +17799,21 @@
         {
           "default": "",
           "document": "是否开启高可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "IsHaEnable",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "KubeInjectEnable值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "KubeInjectEnable",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -19637,6 +19953,86 @@
           "example": "无",
           "member": "string",
           "name": "DbType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Apdex值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Apdex",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Qps值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Qps",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例在线数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceOnlineCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceTotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "normal/error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "normal/warn/error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorRateLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "normal/warn/error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AvgTimeConsumingLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "normal/warn/error\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApdexLevel",
           "required": true,
           "type": "string",
           "value_allowed_null": true

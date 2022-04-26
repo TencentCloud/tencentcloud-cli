@@ -36,6 +36,18 @@
       "name": "生成建库SQL语句",
       "output": "CreateDatabaseResponse"
     },
+    "CreateExportTask": {
+      "document": "该接口（CreateExportTask）用于创建导出任务",
+      "input": "CreateExportTaskRequest",
+      "name": "创建导出任务",
+      "output": "CreateExportTaskResponse"
+    },
+    "CreateImportTask": {
+      "document": "该接口（CreateImportTask）用于创建导入任务",
+      "input": "CreateImportTaskRequest",
+      "name": "创建导入任务",
+      "output": "CreateImportTaskResponse"
+    },
     "CreateScript": {
       "document": "该接口（CreateScript）用于创建sql脚本。",
       "input": "CreateScriptRequest",
@@ -107,6 +119,12 @@
       "input": "DeleteWorkGroupRequest",
       "name": "删除工作组",
       "output": "DeleteWorkGroupResponse"
+    },
+    "DescribeDataEngines": {
+      "document": "本接口（DescribeDataEngines）用于获取DataEngines信息列表",
+      "input": "DescribeDataEnginesRequest",
+      "name": "获取DataEngines列表",
+      "output": "DescribeDataEnginesResponse"
     },
     "DescribeDatabases": {
       "document": "本接口（DescribeDatabases）用于查询数据库列表。",
@@ -582,6 +600,132 @@
       ],
       "type": "object"
     },
+    "CreateExportTaskRequest": {
+      "document": "CreateExportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据来源，lakefsStorage、taskResult",
+          "example": "lakefsStorage、taskResult",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出任务输入配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "InputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出任务输出配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "OutputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "目标数据源的类型，目前支持导出到cos",
+          "example": "cos",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportTaskResponse": {
+      "document": "CreateExportTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "24343434",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImportTaskRequest": {
+      "document": "CreateImportTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据来源，cos",
+          "example": "cos",
+          "member": "string",
+          "name": "InputType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输入配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "InputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "输出配置",
+          "example": "无",
+          "member": "KVPair",
+          "name": "OutputConf",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "目标数据源的类型，目前支持导入到托管存储，即lakefsStorage",
+          "example": "lakefsStorage",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImportTaskResponse": {
+      "document": "CreateImportTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "24343434",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateScriptRequest": {
       "document": "CreateScript请求参数结构体",
       "members": [
@@ -926,6 +1070,33 @@
           "name": "PolicySet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON",
+          "example": "Admin",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定到用户的工作组ID集合。",
+          "example": "1",
+          "member": "int64",
+          "name": "WorkGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户别名，字符长度小50",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -971,6 +1142,15 @@
           "name": "PolicySet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要绑定到工作组的用户Id集合",
+          "example": "[\"123456\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -995,6 +1175,242 @@
         }
       ],
       "type": "object"
+    },
+    "DataEngineInfo": {
+      "document": "DataEngine详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DataEngine名称",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎类型 spark/presto",
+          "example": "presto",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群资源类型 spark_private/presto_private/presto_cu/spark_cu",
+          "example": "presto_private",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引用ID",
+          "example": "****",
+          "member": "string",
+          "name": "QuotaId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计费模式 0共享模式 1按量计费 2包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最小集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinClusters",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxClusters",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自动恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoResume",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动恢复时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SpendAfter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.255.252.0/22",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为默认引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultDataEngine",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试资源",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎id",
+          "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作者",
+          "example": "****",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "IsolatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "冲正时间",
+          "example": "2022-03-16 10:41:03",
+          "member": "string",
+          "name": "ReversalTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签对集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"TagKey\":\"mark002\"}]",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DataFormat": {
       "document": "数据表数据格式。",
@@ -1272,6 +1688,105 @@
     "DeleteWorkGroupResponse": {
       "document": "DeleteWorkGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEnginesRequest": {
+      "document": "DescribeDataEngines请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "滤类型，传参Name应为以下其中一个,\ndata-engine-name - String \nengine-type - String\nstate - String \nmode - String \ncreate-time - String \nmessage - String",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持如下字段类型，create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "若该参数不为空，则返回该数据目录绑定的计算集群",
+          "example": "数据目录名称",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否不返回共享引擎，true不返回共享引擎，false可以返回共享引擎",
+          "example": "false",
+          "member": "bool",
+          "name": "ExcludePublicEngine",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEnginesResponse": {
+      "document": "DescribeDataEngines返回参数结构体",
+      "members": [
+        {
+          "document": "数据引擎列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataEngineInfo",
+          "name": "DataEngines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1735,7 +2250,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）",
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）\ntask-kind - string （任务类型过滤）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1870,7 +2385,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，支持如下字段类型，user-type：根据用户类型过滤。",
+          "document": "过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2873,6 +3388,32 @@
       ],
       "usage": "out"
     },
+    "TagInfo": {
+      "document": "标签对信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tagKey1",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tagValue1",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Task": {
       "document": "任务类型，任务如SQL查询等。",
       "members": [
@@ -3150,6 +3691,16 @@
           "name": "CanDownload",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3548,6 +4099,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "username",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3591,6 +4152,16 @@
           "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户别名",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
           "required": true,
           "type": "string",
           "value_allowed_null": false

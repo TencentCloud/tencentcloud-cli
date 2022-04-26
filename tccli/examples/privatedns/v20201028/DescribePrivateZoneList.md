@@ -50,7 +50,8 @@ Output:
                 ],
                 "Status": "ENABLED",
                 "DnsForwardStatus": "DISABLED",
-                "Tags": []
+                "Tags": [],
+                "IsCustomTld": false
             },
             {
                 "ZoneId": "zone-123456",
@@ -69,7 +70,8 @@ Output:
                         "TagKey": "tagKey",
                         "TagValue": "tagValue"
                     }
-                ]
+                ],
+                "IsCustomTld": true
             }
         ]
     }

@@ -473,8 +473,8 @@
     "DescribeWxCloudBaseRunEnvs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunEnvs\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Status\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"EnvId\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"PackageName\": \"xx\",\n                \"IsAutoDegrade\": true,\n                \"Functions\": [\n                    {\n                        \"Region\": \"xx\",\n                        \"Namespace\": \"xx\"\n                    }\n                ],\n                \"EnvChannel\": \"xx\",\n                \"Source\": \"xx\",\n                \"Alias\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"xx\",\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"CdnDomain\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"LogServices\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"TopicName\": \"xx\",\n                        \"LogsetName\": \"xx\",\n                        \"LogsetId\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"StaticDomain\": \"xx\",\n                        \"DefaultDirName\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxCloudBaseRunEnvs\n<公共请求参数>\n\n{\n    \"WxAppId\": \"xx\",\n    \"AllRegions\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"Status\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"EnvId\": \"xx\",\n                \"EnvType\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"xx\",\n                        \"ClsRegion\": \"xx\",\n                        \"ClsLogsetId\": \"xx\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"PackageName\": \"xx\",\n                \"IsAutoDegrade\": true,\n                \"Functions\": [\n                    {\n                        \"Region\": \"xx\",\n                        \"Namespace\": \"xx\"\n                    }\n                ],\n                \"EnvChannel\": \"xx\",\n                \"Source\": \"xx\",\n                \"Alias\": \"xx\",\n                \"Region\": \"xx\",\n                \"IsDefault\": true,\n                \"PackageId\": \"xx\",\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"xx\",\n                        \"Status\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"CdnDomain\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"AppId\": \"xx\"\n                    }\n                ],\n                \"LogServices\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"TopicName\": \"xx\",\n                        \"LogsetName\": \"xx\",\n                        \"LogsetId\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"StaticDomain\": \"xx\",\n                        \"DefaultDirName\": \"xx\",\n                        \"Bucket\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeWxCloudBaseRunEnvs"
       }
     ],
@@ -524,6 +524,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstablishWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\",\n    \"GatewayRouteDesc\": \"xx\",\n    \"GatewayRouteProtocol\": \"xx\",\n    \"GatewayRouteAddr\": \"xx\",\n    \"GatewayRouteName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "创建微信网关"
+      }
+    ],
+    "FreezeCloudBaseRunServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ServerNameList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"xx\"\n        ],\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量冻结"
       }
     ],
     "ModifyCloudBaseRunServerFlowConf": [
@@ -612,6 +620,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOnStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "开启小租户网关"
+      }
+    ],
+    "UnfreezeCloudBaseRunServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfreezeCloudBaseRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"ServerNameList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailServerList\": [\n            \"xx\"\n        ],\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量解冻服务"
       }
     ]
   },

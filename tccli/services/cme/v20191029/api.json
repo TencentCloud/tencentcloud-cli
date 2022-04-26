@@ -2819,7 +2819,7 @@
       "members": [
         {
           "default": "",
-          "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件。</li>",
+          "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件；</li>\n<li>Task.VideoExportCompleted：视频导出完成事件。 </li>",
           "example": "Storage.NewFileCreated",
           "member": "string",
           "name": "EventType",
@@ -2943,6 +2943,16 @@
           "example": "无",
           "member": "ClassDeletedEvent",
           "name": "ClassDeletedEvent",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoExportCompletedEvent",
+          "name": "VideoExportCompletedEvent",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -7492,6 +7502,62 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoExportCompletedEvent": {
+      "document": "视频导出完成事件。",
+      "members": [
+        {
+          "default": "",
+          "document": "任务 Id。",
+          "example": "123-FusionCME-391d2d669d70952a99e3be240e0acf11t",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态，取值有：\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码，取值有：\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息。",
+          "example": "fail",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoEditProjectOutput",
+          "name": "Output",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VideoExportExtensionArgs": {
       "document": "视频导出扩展参数",

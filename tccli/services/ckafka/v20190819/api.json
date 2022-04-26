@@ -1651,7 +1651,7 @@
         },
         {
           "default": "",
-          "document": "实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。",
+          "document": "实例规格说明 专业版实例[所有规格]填写1.\n标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
@@ -1705,7 +1705,7 @@
         },
         {
           "default": "",
-          "document": "支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro",
+          "document": "CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1",
           "example": "0.10.2/1.1.1/2.4.1",
           "member": "string",
           "name": "KafkaVersion",
@@ -1714,7 +1714,7 @@
         },
         {
           "default": "",
-          "document": "专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession",
+          "document": "实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession",
           "example": "profession\\standard",
           "member": "string",
           "name": "SpecificationsType",
@@ -2200,7 +2200,7 @@
         },
         {
           "default": "",
-          "document": "可消息选。保留时间，单位ms，当前最小值为60000ms",
+          "document": "可选参数。消息保留时间，单位ms，当前最小值为60000ms",
           "example": "60000",
           "member": "int64",
           "name": "RetentionMs",
@@ -2213,6 +2213,15 @@
           "example": "360000",
           "member": "int64",
           "name": "SegmentMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。",
+          "example": "1024",
+          "member": "int64",
+          "name": "MaxMessageBytes",
           "required": false,
           "type": "int"
         },
@@ -3217,7 +3226,7 @@
         },
         {
           "default": "",
-          "document": "过滤器。",
+          "document": "过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3232,6 +3241,15 @@
           "name": "InstanceIds",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照实例ID过滤",
+          "example": "[instance-will-s]",
+          "member": "string",
+          "name": "InstanceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5549,7 +5567,7 @@
         },
         {
           "default": "",
-          "document": "主题消息最大值，单位为 Byte，最大值为8388608Byte（即8MB）。",
+          "document": "主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。",
           "example": "1",
           "member": "int64",
           "name": "MaxMessageBytes",
@@ -5868,7 +5886,7 @@
         },
         {
           "default": "",
-          "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(标准版) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(专业版)）",
+          "document": "vip网络类型（1:外网TGW  2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）",
           "example": "1",
           "member": "int64",
           "name": "VipType",

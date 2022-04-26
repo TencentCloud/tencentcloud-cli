@@ -542,6 +542,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平台: 1android",
+          "example": "1",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -919,6 +929,16 @@
           "name": "RiskType",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7BCF1420708B26034880B789",
+          "member": "string",
+          "name": "ConstId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

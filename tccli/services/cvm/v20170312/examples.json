@@ -3,15 +3,15 @@
     "AllocateHosts": [
       {
         "document": "购买付费模式为包年包月的CDH实例，指定位置在广州二区，购买一个月，到期自动续费，实例机型为HS1，购买一台",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AllocateHosts\r\n&Placement.Zone=ap-guangzhou-2\r\n&HostChargeType=PREPAID\r\n&HostChargePrepaid.Period=1\r\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&HostType=HS1\r\n&HostCount=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HostIdSet\": [\n            \"host-lan4lb2k\"\n        ]\n    }\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=AllocateHosts\n&Placement.Zone=ap-guangzhou-2\n&HostChargeType=PREPAID\n&HostChargePrepaid.Period=1\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&HostType=HS1\n&HostCount=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"HostIdSet\": [\n            \"host-lan4lb2k\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "包年包月CDH实例购买"
       }
     ],
     "AssociateInstancesKeyPairs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateInstancesKeyPairs\r\n&InstanceIds.0=ins-1e4r6y8i\r\n&InstanceIds.1=ins-3e56fg78\r\n&KeyIds.0=skey-4e5ty7i8\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateInstancesKeyPairs\n&InstanceIds.0=ins-1e4r6y8i\n&InstanceIds.1=ins-3e56fg78\n&KeyIds.0=skey-4e5ty7i8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "绑定云服务器密钥对"
       }
@@ -19,7 +19,7 @@
     "AssociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateSecurityGroups\r\n&InstanceIds.0=ins-2zvpghhc\r\n&InstanceIds.1=ins-915zrb0p\r\n&SecurityGroupIds.0=sg-9id3l839\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&InstanceIds.0=ins-2zvpghhc\n&InstanceIds.1=ins-915zrb0p\n&SecurityGroupIds.0=sg-9id3l839\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3385dcf2-e1f0-4ed8-a924-c296721ab65f\"\n    }\n}",
         "title": "指定多个实例绑定一个安全组"
       }
@@ -78,6 +78,12 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=DeleteImages\n&ImageIds.0=img-34vaef8fe\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "删除一个镜像"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-mfih409y\"\n    ],\n    \"DryRun\": \"True\",\n    \"DeleteBindedSnap\": \"True\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f24aca43-5135-4c9b-81fb-734969ce4c78\"\n    }\n}",
+        "title": "检测镜像是否允许删除"
       }
     ],
     "DeleteKeyPairs": [
@@ -156,13 +162,13 @@
       {
         "document": "已经知道镜像ID，查询镜像相关信息。",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\n&Filters.0.Name=image-id\n&Filters.0.Values.0=img-9qabwvbn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-9qabwvbn\",\n                \"OsName\": \"CentOS 7.6 64位\",\n                \"ImageSize\": 10,\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageState\": \"NORMAL\",\n                \"ImageSource\": \"OFFICIAL\",\n                \"ImageName\": \"CentOS 7.6 64位\",\n                \"ImageDescription\": \"CentOS 7.6 64位\",\n                \"ImageCreator\": null,\n                \"SyncPercent\": null,\n                \"IsSupportCloudinit\": true,\n                \"Platform\": \"CentOS\",\n                \"Architecture\": \"x86_64\",\n                \"SnapshotSet\": []\n            }\n        ],\n        \"RequestId\": \"db145873-3128-4079-8cec-65e05a7c9f89\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-9qabwvbn\",\n                \"OsName\": \"CentOS 7.6 64位\",\n                \"ImageSize\": 10,\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageState\": \"NORMAL\",\n                \"ImageSource\": \"OFFICIAL\",\n                \"ImageName\": \"CentOS 7.6 64位\",\n                \"ImageDescription\": \"CentOS 7.6 64位\",\n                \"ImageCreator\": null,\n                \"SyncPercent\": null,\n                \"IsSupportCloudinit\": true,\n                \"Platform\": \"CentOS\",\n                \"Architecture\": \"x86_64\",\n                \"SnapshotSet\": [],\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"db145873-3128-4079-8cec-65e05a7c9f89\"\n    }\n}",
         "title": "按镜像ID查询镜像"
       },
       {
         "document": "查询账户下所有私有镜像。",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeImages\n&Filters.0.Name=image-type\n&Filters.0.Values.0=PRIVATE_IMAGE\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 408,\n        \"ImageSet\": [\n            {\n                \"OsName\": \"CentOS 7.4 64位\",\n                \"ImageSize\": 20,\n                \"ImageType\": \"PRIVATE_IMAGE\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageDescription\": \"test-image\",\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageId\": \"img-qlzp4oea\",\n                \"ImageName\": \"test-image\",\n                \"ImageCreator\": \"3205597606\",\n                \"ImageState\": \"NORMAL\",\n                \"SyncPercent\": null,\n                \"SnapshotSet\": [\n                    {\n                        \"SnapshotId\": \"snap-gqa37j2p\",\n                        \"DiskUsage\": \"SYSTEM_DISK\",\n                        \"DiskSize\": 20\n                    }\n                ],\n                \"Architecture\": \"x86_64\",\n                \"Platform\": \"CentOS\",\n                \"IsSupportCloudinit\": true\n            }\n        ],\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 408,\n        \"ImageSet\": [\n            {\n                \"OsName\": \"CentOS 7.4 64位\",\n                \"ImageSize\": 20,\n                \"ImageType\": \"PRIVATE_IMAGE\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageDescription\": \"test-image\",\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageId\": \"img-qlzp4oea\",\n                \"ImageName\": \"test-image\",\n                \"ImageCreator\": \"3205597606\",\n                \"ImageState\": \"NORMAL\",\n                \"SyncPercent\": null,\n                \"SnapshotSet\": [\n                    {\n                        \"SnapshotId\": \"snap-gqa37j2p\",\n                        \"DiskUsage\": \"SYSTEM_DISK\",\n                        \"DiskSize\": 20\n                    }\n                ],\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"Architecture\": \"x86_64\",\n                \"Platform\": \"CentOS\",\n                \"IsSupportCloudinit\": true\n            }\n        ],\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
         "title": "按镜像类型查询镜像"
       }
     ],
@@ -193,7 +199,7 @@
     "DescribeInstanceTypeConfigs": [
       {
         "document": "查询广州二区中实例机型系列为I1的机型列表",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceTypeConfigs\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-2\r\n&Filters.1.Name=instance-family\r\n&Filters.1.Values.0=I1\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceTypeConfigs\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-2\n&Filters.1.Name=instance-family\n&Filters.1.Values.0=I1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM4\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 4\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM8\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.MEDIUM16\",\n                \"CPU\": 2,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 16\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceFamily\": \"I1\",\n                \"InstanceType\": \"I1.LARGE8\",\n                \"CPU\": 4,\n                \"GPU\": 0,\n                \"FPGA\": 0,\n                \"Memory\": 8\n            }\n        ],\n        \"RequestId\": \"2f1fd71e-95ab-4f10-8adb-895e99d33ff5\"\n    }\n}",
         "title": "查询实例机型列表"
       }
@@ -201,7 +207,7 @@
     "DescribeInstanceVncUrl": [
       {
         "document": "本示例用于查询实例管理终端地址。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceVncUrl\r\n&Region=ap-beijing\r\n&InstanceId=ins-r9hr2upy\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceVncUrl\n&InstanceId=ins-r9hr2upy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceVncUrl\": \"wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查询实例管理终端地址"
       }
@@ -294,7 +300,7 @@
       {
         "document": "",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeReservedInstances\n&Filters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReservedInstancesSet\": [\n            {\n                \"ReservedInstancesId\": \"13d8e599-b8dc-4e8a-80b4-7dce9eb27043\",\n                \"InstanceType\": \"S3.16XLARGE256\",\n                \"InstanceFamily\": \"S3\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"Duration\": 31536000,\n                \"InstanceCount\": 1,\n                \"ProductDescription\": \"linux\",\n                \"State\": \"active\",\n                \"CurrencyCode\": \"USD\",\n                \"OfferingType\": \"All Upfront\"\n            }\n        ],\n        \"RequestId\": \"9cb3dd3d-5717-47c4-bf3b-05c7ddb4655b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReservedInstancesSet\": [\n            {\n                \"ReservedInstanceId\": \"ri-rtbh4han\",\n                \"ReservedInstancesId\": \"ri-rtbh4han\",\n                \"ReservedInstanceName\": \"riname-01\",\n                \"InstanceType\": \"S3.16XLARGE256\",\n                \"InstanceFamily\": \"S3\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"Duration\": 31536000,\n                \"InstanceCount\": 1,\n                \"ProductDescription\": \"linux\",\n                \"State\": \"active\",\n                \"CurrencyCode\": \"USD\",\n                \"OfferingType\": \"All Upfront\"\n            }\n        ],\n        \"RequestId\": \"9cb3dd3d-5717-47c4-bf3b-05c7ddb4655b\"\n    }\n}",
         "title": "列出已购买预留实例计费"
       }
     ],
@@ -339,7 +345,7 @@
     "DisassociateInstancesKeyPairs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateInstancesKeyPairs\r\n&InstanceIds.0=ins-w34e5rl9\r\n&KeyIds.0=skey-e3r6y7ji\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateInstancesKeyPairs\n&InstanceIds.0=ins-w34e5rl9\n&KeyIds.0=skey-e3r6y7ji\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "解除实例的密钥绑定关系"
       }
@@ -347,7 +353,7 @@
     "DisassociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateSecurityGroups\r\n&InstanceIds.0=ins-2zvpghhc\r\n&InstanceIds.1=ins-915zrb0p\r\n&SecurityGroupIds.0=sg-9id3l839\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DisassociateSecurityGroups\n&InstanceIds.0=ins-2zvpghhc\n&InstanceIds.1=ins-915zrb0p\n&SecurityGroupIds.0=sg-9id3l839\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3385dcf2-e1f0-4ed8-a924-c296721ab65f\"\n    }\n}",
         "title": "解绑实例安全组"
       }
@@ -363,7 +369,7 @@
     "ImportKeyPair": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ImportKeyPair\r\n&KeyName=operation_key\r\n&ProjectId=0\r\n&PublicKey=ssh-rsa XXXXXXXXXXXX== skey_45071\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ImportKeyPair\n&KeyName=operation_key\n&ProjectId=0\n&PublicKey=ssh-rsa XXXXXXXXXXXX== skey_45071\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"KeyId\": \"skey-4e5ty7i8\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "导入密钥对"
       }
@@ -464,7 +470,7 @@
       {
         "document": "本示例用于用户修改指定CDH实例的HostName属性。",
         "input": "https://cvm.tencentcloudapi.com/?Action=ModifyHostsAttribute\n&HostIds.0=host-ey16rkyg\n&HostName=webserver\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改CDH实例的属性"
       }
     ],
@@ -587,8 +593,8 @@
     "RenewHosts": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=RenewHosts\r\n&HostChargePrepaid.Period=1\r\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&HostIds.0=host-ey16rkyg\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://cvm.tencentcloudapi.com/?Action=RenewHosts\n&HostChargePrepaid.Period=1\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&HostIds.0=host-ey16rkyg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "续费CDH实例"
       }
     ],

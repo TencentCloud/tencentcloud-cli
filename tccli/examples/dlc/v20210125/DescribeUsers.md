@@ -31,6 +31,7 @@ Output:
                 ],
                 "UserId": "1248065439",
                 "UserType": "ADMIN",
+                "UserAlias": "xxxname",
                 "IsOwner": true,
                 "UserDescription": "Test User",
                 "WorkGroupSet": [

@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc CreateNetworkAcl --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpcId vpc-12345678 \
     --NetworkAclName test
 ```
@@ -19,7 +18,10 @@ Output:
             "NetworkAclId": "acl-12345678",
             "VpcId": "vpc-12345678",
             "NetworkAclName": "test",
-            "CreatedTime": "2020-01-01 10:00:00"
+            "CreatedTime": "2020-01-01 10:00:00",
+            "SubnetSet": [],
+            "IngressEntries": [],
+            "EgressEntries": []
         },
         "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
     }

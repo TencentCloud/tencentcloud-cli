@@ -15,7 +15,21 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "cd0add5f-e7df-4087-8ccf-e07adca8e5a9"
+        "Result": {
+            "TotalCount": 0,
+            "ApiIdStatusSet": [
+                {
+                    "OtherEnvironmentName": "xx",
+                    "ApiId": "xx",
+                    "ApiType": "xx",
+                    "ApiName": "xx",
+                    "OtherIPStrategyId": "xx",
+                    "Path": "xx",
+                    "Method": "xx"
+                }
+            ]
+        },
+        "RequestId": "xx"
     }
 }
 ```

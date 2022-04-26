@@ -11,14 +11,18 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "AccessRegionSet": [
             {
-                "RegionId": "NorthChina",
-                "RegionName": "North China"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",
-        "TotalCount": 1
+        "RequestId": "xx"
     }
 }
 ```

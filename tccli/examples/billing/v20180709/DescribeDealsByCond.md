@@ -16,21 +16,42 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Deals": [
             {
-                "OrderId": "20180806110065",
-                "Status": 4,
-                "Payer": "505515676",
-                "CreateTime": "2018-08-06 15:21:23",
-                "VoucherDecline": 0,
-                "ProjectId": 0,
                 "GoodsCategoryId": 100019,
+                "TimeSpan": 0.0,
+                "Policy": 0.0,
+                "Formula": "xx",
+                "Status": 4,
+                "SubProductCode": "xx",
+                "Price": 0.0,
+                "ProductInfo": [
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
+                ],
+                "TotalCost": 0.0,
+                "ProductCode": "xx",
+                "Payer": "xx",
                 "RealTotalCost": 17000,
-                "Creator": "505515676"
+                "ProjectId": 0,
+                "BigDealId": "xx",
+                "PayMode": "xx",
+                "RefReturnDeals": "xx",
+                "Action": "xx",
+                "OrderId": "xx",
+                "VoucherDecline": 0,
+                "Creator": "xx",
+                "ProductName": "xx",
+                "Currency": "xx",
+                "SubProductName": "xx",
+                "TimeUnit": "xx",
+                "CreateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "TotalCount": 1,
+        "RequestId": "xx"
     }
 }
 ```

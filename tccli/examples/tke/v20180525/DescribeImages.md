@@ -11,6 +11,15 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "ImageInstanceSet": [
+            {
+                "Alias": "xx",
+                "OsCustomizeType": "xx",
+                "OsName": "xx",
+                "ImageId": "xx"
+            }
+        ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459398"
     }
 }

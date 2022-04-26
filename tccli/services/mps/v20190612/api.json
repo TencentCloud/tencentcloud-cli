@@ -9929,7 +9929,8 @@
       "members": [
         {
           "default": "",
-          "document": "该张截图对应视频文件中的时间偏移，单位为<font color=red>毫秒</font>。",
+          "document": "该张截图对应视频文件中的时间偏移，单位为秒。",
+          "example": "0",
           "member": "float",
           "name": "TimeOffset",
           "required": true,
@@ -9939,6 +9940,7 @@
         {
           "default": "",
           "document": "该张截图的路径。",
+          "example": "\"\"",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -9948,6 +9950,7 @@
         {
           "default": "",
           "document": "截图如果被打上了水印，被打水印的模板 ID 列表。",
+          "example": "NULL",
           "member": "int64",
           "name": "WaterMarkDefinition",
           "required": true,

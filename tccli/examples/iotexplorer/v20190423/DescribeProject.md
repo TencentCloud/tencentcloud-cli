@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "Project": {
+            "InstanceId": "xx",
             "ProjectId": "prj-4r2kajtp",
             "ProjectName": "字符串Name",
             "ProjectDesc": "字符串Desc",
@@ -21,6 +22,8 @@ Output:
             "UpdateTime": 1559743207,
             "ProductCount": 0,
             "NativeAppCount": 0,
+            "DeviceCount": 1,
+            "ApplicationCount": 1,
             "WebAppCount": 0
         },
         "RequestId": "672626b5-dbcd-4b5c-a43c-f731e80164c4"

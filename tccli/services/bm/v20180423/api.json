@@ -2443,6 +2443,7 @@
         {
           "default": "",
           "document": "开始位置",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2451,6 +2452,7 @@
         {
           "default": "",
           "document": "数据条数",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2459,6 +2461,7 @@
         {
           "default": "",
           "document": "时间过滤下限",
+          "example": "2018-07-10",
           "member": "date",
           "name": "StartDate",
           "required": false,
@@ -2467,6 +2470,7 @@
         {
           "default": "",
           "document": "时间过滤上限",
+          "example": "2018-07-19",
           "member": "date",
           "name": "EndDate",
           "required": false,
@@ -2475,6 +2479,7 @@
         {
           "default": "",
           "document": "任务状态ID过滤",
+          "example": "[\"1\\r\\n\"]",
           "member": "uint64",
           "name": "TaskStatus",
           "required": false,
@@ -2483,6 +2488,7 @@
         {
           "default": "",
           "document": "排序字段，目前支持：CreateTime，AuthTime，EndTime",
+          "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -2491,6 +2497,7 @@
         {
           "default": "",
           "document": "排序方式 0:递增(默认) 1:递减",
+          "example": "1",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -2499,6 +2506,7 @@
         {
           "default": "",
           "document": "任务ID过滤",
+          "example": "[\"b\\r\\n\"]",
           "member": "string",
           "name": "TaskIds",
           "required": false,
@@ -2507,6 +2515,7 @@
         {
           "default": "",
           "document": "实例ID过滤",
+          "example": "[\"o\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -2515,6 +2524,7 @@
         {
           "default": "",
           "document": "实例别名过滤",
+          "example": "[\"-\\r\\n\"]",
           "member": "string",
           "name": "Aliases",
           "required": false,
@@ -2523,6 +2533,7 @@
         {
           "default": "",
           "document": "故障类型ID过滤",
+          "example": "[\"44\\r\\n\",\"49\\r\\n\"]",
           "member": "uint64",
           "name": "TaskTypeIds",
           "required": false,
@@ -2536,15 +2547,19 @@
       "members": [
         {
           "document": "返回任务总数量",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务信息列表",
+          "example": "无",
           "member": "TaskInfo",
           "name": "TaskInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4167,6 +4182,7 @@
         {
           "default": "",
           "document": "需要改名的设备与别名列表",
+          "example": "无",
           "member": "DeviceAlias",
           "name": "DeviceAliases",
           "required": true,

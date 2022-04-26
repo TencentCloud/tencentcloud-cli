@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "DiscountCost": "77",
+        "DiscountCost": "1.26",
         "PriceSpec": {
             "InstanceType": "S5",
             "DiskCnt": 1,
@@ -35,8 +35,8 @@ Output:
             "RootSize": 50,
             "Spec": "S5.2XLARGE8"
         },
-        "Unit": "1",
-        "OriginalCost": "1.1",
+        "Unit": "s",
+        "OriginalCost": "1.74",
         "RequestId": "04daa603-e1e7-4243-b25d-31e6a6736528"
     }
 }

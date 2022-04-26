@@ -228,6 +228,14 @@
         "title": "创建指定时间点截图模板"
       }
     ],
+    "CreateStorageRegion": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "开通重庆地域的存储"
+      }
+    ],
     "CreateSubAppId": [
       {
         "document": "",
@@ -614,7 +622,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageProcessingTemplates\n&Definitions.0=1008\n&Definitions.1=1009\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageProcessingTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Operations\": [\n                    {\n                        \"Type\": \"CenterCut\"\n                    },\n                    {\n                        \"Type\": \"Scale\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": 1009,\n                \"Operations\": [\n                    {\n                        \"Type\": \"Scale\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ImageProcessingTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Comment\": \"\",\n                \"Name\": \"\",\n                \"Type\": \"Custom\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Operations\": [\n                    {\n                        \"Type\": \"CenterCut\",\n                        \"CenterCut\": {\n                            \"Type\": \"Circle\",\n                            \"Radius\": 30\n                        }\n                    },\n                    {\n                        \"Type\": \"Scale\",\n                        \"Scale\": {\n                            \"Type\": \"ShortEdgeFirst\",\n                            \"ShortEdge\": 100\n                        }\n                    }\n                ]\n            },\n            {\n                \"Definition\": 1009,\n                \"Comment\": \"\",\n                \"Name\": \"\",\n                \"Type\": \"Custom\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Operations\": [\n                    {\n                        \"Type\": \"Scale\",\n                        \"Scale\": {\n                            \"Type\": \"WidthFirst\",\n                            \"Width\": 200\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "读取多个模板"
       }
     ],
@@ -638,6 +646,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeMediaInfos\r\n&FileIds.0=5285485487985271487\r\n&FileIds.1=5285485487985271488\r\n&Filters.0=basicInfo\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"MediaInfoSet\": [\n            {\n                \"FileId\": \"5285485487985271487\",\n                \"BasicInfo\": {\n                    \"Name\": \"test file\",\n                    \"Description\": \"\",\n                    \"CreateTime\": \"2017-01-23T07:25:52Z\",\n                    \"UpdateTime\": \"2017-01-23T07:25:52Z\",\n                    \"ExpireTime\": \"2017-03-23T07:25:52Z\",\n                    \"ClassId\": 1,\n                    \"ClassName\": \"测试\",\n                    \"ClassPath\": \"测试\",\n                    \"CoverUrl\": \"http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg\",\n                    \"Type\": \"mp4\",\n                    \"MediaUrl\": \"http://xx.vod2.myqcloud.com/xx/xx/f0.mp4\",\n                    \"TagSet\": [],\n                    \"SourceInfo\": {\n                        \"SourceType\": \"Record\",\n                        \"SourceContext\": \"\"\n                    },\n                    \"StorageRegion\": \"gzp\"\n                },\n                \"MetaData\": null,\n                \"TranscodeInfo\": null,\n                \"AdaptiveDynamicStreamingInfo\": null,\n                \"AnimatedGraphicsInfo\": null,\n                \"SampleSnapshotInfo\": null,\n                \"ImageSpriteInfo\": null,\n                \"SnapshotByTimeOffsetInfo\": null,\n                \"KeyFrameDescInfo\": null\n            }\n        ],\n        \"NotExistFileIdSet\": [\n            \"5285485487985271488\"\n        ]\n    }\n}",
         "title": "只获取媒体基础信息"
+      }
+    ],
+    "DescribeMediaPlayStatDetails": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeMediaPlayStatDetails\n&FileId=5285485487985271487\n&StartTime=2021-01-01T00:00:00+08:00\n&EndTime=2021-01-01T02:00:00+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PlayStatInfoSet\": [\n            {\n                \"FileId\": \"5285485487985271487\",\n                \"Time\": \"2021-01-01T00:00:00+08:00\",\n                \"PlayTimes\": 13,\n                \"Traffic\": 23434\n            },\n            {\n                \"FileId\": \"5285485487985271487\",\n                \"Time\": \"2021-01-01T01:00:00+08:00\",\n                \"PlayTimes\": 3,\n                \"Traffic\": 2334\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "查询从2021-01-01 00:00:00 到2021-01-01 02:00:00的媒体文件5285485487985271487的播放统计数据"
       }
     ],
     "DescribeMediaProcessUsageData": [
@@ -716,6 +732,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageDetails\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-07T00:00:00+08:00\n&Area=Chinese Mainland\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Time\": \"2018-12-01T00:00:00+08:00\",\n                \"Value\": 1000000\n            },\n            {\n                \"Time\": \"2018-12-02T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-03T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-04T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-05T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-06T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-07T00:00:00+08:00\",\n                \"Value\": 1500000\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "查询点播存储统计数据"
+      }
+    ],
+    "DescribeStorageRegions": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageRegions\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"StorageRegionInfos\": [\n            {\n                \"Region\": \"ap-chongqing\",\n                \"Description\": \"重庆\",\n                \"Status\": \"opened\",\n                \"IsDefault\": true\n            }\n        ]\n    }\n}",
+        "title": "查询存储桶地域列表"
       }
     ],
     "DescribeSubAppIds": [
@@ -845,7 +869,7 @@
       },
       {
         "document": "对一个 ID 为 99873 的直播录制流，剪辑从 2018-09-20 的 10:00:00 到 11:00:00 的片段，生成一个新的点播视频",
-        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.StartTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.EndTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-clipMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的一个流进行剪辑，生成一个新的视频"
       },
@@ -857,7 +881,7 @@
       },
       {
         "document": "将 ID 为 99873，99874 和 99875 的 3 个直播录制流，分别剪辑出从 2018-09-20 的 10:00:00 到 11:00:00 的片段，拼接后生成一个新的点播视频",
-        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.StartTime=2018-09-20T11:00:00Z\n&StreamInfos.1.StreamId=99874\n&StreamInfos.1.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.1.StartTime=2018-09-20T11:00:00Z\n&StreamInfos.2.StreamId=99875\n&StreamInfos.2.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.2.StartTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=EditMedia\n&InputType=Stream\n&StreamInfos.0.StreamId=99873\n&StreamInfos.0.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.0.EndTime=2018-09-20T11:00:00Z\n&StreamInfos.1.StreamId=99874\n&StreamInfos.1.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.1.EndTime=2018-09-20T11:00:00Z\n&StreamInfos.2.StreamId=99875\n&StreamInfos.2.StartTime=2018-09-20T10:00:00Z\n&StreamInfos.2.EndTime=2018-09-20T11:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-clipMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的多个流进行剪辑，然后拼接，生成一个新的视频"
       },
@@ -874,6 +898,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ExecuteFunction\r\n&FunctionName=ExampleFunc\r\n&FunctionArg=XXX\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"XXX\"\n    }\n}",
         "title": "A 客户发起定制的视频处理"
+      }
+    ],
+    "FastClipMedia": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=FastClipMedia\n&FileId=5285890812343181111\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "视频快速剪辑"
       }
     ],
     "ForbidMediaDistribution": [
@@ -965,7 +997,7 @@
     "ModifyClass": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyClass\r\n&ClassId=1\r\n&ClassName=一级分类2\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyClass\n&ClassId=1\n&ClassName=一级分类2\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1363f1c5-c938-468a-96f3-0ca7743aa7bb\"\n    }\n}",
         "title": "修改视频分类"
       }
@@ -988,6 +1020,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=sexy\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改内容智能识别模板，开启令人反感的信息的智能识别任务并指定过滤标签及分数阈值"
+      }
+    ],
+    "ModifyDefaultStorageRegion": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyDefaultStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "设置重庆为默认的存储桶地域"
       }
     ],
     "ModifyEventConfig": [
@@ -1172,6 +1212,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ParseStreamingManifest\r\n&MediaManifestContent=%23EXTM3U%0D%0A%23EXT-X-TARGETDURATION:10%0D%0A%23EXTINF:9.009%0D%0Afirst.ts%0D%0A%23EXTINF:9.009%0D%0Asecond.ts%0D%0A%23EXT-X-ENDLIST\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"MediaSegmentSet\": [\n            \"first.ts\",\n            \"second.ts\"\n        ]\n    }\n}",
         "title": "解析索引文件"
+      }
+    ],
+    "ProcessImage": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ProcessImage\n&FileId=5285485487985271487\n&Operation=ContentReview\n&ContentReviewInput.Definition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ContentReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
+        "title": "发起图片处理智能识别任务"
       }
     ],
     "ProcessMedia": [

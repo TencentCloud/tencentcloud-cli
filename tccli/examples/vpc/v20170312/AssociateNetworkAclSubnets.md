@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc AssociateNetworkAclSubnets --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetworkAclId acl-12345678 \
     --SubnetIds subnet-12345678
 ```

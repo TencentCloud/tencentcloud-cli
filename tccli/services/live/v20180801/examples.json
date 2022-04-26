@@ -120,6 +120,12 @@
         "input": "https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate\n&TemplateName=templat\n&Description=test\n&FlvParam.Enable=0\n&FlvParam.RecordInterval=1800\n&FlvParam.StorageTime=600\n&HlsParam.Enable=1\n&HlsParam.RecordInterval=1800\n&HlsParam.StorageTime=600\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveRecordTemplate\n<公共请求参数>\n\n{\n    \"RemoveWatermark\": \"false\",\n    \"FlvParam\": {\n        \"StorageTime\": \"2\",\n        \"VodSubAppId\": \"251195406\",\n        \"Enable\": \"1\",\n        \"RecordInterval\": \"2222\"\n    },\n    \"IsDelayLive\": \"0\",\n    \"Description\": \"字符串\",\n    \"TemplateName\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74ed2203-278d-4ec8-8c67-65626a94daef\",\n        \"TemplateId\": 362894\n    }\n}",
+        "title": "示例"
       }
     ],
     "CreateLiveSnapshotRule": [
@@ -766,7 +772,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeStreamPushInfoList\n&StartTime=2019-06-21 12:00:00\n&EndTime=2019-06-21 12:01:02\n&StreamName=abcd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"StreamParam\": \"xx\",\n                \"ACodec\": \"AAC\",\n                \"AppName\": \"live\",\n                \"AudioFps\": 43,\n                \"AudioRate\": 131580,\n                \"AudioTs\": 5004,\n                \"BeginPushTime\": \"2019-06-21 00:29:12.252\",\n                \"ClientIp\": \"125.39.132.102\",\n                \"LocalTs\": 5000,\n                \"PushDomain\": \"123.livepush.myqcloud.com\",\n                \"Resolution\": \"368*640\",\n                \"Sequence\": \"10151483429474411508\",\n                \"Time\": \"2019-06-21 01:10:39.87\",\n                \"VCodec\": \"H264\",\n                \"VideoFps\": 24,\n                \"VideoRate\": 701528,\n                \"VideoTs\": 5032,\n                \"MateFps\": 30,\n                \"MetaAudioRate\": 22,\n                \"MetaVideoRate\": 4885\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"StreamParam\": \"xx\",\n                \"ACodec\": \"AAC\",\n                \"AppName\": \"live\",\n                \"AudioFps\": 43,\n                \"AudioRate\": 131580,\n                \"AudioTs\": 5004,\n                \"BeginPushTime\": \"2019-06-21 00:29:12.252\",\n                \"ClientIp\": \"125.39.132.102\",\n                \"LocalTs\": 5000,\n                \"PushDomain\": \"123.livepush.myqcloud.com\",\n                \"Resolution\": \"368*640\",\n                \"Sequence\": \"10151483429474411508\",\n                \"Time\": \"2019-06-21 01:10:39.87\",\n                \"VCodec\": \"H264\",\n                \"VideoFps\": 24,\n                \"VideoRate\": 701528,\n                \"VideoTs\": 5032,\n                \"MateFps\": 30,\n                \"MetaAudioRate\": 22,\n                \"MetaVideoRate\": 4885,\n                \"Bandwidth\": 1.0,\n                \"Flux\": 1.0\n            }\n        ],\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -797,7 +803,7 @@
     "DropLiveStream": [
       {
         "document": "当某些原因暂停主播继续推流时，可调用此接口",
-        "input": "https://live.tencentcloudapi.com/?Action=DropLiveStream\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=DropLiveStream\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }

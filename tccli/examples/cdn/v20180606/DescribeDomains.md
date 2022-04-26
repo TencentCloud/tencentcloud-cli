@@ -22,6 +22,8 @@ Output:
                 "CreateTime": "2019-11-15 15:20:46",
                 "Disable": "normal",
                 "Domain": "www.test.com",
+                "Product": "cdn",
+                "ParentHost": "",
                 "Origin": {
                     "Origins": [
                         "test-1251000004.cos.ap-chengdu.myqcloud.com"

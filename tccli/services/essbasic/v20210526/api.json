@@ -1,5 +1,11 @@
 {
   "actions": {
+    "ChannelCreateFlowByFiles": {
+      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建流程。此接口不可直接使用，需要运营申请",
+      "input": "ChannelCreateFlowByFilesRequest",
+      "name": "渠道版通过文件创建流程",
+      "output": "ChannelCreateFlowByFilesResponse"
+    },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
       "input": "CreateConsoleLoginUrlRequest",
@@ -11,6 +17,12 @@
       "input": "CreateFlowsByTemplatesRequest",
       "name": "使用多个模板批量创建流程",
       "output": "CreateFlowsByTemplatesResponse"
+    },
+    "CreateSealByImage": {
+      "document": "渠道通过图片为子客代创建印章，图片最大5m；此接口不可直接使用，需要运营申请",
+      "input": "CreateSealByImageRequest",
+      "name": "渠道通过图片为子客代创建印章",
+      "output": "CreateSealByImageResponse"
     },
     "CreateSignUrls": {
       "document": "创建参与者签署短链",
@@ -71,6 +83,12 @@
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "同步企业经办人列表",
       "output": "SyncProxyOrganizationOperatorsResponse"
+    },
+    "UploadFiles": {
+      "document": "此接口（UploadFiles）用于文件上传。\n调用时需要设置Domain 为 file.ess.tencent.cn",
+      "input": "UploadFilesRequest",
+      "name": "文件上传",
+      "output": "UploadFilesResponse"
     }
   },
   "metadata": {
@@ -177,6 +195,132 @@
         }
       ],
       "usage": "in"
+    },
+    "ChannelCreateFlowByFilesRequest": {
+      "document": "ChannelCreateFlowByFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "签署文件资源Id列表，目前仅支持单个文件",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "流程名称，长度不超过200个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
+          "example": "3",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流程的描述，长度不超过1000个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程的类型，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程回调地址，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流程签约方列表，最多不超过5个参与方",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署",
+          "example": "false",
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署文件中的控件，如：填写控件等",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowByFilesResponse": {
+      "document": "ChannelCreateFlowByFiles返回参数结构体",
+      "members": [
+        {
+          "document": "合同流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Component": {
       "document": "此结构体 (Component) 用于描述控件属性。",
@@ -533,6 +677,69 @@
       ],
       "type": "object"
     },
+    "CreateSealByImageRequest": {
+      "document": "CreateSealByImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "印章名称",
+          "example": "无",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "印章图片base64",
+          "example": "无",
+          "member": "string",
+          "name": "SealImage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSealByImageResponse": {
+      "document": "CreateSealByImage返回参数结构体",
+      "members": [
+        {
+          "document": "印章id",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSignUrlsRequest": {
       "document": "CreateSignUrls请求参数结构体",
       "members": [
@@ -580,6 +787,15 @@
           "name": "JumpUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Endpoint为\"APP\" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoJumpBack",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1109,7 +1325,7 @@
         },
         {
           "default": "",
-          "document": "签署人类型，PERSON和ORGANIZATION",
+          "document": "签署人类型，PERSON-个人；ORGANIZATION-企业；\nENTERPRISESERVER-企业静默签;\n注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；",
           "example": "PERSON",
           "member": "string",
           "name": "ApproverType",
@@ -1185,6 +1401,16 @@
           "name": "NotChannelOrganization",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用PDF文件直接发起合同时，签署人指定的签署控件",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2277,6 +2503,111 @@
         }
       ],
       "usage": "out"
+    },
+    "UploadFile": {
+      "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "Base64编码后的文件内容",
+          "member": "string",
+          "name": "FileBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadFilesRequest": {
+      "document": "UploadFiles请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息，若是渠道版调用 appid 和proxyappid 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "上传文件内容数组，最多支持20个文件",
+          "example": "FileInfos",
+          "member": "UploadFile",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesResponse": {
+      "document": "UploadFiles返回参数结构体",
+      "members": [
+        {
+          "document": "文件id数组",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "上传成功文件数量",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "文件Url",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrls",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UsageDetail": {
       "document": "用量明细",

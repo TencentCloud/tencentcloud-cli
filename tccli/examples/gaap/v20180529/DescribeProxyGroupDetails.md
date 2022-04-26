@@ -13,39 +13,41 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "300371ff-12fd-4d9e-983d-c429f875dfb5",
+        "RequestId": "xx",
         "ProxyGroupDetail": {
             "Status": 0,
-            "Domain": null,
+            "Http3Supported": 0,
+            "Domain": "xx",
             "ClientIPMethod": [
                 0
             ],
-            "ProxyNum": 0,
-            "ProjectId": 0,
-            "PackageType": "Thunder",
-            "OwnerUin": "2186969362",
-            "GroupId": "lg-mh4k07v5",
-            "GroupName": "t4",
-            "Version": "1.0",
-            "PolicyId": "vdsw",
             "RealServerRegionInfo": {
-                "RegionId": "EastChina",
-                "RegionName": "EastChina",
-                "RegionArea": "EastChina",
-                "RegionAreaName": "EastChina",
-                "IDCType": "ec"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             },
             "TagSet": [
                 {
-                    "TagKey": "123",
-                    "TagValue": "abc"
+                    "TagKey": "xx",
+                    "TagValue": "xx"
                 }
             ],
+            "ProxyNum": 0,
+            "CreateUin": "xx",
+            "PackageType": "xx",
+            "OwnerUin": "xx",
+            "GroupId": "xx",
+            "GroupName": "xx",
+            "Version": "xx",
+            "PolicyId": "xx",
             "IsOldGroup": false,
-            "CreateUin": "2202003302",
+            "ProjectId": 0,
+            "IPAddressVersion": "xx",
             "CreateTime": 1552978237,
-            "DnsDefaultIp": "",
-            "IPAddressVersion": "IPv6"
+            "DnsDefaultIp": "xx"
         }
     }
 }

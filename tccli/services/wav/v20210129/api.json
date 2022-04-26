@@ -54,6 +54,18 @@
       "name": "查询线索列表接口",
       "output": "QueryClueInfoListResponse"
     },
+    "QueryCrmStatistics": {
+      "document": "通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据",
+      "input": "QueryCrmStatisticsRequest",
+      "name": "查询CRM统计数据接口",
+      "output": "QueryCrmStatisticsResponse"
+    },
+    "QueryCustomerEventDetailStatistics": {
+      "document": "通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
+      "input": "QueryCustomerEventDetailStatisticsRequest",
+      "name": "查询外部联系人SaaS使用明细数据接口",
+      "output": "QueryCustomerEventDetailStatisticsResponse"
+    },
     "QueryDealerInfoList": {
       "document": "企业可通过此接口获取录入在企微SaaS平台上的经销商信息。",
       "input": "QueryDealerInfoListRequest",
@@ -72,6 +84,12 @@
       "name": "查询外部联系人列表接口",
       "output": "QueryExternalContactListResponse"
     },
+    "QueryExternalUserEventList": {
+      "document": "通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；",
+      "input": "QueryExternalUserEventListRequest",
+      "name": "查询外部联系人事件明细列表接口",
+      "output": "QueryExternalUserEventListResponse"
+    },
     "QueryExternalUserMappingInfo": {
       "document": "企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。",
       "input": "QueryExternalUserMappingInfoRequest",
@@ -84,11 +102,29 @@
       "name": "查询license信息接口",
       "output": "QueryLicenseInfoResponse"
     },
+    "QueryMaterialList": {
+      "document": "通过接口按类型拉取租户当前的素材列表及关键信息",
+      "input": "QueryMaterialListRequest",
+      "name": "获取企业素材列表接口",
+      "output": "QueryMaterialListResponse"
+    },
     "QueryMiniAppCodeList": {
       "document": "查询小程序码列表接口",
       "input": "QueryMiniAppCodeListRequest",
       "name": "查询小程序码列表接口",
       "output": "QueryMiniAppCodeListResponse"
+    },
+    "QueryStaffEventDetailStatistics": {
+      "document": "通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。",
+      "input": "QueryStaffEventDetailStatisticsRequest",
+      "name": "企业成员SaaS使用明细数据接口",
+      "output": "QueryStaffEventDetailStatisticsResponse"
+    },
+    "QueryUserInfoList": {
+      "document": "查询企业成员信息列表接口",
+      "input": "QueryUserInfoListRequest",
+      "name": "查询企业成员信息列表接口",
+      "output": "QueryUserInfoListResponse"
     },
     "QueryVehicleInfoList": {
       "document": "企业可通过此接口获取企微SaaS平台上的车系车型信息。",
@@ -820,6 +856,112 @@
       ],
       "usage": "out"
     },
+    "CorpUserInfo": {
+      "document": "企业成员信息",
+      "members": [
+        {
+          "default": "",
+          "document": "企业成员UserId",
+          "example": "1323253932850728968",
+          "member": "uint64",
+          "name": "UserId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业成员在SaaS名片内填写的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "杨过",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业成员在企微原生通讯录内的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "YangGuo",
+          "member": "string",
+          "name": "UserOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成员所属经销商id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1438427185617956866",
+          "member": "uint64",
+          "name": "DealerId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成员所属门店id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1381564121059749890",
+          "member": "uint64",
+          "name": "ShopId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业成员手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "134****1234",
+          "member": "string",
+          "name": "Phone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "成员所属部门id列表，仅返回该应用有查看权限的部门id；成员授权模式下，固定返回根部门id，即固定为1；多个部门使用逗号分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3,5",
+          "member": "string",
+          "name": "OrgIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主部门，仅当应用对主部门有查看权限时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "MainDepartment",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为部门负责人，第三方应用可为空。与orgIds值一一对应，多个部门使用逗号隔开，0-否， 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1",
+          "member": "string",
+          "name": "IsLeaderInDept",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "激活状态: 0=已激活，1=已禁用，-1=退出企业\"",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateChannelCodeRequest": {
       "document": "CreateChannelCode请求参数结构体",
       "members": [
@@ -1171,6 +1313,178 @@
       ],
       "type": "object"
     },
+    "CrmStatisticsData": {
+      "document": "CRM统计数据响应",
+      "members": [
+        {
+          "default": "",
+          "document": "新增线索",
+          "example": "10",
+          "member": "uint64",
+          "name": "LeadCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增建档",
+          "example": "5",
+          "member": "uint64",
+          "name": "BuildCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增到店",
+          "example": "1",
+          "member": "uint64",
+          "name": "InvitedCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增下订",
+          "example": "5",
+          "member": "uint64",
+          "name": "OrderedCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增成交",
+          "example": "10",
+          "member": "uint64",
+          "name": "DeliveredCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增战败",
+          "example": "3",
+          "member": "uint64",
+          "name": "DefeatCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新增好友",
+          "example": "2",
+          "member": "uint64",
+          "name": "NewContactCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计时间, 单位：天",
+          "example": "2022-11-11",
+          "member": "string",
+          "name": "StatisticalTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomerActionEventDetail": {
+      "document": "外部联系人SaaS使用明细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "事件码",
+          "example": "1000",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件来源",
+          "example": "1",
+          "member": "int64",
+          "name": "EventSource",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部联系人id",
+          "example": "wmQIM2CwAAL1ZKqK-icQG9XAMa3AhP-A",
+          "member": "string",
+          "name": "ExternalUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销售顾问id",
+          "example": "1323253932850728968",
+          "member": "uint64",
+          "name": "SalesId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材类型",
+          "example": "1",
+          "member": "int64",
+          "name": "MaterialType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材编号id",
+          "example": "1348495383617208321",
+          "member": "uint64",
+          "name": "MaterialId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件上报时间，单位：秒",
+          "example": "1647423519",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DealerInfo": {
       "document": "经销商信息",
       "members": [
@@ -1351,6 +1665,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExternalUserEventInfo": {
+      "document": "外部联系人事件信息",
+      "members": [
+        {
+          "default": "",
+          "document": "事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)",
+          "example": "ADD_EXTERNAL_CUSTOMER",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部联系人id",
+          "example": "woQIM2CwAA8BPLSVDDBZUYIlviX3_9DQ",
+          "member": "string",
+          "name": "ExternalUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企微SaaS的成员id",
+          "example": "1323253932850728968",
+          "member": "string",
+          "name": "SalesId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件上报时间戳，单位：秒",
+          "example": "1614923098",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1642,6 +2002,42 @@
           "example": "1621496513",
           "member": "uint64",
           "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MaterialInfo": {
+      "document": "素材信息响应体",
+      "members": [
+        {
+          "default": "",
+          "document": "素材id",
+          "example": "1348481184631488514",
+          "member": "uint64",
+          "name": "MaterialId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "图片名称",
+          "member": "string",
+          "name": "MaterialName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "素材状态, -1: 删除 0: 启用 1: 禁用",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2067,6 +2463,168 @@
       ],
       "type": "object"
     },
+    "QueryCrmStatisticsRequest": {
+      "document": "QueryCrmStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间， 单位秒",
+          "example": "1647187200",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求的企业成员id，为空时默认全租户",
+          "example": "1323253932850728968",
+          "member": "string",
+          "name": "SalesId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求的部门id，为空时默认全租户",
+          "example": "3",
+          "member": "uint64",
+          "name": "OrgId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCrmStatisticsResponse": {
+      "document": "QueryCrmStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "CRM统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrmStatisticsData",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCustomerEventDetailStatisticsRequest": {
+      "document": "QueryCustomerEventDetailStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间， 单位秒",
+          "example": "1647573600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCustomerEventDetailStatisticsResponse": {
+      "document": "QueryCustomerEventDetailStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外部联系人SaaS使用明细统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomerActionEventDetail",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryDealerInfoListRequest": {
       "document": "QueryDealerInfoList请求参数结构体",
       "members": [
@@ -2256,6 +2814,78 @@
       ],
       "type": "object"
     },
+    "QueryExternalUserEventListRequest": {
+      "document": "QueryExternalUserEventList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间， 单位秒",
+          "example": "1647187200",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryExternalUserEventListResponse": {
+      "document": "QueryExternalUserEventList返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "外部联系人事件信息响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalUserEventInfo",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryExternalUserMappingInfoRequest": {
       "document": "QueryExternalUserMappingInfo请求参数结构体",
       "members": [
@@ -2328,6 +2958,69 @@
       ],
       "type": "object"
     },
+    "QueryMaterialListRequest": {
+      "document": "QueryMaterialList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "素材类型：0-图片，1-视频，3-文章，10-车型，11-名片",
+          "example": "0",
+          "member": "int64",
+          "name": "MaterialType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMaterialListResponse": {
+      "document": "QueryMaterialList返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业素材列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaterialInfo",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryMiniAppCodeListRequest": {
       "document": "QueryMiniAppCodeList请求参数结构体",
       "members": [
@@ -2368,6 +3061,132 @@
           "document": "小程序码列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MiniAppCodeInfo",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryStaffEventDetailStatisticsRequest": {
+      "document": "QueryStaffEventDetailStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间， 单位秒",
+          "example": "1647273600",
+          "member": "uint64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间， 单位秒",
+          "example": "1647573600",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryStaffEventDetailStatisticsResponse": {
+      "document": "QueryStaffEventDetailStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业成员SaaS使用明细统计响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SalesActionEventDetail",
+          "name": "PageData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserInfoListRequest": {
+      "document": "QueryUserInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserInfoListResponse": {
+      "document": "QueryUserInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "分页游标，再下次请求时填写以获取之后分页的记录，如果已经没有更多的数据则返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
+          "member": "string",
+          "name": "NextCursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "企业成员信息列表响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CorpUserInfo",
           "name": "PageData",
           "required": true,
           "type": "list",
@@ -2444,6 +3263,82 @@
         }
       ],
       "type": "object"
+    },
+    "SalesActionEventDetail": {
+      "document": "企业成员SaaS使用明细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "事件码",
+          "example": "1000",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件类型",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件来源",
+          "example": "1",
+          "member": "int64",
+          "name": "EventSource",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "销售顾问id",
+          "example": "1323253932850728968",
+          "member": "uint64",
+          "name": "SalesId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材类型",
+          "example": "1",
+          "member": "int64",
+          "name": "MaterialType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "素材编号id",
+          "example": "1348495383617208321",
+          "member": "uint64",
+          "name": "MaterialId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件上报时间，单位：秒",
+          "example": "1647423519",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TagDetailInfo": {
       "document": "标签详细信息",

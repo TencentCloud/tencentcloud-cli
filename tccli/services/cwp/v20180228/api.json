@@ -19,7 +19,7 @@
       "output": "CheckBashRuleParamsResponse"
     },
     "CloseProVersion": {
-      "document": "本接口 (CloseProVersion) 用于关闭专业版。",
+      "document": "本接口 (CloseProVersion) 已全面改为授权模式,该接口只能解绑授权.",
       "input": "CloseProVersionRequest",
       "name": "关闭专业版",
       "output": "CloseProVersionResponse"
@@ -815,6 +815,12 @@
       "input": "DescribeSecurityDynamicsRequest",
       "name": "获取安全事件动态消息",
       "output": "DescribeSecurityDynamicsResponse"
+    },
+    "DescribeSecurityEventStat": {
+      "document": "获取安全事件统计",
+      "input": "DescribeSecurityEventStatRequest",
+      "name": "获取安全事件统计",
+      "output": "DescribeSecurityEventStatResponse"
     },
     "DescribeSecurityEventsCnt": {
       "document": "获取安全概览相关事件统计数据接口",
@@ -6302,7 +6308,7 @@
         },
         {
           "default": "",
-          "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白",
+          "document": "处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -6750,6 +6756,16 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0：待处理，1：忽略，5：已处理，6：加入白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DataStatus",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11661,7 +11677,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>\n<li>UserName - String - 是否必填：否 - UserName筛选</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 首次攻击时间筛选，开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 首次攻击时间筛选，结束时间</li>\n<li>ModifyBeginTime - String - 是否必填：否 - 最近攻击时间筛选，开始时间</li>\n<li>ModifyEndTime - String - 是否必填：否 - 最近攻击时间筛选，结束时间</li>\n<li>Banned - String - 是否必填：否 - 阻断状态筛选，多个用\",\"分割：0-未阻断（全局ZK开关关闭），82-未阻断(非专业版)，83-未阻断(已加白名单)，1-已阻断，2-未阻断-程序异常，3-未阻断-内网攻击暂不支持阻断，4-未阻断-安平暂不支持阻断</li>",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>\n<li>UserName - String - 是否必填：否 - UserName筛选</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>CreateBeginTime - String - 是否必填：否 - 首次攻击时间筛选，开始时间</li>\n<li>CreateEndTime - String - 是否必填：否 - 首次攻击时间筛选，结束时间</li>\n<li>ModifyBeginTime - String - 是否必填：否 - 最近攻击时间筛选，开始时间</li>\n<li>ModifyEndTime - String - 是否必填：否 - 最近攻击时间筛选，结束时间</li>\n<li>Banned - String - 是否必填：否 - 阻断状态筛选，多个用\",\"分割：0-未阻断（全局ZK开关关闭），82-未阻断(非专业版)，83-未阻断(已加白名单)，1-已阻断，2-未阻断-程序异常，3-未阻断-内网攻击暂不支持阻断，4-未阻断-安平暂不支持阻断</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -12595,7 +12611,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -12834,7 +12850,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "用户批量导入失败的机器列表（比如机器不存在等...）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户批量导入失败的机器列表（例如机器不存在等...）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "InvalidMachineList",
@@ -13165,7 +13181,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "云主机类型。\n<li>CVM: 腾讯云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
+          "document": "云服务器类型。\n<li>CVM: 腾讯云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -15576,6 +15592,240 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityEventStatRequest": {
+      "document": "DescribeSecurityEventStat请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "该接口无过滤条件",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityEventStatResponse": {
+      "document": "DescribeSecurityEventStat返回参数结构体",
+      "members": [
+        {
+          "document": "木马事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "MalwareStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异地事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "HostLoginStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "爆破事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "BruteAttackStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "恶意请求事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "MaliciousRequestStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本地提权事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "PrivilegeStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "反弹Shell事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "ReverseShellStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高危命令事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "HighRiskBashStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络攻击事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "AttackLogsStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高危漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "VulHighStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "中危漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "VulNormalStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低危漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "VulLowStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高危基线漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "BaselineHighStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "中危基线漏事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "BaselineNormalStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "低危基线漏事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "BaselineLowStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有未处理安全事件的机器总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "MachineTotalAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有未处理入侵安全事件的机器总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "InvasionTotalAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有未处理漏洞安全事件的机器总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "VulTotalAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有未处理基线安全事件的机器总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "BaseLineTotalAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有未处理网络攻击安全事件的机器总数",
+          "example": "xxx",
+          "member": "uint64",
+          "name": "CyberAttackTotalAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "严重漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "VulRiskStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "严重基线漏洞事件统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "BaselineRiskStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "漏洞数统计",
+          "example": "xxx",
+          "member": "EventStat",
+          "name": "VulStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全得分",
+          "example": "20",
+          "member": "uint64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSecurityEventsCntRequest": {
       "document": "DescribeSecurityEventsCnt请求参数结构体",
       "members": [],
@@ -16729,7 +16979,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>HostIp- string - 是否必填：否 - 主机ip</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -17588,6 +17838,30 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EventStat": {
+      "document": "未处理的安全事件统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "事件数",
+          "member": "uint64",
+          "name": "EventsNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "受影响的主机数",
+          "member": "uint64",
+          "name": "MachineAffectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19134,7 +19408,7 @@
         },
         {
           "default": "",
-          "document": "1:正常登录；2异地登录； 5已加白",
+          "document": "1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -21099,7 +21373,7 @@
       "members": [
         {
           "default": "",
-          "document": "云主机类型。(当前参数已作废,可以留空值 )",
+          "document": "云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
@@ -21108,7 +21382,7 @@
         },
         {
           "default": "",
-          "document": "机器所属地域。(当前参数已作废,可以留空值 )",
+          "document": "机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -21375,7 +21649,7 @@
         },
         {
           "default": "",
-          "document": "处理状态：0-待处理 2-白名单",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -22373,7 +22647,7 @@
         },
         {
           "default": "",
-          "document": "处理状态：0-待处理 2-白名单",
+          "document": "处理状态：0-待处理 2-白名单 3-已处理 4-已忽略",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -22594,7 +22868,7 @@
         },
         {
           "default": "",
-          "document": "状态；0-待处理，2-已加白，3-非信任状态",
+          "document": "状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略",
           "example": "0",
           "member": "uint64",
           "name": "Status",

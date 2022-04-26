@@ -18,6 +18,12 @@
       "name": "创建标签",
       "output": "CreateTagResponse"
     },
+    "CreateTags": {
+      "document": "本接口用于创建多对标签键和标签值",
+      "input": "CreateTagsRequest",
+      "name": "批量创建标签",
+      "output": "CreateTagsResponse"
+    },
     "DeleteResourceTag": {
       "document": "本接口用于解除标签和资源的关联关系",
       "input": "DeleteResourceTagRequest",
@@ -29,6 +35,12 @@
       "input": "DeleteTagRequest",
       "name": "删除标签",
       "output": "DeleteTagResponse"
+    },
+    "DeleteTags": {
+      "document": "本接口用于删除一对标签键和标签值",
+      "input": "DeleteTagsRequest",
+      "name": "批量删除标签",
+      "output": "DeleteTagsResponse"
     },
     "DescribeResourceTags": {
       "document": "查询资源关联标签",
@@ -102,6 +114,30 @@
       "name": "标签解绑批量资源",
       "output": "DetachResourcesTagResponse"
     },
+    "GetResources": {
+      "document": "查询绑定了标签的资源列表。",
+      "input": "GetResourcesRequest",
+      "name": "查询资源标签列表",
+      "output": "GetResourcesResponse"
+    },
+    "GetTagKeys": {
+      "document": "查询标签键列表。",
+      "input": "GetTagKeysRequest",
+      "name": "查询标签键列表",
+      "output": "GetTagKeysResponse"
+    },
+    "GetTagValues": {
+      "document": "用于查询已建立的标签列表中的标签值。",
+      "input": "GetTagValuesRequest",
+      "name": "查询标签值列表",
+      "output": "GetTagValuesResponse"
+    },
+    "GetTags": {
+      "document": "用于获取已建立的标签列表。",
+      "input": "GetTagsRequest",
+      "name": "获取标签列表",
+      "output": "GetTagsResponse"
+    },
     "ModifyResourceTags": {
       "document": "本接口用于修改资源关联的所有标签",
       "input": "ModifyResourceTagsRequest",
@@ -113,6 +149,18 @@
       "input": "ModifyResourcesTagValueRequest",
       "name": "修改批量资源关联的标签值",
       "output": "ModifyResourcesTagValueResponse"
+    },
+    "TagResources": {
+      "document": "为指定的多个云产品的多个云资源统一创建并绑定标签。",
+      "input": "TagResourcesRequest",
+      "name": "为资源绑定标签",
+      "output": "TagResourcesResponse"
+    },
+    "UnTagResources": {
+      "document": "指定的多个云产品的多个云资源统一解绑标签。",
+      "input": "UnTagResourcesRequest",
+      "name": "为资源解绑标签",
+      "output": "UnTagResourcesResponse"
     },
     "UpdateResourceTagValue": {
       "document": "本接口用于修改资源已关联的标签值（标签键不变）",
@@ -272,6 +320,33 @@
       ],
       "type": "object"
     },
+    "CreateTagsRequest": {
+      "document": "CreateTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签列表。\nN取值范围：0~9",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTagsResponse": {
+      "document": "CreateTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteResourceTagRequest": {
       "document": "DeleteResourceTag请求参数结构体",
       "members": [
@@ -332,6 +407,33 @@
     },
     "DeleteTagResponse": {
       "document": "DeleteTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagsRequest": {
+      "document": "DeleteTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签列表。\nN取值范围：0~9",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTagsResponse": {
+      "document": "DeleteTags返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1489,6 +1591,294 @@
       ],
       "type": "object"
     },
+    "FailedResource": {
+      "document": "失败资源信息。\n绑定或解绑资源标签时失败返回",
+      "members": [
+        {
+          "default": "",
+          "document": "失败的资源六段式",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误码",
+          "example": "InvalidParameterValue.TagKeyDuplicate",
+          "member": "string",
+          "name": "Code",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误信息",
+          "example": "TagKeyDuplicate",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetResourcesRequest": {
+      "document": "GetResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\n如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。\nN取值范围：0~9",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "ResourceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键和标签值。\n指定多个标签，会查询同时绑定了该多个标签的资源。\nN取值范围：0~5。\n每个TagFilters中的TagValue最多支持10个",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每一页返回的数据最大条数，最大200。\n缺省值：50。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourcesResponse": {
+      "document": "GetResources返回参数结构体",
+      "members": [
+        {
+          "document": "获取的下一页的Token值",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源及关联的标签(键和值)列表",
+          "example": "无",
+          "member": "ResourceTagMapping",
+          "name": "ResourceTagMappingList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagKeysRequest": {
+      "document": "GetTagKeys请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "无",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagKeysResponse": {
+      "document": "GetTagKeys返回参数结构体",
+      "members": [
+        {
+          "document": "获取的下一页的Token值",
+          "example": "无",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签键信息。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagValuesRequest": {
+      "document": "GetTagValues请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键。\n返回所有标签键列表对应的标签值。\n最大长度：20",
+          "example": "无",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagValuesResponse": {
+      "document": "GetTagValues返回参数结构体",
+      "members": [
+        {
+          "document": "获取的下一页的Token值",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagsRequest": {
+      "document": "GetTags请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每一页返回的数据最大条数，最大1000。\n缺省值：50。",
+          "example": "50",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签键。\n返回所有标签键列表对应的标签。\n最大长度：20",
+          "example": "无",
+          "member": "string",
+          "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTagsResponse": {
+      "document": "GetTags返回参数结构体",
+      "members": [
+        {
+          "document": "获取的下一页的Token值",
+          "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyResourceTagsRequest": {
       "document": "ModifyResourceTags请求参数结构体",
       "members": [
@@ -1672,6 +2062,32 @@
       ],
       "usage": "out"
     },
+    "ResourceTagMapping": {
+      "document": "资源及关联的标签(键和值)。",
+      "members": [
+        {
+          "default": "",
+          "document": "资源六段式。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "表示一个标签键值对",
       "members": [
@@ -1795,6 +2211,51 @@
       ],
       "usage": "out"
     },
+    "TagResourcesRequest": {
+      "document": "TagResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\nN取值范围：0~9",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键和标签值。\n如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。\n同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。\n如果标签不存在会为您自动创建标签。\nN取值范围：0~9",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TagResourcesResponse": {
+      "document": "TagResources返回参数结构体",
+      "members": [
+        {
+          "document": "失败资源信息。\n创建并绑定标签成功时，返回的FailedResources为空。\n创建并绑定标签失败或部分失败时，返回的FailedResources会显示失败资源的详细信息。",
+          "example": "无",
+          "member": "FailedResource",
+          "name": "FailedResources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TagWithDelete": {
       "document": "表示一个标签键值对以及是否允许删除",
       "members": [
@@ -1827,6 +2288,51 @@
         }
       ],
       "usage": "out"
+    },
+    "UnTagResourcesRequest": {
+      "document": "UnTagResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\nN取值范围：0~9",
+          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "member": "string",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键。\n取值范围：0~9",
+          "example": "无",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnTagResourcesResponse": {
+      "document": "UnTagResources返回参数结构体",
+      "members": [
+        {
+          "document": "失败资源信息。\n解绑标签成功时，返回的FailedResources为空。\n解绑标签失败或部分失败时，返回的FailedResources会显示失败资源的详细信息。",
+          "example": "无",
+          "member": "FailedResource",
+          "name": "FailedResources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateResourceTagValueRequest": {
       "document": "UpdateResourceTagValue请求参数结构体",

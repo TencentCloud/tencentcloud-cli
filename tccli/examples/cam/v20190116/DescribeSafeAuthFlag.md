@@ -32,6 +32,7 @@ Output:
             "NotifyWechat": 1,
             "Tips": 0
         },
+        "PromptTrust": 1,
         "RequestId": "9626da03-4645-4c54-ba90-74836284af0c"
     }
 }

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dcdb ActiveHourDCDBInstance --cli-unfold-argument  \
-    --InstanceIds xx
+    --InstanceIds tdsqlshard-cq3ndzu7
 ```
 
 Output: 

@@ -42,6 +42,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务同步模式，all为全量同步，demand为按需同步\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demand",
+          "member": "string",
+          "name": "SyncMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -125,6 +135,24 @@
           "name": "ConsoleIntranetAddress",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InternetBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "控制台公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ConsoleInternetBandWidth",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -661,6 +689,56 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎实例控制台默认密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nacosxx",
+          "member": "string",
+          "name": "ConsoleDefaultPwd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "交易付费类型，0后付费/1预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TradeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预付费到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-08 16:20:58",
+          "member": "string",
+          "name": "CurDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "隔离开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-04-08 16:20:58",
+          "member": "string",
+          "name": "IsolateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -716,6 +794,16 @@
           "name": "Features",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账户名默认为 polaris，该值为主账户的默认密码",
+          "example": "主账户密码",
+          "member": "string",
+          "name": "MainPassword",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

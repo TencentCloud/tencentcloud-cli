@@ -62,12 +62,28 @@
         "title": "查看设备详情示例"
       }
     ],
+    "DescribeDeviceShadow": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"reported\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"reported\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"get\\\"}\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "获取设备影子"
+      }
+    ],
     "DescribeDevices": [
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDevices\n&ProductId=ABCDE12345\n&Offset=0\n&Limit=10\n&FirmwareVersion=1.0.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Devices\": [\n            {\n                \"EnableState\": 1,\n                \"LastOfflineTime\": 1,\n                \"Version\": \"xx\",\n                \"CertState\": 1,\n                \"Online\": 1,\n                \"FirmwareUpdateTime\": 1,\n                \"DeviceName\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Tag\": \"xx\",\n                        \"Type\": 1,\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    },\n                    {\n                        \"Tag\": \"xx\",\n                        \"Type\": 1,\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"LogLevel\": 1,\n                \"FirstOnlineTime\": 1,\n                \"DeviceCert\": \"xx\",\n                \"Imei\": \"xx\",\n                \"ClientIP\": \"xx\",\n                \"DevicePsk\": \"xx\",\n                \"Isp\": 1,\n                \"NbiotDeviceID\": \"xx\",\n                \"LoraDevEui\": \"xx\",\n                \"DeviceType\": 1,\n                \"LoginTime\": 1,\n                \"ConnIP\": 1,\n                \"LastUpdateTime\": 1,\n                \"Labels\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": 1,\n                \"LoraMoteType\": 1\n            }\n        ]\n    }\n}",
         "title": "获取设备列表"
+      }
+    ],
+    "DescribeGatewayBindDevices": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeGatewayBindDevices\n&GatewayProductId=12345ABCDE\n&GatewayDeviceName=test\n&Offset=0\n&Limit=10\n&ProductId=ABCDE12345\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Devices\": [\n            {\n                \"ProductId\": \"ABCDE12345\",\n                \"DeviceName\": \"test\",\n                \"BindTime\": 1,\n                \"Tags\": []\n            }\n        ],\n        \"ProductName\": \"test\",\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
+        "title": "获取网关绑定的子设备列表"
       }
     ],
     "DescribePrivateCA": [
@@ -142,6 +158,14 @@
         "title": "发布广播消息"
       }
     ],
+    "PublishMessage": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=PublishMessage\n&Topic=RL0BAZKZ6V/dev1/control\n&Payload=hahaha\n&ProductId=RL0BAZKZ6V\n&DeviceName=dev1\n&Qos=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "发布消息"
+      }
+    ],
     "SetProductsForbiddenStatus": [
       {
         "document": "",
@@ -166,6 +190,14 @@
         "title": "更新设备PSK"
       }
     ],
+    "UpdateDeviceShadow": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&State={\"desired\":{\"color\":\"red\"}}\n&ShadowVersion=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"desired\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"desired\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"update\\\"}\",\n        \"RequestId\": \"9e574269-093f-4a7f-bf90-24ef80b6528a\"\n    }\n}",
+        "title": "更新设备影子"
+      }
+    ],
     "UpdateDevicesEnableState": [
       {
         "document": "",
@@ -180,6 +212,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdatePrivateCA\n&CertName=cert_dev\n&CertText=-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----\n&VerifyCertText=-----BEGIN CERTIFICATE-----\\nMIID...\\n-----END CERTIFICATE-----\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "更新私有CA证书"
+      }
+    ],
+    "UpdateProductDynamicRegister": [
+      {
+        "document": "更新产品动态注册",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateProductDynamicRegister\n&ProductId=ABCDE12345\n&RegisterType=0\n&RegisterLimit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegisterType\": 0,\n        \"ProductSecret\": \"xxxx\",\n        \"RegisterLimit\": 10000,\n        \"RequestId\": \"d15b72a9-ab2b-4906-9632-52f7a31932a9\"\n    }\n}",
+        "title": "更新产品动态注册"
       }
     ],
     "UpdateProductPrivateCA": [

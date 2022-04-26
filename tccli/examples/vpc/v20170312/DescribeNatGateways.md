@@ -25,6 +25,12 @@ Output:
                 "NetworkState": "RUNNING",
                 "InternetMaxBandwidthOut": 100,
                 "MaxConcurrentConnection": 1000000,
+                "SecurityGroupSet": [],
+                "ExclusiveGatewayBandwidth": 1,
+                "IsExclusive": true,
+                "SubnetId": "sub-er88uji9",
+                "DirectConnectGatewayIds": [],
+                "SourceIpTranslationNatRuleSet": [],
                 "PublicIpAddressSet": [
                     {
                         "AddressId": "eip-7qcdm91q",
@@ -75,7 +81,13 @@ Output:
                         "Key": "test-key",
                         "Value": "test-value2"
                     }
-                ]
+                ],
+                "SecurityGroupSet": [],
+                "ExclusiveGatewayBandwidth": 1,
+                "IsExclusive": true,
+                "SubnetId": "sub-er88uji9",
+                "DirectConnectGatewayIds": [],
+                "SourceIpTranslationNatRuleSet": []
             }
         ],
         "TotalCount": 2,
@@ -143,7 +155,13 @@ Output:
                         "Key": "test-key",
                         "Value": "test-value3"
                     }
-                ]
+                ],
+                "SecurityGroupSet": [],
+                "ExclusiveGatewayBandwidth": 1,
+                "IsExclusive": true,
+                "SubnetId": "sub-er88uji9",
+                "DirectConnectGatewayIds": [],
+                "SourceIpTranslationNatRuleSet": []
             },
             {
                 "NatGatewayId": "nat-7xh58vea",
@@ -162,7 +180,13 @@ Output:
                         "Key": "test-key",
                         "Value": "test-value4"
                     }
-                ]
+                ],
+                "SecurityGroupSet": [],
+                "ExclusiveGatewayBandwidth": 1,
+                "IsExclusive": true,
+                "SubnetId": "sub-er88uji9",
+                "DirectConnectGatewayIds": [],
+                "SourceIpTranslationNatRuleSet": []
             }
         ],
         "TotalCount": 2,

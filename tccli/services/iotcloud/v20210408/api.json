@@ -42,11 +42,23 @@
       "name": "查看设备详情",
       "output": "DescribeDeviceResponse"
     },
+    "DescribeDeviceShadow": {
+      "document": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 ",
+      "input": "DescribeDeviceShadowRequest",
+      "name": "获取设备影子",
+      "output": "DescribeDeviceShadowResponse"
+    },
     "DescribeDevices": {
       "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 ",
       "input": "DescribeDevicesRequest",
       "name": "获取设备列表",
       "output": "DescribeDevicesResponse"
+    },
+    "DescribeGatewayBindDevices": {
+      "document": "本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表 ",
+      "input": "DescribeGatewayBindDevicesRequest",
+      "name": "获取网关绑定的子设备列表",
+      "output": "DescribeGatewayBindDevicesResponse"
     },
     "DescribePrivateCA": {
       "document": "查询私有化CA信息",
@@ -102,6 +114,12 @@
       "name": "发布广播消息",
       "output": "PublishBroadcastMessageResponse"
     },
+    "PublishMessage": {
+      "document": "本接口（PublishMessage）用于向某个主题发消息。 ",
+      "input": "PublishMessageRequest",
+      "name": "发布消息",
+      "output": "PublishMessageResponse"
+    },
     "SetProductsForbiddenStatus": {
       "document": "批量设置产品禁用状态",
       "input": "SetProductsForbiddenStatusRequest",
@@ -120,6 +138,12 @@
       "name": "更新设备PSK",
       "output": "UpdateDevicePSKResponse"
     },
+    "UpdateDeviceShadow": {
+      "document": "本接口（UpdateDeviceShadow）用于更新虚拟设备信息。",
+      "input": "UpdateDeviceShadowRequest",
+      "name": "更新设备影子",
+      "output": "UpdateDeviceShadowResponse"
+    },
     "UpdateDevicesEnableState": {
       "document": "批量启用或者禁用设备 ",
       "input": "UpdateDevicesEnableStateRequest",
@@ -131,6 +155,12 @@
       "input": "UpdatePrivateCARequest",
       "name": "更新私有CA证书",
       "output": "UpdatePrivateCAResponse"
+    },
+    "UpdateProductDynamicRegister": {
+      "document": "更新产品动态注册的配置 ",
+      "input": "UpdateProductDynamicRegisterRequest",
+      "name": "更新产品动态注册",
+      "output": "UpdateProductDynamicRegisterResponse"
     },
     "UpdateProductPrivateCA": {
       "document": "更新产品的私有CA",
@@ -161,6 +191,52 @@
         }
       ],
       "usage": "in"
+    },
+    "BindDeviceInfo": {
+      "document": "子设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备Tag",
+          "example": "无",
+          "member": "DeviceTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子设备绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "BindTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BindProductInfo": {
       "document": "子产品信息",
@@ -990,6 +1066,51 @@
       ],
       "type": "object"
     },
+    "DescribeDeviceShadowRequest": {
+      "document": "DescribeDeviceShadow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,60}",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceShadowResponse": {
+      "document": "DescribeDeviceShadow返回参数结构体",
+      "members": [
+        {
+          "document": "设备影子数据",
+          "example": "{\"payload\":{\"state\": {\"reported\": { \"color\": \"red\"}}, \"timestamp",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDevicesRequest": {
       "document": "DescribeDevices请求参数结构体",
       "members": [
@@ -1069,6 +1190,96 @@
           "name": "Devices",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesRequest": {
+      "document": "DescribeGatewayBindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "example": "test",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "LoRa产品的ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesResponse": {
+      "document": "DescribeGatewayBindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "子设备总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备信息",
+          "example": "无",
+          "member": "BindDeviceInfo",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备所属的产品名",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1618,7 +1829,7 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
           "example": "1606207080000",
           "member": "uint64",
           "name": "MinTime",
@@ -1627,7 +1838,7 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
           "example": "1606208039999",
           "member": "uint64",
           "name": "MaxTime",
@@ -1708,7 +1919,7 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
           "example": "1530244265000",
           "member": "uint64",
           "name": "MinTime",
@@ -1717,7 +1928,7 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
           "example": "1530258665000",
           "member": "uint64",
           "name": "MaxTime",
@@ -2243,6 +2454,78 @@
       ],
       "type": "object"
     },
+    "PublishMessageRequest": {
+      "document": "PublishMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "消息发往的主题。命名规则：${ProductId}/${DeviceName}/[a-zA-Z0-9:_-]{1,128}",
+          "example": "RL0BAZKZ6V/dev1/control",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "example": "hahaha",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "RL0BAZKZ6V",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务质量等级，取值为0或1",
+          "example": "0",
+          "member": "uint64",
+          "name": "Qos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishMessageResponse": {
+      "document": "PublishMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SDKLogItem": {
       "document": "SDK日志项",
       "members": [
@@ -2425,6 +2708,69 @@
       ],
       "type": "object"
     },
+    "UpdateDeviceShadowRequest": {
+      "document": "UpdateDeviceShadow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "ABC",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟设备的状态，JSON字符串格式，由desired结构组成",
+          "example": "xxx",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前版本号，需要和后台的version保持一致，才能更新成功",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShadowVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceShadowResponse": {
+      "document": "UpdateDeviceShadow返回参数结构体",
+      "members": [
+        {
+          "document": "设备影子数据，JSON字符串格式",
+          "example": "{\"payload\":{\"state\": {\"desired\": { \"color\": \"red\"}}, \"timestamp\"",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateDevicesEnableStateRequest": {
       "document": "UpdateDevicesEnableState请求参数结构体",
       "members": [
@@ -2506,6 +2852,78 @@
     "UpdatePrivateCAResponse": {
       "document": "UpdatePrivateCA返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductDynamicRegisterRequest": {
+      "document": "UpdateProductDynamicRegister请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动态注册设备上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductDynamicRegisterResponse": {
+      "document": "UpdateProductDynamicRegister返回参数结构体",
+      "members": [
+        {
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册产品密钥",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ProductSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册设备上限",
+          "example": "10000",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

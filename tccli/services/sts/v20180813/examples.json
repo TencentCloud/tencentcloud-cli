@@ -16,6 +16,14 @@
         "title": "SAML 断言申请角色临时凭证"
       }
     ],
+    "AssumeRoleWithWebIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRoleWithWebIdentity\n<公共请求参数>\n\n{\n    \"DurationSeconds\": \"5000\",\n    \"RoleSessionName\": \"test_OIDC\",\n    \"WebIdentityToken\": \"eyJraWQiOiJkT**********CNOQ\",\n    \"RoleArn\": \"qcs::cam::uin/798950673:roleName/OneLogin-Role\",\n    \"ProviderId\": \"OIDC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"Credentials\": {\n            \"Token\": \"1siMD5r0tPAq9xpR******6a1ad76f09a0069002923def8aFw7tUMd2nH\",\n            \"TmpSecretId\": \"AKID65zyIP0mp****qt2SlWIQVMn1umNH58\",\n            \"TmpSecretKey\": \"q95K84wrzuE****y39zg52boxvp71yoh\"\n        },\n        \"RequestId\": \"f6e7cbcb-add1-47bd-9097-d08cf8f3a919\"\n    }\n}",
+        "title": "申请OIDC角色临时密钥"
+      }
+    ],
     "GetCallerIdentity": [
       {
         "document": "",

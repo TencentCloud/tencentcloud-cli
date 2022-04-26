@@ -462,6 +462,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-2duawe5v",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -470,6 +471,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -478,6 +480,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "[\"139.199.40.16\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": false,
@@ -486,6 +489,7 @@
         {
           "default": "",
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "2",
           "member": "uint64",
           "name": "AutoAllocEipNum",
           "required": false,
@@ -499,8 +503,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18413",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -812,6 +818,7 @@
         {
           "default": "",
           "document": "转发模式，其中0表示IP方式，1表示网段方式；通过cidr方式可支持更多的IP接入到NAT网关",
+          "example": "1",
           "member": "string",
           "name": "ForwardMode",
           "required": true,
@@ -820,6 +827,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -828,6 +836,7 @@
         {
           "default": "",
           "document": "NAT名称",
+          "example": "test",
           "member": "string",
           "name": "NatName",
           "required": true,
@@ -836,6 +845,7 @@
         {
           "default": "",
           "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
+          "example": "10000000",
           "member": "uint64",
           "name": "MaxConcurrent",
           "required": true,
@@ -844,6 +854,7 @@
         {
           "default": "",
           "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
+          "example": "[\"subnet-d3668cur\\r\\n\",\"subnet-dipbsl5n\\r\\n\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -852,6 +863,7 @@
         {
           "default": "",
           "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效；IpInfoSet和SubnetIds中的子网ID不能同时存在",
+          "example": "无",
           "member": "IpInfo",
           "name": "IpInfoSet",
           "required": false,
@@ -860,6 +872,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表, AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "[\"139.199.40.59\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": false,
@@ -868,6 +881,7 @@
         {
           "default": "",
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP, AssignedEips和AutoAllocEipNum至少输入一个",
+          "example": "1",
           "member": "uint64",
           "name": "AutoAllocEipNum",
           "required": false,
@@ -876,6 +890,7 @@
         {
           "default": "",
           "document": "独占标识，取值为0和1，默认值为0；0和1分别表示创建共享型NAT网关和独占NAT型网关；由于同一个VPC网络内，指向NAT集群的默认路由只有一条，因此VPC内只能创建一种类型NAT网关；创建独占型NAT网关时，需联系对应架构师进行独占NAT集群搭建，否则无法创建独占型NAT网关。",
+          "example": "0",
           "member": "uint64",
           "name": "Exclusive",
           "required": false,
@@ -889,8 +904,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18403",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1385,6 +1402,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-kdm476mp",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -1393,6 +1411,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1406,8 +1425,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18407",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1948,6 +1969,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-afg8md3c。",
+          "example": "rtb-afg8md3c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -1956,6 +1978,7 @@
         {
           "default": "",
           "document": "路由策略实例ID，例如：rti-azd4dt1c。",
+          "example": "[\"rti-q1j48dkd\\r\\n\"]",
           "member": "string",
           "name": "RoutePolicyIds",
           "required": false,
@@ -1964,22 +1987,25 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定RoutePolicyIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nroute-policy-id - String - （过滤条件）路由策略ID。\nroute-policy-description-like - String -（过滤条件）路由项备注。\nroute-policy-type - String - （过滤条件）路由项策略类型。\ndestination-cidr-like - String - （过滤条件）路由项目的地址。\ngateway-id-like - String - （过滤条件）路由项下一跳网关。\ngateway-type - String - （过滤条件）路由项下一条网关类型。\nenable - Bool - （过滤条件）路由策略是否启用。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "初始行的偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "每页行数，默认为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1993,15 +2019,19 @@
       "members": [
         {
           "document": "路由策略数",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "路由策略列表",
+          "example": "无",
           "member": "RoutePolicy",
           "name": "RoutePolicySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3139,6 +3169,7 @@
         {
           "default": "",
           "document": "路由表ID",
+          "example": "rtb-19yps3nz",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -3147,6 +3178,7 @@
         {
           "default": "",
           "document": "修改的路由",
+          "example": "无",
           "member": "RoutePolicy",
           "name": "RoutePolicy",
           "required": true,
@@ -3160,8 +3192,10 @@
       "members": [
         {
           "document": "异步任务ID",
+          "example": "12312",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4232,6 +4266,7 @@
         {
           "default": "",
           "document": "NAT网关ID，例如：nat-kdm476mp",
+          "example": "nat-2duawe5v",
           "member": "string",
           "name": "NatId",
           "required": true,
@@ -4240,6 +4275,7 @@
         {
           "default": "",
           "document": "私有网络ID，例如：vpc-kd7d06of",
+          "example": "vpc-mi51u7gs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4248,6 +4284,7 @@
         {
           "default": "",
           "document": "已分配的EIP列表",
+          "example": "[\"139.199.40.16\\r\\n\"]",
           "member": "string",
           "name": "AssignedEips",
           "required": true,
@@ -4261,8 +4298,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "18417",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

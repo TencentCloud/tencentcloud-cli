@@ -14,36 +14,52 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "f0508c22-aba5-4eee-8365-a64018b1328f",
         "RuleSet": [
             {
                 "BindStatus": 1,
-                "Domain": "www.tt.com",
-                "RealServerType": "IP",
-                "Scheduler": "rr",
-                "RuleId": "rule-3bsuu01r",
-                "HealthCheck": 0,
-                "ListenerId": "listener-gwm92kvx",
+                "Domain": "xx",
+                "RealServerType": "xx",
+                "ForwardHost": "xx",
+                "RuleId": "xx",
+                "HealthCheck": 1,
+                "ServerNameIndication": "xx",
+                "ListenerId": "xx",
                 "CheckParams": {
-                    "Domain": "www.tt.com",
-                    "ConnectTimeout": 2,
-                    "Path": "/",
-                    "Method": "HEAD",
-                    "DelayLoop": 30,
+                    "Domain": "xx",
+                    "ConnectTimeout": 1,
+                    "BlockInter": 1,
+                    "FailedThreshold": 1,
+                    "Path": "xx",
+                    "FailedCountInter": 1,
+                    "Method": "xx",
+                    "DelayLoop": 1,
                     "StatusCode": [
-                        100,
-                        200,
-                        300,
-                        400,
-                        500
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
                     ]
                 },
-                "ForwardHost": "default",
-                "Path": "/",
-                "RealServerSet": [],
-                "RuleStatus": 0
+                "Scheduler": "xx",
+                "Path": "xx",
+                "RuleStatus": 1,
+                "ServerNameIndicationSwitch": "xx",
+                "RealServerSet": [
+                    {
+                        "RealServerStatus": 0,
+                        "RealServerPort": 0,
+                        "RealServerId": "xx",
+                        "DownIPList": [
+                            "xx"
+                        ],
+                        "RealServerWeight": 0,
+                        "RealServerIP": "xx"
+                    }
+                ]
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

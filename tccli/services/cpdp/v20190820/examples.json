@@ -32,6 +32,20 @@
         "title": "ApplyApplicationMaterial"
       }
     ],
+    "ApplyOpenBankOrderDetailReceipt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankOrderDetailReceipt\n<公共请求参数>\n\n{\n    \"OutApplyId\": \"xx\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"ChannelOrderId\": \"599279735088078848\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"string\",\n        \"Result\": {\n            \"ChannelApplyId\": \"RE20220411599279856622231552\",\n            \"ReceiptStatus\": \"PROCESSING\",\n            \"ReceiptMessage\": \"申请中\",\n            \"DownloadUrl\": null,\n            \"ExpireTime\": null\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "ApplyOpenBankOrderDetailReceipt"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyOpenBankOrderDetailReceipt\n<公共请求参数>\n\n{\n    \"ChannelOrderId\": \"599279735088078848\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"OutApplyId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5f61238-9099-4467-a3b6-ae026ba4087d\",\n        \"Result\": {\n            \"ChannelApplyId\": \"RE20220411599285386061275136\",\n            \"ReceiptStatus\": \"PROCESSING\",\n            \"ReceiptMessage\": \"申请中\",\n            \"DownloadUrl\": null,\n            \"ExpireTime\": null\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "单笔交易回单申请"
+      }
+    ],
     "ApplyOutwardOrder": [
       {
         "document": "",
@@ -150,6 +164,14 @@
         "title": "CheckAmount"
       }
     ],
+    "CloseCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseCloudOrder\n<公共请求参数>\n\n{\n    \"OutTradeNo\": \"1183110364214208944\",\n    \"MidasAppId\": \"demo001\",\n    \"UserId\": \"66661877211\",\n    \"MidasEnvironment\": \"sandbox\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6df49681-f654-4a1c-87ab-b83cdbdeb2e7\"\n    }\n}",
+        "title": "聚鑫-关闭订单"
+      }
+    ],
     "CloseOpenBankPaymentOrder": [
       {
         "document": "关闭订单成功示例",
@@ -220,6 +242,14 @@
         "title": "CreateBatchPayment"
       }
     ],
+    "CreateCloudSubMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSubMerchant\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"SubMchDescription\": \"xxx\",\n    \"SubMchName\": \"demos001\",\n    \"SubMchShortName\": \"ds001\",\n    \"OutSubMerchantId\": \"osm001\",\n    \"ParentAppId\": \"demo001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Level\": 1,\n        \"RequestId\": \"dd242838-4241-459b-b138-8f29e4fabbaa\",\n        \"SubAppId\": \"sub-11297\",\n        \"ChannelSubMerchantId\": \"abc001220413\"\n    }\n}",
+        "title": "聚鑫-创建子商户"
+      }
+    ],
     "CreateCustAcctId": [
       {
         "document": "",
@@ -260,6 +290,14 @@
         "title": "CreateMerchant"
       }
     ],
+    "CreateOpenBankExternalSubMerchantAccountBook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankExternalSubMerchantAccountBook\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM597807645516427264\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"ChannelSubMerchantId\": \"CM597809321900044288\",\n    \"OutAccountBookId\": \"outabid0005\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93888c91-f4cd-45d0-9bb5-71ad1ee06fb1\",\n        \"Result\": {\n            \"ChannelAccountBookId\": \"CAB580433254176370688\",\n            \"DealStatus\": \"SUCCESS\",\n            \"DealMessage\": \"success\",\n            \"CollectMoneyAccountInfo\": \"{}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回示例"
+      }
+    ],
     "CreateOpenBankExternalSubMerchantRegistration": [
       {
         "document": "",
@@ -288,6 +326,20 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"remark\",\n    \"ChannelName\": \"TENPAY\",\n    \"ProfitShareFlag\": \"NO_NEED_SHARE\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"GoodsInfo\": {\n        \"GoodsName\": \"测试商品\",\n        \"GoodsDescription\": \"试测试测试\",\n        \"GoodsDetail\": \"测试商品123456\"\n    },\n    \"PaymentMode\": \"DIRECT\",\n    \"PayerInfo\": {\n        \"PayerId\": \"test00003\",\n        \"BindSerialNo\": \"test\",\n        \"PayerName\": \"test00003\"\n    },\n    \"RefreshUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ExpireTime\": \"2022-02-18 11:10:44\",\n    \"OutOrderId\": \"testyunapi2022021809\",\n    \"ProfitShareInfoList\": [\n        {\n            \"RecvId\": \"test\",\n            \"ProfitShareFee\": \"1\"\n        }\n    ],\n    \"SceneInfo\": {\n        \"PayerUa\": \"user agent\",\n        \"PayerClientIp\": \"127.0.0.1\",\n        \"DeviceId\": \"deviceId0001\"\n    },\n    \"PayeeInfo\": {\n        \"PayeeId\": \"test00002\",\n        \"PayeeName\": \"test00002\",\n        \"BankBranchId\": \"test\",\n        \"BankAccountNumber\": \"test\",\n        \"BankBranchName\": \"test\"\n    },\n    \"FrontUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"TotalAmount\": \"1\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\",\n    \"Attachment\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c151fea1-2ad8-4eeb-b27c-a4fca7ed85a7\",\n        \"Result\": null,\n        \"ErrCode\": \"FailedOperation.SystemError\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
         "title": "创建订单支付服务系统异常"
+      }
+    ],
+    "CreateOpenBankRechargeOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankRechargeOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"字符串\",\n    \"ChannelName\": \"ALIPAY\",\n    \"NotifyUrl\": \"字符串\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ExpireTime\": \"2022-04-12 17:11:57\",\n    \"OutOrderId\": \"suyaotest66666\",\n    \"PayeeInfo\": {\n        \"PayeeId\": \"BID599250164788457472\",\n        \"PayeeIdType\": \"ACCOUNT_BOOK_ID\"\n    },\n    \"TotalAmount\": \"100\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"SAFT_ISV\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1e340bc-1081-4a03-8a28-fd11c98ba30e\",\n        \"Result\": null,\n        \"ErrCode\": \"ORDER.RECORD_ALREADY_EXISTED\",\n        \"ErrMessage\": \"订单已受理，请使用查询接口确认订单状态\"\n    }\n}",
+        "title": "幂等"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankRechargeOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"ChannelName\": \"ALIPAY\",\n    \"NotifyUrl\": \"test\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ExpireTime\": \"2022-04-12 18:00:00\",\n    \"OutOrderId\": \"28881889\",\n    \"PayeeInfo\": {\n        \"PayeeId\": \"BID599250164788457472\",\n        \"PayeeIdType\": \"ACCOUNT_BOOK_ID\"\n    },\n    \"TotalAmount\": \"100\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"SAFT_ISV\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"445df192-1201-4ffe-849f-11bb63b8e6ae\",\n        \"Result\": {\n            \"OutOrderId\": \"28881889\",\n            \"ChannelOrderId\": \"599631052579004416\",\n            \"ThirdPayOrderId\": null,\n            \"RedirectInfo\": {\n                \"Url\": \"https://openapi.alipay.com/gateway.do?alipay_root_cert_sn=687b59193f3f462dd5336e5abf83c5d8_02941eef3187dddf3d3b83462e1dfcf6&alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_cert_sn=8f58c31c8ba7dbdefc1a3b4bc741b295&app_id=2021003122617760&biz_content=%7B%22biz_scene%22%3A%22SATF_DEPOSIT%22%2C%22order_title%22%3A%22%E8%AE%B0%E8%B4%A6%E6%9C%AC%E5%85%85%E5%80%BC%22%2C%22out_biz_no%22%3A%22599631052579004416%22%2C%22payee_info%22%3A%7B%22ext_info%22%3A%22%7B%5C%22agreement_no%5C%22%3A%5C%2220225211824707259449%5C%22%7D%22%2C%22identity%22%3A%222088510695478227%22%2C%22identity_type%22%3A%22ACCOUNT_BOOK_ID%22%7D%2C%22product_code%22%3A%22FUND_ACCOUNT_BOOK%22%2C%22remark%22%3A%22test%22%2C%22time_expire%22%3A%222022-04-12+06%3A00%3A00%22%2C%22trans_amount%22%3A%221%22%7D&charset=UTF-8&format=json&method=alipay.fund.trans.page.pay&sign=hh8dK5yVYV18M2CPswXg5q6rsotK3JEkMUYzt54%2FcptnbW8pXAs4JLCXf0sRiSotjRZ2njRTDetGJNn5LLWuLseK88MW%2BTGBWoayxBEZEdj5dS1NXDPfbf1vaz39Y8nFqx79mTYbUbRkLwNlgeFWltEbo5XLuzDa7ekDqkE4tSziuhk6TnVk2Shfed2AQ1aaS41oVmoRHAjvhEnXutVAoAbWB4sqILesKMFqG5ZzNg%2FYLTyZfEEHM4H53sUh61pyJkSrMOLJELzqRd27myfs%2FCaR7ZQBwWhpbMXOir6EdP2vh1UKXeyg%2BUo10ldODPl%2FYRHd7bKT166Yooay4Lx6jA%3D%3D&sign_type=RSA2&timestamp=2022-04-12+15%3A59%3A44&version=1.0\"\n            }\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "返回充值链接"
       }
     ],
     "CreateOrder": [
@@ -488,6 +540,14 @@
         "title": "会员间交易"
       }
     ],
+    "GetBillDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBillDownloadUrl\n<公共请求参数>\n\n{\n    \"OpenId\": \"OpenId123\",\n    \"OpenKey\": \"OpenKey123\",\n    \"Day\": \"20220322\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3402a086-bd77-4ee9-bc9a-4cf0c87b6c64\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"https://tencent.com/Fileup1/orderexport/download?key=123\"\n        }\n    }\n}",
+        "title": "获取机构账单文件下载地址成功示例"
+      }
+    ],
     "MigrateOrderRefund": [
       {
         "document": "用于系统迁移时存量订单退款",
@@ -654,6 +714,30 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCityCode\n<公共请求参数>\n\n{\n    \"OpenId\": \"abc\",\n    \"OpenKey\": \"123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"查询成功\",\n        \"Result\": [\n            {\n                \"CityId\": \"110100\",\n                \"Province\": \"北京\",\n                \"City\": \"北京\",\n                \"District\": \"东城区\"\n            }\n        ]\n    }\n}",
         "title": "查询城市编码接口成功示例"
+      }
+    ],
+    "QueryCloudChannelData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudChannelData\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"ChannelOrderId\": \"202204120001300008\",\n    \"OutOrderNo\": \"1183110364214208944\",\n    \"ExternalChannelDataType\": \"PAYMENT\",\n    \"Channel\": \"wechat\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OutOrderNo\": \"1183110364214208944\",\n        \"ChannelOrderId\": \"202204120001300008\",\n        \"ExternalChannelDataType\": \"PAYMENT\",\n        \"SubAppId\": \"\",\n        \"AppId\": \"demo001\",\n        \"RequestId\": \"9a4fdad2-e1ef-408c-91da-2623b8658858\",\n        \"ExternalChannelDataList\": [\n            {\n                \"ExternalChannelDataValue\": \"xxx\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_NOTIFY_DATA\"\n            },\n            {\n                \"ExternalChannelDataValue\": \"yyy\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_RESPONSE_DATA\"\n            },\n            {\n                \"ExternalChannelDataValue\": \"zzz\",\n                \"ExternalChannelDataName\": \"PAYMENT_ORDER_EXTERNAL_REQUEST_DATA\"\n            }\n        ],\n        \"Channel\": \"wechat\"\n    }\n}",
+        "title": "聚鑫-查询第三方渠道数据"
+      }
+    ],
+    "QueryCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudOrder\n<公共请求参数>\n\n{\n    \"Type\": \"by_order\",\n    \"MidasEnvironment\": \"sandbox\",\n    \"UserId\": \"66661875951\",\n    \"MidasAppId\": \"demo001\",\n    \"OutTradeNo\": \"1183110364214208944\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"OrderList\": [\n            {\n                \"SceneInfo\": \"{}\",\n                \"CashAmt\": \"\",\n                \"CallBackTime\": \"\",\n                \"ExternalReturnPromptGroupList\": null,\n                \"OrderTime\": \"\",\n                \"OrderState\": \"4\",\n                \"AppId\": \"demo001\",\n                \"ChannelExternalUserInfoList\": null,\n                \"Channel\": \"wechat\",\n                \"CurrencyType\": \"CNY\",\n                \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n                \"ProductId\": \"1183110364214208944\",\n                \"TransactionId\": \"202204120001300008\",\n                \"ChannelOrderId\": \"202204120001300008\",\n                \"SettleInfo\": {\n                    \"ProfitSharing\": 0,\n                    \"NeedToBeConfirmed\": 0\n                },\n                \"AttachmentInfoList\": null,\n                \"CouponAmt\": \"\",\n                \"OutTradeNo\": \"1183110364214208944\",\n                \"PayTime\": \"1649778083\",\n                \"SubOrderList\": [\n                    {\n                        \"ProductName\": \"商品\",\n                        \"ChannelExternalSubOrderId\": \"\",\n                        \"SettleInfo\": {\n                            \"NeedToBeConfirmed\": 0,\n                            \"ProfitSharing\": 0\n                        },\n                        \"Amt\": 562,\n                        \"Metadata\": \"1183110364415535792\",\n                        \"ProductDetail\": \"\",\n                        \"SettleCheck\": 0,\n                        \"SubMchIncome\": 562,\n                        \"OriginalAmt\": 562,\n                        \"PlatformIncome\": 0,\n                        \"SubAppId\": \"sub-11214\",\n                        \"AttachmentInfoList\": null,\n                        \"WxSubMchId\": \"\",\n                        \"SubOutTradeNo\": \"4805X1183110364415535792X\"\n                    }\n                ],\n                \"Amt\": 562,\n                \"RefundFlag\": \"1\",\n                \"UserId\": \"66661877211\",\n                \"ProductName\": \"商品\",\n                \"Metadata\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"9e7b2c2f-c29f-4bae-9aea-9328b83cc232\"\n    }\n}",
+        "title": "聚鑫-查询订单"
+      }
+    ],
+    "QueryCloudRefundOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCloudRefundOrder\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"UserId\": \"66661877211\",\n    \"RefundId\": \"545464656565656122\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelExternalOrderId\": \"4200001369202204124504975386\",\n        \"CurrencyType\": \"CNY\",\n        \"ChannelOrderId\": \"202204120001300008\",\n        \"TotalRefundAmt\": 500,\n        \"ChannelExternalRefundId\": \"50300201302022041319287908513\",\n        \"SubRefundList\": [\n            {\n                \"ChannelSubOrderId\": \"202204120001300009\",\n                \"SubOutTradeNo\": \"4805X1183110364415535792X\",\n                \"ChannelExternalOrderId\": \"\",\n                \"SubAppId\": \"\",\n                \"RefundAmt\": 500,\n                \"ChannelSubRefundId\": \"545464656565656122\",\n                \"SubRefundId\": \"545464656565656122\",\n                \"ChannelExternalRefundId\": \"\"\n            }\n        ],\n        \"RefundId\": \"545464656565656122\",\n        \"UsedRefundId\": \"545464656565656122\",\n        \"RequestId\": \"c34493c8-5d0d-4ee0-8ab0-369330691c1f\",\n        \"Metadata\": \"\",\n        \"AppId\": \"\",\n        \"OutTradeNo\": \"1183110364214208944\",\n        \"ChannelRefundId\": \"545464656565656122\",\n        \"State\": \"2\"\n    }\n}",
+        "title": "聚鑫-查询退款"
       }
     ],
     "QueryCommonTransferRecharge": [
@@ -879,21 +963,17 @@
     "QueryOpenBankDownLoadUrl": [
       {
         "document": "查询对账单下载url成功示例",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"BillDate\": \"2020-10-08\",\n    \"BillType\": \"TRADE\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"BillDate\": \"2020-10-08\",\n    \"ChannelName\": \"TENPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"https://xxx.cloud.xxx.com/finance/api/billdownload/file?token=xxx\",\n            \"HashValue\": \"79bb0f45fc4c42234a918000b2668d689e2bde04\",\n            \"HashType\": \"SHA256\"\n        }\n    }\n}",
         "title": "查询对账单下载url成功示例"
-      },
+      }
+    ],
+    "QueryOpenBankExternalSubAccountBookBalance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"BillType\": \"TRADE\",\n    \"BillDate\": \"2022-02-12\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0de6aef6-4e1d-463e-a793-057491ca1bcf\",\n        \"Result\": {\n            \"DownloadUrl\": \"\",\n            \"HashValue\": \"\",\n            \"HashType\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
-        "title": "查询账单下载成功示例"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankDownLoadUrl\n<公共请求参数>\n\n{\n    \"Environment\": \"字符串\",\n    \"BillType\": \"字符串\",\n    \"BillDate\": \"字符串\",\n    \"ChannelMerchantId\": \"字符串\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2fe8f90-667d-4593-a57f-c345e69af8b2\",\n        \"Result\": {\n            \"DownloadUrl\": \"\",\n            \"HashValue\": \"\",\n            \"HashType\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
-        "title": "下载成功的示例"
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankExternalSubAccountBookBalance\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM597807645516427264\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"ChannelSubMerchantId\": \"CM597809321900044288\",\n    \"OutAccountBookId\": \"outabid0005\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93888c91-f4cd-45d0-9bb5-71ad1ee06fb1\",\n        \"Result\": {\n            \"ChannelAccountBookId\": \"CAB580433254176370688\",\n            \"AvailableBalance\": \"988\",\n            \"CollectMoneyAccountInfo\": \"{}\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回示例"
       }
     ],
     "QueryOpenBankExternalSubMerchantBankAccount": [
@@ -910,6 +990,20 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankExternalSubMerchantRegistration\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM12345678\",\n    \"ChannelRegistrationNo\": \"R12345678\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"68359316-3032-4f5d-91b6-c628eb2ba378\",\n        \"Result\": {\n            \"RegistrationStatus\": \"SUCCESS\",\n            \"RegistrationMessage\": \"success\",\n            \"ChannelRegistrationNo\": \"R12345678\",\n            \"ChannelSubMerchantId\": \"CM12345678\",\n            \"OutSubMerchantName\": \"测试\",\n            \"ChannelName\": \"TENPAY\",\n            \"PaymentMethod\": \"EBANK_PAYMENT\",\n            \"BusinessLicenseNumber\": \"12345678\",\n            \"LegalName\": \"测试\",\n            \"ExternalReturnData\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "QueryOpenBankExternalSubMerchantRegistration"
+      }
+    ],
+    "QueryOpenBankOrderDetailReceiptInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankOrderDetailReceiptInfo\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"ChannelApplyId\": \"RE20220411599279856622231552\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"string\",\n        \"Result\": {\n            \"ChannelApplyId\": \"RE20220411599279856622231552\",\n            \"ReceiptStatus\": \"SUCCESS\",\n            \"ReceiptMessage\": \"申请成功\",\n            \"DownloadUrl\": \"http://malaitong-1257849200.cos.ap-guangzhou.myqcloud.com/alipay/receipt/CM598093665441488896/CM599202010869022720/227180978/%E8%BD%AC%E5%85%A5%E8%BD%AC%E5%87%BA%E8%AF%81%E6%98%8E_20220411110070001506220048076642.pdf?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID7ct6dqAX0QuCNayR3zKAmIZw97TSafMp%26q-sign-time%3D1649666717%3B1649670317%26q-key-time%3D1649666717%3B1649670317%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D1ff8d900323616f04ae92db09daee0cb00cdfdfb\",\n            \"ExpireTime\": \"2022-04-13 16:45:17\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankOrderDetailReceiptInfo"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankOrderDetailReceiptInfo\n<公共请求参数>\n\n{\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelApplyId\": \"RE20220411599285386061275136\",\n    \"ChannelName\": \"ALIPAY\",\n    \"PaymentMethod\": \"SAFT_ISV\",\n    \"OutApplyId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"539942ea-d2a7-48a5-a999-6f003a3642ff\",\n        \"Result\": {\n            \"ChannelApplyId\": \"RE20220411599285386061275136\",\n            \"ReceiptStatus\": \"SUCCESS\",\n            \"ReceiptMessage\": \"申请成功\",\n            \"DownloadUrl\": \"http://malaitong-1257849200.cos.ap-guangzhou.myqcloud.com/alipay/receipt/CM598093665441488896/CM599202010869022720/227180978/%E8%BD%AC%E5%85%A5%E8%BD%AC%E5%87%BA%E8%AF%81%E6%98%8E_20220411110070001506220048076642.pdf?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID7ct6dqAX0QuCNayR3zKAmIZw97TSafMp%26q-sign-time%3D1649670030%3B1649673630%26q-key-time%3D1649670030%3B1649673630%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D02d0f81a33113e9cf1c3d46d59eb4a3d63b9c15f\",\n            \"ExpireTime\": \"2022-04-13 17:40:30\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询单笔交易回单结果"
       }
     ],
     "QueryOpenBankPaymentOrder": [
@@ -1100,6 +1194,14 @@
         "title": "退款请求示例"
       }
     ],
+    "RefundCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundCloudOrder\n<公共请求参数>\n\n{\n    \"TotalRefundAmt\": \"1\",\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"SubOrderRefundList\": [\n        {\n            \"SubOutTradeNo\": \"4805X1183110364415535792X\",\n            \"PlatformRefundAmt\": \"0\",\n            \"SubRefundId\": \"545464656565656124\",\n            \"SubMchRefundAmt\": \"1\",\n            \"RefundAmt\": \"1\"\n        }\n    ],\n    \"UserId\": \"66661877211\",\n    \"MchRefundAmt\": \"1\",\n    \"OutTradeNo\": \"1183110364214208944\",\n    \"RefundNotifyUrl\": \"RefundNotifyUrl\",\n    \"RefundId\": \"545464656565656124\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98faef15-832d-4402-9283-a6031f13d12e\"\n    }\n}",
+        "title": "聚鑫-退款申请"
+      }
+    ],
     "RefundMemberTransaction": [
       {
         "document": "会员间交易退款",
@@ -1226,6 +1328,14 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=UnbindRelateAcct\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&FunctionFlag=1&TranNetMemberCode=YAPI100000&MemberAcctNo= 6230582000059121234",
         "output": "{\n    \"Response\": {\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"01f7c43c-7429-4a0f-9e56-583a0746c0d5\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"FrontSeqNo\": \"1911060076987819\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831911061573031795\"\n    }\n}",
         "title": "UnbindRelateAcct"
+      }
+    ],
+    "UnifiedCloudOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnifiedCloudOrder\n<公共请求参数>\n\n{\n    \"MidasEnvironment\": \"sandbox\",\n    \"MidasAppId\": \"demo001\",\n    \"PaymentNotifyUrl\": \"https://xxx.com/pay_notify\",\n    \"OrderReceiveMode\": \"ORDER_RECEIVE_MODE_V_COMBINE\",\n    \"TotalAmt\": \"4\",\n    \"UserId\": \"66661875951\",\n    \"TotalPlatformIncome\": \"2\",\n    \"SubOrderList\": [\n        {\n            \"SubMchIncome\": \"1\",\n            \"SubOutTradeNo\": \"6505X556277899700908678X\",\n            \"PlatformIncome\": \"1\",\n            \"ProductName\": \"商品\",\n            \"SubAppId\": \"sub-11214\",\n            \"ProductDetail\": \"商品\",\n            \"OriginalAmt\": \"2\",\n            \"Amt\": \"2\",\n            \"Metadata\": \"556277899700908678\"\n        },\n        {\n            \"SubMchIncome\": \"1\",\n            \"SubOutTradeNo\": \"6640X556362437709978742X\",\n            \"PlatformIncome\": \"1\",\n            \"ProductName\": \"商品\",\n            \"SubAppId\": \"sub-11214\",\n            \"ProductDetail\": \"商品\",\n            \"OriginalAmt\": \"2\",\n            \"Amt\": \"2\",\n            \"Metadata\": \"556362437709978742\"\n        }\n    ],\n    \"ProductName\": \"商品\",\n    \"OutTradeNo\": \"98545656565623260000\",\n    \"WxAppId\": \"wxa384c55535723da0\",\n    \"RealChannel\": \"wechat\",\n    \"ProductDetail\": \"商品\",\n    \"TotalMchIncome\": \"2\",\n    \"OriginalAmt\": \"4\",\n    \"Metadata\": \"xxx\",\n    \"CurrencyType\": \"CNY\",\n    \"Channel\": \"wechat\",\n    \"ProductId\": \"98545656565623265656\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PayInfo\": \"data=xxx\",\n        \"OutTradeNo\": \"98545656565623260000\",\n        \"TransactionId\": \"\",\n        \"TotalAmt\": 4,\n        \"ChannelInfo\": \"\",\n        \"RequestId\": \"dc6743f5-5b2c-4c55-bc69-d56ec9c51422\"\n    }\n}",
+        "title": "聚鑫-统一下单"
       }
     ],
     "UnifiedOrder": [

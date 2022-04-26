@@ -11,60 +11,221 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 26,
-        "Currency": "CNY",
-        "RequestId": "61b759bb-3d4c-4d7d-a8dc-a7bf2be63328",
+        "TotalCount": 1,
+        "DestRegionSet": [
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            }
+        ],
+        "RequestId": "xx",
         "BandwidthUnitPrice": [
             {
                 "BandwidthRange": [
                     0,
                     20
                 ],
-                "BandwidthUnitPrice": 130,
-                "DiscountBandwidthUnitPrice": 130
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     20,
                     100
                 ],
-                "BandwidthUnitPrice": 90,
-                "DiscountBandwidthUnitPrice": 90
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     100,
                     500
                 ],
-                "BandwidthUnitPrice": 70,
-                "DiscountBandwidthUnitPrice": 70
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     500,
                     2000
                 ],
-                "BandwidthUnitPrice": 60,
-                "DiscountBandwidthUnitPrice": 60
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             },
             {
                 "BandwidthRange": [
                     2000,
-                    -1
+                    0
                 ],
-                "BandwidthUnitPrice": 50,
-                "DiscountBandwidthUnitPrice": 50
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
             }
         ],
+        "Currency": "xx"
+    }
+}
+```
+
+**Example 2: 获取源站区域和带宽梯度价格2**
+
+
+
+Input: 
+
+```
+tccli gaap DescribeRegionAndPrice --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
         "DestRegionSet": [
             {
-                "RegionId": "NorthChina",
-                "RegionName": "中国大陆-华北大区",
-                "RegionArea": "NorthChina",
-                "RegionAreaName": "中国大陆-华北",
-                "IDCType": "dc"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             }
-        ]
+        ],
+        "RequestId": "xx",
+        "BandwidthUnitPrice": [
+            {
+                "BandwidthRange": [
+                    0,
+                    20
+                ],
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
+            },
+            {
+                "BandwidthRange": [
+                    20,
+                    100
+                ],
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
+            },
+            {
+                "BandwidthRange": [
+                    100,
+                    500
+                ],
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
+            },
+            {
+                "BandwidthRange": [
+                    500,
+                    2000
+                ],
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
+            },
+            {
+                "BandwidthRange": [
+                    2000,
+                    0
+                ],
+                "BandwidthUnitPrice": 0.0,
+                "DiscountBandwidthUnitPrice": 0.0
+            }
+        ],
+        "Currency": "xx"
     }
 }
 ```

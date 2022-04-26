@@ -11,14 +11,135 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "DestRegionSet": [
             {
-                "RegionId": "eu-moscow",
-                "RegionName": "俄罗斯"
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
             }
         ],
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",
-        "TotalCount": 1
+        "RequestId": "xx"
+    }
+}
+```
+
+**Example 2: 查询源站区域**
+
+
+
+Input: 
+
+```
+tccli gaap DescribeDestRegions --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "DestRegionSet": [
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            }
+        ],
+        "RequestId": "xx"
     }
 }
 ```

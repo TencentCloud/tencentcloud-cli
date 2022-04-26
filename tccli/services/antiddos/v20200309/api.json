@@ -411,7 +411,7 @@
     "ModifyCCLevelPolicy": {
       "document": "修改CC防护等级",
       "input": "ModifyCCLevelPolicyRequest",
-      "name": "修改CC防护等级",
+      "name": "修改CC的防护等级",
       "output": "ModifyCCLevelPolicyResponse"
     },
     "ModifyCCPrecisionPolicy": {
@@ -1221,6 +1221,36 @@
           "example": "0",
           "member": "uint64",
           "name": "UnionPackFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ServiceBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "战斗服版本标记，0表示普通高防包，1表示战斗服高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BattleEditionFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "渠道版标记，0表示普通高防包，1表示渠道版高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelEditionFlag",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -3022,7 +3052,17 @@
     },
     "CreateSchedulingDomainRequest": {
       "document": "CreateSchedulingDomain请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "代表是否混合云本地化的产品。\nhybrid: 宙斯盾本地化\n不填写：其他",
+          "example": "hybrid",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateSchedulingDomainResponse": {
@@ -3138,7 +3178,7 @@
       "members": [
         {
           "default": "",
-          "document": "区域类型，取值[\noversea(海外)\nchina(国内)\ncustomized(自定义地区)\n]",
+          "document": "区域类型，取值[\noversea(境外)\nchina(国内)\ncustomized(自定义地区)\n]",
           "example": "oversea",
           "member": "string",
           "name": "RegionType",
@@ -4198,7 +4238,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4234,7 +4274,7 @@
         },
         {
           "default": "",
-          "document": "ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4243,7 +4283,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
@@ -4252,7 +4292,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4297,7 +4337,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgp-multip表示高防包，bgpip表示高防ip）",
+          "document": "大禹子产品代号（bgp-multip表示高防包，bgpip表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4333,7 +4373,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4342,7 +4382,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4351,7 +4391,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4639,7 +4679,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgp-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgp-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4675,7 +4715,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4684,7 +4724,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4693,7 +4733,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -4702,7 +4742,7 @@
         },
         {
           "default": "",
-          "document": "筛选ip，需要筛选黑白名单ip时传该字段",
+          "document": "筛选IP，需要筛选黑白名单IP时传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "FilterIp",
@@ -4756,7 +4796,7 @@
       "members": [
         {
           "default": "",
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防ip）",
+          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
           "member": "string",
           "name": "Business",
@@ -4783,7 +4823,7 @@
         },
         {
           "default": "",
-          "document": "指定特定实例Id",
+          "document": "指定特定实例ID",
           "example": "bgpip-0000011x",
           "member": "string",
           "name": "InstanceId",
@@ -4792,7 +4832,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址，普通高防ip要传该字段",
+          "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -4801,7 +4841,7 @@
         },
         {
           "default": "",
-          "document": "域名，普通高防ip要传该字段",
+          "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
           "member": "string",
           "name": "Domain",
@@ -4810,7 +4850,7 @@
         },
         {
           "default": "",
-          "document": "协议，普通高防ip要传该字段",
+          "document": "协议，普通高防IP要传该字段",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -5437,6 +5477,15 @@
           "name": "FilterBoundStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例id数组",
+          "example": "[bgp-00000001]",
+          "member": "string",
+          "name": "FilterInstanceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7134,7 +7183,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址",
+          "document": "IP地址",
           "example": "1.3.2.6",
           "member": "string",
           "name": "Ip",
@@ -7296,7 +7345,7 @@
         },
         {
           "default": "",
-          "document": "Ip地址",
+          "document": "IP地址",
           "example": "1.3.2.6",
           "member": "string",
           "name": "Ip",
@@ -7890,6 +7939,46 @@
       "members": [
         {
           "default": "",
+          "document": "转发协议，取值[http, https]",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "转发域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "LbType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "KeepEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "会话保持时间，单位秒",
           "example": "无",
           "member": "uint64",
@@ -7900,10 +7989,10 @@
         },
         {
           "default": "",
-          "document": "负载均衡方式，取值[1(加权轮询)]",
+          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "example": "无",
           "member": "uint64",
-          "name": "LbType",
+          "name": "SourceType",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -7920,52 +8009,92 @@
         },
         {
           "default": "",
-          "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
+          "document": "区域码",
           "example": "无",
           "member": "uint64",
-          "name": "KeepEnable",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "转发域名",
-          "example": "无",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "转发协议，取值[http, https]",
-          "example": "无",
-          "member": "string",
-          "name": "Protocol",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
-          "example": "无",
-          "member": "uint64",
-          "name": "SourceType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
-          "example": "无",
-          "member": "uint64",
-          "name": "HttpsToHttpEnable",
+          "name": "Region",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源Id",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源Ip",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "example": "无",
+          "member": "uint64",
+          "name": "CertType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "SSLId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "Cert",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7980,12 +8109,12 @@
         },
         {
           "default": "",
-          "document": "HTTPS协议的CC防护等级",
+          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
           "example": "无",
-          "member": "string",
-          "name": "CCLevel",
+          "member": "uint64",
+          "name": "CCStatus",
           "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8010,30 +8139,10 @@
         },
         {
           "default": "",
-          "document": "区域码",
-          "example": "无",
-          "member": "uint64",
-          "name": "Region",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "规则描述",
+          "document": "HTTPS协议的CC防护等级",
           "example": "无",
           "member": "string",
-          "name": "RuleName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
-          "member": "string",
-          "name": "Cert",
+          "name": "CCLevel",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8050,40 +8159,10 @@
         },
         {
           "default": "",
-          "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
-          "example": "无",
-          "member": "string",
-          "name": "RuleId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "资源Ip",
-          "example": "无",
-          "member": "string",
-          "name": "Ip",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
-          "member": "string",
-          "name": "PrivateKey",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "example": "无",
           "member": "uint64",
-          "name": "CertType",
+          "name": "HttpsToHttpEnable",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8100,32 +8179,22 @@
         },
         {
           "default": "",
-          "document": "cc防护状态，取值[0(关闭), 1(开启)]",
+          "document": "http强制跳转https，1表示打开，0表示关闭",
           "example": "无",
           "member": "uint64",
-          "name": "CCStatus",
+          "name": "RewriteHttps",
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
+          "document": "规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期",
           "example": "无",
-          "member": "string",
-          "name": "SSLId",
+          "member": "uint64",
+          "name": "ErrCode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "资源Id",
-          "example": "无",
-          "member": "string",
-          "name": "Id",
-          "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -19,7 +19,8 @@ tccli ses BatchSendEmail --cli-unfold-argument  \
     --CycleParam.IntervalTime 1 \
     --CycleParam.BeginTime 2021-09-10 11:10:11 \
     --Subject 邮件主题 \
-    --TaskType 1
+    --TaskType 1 \
+    --ADLocation 0
 ```
 
 Output: 

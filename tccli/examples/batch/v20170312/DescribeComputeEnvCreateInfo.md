@@ -16,6 +16,12 @@ Output:
         "EnvId": "env-qleawxzt",
         "EnvType": "MANAGED",
         "DesiredComputeNodeCount": 2,
+        "MountDataDisks": [
+            {
+                "FileSystemType": "xx",
+                "LocalPath": "xx"
+            }
+        ],
         "EnvName": "test compute env",
         "EnvDescription": "test compute env",
         "InputMappings": [
@@ -74,6 +80,13 @@ Output:
             {
                 "Key": "batch-test-tag-env-key",
                 "Value": "batch-test-tag-env-value1"
+            }
+        ],
+        "Authentications": [
+            {
+                "SecretKey": "xx",
+                "SecretId": "xx",
+                "Scene": "xx"
             }
         ],
         "RequestId": "578f3fae-6908-4521-ac07-17c2cffcd5ae"

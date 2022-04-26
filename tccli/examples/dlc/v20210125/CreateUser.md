@@ -7,6 +7,7 @@ Input:
 ```
 tccli dlc CreateUser --cli-unfold-argument  \
     --UserDescription Test User \
+    --UserAlias Testname \
     --UserId 1248065439 \
     --PolicySet.0.Table TableName \
     --PolicySet.0.Catalog COSDataCatalog \

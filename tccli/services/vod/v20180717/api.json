@@ -75,7 +75,7 @@
     "CreateImageProcessingTemplate": {
       "document": "创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。",
       "input": "CreateImageProcessingTemplateRequest",
-      "name": "创建图片处理模板",
+      "name": "创建图片即时处理模板",
       "output": "CreateImageProcessingTemplateResponse"
     },
     "CreateImageSpriteTemplate": {
@@ -107,6 +107,12 @@
       "input": "CreateSnapshotByTimeOffsetTemplateRequest",
       "name": "创建指定时间点截图模板",
       "output": "CreateSnapshotByTimeOffsetTemplateResponse"
+    },
+    "CreateStorageRegion": {
+      "document": "该接口用于开通某地域的存储。\n  1. 用户开通点播业务时，系统默认为用户开通了部分地域的存储，用户如果需要开通其它地域的存储，可以通过该接口进行开通。\n  2. 通过 DescribeStorageRegions 接口可以查询到所有存储地域及已经开通的地域。",
+      "input": "CreateStorageRegionRequest",
+      "name": "开通某地域的存储",
+      "output": "CreateStorageRegionResponse"
     },
     "CreateSubAppId": {
       "document": "该接口用于创建点播子应用。",
@@ -189,7 +195,7 @@
     "DeleteImageProcessingTemplate": {
       "document": "删除用户自定义图片处理模板。",
       "input": "DeleteImageProcessingTemplateRequest",
-      "name": "删除图片处理模板",
+      "name": "删除图片即时处理模板",
       "output": "DeleteImageProcessingTemplateResponse"
     },
     "DeleteImageSpriteTemplate": {
@@ -357,7 +363,7 @@
     "DescribeImageProcessingTemplates": {
       "document": "获取图片处理模板列表，支持根据条件，分页查询。",
       "input": "DescribeImageProcessingTemplatesRequest",
-      "name": "获取图片处理模板列表",
+      "name": "获取图片即时处理模板列表",
       "output": "DescribeImageProcessingTemplatesResponse"
     },
     "DescribeImageSpriteTemplates": {
@@ -371,6 +377,12 @@
       "input": "DescribeMediaInfosRequest",
       "name": "获取媒体详细信息",
       "output": "DescribeMediaInfosResponse"
+    },
+    "DescribeMediaPlayStatDetails": {
+      "document": "该接口用于查询媒体文件按指定时间粒度统计的播放数据\n* 可以查询最近一年的播放统计数据。\n* 时间粒度为小时，结束时间和起始时间的跨度最大为7天。\n* 时间粒度为天，结束时间和起始时间的跨度最大为90天。",
+      "input": "DescribeMediaPlayStatDetailsRequest",
+      "name": "查询媒体文件按指定时间粒度统计的播放数据",
+      "output": "DescribeMediaPlayStatDetailsResponse"
     },
     "DescribeMediaProcessUsageData": {
       "document": "该接口返回查询时间范围内每天使用的视频处理用量信息。\n   1. 可以查询最近365天内的视频处理统计数据。\n   2. 查询时间跨度不超过90天。",
@@ -425,6 +437,12 @@
       "input": "DescribeStorageDetailsRequest",
       "name": "查询存储空间数据详情",
       "output": "DescribeStorageDetailsResponse"
+    },
+    "DescribeStorageRegions": {
+      "document": "该接口用于：\n  1. 查询点播可开通的所有存储园区列表。\n  2. 查询已经开通的园区列表。\n  3. 查询默认使用的存储园区。",
+      "input": "DescribeStorageRegionsRequest",
+      "name": "查询存储地域列表",
+      "output": "DescribeStorageRegionsResponse"
     },
     "DescribeSubAppIds": {
       "document": "该接口用于获取当前账号的子应用列表，包含主应用。",
@@ -486,6 +504,12 @@
       "name": "执行定制 API",
       "output": "ExecuteFunctionResponse"
     },
+    "FastClipMedia": {
+      "document": "对视频执行快速剪辑，截取后的视频生成新的 FileID。本接口不对视频进行编解码，截取的时间精度为单个 GOP。",
+      "input": "FastClipMediaRequest",
+      "name": "视频快速剪辑",
+      "output": "FastClipMediaResponse"
+    },
     "ForbidMediaDistribution": {
       "document": "* 对媒体禁播后，除了点播控制台预览，其他场景访问视频各种资源的 URL（原始文件、转码输出文件、截图等）均会返回 403。\n  禁播/解禁操作全网生效时间约 5~10 分钟。",
       "input": "ForbidMediaDistributionRequest",
@@ -539,6 +563,12 @@
       "input": "ModifyContentReviewTemplateRequest",
       "name": "修改视频内容智能识别模板",
       "output": "ModifyContentReviewTemplateResponse"
+    },
+    "ModifyDefaultStorageRegion": {
+      "document": "该接口用于设置默认的存储地域。上传文件时如果没有指定地域，将上传到默认地域。",
+      "input": "ModifyDefaultStorageRegionRequest",
+      "name": "设置默认的存储地域",
+      "output": "ModifyDefaultStorageRegionResponse"
     },
     "ModifyEventConfig": {
       "document": "腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。\n\n开发者可以通过调用本接口来实现：\n- 设置接收回调通知的类型，目前有[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/33779) 和 [基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/33779) 两种类型。\n- 对于[ HTTP 回调通知](https://cloud.tencent.com/document/product/266/33779)，可设置 3.0 格式回调的地址。3.0 格式回调的说明参见 [历史格式回调](https://cloud.tencent.com/document/product/266/33796)。\n- 对具体事件服务的通知事件选择设置接收或者忽略。",
@@ -641,6 +671,12 @@
       "input": "ParseStreamingManifestRequest",
       "name": "解析视频索引文件",
       "output": "ParseStreamingManifestResponse"
+    },
+    "ProcessImage": {
+      "document": "对点播中的图片文件发起处理任务，功能包括：\n\n1. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）;\n\n><li>图片文件大小支持：文件 < 5M；</li>\n><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响识别效果；</li>\n><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>\n",
+      "input": "ProcessImageRequest",
+      "name": "图片处理",
+      "output": "ProcessImageResponse"
     },
     "ProcessMedia": {
       "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
@@ -6280,7 +6316,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -6526,6 +6562,128 @@
         }
       ],
       "type": "object"
+    },
+    "ContentReviewOcrResult": {
+      "document": "图片Ocr 文字鉴别信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别结果的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的嫌疑关键词列表。",
+          "example": "无",
+          "member": "string",
+          "name": "KeywordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Ocr 文字鉴别的嫌疑文字出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ContentReviewResult": {
+      "document": "图片智能内容识别任务结果",
+      "members": [
+        {
+          "default": "",
+          "document": "结果类型，取值范围：\n<li>Porn.Image：图片画面中的鉴别令人反感的信息结果；</li>\n<li>Terrorism.Image：图片画面中的鉴别令人不安全的信息结果；</li>\n<li>Political.Image：图片画面中的鉴别令人不适宜信息结果；</li>\n<li>Porn.Ocr：图片 OCR 文字中的鉴别令人反感的信息结果；</li>\n<li>Terrorism.Ocr：图片 OCR 文字中的鉴别令人不安全的信息结果；</li>\n<li>Political.Ocr：图片 OCR 文字中的鉴别令人不适宜信息结果。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人反感的信息结果，当 Type 为 Porn.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PornImageResult",
+          "name": "PornImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TerrorismImageResult",
+          "name": "TerrorismImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片画面中的鉴别令人不适宜信息结果，当 Type 为 Political.Image 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PoliticalImageResult",
+          "name": "PoliticalImageResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 文字中的鉴别令人反感的信息结果，当 Type 为 Porn.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "PornOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 中的鉴别令人不安全的信息结果，当 Type 为 Terrorism.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "TerrorismOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "图片 OCR 文字中的鉴别令人不适宜信息结果，当 Type 为 Political.Ocr 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReviewOcrResult",
+          "name": "PoliticalOcrResult",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ContentReviewTemplateItem": {
       "document": "智能识别模板详情",
@@ -7413,6 +7571,7 @@
         {
           "default": "",
           "document": "图片处理操作数组，操作将以其在数组中的顺序执行。\n<li>长度限制：3。</li>",
+          "example": "无",
           "member": "ImageOperation",
           "name": "Operations",
           "required": true,
@@ -7421,6 +7580,7 @@
         {
           "default": "",
           "document": "图片处理模板名称，长度限制：64 个字符。",
+          "example": "MyCenterCut",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7429,6 +7589,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "MyCenterCut",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -7437,6 +7598,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -7450,8 +7612,10 @@
       "members": [
         {
           "document": "图片处理模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8001,6 +8165,40 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageRegionRequest": {
+      "document": "CreateStorageRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待开通的存储地域，必须是系统支持的地域。",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageRegionResponse": {
+      "document": "CreateStorageRegion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8778,6 +8976,7 @@
         {
           "default": "",
           "document": "图片处理模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -8786,6 +8985,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -10256,6 +10456,7 @@
         {
           "default": "",
           "document": "图片处理模板标识列表。长度限制：100。",
+          "example": "[1000]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -10264,6 +10465,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -10272,6 +10474,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10280,6 +10483,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10288,6 +10492,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -10301,15 +10506,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "图片处理模板详情列表。",
+          "example": "无",
           "member": "ImageProcessingTemplate",
           "name": "ImageProcessingTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10450,6 +10659,78 @@
       ],
       "type": "object"
     },
+    "DescribeMediaPlayStatDetailsRequest": {
+      "document": "DescribeMediaPlayStatDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID。",
+          "example": "5285485487985271487",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "起始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-07T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计时间粒度，有效值：\n<li>Hour：以小时为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于1天以小时为粒度，大于等于1天则以天为粒度。",
+          "example": "Day",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "1450001234",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMediaPlayStatDetailsResponse": {
+      "document": "DescribeMediaPlayStatDetails返回参数结构体",
+      "members": [
+        {
+          "document": "播放统计数据。",
+          "example": "无",
+          "member": "PlayStatInfo",
+          "name": "PlayStatInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMediaProcessUsageDataRequest": {
       "document": "DescribeMediaProcessUsageData请求参数结构体",
       "members": [
@@ -10473,7 +10754,7 @@
         },
         {
           "default": "",
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> RemoveWatermark: 去除水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> RemoveWatermark: 去除水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -11048,6 +11329,39 @@
       ],
       "type": "object"
     },
+    "DescribeStorageRegionsRequest": {
+      "document": "DescribeStorageRegions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageRegionsResponse": {
+      "document": "DescribeStorageRegions返回参数结构体",
+      "members": [
+        {
+          "document": "存储地域信息列表。",
+          "member": "StorageRegionInfo",
+          "name": "StorageRegionInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubAppIdsRequest": {
       "document": "DescribeSubAppIds请求参数结构体",
       "members": [
@@ -11220,7 +11534,7 @@
       "document": "DescribeTaskDetail返回参数结构体",
       "members": [
         {
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务。</li>\n\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务。</li>\n<li>FastClipMedia：快速剪辑任务。</li>\n\n兼容 2017 版的任务类型：\n<li>Transcode：视频转码任务；</li>\n<li>SnapshotByTimeOffset：视频截图任务；</li>\n<li>Concat：视频拼接任务；</li>\n<li>Clip：视频剪辑任务；</li>\n<li>ImageSprites：截取雪碧图任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -11899,8 +12213,29 @@
         {
           "default": "",
           "document": "保护类型为 SimpleAES 的转自适应码流模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "SimpleAesDefinition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护类型为 Widevine 的转自适应码流模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "WidevineDefinition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护类型为 FairPlay 的转自适应码流模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FairPlayDefinition",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11914,8 +12249,29 @@
         {
           "default": "",
           "document": "保护类型为 SimpleAES 的转自适应码流模板 ID。",
+          "example": "无",
           "member": "uint64",
           "name": "SimpleAesDefinition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护类型为 Widevine 的转自适应码流模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "WidevineDefinition",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "保护类型为 FairPlay 的转自适应码流模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FairPlayDefinition",
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11962,6 +12318,7 @@
         {
           "default": "",
           "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "无",
           "member": "string",
           "name": "MediaName",
           "required": false,
@@ -11971,6 +12328,7 @@
         {
           "default": "",
           "document": "输出文件格式，可选值：mp4、hls。默认是 mp4。",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -11980,6 +12338,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "无",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -11989,10 +12348,31 @@
         {
           "default": "",
           "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "输出的视频信息。",
+          "example": "无",
+          "member": "EditMediaVideoStream",
+          "name": "VideoStream",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "极速高清转码参数。",
+          "example": "无",
+          "member": "EditMediaTEHDConfig",
+          "name": "TEHDConfig",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -12004,6 +12384,7 @@
         {
           "default": "",
           "document": "输入视频的类型，可以取的值为  File，Stream 两种。",
+          "example": "File",
           "member": "string",
           "name": "InputType",
           "required": true,
@@ -12012,6 +12393,7 @@
         {
           "default": "",
           "document": "输入的视频文件信息，当 InputType 为 File 时必填。",
+          "example": "无",
           "member": "EditMediaFileInfo",
           "name": "FileInfos",
           "required": false,
@@ -12020,6 +12402,7 @@
         {
           "default": "",
           "document": "输入的流信息，当 InputType 为 Stream 时必填。",
+          "example": "无",
           "member": "EditMediaStreamInfo",
           "name": "StreamInfos",
           "required": false,
@@ -12027,7 +12410,8 @@
         },
         {
           "default": "",
-          "document": "编辑模板 ID，取值有 10，20，不填代表使用 10 模板。\n<li>10：拼接时，以分辨率最高的输入为基准；</li>\n<li>20：拼接时，以码率最高的输入为基准；</li>",
+          "document": "编辑模板 ID，取值有 10，20，不填代表使用 10 模板。\n<li>10：拼接时，以分辨率最高的输入为基准；</li>\n<li>20：拼接时，以码率最高的输入为基准。</li>",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
           "required": false,
@@ -12036,6 +12420,7 @@
         {
           "default": "",
           "document": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。",
+          "example": "无",
           "member": "string",
           "name": "ProcedureName",
           "required": false,
@@ -12044,6 +12429,7 @@
         {
           "default": "",
           "document": "编辑后生成的文件配置。",
+          "example": "无",
           "member": "EditMediaOutputConfig",
           "name": "OutputConfig",
           "required": false,
@@ -12052,6 +12438,7 @@
         {
           "default": "",
           "document": "标识来源上下文，用于透传用户请求信息，在EditMediaComplete回调和任务流状态变更回调将返回该字段值，最长 1000个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -12060,6 +12447,7 @@
         {
           "default": "",
           "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -12068,6 +12456,7 @@
         {
           "default": "",
           "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -12076,6 +12465,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -12084,6 +12474,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -12097,8 +12488,10 @@
       "members": [
         {
           "document": "编辑视频的任务 ID，可以通过该 ID 查询编辑任务（任务类型为 EditMedia）的状态。",
+          "example": "125xxx65-EditMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12138,6 +12531,22 @@
           "member": "string",
           "name": "EndTime",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EditMediaTEHDConfig": {
+      "document": "视频编辑极速高清参数配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示 OFF。",
+          "example": "TEHD-100",
+          "member": "string",
+          "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12229,7 +12638,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。",
+          "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -12368,6 +12777,42 @@
         }
       ],
       "usage": "out"
+    },
+    "EditMediaVideoStream": {
+      "document": "视频流配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "无",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率取基准分辨率；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按基准分辨率比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按基准分辨率比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率取基准分辨率；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按基准分辨率比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按基准分辨率比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "EmptyTrackItem": {
       "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
@@ -12745,6 +13190,23 @@
       ],
       "usage": "in"
     },
+    "FastClipMediaRequest": {
+      "document": "FastClipMedia请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "FastClipMediaResponse": {
+      "document": "FastClipMedia返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FileDeleteTask": {
       "document": "文件删除任务",
       "members": [
@@ -13110,6 +13572,22 @@
           "member": "int64",
           "name": "Radius",
           "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageContentReviewInput": {
+      "document": "图片智能内容识别任务输入",
+      "members": [
+        {
+          "default": "",
+          "document": "图片智能内容审核模板 ID。当前只支持：\n<li>10：所有审核类型均打开。</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -16850,6 +17328,7 @@
         {
           "default": "",
           "document": "分类 ID",
+          "example": "1",
           "member": "uint64",
           "name": "ClassId",
           "required": true,
@@ -16858,6 +17337,7 @@
         {
           "default": "",
           "document": "分类名称。长度限制：1-64 个字符。",
+          "example": "一级分类2",
           "member": "string",
           "name": "ClassName",
           "required": true,
@@ -16866,6 +17346,7 @@
         {
           "default": "",
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -16993,6 +17474,40 @@
     },
     "ModifyContentReviewTemplateResponse": {
       "document": "ModifyContentReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultStorageRegionRequest": {
+      "document": "ModifyDefaultStorageRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "默认的存储地域，必须是已经开通的地域」，建议改成「默认的存储地域，必须是已经开通的地域（通过 DescribeStorageRegions 接口查询）。",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultStorageRegionResponse": {
+      "document": "ModifyDefaultStorageRegion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18669,6 +19184,52 @@
       ],
       "usage": "out"
     },
+    "PlayStatInfo": {
+      "document": "播放统计信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。\n<li>表示小时级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日0点到1点的统计数据。</li>\n<li>表示天级别数据时，2019-08-22T00:00:00+08:00表示2019-08-22日的统计数据。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "媒体文件ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放次数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PlayTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放流量，单位：字节。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Traffic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PlayerConfig": {
       "document": "播放器配置详情",
       "members": [
@@ -18926,6 +19487,52 @@
         }
       ],
       "usage": "in"
+    },
+    "PoliticalImageResult": {
+      "document": "图片画面智能识别涉及令人不适宜信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人不适宜信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不适宜信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及令人不适宜的信息、违规图标名字。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "涉及令人不适宜的信息、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
+          "example": "无",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PoliticalImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人不适宜的信息的任务控制参数",
@@ -19234,6 +19841,42 @@
         }
       ],
       "usage": "in"
+    },
+    "PornImageResult": {
+      "document": "图片画面智能识别涉及令人反感的信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人反感的信息的结果标签，取值范围：\n<li>porn：色情；</li>\n<li>sexy：性感；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PornImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人反感的信息的任务控制参数",
@@ -19670,6 +20313,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ProcessImageRequest": {
+      "document": "ProcessImage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型。现在仅支持填 ContentReview，表示内容智能识别。",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。",
+          "example": "无",
+          "member": "ImageContentReviewInput",
+          "name": "ContentReviewInput",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessImageResponse": {
+      "document": "ProcessImage返回参数结构体",
+      "members": [
+        {
+          "document": "图片内容智能识别任务结果。",
+          "example": "无",
+          "member": "ContentReviewResult",
+          "name": "ContentReviewResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessMediaByProcedureRequest": {
       "document": "ProcessMediaByProcedure请求参数结构体",
@@ -20546,7 +21252,7 @@
         },
         {
           "default": "",
-          "document": "原始视频的元信息。",
+          "document": "输出视频的元信息。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -20905,6 +21611,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -20914,6 +21621,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -20923,6 +21631,7 @@
         {
           "default": "",
           "document": "采样截图模板名称。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -20932,6 +21641,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -20941,6 +21651,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1920",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -20950,6 +21661,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -20959,6 +21671,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -20968,6 +21681,7 @@
         {
           "default": "",
           "document": "图片格式。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -20977,6 +21691,7 @@
         {
           "default": "",
           "document": "采样截图类型。",
+          "example": "Time",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -20986,6 +21701,7 @@
         {
           "default": "",
           "document": "采样间隔。",
+          "example": "1",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -20995,6 +21711,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -21004,6 +21721,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -21012,7 +21730,8 @@
         },
         {
           "default": "",
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "document": "填充方式，当截图配置宽高参数与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black",
           "member": "string",
           "name": "FillType",
           "required": true,
@@ -21099,7 +21818,7 @@
         },
         {
           "default": "",
-          "document": "推流 [直播码](https://cloud.tencent.com/document/product/267/5959) 集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>",
+          "document": "推流直播码集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>",
           "example": "无",
           "member": "string",
           "name": "StreamIds",
@@ -21216,7 +21935,7 @@
         },
         {
           "default": "",
-          "document": "（不推荐：应使用 StreamIds 替代）\n推流 [直播码](https://cloud.tencent.com/document/product/267/5959)。",
+          "document": "（不推荐：应使用 StreamIds 替代）\n推流直播码。",
           "example": "无",
           "member": "string",
           "name": "StreamId",
@@ -21541,6 +22260,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -21550,6 +22270,7 @@
         {
           "default": "",
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -21559,6 +22280,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板名称。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -21568,6 +22290,7 @@
         {
           "default": "",
           "document": "模板描述信息。",
+          "example": "MyTemplate",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -21577,6 +22300,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1920",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -21586,6 +22310,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "1080",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -21595,6 +22320,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": true,
@@ -21604,6 +22330,7 @@
         {
           "default": "",
           "document": "图片格式。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -21613,6 +22340,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -21622,6 +22350,7 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-10-01T10:00:00Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -21630,7 +22359,8 @@
         },
         {
           "default": "",
-          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>black：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>black：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "document": "填充方式，当截图配置宽高参数与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black",
           "member": "string",
           "name": "FillType",
           "required": true,
@@ -22118,6 +22848,48 @@
       ],
       "usage": "both"
     },
+    "StorageRegionInfo": {
+      "document": "存储地域信息",
+      "members": [
+        {
+          "default": "",
+          "document": "存储地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储地域描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态，是否开通，取值有：\n<li>opened：已经开通。</li>\n<li>unopened：未开通。</li>",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否默认的存储地域，true：是；false：否",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "StorageStatData": {
       "document": "云点播存储用量的分区统计数据",
       "members": [
@@ -22490,7 +23262,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 智能识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 智能识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "example": "无",
           "member": "string",
           "name": "TaskType",
@@ -22510,7 +23282,7 @@
         },
         {
           "default": "",
-          "document": "不同规格任务统计数据详情。\n转码规格：\n<li>Remuxing: 转封装</li>\n<li>Audio: 音频转码</li>\n<li>Standard.H264.SD: H.264编码方式标清转码</li>\n<li>Standard.H264.HD: H.264编码方式高清转码</li>\n<li>Standard.H264.FHD: H.264编码方式全高清转码</li>\n<li>Standard.H264.2K: H.264编码方式2K转码</li>\n<li>Standard.H264.4K: H.264编码方式4K转码</li>\n<li>Standard.H265.SD: H.265编码方式标清转码</li>\n<li>Standard.H265.HD: H.265编码方式高清转码</li>\n<li>Standard.H265.FHD: H.265编码方式全高清转码</li>\n<li>Standard.H265.2K: H.265编码方式2K转码</li>\n<li>Standard.H265.4K: H.265编码方式4K转码</li>\n<li>TESHD-10.H264.SD: H.264编码方式标清极速高清转码</li>\n<li>TESHD-10.H264.HD: H.264编码方式高清极速高清转码</li>\n<li>TESHD-10.H264.FHD: H.264编码方式全高清极速高清转码</li>\n<li>TESHD-10.H264.2K: H.264编码方式2K极速高清转码</li>\n<li>TESHD-10.H264.4K: H.264编码方式4K极速高清转码</li>\n<li>TESHD-10.H265.SD: H.265编码方式标清极速高清转码</li>\n<li>TESHD-10.H265.HD: H.265编码方式高清极速高清转码</li>\n<li>TESHD-10.H265.FHD: H.265编码方式全高清极速高清转码</li>\n<li>TESHD-10.H265.2K: H.265编码方式2K极速高清转码</li>\n<li>TESHD-10.H265.4K: H.265编码方式4K极速高清转码</li>\n<li>Edit.Audio: 音频编辑</li>\n<li>Edit.H264.SD: H.264编码方式标清视频编辑</li>\n<li>Edit.H264.HD: H.264编码方式高清视频编辑</li>\n<li>Edit.H264.FHD: H.264编码方式全高清视频编辑</li>\n<li>Edit.H264.2K: H.264编码方式2K视频编辑</li>\n<li>Edit.H264.4K: H.264编码方式4K视频编辑</li>\n<li>Edit.H265.SD: H.265编码方式标清视频编辑</li>\n<li>Edit.H265.HD: H.265编码方式高清视频编辑</li>\n<li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>\n<li>Edit.H265.2K: H.265编码方式2K视频编辑</li>\n<li>Edit.H265.4K: H.265编码方式4K视频编辑</li>\n去水印规格：\n<li>480P: 分辨率640*480及以下</li>\n<li>720P: 分辨率1280*720及以下</li>\n<li>1080P: 分辨率1920*1080及以下</li>\n<li>2K: 分辨率2560*1440及以下</li>\n<li>4K: 分辨率3840*2160及以下</li>\n<li>8K: 分辨率7680*4320及以下</li>",
+          "document": "不同规格任务统计数据详情。\n转码规格：\n<li>Remuxing: 转封装</li>\n<li>Audio: 音频转码</li>\n<li>Standard.H264.SD: H.264编码方式标清转码</li>\n<li>Standard.H264.HD: H.264编码方式高清转码</li>\n<li>Standard.H264.FHD: H.264编码方式全高清转码</li>\n<li>Standard.H264.2K: H.264编码方式2K转码</li>\n<li>Standard.H264.4K: H.264编码方式4K转码</li>\n<li>Standard.H265.SD: H.265编码方式标清转码</li>\n<li>Standard.H265.HD: H.265编码方式高清转码</li>\n<li>Standard.H265.FHD: H.265编码方式全高清转码</li>\n<li>Standard.H265.2K: H.265编码方式2K转码</li>\n<li>Standard.H265.4K: H.265编码方式4K转码</li>\n<li>TESHD-10.H264.SD: H.264编码方式标清极速高清转码</li>\n<li>TESHD-10.H264.HD: H.264编码方式高清极速高清转码</li>\n<li>TESHD-10.H264.FHD: H.264编码方式全高清极速高清转码</li>\n<li>TESHD-10.H264.2K: H.264编码方式2K极速高清转码</li>\n<li>TESHD-10.H264.4K: H.264编码方式4K极速高清转码</li>\n<li>TESHD-10.H265.SD: H.265编码方式标清极速高清转码</li>\n<li>TESHD-10.H265.HD: H.265编码方式高清极速高清转码</li>\n<li>TESHD-10.H265.FHD: H.265编码方式全高清极速高清转码</li>\n<li>TESHD-10.H265.2K: H.265编码方式2K极速高清转码</li>\n<li>TESHD-10.H265.4K: H.265编码方式4K极速高清转码</li>\n<li>Edit.Audio: 音频编辑</li>\n<li>Edit.H264.SD: H.264编码方式标清视频编辑</li>\n<li>Edit.H264.HD: H.264编码方式高清视频编辑</li>\n<li>Edit.H264.FHD: H.264编码方式全高清视频编辑</li>\n<li>Edit.H264.2K: H.264编码方式2K视频编辑</li>\n<li>Edit.H264.4K: H.264编码方式4K视频编辑</li>\n<li>Edit.H265.SD: H.265编码方式标清视频编辑</li>\n<li>Edit.H265.HD: H.265编码方式高清视频编辑</li>\n<li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>\n<li>Edit.H265.2K: H.265编码方式2K视频编辑</li>\n<li>Edit.H265.4K: H.265编码方式4K视频编辑</li>\n<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>\n去水印规格：\n<li>480P: 分辨率640*480及以下</li>\n<li>720P: 分辨率1280*720及以下</li>\n<li>1080P: 分辨率1920*1080及以下</li>\n<li>2K: 分辨率2560*1440及以下</li>\n<li>4K: 分辨率3840*2160及以下</li>\n<li>8K: 分辨率7680*4320及以下</li>",
           "example": "无",
           "member": "SpecificationDataItem",
           "name": "Details",
@@ -22647,6 +23419,42 @@
         }
       ],
       "usage": "in"
+    },
+    "TerrorismImageResult": {
+      "document": "图片画面智能识别涉及令人不安全的信息的任务结果类型",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的评分，分值为0到100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的结果建议，取值范围：\n<li>pass；</li>\n<li>review；</li>\n<li>block。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴别涉及令人不安全的信息的结果标签，取值范围：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>police：警察部队；</li>\n<li>bloody：血腥画面；</li>\n<li>banners：暴恐旗帜；</li>\n<li>explosion：爆炸火灾；</li>\n<li>scenario：暴恐画面。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TerrorismImgReviewTemplateInfo": {
       "document": "画面鉴别涉及令人不安全的信息的任务控制参数",

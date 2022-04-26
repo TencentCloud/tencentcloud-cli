@@ -17,6 +17,7 @@ Output:
         "DomainRuleSet": [
             {
                 "GaapCertificateAlias": "xx",
+                "Http3Supported": 0,
                 "Domain": "xx",
                 "CertificateId": "xx",
                 "PolyRealServerCertificateAliasInfo": [
@@ -26,7 +27,7 @@ Output:
                     }
                 ],
                 "RealServerCertificateId": "xx",
-                "BanStatus": "BANNED",
+                "BanStatus": "xx",
                 "CertificateAlias": "xx",
                 "ClientCertificateId": "xx",
                 "GaapCertificateId": "xx",
@@ -42,6 +43,7 @@ Output:
                         "ForwardHost": "xx",
                         "RuleId": "xx",
                         "HealthCheck": 1,
+                        "ServerNameIndication": "xx",
                         "ListenerId": "xx",
                         "CheckParams": {
                             "Domain": "xx",
@@ -63,6 +65,7 @@ Output:
                         "Scheduler": "xx",
                         "Path": "xx",
                         "RuleStatus": 1,
+                        "ServerNameIndicationSwitch": "xx",
                         "RealServerSet": [
                             {
                                 "RealServerStatus": 0,

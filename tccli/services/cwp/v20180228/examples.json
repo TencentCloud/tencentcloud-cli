@@ -1088,6 +1088,14 @@
         "title": "获取安全事件消息数据"
       }
     ],
+    "DescribeSecurityEventStat": [
+      {
+        "document": "",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSecurityEventStat\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MachineTotalAffectNum\": 28,\n        \"InvasionTotalAffectNum\": 22,\n        \"VulTotalAffectNum\": 5,\n        \"BaseLineTotalAffectNum\": 5,\n        \"CyberAttackTotalAffectNum\": 0,\n        \"MalwareStat\": {\n            \"EventsNum\": 352,\n            \"MachineAffectNum\": 9\n        },\n        \"HostLoginStat\": {\n            \"EventsNum\": 57,\n            \"MachineAffectNum\": 10\n        },\n        \"BruteAttackStat\": {\n            \"EventsNum\": 5,\n            \"MachineAffectNum\": 3\n        },\n        \"MaliciousRequestStat\": {\n            \"EventsNum\": 20,\n            \"MachineAffectNum\": 4\n        },\n        \"PrivilegeStat\": {\n            \"EventsNum\": 32,\n            \"MachineAffectNum\": 5\n        },\n        \"ReverseShellStat\": {\n            \"EventsNum\": 2,\n            \"MachineAffectNum\": 1\n        },\n        \"HighRiskBashStat\": {\n            \"EventsNum\": 179,\n            \"MachineAffectNum\": 8\n        },\n        \"AttackLogsStat\": {\n            \"EventsNum\": 0,\n            \"MachineAffectNum\": 0\n        },\n        \"VulRiskStat\": {\n            \"EventsNum\": 3,\n            \"MachineAffectNum\": 2\n        },\n        \"VulHighStat\": {\n            \"EventsNum\": 18,\n            \"MachineAffectNum\": 5\n        },\n        \"VulNormalStat\": {\n            \"EventsNum\": 13,\n            \"MachineAffectNum\": 4\n        },\n        \"VulLowStat\": {\n            \"EventsNum\": 1,\n            \"MachineAffectNum\": 1\n        },\n        \"BaselineRiskStat\": {\n            \"EventsNum\": 0,\n            \"MachineAffectNum\": 0\n        },\n        \"BaselineHighStat\": {\n            \"EventsNum\": 107,\n            \"MachineAffectNum\": 5\n        },\n        \"BaselineNormalStat\": {\n            \"EventsNum\": 653,\n            \"MachineAffectNum\": 5\n        },\n        \"BaselineLowStat\": {\n            \"EventsNum\": 128,\n            \"MachineAffectNum\": 5\n        },\n        \"VulStat\": {\n            \"EventsNum\": 8,\n            \"MachineAffectNum\": 5\n        },\n        \"Score\": 20,\n        \"RequestId\": \"8c952399-b255-3711-1c3c-a5c8a6befbd8\"\n    }\n}",
+        "title": "获取安全事件统计"
+      }
+    ],
     "DescribeSecurityEventsCnt": [
       {
         "document": "获取安全事件数统计数据",

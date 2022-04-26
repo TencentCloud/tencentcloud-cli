@@ -42,7 +42,8 @@ Output:
                     "TagKey": "tagKey",
                     "TagValue": "tagValue"
                 }
-            ]
+            ],
+            "IsCustomTld": false
         }
     }
 }

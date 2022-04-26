@@ -37,10 +37,13 @@ Output:
                         "RunningCount": 0
                     }
                 ],
+                "TradeType": 0,
+                "CurDeadline": "xx",
+                "AutoRenewFlag": 0,
                 "Type": "xx",
                 "Edition": "xx",
                 "Status": "xx",
-                "EnableConsoleIntranet": true,
+                "EnableInternet": true,
                 "VpcId": "xx",
                 "SpecId": "xx",
                 "Tags": [
@@ -51,6 +54,7 @@ Output:
                 ],
                 "InstanceId": "xx",
                 "EnableConsoleInternet": true,
+                "EnableConsoleIntranet": true,
                 "EngineRegion": "xx",
                 "ConfigInfoVisible": true,
                 "Name": "xx",
@@ -66,16 +70,19 @@ Output:
                         "BoundK8SInfos": [
                             {
                                 "BoundClusterId": "xx",
+                                "SyncMode": "xx",
                                 "BoundClusterType": "xx"
                             }
                         ],
-                        "AuthOpen": true,
-                        "EngineRegion": "xx",
                         "Features": [
                             "xx"
-                        ]
+                        ],
+                        "AuthOpen": true,
+                        "EngineRegion": "xx",
+                        "MainPassword": "xx"
                     }
                 ],
+                "ConsoleDefaultPwd": "xx",
                 "StorageCapacity": 0,
                 "EKSClusterID": "xx",
                 "VpcInfos": [
@@ -92,7 +99,6 @@ Output:
                 "Paymode": "xx",
                 "EnableStorage": true,
                 "Replica": 3,
-                "EnableInternet": true,
                 "CreateTime": "xx"
             }
         ],

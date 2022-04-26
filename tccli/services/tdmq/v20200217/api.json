@@ -423,7 +423,7 @@
     "DescribeSubscriptions": {
       "document": "查询指定环境和主题下的订阅者列表",
       "input": "DescribeSubscriptionsRequest",
-      "name": "消费订阅列表",
+      "name": "获取消费订阅列表",
       "output": "DescribeSubscriptionsResponse"
     },
     "DescribeTopics": {
@@ -545,6 +545,12 @@
       "input": "ResetMsgSubOffsetByTimestampRequest",
       "name": "消息回溯",
       "output": "ResetMsgSubOffsetByTimestampResponse"
+    },
+    "ResetRocketMQConsumerOffSet": {
+      "document": "重置指定Group的消费位点到指定时间戳",
+      "input": "ResetRocketMQConsumerOffSetRequest",
+      "name": "重置RocketMQ消费位点",
+      "output": "ResetRocketMQConsumerOffSetResponse"
     },
     "RewindCmqQueue": {
       "document": "回溯cmq队列",
@@ -1079,6 +1085,16 @@
           "example": "test",
           "member": "string",
           "name": "DeadLetterRoutingKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Queue对应的Topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2055,6 +2071,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RetentionSizeInMB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2326,6 +2352,16 @@
           "name": "NamespaceName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2937,7 +2973,7 @@
         },
         {
           "default": "",
-          "document": "消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。",
+          "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
           "example": "0",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
@@ -2946,7 +2982,7 @@
         },
         {
           "default": "",
-          "document": "队列是否开启回溯消息能力，该参数取值范围0-msgRetentionSeconds,即最大的回溯时间为消息在队列中的保留周期，0表示不开启。",
+          "document": "队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。",
           "example": "0",
           "member": "uint64",
           "name": "RewindSeconds",
@@ -3033,6 +3069,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "RetentionSizeInMB",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4998,7 +5043,7 @@
         {
           "default": "",
           "document": "查询偏移量",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5106,7 +5151,7 @@
         {
           "default": "",
           "document": "查询偏移量",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -8079,7 +8124,7 @@
         },
         {
           "default": "",
-          "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
+          "document": "消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改",
           "example": "1024",
           "member": "uint64",
           "name": "MaxMsgSize",
@@ -8088,7 +8133,7 @@
         },
         {
           "default": "",
-          "document": "消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。",
+          "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
           "example": "0",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
@@ -8097,7 +8142,7 @@
         },
         {
           "default": "",
-          "document": "消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。",
+          "document": "队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。",
           "example": "0",
           "member": "uint64",
           "name": "RewindSeconds",
@@ -8173,6 +8218,15 @@
           "example": "0",
           "member": "uint64",
           "name": "Transaction",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "RetentionSizeInMB",
           "required": false,
           "type": "int"
         }
@@ -9310,6 +9364,78 @@
       ],
       "type": "object"
     },
+    "ResetRocketMQConsumerOffSetRequest": {
+      "document": "ResetRocketMQConsumerOffSet请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重置方式，0表示从最新位点开始，1表示从指定时间点开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRocketMQConsumerOffSetResponse": {
+      "document": "ResetRocketMQConsumerOffSet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RetentionPolicy": {
       "document": "消息保留策略",
       "members": [
@@ -9576,6 +9702,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否支持命名空间接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportNamespaceEndpoint",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9801,6 +9937,26 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "公网接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicEndpoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "VPC接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcEndpoint",
           "required": true,
           "type": "string",
           "value_allowed_null": true

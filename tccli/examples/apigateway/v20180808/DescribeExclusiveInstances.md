@@ -1,4 +1,4 @@
-**Example 1: DescribeExclusiveInstances**
+**Example 1: 查询独享实例列表**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apigateway DescribeExclusiveInstances --cli-unfold-argument  \
-    --Limit 1 \
-    --Offset 1
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -15,17 +15,17 @@ Output:
 {
     "Response": {
         "Result": {
-            "InstanceId": "instance-0c96l2bo",
-            "InstanceName": "test_instance",
-            "InstanceDescription": "",
-            "InstanceChargeType": "PREPAID",
-            "InstanceState": "RUNNING",
-            "InstanceType": "BASIC",
-            "DealName": "xx",
+            "InstanceDescription": "xx",
+            "InstanceId": "xx",
+            "InstanceState": "xx",
+            "InstanceChargeType": "xx",
             "ResourceId": "xx",
-            "CreatedTime": "2018-10-30T04:24:19Z"
+            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "InstanceName": "xx",
+            "InstanceType": "xx",
+            "DealName": "xx"
         },
-        "RequestId": "e3705d00-bfe0-4fde-942c-cebd6b12431b"
+        "RequestId": "xx"
     }
 }
 ```

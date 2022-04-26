@@ -28,6 +28,7 @@ Output:
                     }
                 ],
                 "ClusterId": "xx",
+                "PayMode": 0,
                 "EndPointNum": 0,
                 "Healthy": 1,
                 "TopicNum": 0,

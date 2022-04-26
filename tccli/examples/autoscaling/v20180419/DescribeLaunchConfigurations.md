@@ -40,7 +40,8 @@ Output:
                         "DiskType": "CLOUD_PREMIUM",
                         "DiskSize": 10,
                         "SnapshotId": null,
-                        "DeleteWithInstance": false
+                        "DeleteWithInstance": false,
+                        "Encrypt": false
                     }
                 ],
                 "LoginSettings": {
@@ -104,7 +105,8 @@ Output:
                         "DiskType": "CLOUD_PREMIUM",
                         "DiskSize": 40,
                         "SnapshotId": null,
-                        "DeleteWithInstance": null
+                        "DeleteWithInstance": null,
+                        "Encrypt": null
                     }
                 ],
                 "LoginSettings": {
@@ -192,7 +194,8 @@ Output:
                         "DiskType": "CLOUD_PREMIUM",
                         "DiskSize": 10,
                         "SnapshotId": null,
-                        "DeleteWithInstance": false
+                        "DeleteWithInstance": false,
+                        "Encrypt": false
                     }
                 ],
                 "LoginSettings": {

@@ -20,7 +20,11 @@ Output:
                 "ProductId": "5SJN3W8XG6",
                 "ProductName": "nhi7qhcp_StudioProduct101",
                 "ProjectId": "5SJYTRW8XYT",
-                "DataProtocol": 1
+                "DataProtocol": 1,
+                "DevStatus": "xx",
+                "NetType": "xx",
+                "ProductType": 0,
+                "CategoryId": 0
             }
         ],
         "RequestId": "66245d34-a39b-41b5-85fa-8f8222c3e58e",

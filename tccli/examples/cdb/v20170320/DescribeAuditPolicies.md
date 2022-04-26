@@ -21,6 +21,7 @@ Output:
                 "PolicyId": "cdbpolicy-asdfqwer",
                 "Status": "running",
                 "InstanceId": "cdb-qwerasdf",
+                "InstanceName": "test",
                 "CreateTime": "2019-03-20 17:09:13",
                 "ModifyTime": "2019-03-20 17:09:13",
                 "PolicyName": "audit_policy_1",

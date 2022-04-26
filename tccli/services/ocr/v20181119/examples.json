@@ -348,7 +348,7 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=MLIDPassportOCR\n&ImageBase64=base64编码\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ID\": \"E6918C\",\n        \"Name\": \"LIM HEG CHUN STEE\",\n        \"IssuingCountry\": \"SGP\",\n        \"Nationality\": \"SGP\",\n        \"DateOfBirth\": \"\",\n        \"Sex\": \"M\",\n        \"DateOfExpiration\": \"230414\",\n        \"Warn\": [],\n        \"Image\": \"\",\n        \"AdvancedInfo\": \"{\\\"IssuingCountry\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Name\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"ID\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Nationality\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Sex\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"DateOfExpiration\\\":{\\\"Confidence\\\":\\\"0.9500\\\"}}\",\n        \"RequestId\": \"0ee989d3-d064-45ec-bccb-63f5064247b4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ID\": \"E6918C\",\n        \"Name\": \"LIM HEG CHUN STEE\",\n        \"IssuingCountry\": \"SGP\",\n        \"Nationality\": \"SGP\",\n        \"DateOfBirth\": \"\",\n        \"Sex\": \"M\",\n        \"DateOfExpiration\": \"230414\",\n        \"Warn\": [],\n        \"Image\": \"\",\n        \"AdvancedInfo\": \"{\\\"IssuingCountry\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Name\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"ID\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Nationality\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"Sex\\\":{\\\"Confidence\\\":\\\"0.9500\\\"},\\\"DateOfExpiration\\\":{\\\"Confidence\\\":\\\"0.9500\\\"}}\",\n        \"CodeSet\": \"P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<\",\n        \"CodeCrc\": \"JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04\",\n        \"RequestId\": \"0ee989d3-d064-45ec-bccb-63f5064247b4\"\n    }\n}",
         "title": "护照识别（港澳台地区及境外护照）示例代码[前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=MLIDPassportOCR)"
       }
     ],
@@ -458,8 +458,8 @@
       {
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeHealthCodeOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"京XX\",\n        \"Time\": \"XXXX - XX - XX XX: XX: XX\",\n        \"Color\": \"绿色\",\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
-        "title": "防疫健康码识别示例代码"
+        "output": "{\n    \"Response\": {\n        \"Name\": \"京XX\",\n        \"Time\": \"XX - XX XX: XX: XX\",\n        \"Color\": \"绿色\",\n        \"TestingResult\": \"48小时阴性\",\n        \"TestingInterval\": \"xx\",\n        \"TestingTime\": \"xx\",\n        \"IDNumber\": \"xx\",\n        \"RequestId\": \"210103d3-db06-4691-abe0-c0853aae606b\"\n    }\n}",
+        "title": "健康码识别示例代码"
       }
     ],
     "RecognizeOnlineTaxiItineraryOCR": [
@@ -484,6 +484,14 @@
         "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeThaiIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ID\": \"3102001968756\",\n        \"ThaiName\": \"นาย ธนกฤต  บุญโญปกรุณ์\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"EnLastName\": \"Boonyopakron\",\n        \"Address\": \"ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง\",\n        \"Birthday\": \"14ธ.ค.2509\",\n        \"IssueDate\": \"9ธ.ค.2559\",\n        \"ExpirationDate\": \"13ธ.ค.2567\",\n        \"RequestId\": \"98f8fcbf-933a-4e95-ac48-6f1a9308fs51\"\n    }\n}",
         "title": "泰国身份证识别示例代码"
+      }
+    ],
+    "RecognizeTravelCardOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeTravelCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RiskArea\": [\n            \"xx\"\n        ],\n        \"ReachedCity\": [\n            \"xx\"\n        ],\n        \"Color\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Time\": \"XXXX - XX - XX XX: XX: XX\"\n    }\n}",
+        "title": "通信行程卡识别示例代码"
       }
     ],
     "ResidenceBookletOCR": [

@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "MaxDelayTime": 10,
         "Monday": [
             "19:00-20:00"
         ],

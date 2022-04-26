@@ -204,6 +204,12 @@
       "name": "获取创建多设备结果",
       "output": "DescribeMultiDevicesResponse"
     },
+    "DescribeProduct": {
+      "document": "本接口（DescribeProduct）用于查看产品详情",
+      "input": "DescribeProductRequest",
+      "name": "查看产品详情",
+      "output": "DescribeProductResponse"
+    },
     "DescribeProductResource": {
       "document": "本接口（DescribeProductResource）用于查询产品资源详情。 ",
       "input": "DescribeProductResourceRequest",
@@ -389,6 +395,12 @@
       "input": "UpdateDevicesEnableStateRequest",
       "name": "批量切换设备可用状态",
       "output": "UpdateDevicesEnableStateResponse"
+    },
+    "UpdateProductDynamicRegister": {
+      "document": "更新产品动态注册的配置 ",
+      "input": "UpdateProductDynamicRegisterRequest",
+      "name": "更新产品动态注册",
+      "output": "UpdateProductDynamicRegisterResponse"
     },
     "UpdateTopicPolicy": {
       "document": "本接口（UpdateTopicPolicy）用于更新Topic信息",
@@ -2839,6 +2851,20 @@
       ],
       "type": "object"
     },
+    "DescribeProductRequest": {
+      "document": "DescribeProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductResourceRequest": {
       "document": "DescribeProductResource请求参数结构体",
       "members": [
@@ -2946,6 +2972,46 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResponse": {
+      "document": "DescribeProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品ID",
+          "member": "string",
+          "name": "ProductId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品名",
+          "member": "string",
+          "name": "ProductName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品元数据",
+          "member": "ProductMetadata",
+          "name": "ProductMetadata",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品属性",
+          "member": "ProductProperties",
+          "name": "ProductProperties",
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4219,7 +4285,8 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
+          "example": "1606207080000",
           "member": "uint64",
           "name": "MinTime",
           "required": true,
@@ -4227,7 +4294,8 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
+          "example": "1606208039999",
           "member": "uint64",
           "name": "MaxTime",
           "required": true,
@@ -4236,6 +4304,7 @@
         {
           "default": "",
           "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key比如：RequestID、ProductID、DeviceName等。\n一个典型的查询示例：ProductID:ABCDE12345 DeviceName:test publish",
+          "example": "productid:xxxxxxxxxx",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -4244,6 +4313,7 @@
         {
           "default": "",
           "document": "日志检索上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -4252,6 +4322,7 @@
         {
           "default": "",
           "document": "日志最大条数",
+          "example": "10",
           "member": "int64",
           "name": "MaxNum",
           "required": false,
@@ -4265,22 +4336,28 @@
       "members": [
         {
           "document": "日志上下文",
+          "example": "ic0cxTVFidWRTTUZmcERXMVZR",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context",
+          "example": "true",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "日志列表",
+          "example": "无",
           "member": "PayloadLogItem",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4298,7 +4375,8 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
+          "example": "1530244265000",
           "member": "uint64",
           "name": "MinTime",
           "required": true,
@@ -4306,7 +4384,8 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
+          "example": "1530258665000",
           "member": "uint64",
           "name": "MaxTime",
           "required": true,
@@ -4315,6 +4394,7 @@
         {
           "default": "",
           "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key包括：requestid、productid、devicename、scene、content。\n一个典型的查询示例：productid:ABCDE12345 devicename:test scene:SHADOW content:Device%20connect publish",
+          "example": "abc",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -4323,6 +4403,7 @@
         {
           "default": "",
           "document": "日志检索上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -4331,6 +4412,7 @@
         {
           "default": "",
           "document": "查询条数",
+          "example": "10",
           "member": "int64",
           "name": "MaxNum",
           "required": false,
@@ -4344,29 +4426,37 @@
       "members": [
         {
           "document": "日志上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context",
+          "example": "true",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "日志列表",
+          "example": "无",
           "member": "CLSLogItem",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "日志总条数",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5934,6 +6024,78 @@
     "UpdateDevicesEnableStateResponse": {
       "document": "UpdateDevicesEnableState返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductDynamicRegisterRequest": {
+      "document": "UpdateProductDynamicRegister请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品Id",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "动态注册设备上限",
+          "example": "10",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductDynamicRegisterResponse": {
+      "document": "UpdateProductDynamicRegister返回参数结构体",
+      "members": [
+        {
+          "document": "动态注册类型，0-关闭 1-预创建设备 2-自动创建设备",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册产品密钥",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ProductSecret",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "动态注册设备上限",
+          "example": "10000",
+          "member": "uint64",
+          "name": "RegisterLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

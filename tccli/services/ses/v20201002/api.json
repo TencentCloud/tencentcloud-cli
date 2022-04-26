@@ -85,9 +85,9 @@
       "output": "GetEmailTemplateResponse"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询30天之内的数据",
+      "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
       "input": "GetSendEmailStatusRequest",
-      "name": "获取邮件发送的状态",
+      "name": "获取邮件发送的状态（待废弃）",
       "output": "GetSendEmailStatusResponse"
     },
     "GetStatisticsReport": {
@@ -285,6 +285,15 @@
           "name": "Unsubscribe",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面",
+          "example": "0",
+          "member": "uint64",
+          "name": "ADLocation",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -442,6 +451,15 @@
     "CreateEmailTemplateResponse": {
       "document": "CreateEmailTemplate返回参数结构体",
       "members": [
+        {
+          "document": "模板id",
+          "example": "123",
+          "member": "uint64",
+          "name": "TemplateID",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1200,7 +1218,8 @@
       "members": [
         {
           "default": "",
-          "document": "获取模版数据量，用于分页",
+          "document": "获取模板数据量，用于分页",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1208,7 +1227,8 @@
         },
         {
           "default": "",
-          "document": "获取模版偏移值，用于分页",
+          "document": "获取模板偏移值，用于分页",
+          "example": "10",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1222,15 +1242,19 @@
       "members": [
         {
           "document": "邮件模板列表",
+          "example": "无",
           "member": "TemplatesMetadata",
           "name": "TemplatesMetadata",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "模版总数量",
+          "document": "模板总数量",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2070,6 +2094,7 @@
         {
           "default": "",
           "document": "模板内容",
+          "example": "无",
           "member": "TemplateContent",
           "name": "TemplateContent",
           "required": true,
@@ -2078,6 +2103,7 @@
         {
           "default": "",
           "document": "模板ID",
+          "example": "10091",
           "member": "uint64",
           "name": "TemplateID",
           "required": true,
@@ -2085,7 +2111,8 @@
         },
         {
           "default": "",
-          "document": "模版名字",
+          "document": "模板名字",
+          "example": "xx",
           "member": "string",
           "name": "TemplateName",
           "required": true,

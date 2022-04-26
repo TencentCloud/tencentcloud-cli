@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库分片信息**
+**Example 1: 无**
 
 
 
@@ -6,57 +6,76 @@ Input:
 
 ```
 tccli dcdb DescribeDCDBShards --cli-unfold-argument  \
-    --InstanceId dcdbt-ovulpcjf
+    --InstanceId dcdbt-21dfpcv1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "09d5c691-c180-4c7f-8bcf-1ef6d1bab40c",
-        "TotalCount": 2,
+        "DcnFlag": 0,
+        "RequestId": "f976f43c-6dd3-4dbf-869b-a1b0eac50506",
         "Shards": [
             {
-                "ShardId": 10244,
-                "InstanceId": "dcdbt-ovulpcjf",
-                "ShardSerialId": "set_1536756357_1",
-                "ShardInstanceId": "shard-5d4efnj7",
+                "Cpu": 2,
+                "CreateTime": "2021-12-01 11:49:54",
+                "InstanceId": "dcdbt-21dfpcv1",
+                "Memory": 4,
+                "MemoryUsage": 0.94,
+                "NodeCount": 2,
+                "Paymode": "prepaid",
+                "PeriodEndTime": "2023-01-01 11:12:24",
+                "Pid": 1002231,
+                "ProjectId": 0,
+                "ProxyVersion": "\"1.17.6-M-V2.0R723D002\"",
+                "Range": "0-31",
+                "Region": "ap-guangzhou",
+                "ShardId": 434,
+                "ShardInstanceId": "shard-ngbrea6b",
+                "ShardMasterZone": "ap-guangzhou-1",
+                "ShardSerialId": "set_1643096858_1",
+                "ShardSlaveZones": [
+                    "ap-guangzhou-1"
+                ],
                 "Status": 2,
                 "StatusDesc": "运行中",
-                "CreateTime": "2018-09-12 20:44:47",
-                "VpcId": "vpc-5rkcp0wb",
-                "SubnetId": "subnet-6ffate6q",
-                "ProjectId": 0,
-                "Region": "ap-guangzhou",
-                "Zone": "ap-guangzhou-1",
-                "Memory": 2,
                 "Storage": 10,
-                "PeriodEndTime": "2018-10-12 20:44:47",
-                "NodeCount": 2,
-                "StorageUsage": 0.1,
-                "MemoryUsage": 37.2
+                "StorageUsage": 0.01,
+                "SubnetId": "subnet-ovkcc9x6",
+                "VpcId": "vpc-j97vcvb5",
+                "Zone": "ap-guangzhou-2"
             },
             {
-                "ShardId": 10245,
-                "InstanceId": "dcdbt-ovulpcjf",
-                "ShardSerialId": "set_1536756415_3",
-                "ShardInstanceId": "shard-8huhv1y9",
+                "Cpu": 1,
+                "CreateTime": "2021-12-01 11:49:54",
+                "InstanceId": "dcdbt-21dfpcv1",
+                "Memory": 2,
+                "MemoryUsage": 0.99,
+                "NodeCount": 2,
+                "Paymode": "prepaid",
+                "PeriodEndTime": "2023-01-01 11:12:24",
+                "Pid": 1002231,
+                "ProjectId": 0,
+                "ProxyVersion": "\"1.17.6-M-V2.0R723D002\"",
+                "Range": "32-63",
+                "Region": "ap-guangzhou",
+                "ShardId": 435,
+                "ShardInstanceId": "shard-5zf65smf",
+                "ShardMasterZone": "ap-guangzhou-1",
+                "ShardSerialId": "set_1643096949_3",
+                "ShardSlaveZones": [
+                    "ap-guangzhou-1"
+                ],
                 "Status": 2,
                 "StatusDesc": "运行中",
-                "CreateTime": "2018-09-12 20:44:47",
-                "VpcId": "vpc-5rkcp0wb",
-                "SubnetId": "subnet-6ffate6q",
-                "ProjectId": 0,
-                "Region": "ap-guangzhou",
-                "Zone": "ap-guangzhou-1",
-                "Memory": 2,
                 "Storage": 10,
-                "PeriodEndTime": "2018-10-12 20:44:47",
-                "NodeCount": 2,
-                "StorageUsage": 0.1,
-                "MemoryUsage": 15.1
+                "StorageUsage": 0.011,
+                "SubnetId": "subnet-ovkcc9x6",
+                "VpcId": "vpc-j97vcvb5",
+                "Zone": "ap-guangzhou-2"
             }
-        ]
+        ],
+        "TotalCount": 2
     }
 }
 ```

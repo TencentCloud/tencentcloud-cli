@@ -42,6 +42,12 @@
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse"
     },
+    "DescribeSampleBatchQuery": {
+      "document": "批量查询指标，返回固定时间点指标内容",
+      "input": "DescribeSampleBatchQueryRequest",
+      "name": "批量查询指标",
+      "output": "DescribeSampleBatchQueryResponse"
+    },
     "DescribeScenarios": {
       "document": "查询场景列表",
       "input": "DescribeScenariosRequest",
@@ -415,6 +421,72 @@
       ],
       "type": "object"
     },
+    "CustomSample": {
+      "document": "sample附带原始查询语句中的metric, aggregation",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "pts_engine_req_total",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "聚合条件",
+          "example": "Rate",
+          "member": "string",
+          "name": "Aggregation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
+          "member": "Label",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "查询值",
+          "example": "123.34",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Time is the number of milliseconds since the epoch\n// (1970-01-01 00:00 UTC) excluding leap seconds.",
+          "example": "12345433",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %",
+          "example": "ms",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DNSConfig": {
       "document": "施压机 DNS 配置",
       "members": [
@@ -604,6 +676,15 @@
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调试任务标记",
+          "example": "false",
+          "member": "bool",
+          "name": "Debug",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -651,6 +732,69 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSampleBatchQueryRequest": {
+      "document": "DescribeSampleBatchQuery请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "job id",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景id",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询指标数组",
+          "example": "无",
+          "member": "InternalMetricQuery",
+          "name": "Queries",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSampleBatchQueryResponse": {
+      "document": "DescribeSampleBatchQuery返回参数结构体",
+      "members": [
+        {
+          "document": "返回指标内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomSample",
+          "name": "MetricSampleSet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -905,6 +1049,42 @@
         }
       ],
       "usage": "both"
+    },
+    "InternalMetricQuery": {
+      "document": "查询结构封装",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "pts_engine_req_total",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "聚合函数",
+          "example": "Rate,Count,Avg,P99,P95",
+          "member": "string",
+          "name": "Aggregation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询过滤",
+          "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Job": {
       "document": "任务",
@@ -1211,6 +1391,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Label": {
+      "document": "包含labelName 和labelValue",
+      "members": [
+        {
+          "default": "",
+          "document": "label名字",
+          "example": "service",
+          "member": "string",
+          "name": "LabelName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "label值",
+          "example": "http://www.baidu.com",
+          "member": "string",
+          "name": "LabelValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Load": {
       "document": "施压配置",
@@ -2009,6 +2215,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否调试",
+          "example": "true",
+          "member": "bool",
+          "name": "Debug",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

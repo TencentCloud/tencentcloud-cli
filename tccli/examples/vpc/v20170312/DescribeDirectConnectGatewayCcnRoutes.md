@@ -17,6 +17,8 @@ Output:
             {
                 "RouteId": "ccnr-bvipc87w",
                 "DestinationCidrBlock": "10.33.0.0/24",
+                "UpdateTime": "xx",
+                "Description": "xx",
                 "ASPath": [
                     "1000",
                     "2000",
@@ -26,6 +28,8 @@ Output:
             {
                 "RouteId": "ccnr-oc61so0o",
                 "DestinationCidrBlock": "192.168.0.0/24",
+                "UpdateTime": "xx",
+                "Description": "xx",
                 "ASPath": []
             }
         ],

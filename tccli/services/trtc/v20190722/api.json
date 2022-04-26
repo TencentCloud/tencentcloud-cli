@@ -1288,7 +1288,7 @@
         },
         {
           "default": "",
-          "document": "混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过10MB。",
+          "document": "混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过2MB。",
           "example": "xxx",
           "member": "string",
           "name": "BackgroundImageUrl",
@@ -1968,6 +1968,7 @@
         {
           "default": "",
           "document": "TRTC的SDKAppId。",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1976,6 +1977,7 @@
         {
           "default": "",
           "document": "房间号。",
+          "example": "1234",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -1984,6 +1986,7 @@
         {
           "default": "",
           "document": "要移出的用户列表，最多10个。",
+          "example": "test1",
           "member": "string",
           "name": "UserIds",
           "required": true,

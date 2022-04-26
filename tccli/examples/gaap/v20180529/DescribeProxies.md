@@ -19,31 +19,44 @@ Output:
         "InstanceSet": [
             {
                 "AccessRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "中国大陆-华东",
-                    "RegionArea": "EastChina",
-                    "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
+                    "RegionId": "xx",
+                    "RegionAreaName": "xx",
+                    "IDCType": "xx",
+                    "FeatureBitmap": 1,
+                    "RegionArea": "xx",
+                    "RegionName": "xx"
                 },
                 "RelatedGlobalDomains": [
                     "xx"
                 ],
-                "Version": "3.0",
-                "PolicyId": null,
+                "Version": "xx",
+                "PolicyId": "xx",
                 "Scalarable": 1,
-                "Status": "RUNNING",
+                "IPList": [
+                    {
+                        "IP": "xx",
+                        "Bandwidth": 0,
+                        "Provider": "xx"
+                    }
+                ],
+                "Status": "xx",
                 "ProxyType": 1,
-                "ForwardIP": "1.1.1.1",
-                "ProxyId": "link-12345678",
-                "RealServerRegion": "NorthChina",
+                "ForwardIP": "xx",
+                "ProxyId": "xx",
+                "RealServerRegion": "xx",
                 "Concurrent": 2,
                 "RealServerRegionInfo": {
-                    "RegionId": "NorthChina",
-                    "RegionName": "中国大陆-华北"
+                    "RegionId": "xx",
+                    "RegionAreaName": "xx",
+                    "IDCType": "xx",
+                    "FeatureBitmap": 1,
+                    "RegionArea": "xx",
+                    "RegionName": "xx"
                 },
-                "IP": "1.1.1.2",
-                "IPList": [],
-                "AccessRegion": "EastChina",
+                "IP": "xx",
+                "Http3Supported": 0,
+                "InBanBlacklist": 0,
+                "AccessRegion": "xx",
                 "ProjectId": 0,
                 "BillingType": 0,
                 "SupportProtocols": [
@@ -52,58 +65,71 @@ Output:
                     "HTTP",
                     "HTTPS"
                 ],
-                "PackageType": "Thunder",
-                "Domain": "link-12345678.gaapqcloud.com",
-                "IPAddressVersion": "IPv4",
-                "BanStatus": "RECOVER",
+                "PackageType": "xx",
+                "Domain": "xx",
+                "IPAddressVersion": "xx",
+                "BanStatus": "xx",
                 "CreateTime": 1,
-                "InstanceId": "link-12345678",
+                "InstanceId": "xx",
                 "Bandwidth": 10,
                 "SupportSecurity": 0,
                 "TagSet": [
                     {
-                        "TagKey": "gaaptest",
-                        "TagValue": "www"
+                        "TagKey": "xx",
+                        "TagValue": "xx"
                     }
                 ],
                 "ClientIPMethod": [
                     0
                 ],
-                "ProxyName": "test",
+                "ProxyName": "xx",
                 "NetworkType": "xx",
                 "ModifyConfigTime": 1,
-                "GroupId": null
+                "GroupId": "xx"
             }
         ],
         "TotalCount": 1,
         "ProxySet": [
             {
                 "AccessRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "中国大陆-华东",
-                    "RegionArea": "EastChina",
-                    "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
+                    "RegionId": "xx",
+                    "RegionAreaName": "xx",
+                    "IDCType": "xx",
+                    "FeatureBitmap": 1,
+                    "RegionArea": "xx",
+                    "RegionName": "xx"
                 },
                 "RelatedGlobalDomains": [
                     "xx"
                 ],
-                "Version": "3.0",
-                "PolicyId": null,
+                "Version": "xx",
+                "PolicyId": "xx",
                 "Scalarable": 1,
-                "Status": "RUNNING",
+                "IPList": [
+                    {
+                        "IP": "xx",
+                        "Bandwidth": 0,
+                        "Provider": "xx"
+                    }
+                ],
+                "Status": "xx",
                 "ProxyType": 1,
-                "ForwardIP": "1.1.1.1",
-                "ProxyId": "link-12345678",
-                "RealServerRegion": "NorthChina",
+                "ForwardIP": "xx",
+                "ProxyId": "xx",
+                "RealServerRegion": "xx",
                 "Concurrent": 2,
                 "RealServerRegionInfo": {
-                    "RegionId": "NorthChina",
-                    "RegionName": "中国大陆-华北"
+                    "RegionId": "xx",
+                    "RegionAreaName": "xx",
+                    "IDCType": "xx",
+                    "FeatureBitmap": 1,
+                    "RegionArea": "xx",
+                    "RegionName": "xx"
                 },
-                "IP": "1.1.1.2",
-                "IPList": [],
-                "AccessRegion": "EastChina",
+                "IP": "xx",
+                "Http3Supported": 0,
+                "InBanBlacklist": 0,
+                "AccessRegion": "xx",
                 "ProjectId": 0,
                 "BillingType": 0,
                 "SupportProtocols": [
@@ -112,30 +138,30 @@ Output:
                     "HTTP",
                     "HTTPS"
                 ],
-                "PackageType": "Thunder",
-                "Domain": "link-12345678.gaapqcloud.com",
-                "IPAddressVersion": "IPv4",
-                "BanStatus": "RECOVER",
+                "PackageType": "xx",
+                "Domain": "xx",
+                "IPAddressVersion": "xx",
+                "BanStatus": "xx",
                 "CreateTime": 1,
-                "InstanceId": "link-12345678",
+                "InstanceId": "xx",
                 "Bandwidth": 10,
                 "SupportSecurity": 0,
                 "TagSet": [
                     {
-                        "TagKey": "gaaptest",
-                        "TagValue": "www"
+                        "TagKey": "xx",
+                        "TagValue": "xx"
                     }
                 ],
                 "ClientIPMethod": [
                     0
                 ],
-                "ProxyName": "test",
-                "NetworkType": "",
+                "ProxyName": "xx",
+                "NetworkType": "xx",
                 "ModifyConfigTime": 1,
-                "GroupId": null
+                "GroupId": "xx"
             }
         ],
-        "RequestId": "1c54137e-e4da-42e1-8565-1bc2d99794a3"
+        "RequestId": "xx"
     }
 }
 ```

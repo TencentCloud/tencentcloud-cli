@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli redis UpgradeVersionToMultiAvailabilityZones --cli-unfold-argument  \
-    --InstanceId crs-5qlrlhux
+    --InstanceId crs-5qlrlhux \
+    --UpgradeProxyAndRedisServer true
 ```
 
 Output: 

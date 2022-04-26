@@ -84,6 +84,12 @@
       "name": "列出单次拨测详情数据",
       "output": "DescribeDetailedSingleProbeDataResponse"
     },
+    "DescribeProbeMetricData": {
+      "document": "列出云拨测指标详细数据",
+      "input": "DescribeProbeMetricDataRequest",
+      "name": "列出云拨测指标详细数据",
+      "output": "DescribeProbeMetricDataResponse"
+    },
     "DescribeProbeNodes": {
       "document": "查询拨测节点",
       "input": "DescribeProbeNodesRequest",
@@ -2180,6 +2186,87 @@
           "name": "TotalNumber",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeMetricDataRequest": {
+      "document": "DescribeProbeMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分析任务类型",
+          "example": "AnalyzeTaskType_UploadDownload",
+          "member": "string",
+          "name": "AnalyzeTaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标类型，counter 或者 gauge",
+          "example": "gauge",
+          "member": "string",
+          "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标详细字段",
+          "example": "sum(counter)",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "host = '123' and time >= now()-30m",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合时间, 1m、1d、100d 等等",
+          "example": "time(1m),  operator",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件数组",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProbeMetricDataResponse": {
+      "document": "DescribeProbeMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "指标 JSON 序列化后的字符串",
+          "example": "[{}]",
+          "member": "string",
+          "name": "MetricSet",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

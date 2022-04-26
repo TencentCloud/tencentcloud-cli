@@ -87,7 +87,13 @@ Output:
                 "WanStatusIpv6": 0,
                 "WanVip": "",
                 "WanVipv6": "",
-                "Zone": "ap-guangzhou-1"
+                "Zone": "ap-guangzhou-1",
+                "ResourceTags": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ]
             }
         ],
         "RequestId": "a44a3d24-1e71-4bbf-bc22-f6d583b084d8",

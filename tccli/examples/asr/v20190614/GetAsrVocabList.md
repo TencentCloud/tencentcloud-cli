@@ -12,6 +12,7 @@ Output:
 {
     "Response": {
         "RequestId": "e4c745a1-27a0-4143-972e-2ced14645ab4",
+        "TotalCount": 1,
         "VocabList": [
             {
                 "Name": "词表1",
@@ -22,6 +23,9 @@ Output:
                         "Word": "智聆",
                         "Weight": 1
                     }
+                ],
+                "TagInfos": [
+                    "xx"
                 ],
                 "CreateTime": "2020-01-09T19:26:42+08:00",
                 "UpdateTime": "2020-01-14T10:43:07+08:00",
@@ -37,6 +41,9 @@ Output:
                         "Weight": 6
                     }
                 ],
+                "TagInfos": [
+                    "xx"
+                ],
                 "CreateTime": "2020-01-14T10:24:07+08:00",
                 "UpdateTime": "2020-01-14T10:24:07+08:00",
                 "State": 0
@@ -50,6 +57,9 @@ Output:
                         "Word": "存储桶",
                         "Weight": 8
                     }
+                ],
+                "TagInfos": [
+                    "xx"
                 ],
                 "CreateTime": "2020-01-09T19:29:41+08:00",
                 "UpdateTime": "2020-01-09T19:29:42+08:00",

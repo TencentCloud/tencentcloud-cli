@@ -36,7 +36,9 @@ Output:
                 "VideoTs": 5032,
                 "MateFps": 30,
                 "MetaAudioRate": 22,
-                "MetaVideoRate": 4885
+                "MetaVideoRate": 4885,
+                "Bandwidth": 1.0,
+                "Flux": 1.0
             }
         ],
         "RequestId": "8e50cdb5-56dc-408b-89b0-31818958d424"

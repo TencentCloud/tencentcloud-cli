@@ -13,9 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "UserName": "xxxxx",
-        "CertificationAuthority": "xxxxxx",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459398"
+        "UserName": "xx",
+        "Domain": "xx",
+        "CertificationAuthority": "xx",
+        "Kubeconfig": "xx",
+        "PgwEndpoint": "xx",
+        "JnsGwEndpoint": "xx",
+        "RequestId": "xx",
+        "SecurityPolicy": [
+            "xx"
+        ],
+        "ClusterExternalEndpoint": "xx",
+        "Password": "xx"
     }
 }
 ```

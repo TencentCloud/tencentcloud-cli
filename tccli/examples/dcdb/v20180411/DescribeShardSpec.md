@@ -22,7 +22,8 @@ Output:
                         "Memory": 64000,
                         "NodeCount": 3,
                         "Qps": 33000,
-                        "MinStorage": 10000
+                        "MinStorage": 10000,
+                        "Cpu": 0
                     },
                     {
                         "SuitInfo": "日独立用户数上百万人的中型应用",
@@ -31,7 +32,8 @@ Output:
                         "Memory": 64000,
                         "NodeCount": 2,
                         "Qps": 33000,
-                        "MinStorage": 10000
+                        "MinStorage": 10000,
+                        "Cpu": 0
                     }
                 ]
             }

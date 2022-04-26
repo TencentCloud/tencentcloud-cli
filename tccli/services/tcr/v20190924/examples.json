@@ -11,7 +11,7 @@
     "BatchDeleteRepositoryPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=BatchDeleteRepositoryPersonal\r\n&RepoNames.0=dockerhub/test\r\n&RepoNames.1=testns/test1\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=BatchDeleteRepositoryPersonal\n&RepoNames.0=dockerhub/test\n&RepoNames.1=testns/test1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459396\"\n    }\n}",
         "title": "批量删除个人版仓库"
       }

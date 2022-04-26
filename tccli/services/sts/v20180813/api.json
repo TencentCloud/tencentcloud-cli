@@ -12,6 +12,12 @@
       "name": "根据 SAML 断言申请角色临时凭证",
       "output": "AssumeRoleWithSAMLResponse"
     },
+    "AssumeRoleWithWebIdentity": {
+      "document": "申请OIDC角色临时密钥",
+      "input": "AssumeRoleWithWebIdentityRequest",
+      "name": "申请OIDC角色临时密钥",
+      "output": "AssumeRoleWithWebIdentityResponse"
+    },
     "GetCallerIdentity": {
       "document": "获取当前调用者的身份信息。\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时凭据的身份获取。",
       "input": "GetCallerIdentityRequest",
@@ -218,6 +224,96 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleWithWebIdentityRequest": {
+      "document": "AssumeRoleWithWebIdentity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份提供商名称",
+          "example": "OIDC",
+          "member": "string",
+          "name": "ProviderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IdP签发的OIDC令牌",
+          "example": "XXXXX",
+          "member": "string",
+          "name": "WebIdentityToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色访问描述名",
+          "example": "qcs::cam::uin/798950673:roleName/OneLogin-Role",
+          "member": "string",
+          "name": "RoleArn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "会话名称",
+          "example": "XXXXX",
+          "member": "string",
+          "name": "RoleSessionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
+          "example": "3600",
+          "member": "int64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AssumeRoleWithWebIdentityResponse": {
+      "document": "AssumeRoleWithWebIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "临时秘钥过期时间(时间戳)",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时秘钥过期时间",
+          "example": "2010-12-10",
+          "member": "string",
+          "name": "Expiration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "临时秘钥",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

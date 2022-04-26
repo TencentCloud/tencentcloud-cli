@@ -15,14 +15,16 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "89d4c4cd-9e03-4574-88bb-98b5115334ac",
         "TotalCount": 1,
+        "RequestId": "xx",
         "Namespaces": [
             {
-                "NamespaceId": "test",
-                "Ttl": 60000,
-                "RetentionTime": 100000,
-                "Remark": "字符串"
+                "Remark": "xx",
+                "PublicEndpoint": "xx",
+                "RetentionTime": 1,
+                "VpcEndpoint": "xx",
+                "Ttl": 1,
+                "NamespaceId": "xx"
             }
         ]
     }

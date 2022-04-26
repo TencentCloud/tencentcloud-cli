@@ -138,12 +138,6 @@
       "name": "查看实例资源使用详情",
       "output": "DescribeDBResourceUsageDetailsResponse"
     },
-    "DescribeDBSecurityGroups": {
-      "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息",
-      "input": "DescribeDBSecurityGroupsRequest",
-      "name": "查询实例安全组信息",
-      "output": "DescribeDBSecurityGroupsResponse"
-    },
     "DescribeDBSlowLogs": {
       "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
       "input": "DescribeDBSlowLogsRequest",
@@ -197,12 +191,6 @@
       "input": "DescribeLogFileRetentionPeriodRequest",
       "name": "查看备份日志备份天数",
       "output": "DescribeLogFileRetentionPeriodResponse"
-    },
-    "DescribeOrders": {
-      "document": "本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。",
-      "input": "DescribeOrdersRequest",
-      "name": "查询订单信息",
-      "output": "DescribeOrdersResponse"
     },
     "DescribePrice": {
       "document": "本接口（DescribePrice）用于在购买实例前，查询实例的价格。",
@@ -424,6 +412,7 @@
         {
           "default": "",
           "document": "实例ID列表",
+          "example": "[\"tdsql-1234\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -437,15 +426,19 @@
       "members": [
         {
           "document": "隔离成功的实例id列表",
+          "example": "[\"tdsql-rlye31jd\"]",
           "member": "string",
           "name": "SuccessInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "隔离失败的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -545,6 +538,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tdsql-6a0lwzzj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -553,6 +547,7 @@
         {
           "default": "",
           "document": "源用户账户名",
+          "example": "testuser",
           "member": "string",
           "name": "SrcUser",
           "required": true,
@@ -561,6 +556,7 @@
         {
           "default": "",
           "document": "源用户HOST",
+          "example": "10.10.10.%",
           "member": "string",
           "name": "SrcHost",
           "required": true,
@@ -569,6 +565,7 @@
         {
           "default": "",
           "document": "目的用户账户名",
+          "example": "testuser",
           "member": "string",
           "name": "DstUser",
           "required": true,
@@ -577,6 +574,7 @@
         {
           "default": "",
           "document": "目的用户HOST",
+          "example": "10.10.20.%",
           "member": "string",
           "name": "DstHost",
           "required": true,
@@ -585,6 +583,7 @@
         {
           "default": "",
           "document": "目的用户账户描述",
+          "example": "testclone",
           "member": "string",
           "name": "DstDesc",
           "required": false,
@@ -598,8 +597,10 @@
       "members": [
         {
           "document": "异步任务流程ID。",
+          "example": "4123",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -731,6 +732,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -739,6 +741,7 @@
         {
           "default": "",
           "document": "源用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "SrcUserName",
           "required": true,
@@ -747,6 +750,7 @@
         {
           "default": "",
           "document": "源用户允许的访问 host",
+          "example": "172.17.%",
           "member": "string",
           "name": "SrcHost",
           "required": true,
@@ -755,6 +759,7 @@
         {
           "default": "",
           "document": "目的用户名",
+          "example": "testuser2",
           "member": "string",
           "name": "DstUserName",
           "required": true,
@@ -763,6 +768,7 @@
         {
           "default": "",
           "document": "目的用户允许的访问 host",
+          "example": "%",
           "member": "string",
           "name": "DstHost",
           "required": true,
@@ -771,6 +777,7 @@
         {
           "default": "",
           "document": "源账号的 ReadOnly 属性",
+          "example": "无",
           "member": "string",
           "name": "SrcReadOnly",
           "required": false,
@@ -779,6 +786,7 @@
         {
           "default": "",
           "document": "目的账号的 ReadOnly 属性",
+          "example": "无",
           "member": "string",
           "name": "DstReadOnly",
           "required": false,
@@ -1579,6 +1587,7 @@
         {
           "default": "",
           "document": "回档实例的ID列表，形如：tdsql-ow728lmc。",
+          "example": "[\"tdsql-arryr5nt\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1587,6 +1596,7 @@
         {
           "default": "",
           "document": "回档时间点",
+          "example": "2019-04-06 12:31:10",
           "member": "string",
           "name": "RollbackTime",
           "required": true,
@@ -1600,8 +1610,10 @@
       "members": [
         {
           "document": "异步任务流程ID。",
+          "example": "167",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2541,72 +2553,13 @@
       ],
       "usage": "out"
     },
-    "Deal": {
-      "document": "订单信息",
-      "members": [
-        {
-          "default": "",
-          "document": "订单号",
-          "member": "string",
-          "name": "DealName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "所属账号",
-          "member": "string",
-          "name": "OwnerUin",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "商品数量",
-          "member": "int64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "关联的流程 Id，可用于查询流程执行状态",
-          "member": "int64",
-          "name": "FlowId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "string",
-          "name": "InstanceIds",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "document": "付费模式，0后付费/1预付费",
-          "member": "int64",
-          "name": "PayMode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "DeleteAccountRequest": {
       "document": "DeleteAccount请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2615,6 +2568,7 @@
         {
           "default": "",
           "document": "用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2623,6 +2577,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -2649,6 +2604,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2657,6 +2613,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2665,6 +2622,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -2673,6 +2631,7 @@
         {
           "default": "",
           "document": "数据库名。如果为 \\*，表示查询全局权限（即 \\*.\\*），此时忽略 Type 和 Object 参数",
+          "example": "*",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -2681,6 +2640,7 @@
         {
           "default": "",
           "document": "类型,可以填入 table 、 view 、 proc 、 func 和 \\*。当 DbName 为具体数据库名，Type为 \\* 时，表示查询该数据库权限（即db.\\*），此时忽略 Object 参数",
+          "example": "*",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -2689,6 +2649,7 @@
         {
           "default": "",
           "document": "具体的 Type 的名称，例如 Type 为 table 时就是具体的表名。DbName 和 Type 都为具体名称，则 Object 表示具体对象名，不能为 \\* 或者为空",
+          "example": "*",
           "member": "string",
           "name": "Object",
           "required": false,
@@ -2697,6 +2658,7 @@
         {
           "default": "",
           "document": "当 Type=table 时，ColName 为 \\* 表示查询表的权限，如果为具体字段名，表示查询对应字段的权限",
+          "example": "*",
           "member": "string",
           "name": "ColName",
           "required": false,
@@ -2710,29 +2672,37 @@
       "members": [
         {
           "document": "实例ID",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "权限列表。",
+          "example": "[\"SELECT\",\"UPDATE\"]",
           "member": "string",
           "name": "Privileges",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "数据库账号用户名",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库账号Host",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2751,6 +2721,7 @@
         {
           "default": "",
           "document": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2764,15 +2735,19 @@
       "members": [
         {
           "document": "实例ID，透传入参。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "实例用户列表。",
+          "example": "无",
           "member": "DBAccount",
           "name": "Users",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2791,6 +2766,7 @@
         {
           "default": "",
           "document": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "[\"tdsql-fdpjf5zh\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2804,15 +2780,19 @@
       "members": [
         {
           "document": "返回的配置数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例备份时间配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DBBackupTimeConfig",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2835,8 +2815,10 @@
       "members": [
         {
           "document": "按机型分类的可售卖规格列表",
+          "example": "无",
           "member": "InstanceSpec",
           "name": "Specs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3152,6 +3134,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3165,15 +3148,19 @@
       "members": [
         {
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "请求DB的当前参数值",
+          "example": "无",
           "member": "ParamDesc",
           "name": "Params",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3192,6 +3179,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3200,6 +3188,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3208,6 +3197,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3216,6 +3206,7 @@
         {
           "default": "",
           "document": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay",
+          "example": "long_query",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3229,22 +3220,28 @@
       "members": [
         {
           "document": "主节点性能监控数据",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Master",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "备机1性能监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Slave1",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "备机2性能监控数据，如果实例是一主一从，则没有该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PerformanceMonitorSet",
           "name": "Slave2",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3263,6 +3260,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3271,6 +3269,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3279,6 +3278,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3287,6 +3287,7 @@
         {
           "default": "",
           "document": "拉取的指标名，支持的值为：long_query,select_total,update_total,insert_total,delete_total,mem_hit_rate,disk_iops,conn_active,is_master_switched,slave_delay",
+          "example": "long_query",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3300,71 +3301,91 @@
       "members": [
         {
           "document": "慢查询数",
+          "example": "无",
           "member": "MonitorData",
           "name": "LongQuery",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "查询操作数SELECT",
+          "example": "无",
           "member": "MonitorData",
           "name": "SelectTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "更新操作数UPDATE",
+          "example": "无",
           "member": "MonitorData",
           "name": "UpdateTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "插入操作数INSERT",
+          "example": "无",
           "member": "MonitorData",
           "name": "InsertTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "删除操作数DELETE",
+          "example": "无",
           "member": "MonitorData",
           "name": "DeleteTotal",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "缓存命中率",
+          "example": "无",
           "member": "MonitorData",
           "name": "MemHitRate",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "磁盘每秒IO次数",
+          "example": "无",
           "member": "MonitorData",
           "name": "DiskIops",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "活跃连接数",
+          "example": "无",
           "member": "MonitorData",
           "name": "ConnActive",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "是否发生主备切换，1为发生，0否",
+          "example": "无",
           "member": "MonitorData",
           "name": "IsMasterSwitched",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "主备延迟",
+          "example": "无",
           "member": "MonitorData",
           "name": "SlaveDelay",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3383,6 +3404,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3391,6 +3413,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3399,6 +3422,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3407,6 +3431,7 @@
         {
           "default": "",
           "document": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate",
+          "example": "data_disk_available",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3420,22 +3445,28 @@
       "members": [
         {
           "document": "主节点资源使用情况监控数据",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Master",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "备机1资源使用情况监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Slave1",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "备机2资源使用情况监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ResourceUsageMonitorSet",
           "name": "Slave2",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3454,6 +3485,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3462,6 +3494,7 @@
         {
           "default": "",
           "document": "开始日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -3470,6 +3503,7 @@
         {
           "default": "",
           "document": "结束日期，格式yyyy-mm-dd",
+          "example": "2018-03-19",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -3478,6 +3512,7 @@
         {
           "default": "",
           "document": "拉取的指标名称，支持的值为：data_disk_available,binlog_disk_available,mem_available,cpu_usage_rate",
+          "example": "data_disk_available",
           "member": "string",
           "name": "MetricName",
           "required": false,
@@ -3491,94 +3526,39 @@
       "members": [
         {
           "document": "binlog日志磁盘可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "BinlogDiskAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "磁盘可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "DataDiskAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CPU利用率",
+          "example": "无",
           "member": "MonitorData",
           "name": "CpuUsageRate",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "内存可用空间,单位GB",
+          "example": "无",
           "member": "MonitorData",
           "name": "MemAvailable",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDBSecurityGroupsRequest": {
-      "document": "DescribeDBSecurityGroups请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "数据库引擎名称，本接口取值：mariadb。",
-          "example": "mariadb",
-          "member": "string",
-          "name": "Product",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "实例ID。",
-          "example": "tdsql-eb2w7dto",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDBSecurityGroupsResponse": {
-      "document": "DescribeDBSecurityGroups返回参数结构体",
-      "members": [
-        {
-          "document": "安全组详情。",
-          "example": "无",
-          "member": "SecurityGroup",
-          "name": "Groups",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "实例VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VIP",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "实例端口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "VPort",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3595,6 +3575,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3603,6 +3584,7 @@
         {
           "default": "",
           "document": "从结果的第几条数据开始返回",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -3611,6 +3593,7 @@
         {
           "default": "",
           "document": "返回的结果条数",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -3619,6 +3602,7 @@
         {
           "default": "",
           "document": "查询的起始时间，形如2016-07-23 14:55:20",
+          "example": "2017-08-06 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -3627,6 +3611,7 @@
         {
           "default": "",
           "document": "查询的结束时间，形如2016-08-22 14:55:20",
+          "example": "2017-08-07 23:59:59",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -3635,6 +3620,7 @@
         {
           "default": "",
           "document": "要查询的具体数据库名称",
+          "example": "db",
           "member": "string",
           "name": "Db",
           "required": false,
@@ -3643,6 +3629,7 @@
         {
           "default": "",
           "document": "排序指标，取值为query_time_sum或者query_count",
+          "example": "query_time_sum",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3651,6 +3638,7 @@
         {
           "default": "",
           "document": "排序类型，desc或者asc",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -3659,6 +3647,7 @@
         {
           "default": "",
           "document": "是否查询从机的慢查询，0-主机; 1-从机",
+          "example": "1",
           "member": "int64",
           "name": "Slave",
           "required": false,
@@ -3672,36 +3661,46 @@
       "members": [
         {
           "document": "慢查询日志数据",
+          "example": "无",
           "member": "SlowLogData",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "所有语句锁时间总和",
+          "example": "0",
           "member": "float",
           "name": "LockTimeSum",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "所有语句查询总次数",
+          "example": "1",
           "member": "int64",
           "name": "QueryCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "总记录数",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "所有语句查询时间总和",
+          "example": "1.13",
           "member": "float",
           "name": "QueryTimeSum",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3720,6 +3719,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "tdsql-e9tklsgz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3728,6 +3728,7 @@
         {
           "default": "",
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "dbname",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -3741,43 +3742,55 @@
       "members": [
         {
           "document": "透传入参。",
+          "example": "tdsql-e9tklsgz",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库名称。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "表列表。",
+          "example": "无",
           "member": "DatabaseTable",
           "name": "Tables",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "视图列表。",
+          "example": "无",
           "member": "DatabaseView",
           "name": "Views",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "存储过程列表。",
+          "example": "无",
           "member": "DatabaseProcedure",
           "name": "Procs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "函数列表。",
+          "example": "无",
           "member": "DatabaseFunction",
           "name": "Funcs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3796,6 +3809,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "tdsql-e9tklsgz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3804,6 +3818,7 @@
         {
           "default": "",
           "document": "数据库名称，通过 DescribeDatabases 接口获取。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -3812,6 +3827,7 @@
         {
           "default": "",
           "document": "表名称，通过 DescribeDatabaseObjects 接口获取。",
+          "example": "test",
           "member": "string",
           "name": "Table",
           "required": true,
@@ -3825,29 +3841,37 @@
       "members": [
         {
           "document": "实例名称。",
+          "example": "tdsql-e9tklsgz",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "数据库名称。",
+          "example": "test",
           "member": "string",
           "name": "DbName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "表名称。",
+          "example": "region",
           "member": "string",
           "name": "Table",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "列信息。",
+          "example": "无",
           "member": "TableColumn",
           "name": "Cols",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3866,6 +3890,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：dcdbt-ow7t8lmc。",
+          "example": "tdsql-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3879,15 +3904,19 @@
       "members": [
         {
           "document": "该实例上的数据库列表。",
+          "example": "无",
           "member": "Database",
           "name": "Databases",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "透传入参。",
+          "example": "tdsql-e9tklsgz",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3987,6 +4016,7 @@
         {
           "default": "",
           "document": "异步请求接口返回的任务流程号。",
+          "example": "3340",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -4000,8 +4030,10 @@
       "members": [
         {
           "document": "流程状态，0：成功，1：失败，2：运行中",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4083,6 +4115,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4096,56 +4129,20 @@
       "members": [
         {
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "日志备份天数",
+          "example": "30",
           "member": "uint64",
           "name": "Days",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOrdersRequest": {
-      "document": "DescribeOrders请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。",
-          "member": "string",
-          "name": "DealNames",
           "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOrdersResponse": {
-      "document": "DescribeOrders返回参数结构体",
-      "members": [
-        {
-          "document": "返回的订单数量。",
-          "member": "int64",
-          "name": "TotalCount",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "订单信息列表。",
-          "member": "Deal",
-          "name": "Deals",
-          "type": "list",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4163,6 +4160,7 @@
         {
           "default": "",
           "document": "欲新购实例的可用区ID。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -4171,6 +4169,7 @@
         {
           "default": "",
           "document": "实例节点个数，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "2",
           "member": "int64",
           "name": "NodeCount",
           "required": true,
@@ -4179,6 +4178,7 @@
         {
           "default": "",
           "document": "内存大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得。",
+          "example": "2000",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -4187,6 +4187,7 @@
         {
           "default": "",
           "document": "存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs\n 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。",
+          "example": "10000",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -4195,6 +4196,7 @@
         {
           "default": "",
           "document": "欲购买的时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -4203,6 +4205,7 @@
         {
           "default": "",
           "document": "欲购买的数量，默认查询购买1个实例的价格。",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -4211,6 +4214,7 @@
         {
           "default": "",
           "document": "付费类型。postpaid：按量付费   prepaid：预付费",
+          "example": "prepaid",
           "member": "string",
           "name": "Paymode",
           "required": false,
@@ -4224,15 +4228,19 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "21120",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "21120",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4305,14 +4313,16 @@
         {
           "default": "",
           "document": "待续费的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "1",
+          "default": "",
           "document": "续费时长，单位：月。不传则默认为1个月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -4326,15 +4336,19 @@
       "members": [
         {
           "document": "原价，单位：分",
+          "example": "21120",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际价格，单位：分。受折扣等影响，可能和原价不同。",
+          "example": "21120",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4357,8 +4371,10 @@
       "members": [
         {
           "document": "可售卖地域信息列表",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4377,6 +4393,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-6a0lwzzj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4385,6 +4402,7 @@
         {
           "default": "",
           "document": "SQL日志偏移。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4393,6 +4411,7 @@
         {
           "default": "",
           "document": "拉取数量（0-10000，为0时拉取总数信息）。",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4406,43 +4425,55 @@
       "members": [
         {
           "document": "当前消息队列中的sql日志条目数。",
+          "example": "2205945",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志起始偏移。",
+          "example": "53560502",
           "member": "uint64",
           "name": "StartOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "消息队列中的sql日志结束偏移。",
+          "example": "55766447",
           "member": "uint64",
           "name": "EndOffset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的第一条sql日志的偏移。",
+          "example": "53560502",
           "member": "uint64",
           "name": "Offset",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "返回的sql日志数量。",
+          "example": "0",
           "member": "uint64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "Sql日志列表。",
+          "example": "无",
           "member": "SqlLogItem",
           "name": "SqlItems",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4632,6 +4663,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4784,6 +4816,7 @@
         {
           "default": "",
           "document": "待初始化的实例ID列表，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "[\"tdsql-fdpjf5zh\\r\\n\",\"tdsql-avw0207d\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4792,6 +4825,7 @@
         {
           "default": "",
           "document": "参数列表。本接口的可选值为：character_set_server（字符集，必传），lower_case_table_names（表名大小写敏感，必传，0 - 敏感；1-不敏感），innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0 - 异步； 1 - 强同步；2 - 强同步可退化。默认为强同步）。",
+          "example": "无",
           "member": "DBParamValue",
           "name": "Params",
           "required": true,
@@ -4805,15 +4839,19 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "3340",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "透传入参。",
+          "example": "[\"tdsql-fdpjf5zh\",\"tdsql-avw0207d\"]",
           "member": "string",
           "name": "InstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4854,6 +4892,7 @@
         {
           "default": "",
           "document": "实例ID列表",
+          "example": "[\"tdsql-cq3ndzu7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4867,15 +4906,19 @@
       "members": [
         {
           "document": "解隔离成功的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "SuccessInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "解隔离失败的实例id列表",
+          "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4981,6 +5024,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4989,6 +5033,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4997,6 +5042,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -5005,6 +5051,7 @@
         {
           "default": "",
           "document": "新的账号备注，长度 0~256。",
+          "example": "用于测试的账号",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -5139,6 +5186,7 @@
         {
           "default": "",
           "document": "实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5147,6 +5195,7 @@
         {
           "default": "",
           "document": "每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00",
+          "example": "03:00",
           "member": "string",
           "name": "StartBackupTime",
           "required": true,
@@ -5155,6 +5204,7 @@
         {
           "default": "",
           "document": "每天备份执行的区间的结束时间，格式 mm:ss，形如 23:59",
+          "example": "05:59",
           "member": "string",
           "name": "EndBackupTime",
           "required": true,
@@ -5168,8 +5218,10 @@
       "members": [
         {
           "document": "设置的状态，0 表示成功",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5188,6 +5240,7 @@
         {
           "default": "",
           "document": "待修改的实例 ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5196,6 +5249,7 @@
         {
           "default": "",
           "document": "新的实例名称。允许的字符为字母、数字、下划线、连字符和中文。",
+          "example": "newname",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5209,8 +5263,10 @@
       "members": [
         {
           "document": "实例ID",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5274,6 +5330,7 @@
         {
           "default": "",
           "document": "待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "[\"tdsql-fdpjf5zh\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5282,6 +5339,7 @@
         {
           "default": "",
           "document": "要分配的项目 ID，可以通过 DescribeProjects 查询项目列表接口获取。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -5308,6 +5366,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5316,6 +5375,7 @@
         {
           "default": "",
           "document": "参数列表，每一个元素是Param和Value的组合",
+          "example": "无",
           "member": "DBParamValue",
           "name": "Params",
           "required": true,
@@ -5329,15 +5389,19 @@
       "members": [
         {
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "参数修改结果",
+          "example": "无",
           "member": "ParamModifyResult",
           "name": "Result",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5356,6 +5420,7 @@
         {
           "default": "",
           "document": "待修改同步模式的实例ID。形如：tdsql-ow728lmc。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5364,6 +5429,7 @@
         {
           "default": "",
           "document": "同步模式：0 异步，1 强同步， 2 强同步可退化",
+          "example": "0",
           "member": "int64",
           "name": "SyncMode",
           "required": true,
@@ -5377,8 +5443,10 @@
       "members": [
         {
           "document": "异步任务Id，可通过 DescribeFlow 查询任务状态。",
+          "example": "3521",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5397,6 +5465,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5405,6 +5474,7 @@
         {
           "default": "",
           "document": "保存的天数,不能超过30",
+          "example": "29",
           "member": "uint64",
           "name": "Days",
           "required": true,
@@ -5418,8 +5488,10 @@
       "members": [
         {
           "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "tdsql-ige1a5k3",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5564,6 +5636,7 @@
         {
           "default": "",
           "document": "待开放外网访问的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5572,6 +5645,7 @@
         {
           "default": "",
           "document": "是否IPv6，默认0",
+          "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
           "required": false,
@@ -5585,8 +5659,10 @@
       "members": [
         {
           "document": "异步任务ID，可通过 DescribeFlow 查询任务状态。",
+          "example": "3323",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5647,6 +5723,7 @@
         {
           "default": "",
           "document": "参数名字",
+          "example": "long_query_time",
           "member": "string",
           "name": "Param",
           "required": true,
@@ -5656,6 +5733,7 @@
         {
           "default": "",
           "document": "当前参数值",
+          "example": "1",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -5665,6 +5743,7 @@
         {
           "default": "",
           "document": "设置过的值，参数生效后，该值和value一样。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "string",
           "name": "SetValue",
           "required": true,
@@ -5674,6 +5753,7 @@
         {
           "default": "",
           "document": "系统默认值",
+          "example": "1",
           "member": "string",
           "name": "Default",
           "required": true,
@@ -5683,6 +5763,7 @@
         {
           "default": "",
           "document": "参数限制",
+          "example": "无",
           "member": "ParamConstraint",
           "name": "Constraint",
           "required": true,
@@ -5692,8 +5773,19 @@
         {
           "default": "",
           "document": "是否有设置过值，false:没有设置过值，true:有设置过值。",
+          "example": "true",
           "member": "bool",
           "name": "HaveSetValue",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要重启生效，false:不需要重启，\ntrue:需要重启",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedRestart",
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -5904,6 +5996,7 @@
         {
           "default": "",
           "document": "待续费的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-avw0207d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5912,14 +6005,16 @@
         {
           "default": "",
           "document": "续费时长，单位：月。",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
           "type": "int"
         },
         {
-          "default": "false",
+          "default": "",
           "document": "是否自动使用代金券进行支付，默认不使用。",
+          "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -5928,6 +6023,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券。",
+          "example": "[]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -5941,8 +6037,10 @@
       "members": [
         {
           "document": "长订单号。可以据此调用 DescribeOrders\n 查询订单详细信息，或在支付失败时调用用户账号相关接口进行支付。",
+          "example": "20171103110253",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5961,6 +6059,7 @@
         {
           "default": "",
           "document": "实例 ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。",
+          "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5969,6 +6068,7 @@
         {
           "default": "",
           "document": "登录用户名。",
+          "example": "testuser1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -5977,6 +6077,7 @@
         {
           "default": "",
           "document": "用户允许的访问 host，用户名+host唯一确定一个账号。",
+          "example": "172.17.%",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -5985,6 +6086,7 @@
         {
           "default": "",
           "document": "新密码，由字母、数字或常见符号组成，不能包含分号、单引号和双引号，长度为6~32位。",
+          "example": "abcd8765_.",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -6616,6 +6718,7 @@
         {
           "default": "",
           "document": "实例Id，形如 tdsql-ow728lmc",
+          "example": "tdsql-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6624,6 +6727,7 @@
         {
           "default": "",
           "document": "切换的目标区域，会自动选择该可用区中延迟最低的节点",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6637,8 +6741,10 @@
       "members": [
         {
           "document": "异步流程Id",
+          "example": "11",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

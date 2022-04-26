@@ -1309,7 +1309,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为付费证书。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsVip",
@@ -1354,7 +1354,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可续费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "RenewAble",

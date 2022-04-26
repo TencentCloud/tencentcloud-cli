@@ -22,9 +22,11 @@ Output:
         ],
         "IntranetAddress": "xx",
         "InternetAddress": "xx",
+        "ConsoleInternetBandWidth": 0,
         "ConsoleIntranetAddress": "xx",
         "RequestId": "xx",
-        "ConsoleInternetAddress": "xx"
+        "ConsoleInternetAddress": "xx",
+        "InternetBandWidth": 0
     }
 }
 ```

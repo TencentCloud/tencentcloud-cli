@@ -13,6 +13,21 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "ClusterAsGroupSet": [
+            {
+                "AutoScalingGroupId": "xx",
+                "Status": "xx",
+                "IsUnschedulable": true,
+                "Labels": [
+                    {
+                        "Name": "xx",
+                        "Value": "xx"
+                    }
+                ],
+                "CreatedTime": "xx"
+            }
+        ],
         "RequestId": "82f2fe9c-c5fa-4077-9236-f1341180a696"
     }
 }

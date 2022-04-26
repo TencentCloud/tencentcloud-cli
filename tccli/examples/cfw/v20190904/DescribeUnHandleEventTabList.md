@@ -32,7 +32,7 @@ Output:
         },
         "RequestId": "121233",
         "ReturnCode": 0,
-        "ReturnMsg": "scuess"
+        "ReturnMsg": "sccuess"
     }
 }
 ```

@@ -253,7 +253,7 @@
       "output": "DescribeBinlogsResponse"
     },
     "DescribeCDBProxy": {
-      "document": "查询数据库代理",
+      "document": "查询数据库代理（待下线，替换接口QueryCDBProxy）",
       "input": "DescribeCDBProxyRequest",
       "name": "查询数据库代理",
       "output": "DescribeCDBProxyResponse"
@@ -702,6 +702,12 @@
       "name": "续费云数据库实例",
       "output": "RenewDBInstanceResponse"
     },
+    "ResetRootAccount": {
+      "document": "重置实例ROOT账号，初始化账号权限",
+      "input": "ResetRootAccountRequest",
+      "name": "重置ROOT账号",
+      "output": "ResetRootAccountResponse"
+    },
     "RestartDBInstances": {
       "document": "本接口(RestartDBInstances)用于重启云数据库实例。\n\n注意：\n1、本接口只支持主实例进行重启操作；\n2、实例状态必须为正常，并且没有其他异步任务在执行中。",
       "input": "RestartDBInstancesRequest",
@@ -904,6 +910,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -912,6 +919,7 @@
         {
           "default": "",
           "document": "星期一的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起始时间按半个小时对齐；最短半个小时，最长三个小时；可设置多个时间段。 一周中应至少设置一天的时间窗。下同。",
+          "example": "[\"02:00-03:00\\n\"]",
           "member": "string",
           "name": "Monday",
           "required": false,
@@ -920,6 +928,7 @@
         {
           "default": "",
           "document": "星期二的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Tuesday",
           "required": false,
@@ -928,6 +937,7 @@
         {
           "default": "",
           "document": "星期三的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Wednesday",
           "required": false,
@@ -936,6 +946,7 @@
         {
           "default": "",
           "document": "星期四的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Thursday",
           "required": false,
@@ -944,6 +955,7 @@
         {
           "default": "",
           "document": "星期五的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Friday",
           "required": false,
@@ -952,6 +964,7 @@
         {
           "default": "",
           "document": "星期六的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Saturday",
           "required": false,
@@ -960,10 +973,20 @@
         {
           "default": "",
           "document": "星期日的可维护时间窗口。 一周中应至少设置一天的时间窗。",
+          "example": "无",
           "member": "string",
           "name": "Sunday",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "最大延迟阈值，仅对主实例和灾备实例有效",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1104,7 +1127,7 @@
         },
         {
           "default": "",
-          "document": "描述说明",
+          "document": "描述说明，最大支持256位。",
           "example": "proxy代理",
           "member": "string",
           "name": "Desc",
@@ -1738,6 +1761,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份",
+          "example": "save_mode_regular",
+          "member": "string",
+          "name": "SaveMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2187,7 +2220,7 @@
         },
         {
           "default": "",
-          "document": "是否只关闭读写分离，取值：\"true\" | \"false\"",
+          "document": "是否只关闭读写分离，取值：\"true\" | \"false\"，默认为\"false\"",
           "example": "false",
           "member": "bool",
           "name": "OnlyCloseRW",
@@ -2901,6 +2934,15 @@
           "name": "CageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "项目ID，默认项目ID0",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3228,7 +3270,7 @@
         },
         {
           "default": "",
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "*******",
           "member": "string",
           "name": "ClientToken",
@@ -3300,7 +3342,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板，默认值是：\"HIGH_STABILITY\"。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "ParamTemplateType",
@@ -3324,6 +3366,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
+          "example": "[]",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3588,7 +3639,7 @@
         },
         {
           "default": "",
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在当天内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间在48小时内唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "********",
           "member": "string",
           "name": "ClientToken",
@@ -3684,6 +3735,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
+          "example": "[]",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3840,7 +3900,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -4744,6 +4804,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-qwerasdf",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -4752,6 +4813,7 @@
         {
           "default": "",
           "document": "审计策略 ID。",
+          "example": "cdbpolicy-asdfqwer",
           "member": "string",
           "name": "PolicyId",
           "required": false,
@@ -4760,6 +4822,7 @@
         {
           "default": "",
           "document": "审计策略名称。支持按审计策略名称进行模糊匹配查询。",
+          "example": "full",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -4768,6 +4831,7 @@
         {
           "default": "",
           "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4776,6 +4840,7 @@
         {
           "default": "",
           "document": "分页偏移量。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4784,8 +4849,18 @@
         {
           "default": "",
           "document": "审计规则 ID。可使用该审计规则 ID 查询到其关联的审计策略。\n注意，参数 RuleId，InstanceId，PolicyId，PolicyName 必须至少传一个。",
+          "example": "test",
           "member": "string",
           "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "cdb",
+          "member": "string",
+          "name": "InstanceName",
           "required": false,
           "type": "string"
         }
@@ -4797,15 +4872,19 @@
       "members": [
         {
           "document": "符合条件的审计策略个数。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "审计策略详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AuditPolicy",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4850,7 +4929,7 @@
         },
         {
           "default": "",
-          "document": "分页偏移量。",
+          "document": "分页偏移量。默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4896,6 +4975,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4909,44 +4989,101 @@
       "members": [
         {
           "document": "自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
+          "example": "10",
           "member": "int64",
           "name": "StartTimeMin",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
+          "example": "14",
           "member": "int64",
           "name": "StartTimeMax",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备份文件保留时间，单位为天。",
+          "example": "7",
           "member": "int64",
           "name": "BackupExpireDays",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备份方式，可能的值为：physical - 物理备份，logical - 逻辑备份。",
+          "example": "physical",
           "member": "string",
           "name": "BackupMethod",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "Binlog 文件保留时间，单位为天。",
+          "example": "7",
           "member": "int64",
           "name": "BinlogExpireDays",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实例自动备份的时间窗。",
+          "example": "无",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
+          "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodSave",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留最长天数，最小值：90，最大值：3650，默认值：1080",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackupPeriodSaveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly",
+          "example": "weekly",
+          "member": "string",
+          "name": "BackupPeriodSaveInterval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupPeriodSaveCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss",
+          "example": "1970-01-01 00:00:01",
+          "member": "string",
+          "name": "StartBackupPeriodSaveDate",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6101,7 +6238,7 @@
         },
         {
           "default": "",
-          "document": "是否锁定标记。",
+          "document": "是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "CdbErrors",
@@ -6222,6 +6359,33 @@
           "example": "[\"cage-test\"]",
           "member": "string",
           "name": "CageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "[\"a12\",\"v22\"]",
+          "member": "string",
+          "name": "TagValues",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络字符型vpcId",
+          "example": "[\"vpc-saxa\",\"vpc-sss\"]",
+          "member": "string",
+          "name": "UniqueVpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "私有网络字符型subnetId",
+          "example": "[\"subnet-kkai\"]",
+          "member": "string",
+          "name": "UniqSubnetIds",
           "required": false,
           "type": "list"
         }
@@ -6697,7 +6861,7 @@
         },
         {
           "default": "",
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -6976,6 +7140,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6983,7 +7148,8 @@
         },
         {
           "default": "",
-          "document": "分页偏移量。",
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6991,7 +7157,8 @@
         },
         {
           "default": "",
-          "document": "分页大小。",
+          "document": "分页大小，默认值：20。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7005,15 +7172,19 @@
       "members": [
         {
           "document": "符合条件的记录数。",
+          "example": "28",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "参数修改记录。",
+          "example": "无",
           "member": "ParamRecord",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7189,7 +7360,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模版，\"HIGH_PERFORMANCE\" - 高性能模版。",
+          "document": "参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -8114,6 +8285,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8127,51 +8299,74 @@
       "members": [
         {
           "document": "星期一的可维护时间列表。",
+          "example": "[\"19:00-20:00\"]",
           "member": "string",
           "name": "Monday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期二的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Tuesday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期三的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Wednesday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期四的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Thursday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期五的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Friday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期六的可维护时间列表。",
+          "example": "[\"18:00-20:00\"]",
           "member": "string",
           "name": "Saturday",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "星期日的可维护时间列表。",
+          "example": "[\"18:00-20:00\",\"21:30-22:00\"]",
           "member": "string",
           "name": "Sunday",
+          "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "最大数据延迟阈值",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8747,6 +8942,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "[\"cdb-f35wr6wj\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8755,6 +8951,7 @@
         {
           "default": "",
           "document": "实例新的密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：!@#$%^*()）中的两种。",
+          "example": "Gx18ux23F^X",
           "member": "string",
           "name": "NewPassword",
           "required": true,
@@ -8763,6 +8960,7 @@
         {
           "default": "",
           "document": "实例的参数列表，目前支持设置“character_set_server”、“lower_case_table_names”参数。其中，“character_set_server”参数可选值为[\"utf8\",\"latin1\",\"gbk\",\"utf8mb4\"]；“lower_case_table_names”可选值为[“0”,“1”]。",
+          "example": "无",
           "member": "ParamInfo",
           "name": "Parameters",
           "required": true,
@@ -8771,6 +8969,7 @@
         {
           "default": "",
           "document": "实例的端口，取值范围为[1024, 65535]",
+          "example": "无",
           "member": "int64",
           "name": "Vport",
           "required": false,
@@ -8784,8 +8983,10 @@
       "members": [
         {
           "document": "异步任务的请求ID数组，可使用此ID查询异步任务的执行结果",
+          "example": "[\"8cd119d4-61ba-11e7-aeff-018cfa1f5560\"]",
           "member": "string",
           "name": "AsyncRequestIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9210,7 +9411,7 @@
         },
         {
           "default": "",
-          "document": "是否锁定标记",
+          "document": "磁盘写入是否被锁定（实例数据写入量已经超过磁盘配额）。0 -未被锁定 1 -已被锁定",
           "example": "0",
           "member": "int64",
           "name": "CdbError",
@@ -9900,7 +10101,7 @@
         },
         {
           "default": "",
-          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，不传该参数表示清除该权限。",
+          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "[\"SELECT\\n\"]",
           "member": "string",
           "name": "GlobalPrivileges",
@@ -9909,7 +10110,7 @@
         },
         {
           "default": "",
-          "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
@@ -9918,7 +10119,7 @@
         },
         {
           "default": "",
-          "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库中表的权限。Privileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\t\"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
@@ -9927,7 +10128,7 @@
         },
         {
           "default": "",
-          "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。",
+          "document": "数据库表中列的权限。Privileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "无",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
@@ -9936,7 +10137,7 @@
         },
         {
           "default": "",
-          "document": "该参数不为空时，为批量修改权限。可选值为：grant，revoke。",
+          "document": "该参数不为空时，为批量修改权限。可选值为：grant - 授予权限，revoke - 回收权限。",
           "example": "无",
           "member": "string",
           "name": "ModifyAction",
@@ -10115,6 +10316,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10122,7 +10324,8 @@
         },
         {
           "default": "",
-          "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为732天。",
+          "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。",
+          "example": "10",
           "member": "int64",
           "name": "ExpireDays",
           "required": false,
@@ -10131,6 +10334,7 @@
         {
           "default": "",
           "document": "(将废弃，建议使用 BackupTimeWindow 参数) 备份时间范围，格式为：02:00-06:00，起点和终点时间目前限制为整点，目前可以选择的范围为： 00:00-12:00，02:00-06:00，06：00-10：00，10:00-14:00，14:00-18:00，18:00-22:00，22:00-02:00。",
+          "example": "02:00-06:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -10139,6 +10343,7 @@
         {
           "default": "",
           "document": "自动备份方式，仅支持：physical - 物理冷备",
+          "example": "logical",
           "member": "string",
           "name": "BackupMethod",
           "required": false,
@@ -10146,7 +10351,8 @@
         },
         {
           "default": "",
-          "document": "binlog的保留时间，单位为天。最小值为7天，最大值为732天。该值的设置不能大于备份文件的保留时间。",
+          "document": "binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。",
+          "example": "8",
           "member": "int64",
           "name": "BinlogExpireDays",
           "required": false,
@@ -10155,10 +10361,65 @@
         {
           "default": "",
           "document": "备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{\"Monday\": \"\", \"Tuesday\": \"10:00-14:00\", \"Wednesday\": \"\", \"Thursday\": \"\", \"Friday\": \"\", \"Saturday\": \"\", \"Sunday\": \"10:00-14:00\"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）",
+          "example": "无",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodSave",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "长期保留开关,该字段功能暂未上线，可忽略。off - 不开启长期保留策略，on - 开启长期保留策略，默认为off，如果开启，则BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount参数无效",
+          "example": "off",
+          "member": "string",
+          "name": "EnableBackupPeriodLongTermSave",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期保留最长天数，最小值：90，最大值：3650，默认值：1080",
+          "example": "1080",
+          "member": "int64",
+          "name": "BackupPeriodSaveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定期保留策略周期，可取值：weekly - 周，monthly - 月， quarterly - 季度，yearly - 年，默认为monthly",
+          "example": "weekly",
+          "member": "string",
+          "name": "BackupPeriodSaveInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "定期保留的备份数量，最小值为1，最大值不超过定期保留策略周期内常规备份个数，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupPeriodSaveCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "定期保留策略周期起始日期，格式：YYYY-MM-dd HH:mm:ss",
+          "example": "1970-01-01 00:00:01",
+          "member": "string",
+          "name": "StartBackupPeriodSaveDate",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10360,7 +10621,7 @@
         },
         {
           "default": "",
-          "document": "是否开始延迟剔除，取值：\"true\" | \"false\"",
+          "document": "是否开始延迟剔除，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "IsKickout",
@@ -10369,7 +10630,7 @@
         },
         {
           "default": "",
-          "document": "最少保留数",
+          "document": "最少保留数，最小为0，最大为实例数量",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -10405,7 +10666,7 @@
         },
         {
           "default": "",
-          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"true\" | \"false\"",
+          "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "FailOver",
@@ -10414,7 +10675,7 @@
         },
         {
           "default": "",
-          "document": "是否自动添加只读实例，取值：\"true\" | \"false\"",
+          "document": "是否自动添加只读实例，默认false，取值：\"true\" | \"false\"",
           "example": "false",
           "member": "bool",
           "name": "AutoAddRo",
@@ -10628,7 +10889,8 @@
       "members": [
         {
           "default": "",
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c2nl9rpv 或者 cdbrg-c3nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10637,6 +10899,7 @@
         {
           "default": "",
           "document": "目标 IP。该参数和 DstPort 参数，两者必传一个。",
+          "example": "10.0.1.1",
           "member": "string",
           "name": "DstIp",
           "required": false,
@@ -10645,6 +10908,7 @@
         {
           "default": "",
           "document": "目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。",
+          "example": "1025",
           "member": "int64",
           "name": "DstPort",
           "required": false,
@@ -10653,6 +10917,7 @@
         {
           "default": "",
           "document": "私有网络统一 ID。",
+          "example": "11357",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -10661,6 +10926,7 @@
         {
           "default": "",
           "document": "子网统一 ID。",
+          "example": "23789",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -10669,6 +10935,7 @@
         {
           "default": "",
           "document": "进行基础网络转 VPC 网络和 VPC 网络下的子网变更时，原网络中旧IP的回收时间，单位为小时，取值范围为0-168，默认值为24小时。",
+          "example": "12",
           "member": "int64",
           "name": "ReleaseDuration",
           "required": false,
@@ -10682,8 +10949,10 @@
       "members": [
         {
           "document": "异步任务ID。(该返回字段目前已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10899,7 +11168,7 @@
         },
         {
           "default": "",
-          "document": "模板名称。",
+          "document": "模板名称，长度不超过64。",
           "example": "\"\"",
           "member": "string",
           "name": "Name",
@@ -10908,7 +11177,7 @@
         },
         {
           "default": "",
-          "document": "模板描述。",
+          "document": "模板描述，长度不超过255。",
           "example": "\"\"",
           "member": "string",
           "name": "Description",
@@ -11017,6 +11286,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11025,6 +11295,7 @@
         {
           "default": "",
           "document": "修改后的可维护时间段，其中每一个时间段的格式形如：10:00-12:00；起止时间按半个小时对齐；最短半个小时，最长三个小时；最多设置两个时间段；起止时间范围为：[00:00, 24:00]。",
+          "example": "[\"03:00-03:30\\r\\n\"]",
           "member": "string",
           "name": "TimeRanges",
           "required": true,
@@ -11033,10 +11304,20 @@
         {
           "default": "",
           "document": "指定修改哪一天的客户时间段，可能的取值为：monday，tuesday，wednesday，thursday，friday，saturday，sunday。如果不指定该值或者为空，则默认一周七天都修改。",
+          "example": "[\"monday\\r\\n\"]",
           "member": "string",
           "name": "Weekdays",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxDelayTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11239,6 +11520,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11248,6 +11530,7 @@
         {
           "default": "",
           "document": "参数名称",
+          "example": "\"\"",
           "member": "string",
           "name": "ParamName",
           "required": true,
@@ -11257,6 +11540,7 @@
         {
           "default": "",
           "document": "参数修改前的值",
+          "example": "\"\"",
           "member": "string",
           "name": "OldValue",
           "required": true,
@@ -11266,6 +11550,7 @@
         {
           "default": "",
           "document": "参数修改后的值",
+          "example": "\"\"",
           "member": "string",
           "name": "NewValue",
           "required": true,
@@ -11275,6 +11560,7 @@
         {
           "default": "",
           "document": "参数是否修改成功",
+          "example": "true",
           "member": "bool",
           "name": "IsSucess",
           "required": true,
@@ -11284,6 +11570,7 @@
         {
           "default": "",
           "document": "修改时间",
+          "example": "\"\"",
           "member": "string",
           "name": "ModifyTime",
           "required": true,
@@ -12108,6 +12395,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRootAccountRequest": {
+      "document": "ResetRootAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "cdb-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRootAccountResponse": {
+      "document": "ResetRootAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

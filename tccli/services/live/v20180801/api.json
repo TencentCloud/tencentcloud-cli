@@ -241,9 +241,9 @@
       "output": "DescribeAreaBillBandwidthAndFluxListResponse"
     },
     "DescribeBillBandwidthAndFluxList": {
-      "document": "直播计费带宽和流量数据查询。",
+      "document": "直播播放带宽和流量数据查询。",
       "input": "DescribeBillBandwidthAndFluxListRequest",
-      "name": "直播计费带宽和流量数据查询",
+      "name": "直播播放带宽和流量数据查询",
       "output": "DescribeBillBandwidthAndFluxListResponse"
     },
     "DescribeCallbackRecordsList": {
@@ -583,9 +583,9 @@
       "output": "DescribeVisitTopSumInfoListResponse"
     },
     "DropLiveStream": {
-      "document": "断开推流连接，但可以重新推流。",
+      "document": "断开推流连接，但可以重新推流。\n注：对已经不活跃的流，调用该断流接口时，接口返回成功。",
       "input": "DropLiveStreamRequest",
-      "name": "断开直播流",
+      "name": "断开直播推流",
       "output": "DropLiveStreamResponse"
     },
     "EnableLiveDomain": {
@@ -2276,6 +2276,24 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 主直播源拉流中断时，自动使用备源进行拉流。\n3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
+          "example": "PullLivePushLive",
+          "member": "string",
+          "name": "BackupSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源 URL。\n只允许填一个备源 URL",
+          "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
+          "member": "string",
+          "name": "BackupSourceUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2543,6 +2561,15 @@
           "name": "Mp3Param",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印，类型为慢直播时此参数无效。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7811,7 +7838,7 @@
         },
         {
           "default": "",
-          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。",
+          "document": "起始时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS。",
           "example": "2019-06-21 12:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7820,7 +7847,7 @@
         },
         {
           "default": "",
-          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。",
+          "document": "结束时间点，北京时间，格式为yyyy-mm-dd HH:MM:SS，支持查询最近7天数据，建议查询时间跨度在3小时之内。",
           "example": "2019-06-21 12:01:02",
           "member": "string",
           "name": "EndTime",
@@ -8382,6 +8409,7 @@
         {
           "default": "",
           "document": "直播域名。",
+          "example": "abc.com",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8391,6 +8419,7 @@
         {
           "default": "",
           "document": "域名类型:\n0: 推流。\n1: 播放。",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -8400,6 +8429,7 @@
         {
           "default": "",
           "document": "域名状态:\n0: 停用。\n1: 启用。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -8409,6 +8439,7 @@
         {
           "default": "",
           "document": "添加时间。",
+          "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -8418,6 +8449,7 @@
         {
           "default": "",
           "document": "是否有 CName 到固定规则域名:\n0: 否。\n1: 是。",
+          "example": "1",
           "member": "uint64",
           "name": "BCName",
           "required": true,
@@ -8427,6 +8459,7 @@
         {
           "default": "",
           "document": "cname 对应的域名。",
+          "example": "abc.com",
           "member": "string",
           "name": "TargetDomain",
           "required": true,
@@ -8436,6 +8469,7 @@
         {
           "default": "",
           "document": "播放区域，只在 Type=1 时该参数有意义。\n1: 国内。\n2: 全球。\n3: 海外。",
+          "example": "2",
           "member": "int64",
           "name": "PlayType",
           "required": true,
@@ -8445,6 +8479,7 @@
         {
           "default": "",
           "document": "是否慢直播:\n0: 普通直播。\n1: 慢直播。",
+          "example": "0",
           "member": "int64",
           "name": "IsDelayLive",
           "required": true,
@@ -8454,6 +8489,7 @@
         {
           "default": "",
           "document": "当前客户使用的 cname 信息。",
+          "example": "abc.com",
           "member": "string",
           "name": "CurrentCName",
           "required": true,
@@ -8463,6 +8499,7 @@
         {
           "default": "",
           "document": "失效参数，可忽略。",
+          "example": "a",
           "member": "int64",
           "name": "RentTag",
           "required": true,
@@ -8472,6 +8509,7 @@
         {
           "default": "",
           "document": "失效参数，可忽略。",
+          "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "RentExpireTime",
           "required": true,
@@ -8481,6 +8519,7 @@
         {
           "default": "",
           "document": "0: 标准直播。\n1: 小程序直播。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "IsMiniProgramLive",
           "required": true,
@@ -8520,6 +8559,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -8528,6 +8568,7 @@
         {
           "default": "",
           "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8536,6 +8577,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -9457,6 +9499,24 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源的类型：\nPullLivePushLive -直播，\nPullVodPushLive -点播。\n注意：\n1. 仅当主源类型为直播源时，备源才会生效。\n2. 主直播源拉流中断时，自动使用备源进行拉流。\n3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。",
+          "example": "PullLivePushLive",
+          "member": "string",
+          "name": "BackupSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备源 URL。\n只允许填一个备源 URL",
+          "example": "http://5000.liveplay.myqcloud.com/live/backup.flv?txSecret=4d8e",
+          "member": "string",
+          "name": "BackupSourceUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9614,6 +9674,15 @@
           "name": "Mp3Param",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否去除水印，类型为慢直播时此参数无效。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11156,6 +11225,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽，单位Mbps。",
+          "example": "0.1",
+          "member": "float",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量，单位MB。",
+          "example": "0.1",
+          "member": "float",
+          "name": "Flux",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11468,6 +11557,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除水印。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveWatermark",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

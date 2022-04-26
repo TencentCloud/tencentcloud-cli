@@ -123,7 +123,7 @@
     "RemoveUser": [
       {
         "document": "将用户test1、test2从房间1234移出。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\r\n&SdkAppId=1400000001\r\n&RoomId=1234\r\n&UserIds.0=test1\r\n&UserIds.1=test2\r\n&UserIds.3=test3\r\n&UserIds.4=test4\r\n&UserIds.5=test5\r\n&UserIds.6=test6\r\n&UserIds.7=test7\r\n&UserIds.8=test8\r\n&UserIds.9=test9\r\n&UserIds.10=test10\r\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1234\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "移出用户"
       }

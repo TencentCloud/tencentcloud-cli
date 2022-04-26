@@ -18,7 +18,11 @@ Output:
 ```
 {
     "Response": {
+        "LockTimeSum": 0.0,
+        "QueryCount": 1,
+        "QueryTimeSum": 1.13,
         "RequestId": "1e74e824-6d2b-495d-b347-5250cdf8e964",
+        "Total": 1,
         "Data": [
             {
                 "CheckSum": "14090621765287179955",
@@ -37,13 +41,11 @@ Output:
                 "RowsSentSum": "0.00",
                 "TsMax": "2016-08-06 11:32:10",
                 "TsMin": "2016-08-06 11:32:10",
-                "User": "agent"
+                "User": "agent",
+                "Host": "10.1.1.1",
+                "ExampleSql": ""
             }
-        ],
-        "LockTimeSum": 0,
-        "QueryCount": 1,
-        "QueryTimeSum": 1.13,
-        "Total": 1
+        ]
     }
 }
 ```

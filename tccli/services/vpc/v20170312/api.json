@@ -109,7 +109,7 @@
       "output": "AttachClassicLinkVpcResponse"
     },
     "AttachNetworkInterface": {
-      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个弹性网卡请至少绑定一个安全组，如需绑定请参见<a href=\"https://cloud.tencent.com/document/product/215/43132\">弹性网卡绑定安全组</a>。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "AttachNetworkInterfaceRequest",
       "name": "弹性网卡绑定云服务器",
       "output": "AttachNetworkInterfaceResponse"
@@ -1393,7 +1393,7 @@
       "output": "ModifyNetworkInterfaceAttributeResponse"
     },
     "ModifyNetworkInterfaceQos": {
-      "document": "修改弹性网卡服务质量",
+      "document": "修改弹性网卡服务质量。",
       "input": "ModifyNetworkInterfaceQosRequest",
       "name": "修改弹性网卡服务质量",
       "output": "ModifyNetworkInterfaceQosResponse"
@@ -1495,7 +1495,7 @@
       "output": "ModifyVpnGatewayRoutesResponse"
     },
     "NotifyRoutes": {
-      "document": "路由表列表页操作增加“发布到云联网”，用于发布路由到云联网。",
+      "document": "本接口（NotifyRoutes）用于路由表列表页操作增加“发布到云联网”，发布路由到云联网。",
       "input": "NotifyRoutesRequest",
       "name": "发布路由至云联网",
       "output": "NotifyRoutesResponse"
@@ -1569,7 +1569,7 @@
     "ReplaceSecurityGroupPolicy": {
       "document": "本接口（ReplaceSecurityGroupPolicy）用于替换单条安全组规则（SecurityGroupPolicy）。\n单个请求中只能替换单个方向的一条规则, 必须要指定索引（PolicyIndex）。",
       "input": "ReplaceSecurityGroupPolicyRequest",
-      "name": "替换单条安全组路由规则",
+      "name": "替换单条安全组规则",
       "output": "ReplaceSecurityGroupPolicyResponse"
     },
     "ResetAttachCcnInstances": {
@@ -2883,6 +2883,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-mdbjfr0y",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -2891,6 +2892,7 @@
         {
           "default": "",
           "document": "需要申请的弹性IP个数，系统会按您的要求生产N个弹性IP, 其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "1",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
@@ -2899,6 +2901,7 @@
         {
           "default": "",
           "document": "绑定NAT网关的弹性IP数组，其中AddressCount和PublicAddresses至少传递一个。",
+          "example": "[\"139.199.232.212\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": false,
@@ -2907,10 +2910,38 @@
         {
           "default": "",
           "document": "弹性IP可用区，自动分配弹性IP时传递。",
+          "example": "10003",
           "member": "string",
           "name": "Zone",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "StockPublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "PublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicIpFromSameZone",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2933,6 +2964,7 @@
         {
           "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -2941,6 +2973,7 @@
         {
           "default": "",
           "document": "子网实例ID数组。例如：[subnet-12345678]",
+          "example": "[\"subnet-12345678\\r\\n\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -4968,7 +5001,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -5248,6 +5281,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -5256,6 +5290,7 @@
         {
           "default": "",
           "document": "NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRules",
           "required": true,
@@ -5359,6 +5394,33 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定NAT网关的弹性IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "StockPublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请公网IP带宽大小（单位Mbps），默认为当前用户类型所能使用的最大值。",
+          "example": "77",
+          "member": "uint64",
+          "name": "PublicIpAddressesBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "公网IP是否强制与NAT网关来自同可用区，true表示需要与NAT网关同可用区；false表示可与NAT网关不是同一个可用区。此参数只有当参数Zone存在时才能生效。",
+          "example": "false",
+          "member": "bool",
+          "name": "PublicIpFromSameZone",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5399,6 +5461,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：\"nat-df45454\"",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -5407,6 +5470,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT转换规则",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRules",
           "required": true,
@@ -5523,6 +5587,7 @@
         {
           "default": "",
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5531,6 +5596,7 @@
         {
           "default": "",
           "document": "网络ACL名称，最大长度不能超过60个字节。",
+          "example": "test",
           "member": "string",
           "name": "NetworkAclName",
           "required": true,
@@ -5544,8 +5610,10 @@
       "members": [
         {
           "document": "网络ACL实例。",
+          "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAcl",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7405,6 +7473,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -7413,6 +7482,7 @@
         {
           "default": "",
           "document": "CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]",
+          "example": "[\"172.16.0.0\\/24\\n\"]",
           "member": "string",
           "name": "CidrBlocks",
           "required": true,
@@ -7546,6 +7616,7 @@
         {
           "default": "",
           "document": "专线网关ID，形如：dcg-prpqlmg1",
+          "example": "dcg-prpqlmg1",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -7554,6 +7625,7 @@
         {
           "default": "",
           "document": "路由ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -7740,6 +7812,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7748,6 +7821,7 @@
         {
           "default": "",
           "document": "NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRules",
           "required": true,
@@ -7774,6 +7848,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7800,6 +7875,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -7808,6 +7884,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT ID列表，形如：`snat-df43254`。",
+          "example": "[\"snat-3ixd0hr0\\n\"]",
           "member": "string",
           "name": "NatGatewaySnatIds",
           "required": true,
@@ -7861,6 +7938,7 @@
         {
           "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -9690,6 +9768,7 @@
         {
           "default": "",
           "document": "专线网关ID，形如：`dcg-prpqlmg1`。",
+          "example": "dcg-prpqlmg1",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -9698,6 +9777,7 @@
         {
           "default": "",
           "document": "云联网路由学习类型，可选值：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置，默认值。</li>",
+          "example": "BGP",
           "member": "string",
           "name": "CcnRouteType",
           "required": false,
@@ -9706,6 +9786,7 @@
         {
           "default": "",
           "document": "偏移量。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9714,6 +9795,7 @@
         {
           "default": "",
           "document": "返回数量。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9727,15 +9809,19 @@
       "members": [
         {
           "document": "符合条件的对象数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "云联网路由（IDC网段）列表。",
+          "example": "无",
           "member": "DirectConnectGatewayCcnRoute",
           "name": "RouteSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10116,6 +10202,7 @@
         {
           "default": "",
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
+          "example": "vpngw-4je9dgin",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -10124,6 +10211,7 @@
         {
           "default": "",
           "document": "限流的云服务器内网IP。",
+          "example": "10.0.0.12",
           "member": "string",
           "name": "IpAddresses",
           "required": false,
@@ -10132,6 +10220,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10140,6 +10229,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10153,15 +10243,19 @@
       "members": [
         {
           "document": "实例详细信息列表。",
+          "example": "无",
           "member": "GatewayQos",
           "name": "GatewayQosSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的实例数量。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10575,6 +10669,7 @@
         {
           "default": "",
           "document": "NAT网关ID。",
+          "example": "[\"nat-3isn9hr0\\r\\n\"]",
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -10583,6 +10678,7 @@
         {
           "default": "",
           "document": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10591,6 +10687,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10599,6 +10696,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10612,15 +10710,19 @@
       "members": [
         {
           "document": "NAT网关端口转发规则对象数组。",
+          "example": "无",
           "member": "NatGatewayDestinationIpPortTranslationNatRule",
           "name": "NatGatewayDestinationIpPortTranslationNatRuleSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的NAT网关端口转发规则对象数目。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10711,6 +10813,7 @@
         {
           "default": "",
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -10719,6 +10822,7 @@
         {
           "default": "",
           "document": "过滤条件:\n<li> resource-id，Subnet的ID或者Cvm ID，如`subnet-0yi4hekt`</li>\n<li> public-ip-address，弹性IP，如`139.199.232.238`</li>\n<li>description，规则描述。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10727,6 +10831,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10735,6 +10840,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10748,15 +10854,19 @@
       "members": [
         {
           "document": "NAT网关SNAT规则对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRuleSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "符合条件的NAT网关端口转发规则对象数目。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10775,6 +10885,7 @@
         {
           "default": "",
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "example": "[\"nat-3isn9hr0\\r\\n\",\"nat-mxkohguo\\r\\n\"]",
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -10783,6 +10894,7 @@
         {
           "default": "",
           "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10791,6 +10903,7 @@
         {
           "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10799,6 +10912,7 @@
         {
           "default": "",
           "document": "返回数量，默认为20，最大值为100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10812,15 +10926,19 @@
       "members": [
         {
           "document": "NAT网关对象数组。",
+          "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的NAT网关对象个数。",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11171,7 +11289,8 @@
       "members": [
         {
           "default": "",
-          "document": "查询的网络产品名称，如vpc、ccn等",
+          "document": "查询的网络产品名称，可查询的产品有：vpc、ccn、vpn、dc、dfw、clb、eip。",
+          "example": "vpc",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -11185,15 +11304,19 @@
       "members": [
         {
           "document": "ProductQuota对象数组",
+          "example": "无",
           "member": "ProductQuota",
           "name": "ProductQuotaSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "符合条件的产品类型个数",
+          "example": "53",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13329,6 +13452,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -13337,6 +13461,7 @@
         {
           "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -13363,6 +13488,7 @@
         {
           "default": "",
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
+          "example": "vpngw-gree226l",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -13389,6 +13515,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-9wzwlnhc",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -13397,6 +13524,7 @@
         {
           "default": "",
           "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
+          "example": "[\"18292\\n\",\"18293\\n\"]",
           "member": "uint64",
           "name": "RouteIds",
           "required": false,
@@ -13405,6 +13533,7 @@
         {
           "default": "",
           "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
+          "example": "[\"18292\"]",
           "member": "string",
           "name": "RouteItemIds",
           "required": false,
@@ -13584,6 +13713,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-mdbjfr0y",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -13592,6 +13722,7 @@
         {
           "default": "",
           "document": "待解绑NAT网关的弹性IP数组。",
+          "example": "[\"139.199.232.212\\n\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -13618,6 +13749,7 @@
         {
           "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -13626,6 +13758,7 @@
         {
           "default": "",
           "document": "子网实例ID数组。例如：[subnet-12345678]",
+          "example": "[\"subnet-12345678\\n\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -13815,6 +13948,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -13823,6 +13957,7 @@
         {
           "default": "",
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
+          "example": "[\"ccnr-bvipc87w\\r\\n\"]",
           "member": "string",
           "name": "RouteIds",
           "required": true,
@@ -13849,6 +13984,7 @@
         {
           "default": "",
           "document": "网关实例ID，目前我们支持的网关实例有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
+          "example": "vpngw-gree226l",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -13875,6 +14011,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-9wzwlnhc",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -13883,6 +14020,7 @@
         {
           "default": "",
           "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
+          "example": "[\"18292\\n\",\"18293\\n\"]",
           "member": "uint64",
           "name": "RouteIds",
           "required": false,
@@ -13891,6 +14029,7 @@
         {
           "default": "",
           "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
+          "example": "[\"18293\"]",
           "member": "string",
           "name": "RouteItemIds",
           "required": false,
@@ -14307,7 +14446,7 @@
         },
         {
           "default": "",
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN。",
+          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -15004,6 +15143,7 @@
         {
           "default": "",
           "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
+          "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -15012,6 +15152,7 @@
         {
           "default": "",
           "document": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -15020,10 +15161,29 @@
         {
           "default": "",
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxConnection",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。",
+          "example": "IPSEC",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15033,9 +15193,12 @@
       "members": [
         {
           "document": "商品价格。",
+          "example": "无",
           "member": "Price",
           "name": "Price",
-          "type": "object"
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16157,6 +16320,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。形如：`vpc-6v2ht8q5`",
+          "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -16165,6 +16329,7 @@
         {
           "default": "",
           "document": "待添加的辅助CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
+          "example": "[\"172.16.0.0\\/24\\n\"]",
           "member": "string",
           "name": "NewCidrBlocks",
           "required": false,
@@ -16173,6 +16338,7 @@
         {
           "default": "",
           "document": "待删除的辅助CIDR。CIDR数组，格式如[\"10.0.0.0/16\", \"172.16.0.0/16\"]，入参NewCidrBlocks和OldCidrBlocks至少需要其一。",
+          "example": "[\"172.16.0.0\\/24\\n\"]",
           "member": "string",
           "name": "OldCidrBlocks",
           "required": false,
@@ -16186,8 +16352,10 @@
       "members": [
         {
           "document": "辅助CIDR数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16549,6 +16717,7 @@
         {
           "default": "",
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
+          "example": "vpngw-gree226l",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -16557,6 +16726,7 @@
         {
           "default": "",
           "document": "流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。",
+          "example": "10",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -16565,6 +16735,7 @@
         {
           "default": "",
           "document": "限流的云服务器内网IP。",
+          "example": "10.0.0.2",
           "member": "string",
           "name": "IpAddresses",
           "required": true,
@@ -16866,6 +17037,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -16874,6 +17046,7 @@
         {
           "default": "",
           "document": "NAT网关的名称，形如：`test_nat`。",
+          "example": "测试nat网关",
           "member": "string",
           "name": "NatGatewayName",
           "required": false,
@@ -16882,6 +17055,7 @@
         {
           "default": "",
           "document": "NAT网关最大外网出带宽(单位:Mbps)。",
+          "example": "500",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -16890,6 +17064,7 @@
         {
           "default": "",
           "document": "是否修改NAT网关绑定的安全组。",
+          "example": "true",
           "member": "bool",
           "name": "ModifySecurityGroup",
           "required": false,
@@ -16898,6 +17073,7 @@
         {
           "default": "",
           "document": "NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`",
+          "example": "['sg-1n232323']",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -16924,6 +17100,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -16932,6 +17109,7 @@
         {
           "default": "",
           "document": "源NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "SourceNatRule",
           "required": true,
@@ -16940,6 +17118,7 @@
         {
           "default": "",
           "document": "目的NAT网关的端口转换规则。",
+          "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationNatRule",
           "required": true,
@@ -16966,6 +17145,7 @@
         {
           "default": "",
           "document": "NAT网关的ID，形如：`nat-df453454`。",
+          "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -16974,6 +17154,7 @@
         {
           "default": "",
           "document": "NAT网关的SNAT转换规则。",
+          "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRule",
           "required": true,
@@ -17072,6 +17253,7 @@
         {
           "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -17080,6 +17262,7 @@
         {
           "default": "",
           "document": "网络ACL名称，最大长度不能超过60个字节。",
+          "example": "test modify",
           "member": "string",
           "name": "NetworkAclName",
           "required": true,
@@ -17106,6 +17289,7 @@
         {
           "default": "",
           "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -17114,6 +17298,7 @@
         {
           "default": "",
           "document": "网络ACL规则集。",
+          "example": "无",
           "member": "NetworkAclEntrySet",
           "name": "NetworkAclEntrySet",
           "required": true,
@@ -17198,7 +17383,7 @@
         },
         {
           "default": "",
-          "document": "服务质量，可选值：AU、AG、PT，分别代表金、银、白金三个等级。",
+          "document": "服务质量，可选值：PT、AU、AG、DEFAULT，分别代表白金、金、银、默认四个等级。",
           "example": "无",
           "member": "string",
           "name": "QosLevel",
@@ -18273,6 +18458,7 @@
         {
           "default": "",
           "document": "弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。",
+          "example": "eip-11112222",
           "member": "string",
           "name": "AddressId",
           "required": false,
@@ -18282,6 +18468,7 @@
         {
           "default": "",
           "document": "外网IP地址，形如：`123.121.34.33`。",
+          "example": "123.121.34.3",
           "member": "string",
           "name": "PublicIpAddress",
           "required": false,
@@ -18291,6 +18478,7 @@
         {
           "default": "",
           "document": "资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。",
+          "example": "true",
           "member": "bool",
           "name": "IsBlocked",
           "required": false,
@@ -18995,6 +19183,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-9wzwlnhc",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -19003,6 +19192,7 @@
         {
           "default": "",
           "document": "路由策略唯一ID。",
+          "example": "[\"rti-i8bap903\\n\"]",
           "member": "string",
           "name": "RouteItemIds",
           "required": true,
@@ -19289,6 +19479,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -19297,6 +19488,7 @@
         {
           "default": "",
           "document": "拒绝关联实例列表。",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -19669,6 +19861,7 @@
         {
           "default": "",
           "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -19677,6 +19870,7 @@
         {
           "default": "",
           "document": "安全组规则集合对象。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": true,
@@ -19685,6 +19879,7 @@
         {
           "default": "",
           "document": "旧的安全组规则集合对象，可选，日志记录用。",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "OriginalSecurityGroupPolicySet",
           "required": false,
@@ -19711,6 +19906,7 @@
         {
           "default": "",
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
+          "example": "ccn-gree226l",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -19719,6 +19915,7 @@
         {
           "default": "",
           "document": "CCN所属UIN（根账号）。",
+          "example": "979137",
           "member": "string",
           "name": "CcnUin",
           "required": true,
@@ -19727,6 +19924,7 @@
         {
           "default": "",
           "document": "重新申请关联网络实例列表。",
+          "example": "无",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -22901,6 +23099,7 @@
         {
           "default": "",
           "document": "路由表唯一ID。",
+          "example": "rtb-9wzwlnhc",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -22909,6 +23108,7 @@
         {
           "default": "",
           "document": "路由策略唯一ID。",
+          "example": "[\"rti-i8bap903\\n\"]",
           "member": "string",
           "name": "RouteItemIds",
           "required": true,

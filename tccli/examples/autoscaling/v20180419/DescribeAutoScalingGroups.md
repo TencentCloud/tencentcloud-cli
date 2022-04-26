@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as DescribeAutoScalingGroups --cli-unfold-argument  \
-    --AutoScalingGroupIds asg-nkdwoui0
+    --AutoScalingGroupIds asg-pts6qcgp
 ```
 
 Output: 
@@ -15,7 +15,28 @@ Output:
     "Response": {
         "AutoScalingGroupSet": [
             {
-                "LaunchConfigurationId": "asc-7vucy6ae",
+                "InActivityStatus": "NOT_IN_ACTIVITY",
+                "LoadBalancerIdSet": [],
+                "RetryPolicy": "IMMEDIATE_RETRY",
+                "InServiceInstanceCount": 0,
+                "CreatedTime": "2022-04-21T03:21:14Z",
+                "SpotMixedAllocationPolicy": {
+                    "CompensateWithBaseInstance": null,
+                    "SpotAllocationStrategy": null,
+                    "OnDemandPercentageAboveBaseCapacity": null,
+                    "BaseCapacity": null
+                },
+                "VpcId": "vpc-lceuvai4",
+                "InstanceAllocationPolicy": "LAUNCH_CONFIGURATION",
+                "Tags": [],
+                "LaunchConfigurationId": "asc-mo1woym9",
+                "MaxSize": 1,
+                "MultiZoneSubnetPolicy": "PRIORITY",
+                "SubnetIdSet": [
+                    "subnet-6qqolfi7"
+                ],
+                "HealthCheckType": "CLB",
+                "LoadBalancerHealthCheckGracePeriod": 0,
                 "ForwardLoadBalancerSet": [
                     {
                         "TargetAttributes": [
@@ -24,40 +45,37 @@ Output:
                                 "Weight": 10
                             }
                         ],
-                        "LocationId": "loc-l3hmaev9",
-                        "ListenerId": "lbl-ncw704sn",
-                        "Region": "ap-guangzhou",
-                        "LoadBalancerId": "lb-23aejgcv"
+                        "Region": "ap-shanghai",
+                        "LocationId": "loc-5dovrfov",
+                        "ListenerId": "lbl-i4p05pmv",
+                        "LoadBalancerId": "lb-pbx8nq2p"
                     }
                 ],
-                "LoadBalancerIdSet": [],
-                "InstanceCount": 1,
-                "DesiredCapacity": 1,
-                "AutoScalingGroupStatus": "NORMAL",
-                "AutoScalingGroupId": "asg-nkdwoui0",
                 "ProjectId": 0,
+                "AutoScalingGroupName": "testasg",
+                "MinSize": 0,
+                "ServiceSettings": {
+                    "ReplaceMonitorUnhealthy": false,
+                    "ReplaceLoadBalancerUnhealthy": false,
+                    "ScalingMode": "CLASSIC_SCALING"
+                },
+                "LaunchConfigurationName": "test_2jerry",
+                "CapacityRebalance": false,
                 "TerminationPolicySet": [
                     "OLDEST_INSTANCE"
                 ],
-                "AutoScalingGroupName": "vpc-7layer-lb",
-                "InActivityStatus": "NOT_IN_ACTIVITY",
-                "InServiceInstanceCount": 1,
-                "DefaultCooldown": 301,
-                "MinSize": 0,
-                "MaxSize": 10,
-                "VpcId": "vpc-hy436tmc",
-                "LaunchConfigurationName": "启动配置1",
-                "CreatedTime": "2018-09-27T02:01:28Z",
-                "SubnetIdSet": [
-                    "subnet-3tmerl37",
-                    "subnet-b0vxjhot"
-                ],
+                "AutoScalingGroupStatus": "NORMAL",
+                "InstanceCount": 0,
+                "DesiredCapacity": 0,
+                "AutoScalingGroupId": "asg-pts6qcgp",
+                "Ipv6AddressCount": 0,
+                "DefaultCooldown": 300,
                 "EnabledStatus": "ENABLED",
                 "ZoneSet": []
             }
         ],
         "TotalCount": 1,
-        "RequestId": "b8d3660c-bed1-40ad-9e7d-77390c9610be"
+        "RequestId": "53a76c96-a88c-4972-8488-66d6c15a080f"
     }
 }
 ```
@@ -82,7 +100,37 @@ Output:
     "Response": {
         "AutoScalingGroupSet": [
             {
-                "LaunchConfigurationId": "asc-7vucy6ae",
+                "InActivityStatus": "NOT_IN_ACTIVITY",
+                "LoadBalancerIdSet": [],
+                "RetryPolicy": "IMMEDIATE_RETRY",
+                "InServiceInstanceCount": 0,
+                "CreatedTime": "2019-10-29T02:21:26Z",
+                "SpotMixedAllocationPolicy": {
+                    "CompensateWithBaseInstance": null,
+                    "SpotAllocationStrategy": null,
+                    "OnDemandPercentageAboveBaseCapacity": null,
+                    "BaseCapacity": null
+                },
+                "VpcId": "vpc-qmjyqjnk",
+                "InstanceAllocationPolicy": "LAUNCH_CONFIGURATION",
+                "Tags": [
+                    {
+                        "Key": "city",
+                        "Value": "shenzhen"
+                    }
+                ],
+                "LaunchConfigurationId": "asc-3d9e2zfx",
+                "MaxSize": 10,
+                "MultiZoneSubnetPolicy": "PRIORITY",
+                "SubnetIdSet": [
+                    "subnet-3cpb9yfp",
+                    "subnet-c98udmmr",
+                    "subnet-1xsr551x",
+                    "subnet-o3ibshdr",
+                    "subnet-6c7q2jhz"
+                ],
+                "HealthCheckType": "CVM",
+                "LoadBalancerHealthCheckGracePeriod": 0,
                 "ForwardLoadBalancerSet": [
                     {
                         "TargetAttributes": [
@@ -91,46 +139,49 @@ Output:
                                 "Weight": 10
                             }
                         ],
-                        "LocationId": "loc-l3hmaev9",
-                        "ListenerId": "lbl-ncw704sn",
-                        "Region": "ap-guangzhou",
-                        "LoadBalancerId": "lb-23aejgcv"
+                        "Region": "ap-shanghai",
+                        "LocationId": "",
+                        "ListenerId": "lbl-aiwdu9bd",
+                        "LoadBalancerId": "lb-k264wzwj"
+                    },
+                    {
+                        "TargetAttributes": [
+                            {
+                                "Port": 80,
+                                "Weight": 10
+                            }
+                        ],
+                        "Region": "ap-shanghai",
+                        "LocationId": "loc-qmxmx085",
+                        "ListenerId": "lbl-ldjbrn65",
+                        "LoadBalancerId": "lb-k264wzwj"
                     }
                 ],
-                "LoadBalancerIdSet": [],
-                "InstanceCount": 1,
-                "DesiredCapacity": 1,
-                "AutoScalingGroupStatus": "NORMAL",
-                "AutoScalingGroupId": "asg-nkdwoui0",
                 "ProjectId": 0,
+                "AutoScalingGroupName": "sz-asg",
+                "MinSize": 0,
+                "ServiceSettings": {
+                    "ReplaceMonitorUnhealthy": false,
+                    "ReplaceLoadBalancerUnhealthy": false,
+                    "ScalingMode": "CLASSIC_SCALING"
+                },
+                "LaunchConfigurationName": "sz-asc",
+                "CapacityRebalance": false,
                 "TerminationPolicySet": [
                     "OLDEST_INSTANCE"
                 ],
-                "AutoScalingGroupName": "vpc-7layer-lb",
-                "InActivityStatus": "NOT_IN_ACTIVITY",
-                "InServiceInstanceCount": 1,
-                "DefaultCooldown": 301,
-                "MinSize": 0,
-                "MaxSize": 10,
-                "VpcId": "vpc-hy436tmc",
-                "LaunchConfigurationName": "启动配置1",
-                "CreatedTime": "2018-09-27T02:01:28Z",
-                "SubnetIdSet": [
-                    "subnet-3tmerl37",
-                    "subnet-b0vxjhot"
-                ],
+                "AutoScalingGroupStatus": "NORMAL",
+                "InstanceCount": 0,
+                "DesiredCapacity": 0,
+                "AutoScalingGroupId": "asg-h71x7a3f",
+                "Ipv6AddressCount": 0,
+                "DefaultCooldown": 300,
                 "EnabledStatus": "ENABLED",
-                "ZoneSet": [],
-                "Tags": [
-                    {
-                        "Key": "city",
-                        "Value": "shenzhen"
-                    }
-                ]
+                "ZoneSet": []
             }
         ],
         "TotalCount": 1,
-        "RequestId": "b8d3660c-bed1-40ad-9e7d-77390c9610be"
+        "RequestId": "53a76c96-a88c-4972-8488-66d6c15a080f"
     }
 }
 ```

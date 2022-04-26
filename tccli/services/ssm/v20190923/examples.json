@@ -120,6 +120,14 @@
         "title": "获取凭据明文信息"
       }
     ],
+    "GetSecretValueInternal": [
+      {
+        "document": "",
+        "input": "https://ssm.tencentcloudapi.com/?Action=GetSecretValueInternal\n&SecretName=test_secret\n&VersionId=v1.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8e6b67f-3ca7-4341-b4fa-a372bdf4e11c\",\n        \"SecretName\": \"test_secret\",\n        \"VersionId\": \"v1.0\",\n        \"SecretBinary\": \"\",\n        \"SecretString\": \"test\",\n        \"NextRotateBeginTime\": 654321\n    }\n}",
+        "title": "获取凭据明文信息"
+      }
+    ],
     "GetServiceStatus": [
       {
         "document": "",

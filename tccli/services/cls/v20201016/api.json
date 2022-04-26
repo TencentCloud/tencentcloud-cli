@@ -6,6 +6,12 @@
       "name": "应用采集配置到指定机器组",
       "output": "ApplyConfigToMachineGroupResponse"
     },
+    "CloseKafkaConsumer": {
+      "document": "关闭Kafka协议消费",
+      "input": "CloseKafkaConsumerRequest",
+      "name": "关闭Kafka协议消费",
+      "output": "CloseKafkaConsumerResponse"
+    },
     "CreateAlarm": {
       "document": "本接口用于创建告警策略。",
       "input": "CreateAlarmRequest",
@@ -36,6 +42,12 @@
       "name": "创建投递任务",
       "output": "CreateConsumerResponse"
     },
+    "CreateDataTransform": {
+      "document": "本接口用于创建数据加工任务。",
+      "input": "CreateDataTransformRequest",
+      "name": "创建数据加工任务",
+      "output": "CreateDataTransformResponse"
+    },
     "CreateExport": {
       "document": "本接口用于创建日志下载任务，导出原始日志",
       "input": "CreateExportRequest",
@@ -61,7 +73,7 @@
       "output": "CreateMachineGroupResponse"
     },
     "CreateShipper": {
-      "document": "创建新的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。",
+      "document": "创建新的投递规则，【！！！注意】使用此接口，需要检查是否配置了投递COS的角色和权限。如果没有配置，请参考文档投递权限查看和配置https://cloud.tencent.com/document/product/614/71623。",
       "input": "CreateShipperRequest",
       "name": "创建投递规则",
       "output": "CreateShipperResponse"
@@ -107,6 +119,12 @@
       "input": "DeleteConsumerRequest",
       "name": "删除投递配置",
       "output": "DeleteConsumerResponse"
+    },
+    "DeleteDataTransform": {
+      "document": "本接口用于删除数据加工任务",
+      "input": "DeleteDataTransformRequest",
+      "name": "删除数据加工任务",
+      "output": "DeleteDataTransformResponse"
     },
     "DeleteExport": {
       "document": "本接口用于删除日志下载任务",
@@ -180,6 +198,12 @@
       "name": "获取投递配置",
       "output": "DescribeConsumerResponse"
     },
+    "DescribeDataTransformInfo": {
+      "document": "本接口用于获取数据加工任务列表基本信息",
+      "input": "DescribeDataTransformInfoRequest",
+      "name": "获取数据加工任务列表基本信息",
+      "output": "DescribeDataTransformInfoResponse"
+    },
     "DescribeExports": {
       "document": "本接口用于获取日志下载任务列表",
       "input": "DescribeExportsRequest",
@@ -197,6 +221,12 @@
       "input": "DescribeLogContextRequest",
       "name": "上下文检索",
       "output": "DescribeLogContextResponse"
+    },
+    "DescribeLogHistogram": {
+      "document": "本接口用于构建直方图",
+      "input": "DescribeLogHistogramRequest",
+      "name": "获取直方图",
+      "output": "DescribeLogHistogramResponse"
     },
     "DescribeLogsets": {
       "document": "本接口用于获取日志集信息列表。",
@@ -288,6 +318,12 @@
       "name": "修改投递任务",
       "output": "ModifyConsumerResponse"
     },
+    "ModifyDataTransform": {
+      "document": "本接口用于修改数据加工任务",
+      "input": "ModifyDataTransformRequest",
+      "name": "修改数据加工任务",
+      "output": "ModifyDataTransformResponse"
+    },
     "ModifyIndex": {
       "document": "本接口用于修改索引配置\n",
       "input": "ModifyIndexRequest",
@@ -317,6 +353,12 @@
       "input": "ModifyTopicRequest",
       "name": "修改日志主题",
       "output": "ModifyTopicResponse"
+    },
+    "OpenKafkaConsumer": {
+      "document": "打开Kafka协议消费功能",
+      "input": "OpenKafkaConsumerRequest",
+      "name": "打开Kafka协议消费",
+      "output": "OpenKafkaConsumerResponse"
     },
     "RetryShipperTask": {
       "document": "重试失败的投递任务",
@@ -571,6 +613,7 @@
         {
           "default": "",
           "document": "日志主题ID。",
+          "example": "380fe1f1-0c7b-4b0d-xxxx-d514959db1bb",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -580,6 +623,7 @@
         {
           "default": "",
           "document": "查询语句。",
+          "example": "code:200 | select count(*) as success_counts",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -589,6 +633,7 @@
         {
           "default": "",
           "document": "告警对象序号；从1开始递增。",
+          "example": "1",
           "member": "int64",
           "name": "Number",
           "required": true,
@@ -597,7 +642,8 @@
         },
         {
           "default": "",
-          "document": "查询范围起始时间相对当前的历史时间，单位非分钟，取值为非正，最大值为0，最小值为-1440。",
+          "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
+          "example": "-5",
           "member": "int64",
           "name": "StartTimeOffset",
           "required": true,
@@ -606,7 +652,8 @@
         },
         {
           "default": "",
-          "document": "查询范围终止时间相对当前的历史时间，单位非分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "example": "0",
           "member": "int64",
           "name": "EndTimeOffset",
           "required": true,
@@ -616,6 +663,7 @@
         {
           "default": "",
           "document": "日志集ID。",
+          "example": "1c012db7-2cfd-4418-xxxx-7342c7a42516",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -690,7 +738,7 @@
         },
         {
           "default": "",
-          "document": "查询范围起始时间相对当前的历史时间，取值为非正，最大值为0，最小值为-1440。",
+          "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
           "example": "-240",
           "member": "int64",
           "name": "StartTimeOffset",
@@ -700,7 +748,7 @@
         },
         {
           "default": "",
-          "document": "查询范围终止时间相对当前的历史时间，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
+          "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
           "example": "0",
           "member": "int64",
           "name": "EndTimeOffset",
@@ -874,6 +922,33 @@
         }
       ],
       "usage": "both"
+    },
+    "CloseKafkaConsumerRequest": {
+      "document": "CloseKafkaConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CLS对应的topic标识",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "FromTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseKafkaConsumerResponse": {
+      "document": "CloseKafkaConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Column": {
       "document": "日志分析的列属性",
@@ -2012,6 +2087,105 @@
       ],
       "type": "object"
     },
+    "CreateDataTransformRequest": {
+      "document": "CreateDataTransform请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "函数类型. DSL:1 SQL:2",
+          "example": "1",
+          "member": "int64",
+          "name": "FuncType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "源日志主题",
+          "example": "topicid-1",
+          "member": "string",
+          "name": "SrcTopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加工任务名称",
+          "example": "task1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加工逻辑函数",
+          "example": "xxx",
+          "member": "string",
+          "name": "EtlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加工任务目的topic_id以及别名",
+          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "member": "DataTransformResouceInfo",
+          "name": "DstResources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务类型.  以SrcTopicId为数据源建立预览任务:1，以PreviewLogStatistics为数据源建立预览任务:2  真实任务:3",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "任务启动状态.   默认为1，正常开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "测试数据",
+          "example": "无",
+          "member": "PreviewLogStatistic",
+          "name": "PreviewLogStatistics",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataTransformResponse": {
+      "document": "CreateDataTransform返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateExportRequest": {
       "document": "CreateExport请求参数结构体",
       "members": [
@@ -2131,6 +2305,24 @@
           "name": "Status",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2458,7 +2650,7 @@
         },
         {
           "default": "",
-          "document": "日志主题的存储类型，可选值 hot（实时存储），cold（离线存储）；默认为hot。若传入cold，请先联系客服进行开白。",
+          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -2467,7 +2659,7 @@
         },
         {
           "default": "",
-          "document": "生命周期，单位天；可取值范围1~366。默认30天",
+          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -2553,6 +2745,168 @@
         }
       ],
       "usage": "both"
+    },
+    "DataTransformResouceInfo": {
+      "document": "数据加工的资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目标主题id",
+          "example": "topic-xx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "别名",
+          "example": "topicname",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataTransformTaskInfo": {
+      "document": "数据加工任务基本详情",
+      "members": [
+        {
+          "default": "",
+          "document": "数据加工任务名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据加工任务id",
+          "example": "taskid_xx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务启用状态，默认为1，正常开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加工任务类型，1： DSL， 2：SQL",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源日志主题",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SrcTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前加工任务状态（1准备中/2运行中/3停止中/4已停止）",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加工任务创建时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近修改时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后启用时间，如果需要重建集群，修改该时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "LastEnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志主题名称",
+          "example": "topicname",
+          "member": "string",
+          "name": "SrcTopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志集id",
+          "example": "logset-1",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加工任务目的topic_id以及别名",
+          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "member": "DataTransformResouceInfo",
+          "name": "DstResources",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加工逻辑函数",
+          "example": "xxxx",
+          "member": "string",
+          "name": "EtlContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAlarmNoticeRequest": {
       "document": "DeleteAlarmNotice请求参数结构体",
@@ -2715,6 +3069,33 @@
     },
     "DeleteConsumerResponse": {
       "document": "DeleteConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataTransformRequest": {
+      "document": "DeleteDataTransform请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据加工任务id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataTransformResponse": {
+      "document": "DeleteDataTransform返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3238,6 +3619,87 @@
       ],
       "type": "object"
     },
+    "DescribeDataTransformInfoRequest": {
+      "document": "DescribeDataTransformInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "<br><li> taskName\n\n按照【加工任务名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskId\n\n按照【加工任务id】进行过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "默认值为2.   1: 获取单个任务的详细信息 2：获取任务列表",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Type为1， 此参数必填",
+          "example": "task-id",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataTransformInfoResponse": {
+      "document": "DescribeDataTransformInfo返回参数结构体",
+      "members": [
+        {
+          "document": "数据加工任务列表信息",
+          "example": "无",
+          "member": "DataTransformTaskInfo",
+          "name": "DataTransformTaskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务总次数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExportsRequest": {
       "document": "DescribeExports请求参数结构体",
       "members": [
@@ -3356,6 +3818,24 @@
           "value_allowed_null": false
         },
         {
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3452,6 +3932,96 @@
           "name": "NextOver",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogHistogramRequest": {
+      "document": "DescribeLogHistogram请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询语句",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间间隔: 单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogHistogramResponse": {
+      "document": "DescribeLogHistogram返回参数结构体",
+      "members": [
+        {
+          "document": "统计周期： 单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命中关键字的日志总条数",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "周期内统计结果详情",
+          "example": "无",
+          "member": "HistogramInfo",
+          "name": "HistogramInfos",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3864,7 +4434,7 @@
       "members": [
         {
           "default": "",
-          "document": "<br><li> topicName按照【日志主题名称】进行过滤。类型：String必选：否<br><li> logsetName按照【日志集名称】进行过滤。类型：String必选：否<br><li> topicId按照【日志主题ID】进行过滤。类型：String必选：否<br><li> logsetId按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String必选：否<br><li> tagKey按照【标签键】进行过滤。类型：String必选：否<br><li> tag:tagKey按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String必选：否<br><li> storageType按照【日志主题的存储类型】进行过滤。可选值 hot（实时存储），cold（低频存储）类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li> topicName按照【日志主题名称】进行过滤。类型：String必选：否<br><li> logsetName按照【日志集名称】进行过滤。类型：String必选：否<br><li> topicId按照【日志主题ID】进行过滤。类型：String必选：否<br><li> logsetId按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String必选：否<br><li> tagKey按照【标签键】进行过滤。类型：String必选：否<br><li> tag:tagKey按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String必选：否<br><li> storageType按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4437,6 +5007,32 @@
       ],
       "type": "object"
     },
+    "HistogramInfo": {
+      "document": "直方图详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "统计周期内的日志条数",
+          "example": "15",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按 period 取整后的 unix timestamp： 单位毫秒",
+          "example": "2021-04-25 14:25:00.000",
+          "member": "int64",
+          "name": "BTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HostFileInfo": {
       "document": "自建k8s-节点文件配置信息",
       "members": [
@@ -4611,6 +5207,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4694,6 +5300,16 @@
           "example": "{\"content\":\"test\"}",
           "member": "string",
           "name": "LogJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5570,6 +6186,69 @@
       ],
       "type": "object"
     },
+    "ModifyDataTransformRequest": {
+      "document": "ModifyDataTransform请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加工任务id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加工任务名称",
+          "example": "task1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "加工逻辑函数",
+          "example": "xxx",
+          "member": "string",
+          "name": "EtlContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务启动状态. 默认为1，正常开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "加工任务目的topic_id以及别名",
+          "example": "无",
+          "member": "DataTransformResouceInfo",
+          "name": "DstResources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataTransformResponse": {
+      "document": "ModifyDataTransform返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyIndexRequest": {
       "document": "ModifyIndex请求参数结构体",
       "members": [
@@ -5599,6 +6278,24 @@
           "name": "Rule",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeInternalFields",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MetadataFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5926,7 +6623,7 @@
         },
         {
           "default": "",
-          "document": "生命周期，单位天；可取值范围1~366",
+          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -6038,6 +6735,42 @@
       ],
       "usage": "both"
     },
+    "OpenKafkaConsumerRequest": {
+      "document": "OpenKafkaConsumer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CLS控制台创建的TopicId",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "FromTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenKafkaConsumerResponse": {
+      "document": "OpenKafkaConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "待消费TopicId",
+          "example": "out-57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PartitionInfo": {
       "document": "日志主题分区信息",
       "members": [
@@ -6097,6 +6830,72 @@
         }
       ],
       "usage": "out"
+    },
+    "PreviewLogStatistic": {
+      "document": "预览数据详情",
+      "members": [
+        {
+          "default": "",
+          "document": "日志内容",
+          "example": "xxxx",
+          "member": "string",
+          "name": "LogContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行号",
+          "example": "1",
+          "member": "int64",
+          "name": "LineNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标日志主题",
+          "example": "topic-xx",
+          "member": "string",
+          "name": "DstTopicId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败错误码， 空字符串\"\"表示正常",
+          "example": "error",
+          "member": "string",
+          "name": "FailReason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "日志时间戳",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标topic-name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "DstTopicName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RetryShipperTaskRequest": {
       "document": "RetryShipperTask请求参数结构体",
@@ -6816,7 +7615,7 @@
         },
         {
           "default": "",
-          "document": "生命周期，单位为天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
           "name": "Period",

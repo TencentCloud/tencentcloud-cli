@@ -334,6 +334,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否使用旧回包",
+          "example": "无",
+          "member": "string",
+          "name": "OldResponseType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

@@ -247,9 +247,9 @@
       "output": "DescribeTopDataResponse"
     },
     "DescribeTrafficPackages": {
-      "document": "DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。",
+      "document": "DescribeTrafficPackages 用于查询 CDN 流量包详情。",
       "input": "DescribeTrafficPackagesRequest",
-      "name": "中国境内流量包查询",
+      "name": "流量包查询",
       "output": "DescribeTrafficPackagesResponse"
     },
     "DescribeUrlViolations": {
@@ -385,7 +385,7 @@
       "output": "ModifyPurgeFetchTaskStatusResponse"
     },
     "PurgePathCache": {
-      "document": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 20 条。",
+      "document": "PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。\n默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 500 条。",
       "input": "PurgePathCacheRequest",
       "name": "刷新目录",
       "output": "PurgePathCacheResponse"
@@ -397,7 +397,7 @@
       "output": "PurgeUrlsCacheResponse"
     },
     "PushUrlsCache": {
-      "document": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。",
+      "document": "PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。\n默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 500 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。",
       "input": "PushUrlsCacheRequest",
       "name": "预热 URL",
       "output": "PushUrlsCacheResponse"
@@ -869,6 +869,24 @@
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
           "required": false,
           "type": "object"
         }
@@ -2040,6 +2058,7 @@
         {
           "default": "",
           "document": "开关，on/off。",
+          "example": "on",
           "member": "string",
           "name": "Switch",
           "required": true,
@@ -2049,6 +2068,7 @@
         {
           "default": "",
           "document": "访问ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dfss12nk",
           "member": "string",
           "name": "AccessKey",
           "required": false,
@@ -2058,8 +2078,29 @@
         {
           "default": "",
           "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsfds13m",
           "member": "string",
           "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "Bucket",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2148,6 +2189,16 @@
           "name": "Metric",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "累计用量配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatisticItem",
+          "name": "StatisticItems",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2669,6 +2720,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主域名",
+          "example": "cdn-123",
+          "member": "string",
+          "name": "ParentHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2708,6 +2769,32 @@
         }
       ],
       "usage": "both"
+    },
+    "CacheConfig": {
+      "document": "启发式自定义时间缓存配置",
+      "members": [
+        {
+          "default": "",
+          "document": "on 代表开启自定义启发式缓存时间\noff 代表关闭自定义启发式缓存时间",
+          "example": "on",
+          "member": "string",
+          "name": "HeuristicCacheTimeSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "单位 秒.",
+          "example": "10",
+          "member": "int64",
+          "name": "HeuristicCacheTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CacheConfigCache": {
       "document": "路径缓存缓存配置",
@@ -2771,11 +2858,22 @@
         {
           "default": "",
           "document": "遵循源站配置开关\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启发式缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeuristicCache",
+          "name": "HeuristicCache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3930,6 +4028,7 @@
         {
           "default": "",
           "document": "要取回的域名",
+          "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3943,24 +4042,39 @@
       "members": [
         {
           "document": "子解析",
+          "example": "_cdnauth",
           "member": "string",
           "name": "SubDomain",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解析值",
+          "example": "202009071516044acd018wf498457628cn75ba018ec9cv",
           "member": "string",
           "name": "Record",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "解析类型",
+          "example": "TXT",
           "member": "string",
           "name": "RecordType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "文件验证 URL 指引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://abc.com/verification.html",
+          "member": "string",
+          "name": "FileVerifyUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4117,6 +4231,7 @@
         {
           "default": "",
           "document": "域名\n域名状态需要为【已停用】",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4299,6 +4414,15 @@
           "example": "cdn",
           "member": "string",
           "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "required": false,
           "type": "string"
         }
@@ -4607,6 +4731,15 @@
           "name": "Product",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4746,6 +4879,7 @@
         {
           "default": "",
           "document": "需要查询的 IP 列表",
+          "example": "[\"1.1.1.1\\n\"]",
           "member": "string",
           "name": "Ips",
           "required": true,
@@ -4759,8 +4893,10 @@
       "members": [
         {
           "document": "查询的节点归属详情。",
+          "example": "无",
           "member": "CdnIp",
           "name": "Ips",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4949,6 +5085,7 @@
         {
           "default": "",
           "document": "报告ID",
+          "example": "123",
           "member": "string",
           "name": "ReportId",
           "required": true,
@@ -4962,59 +5099,84 @@
       "members": [
         {
           "document": "诊断报告基础信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "BaskInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CNAME检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "CnameInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "客户端检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "ClientInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "DNS检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "DnsInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "网络检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "NetworkInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "边缘节点检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "OcNodeInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "中间源节点检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "MidNodeInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "源站检测信息",
+          "example": "无",
           "member": "DiagnoseData",
           "name": "OriginInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "刷新检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagnoseData",
+          "name": "PurgeInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5373,6 +5535,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "test.tencent.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5386,22 +5549,28 @@
       "members": [
         {
           "document": "WebpAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WebpAdapter",
           "name": "WebpAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TpgAdapter",
           "name": "TpgAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5573,6 +5742,7 @@
         {
           "default": "",
           "document": "映射查询类别：\nisp：运营商映射查询\ndistrict：省份（中国境内）、国家/地区（中国境外）映射查询",
+          "example": "isp",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5586,22 +5756,28 @@
       "members": [
         {
           "document": "映射关系数组。",
+          "example": "无",
           "member": "MapInfo",
           "name": "MapInfoList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "服务端区域id和子区域id的映射关系。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionMapRelation",
           "name": "ServerRegionRelation",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "客户端区域id和子区域id的映射关系。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RegionMapRelation",
           "name": "ClientRegionRelation",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5686,6 +5862,15 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指定查询时间的时区，默认UTC+08:00",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "required": false,
           "type": "string"
         }
@@ -5813,15 +5998,19 @@
       "members": [
         {
           "document": "URL刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "UrlPurge",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "目录刷新用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "PathPurge",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5961,8 +6150,10 @@
       "members": [
         {
           "document": "Url预热用量及配额。",
+          "example": "无",
           "member": "Quota",
           "name": "UrlPush",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6413,6 +6604,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6426,43 +6618,55 @@
       "members": [
         {
           "document": "自定义防护策略配置",
+          "example": "无",
           "member": "ScdnAclConfig",
           "name": "Acl",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "Web 攻击防护（WAF）配置",
+          "example": "无",
           "member": "ScdnWafConfig",
           "name": "Waf",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "CC 防护配置",
+          "example": "无",
           "member": "ScdnConfig",
           "name": "CC",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "DDOS 防护配置",
+          "example": "无",
           "member": "ScdnDdosConfig",
           "name": "Ddos",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "BOT 防护配置",
+          "example": "无",
           "member": "ScdnBotConfig",
           "name": "Bot",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "当前状态，取值online | offline\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6662,7 +6866,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的起点时刻",
+          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为起始日期\n返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00\n仅支持 90 天内数据查询",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -6671,7 +6875,7 @@
         },
         {
           "default": "",
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n当前仅支持按天粒度的数据查询，参数需为某天的结束时刻",
+          "document": "查询结束日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为结束日期\n返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59\nEndTime 需要大于等于 StartTime",
           "example": "2021-01-01 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -6725,7 +6929,7 @@
         },
         {
           "default": "",
-          "document": "地域，目前可不填，默认是大陆",
+          "document": "指定服务地域查询，不填充表示查询中国境内 CDN 数据\nmainland：指定查询中国境内 CDN 数据\noverseas：指定查询中国境外 CDN 数据",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -6734,7 +6938,7 @@
         },
         {
           "default": "",
-          "document": "产品名，目前仅可使用cdn",
+          "document": "指定查询的产品数据，目前仅可使用cdn",
           "example": "cdn",
           "member": "string",
           "name": "Product",
@@ -6771,6 +6975,7 @@
         {
           "default": "",
           "document": "分页查询起始地址，默认 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6779,10 +6984,20 @@
         {
           "default": "",
           "document": "分页查询记录个数，默认100，最大1000",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "流量包排序方式，支持以下值：\nexpireTimeDesc：默认值，按过期时间倒序\nexpireTimeAsc：按过期时间正序\ncreateTimeDesc：按创建时间倒序\ncreateTimeAsc：按创建时间正序\nstatus：按状态排序，正常抵扣>未生效>已用尽>已过期\nchannel：按来源排序，主动购买>自动续订>CDN赠送",
+          "example": "status",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6792,29 +7007,46 @@
       "members": [
         {
           "document": "流量包总个数",
+          "example": "40",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "流量包详情",
+          "example": "无",
           "member": "TrafficPackage",
           "name": "TrafficPackages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "即将过期的流量包个数（7天内）",
+          "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "有效流量包个数",
+          "example": "40",
           "member": "int64",
           "name": "EnabledCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "付费流量包个数",
+          "example": "20",
+          "member": "int64",
+          "name": "PaidCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6833,6 +7065,7 @@
         {
           "default": "",
           "document": "分页查询偏移量，默认为 0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6841,6 +7074,7 @@
         {
           "default": "",
           "document": "分页查询限制数目，默认为 100",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6849,6 +7083,7 @@
         {
           "default": "",
           "document": "指定的域名查询",
+          "example": "无",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -6862,15 +7097,19 @@
       "members": [
         {
           "document": "违规 URL 详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ViolationUrl",
           "name": "UrlRecordList",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "记录总数，用于分页",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7609,6 +7848,36 @@
           "example": "无",
           "member": "RuleEngine",
           "name": "RuleEngine",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -8648,6 +8917,32 @@
       ],
       "usage": "both"
     },
+    "HeuristicCache": {
+      "document": "启发式缓存配置",
+      "members": [
+        {
+          "default": "",
+          "document": "on 代表开启启发式缓存\noff 代表关闭启发式缓存",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义启发式缓存时间配置",
+          "example": "无",
+          "member": "CacheConfig",
+          "name": "CacheConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "Hsts": {
       "document": "HSTS 配置。",
       "members": [
@@ -8871,6 +9166,52 @@
           "name": "TlsVersion",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "HwPrivateAccess": {
+      "document": " 华为云对象存储回源鉴权",
+      "members": [
+        {
+          "default": "",
+          "document": "开关 on/off",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SYWKY0DAR8I5NXZO93YT",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5Hhn0uss213Szfgysb6nOkWaGA6Z4V956n8NtSmg",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-1-163",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9968,7 +10309,7 @@
       "members": [
         {
           "default": "",
-          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为起始日期\n返回大于等于起始日期当天 00:00:00 点产生的数据\n仅支持 90 天内数据查询",
+          "document": "查询起始日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为起始日期\n返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00\n仅支持 90 天内数据查询",
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -9977,7 +10318,7 @@
         },
         {
           "default": "",
-          "document": "查询结束日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为结束日期\n返回小于等于结束日期当天 23:59:59 产生的数据\nEndTime 需要大于等于 StartTime",
+          "document": "查询结束日期：yyyy-MM-dd HH:mm:ss\n仅支持按天粒度的数据查询，取入参中的天信息作为结束日期\n返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59\nEndTime 需要大于等于 StartTime",
           "example": "2021-01-01 23:59:59",
           "member": "datetime",
           "name": "EndTime",
@@ -10601,6 +10942,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10942,6 +11303,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "对象存储回源厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "OriginCompany",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11092,6 +11463,26 @@
           "example": "abc",
           "member": "string",
           "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Bucketname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hw-oss",
+          "member": "string",
+          "name": "Bucket",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11358,6 +11749,26 @@
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11801,6 +12212,15 @@
           "name": "ParseM3U8",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否关闭Range回源\n注意事项：\n此功能灰度发布中，敬请期待",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableRange",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11825,6 +12245,42 @@
         }
       ],
       "type": "object"
+    },
+    "QnPrivateAccess": {
+      "document": "七牛元对象存储回源鉴权配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开关 on/off",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "访问 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ousbDM5xlzuAZJEhhwcLj8makXkYiaAvciZHqAQj",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "密钥",
+          "example": "c109ES08UcSUNdSA1rN04tSBJ8I45BrxMZQn3vtL",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "QueryStringKey": {
       "document": "组成CacheKey的一部分",
@@ -14010,6 +14466,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14023,8 +14480,10 @@
       "members": [
         {
           "document": "开启结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14036,6 +14495,102 @@
         }
       ],
       "type": "object"
+    },
+    "StatisticItem": {
+      "document": "累计用量封顶的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "封顶类型，累计用量total，瞬时用量moment\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "total",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动解封时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "UnBlockTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带宽、流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000000",
+          "member": "uint64",
+          "name": "BpsThreshold",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RESOLVE_DNS_TO_ORIGIN",
+          "member": "string",
+          "name": "CounterMeasure",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "触发提醒阈值百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "AlertPercentage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提醒开关 on/off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "AlertSwitch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标类型，流量flux或带宽bandwidth\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "flux",
+          "member": "string",
+          "name": "Metric",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检测周期，单位分钟，60或1440\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Cycle",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启该选项，on/off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StatusCodeCache": {
       "document": "状态码缓存过期配置，默认情况下会对 404 状态码缓存 10 秒",
@@ -14091,6 +14646,7 @@
         {
           "default": "",
           "document": "域名\n域名需要为【已启动】状态",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14117,6 +14673,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14130,8 +14687,10 @@
       "members": [
         {
           "document": "关闭结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14823,21 +15382,21 @@
         },
         {
           "default": "",
-          "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
-          "example": "web",
-          "member": "string",
-          "name": "ServiceType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "地域属性特殊配置\n适用于域名境内加速、境外加速配置不一致场景",
           "example": "无",
           "member": "SpecificConfig",
           "name": "SpecificConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "域名业务类型\nweb：静态加速\ndownload：下载加速\nmedia：流媒体点播加速",
+          "example": "web",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -14949,6 +15508,15 @@
         },
         {
           "default": "",
+          "document": "POST请求传输配置",
+          "example": "无",
+          "member": "PostSize",
+          "name": "PostMaxSize",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "Quic访问（收费服务，详见计费说明和产品文档）",
           "example": "无",
           "member": "Quic",
@@ -14989,6 +15557,24 @@
           "example": "无",
           "member": "ShareCname",
           "name": "ShareCname",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "华为云对象存储回源鉴权",
+          "example": "无",
+          "member": "HwPrivateAccess",
+          "name": "HwPrivateAccess",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "七牛云对象存储回源鉴权",
+          "example": "无",
+          "member": "QnPrivateAccess",
+          "name": "QnPrivateAccess",
           "required": false,
           "type": "object"
         }
@@ -15103,6 +15689,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15111,6 +15698,7 @@
         {
           "default": "",
           "document": "Web 攻击防护（WAF）配置",
+          "example": "无",
           "member": "ScdnWafConfig",
           "name": "Waf",
           "required": false,
@@ -15119,6 +15707,7 @@
         {
           "default": "",
           "document": "自定义防护策略配置",
+          "example": "无",
           "member": "ScdnAclConfig",
           "name": "Acl",
           "required": false,
@@ -15127,6 +15716,7 @@
         {
           "default": "",
           "document": "CC 防护配置，目前 CC 防护默认开启",
+          "example": "无",
           "member": "ScdnConfig",
           "name": "CC",
           "required": false,
@@ -15135,6 +15725,7 @@
         {
           "default": "",
           "document": "DDOS 防护配置，目前 DDoS 防护默认开启",
+          "example": "无",
           "member": "ScdnDdosConfig",
           "name": "Ddos",
           "required": false,
@@ -15143,6 +15734,7 @@
         {
           "default": "",
           "document": "BOT 防护配置",
+          "example": "无",
           "member": "ScdnBotConfig",
           "name": "Bot",
           "required": false,
@@ -15156,8 +15748,10 @@
       "members": [
         {
           "document": "提交结果，Success表示成功",
+          "example": "Success",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15366,9 +15960,19 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "验证方式\ndns: DNS 解析验证（默认值）\nfile: 文件验证",
+          "example": "file",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -15379,8 +15983,10 @@
       "members": [
         {
           "document": "是否验证成功",
+          "example": "ok",
           "member": "bool",
           "name": "Result",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },

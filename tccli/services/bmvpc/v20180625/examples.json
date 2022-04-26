@@ -19,13 +19,13 @@
     "BindEipsToNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AssignedEips.0=139.199.40.16\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\n&NatId=nat-2duawe5v\n&VpcId=vpc-mi51u7gs\n&AssignedEips.0=139.199.40.16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18413,\n        \"RequestId\": \"a63cf9af-5529-459e-93b8-8f45e38b5770\"\n    }\n}",
         "title": "NAT网关绑定已申请的EIP"
       },
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AutoAllocEipNum=1\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=BindEipsToNatGateway\n&NatId=nat-2duawe5v\n&VpcId=vpc-mi51u7gs\n&AutoAllocEipNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18415,\n        \"RequestId\": \"cb2be9db-6ab7-4fd6-a1c1-935bf78dd8f3\"\n    }\n}",
         "title": "NAT网关绑定新建EIP"
       }
@@ -81,13 +81,13 @@
     "CreateNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=1\r\n&VpcId=vpc-mi51u7gs\r\n&NatName=test\r\n&MaxConcurrent=10000000\r\n&AssignedEips.0=139.199.40.59\r\n&SubnetIds.0=subnet-d3668cur\r\n&SubnetIds.1=subnet-dipbsl5n\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\n&ForwardMode=1\n&VpcId=vpc-mi51u7gs\n&NatName=test\n&MaxConcurrent=10000000\n&AssignedEips.0=139.199.40.59\n&SubnetIds.0=subnet-d3668cur\n&SubnetIds.1=subnet-dipbsl5n\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18403,\n        \"RequestId\": \"6e9f212d-b3cb-417e-b78e-3ae6ec690e4d\"\n    }\n}",
         "title": "网段方式创建NAT网关"
       },
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\r\n&ForwardMode=0\r\n&VpcId=vpc-mi51u7gs\r\n&SubnetIds.0=subnet-kmoq5ugh\r\n&SubnetIds.1=subnet-j74dmsz5\r\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\r\n&IpInfoSet.0.Ips.0=192.168.88.2\r\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\r\n&IpInfoSet.1.Ips.0=192.168.222.2\r\n&IpInfoSet.1.Ips.1=192.168.222.3\r\n&NatName=test\r\n&MaxConcurrent=1000000\r\n&AutoAllocEipNum=1\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=CreateNatGateway\n&ForwardMode=0\n&VpcId=vpc-mi51u7gs\n&SubnetIds.0=subnet-kmoq5ugh\n&SubnetIds.1=subnet-j74dmsz5\n&IpInfoSet.0.SubnetId=subnet-qnh7qryt\n&IpInfoSet.0.Ips.0=192.168.88.2\n&IpInfoSet.1.SubnetId=subnet-o9lo3es1\n&IpInfoSet.1.Ips.0=192.168.222.2\n&IpInfoSet.1.Ips.1=192.168.222.3\n&NatName=test\n&MaxConcurrent=1000000\n&AutoAllocEipNum=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18405,\n        \"RequestId\": \"7d18fca8-4b3c-4bc6-818e-ec291764b8fb\"\n    }\n}",
         "title": "IP方式创建NAT网关"
       }
@@ -167,7 +167,7 @@
     "DeleteNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteNatGateway\r\n&NatId=nat-kdm476mp\r\n&VpcId=vpc-mi51u7gs\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DeleteNatGateway\n&NatId=nat-kdm476mp\n&VpcId=vpc-mi51u7gs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18407,\n        \"RequestId\": \"fb836c6d-487f-4ea5-8742-549be18aca77\"\n    }\n}",
         "title": "删除NAT网关"
       }
@@ -263,7 +263,7 @@
     "DescribeRoutePolicies": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\r\n&RouteTableId=rtb-afg8md3c\r\n&RoutePolicyIds.0=rti-q1j48dkd\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\n&RouteTableId=rtb-afg8md3c\n&RoutePolicyIds.0=rti-q1j48dkd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoutePolicySet\": [\n            {\n                \"RoutePolicyId\": \"Local\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"Local\",\n                \"GatewayType\": \"LOCAL\",\n                \"GatewayId\": \"Local\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            },\n            {\n                \"RoutePolicyId\": \"rti-q9eyoybe\",\n                \"RouteDescription\": \"\",\n                \"DestinationCidrBlock\": \"169.254.0.0/23\",\n                \"GatewayType\": \"SSHSSLVPN\",\n                \"GatewayId\": \"sslvpngw-o7tpr54i\",\n                \"RoutePolicyType\": \"NETD\",\n                \"Enabled\": true\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
         "title": "查询黑石路由表条目"
       }
@@ -391,7 +391,7 @@
     "ModifyRoutePolicy": [
       {
         "document": "修改路由表路由条目",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRoutePolicy\r\n&RouteTableId=rtb-19yps3nz\r\n&RoutePolicy.DestinationCidrBlock=10.151.0.0/16\r\n&RoutePolicy.GatewayType=CPM\r\n&RoutePolicy.GatewayId=10.1.10.2\r\n&RoutePolicy.RouteDescription=test\r\n&RoutePolicy.RoutePolicyId=rti-3xx8yzru\r\n&RoutePolicy.RoutePolicyType=USER\r\n&RoutePolicy.Enabled=true\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=ModifyRoutePolicy\n&RouteTableId=rtb-19yps3nz\n&RoutePolicy.DestinationCidrBlock=10.151.0.0/16\n&RoutePolicy.GatewayType=CPM\n&RoutePolicy.GatewayId=10.1.10.2\n&RoutePolicy.RouteDescription=test\n&RoutePolicy.RoutePolicyId=rti-3xx8yzru\n&RoutePolicy.RoutePolicyType=USER\n&RoutePolicy.Enabled=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 12312,\n        \"RequestId\": \"62735da7-4546-4d63-8d42-36ced3bd3d94\"\n    }\n}",
         "title": "修改路由表路由条目"
       }
@@ -471,7 +471,7 @@
     "UnbindEipsFromNatGateway": [
       {
         "document": "",
-        "input": "https://bmvpc.tencentcloudapi.com/?Action=UnbindEipsFromNatGateway\r\n&NatId=nat-2duawe5v\r\n&VpcId=vpc-mi51u7gs\r\n&AssignedEips.0=139.199.40.16\r\n&<公共请求参数>",
+        "input": "https://bmvpc.tencentcloudapi.com/?Action=UnbindEipsFromNatGateway\n&NatId=nat-2duawe5v\n&VpcId=vpc-mi51u7gs\n&AssignedEips.0=139.199.40.16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 18417,\n        \"RequestId\": \"e16cdd36-43e2-4748-bcf8-56e999953bed\"\n    }\n}",
         "title": "NAT网关解绑EIP"
       }

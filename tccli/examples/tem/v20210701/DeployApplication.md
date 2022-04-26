@@ -59,7 +59,8 @@ tccli tem DeployApplication --cli-unfold-argument  \
     --SettingConfs.0.ConfigDataName xx \
     --SettingConfs.0.MountedPath xx \
     --SettingConfs.0.Data.0.Value xx \
-    --SettingConfs.0.Data.0.Key xx
+    --SettingConfs.0.Data.0.Key xx \
+    --OsFlavour ALPINE
 ```
 
 Output: 
@@ -125,7 +126,8 @@ tccli tem DeployApplication --cli-unfold-argument  \
     --StorageConfs.0.StorageVolPath 字符串 \
     --StorageConfs.0.StorageVolIp 字符串 \
     --StorageConfs.0.StorageVolName 字符串 \
-    --PostStart 字符串
+    --PostStart 字符串 \
+    --OsFlavour ALPINE
 ```
 
 Output: 

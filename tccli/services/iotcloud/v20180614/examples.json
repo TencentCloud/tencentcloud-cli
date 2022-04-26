@@ -278,6 +278,14 @@
         "title": "获取创建多设备结果"
       }
     ],
+    "DescribeProduct": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProduct\n&ProductId=ABCDE12345\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProductMetadata\": {\n            \"CreationDate\": 1509453755000\n        },\n        \"ProductProperties\": {\n            \"ProductDescription\": \"description1\"\n        },\n        \"ProductName\": \"Test_1\",\n        \"ProductId\": \"ABCDE12345\",\n        \"RequestId\": \"8e0b3665-cfb5-4077-a535-0ed7f970cf3b\"\n    }\n}",
+        "title": "查看产品详情示例"
+      }
+    ],
     "DescribeProductResource": [
       {
         "document": "",
@@ -524,6 +532,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateDevicesEnableState\n&ProductID=SB9OJFCJ1C\n&DeviceNames.0=test123\n&Status=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"69f65618-600b-4ac4-b8e3-4528a6819078\"\n    }\n}",
         "title": "UpdateDevicesEnableState"
+      }
+    ],
+    "UpdateProductDynamicRegister": [
+      {
+        "document": "更新产品动态注册",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=UpdateProductDynamicRegister\n&ProductId=ABCDE12345\n&RegisterType=0\n&RegisterLimit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegisterType\": 0,\n        \"ProductSecret\": \"xxxx\",\n        \"RegisterLimit\": 10000,\n        \"RequestId\": \"d15b72a9-ab2b-4906-9632-52f7a31932a9\"\n    }\n}",
+        "title": "更新产品动态注册"
       }
     ],
     "UpdateTopicPolicy": [

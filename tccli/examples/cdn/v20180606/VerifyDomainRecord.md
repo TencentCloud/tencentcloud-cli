@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b",
-        "Result": "ok"
+        "Result": true
     }
 }
 ```

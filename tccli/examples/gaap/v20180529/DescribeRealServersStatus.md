@@ -13,15 +13,16 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
+        "RequestId": "xx",
         "RealServerStatusSet": [
             {
-                "RealServerId": "rs-4ftghy6",
+                "ProxyId": "xx",
                 "BindStatus": 0,
-                "ProxyId": "link-asfke"
+                "RealServerId": "xx",
+                "GroupId": "xx"
             }
-        ],
-        "TotalCount": 1,
-        "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd"
+        ]
     }
 }
 ```

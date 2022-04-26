@@ -191,6 +191,23 @@ Output:
                     "ValueText": "--"
                 }
             ]
+        },
+        "PurgeInfo": {
+            "Status": "ok",
+            "Data": [
+                {
+                    "Key": "purge",
+                    "KeyText": "刷新详情",
+                    "Value": "检测中",
+                    "ValueText": "检测中"
+                },
+                {
+                    "Key": "solution",
+                    "KeyText": "解决方案",
+                    "Value": "无需检测",
+                    "ValueText": "无需检测"
+                }
+            ]
         }
     }
 }

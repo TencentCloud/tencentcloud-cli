@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli vpc ModifyNetworkAclEntries --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetworkAclId acl-12345678 \
     --NetworkAclEntrySet.Ingress.0.Protocol TCP \
     --NetworkAclEntrySet.Ingress.0.Port 80 \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.1.0/24 \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
     --NetworkAclEntrySet.Ingress.0.Description test \
+    --NetworkAclEntrySet.Ingress.0.ModifyTime xx \
     --NetworkAclEntrySet.Egress.0.Protocol TCP \
     --NetworkAclEntrySet.Egress.0.Port 80 \
     --NetworkAclEntrySet.Egress.0.CidrBlock 192.168.1.0/24 \
     --NetworkAclEntrySet.Egress.0.Action Accept \
-    --NetworkAclEntrySet.Egress.0.Description test
+    --NetworkAclEntrySet.Egress.0.Description test \
+    --NetworkAclEntrySet.Egress.0.ModifyTime xx
 ```
 
 Output: 
@@ -37,18 +38,19 @@ Input:
 
 ```
 tccli vpc ModifyNetworkAclEntries --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetworkAclId acl-12345678 \
     --NetworkAclEntrySet.Ingress.0.Protocol TCP \
     --NetworkAclEntrySet.Ingress.0.Port 80 \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.1.0/24 \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
     --NetworkAclEntrySet.Ingress.0.Description test \
+    --NetworkAclEntrySet.Ingress.0.ModifyTime xx \
     --NetworkAclEntrySet.Ingress.1.Protocol TCP \
     --NetworkAclEntrySet.Ingress.1.Port 442 \
     --NetworkAclEntrySet.Ingress.1.CidrBlock 192.168.1.0/24 \
     --NetworkAclEntrySet.Ingress.1.Action Accept \
-    --NetworkAclEntrySet.Ingress.1.Description test
+    --NetworkAclEntrySet.Ingress.1.Description test \
+    --NetworkAclEntrySet.Ingress.1.ModifyTime xx
 ```
 
 Output: 
@@ -71,13 +73,13 @@ Input:
 
 ```
 tccli vpc ModifyNetworkAclEntries --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetworkAclId acl-12345678 \
     --NetworkAclEntrySet.Ingress.0.Protocol TCP \
     --NetworkAclEntrySet.Ingress.0.Port 80 \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.1.0/24 \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
-    --NetworkAclEntrySet.Ingress.0.Description test
+    --NetworkAclEntrySet.Ingress.0.Description test \
+    --NetworkAclEntrySet.Ingress.0.ModifyTime xx
 ```
 
 Output: 

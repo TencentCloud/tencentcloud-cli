@@ -43,7 +43,7 @@
     "DescribeEcdnDomainLogs": [
       {
         "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeEcdnDomainLogs\r\n&StartTime=2019-09-04 00:00:00\r\n&EndTime=2019-09-04 12:00:00\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribeEcdnDomainLogs\n&StartTime=2019-09-04 00:00:00\n&EndTime=2019-09-04 12:00:00\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\",\n        \"DomainLogs\": [\n            {\n                \"StartTime\": \"2019-09-04 23:00:00\",\n                \"EndTime\": \"2019-09-04 23:59:59\",\n                \"LogPath\": \"http://www.test.qcloud.com/20190904/23/201909042300-www.test.com.gz?st=hGzJr0QFpo3jYM2uj7kkjA&e=3135214538\"\n            }\n        ],\n        \"TotalCount\": 300\n    }\n}",
         "title": "查询域名日志下载链接"
       }

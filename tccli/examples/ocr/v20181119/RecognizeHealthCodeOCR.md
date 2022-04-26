@@ -1,4 +1,4 @@
-**Example 1: 防疫健康码识别示例代码**
+**Example 1: 健康码识别示例代码**
 
 
 
@@ -14,8 +14,12 @@ Output:
 {
     "Response": {
         "Name": "京XX",
-        "Time": "XXXX - XX - XX XX: XX: XX",
+        "Time": "XX - XX XX: XX: XX",
         "Color": "绿色",
+        "TestingResult": "48小时阴性",
+        "TestingInterval": "xx",
+        "TestingTime": "xx",
+        "IDNumber": "xx",
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }

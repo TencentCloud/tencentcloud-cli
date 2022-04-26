@@ -1,38 +1,46 @@
-**Example 1: 境内流量包查询**
+**Example 1: 查询流量包列表**
 
 
 
 Input: 
 
 ```
-tccli cdn DescribeTrafficPackages --cli-unfold-argument ```
+tccli cdn DescribeTrafficPackages --cli-unfold-argument  \
+    --Limit 1 \
+    --Offset 0
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "bc7df980-c745-4f80-854e-1a49295b0d5f",
+        "RequestId": "604e7ebe-041c-4684-ab59-e0c825c3a788",
         "TrafficPackages": [
             {
-                "Id": 123,
-                "Type": "新手流量包",
-                "Bytes": 50000000000,
+                "Id": 888890106,
+                "Type": "日常流量包",
+                "ConfigId": 672,
+                "Bytes": 100000000000,
                 "BytesUsed": 0,
-                "Status": "expired",
-                "CreateTime": "2017-07-31 09:28:14",
-                "EnableTime": "2017-07-01 00:00:00",
-                "ExpireTime": "2017-08-01 00:00:00",
+                "Status": "enabled",
+                "CreateTime": "2021-11-10 17:59:24",
+                "EnableTime": "2021-11-01 00:00:00",
+                "ExpireTime": "2022-10-31 23:59:59",
                 "ContractExtension": false,
-                "AutoExtension": false,
-                "Channel": "cdn",
+                "AutoExtension": true,
+                "ExtensionMode": 3,
                 "Area": "mainland",
-                "LifeTimeMonth": 1,
-                "ExtensionAvailable": false
+                "LifeTimeMonth": 12,
+                "RefundAvailable": false,
+                "Channel": "ACTIVE_PURCHASE",
+                "ExtensionAvailable": true,
+                "Region": 0
             }
         ],
-        "TotalCount": 40,
+        "TotalCount": 6,
         "ExpiringCount": 0,
-        "EnabledCount": 40
+        "EnabledCount": 6,
+        "PaidCount": 6
     }
 }
 ```

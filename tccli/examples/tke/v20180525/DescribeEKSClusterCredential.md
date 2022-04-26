@@ -45,7 +45,8 @@ Output:
         "InternalLB": {
             "SubnetId": "xx",
             "Enabled": true
-        }
+        },
+        "Kubeconfig": "apiVersion: v1 \n clusters: \n - cluster: \n     insecure-skip-tls-verify: true\n     server: https://9.3.224.18:10909 \n   name: cls-xxxxxxxx \n contexts: \n - context:\n     cluster: cls-xxxxxxxx \n     user: admin\n  name: master\n current-context: master \n kind: Config \n preferences: {} \n users: \n- \n ame: admin \n  user:\n    token: xxxxlWn8DaQQneFkPWht1Suorkxxxxxx\n"
     }
 }
 ```

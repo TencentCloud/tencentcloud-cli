@@ -53,7 +53,8 @@ Output:
                         "xx"
                     ],
                     "ImpactAssetNum": 0,
-                    "Id": 0
+                    "VulPath": "xx",
+                    "Id": "xx"
                 }
             ]
         },
