@@ -64,6 +64,15 @@
         },
         {
           "default": "",
+          "document": "队列名称。",
+          "example": "all.q",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
           "example": "120",
           "member": "int64",

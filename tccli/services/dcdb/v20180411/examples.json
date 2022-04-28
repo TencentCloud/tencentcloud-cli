@@ -358,6 +358,14 @@
         "title": "修改云数据库账号备注"
       }
     ],
+    "ModifyDBInstanceName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceName\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-21dfpcv1\",\n    \"InstanceName\": \"test-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"dcdbt-21dfpcv1\",\n        \"RequestId\": \"9405c219-c89f-4557-9ada-881c72a9e9ea\"\n    }\n}",
+        "title": "无"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "",

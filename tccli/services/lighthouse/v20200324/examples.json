@@ -478,6 +478,14 @@
         "title": "重启实例"
       }
     ],
+    "RenewInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1cte6j63\",\n        \"lhins-oxfq8tad\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"AutoVoucher\": true,\n    \"RenewDataDisk\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c139e106-cdb2-4923-8f1e-ea1dc4fe3a47\"\n    }\n}",
+        "title": "续费实例"
+      }
+    ],
     "ResetAttachCcn": [
       {
         "document": "",

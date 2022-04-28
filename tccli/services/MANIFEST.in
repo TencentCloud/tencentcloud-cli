@@ -367,6 +367,8 @@ include tccli/services/tem/v20210701/api.json
 include tccli/services/tem/v20210701/examples.json
 include tccli/services/tem/v20201221/api.json
 include tccli/services/tem/v20201221/examples.json
+include tccli/services/teo/v20220106/api.json
+include tccli/services/teo/v20220106/examples.json
 include tccli/services/thpc/v20220401/api.json
 include tccli/services/thpc/v20220401/examples.json
 include tccli/services/thpc/v20211109/api.json

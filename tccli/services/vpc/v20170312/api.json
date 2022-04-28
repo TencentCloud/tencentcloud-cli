@@ -6867,6 +6867,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "SSL-VPN client 唯一ID",
+          "example": "vpnc-xxxxx",
+          "member": "string",
+          "name": "SslVpnClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6972,6 +6981,15 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSL-VPN server 唯一ID",
+          "example": "vpns-xxxxx",
+          "member": "string",
+          "name": "SslVpnServerId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

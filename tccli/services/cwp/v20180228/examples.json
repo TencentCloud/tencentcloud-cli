@@ -24,14 +24,6 @@
         "title": "示例"
       }
     ],
-    "CloseProVersion": [
-      {
-        "document": "关闭专业版",
-        "input": "https://cwp.tencentcloudapi.com/?Action=CloseProVersion\n&Quuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "关闭专业版"
-      }
-    ],
     "CreateBaselineStrategy": [
       {
         "document": "根据基线信息创建基线策略",
@@ -1488,14 +1480,6 @@
         "title": "忽略漏洞"
       }
     ],
-    "InquiryPriceOpenProVersionPrepaid": [
-      {
-        "document": "开通云镜专业版询价（预付费）",
-        "input": "https://cwp.tencentcloudapi.com/?Action=InquiryPriceOpenProVersionPrepaid\n&ChargePrepaid.Period=1\n&Machines.0.MachineType=CVM\n&Machines.0.MachineRegion=ap-guangzhou\n&Machines.0.Quuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DiscountPrice\": 88.88,\n        \"OriginalPrice\": 100\n    }\n}",
-        "title": "开通云镜专业版询价（预付费）"
-      }
-    ],
     "ModifyAutoOpenProVersionConfig": [
       {
         "document": "",
@@ -1536,14 +1520,6 @@
         "title": "定时扫描设置"
       }
     ],
-    "ModifyProVersionRenewFlag": [
-      {
-        "document": "修改专业版续费标识",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ModifyProVersionRenewFlag\n&RenewFlag=NOTIFY_AND_AUTO_RENEW\n&Quuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "修改专业版续费标识"
-      }
-    ],
     "ModifyWarningSetting": [
       {
         "document": "告警设置-修改告警设置",
@@ -1576,36 +1552,12 @@
         "title": "示例"
       }
     ],
-    "OpenProVersion": [
-      {
-        "document": "开通专业版",
-        "input": "https://cwp.tencentcloudapi.com/?Action=OpenProVersion\n&MachineType=CVM\n&MachineRegion=ap-guangzhou\n&Quuids.0=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "开通专业版"
-      }
-    ],
-    "OpenProVersionPrepaid": [
-      {
-        "document": "开通专业版(包年包月)。",
-        "input": "https://cwp.tencentcloudapi.com/?Action=OpenProVersionPrepaid\n&ChargePrepaid.Period=1\n&Machines.0.MachineType=CVM\n&Machines.0.MachineRegion=ap-guangzhou\n&Machines.0.Quuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DealIds\": [\n            \"20171201110011\"\n        ]\n    }\n}",
-        "title": "开通专业版(包年包月)"
-      }
-    ],
     "RecoverMalwares": [
       {
         "document": "本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverMalwares\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1,\n        2,\n        3\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedIds\": [],\n        \"RequestId\": \"4985eb7f-62d6-4da8-898f-d92a08660a38\",\n        \"SuccessIds\": [\n            123,\n            456\n        ]\n    }\n}",
         "title": "恢复木马文件"
-      }
-    ],
-    "RenewProVersion": [
-      {
-        "document": "续费专业版，用于包年包月计费模式进行续费",
-        "input": "https://cwp.tencentcloudapi.com/?Action=RenewProVersion\n&ChargePrepaid.Period=1\n&Quuid=add4a78a-0d59-11e8-b7ab-00e081e1a5c5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "续费专业版"
       }
     ],
     "ScanAsset": [

@@ -264,6 +264,12 @@
       "name": "修改数据库账号备注",
       "output": "ModifyAccountDescriptionResponse"
     },
+    "ModifyDBInstanceName": {
+      "document": "本接口（ModifyDBInstanceName）用于修改实例名字",
+      "input": "ModifyDBInstanceNameRequest",
+      "name": "修改实例名字",
+      "output": "ModifyDBInstanceNameResponse"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -5073,6 +5079,51 @@
     "ModifyAccountDescriptionResponse": {
       "document": "ModifyAccountDescription返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNameRequest": {
+      "document": "ModifyDBInstanceName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID，形如tdsql-hdaprz0v",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "test-name",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceNameResponse": {
+      "document": "ModifyDBInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "tdsql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

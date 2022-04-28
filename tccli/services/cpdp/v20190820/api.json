@@ -207,7 +207,7 @@
     "CreateOpenBankExternalSubMerchantAccountBook": {
       "document": "第三方子商户电子记账本创建接口",
       "input": "CreateOpenBankExternalSubMerchantAccountBookRequest",
-      "name": "云企付-渠道子商户电子记账本创建接口",
+      "name": "云企付-子商户电子记账本创建接口",
       "output": "CreateOpenBankExternalSubMerchantAccountBookResponse"
     },
     "CreateOpenBankExternalSubMerchantRegistration": {
@@ -693,7 +693,7 @@
     "QueryOpenBankExternalSubAccountBookBalance": {
       "document": "第三方子商户电子记账本余额查询接口",
       "input": "QueryOpenBankExternalSubAccountBookBalanceRequest",
-      "name": "云企付-渠道子商户电子记账本余额查询",
+      "name": "云企付-子商户电子记账本余额查询",
       "output": "QueryOpenBankExternalSubAccountBookBalanceResponse"
     },
     "QueryOpenBankExternalSubMerchantBankAccount": {

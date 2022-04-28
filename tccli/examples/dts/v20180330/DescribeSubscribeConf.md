@@ -41,9 +41,22 @@ Output:
             }
         ],
         "UniqSubnetId": "subnet-4p1hpsj8",
+        "SubscribeVersion": "kafka",
         "UniqVpcId": "vpc-fbg8gh1j",
         "Vip": "192.168.1.143",
-        "Vport": 7507
+        "Vport": 7507,
+        "AutoRenewFlag": 0,
+        "Errors": [
+            {
+                "Message": ""
+            }
+        ],
+        "Tags": [
+            {
+                "TagKey": "userDefineKey",
+                "TagValue": "userDefineValue"
+            }
+        ]
     }
 }
 ```

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli car DestroySession --cli-unfold-argument  \
-    --UserId xx
+    --UserId cg_user
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "fcf4146f-64d3-496c-88dc-d12f832de313"
     }
 }
 ```

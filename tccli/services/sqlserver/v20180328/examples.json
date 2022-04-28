@@ -43,7 +43,7 @@
     "CreateBackup": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateBackup\r\n&InstanceId=mssql-njj2mtpl\r\n&Strategy=1\r\n&DBNames.0=db1\r\n&DBNames.1=db2\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateBackup\n&InstanceId=mssql-njj2mtpl\n&Strategy=1\n&DBNames.0=db1\n&DBNames.1=db2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\n        \"FlowId\": 5293\n    }\n}",
         "title": "创建备份"
       }
@@ -67,7 +67,7 @@
     "CreateDB": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateDB\r\n&InstanceId=mssql-i1z41iwd\r\n&DBs.0.DBName=test_db\r\n&DBs.0.Charset=Chinese_PRC_CI_AS\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=CreateDB\n&InstanceId=mssql-i1z41iwd\n&DBs.0.DBName=test_db\n&DBs.0.Charset=Chinese_PRC_CI_AS\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\"\n    }\n}",
         "title": "创建数据库test_db"
       }
@@ -115,7 +115,7 @@
     "DeleteAccount": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteAccount\r\n&InstanceId=mssql-njj2mtpl\r\n&UserNames.0=testusername\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteAccount\n&InstanceId=mssql-njj2mtpl\n&UserNames.0=testusername\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": 312\n    }\n}",
         "title": "删除实例账号"
       }
@@ -131,7 +131,7 @@
     "DeleteDB": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteDB\r\n&InstanceId=mssql-rljoi3bf\r\n&Names.0=test_db\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DeleteDB\n&InstanceId=mssql-rljoi3bf\n&Names.0=test_db\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a928d733-109a-4f44-84ad-991da182d0a3\",\n        \"FlowId\": 30467\n    }\n}",
         "title": "删除数据库"
       }
@@ -331,7 +331,7 @@
     "DescribeMaintenanceSpan": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeMaintenanceSpan\r\n&InstanceId=mssql-6upluvd5\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeMaintenanceSpan\n&InstanceId=mssql-6upluvd5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"160c730d-b563-4a43-b377-428191d77f39\",\n        \"Span\": 6,\n        \"StartTime\": \"00:00\",\n        \"Weekly\": [\n            1\n        ]\n    }\n}",
         "title": "查询实力的可维护时间窗"
       }
@@ -387,7 +387,7 @@
     "DescribePublishSubscribe": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribePublishSubscribe\r\n&InstanceId=mssql-12klhrx2c\r\n&PubOrSubInstanceId=mssql-hh598yjo\r\n&PubOrSubInstanceIp=10.0.1.27\r\n&PublishSubscribeId=5\r\n&PublishSubscribeName=Change_name\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribePublishSubscribe\n&InstanceId=mssql-12klhrx2c\n&PubOrSubInstanceId=mssql-hh598yjo\n&PubOrSubInstanceIp=10.0.1.27\n&PublishSubscribeId=5\n&PublishSubscribeName=Change_name\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PublishSubscribeSet\": [\n            {\n                \"Id\": 5,\n                \"Name\": \"Change_name\",\n                \"PublishInstanceId\": \"mssql-12klhrx2c\",\n                \"PublishInstanceName\": \"890d5f71-7e4d-493c-bbe8-22fcec655d50\",\n                \"PublishInstanceIp\": \"192.168.0.7\",\n                \"SubscribeInstanceId\": \"mssql-hh598yjo\",\n                \"SubscribeInstanceName\": \"1957199f-f396-47b6-9716-dfae74161f10\",\n                \"SubscribeInstanceIp\": \"10.0.1.27\",\n                \"DatabaseTupleSet\": [\n                    {\n                        \"PublishDatabase\": \"test01\",\n                        \"SubscribeDatabase\": \"test01\",\n                        \"LastSyncTime\": \"2020-07-13 16:57:01\",\n                        \"Status\": \"SyncNormal\"\n                    },\n                    {\n                        \"PublishDatabase\": \"test02\",\n                        \"SubscribeDatabase\": \"test02\",\n                        \"LastSyncTime\": \"2020-07-13 16:57:01\",\n                        \"Status\": \"SyncNormal\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"b1475330-2c4d-49a7-b063-f3e8b69d23ca\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询发布订阅列表"
       }
@@ -427,7 +427,7 @@
     "DescribeRollbackTime": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeRollbackTime\r\n&InstanceId=mssql-j8kv137v\r\n&DBs.0=db1\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeRollbackTime\n&InstanceId=mssql-j8kv137v\n&DBs.0=db1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"780339f6-30d7-419a-a30c-c2dc0933af1c\",\n        \"Details\": [\n            {\n                \"DBName\": \"db1\",\n                \"StartTime\": \"2018-08-07 11:09:03\",\n                \"EndTime\": \"2018-08-09 11:09:03\"\n            }\n        ]\n    }\n}",
         "title": "查询实例mssql-j8kv137v中db1的可回档时间"
       }
@@ -507,7 +507,7 @@
     "ModifyAccountRemark": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyAccountRemark\r\n&InstanceId=mssql-j8kv137v\r\n&Accounts.0.UserName=test\r\n&Accounts.0.Remark=testRemark\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyAccountRemark\n&InstanceId=mssql-j8kv137v\n&Accounts.0.UserName=test\n&Accounts.0.Remark=testRemark\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\"\n    }\n}",
         "title": "修改账户备注"
       }
@@ -539,7 +539,7 @@
     "ModifyDBInstanceName": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBInstanceName\r\n&InstanceId=mssql-njj2mtpl\r\n&InstanceName=testModifyInstanceName\r\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDBInstanceName\n&InstanceId=mssql-njj2mtpl\n&InstanceName=testModifyInstanceName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "将实例mssql-njj2mtpl名字修改为testModifyInstanceName"
       }

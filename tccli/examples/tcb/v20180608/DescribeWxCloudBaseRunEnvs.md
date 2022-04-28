@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli tcb DescribeWxCloudBaseRunEnvs --cli-unfold-argument  \
-    --WxAppId xx
+    --WxAppId xx \
+    --AllRegions False
 ```
 
 Output: 
@@ -19,10 +20,19 @@ Output:
                 "PayMode": "xx",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "EnvId": "xx",
+                "EnvType": "xx",
                 "Tags": [
                     {
                         "Value": "xx",
                         "Key": "xx"
+                    }
+                ],
+                "CustomLogServices": [
+                    {
+                        "ClsTopicId": "xx",
+                        "ClsRegion": "xx",
+                        "ClsLogsetId": "xx",
+                        "CreateTime": "2020-09-22 00:00:00"
                     }
                 ],
                 "PackageName": "xx",

@@ -1918,7 +1918,7 @@
         },
         {
           "default": "",
-          "document": "是否开启节点的默认安全组(默认: 否，Aphla特性)",
+          "document": "是否开启节点的默认安全组(默认: 否，Alpha特性)",
           "example": "false",
           "member": "bool",
           "name": "NeedWorkSecurityGroup",

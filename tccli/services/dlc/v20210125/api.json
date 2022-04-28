@@ -3567,6 +3567,16 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的用户自定义参数信息",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Params",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

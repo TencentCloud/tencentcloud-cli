@@ -354,6 +354,12 @@
       "name": "重启实例",
       "output": "RebootInstancesResponse"
     },
+    "RenewInstances": {
+      "document": "本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。",
+      "input": "RenewInstancesRequest",
+      "name": "续费实例",
+      "output": "RenewInstancesResponse"
+    },
     "ResetAttachCcn": {
       "document": "本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。",
       "input": "ResetAttachCcnRequest",
@@ -4743,7 +4749,28 @@
     },
     "LoginConfiguration": {
       "document": "实例密码登录配置信息。",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "<li>\"YES\"代表选择自动生成密码，这时不指定Password字段。</li>\n<li>\"NO\"代表选择自定义密码，这时要指定Password字段。</li>",
+          "example": "NO",
+          "member": "string",
+          "name": "AutoGeneratePassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例登录密码。具体按照操作系统的复杂度要求。\nWINDOWS 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符\n<li>小写字母：[a-z]</li>\n<li>大写字母：[A-Z]</li>\n<li>数字： 0-9</li>\n<li>特殊字符：()`~!@#$%^&*-+=_|{}[]:;' <>,.?/</li>",
+          "example": " HelloTgHd123_&*",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "LoginSettings": {
@@ -5325,6 +5352,60 @@
         }
       ],
       "usage": "in"
+    },
+    "RenewInstancesRequest": {
+      "document": "RenewInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
+          "example": "[\"lhins-7ofik5q9\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否续费弹性数据盘。取值范围：\nTRUE：表示续费实例同时续费其挂载的数据盘\nFALSE：表示续费实例同时不再续费其挂载的数据盘\n默认取值：TRUE。",
+          "example": "true",
+          "member": "bool",
+          "name": "RenewDataDisk",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否自动抵扣代金券。取值范围：\nTRUE：表示自动抵扣代金券\nFALSE：表示不自动抵扣代金券\n默认取值：FALSE。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstancesResponse": {
+      "document": "RenewInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetAttachCcnRequest": {
       "document": "ResetAttachCcn请求参数结构体",

@@ -578,7 +578,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGatewaySslClient\n&SslVpnServerId=vpns-xxxx\n&SslVpnClientName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslVpnClientId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": 1\n    }\n}",
         "title": "创建SSL-VPN-CLIENT"
       }
     ],
@@ -586,7 +586,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGatewaySslServer\n<公共请求参数>\n\n{\n    \"SslVpnProtocol\": \"xx\",\n    \"IntegrityAlgorithm\": \"xx\",\n    \"RemoteAddress\": \"xx\",\n    \"EncryptAlgorithm\": \"xx\",\n    \"Compress\": true,\n    \"LocalAddress\": [\n        \"xx\"\n    ],\n    \"VpnGatewayId\": \"xx\",\n    \"SslVpnServerName\": \"xx\",\n    \"SslVpnPort\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslVpnServerId\": \"xx\",\n        \"TaskId\": 123,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建SSL-VPN-SERVER"
       }
     ],

@@ -35,10 +35,11 @@ tccli as UpgradeLaunchConfiguration --cli-unfold-argument  \
     --InstanceTypes S2.SMALL1 \
     --SystemDisk.DiskType LOCAL_BASIC \
     --SystemDisk.DiskSize 50 \
-    --DataDisks.0.DiskType CLOUD_BASIC \
-    --DataDisks.0.DiskSize 100 \
+    --DataDisks.0.DiskType CLOUD_HSSD \
+    --DataDisks.0.DiskSize 1000 \
     --DataDisks.0.DeleteWithInstance TRUE \
     --DataDisks.0.Encrypt FALSE \
+    --DataDisks.0.ThroughputPerformance 100 \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 5 \
     --InternetAccessible.PublicIpAssigned TRUE \

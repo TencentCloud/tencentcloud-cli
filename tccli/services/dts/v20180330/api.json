@@ -13,7 +13,7 @@
       "output": "CompleteMigrateJobResponse"
     },
     "CreateMigrateCheckJob": {
-      "document": "创建校验迁移任务\n在开始迁移前, 必须调用本接口创建校验, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrateCheckJob查看.\n校验成功后,迁移任务若有修改, 则必须重新创建校验并通过后, 才能开始迁移.",
+      "document": "创建校验迁移任务\n在开始迁移前, 必须调用本接口创建校验, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrateCheckJob查看.\n校验成功后,迁移任务若有修改, 则必须重新创建校验并通过后, 才能开始迁移.\n\n如果是金融区链路, 请使用域名: https://dts.ap-shenzhen-fsi.tencentcloudapi.com",
       "input": "CreateMigrateCheckJobRequest",
       "name": "创建校验迁移任务",
       "output": "CreateMigrateCheckJobResponse"
@@ -152,6 +152,7 @@
         {
           "default": "",
           "document": "订阅实例ID。",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -160,6 +161,7 @@
         {
           "default": "",
           "document": "数据库实例ID",
+          "example": "cdb-9dijwkkw2",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -168,6 +170,7 @@
         {
           "default": "",
           "document": "数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅",
+          "example": "0",
           "member": "int64",
           "name": "SubscribeObjectType",
           "required": true,
@@ -176,6 +179,7 @@
         {
           "default": "",
           "document": "订阅对象",
+          "example": "无",
           "member": "SubscribeObject",
           "name": "Objects",
           "required": false,
@@ -184,6 +188,7 @@
         {
           "default": "",
           "document": "数据订阅服务所在子网。默认为数据库实例所在的子网内。",
+          "example": "Default-VPC",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -192,6 +197,7 @@
         {
           "default": "",
           "document": "订阅服务端口；默认为7507",
+          "example": "7507",
           "member": "int64",
           "name": "Vport",
           "required": false,
@@ -205,8 +211,10 @@
       "members": [
         {
           "document": "配置数据订阅任务ID。",
+          "example": "cafebabe-254f-11ea-8995-e92c139e6978",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -294,6 +302,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -455,6 +464,7 @@
         {
           "default": "",
           "document": "订阅的数据库类型，目前支持的有 mysql",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -463,6 +473,7 @@
         {
           "default": "",
           "document": "实例付费类型，1小时计费，0包年包月",
+          "example": "1",
           "member": "int64",
           "name": "PayType",
           "required": true,
@@ -471,6 +482,7 @@
         {
           "default": "",
           "document": "购买时长。PayType为0时必填。单位为月，最大支持120",
+          "example": "120",
           "member": "int64",
           "name": "Duration",
           "required": false,
@@ -479,6 +491,7 @@
         {
           "default": "",
           "document": "购买数量,默认为1，最大为10",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -487,6 +500,7 @@
         {
           "default": "",
           "document": "是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
@@ -495,10 +509,20 @@
         {
           "default": "",
           "document": "实例资源标签",
+          "example": "无",
           "member": "TagItem",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户自定义实例名",
+          "example": "user-defined-name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -508,8 +532,10 @@
       "members": [
         {
           "document": "数据订阅实例的ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"subs-ieuwi83j2e\"]",
           "member": "string",
           "name": "SubscribeIds",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -595,6 +621,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -608,33 +635,48 @@
       "members": [
         {
           "document": "校验任务状态：unavailable(当前不可用), starting(开始中)，running(校验中)，finished(校验完成)",
+          "example": "finished",
           "member": "string",
           "name": "Status",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "任务的错误码",
+          "example": "-1",
           "member": "int64",
           "name": "ErrorCode",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "任务的错误信息",
+          "example": "选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]",
           "member": "string",
           "name": "ErrorMessage",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "Check任务总进度,如：\"30\"表示30%",
+          "example": "100",
           "member": "string",
           "name": "Progress",
-          "type": "string"
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "校验是否通过,0-未通过，1-校验通过, 3-未校验",
+          "example": "0",
           "member": "int64",
           "name": "CheckFlag",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -781,6 +823,7 @@
         {
           "default": "",
           "document": "订阅实例ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -794,184 +837,254 @@
       "members": [
         {
           "document": "订阅实例ID",
+          "example": "subs-58zcu8bax0",
           "member": "string",
           "name": "SubscribeId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例名称",
+          "example": "测试实例",
           "member": "string",
           "name": "SubscribeName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅通道",
+          "example": "dts-channel-C9rS58f2rFx11ZEZ",
           "member": "string",
           "name": "ChannelId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅数据库类型",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "被订阅的实例",
+          "example": "cdb-forsubsc",
           "member": "string",
           "name": "InstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "被订阅的实例的状态，可能的值有running,offline,isolate",
+          "example": "running",
           "member": "string",
           "name": "InstanceStatus",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例状态，可能的值有unconfigure-未配置，configuring-配置中，configured-已配置",
+          "example": "configured",
           "member": "string",
           "name": "SubsStatus",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例生命周期状态，可能的值有：normal-正常，isolating-隔离中，isolated-已隔离，offlining-下线中",
+          "example": "normal",
           "member": "string",
           "name": "Status",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例创建时间",
+          "example": "2019-12-20 14:59:07",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例被隔离时间",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例到期时间",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "ExpireTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例下线时间",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "OfflineTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例消费时间起点。",
+          "example": "2019-12-19 16:23:45",
           "member": "string",
           "name": "ConsumeStartTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例计费类型，1-小时计费，0-包年包月",
+          "example": "1",
           "member": "int64",
           "name": "PayType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "订阅通道Vip",
+          "example": "192.168.1.143",
           "member": "string",
           "name": "Vip",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅通道Port",
+          "example": "7507",
           "member": "int64",
           "name": "Vport",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "订阅通道所在VpcId",
+          "example": "vpc-fbg8gh1j",
           "member": "string",
           "name": "UniqVpcId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅通道所在SubnetId",
+          "example": "subnet-4p1hpsj8",
           "member": "string",
           "name": "UniqSubnetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "当前SDK消费时间位点",
+          "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "SdkConsumedTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅SDK IP地址",
+          "example": "192.168.1.143",
           "member": "string",
           "name": "SdkHost",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅对象类型0-全实例订阅，1-DDL数据订阅，2-DML结构订阅，3-DDL数据订阅+DML结构订阅",
+          "example": "3",
           "member": "int64",
           "name": "SubscribeObjectType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "订阅对象，当SubscribeObjectType 为0时，此字段为空数组",
+          "example": "无",
           "member": "SubscribeObject",
           "name": "SubscribeObjects",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "修改时间",
+          "example": "2019-12-20 18:06:26",
           "member": "string",
           "name": "ModifyTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订阅实例的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagItem",
           "name": "Tags",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "document": "自动续费标识,0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
+          "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据订阅版本。老版订阅填txdts，kafka版填kafka",
+          "example": "txdts",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubsErr",
+          "name": "Errors",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -989,6 +1102,7 @@
         {
           "default": "",
           "document": "数据订阅的实例ID",
+          "example": "subs-fr19dk5e2y",
           "member": "string",
           "name": "SubscribeId",
           "required": false,
@@ -997,6 +1111,7 @@
         {
           "default": "",
           "document": "数据订阅的实例名称",
+          "example": "name-fr19dk5e2y ",
           "member": "string",
           "name": "SubscribeName",
           "required": false,
@@ -1005,6 +1120,7 @@
         {
           "default": "",
           "document": "绑定数据库实例的ID",
+          "example": "cdb-5gsip99h",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1013,6 +1129,7 @@
         {
           "default": "",
           "document": "数据订阅实例的通道ID",
+          "example": "topic-subs-fr19dk5e2y-cdb-5gsip99h",
           "member": "string",
           "name": "ChannelId",
           "required": false,
@@ -1021,6 +1138,7 @@
         {
           "default": "",
           "document": "计费模式筛选，可能的值：0-包年包月，1-按量计费",
+          "example": "1",
           "member": "string",
           "name": "PayType",
           "required": false,
@@ -1029,6 +1147,7 @@
         {
           "default": "",
           "document": "订阅的数据库产品，如mysql",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "required": false,
@@ -1037,6 +1156,7 @@
         {
           "default": "",
           "document": "数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中",
+          "example": "[\"isolate\\n\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1045,6 +1165,7 @@
         {
           "default": "",
           "document": "数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置",
+          "example": "running",
           "member": "string",
           "name": "SubsStatus",
           "required": false,
@@ -1053,6 +1174,7 @@
         {
           "default": "",
           "document": "返回记录的起始偏移量",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1061,6 +1183,7 @@
         {
           "default": "",
           "document": "单次返回的记录数量",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1069,6 +1192,7 @@
         {
           "default": "",
           "document": "排序方向，可选的值为\"DESC\"和\"ASC\"，默认为\"DESC\"，按创建时间逆序排序",
+          "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1077,6 +1201,7 @@
         {
           "default": "",
           "document": "标签过滤条件",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -1085,6 +1210,7 @@
         {
           "default": "",
           "document": "订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅",
+          "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
           "required": false,
@@ -1098,15 +1224,19 @@
       "members": [
         {
           "document": "符合查询条件的实例总数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "数据订阅实例的信息列表",
+          "example": "无",
           "member": "SubscribeInfo",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1487,6 +1617,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源实例为集群时且接入为非cdb时源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"",
+          "member": "SrcInfo",
+          "name": "SrcInfoMulti",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1802,6 +1942,7 @@
         {
           "default": "",
           "document": "数据订阅实例的ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -1810,6 +1951,7 @@
         {
           "default": "",
           "document": "数据订阅实例的名称，长度限制为[1,60]",
+          "example": "test",
           "member": "string",
           "name": "SubscribeName",
           "required": true,
@@ -1836,6 +1978,7 @@
         {
           "default": "",
           "document": "数据订阅实例的ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -1844,6 +1987,7 @@
         {
           "default": "",
           "document": "数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅",
+          "example": "0",
           "member": "int64",
           "name": "SubscribeObjectType",
           "required": true,
@@ -1852,6 +1996,7 @@
         {
           "default": "",
           "document": "订阅的数据库表信息",
+          "example": "无",
           "member": "SubscribeObject",
           "name": "Objects",
           "required": false,
@@ -1865,8 +2010,10 @@
       "members": [
         {
           "document": "异步任务的ID",
+          "example": "19b514a7-816c43c1-ffb34ab6-8c6a23eb",
           "member": "string",
           "name": "AsyncRequestId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1935,6 +2082,7 @@
         {
           "default": "",
           "document": "数据订阅实例的ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -1961,6 +2109,7 @@
         {
           "default": "",
           "document": "数据订阅实例的ID",
+          "example": "subs-ieuwi83j2e",
           "member": "string",
           "name": "SubscribeId",
           "required": true,
@@ -2137,6 +2286,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2163,6 +2313,7 @@
         {
           "default": "",
           "document": "数据迁移任务ID",
+          "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2182,6 +2333,22 @@
         }
       ],
       "type": "object"
+    },
+    "SubsErr": {
+      "document": "查询订阅配置的错误信息",
+      "members": [
+        {
+          "default": "",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SubscribeInfo": {
       "document": "订阅实例信息",

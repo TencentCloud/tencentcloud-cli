@@ -23,6 +23,12 @@
       "input": "DescribeMetricRecordsRequest",
       "name": "通用指标列表接口",
       "output": "DescribeMetricRecordsResponse"
+    },
+    "DescribeServiceOverview": {
+      "document": "服务概览数据拉取",
+      "input": "DescribeServiceOverviewRequest",
+      "name": "获取服务概览数据",
+      "output": "DescribeServiceOverviewResponse"
     }
   },
   "metadata": {
@@ -754,6 +760,114 @@
     },
     "DescribeMetricRecordsResponse": {
       "document": "DescribeMetricRecords返回参数结构体",
+      "members": [
+        {
+          "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmMetricRecord",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceOverviewRequest": {
+      "document": "DescribeServiceOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "指标列表",
+          "example": "无",
+          "member": "QueryMetricItem",
+          "name": "Metrics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "聚合维度",
+          "example": "无",
+          "member": "string",
+          "name": "GroupBy",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页起始点",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceOverviewResponse": {
+      "document": "DescribeServiceOverview返回参数结构体",
       "members": [
         {
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",

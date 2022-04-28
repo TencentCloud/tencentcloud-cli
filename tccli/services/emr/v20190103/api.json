@@ -36,6 +36,12 @@
       "name": "查询流程任务",
       "output": "DescribeJobFlowResponse"
     },
+    "DescribeResourceSchedule": {
+      "document": "获取yarn资源调度页面的数据",
+      "input": "DescribeResourceScheduleRequest",
+      "name": "获取yarn资源调度页面的数据",
+      "output": "DescribeResourceScheduleResponse"
+    },
     "InquirePriceRenewEmr": {
       "document": "集群续费询价。",
       "input": "InquirePriceRenewEmrRequest",
@@ -65,6 +71,24 @@
       "input": "InquiryPriceUpdateInstanceRequest",
       "name": "变配询价",
       "output": "InquiryPriceUpdateInstanceResponse"
+    },
+    "ModifyResourcePools": {
+      "document": "刷新动态资源池",
+      "input": "ModifyResourcePoolsRequest",
+      "name": "刷新动态资源池",
+      "output": "ModifyResourcePoolsResponse"
+    },
+    "ModifyResourceScheduleConfig": {
+      "document": "修改yarn资源调度的资源配置",
+      "input": "ModifyResourceScheduleConfigRequest",
+      "name": "修改yarn资源调度的资源配置",
+      "output": "ModifyResourceScheduleConfigResponse"
+    },
+    "ModifyResourceScheduler": {
+      "document": "修改了yarn的资源调度器，点击部署生效",
+      "input": "ModifyResourceSchedulerRequest",
+      "name": "部署生效yarn的资源调度器",
+      "output": "ModifyResourceSchedulerResponse"
     },
     "RunJobFlow": {
       "document": "创建流程作业",
@@ -1620,6 +1644,69 @@
       ],
       "type": "object"
     },
+    "DescribeResourceScheduleRequest": {
+      "document": "DescribeResourceSchedule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceScheduleResponse": {
+      "document": "DescribeResourceSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "资源调度功能是否开启",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenSwitch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "正在使用的资源调度器",
+          "example": "\"fair\"",
+          "member": "string",
+          "name": "Scheduler",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "公平调度器的信息",
+          "example": "null",
+          "member": "string",
+          "name": "FSInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "容量调度器的信息",
+          "example": "null",
+          "member": "string",
+          "name": "CSInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DiskGroup": {
       "document": "磁盘组。",
       "members": [
@@ -2894,6 +2981,168 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyResourcePoolsRequest": {
+      "document": "ModifyResourcePools请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "emr集群id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标识是fair还是capacity",
+          "example": "fair",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcePoolsResponse": {
+      "document": "ModifyResourcePools返回参数结构体",
+      "members": [
+        {
+          "document": "false表示不是草稿，提交刷新请求成功",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDraft",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扩展字段，暂时没用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceScheduleConfigRequest": {
+      "document": "ModifyResourceScheduleConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项",
+          "example": "fair",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "修改后的模块消息",
+          "example": "null",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceScheduleConfigResponse": {
+      "document": "ModifyResourceScheduleConfig返回参数结构体",
+      "members": [
+        {
+          "document": "true为草稿，表示还没有刷新资源池",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDraft",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "校验错误信息，如果不为空，则说明校验失败，配置没有成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceSchedulerRequest": {
+      "document": "ModifyResourceScheduler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "老的调度器:fair",
+          "example": "fair",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的调度器:capacity",
+          "example": "capacity",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceSchedulerResponse": {
+      "document": "ModifyResourceScheduler返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MultiDisk": {
       "document": "多云盘参数",

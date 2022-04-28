@@ -18,12 +18,6 @@
       "name": "校验高危命新增用户规则参数",
       "output": "CheckBashRuleParamsResponse"
     },
-    "CloseProVersion": {
-      "document": "本接口 (CloseProVersion) 已全面改为授权模式,该接口只能解绑授权.",
-      "input": "CloseProVersionRequest",
-      "name": "关闭专业版",
-      "output": "CloseProVersionResponse"
-    },
     "CreateBaselineStrategy": {
       "document": "根据策略信息创建基线策略",
       "input": "CreateBaselineStrategyRequest",
@@ -1116,12 +1110,6 @@
       "name": "忽略漏洞",
       "output": "IgnoreImpactedHostsResponse"
     },
-    "InquiryPriceOpenProVersionPrepaid": {
-      "document": "本接口 (InquiryPriceOpenProVersionPrepaid) 用于开通专业版询价(预付费)。",
-      "input": "InquiryPriceOpenProVersionPrepaidRequest",
-      "name": "开通专业版询价(预付费)",
-      "output": "InquiryPriceOpenProVersionPrepaidResponse"
-    },
     "ModifyAutoOpenProVersionConfig": {
       "document": " 用于设置新增主机自动开通专业防护配置。",
       "input": "ModifyAutoOpenProVersionConfigRequest",
@@ -1152,12 +1140,6 @@
       "name": "定时扫描设置",
       "output": "ModifyMalwareTimingScanSettingsResponse"
     },
-    "ModifyProVersionRenewFlag": {
-      "document": "本接口 (ModifyProVersionRenewFlag) 用于修改专业版包年包月续费标识。",
-      "input": "ModifyProVersionRenewFlagRequest",
-      "name": "修改专业版续费标识",
-      "output": "ModifyProVersionRenewFlagResponse"
-    },
     "ModifyWarningSetting": {
       "document": "修改告警设置",
       "input": "ModifyWarningSettingRequest",
@@ -1182,29 +1164,11 @@
       "name": "网站防护设置开关",
       "output": "ModifyWebPageProtectSwitchResponse"
     },
-    "OpenProVersion": {
-      "document": "本接口 (OpenProVersion) 用于开通专业版。",
-      "input": "OpenProVersionRequest",
-      "name": "开通专业版",
-      "output": "OpenProVersionResponse"
-    },
-    "OpenProVersionPrepaid": {
-      "document": "本接口 (OpenProVersionPrepaid) 用于开通专业版(包年包月)。",
-      "input": "OpenProVersionPrepaidRequest",
-      "name": "开通专业版(包年包月)",
-      "output": "OpenProVersionPrepaidResponse"
-    },
     "RecoverMalwares": {
       "document": "本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。",
       "input": "RecoverMalwaresRequest",
       "name": "恢复木马文件",
       "output": "RecoverMalwaresResponse"
-    },
-    "RenewProVersion": {
-      "document": "本接口 (RenewProVersion) 用于续费专业版(包年包月)。",
-      "input": "RenewProVersionRequest",
-      "name": "续费专业版",
-      "output": "RenewProVersionResponse"
     },
     "ScanAsset": {
       "document": "资产指纹启动扫描",
@@ -6912,30 +6876,6 @@
       ],
       "type": "object"
     },
-    "ChargePrepaid": {
-      "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
-      "members": [
-        {
-          "default": "",
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
-          "member": "uint64",
-          "name": "Period",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
-          "member": "string",
-          "name": "RenewFlag",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
     "CheckBashRuleParamsRequest": {
       "document": "CheckBashRuleParams请求参数结构体",
       "members": [
@@ -7008,33 +6948,6 @@
           "type": "string",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CloseProVersionRequest": {
-      "document": "CloseProVersion请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20",
-          "example": "xxx",
-          "member": "string",
-          "name": "Quuid",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CloseProVersionResponse": {
-      "document": "CloseProVersion返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -19677,60 +19590,6 @@
       ],
       "usage": "out"
     },
-    "InquiryPriceOpenProVersionPrepaidRequest": {
-      "document": "InquiryPriceOpenProVersionPrepaid请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "预付费模式(包年包月)参数设置。",
-          "example": "xxx",
-          "member": "ChargePrepaid",
-          "name": "ChargePrepaid",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "需要开通专业版机器列表数组。",
-          "example": "[]",
-          "member": "ProVersionMachine",
-          "name": "Machines",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "InquiryPriceOpenProVersionPrepaidResponse": {
-      "document": "InquiryPriceOpenProVersionPrepaid返回参数结构体",
-      "members": [
-        {
-          "document": "预支费用的原价，单位：元。",
-          "example": "xxx",
-          "member": "float",
-          "name": "OriginalPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "预支费用的折扣价，单位：元。",
-          "example": "xxx",
-          "member": "float",
-          "name": "DiscountPrice",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "LoginWhiteCombinedInfo": {
       "document": "异地登录合并后白名单",
       "members": [
@@ -21023,42 +20882,6 @@
       ],
       "type": "object"
     },
-    "ModifyProVersionRenewFlagRequest": {
-      "document": "ModifyProVersionRenewFlag请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>",
-          "example": "NOTIFY_AND_AUTO_RENEW",
-          "member": "string",
-          "name": "RenewFlag",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主机唯一ID，对应CVM的uuid、BM的instanceId。",
-          "example": "xxx",
-          "member": "string",
-          "name": "Quuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyProVersionRenewFlagResponse": {
-      "document": "ModifyProVersionRenewFlag返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyWarningSettingRequest": {
       "document": "ModifyWarningSetting请求参数结构体",
       "members": [
@@ -21289,105 +21112,6 @@
         }
       ],
       "usage": "out"
-    },
-    "OpenProVersionPrepaidRequest": {
-      "document": "OpenProVersionPrepaid请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "购买相关参数。",
-          "example": "xxx",
-          "member": "ChargePrepaid",
-          "name": "ChargePrepaid",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "需要开通专业版主机信息数组。",
-          "example": "[]",
-          "member": "ProVersionMachine",
-          "name": "Machines",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "OpenProVersionPrepaidResponse": {
-      "document": "OpenProVersionPrepaid返回参数结构体",
-      "members": [
-        {
-          "document": "订单ID列表。",
-          "example": "[]",
-          "member": "string",
-          "name": "DealIds",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "OpenProVersionRequest": {
-      "document": "OpenProVersion请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "云服务器类型（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
-          "example": "CVM",
-          "member": "string",
-          "name": "MachineType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "机器所属地域（当前字段已作废，暂时填string类型空字符串代替，例如：\"\"，英文双引号）",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "MachineRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20",
-          "example": "xxx",
-          "member": "string",
-          "name": "Quuids",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "活动ID。",
-          "example": "1",
-          "member": "uint64",
-          "name": "ActivityId",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "OpenProVersionResponse": {
-      "document": "OpenProVersion返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "OsName": {
       "document": "操作系统名称",
@@ -21742,42 +21466,6 @@
         }
       ],
       "usage": "out"
-    },
-    "ProVersionMachine": {
-      "document": "需要开通专业版机器信息。",
-      "members": [
-        {
-          "default": "",
-          "document": "主机类型。\n<li>CVM: 云服务器</li>\n<li>BM: 黑石物理机</li>\n<li>ECM: 边缘计算服务器</li>\n<li>LH: 轻量应用服务器</li>\n<li>Other: 混合云机器</li>",
-          "example": "CVM",
-          "member": "string",
-          "name": "MachineType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机所在地域。\n如：ap-guangzhou、ap-beijing",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "MachineRegion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid ,边缘计算的Uuid , 轻量应用服务器的Uuid ,混合云机器的Quuid 。 当前参数最大长度限制20",
-          "example": "quuid",
-          "member": "string",
-          "name": "Quuid",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "ProcessStatistics": {
       "document": "进程数据统计数据。",
@@ -22422,42 +22110,6 @@
         }
       ],
       "usage": "out"
-    },
-    "RenewProVersionRequest": {
-      "document": "RenewProVersion请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "购买相关参数。",
-          "example": "xxx",
-          "member": "ChargePrepaid",
-          "name": "ChargePrepaid",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "主机唯一ID，对应CVM的uuid、BM的InstanceId。",
-          "example": "xxx",
-          "member": "string",
-          "name": "Quuid",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RenewProVersionResponse": {
-      "document": "RenewProVersion返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ReverseShell": {
       "document": "反弹Shell数据",

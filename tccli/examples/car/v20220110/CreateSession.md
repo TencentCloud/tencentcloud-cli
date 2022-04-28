@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli car CreateSession --cli-unfold-argument  \
-    --UserIp xx \
-    --ClientSession xx \
-    --UserId xx
+    --UserIp 125.127.178.228 \
+    --ClientSession eyJhYmMiOjEyM30= \
+    --UserId cg_user
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ServerSession": "xx",
-        "RequestId": "xx"
+        "ServerSession": "eyJ4dHoiOjc4OX0=",
+        "RequestId": "fcf4146f-64d3-496c-88dc-d12f832de313"
     }
 }
 ```

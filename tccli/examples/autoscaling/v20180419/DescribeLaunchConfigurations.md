@@ -41,7 +41,8 @@ Output:
                         "DiskSize": 10,
                         "SnapshotId": null,
                         "DeleteWithInstance": false,
-                        "Encrypt": false
+                        "Encrypt": false,
+                        "ThroughputPerformance": null
                     }
                 ],
                 "LoginSettings": {
@@ -106,7 +107,8 @@ Output:
                         "DiskSize": 40,
                         "SnapshotId": null,
                         "DeleteWithInstance": null,
-                        "Encrypt": null
+                        "Encrypt": null,
+                        "ThroughputPerformance": null
                     }
                 ],
                 "LoginSettings": {
@@ -195,7 +197,8 @@ Output:
                         "DiskSize": 10,
                         "SnapshotId": null,
                         "DeleteWithInstance": false,
-                        "Encrypt": false
+                        "Encrypt": false,
+                        "ThroughputPerformance": null
                     }
                 ],
                 "LoginSettings": {

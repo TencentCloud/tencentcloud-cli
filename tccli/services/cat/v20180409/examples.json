@@ -22,6 +22,12 @@
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"Name\": \"probe\",\n            \"TargetAddress\": \"http://www.baidu.com\"\n        }\n    ],\n    \"Parameters\": \"{}\",\n    \"Interval\": 30,\n    \"TaskCategory\": 1,\n    \"TaskType\": 1,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Cron\": \"* 0-6 * * *\",\n    \"Tag\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"a1\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "批量创建拨测任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\":[\n        {\n            \"TargetAddress\":\"www.baidu.com\",\n            \"Name\":\"CDN验证1\"\n        }\n    ],\n    \"Parameters\":\"{\"ipType\":0,\"grabBag\":0,\"netIcmpOn\":1,\"netIcmpActivex\":0,\"netIcmpTimeout\":20,\"netIcmpInterval\":0.5,\"netIcmpNum\":20,\"netIcmpSize\":32,\"netIcmpDataCut\":1,\"netDnsOn\":1,\"netDnsTimeout\":5,\"netDnsQuerymethod\":1,\"netDnsNs\":\"\",\"netDigOn\":1,\"netDnsServer\":2,\"netTracertOn\":1,\"netTracertTimeout\":60,\"netTracertNum\":30,\"whiteList\":\"\",\"blackList\":\"\",\"netIcmpActivexStr\":\"\"}\",\n    \"TaskCategory\":\"1\",\n    \"Interval\":\"5\",\n    \"TaskType\":\"5\",\n    \"Nodes\":[\n        \"12136\"\n    ],\n    \"PluginSource\":\"CDN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9db2fcc0-fd70-4740-a4f9-8904b3f5f518\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "CreateTaskEx": [
@@ -134,6 +140,18 @@
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"TaskIDs\": [\n        \"task-xx\"\n    ],\n    \"TagFilters\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"zhangsan\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 3,\n        \"RequestId\": \"xx\",\n        \"TaskSet\": [\n            {\n                \"Status\": 1,\n                \"Name\": \"xx\",\n                \"Parameters\": \"{}\",\n                \"Interval\": 30,\n                \"TaskId\": \"task-xx\",\n                \"TaskType\": 1,\n                \"Nodes\": [\n                    \"10001\"\n                ],\n                \"TagInfoList\": [\n                    {\n                        \"Key\": \"tag_key1\",\n                        \"Value\": \"tag_value1\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询拨测任务列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a92494-0fb9-4b10-8ce4-bfa4565cf4eb\",\n        \"TaskSet\": null,\n        \"Total\": 0\n    }\n}",
+        "title": "示例2"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11483de9-9be5-4537-a846-339a57f0e90e\",\n        \"TaskSet\": null,\n        \"Total\": 0\n    }\n}",
+        "title": "示例3"
       }
     ],
     "DescribeTaskDetail": [

@@ -3665,6 +3665,7 @@
         {
           "default": "",
           "document": "数据库唯一标识",
+          "example": "tnt-xxxxyyyy",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3674,6 +3675,7 @@
         {
           "default": "",
           "document": "状态。包含以下取值：\n<li>INITIALIZING：资源初始化中</li>\n<li>RUNNING：运行中，可正常使用的状态</li>\n<li>UNUSABLE：禁用，不可用</li>\n<li>OVERDUE：资源过期</li>",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3683,11 +3685,22 @@
         {
           "default": "",
           "document": "所属地域。\n当前支持ap-shanghai",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-01 12:34:56",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7139,6 +7152,15 @@
           "name": "WxAppId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否查询全地域",
+          "example": "true",
+          "member": "bool",
+          "name": "AllRegions",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7812,6 +7834,16 @@
           "name": "EnvType",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是dau新套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDauPackage",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
