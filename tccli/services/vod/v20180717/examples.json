@@ -626,6 +626,14 @@
         "title": "读取多个模板"
       }
     ],
+    "DescribeImageReviewUsageData": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageReviewUsageData\n&StartTime=2020-09-07T00:00:00+08:00\n&EndTime=2020-09-09T23:59:59+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ImageReviewUsageDataSet\": [\n            {\n                \"Time\": \"2020-09-07T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-08T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-09T00:00:00+08:00\",\n                \"Count\": 2\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "查询图片智能识别统计数据"
+      }
+    ],
     "DescribeImageSpriteTemplates": [
       {
         "document": "",
@@ -1322,6 +1330,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=ResetProcedureTemplate\r\n&Name=我的一个任务流&MediaProcessTask.TranscodeTaskSet.0.Definition=220\r\n&MediaProcessTask.TranscodeTaskSet.1.Definition=230\r\n&MediaProcessTask.TranscodeTaskSet.2.Definition=240\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "重设一个任务流模板的内容"
+      }
+    ],
+    "ReviewImage": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=ReviewImage\n&FileId=5285485487985271487\n&Definition=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
+        "title": "发起图片智能识别任务"
       }
     ],
     "SearchMedia": [

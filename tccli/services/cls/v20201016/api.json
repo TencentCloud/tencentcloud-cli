@@ -49,7 +49,7 @@
       "output": "CreateDataTransformResponse"
     },
     "CreateExport": {
-      "document": "本接口用于创建日志下载任务，导出原始日志",
+      "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
       "input": "CreateExportRequest",
       "name": "创建日志下载任务",
       "output": "CreateExportResponse"
@@ -1567,6 +1567,16 @@
           "example": "无",
           "member": "JsonInfo",
           "name": "Json",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "parquet格式内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParquetInfo",
+          "name": "Parquet",
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -6770,6 +6780,58 @@
         }
       ],
       "type": "object"
+    },
+    "ParquetInfo": {
+      "document": "Parquet内容",
+      "members": [
+        {
+          "default": "",
+          "document": "ParquetKeyInfo数组",
+          "example": "无",
+          "member": "ParquetKeyInfo",
+          "name": "ParquetKeyInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ParquetKeyInfo": {
+      "document": "Parquet内容描述",
+      "members": [
+        {
+          "default": "",
+          "document": "键值名称",
+          "example": "content",
+          "member": "string",
+          "name": "KeyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据类型，目前支持6种类型：string、boolean、int32、int64、float、double",
+          "example": "string",
+          "member": "string",
+          "name": "KeyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析失败赋值信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "KeyNonExistingField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PartitionInfo": {
       "document": "日志主题分区信息",

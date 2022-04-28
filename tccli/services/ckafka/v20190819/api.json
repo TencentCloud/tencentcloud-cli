@@ -108,6 +108,12 @@
       "name": "删除预付费实例",
       "output": "DeleteInstancePreResponse"
     },
+    "DeleteRoute": {
+      "document": "删除路由",
+      "input": "DeleteRouteRequest",
+      "name": "删除路由",
+      "output": "DeleteRouteResponse"
+    },
     "DeleteRouteTriggerTime": {
       "document": "修改删除路由延迟触发时间",
       "input": "DeleteRouteTriggerTimeRequest",
@@ -2545,6 +2551,69 @@
           "document": "返回结果",
           "example": "data",
           "member": "CreateInstancePreResp",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRouteRequest": {
+      "document": "DeleteRoute请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例唯一id",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "路由id",
+          "example": "1",
+          "member": "int64",
+          "name": "RouteId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "调用方appId",
+          "example": "1",
+          "member": "int64",
+          "name": "CallerAppid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "删除路由时间",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "DeleteRouteTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRouteResponse": {
+      "document": "DeleteRoute返回参数结构体",
+      "members": [
+        {
+          "document": "返回结果",
+          "example": "无",
+          "member": "JgwOperateResponse",
           "name": "Result",
           "required": true,
           "type": "object",

@@ -398,6 +398,14 @@
         "title": "创建实例询价-成功返回"
       }
     ],
+    "IsolateInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-lfdnmikp\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35eee594-4644-401a-815a-1c9075b5f39c\"\n    }\n}",
+        "title": "退还实例"
+      }
+    ],
     "ModifyBlueprintAttribute": [
       {
         "document": "",

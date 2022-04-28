@@ -144,6 +144,14 @@
         "title": "删除实例(预付费包年包月)"
       }
     ],
+    "DeleteRoute": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DeleteRoute\n&InstanceId=xxx\n&RouteId=1\n&CallerAppid=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnMessage\": \"xx\",\n            \"ReturnCode\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除路由"
+      }
+    ],
     "DeleteRouteTriggerTime": [
       {
         "document": "",

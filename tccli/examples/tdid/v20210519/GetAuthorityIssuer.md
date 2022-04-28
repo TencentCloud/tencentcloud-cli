@@ -1,6 +1,6 @@
 **Example 1: GetAuthorityIssuer**
 
-查看DID文档
+获取权威机构信息
 
 Input: 
 

@@ -103,9 +103,9 @@
       "output": "DeleteDBResponse"
     },
     "DeleteDBInstance": {
-      "document": "本接口（DeleteDBInstance）用于释放回收站中的SQL server实例。释放后的实例将保存一段时间后物理销毁。其发布订阅将自动解除，其ro副本将自动释放。",
+      "document": "本接口（DeleteDBInstance）用于释放回收站中的SQL server实例(立即下线)。释放后的实例将保存一段时间后物理销毁。其发布订阅将自动解除，其ro副本将自动释放。",
       "input": "DeleteDBInstanceRequest",
-      "name": "删除SQL server实例",
+      "name": "立即下线实例",
       "output": "DeleteDBInstanceResponse"
     },
     "DeleteIncrementalMigration": {
@@ -1793,6 +1793,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1801,6 +1802,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -1809,6 +1811,7 @@
         {
           "default": "",
           "document": "增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "example": "[\"db_cvm_1_20200927204209_2log2_2noreconvery2.bak\\n\"]",
           "member": "string",
           "name": "BackupFiles",
           "required": false,
@@ -1817,6 +1820,7 @@
         {
           "default": "",
           "document": "是否需要恢复，NO-不需要，YES-需要，默认不需要",
+          "example": "NO",
           "member": "string",
           "name": "IsRecovery",
           "required": false,
@@ -1830,8 +1834,10 @@
       "members": [
         {
           "document": "增量备份导入任务ID",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3181,6 +3187,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7",
+          "example": "mssql-ms2m7vut",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5608,6 +5615,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-k8voqdlz",
+          "example": "mssql-9aajrcn7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5616,6 +5624,7 @@
         {
           "default": "",
           "document": "查询开始时间",
+          "example": "2018-03-28 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -5624,6 +5633,7 @@
         {
           "default": "",
           "document": "查询结束时间",
+          "example": "2020-11-20 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -5632,6 +5642,7 @@
         {
           "default": "",
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5640,6 +5651,7 @@
         {
           "default": "",
           "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5653,15 +5665,19 @@
       "members": [
         {
           "document": "查询总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "慢查询日志信息列表",
+          "example": "无",
           "member": "SlowlogInfo",
           "name": "Slowlogs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5788,6 +5804,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5796,6 +5813,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -5804,6 +5822,7 @@
         {
           "default": "",
           "document": "增量导入任务ID",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": true,
@@ -5817,57 +5836,73 @@
       "members": [
         {
           "document": "存储桶名称",
+          "example": "cosbacktest-1254065710",
           "member": "string",
           "name": "BucketName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "存储桶地域信息",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "存储路径",
+          "example": "251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-cg0ffgqt/increment/mssql-incremental-migration-kp7bgv8p/",
           "member": "string",
           "name": "Path",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时密钥ID",
+          "example": "AKIDOxJelHkinofTdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时密钥Key",
+          "example": "gzfh3Olpe5HKiviXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretKey",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时密钥Token",
+          "example": "S0niafv9wK40qvkDv2OjmEc2J7DAJRRa7b8c49fac8faf31d51469d4c639c866eKiE4vy8Y1d36neOhi1yg4RD4q9J4MeUyVSNsdiEt1z8X5zVFLGvGayDCfuA2uNuA5aoUSytd3CZzviKkGN-_Nq4OrIdSMzfeM-SrY3OEkV9TRItcig0PtpUYocSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "XCosSecurityToken",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时密钥开始时间",
+          "example": "1601211211",
           "member": "string",
           "name": "StartTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "临时密钥到期时间",
+          "example": "1601211711",
           "member": "string",
           "name": "ExpiredTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6877,6 +6912,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6885,6 +6921,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-kpl74n9l",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -6893,6 +6930,7 @@
         {
           "default": "",
           "document": "任务名称",
+          "example": "字符串",
           "member": "string",
           "name": "MigrationName",
           "required": false,
@@ -6901,6 +6939,7 @@
         {
           "default": "",
           "document": "迁移任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
+          "example": "FULL",
           "member": "string",
           "name": "RecoveryType",
           "required": false,
@@ -6909,6 +6948,7 @@
         {
           "default": "",
           "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
+          "example": "COS_UPLOAD",
           "member": "string",
           "name": "UploadType",
           "required": false,
@@ -6917,6 +6957,7 @@
         {
           "default": "",
           "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
+          "example": "[\"db1.bak\\n\"]",
           "member": "string",
           "name": "BackupFiles",
           "required": false,
@@ -6930,8 +6971,10 @@
       "members": [
         {
           "document": "备份导入任务ID",
+          "example": "mssql-backup-migration-kpl74n9l",
           "member": "string",
           "name": "BackupMigrationId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7301,6 +7344,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-i1z41iwd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7309,6 +7353,7 @@
         {
           "default": "",
           "document": "旧数据库名",
+          "example": "test_db",
           "member": "string",
           "name": "OldDBName",
           "required": true,
@@ -7317,6 +7362,7 @@
         {
           "default": "",
           "document": "新数据库名",
+          "example": "test_db_newname",
           "member": "string",
           "name": "NewDBName",
           "required": true,
@@ -7330,8 +7376,10 @@
       "members": [
         {
           "document": "任务流ID",
+          "example": "123",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7350,6 +7398,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-rljoi3bf",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7358,6 +7407,7 @@
         {
           "default": "",
           "document": "数据库名称及备注数组，每个元素包含数据库名和对应的备注",
+          "example": "无",
           "member": "DBRemark",
           "name": "DBRemarks",
           "required": true,
@@ -7663,6 +7713,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-k8voqdlz",
+          "example": "mssql-6upluvd5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7671,6 +7722,7 @@
         {
           "default": "",
           "document": "以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。",
+          "example": "[\"1\\r\\n\",\"2\\r\\n\",\"3\\r\\n\"]",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -7679,6 +7731,7 @@
         {
           "default": "",
           "document": "每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。",
+          "example": "00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -7687,6 +7740,7 @@
         {
           "default": "",
           "document": "每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。",
+          "example": "6",
           "member": "uint64",
           "name": "Span",
           "required": false,
@@ -8858,6 +8912,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7",
+          "example": "mssql-ms2m7vut",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8884,6 +8939,7 @@
         {
           "default": "",
           "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8892,6 +8948,7 @@
         {
           "default": "",
           "document": "更新后的账户密码信息数组",
+          "example": "无",
           "member": "AccountPassword",
           "name": "Accounts",
           "required": true,
@@ -8905,8 +8962,10 @@
       "members": [
         {
           "document": "修改帐号密码的异步任务流程ID",
+          "example": "30457",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8949,6 +9008,7 @@
         {
           "default": "",
           "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8962,8 +9022,10 @@
       "members": [
         {
           "document": "异步任务流程ID",
+          "example": "30321",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9054,6 +9116,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9062,6 +9125,7 @@
         {
           "default": "",
           "document": "回档类型，0-回档的数据库覆盖原库；1-回档的数据库以重命名的形式生成，不覆盖原库",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -9070,6 +9134,7 @@
         {
           "default": "",
           "document": "需要回档的数据库",
+          "example": "[\"db1\\n\"]",
           "member": "string",
           "name": "DBs",
           "required": true,
@@ -9078,6 +9143,7 @@
         {
           "default": "",
           "document": "回档目标时间点",
+          "example": "2018-08-0711:32:29",
           "member": "datetime",
           "name": "Time",
           "required": true,
@@ -9086,6 +9152,7 @@
         {
           "default": "",
           "document": "备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID",
+          "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "TargetInstanceId",
           "required": false,
@@ -9094,6 +9161,7 @@
         {
           "default": "",
           "document": "按照ReNameRestoreDatabase中的库进行重命名，仅在Type = 1重命名回档方式有效；不填则按照默认方式命名库，DBs参数确定要恢复的库",
+          "example": "无",
           "member": "RenameRestoreDatabase",
           "name": "RenameRestore",
           "required": false,
@@ -9107,8 +9175,10 @@
       "members": [
         {
           "document": "异步任务ID",
+          "example": "1234",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9508,6 +9578,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9516,6 +9587,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-kpl74n9l",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -9529,8 +9601,10 @@
       "members": [
         {
           "document": "流程ID",
+          "example": "1001399",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9549,6 +9623,7 @@
         {
           "default": "",
           "document": "导入目标实例ID",
+          "example": "mssql-rdc0gajn",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9557,6 +9632,7 @@
         {
           "default": "",
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
+          "example": "mssql-backup-migration-cg0ffgqt",
           "member": "string",
           "name": "BackupMigrationId",
           "required": true,
@@ -9565,6 +9641,7 @@
         {
           "default": "",
           "document": "增量备份导入任务ID",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": true,
@@ -9578,8 +9655,10 @@
       "members": [
         {
           "document": "流程ID",
+          "example": "1001403",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

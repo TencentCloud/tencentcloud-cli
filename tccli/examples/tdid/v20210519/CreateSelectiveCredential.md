@@ -1,6 +1,6 @@
 **Example 1: CreateSelectiveCredential**
 
-验证凭证
+生成选择性批露凭证
 
 Input: 
 

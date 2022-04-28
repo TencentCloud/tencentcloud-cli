@@ -10,6 +10,9 @@ tccli ess CreateSchemeUrl --cli-unfold-argument  \
     --PathType 1 \
     --Name 张三 \
     --Mobile 13888888888 \
+    --OrganizationName 测试企业 \
+    --EndPoint HTTP \
+    --AutoJumpBack False \
     --Operator.UserId 00033e********4aa82a9
 ```
 

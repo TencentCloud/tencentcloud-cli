@@ -8,7 +8,7 @@ Input:
 tccli sqlserver RollbackInstance --cli-unfold-argument  \
     --InstanceId mssql-j8kv137v \
     --Type 0 \
-    --Time 2018-08-0711:32:29 \
+    --Time '2018-08-07 11:32:29' \
     --DBs db1
 ```
 

@@ -35,7 +35,7 @@
     "CreateSchemeUrl": [
       {
         "document": "获取小程序跳转链接",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"1956103*****20fde6a\",\n    \"PathType\": 1,\n    \"Name\": \"张三\",\n    \"Mobile\": \"13888888888\",\n    \"Operator\": {\n        \"UserId\": \"00033e********4aa82a9\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"1956103*****20fde6a\",\n    \"PathType\": 1,\n    \"Name\": \"张三\",\n    \"Mobile\": \"13888888888\",\n    \"OrganizationName\": \"测试企业\",\n    \"EndPoint\": \"HTTP\",\n    \"AutoJumpBack\": false,\n    \"Operator\": {\n        \"UserId\": \"00033e********4aa82a9\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"SchemeUrl\": \"weixin://dl/business/?t= *TICKET*\",\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取小程序跳转链接"
       }
