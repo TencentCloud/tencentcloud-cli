@@ -6,6 +6,12 @@
       "name": "获取用户昵称",
       "output": "DescribeNicknameResponse"
     },
+    "GetAuthNonSensitiveInfo": {
+      "document": "获取实名认证非敏感信息",
+      "input": "GetAuthNonSensitiveInfoRequest",
+      "name": "获取实名认证非敏感信息",
+      "output": "GetAuthNonSensitiveInfoResponse"
+    },
     "GetBackUpValidate": {
       "document": "获取备选校验方式",
       "input": "GetBackUpValidateRequest",
@@ -107,6 +113,39 @@
         }
       ],
       "usage": "out"
+    },
+    "GetAuthNonSensitiveInfoRequest": {
+      "document": "GetAuthNonSensitiveInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "认证账户UIN",
+          "member": "uint64",
+          "name": "AuthUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthNonSensitiveInfoResponse": {
+      "document": "GetAuthNonSensitiveInfo返回参数结构体",
+      "members": [
+        {
+          "document": "实名认证通过时间",
+          "member": "string",
+          "name": "PassTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetBackUpValidateRequest": {
       "document": "GetBackUpValidate请求参数结构体",

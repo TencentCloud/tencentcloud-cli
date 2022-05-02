@@ -84,6 +84,12 @@
       "name": "修改yarn资源调度的资源配置",
       "output": "ModifyResourceScheduleConfigResponse"
     },
+    "ModifyResourceScheduler": {
+      "document": "修改了yarn的资源调度器，点击部署生效",
+      "input": "ModifyResourceSchedulerRequest",
+      "name": "部署生效yarn的资源调度器",
+      "output": "ModifyResourceSchedulerResponse"
+    },
     "RunJobFlow": {
       "document": "创建流程作业",
       "input": "RunJobFlowRequest",
@@ -3084,6 +3090,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceSchedulerRequest": {
+      "document": "ModifyResourceScheduler请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "emr集群的英文id",
+          "example": "emr-2xef56",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "老的调度器:fair",
+          "example": "fair",
+          "member": "string",
+          "name": "OldValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的调度器:capacity",
+          "example": "capacity",
+          "member": "string",
+          "name": "NewValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceSchedulerResponse": {
+      "document": "ModifyResourceScheduler返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

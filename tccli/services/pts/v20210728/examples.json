@@ -8,6 +8,22 @@
         "title": "停止任务"
       }
     ],
+    "CreateAlertChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertChannel\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"NoticeId\": \"xx\",\n    \"AMPConsumerId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9g7dz8hd4f6xp1fnx4izhfyad1tz2ke-\"\n    }\n}",
+        "title": "创建告警通知接收组"
+      }
+    ],
+    "CreateFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFile\n<公共请求参数>\n\n{\n    \"FileId\": \"file-xx\",\n    \"ProjectId\": \"project-xx\",\n    \"Kind\": 0,\n    \"Name\": \"uin.csv\",\n    \"Size\": 3896,\n    \"Type\": \"csv\",\n    \"LineCount\": 1001,\n    \"HeadLines\": [\n        \"uin\",\n        \"1\",\n        \"2\"\n    ],\n    \"TailLines\": [\n        \"998\",\n        \"999\",\n        \"1000\"\n    ],\n    \"HeaderInFile\": true,\n    \"HeaderColumns\": [\n        \"uin\"\n    ],\n    \"FileInfos\": [\n        {\n            \"Name\": \"\",\n            \"Size\": 0,\n            \"Type\": \"\",\n            \"UpdatedAt\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建文件"
+      }
+    ],
     "CreateProject": [
       {
         "document": "",
@@ -24,12 +40,36 @@
         "title": "创建场景"
       }
     ],
+    "DeleteAlertChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlertChannel\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"NoticeId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除告警通知接收组"
+      }
+    ],
+    "DeleteFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFiles\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"FileIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除文件"
+      }
+    ],
     "DeleteJobs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-xx\"\n    ],\n    \"ProjectId\": \"project-xx\",\n    \"ScenarioIds\": [\n        \"scenario-xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1qmunlpf51noe13qp5vyvg7mq5t4t4w\"\n    }\n}",
         "title": "删除任务"
+      }
+    ],
+    "DeleteProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjects\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"project-xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1qmunlpf51noe13qp5vyvg7mq5t4t4w\"\n    }\n}",
+        "title": "删除项目"
       }
     ],
     "DeleteScenarios": [
@@ -40,12 +80,68 @@
         "title": "删除场景"
       }
     ],
+    "DescribeAlertChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlertChannels\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"Ascend\": true,\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ProjectIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\r\n    \"Response\": {\r\n        \"AlertChannelSet\": [\r\n            {\r\n                \"Status\": {\r\n                    \"SendNotice\": 1, \r\n                    \"AbortJob\": 1\r\n                }, \r\n                \"NoticeId\": \"xx\", \r\n                \"ProjectId\": \"xx\", \r\n                \"UpdatedAt\": \"xx\", \r\n                \"AMPConsumerId\": \"xx\", \r\n                \"CreatedAt\": \"xx\"\r\n            }\r\n        ], \r\n        \"Total\": 1, \r\n        \"RequestId\": \"xx\"\r\n    }\r\n}",
+        "title": "查询告警通知接收组列表"
+      }
+    ],
+    "DescribeAlertRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlertRecords\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ],\n    \"Ascend\": true,\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ProjectIds\": [\n        \"xx\"\n    ],\n    \"ScenarioIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AlertRecordSet\": [\n            {\n                \"CreatedAt\": \"2021-12-22T15:04:36+08:00\",\n                \"UpdatedAt\": \"2021-12-22T15:04:36+08:00\",\n                \"AlertRecordId\": \"alert-q5qn20zy\",\n                \"ProjectId\": \"project-cphgtuvq\",\n                \"ScenarioId\": \"scenario-lkbg8f20\",\n                \"JobId\": \"job-b8eklbx8\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"9g7dz8hd4f6xp1fnx4izhfyad1tz2ke-\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询告警历史"
+      }
+    ],
+    "DescribeCheckSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckSummary\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"ScenarioId\": \"xx\",\n    \"JobId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckSummarySet\": [\n            {\n                \"Name\": \"400\",\n                \"Step\": \"sample\",\n                \"SuccessCount\": 0,\n                \"FailCount\": 92343,\n                \"ErrorRate\": 1\n            },\n            {\n                \"Name\": \"status 200\",\n                \"Step\": \"sample\",\n                \"SuccessCount\": 831084,\n                \"FailCount\": 0,\n                \"ErrorRate\": 0\n            }\n        ],\n        \"RequestId\": \"seysqgrlaugvvusulj7ry2n47buudhdg\"\n    }\n}",
+        "title": "查询检查点汇总信息"
+      }
+    ],
+    "DescribeFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFiles\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"xx\"\n    ],\n    \"Offset\": 0,\n    \"FileIds\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"FileName\": \"xx\",\n    \"Kind\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"FileSet\": [\n            {\n                \"Status\": 0,\n                \"Kind\": 0,\n                \"HeaderInFile\": true,\n                \"Name\": \"xx\",\n                \"Type\": \"xx\",\n                \"TailLines\": [\n                    \"xx\"\n                ],\n                \"FileInfos\": [\n                    {\n                        \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                        \"Type\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"Size\": 0\n                    }\n                ],\n                \"LineCount\": 0,\n                \"ScenarioSet\": [\n                    {\n                        \"SubAccountUin\": \"xx\",\n                        \"DomainNameConfig\": {\n                            \"HostAliases\": [\n                                {\n                                    \"IP\": \"xx\",\n                                    \"HostNames\": [\n                                        \"xx\"\n                                    ]\n                                }\n                            ],\n                            \"DNSConfig\": {\n                                \"Nameservers\": [\n                                    \"xx\"\n                                ]\n                            }\n                        },\n                        \"SLAId\": \"xx\",\n                        \"Type\": \"xx\",\n                        \"CronId\": \"xx\",\n                        \"Status\": 0,\n                        \"Description\": \"xx\",\n                        \"SLAPolicy\": {\n                            \"AlertChannel\": {\n                                \"NoticeId\": \"xx\",\n                                \"AMPConsumerId\": \"xx\"\n                            },\n                            \"SLARules\": [\n                                {\n                                    \"For\": \"xx\",\n                                    \"Metric\": \"xx\",\n                                    \"Aggregation\": \"xx\",\n                                    \"Value\": 0.0,\n                                    \"AbortFlag\": true,\n                                    \"LabelFilter\": [\n                                        {\n                                            \"LabelName\": \"xx\",\n                                            \"LabelValue\": \"xx\"\n                                        }\n                                    ],\n                                    \"Condition\": \"xx\"\n                                }\n                            ]\n                        },\n                        \"AppId\": 0,\n                        \"UpdatedAt\": \"xx\",\n                        \"Configs\": [\n                            \"xx\"\n                        ],\n                        \"Protocols\": [\n                            {\n                                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                                \"Type\": \"xx\",\n                                \"Name\": \"xx\",\n                                \"Size\": 0\n                            }\n                        ],\n                        \"Datasets\": [\n                            {\n                                \"HeaderInFile\": true,\n                                \"Name\": \"xx\",\n                                \"TailLines\": [\n                                    \"xx\"\n                                ],\n                                \"LineCount\": 0,\n                                \"Split\": true,\n                                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                                \"HeaderColumns\": [\n                                    \"xx\"\n                                ],\n                                \"HeadLines\": [\n                                    \"xx\"\n                                ],\n                                \"Type\": \"xx\",\n                                \"Size\": 0\n                            }\n                        ],\n                        \"Name\": \"xx\",\n                        \"ScenarioId\": \"xx\",\n                        \"ProjectId\": \"xx\",\n                        \"TestScripts\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"EncodedHttpArchive\": \"xx\",\n                                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                                \"Size\": 0,\n                                \"Type\": \"xx\",\n                                \"EncodedContent\": \"xx\"\n                            }\n                        ],\n                        \"Extensions\": [\n                            \"xx\"\n                        ],\n                        \"RequestFiles\": [\n                            {\n                                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                                \"Type\": \"xx\",\n                                \"Name\": \"xx\",\n                                \"Size\": 0\n                            }\n                        ],\n                        \"Load\": {\n                            \"VpcLoadDistribution\": {\n                                \"VpcId\": \"xx\",\n                                \"Region\": \"xx\",\n                                \"RegionId\": 0,\n                                \"SubnetIds\": [\n                                    \"xx\"\n                                ]\n                            },\n                            \"GeoRegionsLoadDistribution\": [\n                                {\n                                    \"Region\": \"xx\",\n                                    \"RegionId\": 0,\n                                    \"Percentage\": 0\n                                }\n                            ],\n                            \"LoadSpec\": {\n                                \"ScriptOrigin\": {\n                                    \"DurationSeconds\": 0,\n                                    \"MachineSpecification\": \"xx\",\n                                    \"MachineNumber\": 0\n                                },\n                                \"RequestsPerSecond\": {\n                                    \"DurationSeconds\": 0,\n                                    \"MaxRequestsPerSecond\": 0\n                                },\n                                \"Concurrency\": {\n                                    \"MaxRequestsPerSecond\": 0,\n                                    \"Stages\": [\n                                        {\n                                            \"DurationSeconds\": 0,\n                                            \"TargetVirtualUsers\": 0\n                                        }\n                                    ],\n                                    \"IterationCount\": 0\n                                }\n                            }\n                        },\n                        \"EncodedScripts\": \"xx\",\n                        \"Uin\": \"xx\",\n                        \"CreatedAt\": \"xx\",\n                        \"Plugins\": [\n                            {\n                                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                                \"Type\": \"xx\",\n                                \"Name\": \"xx\",\n                                \"Size\": 0\n                            }\n                        ]\n                    }\n                ],\n                \"HeaderColumns\": [\n                    \"xx\"\n                ],\n                \"HeadLines\": [\n                    \"xx\"\n                ],\n                \"FileId\": \"xx\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"Size\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeFiles"
+      }
+    ],
     "DescribeJobs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"xx\"\n    ],\n    \"OrderBy\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ],\n    \"Ascend\": true,\n    \"Limit\": 0,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Offset\": 0,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"ScenarioIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"ErrorRate\": 0,\n                \"RequestTotal\": 3433,\n                \"RequestsPerSecond\": 5.7235827,\n                \"ResponseTimeAverage\": 0.22972645,\n                \"ResponseTimeP99\": 0.48834386,\n                \"ResponseTimeP95\": 0.26974347,\n                \"ResponseTimeP90\": 0.24264774,\n                \"ResponseTimeMax\": 0.8703224,\n                \"ResponseTimeMin\": 0.2167055,\n                \"JobId\": \"job-o5u4k8es\",\n                \"ScenarioId\": \"scenario-piekhfoc\",\n                \"Load\": {\n                    \"LoadSpec\": {\n                        \"Concurrency\": {\n                            \"Stages\": [\n                                {\n                                    \"DurationSeconds\": 120,\n                                    \"TargetVirtualUsers\": 2\n                                },\n                                {\n                                    \"DurationSeconds\": 120,\n                                    \"TargetVirtualUsers\": 4\n                                },\n                                {\n                                    \"DurationSeconds\": 120,\n                                    \"TargetVirtualUsers\": 5\n                                },\n                                {\n                                    \"DurationSeconds\": 240,\n                                    \"TargetVirtualUsers\": 5\n                                }\n                            ],\n                            \"IterationCount\": 0,\n                            \"MaxRequestsPerSecond\": 0\n                        }\n                    },\n                    \"GeoRegionsLoadDistribution\": [\n                        {\n                            \"Region\": \"ap-guangzhou\",\n                            \"RegionId\": 1,\n                            \"Percentage\": 100\n                        }\n                    ]\n                },\n                \"Scripts\": [\n                    \"script_0.js\"\n                ],\n                \"Configs\": [],\n                \"Datasets\": [],\n                \"Extensions\": [],\n                \"StartTime\": \"2021-11-15T15:54:40+08:00\",\n                \"EndTime\": \"2021-11-15T16:04:40+08:00\",\n                \"Note\": \"\",\n                \"JobOwner\": \"test_env_master\",\n                \"Status\": 12,\n                \"Duration\": 600,\n                \"MaxVirtualUserCount\": 5,\n                \"MaxRequestsPerSecond\": 0,\n                \"LoadSources\": [\n                    {\n                        \"PodName\": \"job-o5u4k8es-p7wh5\",\n                        \"IP\": \"9.139.1.182\",\n                        \"Region\": \"ap-guangzhou\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"14npzmr5ybb44wa35fus1-r981l-v1r4\",\n        \"Total\": 1\n    }\n}",
         "title": "查询任务列表"
+      }
+    ],
+    "DescribeLabelValues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLabelValues\n<公共请求参数>\n\n{\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"ProjectId\": \"project-xx\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"LabelName\": \"service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LabelValueSet\": [\n            \"http://pets.com/0\",\n            \"http://pets.com/1\",\n            \"http://pets.com/10\",\n            \"http://pets.com/11\",\n            \"http://pets.com/12\",\n            \"http://pets.com/13\",\n            \"http://pets.com/14\",\n            \"http://pets.com/15\",\n            \"http://pets.com/16\",\n            \"http://pets.com/17\",\n            \"http://pets.com/18\",\n            \"http://pets.com/19\",\n            \"http://pets.com/2\",\n            \"http://pets.com/3\",\n            \"http://pets.com/4\",\n            \"http://pets.com/5\",\n            \"http://pets.com/6\",\n            \"http://pets.com/7\",\n            \"http://pets.com/8\",\n            \"http://pets.com/9\"\n        ],\n        \"RequestId\": \"putbj9hmg-65fh73i4j1gse2e4r7x97b\"\n    }\n}",
+        "title": "查询标签值"
+      }
+    ],
+    "DescribeNormalLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNormalLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-fjs583kq\",\n    \"ScenarioId\": \"scenario-q63bkqsa\",\n    \"JobId\": \"job-657v4tmi\",\n    \"LogType\": \"console\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"123-456-789\",\n        \"NormalLogs\": [],\n        \"RequestId\": \"nes5mdwkfrbfhbpjrs4ox6ck41xjn9jp\"\n    }\n}",
+        "title": "查询压测过程日志"
+      }
+    ],
+    "DescribeProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"project-xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ProjectSet\": [\n            {\n                \"AppId\": 123,\n                \"Uin\": \"456\",\n                \"SubAccountUin\": \"789\",\n                \"CreatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"UpdatedAt\": \"2021-08-23T20:59:07+08:00\",\n                \"ProjectId\": \"project-ks8lr6m2\",\n                \"Name\": \"MyProject\",\n                \"Description\": \"Test project\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"xx\",\n                        \"TagValue\": \"xx\"\n                    }\n                ],\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"4k8o9vf1oq-6fqmzsh8l8euisgdhqo3e\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询项目列表"
       }
     ],
     "DescribeRegions": [
@@ -64,12 +160,60 @@
         "title": "批量查询指标"
       }
     ],
+    "DescribeSampleLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleLogs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-fjs583kq\",\n    \"ScenarioId\": \"scenario-q63bkqsa\",\n    \"JobId\": \"job-657v4tmi\",\n    \"LogType\": \"request\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 10,\n        \"Context\": \"12353-2432423\",\n        \"SampleLogs\": []\n    }\n}",
+        "title": "查询采样日志"
+      }
+    ],
+    "DescribeSampleQuery": [
+      {
+        "document": "查询某个任务总的请求数",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"Aggregation\": \"Count\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSample\": {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\",\n            \"Unit\": \"reqs\",\n            \"Labels\": null,\n            \"Value\": \"1159362\",\n            \"Timestamp\": 1631693039208\n        },\n        \"RequestId\": \"jqlhs725if7tqgfnb2snytlm22-f3our\"\n    }\n}",
+        "title": "查询总请求数"
+      }
+    ],
+    "DescribeScenarioWithJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenarioWithJobs\n<公共请求参数>\n\n{\n    \"ScenarioIds\": [\n        \"scenario-44dlxys2\"\n    ],\n    \"ScenarioRelatedJobsParams\": {\n        \"OrderBy\": \"StartTime\",\n        \"Limit\": 10,\n        \"Ascend\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3jojuytvhs1uy8kp1vit9l6bdfiso6bh\",\n        \"ScenarioWithJobsSet\": [\n            {\n                \"Scenario\": {\n                    \"AppId\": 251201585,\n                    \"Uin\": \"700000153395\",\n                    \"SubAccountUin\": \"700000153395\",\n                    \"CreatedAt\": \"2021-09-27T10:46:26+08:00\",\n                    \"UpdatedAt\": \"2021-09-27T10:46:26+08:00\",\n                    \"ScenarioId\": \"scenario-44dlxys2\",\n                    \"Name\": \"hello\",\n                    \"Type\": \"pts-js\",\n                    \"Load\": {\n                        \"LoadSpec\": {\n                            \"Concurrency\": {\n                                \"Stages\": [\n                                    {\n                                        \"DurationSeconds\": 60,\n                                        \"TargetVirtualUsers\": 10\n                                    }\n                                ],\n                                \"IterationCount\": 5,\n                                \"MaxRequestsPerSecond\": 1000\n                            }\n                        },\n                        \"VpcLoadDistribution\": {\n                            \"Region\": \"ap-guangzhou\",\n                            \"RegionId\": 1,\n                            \"VpcId\": \"1\",\n                            \"SubnetIds\": null\n                        },\n                        \"GeoRegionsLoadDistribution\": [\n                            {\n                                \"Region\": \"1\",\n                                \"RegionId\": 1,\n                                \"Percentage\": 1\n                            }\n                        ]\n                    },\n                    \"EncodedScripts\": \"\",\n                    \"Description\": \"this is a test\",\n                    \"Status\": 2,\n                    \"Configs\": [\n                        \"a.prop\"\n                    ],\n                    \"Datasets\": [\n                        {\n                            \"Name\": \"a.csv\",\n                            \"UpdatedAt\": null,\n                            \"Size\": 0,\n                            \"LineCount\": 5,\n                            \"HeaderInFile\": true,\n                            \"Split\": true,\n                            \"HeaderColumns\": null\n                        }\n                    ],\n                    \"Extensions\": [\n                        \"a.jar\"\n                    ],\n                    \"ProjectId\": \"1\",\n                    \"SLAId\": \"\",\n                    \"CronId\": \"\"\n                },\n                \"Jobs\": [\n                    {\n                        \"ErrorRate\": 0,\n                        \"RequestTotal\": 0,\n                        \"ResponseTimeAverage\": 0,\n                        \"ResponseTimeP99\": 0,\n                        \"ResponseTimeP95\": 0,\n                        \"ResponseTimeP90\": 0,\n                        \"JobId\": \"job-j4j0t76k\",\n                        \"ScenarioId\": \"scenario-44dlxys2\",\n                        \"Load\": {\n                            \"LoadSpec\": {\n                                \"Concurrency\": {\n                                    \"Stages\": [\n                                        {\n                                            \"DurationSeconds\": 60,\n                                            \"TargetVirtualUsers\": 10\n                                        }\n                                    ],\n                                    \"IterationCount\": 5,\n                                    \"MaxRequestsPerSecond\": 1000\n                                }\n                            },\n                            \"VpcLoadDistribution\": {\n                                \"Region\": \"ap-guangzhou\",\n                                \"RegionId\": 1,\n                                \"VpcId\": \"1\",\n                                \"SubnetIds\": null\n                            },\n                            \"GeoRegionsLoadDistribution\": [\n                                {\n                                    \"Region\": \"1\",\n                                    \"RegionId\": 1,\n                                    \"Percentage\": 1\n                                }\n                            ]\n                        },\n                        \"Scripts\": [\n                            \"a.js\"\n                        ],\n                        \"Configs\": [\n                            \"a.prop\"\n                        ],\n                        \"Datasets\": [\n                            {\n                                \"Name\": \"a.csv\",\n                                \"UpdatedAt\": null,\n                                \"Size\": 0,\n                                \"LineCount\": 5,\n                                \"HeaderInFile\": true,\n                                \"Split\": true,\n                                \"HeaderColumns\": null\n                            }\n                        ],\n                        \"Extensions\": [\n                            \"a.jar\"\n                        ],\n                        \"StartTime\": \"2021-09-27T13:50:52+08:00\",\n                        \"EndTime\": \"2021-09-28T14:00:52+08:00\",\n                        \"Note\": \"\",\n                        \"JobOwner\": \"lucas\",\n                        \"Status\": 5,\n                        \"Duration\": 60,\n                        \"MaxVirtualUserCount\": 10,\n                        \"MaxRequestsPerSecond\": 1000,\n                        \"LoadSources\": null\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询场景及对应的job内容"
+      }
+    ],
     "DescribeScenarios": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenarios\n<公共请求参数>\n\n{\n    \"ScenarioIds\": [\n        \"scenario-xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"ScenarioSet\": [\n            {\n                \"Status\": 0,\n                \"Load\": {\n                    \"VpcLoadDistribution\": {\n                        \"VpcId\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"RegionId\": 0\n                    },\n                    \"GeoRegionsLoadDistribution\": [\n                        {\n                            \"Region\": \"xx\",\n                            \"RegionId\": 0,\n                            \"Percentage\": 0\n                        }\n                    ],\n                    \"LoadSpec\": {\n                        \"RequestsPerSecond\": {\n                            \"DurationSeconds\": 0\n                        },\n                        \"Concurrency\": {\n                            \"Stages\": [\n                                {\n                                    \"DurationSeconds\": 0,\n                                    \"TargetVirtualUsers\": 0\n                                }\n                            ],\n                            \"IterationCount\": 0\n                        }\n                    }\n                },\n                \"Datasets\": [\n                    {\n                        \"HeaderInFile\": true,\n                        \"Name\": \"xx\",\n                        \"LineCount\": 0,\n                        \"Split\": true,\n                        \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                        \"HeaderColumns\": [\n                            \"xx\"\n                        ],\n                        \"Size\": 0\n                    }\n                ],\n                \"Description\": \"xx\",\n                \"SubAccountUin\": \"xx\",\n                \"Uin\": \"xx\",\n                \"Extensions\": [\n                    \"xx\"\n                ],\n                \"CreatedAt\": \"xx\",\n                \"AppId\": 0,\n                \"UpdatedAt\": \"xx\",\n                \"Configs\": [\n                    \"xx\"\n                ],\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询场景列表"
+      }
+    ],
+    "DescribeScriptTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScriptTemplates\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"Ascend\": true,\n    \"Limit\": 1,\n    \"Categories\": [\n        \"xx\"\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ScriptTemplateSet\": [\n            {\n                \"Category\": \"xx\",\n                \"Status\": 1,\n                \"Name\": \"xx\",\n                \"ScriptTemplateID\": \"xx\",\n                \"Internal\": true,\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"xx\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"EncodedContent\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询脚本模板"
+      }
+    ],
+    "DescribeServiceSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceSummary\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9byccyy7i7u9cw-81axnla-a-ezcnwr\",\n        \"ServiceSummarySet\": [\n            {\n                \"Service\": \"http://pets.com/0\",\n                \"Method\": \"get\",\n                \"Status\": \"400\",\n                \"Result\": \"BadRequest\",\n                \"Count\": 41253,\n                \"Average\": 0.4976391081807893,\n                \"P90\": 0.909354130052724,\n                \"P95\": 0.949354130052724,\n                \"P99\": 0.9898708260105447,\n                \"Min\": 0.2198708260105447,\n                \"Max\": 0.9998708260105447\n            },\n            {\n                \"Service\": \"http://pets.com/10\",\n                \"Method\": \"get\",\n                \"Status\": \"400\",\n                \"Result\": \"BadRequest\",\n                \"Count\": 41252,\n                \"Average\": 0.49687854602238934,\n                \"P90\": 0.909354130052724,\n                \"P95\": 0.949698900331646,\n                \"P99\": 0.9899397800663291,\n                \"Min\": 0.2198708260105447,\n                \"Max\": 0.9998708260105447\n            }\n        ]\n    }\n}",
+        "title": "查询服务汇总信息"
+      }
+    ],
+    "GenerateTmpKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateTmpKey\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"ScenarioId\": \"scenario-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"StartTime\": 1630376705,\n        \"ExpiredTime\": 1630377005,\n        \"Credentials\": {\n            \"TmpSecretId\": \"xx\",\n            \"TmpSecretKey\": \"xx\",\n            \"Token\": \"xx\"\n        }\n    }\n}",
+        "title": "生成临时COS凭证"
       }
     ],
     "StartJob": [
@@ -80,12 +224,28 @@
         "title": "创建并启动任务"
       }
     ],
+    "UpdateFileScenarioRelation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFileScenarioRelation\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"ScenarioIds\": [\n        \"scenario-xx\"\n    ],\n    \"FileId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "更新关联文件场景"
+      }
+    ],
     "UpdateJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"ScenarioId\": \"scenario-xx\",\n    \"Note\": \"this is my note\",\n    \"JobId\": \"job-xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建任务"
+      }
+    ],
+    "UpdateProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fyy3-g7ujmxbouxshy3plmkmhlnmdbfh\"\n    }\n}",
+        "title": "更新项目"
       }
     ],
     "UpdateScenario": [

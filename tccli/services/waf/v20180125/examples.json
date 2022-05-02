@@ -78,6 +78,14 @@
         "title": "删除下载记录"
       }
     ],
+    "DeleteGlobalWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalWhiteRule\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
     "DeleteIpAccessControl": [
       {
         "document": "",
@@ -92,6 +100,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=DeleteSession\n&Domain=test.com\n&Edition=clb-waf\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"0746a563-2597-43ec-8aaf-d3267b093efa\"\n    }\n}",
         "title": "Waf  会话定义 Delete接口"
+      }
+    ],
+    "DeleteTsRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTsRegion\n<公共请求参数>\n\n{\n    \"MainRegion\": \"bj\",\n    \"SubRegion\": \"bj-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DeleteTsRegion"
       }
     ],
     "DeleteTsResource": [
@@ -196,6 +212,30 @@
         "title": "查询示例"
       }
     ],
+    "DescribeOpSignatureRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpSignatureRule\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 20,\n    \"Order\": \"asc\",\n    \"By\": \"signature_id\",\n    \"Filters\": [\n        {\n            \"Name\": \"MainClassID\",\n            \"Values\": [\n                \"010000000\"\n            ],\n            \"ExactMatch\": false\n        },\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"ExactMatch\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 8,\n        \"Rules\": [\n            {\n                \"ID\": \"010000002\",\n                \"Description\": \"xxx\",\n                \"Status\": 0,\n                \"MainClassID\": \"010000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"000000000\",\n                \"SubClassName\": \"\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            },\n            {\n                \"ID\": \"050000022\",\n                \"Description\": \"xxx\",\n                \"Status\": 1,\n                \"MainClassID\": \"050000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"050030000\",\n                \"SubClassName\": \"data\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
+    "DescribeOpUserSignaturePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpUserSignaturePolicy\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"AppId\",\n            \"Values\": [\n                \"251198060\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 1,\n        \"OpUserSigPolicy\": [\n            {\n                \"OpAppId\": \"050000000\",\n                \"OpDomain\": \"xx.qcloudwaf.com\",\n                \"Level\": 300,\n                \"Status\": 1,\n                \"ModifyTime\": \"2021-12-07T15:03:24+08:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
+    "DescribeTsRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTsRegion\n<公共请求参数>\n\n{\n    \"MainRegion\": \"bj\",\n    \"SubRegion\": \"bj-0\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b71d47f4-5882-4e59-9624-7041bd7314a6\",\n        \"Count\": 1,\n        \"Data\": [\n            {\n                \"Id\": 2,\n                \"MainRegion\": \"bj\",\n                \"SubRegion\": \"bj-0\",\n                \"DomainCount\": 0,\n                \"CreateTime\": \"2021-12-02T20:31:14+08:00\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeTsRegion"
+      }
+    ],
     "DescribeTsResource": [
       {
         "document": "",
@@ -236,6 +276,22 @@
         "title": "描述WAF威胁情报封禁模块详情"
       }
     ],
+    "EditOpRuleUpdateLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditOpRuleUpdateLog\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"LogVersion\": \"v1\",\n    \"Detail\": \"update log\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
+    "EditOpRuleUpdateLogStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditOpRuleUpdateLogStatus\n<公共请求参数>\n\n{\n    \"UpdateLogIDs\": [\n        1,\n        2\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
     "ModifyAccessPeriod": [
       {
         "document": "",
@@ -258,6 +314,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Id\": 111,\n    \"Rules\": [\n        2\n    ],\n    \"Url\": \"/aa\",\n    \"Function\": \"suffix\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
         "title": "更改某一条规则"
+      }
+    ],
+    "ModifyOpSignatureRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOpSignatureRule\n<公共请求参数>\n\n{\n    \"SignatureIDs\": [\n        \"090520007\",\n        \"090520006\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
+    "ModifyTsRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTsRegion\n<公共请求参数>\n\n{\n    \"MainRegion\": \"bj\",\n    \"SubRegion\": \"bj-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "ModifyTsRegion"
       }
     ],
     "ModifyTsResource": [

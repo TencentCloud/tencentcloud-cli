@@ -358,6 +358,15 @@
           "name": "EnableTracing",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "使用默认镜像服务额外参数",
+          "example": "{}",
+          "member": "UseDefaultRepoParameters",
+          "name": "UseDefaultImageServiceParameters",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3915,6 +3924,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UseDefaultRepoParameters": {
+      "document": "创建应用，创建仓库参数",
+      "members": [
+        {
+          "default": "",
+          "document": "企业版实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "EnterpriseInstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业版收费类型  0 按量收费   1 包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnterpriseInstanceChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "企业版规格：basic-基础班 ，standard-标准版，premium-高级版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic",
+          "member": "string",
+          "name": "EnterpriseInstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

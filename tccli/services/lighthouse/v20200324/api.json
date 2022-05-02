@@ -294,6 +294,12 @@
       "name": "续费实例询价",
       "output": "InquirePriceRenewInstancesResponse"
     },
+    "IsolateInstances": {
+      "document": "本接口(IsolateInstances)用于退还一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING 或 STOPPED 的实例才可以进行此操作。\n* 接口调用成功后，实例会进入SHUTDOWN 状态。\n* 支持批量操作。每次请求批量资源（包括实例与数据盘）的上限为 20。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "input": "IsolateInstancesRequest",
+      "name": "隔离实例",
+      "output": "IsolateInstancesResponse"
+    },
     "ModifyBlueprintAttribute": {
       "document": "本接口 (ModifyBlueprintAttribute) 用于修改镜像属性。",
       "input": "ModifyBlueprintAttributeRequest",
@@ -355,7 +361,7 @@
       "output": "RebootInstancesResponse"
     },
     "RenewInstances": {
-      "document": "本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。",
+      "document": "本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING，STOPPED 或 SHUTDOWN 的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "RenewInstancesRequest",
       "name": "续费实例",
       "output": "RenewInstancesResponse"
@@ -4687,6 +4693,42 @@
       ],
       "usage": "out"
     },
+    "IsolateInstancesRequest": {
+      "document": "IsolateInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求退还实例和数据盘数量总计上限为20。",
+          "example": "[\"lhins-7ofik5q9\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否退还挂载的数据盘。取值范围：\nTRUE：表示退还实例同时退还其挂载的数据盘。\nFALSE：表示退还实例同时不再退还其挂载的数据盘。\n默认取值：TRUE。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsolateDataDisk",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateInstancesResponse": {
+      "document": "IsolateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "KeyPair": {
       "document": "描述密钥对信息。",
       "members": [
@@ -5358,7 +5400,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID列表。一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
+          "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
           "example": "[\"lhins-7ofik5q9\"]",
           "member": "string",
           "name": "InstanceIds",

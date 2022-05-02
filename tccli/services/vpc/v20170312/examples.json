@@ -578,7 +578,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateVpnGatewaySslClient\n&SslVpnServerId=vpns-xxxx\n&SslVpnClientName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslVpnClientId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": 1\n    }\n}",
         "title": "创建SSL-VPN-CLIENT"
       }
     ],
@@ -586,7 +586,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGatewaySslServer\n<公共请求参数>\n\n{\n    \"SslVpnProtocol\": \"xx\",\n    \"IntegrityAlgorithm\": \"xx\",\n    \"RemoteAddress\": \"xx\",\n    \"EncryptAlgorithm\": \"xx\",\n    \"Compress\": true,\n    \"LocalAddress\": [\n        \"xx\"\n    ],\n    \"VpnGatewayId\": \"xx\",\n    \"SslVpnServerName\": \"xx\",\n    \"SslVpnPort\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslVpnServerId\": \"xx\",\n        \"TaskId\": 123,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建SSL-VPN-SERVER"
       }
     ],
@@ -1526,6 +1526,14 @@
         "title": "查询VPC下的云主机实例列表"
       }
     ],
+    "DescribeVpcInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcInternal\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-p5sf61yj\n&Filters.1.Name=vpc-name\n&Filters.1.Values.0=测试dhcp\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a44afb7-0644-4ff9-9761-3502f99d3a15\"\n    }\n}",
+        "title": "查询VPC列表"
+      }
+    ],
     "DescribeVpcIpv6Addresses": [
       {
         "document": "",
@@ -1890,6 +1898,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockCcns\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"443c2024-74b1-4b34-9f98-5ac50d34b7fe\"\n    }\n}",
         "title": "封禁云联网"
+      }
+    ],
+    "ManageDockerSubnetInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ManageDockerSubnetInternal\n&VpcId=vpc-ewdc1236\n&Subnet=10.0.0.1\n&IntMask=16\n&ManageType=CREATE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "Docker子网管理"
       }
     ],
     "MigrateNetworkInterface": [
@@ -2464,6 +2480,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ResetVpnGatewayInternetMaxBandwidth\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InternetMaxBandwidthOut=10\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "调整VPN网关带宽上限"
+      }
+    ],
+    "ReturnPrivateIpAddress": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ReturnPrivateIpAddress\n&PrivateIpAddress=“10.0.0.2”\n&ResourceId=tke-cls-3erfgt54\n&VpcId=vpc-34edfr43\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
+        "title": "退还内网IP"
       }
     ],
     "SetCcnRegionBandwidthLimits": [

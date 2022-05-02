@@ -960,6 +960,12 @@
       "name": "查询VPC下的云主机实例列表",
       "output": "DescribeVpcInstancesResponse"
     },
+    "DescribeVpcInternal": {
+      "document": "本接口（DescribeVpcInternal）用于查询私有网络列表。只用于内部系统间调用，不对外。",
+      "input": "DescribeVpcInternalRequest",
+      "name": "查询VPC列表，仅用于内部调用",
+      "output": "DescribeVpcInternalResponse"
+    },
     "DescribeVpcIpv6Addresses": {
       "document": "本接口（DescribeVpcIpv6Addresses）用于查询 `VPC` `IPv6` 信息。\n只能查询已使用的`IPv6`信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。",
       "input": "DescribeVpcIpv6AddressesRequest",
@@ -1211,6 +1217,12 @@
       "input": "LockCcnsRequest",
       "name": "安全锁定云联网实例",
       "output": "LockCcnsResponse"
+    },
+    "ManageDockerSubnetInternal": {
+      "document": "本接口（ManageDockerSubnetInternal）用于创建或删除Docker子网",
+      "input": "ManageDockerSubnetInternalRequest",
+      "name": "管理Docker子网",
+      "output": "ManageDockerSubnetInternalResponse"
     },
     "MigrateNetworkInterface": {
       "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
@@ -1601,6 +1613,12 @@
       "input": "ResetVpnGatewayInternetMaxBandwidthRequest",
       "name": "调整VPN网关带宽上限",
       "output": "ResetVpnGatewayInternetMaxBandwidthResponse"
+    },
+    "ReturnPrivateIpAddress": {
+      "document": "本接口（ReturnPrivateIpAddress）仅用于内部服务退还保留IP。",
+      "input": "ReturnPrivateIpAddressRequest",
+      "name": "指定资源退还内网IP",
+      "output": "ReturnPrivateIpAddressResponse"
     },
     "SetCcnRegionBandwidthLimits": {
       "document": "本接口（SetCcnRegionBandwidthLimits）用于设置云联网（CCN）各地域出带宽上限，或者地域间带宽上限。",
@@ -6867,6 +6885,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "SSL-VPN client 唯一ID",
+          "example": "vpnc-xxxxx",
+          "member": "string",
+          "name": "SslVpnClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6972,6 +6999,15 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSL-VPN server 唯一ID",
+          "example": "vpns-xxxxx",
+          "member": "string",
+          "name": "SslVpnServerId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12191,6 +12227,23 @@
       ],
       "type": "object"
     },
+    "DescribeVpcInternalRequest": {
+      "document": "DescribeVpcInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcInternalResponse": {
+      "document": "DescribeVpcInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcIpv6AddressesRequest": {
       "document": "DescribeVpcIpv6Addresses请求参数结构体",
       "members": [
@@ -15921,6 +15974,23 @@
     },
     "LockCcnsResponse": {
       "document": "LockCcns返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageDockerSubnetInternalRequest": {
+      "document": "ManageDockerSubnetInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ManageDockerSubnetInternalResponse": {
+      "document": "ManageDockerSubnetInternal返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -20552,6 +20622,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ReturnPrivateIpAddressRequest": {
+      "document": "ReturnPrivateIpAddress请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReturnPrivateIpAddressResponse": {
+      "document": "ReturnPrivateIpAddress返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Route": {
       "document": "路由策略对象",

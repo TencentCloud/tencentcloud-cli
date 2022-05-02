@@ -184,14 +184,6 @@
         "title": "创建仓库"
       }
     ],
-    "CreateServerlessGroup": [
-      {
-        "document": "创建Serverless部署组",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateServerlessGroup\r\n&ApplicationId=application-xxxxxxx\r\n&GroupName=consumer\r\n&NamespaceId=namespace-xxxxxxxx\r\n&ClusterId=cluster-xxxxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39bb8e88-1ccd-4204-9f9e-56804c980a31\",\n        \"Result\": \"group-xxxxxxx\"\n    }\n}",
-        "title": "创建Serverless部署组"
-      }
-    ],
     "CreateTask": [
       {
         "document": "创建任务",
@@ -374,14 +366,6 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DeployGroup\n&GroupId=group-xxxxxxx\n&PkgId=pkg-xxxxxxx\n&StartupParameters=-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48994bff-70ed-43b9-ae0e-8d3b4d6e72cd\",\n        \"Result\": {\n            \"TaskId\": \"task-xxxxxxx\"\n        }\n    }\n}",
         "title": "部署虚拟机部署组应用"
-      }
-    ],
-    "DeployServerlessGroup": [
-      {
-        "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeployServerlessGroup\r\n&GroupId=group-xxxxxxx\r\n&PkgId =pkg-xxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96773935-0adc-4a24-8bf7-613510b17a45\",\n        \"Result\": true\n    }\n}",
-        "title": "部署Serverless应用"
       }
     ],
     "DescribeApiDetail": [
@@ -902,22 +886,6 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeRepository\r\n&RepositoryId=application-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"66e97c87-16d0-4936-b639-fab2c06ab238\",\n        \"Result\": {\n            \"RepositoryId\": \"application-xxxxxxxx\",\n            \"RepositoryName\": \"test001\",\n            \"RepositoryType\": \"private\",\n            \"RepositoryDesc\": \"\",\n            \"IsUsed\": false,\n            \"CreateTime\": \"2020-05-26 10:52:20\",\n            \"BucketName\": \"apple\",\n            \"BucketRegion\": \"cq\",\n            \"Directory\": \"\"\n        }\n    }\n}",
         "title": "获取仓库信息"
-      }
-    ],
-    "DescribeServerlessGroup": [
-      {
-        "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeServerlessGroup\r\n&GroupId=group-jy9jxpkv\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8201d29-c559-4906-96d9-546c4b5fbcf4\",\n        \"Result\": {\n            \"GroupName\": \"wzz-node-8\",\n            \"Status\": \"Running\",\n            \"ApplicationName\": \"wzz-node-8\",\n            \"ClusterId\": \"cluster-5yrw3koa\",\n            \"Memory\": \"1Gi\",\n            \"CreateTime\": \"2020-01-31 21:16:17.0\",\n            \"PkgName\": \"code2.zip\",\n            \"GroupId\": \"group-jy9jxpkv\",\n            \"NamespaceName\": \"wzz_default\",\n            \"InstanceCount\": 1,\n            \"PkgVersion\": \"20200131212742\",\n            \"ClusterName\": \"wzz\",\n            \"NamespaceId\": \"namespace-qv35e69y\",\n            \"ApplicationId\": \"application-6ym9kjba\",\n            \"PkgId\": \"pkg-76578126\",\n            \"InstanceRequest\": 1,\n            \"StartupParameters\": \"\"\n        }\n    }\n}",
-        "title": "查询部署组明细"
-      }
-    ],
-    "DescribeServerlessGroups": [
-      {
-        "document": "查询Serverless部署组列表",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeServerlessGroups\n&ApplicationId=application-6ym9kjba\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63871c25-31d0-40dd-b65e-5a95a57ed461\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"GroupId\": \"group-nalmm3wy\",\n                    \"GroupName\": \"group12345\",\n                    \"ApplicationId\": \"application-6ym9kjba\",\n                    \"ApplicationName\": \"wzz-node-8\",\n                    \"ClusterId\": \"cluster-6ymj295y\",\n                    \"ClusterName\": \"serverless_cluster\",\n                    \"NamespaceId\": \"namespace-evj92lly\",\n                    \"NamespaceName\": \"serverless_cluster_default\",\n                    \"PkgId\": \"pkg-a7d4f954\"\n                }\n            ]\n        }\n    }\n}",
-        "title": "查询Serverless部署组列表"
       }
     ],
     "DescribeSimpleApplications": [

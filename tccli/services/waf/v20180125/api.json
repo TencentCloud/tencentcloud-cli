@@ -54,6 +54,12 @@
       "name": "删除访问日志下载记录",
       "output": "DeleteDownloadRecordResponse"
     },
+    "DeleteGlobalWhiteRule": {
+      "document": "供内部运营系统调用，删除Tiga规则引擎全局白名单。",
+      "input": "DeleteGlobalWhiteRuleRequest",
+      "name": "删除规则引擎全局白名单",
+      "output": "DeleteGlobalWhiteRuleResponse"
+    },
     "DeleteIpAccessControl": {
       "document": "Waf IP黑白名单Delete接口",
       "input": "DeleteIpAccessControlRequest",
@@ -65,6 +71,12 @@
       "input": "DeleteSessionRequest",
       "name": "删除CC攻击的session设置",
       "output": "DeleteSessionResponse"
+    },
+    "DeleteTsRegion": {
+      "document": "删除ts接入区域",
+      "input": "DeleteTsRegionRequest",
+      "name": "删除ts接入区域",
+      "output": "DeleteTsRegionResponse"
     },
     "DeleteTsResource": {
       "document": "删除自研引擎服务资源",
@@ -138,6 +150,24 @@
       "name": "运营后台：获取特征规则更新动态",
       "output": "DescribeOpRuleUpdateLogResponse"
     },
+    "DescribeOpSignatureRule": {
+      "document": "运营后台接口，获取全量特征规则列表",
+      "input": "DescribeOpSignatureRuleRequest",
+      "name": "运营后台接口，获取全量特征规则列表",
+      "output": "DescribeOpSignatureRuleResponse"
+    },
+    "DescribeOpUserSignaturePolicy": {
+      "document": "运营后台接口：获取规则状态",
+      "input": "DescribeOpUserSignaturePolicyRequest",
+      "name": "运营后台接口：获取规则状态",
+      "output": "DescribeOpUserSignaturePolicyResponse"
+    },
+    "DescribeTsRegion": {
+      "document": "获取ts接入区域",
+      "input": "DescribeTsRegionRequest",
+      "name": "获取ts接入区域",
+      "output": "DescribeTsRegionResponse"
+    },
     "DescribeTsResource": {
       "document": "供运营后台获取自研引擎服务资源列表",
       "input": "DescribeTsResourceRequest",
@@ -168,6 +198,18 @@
       "name": "描述WAF威胁情报封禁模块配置详情",
       "output": "DescribeWafThreatenIntelligenceResponse"
     },
+    "EditOpRuleUpdateLog": {
+      "document": "运营后台接口：编辑规则更新日志",
+      "input": "EditOpRuleUpdateLogRequest",
+      "name": "运营后台接口：编辑规则更新日志",
+      "output": "EditOpRuleUpdateLogResponse"
+    },
+    "EditOpRuleUpdateLogStatus": {
+      "document": "运营后台接口：编辑规则更新日志的发布状态",
+      "input": "EditOpRuleUpdateLogStatusRequest",
+      "name": "运营后台接口：编辑规则更新日志的发布状态",
+      "output": "EditOpRuleUpdateLogStatusResponse"
+    },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限",
       "input": "ModifyAccessPeriodRequest",
@@ -185,6 +227,18 @@
       "input": "ModifyDomainWhiteRuleRequest",
       "name": "更改某一条规则",
       "output": "ModifyDomainWhiteRuleResponse"
+    },
+    "ModifyOpSignatureRule": {
+      "document": "运营后台接口：修改规则",
+      "input": "ModifyOpSignatureRuleRequest",
+      "name": "运营后台接口：修改规则",
+      "output": "ModifyOpSignatureRuleResponse"
+    },
+    "ModifyTsRegion": {
+      "document": "修改ts接入区域",
+      "input": "ModifyTsRegionRequest",
+      "name": "修改ts接入区域",
+      "output": "ModifyTsRegionResponse"
     },
     "ModifyTsResource": {
       "document": "修改Tiga资源列表，如果id=0则添加，>0则修改",
@@ -1405,6 +1459,51 @@
       ],
       "type": "object"
     },
+    "DeleteGlobalWhiteRuleRequest": {
+      "document": "DeleteGlobalWhiteRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则序号",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "GWL1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalWhiteRuleResponse": {
+      "document": "DeleteGlobalWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIpAccessControlRequest": {
       "document": "DeleteIpAccessControl请求参数结构体",
       "members": [
@@ -1504,6 +1603,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTsRegionRequest": {
+      "document": "DeleteTsRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一级区域",
+          "example": "“bj”",
+          "member": "string",
+          "name": "MainRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二级区域",
+          "example": "\"bj-0\"",
+          "member": "string",
+          "name": "SubRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTsRegionResponse": {
+      "document": "DeleteTsRegion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2553,6 +2688,249 @@
       ],
       "type": "object"
     },
+    "DescribeOpSignatureRuleRequest": {
+      "document": "DescribeOpSignatureRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "筛选条件，支持 MainClassID，SubClassID , Status, CveID, ID, Status; Status为必填字段 status=all，查询全部，status=0/1/2，查询对应status的规则",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持 signature_id, modify_time",
+          "example": "signature_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式，asc/desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cn/en",
+          "example": "cn",
+          "member": "string",
+          "name": "OpLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpSignatureRuleResponse": {
+      "document": "DescribeOpSignatureRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则列表",
+          "example": "无",
+          "member": "UserSignatureRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpUserSignaturePolicyRequest": {
+      "document": "DescribeOpUserSignaturePolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，仅支持 level",
+          "example": "level",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选条件，支持 AppId，Domain",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpUserSignaturePolicyResponse": {
+      "document": "DescribeOpUserSignaturePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则列表",
+          "example": "无",
+          "member": "OpUserSignaturePolicy",
+          "name": "OpUserSigPolicy",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTsRegionRequest": {
+      "document": "DescribeTsRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移,大于0的整数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "容量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一级区域",
+          "example": "“bj”",
+          "member": "string",
+          "name": "MainRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二级区域",
+          "example": "\"bj-0\"",
+          "member": "string",
+          "name": "SubRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTsRegionResponse": {
+      "document": "DescribeTsRegion返回参数结构体",
+      "members": [
+        {
+          "document": "区域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "RegionItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "区域列表总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTsResourceRequest": {
       "document": "DescribeTsResource请求参数结构体",
       "members": [
@@ -2757,6 +3135,87 @@
       "document": "域名的详细信息",
       "members": [],
       "usage": "both"
+    },
+    "EditOpRuleUpdateLogRequest": {
+      "document": "EditOpRuleUpdateLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要编辑的日志id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "详细信息",
+          "example": "test",
+          "member": "string",
+          "name": "Detail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "version",
+          "example": "v1",
+          "member": "string",
+          "name": "LogVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditOpRuleUpdateLogResponse": {
+      "document": "EditOpRuleUpdateLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditOpRuleUpdateLogStatusRequest": {
+      "document": "EditOpRuleUpdateLogStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要编辑的日志id",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "UpdateLogIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EditOpRuleUpdateLogStatusResponse": {
+      "document": "EditOpRuleUpdateLogStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportAccessInfo": {
       "document": "DescribeAccessExports接口",
@@ -3253,6 +3712,78 @@
       ],
       "type": "object"
     },
+    "ModifyOpSignatureRuleRequest": {
+      "document": "ModifyOpSignatureRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要修改的规则id",
+          "example": "[\"010000020\", \"020000001\"]",
+          "member": "string",
+          "name": "SignatureIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要修改的状态 只能为0/1/2三种状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOpSignatureRuleResponse": {
+      "document": "ModifyOpSignatureRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTsRegionRequest": {
+      "document": "ModifyTsRegion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一级区域",
+          "example": "“bj”",
+          "member": "string",
+          "name": "MainRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "二级区域",
+          "example": "\"bj-0\"",
+          "member": "string",
+          "name": "SubRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTsRegionResponse": {
+      "document": "ModifyTsRegion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTsResourceRequest": {
       "document": "ModifyTsResource请求参数结构体",
       "members": [
@@ -3472,6 +4003,62 @@
       ],
       "type": "object"
     },
+    "OpUserSignaturePolicy": {
+      "document": "用户防护规则",
+      "members": [
+        {
+          "default": "",
+          "document": "appid",
+          "example": "250021210",
+          "member": "uint64",
+          "name": "OpAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "OpDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护等级 300=标准 400=扩展",
+          "example": "300",
+          "member": "int64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "防护状态 0=关闭，1=开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-12-07T15:03:24+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PortItem": {
       "document": "防护域名端口配置信息",
       "members": [
@@ -3522,6 +4109,62 @@
         }
       ],
       "usage": "both"
+    },
+    "RegionItem": {
+      "document": "区域列表",
+      "members": [
+        {
+          "default": "",
+          "document": "一级区域",
+          "example": "\"bj\"",
+          "member": "string",
+          "name": "MainRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二级区域",
+          "example": "\"bj-0\"",
+          "member": "string",
+          "name": "SubRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "接入域名数",
+          "example": "0",
+          "member": "uint64",
+          "name": "DomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标号",
+          "example": "0",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResponseCode": {
       "document": "响应体的返回码",
@@ -4008,6 +4651,112 @@
         }
       ],
       "type": "object"
+    },
+    "UserSignatureRule": {
+      "document": "用户特征规则描述",
+      "members": [
+        {
+          "default": "",
+          "document": "特征ID",
+          "example": "010000001",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主类ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "MainClassID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子类ID",
+          "example": "000000000",
+          "member": "string",
+          "name": "SubClassID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CVE ID",
+          "example": "reference item1 <#BID-28277::http://www.securityfocus.com/bid/28",
+          "member": "string",
+          "name": "CveID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主类名字，根据Language字段输出中文/英文",
+          "example": "Cross Site Scripting",
+          "member": "string",
+          "name": "MainClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子类名字，根据Language字段输出中文/英文，若子类id为00000000，此字段为空",
+          "example": "Signatures for Database",
+          "member": "string",
+          "name": "SubClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "rule description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WafThreatenIntelligenceDetails": {
       "document": "Waf 威胁情报封禁模块配置详情",
