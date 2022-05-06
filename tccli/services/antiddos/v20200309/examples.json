@@ -536,6 +536,38 @@
         "title": "获取DDoS防护的水印防护配置列表"
       }
     ],
+    "DescribeOverviewAttackTrend": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeOverviewAttackTrend\n&Type=ddos\n&Dimension=attackcount\n&Period=86400\n&StartTime=2020-02-01 12:04:12\n&EndTime=2020-02-03 18:03:23\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Type\": \"ddos\",\n        \"StartTime\": \"2020-02-01 12:04:12\",\n        \"EndTime\": \"2020-02-03 18:03:23\",\n        \"Period\": 86400,\n        \"Data\": [\n            0,\n            0\n        ],\n        \"Count\": 2\n    }\n}",
+        "title": "拉取防护概览攻击趋势"
+      }
+    ],
+    "DescribeOverviewCCTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewCCTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取防护概览趋势图"
+      }
+    ],
+    "DescribeOverviewDDoSTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewDDoSTrend\n<公共请求参数>\n\n{\n    \"Business\": \"xx\",\n    \"Period\": 0,\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Id\": \"xx\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Count\": 1,\n        \"Data\": [\n            1234\n        ]\n    }\n}",
+        "title": "获取防护概览DDoS攻击流量带宽和攻击包速率数据"
+      }
+    ],
+    "DescribeOverviewIndex": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeOverviewIndex\n&StartTime=2020-02-01 12:04:12\n&EndTime=2020-02-03 18:03:23\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"AllIpCount\": 100,\n        \"AntiddosIpCount\": 10,\n        \"AttackIpCount\": 2,\n        \"BlockIpCount\": 1,\n        \"AntiddosDomainCount\": 10,\n        \"AttackDomainCount\": 2,\n        \"MaxAttackFlow\": 245,\n        \"NewAttackTime\": \"2021-05-15 21:43:15\",\n        \"NewAttackIp\": \"10.34.14.54\",\n        \"NewAttackType\": \"SYNFLOOD\"\n    }\n}",
+        "title": "拉取防护概览指标"
+      }
+    ],
     "DisassociateDDoSEipAddress": [
       {
         "document": "",
