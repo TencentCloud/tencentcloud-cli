@@ -384,6 +384,12 @@
       "name": "云支付-获取机构账单文件下载地址",
       "output": "GetBillDownloadUrlResponse"
     },
+    "GetDistributeBillDownloadUrl": {
+      "document": "调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：\n商户号,订单号,支付订单号,分账订单总金额,分账详情（通过|分割每笔明细：商户号1#分账金额1|商户号2#分账金额2）,交易手续费承担方商户号,交易手续费,发起时间,分账状态,结算日期,非交易主体分账金额,商户退款订单号,商户分账单号",
+      "input": "GetDistributeBillDownloadUrlRequest",
+      "name": "云支付-获取机构分账账单文件下载地址",
+      "output": "GetDistributeBillDownloadUrlResponse"
+    },
     "MigrateOrderRefund": {
       "document": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。",
       "input": "MigrateOrderRefundRequest",
@@ -14048,6 +14054,78 @@
     },
     "GetBillDownloadUrlResponse": {
       "document": "GetBillDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "业务系统返回码",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "业务系统返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "账单文件下载地址响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillDownloadUrlResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDistributeBillDownloadUrlRequest": {
+      "document": "GetDistributeBillDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收单系统分配的开放ID",
+          "example": "OpenId123",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收单系统分配的密钥",
+          "example": "OpenKey123",
+          "member": "string",
+          "name": "OpenKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分账日期（YYYYMMDD，今天传昨天的日期）",
+          "example": "20220322",
+          "member": "string",
+          "name": "Day",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDistributeBillDownloadUrlResponse": {
+      "document": "GetDistributeBillDownloadUrl返回参数结构体",
       "members": [
         {
           "document": "业务系统返回码",

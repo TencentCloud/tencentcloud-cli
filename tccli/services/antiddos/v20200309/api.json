@@ -402,6 +402,30 @@
       "name": "获取DDoS防护的水印防护配置列表",
       "output": "DescribeListWaterPrintConfigResponse"
     },
+    "DescribeOverviewAttackTrend": {
+      "document": "拉取防护概览攻击趋势",
+      "input": "DescribeOverviewAttackTrendRequest",
+      "name": "拉取防护概览攻击趋势",
+      "output": "DescribeOverviewAttackTrendResponse"
+    },
+    "DescribeOverviewCCTrend": {
+      "document": "获取防护概览总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
+      "input": "DescribeOverviewCCTrendRequest",
+      "name": "获取防护概览趋势图",
+      "output": "DescribeOverviewCCTrendResponse"
+    },
+    "DescribeOverviewDDoSTrend": {
+      "document": "获取防护概览DDoS攻击流量带宽和攻击包速率数据",
+      "input": "DescribeOverviewDDoSTrendRequest",
+      "name": "获取防护概览DDoS攻击流量带宽和攻击包速率数据",
+      "output": "DescribeOverviewDDoSTrendResponse"
+    },
+    "DescribeOverviewIndex": {
+      "document": "拉取防护概览指标",
+      "input": "DescribeOverviewIndexRequest",
+      "name": "拉取防护概览指标",
+      "output": "DescribeOverviewIndexResponse"
+    },
     "DisassociateDDoSEipAddress": {
       "document": "本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。",
       "input": "DisassociateDDoSEipAddressRequest",
@@ -6354,6 +6378,447 @@
           "name": "ConfigList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewAttackTrendRequest": {
+      "document": "DescribeOverviewAttackTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击类型，取值ddos， cc",
+          "example": "ddos",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "纬度，当前仅支持attackcount",
+          "example": "attackcount",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "周期，当前仅支持86400",
+          "example": "86400",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2021-03-17 12:32:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2021-03-17 12:32:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewAttackTrendResponse": {
+      "document": "DescribeOverviewAttackTrend返回参数结构体",
+      "members": [
+        {
+          "document": "攻击类型",
+          "example": "ddos",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "起始时间",
+          "example": "2021-05-24 14:23:54",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "结束时间",
+          "example": "2021-05-24 14:23:54",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "周期",
+          "example": "86400",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "每个周期点的攻击次数",
+          "example": "[0, 0, 0, 0, 0, 0]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "包含的周期点数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewCCTrendRequest": {
+      "document": "DescribeOverviewCCTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
+          "example": "inqps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源的IP",
+          "example": "无",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewCCTrendResponse": {
+      "document": "DescribeOverviewCCTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewDDoSTrendRequest": {
+      "document": "DescribeOverviewDDoSTrend请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示高防包；basic表示DDoS基础防护）",
+          "example": "bgp",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
+          "example": "3600",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "统计开始时间",
+          "example": "2018-08-2715:05:10",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计结束时间",
+          "example": "2018-08-2716:05:10",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
+          "example": "bps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源实例的IP列表",
+          "example": "无",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源实例ID",
+          "example": "bgp-00000010",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewDDoSTrendResponse": {
+      "document": "DescribeOverviewDDoSTrend返回参数结构体",
+      "members": [
+        {
+          "document": "值个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "值数组，攻击流量带宽单位为Mbps，包速率单位为pps",
+          "example": "[1234]",
+          "member": "uint64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewIndexRequest": {
+      "document": "DescribeOverviewIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "拉取指标起始时间",
+          "example": "2021-03-17 12:32:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拉取指标结束时间",
+          "example": "2021-03-17 12:32:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewIndexResponse": {
+      "document": "DescribeOverviewIndex返回参数结构体",
+      "members": [
+        {
+          "document": "IP总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "AllIpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高防IP总数（包含高防包+高防IP）",
+          "example": "10",
+          "member": "uint64",
+          "name": "AntiddosIpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击IP总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "AttackIpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "封堵IP总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "BlockIpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "高防域名总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "AntiddosDomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击域名总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "AttackDomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "攻击流量峰值",
+          "example": "245",
+          "member": "uint64",
+          "name": "MaxAttackFlow",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前最近一条攻击中的起始时间",
+          "example": "2021-05-15 21:43:15",
+          "member": "string",
+          "name": "NewAttackTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前最近一条攻击中的IP",
+          "example": "10.34.14.54",
+          "member": "string",
+          "name": "NewAttackIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前最近一条攻击中的攻击类型",
+          "example": "SYNFLOOD",
+          "member": "string",
+          "name": "NewAttackType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

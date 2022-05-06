@@ -4285,7 +4285,8 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
+          "example": "1606207080000",
           "member": "uint64",
           "name": "MinTime",
           "required": true,
@@ -4293,7 +4294,8 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
+          "example": "1606208039999",
           "member": "uint64",
           "name": "MaxTime",
           "required": true,
@@ -4302,6 +4304,7 @@
         {
           "default": "",
           "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key比如：RequestID、ProductID、DeviceName等。\n一个典型的查询示例：ProductID:ABCDE12345 DeviceName:test publish",
+          "example": "productid:xxxxxxxxxx",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -4310,6 +4313,7 @@
         {
           "default": "",
           "document": "日志检索上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -4318,6 +4322,7 @@
         {
           "default": "",
           "document": "日志最大条数",
+          "example": "10",
           "member": "int64",
           "name": "MaxNum",
           "required": false,
@@ -4331,22 +4336,28 @@
       "members": [
         {
           "document": "日志上下文",
+          "example": "ic0cxTVFidWRTTUZmcERXMVZR",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context",
+          "example": "true",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "日志列表",
+          "example": "无",
           "member": "PayloadLogItem",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4364,7 +4375,8 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
+          "example": "1530244265000",
           "member": "uint64",
           "name": "MinTime",
           "required": true,
@@ -4372,7 +4384,8 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
+          "example": "1530258665000",
           "member": "uint64",
           "name": "MaxTime",
           "required": true,
@@ -4381,6 +4394,7 @@
         {
           "default": "",
           "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key包括：requestid、productid、devicename、scene、content。\n一个典型的查询示例：productid:ABCDE12345 devicename:test scene:SHADOW content:Device%20connect publish",
+          "example": "abc",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -4389,6 +4403,7 @@
         {
           "default": "",
           "document": "日志检索上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -4397,6 +4412,7 @@
         {
           "default": "",
           "document": "查询条数",
+          "example": "10",
           "member": "int64",
           "name": "MaxNum",
           "required": false,
@@ -4410,29 +4426,37 @@
       "members": [
         {
           "document": "日志上下文",
+          "example": "无",
           "member": "string",
           "name": "Context",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context",
+          "example": "true",
           "member": "bool",
           "name": "Listover",
+          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "document": "日志列表",
+          "example": "无",
           "member": "CLSLogItem",
           "name": "Results",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "日志总条数",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

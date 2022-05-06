@@ -962,10 +962,10 @@
     ],
     "DescribeProtectNetList": [
       {
-        "document": "专家服务-旗舰护网列表",
+        "document": "专家服务-旗舰重保列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectNetList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TaskId\": \"cve2021-1616989795566547835\",\n                \"ProtectDays\": 1,\n                \"Status\": 1,\n                \"StartTime\": \"2021-03-29 12:49:55\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            },\n            {\n                \"TaskId\": \"cve2021-1617009909259812569\",\n                \"ProtectDays\": 1,\n                \"Status\": 0,\n                \"StartTime\": \"--\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"\"\n            }\n        ],\n        \"RequestId\": \"123456\",\n        \"TotalCount\": 2\n    }\n}",
-        "title": "专家服务-旗舰护网列表"
+        "title": "专家服务-旗舰重保列表"
       }
     ],
     "DescribeReverseShellEvents": [

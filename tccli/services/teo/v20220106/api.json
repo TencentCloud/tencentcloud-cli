@@ -11,6 +11,12 @@
       "input": "DescribePurgeTasksRequest",
       "name": "查询清除缓存历史记录",
       "output": "DescribePurgeTasksResponse"
+    },
+    "DescribeZones": {
+      "document": "用户查询用户站点信息列表，支持分页",
+      "input": "DescribeZonesRequest",
+      "name": "查询用户站点信息列表",
+      "output": "DescribeZonesResponse"
     }
   },
   "metadata": {
@@ -218,6 +224,69 @@
       ],
       "type": "object"
     },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页参数，页偏移",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数，每页返回的站点个数",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件过滤器，复杂类型",
+          "example": "无",
+          "member": "ZoneFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的站点数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点详细信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Zone",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FailReason": {
       "document": "失败原因",
       "members": [
@@ -309,6 +378,138 @@
         }
       ],
       "usage": "out"
+    },
+    "Zone": {
+      "document": "站点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点当前使用的 NS 列表",
+          "example": "test1.com,test2.com",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯云分配的 NS 列表",
+          "example": "无",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点状态\n- active：NS 已切换\n- pending：NS 未切换\n- moved：NS 已切走\n- deactivated：被封禁",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点接入方式\n- full：NS 接入\n- partial：CNAME 接入",
+          "example": "full",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点是否关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点修改时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneFilter": {
+      "document": "站点查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名，支持的列表如下：\n- name: 站点名。\n- status: 站点状态",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "test.com",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1",
+          "example": "false",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

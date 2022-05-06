@@ -721,9 +721,9 @@
       "output": "DescribeProtectDirRelatedServerResponse"
     },
     "DescribeProtectNetList": {
-      "document": "专家服务-旗舰护网列表",
+      "document": "专家服务-旗舰重保列表",
       "input": "DescribeProtectNetListRequest",
-      "name": "旗舰护网列表",
+      "name": "旗舰重保列表",
       "output": "DescribeProtectNetListResponse"
     },
     "DescribeReverseShellEvents": {
@@ -17788,7 +17788,7 @@
         },
         {
           "default": "",
-          "document": "订单类型 1应急 2 旗舰护网 3 安全管家",
+          "document": "订单类型 1应急 2 旗舰重保 3 安全管家",
           "example": "1",
           "member": "uint64",
           "name": "InquireType",

@@ -21,6 +21,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"purge_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
         "title": "查询清除缓存历史记录"
       }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"Status\": \"xx\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Name\": \"xx\",\n                \"NameServers\": [\n                    \"xx\"\n                ],\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"OriginalNameServers\": [\n                    \"xx\"\n                ],\n                \"Paused\": true,\n                \"Type\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户站点信息列表"
+      }
     ]
   },
   "version": "1.0"
