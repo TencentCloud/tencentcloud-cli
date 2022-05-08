@@ -10878,6 +10878,78 @@
           "value_allowed_null": false
         },
         {
+          "document": "网络类型.PublicNetwork为公网类型,VPCNetwork为VPC网络",
+          "example": "PublicNetwork",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "API Server地址",
+          "example": "https://10.100.0.123:60002",
+          "member": "string",
+          "name": "ApiServerAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点数",
+          "example": "4",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "命名空间数",
+          "example": "4",
+          "member": "uint64",
+          "name": "NamespaceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "工作负载数",
+          "example": "4",
+          "member": "uint64",
+          "name": "WorkloadCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Pod数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "PodCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Service数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "ServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Ingress数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "IngressCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

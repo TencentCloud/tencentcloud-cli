@@ -14487,6 +14487,7 @@
         {
           "default": "",
           "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。av1 编码容器目前只支持 mp4 。",
+          "example": "libx264",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -14496,6 +14497,7 @@
         {
           "default": "",
           "document": "视频帧率，取值范围：[0, 100]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。",
+          "example": "0",
           "member": "uint64",
           "name": "Fps",
           "required": false,
@@ -14505,6 +14507,7 @@
         {
           "default": "",
           "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "0",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
@@ -14514,6 +14517,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -14523,6 +14527,7 @@
         {
           "default": "",
           "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -14532,6 +14537,7 @@
         {
           "default": "",
           "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。",
+          "example": "0",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -14541,6 +14547,7 @@
         {
           "default": "",
           "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。",
+          "example": "0",
           "member": "uint64",
           "name": "Gop",
           "required": false,
@@ -14550,6 +14557,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>",
+          "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -14559,8 +14567,19 @@
         {
           "default": "",
           "document": "视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。\n如果没有特殊需求，不建议指定该参数。",
+          "example": "0",
           "member": "uint64",
           "name": "Vcrf",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容自适应编码。可选值：\n<li>0：不开启</li>\n<li>1：开启</li>\n默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ContentAdaptStream",
           "required": false,
           "type": "int",
           "value_allowed_null": false

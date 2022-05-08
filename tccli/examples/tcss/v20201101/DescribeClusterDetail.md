@@ -1,4 +1,4 @@
-**Example 1: 查询单个集群的详细信息示例**
+**Example 1: 查询集群详情**
 
 
 
@@ -6,30 +6,38 @@ Input:
 
 ```
 tccli tcss DescribeClusterDetail --cli-unfold-argument  \
-    --ClusterId cls-0zmsjvko
+    --ClusterId b6ebf065d08563396da66bf0950cba8c
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8a360c7e-22d3-421d-8cf9-f5f6af91a8d8",
-        "ClusterId": "cls-0zmsjvko",
-        "ClusterName": "wk独立集群",
-        "ScanTaskProgress": 100,
-        "ClusterVersion": "1.18.4",
-        "ContainerRuntime": "docker",
-        "ClusterNodeNum": 2,
+        "RequestId": "6c4a3216-1849-48d1-b02c-bb83801044b6",
+        "ClusterId": "b6ebf065d08563396da66bf0950cba8c",
+        "ClusterName": "wk-usercluster-test",
+        "ScanTaskProgress": 0,
+        "ClusterVersion": "v1.20.6-tke.12",
+        "ContainerRuntime": "docker://19.3.9",
+        "ClusterNodeNum": 4,
         "ClusterStatus": "Running",
         "DefenderStatus": "Defender_Normal",
-        "ClusterType": "INDEPENDENT_CLUSTER",
+        "ClusterType": "Kubernetes",
         "Region": "ap-guangzhou",
-        "SeriousRiskCount": 1,
-        "HighRiskCount": 5,
-        "MiddleRiskCount": 8,
-        "HintRiskCount": 4,
-        "CheckStatus": "HasRisk",
-        "TaskCreateTime": "2021-11-16 10:13:42"
+        "SeriousRiskCount": 0,
+        "HighRiskCount": 0,
+        "MiddleRiskCount": 0,
+        "HintRiskCount": 0,
+        "CheckStatus": "Task_Running",
+        "TaskCreateTime": "2022-05-06 11:03:19",
+        "NetworkType": "PublicNetwork",
+        "ApiServerAddress": "https://xxxx:60002",
+        "NodeCount": 4,
+        "NamespaceCount": 0,
+        "WorkloadCount": 0,
+        "PodCount": 0,
+        "ServiceCount": 0,
+        "IngressCount": 0
     }
 }
 ```

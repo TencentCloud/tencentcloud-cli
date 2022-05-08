@@ -1,10 +1,22 @@
 {
   "actions": {
+    "CreatePrefetchTask": {
+      "document": "创建预热任务",
+      "input": "CreatePrefetchTaskRequest",
+      "name": "创建预热任务",
+      "output": "CreatePrefetchTaskResponse"
+    },
     "CreatePurgeTask": {
       "document": "创建清除缓存任务",
       "input": "CreatePurgeTaskRequest",
       "name": "创建清除缓存任务",
       "output": "CreatePurgeTaskResponse"
+    },
+    "DescribePrefetchTasks": {
+      "document": "查询预热任务状态",
+      "input": "DescribePrefetchTasksRequest",
+      "name": "查询预热任务状态",
+      "output": "DescribePrefetchTasksResponse"
     },
     "DescribePurgeTasks": {
       "document": "查询清除缓存历史记录",
@@ -26,6 +38,78 @@
     "serviceShortName": "teo"
   },
   "objects": {
+    "CreatePrefetchTaskRequest": {
+      "document": "CreatePrefetchTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Zone ID",
+          "example": "8afj24jzg9",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "预热的资源列表",
+          "example": "[\"http://www.qq.com/1.txt\"]",
+          "member": "string",
+          "name": "Targets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否对url进行encode",
+          "example": "true",
+          "member": "bool",
+          "name": "EncodeUrl",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "附带的http头部信息",
+          "example": "无",
+          "member": "Header",
+          "name": "Headers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrefetchTaskResponse": {
+      "document": "CreatePrefetchTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "jkqj4hahfkaf",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "失败的任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "FailReason",
+          "name": "FailedList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePurgeTaskRequest": {
       "document": "CreatePurgeTask请求参数结构体",
       "members": [
@@ -88,6 +172,123 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrefetchTasksRequest": {
+      "document": "DescribePrefetchTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "ajjvjaf924",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始时间",
+          "example": "2022-02-09T02:35:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间",
+          "example": "2022-02-09T02:35:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询起始偏移量",
+          "example": "7",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询最大返回的结果条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的状态\n允许的值为：processing、success、failed、timeout、invalid",
+          "example": "processing",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "zone id",
+          "example": "jalfj2n42",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的域名列表",
+          "example": "[\"www.qq.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询的资源",
+          "example": "http://www.qq.com/1.txt",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrefetchTasksResponse": {
+      "document": "DescribePrefetchTasks返回参数结构体",
+      "members": [
+        {
+          "document": "该查询条件总共条目数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务结果列表",
+          "example": "无",
+          "member": "Task",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -312,6 +513,32 @@
         }
       ],
       "usage": "out"
+    },
+    "Header": {
+      "document": "刷新预热附带的头部信息",
+      "members": [
+        {
+          "default": "",
+          "document": "HTTP头部",
+          "example": "User-Agent",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTP头部值",
+          "example": "TencentEdgeOne",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Task": {
       "document": "内容管理任务结果",

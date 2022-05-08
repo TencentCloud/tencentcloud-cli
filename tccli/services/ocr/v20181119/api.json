@@ -327,7 +327,7 @@
     "SmartStructuralOCR": {
       "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。",
       "input": "SmartStructuralOCRRequest",
-      "name": "智能结构化识别(免费公测版)",
+      "name": "智能结构化识别",
       "output": "SmartStructuralOCRResponse"
     },
     "TableOCR": {
@@ -3599,6 +3599,7 @@
         {
           "default": "",
           "document": "左上角x",
+          "example": "537",
           "member": "int64",
           "name": "X",
           "required": true,
@@ -3608,6 +3609,7 @@
         {
           "default": "",
           "document": "左上角y",
+          "example": "335",
           "member": "int64",
           "name": "Y",
           "required": true,
@@ -3617,6 +3619,7 @@
         {
           "default": "",
           "document": "宽width",
+          "example": "169",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -3626,6 +3629,7 @@
         {
           "default": "",
           "document": "高height",
+          "example": "63",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -6520,7 +6524,7 @@
         },
         {
           "default": "",
-          "document": "需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
+          "document": "自定义结构化功能需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
           "example": "[\"key1\",\"key2\"]",
           "member": "string",
           "name": "ItemNames",

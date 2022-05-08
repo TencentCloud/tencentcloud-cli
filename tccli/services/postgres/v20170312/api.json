@@ -1077,7 +1077,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。",
+          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。",
           "example": "12.4",
           "member": "string",
           "name": "DBVersion",
@@ -1185,7 +1185,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。",
+          "document": "PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
@@ -1194,7 +1194,7 @@
         },
         {
           "default": "",
-          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。",
+          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。",
           "example": "v12.4_r1.0",
           "member": "string",
           "name": "DBKernelVersion",
@@ -5039,7 +5039,7 @@
         },
         {
           "default": "",
-          "document": "切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "document": "切换时间。默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换",
           "example": "1",
           "member": "int64",
           "name": "SwitchTag",
@@ -5048,7 +5048,7 @@
         },
         {
           "default": "",
-          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。",
+          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:00:00",
           "member": "string",
           "name": "SwitchStartTime",
@@ -5057,7 +5057,7 @@
         },
         {
           "default": "",
-          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。",
+          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:30:00",
           "member": "string",
           "name": "SwitchEndTime",
@@ -5262,7 +5262,7 @@
         },
         {
           "default": "",
-          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
+          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。",
           "example": "1",
           "member": "uint64",
           "name": "SwitchTag",
@@ -5271,7 +5271,7 @@
         },
         {
           "default": "",
-          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。",
+          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:00:00",
           "member": "string",
           "name": "SwitchStartTime",
@@ -5280,7 +5280,7 @@
         },
         {
           "default": "",
-          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。",
+          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。",
           "example": "12:30:00",
           "member": "string",
           "name": "SwitchEndTime",

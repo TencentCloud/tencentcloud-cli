@@ -711,9 +711,9 @@
     "DescribeClusterDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0zmsjvko\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a360c7e-22d3-421d-8cf9-f5f6af91a8d8\",\n        \"ClusterId\": \"cls-0zmsjvko\",\n        \"ClusterName\": \"wk独立集群\",\n        \"ScanTaskProgress\": 100,\n        \"ClusterVersion\": \"1.18.4\",\n        \"ContainerRuntime\": \"docker\",\n        \"ClusterNodeNum\": 2,\n        \"ClusterStatus\": \"Running\",\n        \"DefenderStatus\": \"Defender_Normal\",\n        \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n        \"Region\": \"ap-guangzhou\",\n        \"SeriousRiskCount\": 1,\n        \"HighRiskCount\": 5,\n        \"MiddleRiskCount\": 8,\n        \"HintRiskCount\": 4,\n        \"CheckStatus\": \"HasRisk\",\n        \"TaskCreateTime\": \"2021-11-16 10:13:42\"\n    }\n}",
-        "title": "查询单个集群的详细信息示例"
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"b6ebf065d08563396da66bf0950cba8c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c4a3216-1849-48d1-b02c-bb83801044b6\",\n        \"ClusterId\": \"b6ebf065d08563396da66bf0950cba8c\",\n        \"ClusterName\": \"wk-usercluster-test\",\n        \"ScanTaskProgress\": 0,\n        \"ClusterVersion\": \"v1.20.6-tke.12\",\n        \"ContainerRuntime\": \"docker://19.3.9\",\n        \"ClusterNodeNum\": 4,\n        \"ClusterStatus\": \"Running\",\n        \"DefenderStatus\": \"Defender_Normal\",\n        \"ClusterType\": \"Kubernetes\",\n        \"Region\": \"ap-guangzhou\",\n        \"SeriousRiskCount\": 0,\n        \"HighRiskCount\": 0,\n        \"MiddleRiskCount\": 0,\n        \"HintRiskCount\": 0,\n        \"CheckStatus\": \"Task_Running\",\n        \"TaskCreateTime\": \"2022-05-06 11:03:19\",\n        \"NetworkType\": \"PublicNetwork\",\n        \"ApiServerAddress\": \"https://xxxx:60002\",\n        \"NodeCount\": 4,\n        \"NamespaceCount\": 0,\n        \"WorkloadCount\": 0,\n        \"PodCount\": 0,\n        \"ServiceCount\": 0,\n        \"IngressCount\": 0\n    }\n}",
+        "title": "查询集群详情"
       }
     ],
     "DescribeClusterSummary": [

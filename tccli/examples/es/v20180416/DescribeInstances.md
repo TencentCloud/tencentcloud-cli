@@ -93,6 +93,8 @@ Output:
                 "ColdMemSize": 1,
                 "UpdateTime": "xx",
                 "EnableHotWarmMode": true,
+                "EsPrivateUrl": "xx",
+                "EsPrivateDomain": "xx",
                 "InstanceId": "xx",
                 "FrozenNodeType": "xx",
                 "CpuNum": 1,
@@ -337,6 +339,8 @@ Output:
                 "KibanaUrl": "xx",
                 "CreateTime": "xx",
                 "EnableHotWarmMode": true,
+                "EsPrivateUrl": "xx",
+                "EsPrivateDomain": "xx",
                 "KibanaConfig": "xx",
                 "TagList": [
                     {

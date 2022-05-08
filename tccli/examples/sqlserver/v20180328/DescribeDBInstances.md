@@ -65,7 +65,20 @@ Output:
                 "VpcId": 206194,
                 "Vport": 1433,
                 "Zone": "ap-guangzhou-2",
-                "ZoneId": 100002
+                "ZoneId": 100002,
+                "BackupSaveDays": 7,
+                "BackupCycleType": "weekly",
+                "InstanceNote": "test",
+                "InstanceType": "HA",
+                "BackupCycle": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
             }
         ],
         "RequestId": "de641788-0565-4617-a7f4-639de128772b",

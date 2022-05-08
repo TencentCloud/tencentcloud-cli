@@ -4244,7 +4244,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-ins-jhi2gdi0",
+          "example": "cynosdbmysql-ins-jhi2gdi0",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4252,7 +4252,7 @@
         },
         {
           "default": "",
-          "document": "修改参数列表",
+          "document": "要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值",
           "example": "无",
           "member": "ParamItem",
           "name": "ParamList",

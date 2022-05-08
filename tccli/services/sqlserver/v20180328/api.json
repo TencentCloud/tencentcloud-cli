@@ -990,6 +990,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份文件形式（pkg-打包备份文件，single-单库备份文件）",
+          "example": "pkg",
+          "member": "string",
+          "name": "BackupFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2679,6 +2689,56 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例备份信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceNote",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备份周期",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupCycle",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份周期类型，[daily、weekly、monthly]",
+          "example": "daily",
+          "member": "string",
+          "name": "BackupCycleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据(日志)备份保留时间",
+          "example": "7",
+          "member": "int64",
+          "name": "BackupSaveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务",
+          "example": "HA",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3693,6 +3753,15 @@
           "name": "DatabaseName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4017,6 +4086,24 @@
           "name": "Group",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备份类型，1-数据备份，2-日志备份，默认值为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件",
+          "example": "pkg",
+          "member": "string",
+          "name": "BackupFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4264,6 +4351,15 @@
           "name": "UidSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务",
+          "example": "HA",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5506,6 +5602,7 @@
         {
           "default": "",
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5519,8 +5616,10 @@
       "members": [
         {
           "document": "只读组列表",
+          "example": "无",
           "member": "ReadOnlyGroup",
           "name": "ReadOnlyGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7055,7 +7154,7 @@
         },
         {
           "default": "",
-          "document": "备份类型，当前只支持按天备份，取值为daily",
+          "document": "备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily",
           "example": "daily",
           "member": "string",
           "name": "BackupType",
@@ -7088,6 +7187,24 @@
           "name": "BackupModel",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）",
+          "example": "[1,2,3,4,5,6,7]",
+          "member": "uint64",
+          "name": "BackupCycle",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据(日志)备份保留时间，取值[3-1830]天，默认7天",
+          "example": "7",
+          "member": "uint64",
+          "name": "BackupSaveDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -4580,10 +4580,20 @@
         },
         {
           "default": "",
-          "document": "命名空间配额使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间并发使用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "TotalAllocatedConcurrencyMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间预置使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalAllocatedProvisionedMem",
           "required": true,
           "type": "int",
           "value_allowed_null": true

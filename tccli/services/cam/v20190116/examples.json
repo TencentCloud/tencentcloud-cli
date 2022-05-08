@@ -56,6 +56,14 @@
         "title": "创建用户组"
       }
     ],
+    "CreateOIDCConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgIC***************V9jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n    \"IdentityUrl\": \"https://*******.qq.cn/\",\n    \"Name\": \"oidc\",\n    \"ClientId\": [\n        \"61adcf00******ddbc9546\"\n    ],\n    \"Description\": \"Desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d8de866-7385-4230-8f28-060a92d723ee\"\n    }\n}",
+        "title": "添加角色OIDC配置"
+      }
+    ],
     "CreatePolicy": [
       {
         "document": "以下示例将创建一个允许cos所有API访问所有的cos资源的策略",
@@ -120,6 +128,14 @@
         "title": "删除用户组"
       }
     ],
+    "DeleteOIDCConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOIDCConfig\n<公共请求参数>\n\n{\n    \"Name\": \"Name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ed37b07-25aa-4861-b141-9b614d82bf69\"\n    }\n}",
+        "title": "删除角色OIDC配置"
+      }
+    ],
     "DeletePolicy": [
       {
         "document": "删除策略ID为524497的策略",
@@ -182,6 +198,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=DeleteUserPermissionsBoundary\r\n&TargetUin=1234567\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
         "title": "删除用户权限边界"
+      }
+    ],
+    "DescribeOIDCConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOIDCConfig\n<公共请求参数>\n\n{\n    \"Name\": \"Name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"Desc\",\n        \"ProviderType\": 11,\n        \"IdentityUrl\": \"https://*****.qq.cn/\",\n        \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgICAg********jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n        \"ClientId\": [\n            \"61adcf0******bc9546\"\n        ],\n        \"Name\": \"Name\",\n        \"Status\": 11,\n        \"RequestId\": \"24366174-63dd-42ba-8073-bd6b0af0f241\"\n    }\n}",
+        "title": "获取角色OIDC配置"
       }
     ],
     "DescribeRoleList": [
@@ -570,6 +594,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateGroup\r\n&GroupId=2020\r\n&GroupName=2020test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "更新用户组"
+      }
+    ],
+    "UpdateOIDCConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCiAgICAgICAgewogIC************klJbUpsLV9jenYyT0kiCiAgICAgICAgfQogICAgXQp9\",\n    \"IdentityUrl\": \"https://test.qq.cn/\",\n    \"Name\": \"test-oidc\",\n    \"ClientId\": [\n        \"61adcf0*****9546\"\n    ],\n    \"Description\": \"Desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59b8efa4-cdd3-46dd-b9e7-0925aa1bee74\"\n    }\n}",
+        "title": "修改角色OIDC配置"
       }
     ],
     "UpdatePolicy": [

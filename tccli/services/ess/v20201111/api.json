@@ -1557,7 +1557,7 @@
         },
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模版； 文件类型：.pdf/.html\n2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html\n3. FLOW - 签署过程 文件类型：.pdf/.html\n4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png\n5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png\n6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf/.html\n2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html\n3. FLOW - 签署过程 文件类型：.pdf/.html\n4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png\n5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png\n6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",

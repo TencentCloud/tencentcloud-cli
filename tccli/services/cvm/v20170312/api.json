@@ -246,6 +246,12 @@
       "name": "解绑安全组",
       "output": "DisassociateSecurityGroupsResponse"
     },
+    "ExportImages": {
+      "document": "提供导出自定义镜像到指定COS存储桶的能力",
+      "input": "ExportImagesRequest",
+      "name": "导出自定义镜像",
+      "output": "ExportImagesResponse"
+    },
     "ImportImage": {
       "document": "本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。目前支持 RAW、VHD、QCOW2、VMDK 镜像格式。",
       "input": "ImportImageRequest",
@@ -3401,6 +3407,96 @@
         }
       ],
       "usage": "both"
+    },
+    "ExportImagesRequest": {
+      "document": "ExportImages请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "COS存储桶名称",
+          "example": "mybucketname",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "镜像ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "ImageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "镜像文件导出格式。取值范围：RAW，QCOW2，VHD，VMDK。默认为RAW",
+          "example": "RAW{\"Version\": \"2017-03-12\", \"Action\": \"ExportImages\", \"Region\":",
+          "member": "string",
+          "name": "ExportFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出文件的名称前缀列表",
+          "example": "[\"testfilename\"]",
+          "member": "string",
+          "name": "FileNamePrefixList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否只导出系统盘",
+          "example": "True",
+          "member": "bool",
+          "name": "OnlyExportRootDisk",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "检测镜像是否支持导出",
+          "example": "True",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "角色名称。默认为CVM_QcsRole，发起请求前请确认是否存在该角色，以及是否已正确配置COS写入权限。",
+          "example": "CVM_QcsRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportImagesResponse": {
+      "document": "ExportImages返回参数结构体",
+      "members": [
+        {
+          "document": "导出镜像任务ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Externals": {
       "document": "扩展数据",
