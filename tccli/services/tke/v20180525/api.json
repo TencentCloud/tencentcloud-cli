@@ -42,12 +42,6 @@
       "name": "创建集群",
       "output": "CreateClusterResponse"
     },
-    "CreateClusterAsGroup": {
-      "document": "为已经存在的集群创建伸缩组",
-      "input": "CreateClusterAsGroupRequest",
-      "name": "创建集群的伸缩组",
-      "output": "CreateClusterAsGroupResponse"
-    },
     "CreateClusterEndpoint": {
       "document": "创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)",
       "input": "CreateClusterEndpointRequest",
@@ -2894,78 +2888,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CreateClusterAsGroupRequest": {
-      "document": "CreateClusterAsGroup请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "集群ID",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "伸缩组创建透传参数，json化字符串格式，详见[伸缩组创建实例](https://cloud.tencent.com/document/api/377/20440)接口。LaunchConfigurationId由LaunchConfigurePara参数创建，不支持填写",
-          "member": "string",
-          "name": "AutoScalingGroupPara",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "启动配置创建透传参数，json化字符串格式，详见[创建启动配置](https://cloud.tencent.com/document/api/377/20447)接口。另外ImageId参数由于集群维度已经有的ImageId信息，这个字段不需要填写。UserData字段设置通过UserScript设置，这个字段不需要填写。",
-          "member": "string",
-          "name": "LaunchConfigurePara",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "节点高级配置信息",
-          "member": "InstanceAdvancedSettings",
-          "name": "InstanceAdvancedSettings",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "节点Label数组",
-          "member": "Label",
-          "name": "Labels",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateClusterAsGroupResponse": {
-      "document": "CreateClusterAsGroup返回参数结构体",
-      "members": [
-        {
-          "document": "启动配置ID",
-          "member": "string",
-          "name": "LaunchConfigurationId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "伸缩组ID",
-          "member": "string",
-          "name": "AutoScalingGroupId",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CreateClusterEndpointRequest": {
       "document": "CreateClusterEndpoint请求参数结构体",

@@ -162,6 +162,12 @@
       "name": "运营后台接口：获取规则状态",
       "output": "DescribeOpUserSignaturePolicyResponse"
     },
+    "DescribeOpUserSignatureRule": {
+      "document": "为运营后台获取用户规则",
+      "input": "DescribeOpUserSignatureRuleRequest",
+      "name": "为运营后台获取用户规则",
+      "output": "DescribeOpUserSignatureRuleResponse"
+    },
     "DescribeTsRegion": {
       "document": "获取ts接入区域",
       "input": "DescribeTsRegionRequest",
@@ -2846,6 +2852,114 @@
           "example": "无",
           "member": "OpUserSignaturePolicy",
           "name": "OpUserSigPolicy",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpUserSignatureRuleRequest": {
+      "document": "DescribeOpUserSignatureRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分片偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页面显示个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "appid",
+          "example": "250190032",
+          "member": "uint64",
+          "name": "OpAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "地域信息",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序条件，支持signature_id, modify_time",
+          "example": "signature_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选条件，支持MainClassID, SubClassID, CveID，Status，ID；ID为规则id, Status = 0/1",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "en/cn",
+          "example": "cn",
+          "member": "string",
+          "name": "OpLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpUserSignatureRuleResponse": {
+      "document": "DescribeOpUserSignatureRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则详细",
+          "example": "无",
+          "member": "UserSignatureRule",
+          "name": "Rules",
           "required": true,
           "type": "list",
           "value_allowed_null": false

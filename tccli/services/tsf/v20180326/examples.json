@@ -824,6 +824,14 @@
         "title": "DescribePodInstances"
       }
     ],
+    "DescribePrograms": [
+      {
+        "document": "",
+        "input": "{\r\n    \"action\": \"DescribePrograms\",\r\n    \"serviceType\": \"tsf\",\r\n    \"regionId\": \"1\",\r\n    \"data\": {\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"865be0aa-ae4d-443a-bb72-01995d1f5f4e\",\n        \"Result\": {\n            \"TotalCount\": 5,\n            \"Content\": [\n                {\n                    \"ProgramId\": \"program-96a79v5b\",\n                    \"ProgramName\": \"AUTO-appId-@ALL@\",\n                    \"ProgramDesc\": null,\n                    \"CreationTime\": 1542870362,\n                    \"LastUpdateTime\": 1542870362,\n                    \"DeleteFlag\": false,\n                    \"ProgramItemList\": null\n                },\n                {\n                    \"ProgramId\": \"program-a79e9j9v\",\n                    \"ProgramName\": \"测试数据集\",\n                    \"ProgramDesc\": null,\n                    \"CreationTime\": 1566467701,\n                    \"LastUpdateTime\": 1566467701,\n                    \"DeleteFlag\": true,\n                    \"ProgramItemList\": null\n                },\n                {\n                    \"ProgramId\": \"program-l6ymbvgd\",\n                    \"ProgramName\": \"AUTO-NOTHING\",\n                    \"ProgramDesc\": null,\n                    \"CreationTime\": 1542870362,\n                    \"LastUpdateTime\": 1542870362,\n                    \"DeleteFlag\": true,\n                    \"ProgramItemList\": null\n                },\n                {\n                    \"ProgramId\": \"program-ymqbq8bv\",\n                    \"ProgramName\": \"测试数据集9\",\n                    \"ProgramDesc\": \"测试数据集desc9\",\n                    \"CreationTime\": 1566467729,\n                    \"LastUpdateTime\": 1566483895,\n                    \"DeleteFlag\": false,\n                    \"ProgramItemList\": null\n                },\n                {\n                    \"ProgramId\": \"program-yn2g3e9y\",\n                    \"ProgramName\": \"测试数据集3\",\n                    \"ProgramDesc\": \"测试数据集desc\",\n                    \"CreationTime\": 1566479755,\n                    \"LastUpdateTime\": 1566479755,\n                    \"DeleteFlag\": false,\n                    \"ProgramItemList\": null\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询数据集列表"
+      }
+    ],
     "DescribePublicConfig": [
       {
         "document": "",

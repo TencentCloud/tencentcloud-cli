@@ -228,6 +228,14 @@
         "title": "查询示例"
       }
     ],
+    "DescribeOpUserSignatureRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpUserSignatureRule\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"OpAppId\": 1,\n    \"OpLanguage\": \"en\",\n    \"Offset\": 1,\n    \"Limit\": 20,\n    \"Order\": \"asc\",\n    \"By\": \"signature_id\",\n    \"Filters\": [\n        {\n            \"Name\": \"MainClassID\",\n            \"Values\": [\n                \"010000000\"\n            ],\n            \"ExactMatch\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 8,\n        \"Rules\": [\n            {\n                \"ID\": \"010000002\",\n                \"Description\": \"xxx\",\n                \"Status\": 0,\n                \"MainClassID\": \"010000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"000000000\",\n                \"SubClassName\": \"\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            },\n            {\n                \"ID\": \"050000022\",\n                \"Description\": \"xxx\",\n                \"Status\": 1,\n                \"MainClassID\": \"050000000\",\n                \"MainClassName\": \"Cross Site Scripting\",\n                \"SubClassID\": \"050030000\",\n                \"SubClassName\": \"data\",\n                \"CveID\": \"\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2021-11-22T16:16:52+08:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
     "DescribeTsRegion": [
       {
         "document": "",

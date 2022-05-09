@@ -42,6 +42,12 @@
       "name": "创建用户组",
       "output": "CreateGroupResponse"
     },
+    "CreateOIDCConfig": {
+      "document": "创建角色OIDC配置",
+      "input": "CreateOIDCConfigRequest",
+      "name": "创建角色OIDC配置",
+      "output": "CreateOIDCConfigResponse"
+    },
     "CreatePolicy": {
       "document": "本接口（CreatePolicy）可用于创建策略。",
       "input": "CreatePolicyRequest",
@@ -90,6 +96,12 @@
       "name": "删除用户组",
       "output": "DeleteGroupResponse"
     },
+    "DeleteOIDCConfig": {
+      "document": "删除OIDC身份提供商",
+      "input": "DeleteOIDCConfigRequest",
+      "name": "删除OIDC身份提供商",
+      "output": "DeleteOIDCConfigResponse"
+    },
     "DeletePolicy": {
       "document": "本接口（DeletePolicy）可用于删除策略。",
       "input": "DeletePolicyRequest",
@@ -137,6 +149,12 @@
       "input": "DeleteUserPermissionsBoundaryRequest",
       "name": "删除用户权限边界",
       "output": "DeleteUserPermissionsBoundaryResponse"
+    },
+    "DescribeOIDCConfig": {
+      "document": "查询角色OIDC配置",
+      "input": "DescribeOIDCConfigRequest",
+      "name": "查询角色OIDC配置",
+      "output": "DescribeOIDCConfigResponse"
     },
     "DescribeRoleList": {
       "document": "本接口（DescribeRoleList）用于获取账号下的角色列表。",
@@ -419,6 +437,12 @@
       "input": "UpdateGroupRequest",
       "name": "更新用户组",
       "output": "UpdateGroupResponse"
+    },
+    "UpdateOIDCConfig": {
+      "document": "修改角色OIDC配置",
+      "input": "UpdateOIDCConfigRequest",
+      "name": "修改角色OIDC配置",
+      "output": "UpdateOIDCConfigResponse"
     },
     "UpdatePolicy": {
       "document": "本接口（UpdatePolicy ）可用于更新策略。\n如果已存在策略版本，本接口会直接更新策略的默认版本，不会创建新版本，如果不存在任何策略版本，则直接创建一个默认版本。",
@@ -1224,6 +1248,69 @@
       ],
       "type": "object"
     },
+    "CreateOIDCConfigRequest": {
+      "document": "CreateOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份提供商URL",
+          "example": "https://xulongliang.authing.cn/oidc",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名公钥，需要base64",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端ID",
+          "example": "61adcf00620c31e3ddbc9546",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "OIDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOIDCConfigResponse": {
+      "document": "CreateOIDCConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePolicyRequest": {
       "document": "CreatePolicy请求参数结构体",
       "members": [
@@ -1642,6 +1729,33 @@
       ],
       "type": "object"
     },
+    "DeleteOIDCConfigRequest": {
+      "document": "DeleteOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "OIDC身份提供商名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOIDCConfigResponse": {
+      "document": "DeleteOIDCConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePolicyRequest": {
       "document": "DeletePolicy请求参数结构体",
       "members": [
@@ -1889,6 +2003,96 @@
     "DeleteUserResponse": {
       "document": "DeleteUser返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOIDCConfigRequest": {
+      "document": "DescribeOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "OIDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOIDCConfigResponse": {
+      "document": "DescribeOIDCConfig返回参数结构体",
+      "members": [
+        {
+          "document": "身份提供商类型 11角色身份提供商",
+          "example": "11",
+          "member": "uint64",
+          "name": "ProviderType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份提供商URL",
+          "example": "11",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "签名公钥",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "客户端id",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态：0:未设置，11:已开启，2:已禁用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "描述",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "名称",
+          "example": "OIDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5504,6 +5708,69 @@
     },
     "UpdateGroupResponse": {
       "document": "UpdateGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOIDCConfigRequest": {
+      "document": "UpdateOIDCConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "身份提供商URL",
+          "example": "https://xulongliang.authing.cn/oidc",
+          "member": "string",
+          "name": "IdentityUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签名公钥，需要base64",
+          "example": "无",
+          "member": "string",
+          "name": "IdentityKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端ID",
+          "example": "61adcf00620c31e3ddbc9546",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "名称",
+          "example": "OIDC",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOIDCConfigResponse": {
+      "document": "UpdateOIDCConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

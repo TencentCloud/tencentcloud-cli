@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb ModifyClusterParam --cli-unfold-argument  \
-    --ClusterId cynosdbpg-ins-jhi2gdi0 \
+    --ClusterId cynosdbmysql-ins-jhi2gdi0 \
     --ParamList.0.ParamName authentication_timeout \
     --ParamList.0.OldValue 60 \
     --ParamList.0.CurrentValue 59

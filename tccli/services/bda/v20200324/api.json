@@ -13,7 +13,7 @@
       "output": "CreatePersonResponse"
     },
     "CreateSegmentationTask": {
-      "document": "本接口为离线人像分割处理接口组中的提交任务接口，可以对提交的资源进行处理视频流/图片流识别视频作品中的人像区域，进行一键抠像、背景替换、人像虚化等后期处理。",
+      "document": "本接口为人像分割在线处理接口组中的提交任务接口，可以对提交的资源进行处理视频流/图片流识别视频作品中的人像区域，进行一键抠像、背景替换、人像虚化等后期处理。",
       "input": "CreateSegmentationTaskRequest",
       "name": "创建视频人像分割处理任务",
       "output": "CreateSegmentationTaskResponse"
@@ -624,7 +624,8 @@
           "member": "string",
           "name": "VideoUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -633,7 +634,8 @@
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -642,7 +644,8 @@
           "member": "string",
           "name": "Config",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -657,7 +660,8 @@
           "name": "TaskID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "预估处理时间，单位为秒",
@@ -666,7 +670,8 @@
           "name": "EstimatedProcessingTime",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

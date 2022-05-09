@@ -819,6 +819,7 @@
         {
           "default": "",
           "document": "查询开始日期，格式为YYYY-MM-DD。",
+          "example": "2019-10-11",
           "member": "date",
           "name": "StartTime",
           "required": true,
@@ -827,6 +828,7 @@
         {
           "default": "",
           "document": "查询结束日期，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
+          "example": "2019-10-13",
           "member": "date",
           "name": "EndTime",
           "required": true,
@@ -835,6 +837,7 @@
         {
           "default": "",
           "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400123456",
           "member": "uint64",
           "name": "SdkAppId",
           "required": false,
@@ -848,8 +851,10 @@
       "members": [
         {
           "document": "应用的用量信息数组。",
+          "example": "无",
           "member": "SdkAppIdRecordUsage",
           "name": "SdkAppIdUsages",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

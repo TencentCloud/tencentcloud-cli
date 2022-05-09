@@ -345,7 +345,7 @@
     "SmartStructuralOCR": {
       "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。",
       "input": "SmartStructuralOCRRequest",
-      "name": "智能结构化识别(免费公测版)",
+      "name": "智能结构化识别",
       "output": "SmartStructuralOCRResponse"
     },
     "TableOCR": {
@@ -3994,38 +3994,46 @@
         {
           "default": "",
           "document": "左上角x",
+          "example": "537",
           "member": "int64",
           "name": "X",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "左上角y",
+          "example": "335",
           "member": "int64",
           "name": "Y",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "宽width",
+          "example": "169",
           "member": "int64",
           "name": "Width",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "高height",
+          "example": "63",
           "member": "int64",
           "name": "Height",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6965,7 +6973,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6974,16 +6983,18 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
+          "document": "自定义结构化功能需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
           "example": "[\"key1\",\"key2\"]",
           "member": "string",
           "name": "ItemNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6998,7 +7009,8 @@
           "name": "Angle",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "识别信息",
@@ -7007,7 +7019,8 @@
           "name": "StructuralItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -31,6 +31,7 @@ Output:
                 "GroupId": 0,
                 "Status": 1,
                 "BackupWay": 0,
+                "BackupFormat": "pkg",
                 "DBs": [
                     "testdbvictornew"
                 ],
@@ -48,6 +49,7 @@ Output:
                 "GroupId": 0,
                 "Status": 1,
                 "BackupWay": 0,
+                "BackupFormat": "pkg",
                 "DBs": [
                     "testdbvictornew"
                 ],

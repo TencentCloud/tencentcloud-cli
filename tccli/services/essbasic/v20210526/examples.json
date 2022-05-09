@@ -33,7 +33,7 @@
     "CreateSealByImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\",\n            \"ClientIp\": \"8.8.8.8\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf*****200fef3d\",\n        \"ProxyOrganizationId\": \"xx\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8*********xxx3aff766cac\",\n            \"ClientIp\": \"8.8.8.8\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8*********968c0ee248f04\",\n        \"AppId\": \"65fb0c59*********382cc5ed0e\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"SealId\": \"\",\n        \"RequestId\": \"s1629442787650001803\"\n    }\n}",
         "title": "渠道通过图片为子客代创建印章"
       }

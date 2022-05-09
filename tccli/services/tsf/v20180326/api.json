@@ -618,6 +618,12 @@
       "name": "获取部署组实例列表",
       "output": "DescribePodInstancesResponse"
     },
+    "DescribePrograms": {
+      "document": "查询数据集列表",
+      "input": "DescribeProgramsRequest",
+      "name": "查询数据集列表",
+      "output": "DescribeProgramsResponse"
+    },
     "DescribePublicConfig": {
       "document": "查询公共配置（单条）",
       "input": "DescribePublicConfigRequest",
@@ -11098,6 +11104,55 @@
       ],
       "type": "object"
     },
+    "DescribeProgramsRequest": {
+      "document": "DescribePrograms请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模糊查询数据集ID，数据集名称，不传入时查询全量",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页数量",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "起始偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProgramsResponse": {
+      "document": "DescribePrograms返回参数结构体",
+      "members": [
+        {
+          "document": "数据集列表",
+          "member": "PagedProgram",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicConfigReleaseLogsRequest": {
       "document": "DescribePublicConfigReleaseLogs请求参数结构体",
       "members": [
@@ -17703,6 +17758,30 @@
       ],
       "usage": "out"
     },
+    "PagedProgram": {
+      "document": "tsf-privilege模块，分页数据集列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总条数",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据集列表",
+          "member": "Program",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PathRewrite": {
       "document": "路径重写",
       "members": [
@@ -18020,6 +18099,153 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Program": {
+      "document": "tsf-privilege模块 Program数据集",
+      "members": [
+        {
+          "default": "",
+          "document": "数据集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProgramId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProgramName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据集描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProgramDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除标识，true: 可以删除; false: 不可删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeleteFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreationTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据项列表，无值时返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "ProgramItem",
+          "name": "ProgramItemList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ProgramItem": {
+      "document": "tsf-privilege模块，数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "数据项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProgramItemId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "Resource",
+          "name": "Resource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ValueList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "全选标识，true: 全选；false: 非全选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "IsAll",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreationTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除标识，true: 可删除；false: 不可删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeleteFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ProgramId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18633,6 +18859,147 @@
         }
       ],
       "usage": "out"
+    },
+    "Resource": {
+      "document": "tsf-privilege 模块，资源",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源所属产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ServiceCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "选取资源使用的Action\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceAction",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源数据查询的ID字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "IdField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源数据查询的名称字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NameField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源数据查询的ID过滤字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SelectIdsField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "CreationTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "DeleteFlag",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ResourceDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可以选择全部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "CanSelectAll",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源数据查询的模糊查询字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SearchWordField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ResourceFieldRef": {
       "document": "k8s env 的 ResourceFieldRef",

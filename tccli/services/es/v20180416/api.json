@@ -1561,7 +1561,7 @@
         },
         {
           "default": "",
-          "document": "自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "document": "自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3211,7 +3211,7 @@
         },
         {
           "default": "",
-          "document": "0：安装；1：删除",
+          "document": "0：安装；1：删除。默认值0",
           "example": "0",
           "member": "int64",
           "name": "UpdateType",
@@ -3220,7 +3220,7 @@
         },
         {
           "default": "",
-          "document": "是否强制重启集群",
+          "document": "是否强制重启集群。默认值false",
           "example": "false",
           "member": "bool",
           "name": "ForceRestart",
@@ -3616,7 +3616,7 @@
         },
         {
           "default": "",
-          "document": "是否强制重启",
+          "document": "是否强制重启，默认值false",
           "example": "true",
           "member": "bool",
           "name": "ForceRestart",
@@ -3625,7 +3625,7 @@
         },
         {
           "default": "",
-          "document": "是否重新安装",
+          "document": "是否重新安装，默认值false",
           "example": "true",
           "member": "bool",
           "name": "ForceUpdate",
