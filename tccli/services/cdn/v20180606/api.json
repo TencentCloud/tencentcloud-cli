@@ -199,7 +199,7 @@
       "output": "DescribePushQuotaResponse"
     },
     "DescribePushTasks": {
-      "document": "DescribePushTasks  用于查询预热任务提交历史记录及执行进度。\n接口灰度中，暂未全量开放，敬请期待。",
+      "document": "DescribePushTasks  用于查询预热任务提交历史记录及执行进度。",
       "input": "DescribePushTasksRequest",
       "name": "预热历史查询",
       "output": "DescribePushTasksResponse"
@@ -11206,7 +11206,7 @@
         },
         {
           "default": "",
-          "document": "回主源站时 Host 头部，不填充则默认为加速域名\n若接入的是泛域名，则回源 Host 默认为访问时的子域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当源站类型为cos或者第三方存储加速时,ServerName字段必填\n回主源站时 Host 头部，不填充则默认为加速域名\n若接入的是泛域名，则回源 Host 默认为访问时的子域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.test.com",
           "member": "string",
           "name": "ServerName",

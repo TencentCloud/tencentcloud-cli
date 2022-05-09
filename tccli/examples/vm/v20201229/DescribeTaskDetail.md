@@ -24,12 +24,14 @@ Output:
             {
                 "Label": "Porn",
                 "Suggestion": "Block",
-                "Score": 99
+                "Score": 99,
+                "SubLabel": ""
             },
             {
                 "Label": "Hot",
                 "Suggestion": "Block",
-                "Score": 70
+                "Score": 70,
+                "SubLabel": ""
             }
         ],
         "MediaInfo": {
@@ -47,6 +49,7 @@ Output:
                 "Result": {
                     "HitFlag": 1,
                     "Label": "Porn",
+                    "SubLabel": "",
                     "Suggestion": "Block",
                     "Score": 85,
                     "Results": [
@@ -70,6 +73,7 @@ Output:
                 "Result": {
                     "HitFlag": 1,
                     "Label": "Porn",
+                    "SubLabel": "",
                     "Suggestion": "Block",
                     "Score": 77,
                     "Results": [
@@ -95,6 +99,7 @@ Output:
                 "Result": {
                     "HitFlag": 0,
                     "Label": "Normal",
+                    "SubLabel": "",
                     "Suggestion": "Pass",
                     "Score": 0,
                     "Text": "测试音频文本",
