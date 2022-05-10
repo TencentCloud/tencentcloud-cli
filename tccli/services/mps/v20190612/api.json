@@ -404,6 +404,7 @@
         {
           "default": "",
           "document": "智能分析模板唯一标识。",
+          "example": "0",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -413,6 +414,7 @@
         {
           "default": "",
           "document": "智能分析模板名称。",
+          "example": "“”",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -422,6 +424,7 @@
         {
           "default": "",
           "document": "智能分析模板描述信息。",
+          "example": "“”",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -431,6 +434,7 @@
         {
           "default": "",
           "document": "智能分类任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ClassificationConfigureInfo",
           "name": "ClassificationConfigure",
           "required": true,
@@ -440,6 +444,7 @@
         {
           "default": "",
           "document": "智能标签任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagConfigureInfo",
           "name": "TagConfigure",
           "required": true,
@@ -449,6 +454,7 @@
         {
           "default": "",
           "document": "智能封面任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "CoverConfigureInfo",
           "name": "CoverConfigure",
           "required": true,
@@ -458,6 +464,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "FrameTagConfigureInfo",
           "name": "FrameTagConfigure",
           "required": true,
@@ -467,6 +474,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -476,11 +484,22 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -491,6 +510,7 @@
         {
           "default": "",
           "document": "视频内容识别模板唯一标识。",
+          "example": "0",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -500,6 +520,7 @@
         {
           "default": "",
           "document": "视频内容识别模板名称。",
+          "example": "“”",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -509,6 +530,7 @@
         {
           "default": "",
           "document": "视频内容识别模板描述信息。",
+          "example": "“”",
           "member": "string",
           "name": "Comment",
           "required": true,
@@ -518,6 +540,7 @@
         {
           "default": "",
           "document": "人脸识别控制参数。",
+          "example": "无",
           "member": "FaceConfigureInfo",
           "name": "FaceConfigure",
           "required": true,
@@ -527,6 +550,7 @@
         {
           "default": "",
           "document": "文本全文识别控制参数。",
+          "example": "无",
           "member": "OcrFullTextConfigureInfo",
           "name": "OcrFullTextConfigure",
           "required": true,
@@ -536,6 +560,7 @@
         {
           "default": "",
           "document": "文本关键词识别控制参数。",
+          "example": "无",
           "member": "OcrWordsConfigureInfo",
           "name": "OcrWordsConfigure",
           "required": true,
@@ -545,6 +570,7 @@
         {
           "default": "",
           "document": "语音全文识别控制参数。",
+          "example": "无",
           "member": "AsrFullTextConfigureInfo",
           "name": "AsrFullTextConfigure",
           "required": true,
@@ -554,6 +580,7 @@
         {
           "default": "",
           "document": "语音关键词识别控制参数。",
+          "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
           "required": true,
@@ -563,6 +590,7 @@
         {
           "default": "",
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -572,11 +600,22 @@
         {
           "default": "",
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4183,6 +4222,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5774,6 +5823,7 @@
         {
           "default": "",
           "document": "视频内容分析模板唯一标识过滤条件，数组长度限制：10。",
+          "example": "[\"30\\r\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -5782,6 +5832,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5790,10 +5841,20 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5803,15 +5864,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "视频内容分析模板详情列表。",
+          "example": "无",
           "member": "AIAnalysisTemplateItem",
           "name": "AIAnalysisTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5830,6 +5895,7 @@
         {
           "default": "",
           "document": "视频内容识别模板唯一标识过滤条件，数组长度限制：10。",
+          "example": "[\"30\\r\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -5838,6 +5904,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5846,10 +5913,20 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：50。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5859,15 +5936,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "视频内容识别模板详情列表。",
+          "example": "无",
           "member": "AIRecognitionTemplateItem",
           "name": "AIRecognitionTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6037,6 +6118,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

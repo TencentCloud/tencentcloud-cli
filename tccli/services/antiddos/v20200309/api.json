@@ -7505,6 +7505,7 @@
         {
           "default": "",
           "document": "源站端口，取值1~65535",
+          "example": "80",
           "member": "uint64",
           "name": "BackendPort",
           "required": true,
@@ -7514,6 +7515,7 @@
         {
           "default": "",
           "document": "转发端口，取值1~65535",
+          "example": "80",
           "member": "uint64",
           "name": "FrontendPort",
           "required": true,
@@ -7523,6 +7525,7 @@
         {
           "default": "",
           "document": "转发协议，取值[\nTCP(TCP协议)\nUDP(UDP协议)\n]",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -7532,6 +7535,7 @@
         {
           "default": "",
           "document": "源站列表",
+          "example": "xxx",
           "member": "SourceServer",
           "name": "RealServers",
           "required": true,
@@ -7540,10 +7544,21 @@
         },
         {
           "default": "",
-          "document": "规则所属的资源实例",
+          "document": "资源实例",
+          "example": "xxx",
           "member": "InstanceRelation",
           "name": "InstanceDetails",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则所属的资源实例",
+          "example": "xxx",
+          "member": "RuleInstanceRelation",
+          "name": "InstanceDetailRule",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7556,6 +7571,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.baidu.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7565,6 +7581,7 @@
         {
           "default": "",
           "document": "转发类型列表",
+          "example": "1",
           "member": "ProxyTypeInfo",
           "name": "ProxyTypeList",
           "required": true,
@@ -7574,6 +7591,7 @@
         {
           "default": "",
           "document": "源站列表",
+          "example": "1.1.1.1",
           "member": "SourceServer",
           "name": "RealServers",
           "required": true,
@@ -7582,10 +7600,21 @@
         },
         {
           "default": "",
-          "document": "规则所属的资源实例",
+          "document": "资源实例",
+          "example": "xxx",
           "member": "InstanceRelation",
           "name": "InstanceDetails",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则所属的资源实例",
+          "example": "xxx",
+          "member": "RuleInstanceRelation",
+          "name": "InstanceDetailRule",
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9171,6 +9200,42 @@
         }
       ],
       "usage": "both"
+    },
+    "RuleInstanceRelation": {
+      "document": "四七层规则的",
+      "members": [
+        {
+          "default": "",
+          "document": "资源实例的IP",
+          "example": "[1.1.1.1]",
+          "member": "string",
+          "name": "EipList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例的ID",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源实例的Cname",
+          "example": "abcdefg",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SchedulingDomainInfo": {
       "document": "调度域名信息",

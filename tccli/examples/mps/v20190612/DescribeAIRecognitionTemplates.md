@@ -18,24 +18,37 @@ Output:
             {
                 "Definition": 30,
                 "Name": "模板1",
+                "Type": "Preset",
                 "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All"
+                    "Score": 0.0,
+                    "FaceLibrary": "All",
+                    "DefaultLibraryLabelSet": [
+                        "xx"
+                    ],
+                    "UserDefineLibraryLabelSet": [
+                        "xx"
+                    ]
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
                 },
                 "OcrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": [
+                        "xx"
+                    ]
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "ON",
+                    "SubtitleFormat": "xx"
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": [
+                        "xx"
+                    ]
                 },
                 "CreateTime": "2019-01-01T12:00:00Z",
                 "UpdateTime": "2019-01-01T16:00:00Z"
@@ -62,57 +75,41 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "AIRecognitionTemplateSet": [
             {
                 "Definition": 30,
                 "Name": "模板1",
                 "Comment": "智能识别模板",
+                "Type": "Preset",
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All"
+                    "Score": 0.0,
+                    "FaceLibrary": "All",
+                    "DefaultLibraryLabelSet": [
+                        "xx"
+                    ],
+                    "UserDefineLibraryLabelSet": [
+                        "xx"
+                    ]
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
                 },
                 "OcrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "ON",
+                    "SubtitleFormat": "xx"
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
-                    "LabelSet": null
+                    "LabelSet": []
                 },
                 "CreateTime": "2019-01-01T12:00:00Z",
                 "UpdateTime": "2019-01-01T16:00:00Z"
-            },
-            {
-                "Definition": 31,
-                "Name": "模板2",
-                "Comment": "智能识别模板",
-                "FaceConfigure": {
-                    "Switch": "OFF",
-                    "FaceLibrary": "All"
-                },
-                "OcrFullTextConfigure": {
-                    "Switch": "OFF"
-                },
-                "OcrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": null
-                },
-                "AsrFullTextConfigure": {
-                    "Switch": "OFF"
-                },
-                "AsrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": null
-                },
-                "CreateTime": "2019-01-01T11:00:00Z",
-                "UpdateTime": "2019-01-01T12:00:00Z"
             }
         ],
         "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
