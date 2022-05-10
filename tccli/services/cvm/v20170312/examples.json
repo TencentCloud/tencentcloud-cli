@@ -142,6 +142,14 @@
         "title": "查询CDH实例列表"
       }
     ],
+    "DescribeHostsInfos": [
+      {
+        "document": "本接口 (DescribeHostsInfos) 用于查询母机信息。\n查询并返回超卖售卖池母机信息\n只允许eks调用，会对UIN进行白名单校验。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHostsInfos\n&Filters.0.Name=pool\n&Filters.0.Values.0=qcloud\n&Limit=10\n&Offset=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"HostInfoSet\": [\n            {}\n        ],\n        \"RequestId\": \"92c9b8e4-bc5e-40fe-ae29-cace062a0d4b\"\n    }\n}",
+        "title": "DescribeHostsInfos"
+      }
+    ],
     "DescribeImageQuota": [
       {
         "document": "用户需要知道自己账户一共可以持有多少镜像。",

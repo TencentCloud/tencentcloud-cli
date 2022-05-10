@@ -102,6 +102,12 @@
       "name": "查看CDH实例列表",
       "output": "DescribeHostsResponse"
     },
+    "DescribeHostsInfos": {
+      "document": "本接口 (DescribeHostsInfos) 用于查询母机信息。\n\n*查询并返回超卖售卖池母机信息\n*只允许eks调用，会对UIN进行白名单校验。",
+      "input": "DescribeHostsInfosRequest",
+      "name": "EKS查询特殊资源池母机信息",
+      "output": "DescribeHostsInfosResponse"
+    },
     "DescribeImageQuota": {
       "document": "本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。",
       "input": "DescribeImageQuotaRequest",
@@ -2017,6 +2023,69 @@
       ],
       "type": "object"
     },
+    "DescribeHostsInfosRequest": {
+      "document": "DescribeHostsInfos请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件。\n- pool\n类型：String\n是否必填：否\n描述：（过滤条件）按照资源池过滤，只支持\"qcldoud\"、\"qcloud_ziyan_eks\"、\"qcloud_eks\"、\"qcloud_eks\"。\n- zone\n类型：String\n是否必填：否\n描述：（过滤条件）按照可用区过滤。\n- host-ip\n类型：String\n是否必填：否\n描述：（过滤条件）按照母机ip过滤。\n- host-type\n类型：String\n是否必填：否\n描述：（过滤条件）按照母机类型过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为1000。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsInfosResponse": {
+      "document": "DescribeHostsInfos返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的母机数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "母机详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{'Placement': {'Zone': 'ap-guangzhou-2', 'Pool': 'qcloud'}, 'Ho",
+          "member": "HostInfo",
+          "name": "HostInfoSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHostsRequest": {
       "document": "DescribeHosts请求参数结构体",
       "members": [
@@ -3589,6 +3658,11 @@
           "value_allowed_null": true
         }
       ],
+      "usage": "out"
+    },
+    "HostInfo": {
+      "document": "母机相关的信息",
+      "members": [],
       "usage": "out"
     },
     "HostItem": {

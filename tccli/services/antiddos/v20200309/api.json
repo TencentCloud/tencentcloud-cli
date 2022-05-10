@@ -7707,7 +7707,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7716,16 +7717,18 @@
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "策略方式，可取值alg表示验证码，drop表示丢弃",
+          "document": "策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。",
           "example": "alg",
           "member": "string",
           "name": "PolicyAction",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7734,7 +7737,8 @@
           "member": "CCPrecisionPlyRecord",
           "name": "PolicyList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
