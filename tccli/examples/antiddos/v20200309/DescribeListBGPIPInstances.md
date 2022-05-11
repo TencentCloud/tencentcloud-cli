@@ -70,11 +70,13 @@ Output:
                     "ForwardRulesLimit": 1,
                     "Line": 1
                 },
+                "BGPIPChannelFlag": 1,
                 "Usage": {
                     "PortRulesUsage": 1,
                     "DomainRulesUsage": 1,
                     "Last7DayAttackCount": 1
                 },
+                "V6Flag": 1,
                 "PackInfo": {
                     "PackId": "xx",
                     "PackType": "xx"

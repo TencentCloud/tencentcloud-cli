@@ -1798,6 +1798,15 @@
           "name": "TableType",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；",
+          "example": "HIVE",
+          "member": "string",
+          "name": "TableFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2551,6 +2560,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隐式分区转换策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "truncate",
+          "member": "string",
+          "name": "Transform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转换策略参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"3\"]",
+          "member": "string",
+          "name": "TransformArgs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2694,6 +2733,26 @@
           "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_group",
+          "member": "string",
+          "name": "SourceName",
           "required": false,
           "type": "string",
           "value_allowed_null": true

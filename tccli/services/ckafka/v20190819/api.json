@@ -4019,7 +4019,7 @@
         },
         {
           "default": "",
-          "document": "位点信息",
+          "document": "位点信息，必填",
           "example": "1",
           "member": "int64",
           "name": "Offset",

@@ -61,7 +61,7 @@
       "output": "DetectReflectLivenessAndCompareResponse"
     },
     "EncryptedPhoneVerification": {
-      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持MD5加密传输。",
+      "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持明文、MD5和SHA256加密传输。",
       "input": "EncryptedPhoneVerificationRequest",
       "name": "运营商三要素核验（加密）",
       "output": "EncryptedPhoneVerificationResponse"
@@ -1721,7 +1721,7 @@
         },
         {
           "default": "",
-          "document": "敏感信息的加密方式，目前只支持MD5加密传输，参数取值：\n\n0：明文，不加密\n1：使用MD5加密",
+          "document": "敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：\n\n0：明文，不加密\n1:   使用MD5加密\n2:   使用SHA256",
           "example": "1",
           "member": "string",
           "name": "EncryptionMode",
@@ -1735,7 +1735,7 @@
       "document": "EncryptedPhoneVerification返回参数结构体",
       "members": [
         {
-          "document": "认证结果码:\n【收费结果码】\n0: 认证通过\n-4: 信息不一致\n\n【不收费结果码】\n-7: 身份证号码有误\n-8: 参数错误\n-9: 没有记录\n-11: 验证中心服务繁忙",
+          "document": "认证结果码:\n【收费结果码】\n0:   三要素信息一致\n-4:  三要素信息不一致\n\n【不收费结果码】\n-7: 身份证号码有误\n-8: 参数错误\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",

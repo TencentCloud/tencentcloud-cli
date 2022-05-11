@@ -718,6 +718,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否延迟下发，1则延迟下发，否则立即下发",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsDelay",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6808,7 +6817,7 @@
         {
           "default": "",
           "document": "规则对应的唯一id",
-          "example": "cfw_newsg_xxxx",
+          "example": "8888",
           "member": "string",
           "name": "Id",
           "required": false,

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli antiddos DescribeListSchedulingDomain --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
-    --FilterDomain test.com
+    --Limit 1 \
+    --FilterDomain xx \
+    --Offset 1
 ```
 
 Output: 

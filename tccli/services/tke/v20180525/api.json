@@ -2918,6 +2918,33 @@
           "name": "IsExtranet",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "设置域名",
+          "example": "cls.domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用的安全组，只有外网访问需要传递",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建lb参数，只有外网访问需要设置",
+          "example": "无",
+          "member": "string",
+          "name": "ExtensiveParameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

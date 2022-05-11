@@ -1,10 +1,34 @@
 {
   "actions": {
+    "BatchUpdateFirmware": {
+      "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
+      "input": "BatchUpdateFirmwareRequest",
+      "name": "批量更新固件",
+      "output": "BatchUpdateFirmwareResponse"
+    },
+    "BindDevices": {
+      "document": "本接口（BindDevices）用于网关设备批量绑定子设备 ",
+      "input": "BindDevicesRequest",
+      "name": "批量绑定子设备",
+      "output": "BindDevicesResponse"
+    },
+    "CancelDeviceFirmwareTask": {
+      "document": "取消设备升级任务",
+      "input": "CancelDeviceFirmwareTaskRequest",
+      "name": "取消设备升级任务",
+      "output": "CancelDeviceFirmwareTaskResponse"
+    },
     "CreateDevice": {
       "document": "本接口（CreateDevice）用于新建一个物联网通信设备。 ",
       "input": "CreateDeviceRequest",
       "name": "创建设备",
       "output": "CreateDeviceResponse"
+    },
+    "CreateMultiDevicesTask": {
+      "document": "本接口（CreateMultiDevicesTask）用于创建产品级别的批量创建设备任务",
+      "input": "CreateMultiDevicesTaskRequest",
+      "name": "创建批量创建设备任务",
+      "output": "CreateMultiDevicesTaskResponse"
     },
     "CreatePrivateCA": {
       "document": "创建私有CA证书",
@@ -12,11 +36,41 @@
       "name": "创建私有CA证书",
       "output": "CreatePrivateCAResponse"
     },
+    "CreateProduct": {
+      "document": "本接口（CreateProduct）用于创建一个新的物联网通信产品 ",
+      "input": "CreateProductRequest",
+      "name": "创建产品",
+      "output": "CreateProductResponse"
+    },
+    "CreateTaskFileUrl": {
+      "document": "本接口（CreateTaskFileUrl）用于获取产品级任务文件上传链接",
+      "input": "CreateTaskFileUrlRequest",
+      "name": "获取任务文件上传链接",
+      "output": "CreateTaskFileUrlResponse"
+    },
+    "CreateTopicPolicy": {
+      "document": "本接口（CreateTopicPolicy）用于创建一个Topic ",
+      "input": "CreateTopicPolicyRequest",
+      "name": "创建Topic",
+      "output": "CreateTopicPolicyResponse"
+    },
+    "CreateTopicRule": {
+      "document": "本接口（CreateTopicRule）用于创建一个规则 ",
+      "input": "CreateTopicRuleRequest",
+      "name": "创建规则",
+      "output": "CreateTopicRuleResponse"
+    },
     "DeleteDevice": {
       "document": "本接口（DeleteDevice）用于删除物联网通信设备。 ",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse"
+    },
+    "DeleteDeviceResource": {
+      "document": "本接口（DeleteDeviceResource）用于删除设备资源",
+      "input": "DeleteDeviceResourceRequest",
+      "name": "删除设备资源",
+      "output": "DeleteDeviceResourceResponse"
     },
     "DeletePrivateCA": {
       "document": "删除私有CA证书",
@@ -36,17 +90,89 @@
       "name": "删除产品的私有CA证书",
       "output": "DeleteProductPrivateCAResponse"
     },
+    "DeleteTopicRule": {
+      "document": "本接口（DeleteTopicRule）用于删除规则",
+      "input": "DeleteTopicRuleRequest",
+      "name": "删除规则",
+      "output": "DeleteTopicRuleResponse"
+    },
     "DescribeDevice": {
       "document": "本接口（DescribeDevice）用于查看设备信息",
       "input": "DescribeDeviceRequest",
       "name": "查看设备详情",
       "output": "DescribeDeviceResponse"
     },
+    "DescribeDeviceClientKey": {
+      "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次 ",
+      "input": "DescribeDeviceClientKeyRequest",
+      "name": "获取设备私钥",
+      "output": "DescribeDeviceClientKeyResponse"
+    },
+    "DescribeDeviceResource": {
+      "document": "本接口（DescribeDeviceResource）用于查询设备资源详情。 ",
+      "input": "DescribeDeviceResourceRequest",
+      "name": "查询设备资源详情",
+      "output": "DescribeDeviceResourceResponse"
+    },
+    "DescribeDeviceResources": {
+      "document": "本接口（DescribeDeviceResources）用于查询设备资源列表。 ",
+      "input": "DescribeDeviceResourcesRequest",
+      "name": "获取设备资源列表",
+      "output": "DescribeDeviceResourcesResponse"
+    },
+    "DescribeDeviceShadow": {
+      "document": "本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 ",
+      "input": "DescribeDeviceShadowRequest",
+      "name": "获取设备影子",
+      "output": "DescribeDeviceShadowResponse"
+    },
     "DescribeDevices": {
       "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 ",
       "input": "DescribeDevicesRequest",
       "name": "获取设备列表",
       "output": "DescribeDevicesResponse"
+    },
+    "DescribeFirmware": {
+      "document": "查询固件信息",
+      "input": "DescribeFirmwareRequest",
+      "name": "查询固件信息",
+      "output": "DescribeFirmwareResponse"
+    },
+    "DescribeFirmwareTask": {
+      "document": "查询固件升级任务详情",
+      "input": "DescribeFirmwareTaskRequest",
+      "name": "查询固件升级任务详情",
+      "output": "DescribeFirmwareTaskResponse"
+    },
+    "DescribeFirmwareTaskDevices": {
+      "document": "查询固件升级任务的设备列表",
+      "input": "DescribeFirmwareTaskDevicesRequest",
+      "name": "查询固件升级任务的设备列表",
+      "output": "DescribeFirmwareTaskDevicesResponse"
+    },
+    "DescribeFirmwareTaskDistribution": {
+      "document": "查询固件升级任务状态分布",
+      "input": "DescribeFirmwareTaskDistributionRequest",
+      "name": "查询固件升级任务状态分布",
+      "output": "DescribeFirmwareTaskDistributionResponse"
+    },
+    "DescribeFirmwareTaskStatistics": {
+      "document": "查询固件升级任务统计信息",
+      "input": "DescribeFirmwareTaskStatisticsRequest",
+      "name": "查询固件升级任务统计信息",
+      "output": "DescribeFirmwareTaskStatisticsResponse"
+    },
+    "DescribeFirmwareTasks": {
+      "document": "查询固件升级任务列表",
+      "input": "DescribeFirmwareTasksRequest",
+      "name": "查询固件升级任务列表",
+      "output": "DescribeFirmwareTasksResponse"
+    },
+    "DescribeGatewayBindDevices": {
+      "document": "本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表 ",
+      "input": "DescribeGatewayBindDevicesRequest",
+      "name": "获取网关绑定的子设备列表",
+      "output": "DescribeGatewayBindDevicesResponse"
     },
     "DescribePrivateCA": {
       "document": "查询私有化CA信息",
@@ -78,6 +204,84 @@
       "name": "查询产品绑定的CA证书",
       "output": "DescribeProductCAResponse"
     },
+    "DescribeProductResource": {
+      "document": "本接口（DescribeProductResource）用于查询产品资源详情。 ",
+      "input": "DescribeProductResourceRequest",
+      "name": "查询产品资源详情",
+      "output": "DescribeProductResourceResponse"
+    },
+    "DescribeProductResources": {
+      "document": "本接口（DescribeProductResources）用于查询产品资源列表。 ",
+      "input": "DescribeProductResourcesRequest",
+      "name": "获取产品资源列表",
+      "output": "DescribeProductResourcesResponse"
+    },
+    "DescribeProductTask": {
+      "document": "本接口（DescribeProductTask）用于查看产品级别的任务信息",
+      "input": "DescribeProductTaskRequest",
+      "name": "查看产品任务详情",
+      "output": "DescribeProductTaskResponse"
+    },
+    "DescribeProductTasks": {
+      "document": "本接口（DescribeProductTasks）用于查看产品级别的任务列表",
+      "input": "DescribeProductTasksRequest",
+      "name": "获取产品级任务列表",
+      "output": "DescribeProductTasksResponse"
+    },
+    "DescribeProducts": {
+      "document": "本接口（DescribeProducts）用于列出产品列表。 ",
+      "input": "DescribeProductsRequest",
+      "name": "获取产品列表",
+      "output": "DescribeProductsResponse"
+    },
+    "DescribePushResourceTaskStatistics": {
+      "document": "查询推送资源任务统计信息",
+      "input": "DescribePushResourceTaskStatisticsRequest",
+      "name": "查询推送资源任务统计信息",
+      "output": "DescribePushResourceTaskStatisticsResponse"
+    },
+    "DescribeResourceTasks": {
+      "document": "查询资源推送任务列表",
+      "input": "DescribeResourceTasksRequest",
+      "name": "查询资源推送任务列表",
+      "output": "DescribeResourceTasksResponse"
+    },
+    "DisableTopicRule": {
+      "document": "本接口（DisableTopicRule）用于禁用规则",
+      "input": "DisableTopicRuleRequest",
+      "name": "禁用规则",
+      "output": "DisableTopicRuleResponse"
+    },
+    "DownloadDeviceResource": {
+      "document": "本接口（DownloadDeviceResource）用于下载设备资源",
+      "input": "DownloadDeviceResourceRequest",
+      "name": "下载设备资源",
+      "output": "DownloadDeviceResourceResponse"
+    },
+    "EditFirmware": {
+      "document": "编辑固件信息",
+      "input": "EditFirmwareRequest",
+      "name": "编辑固件信息",
+      "output": "EditFirmwareResponse"
+    },
+    "EnableTopicRule": {
+      "document": "本接口（EnableTopicRule）用于启用规则 ",
+      "input": "EnableTopicRuleRequest",
+      "name": "启用规则",
+      "output": "EnableTopicRuleResponse"
+    },
+    "GetCOSURL": {
+      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
+      "input": "GetCOSURLRequest",
+      "name": "获取固件下载地址",
+      "output": "GetCOSURLResponse"
+    },
+    "GetUserResourceInfo": {
+      "document": "本接口（GetUserResourceInfo）用于查询用户资源使用信息。",
+      "input": "GetUserResourceInfoRequest",
+      "name": "获取用户资源信息",
+      "output": "GetUserResourceInfoResponse"
+    },
     "ListLog": {
       "document": "本接口（ListLog）用于查看日志信息 ",
       "input": "ListLogRequest",
@@ -102,11 +306,53 @@
       "name": "发布广播消息",
       "output": "PublishBroadcastMessageResponse"
     },
+    "PublishMessage": {
+      "document": "本接口（PublishMessage）用于向某个主题发消息。 ",
+      "input": "PublishMessageRequest",
+      "name": "发布消息",
+      "output": "PublishMessageResponse"
+    },
+    "PublishRRPCMessage": {
+      "document": "发布RRPC消息",
+      "input": "PublishRRPCMessageRequest",
+      "name": "发布RRPC消息",
+      "output": "PublishRRPCMessageResponse"
+    },
+    "ReplaceTopicRule": {
+      "document": "本接口（ReplaceTopicRule）用于修改替换规则 ",
+      "input": "ReplaceTopicRuleRequest",
+      "name": "替换规则",
+      "output": "ReplaceTopicRuleResponse"
+    },
+    "ResetDeviceState": {
+      "document": "重置设备的连接状态 ",
+      "input": "ResetDeviceStateRequest",
+      "name": "重置设备状态",
+      "output": "ResetDeviceStateResponse"
+    },
+    "RetryDeviceFirmwareTask": {
+      "document": "重试设备升级任务",
+      "input": "RetryDeviceFirmwareTaskRequest",
+      "name": "重试设备升级任务",
+      "output": "RetryDeviceFirmwareTaskResponse"
+    },
     "SetProductsForbiddenStatus": {
       "document": "批量设置产品禁用状态",
       "input": "SetProductsForbiddenStatusRequest",
       "name": "批量设置产品禁用状态",
       "output": "SetProductsForbiddenStatusResponse"
+    },
+    "UnbindDevices": {
+      "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备 ",
+      "input": "UnbindDevicesRequest",
+      "name": "批量解绑子设备",
+      "output": "UnbindDevicesResponse"
+    },
+    "UpdateDeviceAvailableState": {
+      "document": "启用或者禁用设备 ",
+      "input": "UpdateDeviceAvailableStateRequest",
+      "name": "切换设备可用状态",
+      "output": "UpdateDeviceAvailableStateResponse"
     },
     "UpdateDeviceLogLevel": {
       "document": "设置设备上报的日志级别  ",
@@ -119,6 +365,12 @@
       "input": "UpdateDevicePSKRequest",
       "name": "更新设备PSK",
       "output": "UpdateDevicePSKResponse"
+    },
+    "UpdateDeviceShadow": {
+      "document": "本接口（UpdateDeviceShadow）用于更新虚拟设备信息。",
+      "input": "UpdateDeviceShadowRequest",
+      "name": "更新设备影子",
+      "output": "UpdateDeviceShadowResponse"
     },
     "UpdateDevicesEnableState": {
       "document": "批量启用或者禁用设备 ",
@@ -143,6 +395,18 @@
       "input": "UpdateProductPrivateCARequest",
       "name": "更新产品的私有CA",
       "output": "UpdateProductPrivateCAResponse"
+    },
+    "UpdateTopicPolicy": {
+      "document": "本接口（UpdateTopicPolicy）用于更新Topic信息",
+      "input": "UpdateTopicPolicyRequest",
+      "name": "更新Topic",
+      "output": "UpdateTopicPolicyResponse"
+    },
+    "UploadFirmware": {
+      "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
+      "input": "UploadFirmwareRequest",
+      "name": "上传固件信息",
+      "output": "UploadFirmwareResponse"
     }
   },
   "metadata": {
@@ -167,6 +431,223 @@
         }
       ],
       "usage": "in"
+    },
+    "BatchUpdateFirmwareRequest": {
+      "document": "BatchUpdateFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件新版本号",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件原版本号，根据文件列表升级固件不需要填写此参数",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareOriVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpgradeMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "设备列表文件名称，根据文件列表升级固件需要填写此参数",
+          "example": "ota",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备列表的文件md5值",
+          "example": "608afe29a06b19d3033c5f8787ec75fa",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备列表的文件大小值",
+          "example": "120",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要升级的设备名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务，默认超时时间。 最小取值60秒，最大为3600秒",
+          "example": "120",
+          "member": "uint64",
+          "name": "TimeoutInterval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchUpdateFirmwareResponse": {
+      "document": "BatchUpdateFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "123456",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceInfo": {
+      "document": "子设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备Tag",
+          "example": "无",
+          "member": "DeviceTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子设备绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "BindTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BindDevicesRequest": {
+      "document": "BindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "example": "test",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被绑定设备的产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "被绑定的多个设备名",
+          "example": "[\"test0\\n\",\"test1\\n\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "中兴CLAA设备的绑定需要skey，普通的设备不需要",
+          "example": "123",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDevicesResponse": {
+      "document": "BindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindProductInfo": {
       "document": "子产品信息",
@@ -193,6 +674,32 @@
         }
       ],
       "usage": "out"
+    },
+    "BrokerSubscribe": {
+      "document": "代理订阅信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CLSLogItem": {
       "document": "CLS日志",
@@ -279,6 +786,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelDeviceFirmwareTaskRequest": {
+      "document": "CancelDeviceFirmwareTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDeviceFirmwareTaskResponse": {
+      "document": "CancelDeviceFirmwareTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CertInfo": {
       "document": "X509证书信息",
@@ -555,6 +1116,87 @@
       ],
       "type": "object"
     },
+    "CreateMultiDevicesTaskRequest": {
+      "document": "CreateMultiDevicesTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数类型 cosfile-文件上传 random-随机创建",
+          "example": "random",
+          "member": "string",
+          "name": "ParametersType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件上传类型时文件名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件上传类型时文件大小",
+          "example": "123",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "随机创建时设备创建个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "BatchCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "文件上传类型时文件md5值",
+          "example": "123123",
+          "member": "string",
+          "name": "Hash",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultiDevicesTaskResponse": {
+      "document": "CreateMultiDevicesTask返回参数结构体",
+      "members": [
+        {
+          "document": "任务ID",
+          "example": "1000001",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrivateCARequest": {
       "document": "CreatePrivateCA请求参数结构体",
       "members": [
@@ -600,6 +1242,213 @@
       ],
       "type": "object"
     },
+    "CreateProductRequest": {
+      "document": "CreateProduct请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}",
+          "example": "fruit",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品属性",
+          "example": "无",
+          "member": "ProductProperties",
+          "name": "ProductProperties",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "创建CLAA产品时，需要Skey",
+          "example": "xxx",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProductResponse": {
+      "document": "CreateProduct返回参数结构体",
+      "members": [
+        {
+          "document": "产品名称",
+          "example": "fruit",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品 ID，腾讯云生成全局唯一 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品属性",
+          "example": "无",
+          "member": "ProductProperties",
+          "name": "ProductProperties",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFileUrlRequest": {
+      "document": "CreateTaskFileUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskFileUrlResponse": {
+      "document": "CreateTaskFileUrl返回参数结构体",
+      "members": [
+        {
+          "document": "任务文件上传链接",
+          "example": "https://iothub-tasktest-****",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务文件名",
+          "example": "111111_ABCDE12345_1586228400",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicPolicyRequest": {
+      "document": "CreateTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品自身ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic名称",
+          "example": "abc",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic权限，1发布，2订阅，3订阅和发布",
+          "example": "2",
+          "member": "uint64",
+          "name": "Privilege",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代理订阅信息，网关产品为绑定的子产品创建topic时需要填写，内容为子产品的ID和设备信息。",
+          "example": "无",
+          "member": "BrokerSubscribe",
+          "name": "BrokerSubscribe",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicPolicyResponse": {
+      "document": "CreateTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRuleRequest": {
+      "document": "CreateTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "testrulename",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则内容",
+          "example": "无",
+          "member": "TopicRulePayload",
+          "name": "TopicRulePayload",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTopicRuleResponse": {
+      "document": "CreateTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceRequest": {
       "document": "DeleteDevice请求参数结构体",
       "members": [
@@ -628,6 +1477,51 @@
           "member": "string",
           "name": "Skey",
           "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResourceRequest": {
+      "document": "DeleteDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceResourceResponse": {
+      "document": "DeleteDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
           "type": "string"
         }
       ],
@@ -735,6 +1629,78 @@
       ],
       "type": "object"
     },
+    "DeleteTopicRuleRequest": {
+      "document": "DeleteTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTopicRuleResponse": {
+      "document": "DeleteTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceClientKeyRequest": {
+      "document": "DescribeDeviceClientKey请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "所属产品的Id",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceClientKeyResponse": {
+      "document": "DescribeDeviceClientKey返回参数结构体",
+      "members": [
+        {
+          "document": "设备的私钥",
+          "example": "----------BEGIN PRIVATE KEY----------END PRIVATE KEY-----",
+          "member": "string",
+          "name": "ClientKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceRequest": {
       "document": "DescribeDevice请求参数结构体",
       "members": [
@@ -754,6 +1720,150 @@
           "member": "string",
           "name": "DeviceName",
           "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResourceRequest": {
+      "document": "DescribeDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "具体的设备资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResourceResponse": {
+      "document": "DescribeDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "设备资源详情",
+          "example": "无",
+          "member": "DeviceResourceInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResourcesRequest": {
+      "document": "DescribeDeviceResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，数值范围 10-250",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源搜索开始时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源搜索结束时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceResourcesResponse": {
+      "document": "DescribeDeviceResources返回参数结构体",
+      "members": [
+        {
+          "document": "资源总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceResourceInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
           "type": "string"
         }
       ],
@@ -996,6 +2106,51 @@
       ],
       "type": "object"
     },
+    "DescribeDeviceShadowRequest": {
+      "document": "DescribeDeviceShadow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品 ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,60}",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceShadowResponse": {
+      "document": "DescribeDeviceShadow返回参数结构体",
+      "members": [
+        {
+          "document": "设备影子数据",
+          "example": "{\"payload\":{\"state\": {\"reported\": { \"color\": \"red\"}}, \"timestamp",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDevicesRequest": {
       "document": "DescribeDevices请求参数结构体",
       "members": [
@@ -1075,6 +2230,600 @@
           "name": "Devices",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareRequest": {
+      "document": "DescribeFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "7ZISKXPJVU",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.3",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareResponse": {
+      "document": "DescribeFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "固件版本号",
+          "example": "1.0.3",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID",
+          "example": "7ZISKXPJVU",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "md5",
+          "member": "string",
+          "name": "Md5sum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件上传的秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1597047368",
+          "member": "uint64",
+          "name": "Createtime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品名称",
+          "example": "ABC",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "固件类型。选项：mcu、module",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskDevicesRequest": {
+      "document": "DescribeFirmwareTaskDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "O4CCMMZE3A",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询的数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskDevicesResponse": {
+      "document": "DescribeFirmwareTaskDevices返回参数结构体",
+      "members": [
+        {
+          "document": "固件升级任务的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件升级任务的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceUpdateStatus",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskDistributionRequest": {
+      "document": "DescribeFirmwareTaskDistribution请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "O4CCMMZE3A",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskDistributionResponse": {
+      "document": "DescribeFirmwareTaskDistribution返回参数结构体",
+      "members": [
+        {
+          "document": "固件升级任务状态分布信息",
+          "example": "无",
+          "member": "StatusStatistic",
+          "name": "StatusInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskRequest": {
+      "document": "DescribeFirmwareTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件任务ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskResponse": {
+      "document": "DescribeFirmwareTask返回参数结构体",
+      "members": [
+        {
+          "document": "固件任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000175",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务创建时间，单位:秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1589466879",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务升级类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "门锁",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "originalVersion",
+          "member": "string",
+          "name": "UpgradeMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "升级前版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "OriginalVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskStatisticsRequest": {
+      "document": "DescribeFirmwareTaskStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "O4CCMMZE3A",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskStatisticsResponse": {
+      "document": "DescribeFirmwareTaskStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "升级成功的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "升级失败的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FailureTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "正在升级的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpgradingTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTasksRequest": {
+      "document": "DescribeFirmwareTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回查询结果条数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTasksResponse": {
+      "document": "DescribeFirmwareTasks返回参数结构体",
+      "members": [
+        {
+          "document": "固件升级任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FirmwareTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "固件升级任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "53",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesRequest": {
+      "document": "DescribeGatewayBindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "example": "test",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "LoRa产品的ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayBindDevicesResponse": {
+      "document": "DescribeGatewayBindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "子设备总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备信息",
+          "example": "无",
+          "member": "BindDeviceInfo",
+          "name": "Devices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子设备所属的产品名",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1253,6 +3002,123 @@
       ],
       "type": "object"
     },
+    "DescribeProductResourceRequest": {
+      "document": "DescribeProductResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要查看资源列表的产品 ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResourceResponse": {
+      "document": "DescribeProductResource返回参数结构体",
+      "members": [
+        {
+          "document": "资源详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProductResourceInfo",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResourcesRequest": {
+      "document": "DescribeProductResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小，数值范围 10-250",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要查看资源列表的产品 ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductResourcesResponse": {
+      "document": "DescribeProductResources返回参数结构体",
+      "members": [
+        {
+          "document": "资源总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProductResourceInfo",
+          "name": "Result",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductResponse": {
       "document": "DescribeProduct返回参数结构体",
       "members": [
@@ -1291,6 +3157,312 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductTaskRequest": {
+      "document": "DescribeProductTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductTaskResponse": {
+      "document": "DescribeProductTask返回参数结构体",
+      "members": [
+        {
+          "document": "产品任务详细信息",
+          "example": "无",
+          "member": "ProductTaskInfo",
+          "name": "TaskInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductTasksRequest": {
+      "document": "DescribeProductTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品级别任务列表偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品级别任务列表拉取个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductTasksResponse": {
+      "document": "DescribeProductTasks返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的任务总个数",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务详细信息列表",
+          "example": "无",
+          "member": "ProductTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsRequest": {
+      "document": "DescribeProducts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，Offset从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页大小，当前页面中显示的最大数量，值范围 10-250。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductsResponse": {
+      "document": "DescribeProducts返回参数结构体",
+      "members": [
+        {
+          "document": "产品总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品详细信息列表",
+          "example": "无",
+          "member": "ProductInfo",
+          "name": "Products",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePushResourceTaskStatisticsRequest": {
+      "document": "DescribePushResourceTaskStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "O4CCMMZE3A",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "1.0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePushResourceTaskStatisticsResponse": {
+      "document": "DescribePushResourceTaskStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "推送成功的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "推送失败的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FailureTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "正在推送的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpgradingTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTasksRequest": {
+      "document": "DescribeResourceTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回查询结果条数",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceTasksResponse": {
+      "document": "DescribeResourceTasks返回参数结构体",
+      "members": [
+        {
+          "document": "资源任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FirmwareTaskInfo",
+          "name": "TaskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "资源任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "53",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1573,6 +3745,102 @@
       ],
       "usage": "both"
     },
+    "DeviceResourceInfo": {
+      "document": "设备资源详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源文件md5",
+          "example": "bda2cc64487b0db7f53d689bccabde2d",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源文件大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源更新时间",
+          "example": "2021-01-03 17:04:05",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备资源上传状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备资源上传百分比",
+          "example": "70",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeviceTag": {
       "document": "设备属性",
       "members": [
@@ -1619,12 +3887,405 @@
       ],
       "usage": "both"
     },
+    "DeviceUpdateStatus": {
+      "document": "设备固件更新状态",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后处理时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "LastProcessTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "错误消息",
+          "example": "fail",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回码",
+          "example": "-1",
+          "member": "int64",
+          "name": "Retcode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "目标更新版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "DstVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载中状态时的下载进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "OriVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DisableTopicRuleRequest": {
+      "document": "DisableTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableTopicRuleResponse": {
+      "document": "DisableTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadDeviceResourceRequest": {
+      "document": "DownloadDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadDeviceResourceResponse": {
+      "document": "DownloadDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "设备资源的cos链接",
+          "example": "https://xxx.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditFirmwareRequest": {
+      "document": "EditFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID。",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件名称。",
+          "example": "name",
+          "member": "string",
+          "name": "FirmwareName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件描述",
+          "example": "desc",
+          "member": "string",
+          "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EditFirmwareResponse": {
+      "document": "EditFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTopicRuleRequest": {
+      "document": "EnableTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTopicRuleResponse": {
+      "document": "EnableTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FirmwareTaskInfo": {
+      "document": "固件升级任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetCOSURLRequest": {
+      "document": "GetCOSURL请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本大小",
+          "example": "256",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCOSURLResponse": {
+      "document": "GetCOSURL返回参数结构体",
+      "members": [
+        {
+          "document": "固件URL",
+          "example": "http://abc.com",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserResourceInfoRequest": {
+      "document": "GetUserResourceInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetUserResourceInfoResponse": {
+      "document": "GetUserResourceInfo返回参数结构体",
+      "members": [
+        {
+          "document": "已使用的资源字节数",
+          "example": "100",
+          "member": "uint64",
+          "name": "UsedSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可以使用资源的总大小",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListLogPayloadRequest": {
       "document": "ListLogPayload请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
           "example": "1606207080000",
           "member": "uint64",
           "name": "MinTime",
@@ -1633,7 +4294,7 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
           "example": "1606208039999",
           "member": "uint64",
           "name": "MaxTime",
@@ -1714,7 +4375,7 @@
       "members": [
         {
           "default": "",
-          "document": "日志开始时间",
+          "document": "日志开始时间，毫秒级时间戳",
           "example": "1530244265000",
           "member": "uint64",
           "name": "MinTime",
@@ -1723,7 +4384,7 @@
         },
         {
           "default": "",
-          "document": "日志结束时间",
+          "document": "日志结束时间，毫秒级时间戳",
           "example": "1530258665000",
           "member": "uint64",
           "name": "MaxTime",
@@ -2004,6 +4665,52 @@
       ],
       "usage": "out"
     },
+    "ProductInfo": {
+      "document": "产品详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE2345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名",
+          "example": "IotHub",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品元数据",
+          "example": "无",
+          "member": "ProductMetadata",
+          "name": "ProductMetadata",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品属性",
+          "example": "无",
+          "member": "ProductProperties",
+          "name": "ProductProperties",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ProductMetadata": {
       "document": "产品元数据",
       "members": [
@@ -2186,6 +4893,208 @@
       ],
       "usage": "both"
     },
+    "ProductResourceInfo": {
+      "document": "产品资源详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "AAAAAAAAAA",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名",
+          "example": "test",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源文件md5",
+          "example": "bda2cc64487b0db7f53d689bccabde2d",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源文件大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源文件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源创建时间",
+          "example": "2021-01-03 17:04:05",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductTaskInfo": {
+      "document": "产品级任务详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型 0-批量创建设备类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态 0-创建中 1-待执行 2-执行中 3-执行失败 4-子任务部分失败 5-执行成功",
+          "example": "0",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务参数类型 cosfile-文件输入 random-随机生成",
+          "example": "cosfile",
+          "member": "string",
+          "name": "ParametersType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务参数",
+          "example": "abc",
+          "member": "string",
+          "name": "Parameters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务执行结果类型 cosfile-文件输出 errmsg-错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosfile",
+          "member": "string",
+          "name": "ResultType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子任务总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "BatchCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子任务已执行个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "BatchOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务更新时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "CompleteTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PublishBroadcastMessageRequest": {
       "document": "PublishBroadcastMessage请求参数结构体",
       "members": [
@@ -2240,6 +5149,321 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishMessageRequest": {
+      "document": "PublishMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "消息发往的主题。命名规则：${ProductId}/${DeviceName}/[a-zA-Z0-9:_-]{1,128}",
+          "example": "RL0BAZKZ6V/dev1/control",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容",
+          "example": "hahaha",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "RL0BAZKZ6V",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务质量等级，取值为0或1",
+          "example": "0",
+          "member": "uint64",
+          "name": "Qos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Payload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishMessageResponse": {
+      "document": "PublishMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishRRPCMessageRequest": {
+      "document": "PublishRRPCMessage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ASBHKN121",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "消息内容，utf8编码",
+          "example": "1234561",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishRRPCMessageResponse": {
+      "document": "PublishRRPCMessage返回参数结构体",
+      "members": [
+        {
+          "document": "RRPC消息ID",
+          "example": "74",
+          "member": "int64",
+          "name": "MessageId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "设备回复的消息内容，采用base64编码",
+          "example": "QUJDRA==",
+          "member": "string",
+          "name": "PayloadBase64",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceTopicRuleRequest": {
+      "document": "ReplaceTopicRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "testrulename",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "替换的规则包体",
+          "example": "无",
+          "member": "TopicRulePayload",
+          "name": "TopicRulePayload",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceTopicRuleResponse": {
+      "document": "ReplaceTopicRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceResult": {
+      "document": "重置设备状态结果",
+      "members": [
+        {
+          "default": "",
+          "document": "设备名",
+          "example": "ABCD",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "not exist",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResetDeviceStateRequest": {
+      "document": "ResetDeviceState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "[\"test_device1\\n\",\"test_device2\\n\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDeviceStateResponse": {
+      "document": "ResetDeviceState返回参数结构体",
+      "members": [
+        {
+          "document": "批量重置设备成功数",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "批量重置设备结果",
+          "example": "无",
+          "member": "ResetDeviceResult",
+          "name": "ResetDeviceResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryDeviceFirmwareTaskRequest": {
+      "document": "RetryDeviceFirmwareTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件升级任务ID",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RetryDeviceFirmwareTaskResponse": {
+      "document": "RetryDeviceFirmwareTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2305,6 +5529,32 @@
       ],
       "usage": "out"
     },
+    "SearchKeyword": {
+      "document": "搜索关键词",
+      "members": [
+        {
+          "default": "",
+          "document": "搜索条件的Key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "搜索条件的值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SetProductsForbiddenStatusRequest": {
       "document": "SetProductsForbiddenStatus请求参数结构体",
       "members": [
@@ -2331,6 +5581,186 @@
     },
     "SetProductsForbiddenStatusResponse": {
       "document": "SetProductsForbiddenStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StatusStatistic": {
+      "document": "状态统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "统计总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRulePayload": {
+      "document": "创建规则请求包体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
+          "example": "U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行为的JSON字符串，大部分种类举例如下：\n[\n    {\n        \"republish\": {\n            \"topic\": \"TEST/test\"\n        }\n    },\n    {\n        \"forward\": {\n            \"api\": \"http://127.0.0.1:8080\",\n            \"token\":\"xxx\"\n        }\n    },\n    {\n        \"ckafka\": {\n            \"instance\": {\n                \"id\": \"ckafka-test\",\n                \"name\": \"\"\n            },\n            \"topic\": {\n                \"id\": \"topic-test\",\n                \"name\": \"test\"\n            },\n            \"region\": \"gz\"\n        }\n    },\n    {\n        \"cmqqueue\": {\n            \"queuename\": \"queue-test-TEST\",\n            \"region\": \"gz\"\n        }\n    },\n    {\n        \"mysql\": {\n            \"instanceid\": \"cdb-test\",\n            \"region\": \"gz\",\n            \"username\": \"test\",\n            \"userpwd\": \"*****\",\n            \"dbname\": \"d_mqtt\",\n            \"tablename\": \"t_test\",\n            \"fieldpairs\": [\n                {\n                    \"field\": \"test\",\n                    \"value\": \"test\"\n                }\n            ],\n            \"devicetype\": \"CUSTOM\"\n        }\n    }\n]",
+          "example": "[]",
+          "member": "string",
+          "name": "Actions",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否禁用规则",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleDisabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UnbindDevicesRequest": {
+      "document": "UnbindDevices请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网关设备的产品ID",
+          "example": "12345ABCDE",
+          "member": "string",
+          "name": "GatewayProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "网关设备的设备名",
+          "example": "test",
+          "member": "string",
+          "name": "GatewayDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "多个设备名",
+          "example": "[\"test0\\n\",\"test1\\n\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "中兴CLAA设备的解绑需要Skey，普通设备不需要",
+          "example": "123",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindDevicesResponse": {
+      "document": "UnbindDevices返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceAvailableStateRequest": {
+      "document": "UpdateDeviceAvailableState请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "设备所属产品id",
+          "example": "SB9OJFCJ1C",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "test123",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要设置的设备状态，1为启用，0为禁用",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableState",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceAvailableStateResponse": {
+      "document": "UpdateDeviceAvailableState返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2422,6 +5852,69 @@
     "UpdateDevicePSKResponse": {
       "document": "UpdateDevicePSK返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceShadowRequest": {
+      "document": "UpdateDeviceShadow请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "设备名称",
+          "example": "ABC",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "虚拟设备的状态，JSON字符串格式，由desired结构组成",
+          "example": "xxx",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前版本号，需要和后台的version保持一致，才能更新成功",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShadowVersion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceShadowResponse": {
+      "document": "UpdateDeviceShadow返回参数结构体",
+      "members": [
+        {
+          "document": "设备影子数据，JSON字符串格式",
+          "example": "{\"payload\":{\"state\": {\"desired\": { \"color\": \"red\"}}, \"timestamp\"",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2619,6 +6112,141 @@
     },
     "UpdateProductPrivateCAResponse": {
       "document": "UpdateProductPrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTopicPolicyRequest": {
+      "document": "UpdateTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新前Topic名",
+          "example": "abc",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新后Topic名",
+          "example": "ABC",
+          "member": "string",
+          "name": "NewTopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Topic权限",
+          "example": "2",
+          "member": "uint64",
+          "name": "Privilege",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代理订阅信息",
+          "example": "无",
+          "member": "BrokerSubscribe",
+          "name": "BrokerSubscribe",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTopicPolicyResponse": {
+      "document": "UpdateTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFirmwareRequest": {
+      "document": "UploadFirmware请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件的MD5值",
+          "example": "hfshfspodkoiwuidoiwjcuie",
+          "member": "string",
+          "name": "Md5sum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件的大小",
+          "example": "1024",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "固件名称",
+          "example": "ABCD",
+          "member": "string",
+          "name": "FirmwareName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "固件描述",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFirmwareResponse": {
+      "document": "UploadFirmware返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
