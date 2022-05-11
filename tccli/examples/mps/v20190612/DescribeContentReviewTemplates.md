@@ -18,6 +18,7 @@ Output:
             {
                 "Definition": 30,
                 "Name": "模板1",
+                "Type": "Preset",
                 "Comment": "内容智能识别模板",
                 "PornConfigure": {
                     "ImgReviewInfo": {
@@ -119,6 +120,7 @@ Output:
             {
                 "Definition": 30,
                 "Name": "模板1",
+                "Type": "Preset",
                 "Comment": "内容智能识别模板",
                 "PornConfigure": {
                     "ImgReviewInfo": {
@@ -196,6 +198,7 @@ Output:
             {
                 "Definition": 31,
                 "Name": "模板2",
+                "Type": "Preset",
                 "Comment": "内容审核模板",
                 "PornConfigure": {
                     "ImgReviewInfo": {

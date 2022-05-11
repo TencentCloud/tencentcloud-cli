@@ -146,7 +146,7 @@
       {
         "document": "本接口 (DescribeHostsInfos) 用于查询母机信息。\n查询并返回超卖售卖池母机信息\n只允许eks调用，会对UIN进行白名单校验。",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHostsInfos\n&Filters.0.Name=pool\n&Filters.0.Values.0=qcloud\n&Limit=10\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"HostInfoSet\": [\n            {}\n        ],\n        \"RequestId\": \"92c9b8e4-bc5e-40fe-ae29-cace062a0d4b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"HostInfoSet\": [\n            {\n                \"Placement\": {\n                    \"Pool\": \"qcloud\",\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"HostIp\": \"10.108.118.105\",\n                \"HostType\": \"M1\",\n                \"HostResource\": {\n                    \"CpuTotal\": 2400,\n                    \"CpuAvailable\": 2400,\n                    \"MemTotal\": 122880,\n                    \"MemAvailable\": 122880,\n                    \"DiskTotal\": 1200,\n                    \"DiskAvailable\": 1200,\n                    \"NodeQuotaTotal\": \"[1200, 1200]\",\n                    \"NodeQuota\": \"[1200, 1200]\"\n                }\n            }\n        ],\n        \"RequestId\": \"92c9b8e4-bc5e-40fe-ae29-cace062a0d4b\"\n    }\n}",
         "title": "DescribeHostsInfos"
       }
     ],

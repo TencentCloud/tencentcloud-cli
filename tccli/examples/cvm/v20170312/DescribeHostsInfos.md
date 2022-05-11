@@ -20,7 +20,24 @@ Output:
     "Response": {
         "TotalCount": 3,
         "HostInfoSet": [
-            {}
+            {
+                "Placement": {
+                    "Pool": "qcloud",
+                    "Zone": "ap-guangzhou-2"
+                },
+                "HostIp": "10.108.118.105",
+                "HostType": "M1",
+                "HostResource": {
+                    "CpuTotal": 2400,
+                    "CpuAvailable": 2400,
+                    "MemTotal": 122880,
+                    "MemAvailable": 122880,
+                    "DiskTotal": 1200,
+                    "DiskAvailable": 1200,
+                    "NodeQuotaTotal": "[1200, 1200]",
+                    "NodeQuota": "[1200, 1200]"
+                }
+            }
         ],
         "RequestId": "92c9b8e4-bc5e-40fe-ae29-cace062a0d4b"
     }

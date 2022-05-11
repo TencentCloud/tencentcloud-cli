@@ -805,6 +805,32 @@
       ],
       "usage": "in"
     },
+    "CommInfo": {
+      "document": "资源池和可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源池子\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qcloud",
+          "member": "string",
+          "name": "Pool",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateDisasterRecoverGroupRequest": {
       "document": "CreateDisasterRecoverGroup请求参数结构体",
       "members": [
@@ -3662,7 +3688,52 @@
     },
     "HostInfo": {
       "document": "母机相关的信息",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "地域、资源池子等公共信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Placement\": {           \"Pool\": \"qcloud\",           \"Zone\": \"ap",
+          "member": "CommInfo",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "母机ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "母机type\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Y0-MM52-124",
+          "member": "string",
+          "name": "HostType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "母机信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"HostResource\": {           \"CpuTotal\": 2400,           \"CpuAvai",
+          "member": "HostResourceInfo",
+          "name": "HostResource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "out"
     },
     "HostItem": {
@@ -3853,6 +3924,102 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HostResourceInfo": {
+      "document": "母机信息",
+      "members": [
+        {
+          "default": "",
+          "document": "母机总cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "CpuTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "母机可用cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "CpuAvailable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "母机总内存大小（单位为:GiB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MemTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "母机可用内存大小（单位为:GiB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MemAvailable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "母机总磁盘大小（单位为:GiB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "母机总磁盘大小（单位为:GiB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskAvailable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "剩余母机cpu资源node分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100, 100]",
+          "member": "string",
+          "name": "NodeQuota",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总的母机cpu资源node分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[100, 100]",
+          "member": "string",
+          "name": "NodeQuotaTotal",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "超卖率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CpuOverSoldRate",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

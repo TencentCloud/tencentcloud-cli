@@ -468,7 +468,8 @@
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -477,7 +478,8 @@
           "member": "int64",
           "name": "PayType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -486,7 +488,8 @@
           "member": "int64",
           "name": "Duration",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -495,16 +498,18 @@
           "member": "int64",
           "name": "Count",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。",
+          "document": "是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -513,7 +518,8 @@
           "member": "TagItem",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -522,7 +528,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -537,7 +544,8 @@
           "name": "SubscribeIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1106,7 +1114,8 @@
           "member": "string",
           "name": "SubscribeId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1115,7 +1124,8 @@
           "member": "string",
           "name": "SubscribeName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1124,7 +1134,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1133,7 +1144,8 @@
           "member": "string",
           "name": "ChannelId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1142,7 +1154,8 @@
           "member": "string",
           "name": "PayType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1151,7 +1164,8 @@
           "member": "string",
           "name": "Product",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1160,7 +1174,8 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1169,25 +1184,28 @@
           "member": "string",
           "name": "SubsStatus",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "返回记录的起始偏移量",
+          "document": "返回记录的起始偏移量，默认为0。请输入非负整数",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "单次返回的记录数量",
+          "document": "单次返回的记录数量，默认20。请输入1到100的整数",
           "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1196,7 +1214,8 @@
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1205,7 +1224,8 @@
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1214,7 +1234,8 @@
           "member": "string",
           "name": "SubscribeVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1229,7 +1250,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "数据订阅实例的信息列表",
@@ -1238,7 +1260,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

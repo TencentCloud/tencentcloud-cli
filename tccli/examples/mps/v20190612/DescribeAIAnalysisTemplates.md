@@ -19,6 +19,7 @@ Output:
                 "Definition": 30,
                 "Name": "模板1",
                 "Comment": "智能分析模板",
+                "Type": "Preset",
                 "ClassificationConfigure": {
                     "Switch": "ON"
                 },
@@ -62,6 +63,7 @@ Output:
                 "Definition": 30,
                 "Name": "模板1",
                 "Comment": "智能分析模板",
+                "Type": "Preset",
                 "ClassificationConfigure": {
                     "Switch": "ON"
                 },
@@ -80,6 +82,7 @@ Output:
             {
                 "Definition": 31,
                 "Name": "模板2",
+                "Type": "Preset",
                 "Comment": "智能分析模板",
                 "ClassificationConfigure": {
                     "Switch": "OFF"

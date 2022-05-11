@@ -1397,6 +1397,16 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Prometheus 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmp",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
