@@ -13261,14 +13261,51 @@
       ],
       "usage": "in"
     },
+    "FileDeleteResultItem": {
+      "document": "文件删除结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "删除的文件 ID 。",
+          "example": "7447398156998994860",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本次删除的文件部分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaDeleteItem",
+          "name": "DeleteParts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FileDeleteTask": {
       "document": "文件删除任务",
       "members": [
         {
           "default": "",
           "document": "删除文件 ID 列表。",
+          "example": "无",
           "member": "string",
           "name": "FileIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "删除文件结果信息列表。",
+          "example": "无",
+          "member": "FileDeleteResultItem",
+          "name": "FileDeleteResultInfo",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14159,7 +14196,7 @@
       "members": [
         {
           "default": "",
-          "document": "推流[直播码](https://cloud.tencent.com/document/product/267/5959)。",
+          "document": "推流直播码。",
           "example": "record-stream",
           "member": "string",
           "name": "StreamId",
@@ -15292,7 +15329,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "MediaImageSpriteInfo": {
       "document": "点播文件雪碧图信息",

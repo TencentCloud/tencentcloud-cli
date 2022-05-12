@@ -3528,6 +3528,15 @@
           "name": "TriggerTasks",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略",
+          "example": "[\"ONECLICK\"]",
+          "member": "string",
+          "name": "OneClickPolicyType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

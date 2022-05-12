@@ -11,8 +11,8 @@
     "AddUserToUserGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserToUserGroup\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"3945dcb0-e433-4fd0-a69b-b5074abe3cbd\",\n        \"5c1ab60e-4844-4d92-8708-82257657d916\",\n        \"df68819a-804b-44f8-af68-682b28d5c02e\"\n    ],\n    \"UserGroupId\": \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"FailedItems\": [\n            \"xx\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserToUserGroup\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"3945dcb0-e433-****-a69b-b5074abe3cbd\",\n        \"5c1ab60e-4844-****-8708-82257657d916\",\n        \"df68819a-804b-****-af68-682b28d5c02e\"\n    ],\n    \"UserGroupId\": \"1453013c-****-424b-b9c7-dabcea3bd0ca\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"424b-804b-****-af68-682b28d5c02e\",\n        \"FailedItems\": [\n            \"5c1ab60e-4844-****-8708-82257657d916\"\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -43,16 +43,16 @@
     "CreateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"新建用户03\",\n    \"DisplayName\": \"接口创建用户\",\n    \"Description\": \"接口创建用户\",\n    \"Phone\": \"+86-13312546881\",\n    \"OrgNodeId\": \"7999987a-c9dc-4dd2-b3e2-b52f53317aa6\",\n    \"ExpirationTime\": \"2022-01-18T09:44:07.182+0000\",\n    \"Password\": \"qqWW22@@\",\n    \"Email\": \"632542556@qq.com\",\n    \"PwdNeedReset\": \"true\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a31e9877-f195-45f9-9765-0f36e005ceea\",\n        \"UserId\": \"2877f61b-3467-46f4-a6cb-eebd3cce660a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"示例用户\",\n    \"DisplayName\": \"创建示例用户\",\n    \"Description\": \"接口创建的示例用户\",\n    \"Phone\": \"+86-133****6881\",\n    \"OrgNodeId\": \"7999987a-****-4dd2-b3e2-b52f53317aa6\",\n    \"ExpirationTime\": \"2022-01-18T09:44:07.182+0000\",\n    \"Password\": \"q6E7@#8\",\n    \"Email\": \"63****2556@qq.com\",\n    \"PwdNeedReset\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a31e9877-****-45f9-9765-0f36e005ceea\",\n        \"UserId\": \"2877f61b-****-46f4-a6cb-eebd3cce660a\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "CreateUserGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"DisplayName\": \"用户组的名称\",\n    \"Description\": \"用户组的备注\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"662cdc36-d0ec-490a-a750-f92503baaf8c\",\n        \"UserGroupId\": \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"DisplayName\": \"示例用户组\",\n    \"Description\": \"示例用户组的备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"662cdc36-****-490a-a750-f92503baaf8c\",\n        \"UserGroupId\": \"1453013c-****-424b-b9c7-dabcea3bd0ca\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -83,16 +83,16 @@
     "DeleteUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"961828af-6a53-4142-8c19-0be86561faa4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserId\": \"ps18asd8af-****-dfas-8c19-0be8656fdase\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"961828af-****-4142-8c19-0be86561faa4\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DeleteUserGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroup\n<公共请求参数>\n\n{\n    \"UserGroupId\": \"9cc76b71-e79e-4eaf-b5c1-d0198aff50d1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39525c2d-bc01-4e99-b007-559b3874567d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroup\n<公共请求参数>\n\n{\n    \"UserGroupId\": \"9cc76b71-****-4eaf-b5c1-d0198aff50d1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39525c2d-****-4e99-b007-559b3874567d\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -251,8 +251,8 @@
     "ListUserGroupsOfUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroupsOfUser\n<公共请求参数>\n\n{\n    \"UserId\": \"5c1ab60e-4844-4d92-8708-82257657d916\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserGroupIds\": [\n            \"1453013c-d0e9-424b-b9c7-dabcea3bd0ca\"\n        ],\n        \"TotalCount\": 1,\n        \"UserGroupInfoList\": 0,\n        \"UserId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUserGroupsOfUser\n<公共请求参数>\n\n{\n    \"UserId\": \"5c1ab60e-****-4d92-8708-82257657d916\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserGroupIds\": [\n            \"1453013c-****-424b-b9c7-dabcea3bd0ca\"\n        ],\n        \"TotalCount\": 1,\n        \"UserGroupInfoList\": 0,\n        \"UserId\": \"5c1ab60e-****-4d92-8708-82257657d916\",\n        \"RequestId\": \"789s60e-****-4d92-8708-82257847362\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -260,7 +260,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsers\n<公共请求参数>\n\n{\n    \"SearchCondition\": {\n        \"Keyword\": \"\\\"\\\"\"\n    },\n    \"ExpectedFields\": [\n        \"UserId\",\n        \"UserName\",\n        \"DisplayName\",\n        \"LastUpdateTime\",\n        \"Status\"\n    ],\n    \"Sort\": {\n        \"SortKey\": \"LastUpdateTime\",\n        \"SortOrder\": \"ASC\"\n    },\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"IncludeTotal\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"2151788c-45ac-47be-8a6f-5ca114fcfbeb\",\n        \"UserList\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"2151788c-****-47be-8a6f-5ca114fcfbeb\",\n        \"UserList\": []\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -307,8 +307,8 @@
     "ModifyUserInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserInfo\n<公共请求参数>\n\n{\n    \"DisplayName\": \"修改用户\",\n    \"UserId\": \"3945dcb0-e433-4fd0-a69b-b5074abe3cbd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b2d3828-82ec-483c-b8cc-9e5f2da05905\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eiam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserInfo\n<公共请求参数>\n\n{\n    \"DisplayName\": \"示例用户\",\n    \"UserId\": \"3945dcb0-e433-****-a69b-b5074abe3cbd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b2d3828-****-483c-b8cc-9e5f2da05905\"\n    }\n}",
         "title": "请求示例"
       }
     ],

@@ -9014,7 +9014,8 @@
       "members": [
         {
           "default": "",
-          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”",
+          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”",
+          "example": "instance",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -9024,6 +9025,7 @@
         {
           "default": "",
           "document": "标签对列表",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": true,
