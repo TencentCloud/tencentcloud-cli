@@ -1176,6 +1176,42 @@
       ],
       "type": "object"
     },
+    "CrontabResumeSuspendStrategy": {
+      "document": "定时启停策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "定时拉起时间：如：周一8点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000-08:00:00",
+          "member": "string",
+          "name": "ResumeTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时挂起时间：如：周一20点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000-20:00:00",
+          "member": "string",
+          "name": "SuspendTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SuspendStrategy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DataEngineInfo": {
       "document": "DataEngine详细信息",
       "members": [
@@ -1407,6 +1443,46 @@
           "name": "TagList",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎拥有的权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[USE]",
+          "member": "string",
+          "name": "Permissions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSuspend",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CrontabResumeSuspend",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrontabResumeSuspendStrategy",
+          "name": "CrontabResumeSuspendStrategy",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -1762,6 +1838,15 @@
           "name": "ExcludePublicEngine",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "参数应该为引擎权限类型，有效类型：\"USE\", \"MODIFY\", \"OPERATE\", \"MONITOR\", \"DELETE\"",
+          "example": "[USE]",
+          "member": "string",
+          "name": "AccessTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2137,6 +2222,15 @@
           "example": "Table",
           "member": "string",
           "name": "TableType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；",
+          "example": "HIVE",
+          "member": "string",
+          "name": "TableFormat",
           "required": false,
           "type": "string"
         }
@@ -2892,6 +2986,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隐式分区转换策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "truncate",
+          "member": "string",
+          "name": "Transform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转换策略参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"3\"]",
+          "member": "string",
+          "name": "TransformArgs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2907,7 +3031,8 @@
           "name": "Database",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2917,7 +3042,8 @@
           "name": "Catalog",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2927,7 +3053,8 @@
           "name": "Table",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2937,7 +3064,8 @@
           "name": "Operation",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2947,7 +3075,8 @@
           "name": "PolicyType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2957,7 +3086,8 @@
           "name": "Function",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2967,7 +3097,8 @@
           "name": "View",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2977,7 +3108,8 @@
           "name": "Column",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2987,7 +3119,8 @@
           "name": "DataEngine",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2997,7 +3130,8 @@
           "name": "ReAuth",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3007,7 +3141,8 @@
           "name": "Source",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3017,7 +3152,8 @@
           "name": "Mode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3027,7 +3163,8 @@
           "name": "Operator",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3037,7 +3174,30 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_group",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
