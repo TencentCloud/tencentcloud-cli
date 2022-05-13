@@ -144,6 +144,12 @@
       "name": "Waf  IP封堵状态查询",
       "output": "DescribeIpHitItemsResponse"
     },
+    "DescribeOpAttackWhiteRuleNew": {
+      "document": "运营平台接口：获取用户规则白名单列表",
+      "input": "DescribeOpAttackWhiteRuleNewRequest",
+      "name": "运营平台接口：获取用户规则白名单列表",
+      "output": "DescribeOpAttackWhiteRuleNewResponse"
+    },
     "DescribeOpRuleUpdateLog": {
       "document": "运营后台：获取特征规则更新动态",
       "input": "DescribeOpRuleUpdateLogRequest",
@@ -2622,6 +2628,94 @@
       ],
       "type": "object"
     },
+    "DescribeOpAttackWhiteRuleNewRequest": {
+      "document": "DescribeOpAttackWhiteRuleNew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持 user_id, signature_id, modify_time",
+          "example": "user_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "筛选字段支持 AppId，Domain",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOpAttackWhiteRuleNewResponse": {
+      "document": "DescribeOpAttackWhiteRuleNew返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpUserWhiteRuleNew",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOpRuleUpdateLogRequest": {
       "document": "DescribeOpRuleUpdateLog请求参数结构体",
       "members": [
@@ -4169,6 +4263,122 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OpUserWhiteRuleNew": {
+      "document": "用户白名单规则的运营后台接口",
+      "members": [
+        {
+          "default": "",
+          "document": "appid",
+          "example": "2500212003",
+          "member": "string",
+          "name": "OpAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "OpDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "id",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteRuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "规则id",
+          "example": "010000001",
+          "member": "string",
+          "name": "SignatureId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配域",
+          "example": "URL",
+          "member": "string",
+          "name": "MatchField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配方法",
+          "example": "eq",
+          "member": "string",
+          "name": "MatchMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配内容",
+          "example": "/api",
+          "member": "string",
+          "name": "MatchContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-11-19T19:53:53+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "ModifyTime",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

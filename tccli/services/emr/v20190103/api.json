@@ -756,6 +756,46 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群vpcid 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网id 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopologyInfo",
+          "name": "TopologyInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是跨AZ集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsMultiZoneCluster",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -930,30 +970,12 @@
         },
         {
           "default": "",
-          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
-          "example": "无",
-          "member": "VPCSettings",
-          "name": "VPCSettings",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
           "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
           "member": "string",
           "name": "Software",
           "required": true,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "节点资源的规格。",
-          "example": "无",
-          "member": "NewResourceSpec",
-          "name": "ResourceSpec",
-          "required": true,
-          "type": "object"
         },
         {
           "default": "",
@@ -984,15 +1006,6 @@
         },
         {
           "default": "",
-          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
-          "example": "无",
-          "member": "Placement",
-          "name": "Placement",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
           "member": "uint64",
@@ -1020,10 +1033,37 @@
         },
         {
           "default": "",
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "example": "无",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点资源的规格。",
+          "example": "无",
+          "member": "NewResourceSpec",
+          "name": "ResourceSpec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "开启COS访问需要设置的参数。",
           "example": "无",
           "member": "COSSettings",
           "name": "COSSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
           "required": false,
           "type": "object"
         },
@@ -1177,6 +1217,33 @@
           "example": "无",
           "member": "ExternalService",
           "name": "ExternalService",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。",
+          "example": "false",
+          "member": "bool",
+          "name": "MultiZone",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。",
+          "example": "无",
+          "member": "MultiZoneSetting",
+          "name": "MultiZoneSettings",
           "required": false,
           "type": "list"
         }
@@ -2213,15 +2280,6 @@
         },
         {
           "default": "",
-          "document": "询价的节点规格。",
-          "example": "无",
-          "member": "NewResourceSpec",
-          "name": "ResourceSpec",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
           "example": "无",
           "member": "string",
@@ -2258,11 +2316,20 @@
         },
         {
           "default": "",
+          "document": "询价的节点规格。",
+          "example": "无",
+          "member": "NewResourceSpec",
+          "name": "ResourceSpec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -2271,7 +2338,7 @@
           "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -2325,6 +2392,24 @@
           "example": "无",
           "member": "ExternalService",
           "name": "ExternalService",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当前默认值为0，跨AZ特性支持后为1",
+          "example": "无",
+          "member": "uint64",
+          "name": "VersionID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区的规格信息",
+          "example": "无",
+          "member": "MultiZoneSetting",
+          "name": "MultiZoneSettings",
           "required": false,
           "type": "list"
         }
@@ -3213,6 +3298,52 @@
       ],
       "usage": "both"
     },
+    "MultiZoneSetting": {
+      "document": "各个可用区的参数信息",
+      "members": [
+        {
+          "default": "",
+          "document": "\"master\"、\"standby\"、\"third-party\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"master\"",
+          "member": "string",
+          "name": "ZoneTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "VPCSettings",
+          "name": "VPCSettings",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "NewResourceSpec",
+          "name": "ResourceSpec",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NewResourceSpec": {
       "document": "资源描述",
       "members": [
@@ -3310,7 +3441,8 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3320,7 +3452,8 @@
           "name": "SerialNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3330,7 +3463,8 @@
           "name": "OrderNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3340,7 +3474,8 @@
           "name": "WanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3350,7 +3485,8 @@
           "name": "Flag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3360,7 +3496,8 @@
           "name": "Spec",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3370,7 +3507,8 @@
           "name": "CpuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3380,7 +3518,8 @@
           "name": "MemSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3390,7 +3529,8 @@
           "name": "MemDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3400,7 +3540,8 @@
           "name": "RegionId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3410,7 +3551,8 @@
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3420,7 +3562,8 @@
           "name": "ApplyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3430,7 +3573,8 @@
           "name": "FreeTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3440,7 +3584,8 @@
           "name": "DiskSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3450,7 +3595,8 @@
           "name": "NameTag",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3460,7 +3606,8 @@
           "name": "Services",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3470,7 +3617,8 @@
           "name": "StorageType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3480,7 +3628,8 @@
           "name": "RootSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3490,7 +3639,8 @@
           "name": "ChargeType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3500,7 +3650,8 @@
           "name": "CdbIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3510,7 +3661,8 @@
           "name": "CdbPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3520,7 +3672,8 @@
           "name": "HwDiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3530,7 +3683,8 @@
           "name": "HwDiskSizeDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3540,7 +3694,8 @@
           "name": "HwMemSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3550,7 +3705,8 @@
           "name": "HwMemSizeDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3560,7 +3716,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3570,7 +3727,8 @@
           "name": "EmrResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3580,7 +3738,8 @@
           "name": "IsAutoRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3590,7 +3749,8 @@
           "name": "DeviceClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3600,7 +3760,8 @@
           "name": "Mutable",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3610,7 +3771,8 @@
           "name": "MCMultiDisk",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3620,7 +3782,8 @@
           "name": "CdbNodeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3630,7 +3793,8 @@
           "name": "Ip",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3640,7 +3804,8 @@
           "name": "Destroyable",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3650,7 +3815,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3660,7 +3826,8 @@
           "name": "AutoFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3670,7 +3837,8 @@
           "name": "HardwareResourceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3680,7 +3848,8 @@
           "name": "IsDynamicSpec",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3690,7 +3859,8 @@
           "name": "DynamicPodSpec",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -3700,7 +3870,52 @@
           "name": "SupportModifyPayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "系统盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RootStorageType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubnetInfo",
+          "name": "SubnetInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "客户端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Clients",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4048,6 +4263,16 @@
           "example": "\"\"",
           "member": "string",
           "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pod name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodName",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4834,7 +5059,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4843,7 +5069,8 @@
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4852,7 +5079,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4861,7 +5089,8 @@
           "member": "uint64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4870,7 +5099,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4879,7 +5109,8 @@
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4888,7 +5119,8 @@
           "member": "uint64",
           "name": "TaskCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4897,7 +5129,8 @@
           "member": "uint64",
           "name": "CoreCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4906,7 +5139,8 @@
           "member": "uint64",
           "name": "UnNecessaryNodeList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4915,7 +5149,8 @@
           "member": "uint64",
           "name": "RouterCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4924,7 +5159,8 @@
           "member": "uint64",
           "name": "SoftDeployInfo",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4933,7 +5169,8 @@
           "member": "uint64",
           "name": "ServiceNodeInfo",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4942,7 +5179,8 @@
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4951,7 +5189,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4960,7 +5199,8 @@
           "member": "string",
           "name": "HardwareResourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4969,7 +5209,8 @@
           "member": "PodSpec",
           "name": "PodSpec",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4978,7 +5219,8 @@
           "member": "string",
           "name": "ClickHouseClusterName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4987,7 +5229,8 @@
           "member": "string",
           "name": "ClickHouseClusterType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4996,7 +5239,8 @@
           "member": "string",
           "name": "YarnNodeLabel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5005,7 +5249,8 @@
           "member": "PodParameter",
           "name": "PodParameter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5014,7 +5259,8 @@
           "member": "uint64",
           "name": "MasterCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5023,7 +5269,28 @@
           "member": "string",
           "name": "StartServiceAfterScaleOut",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可用区，默认是集群的主可用区",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网，默认是集群创建时的子网",
+          "example": "sub-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5038,7 +5305,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5047,7 +5315,8 @@
           "name": "DealNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "客户端Token。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5056,7 +5325,8 @@
           "name": "ClientToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "扩容流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5065,7 +5335,8 @@
           "name": "FlowId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "大订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5074,7 +5345,8 @@
           "name": "BillId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5108,6 +5380,32 @@
         }
       ],
       "usage": "in"
+    },
+    "ShortNodeInfo": {
+      "document": "节点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "节点类型，Master/Core/Task/Router/Common\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Master",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Step": {
       "document": "执行步骤",
@@ -5147,6 +5445,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SubnetInfo": {
+      "document": "子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网信息（名字）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名字",
+          "member": "string",
+          "name": "SubnetName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网信息（ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5275,6 +5599,52 @@
         }
       ],
       "type": "object"
+    },
+    "TopologyInfo": {
+      "document": "集群节点拓扑信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou-2\"",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubnetInfo",
+          "name": "SubnetInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShortNodeInfo",
+          "name": "NodeInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UpdateInstanceSettings": {
       "document": "变配资源规格",

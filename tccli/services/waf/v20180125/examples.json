@@ -204,6 +204,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeOpAttackWhiteRuleNew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOpAttackWhiteRuleNew\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Order\": \"xx\",\n    \"By\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"Status\": 0,\n                \"OpDomain\": \"xx\",\n                \"MatchField\": \"xx\",\n                \"MatchMethod\": \"xx\",\n                \"MatchContent\": \"xx\",\n                \"OpAppId\": \"xx\",\n                \"SignatureId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"WhiteRuleId\": 1,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            },\n            {\n                \"Status\": 1,\n                \"OpDomain\": \"xx\",\n                \"MatchField\": \"xx\",\n                \"MatchMethod\": \"xx\",\n                \"MatchContent\": \"xx\",\n                \"OpAppId\": \"xx\",\n                \"SignatureId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"WhiteRuleId\": 1,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
     "DescribeOpRuleUpdateLog": [
       {
         "document": "",

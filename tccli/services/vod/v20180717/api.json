@@ -13284,14 +13284,53 @@
       ],
       "type": "object"
     },
+    "FileDeleteResultItem": {
+      "document": "文件删除结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "删除的文件 ID 。",
+          "example": "7447398156998994860",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "本次删除的文件部分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaDeleteItem",
+          "name": "DeleteParts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "FileDeleteTask": {
       "document": "文件删除任务",
       "members": [
         {
           "default": "",
           "document": "删除文件 ID 列表。",
+          "example": "无",
           "member": "string",
           "name": "FileIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "删除文件结果信息列表。",
+          "example": "无",
+          "member": "FileDeleteResultItem",
+          "name": "FileDeleteResultInfo",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14182,12 +14221,13 @@
       "members": [
         {
           "default": "",
-          "document": "推流[直播码](https://cloud.tencent.com/document/product/267/5959)。",
+          "document": "推流直播码。",
           "example": "record-stream",
           "member": "string",
           "name": "StreamId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14196,7 +14236,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14205,7 +14246,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14214,7 +14256,8 @@
           "member": "int64",
           "name": "IsPersistence",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14223,7 +14266,8 @@
           "member": "string",
           "name": "ExpireTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14232,7 +14276,8 @@
           "member": "string",
           "name": "Procedure",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14241,7 +14286,8 @@
           "member": "uint64",
           "name": "MetaDataRequired",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14250,7 +14296,8 @@
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14259,7 +14306,8 @@
           "member": "string",
           "name": "ExtInfo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14268,7 +14316,8 @@
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14283,7 +14332,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "剪辑固化后的视频的媒体文件的唯一标识。",
@@ -14292,7 +14342,8 @@
           "name": "FileId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "剪辑固化后的视频任务流 ID。",
@@ -14301,7 +14352,8 @@
           "name": "VodTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "剪辑后的视频元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -14310,7 +14362,8 @@
           "name": "MetaData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "<span id=\"p_segmentset\">剪辑后的视频片段信息。</span>",
@@ -14319,7 +14372,8 @@
           "name": "SegmentSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15315,7 +15369,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "MediaImageSpriteInfo": {
       "document": "点播文件雪碧图信息",

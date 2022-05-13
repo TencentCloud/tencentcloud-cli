@@ -396,7 +396,7 @@
         },
         {
           "default": "",
-          "document": "该库的容量限制。",
+          "document": "图库可容纳的最大图片数量。",
           "example": "123",
           "member": "uint64",
           "name": "MaxCapacity",
@@ -416,7 +416,7 @@
         },
         {
           "default": "",
-          "document": "该库的访问限频 ，默认10。",
+          "document": "访问限制默认为10qps，如需扩容请联系[在线客服](https://cloud.tencent.com/online-service)申请。",
           "example": "10",
           "member": "uint64",
           "name": "MaxQps",
