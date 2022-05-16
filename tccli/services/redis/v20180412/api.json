@@ -6399,6 +6399,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6407,6 +6408,7 @@
         {
           "default": "",
           "document": "实例旧密码",
+          "example": "zy456987",
           "member": "string",
           "name": "OldPassword",
           "required": true,
@@ -6415,6 +6417,7 @@
         {
           "default": "",
           "document": "实例新密码",
+          "example": "456987zy",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -6428,8 +6431,10 @@
       "members": [
         {
           "document": "任务ID",
+          "example": "16661",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
