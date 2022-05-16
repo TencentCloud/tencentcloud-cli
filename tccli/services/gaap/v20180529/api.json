@@ -66,6 +66,12 @@
       "name": "定制域名指定错误码的错误响应",
       "output": "CreateDomainErrorPageInfoResponse"
     },
+    "CreateFirstLinkSession": {
+      "document": "本接口（CreateFirstLinkSession）用于创建接入段加速会话，创建有可能成功，也可能失败，需要通过返回码来进行判断。",
+      "input": "CreateFirstLinkSessionRequest",
+      "name": "创建接入段加速会话",
+      "output": "CreateFirstLinkSessionResponse"
+    },
     "CreateHTTPListener": {
       "document": "该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。",
       "input": "CreateHTTPListenerRequest",
@@ -143,6 +149,12 @@
       "input": "DeleteDomainErrorPageInfoRequest",
       "name": "删除域名的定制错误",
       "output": "DeleteDomainErrorPageInfoResponse"
+    },
+    "DeleteFirstLinkSession": {
+      "document": "本接口（DeleteFirstLinkSession）用于删除接入段加速会话，删除加速会话后会停止加速。",
+      "input": "DeleteFirstLinkSessionRequest",
+      "name": "删除接入段加速会话",
+      "output": "DeleteFirstLinkSessionResponse"
     },
     "DeleteListeners": {
       "document": "该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。",
@@ -233,6 +245,12 @@
       "input": "DescribeDomainErrorPageInfoByIdsRequest",
       "name": "根据定制错误ID查询错误响应",
       "output": "DescribeDomainErrorPageInfoByIdsResponse"
+    },
+    "DescribeFirstLinkSession": {
+      "document": "本接口（DescribeFirstLinkSession）用于查询接入段加速会话状态，包括会话状态，生效时长，加速套餐等信息。",
+      "input": "DescribeFirstLinkSessionRequest",
+      "name": "查询接入段加速会话信息",
+      "output": "DescribeFirstLinkSessionResponse"
     },
     "DescribeGroupAndStatisticsProxy": {
       "document": "该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息",
@@ -970,6 +988,32 @@
         }
       ],
       "type": "object"
+    },
+    "Capacity": {
+      "document": "接口扩展参数",
+      "members": [
+        {
+          "default": "",
+          "document": "电信鉴权的Token",
+          "example": "无",
+          "member": "string",
+          "name": "CTCCToken",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端所处在的省份，建议不填写由服务端自动获取，若需填写请填写带有省、市、自治区、特别行政区等后缀的省份中文全称",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "Certificate": {
       "document": "服务器证书",
@@ -1751,6 +1795,87 @@
     "CreateDomainResponse": {
       "document": "CreateDomain返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirstLinkSessionRequest": {
+      "document": "CreateFirstLinkSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "flt-12345678",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "终端网络信息",
+          "example": "无",
+          "member": "SrcAddressInfo",
+          "name": "SrcAddressInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "加速目标网络信息",
+          "example": "无",
+          "member": "DestAddressInfo",
+          "name": "DestAddressInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "终端设备信息",
+          "example": "无",
+          "member": "DeviceInfo",
+          "name": "DeviceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "接口扩展参数，如果是电信用户，需要填充CTCC Token字段",
+          "example": "无",
+          "member": "Capacity",
+          "name": "Capacity",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirstLinkSessionResponse": {
+      "document": "CreateFirstLinkSession返回参数结构体",
+      "members": [
+        {
+          "document": "加速成功时返回，单次加速唯一会话Id。。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16323902746ebb80e918b94b818a5647fbb0d921f8-3-65537",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余的加速时间，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1790",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2804,6 +2929,33 @@
       ],
       "type": "object"
     },
+    "DeleteFirstLinkSessionRequest": {
+      "document": "DeleteFirstLinkSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单次加速唯一会话Id",
+          "example": "16323902746ebb80e918b94b818a5647fbb0d921f8-3-65537",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirstLinkSessionResponse": {
+      "document": "DeleteFirstLinkSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteListenersRequest": {
       "document": "DeleteListeners请求参数结构体",
       "members": [
@@ -3416,6 +3568,78 @@
           "example": "无",
           "member": "DomainErrorPageInfo",
           "name": "ErrorPageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirstLinkSessionRequest": {
+      "document": "DescribeFirstLinkSession请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "单次加速唯一会话Id",
+          "example": "16323902746ebb80e918b94b818a5647fbb0d921f8-3-65537",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirstLinkSessionResponse": {
+      "document": "DescribeFirstLinkSession返回参数结构体",
+      "members": [
+        {
+          "document": "会话状态，具体如下：\n1： 加速中；\n0： 非加速中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "剩余加速时间，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1790",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加速套餐类型。\n套餐说明如下：\nT100K：上/下行保障100kbps；\nBD4M：下行带宽保障4Mbps；\nBU4M：上行带宽保障4Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T100K",
+          "member": "string",
+          "name": "SuiteType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加速终端的公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "211.97.129.234",
+          "member": "string",
+          "name": "SrcPublicIpv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "加速目标ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DestIpv4",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -5292,6 +5516,22 @@
       ],
       "type": "object"
     },
+    "DestAddressInfo": {
+      "document": "网络加速的目标地址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "加速的目标IP，可多ip一起加速",
+          "example": "[\"192.168.0.0.1\"]",
+          "member": "string",
+          "name": "DestIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DestroyProxiesRequest": {
       "document": "DestroyProxies请求参数结构体",
       "members": [
@@ -5363,6 +5603,62 @@
         }
       ],
       "type": "object"
+    },
+    "DeviceInfo": {
+      "document": "终端设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备数据卡所属的运营商\n1：移动\n2：电信\n3：联通\n4：广电\n99：其他",
+          "example": "2",
+          "member": "int64",
+          "name": "Vendor",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备操作系统\n1：Android\n2： IOS\n99：其他",
+          "example": "1",
+          "member": "int64",
+          "name": "OS",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备唯一标识\nIOS 填写 IDFV\nAndroid 填写 IMEI",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机号码",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "无线信息\n1：4G\n2：5G\n3：WIFI\n99：其他",
+          "example": "1",
+          "member": "int64",
+          "name": "Wireless",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "DomainAccessRegionDict": {
       "document": "域名解析就近访问配置详情",
@@ -8907,6 +9203,32 @@
         }
       ],
       "type": "object"
+    },
+    "SrcAddressInfo": {
+      "document": "网络加速的原地址信息",
+      "members": [
+        {
+          "default": "",
+          "document": "内网Ip4地址",
+          "example": "192.168.0.0.1",
+          "member": "string",
+          "name": "SrcIpv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公网Ip4地址",
+          "example": "192.168.0.0.1",
+          "member": "string",
+          "name": "SrcPublicIpv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "StatisticsDataInfo": {
       "document": "统计数据信息",

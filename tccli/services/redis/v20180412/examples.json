@@ -481,7 +481,7 @@
     "ModfiyInstancePassword": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword\r\n&InstanceId=crs-5a4py64p\r\n&OldPassword=zy456987\r\n&Password=456987zy\r\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModfiyInstancePassword\n&InstanceId=crs-5a4py64p\n&OldPassword=zy456987\n&Password=456987zy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cca16225-a169-4f11-b1cf-13398200f604\",\n        \"TaskId\": 16661\n    }\n}",
         "title": "请求示例"
       }

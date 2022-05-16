@@ -319,9 +319,9 @@
       "output": "GetBatchProductionsListResponse"
     },
     "GetCOSURL": {
-      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
+      "document": "本接口（GetCOSURL）用于获取固件COS存储的上传请求URL地址",
       "input": "GetCOSURLRequest",
-      "name": "获取固件下载地址",
+      "name": "获取固件存储请求地址",
       "output": "GetCOSURLResponse"
     },
     "GetDeviceList": {
@@ -529,9 +529,9 @@
       "output": "UpdateFirmwareResponse"
     },
     "UploadFirmware": {
-      "document": "本接口（UploadFirmware）用于上传设备固件至平台",
+      "document": "本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。",
       "input": "UploadFirmwareRequest",
-      "name": "上传设备固件",
+      "name": "创建固件版本信息",
       "output": "UploadFirmwareResponse"
     }
   },

@@ -352,6 +352,14 @@
         "title": "设置实例属性"
       }
     ],
+    "ModifyInstancePre": [
+      {
+        "document": "",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyInstancePre\n&InstanceId=ckafka-xxxx\n&DiskSize=600\n&BandWidth=40\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DeleteRouteTimestamp\": \"xx\",\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-xxxx\",\n                \"DealNames\": [\n                    \"1111111111\"\n                ]\n            }\n        },\n        \"RequestId\": \"1ba4ac83-1e9e-497b-b3e1-4c10872a4068\"\n    }\n}",
+        "title": "修改实例(预付费包年包月)"
+      }
+    ],
     "ModifyPassword": [
       {
         "document": "",

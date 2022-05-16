@@ -1,0 +1,337 @@
+{
+  "actions": {
+    "ApplyEmbedInterval": {
+      "document": "申请延长Token可用时间接口-强鉴权",
+      "input": "ApplyEmbedIntervalRequest",
+      "name": "申请延长Token可用时间接口",
+      "output": "ApplyEmbedIntervalResponse"
+    },
+    "CreateEmbedToken": {
+      "document": "创建嵌出报表-强鉴权",
+      "input": "CreateEmbedTokenRequest",
+      "name": "创建嵌出报表Token",
+      "output": "CreateEmbedTokenResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-01-05",
+    "api_brief": "bi产品",
+    "serviceNameCN": "商业智能分析 BI",
+    "serviceShortName": "bi"
+  },
+  "objects": {
+    "ApplyEmbedIntervalRequest": {
+      "document": "ApplyEmbedInterval请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分享项目id，必选",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分享页面id，嵌出看板时此为空值0",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要申请延期的Token",
+          "example": "1",
+          "member": "string",
+          "name": "BIToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备用字段",
+          "example": "1",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "panel,看板；page，页面",
+          "example": "page",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyEmbedIntervalResponse": {
+      "document": "ApplyEmbedInterval返回参数结构体",
+      "members": [
+        {
+          "document": "额外参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyEmbedTokenInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyEmbedTokenInfo": {
+      "document": "申请Token延期",
+      "members": [
+        {
+          "default": "",
+          "document": "申请结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateEmbedTokenRequest": {
+      "document": "CreateEmbedToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分享项目id，必选",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分享页面id，嵌出看板时此为空值0",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "page表示嵌出页面，panel表嵌出整个看板",
+          "example": "1",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过期时间。 单位：分钟 最大值：240。即，4小时 默认值：240",
+          "example": "1",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备用字段",
+          "example": "1",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmbedTokenResponse": {
+      "document": "CreateEmbedToken返回参数结构体",
+      "members": [
+        {
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extra",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmbedTokenInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EmbedTokenInfo": {
+      "document": "报表嵌出数据结构-强鉴权",
+      "members": [
+        {
+          "default": "",
+          "document": "信息标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "令牌\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BIToken",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatedUser",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdatedUser",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "页面Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "嵌出类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期时间，分钟为单位，最大240\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

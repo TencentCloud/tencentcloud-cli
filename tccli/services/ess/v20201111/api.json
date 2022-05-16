@@ -320,7 +320,7 @@
         },
         {
           "default": "",
-          "document": "参数控件宽度，单位px",
+          "document": "参数控件宽度，单位pt",
           "example": "无",
           "member": "float",
           "name": "ComponentWidth",
@@ -330,7 +330,7 @@
         },
         {
           "default": "",
-          "document": "参数控件高度，单位px",
+          "document": "参数控件高度，单位pt",
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",
@@ -350,7 +350,7 @@
         },
         {
           "default": "",
-          "document": "参数控件X位置，单位px",
+          "document": "参数控件X位置，单位pt",
           "example": "无",
           "member": "float",
           "name": "ComponentPosX",
@@ -360,7 +360,7 @@
         },
         {
           "default": "",
-          "document": "参数控件Y位置，单位px",
+          "document": "参数控件Y位置，单位pt",
           "example": "无",
           "member": "float",
           "name": "ComponentPosY",
@@ -380,7 +380,7 @@
         },
         {
           "default": "",
-          "document": "控件编号",
+          "document": "GenerateMode==KEYWORD 指定关键字",
           "example": "无",
           "member": "string",
           "name": "ComponentId",
@@ -390,7 +390,7 @@
         },
         {
           "default": "",
-          "document": "控件名称",
+          "document": "GenerateMode==FIELD 指定表单域名称",
           "example": "无",
           "member": "string",
           "name": "ComponentName",
@@ -410,7 +410,7 @@
         },
         {
           "default": "",
-          "document": "参数控件样式",
+          "document": "扩展参数：\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nBORDERLESS_ESIGN – 自动生成无边框腾讯体\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\n如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -466,6 +466,26 @@
           "name": "ComponentDateFontSize",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字时横坐标偏移量",
+          "example": "无",
+          "member": "float",
+          "name": "OffsetX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字时纵坐标偏移量",
+          "example": "无",
+          "member": "float",
+          "name": "OffsetY",
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

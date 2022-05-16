@@ -39,6 +39,8 @@ include tccli/services/batch/v20170312/api.json
 include tccli/services/batch/v20170312/examples.json
 include tccli/services/bda/v20200324/api.json
 include tccli/services/bda/v20200324/examples.json
+include tccli/services/bi/v20220105/api.json
+include tccli/services/bi/v20220105/examples.json
 include tccli/services/billing/v20180709/api.json
 include tccli/services/billing/v20180709/examples.json
 include tccli/services/bizlive/v20190313/api.json
