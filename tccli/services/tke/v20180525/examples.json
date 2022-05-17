@@ -148,6 +148,20 @@
         "title": "创建镜像缓存"
       }
     ],
+    "CreatePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增告警"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3dfe620f-11b8-4301-b279-1fdadedf7a59\"\n    }\n}",
+        "title": "添加告警策略，告警渠道为Alertmanager"
+      }
+    ],
     "CreatePrometheusAlertRule": [
       {
         "document": "",
@@ -162,6 +176,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusDashboard\n&InstanceId=prom-xxx\n&DashboardName=test-dashboards\n&Contens.0=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建grafana面板"
+      }
+    ],
+    "CreatePrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusTemp\n&Template.Name=t1\n&Template.Describe=一个模板\n&Template.ServiceMonitors.0.Name=s\n&Template.ServiceMonitors.0.Config=xx\n&Template.Level=cluster\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建一个模板"
       }
     ],
     "CreatePrometheusTemplate": [
@@ -260,12 +282,36 @@
         "title": "删除镜像缓存"
       }
     ],
+    "DeletePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除Prometheus告警规则"
+      }
+    ],
     "DeletePrometheusAlertRule": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusAlertRule\n&InstanceId=prom-xxx\n&AlertIds.0=a1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除Prometheus告警规则"
+      }
+    ],
+    "DeletePrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTemp\n&TemplateId=temp-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除一个模板实例"
+      }
+    ],
+    "DeletePrometheusTempSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "解除模板同步"
       }
     ],
     "DeletePrometheusTemplate": [
@@ -548,12 +594,28 @@
         "title": "查询告警历史"
       }
     ],
+    "DescribePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAlertPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "告警列表"
+      }
+    ],
     "DescribePrometheusAlertRule": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertRule\n&InstanceId=prom-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"xx\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"For\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"Rule\": \"xx\",\n                        \"Template\": \"xx\"\n                    }\n                ],\n                \"Notification\": {\n                    \"WebHook\": \"xx\",\n                    \"RepeatInterval\": \"xx\",\n                    \"TimeRangeStart\": \"xx\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"xx\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"Type\": \"xx\",\n                    \"TimeRangeEnd\": \"xx\"\n                },\n                \"UpdatedAt\": \"xx\",\n                \"TemplateId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "告警列表"
+      }
+    ],
+    "DescribePrometheusClusterAgents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusClusterAgents\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取agent信息"
       }
     ],
     "DescribePrometheusInstance": [
@@ -564,6 +626,14 @@
         "title": "查看托管prometheus实例详情"
       }
     ],
+    "DescribePrometheusInstancesOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstancesOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
     "DescribePrometheusOverviews": [
       {
         "document": "",
@@ -572,12 +642,36 @@
         "title": "拉取实例列表"
       }
     ],
+    "DescribePrometheusRecordRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusRecordRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取聚合规则"
+      }
+    ],
     "DescribePrometheusTargets": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTargets\n&InstanceId=prom-xxx\n&ClusterType=tke\n&ClusterId=cls-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Jobs\": [\n            {\n                \"Targets\": [\n                    {\n                        \"LastScrape\": \"xx\",\n                        \"ScrapeDuration\": 0.0,\n                        \"Url\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"State\": \"xx\",\n                        \"Error\": \"xx\"\n                    }\n                ],\n                \"Total\": 1,\n                \"Up\": 1,\n                \"JobName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取targets列表"
+      }
+    ],
+    "DescribePrometheusTemp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusTemp\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取模板列表"
+      }
+    ],
+    "DescribePrometheusTempSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "拉取同步目标"
       }
     ],
     "DescribePrometheusTemplateSync": [
@@ -644,12 +738,28 @@
         "title": "查询广州3区下的S5实例族机型可支持的 VPC-CNI Pod 数量"
       }
     ],
+    "DisableClusterAudit": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterAudit\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "关闭集群审计"
+      }
+    ],
     "DisableClusterDeletionProtection": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "关闭集群删除保护"
+      }
+    ],
+    "DisableEventPersistence": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DisableEventPersistence\n&ClusterId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "关闭事件持久化功能示例"
       }
     ],
     "DisableVpcCniNetworkType": [
@@ -660,12 +770,28 @@
         "title": "关闭vpc-cni网络"
       }
     ],
+    "EnableClusterAudit": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterAudit\n&ClusterId=cls-65r1c5nu\n&LogsetId=d93d9f91-a27a-4756-8575-e367fe885556\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "开启集群审计"
+      }
+    ],
     "EnableClusterDeletionProtection": [
       {
         "document": "集群删除保护一定程度上可以避免您误删集群，启用集群删除保护后，您将无法直接通过控制台和API来删除集群，如需删除集群，需要先关闭集群删除保护。",
         "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启用集群删除保护"
+      }
+    ],
+    "EnableEventPersistence": [
+      {
+        "document": "开启事件采集功能",
+        "input": "https://tke.tencentcloudapi.com/?Action=EnableEventPersistence\n&ClusterId=xxx\n&LogsetId=xxx\n&TopicId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "开启事件采集功能示例"
       }
     ],
     "EnableVpcCniNetworkType": [
@@ -714,6 +840,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LifeState\": \"xx\",\n        \"Instances\": [\n            {\n                \"StartAt\": \"xx\",\n                \"InstanceID\": \"xx\",\n                \"Detail\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"LifeState\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    }\n                ],\n                \"EndAt\": \"xx\",\n                \"CheckResult\": {\n                    \"Items\": [\n                        {\n                            \"WorkLoadKind\": \"xx\",\n                            \"After\": 1,\n                            \"Namespace\": \"xx\",\n                            \"WorkLoadName\": \"xx\",\n                            \"Pods\": [\n                                \"xx\"\n                            ],\n                            \"Before\": 1\n                        }\n                    ],\n                    \"CheckPass\": true,\n                    \"SinglePods\": [\n                        \"xx\"\n                    ]\n                },\n                \"LifeState\": \"xx\"\n            }\n        ],\n        \"Done\": 1,\n        \"RequestId\": \"xx\",\n        \"ClusterStatus\": {\n            \"PodTotal\": 0,\n            \"NotReadyPod\": 0\n        },\n        \"Total\": 3\n    }\n}",
         "title": "查询升级状态"
+      }
+    ],
+    "InstallLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=InstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "安装日志插件"
       }
     ],
     "ModifyClusterAsGroupAttribute": [
@@ -780,6 +914,14 @@
         "title": "修改节点池机型"
       }
     ],
+    "ModifyPrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改告警"
+      }
+    ],
     "ModifyPrometheusAlertRule": [
       {
         "document": "",
@@ -836,12 +978,28 @@
         "title": "给节点池中的节点设置移出保护"
       }
     ],
+    "SyncPrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemp\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "同步模板到实例"
+      }
+    ],
     "SyncPrometheusTemplate": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "同步模板到实例"
+      }
+    ],
+    "UninstallLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=UninstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "卸载日志插件"
       }
     ],
     "UpdateClusterVersion": [

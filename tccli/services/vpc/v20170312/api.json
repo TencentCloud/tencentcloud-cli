@@ -1056,6 +1056,12 @@
       "name": "禁用云联网路由",
       "output": "DisableCcnRoutesResponse"
     },
+    "DisableFlowLogs": {
+      "document": "本接口（DisableFlowLogs）用于停止流日志。",
+      "input": "DisableFlowLogsRequest",
+      "name": "停止流日志",
+      "output": "DisableFlowLogsResponse"
+    },
     "DisableGatewayFlowMonitor": {
       "document": "本接口（DisableGatewayFlowMonitor）用于关闭网关流量监控。",
       "input": "DisableGatewayFlowMonitorRequest",
@@ -1133,6 +1139,12 @@
       "input": "EnableCcnRoutesRequest",
       "name": "启用云联网路由",
       "output": "EnableCcnRoutesResponse"
+    },
+    "EnableFlowLogs": {
+      "document": "本接口（EnableFlowLogs）用于启动流日志。",
+      "input": "EnableFlowLogsRequest",
+      "name": "启动流日志",
+      "output": "EnableFlowLogsResponse"
     },
     "EnableGatewayFlowMonitor": {
       "document": "本接口（EnableGatewayFlowMonitor）用于开启网关流量监控。",
@@ -13500,6 +13512,33 @@
       ],
       "type": "object"
     },
+    "DisableFlowLogsRequest": {
+      "document": "DisableFlowLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流日志Id。",
+          "example": "[\"fl-7rymh5cn\"]",
+          "member": "string",
+          "name": "FlowLogIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableFlowLogsResponse": {
+      "document": "DisableFlowLogs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableGatewayFlowMonitorRequest": {
       "document": "DisableGatewayFlowMonitor请求参数结构体",
       "members": [
@@ -13986,6 +14025,33 @@
     },
     "EnableCcnRoutesResponse": {
       "document": "EnableCcnRoutes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableFlowLogsRequest": {
+      "document": "EnableFlowLogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "流日志Id。",
+          "example": "[\"fl-7rymh5cn\"]",
+          "member": "string",
+          "name": "FlowLogIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableFlowLogsResponse": {
+      "document": "EnableFlowLogs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

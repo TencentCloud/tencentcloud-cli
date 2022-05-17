@@ -29,6 +29,12 @@
       "input": "DescribeZonesRequest",
       "name": "查询用户站点信息列表",
       "output": "DescribeZonesResponse"
+    },
+    "DownloadL7Logs": {
+      "document": "查询七层离线日志",
+      "input": "DownloadL7LogsRequest",
+      "name": "七层离线日志下载",
+      "output": "DownloadL7LogsResponse"
     }
   },
   "metadata": {
@@ -52,7 +58,7 @@
         },
         {
           "default": "",
-          "document": "预热的资源列表",
+          "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
@@ -61,7 +67,7 @@
         },
         {
           "default": "",
-          "document": "是否对url进行encode",
+          "document": "是否对url进行encode\n若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）",
           "example": "true",
           "member": "bool",
           "name": "EncodeUrl",
@@ -133,7 +139,7 @@
         },
         {
           "default": "",
-          "document": "内容，一行一个",
+          "document": "要刷新的资源列表，每个元素格式依据Type而定\n1) Type = purge_host 时\n形如：www.example.com 或 foo.bar.example.com\n2) Type = purge_prefix 时\n形如：http://www.example.com/example\n3) Type = purge_url 时\n形如：https://www.example.com/example.jpg\n4）Type = purge_all 时\nTargets可为空，不需要填写",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
@@ -142,7 +148,7 @@
         },
         {
           "default": "",
-          "document": "若有编码转换，仅清除编码转换后匹配的资源\n若内容含有非 ASCII 字符集的字符，请打开 URL Encode 开关，编码转换（编码规则遵循 RFC3986）",
+          "document": "若有编码转换，仅清除编码转换后匹配的资源\n若内容含有非 ASCII 字符集的字符，请开启此开关，编码转换（编码规则遵循 RFC3986）",
           "example": "true",
           "member": "bool",
           "name": "EncodeUrl",
@@ -488,6 +494,123 @@
       ],
       "type": "object"
     },
+    "DownloadL7LogsRequest": {
+      "document": "DownloadL7Logs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间(需严格按照RFC3339标准传参)",
+          "example": "2022-05-04T03:27:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间(需严格按照RFC3339标准传参)",
+          "example": "2022-05-10T23:59:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页展示条数",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "2",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zone1\",\"zone2\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名集合",
+          "example": "[\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadL7LogsResponse": {
+      "document": "DownloadL7Logs返回参数结构体",
+      "members": [
+        {
+          "document": "七层离线日志data\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "L7OfflineLog",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "页面大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FailReason": {
       "document": "失败原因",
       "members": [
@@ -503,7 +626,7 @@
         },
         {
           "default": "",
-          "document": "失败列表",
+          "document": "处理失败的资源列表。\n该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
@@ -539,6 +662,62 @@
         }
       ],
       "usage": "in"
+    },
+    "L7OfflineLog": {
+      "document": "离线日志详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "日志打包开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "int64",
+          "name": "LogTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"baidu.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "原始大小 单位byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日志数据包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LogPacketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Task": {
       "document": "内容管理任务结果",

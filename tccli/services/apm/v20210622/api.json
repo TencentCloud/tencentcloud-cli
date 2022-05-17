@@ -18,6 +18,12 @@
       "name": "拉取APM实例列表",
       "output": "DescribeApmInstancesResponse"
     },
+    "DescribeGeneralMetricData": {
+      "document": "获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求的数据点数限制为1440个。",
+      "input": "DescribeGeneralMetricDataRequest",
+      "name": "获取指标数据通用接口",
+      "output": "DescribeGeneralMetricDataResponse"
+    },
     "DescribeMetricRecords": {
       "document": "拉取通用指标列表",
       "input": "DescribeMetricRecordsRequest",
@@ -662,6 +668,105 @@
       ],
       "type": "object"
     },
+    "DescribeGeneralMetricDataRequest": {
+      "document": "DescribeGeneralMetricData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。\n\nspan.kind:\n\n       server:服务端视角\n       client:客户端视角\n\n默认为服务端视角进行查询。",
+          "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
+          "member": "GeneralFilter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。",
+          "example": "\"service_request_count\"、“service_duration”",
+          "member": "string",
+          "name": "Metrics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "apm-ylTJfTSbn",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "视图名称",
+          "example": "service_metric",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。",
+          "example": "\"service.name\"、\"span.kind\"",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralMetricDataResponse": {
+      "document": "DescribeGeneralMetricData返回参数结构体",
+      "members": [
+        {
+          "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Line",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMetricRecordsRequest": {
       "document": "DescribeMetricRecords请求参数结构体",
       "members": [
@@ -922,6 +1027,88 @@
         }
       ],
       "usage": "in"
+    },
+    "GeneralFilter": {
+      "document": "查询过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤维度名",
+          "example": "serviceName",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤值",
+          "example": "sso-api",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Line": {
+      "document": "指标曲线数据",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "qps",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指标中文名",
+          "example": "吞吐量",
+          "member": "string",
+          "name": "MetricNameCN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间序列",
+          "example": "[1617124595, 1617124596, 1617124597]",
+          "member": "int64",
+          "name": "TimeSerial",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据序列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1.0, 2.0, 3.0]",
+          "member": "float",
+          "name": "DataSerial",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "维度列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OrderBy": {
       "document": "sql排序字段",

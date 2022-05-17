@@ -1,0 +1,20 @@
+**Example 1: 拉取同步目标**
+
+
+
+Input: 
+
+```
+tccli tke DescribePrometheusTempSync --cli-unfold-argument  \
+    --TemplateId "temp-xxx"
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+    }
+}
+```
+

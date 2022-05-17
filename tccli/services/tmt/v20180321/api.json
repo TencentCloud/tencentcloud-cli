@@ -1,5 +1,17 @@
 {
   "actions": {
+    "FileTranslate": {
+      "document": "提交文档原文内容，输出任务ID， 支持原文为单一语种文档（如出现多语言文档，仅支持以选定的源语言相关内容翻译）,文件格式有pdf、docx、pptx、xlsx，支持的文本格式有txt、xml、html、markdown、properties。",
+      "input": "FileTranslateRequest",
+      "name": "文件翻译请求",
+      "output": "FileTranslateResponse"
+    },
+    "GetFileTranslate": {
+      "document": "在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。\n•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见文档翻译结果回调 。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。",
+      "input": "GetFileTranslateRequest",
+      "name": "文件翻译结果查询",
+      "output": "GetFileTranslateResponse"
+    },
     "ImageTranslate": {
       "document": "提供13种语言的图片翻译服务，可自动识别图片中的文本内容并翻译成目标语言，识别后的文本按行翻译，后续会提供可按段落翻译的版本。<br />\n提示：对于一般开发者，我们建议优先使用SDK接入简化开发。SDK使用介绍请直接查看 5. 开发者资源 部分。",
       "input": "ImageTranslateRequest",
@@ -38,6 +50,187 @@
     "serviceShortName": "tmt"
   },
   "objects": {
+    "FileTranslateRequest": {
+      "document": "FileTranslate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "源语言，支持\nzh:简体中文\nzh-HK：繁体中文\nzh-TW : 繁体中文\nzh-TR:  繁体中文\nen ：英语\nar：阿拉伯语\nde：德语\nes：西班牙语\nfr：法语\nit：意大利语\nja：日语\npt：葡萄牙语\nru：俄语\nko：韩语\nkm：高棉语\nlo：老挝语",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "目标语言，各源语言的目标语言支持列表如下\nzh（简体中文）： en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-HK（繁体中文） ：en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-TW（繁体中文）：en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nzh-TR 繁体中文 : en （英语）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nen （英语） ：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、 zh-TR(繁体中文）、 ar (阿拉伯语）、 de （德语）、  es（西班牙语） 、fr（法语）、  it（意大利语） 、 ja （日语）、 pt （葡萄牙语）、 ru（俄语）、  ko（韩语）、 km（高棉语）、   lo（老挝语）\nar（阿拉伯语） ：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nde（德语 ）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nes（西班牙语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nfr（法语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nit（意大利语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nja（日语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\npt（葡萄牙语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nru（俄语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nko（韩语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nkm（高棉语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）\nlo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（繁体中文)、zh-TR(繁体中文）",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文档类型：可支持以下几种(pdf,docx,pptx,xlsx,txt,xml,html,markdown,properties)",
+          "example": "pdf",
+          "member": "string",
+          "name": "DocumentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据来源，0：url，1：直接传文件编码后数据",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要翻译文件url",
+          "example": "http://test.com",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "原始文档类型",
+          "example": "doc",
+          "member": "string",
+          "name": "BasicDocumentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "回调url",
+          "example": "http://test.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。数据要小于5MB。",
+          "example": "eGNmYXNkZmFzZmFzZGZhc2RmCg==",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileTranslateResponse": {
+      "document": "FileTranslate返回参数结构体",
+      "members": [
+        {
+          "document": "文件翻译的请求返回结果，包含结果查询需要的TaskId",
+          "example": "无",
+          "member": "Task",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFileTranslateData": {
+      "document": "查询文件翻译任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "\"12132323\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetFileTranslateRequest": {
+      "document": "GetFileTranslate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "12132323",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFileTranslateResponse": {
+      "document": "GetFileTranslate返回参数结构体",
+      "members": [
+        {
+          "document": "任务id",
+          "example": "2132131",
+          "member": "GetFileTranslateData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ImageRecord": {
       "document": "图片翻译结果",
       "members": [
@@ -415,6 +608,22 @@
         }
       ],
       "type": "object"
+    },
+    "Task": {
+      "document": "文件翻译请求的返回数据",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为字符串类型",
+          "example": "\"12132323\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TextTranslateBatchRequest": {
       "document": "TextTranslateBatch请求参数结构体",

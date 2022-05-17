@@ -1,5 +1,21 @@
 {
   "actions": {
+    "FileTranslate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: FileTranslate\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"Data\": \"eGNmYXNkZmFzZmFzZGZhc2RmCg==\",\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"DocumentType\": \"pdf\",\n    \"SourceType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Data\": {\n            \"TaskId\": 1396665\n        }\n    }\n}",
+        "title": "示例1 通过文件数据来调用接口"
+      }
+    ],
+    "GetFileTranslate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: GetFileTranslate\nX-TC-Timestamp: 1599142560\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhOr6B2xxxxx/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=524ed61a4a71de417f4fa41249dcb428a0c51013890f24f3492068ca7cd16953\n<公共请求参数>\n\n{\n    \"TaskId\": \"100001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"Wait\",\n            \"FileData\": \"\",\n            \"TaskId\": \"100001\",\n            \"Message\": \"\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例1 通过文件数据来调用接口"
+      }
+    ],
     "ImageTranslate": [
       {
         "document": "",

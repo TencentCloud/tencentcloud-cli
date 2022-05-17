@@ -102,6 +102,12 @@
       "name": "创建镜像缓存",
       "output": "CreateImageCacheResponse"
     },
+    "CreatePrometheusAlertPolicy": {
+      "document": "创建告警策略",
+      "input": "CreatePrometheusAlertPolicyRequest",
+      "name": "创建告警策略",
+      "output": "CreatePrometheusAlertPolicyResponse"
+    },
     "CreatePrometheusAlertRule": {
       "document": "创建告警规则",
       "input": "CreatePrometheusAlertRuleRequest",
@@ -113,6 +119,12 @@
       "input": "CreatePrometheusDashboardRequest",
       "name": "创建grafana监控面板",
       "output": "CreatePrometheusDashboardResponse"
+    },
+    "CreatePrometheusTemp": {
+      "document": "创建一个云原生Prometheus模板",
+      "input": "CreatePrometheusTempRequest",
+      "name": "新建模板",
+      "output": "CreatePrometheusTempResponse"
     },
     "CreatePrometheusTemplate": {
       "document": "创建一个云原生Prometheus模板实例",
@@ -186,11 +198,29 @@
       "name": "删除镜像缓存",
       "output": "DeleteImageCachesResponse"
     },
+    "DeletePrometheusAlertPolicy": {
+      "document": "删除2.0实例告警策略",
+      "input": "DeletePrometheusAlertPolicyRequest",
+      "name": "删除2.0实例告警策略",
+      "output": "DeletePrometheusAlertPolicyResponse"
+    },
     "DeletePrometheusAlertRule": {
       "document": "删除告警规则",
       "input": "DeletePrometheusAlertRuleRequest",
       "name": "删除告警规则",
       "output": "DeletePrometheusAlertRuleResponse"
+    },
+    "DeletePrometheusTemp": {
+      "document": "删除一个云原生Prometheus配置模板",
+      "input": "DeletePrometheusTempRequest",
+      "name": "删除模板实例",
+      "output": "DeletePrometheusTempResponse"
+    },
+    "DeletePrometheusTempSync": {
+      "document": "解除模板同步，这将会删除目标中该模板所生产的配置，针对V2版本实例",
+      "input": "DeletePrometheusTempSyncRequest",
+      "name": "解除模板同步",
+      "output": "DeletePrometheusTempSyncResponse"
     },
     "DeletePrometheusTemplate": {
       "document": "删除一个云原生Prometheus配置模板",
@@ -402,11 +432,23 @@
       "name": "获取告警历史",
       "output": "DescribePrometheusAlertHistoryResponse"
     },
+    "DescribePrometheusAlertPolicy": {
+      "document": "获取2.0实例告警策略列表",
+      "input": "DescribePrometheusAlertPolicyRequest",
+      "name": "获取2.0实例告警策略列表",
+      "output": "DescribePrometheusAlertPolicyResponse"
+    },
     "DescribePrometheusAlertRule": {
       "document": "获取告警规则列表",
       "input": "DescribePrometheusAlertRuleRequest",
       "name": "获取告警规则列表",
       "output": "DescribePrometheusAlertRuleResponse"
+    },
+    "DescribePrometheusClusterAgents": {
+      "document": "获取2.0实例关联集群列表",
+      "input": "DescribePrometheusClusterAgentsRequest",
+      "name": "获取2.0实例关联集群列表",
+      "output": "DescribePrometheusClusterAgentsResponse"
     },
     "DescribePrometheusInstance": {
       "document": "获取实例详细信息",
@@ -414,17 +456,41 @@
       "name": "获取实例详细信息",
       "output": "DescribePrometheusInstanceResponse"
     },
+    "DescribePrometheusInstancesOverview": {
+      "document": "获取与云监控融合实例列表",
+      "input": "DescribePrometheusInstancesOverviewRequest",
+      "name": "获取2.0实例列表",
+      "output": "DescribePrometheusInstancesOverviewResponse"
+    },
     "DescribePrometheusOverviews": {
       "document": "获取实例列表",
       "input": "DescribePrometheusOverviewsRequest",
       "name": "获取实例列表",
       "output": "DescribePrometheusOverviewsResponse"
     },
+    "DescribePrometheusRecordRules": {
+      "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
+      "input": "DescribePrometheusRecordRulesRequest",
+      "name": "获取聚合规则列表，包含关联集群内的资源",
+      "output": "DescribePrometheusRecordRulesResponse"
+    },
     "DescribePrometheusTargets": {
       "document": "获取targets信息",
       "input": "DescribePrometheusTargetsRequest",
       "name": "获取targets信息",
       "output": "DescribePrometheusTargetsResponse"
+    },
+    "DescribePrometheusTemp": {
+      "document": "拉取模板列表，默认模板将总是在最前面",
+      "input": "DescribePrometheusTempRequest",
+      "name": "拉取模板列表",
+      "output": "DescribePrometheusTempResponse"
+    },
+    "DescribePrometheusTempSync": {
+      "document": "获取模板关联实例信息，针对V2版本实例",
+      "input": "DescribePrometheusTempSyncRequest",
+      "name": "获取模板关联实例信息",
+      "output": "DescribePrometheusTempSyncResponse"
     },
     "DescribePrometheusTemplateSync": {
       "document": "获取模板同步信息",
@@ -474,11 +540,23 @@
       "name": "查询机型可支持的最大VPC-CNI模式Pod数量",
       "output": "DescribeVpcCniPodLimitsResponse"
     },
+    "DisableClusterAudit": {
+      "document": "关闭集群审计",
+      "input": "DisableClusterAuditRequest",
+      "name": "关闭集群审计",
+      "output": "DisableClusterAuditResponse"
+    },
     "DisableClusterDeletionProtection": {
       "document": "关闭集群删除保护",
       "input": "DisableClusterDeletionProtectionRequest",
       "name": "关闭集群删除保护",
       "output": "DisableClusterDeletionProtectionResponse"
+    },
+    "DisableEventPersistence": {
+      "document": "关闭事件持久化功能",
+      "input": "DisableEventPersistenceRequest",
+      "name": "关闭事件持久化功能",
+      "output": "DisableEventPersistenceResponse"
     },
     "DisableVpcCniNetworkType": {
       "document": "提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI",
@@ -486,11 +564,23 @@
       "name": "关闭附加的VPC-CNI网络能力",
       "output": "DisableVpcCniNetworkTypeResponse"
     },
+    "EnableClusterAudit": {
+      "document": "开启集群审计",
+      "input": "EnableClusterAuditRequest",
+      "name": "开启集群审计",
+      "output": "EnableClusterAuditResponse"
+    },
     "EnableClusterDeletionProtection": {
       "document": "启用集群删除保护",
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
       "output": "EnableClusterDeletionProtectionResponse"
+    },
+    "EnableEventPersistence": {
+      "document": "开启事件持久化功能",
+      "input": "EnableEventPersistenceRequest",
+      "name": "开启事件持久化功能",
+      "output": "EnableEventPersistenceResponse"
     },
     "EnableVpcCniNetworkType": {
       "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
@@ -527,6 +617,12 @@
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse"
+    },
+    "InstallLogAgent": {
+      "document": "在TKE集群中安装CLS日志采集组件",
+      "input": "InstallLogAgentRequest",
+      "name": "安装日志采集组件",
+      "output": "InstallLogAgentResponse"
     },
     "ModifyClusterAsGroupAttribute": {
       "document": "修改集群伸缩组属性",
@@ -576,6 +672,12 @@
       "name": "修改节点池的机型配置",
       "output": "ModifyNodePoolInstanceTypesResponse"
     },
+    "ModifyPrometheusAlertPolicy": {
+      "document": "修改2.0实例告警策略",
+      "input": "ModifyPrometheusAlertPolicyRequest",
+      "name": "修改2.0实例告警策略",
+      "output": "ModifyPrometheusAlertPolicyResponse"
+    },
     "ModifyPrometheusAlertRule": {
       "document": "修改告警规则 ",
       "input": "ModifyPrometheusAlertRuleRequest",
@@ -618,11 +720,23 @@
       "name": "节点池节点设置移出保护",
       "output": "SetNodePoolNodeProtectionResponse"
     },
+    "SyncPrometheusTemp": {
+      "document": "同步模板到实例或者集群，针对V2版本实例",
+      "input": "SyncPrometheusTempRequest",
+      "name": "同步模板",
+      "output": "SyncPrometheusTempResponse"
+    },
     "SyncPrometheusTemplate": {
       "document": "同步模板到实例或者集群",
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
       "output": "SyncPrometheusTemplateResponse"
+    },
+    "UninstallLogAgent": {
+      "document": "从TKE集群中卸载CLS日志采集组件",
+      "input": "UninstallLogAgentRequest",
+      "name": "卸载日志采集组件",
+      "output": "UninstallLogAgentResponse"
     },
     "UpdateClusterVersion": {
       "document": "升级集群 Master 组件到指定版本",
@@ -3885,6 +3999,23 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAlertPolicyRequest": {
+      "document": "CreatePrometheusAlertPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreatePrometheusAlertPolicyResponse": {
+      "document": "CreatePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertRuleRequest": {
       "document": "CreatePrometheusAlertRule请求参数结构体",
       "members": [
@@ -3962,6 +4093,23 @@
     },
     "CreatePrometheusDashboardResponse": {
       "document": "CreatePrometheusDashboard返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusTempRequest": {
+      "document": "CreatePrometheusTemp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreatePrometheusTempResponse": {
+      "document": "CreatePrometheusTemp返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4556,6 +4704,23 @@
       ],
       "type": "object"
     },
+    "DeletePrometheusAlertPolicyRequest": {
+      "document": "DeletePrometheusAlertPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeletePrometheusAlertPolicyResponse": {
+      "document": "DeletePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePrometheusAlertRuleRequest": {
       "document": "DeletePrometheusAlertRule请求参数结构体",
       "members": [
@@ -4582,6 +4747,40 @@
     },
     "DeletePrometheusAlertRuleResponse": {
       "document": "DeletePrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempRequest": {
+      "document": "DeletePrometheusTemp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeletePrometheusTempResponse": {
+      "document": "DeletePrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempSyncRequest": {
+      "document": "DeletePrometheusTempSync请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeletePrometheusTempSyncResponse": {
+      "document": "DeletePrometheusTempSync返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6625,6 +6824,23 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAlertPolicyRequest": {
+      "document": "DescribePrometheusAlertPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusAlertPolicyResponse": {
+      "document": "DescribePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusAlertRuleRequest": {
       "document": "DescribePrometheusAlertRule请求参数结构体",
       "members": [
@@ -6688,6 +6904,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusClusterAgentsRequest": {
+      "document": "DescribePrometheusClusterAgents请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusClusterAgentsResponse": {
+      "document": "DescribePrometheusClusterAgents返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6796,6 +7029,23 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusInstancesOverviewRequest": {
+      "document": "DescribePrometheusInstancesOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusInstancesOverviewResponse": {
+      "document": "DescribePrometheusInstancesOverview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusOverviewsRequest": {
       "document": "DescribePrometheusOverviews请求参数结构体",
       "members": [
@@ -6843,6 +7093,23 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusRecordRulesRequest": {
+      "document": "DescribePrometheusRecordRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusRecordRulesResponse": {
+      "document": "DescribePrometheusRecordRules返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6900,6 +7167,40 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempRequest": {
+      "document": "DescribePrometheusTemp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusTempResponse": {
+      "document": "DescribePrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempSyncRequest": {
+      "document": "DescribePrometheusTempSync请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusTempSyncResponse": {
+      "document": "DescribePrometheusTempSync返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7302,6 +7603,33 @@
       ],
       "type": "object"
     },
+    "DisableClusterAuditRequest": {
+      "document": "DisableClusterAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableClusterAuditResponse": {
+      "document": "DisableClusterAudit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableClusterDeletionProtectionRequest": {
       "document": "DisableClusterDeletionProtection请求参数结构体",
       "members": [
@@ -7318,6 +7646,33 @@
     },
     "DisableClusterDeletionProtectionResponse": {
       "document": "DisableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEventPersistenceRequest": {
+      "document": "DisableEventPersistence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEventPersistenceResponse": {
+      "document": "DisableEventPersistence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7849,6 +8204,51 @@
       ],
       "usage": "both"
     },
+    "EnableClusterAuditRequest": {
+      "document": "EnableClusterAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLS日志集ID",
+          "example": "d93d9f91-a27a-4756-8575-e367fe885556",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CLS日志主题ID",
+          "example": "xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClusterAuditResponse": {
+      "document": "EnableClusterAudit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableClusterDeletionProtectionRequest": {
       "document": "EnableClusterDeletionProtection请求参数结构体",
       "members": [
@@ -7865,6 +8265,51 @@
     },
     "EnableClusterDeletionProtectionResponse": {
       "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEventPersistenceRequest": {
+      "document": "EnableEventPersistence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cls服务的logsetID",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cls服务的topicID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEventPersistenceResponse": {
+      "document": "EnableEventPersistence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9009,6 +9454,42 @@
       ],
       "usage": "both"
     },
+    "InstallLogAgentRequest": {
+      "document": "InstallLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TKE集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "kubelet根目录",
+          "example": "/var/lib/kubelet",
+          "member": "string",
+          "name": "KubeletRootDir",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallLogAgentResponse": {
+      "document": "InstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Instance": {
       "document": "集群的实例信息",
       "members": [
@@ -10054,6 +10535,23 @@
     },
     "ModifyNodePoolInstanceTypesResponse": {
       "document": "ModifyNodePoolInstanceTypes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertPolicyRequest": {
+      "document": "ModifyPrometheusAlertPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertPolicyResponse": {
+      "document": "ModifyPrometheusAlertPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12211,6 +12709,23 @@
       ],
       "type": "object"
     },
+    "SyncPrometheusTempRequest": {
+      "document": "SyncPrometheusTemp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SyncPrometheusTempResponse": {
+      "document": "SyncPrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SyncPrometheusTemplateRequest": {
       "document": "SyncPrometheusTemplate请求参数结构体",
       "members": [
@@ -12392,6 +12907,33 @@
         }
       ],
       "usage": "both"
+    },
+    "UninstallLogAgentRequest": {
+      "document": "UninstallLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallLogAgentResponse": {
+      "document": "UninstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateClusterVersionRequest": {
       "document": "UpdateClusterVersion请求参数结构体",

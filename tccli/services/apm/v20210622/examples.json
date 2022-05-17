@@ -24,6 +24,20 @@
         "title": "拉取APM实例列表"
       }
     ],
+    "DescribeGeneralMetricData": [
+      {
+        "document": "该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内的service_request_count（总请求）、service_duration（平均响应时间）的指标数据。",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGeneralMetricData\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"service.name\",\n            \"Value\": \"tapm-api-ap-beijing\"\n        }\n    ],\n    \"ViewName\": \"service_metric\",\n    \"InstanceId\": \"apm-iIPwOX7Ln\",\n    \"Period\": \"0\",\n    \"Metrics\": [\n        \"service_request_count\"\n    ],\n    \"StartTime\": \"1652666416\",\n    \"EndTime\": \"1652667616\",\n    \"GroupBy\": [\n        \"service.name\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Tags\": [\n                    {\n                        \"Key\": \"service.name\",\n                        \"Value\": \"java-order-service\"\n                    }\n                ],\n                \"MetricName\": \"service_request_count\",\n                \"MetricNameCN\": \"总请求数\",\n                \"TimeSerial\": null,\n                \"DataSerial\": [\n                    1193137\n                ]\n            },\n            {\n                \"Tags\": [\n                    {\n                        \"Key\": \"service.name\",\n                        \"Value\": \"java-order-service\"\n                    }\n                ],\n                \"MetricName\": \"service_duration\",\n                \"MetricNameCN\": \"平均响应时间\",\n                \"TimeSerial\": null,\n                \"DataSerial\": [\n                    58.888715069029146\n                ]\n            }\n        ],\n        \"RequestId\": \"test-test-test\"\n    }\n}",
+        "title": "查询起始到终止时间内统计指标数据示例"
+      },
+      {
+        "document": "该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的service_request_count（总请求）、service_duration（平均响应时间）的指标数据。",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGeneralMetricData\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"service.name\",\n            \"Value\": \"tapm-api-ap-beijing\"\n        }\n    ],\n    \"ViewName\": \"service_metric\",\n    \"InstanceId\": \"apm-iIPwOX7Ln\",\n    \"Period\": \"60\",\n    \"Metrics\": [\n        \"service_request_count\"\n    ],\n    \"StartTime\": \"1652666416\",\n    \"EndTime\": \"1652667616\",\n    \"GroupBy\": [\n        \"service.name\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Tags\": [\n                    {\n                        \"Key\": \"service.name\",\n                        \"Value\": \"java-order-service\"\n                    }\n                ],\n                \"MetricName\": \"service_request_count\",\n                \"MetricNameCN\": \"总请求数\",\n                \"TimeSerial\": null,\n                \"DataSerial\": [\n                    1193137\n                ]\n            },\n            {\n                \"Tags\": [\n                    {\n                        \"Key\": \"service.name\",\n                        \"Value\": \"java-order-service\"\n                    }\n                ],\n                \"MetricName\": \"service_duration\",\n                \"MetricNameCN\": \"平均响应时间\",\n                \"TimeSerial\": null,\n                \"DataSerial\": [\n                    58.888715069029146\n                ]\n            }\n        ],\n        \"RequestId\": \"test-test-test\"\n    }\n}",
+        "title": "查询1分钟聚合粒度的指标数据示例"
+      }
+    ],
     "DescribeMetricRecords": [
       {
         "document": "",

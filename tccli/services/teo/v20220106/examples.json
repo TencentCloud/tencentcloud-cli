@@ -45,6 +45,14 @@
         "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"Status\": \"xx\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Name\": \"xx\",\n                \"NameServers\": [\n                    \"xx\"\n                ],\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"OriginalNameServers\": [\n                    \"xx\"\n                ],\n                \"Paused\": true,\n                \"Type\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询用户站点信息列表"
       }
+    ],
+    "DownloadL7Logs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadL7Logs\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"Zones\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2022-05-04T03:27:00+08:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2022-05-10T23:59:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageSize\": 0,\n        \"PageNo\": 0,\n        \"TotalSize\": 0,\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Url\": \"xx\",\n                \"Domain\": \"xx\",\n                \"LogPacketName\": \"xx\",\n                \"LogTime\": 0,\n                \"Size\": 0\n            }\n        ],\n        \"Pages\": 0\n    }\n}",
+        "title": "七层离线日志"
+      }
     ]
   },
   "version": "1.0"

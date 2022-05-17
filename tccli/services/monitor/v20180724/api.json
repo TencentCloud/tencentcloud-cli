@@ -7217,6 +7217,7 @@
         {
           "default": "",
           "document": "告警策略类型",
+          "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -7226,6 +7227,7 @@
         {
           "default": "",
           "document": "指标名",
+          "example": "CpuUsage",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -7235,6 +7237,7 @@
         {
           "default": "",
           "document": "指标展示名",
+          "example": "CPU利用率",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -7244,6 +7247,7 @@
         {
           "default": "",
           "document": "最小值",
+          "example": "0",
           "member": "float",
           "name": "Min",
           "required": true,
@@ -7253,6 +7257,7 @@
         {
           "default": "",
           "document": "最大值",
+          "example": "100",
           "member": "float",
           "name": "Max",
           "required": true,
@@ -7262,6 +7267,7 @@
         {
           "default": "",
           "document": "维度列表",
+          "example": "vm_uuid",
           "member": "string",
           "name": "Dimensions",
           "required": true,
@@ -7271,6 +7277,7 @@
         {
           "default": "",
           "document": "单位",
+          "example": "%",
           "member": "string",
           "name": "Unit",
           "required": true,
@@ -7280,6 +7287,7 @@
         {
           "default": "",
           "document": "指标配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MetricConfig",
           "name": "MetricConfig",
           "required": true,

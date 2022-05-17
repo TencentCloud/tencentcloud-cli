@@ -1660,6 +1660,14 @@
         "title": "禁用多条路由策略"
       }
     ],
+    "DisableFlowLogs": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableFlowLogs\n&FlowLogIds.0=fl-7rymh5cn\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "停止流日志"
+      }
+    ],
     "DisableGatewayFlowMonitor": [
       {
         "document": "",
@@ -1768,6 +1776,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=EnableCcnRoutes\n&CcnId=ccn-gree226l\n&RouteIds.0=ccnr-bvipc87w\n&RouteIds.1=ccnr-oc61so0o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "启用多条路由策略"
+      }
+    ],
+    "EnableFlowLogs": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=EnableFlowLogs\n&FlowLogIds.0=fl-7rymh5cn\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a38579de-a046-4d68-b24a-b629c8d0ae57\"\n    }\n}",
+        "title": "启动流日志"
       }
     ],
     "EnableGatewayFlowMonitor": [
