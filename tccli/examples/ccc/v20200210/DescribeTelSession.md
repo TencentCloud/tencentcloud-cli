@@ -28,7 +28,9 @@ Output:
             "SessionStatus": "inProgress",
             "Direction": 1,
             "OutBoundCaller": "",
-            "OutBoundCallee": ""
+            "OutBoundCallee": "",
+            "ProtectedCallee": "",
+            "ProtectedCaller": ""
         }
     }
 }

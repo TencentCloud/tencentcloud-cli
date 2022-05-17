@@ -11,13 +11,13 @@ from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
-from tencentcloud.trtc.v20190722 import trtc_client as trtc_client_v20190722
-from tencentcloud.trtc.v20190722 import models as models_v20190722
+from tencentcloud.cdc.v20201214 import cdc_client as cdc_client_v20201214
+from tencentcloud.cdc.v20201214 import models as models_v20201214
 
 from jmespath import search
 import time
 
-def doStartMCUMixTranscode(args, parsed_globals):
+def doModifySiteDeviceInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -39,14 +39,14 @@ def doStartMCUMixTranscode(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartMCUMixTranscodeRequest()
+    model = models.ModifySiteDeviceInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StartMCUMixTranscode(model)
+        rsp = client.ModifySiteDeviceInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -65,7 +65,7 @@ def doStartMCUMixTranscode(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRoomInformation(args, parsed_globals):
+def doDescribeDedicatedClusterTypes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -87,14 +87,14 @@ def doDescribeRoomInformation(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRoomInformationRequest()
+    model = models.DescribeDedicatedClusterTypesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeRoomInformation(model)
+        rsp = client.DescribeDedicatedClusterTypes(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -113,7 +113,7 @@ def doDescribeRoomInformation(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopMCUMixTranscode(args, parsed_globals):
+def doDeleteDedicatedClusters(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -135,14 +135,14 @@ def doStopMCUMixTranscode(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopMCUMixTranscodeRequest()
+    model = models.DeleteDedicatedClustersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StopMCUMixTranscode(model)
+        rsp = client.DeleteDedicatedClusters(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -161,7 +161,7 @@ def doStopMCUMixTranscode(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTroubleInfo(args, parsed_globals):
+def doDescribeDedicatedClusterCosCapacity(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -183,14 +183,14 @@ def doCreateTroubleInfo(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTroubleInfoRequest()
+    model = models.DescribeDedicatedClusterCosCapacityRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateTroubleInfo(model)
+        rsp = client.DescribeDedicatedClusterCosCapacity(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -209,7 +209,7 @@ def doCreateTroubleInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeHistoryScale(args, parsed_globals):
+def doCreateDedicatedCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -231,14 +231,14 @@ def doDescribeHistoryScale(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeHistoryScaleRequest()
+    model = models.CreateDedicatedClusterRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeHistoryScale(model)
+        rsp = client.CreateDedicatedCluster(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -257,7 +257,7 @@ def doDescribeHistoryScale(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeletePicture(args, parsed_globals):
+def doDescribeDedicatedClusterHostStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -279,14 +279,14 @@ def doDeletePicture(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeletePictureRequest()
+    model = models.DescribeDedicatedClusterHostStatisticsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeletePicture(model)
+        rsp = client.DescribeDedicatedClusterHostStatistics(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -305,7 +305,7 @@ def doDeletePicture(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePicture(args, parsed_globals):
+def doModifyDedicatedClusterInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -327,14 +327,14 @@ def doCreatePicture(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePictureRequest()
+    model = models.ModifyDedicatedClusterInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreatePicture(model)
+        rsp = client.ModifyDedicatedClusterInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -353,7 +353,7 @@ def doCreatePicture(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRemoveUser(args, parsed_globals):
+def doDescribeSites(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -375,14 +375,14 @@ def doRemoveUser(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RemoveUserRequest()
+    model = models.DescribeSitesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RemoveUser(model)
+        rsp = client.DescribeSites(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -401,7 +401,7 @@ def doRemoveUser(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeCallDetail(args, parsed_globals):
+def doDescribeDedicatedClusterOrders(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -423,14 +423,14 @@ def doDescribeCallDetail(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCallDetailRequest()
+    model = models.DescribeDedicatedClusterOrdersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeCallDetail(model)
+        rsp = client.DescribeDedicatedClusterOrders(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -449,7 +449,7 @@ def doDescribeCallDetail(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyCloudRecording(args, parsed_globals):
+def doModifySiteInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -471,14 +471,14 @@ def doModifyCloudRecording(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyCloudRecordingRequest()
+    model = models.ModifySiteInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyCloudRecording(model)
+        rsp = client.ModifySiteInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -497,7 +497,7 @@ def doModifyCloudRecording(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCloudRecording(args, parsed_globals):
+def doDescribeDedicatedClusters(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -519,14 +519,14 @@ def doCreateCloudRecording(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCloudRecordingRequest()
+    model = models.DescribeDedicatedClustersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCloudRecording(model)
+        rsp = client.DescribeDedicatedClusters(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -545,7 +545,7 @@ def doCreateCloudRecording(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopMCUMixTranscodeByStrRoomId(args, parsed_globals):
+def doDescribeDedicatedClusterHosts(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -567,14 +567,14 @@ def doStopMCUMixTranscodeByStrRoomId(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopMCUMixTranscodeByStrRoomIdRequest()
+    model = models.DescribeDedicatedClusterHostsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StopMCUMixTranscodeByStrRoomId(model)
+        rsp = client.DescribeDedicatedClusterHosts(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -593,7 +593,7 @@ def doStopMCUMixTranscodeByStrRoomId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyPicture(args, parsed_globals):
+def doDescribeSitesDetail(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -615,14 +615,14 @@ def doModifyPicture(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPictureRequest()
+    model = models.DescribeSitesDetailRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyPicture(model)
+        rsp = client.DescribeSitesDetail(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -641,7 +641,7 @@ def doModifyPicture(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDismissRoomByStrRoomId(args, parsed_globals):
+def doCreateDedicatedClusterOrder(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -663,14 +663,14 @@ def doDismissRoomByStrRoomId(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DismissRoomByStrRoomIdRequest()
+    model = models.CreateDedicatedClusterOrderRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DismissRoomByStrRoomId(model)
+        rsp = client.CreateDedicatedClusterOrder(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -689,7 +689,7 @@ def doDismissRoomByStrRoomId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAbnormalEvent(args, parsed_globals):
+def doDescribeDedicatedClusterOverview(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -711,14 +711,14 @@ def doDescribeAbnormalEvent(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAbnormalEventRequest()
+    model = models.DescribeDedicatedClusterOverviewRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAbnormalEvent(model)
+        rsp = client.DescribeDedicatedClusterOverview(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -737,7 +737,7 @@ def doDescribeAbnormalEvent(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartMCUMixTranscodeByStrRoomId(args, parsed_globals):
+def doDeleteSites(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -759,14 +759,14 @@ def doStartMCUMixTranscodeByStrRoomId(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartMCUMixTranscodeByStrRoomIdRequest()
+    model = models.DeleteSitesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StartMCUMixTranscodeByStrRoomId(model)
+        rsp = client.DeleteSites(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -785,7 +785,7 @@ def doStartMCUMixTranscodeByStrRoomId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRemoveUserByStrRoomId(args, parsed_globals):
+def doModifyOrderStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -807,14 +807,14 @@ def doRemoveUserByStrRoomId(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RemoveUserByStrRoomIdRequest()
+    model = models.ModifyOrderStatusRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RemoveUserByStrRoomId(model)
+        rsp = client.ModifyOrderStatus(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -833,7 +833,7 @@ def doRemoveUserByStrRoomId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDismissRoom(args, parsed_globals):
+def doDescribeDedicatedClusterInstanceTypes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -855,14 +855,14 @@ def doDismissRoom(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DismissRoomRequest()
+    model = models.DescribeDedicatedClusterInstanceTypesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DismissRoom(model)
+        rsp = client.DescribeDedicatedClusterInstanceTypes(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -881,7 +881,7 @@ def doDismissRoom(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRecordStatistic(args, parsed_globals):
+def doDescribeDedicatedSupportedZones(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -903,14 +903,14 @@ def doDescribeRecordStatistic(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRecordStatisticRequest()
+    model = models.DescribeDedicatedSupportedZonesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeRecordStatistic(model)
+        rsp = client.DescribeDedicatedSupportedZones(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -929,7 +929,7 @@ def doDescribeRecordStatistic(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTrtcMcuTranscodeTime(args, parsed_globals):
+def doCreateSite(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -951,254 +951,14 @@ def doDescribeTrtcMcuTranscodeTime(args, parsed_globals):
     )
     profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
+    client = mod.CdcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTrtcMcuTranscodeTimeRequest()
+    model = models.CreateSiteRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeTrtcMcuTranscodeTime(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeCloudRecording(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeCloudRecordingRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeCloudRecording(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteCloudRecording(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteCloudRecordingRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteCloudRecording(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribePicture(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePictureRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribePicture(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDetailEvent(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDetailEventRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeDetailEvent(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeUserInformation(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.TrtcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserInformationRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeUserInformation(model)
+        rsp = client.CreateSite(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1218,46 +978,41 @@ def doDescribeUserInformation(args, parsed_globals):
 
 
 CLIENT_MAP = {
-    "v20190722": trtc_client_v20190722,
+    "v20201214": cdc_client_v20201214,
 
 }
 
 MODELS_MAP = {
-    "v20190722": models_v20190722,
+    "v20201214": models_v20201214,
 
 }
 
 ACTION_MAP = {
-    "StartMCUMixTranscode": doStartMCUMixTranscode,
-    "DescribeRoomInformation": doDescribeRoomInformation,
-    "StopMCUMixTranscode": doStopMCUMixTranscode,
-    "CreateTroubleInfo": doCreateTroubleInfo,
-    "DescribeHistoryScale": doDescribeHistoryScale,
-    "DeletePicture": doDeletePicture,
-    "CreatePicture": doCreatePicture,
-    "RemoveUser": doRemoveUser,
-    "DescribeCallDetail": doDescribeCallDetail,
-    "ModifyCloudRecording": doModifyCloudRecording,
-    "CreateCloudRecording": doCreateCloudRecording,
-    "StopMCUMixTranscodeByStrRoomId": doStopMCUMixTranscodeByStrRoomId,
-    "ModifyPicture": doModifyPicture,
-    "DismissRoomByStrRoomId": doDismissRoomByStrRoomId,
-    "DescribeAbnormalEvent": doDescribeAbnormalEvent,
-    "StartMCUMixTranscodeByStrRoomId": doStartMCUMixTranscodeByStrRoomId,
-    "RemoveUserByStrRoomId": doRemoveUserByStrRoomId,
-    "DismissRoom": doDismissRoom,
-    "DescribeRecordStatistic": doDescribeRecordStatistic,
-    "DescribeTrtcMcuTranscodeTime": doDescribeTrtcMcuTranscodeTime,
-    "DescribeCloudRecording": doDescribeCloudRecording,
-    "DeleteCloudRecording": doDeleteCloudRecording,
-    "DescribePicture": doDescribePicture,
-    "DescribeDetailEvent": doDescribeDetailEvent,
-    "DescribeUserInformation": doDescribeUserInformation,
+    "ModifySiteDeviceInfo": doModifySiteDeviceInfo,
+    "DescribeDedicatedClusterTypes": doDescribeDedicatedClusterTypes,
+    "DeleteDedicatedClusters": doDeleteDedicatedClusters,
+    "DescribeDedicatedClusterCosCapacity": doDescribeDedicatedClusterCosCapacity,
+    "CreateDedicatedCluster": doCreateDedicatedCluster,
+    "DescribeDedicatedClusterHostStatistics": doDescribeDedicatedClusterHostStatistics,
+    "ModifyDedicatedClusterInfo": doModifyDedicatedClusterInfo,
+    "DescribeSites": doDescribeSites,
+    "DescribeDedicatedClusterOrders": doDescribeDedicatedClusterOrders,
+    "ModifySiteInfo": doModifySiteInfo,
+    "DescribeDedicatedClusters": doDescribeDedicatedClusters,
+    "DescribeDedicatedClusterHosts": doDescribeDedicatedClusterHosts,
+    "DescribeSitesDetail": doDescribeSitesDetail,
+    "CreateDedicatedClusterOrder": doCreateDedicatedClusterOrder,
+    "DescribeDedicatedClusterOverview": doDescribeDedicatedClusterOverview,
+    "DeleteSites": doDeleteSites,
+    "ModifyOrderStatus": doModifyOrderStatus,
+    "DescribeDedicatedClusterInstanceTypes": doDescribeDedicatedClusterInstanceTypes,
+    "DescribeDedicatedSupportedZones": doDescribeDedicatedSupportedZones,
+    "CreateSite": doCreateSite,
 
 }
 
 AVAILABLE_VERSION_LIST = [
-    "v20190722",
+    "v20201214",
 
 ]
 
@@ -1327,11 +1082,11 @@ def parse_global_arg(parsed_globals):
         if g_param[OptionsDefine.ServiceVersion]:
             g_param[OptionsDefine.Version] = "v" + g_param[OptionsDefine.ServiceVersion].replace('-', '')
         else:
-            version = conf["trtc"][OptionsDefine.Version]
+            version = conf["cdc"][OptionsDefine.Version]
             g_param[OptionsDefine.Version] = "v" + version.replace('-', '')
 
         if g_param[OptionsDefine.Endpoint] is None:
-            g_param[OptionsDefine.Endpoint] = conf["trtc"][OptionsDefine.Endpoint]
+            g_param[OptionsDefine.Endpoint] = conf["cdc"][OptionsDefine.Endpoint]
     except Exception as err:
         raise ConfigurationError("config file:%s error, %s" % (conf_path, str(err)))
 

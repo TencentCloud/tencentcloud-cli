@@ -1,0 +1,2881 @@
+{
+  "actions": {
+    "CreateDedicatedCluster": {
+      "document": "创建专用集群",
+      "input": "CreateDedicatedClusterRequest",
+      "name": "创建专用集群",
+      "output": "CreateDedicatedClusterResponse"
+    },
+    "CreateDedicatedClusterOrder": {
+      "document": "创建专用集群订单",
+      "input": "CreateDedicatedClusterOrderRequest",
+      "name": "创建专用集群订单",
+      "output": "CreateDedicatedClusterOrderResponse"
+    },
+    "CreateSite": {
+      "document": "创建站点",
+      "input": "CreateSiteRequest",
+      "name": "创建站点",
+      "output": "CreateSiteResponse"
+    },
+    "DeleteDedicatedClusters": {
+      "document": "删除专用集群",
+      "input": "DeleteDedicatedClustersRequest",
+      "name": "删除专用集群",
+      "output": "DeleteDedicatedClustersResponse"
+    },
+    "DeleteSites": {
+      "document": "删除站点",
+      "input": "DeleteSitesRequest",
+      "name": "删除站点",
+      "output": "DeleteSitesResponse"
+    },
+    "DescribeDedicatedClusterCosCapacity": {
+      "document": "查询专用集群内cos的容量信息",
+      "input": "DescribeDedicatedClusterCosCapacityRequest",
+      "name": "查询专用集群内cos的容量信息",
+      "output": "DescribeDedicatedClusterCosCapacityResponse"
+    },
+    "DescribeDedicatedClusterHostStatistics": {
+      "document": "查询专用集群内宿主机的统计信息",
+      "input": "DescribeDedicatedClusterHostStatisticsRequest",
+      "name": "查询专用集群内宿主机的统计信息",
+      "output": "DescribeDedicatedClusterHostStatisticsResponse"
+    },
+    "DescribeDedicatedClusterHosts": {
+      "document": "专用集群宿主机信息",
+      "input": "DescribeDedicatedClusterHostsRequest",
+      "name": "专用集群宿主机信息",
+      "output": "DescribeDedicatedClusterHostsResponse"
+    },
+    "DescribeDedicatedClusterInstanceTypes": {
+      "document": "查询专用集群支持的实例规格列表",
+      "input": "DescribeDedicatedClusterInstanceTypesRequest",
+      "name": "查询专用集群支持的实例规格列表",
+      "output": "DescribeDedicatedClusterInstanceTypesResponse"
+    },
+    "DescribeDedicatedClusterOrders": {
+      "document": "查询专用集群订单列表",
+      "input": "DescribeDedicatedClusterOrdersRequest",
+      "name": "查询专用集群订单列表",
+      "output": "DescribeDedicatedClusterOrdersResponse"
+    },
+    "DescribeDedicatedClusterOverview": {
+      "document": "专用集群概览信息",
+      "input": "DescribeDedicatedClusterOverviewRequest",
+      "name": "专用集群概览信息",
+      "output": "DescribeDedicatedClusterOverviewResponse"
+    },
+    "DescribeDedicatedClusterTypes": {
+      "document": "查询专有集群配置列表",
+      "input": "DescribeDedicatedClusterTypesRequest",
+      "name": "查询专有集群配置列表",
+      "output": "DescribeDedicatedClusterTypesResponse"
+    },
+    "DescribeDedicatedClusters": {
+      "document": "查询专用集群列表",
+      "input": "DescribeDedicatedClustersRequest",
+      "name": "查询专用集群列表",
+      "output": "DescribeDedicatedClustersResponse"
+    },
+    "DescribeDedicatedSupportedZones": {
+      "document": "查询专用集群支持的可用区列表",
+      "input": "DescribeDedicatedSupportedZonesRequest",
+      "name": "查询专用集群支持的可用区列表",
+      "output": "DescribeDedicatedSupportedZonesResponse"
+    },
+    "DescribeSites": {
+      "document": "查询站点列表",
+      "input": "DescribeSitesRequest",
+      "name": "查询站点列表",
+      "output": "DescribeSitesResponse"
+    },
+    "DescribeSitesDetail": {
+      "document": "查询站点详情",
+      "input": "DescribeSitesDetailRequest",
+      "name": "查询站点详情",
+      "output": "DescribeSitesDetailResponse"
+    },
+    "ModifyDedicatedClusterInfo": {
+      "document": "修改本地专用集群信息",
+      "input": "ModifyDedicatedClusterInfoRequest",
+      "name": "修改本地专用集群信息",
+      "output": "ModifyDedicatedClusterInfoResponse"
+    },
+    "ModifyOrderStatus": {
+      "document": "修改大订单、小订单的状态",
+      "input": "ModifyOrderStatusRequest",
+      "name": "修改订单状态",
+      "output": "ModifyOrderStatusResponse"
+    },
+    "ModifySiteDeviceInfo": {
+      "document": "修改机房设备信息",
+      "input": "ModifySiteDeviceInfoRequest",
+      "name": "修改机房设备信息",
+      "output": "ModifySiteDeviceInfoResponse"
+    },
+    "ModifySiteInfo": {
+      "document": "修改机房信息",
+      "input": "ModifySiteInfoRequest",
+      "name": "修改机房信息",
+      "output": "ModifySiteInfoResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-14",
+    "api_brief": "介绍如何使用API对本地专用集群进行操作，包括使用并管理站点、专用集群等资源。",
+    "serviceNameCN": "本地专用集群",
+    "serviceShortName": "cdc"
+  },
+  "objects": {
+    "CbsInfo": {
+      "document": "购买的cbs信息",
+      "members": [
+        {
+          "default": "",
+          "document": "cbs存储大小，单位TB",
+          "example": "1",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cbs存储类型，默认为SSD",
+          "example": "SSD",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CosCapacity": {
+      "document": "CDC集群内cos的容量信息",
+      "members": [
+        {
+          "default": "",
+          "document": "已购cos的总容量大小，单位GB",
+          "example": "3394.92",
+          "member": "float",
+          "name": "TotalCapacity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "剩余可用cos的容量大小，单位GB",
+          "example": "3367.41",
+          "member": "float",
+          "name": "TotalFreeCapacity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已用cos的容量大小，单位GB",
+          "example": "27.51",
+          "member": "float",
+          "name": "TotalUsedCapacity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosInfo": {
+      "document": "用于购买页面添加cos信息",
+      "members": [
+        {
+          "default": "",
+          "document": "COS存储大小，单位TB",
+          "example": "1",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "COS存储类型，默认为cos",
+          "example": "COS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateDedicatedClusterOrderRequest": {
+      "document": "CreateDedicatedClusterOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用集群id",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "order关联的专用集群类型数组",
+          "example": "无",
+          "member": "DedicatedClusterTypeInfo",
+          "name": "DedicatedClusterTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "order关联的cos存储信息",
+          "example": "无",
+          "member": "CosInfo",
+          "name": "CosInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "order关联的cbs存储信息",
+          "example": "无",
+          "member": "CbsInfo",
+          "name": "CbsInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "购买来源，默认为cloudApi",
+          "example": "cloudApi",
+          "member": "string",
+          "name": "PurchaseSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当调用API接口提交订单时，需要提交DedicatedClusterOrderId",
+          "example": "ord-aijx4ets",
+          "member": "string",
+          "name": "DedicatedClusterOrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterOrderResponse": {
+      "document": "CreateDedicatedClusterOrder返回参数结构体",
+      "members": [
+        {
+          "document": "专用集群订单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ord-j3f3kdj4\"",
+          "member": "string",
+          "name": "DedicatedClusterOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterRequest": {
+      "document": "CreateDedicatedCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "专用集群所属的SiteId",
+          "example": "\"site-98dj3kd\"",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用集群的名称",
+          "example": "\"my-site\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用集群所属的可用区",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "专用集群的描述",
+          "example": "\"my dedicated cluster\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterResponse": {
+      "document": "CreateDedicatedCluster返回参数结构体",
+      "members": [
+        {
+          "document": "创建的专用集群id",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSiteRequest": {
+      "document": "CreateSite请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "\"my-site\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在国家",
+          "example": "China",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在省份",
+          "example": "Guangdong",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在城市",
+          "example": "Shenzhen",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的详细地址信息",
+          "example": "\"Shennan Road 10000\"",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点描述",
+          "example": "\"this site is good\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注意事项",
+          "example": "\"the floor is not very good\"",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
+          "example": "无",
+          "member": "string",
+          "name": "FiberType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
+          "example": "无",
+          "member": "string",
+          "name": "OpticalStandard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电源连接器类型",
+          "example": "无",
+          "member": "string",
+          "name": "PowerConnectors",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从机架上方还是下方供电。",
+          "example": "无",
+          "member": "string",
+          "name": "PowerFeedDrop",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大承重(KG)",
+          "example": "5000",
+          "member": "int64",
+          "name": "MaxWeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "功耗(KW)",
+          "example": "4000",
+          "member": "int64",
+          "name": "PowerDrawKva",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络到腾讯云Region区域的上行链路速度",
+          "example": "10",
+          "member": "int64",
+          "name": "UplinkSpeedGbps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
+          "example": "2",
+          "member": "int64",
+          "name": "UplinkCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
+          "example": "True",
+          "member": "bool",
+          "name": "ConditionRequirement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
+          "example": "True",
+          "member": "bool",
+          "name": "DimensionRequirement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
+          "example": "True",
+          "member": "bool",
+          "name": "RedundantNetworking",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的邮编",
+          "example": "518000",
+          "member": "int64",
+          "name": "PostalCode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的详细地址信息（补充）",
+          "example": "无",
+          "member": "string",
+          "name": "OptionalAddressLine",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否需要腾讯云团队协助完成机架支撑工作",
+          "example": "True",
+          "member": "bool",
+          "name": "NeedHelp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否电源冗余",
+          "example": "True",
+          "member": "bool",
+          "name": "RedundantPower",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "上游断路器是否具备",
+          "example": "True",
+          "member": "bool",
+          "name": "BreakerRequirement",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSiteResponse": {
+      "document": "CreateSite返回参数结构体",
+      "members": [
+        {
+          "document": "创建Site生成的id",
+          "example": "\"site-98dj3kd\"",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DedicatedCluster": {
+      "document": "专用集群列表",
+      "members": [
+        {
+          "default": "",
+          "document": "专用集群id。如\"cluster-xxxxx\"。",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群所属可用区名称。",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专用集群的名称。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群的生命周期。如\"PENDING\"。",
+          "member": "string",
+          "name": "LifecycleStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群的创建时间。",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群所属的站点id。",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DedicatedClusterInstanceType": {
+      "document": "专用宿主机支持的实例规格列表",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格名称",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡类型，例如：25代表25G网卡",
+          "member": "int64",
+          "name": "NetworkCard",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的CPU核数，单位：核。",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例内存容量，单位：`GB`。",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例机型系列。",
+          "member": "string",
+          "name": "InstanceFamily",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型名称。",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "本地存储块数量。",
+          "member": "int64",
+          "name": "StorageBlockAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网带宽，单位Gbps。",
+          "member": "float",
+          "name": "InstanceBandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络收发包能力，单位万PPS。",
+          "member": "int64",
+          "name": "InstancePps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "处理器型号。",
+          "member": "string",
+          "name": "CpuType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的GPU数量。",
+          "member": "int64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例的FPGA数量。",
+          "member": "int64",
+          "name": "Fpga",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型描述",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DedicatedClusterOrder": {
+      "document": "专用集群订单",
+      "members": [
+        {
+          "default": "",
+          "document": "专用集群id",
+          "example": "无",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
+          "example": "无",
+          "member": "string",
+          "name": "DedicatedClusterTypeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
+          "example": "无",
+          "member": "string",
+          "name": "SupportedStorageType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
+          "example": "无",
+          "member": "int64",
+          "name": "SupportedUplinkSpeed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
+          "example": "无",
+          "member": "string",
+          "name": "SupportedInstanceFamily",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地板承重要求(KG)",
+          "example": "无",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "功率要求(KW)",
+          "example": "无",
+          "member": "float",
+          "name": "PowerDraw",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态",
+          "example": "无",
+          "member": "string",
+          "name": "OrderStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单创建的时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "大订单ID",
+          "example": "ord-aijx4ets ",
+          "member": "string",
+          "name": "DedicatedClusterOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单类型，创建CREATE或扩容EXTEND",
+          "example": "CREATE",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DedicatedClusterOrderItem",
+          "name": "DedicatedClusterOrderItems",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Gpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0代表未支付，1代表已支付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DedicatedClusterOrderItem": {
+      "document": "专用集群子订单",
+      "members": [
+        {
+          "default": "",
+          "document": "专用集群类型id",
+          "example": "无",
+          "member": "string",
+          "name": "DedicatedClusterTypeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的存储类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "SupportedStorageType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的上连交换机的链路传输速率(GiB)",
+          "example": "无",
+          "member": "int64",
+          "name": "SupportedUplinkSpeed",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的实例族列表",
+          "example": "无",
+          "member": "string",
+          "name": "SupportedInstanceFamily",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地板承重要求(KG)",
+          "example": "无",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "功率要求(KW)",
+          "example": "无",
+          "member": "float",
+          "name": "PowerDraw",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单状态",
+          "example": "无",
+          "member": "string",
+          "name": "SubOrderStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单创建的时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单ID",
+          "example": "ord-aijx4ets ",
+          "member": "string",
+          "name": "SubOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的集群规格数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格简单描述",
+          "example": "通用小型机",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格详细描述",
+          "example": "适用于...场景",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GPU数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalGpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格英文名",
+          "example": "CBS.SSD",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
+          "member": "string",
+          "name": "ComputeFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DedicatedClusterType": {
+      "document": "专用集群配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置id",
+          "example": "dctype-00000000",
+          "member": "string",
+          "name": "DedicatedClusterTypeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置描述，对应描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "适用于xxx场景",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置名称，对应计算资源类型",
+          "example": "通用小型机规格",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建配置的时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的存储类型列表",
+          "example": "COS",
+          "member": "string",
+          "name": "SupportedStorageType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的上连交换机的链路传输速率",
+          "example": "10",
+          "member": "int64",
+          "name": "SupportedUplinkGiB",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支持的实例族列表",
+          "example": "M5",
+          "member": "string",
+          "name": "SupportedInstanceFamily",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地板承重要求(KG)",
+          "example": "1000",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "功率要求(KW)",
+          "example": "100",
+          "member": "float",
+          "name": "PowerDrawKva",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "显示计算资源规格详情，存储等资源不显示；对应规格",
+          "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
+          "member": "string",
+          "name": "ComputeFormatDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DedicatedClusterTypeInfo": {
+      "document": "DedicatedClusterType => (Id, Count)",
+      "members": [
+        {
+          "default": "",
+          "document": "集群类型Id",
+          "example": "dctype-00000000",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteDedicatedClustersRequest": {
+      "document": "DeleteDedicatedClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的专用集群id",
+          "example": "[\"cluster-xh37dh\"]",
+          "member": "string",
+          "name": "DedicatedClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDedicatedClustersResponse": {
+      "document": "DeleteDedicatedClusters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSitesRequest": {
+      "document": "DeleteSites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要删除的站点id列表",
+          "example": "[\"site-98dj3kd\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSitesResponse": {
+      "document": "DeleteSites返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterCosCapacityRequest": {
+      "document": "DescribeDedicatedClusterCosCapacity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的专用集群id",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterCosCapacityResponse": {
+      "document": "DescribeDedicatedClusterCosCapacity返回参数结构体",
+      "members": [
+        {
+          "document": "本集群内cos容量信息，单位：‘GB’",
+          "example": "无",
+          "member": "CosCapacity",
+          "name": "CosCapacity",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterHostStatisticsRequest": {
+      "document": "DescribeDedicatedClusterHostStatistics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的专用集群id",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterHostStatisticsResponse": {
+      "document": "DescribeDedicatedClusterHostStatistics返回参数结构体",
+      "members": [
+        {
+          "document": "该集群内宿主机的统计信息列表",
+          "example": "无",
+          "member": "HostStatistic",
+          "name": "HostStatisticSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterHostsRequest": {
+      "document": "DescribeDedicatedClusterHosts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cluster-nk6e8j6c",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterHostsResponse": {
+      "document": "DescribeDedicatedClusterHosts返回参数结构体",
+      "members": [
+        {
+          "document": "宿主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostInfo",
+          "name": "HostInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "宿主机总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterInstanceTypesRequest": {
+      "document": "DescribeDedicatedClusterInstanceTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询的专用集群id",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterInstanceTypesResponse": {
+      "document": "DescribeDedicatedClusterInstanceTypes返回参数结构体",
+      "members": [
+        {
+          "document": "支持的实例规格列表",
+          "example": "无",
+          "member": "DedicatedClusterInstanceType",
+          "name": "DedicatedClusterInstanceTypeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterOrdersRequest": {
+      "document": "DescribeDedicatedClusterOrders请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照专用集群id过滤",
+          "example": "[\"cluster-xh37dh\"]",
+          "member": "string",
+          "name": "DedicatedClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照专用集群订单id过滤",
+          "example": "[\"ord-xjehslf\"]",
+          "member": "string",
+          "name": "DedicatedClusterOrderIds",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "订单状态为过滤条件：PENDING INCONSTRUCTION DELIVERING DELIVERED EXPIRED CANCELLED  OFFLINE",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单类型为过滤条件：CREATE  EXTEND",
+          "example": "CREATE",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterOrdersResponse": {
+      "document": "DescribeDedicatedClusterOrders返回参数结构体",
+      "members": [
+        {
+          "document": "专用集群订单列表",
+          "example": "无",
+          "member": "DedicatedClusterOrder",
+          "name": "DedicatedClusterOrderSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的专用集群订单总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterOverviewRequest": {
+      "document": "DescribeDedicatedClusterOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cluster-nk6e8j6c",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterOverviewResponse": {
+      "document": "DescribeDedicatedClusterOverview返回参数结构体",
+      "members": [
+        {
+          "document": "云服务器数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "CvmCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "宿主机数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterTypesRequest": {
+      "document": "DescribeDedicatedClusterTypes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模糊匹配专用集群配置名称",
+          "example": "\"my-type\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待查询的专用集群配置id列表",
+          "example": "[\"dctype-lkm17jbu\"]",
+          "member": "string",
+          "name": "DedicatedClusterTypeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否只查询计算规格类型",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCompute",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClusterTypesResponse": {
+      "document": "DescribeDedicatedClusterTypes返回参数结构体",
+      "members": [
+        {
+          "document": "专用集群配置列表",
+          "example": "无",
+          "member": "DedicatedClusterType",
+          "name": "DedicatedClusterTypeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的个数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClustersRequest": {
+      "document": "DescribeDedicatedClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：`cluster-xxxxxxxx`",
+          "example": "[\"cluster-du3hdu\"]",
+          "member": "string",
+          "name": "DedicatedClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照可用区名称过滤",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照站点id过滤",
+          "example": "\"site-378xs3g\"",
+          "member": "string",
+          "name": "SiteIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按照专用集群生命周期过滤",
+          "example": "\"Pending\"",
+          "member": "string",
+          "name": "LifecycleStatuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配专用集群名称",
+          "example": "\"my-cluster\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedClustersResponse": {
+      "document": "DescribeDedicatedClusters返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的专用集群列表",
+          "example": "无",
+          "member": "DedicatedCluster",
+          "name": "DedicatedClusterSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的专用集群数量。",
+          "example": "20 ",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedSupportedZonesRequest": {
+      "document": "DescribeDedicatedSupportedZones请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "传入region列表",
+          "example": "无",
+          "member": "int64",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDedicatedSupportedZonesResponse": {
+      "document": "DescribeDedicatedSupportedZones返回参数结构体",
+      "members": [
+        {
+          "document": "支持的可用区列表",
+          "example": "无",
+          "member": "RegionZoneInfo",
+          "name": "ZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesDetailRequest": {
+      "document": "DescribeSitesDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照站点id过滤",
+          "example": "[\"site-98dj3kd\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "按照站定名称模糊匹配",
+          "example": "\"my-site\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesDetailResponse": {
+      "document": "DescribeSitesDetail返回参数结构体",
+      "members": [
+        {
+          "document": "站点详情",
+          "example": "无",
+          "member": "SiteDetail",
+          "name": "SiteDetailSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的站点总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesRequest": {
+      "document": "DescribeSites请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照站点id过滤",
+          "example": "[\"site-98dj3kd\"]",
+          "member": "string",
+          "name": "SiteIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配站点名称",
+          "example": "\"first-site\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSitesResponse": {
+      "document": "DescribeSites返回参数结构体",
+      "members": [
+        {
+          "document": "符合查询条件的站点列表",
+          "example": "无",
+          "member": "Site",
+          "name": "SiteSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "符合条件的站点数量。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HostInfo": {
+      "document": "CDC宿主机的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "宿主机IP",
+          "example": "10.1.1.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云服务类型",
+          "example": "云服务器宿主机",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宿主机运行状态",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "HostStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宿主机类型",
+          "example": "CG2-25G",
+          "member": "string",
+          "name": "HostType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu可用数",
+          "example": "32",
+          "member": "uint64",
+          "name": "CpuAvailable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cpu总数",
+          "example": "32",
+          "member": "uint64",
+          "name": "CpuTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存可用数",
+          "example": "64",
+          "member": "uint64",
+          "name": "MemAvailable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存总数",
+          "example": "64",
+          "member": "uint64",
+          "name": "MemTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时间",
+          "example": "2020/12/18",
+          "member": "string",
+          "name": "RunTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2023/12/18",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HostStatistic": {
+      "document": "CDC集群内宿主机的统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "宿主机规格",
+          "example": "S5.21XLARGE320",
+          "member": "string",
+          "name": "HostType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宿主机机型系列",
+          "example": "S5",
+          "member": "string",
+          "name": "HostFamily",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宿主机的CPU核数，单位：核",
+          "example": "84",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "宿主机内存大小，单位：GB",
+          "example": "320",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该规格宿主机的数量",
+          "example": "240",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyDedicatedClusterInfoRequest": {
+      "document": "ModifyDedicatedClusterInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "本地专用集群ID",
+          "example": "cluster-6qvrhrmg",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的新名称",
+          "example": "task_success",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的新可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的新描述信息",
+          "example": "this is a description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群所在站点",
+          "example": "site-pp2cbp9k",
+          "member": "string",
+          "name": "SiteId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDedicatedClusterInfoResponse": {
+      "document": "ModifyDedicatedClusterInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrderStatusRequest": {
+      "document": "ModifyOrderStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要更新成的状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "大订单ID",
+          "example": "ord-aijx4ets",
+          "member": "string",
+          "name": "DedicatedClusterOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "小订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "SubOrderIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrderStatusResponse": {
+      "document": "ModifyOrderStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteDeviceInfoRequest": {
+      "document": "ModifySiteDeviceInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机房ID",
+          "example": "site-pjmtpk14",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
+          "example": "SM",
+          "member": "string",
+          "name": "FiberType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
+          "example": "MM",
+          "member": "string",
+          "name": "OpticalStandard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "电源连接器类型",
+          "example": "220VAC50HZ",
+          "member": "string",
+          "name": "PowerConnectors",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从机架上方还是下方供电。",
+          "example": "UP",
+          "member": "string",
+          "name": "PowerFeedDrop",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "最大承重(KG)",
+          "example": "800",
+          "member": "int64",
+          "name": "MaxWeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "功耗(KW)",
+          "example": "5",
+          "member": "int64",
+          "name": "PowerDrawKva",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "网络到腾讯云Region区域的上行链路速度",
+          "example": "10",
+          "member": "int64",
+          "name": "UplinkSpeedGbps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
+          "example": "3",
+          "member": "int64",
+          "name": "UplinkCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
+          "example": "true",
+          "member": "bool",
+          "name": "ConditionRequirement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
+          "example": "true",
+          "member": "bool",
+          "name": "DimensionRequirement",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
+          "example": "true",
+          "member": "bool",
+          "name": "RedundantNetworking",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否需要腾讯云团队协助完成机架支撑工作",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedHelp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否电源冗余",
+          "example": "true",
+          "member": "bool",
+          "name": "RedundantPower",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "上游断路器是否具备",
+          "example": "true",
+          "member": "bool",
+          "name": "BreakerRequirement",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteDeviceInfoResponse": {
+      "document": "ModifySiteDeviceInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteInfoRequest": {
+      "document": "ModifySiteInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "机房ID",
+          "example": "site-pjmtpk14",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "测试机房",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点描述",
+          "example": "机房详细描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "注意事项",
+          "example": "机房注意事项",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在省份",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的邮编",
+          "example": "518000",
+          "member": "string",
+          "name": "PostalCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的详细地址信息",
+          "example": "南山区",
+          "member": "string",
+          "name": "AddressLine",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySiteInfoResponse": {
+      "document": "ModifySiteInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegionZoneInfo": {
+      "document": "RegionZoneInfo信息",
+      "members": [
+        {
+          "default": "",
+          "document": "Region id",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ZoneInfo数组",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "Zones",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Site": {
+      "document": "客户站点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点id",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点创建时间",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SiteDetail": {
+      "document": "站点详情",
+      "members": [
+        {
+          "default": "",
+          "document": "站点id",
+          "example": "\"site-u37d8sh\"",
+          "member": "string",
+          "name": "SiteId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "\"my-site\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点描述",
+          "example": "\"this site is good\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点创建时间",
+          "example": "\"2020-12-25T10:26:11Z\"",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "光纤类型",
+          "example": "\"MM\"",
+          "member": "string",
+          "name": "FiberType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络到腾讯云Region区域的上行链路速度",
+          "example": "0",
+          "member": "int64",
+          "name": "UplinkSpeedGbps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "UplinkCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "将CDC连接到网络时采用的光学标准",
+          "example": "\"MM\"",
+          "member": "string",
+          "name": "OpticalStandard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
+          "example": "false",
+          "member": "bool",
+          "name": "RedundantNetworking",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电源连接器类型",
+          "example": "\"MM\"",
+          "member": "string",
+          "name": "PowerConnectors",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "从机架上方还是下方供电。",
+          "example": "\"above\"",
+          "member": "string",
+          "name": "PowerFeedDrop",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "功耗(KW)",
+          "example": "0.0",
+          "member": "float",
+          "name": "PowerDrawKva",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConditionRequirement",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
+          "example": "false",
+          "member": "bool",
+          "name": "DimensionRequirement",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大承重(KG)",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxWeight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点地址",
+          "example": "\"Furong Road\"",
+          "member": "string",
+          "name": "AddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的详细地址信息（补充）",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OptionalAddressLine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要腾讯云团队协助完成机架支撑工作",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedHelp",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上游断路器是否具备",
+          "example": "false",
+          "member": "bool",
+          "name": "BreakerRequirement",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否电源冗余",
+          "example": "false",
+          "member": "bool",
+          "name": "RedundantPower",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点所在国家",
+          "example": "\"China\"",
+          "member": "string",
+          "name": "Country",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点所在省份",
+          "example": "\"Hunan\"",
+          "member": "string",
+          "name": "Province",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点所在城市",
+          "example": "\"Changsha\"",
+          "member": "string",
+          "name": "City",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点所在地区的邮编",
+          "example": "414012",
+          "member": "int64",
+          "name": "PostalCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "可用区信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可用区名称",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区描述",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
+          "member": "string",
+          "name": "ZoneState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

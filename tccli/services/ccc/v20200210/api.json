@@ -13,9 +13,9 @@
       "output": "CreateAutoCalloutTaskResponse"
     },
     "CreateCallOutSession": {
-      "document": "创建外呼会话",
+      "document": "创建外呼会话，当前仅支持双呼，即先使用平台号码呼出到坐席手机上，坐席接听后，然后再外呼用户，而且由于运营商频率限制，坐席手机号必须先加白名单，避免频控导致外呼失败。",
       "input": "CreateCallOutSessionRequest",
-      "name": "创建外呼会话",
+      "name": "创建外呼会话（当前仅支持双呼）",
       "output": "CreateCallOutSessionResponse"
     },
     "CreateSDKLoginToken": {
@@ -259,7 +259,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -492,8 +492,8 @@
       "members": [
         {
           "default": "",
-          "document": "呼叫中心实例Id",
-          "example": "1",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -681,7 +681,8 @@
       "members": [
         {
           "default": "",
-          "document": "应用ID。",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -690,6 +691,7 @@
         {
           "default": "",
           "document": "坐席账号。",
+          "example": "FooOrBar@tencent.com",
           "member": "string",
           "name": "SeatUserId",
           "required": true,
@@ -703,22 +705,28 @@
       "members": [
         {
           "document": "SDK 登录 Token。",
+          "example": "6bb56a09278740bc80c5dc6dab783eff",
           "member": "string",
           "name": "Token",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "过期时间戳，Unix 时间戳。",
+          "example": "1601371974",
           "member": "int64",
           "name": "ExpiredTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "SDK 加载路径会随着 SDK 的发布而变动。",
+          "example": "https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/",
           "member": "string",
           "name": "SdkURL",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -736,7 +744,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -781,7 +789,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -844,7 +852,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -889,8 +897,8 @@
       "members": [
         {
           "default": "",
-          "document": "呼叫中心实例Id",
-          "example": "1",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -997,8 +1005,8 @@
       "members": [
         {
           "default": "",
-          "document": "呼叫中心实例Id",
-          "example": "1",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1114,7 +1122,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1195,7 +1203,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例 ID（废弃）",
           "example": "0",
           "member": "int64",
           "name": "InstanceId",
@@ -1204,8 +1212,8 @@
         },
         {
           "default": "",
-          "document": "应用ID",
-          "example": "0",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
@@ -1272,13 +1280,13 @@
           "value_allowed_null": false
         },
         {
-          "document": "消息列表",
+          "document": "消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MessageBody",
           "name": "Messages",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1295,6 +1303,7 @@
         {
           "default": "",
           "document": "起始时间",
+          "example": "1603877878",
           "member": "int64",
           "name": "StartTimestamp",
           "required": true,
@@ -1303,6 +1312,7 @@
         {
           "default": "",
           "document": "结束时间",
+          "example": "1603877879",
           "member": "int64",
           "name": "EndTimestamp",
           "required": true,
@@ -1310,7 +1320,8 @@
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "实例 ID（废弃）",
+          "example": "11",
           "member": "int64",
           "name": "InstanceId",
           "required": false,
@@ -1318,7 +1329,8 @@
         },
         {
           "default": "",
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
@@ -1327,6 +1339,7 @@
         {
           "default": "",
           "document": "返回记录条数 最大为100默认20",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1335,6 +1348,7 @@
         {
           "default": "",
           "document": "返回记录偏移 默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1343,6 +1357,7 @@
         {
           "default": "",
           "document": "1为全媒体，2为文本客服，不填则查询全部",
+          "example": "2",
           "member": "int64",
           "name": "Type",
           "required": false,
@@ -1356,15 +1371,19 @@
       "members": [
         {
           "document": "总记录数",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "服务记录列表",
+          "example": "无",
           "member": "IMCdrInfo",
           "name": "IMCdrs",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1382,7 +1401,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用 ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1589,7 +1608,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1670,7 +1689,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1751,7 +1770,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1797,6 +1816,7 @@
         {
           "default": "",
           "document": "起始时间戳，Unix 时间戳",
+          "example": "0",
           "member": "int64",
           "name": "StartTimeStamp",
           "required": true,
@@ -1805,6 +1825,7 @@
         {
           "default": "",
           "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天",
+          "example": "0",
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,
@@ -1813,6 +1834,7 @@
         {
           "default": "",
           "document": "应用ID列表，多个ID时，返回值为多个ID使用总和",
+          "example": "[\"0\\n\"]",
           "member": "int64",
           "name": "SdkAppIdList",
           "required": true,
@@ -1826,22 +1848,28 @@
       "members": [
         {
           "document": "电话呼出统计分钟数",
+          "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "电话呼入统计分钟数",
+          "example": "10",
           "member": "int64",
           "name": "TelCallInCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "坐席使用统计个数",
+          "example": "50",
           "member": "int64",
           "name": "SeatUsedCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1985,7 +2013,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
@@ -1994,7 +2022,7 @@
         },
         {
           "default": "",
-          "document": "会话ID",
+          "document": "会话 ID",
           "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
           "member": "string",
           "name": "SessionId",
@@ -3715,7 +3743,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID",
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",

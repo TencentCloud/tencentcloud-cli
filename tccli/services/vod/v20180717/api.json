@@ -378,6 +378,12 @@
       "name": "获取雪碧图模板列表",
       "output": "DescribeImageSpriteTemplatesResponse"
     },
+    "DescribeLicenseUsageData": {
+      "document": "该接口返回查询时间范围内每天 License 请求次数信息。\n   1. 可以查询最近365天内的 License 请求次数统计数据。\n   2. 查询时间跨度不超过90天。\n   3. 查询时间跨度超过1天的，返回以天为粒度的数据，否则，返回以5分钟为粒度的数据。\n",
+      "input": "DescribeLicenseUsageDataRequest",
+      "name": "查询 License 请求数统计数据",
+      "output": "DescribeLicenseUsageDataResponse"
+    },
     "DescribeMediaInfos": {
       "document": "1. 该接口可以获取多个媒体文件的多种信息，包括：\n    1. 基础信息（basicInfo）：包括媒体名称、分类、播放地址、封面图片等。\n    2. 元信息（metaData）：包括大小、时长、视频流信息、音频流信息等。\n    3. 转码结果信息（transcodeInfo）：包括该媒体转码生成的各种规格的媒体地址、视频流参数、音频流参数等。\n    4. 转动图结果信息（animatedGraphicsInfo）：对视频转动图（如 gif）后的动图信息。\n    5. 采样截图信息（sampleSnapshotInfo）：对视频采样截图后的截图信息。\n    6. 雪碧图信息（imageSpriteInfo）：对视频截取雪碧图后的雪碧图信息。\n    7. 指定时间点截图信息（snapshotByTimeOffsetInfo）：对视频依照指定时间点截图后，的截图信息。\n    8. 视频打点信息（keyFrameDescInfo）：对视频设置的打点信息。\n    9. 转自适应码流信息（adaptiveDynamicStreamingInfo）：包括规格、加密类型、打包格式等相关信息。\n2. 可以指定回包只返回部分信息。",
       "input": "DescribeMediaInfosRequest",
@@ -10674,6 +10680,69 @@
       ],
       "type": "object"
     },
+    "DescribeLicenseUsageDataRequest": {
+      "document": "DescribeLicenseUsageData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2020-09-07T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。",
+          "example": "2020-09-09T23:59:59+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "License 类型，默认为 DRM 。目前支持的 License 类型包括：\n<li> DRM: DRM 加密播放 License</li>",
+          "example": "DRM",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseUsageDataResponse": {
+      "document": "DescribeLicenseUsageData返回参数结构体",
+      "members": [
+        {
+          "document": "License 查询次数统计数据，展示所查询 License 次数的明细数据。",
+          "example": "无",
+          "member": "LicenseUsageDataItem",
+          "name": "LicenseUsageDataSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMediaInfosRequest": {
       "document": "DescribeMediaInfos请求参数结构体",
       "members": [
@@ -14160,6 +14229,32 @@
           "name": "RepeatType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseUsageDataItem": {
+      "document": "License 请求次数统计数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#52)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
+          "example": "2018-12-01T00:00:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "License 请求次数。",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
