@@ -534,6 +534,14 @@
         "title": "修改实例参数"
       }
     ],
+    "ModifyInstanceReadOnly": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceReadOnly\n&InstanceId=crs-5a4py64p\n&InputMode=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"RequestId\": \"c07beb69-a8f0-4e09-9655-68e59677a7f1\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ModifyMaintenanceWindow": [
       {
         "document": "",

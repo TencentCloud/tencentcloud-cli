@@ -5574,6 +5574,15 @@
           "name": "FilterInstanceIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "企业版搜索",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterEnterpriseFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

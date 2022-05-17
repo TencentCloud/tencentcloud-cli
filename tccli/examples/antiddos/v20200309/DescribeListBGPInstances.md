@@ -59,7 +59,10 @@ Output:
                     "ProtectBandwidth": 1,
                     "ProtectCountLimit": 1,
                     "UnionPackFlag": 1,
-                    "ProtectIPNumberLimit": 1
+                    "ProtectIPNumberLimit": 1,
+                    "BattleEditionFlag": 0,
+                    "ChannelEditionFlag": 0,
+                    "EnterpriseFlag": 0
                 },
                 "BoundStatus": "xx"
             }

@@ -15,21 +15,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "53bccf04-0870-4520-8614-f4bdddfd68df",
         "Total": 1,
+        "RequestId": "53bccf04-0870-4520-8614-f4bdddfd68df",
         "Sessions": [
             {
-                "SessionID": "0cf5be1b-de75-4445-a0c4-8dff3fa4b68b",
-                "RoomID": "32929373",
-                "Caller": "00864009282737",
-                "Callee": "00864001783747",
-                "StartTimestamp": 1607702199,
-                "RingTimestamp": 1607702299,
+                "Direction": 1,
                 "AcceptTimestamp": 1607702329,
-                "StaffEmail": "foo@tencent.com",
+                "ProtectedCaller": "",
+                "RoomID": "32929373",
+                "StartTimestamp": 1607702199,
+                "Caller": "00864009282737",
+                "ProtectedCallee": "",
                 "StaffNumber": "1007",
-                "SessionStatus": "inProgress",
-                "Direction": 1
+                "SessionID": "0cf5be1b-de75-4445-a0c4-8dff3fa4b68b",
+                "StaffEmail": "foo@tencent.com",
+                "RingTimestamp": 1607702299,
+                "Callee": "00864001783747",
+                "SessionStatus": "inProgress"
             }
         ]
     }

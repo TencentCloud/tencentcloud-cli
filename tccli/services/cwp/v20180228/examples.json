@@ -724,7 +724,7 @@
       {
         "document": "",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeHistoryService\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"498e4cab-e95d-430b-bc4c-f5821bb278d4\",\n        \"BuyStatus\": 1,\n        \"InquireNum\": 1,\n        \"EndTime\": \"2020-10-29 00:00:00\",\n        \"IsAutoOpenRenew\": 0,\n        \"ResourceId\": \"xxxxxxxx\",\n        \"Status\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"498e4cab-e95d-430b-bc4c-f5821bb278d4\",\n        \"BuyStatus\": 1,\n        \"InquireNum\": 1,\n        \"StartTime\": \"2020-10-20 00:00:00\",\n        \"EndTime\": \"2020-10-29 00:00:00\",\n        \"IsAutoOpenRenew\": 0,\n        \"ResourceId\": \"xxxxxxxx\",\n        \"Status\": 1\n    }\n}",
         "title": "查询日志检索服务信息示例"
       }
     ],

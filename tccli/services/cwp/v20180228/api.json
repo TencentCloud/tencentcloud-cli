@@ -12445,7 +12445,8 @@
           "name": "BuyStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户已购容量 单位 G",
@@ -12454,7 +12455,8 @@
           "name": "InquireNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "到期时间",
@@ -12463,7 +12465,8 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否自动续费,0 初始值, 1 开通 2 没开通",
@@ -12472,7 +12475,8 @@
           "name": "IsAutoOpenRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "资源ID",
@@ -12481,7 +12485,8 @@
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "0 没开通 1 正常 2隔离 3销毁",
@@ -12490,7 +12495,18 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "开始时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

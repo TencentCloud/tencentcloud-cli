@@ -176,6 +176,45 @@
     "serviceShortName": "tiw"
   },
   "objects": {
+    "AuthParam": {
+      "document": "鉴权参数",
+      "members": [
+        {
+          "default": "",
+          "document": "应用SdkAppId",
+          "example": "12345678",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "userid",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用户ID对应的签名",
+          "example": "usersig",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "Canvas": {
       "document": "混流画布参数",
       "members": [
@@ -2266,7 +2305,8 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2275,16 +2315,18 @@
           "member": "int64",
           "name": "RoomId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "用于白板推流服务进房进行推流的用户ID，最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
+          "document": "用于白板推流服务进入白板房间的用户ID。在没有进行额外指定的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该ID必须是一个单独的未在SDK中使用的ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该ID和SDK中使用的ID重复，会导致SDK和白板推流服务互踢，影响正常推流。",
           "example": "tic_push_12345_xxx",
           "member": "string",
           "name": "PushUserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2293,7 +2335,8 @@
           "member": "string",
           "name": "PushUserSig",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2302,7 +2345,8 @@
           "member": "Whiteboard",
           "name": "Whiteboard",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2311,7 +2355,8 @@
           "member": "int64",
           "name": "AutoStopTimeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2320,7 +2365,8 @@
           "member": "bool",
           "name": "AutoManageBackup",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2329,7 +2375,8 @@
           "member": "WhiteboardPushBackupParam",
           "name": "Backup",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2338,7 +2385,8 @@
           "member": "string",
           "name": "PrivateMapKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2347,7 +2395,8 @@
           "member": "int64",
           "name": "VideoFPS",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2356,7 +2405,8 @@
           "member": "int64",
           "name": "VideoBitrate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2365,7 +2415,8 @@
           "member": "bool",
           "name": "AutoRecord",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2374,7 +2425,8 @@
           "member": "string",
           "name": "UserDefinedRecordId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2383,7 +2435,8 @@
           "member": "bool",
           "name": "AutoPublish",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2392,7 +2445,8 @@
           "member": "string",
           "name": "UserDefinedStreamId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2401,7 +2455,8 @@
           "member": "string",
           "name": "ExtraData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2410,7 +2465,8 @@
           "member": "int64",
           "name": "TRTCRoomId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2419,7 +2475,28 @@
           "member": "string",
           "name": "TRTCRoomIdStr",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "内测参数，需开通白名单进行体验。\n\nIM鉴权信息参数，用于IM鉴权。\n当白板信令所使用的IM应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应IM应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板信令的传输通道，否则使用公共参数中的SdkAppId作为白板信令的传输通道。",
+          "example": "无",
+          "member": "AuthParam",
+          "name": "IMAuthParam",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "内测参数，需开通白名单进行体验。\n\nTRTC鉴权信息参数，用于TRTC进房推流鉴权。\n当需要推流到的TRTC房间所对应的TRTC应用与白板应用的SdkAppId不一致时，可以通过此参数提供对应的TRTC应用鉴权信息。\n\n如果提供了此参数，白板推流服务会优先使用此参数指定的SdkAppId作为白板推流的目标TRTC应用，否则使用公共参数中的SdkAppId作为白板推流的目标TRTC应用。",
+          "example": "无",
+          "member": "AuthParam",
+          "name": "TRTCAuthParam",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2434,7 +2511,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "备份任务结果参数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2443,7 +2521,8 @@
           "name": "Backup",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
