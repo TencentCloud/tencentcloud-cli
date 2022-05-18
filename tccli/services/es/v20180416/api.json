@@ -1366,6 +1366,16 @@
         },
         {
           "default": "",
+          "document": "自动续费标识。取值范围：\nRENEW_FLAG_AUTO：自动续费  \nRENEW_FLAG_MANUAL：不自动续费\n默认取值：\nRENEW_FLAG_DEFAULT：不自动续费\n若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。",
           "example": "PREPAID",
           "member": "string",
@@ -1382,16 +1392,6 @@
           "name": "ChargePeriod",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "自动续费标识。取值范围：RENEW_FLAG_AUTO：自动续费  RENEW_FLAG_MANUAL：不自动续费  默认取值：RENEW_FLAG_DEFAULT：不自动续费。若该参数指定为RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。",
-          "example": "NOTIFY_AND_AUTO_RENEW",
-          "member": "string",
-          "name": "RenewFlag",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {

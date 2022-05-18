@@ -930,6 +930,14 @@
         "title": "新增告警"
       }
     ],
+    "ModifyPrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyPrometheusTemp\n&TemplateId=temp-xxx\n&Template.Describe=一个模板\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改模板描述"
+      }
+    ],
     "ModifyPrometheusTemplate": [
       {
         "document": "",

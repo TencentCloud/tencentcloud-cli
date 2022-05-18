@@ -1415,6 +1415,7 @@
         {
           "default": "",
           "document": "角色名称",
+          "example": "test_1234544",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -1423,6 +1424,7 @@
         {
           "default": "",
           "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
+          "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
@@ -1431,6 +1433,7 @@
         {
           "default": "",
           "document": "角色描述",
+          "example": "abc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1439,6 +1442,7 @@
         {
           "default": "",
           "document": "是否允许登录 1 为允许 0 为不允许",
+          "example": "0",
           "member": "uint64",
           "name": "ConsoleLogin",
           "required": false,
@@ -1447,10 +1451,20 @@
         {
           "default": "",
           "document": "申请角色临时密钥的最长有效期限制(范围：0~43200)",
+          "example": "3600",
           "member": "uint64",
           "name": "SessionDuration",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "角色绑定标签",
+          "example": "无",
+          "member": "RoleTags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1460,8 +1474,10 @@
       "members": [
         {
           "document": "角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789",
           "member": "string",
           "name": "RoleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1534,6 +1550,7 @@
         {
           "default": "",
           "document": "授权服务，附加了此角色的腾讯云服务主体。",
+          "example": "[\"ccs.qcloud.com\\n\"]",
           "member": "string",
           "name": "QCSServiceName",
           "required": true,
@@ -1542,6 +1559,7 @@
         {
           "default": "",
           "document": "自定义后缀，根据您提供的字符串，与服务提供的前缀组合在一起以形成完整的角色名称。",
+          "example": "forTest",
           "member": "string",
           "name": "CustomSuffix",
           "required": false,
@@ -1550,10 +1568,20 @@
         {
           "default": "",
           "document": "角色说明。",
+          "example": "ccsLinkedRole",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色绑定标签。",
+          "example": "无",
+          "member": "RoleTags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1563,8 +1591,10 @@
       "members": [
         {
           "document": "角色ID",
+          "example": "4611686018427411525",
           "member": "string",
           "name": "RoleId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2122,6 +2152,15 @@
           "name": "Rp",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签筛选",
+          "example": "无",
+          "member": "RoleTags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5133,9 +5172,45 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoleTags",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "RoleTags": {
+      "document": "角色标签类型",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "TagKey",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "TagValue",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SAMLProviderInfo": {
       "document": "SAML身份提供商",

@@ -3295,6 +3295,15 @@
           "name": "RecordLineId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TTL值，如果不传，默认为域名的TTL值。",
+          "example": "600",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

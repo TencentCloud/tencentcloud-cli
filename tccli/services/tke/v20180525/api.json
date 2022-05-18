@@ -684,6 +684,12 @@
       "name": "修改告警规则",
       "output": "ModifyPrometheusAlertRuleResponse"
     },
+    "ModifyPrometheusTemp": {
+      "document": "修改模板内容",
+      "input": "ModifyPrometheusTempRequest",
+      "name": "修改模板实例",
+      "output": "ModifyPrometheusTempResponse"
+    },
     "ModifyPrometheusTemplate": {
       "document": "修改模板内容",
       "input": "ModifyPrometheusTemplateRequest",
@@ -10588,6 +10594,23 @@
     },
     "ModifyPrometheusAlertRuleResponse": {
       "document": "ModifyPrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusTempRequest": {
+      "document": "ModifyPrometheusTemp请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyPrometheusTempResponse": {
+      "document": "ModifyPrometheusTemp返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

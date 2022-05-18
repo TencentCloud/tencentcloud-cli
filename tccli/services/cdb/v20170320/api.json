@@ -10119,7 +10119,7 @@
         },
         {
           "default": "",
-          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\",\"UPDATE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
+          "document": "全局权限。其中，GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\",\"CREATE USER\",\"RELOAD\",\"REPLICATION CLIENT\",\"REPLICATION SLAVE\"。\n注意，ModifyAction为空时，不传该参数表示清除该权限。",
           "example": "[\"SELECT\\n\"]",
           "member": "string",
           "name": "GlobalPrivileges",
