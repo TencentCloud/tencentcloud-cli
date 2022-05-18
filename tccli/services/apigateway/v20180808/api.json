@@ -3773,7 +3773,8 @@
           "member": "string",
           "name": "ServiceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3782,7 +3783,8 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3791,7 +3793,8 @@
           "member": "string",
           "name": "ServiceDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3800,7 +3803,8 @@
           "member": "string",
           "name": "ExclusiveSetName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3809,7 +3813,8 @@
           "member": "string",
           "name": "NetTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3818,7 +3823,8 @@
           "member": "string",
           "name": "IpVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3827,7 +3833,8 @@
           "member": "string",
           "name": "SetServerName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3836,7 +3843,8 @@
           "member": "string",
           "name": "AppIdType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3845,7 +3853,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3854,7 +3863,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3863,7 +3873,8 @@
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3878,7 +3889,8 @@
           "name": "ServiceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户自定义服务名称。",
@@ -3887,7 +3899,8 @@
           "name": "ServiceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户自定义服务描述。",
@@ -3896,7 +3909,8 @@
           "name": "ServiceDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "外网默认域名。",
@@ -3905,7 +3919,8 @@
           "name": "OuterSubDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "vpc内网默认域名。",
@@ -3914,7 +3929,8 @@
           "name": "InnerSubDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "服务创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
@@ -3923,7 +3939,8 @@
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "网络类型列表，INNER为内网访问，OUTER为外网访问。",
@@ -3932,7 +3949,8 @@
           "name": "NetTypes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "IP版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3941,7 +3959,8 @@
           "name": "IpVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

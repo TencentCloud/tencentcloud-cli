@@ -667,9 +667,9 @@
       "output": "QueryMerchantPayWayListResponse"
     },
     "QueryOpenBankBankAccountBalance": {
-      "document": "云企付-查询账户余额",
+      "document": "云企付-子商户银行卡余额查询",
       "input": "QueryOpenBankBankAccountBalanceRequest",
-      "name": "云企付-查询账户余额",
+      "name": "云企付-子商户银行卡余额查询",
       "output": "QueryOpenBankBankAccountBalanceResponse"
     },
     "QueryOpenBankBankBranchList": {
@@ -2766,7 +2766,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2775,7 +2776,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2784,7 +2786,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2793,7 +2796,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2802,7 +2806,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2811,7 +2816,8 @@
           "member": "string",
           "name": "ChannelOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2826,7 +2832,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2835,7 +2842,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2844,7 +2852,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4415,7 +4424,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4424,7 +4434,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4433,7 +4444,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4442,7 +4454,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4451,7 +4464,8 @@
           "member": "string",
           "name": "ExternalSubMerchantBindBankAccountData",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4460,7 +4474,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4469,7 +4484,8 @@
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4478,7 +4494,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4493,7 +4510,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -4502,7 +4520,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4511,7 +4530,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5454,7 +5474,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5463,7 +5484,8 @@
           "member": "string",
           "name": "OutOrderId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5472,7 +5494,8 @@
           "member": "string",
           "name": "ChannelOrderId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5481,7 +5504,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5496,7 +5520,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息",
@@ -5505,7 +5530,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "关单响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5514,7 +5540,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9834,7 +9861,8 @@
           "member": "string",
           "name": "OutAccountBookId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9843,7 +9871,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9852,7 +9881,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9861,7 +9891,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9870,7 +9901,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9885,7 +9917,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -9894,7 +9927,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -9903,7 +9937,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9924,7 +9959,8 @@
           "member": "string",
           "name": "OutRegistrationNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9933,7 +9969,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9942,7 +9979,8 @@
           "member": "string",
           "name": "OutSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9951,7 +9989,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9960,7 +9999,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9969,7 +10009,8 @@
           "member": "string",
           "name": "BusinessLicenseNumber",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9978,7 +10019,8 @@
           "member": "string",
           "name": "OutSubMerchantName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9987,7 +10029,8 @@
           "member": "string",
           "name": "LegalName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9996,7 +10039,8 @@
           "member": "string",
           "name": "OutSubMerchantShortName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10005,7 +10049,8 @@
           "member": "string",
           "name": "OutSubMerchantDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10014,7 +10059,8 @@
           "member": "string",
           "name": "ExternalSubMerchantRegistrationData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10023,7 +10069,8 @@
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10032,7 +10079,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10047,7 +10095,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -10056,7 +10105,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10065,7 +10115,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10142,7 +10193,8 @@
           "member": "string",
           "name": "OutMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10151,7 +10203,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10160,7 +10213,8 @@
           "member": "string",
           "name": "OutMerchantName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10169,7 +10223,8 @@
           "member": "string",
           "name": "ExternalMerchantInfo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10178,7 +10233,8 @@
           "member": "string",
           "name": "OutMerchantShortName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10187,7 +10243,8 @@
           "member": "string",
           "name": "OutMerchantDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10196,7 +10253,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10211,7 +10269,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -10220,7 +10279,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10229,7 +10289,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10358,25 +10419,28 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝\n__WECHAT__: 微信支付",
           "example": "TENPAY",
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "付款方式。如\n__EBANK_PAYMENT__:B2B EBank付款\n__OPENBANK_PAYMENT__:B2C  openbank付款\n__SAFT_ISV__:支付宝安心发",
+          "document": "付款方式。如\n__EBANK_PAYMENT__:B2B EBank付款\n__OPENBANK_PAYMENT__:B2C  openbank付款\n__SAFT_ISV__:支付宝安心发\n__TRANS_TO_CHANGE__: 微信支付转账到零钱v2",
           "example": "EBANK_PAYMENT",
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10385,7 +10449,8 @@
           "member": "string",
           "name": "PaymentMode",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10394,7 +10459,8 @@
           "member": "string",
           "name": "OutOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10403,7 +10469,8 @@
           "member": "int64",
           "name": "TotalAmount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10412,7 +10479,8 @@
           "member": "string",
           "name": "Currency",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10421,7 +10489,8 @@
           "member": "OpenBankPayerInfo",
           "name": "PayerInfo",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10430,7 +10499,8 @@
           "member": "OpenBankPayeeInfo",
           "name": "PayeeInfo",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10439,7 +10509,8 @@
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10448,7 +10519,8 @@
           "member": "string",
           "name": "ExpireTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10457,7 +10529,8 @@
           "member": "string",
           "name": "FrontUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10466,7 +10539,8 @@
           "member": "string",
           "name": "RefreshUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10475,7 +10549,8 @@
           "member": "OpenBankSceneInfo",
           "name": "SceneInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10484,7 +10559,8 @@
           "member": "OpenBankGoodsInfo",
           "name": "GoodsInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10493,7 +10569,8 @@
           "member": "string",
           "name": "Attachment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10502,7 +10579,8 @@
           "member": "string",
           "name": "ProfitShareFlag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10511,7 +10589,8 @@
           "member": "OpenBankProfitShareInfo",
           "name": "ProfitShareInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10520,7 +10599,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10529,7 +10609,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10544,7 +10625,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10553,7 +10635,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "统一下单响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10562,7 +10645,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10583,7 +10667,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10592,7 +10677,8 @@
           "member": "string",
           "name": "OutOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10601,7 +10687,8 @@
           "member": "int64",
           "name": "TotalAmount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10610,7 +10697,8 @@
           "member": "string",
           "name": "Currency",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10619,7 +10707,8 @@
           "member": "string",
           "name": "ExpireTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10628,7 +10717,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10637,7 +10727,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10646,7 +10737,8 @@
           "member": "OpenBankRechargePayeeInfo",
           "name": "PayeeInfo",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10655,7 +10747,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10664,7 +10757,8 @@
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10673,7 +10767,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10688,7 +10783,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10697,7 +10793,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "充值响应对象\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -10706,7 +10803,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15175,7 +15273,7 @@
       "members": [
         {
           "default": "",
-          "document": "收款方唯一标识。当渠道为TENPAY，付款方式为EBANK_PAYMENT，必填，上送收款方入驻云企付商户ID；付款方式为OPENBANK_PAYMENT时，非必填，输入外部收款方的标识ID",
+          "document": "收款方唯一标识。\n当渠道为TENPAY，付款方式为EBANK_PAYMENT，必填，上送收款方入驻云企付商户ID；\n付款方式为OPENBANK_PAYMENT时，非必填，输入外部收款方的标识ID\n渠道为WECHAT，付款方式为TRANS_TO_CHANGE时，上送微信OPEN_ID；",
           "example": "sub1w00002",
           "member": "string",
           "name": "PayeeId",
@@ -15185,10 +15283,10 @@
         },
         {
           "default": "",
-          "document": "收款方名称。当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付的商户名称；\n渠道为TENPAY，付款方式为OPENBANK_PAYMENT时必选，上送收款方账户名称；渠道为ALIPAY，付款方式为SAFT_ISV时，收款账户标识类型为ALIPAY_LOGON_ID时必传，上送收款方真实姓名。",
-          "example": "收款子商户0002",
+          "document": "支行名称。",
+          "example": "深圳华侨城支行",
           "member": "string",
-          "name": "PayeeName",
+          "name": "BankBranchName",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15205,10 +15303,10 @@
         },
         {
           "default": "",
-          "document": "支行名称。",
-          "example": "深圳华侨城支行",
+          "document": "收款方名称。\n当渠道为TENPAY，付款方式为EBANK_PAYMENT时，上送收款方入驻云企付的商户名称；\n渠道为TENPAY，付款方式为OPENBANK_PAYMENT时必选，上送收款方账户名称；\n渠道为ALIPAY，付款方式为SAFT_ISV时，收款账户标识类型为ALIPAY_LOGON_ID时必传，上送收款方真实姓名。\n渠道为WECHAT，付款方式为TRANS_TO_CHANGE时，上送收款人姓名。",
+          "example": "收款子商户0002",
           "member": "string",
-          "name": "BankBranchName",
+          "name": "PayeeName",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -21291,7 +21389,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21300,7 +21399,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21309,7 +21409,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21318,7 +21419,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21327,7 +21429,8 @@
           "member": "string",
           "name": "BindSerialNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21336,7 +21439,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -21351,7 +21455,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21360,7 +21465,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "账户余额查询响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21369,7 +21475,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21550,7 +21657,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21559,7 +21667,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21568,7 +21677,8 @@
           "member": "string",
           "name": "ChannelApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21577,7 +21687,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21586,7 +21697,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -21601,7 +21713,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -21610,7 +21723,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21619,7 +21733,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21696,7 +21811,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21705,7 +21821,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21714,7 +21831,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21723,7 +21841,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21732,7 +21851,8 @@
           "member": "string",
           "name": "BindSerialNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21741,7 +21861,8 @@
           "member": "string",
           "name": "QueryDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21750,7 +21871,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -21765,7 +21887,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21774,7 +21897,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "按日期查询回单下载地址响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21783,7 +21907,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21840,7 +21965,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21849,7 +21975,8 @@
           "member": "string",
           "name": "BillDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21858,7 +21985,8 @@
           "member": "string",
           "name": "BillType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21867,7 +21995,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21876,7 +22005,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21885,7 +22015,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -21900,7 +22031,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。",
@@ -21909,7 +22041,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查询对账文件下载响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -21918,7 +22051,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -21975,7 +22109,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21984,7 +22119,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21993,7 +22129,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22002,7 +22139,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22011,7 +22149,8 @@
           "member": "string",
           "name": "OutAccountBookId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22020,7 +22159,8 @@
           "member": "string",
           "name": "ChannelAccountBookId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22035,7 +22175,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -22044,7 +22185,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22053,7 +22195,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22130,7 +22273,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22139,7 +22283,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22148,7 +22293,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22157,7 +22303,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22166,7 +22313,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22181,7 +22329,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -22190,7 +22339,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22199,7 +22349,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22236,7 +22387,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22245,7 +22397,8 @@
           "member": "string",
           "name": "ChannelRegistrationNo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22254,7 +22407,8 @@
           "member": "string",
           "name": "OutRegistrationNo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22263,7 +22417,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22278,7 +22433,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -22287,7 +22443,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22296,7 +22453,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22423,7 +22581,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22432,7 +22591,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22441,7 +22601,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22450,7 +22611,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22459,7 +22621,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22468,7 +22631,8 @@
           "member": "string",
           "name": "ChannelApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22483,7 +22647,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22492,7 +22657,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22501,7 +22667,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22578,7 +22745,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22587,7 +22755,8 @@
           "member": "string",
           "name": "OutOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22596,7 +22765,8 @@
           "member": "string",
           "name": "ChannelOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22605,7 +22775,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22620,7 +22791,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "业务系统返回消息。",
@@ -22629,7 +22801,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查询支付结果响应对象。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22638,7 +22811,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22902,7 +23076,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22911,7 +23086,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22920,7 +23096,8 @@
           "member": "string",
           "name": "ChannelApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22929,7 +23106,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -22938,7 +23116,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -22953,7 +23132,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -22962,7 +23142,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -22971,7 +23152,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -29641,7 +29823,8 @@
           "member": "string",
           "name": "ChannelMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29650,7 +29833,8 @@
           "member": "string",
           "name": "ChannelSubMerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29659,7 +29843,8 @@
           "member": "string",
           "name": "ChannelName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29668,7 +29853,8 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29677,7 +29863,8 @@
           "member": "string",
           "name": "BindSerialNo",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29686,7 +29873,8 @@
           "member": "string",
           "name": "OutApplyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29695,7 +29883,8 @@
           "member": "string",
           "name": "NotifyUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -29704,7 +29893,8 @@
           "member": "string",
           "name": "Environment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -29719,7 +29909,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息。",
@@ -29728,7 +29919,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -29737,7 +29929,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

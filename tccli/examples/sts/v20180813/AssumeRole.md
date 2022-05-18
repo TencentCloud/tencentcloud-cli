@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "Token": "da1e9d2ee9dda83506832d5ecb903b790132dfe340001",
+            "Token": "da1e9d2ee9d***2dfe340001",
             "TmpSecretId": "AKID65zyIP0mpXtaI******WIQVMn1umNH58",
             "TmpSecretKey": "q95K84wrzuEGoc*******52boxvp71yoh"
         },
