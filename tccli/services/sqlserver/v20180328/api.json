@@ -596,6 +596,7 @@
         {
           "default": "",
           "document": "实例用户名",
+          "example": "ac1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -605,6 +606,7 @@
         {
           "default": "",
           "document": "实例密码",
+          "example": "无",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -614,6 +616,7 @@
         {
           "default": "",
           "document": "DB权限列表",
+          "example": "无",
           "member": "DBPrivilege",
           "name": "DBPrivileges",
           "required": false,
@@ -623,6 +626,7 @@
         {
           "default": "",
           "document": "账号备注信息",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -632,10 +636,21 @@
         {
           "default": "",
           "document": "是否为管理员账户，默认为否",
+          "example": "false",
           "member": "bool",
           "name": "IsAdmin",
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "win-windows鉴权,sql-sqlserver鉴权，不填模式兼容接口sqlserver鉴权",
+          "example": "sql",
+          "member": "string",
+          "name": "Authentication",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -647,6 +662,7 @@
         {
           "default": "",
           "document": "账户名",
+          "example": "ac1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -656,6 +672,7 @@
         {
           "default": "",
           "document": "账户备注",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -665,6 +682,7 @@
         {
           "default": "",
           "document": "账户创建时间",
+          "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -674,6 +692,7 @@
         {
           "default": "",
           "document": "账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -683,6 +702,7 @@
         {
           "default": "",
           "document": "账户更新时间",
+          "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -692,6 +712,7 @@
         {
           "default": "",
           "document": "密码更新时间",
+          "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "PassTime",
           "required": true,
@@ -701,6 +722,7 @@
         {
           "default": "",
           "document": "账户内部状态，正常为enable",
+          "example": "enable",
           "member": "string",
           "name": "InternalStatus",
           "required": true,
@@ -710,6 +732,7 @@
         {
           "default": "",
           "document": "该账户对相关db的读写权限信息",
+          "example": "无",
           "member": "DBPrivilege",
           "name": "Dbs",
           "required": true,
@@ -719,10 +742,31 @@
         {
           "default": "",
           "document": "是否为管理员账户",
+          "example": "false",
           "member": "bool",
           "name": "IsAdmin",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "win-windows鉴权,sql-sqlserver鉴权",
+          "example": "win",
+          "member": "string",
+          "name": "Authentication",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "win-windows鉴权账户需要host",
+          "example": "172_8_9_12",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -842,6 +886,7 @@
         {
           "default": "",
           "document": "安全组ID。",
+          "example": "sg-igw86yth",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -850,6 +895,7 @@
         {
           "default": "",
           "document": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。",
+          "example": "[\"mssql-6f4ddx2f\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -1123,6 +1169,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-j8kv137v",
+          "example": "mssql-2pohwxbf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1136,8 +1183,10 @@
       "members": [
         {
           "document": "流程ID，可通过接口DescribeFlowStatus查询立即切换升级任务的状态。",
+          "example": "1002591",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1156,6 +1205,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2729",
           "member": "int64",
           "name": "MigrateId",
           "required": true,
@@ -1169,8 +1219,10 @@
       "members": [
         {
           "document": "完成迁移流程发起后，返回的流程id",
+          "example": "30530",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1393,6 +1445,7 @@
         {
           "default": "",
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1401,6 +1454,7 @@
         {
           "default": "",
           "document": "实例的CPU核心数",
+          "example": "2",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -1409,6 +1463,7 @@
         {
           "default": "",
           "document": "实例内存大小，单位GB",
+          "example": "2",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -1417,6 +1472,7 @@
         {
           "default": "",
           "document": "实例磁盘大小，单位GB",
+          "example": "20",
           "member": "uint64",
           "name": "Storage",
           "required": true,
@@ -1425,6 +1481,7 @@
         {
           "default": "",
           "document": "VPC子网ID，形如subnet-bdoe83fa",
+          "example": "subnet-pudyecyk",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1433,6 +1490,7 @@
         {
           "default": "",
           "document": "VPC网络ID，形如vpc-dsp338hz",
+          "example": "vpc-huew581t",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1441,6 +1499,7 @@
         {
           "default": "",
           "document": "购买实例的宿主机类型, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "MachineType",
           "required": true,
@@ -1449,6 +1508,7 @@
         {
           "default": "",
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -1457,6 +1517,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -1465,6 +1526,7 @@
         {
           "default": "",
           "document": "本次购买几个实例，默认值为1。取值不超过10",
+          "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
           "required": false,
@@ -1473,6 +1535,7 @@
         {
           "default": "",
           "document": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard），2017（SQL Server 2017 Enterprise），201202（SQL Server 2012 Standard），201402（SQL Server 2014 Standard），2014SP2（SQL Server 2014 Enterprise），201702（SQL Server 2017 Standard）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -1481,6 +1544,7 @@
         {
           "default": "",
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -1489,6 +1553,7 @@
         {
           "default": "",
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
+          "example": "sg-xxx",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -1497,6 +1562,7 @@
         {
           "default": "",
           "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -1505,6 +1571,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "example": "2",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -1513,6 +1580,7 @@
         {
           "default": "",
           "document": "代金券ID数组，目前单个订单只能使用一张",
+          "example": "xxx",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -1521,6 +1589,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
+          "example": "[\"1\\n\"]",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -1529,6 +1598,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，每天可维护的开始时间",
+          "example": "00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -1537,6 +1607,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，持续时间，单位：小时",
+          "example": "6",
           "member": "int64",
           "name": "Span",
           "required": false,
@@ -1545,6 +1616,7 @@
         {
           "default": "",
           "document": "新建实例绑定的标签集合",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -1558,8 +1630,10 @@
       "members": [
         {
           "document": "订单名称",
+          "example": "20200713383000001111250",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1578,6 +1652,7 @@
         {
           "default": "",
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1586,6 +1661,7 @@
         {
           "default": "",
           "document": "实例内存大小，单位GB",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -1594,6 +1670,7 @@
         {
           "default": "",
           "document": "实例磁盘大小，单位GB",
+          "example": "100",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -1602,6 +1679,7 @@
         {
           "default": "",
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -1610,6 +1688,7 @@
         {
           "default": "",
           "document": "项目ID",
+          "example": "1003",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1618,6 +1697,7 @@
         {
           "default": "",
           "document": "本次购买几个实例，默认值为1。取值不超过10",
+          "example": "1",
           "member": "int64",
           "name": "GoodsNum",
           "required": false,
@@ -1626,6 +1706,7 @@
         {
           "default": "",
           "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "subnet-bdoe83fa",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1634,6 +1715,7 @@
         {
           "default": "",
           "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "vpc-dsp338hz",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1642,6 +1724,7 @@
         {
           "default": "",
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -1650,6 +1733,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -1658,6 +1742,7 @@
         {
           "default": "",
           "document": "代金券ID数组，目前单个订单只能使用一张",
+          "example": "xxxxx",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -1666,6 +1751,7 @@
         {
           "default": "",
           "document": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
+          "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -1674,6 +1760,7 @@
         {
           "default": "",
           "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -1682,6 +1769,7 @@
         {
           "default": "",
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
+          "example": "sg-xxxx",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -1690,6 +1778,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
+          "example": "1",
           "member": "int64",
           "name": "Weekly",
           "required": false,
@@ -1698,6 +1787,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，每天可维护的开始时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -1706,6 +1796,7 @@
         {
           "default": "",
           "document": "可维护时间窗配置，持续时间，单位：小时",
+          "example": "2",
           "member": "int64",
           "name": "Span",
           "required": false,
@@ -1714,6 +1805,7 @@
         {
           "default": "",
           "document": "购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL",
+          "example": "DUAL",
           "member": "string",
           "name": "HAType",
           "required": false,
@@ -1722,6 +1814,7 @@
         {
           "default": "",
           "document": "是否跨可用区部署，默认值为false",
+          "example": "ture",
           "member": "bool",
           "name": "MultiZones",
           "required": false,
@@ -1730,6 +1823,7 @@
         {
           "default": "",
           "document": "新建实例绑定的标签集合",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -1743,15 +1837,19 @@
       "members": [
         {
           "document": "订单名称",
+          "example": "20200318114212",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "订单名称数组",
+          "example": "[\"20200318114212\"]",
           "member": "string",
           "name": "DealNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1968,6 +2066,7 @@
         {
           "default": "",
           "document": "发布实例ID，形如mssql-j8kv137v",
+          "example": "mssql-2cwisu23",
           "member": "string",
           "name": "PublishInstanceId",
           "required": true,
@@ -1976,6 +2075,7 @@
         {
           "default": "",
           "document": "订阅实例ID，形如mssql-j8kv137v",
+          "example": "mssql-hlh6yka1",
           "member": "string",
           "name": "SubscribeInstanceId",
           "required": true,
@@ -1984,6 +2084,7 @@
         {
           "default": "",
           "document": "数据库的订阅发布关系集合",
+          "example": "无",
           "member": "DatabaseTuple",
           "name": "DatabaseTupleSet",
           "required": true,
@@ -1992,6 +2093,7 @@
         {
           "default": "",
           "document": "发布订阅的名称，默认值为：default_name",
+          "example": "Create_name",
           "member": "string",
           "name": "PublishSubscribeName",
           "required": false,
@@ -2005,8 +2107,10 @@
       "members": [
         {
           "document": "流程ID，可通过接口DescribeFlowStatus查询立即切换升级任务的状态。",
+          "example": "1002591",
           "member": "uint64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2025,6 +2129,7 @@
         {
           "default": "",
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
+          "example": "mssql-6upluvd5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2033,6 +2138,7 @@
         {
           "default": "",
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -2041,6 +2147,7 @@
         {
           "default": "",
           "document": "只读组类型选项，1-按照一个实例一个只读组的方式发货，2-新建只读组后发货，所有实例都在这个只读组下面， 3-发货的所有实例都在已有的只读组下面",
+          "example": "2",
           "member": "int64",
           "name": "ReadOnlyGroupType",
           "required": true,
@@ -2049,6 +2156,7 @@
         {
           "default": "",
           "document": "实例内存大小，单位GB",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -2057,6 +2165,7 @@
         {
           "default": "",
           "document": "实例磁盘大小，单位GB",
+          "example": "10",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -2065,6 +2174,7 @@
         {
           "default": "",
           "document": "0-默认不升级主实例，1-强制升级主实例完成ro部署；主实例为非集群版时需要填1，强制升级为集群版。填1 说明您已同意将主实例升级到集群版实例。",
+          "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupForcedUpgrade",
           "required": false,
@@ -2073,6 +2183,7 @@
         {
           "default": "",
           "document": "ReadOnlyGroupType=3时必填,已存在的只读组ID",
+          "example": "mssqlrg-dj5i29c5n",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": false,
@@ -2081,6 +2192,7 @@
         {
           "default": "",
           "document": "ReadOnlyGroupType=2时必填，新建的只读组名称",
+          "example": "default_name",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "required": false,
@@ -2089,6 +2201,7 @@
         {
           "default": "",
           "document": "ReadOnlyGroupType=2时必填，新建的只读组是否开启延迟剔除功能，1-开启，0-关闭。当只读副本与主实例延迟大于阈值后，自动剔除。",
+          "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupIsOfflineDelay",
           "required": false,
@@ -2097,6 +2210,7 @@
         {
           "default": "",
           "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除的阈值。",
+          "example": "10",
           "member": "int64",
           "name": "ReadOnlyGroupMaxDelayTime",
           "required": false,
@@ -2105,6 +2219,7 @@
         {
           "default": "",
           "document": "ReadOnlyGroupType=2 且 ReadOnlyGroupIsOfflineDelay=1时必填，新建的只读组延迟剔除后至少保留只读副本的个数。",
+          "example": "1",
           "member": "int64",
           "name": "ReadOnlyGroupMinInGroup",
           "required": false,
@@ -2113,6 +2228,7 @@
         {
           "default": "",
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
+          "example": "POSTPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -2121,6 +2237,7 @@
         {
           "default": "",
           "document": "本次购买几个只读实例，默认值为1。",
+          "example": "1",
           "member": "int64",
           "name": "GoodsNum",
           "required": false,
@@ -2129,6 +2246,7 @@
         {
           "default": "",
           "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "subnet-gdy95gfs",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2137,6 +2255,7 @@
         {
           "default": "",
           "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
+          "example": "vpc-3xq2t5al",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2145,6 +2264,7 @@
         {
           "default": "",
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -2153,6 +2273,7 @@
         {
           "default": "",
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
+          "example": "sg-xxx",
           "member": "string",
           "name": "SecurityGroupList",
           "required": false,
@@ -2161,6 +2282,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
+          "example": "1",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -2169,6 +2291,7 @@
         {
           "default": "",
           "document": "代金券ID数组，目前单个订单只能使用一张",
+          "example": "xxx",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -2177,6 +2300,7 @@
         {
           "default": "",
           "document": "新建实例绑定的标签集合",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -2190,8 +2314,10 @@
       "members": [
         {
           "document": "订单名称数组",
+          "example": "[\"20200722117963\"]",
           "member": "string",
           "name": "DealNames",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3376,6 +3502,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2729",
           "member": "uint64",
           "name": "MigrateId",
           "required": true,
@@ -3402,6 +3529,7 @@
         {
           "default": "",
           "document": "发布订阅ID，可通过DescribePublishSubscribe接口获得",
+          "example": "5",
           "member": "uint64",
           "name": "PublishSubscribeId",
           "required": true,
@@ -3410,6 +3538,7 @@
         {
           "default": "",
           "document": "待删除的数据库的订阅发布关系集合",
+          "example": "无",
           "member": "DatabaseTuple",
           "name": "DatabaseTupleSet",
           "required": true,
@@ -4156,6 +4285,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：mssql-3l3fgqn7",
+          "example": "mssql-6upluvd5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4169,15 +4299,19 @@
       "members": [
         {
           "document": "备机所在地域的字符串ID，形如：ap-guangzhou",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "备机所在可用区的字符串ID，形如：ap-guangzhou-1",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4556,6 +4690,7 @@
         {
           "default": "",
           "document": "流程ID",
+          "example": "30403",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -4569,8 +4704,10 @@
       "members": [
         {
           "document": "流程状态，0：成功，1：失败，2：运行中",
+          "example": "0",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4868,6 +5005,7 @@
         {
           "default": "",
           "document": "迁移源实例的ID，格式如：mssql-si2823jyl",
+          "example": "mssql-si2823jyl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4876,6 +5014,7 @@
         {
           "default": "",
           "document": "迁移源实例用户名",
+          "example": "sqlserver_admin",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4884,6 +5023,7 @@
         {
           "default": "",
           "document": "迁移源实例密码",
+          "example": "123456",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -4897,17 +5037,21 @@
       "members": [
         {
           "document": "数据库数量",
+          "example": "3",
           "member": "int64",
           "name": "Amount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "数据库名称数组",
+          "document": "数据库名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Biz-test1\",\"Biz-test2\",\"Biz-test3\"]",
           "member": "string",
           "name": "MigrateDBSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4924,6 +5068,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2728",
           "member": "uint64",
           "name": "MigrateId",
           "required": true,
@@ -4937,99 +5082,127 @@
       "members": [
         {
           "document": "迁移任务ID",
+          "example": "2728",
           "member": "uint64",
           "name": "MigrateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务名称",
+          "example": "测试接口",
           "member": "string",
           "name": "MigrateName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务所属的用户ID",
+          "example": "1254065710",
           "member": "uint64",
           "name": "AppId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务所属的地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）",
+          "example": "5",
           "member": "int64",
           "name": "SourceType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务的创建时间",
+          "example": "2018-08-06 17:44:58",
           "member": "datetime",
           "name": "CreateTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务的开始时间",
+          "example": "0000-00- 00 00:00:00",
           "member": "datetime",
           "name": "StartTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务的结束时间",
+          "example": "0000-00-00 00:00:00",
           "member": "datetime",
           "name": "EndTime",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务的状态（1:初始化,4:迁移中,5.迁移失败,6.迁移成功）",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移任务当前进度",
+          "example": "0",
           "member": "int64",
           "name": "Progress",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移类型（1:结构迁移 2:数据迁移 3:增量同步）",
+          "example": "2",
           "member": "int64",
           "name": "MigrateType",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "迁移源",
+          "example": "无",
           "member": "MigrateSource",
           "name": "Source",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "迁移目标",
+          "example": "无",
           "member": "MigrateTarget",
           "name": "Target",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用。",
+          "example": "无",
           "member": "MigrateDB",
           "name": "MigrateDBSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5048,6 +5221,7 @@
         {
           "default": "",
           "document": "状态集合。只要符合集合中某一状态的迁移任务，就会查出来",
+          "example": "[\"1\\r\\n\",\"4\\r\\n\"]",
           "member": "int64",
           "name": "StatusSet",
           "required": false,
@@ -5056,6 +5230,7 @@
         {
           "default": "",
           "document": "迁移任务的名称，模糊匹配",
+          "example": "测试",
           "member": "string",
           "name": "MigrateName",
           "required": false,
@@ -5064,6 +5239,7 @@
         {
           "default": "",
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5072,6 +5248,7 @@
         {
           "default": "",
           "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5080,6 +5257,7 @@
         {
           "default": "",
           "document": "查询结果按照关键字排序，可选值为name、createTime、startTime，endTime，status",
+          "example": "name",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -5088,6 +5266,7 @@
         {
           "default": "",
           "document": "排序方式，可选值为desc、asc",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -5101,15 +5280,19 @@
       "members": [
         {
           "document": "查询结果的总数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "查询结果的列表",
+          "example": "无",
           "member": "MigrateTask",
           "name": "MigrateTaskSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5128,6 +5311,7 @@
         {
           "default": "",
           "document": "订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况",
+          "example": "[\"201806271245\\r\\n\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
@@ -5141,15 +5325,19 @@
       "members": [
         {
           "document": "订单信息数组",
+          "example": "无",
           "member": "DealInfo",
           "name": "Deals",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "返回多少个订单的信息",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5222,6 +5410,7 @@
         {
           "default": "",
           "document": "项目ID，可通过控制台项目管理中查看",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -5235,8 +5424,10 @@
       "members": [
         {
           "document": "安全组详情。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroupSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5372,6 +5563,7 @@
         {
           "default": "",
           "document": "实例ID，格式如：mssqlro-3l3fgqn7",
+          "example": "mssqlro-91masbl1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5385,85 +5577,109 @@
       "members": [
         {
           "document": "只读组ID",
+          "example": "mssqlrg-552tyamb",
           "member": "string",
           "name": "ReadOnlyGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组名称",
+          "example": "再次尝试一次创建2个副本",
           "member": "string",
           "name": "ReadOnlyGroupName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组的地域ID",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组的可用区ID",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "ZoneId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否启动超时剔除功能 ,0-不开启剔除功能，1-开启剔除功能",
+          "example": "1",
           "member": "int64",
           "name": "IsOfflineDelay",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "启动超时剔除功能后，使用的超时阈值，单位是秒",
+          "example": "11",
           "member": "int64",
           "name": "ReadOnlyMaxDelayTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数",
+          "example": "1",
           "member": "int64",
           "name": "MinReadOnlyInGroup",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读组vip",
+          "example": "10.100.0.44",
           "member": "string",
           "name": "Vip",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组vport",
+          "example": "1433",
           "member": "int64",
           "name": "Vport",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读组在私有网络ID",
+          "example": "vpc-3xq2t5al",
           "member": "string",
           "name": "VpcId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组在私有网络子网ID",
+          "example": "subnet-gdy95gfs",
           "member": "string",
           "name": "SubnetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "主实例ID，形如mssql-sgeshe3th",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "MasterInstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5482,6 +5698,7 @@
         {
           "default": "",
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5490,6 +5707,7 @@
         {
           "default": "",
           "document": "只读组ID，格式如：mssqlrg-3l3fgqn7",
+          "example": "mssqlrg-552tyamb",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -5503,99 +5721,127 @@
       "members": [
         {
           "document": "只读组ID",
+          "example": "mssqlrg-552tyamb",
           "member": "string",
           "name": "ReadOnlyGroupId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组名称",
+          "example": "default_name",
           "member": "string",
           "name": "ReadOnlyGroupName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组的地域ID，与主实例相同",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组的可用区ID，与主实例相同",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "ZoneId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能",
+          "example": "1",
           "member": "int64",
           "name": "IsOfflineDelay",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "启动超时剔除功能后，使用的超时阈值",
+          "example": "11",
           "member": "int64",
           "name": "ReadOnlyMaxDelayTime",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "启动超时剔除功能后，至少只读组保留的只读副本数",
+          "example": "1",
           "member": "int64",
           "name": "MinReadOnlyInGroup",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读组vip",
+          "example": "10.100.0.44",
           "member": "string",
           "name": "Vip",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组vport",
+          "example": "1433",
           "member": "int64",
           "name": "Vport",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "只读组私有网络ID",
+          "example": "vpc-3xq2t5al",
           "member": "string",
           "name": "VpcId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读组私有网络子网ID",
+          "example": "subnet-gdy95gfs",
           "member": "string",
           "name": "SubnetId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "只读实例副本集合",
+          "example": "无",
           "member": "ReadOnlyInstance",
           "name": "ReadOnlyInstanceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "只读组状态: 1-申请成功运行中，5-申请中",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "主实例ID，形如mssql-sgeshe3th",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "MasterInstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5654,15 +5900,19 @@
       "members": [
         {
           "document": "返回地域信息总的条目",
+          "example": "9",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "地域信息数组",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6036,15 +6286,19 @@
       "members": [
         {
           "document": "返回多少个可用区信息",
+          "example": "34",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "可用区数组",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6063,6 +6317,7 @@
         {
           "default": "",
           "document": "安全组ID。",
+          "example": "sg-igw86yth",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
@@ -6071,6 +6326,7 @@
         {
           "default": "",
           "document": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。",
+          "example": "[\"mssql-6f4ddx2f\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -6097,6 +6353,7 @@
         {
           "default": "",
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6105,6 +6362,7 @@
         {
           "default": "",
           "document": "内存大小，单位：GB",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -6113,6 +6371,7 @@
         {
           "default": "",
           "document": "实例容量大小，单位：GB。",
+          "example": "300",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -6121,6 +6380,7 @@
         {
           "default": "",
           "document": "计费类型，取值支持 PREPAID，POSTPAID。",
+          "example": "POSTPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -6129,6 +6389,7 @@
         {
           "default": "",
           "document": "购买时长，单位：月。取值为1到48，默认为1",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -6137,6 +6398,7 @@
         {
           "default": "",
           "document": "一次性购买的实例数量。取值1-100，默认取值为1",
+          "example": "1",
           "member": "int64",
           "name": "GoodsNum",
           "required": false,
@@ -6145,6 +6407,7 @@
         {
           "default": "",
           "document": "sqlserver版本，目前只支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise），2016SP1（SQL Server 2016 Enterprise），201602（SQL Server 2016 Standard）2017（SQL Server 2017 Enterprise）版本。默认为2008R2版本",
+          "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -6153,6 +6416,7 @@
         {
           "default": "",
           "document": "预购买实例的CPU核心数",
+          "example": "2",
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -6161,6 +6425,7 @@
         {
           "default": "",
           "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本，SI-基础版，默认取值HA",
+          "example": "HA",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -6169,6 +6434,7 @@
         {
           "default": "",
           "document": "购买实例的宿主机类型，PM-物理机, CLOUD_PREMIUM-虚拟机高性能云盘，CLOUD_SSD-虚拟机SSD云盘，默认取值PM",
+          "example": "PM",
           "member": "string",
           "name": "MachineType",
           "required": false,
@@ -6182,15 +6448,19 @@
       "members": [
         {
           "document": "未打折前价格，其值除以100表示多少钱。例如10010表示100.10元",
+          "example": "20988",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际需要支付的价格，其值除以100表示多少钱。例如10010表示100.10元",
+          "example": "20988",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6209,6 +6479,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6217,6 +6488,7 @@
         {
           "default": "",
           "document": "续费周期。按月续费最多48个月。默认查询续费一个月的价格",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": false,
@@ -6225,6 +6497,7 @@
         {
           "default": "",
           "document": "续费周期单位。month表示按月续费，当前只支持按月付费查询价格",
+          "example": "month",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
@@ -6238,15 +6511,19 @@
       "members": [
         {
           "document": "未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元",
+          "example": "42720",
           "member": "uint64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元",
+          "example": "42720",
           "member": "uint64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6265,6 +6542,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6273,6 +6551,7 @@
         {
           "default": "",
           "document": "实例升级后的内存大小，单位GB，其值不能比当前实例内存小",
+          "example": "8",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -6281,6 +6560,7 @@
         {
           "default": "",
           "document": "实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小",
+          "example": "300",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -6289,6 +6569,7 @@
         {
           "default": "",
           "document": "实例升级后的CPU核心数，其值不能比当前实例CPU小",
+          "example": "2",
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -6302,15 +6583,19 @@
       "members": [
         {
           "document": "未打折的原价，其值除以100表示最终的价格。例如10094表示100.94元",
+          "example": "149696",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际需要支付价格，其值除以100表示最终的价格。例如10094表示100.94元",
+          "example": "149696",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7365,6 +7650,7 @@
         {
           "default": "",
           "document": "实例ID数组，形如mssql-j8kv137v",
+          "example": "[\"mssql-j8kv137v\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -7373,6 +7659,7 @@
         {
           "default": "",
           "document": "项目ID，为0的话表示默认项目",
+          "example": "347",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
@@ -7386,8 +7673,10 @@
       "members": [
         {
           "document": "修改成功的实例个数",
+          "example": "1",
           "member": "int64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7406,6 +7695,7 @@
         {
           "default": "",
           "document": "实例续费状态标记信息",
+          "example": "无",
           "member": "InstanceRenewInfo",
           "name": "RenewFlags",
           "required": true,
@@ -7419,8 +7709,10 @@
       "members": [
         {
           "document": "修改成功的个数",
+          "example": "1",
           "member": "int64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7439,6 +7731,7 @@
         {
           "default": "",
           "document": "实例 ID，格式如：mssql-c1nl9rpv 或者 mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7447,6 +7740,7 @@
         {
           "default": "",
           "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "example": "[\"sg-igw86yth\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIdSet",
           "required": true,
@@ -7896,6 +8190,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2728",
           "member": "uint64",
           "name": "MigrateId",
           "required": true,
@@ -7904,6 +8199,7 @@
         {
           "default": "",
           "document": "新的迁移任务的名称，若不填则不修改",
+          "example": "测试接口",
           "member": "string",
           "name": "MigrateName",
           "required": false,
@@ -7912,6 +8208,7 @@
         {
           "default": "",
           "document": "新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改",
+          "example": "2",
           "member": "uint64",
           "name": "MigrateType",
           "required": false,
@@ -7920,6 +8217,7 @@
         {
           "default": "",
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改",
+          "example": "5",
           "member": "uint64",
           "name": "SourceType",
           "required": false,
@@ -7928,6 +8226,7 @@
         {
           "default": "",
           "document": "迁移源，若不填则不修改",
+          "example": "无",
           "member": "MigrateSource",
           "name": "Source",
           "required": false,
@@ -7936,6 +8235,7 @@
         {
           "default": "",
           "document": "迁移目标，若不填则不修改",
+          "example": "无",
           "member": "MigrateTarget",
           "name": "Target",
           "required": false,
@@ -7944,6 +8244,7 @@
         {
           "default": "",
           "document": "迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改",
+          "example": "无",
           "member": "MigrateDB",
           "name": "MigrateDBSet",
           "required": false,
@@ -7957,8 +8258,10 @@
       "members": [
         {
           "document": "迁移任务ID",
+          "example": "2728",
           "member": "uint64",
           "name": "MigrateId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7977,6 +8280,7 @@
         {
           "default": "",
           "document": "发布订阅ID",
+          "example": "5",
           "member": "uint64",
           "name": "PublishSubscribeId",
           "required": true,
@@ -7985,6 +8289,7 @@
         {
           "default": "",
           "document": "待修改的发布订阅名称",
+          "example": "Change_name",
           "member": "string",
           "name": "PublishSubscribeName",
           "required": true,
@@ -8011,6 +8316,7 @@
         {
           "default": "",
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
+          "example": "mssql-6f4ddx2f",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8019,6 +8325,7 @@
         {
           "default": "",
           "document": "只读组ID",
+          "example": "mssqlrg-552tyamb",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -8027,6 +8334,7 @@
         {
           "default": "",
           "document": "只读组名称，不填此参数，则不修改",
+          "example": "change_name",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "required": false,
@@ -8035,6 +8343,7 @@
         {
           "default": "",
           "document": "是否启动超时剔除功能,0-不开启剔除功能，1-开启剔除功能，不填此参数，则不修改",
+          "example": "1",
           "member": "int64",
           "name": "IsOfflineDelay",
           "required": false,
@@ -8043,6 +8352,7 @@
         {
           "default": "",
           "document": "启动超时剔除功能后，使用的超时阈值，不填此参数，则不修改",
+          "example": "18",
           "member": "int64",
           "name": "ReadOnlyMaxDelayTime",
           "required": false,
@@ -8051,6 +8361,7 @@
         {
           "default": "",
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数，不填此参数，则不修改",
+          "example": "1",
           "member": "int64",
           "name": "MinReadOnlyInGroup",
           "required": false,
@@ -8059,6 +8370,7 @@
         {
           "default": "",
           "document": "只读组实例权重修改集合，不填此参数，则不修改",
+          "example": "无",
           "member": "ReadOnlyInstanceWeightPair",
           "name": "WeightPairs",
           "required": false,
@@ -8067,6 +8379,7 @@
         {
           "default": "",
           "document": "0-用户自定义权重（根据WeightPairs调整）,1-系统自动分配权重(WeightPairs无效)， 默认为0",
+          "example": "0",
           "member": "int64",
           "name": "AutoWeight",
           "required": false,
@@ -8075,6 +8388,7 @@
         {
           "default": "",
           "document": "0-不重新均衡负载，1-重新均衡负载，默认为0",
+          "example": "1",
           "member": "int64",
           "name": "BalanceWeight",
           "required": false,
@@ -8386,6 +8700,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "1066",
           "member": "int64",
           "name": "MigrateId",
           "required": true,
@@ -8399,22 +8714,28 @@
       "members": [
         {
           "document": "总步骤数量",
+          "example": "8",
           "member": "int64",
           "name": "TotalStep",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前步骤编号，从1开始",
+          "example": "8",
           "member": "int64",
           "name": "CurrentStep",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "所有步骤详情",
+          "example": "无",
           "member": "StepDetail",
           "name": "StepDetails",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8829,6 +9150,7 @@
         {
           "default": "",
           "document": "主实例的ID",
+          "example": "mssql-2cwisu23",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8837,6 +9159,7 @@
         {
           "default": "",
           "document": "只读组的ID",
+          "example": "mssqlrg-787oxy95",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -8850,8 +9173,10 @@
       "members": [
         {
           "document": "任务流ID",
+          "example": "1001539",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8912,6 +9237,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-j8kv137v",
+          "example": "mssql-6upluvd5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8920,6 +9246,7 @@
         {
           "default": "",
           "document": "待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。",
+          "example": "[\"manual_instance_58001_20180702010430.bak.tar\\r\\n\"]",
           "member": "string",
           "name": "BackupNames",
           "required": true,
@@ -9329,6 +9656,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2729",
           "member": "uint64",
           "name": "MigrateId",
           "required": true,
@@ -9342,8 +9670,10 @@
       "members": [
         {
           "document": "迁移流程启动后，返回流程ID",
+          "example": "30530",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9809,6 +10139,7 @@
         {
           "default": "",
           "document": "迁移任务id",
+          "example": "1066",
           "member": "int64",
           "name": "MigrateId",
           "required": true,
@@ -9822,8 +10153,10 @@
       "members": [
         {
           "document": "迁移检查流程发起后，返回的流程id",
+          "example": "1058",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9875,6 +10208,7 @@
         {
           "default": "",
           "document": "迁移任务ID",
+          "example": "2729",
           "member": "int64",
           "name": "MigrateId",
           "required": true,
@@ -9888,8 +10222,10 @@
       "members": [
         {
           "document": "中止迁移流程发起后，返回的流程id",
+          "example": "30530",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9908,6 +10244,7 @@
         {
           "default": "",
           "document": "主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同",
+          "example": "[\"mssql-njj2mtpl\\n\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -9934,6 +10271,7 @@
         {
           "default": "",
           "document": "实例ID，形如mssql-j8kv137v",
+          "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9942,6 +10280,7 @@
         {
           "default": "",
           "document": "实例升级后内存大小，单位GB，其值不能小于当前实例内存大小",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
           "required": false,
@@ -9950,6 +10289,7 @@
         {
           "default": "",
           "document": "实例升级后磁盘大小，单位GB，其值不能小于当前实例磁盘大小",
+          "example": "400",
           "member": "int64",
           "name": "Storage",
           "required": false,
@@ -9958,6 +10298,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券，0 - 不使用；1 - 默认使用。取值默认为0",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -9966,6 +10307,7 @@
         {
           "default": "",
           "document": "代金券ID，目前单个订单只能使用一张代金券",
+          "example": "0",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -9974,6 +10316,7 @@
         {
           "default": "",
           "document": "实例升级后的CPU核心数",
+          "example": "1",
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -9982,6 +10325,7 @@
         {
           "default": "",
           "document": "升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本",
+          "example": "2008R2",
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -9990,6 +10334,7 @@
         {
           "default": "",
           "document": "升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构",
+          "example": "CLUSTER",
           "member": "string",
           "name": "HAType",
           "required": false,
@@ -9998,10 +10343,20 @@
         {
           "default": "",
           "document": "修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为夸可用区",
+          "example": "MultiZones",
           "member": "string",
           "name": "MultiZones",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行",
+          "example": "1",
+          "member": "int64",
+          "name": "WaitSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10011,8 +10366,10 @@
       "members": [
         {
           "document": "订单名称",
+          "example": "201806261980",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

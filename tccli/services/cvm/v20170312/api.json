@@ -8589,6 +8589,15 @@
         },
         {
           "default": "",
+          "document": "指定专用集群创建。",
+          "example": "\"cluster-gbo27yc4\"",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "指定CHC物理服务器来创建CHC云主机。",
           "example": "[\"chc-kwf9mhzf\"]",
           "member": "string",

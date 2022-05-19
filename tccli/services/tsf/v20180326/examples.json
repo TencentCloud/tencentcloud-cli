@@ -390,6 +390,18 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiGroups\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Status\": \"xx\",\n                    \"UpdatedTime\": \"xx\",\n                    \"AuthType\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"BindedGatewayDeployGroups\": [\n                        {\n                            \"DeployGroupId\": \"xx\",\n                            \"ApplicationName\": \"xx\",\n                            \"GroupStatus\": \"xx\",\n                            \"ClusterType\": \"xx\",\n                            \"DeployGroupName\": \"xx\",\n                            \"ApplicationType\": \"xx\",\n                            \"ApplicationId\": \"xx\"\n                        }\n                    ],\n                    \"GroupType\": \"xx\",\n                    \"AclMode\": \"xx\",\n                    \"ApiCount\": 0,\n                    \"GroupName\": \"xx\",\n                    \"GroupContext\": \"xx\",\n                    \"CreatedTime\": \"xx\",\n                    \"GroupId\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\n    }\n}",
         "title": "查询API 分组信息列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiGroups\n<公共请求参数>\n\n{\n    \"Status\": \"字符串\",\n    \"OrderBy\": \"字符串\",\n    \"AuthType\": \"字符串\",\n    \"OrderType\": \"1\",\n    \"GroupType\": \"字符串\",\n    \"Limit\": \"1\",\n    \"GatewayInstanceId\": \"字符串\",\n    \"SearchWord\": \"字符串\",\n    \"Offset\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"685c0c8e-d107-44ed-bba0-723456e01783\",\n        \"Result\": null\n    }\n}",
+        "title": "test"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiGroups\n<公共请求参数>\n\n{\n    \"Status\": \"字符串\",\n    \"OrderBy\": \"字符串\",\n    \"AuthType\": \"字符串\",\n    \"OrderType\": \"1\",\n    \"GroupType\": \"字符串\",\n    \"Limit\": \"1\",\n    \"GatewayInstanceId\": \"字符串\",\n    \"SearchWord\": \"字符串\",\n    \"Offset\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1deb916-ce41-4f0e-9307-deea50b14d44\",\n        \"Result\": null\n    }\n}",
+        "title": "test1"
       }
     ],
     "DescribeApiRateLimitRules": [

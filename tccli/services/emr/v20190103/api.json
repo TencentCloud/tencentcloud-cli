@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddUsersForUserManager": {
+      "document": "新增用户列表（用户管理）",
+      "input": "AddUsersForUserManagerRequest",
+      "name": "用户管理-新增用户列表",
+      "output": "AddUsersForUserManagerResponse"
+    },
     "CreateInstance": {
       "document": "创建EMR集群实例",
       "input": "CreateInstanceRequest",
@@ -29,6 +35,12 @@
       "input": "DescribeInstancesRequest",
       "name": "查询EMR实例",
       "output": "DescribeInstancesResponse"
+    },
+    "DescribeInstancesList": {
+      "document": "EMR集群实例列表查询",
+      "input": "DescribeInstancesListRequest",
+      "name": "EMR集群实例列表查询",
+      "output": "DescribeInstancesListResponse"
     },
     "DescribeJobFlow": {
       "document": "查询流程任务",
@@ -128,6 +140,33 @@
     "serviceShortName": "emr"
   },
   "objects": {
+    "AddUsersForUserManagerRequest": {
+      "document": "AddUsersForUserManager请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息列表",
+          "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
+          "member": "UserInfoForUserManager",
+          "name": "UserManagerUserList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUsersForUserManagerResponse": {
+      "document": "AddUsersForUserManager返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BootstrapAction": {
       "document": "引导脚本",
       "members": [
@@ -1558,6 +1597,96 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesListRequest": {
+      "document": "DescribeInstancesList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群筛选策略。取值范围：<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li><li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li><li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>",
+          "example": "clusterList",
+          "member": "string",
+          "name": "DisplayStrategy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页编号，默认值为0，表示第一页。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页返回数量，默认值为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段。取值范围：<li>clusterId：表示按照实例ID排序。</li><li>addTime：表示按照实例创建时间排序。</li><li>status：表示按照实例的状态码排序。</li>",
+          "example": "clusterid",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。\u0007",
+          "example": "0",
+          "member": "int64",
+          "name": "Asc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义查询",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesListResponse": {
+      "document": "DescribeInstancesList返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群实例列表",
+          "example": "无",
+          "member": "EmrListInstance",
+          "name": "InstancesList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -1868,6 +1997,282 @@
       ],
       "usage": "both"
     },
+    "EmrListInstance": {
+      "document": "集群列表返回示例",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "emr-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "状态描述",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名字",
+          "example": "集群名字",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群地域",
+          "example": "集群地域",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户APPID",
+          "example": "663622",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "创建时间",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行时间",
+          "example": "运行时间",
+          "member": "string",
+          "name": "RunTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群IP",
+          "example": "集群ID",
+          "member": "string",
+          "name": "MasterIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群版本",
+          "example": "集群版本",
+          "member": "string",
+          "name": "EmrVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群计费类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "emr ID",
+          "example": "23321",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "44333",
+          "member": "uint64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4555",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4552",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3422",
+          "member": "uint64",
+          "name": "SubnetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45666",
+          "member": "uint64",
+          "name": "VpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "告警信息",
+          "member": "string",
+          "name": "AlarmInfo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否是woodpecker集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsWoodpeckerCluster",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Vpc中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "子网中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr",
+          "member": "string",
+          "name": "SubnetName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字符串VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-lzd3w8jz",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "字符串子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-3d73yezg",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark",
+          "member": "string",
+          "name": "ClusterClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为跨AZ集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMultiZoneCluster",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "EmrProductConfigOutter": {
       "document": "EMR产品配置",
       "members": [
@@ -2129,6 +2534,30 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filters": {
+      "document": "Emr集群列表实例自定义查询过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5614,6 +6043,52 @@
         }
       ],
       "usage": "both"
+    },
+    "UserInfoForUserManager": {
+      "document": "添加的用户信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户所属的组",
+          "example": "group1",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "123456",
+          "member": "string",
+          "name": "PassWord",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "提交mr任务",
+          "member": "string",
+          "name": "ReMark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "VPCSettings": {
       "document": "VPC 参数",

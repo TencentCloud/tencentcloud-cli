@@ -13,7 +13,15 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "Targets": [
+            {
+                "Region": "ap-shanghai",
+                "InstanceId": "prom-xxx",
+                "ClusterId": "xxx",
+                "SyncTime": "2020-02-2"
+            }
+        ]
     }
 }
 ```

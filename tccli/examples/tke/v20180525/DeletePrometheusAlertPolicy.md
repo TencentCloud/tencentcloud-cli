@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli tke DeletePrometheusAlertPolicy --cli-unfold-argument ```
+tccli tke DeletePrometheusAlertPolicy --cli-unfold-argument  \
+    --InstanceId xx \
+    --AlertIds xx \
+    --Names xx
+```
 
 Output: 
 ```

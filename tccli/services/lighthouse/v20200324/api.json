@@ -2993,7 +2993,26 @@
     },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "可用区列表排序的依据字段。取值范围：\n<li>ZONE：依据可用区排序。\n<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序, 可用区展示标签按可选择程度, 升序排列为: ['HIDDEN', 'NORMAL', 'SELECTED']。\n默认按可用区排序。",
+          "example": "\"ZONE\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "输出可用区列表的排列顺序。取值范围：\n<li>ASC：升序排列。 \n<li>DESC：降序排列。\n默认按升序排列。",
+          "example": "\"DESC\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeZonesResponse": {

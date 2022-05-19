@@ -9828,6 +9828,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，例如：eni-f1xjkw1b。",
+          "example": "eni-f1xjkw1b。",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -9837,6 +9838,7 @@
         {
           "default": "",
           "document": "弹性网卡名称。",
+          "example": "royhyangtest-main",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -9846,6 +9848,7 @@
         {
           "default": "",
           "document": "弹性网卡描述。",
+          "example": "xx",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": true,
@@ -9855,6 +9858,7 @@
         {
           "default": "",
           "document": "子网实例ID。",
+          "example": "subnet-nao8lfro",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -9864,6 +9868,7 @@
         {
           "default": "",
           "document": "VPC实例ID。",
+          "example": "vpc-2kx9z6h3",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -9873,6 +9878,7 @@
         {
           "default": "",
           "document": "绑定的安全组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[           \"sg-c2r7lnxh\",  \"sg-f9ekbxeq\" ]",
           "member": "string",
           "name": "GroupSet",
           "required": true,
@@ -9882,6 +9888,7 @@
         {
           "default": "",
           "document": "是否是主网卡。",
+          "example": "true",
           "member": "bool",
           "name": "Primary",
           "required": true,
@@ -9891,6 +9898,7 @@
         {
           "default": "",
           "document": "MAC地址。",
+          "example": "20:90:6F:F5:34:C7",
           "member": "string",
           "name": "MacAddress",
           "required": true,
@@ -9900,6 +9908,7 @@
         {
           "default": "",
           "document": "弹性网卡状态：\nPENDING：创建中\nAVAILABLE：可用的\nATTACHING：绑定中\nDETACHING：解绑中\nDELETING：删除中",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
           "required": true,
@@ -9909,6 +9918,7 @@
         {
           "default": "",
           "document": "内网IP信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{             \"Description\": \"\",             \"Primary\": true, ]",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
           "required": true,
@@ -9918,6 +9928,7 @@
         {
           "default": "",
           "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{           \"InstanceId\": \"ins-ymk3eje8\",           \"DeviceIndex",
           "member": "NetworkInterfaceAttachment",
           "name": "Attachment",
           "required": true,
@@ -9927,6 +9938,7 @@
         {
           "default": "",
           "document": "可用区。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -9936,6 +9948,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "\"2021-01-07 16:32:55",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -9945,6 +9958,7 @@
         {
           "default": "",
           "document": "IPv6地址列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[           {             \"Description\": \"\",             \"Primar",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "required": true,
@@ -9954,6 +9968,7 @@
         {
           "default": "",
           "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[           {             \"Key\": \"Version\",             \"Value\":",
           "member": "Tag",
           "name": "TagSet",
           "required": true,
@@ -9963,6 +9978,7 @@
         {
           "default": "",
           "document": "网卡类型。0 - 弹性网卡；1 - evm弹性网卡。",
+          "example": "1",
           "member": "uint64",
           "name": "EniType",
           "required": true,
@@ -9972,11 +9988,22 @@
         {
           "default": "",
           "document": "EcmRegion ecm区域",
+          "example": "ap-changchun-ecm-ct2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

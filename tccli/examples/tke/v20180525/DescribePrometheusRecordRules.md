@@ -5,12 +5,24 @@
 Input: 
 
 ```
-tccli tke DescribePrometheusRecordRules --cli-unfold-argument ```
+tccli tke DescribePrometheusRecordRules --cli-unfold-argument  \
+    --InstanceId xx
+```
 
 Output: 
 ```
 {
     "Response": {
+        "Records": [
+            {
+                "Content": "xx",
+                "UpdateTime": "xx",
+                "ClusterId": "xx",
+                "Name": "xx",
+                "TemplateId": "xx"
+            }
+        ],
+        "Total": 1,
         "RequestId": "xx"
     }
 }

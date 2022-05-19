@@ -3394,6 +3394,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "spark应用作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark_app",
+          "member": "string",
+          "name": "SparkJobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "spark应用作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batch_sdafa",
+          "member": "string",
+          "name": "SparkJobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "spark应用入口jar文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example.jar",
+          "member": "string",
+          "name": "SparkJobFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "spark ui url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://dlc-spark-ui.cloud.tencent.com/history/spark-893c606226b",
+          "member": "string",
+          "name": "UiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

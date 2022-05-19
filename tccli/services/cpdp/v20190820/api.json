@@ -246,6 +246,24 @@
       "name": "云鉴-商户新增接口",
       "output": "CreatePayMerchantResponse"
     },
+    "CreatePayRollPreOrder": {
+      "document": "务工卡-核身预下单",
+      "input": "CreatePayRollPreOrderRequest",
+      "name": "务工卡-核身预下单",
+      "output": "CreatePayRollPreOrderResponse"
+    },
+    "CreatePayRollPreOrderWithAuth": {
+      "document": "务工卡-核身预下单带授权",
+      "input": "CreatePayRollPreOrderWithAuthRequest",
+      "name": "务工卡-核身预下单带授权",
+      "output": "CreatePayRollPreOrderWithAuthResponse"
+    },
+    "CreatePayRollToken": {
+      "document": "务工卡-生成授权令牌",
+      "input": "CreatePayRollTokenRequest",
+      "name": "务工卡-生成授权令牌",
+      "output": "CreatePayRollTokenResponse"
+    },
     "CreateRedInvoice": {
       "document": "智慧零售-发票红冲",
       "input": "CreateRedInvoiceRequest",
@@ -389,6 +407,24 @@
       "input": "GetDistributeBillDownloadUrlRequest",
       "name": "云支付-获取机构分账账单文件下载地址",
       "output": "GetDistributeBillDownloadUrlResponse"
+    },
+    "GetPayRollAuth": {
+      "document": "务工卡-查询授权关系",
+      "input": "GetPayRollAuthRequest",
+      "name": "务工卡-查询授权关系",
+      "output": "GetPayRollAuthResponse"
+    },
+    "GetPayRollAuthList": {
+      "document": "务工卡-查询核身记录",
+      "input": "GetPayRollAuthListRequest",
+      "name": "务工卡-查询核身记录",
+      "output": "GetPayRollAuthListResponse"
+    },
+    "GetPayRollAuthResult": {
+      "document": "务工卡-获取核身结果",
+      "input": "GetPayRollAuthResultRequest",
+      "name": "务工卡-获取核身结果",
+      "output": "GetPayRollAuthResultResponse"
     },
     "MigrateOrderRefund": {
       "document": "山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。",
@@ -10897,6 +10933,429 @@
       ],
       "type": "object"
     },
+    "CreatePayRollPreOrderRequest": {
+      "document": "CreatePayRollPreOrder请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该劳务活动的项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该工人所属的用工企业",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）\n当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）\n当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatSubAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRollPreOrderResponse": {
+      "document": "CreatePayRollPreOrder返回参数结构体",
+      "members": [
+        {
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token有效时间，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token值",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRollPreOrderWithAuthRequest": {
+      "document": "CreatePayRollPreOrderWithAuth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该劳务活动的项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该工人所属的用工企业",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微工卡服务仅支持用于与商户有用工关系的用户，需明确用工类型；参考值：\nLONG_TERM_EMPLOYMENT：长期用工，\nSHORT_TERM_EMPLOYMENT： 短期用工，\nCOOPERATION_EMPLOYMENT：合作关系",
+          "example": "无",
+          "member": "string",
+          "name": "EmploymentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）\n当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）\n当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatSubAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRollPreOrderWithAuthResponse": {
+      "document": "CreatePayRollPreOrderWithAuth返回参数结构体",
+      "members": [
+        {
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token有效时间，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token值",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRollTokenRequest": {
+      "document": "CreatePayRollToken请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户实名信息，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户证件号，该字段需进行加密处理，加密方法详见[敏感信息加密说明](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微工卡服务仅支持用于与商户有用工关系的用户，需明确用工类型；参考值：\nLONG_TERM_EMPLOYMENT：长期用工，\nSHORT_TERM_EMPLOYMENT： 短期用工，\nCOOPERATION_EMPLOYMENT：合作关系",
+          "example": "无",
+          "member": "string",
+          "name": "EmploymentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）\n当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）\n当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatSubAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePayRollTokenResponse": {
+      "document": "CreatePayRollToken返回参数结构体",
+      "members": [
+        {
+          "document": "Token有效时间，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Token值",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRedInvoiceItem": {
       "document": "创建红票明细",
       "members": [
@@ -14163,6 +14622,285 @@
       ],
       "type": "object"
     },
+    "GetPayRollAuthListRequest": {
+      "document": "GetPayRollAuthList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "核身日期，一次只能查询一天，最久可查询90天内的记录，格式为YYYY-MM-DD",
+          "example": "无",
+          "member": "string",
+          "name": "AuthDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "非负整数，表示该次请求资源的起始位置，从0开始计数",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "非0非负的整数，该次请求可返回的最大资源条数，默认值为10，最大支持10条",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）\n当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）\n当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatSubAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "核身状态，列表查询仅提供成功状态的核身记录查询，故此字段固定AUTHENTICATE_SUCCESS即可",
+          "example": "无",
+          "member": "string",
+          "name": "AuthStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPayRollAuthListResponse": {
+      "document": "GetPayRollAuthList返回参数结构体",
+      "members": [
+        {
+          "document": "核身结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayRollAuthResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "总记录条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录起始位置，该次请求资源的起始位置，请求中包含偏移量时应答消息返回相同偏移量，否则返回默认值0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "本次返回条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPayRollAuthRequest": {
+      "document": "GetPayRollAuth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是服务商在微信申请公众号/小程序或移动应用成功后分配的账号ID（与服务商主体一致）\n当输入服务商Appid时，会校验其与服务商商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "特约商户在微信申请公众号/小程序或移动应用成功后分配的账号ID（与特约商户主体一致）\n当输入特约商户Appid时，会校验其与特约商户号的绑定关系。服务商APPID和与特约商户APPID至少输入一个，且必须要有拉起领薪卡小程序时使用的APPID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatSubAppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPayRollAuthResponse": {
+      "document": "GetPayRollAuth返回参数结构体",
+      "members": [
+        {
+          "document": "授权状态：\nUNAUTHORIZED：未授权\nAUTHORIZED：已授权\nDEAUTHORIZED：已取消授权",
+          "example": "无",
+          "member": "string",
+          "name": "AuthStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "授权时间，遵循[rfc3339](https://datatracker.ietf.org/doc/html/rfc3339)标准格式，格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE，空字符串等同null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "授权时间，遵循[rfc3339](https://datatracker.ietf.org/doc/html/rfc3339)标准格式，格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE，空字符串等同null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CancelAuthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "微信服务商商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPayRollAuthResultRequest": {
+      "document": "GetPayRollAuthResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "无",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "无",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPayRollAuthResultResponse": {
+      "document": "GetPayRollAuthResult返回参数结构体",
+      "members": [
+        {
+          "document": "核身结果",
+          "example": "无",
+          "member": "PayRollAuthResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MemberTransactionItem": {
       "document": "会员间交易明细信息",
       "members": [
@@ -16229,6 +16967,122 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayRollAuthResult": {
+      "document": "微工卡核身结果",
+      "members": [
+        {
+          "default": "",
+          "document": "结果为核身失败时的原因描述，仅在失败记录返回，空字符串等同null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "人脸验证未通过",
+          "member": "string",
+          "name": "AuthFailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "商户系统内部的商家核身单号，要求此参数只能由数字、大小写字母组成，在服务商内部唯一",
+          "example": "mcdhehfgisdhfjghed39384564i83",
+          "member": "string",
+          "name": "AuthNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身渠道，发起核身时的来源渠道，如通过小程序，硬件设备等\nFROM_MINI_APP：来自小程序方式核身\nFROM_HARDWARE：来自硬件设备方式核身",
+          "example": "FROM_MINI_APP",
+          "member": "string",
+          "name": "AuthScene",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身渠道标识，用于定位渠道具体来源，如果是扫码打卡渠道标识就是具体的小程序appid，若是硬件设备，则是设备的序列号等",
+          "example": "wdiooewl7587443649000",
+          "member": "string",
+          "name": "AuthSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身状态\nAUTHENTICATE_PROCESSING：核身中\nAUTHENTICATE_SUCCESS：核身成功\nAUTHENTICATE_FAILED：核身失败",
+          "example": "AUTHENTICATE_SUCCESS",
+          "member": "string",
+          "name": "AuthStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "核身时间，遵循[rfc3339](https://datatracker.ietf.org/doc/html/rfc3339)标准格式，格式为YYYY-MM-DDTHH:mm:ss.sss+TIMEZONE",
+          "example": "2015-05-20T13:29:35+08:00",
+          "member": "string",
+          "name": "AuthTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该用户所属的单位名称",
+          "example": "某单位名称",
+          "member": "string",
+          "name": "CompanyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信服务商商户的商户号，由微信支付生成并下发",
+          "example": "1111111",
+          "member": "string",
+          "name": "MerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户在商户对应appid下的唯一标识",
+          "example": "onqOjjmo8wmTOOtSKwXtGjg9Gb58",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该项目的名称",
+          "example": "某项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信服务商下特约商户的商户号，由微信支付生成并下发",
+          "example": "111111",
+          "member": "string",
+          "name": "SubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

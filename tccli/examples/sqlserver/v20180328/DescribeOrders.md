@@ -14,6 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3",
+        "TotalCount": 10,
         "Deals": [
             {
                 "DealName": "201806271765",
@@ -22,7 +23,8 @@ Output:
                 "FlowId": 3456,
                 "InstanceIdSet": [
                     "mssql-k8vodfsw"
-                ]
+                ],
+                "InstanceChargeType": "POST"
             }
         ]
     }

@@ -96,6 +96,12 @@
       "name": "下载证书",
       "output": "DownloadCertificateResponse"
     },
+    "HostCertificate": {
+      "document": "云资源托管",
+      "input": "HostCertificateRequest",
+      "name": "云资源托管",
+      "output": "HostCertificateResponse"
+    },
     "ModifyCertificateAlias": {
       "document": "用户传入证书id和备注来修改证书备注。",
       "input": "ModifyCertificateAliasRequest",
@@ -331,6 +337,52 @@
         }
       ],
       "type": "object"
+    },
+    "CertHostingInfo": {
+      "document": "云资源配置详情",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已替换的新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RenewCertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-05-16T09:06:24",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CertificateExtra": {
       "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 数组下，key为CertificateExtra 的内容。",
@@ -2420,6 +2472,51 @@
         }
       ],
       "usage": "out"
+    },
+    "HostCertificateRequest": {
+      "document": "HostCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源类型：目前仅限于CLB,CDN",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "HostCertificateResponse": {
+      "document": "HostCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "云资源配置详情",
+          "example": "无",
+          "member": "CertHostingInfo",
+          "name": "CertHostingInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ManagerInfo": {
       "document": "管理人信息",

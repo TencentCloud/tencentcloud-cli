@@ -270,6 +270,12 @@
       "name": "启用规则",
       "output": "EnableTopicRuleResponse"
     },
+    "GetAllVersion": {
+      "document": "本接口（GetAllVersion）用于获取所有的版本列表 ",
+      "input": "GetAllVersionRequest",
+      "name": "获取所有版本列表",
+      "output": "GetAllVersionResponse"
+    },
     "GetCOSURL": {
       "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
       "input": "GetCOSURLRequest",
@@ -281,6 +287,12 @@
       "input": "GetUserResourceInfoRequest",
       "name": "获取用户资源信息",
       "output": "GetUserResourceInfoResponse"
+    },
+    "ListFirmwares": {
+      "document": "本接口（ListFirmwares）用于获取固件列表 ",
+      "input": "ListFirmwaresRequest",
+      "name": "获取固件列表",
+      "output": "ListFirmwaresResponse"
     },
     "ListLog": {
       "document": "本接口（ListLog）用于查看日志信息 ",
@@ -4145,6 +4157,82 @@
       ],
       "type": "object"
     },
+    "FirmwareInfo": {
+      "document": "设备固件详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "固件版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固件MD5值",
+          "example": "2f8222b4f275c4f18e69c34f66d2631b",
+          "member": "string",
+          "name": "Md5sum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "固件创建时间",
+          "example": "1617801604",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "固件名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "固件信息描述",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FirmwareTaskInfo": {
       "document": "固件升级任务信息",
       "members": [
@@ -4190,6 +4278,42 @@
         }
       ],
       "usage": "out"
+    },
+    "GetAllVersionRequest": {
+      "document": "GetAllVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAllVersionResponse": {
+      "document": "GetAllVersion返回参数结构体",
+      "members": [
+        {
+          "document": "版本号列表",
+          "example": "[\"1.0.0\",\"2.0.0\"]",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetCOSURLRequest": {
       "document": "GetCOSURL请求参数结构体",
@@ -4269,6 +4393,78 @@
           "name": "Limit",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFirmwaresRequest": {
+      "document": "ListFirmwares请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "获取的页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFirmwaresResponse": {
+      "document": "ListFirmwares返回参数结构体",
+      "members": [
+        {
+          "document": "固件总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "固件列表",
+          "example": "无",
+          "member": "FirmwareInfo",
+          "name": "Firmwares",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

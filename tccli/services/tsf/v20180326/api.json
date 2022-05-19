@@ -7514,7 +7514,7 @@
         },
         {
           "default": "",
-          "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权",
+          "document": "鉴权类型。 secret： 密钥鉴权； none:无鉴权",
           "example": "无",
           "member": "string",
           "name": "AuthType",
@@ -7564,13 +7564,13 @@
       "document": "DescribeApiGroups返回参数结构体",
       "members": [
         {
-          "document": "翻页结构体",
+          "document": "翻页结构体\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
