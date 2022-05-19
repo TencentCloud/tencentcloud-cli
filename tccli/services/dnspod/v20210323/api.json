@@ -3240,7 +3240,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3249,7 +3250,8 @@
           "member": "uint64",
           "name": "RecordId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3258,7 +3260,8 @@
           "member": "string",
           "name": "RecordLine",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3267,7 +3270,8 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3276,7 +3280,8 @@
           "member": "uint64",
           "name": "DomainId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3285,7 +3290,8 @@
           "member": "string",
           "name": "SubDomain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3294,7 +3300,18 @@
           "member": "string",
           "name": "RecordLineId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "TTL值，如果不传，默认为域名的TTL值。",
+          "example": "600",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3309,7 +3326,8 @@
           "name": "RecordId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

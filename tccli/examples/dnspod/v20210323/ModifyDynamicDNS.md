@@ -12,7 +12,8 @@ tccli dnspod ModifyDynamicDNS --cli-unfold-argument  \
     --RecordId 162 \
     --RecordLine 默认 \
     --RecordLineId 0 \
-    --Value 129.23.32.32
+    --Value 129.23.32.32 \
+    --Ttl 600
 ```
 
 Output: 

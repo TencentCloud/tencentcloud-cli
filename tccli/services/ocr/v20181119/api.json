@@ -139,7 +139,7 @@
       "output": "GeneralBasicOCRResponse"
     },
     "GeneralEfficientOCR": {
-      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于快速文本识别场景。\n\n产品优势：与通用印刷体识别接口相比，精简版虽然在准确率和召回率上有一定损失，但价格更加优惠。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >通用印刷体识别（精简版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n          \n          \n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>91%</td>\n          <td>96%</td>\n          <td>99%</td>\n          \n          \n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n          <td>高</td>\n          \n          \n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n          \n          \n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n          \n          \n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n          \n          \n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          \n         \n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持图像整体文字的检测和识别。支持中文、英文、中英文、数字和特殊字符号的识别，并返回文字框位置和文字内容。\n\n适用于快速文本识别场景。\n\n产品优势：与通用印刷体识别接口相比，精简版虽然在准确率和召回率上有一定损失，但价格更加优惠。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th >通用印刷体识别（精简版）</th>\n          <th style=\"width:200px\"><a href=\"https://cloud.tencent.com/document/product/866/33526\">【荐】通用印刷体识别</a></th>\n          <th><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>91%</td>\n          <td>96%</td>\n          <td>99%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n          <td>高</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  \n          <td>中文、英文、中英文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>支持</td>  \n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "GeneralEfficientOCRRequest",
       "name": "通用印刷体识别（精简版）",
       "output": "GeneralEfficientOCRResponse"
@@ -431,6 +431,12 @@
       "input": "VerifyEnterpriseFourFactorsRequest",
       "name": "企业四要素核验",
       "output": "VerifyEnterpriseFourFactorsResponse"
+    },
+    "VerifyMultiPermit": {
+      "document": "证照类多图鉴伪识别，支持基于输入多张证照图片，判断证照的真伪并反馈鉴别结果。支持鉴别伪证场景：遮挡、翻拍件、复印件。",
+      "input": "VerifyMultiPermitRequest",
+      "name": "证照类多图鉴伪识别",
+      "output": "VerifyMultiPermitResponse"
     },
     "VerifyOfdVatInvoiceOCR": {
       "document": "本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
@@ -3056,7 +3062,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3065,7 +3072,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3080,7 +3088,8 @@
           "name": "TextDetections",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
@@ -3089,7 +3098,8 @@
           "name": "Angel",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10631,6 +10641,130 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyMultiPermitItem": {
+      "document": "证照类多图鉴伪结果",
+      "members": [
+        {
+          "default": "",
+          "document": "鉴伪字段；\nKineprintHK 动感印刷\nFaceImageMatch 证件人脸比对\nChipCheck 晶片检测\nFlashCheck 材质反光\nTamperCheck 篡改检测\nSoftenPhotoArea 渐淡色背景\nInkWithVariableProperties 变色油墨\nLaserFaceImage 动感印刷头像(03)，镭射人脸(18)\nSwitchID 换证检测\nHologram 全息图, 镭射花标\nRainbowPrinting 彩虹印刷",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "鉴伪结果；Fail鉴定不通过 Pass鉴定通过",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifyMultiPermitRequest": {
+      "document": "VerifyMultiPermit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值数组。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrlList、ImageBase64List 必须提供一个，如果都提供，只使用 ImageUrlList。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64List",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址数组。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrlList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyMultiPermitResponse": {
+      "document": "VerifyMultiPermit返回参数结构体",
+      "members": [
+        {
+          "document": "图片数据，返回预处理后图像",
+          "example": "无",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "鉴伪结果，输出值： Pass/Fail/Recapture/ManualReview",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "置信度 取值范围 [0.0,1.0]",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "图片质量分 取值范围 [0.0,1.0]",
+          "example": "无",
+          "member": "float",
+          "name": "ImagesScore",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "场景鉴伪结果",
+          "example": "无",
+          "member": "VerifyMultiPermitItem",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

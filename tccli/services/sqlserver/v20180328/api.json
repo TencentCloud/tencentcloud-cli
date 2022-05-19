@@ -782,6 +782,7 @@
         {
           "default": "",
           "document": "数据库用户名",
+          "example": "ac1",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -791,10 +792,21 @@
         {
           "default": "",
           "document": "账号权限变更信息",
+          "example": "无",
           "member": "DBPrivilegeModifyInfo",
           "name": "DBPrivileges",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为管理员账户",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAdmin",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -8781,6 +8793,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "mssql-ms2m7vut",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8794,8 +8807,10 @@
       "members": [
         {
           "document": "流程id",
+          "example": "100010",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -678,6 +678,14 @@
         "title": "企业四要素核验示例代码（输入关键字段进行核验）"
       }
     ],
+    "VerifyMultiPermit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyMultiPermit\n<公共请求参数>\n\n{\n    \"ImageUrlList\": [\n        \"xx\"\n    ],\n    \"ImageBase64List\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Confidence\": 0.0,\n        \"Items\": [\n            {\n                \"Confidence\": 0.0,\n                \"Name\": \"xx\",\n                \"Result\": \"xx\"\n            }\n        ],\n        \"Image\": \"xx\",\n        \"Result\": \"xx\",\n        \"ImagesScore\": 0.0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "证照类多图鉴伪识别示例代码"
+      }
+    ],
     "VerifyOfdVatInvoiceOCR": [
       {
         "document": "",

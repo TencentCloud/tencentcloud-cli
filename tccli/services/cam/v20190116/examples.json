@@ -99,7 +99,7 @@
     "CreateServiceLinkedRole": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\r\n&QCSServiceName.0=ccs.qcloud.com\r\n&CustomSuffix=forTest\r\n&Description=ccsLinkedRole\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\n&QCSServiceName.0=ccs.qcloud.com\n&CustomSuffix=forTest\n&Description=ccsLinkedRole\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611686018427411525\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "创建服务相关角色"
       }
