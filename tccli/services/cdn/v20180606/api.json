@@ -555,7 +555,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -564,7 +565,8 @@
           "member": "string",
           "name": "ServiceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -573,7 +575,8 @@
           "member": "Origin",
           "name": "Origin",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -582,7 +585,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -591,7 +595,8 @@
           "member": "IpFilter",
           "name": "IpFilter",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -600,7 +605,8 @@
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -609,7 +615,8 @@
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -618,7 +625,8 @@
           "member": "Compression",
           "name": "Compression",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -627,7 +635,8 @@
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -636,7 +645,8 @@
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -645,7 +655,8 @@
           "member": "FollowRedirect",
           "name": "FollowRedirect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -654,7 +665,8 @@
           "member": "ErrorPage",
           "name": "ErrorPage",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -663,7 +675,8 @@
           "member": "RequestHeader",
           "name": "RequestHeader",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -672,7 +685,8 @@
           "member": "ResponseHeader",
           "name": "ResponseHeader",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -681,7 +695,8 @@
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -690,7 +705,8 @@
           "member": "CacheKey",
           "name": "CacheKey",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -699,7 +715,8 @@
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -708,7 +725,8 @@
           "member": "VideoSeek",
           "name": "VideoSeek",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -717,7 +735,8 @@
           "member": "Cache",
           "name": "Cache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -726,7 +745,8 @@
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -735,7 +755,8 @@
           "member": "Https",
           "name": "Https",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -744,7 +765,8 @@
           "member": "Authentication",
           "name": "Authentication",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -753,7 +775,8 @@
           "member": "Seo",
           "name": "Seo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -762,7 +785,8 @@
           "member": "ForceRedirect",
           "name": "ForceRedirect",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -771,7 +795,8 @@
           "member": "Referer",
           "name": "Referer",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -780,7 +805,8 @@
           "member": "MaxAge",
           "name": "MaxAge",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -789,7 +815,8 @@
           "member": "Ipv6",
           "name": "Ipv6",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -798,7 +825,8 @@
           "member": "SpecificConfig",
           "name": "SpecificConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -807,7 +835,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -816,7 +845,8 @@
           "member": "OriginPullTimeout",
           "name": "OriginPullTimeout",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -825,7 +855,8 @@
           "member": "Tag",
           "name": "Tag",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -834,7 +865,8 @@
           "member": "Ipv6Access",
           "name": "Ipv6Access",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -843,7 +875,8 @@
           "member": "OfflineCache",
           "name": "OfflineCache",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -852,7 +885,8 @@
           "member": "Quic",
           "name": "Quic",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -861,7 +895,8 @@
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -870,7 +905,8 @@
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -879,7 +915,8 @@
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -888,7 +925,8 @@
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16140,13 +16178,14 @@
       "members": [
         {
           "default": "",
-          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.\n\n* WebSocket 为内测功能,如需使用,请联系腾讯云工程师开白.",
+          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.\n\n* WebSocket 为ECDN产品功能，如需使用请通过ECDN域名配置.",
           "example": "off",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -16156,7 +16195,8 @@
           "name": "Timeout",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -7519,7 +7519,8 @@
           "member": "string",
           "name": "SearchWord",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7528,7 +7529,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7537,7 +7539,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7546,16 +7549,18 @@
           "member": "string",
           "name": "GroupType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "鉴权类型。 secret： 秘钥鉴权； none:无鉴权",
+          "document": "鉴权类型。 secret： 密钥鉴权； none:无鉴权",
           "example": "无",
           "member": "string",
           "name": "AuthType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7564,7 +7569,8 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7573,7 +7579,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7582,7 +7589,8 @@
           "member": "int64",
           "name": "OrderType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7591,7 +7599,8 @@
           "member": "string",
           "name": "GatewayInstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7600,13 +7609,14 @@
       "document": "DescribeApiGroups返回参数结构体",
       "members": [
         {
-          "document": "翻页结构体",
+          "document": "翻页结构体\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

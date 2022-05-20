@@ -366,6 +366,14 @@
         "title": "启用规则示例"
       }
     ],
+    "GetAllVersion": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=GetAllVersion\n&ProductId=ABCDE12345\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Version\": [\n            \"1.0.0\",\n            \"2.0.0\"\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "获取所有版本列表示例"
+      }
+    ],
     "GetCOSURL": [
       {
         "document": "",
@@ -380,6 +388,14 @@
         "input": "https://iotcloud.tencentcloudapi.com/?Action=GetUserResourceInfo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"UsedSize\": 100,\n        \"Limit\": 10000,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取用户资源信息"
+      }
+    ],
+    "ListFirmwares": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=ListFirmwares\n&ProductId=ABCDE12345\n&PageNum=1\n&PageSize=10\n&Filters.0.Key=FirmwareName\n&Filters.0.Value=123\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Firmwares\": [\n            {\n                \"Version\": \"1.0.0\",\n                \"Md5sum\": \"ahbdjshfuisdfoisjfos\",\n                \"CreateTime\": \"147873872173\",\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductId\": \"xx\",\n                \"Description\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "获取固件列表示例"
       }
     ],
     "ListLog": [

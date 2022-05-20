@@ -358,6 +358,30 @@
         "title": "商户新增正常返回"
       }
     ],
+    "CreatePayRollPreOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePayRollPreOrder\n<公共请求参数>\n\n{\n    \"WechatSubAppId\": \"wxa1111111\",\n    \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n    \"WechatAppId\": \"wxa1111111\",\n    \"CompanyName\": \"某用工企业\",\n    \"ProjectName\": \"某项目\",\n    \"SubMerchantId\": \"1111111\",\n    \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\",\n        \"ExpireTime\": 300,\n        \"MerchantId\": \"1111111\",\n        \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n        \"RequestId\": \"req-164085245170\",\n        \"SubMerchantId\": \"1111111\",\n        \"Token\": \"abcdefghijklmn\"\n    }\n}",
+        "title": "务工卡-核身预下单"
+      }
+    ],
+    "CreatePayRollPreOrderWithAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePayRollPreOrderWithAuth\n<公共请求参数>\n\n{\n    \"WechatSubAppId\": \"wxa1111111\",\n    \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n    \"WechatAppId\": \"wxa1111111\",\n    \"CompanyName\": \"某用工企业\",\n    \"EmploymentType\": \"LONG_TERM_EMPLOYMENT\",\n    \"ProjectName\": \"某项目\",\n    \"SubMerchantId\": \"1111111\",\n    \"UserName\": \"LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg\",\n    \"IdNo\": \"7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5\",\n    \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\",\n        \"ExpireTime\": 300,\n        \"MerchantId\": \"1111111\",\n        \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n        \"RequestId\": \"req-164085245170\",\n        \"SubMerchantId\": \"1111111\",\n        \"Token\": \"abcdefghijklmn\"\n    }\n}",
+        "title": "务工卡-核身预下单带授权"
+      }
+    ],
+    "CreatePayRollToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePayRollToken\n<公共请求参数>\n\n{\n    \"WechatSubAppId\": \"wxa1111111\",\n    \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n    \"WechatAppId\": \"wxa1111111\",\n    \"EmploymentType\": \"LONG_TERM_EMPLOYMENT\",\n    \"SubMerchantId\": \"1111111\",\n    \"UserName\": \"LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg\",\n    \"IdNo\": \"7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1800,\n        \"MerchantId\": \"1111111\",\n        \"OpenId\": \"9x111111\",\n        \"RequestId\": \"req-164085451674\",\n        \"SubMerchantId\": \"1111111\",\n        \"Token\": \"abcdefghijklmn\"\n    }\n}",
+        "title": "务工卡-生成授权令牌"
+      }
+    ],
     "CreateRedInvoice": [
       {
         "document": "",
@@ -554,6 +578,30 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDistributeBillDownloadUrl\n<公共请求参数>\n\n{\n    \"OpenId\": \"OpenId123\",\n    \"OpenKey\": \"OpenKey123\",\n    \"Day\": \"20220322\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3402a086-bd77-4ee9-bc9a-4cf0c87b6c64\",\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"DownloadUrl\": \"https://tencent.com/Fileup1/orderexport/download?key=123\"\n        }\n    }\n}",
         "title": "获取机构账单文件下载地址成功示例"
+      }
+    ],
+    "GetPayRollAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPayRollAuth\n<公共请求参数>\n\n{\n    \"WechatSubAppId\": \"wxa1111111\",\n    \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n    \"WechatAppId\": \"wxa1111111\",\n    \"SubMerchantId\": \"1111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthStatus\": \"UNAUTHORIZED\",\n        \"AuthTime\": \"2015-05-20T13:29:35.120+08:00\",\n        \"CancelAuthTime\": \"2015-05-20T13:29:35.120+08:00\",\n        \"MerchantId\": \"1111111\",\n        \"OpenId\": \"9x111111\",\n        \"RequestId\": \"req-164085490080\",\n        \"SubMerchantId\": \"1111111\"\n    }\n}",
+        "title": "务工卡-查询授权关系"
+      }
+    ],
+    "GetPayRollAuthList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPayRollAuthList\n<公共请求参数>\n\n{\n    \"WechatSubAppId\": \"wxa1111111\",\n    \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n    \"WechatAppId\": \"wxa1111111\",\n    \"AuthDate\": \"2020-12-25\",\n    \"SubMerchantId\": \"1111111\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"AuthStatus\": \"AUTHENTICATE_SUCCESS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Limit\": 10,\n        \"Offset\": 1,\n        \"RequestId\": \"req-164085656796\",\n        \"Results\": [\n            {\n                \"AuthFailedReason\": \"\",\n                \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\",\n                \"AuthScene\": \"FROM_MINI_APP\",\n                \"AuthSource\": \"wdiooewl7587443649000\",\n                \"AuthStatus\": \"FROM_MINI_APP\",\n                \"AuthTime\": \"2015-05-20T13:29:35+08:00\",\n                \"CompanyName\": \"某单位名称\",\n                \"MerchantId\": \"1111111\",\n                \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n                \"ProjectName\": \"某项目\",\n                \"SubMerchantId\": \"111111\"\n            }\n        ],\n        \"Total\": 9\n    }\n}",
+        "title": "务工卡-查询核身记录"
+      }
+    ],
+    "GetPayRollAuthResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPayRollAuthResult\n<公共请求参数>\n\n{\n    \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\",\n    \"SubMerchantId\": \"1111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-164085621426\",\n        \"Result\": {\n            \"AuthFailedReason\": \"人脸验证未通过\",\n            \"AuthNumber\": \"mcdhehfgisdhfjghed39384564i83\",\n            \"AuthScene\": \"FROM_MINI_APP\",\n            \"AuthSource\": \"wdiooewl7587443649000\",\n            \"AuthStatus\": \"AUTHENTICATE_SUCCESS\",\n            \"AuthTime\": \"2015-05-20T13:29:35+08:00\",\n            \"CompanyName\": \"某单位名称\",\n            \"MerchantId\": \"1111111\",\n            \"OpenId\": \"onqOjjmo8wmTOOtSKwXtGjg9Gb58\",\n            \"ProjectName\": \"某项目\",\n            \"SubMerchantId\": \"111111\"\n        }\n    }\n}",
+        "title": "务工卡-获取核身结果"
       }
     ],
     "MigrateOrderRefund": [

@@ -10692,7 +10692,7 @@
       "members": [
         {
           "default": "",
-          "document": "图片的 Base64 值数组。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrlList、ImageBase64List 必须提供一个，如果都提供，只使用 ImageUrlList。",
+          "document": "图片的 Base64 值数组，图片数量建议3-7张。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrlList、ImageBase64List 必须提供一个，如果都提供，只使用 ImageUrlList。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64List",
@@ -10702,7 +10702,7 @@
         },
         {
           "default": "",
-          "document": "图片的 Url 地址数组。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址数组，图片数量建议3-7张。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的单个图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "无",
           "member": "string",
           "name": "ImageUrlList",
