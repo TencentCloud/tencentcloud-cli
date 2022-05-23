@@ -1164,7 +1164,8 @@
           "member": "ProbeTaskBasicConfiguration",
           "name": "BatchTasks",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1173,7 +1174,8 @@
           "member": "int64",
           "name": "TaskType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1182,7 +1184,8 @@
           "member": "string",
           "name": "Nodes",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1191,7 +1194,8 @@
           "member": "int64",
           "name": "Interval",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1200,7 +1204,8 @@
           "member": "string",
           "name": "Parameters",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1209,7 +1214,8 @@
           "member": "int64",
           "name": "TaskCategory",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1218,7 +1224,8 @@
           "member": "string",
           "name": "Cron",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1227,7 +1234,8 @@
           "member": "Tag",
           "name": "Tag",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1236,7 +1244,8 @@
           "member": "uint64",
           "name": "ProbeType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1245,7 +1254,18 @@
           "member": "string",
           "name": "PluginSource",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "客户度ID",
+          "example": "3198058",
+          "member": "string",
+          "name": "ClientNum",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1253,6 +1273,16 @@
     "CreateProbeTasksResponse": {
       "document": "CreateProbeTasks返回参数结构体",
       "members": [
+        {
+          "document": "任务ID列表",
+          "example": "[\"task-fsz5tuvy\"]",
+          "member": "string",
+          "name": "TaskIDs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2378,7 +2408,8 @@
           "member": "string",
           "name": "TaskIDs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2387,7 +2418,8 @@
           "member": "string",
           "name": "TaskName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2396,7 +2428,8 @@
           "member": "string",
           "name": "TargetAddress",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2405,7 +2438,8 @@
           "member": "int64",
           "name": "TaskStatus",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2414,7 +2448,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2423,7 +2458,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2432,7 +2468,8 @@
           "member": "int64",
           "name": "PayMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2441,7 +2478,8 @@
           "member": "int64",
           "name": "OrderState",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2450,7 +2488,8 @@
           "member": "int64",
           "name": "TaskType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2459,7 +2498,8 @@
           "member": "int64",
           "name": "TaskCategory",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2468,7 +2508,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2477,7 +2518,8 @@
           "member": "bool",
           "name": "Ascend",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2486,7 +2528,8 @@
           "member": "KeyValuePair",
           "name": "TagFilters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2501,7 +2544,8 @@
           "name": "TaskSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "任务总数",
@@ -2510,7 +2554,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3833,6 +3878,26 @@
           "example": "1",
           "member": "int64",
           "name": "Location",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "base",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点状态：1-运行,2-下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeDefineStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true

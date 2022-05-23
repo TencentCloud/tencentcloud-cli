@@ -15,6 +15,7 @@ Output:
     "Response": {
         "IsOfflineDelay": 1,
         "MasterInstanceId": "mssql-6f4ddx2f",
+        "MasterRegionId": "ap-guangzhou",
         "MinReadOnlyInGroup": 1,
         "ReadOnlyGroupId": "mssqlrg-552tyamb",
         "ReadOnlyGroupName": "再次尝试一次创建2个副本",

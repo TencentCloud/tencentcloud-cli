@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CheckSavepoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSavepoint\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-52xkpymp\",\n    \"SerialId\": \"svp-52xkpymp\",\n    \"RecordType\": 1,\n    \"SavepointPath\": \"cosn://xxxx/xxxx/xxxx/chk-1\",\n    \"WorkSpaceId\": \"space-12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\",\n        \"SerialId\": \"svp-52xkpymp\",\n        \"SavepointStatus\": 1\n    }\n}",
+        "title": "检查快照可用性"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckSavepoint\n<公共请求参数>\n\n{\n    \"SerialId\": \"cql-52xkpymp\",\n    \"WorkSpaceId\": \"default-12345ap-beijing\",\n    \"SavepointPath\": \"cosn://52xkpymp-12345/12345/10000/cql-12345/2/flink-savepoints/savepoint-000000-12334\",\n    \"RecordType\": \"1\",\n    \"JobId\": \"cql-52xkpymp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e9e8172-17e2-4fc5-b363-1d480a4795ae\",\n        \"SavepointStatus\": 2,\n        \"SerialId\": \"cql-52xkpymp\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CreateJob": [
       {
         "document": "",
@@ -62,6 +76,14 @@
         "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobConfigs\n&JobId=cql-fktse6bt\n&JobConfigVersions.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"JobConfigSet\": [\n            {\n                \"ProgramArgs\": \"xx\",\n                \"Remark\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DefaultParallelism\": 1,\n                \"ClsTopicId\": \"xx\",\n                \"ResourceRefDetails\": [\n                    {\n                        \"ResourceId\": \"xx\",\n                        \"SystemProvide\": 0,\n                        \"Type\": 0,\n                        \"Version\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"COSBucket\": \"xx\",\n                \"TaskManagerSpec\": 0.0,\n                \"UpdateTime\": \"xx\",\n                \"JobId\": \"xx\",\n                \"EntrypointClass\": \"xx\",\n                \"Version\": 1,\n                \"ClsLogsetId\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"LogCollect\": 0,\n                \"JobManagerSpec\": 0.0,\n                \"MaxParallelism\": 1,\n                \"PythonVersion\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "查询作业配置列表示例"
+      }
+    ],
+    "DescribeJobSavepoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobSavepoint\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"JobId\": \"cql-asdf5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66de08ce-ea4e-43c0-be85-90b7549293c5\",\n        \"RunningSavepoint\": [],\n        \"RunningTotalNumber\": 0,\n        \"Savepoint\": [\n            {\n                \"Id\": 0,\n                \"SerialId\": \"cql-asdf5678\",\n                \"VersionId\": 1,\n                \"JobRuntimeId\": 6029,\n                \"Status\": 1,\n                \"CreateTime\": 1638198485,\n                \"UpdateTime\": 1638198486,\n                \"Path\": \"cosn://helloworld-guangzhou-12345/1234567890/100000000006/cql-asdf5678/2/flink-savepoints/savepoint-000000-9085e69e28c4\",\n                \"Size\": 816,\n                \"RecordType\": 3,\n                \"Timeout\": 1200,\n                \"Description\": \"作业停止时自动生成的快照\"\n            }\n        ],\n        \"TotalNumber\": 1\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeJobs": [

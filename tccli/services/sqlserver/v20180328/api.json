@@ -5589,7 +5589,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5604,7 +5605,8 @@
           "name": "ReadOnlyGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组名称",
@@ -5613,7 +5615,8 @@
           "name": "ReadOnlyGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组的地域ID",
@@ -5622,7 +5625,8 @@
           "name": "RegionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组的可用区ID",
@@ -5631,7 +5635,8 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否启动超时剔除功能 ,0-不开启剔除功能，1-开启剔除功能",
@@ -5640,7 +5645,8 @@
           "name": "IsOfflineDelay",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "启动超时剔除功能后，使用的超时阈值，单位是秒",
@@ -5649,7 +5655,8 @@
           "name": "ReadOnlyMaxDelayTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数",
@@ -5658,7 +5665,8 @@
           "name": "MinReadOnlyInGroup",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组vip",
@@ -5667,7 +5675,8 @@
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组vport",
@@ -5676,7 +5685,8 @@
           "name": "Vport",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组在私有网络ID",
@@ -5685,7 +5695,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "只读组在私有网络子网ID",
@@ -5694,7 +5705,8 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主实例ID，形如mssql-sgeshe3th",
@@ -5703,7 +5715,18 @@
           "name": "MasterInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "主实例的地域ID",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "MasterRegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8908,200 +8931,266 @@
         {
           "default": "",
           "document": "只读副本ID，格式如：mssqlro-3l3fgqn7",
+          "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本名称",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本唯一UID",
+          "example": "无",
           "member": "string",
           "name": "Uid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本所在项目ID",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本状态。1：申请中 2：运行中 3：被延迟剔除 4：已隔离 5：回收中 6：已回收 7：任务执行中 8：已下线 9：实例扩容中 10：实例迁移中  12：重启中",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本创建时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本更新时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本内存大小，单位G",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本存储空间大小，单位G",
+          "example": "100",
           "member": "int64",
           "name": "Storage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本cpu核心数",
+          "example": "1",
           "member": "int64",
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本版本代号",
+          "example": "2008R2",
           "member": "string",
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "宿主机代号",
+          "example": "TS85",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本模式，2-单机",
+          "example": "2",
           "member": "int64",
           "name": "Model",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本计费模式，1-包年包月，0-按量计费",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本权重",
+          "example": "1",
           "member": "int64",
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本延迟时间，单位秒",
+          "example": "1",
           "member": "string",
           "name": "DelayTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本与主实例的同步状态。\nInit:初始化\nDeployReadOnlyInPorgress:部署副本进行中\nDeployReadOnlySuccess:部署副本成功\nDeployReadOnlyFail:部署副本失败\nDeployMasterDBInPorgress:主节点上加入副本数据库进行中\nDeployMasterDBSuccess:主节点上加入副本数据库成功\nDeployMasterDBFail:主节点上加入副本数据库进失败\nDeployReadOnlyDBInPorgress:副本还原加入数据库开始\nDeployReadOnlyDBSuccess:副本还原加入数据库成功\nDeployReadOnlyDBFail:副本还原加入数据库失败\nSyncDelay:同步延迟\nSyncFail:同步故障\nSyncExcluded:已剔除只读组\nSyncNormal:正常",
+          "example": "Init",
           "member": "string",
           "name": "SynStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本与主实例没有同步的库",
+          "example": "db1",
           "member": "string",
           "name": "DatabaseDifference",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本与主实例没有同步的账户",
+          "example": "ac1",
           "member": "string",
           "name": "AccountDifference",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本计费开始时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本计费结束时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "只读副本隔离时间",
+          "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "IsolateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "只读副本所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "只读副本所在可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
