@@ -54,6 +54,12 @@
       "name": "获取yarn资源调度页面的数据",
       "output": "DescribeResourceScheduleResponse"
     },
+    "DescribeUsersForUserManager": {
+      "document": "批量导出用户",
+      "input": "DescribeUsersForUserManagerRequest",
+      "name": "用户管理-查询用户列表",
+      "output": "DescribeUsersForUserManagerResponse"
+    },
     "InquirePriceRenewEmr": {
       "document": "集群续费询价。",
       "input": "InquirePriceRenewEmrRequest",
@@ -1894,6 +1900,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersForUserManagerRequest": {
+      "document": "DescribeUsersForUserManager请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedKeytabInfo",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersForUserManagerResponse": {
+      "document": "DescribeUsersForUserManager返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

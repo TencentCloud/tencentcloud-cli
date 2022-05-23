@@ -86,3 +86,23 @@ Output:
 }
 ```
 
+**Example 4: 示例5**
+
+
+
+Input: 
+
+```
+tccli cat DescribeProbeTasks --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d7628289-fd3c-4acf-a140-a33dd02b3ff6",
+        "TaskSet": null,
+        "Total": 0
+    }
+}
+```
+

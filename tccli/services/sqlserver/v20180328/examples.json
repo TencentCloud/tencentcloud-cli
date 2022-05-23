@@ -396,7 +396,7 @@
       {
         "document": "",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeReadOnlyGroupByReadOnlyInstance\n&InstanceId=mssqlro-91masbl1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IsOfflineDelay\": 1,\n        \"MasterInstanceId\": \"mssql-6f4ddx2f\",\n        \"MinReadOnlyInGroup\": 1,\n        \"ReadOnlyGroupId\": \"mssqlrg-552tyamb\",\n        \"ReadOnlyGroupName\": \"再次尝试一次创建2个副本\",\n        \"ReadOnlyMaxDelayTime\": 11,\n        \"RegionId\": \"ap-guangzhou\",\n        \"RequestId\": \"798db80b-869b-4a39-a39a-72c52d5bdca4\",\n        \"SubnetId\": \"subnet-gdy95gfs\",\n        \"Vip\": \"10.100.0.44\",\n        \"VpcId\": \"vpc-3xq2t5al\",\n        \"Vport\": 1433,\n        \"ZoneId\": \"ap-guangzhou-2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsOfflineDelay\": 1,\n        \"MasterInstanceId\": \"mssql-6f4ddx2f\",\n        \"MasterRegionId\": \"ap-guangzhou\",\n        \"MinReadOnlyInGroup\": 1,\n        \"ReadOnlyGroupId\": \"mssqlrg-552tyamb\",\n        \"ReadOnlyGroupName\": \"再次尝试一次创建2个副本\",\n        \"ReadOnlyMaxDelayTime\": 11,\n        \"RegionId\": \"ap-guangzhou\",\n        \"RequestId\": \"798db80b-869b-4a39-a39a-72c52d5bdca4\",\n        \"SubnetId\": \"subnet-gdy95gfs\",\n        \"Vip\": \"10.100.0.44\",\n        \"VpcId\": \"vpc-3xq2t5al\",\n        \"Vport\": 1433,\n        \"ZoneId\": \"ap-guangzhou-2\"\n    }\n}",
         "title": "通过只读实例查询只读组"
       }
     ],

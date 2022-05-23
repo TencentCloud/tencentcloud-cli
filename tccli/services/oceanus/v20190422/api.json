@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CheckSavepoint": {
+      "document": "检查快照是否可用",
+      "input": "CheckSavepointRequest",
+      "name": "检查快照是否可用",
+      "output": "CheckSavepointResponse"
+    },
     "CreateJob": {
       "document": "新建作业接口，一个 AppId 最多允许创建1000个作业",
       "input": "CreateJobRequest",
@@ -47,6 +53,12 @@
       "input": "DescribeJobConfigsRequest",
       "name": "查询作业配置",
       "output": "DescribeJobConfigsResponse"
+    },
+    "DescribeJobSavepoint": {
+      "document": "查找Savepoint列表",
+      "input": "DescribeJobSavepointRequest",
+      "name": "查找Savepoint列表",
+      "output": "DescribeJobSavepointResponse"
     },
     "DescribeJobs": {
       "document": "查询作业",
@@ -98,6 +110,87 @@
     "serviceShortName": "oceanus"
   },
   "objects": {
+    "CheckSavepointRequest": {
+      "document": "CheckSavepoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业 id",
+          "example": "cql-52xkpymp",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照资源 id",
+          "example": "svp-52xkpymp",
+          "member": "string",
+          "name": "SerialId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint",
+          "example": "1",
+          "member": "int64",
+          "name": "RecordType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "快照路径，目前只支持 cos 路径",
+          "example": "cosn://xxx/xxx",
+          "member": "string",
+          "name": "SavepointPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 id",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckSavepointResponse": {
+      "document": "CheckSavepoint返回参数结构体",
+      "members": [
+        {
+          "document": "资源 id",
+          "example": "svp-6w8eab6f",
+          "member": "string",
+          "name": "SerialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "1=可用，2=不可用",
+          "example": "1",
+          "member": "int64",
+          "name": "SavepointStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateJobConfigRequest": {
       "document": "CreateJobConfig请求参数结构体",
       "members": [
@@ -781,6 +874,96 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobSavepointRequest": {
+      "document": "DescribeJobSavepoint请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业 SerialId",
+          "example": "cql-asdf5678",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数，单页总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数，偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobSavepointResponse": {
+      "document": "DescribeJobSavepoint返回参数结构体",
+      "members": [
+        {
+          "document": "快照列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "快照列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Savepoint",
+          "name": "Savepoint",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进行中的快照列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Savepoint",
+          "name": "RunningSavepoint",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "进行中的快照列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RunningTotalNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2318,6 +2501,132 @@
         }
       ],
       "type": "object"
+    },
+    "Savepoint": {
+      "document": "描述Savepoint信息",
+      "members": [
+        {
+          "default": "",
+          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态 1: Active; 2: Expired; 3: InProgress; 4: Failed; 5: Timeout\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1652962710",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1652962710",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://kkingtest-123/123/123/cql-i7985eg9/27/flink-checkpoints/0",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89446",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RecordType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行作业实例的顺序 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobRuntimeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "固定超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "快照 serialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-6w8eab6f",
+          "member": "string",
+          "name": "SerialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "StopJobDescription": {
       "document": "停止作业的描述信息",

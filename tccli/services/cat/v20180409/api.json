@@ -1246,6 +1246,15 @@
           "name": "PluginSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户度ID",
+          "example": "3198058",
+          "member": "string",
+          "name": "ClientNum",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1253,6 +1262,15 @@
     "CreateProbeTasksResponse": {
       "document": "CreateProbeTasks返回参数结构体",
       "members": [
+        {
+          "document": "任务ID列表",
+          "example": "[\"task-fsz5tuvy\"]",
+          "member": "string",
+          "name": "TaskIDs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3833,6 +3851,26 @@
           "example": "1",
           "member": "int64",
           "name": "Location",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "base",
+          "member": "string",
+          "name": "CodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节点状态：1-运行,2-下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeDefineStatus",
           "required": true,
           "type": "int",
           "value_allowed_null": true

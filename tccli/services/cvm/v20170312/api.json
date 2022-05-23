@@ -3715,11 +3715,12 @@
       "usage": "out"
     },
     "HostResource": {
-      "document": "cdh实例的资源信息",
+      "document": "专用宿主机实例的资源信息",
       "members": [
         {
           "default": "",
-          "document": "cdh实例总cpu核数",
+          "document": "专用宿主机实例总cpu核数",
+          "example": "32",
           "member": "uint64",
           "name": "CpuTotal",
           "required": false,
@@ -3728,7 +3729,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例可用cpu核数",
+          "document": "专用宿主机实例可用cpu核数",
+          "example": "32",
           "member": "uint64",
           "name": "CpuAvailable",
           "required": false,
@@ -3737,7 +3739,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例总内存大小（单位为:GiB）",
+          "document": "专用宿主机实例总内存大小（单位为:GiB）",
+          "example": "96",
           "member": "float",
           "name": "MemTotal",
           "required": false,
@@ -3746,7 +3749,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例可用内存大小（单位为:GiB）",
+          "document": "专用宿主机实例可用内存大小（单位为:GiB）",
+          "example": "96",
           "member": "float",
           "name": "MemAvailable",
           "required": false,
@@ -3755,7 +3759,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例总磁盘大小（单位为:GiB）",
+          "document": "专用宿主机实例总磁盘大小（单位为:GiB）",
+          "example": "1000",
           "member": "uint64",
           "name": "DiskTotal",
           "required": false,
@@ -3764,7 +3769,8 @@
         },
         {
           "default": "",
-          "document": "cdh实例可用磁盘大小（单位为:GiB）",
+          "document": "专用宿主机实例可用磁盘大小（单位为:GiB）",
+          "example": "1000",
           "member": "uint64",
           "name": "DiskAvailable",
           "required": false,
@@ -3773,11 +3779,32 @@
         },
         {
           "default": "",
-          "document": "cdh实例磁盘类型",
+          "document": "专用宿主机实例磁盘类型",
+          "example": "\"LOCAL_SSD\"",
           "member": "string",
           "name": "DiskType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用宿主机实例总GPU卡数",
+          "example": "0",
+          "member": "uint64",
+          "name": "GpuTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专用宿主机实例可用GPU卡数",
+          "example": "0",
+          "member": "uint64",
+          "name": "GpuAvailable",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4867,7 +4894,7 @@
         },
         {
           "default": "",
-          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -5391,6 +5418,7 @@
         {
           "default": "",
           "document": "可用区。",
+          "example": "无",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -5400,6 +5428,7 @@
         {
           "default": "",
           "document": "实例机型。",
+          "example": "无",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -5408,7 +5437,8 @@
         },
         {
           "default": "",
-          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
+          "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -5418,6 +5448,7 @@
         {
           "default": "",
           "document": "网卡类型，例如：25代表25G网卡",
+          "example": "无",
           "member": "int64",
           "name": "NetworkCard",
           "required": true,
@@ -5427,6 +5458,7 @@
         {
           "default": "",
           "document": "扩展属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Externals",
           "name": "Externals",
           "required": true,
@@ -5436,6 +5468,7 @@
         {
           "default": "",
           "document": "实例的CPU核数，单位：核。",
+          "example": "无",
           "member": "int64",
           "name": "Cpu",
           "required": true,
@@ -5445,6 +5478,7 @@
         {
           "default": "",
           "document": "实例内存容量，单位：`GB`。",
+          "example": "无",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -5454,6 +5488,7 @@
         {
           "default": "",
           "document": "实例机型系列。",
+          "example": "无",
           "member": "string",
           "name": "InstanceFamily",
           "required": true,
@@ -5463,6 +5498,7 @@
         {
           "default": "",
           "document": "机型名称。",
+          "example": "无",
           "member": "string",
           "name": "TypeName",
           "required": true,
@@ -5472,6 +5508,7 @@
         {
           "default": "",
           "document": "本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。",
+          "example": "无",
           "member": "LocalDiskType",
           "name": "LocalDiskTypeList",
           "required": true,
@@ -5481,6 +5518,7 @@
         {
           "default": "",
           "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -5490,6 +5528,7 @@
         {
           "default": "",
           "document": "实例的售卖价格。",
+          "example": "无",
           "member": "ItemPrice",
           "name": "Price",
           "required": true,
@@ -5499,6 +5538,7 @@
         {
           "default": "",
           "document": "售罄原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SoldOutReason",
           "required": true,
@@ -5508,6 +5548,7 @@
         {
           "default": "",
           "document": "内网带宽，单位Gbps。",
+          "example": "无",
           "member": "float",
           "name": "InstanceBandwidth",
           "required": true,
@@ -5517,6 +5558,7 @@
         {
           "default": "",
           "document": "网络收发包能力，单位万PPS。",
+          "example": "无",
           "member": "int64",
           "name": "InstancePps",
           "required": true,
@@ -5526,6 +5568,7 @@
         {
           "default": "",
           "document": "本地存储块数量。",
+          "example": "无",
           "member": "int64",
           "name": "StorageBlockAmount",
           "required": true,
@@ -5535,6 +5578,7 @@
         {
           "default": "",
           "document": "处理器型号。",
+          "example": "无",
           "member": "string",
           "name": "CpuType",
           "required": true,
@@ -5544,6 +5588,7 @@
         {
           "default": "",
           "document": "实例的GPU数量。",
+          "example": "无",
           "member": "int64",
           "name": "Gpu",
           "required": true,
@@ -5553,6 +5598,7 @@
         {
           "default": "",
           "document": "实例的FPGA数量。",
+          "example": "无",
           "member": "int64",
           "name": "Fpga",
           "required": true,
@@ -5562,6 +5608,7 @@
         {
           "default": "",
           "document": "实例备注信息。",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -6079,7 +6126,7 @@
         },
         {
           "default": "",
-          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7050,7 +7097,7 @@
       "usage": "out"
     },
     "Placement": {
-      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅CDH产品可用），母机ip等",
+      "document": "描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机ip等",
       "members": [
         {
           "default": "",
