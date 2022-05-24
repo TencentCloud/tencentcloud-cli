@@ -1378,7 +1378,8 @@
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1387,7 +1388,8 @@
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1396,16 +1398,18 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "是否返回年龄、性别、情绪等属性。 \n合法值为（大小写不敏感）：None、Age、Beauty、Emotion、Eye、Eyebrow \nGender、Hair、Hat、Headpose、Mask、Mouth、Moustache、Nose、Shape、Skin、Smile。 \nNone为不需要返回。默认为 None。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 AttributesInfo 不具备参考意义。",
+          "document": "是否返回年龄、性别、情绪等属性。 \n合法值为（大小写不敏感）：None、Age、Beauty、Emotion、Eye、Eyebrow、 \nGender、Hair、Hat、Headpose、Mask、Mouth、Moustache、Nose、Shape、Skin、Smile。 \nNone为不需要返回。默认为 None。 \n需要将属性组成一个用逗号分隔的字符串，属性之间的顺序没有要求。 \n关于各属性的详细描述，参见下文出参。 \n最多返回面积最大的 5 张人脸属性信息，超过 5 张人脸（第 6 张及以后的人脸）的 AttributesInfo 不具备参考意义。",
           "example": "eye",
           "member": "string",
           "name": "FaceAttributesType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1414,7 +1418,8 @@
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1423,7 +1428,8 @@
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1438,7 +1444,8 @@
           "name": "ImageWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "请求的图片高度。",
@@ -1447,7 +1454,8 @@
           "name": "ImageHeight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸信息列表。",
@@ -1456,7 +1464,8 @@
           "name": "FaceDetailInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "人脸识别所用的算法模型版本。",
@@ -1465,7 +1474,8 @@
           "name": "FaceModelVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

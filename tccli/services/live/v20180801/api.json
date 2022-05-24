@@ -2149,7 +2149,8 @@
           "member": "string",
           "name": "SourceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2158,7 +2159,8 @@
           "member": "string",
           "name": "SourceUrls",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2167,7 +2169,8 @@
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2176,7 +2179,8 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2185,7 +2189,8 @@
           "member": "string",
           "name": "StreamName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2194,7 +2199,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2203,7 +2209,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2212,7 +2219,8 @@
           "member": "string",
           "name": "Operator",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2221,7 +2229,8 @@
           "member": "string",
           "name": "PushArgs",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2230,7 +2239,8 @@
           "member": "string",
           "name": "CallbackEvents",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2239,7 +2249,8 @@
           "member": "string",
           "name": "VodLoopTimes",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2248,7 +2259,8 @@
           "member": "string",
           "name": "VodRefreshType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2257,7 +2269,8 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2266,7 +2279,8 @@
           "member": "string",
           "name": "ExtraCmd",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2275,7 +2289,8 @@
           "member": "string",
           "name": "Comment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2284,7 +2299,8 @@
           "member": "string",
           "name": "BackupSourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2293,7 +2309,8 @@
           "member": "string",
           "name": "BackupSourceUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2308,7 +2325,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

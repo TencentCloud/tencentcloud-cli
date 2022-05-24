@@ -26,6 +26,8 @@ Output:
                 "Height": 540,
                 "SampleType": "Percent",
                 "SampleInterval": 10,
+                "ResolutionAdaptive": "xx",
+                "FillType": "black",
                 "Width": 960
             }
         ],

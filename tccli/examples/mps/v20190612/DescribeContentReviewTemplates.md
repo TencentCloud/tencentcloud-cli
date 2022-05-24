@@ -1,4 +1,4 @@
-**Example 1: 获取模板 ID 为 30 的内容智能识别模板**
+**Example 1: 获取模板 ID 为 30 的智能审核模板**
 
 
 
@@ -19,7 +19,7 @@ Output:
                 "Definition": 30,
                 "Name": "模板1",
                 "Type": "Preset",
-                "Comment": "内容智能识别模板",
+                "Comment": "智能审核模板",
                 "PornConfigure": {
                     "ImgReviewInfo": {
                         "Switch": "ON",
@@ -99,9 +99,9 @@ Output:
 }
 ```
 
-**Example 2: 获取指定个数的内容智能识别模板**
+**Example 2: 获取指定个数的智能审核模板**
 
-从序号 0 开始，获取 10 个内容智能识别模板，包括系统默认内容智能识别模板。
+从序号 0 开始，获取 10 个智能审核模板，包括系统默认智能审核模板。
 
 Input: 
 
@@ -121,7 +121,7 @@ Output:
                 "Definition": 30,
                 "Name": "模板1",
                 "Type": "Preset",
-                "Comment": "内容智能识别模板",
+                "Comment": "智能审核模板",
                 "PornConfigure": {
                     "ImgReviewInfo": {
                         "Switch": "ON",
