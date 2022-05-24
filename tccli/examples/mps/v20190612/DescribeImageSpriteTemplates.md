@@ -25,6 +25,10 @@ Output:
                 "SampleInterval": 10,
                 "RowCount": 10,
                 "ColumnCount": 5,
+                "ResolutionAdaptive": "xx",
+                "FillType": "black",
+                "Comment": "",
+                "Type": "Preset",
                 "Width": 960
             }
         ],

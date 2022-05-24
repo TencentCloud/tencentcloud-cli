@@ -24,7 +24,9 @@ Output:
                 "UpdateTime": "2018-10-01T10:00:00Z",
                 "Format": "jpg",
                 "Height": 540,
-                "Width": 960
+                "Width": 960,
+                "ResolutionAdaptive": "xx",
+                "FillType": "black"
             }
         ],
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"

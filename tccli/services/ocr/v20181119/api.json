@@ -3826,7 +3826,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "出生日期（目前该字段仅支持IKAD劳工证）",
+          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）",
           "example": "无",
           "member": "string",
           "name": "Birthday",

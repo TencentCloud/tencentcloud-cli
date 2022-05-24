@@ -1639,6 +1639,32 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "启动第三方服务器的地址",
+          "example": "无",
+          "member": "TracingZipkin",
+          "name": "Zipkin",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TracingZipkin": {
+      "document": "调用追踪的Zipkin设置",
+      "members": [
+        {
+          "default": "",
+          "document": "Zipkin调用地址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

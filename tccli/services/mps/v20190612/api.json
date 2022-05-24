@@ -103,9 +103,9 @@
       "output": "DeleteAnimatedGraphicsTemplateResponse"
     },
     "DeleteContentReviewTemplate": {
-      "document": "删除用户自定义内容智能识别模板。",
+      "document": "删除用户自定义内容审核模板。",
       "input": "DeleteContentReviewTemplateRequest",
-      "name": "删除内容智能识别模板",
+      "name": "删除内容审核模板",
       "output": "DeleteContentReviewTemplateResponse"
     },
     "DeleteImageSpriteTemplate": {
@@ -181,9 +181,9 @@
       "output": "DescribeAnimatedGraphicsTemplatesResponse"
     },
     "DescribeContentReviewTemplates": {
-      "document": "根据内容智能识别模板唯一标识，获取内容智能识别模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置内容智能识别模板。",
+      "document": "根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。",
       "input": "DescribeContentReviewTemplatesRequest",
-      "name": "获取内容智能识别模板列表",
+      "name": "获取智能审核模板列表",
       "output": "DescribeContentReviewTemplatesResponse"
     },
     "DescribeImageSpriteTemplates": {
@@ -271,7 +271,7 @@
       "output": "EnableWorkflowResponse"
     },
     "ExecuteFunction": {
-      "document": "本接口仅用于定制开发的特殊场景，除非云视频处理客服人员主动告知您需要使用本接口，其它情况请勿调用。",
+      "document": "本接口仅用于定制开发的特殊场景，除非云媒体处理客服人员主动告知您需要使用本接口，其它情况请勿调用。",
       "input": "ExecuteFunctionRequest",
       "name": "执行定制 API",
       "output": "ExecuteFunctionResponse"
@@ -307,9 +307,9 @@
       "output": "ModifyAnimatedGraphicsTemplateResponse"
     },
     "ModifyContentReviewTemplate": {
-      "document": "修改用户自定义内容智能识别模板。",
+      "document": "修改用户自定义内容审核模板。",
       "input": "ModifyContentReviewTemplateRequest",
-      "name": "修改内容智能识别模板",
+      "name": "修改内容审核模板",
       "output": "ModifyContentReviewTemplateResponse"
     },
     "ModifyImageSpriteTemplate": {
@@ -375,7 +375,7 @@
     "ProcessMedia": {
       "document": "对 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。",
       "input": "ProcessMediaRequest",
-      "name": "发起视频处理",
+      "name": "发起媒体处理",
       "output": "ProcessMediaResponse"
     },
     "RecognizeMediaForZhiXue": {
@@ -962,6 +962,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -970,7 +971,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -980,6 +982,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -989,6 +992,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -998,6 +1002,7 @@
         {
           "default": "",
           "document": "智能分类任务输入。",
+          "example": "NULL",
           "member": "AiAnalysisTaskClassificationInput",
           "name": "Input",
           "required": true,
@@ -1007,6 +1012,7 @@
         {
           "default": "",
           "document": "智能分类任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiAnalysisTaskClassificationOutput",
           "name": "Output",
           "required": true,
@@ -1061,6 +1067,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1069,7 +1076,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1079,6 +1087,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1088,6 +1097,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1097,6 +1107,7 @@
         {
           "default": "",
           "document": "智能封面任务输入。",
+          "example": "NULL",
           "member": "AiAnalysisTaskCoverInput",
           "name": "Input",
           "required": true,
@@ -1106,6 +1117,7 @@
         {
           "default": "",
           "document": "智能封面任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiAnalysisTaskCoverOutput",
           "name": "Output",
           "required": true,
@@ -1151,6 +1163,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1159,7 +1172,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1169,6 +1183,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1178,6 +1193,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1187,6 +1203,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务输入。",
+          "example": "NULL",
           "member": "AiAnalysisTaskFrameTagInput",
           "name": "Input",
           "required": true,
@@ -1196,6 +1213,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiAnalysisTaskFrameTagOutput",
           "name": "Output",
           "required": true,
@@ -1256,6 +1274,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1264,7 +1283,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1274,6 +1294,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1283,6 +1304,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1292,6 +1314,7 @@
         {
           "default": "",
           "document": "智能标签任务输入。",
+          "example": "NULL",
           "member": "AiAnalysisTaskTagInput",
           "name": "Input",
           "required": true,
@@ -1301,6 +1324,7 @@
         {
           "default": "",
           "document": "智能标签任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiAnalysisTaskTagOutput",
           "name": "Output",
           "required": true,
@@ -1527,6 +1551,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1535,7 +1560,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1545,6 +1571,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1554,6 +1581,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1563,6 +1591,7 @@
         {
           "default": "",
           "document": "语音全文识别任务输入信息。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResultInput",
           "name": "Input",
           "required": true,
@@ -1572,6 +1601,7 @@
         {
           "default": "",
           "document": "语音全文识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResultOutput",
           "name": "Output",
           "required": true,
@@ -1677,6 +1707,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1685,7 +1716,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1695,6 +1727,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1704,6 +1737,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1713,6 +1747,7 @@
         {
           "default": "",
           "document": "语音关键词识别任务输入信息。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResultInput",
           "name": "Input",
           "required": true,
@@ -1722,6 +1757,7 @@
         {
           "default": "",
           "document": "语音关键词识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResultOutput",
           "name": "Output",
           "required": true,
@@ -1824,6 +1860,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1832,7 +1869,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -1842,6 +1880,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -1851,6 +1890,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -1860,6 +1900,7 @@
         {
           "default": "",
           "document": "人脸识别任务输入信息。",
+          "example": "NULL",
           "member": "AiRecognitionTaskFaceResultInput",
           "name": "Input",
           "required": true,
@@ -1869,6 +1910,7 @@
         {
           "default": "",
           "document": "人脸识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskFaceResultOutput",
           "name": "Output",
           "required": true,
@@ -1899,6 +1941,7 @@
         {
           "default": "",
           "document": "人物唯一标识 ID。",
+          "example": "9527",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -1908,6 +1951,7 @@
         {
           "default": "",
           "document": "人物库类型，表示识别出的人物来自哪个人物库：\n<li>Default：默认人物库；</li>\n<li>UserDefine：用户自定义人物库。</li>",
+          "example": "Default",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1917,6 +1961,7 @@
         {
           "default": "",
           "document": "人物名称。",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1926,11 +1971,102 @@
         {
           "default": "",
           "document": "人物出现的片段结果集。",
+          "example": "NULL",
           "member": "AiRecognitionTaskFaceSegmentItem",
           "name": "SegmentSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "人物性别：\n<li>Male：男性；</li>\n<li>Female：女性。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Male",
+          "member": "string",
+          "name": "Gender",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物出生日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1953年6月",
+          "member": "string",
+          "name": "Birthday",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物职业或者职务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "歌手",
+          "member": "string",
+          "name": "Profession",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物毕业院校。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "清华大学",
+          "member": "string",
+          "name": "SchoolOfGraduation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物简介。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Abstract",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物出生地或者籍贯。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "湖北武汉",
+          "member": "string",
+          "name": "PlaceOfBirth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人物类型：\n<li>Politician：官员；</li>\n<li>Artist：艺人。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Politician",
+          "member": "string",
+          "name": "PersonType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "敏感度标注：\n<li>Normal：正常；</li>\n<li>Sensitive：敏感。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "截图链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2013,6 +2149,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2021,7 +2158,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2031,6 +2169,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2040,6 +2179,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2049,6 +2189,7 @@
         {
           "default": "",
           "document": "文本全文识别任务输入信息。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResultInput",
           "name": "Input",
           "required": true,
@@ -2058,6 +2199,7 @@
         {
           "default": "",
           "document": "文本全文识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResultOutput",
           "name": "Output",
           "required": true,
@@ -2169,6 +2311,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2177,7 +2320,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2187,6 +2331,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2196,6 +2341,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2205,6 +2351,7 @@
         {
           "default": "",
           "document": "文本关键词识别任务输入信息。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResultInput",
           "name": "Input",
           "required": true,
@@ -2214,6 +2361,7 @@
         {
           "default": "",
           "document": "文本关键词识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResultOutput",
           "name": "Output",
           "required": true,
@@ -2749,7 +2897,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -2815,7 +2963,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -2881,7 +3029,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -2938,6 +3086,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2946,7 +3095,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -2956,6 +3106,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -2965,6 +3116,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -2974,6 +3126,7 @@
         {
           "default": "",
           "document": "内容审核 Asr 文字鉴黄任务输入。",
+          "example": "NULL",
           "member": "AiReviewPornAsrTaskInput",
           "name": "Input",
           "required": true,
@@ -2983,6 +3136,7 @@
         {
           "default": "",
           "document": "内容审核 Asr 文字鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiReviewPornAsrTaskOutput",
           "name": "Output",
           "required": true,
@@ -2998,6 +3152,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3006,7 +3161,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3016,6 +3172,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3025,6 +3182,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3034,6 +3192,7 @@
         {
           "default": "",
           "document": "内容审核 Ocr 文字鉴黄任务输入。",
+          "example": "NULL",
           "member": "AiReviewPornOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -3043,6 +3202,7 @@
         {
           "default": "",
           "document": "内容审核 Ocr 文字鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiReviewPornOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -3058,6 +3218,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3066,7 +3227,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3076,6 +3238,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3085,6 +3248,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3094,6 +3258,7 @@
         {
           "default": "",
           "document": "内容审核鉴黄任务输入。",
+          "example": "NULL",
           "member": "AiReviewPornTaskInput",
           "name": "Input",
           "required": true,
@@ -3103,6 +3268,7 @@
         {
           "default": "",
           "document": "内容审核鉴黄任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiReviewPornTaskOutput",
           "name": "Output",
           "required": true,
@@ -3118,6 +3284,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3126,7 +3293,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3136,6 +3304,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3145,6 +3314,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3154,6 +3324,7 @@
         {
           "default": "",
           "document": "内容审核 Asr 文字鉴违禁任务输入。",
+          "example": "NULL",
           "member": "AiReviewProhibitedAsrTaskInput",
           "name": "Input",
           "required": true,
@@ -3163,6 +3334,7 @@
         {
           "default": "",
           "document": "内容审核 Asr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiReviewProhibitedAsrTaskOutput",
           "name": "Output",
           "required": true,
@@ -3178,6 +3350,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -3186,7 +3359,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -3196,6 +3370,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -3205,6 +3380,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -3214,6 +3390,7 @@
         {
           "default": "",
           "document": "内容审核 Ocr 文字鉴违禁任务输入。",
+          "example": "NULL",
           "member": "AiReviewProhibitedOcrTaskInput",
           "name": "Input",
           "required": true,
@@ -3223,6 +3400,7 @@
         {
           "default": "",
           "document": "内容审核 Ocr 文字鉴违禁任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiReviewProhibitedOcrTaskOutput",
           "name": "Output",
           "required": true,
@@ -3247,7 +3425,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -3313,7 +3491,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -4279,11 +4457,12 @@
       "usage": "both"
     },
     "CosInputInfo": {
-      "document": "视频处理 COS 对象信息。",
+      "document": "媒体处理 COS 对象信息。",
       "members": [
         {
           "default": "",
-          "document": "视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
+          "document": "媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
+          "example": "NULL",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -4292,7 +4471,8 @@
         },
         {
           "default": "",
-          "document": "视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
+          "document": "媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
+          "example": "NULL",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -4301,7 +4481,8 @@
         },
         {
           "default": "",
-          "document": "视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。",
+          "document": "媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。",
+          "example": "NULL",
           "member": "string",
           "name": "Object",
           "required": true,
@@ -4312,11 +4493,12 @@
       "usage": "both"
     },
     "CosOutputStorage": {
-      "document": "视频处理 COS 输出对象信息。",
+      "document": "媒体处理 COS 输出对象信息。",
       "members": [
         {
           "default": "",
-          "document": "视频处理生成的文件输出的目标 Bucket 名，如 TopRankVideo-125xxx88。如果不填，表示继承上层。",
+          "document": "媒体处理生成的文件输出的目标 Bucket 名，如 TopRankVideo-125xxx88。如果不填，表示继承上层。",
+          "example": "NULL",
           "member": "string",
           "name": "Bucket",
           "required": false,
@@ -4325,7 +4507,8 @@
         },
         {
           "default": "",
-          "document": "视频处理生成的文件输出的目标 Bucket 的园区，如 ap-chongqing。如果不填，表示继承上层。",
+          "document": "媒体处理生成的文件输出的目标 Bucket 的园区，如 ap-chongqing。如果不填，表示继承上层。",
+          "example": "NULL",
           "member": "string",
           "name": "Region",
           "required": false,
@@ -4371,6 +4554,7 @@
         {
           "default": "",
           "document": "视频内容分析模板名称，长度限制：64 个字符。",
+          "example": "智能分析模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4379,6 +4563,7 @@
         {
           "default": "",
           "document": "视频内容分析模板描述信息，长度限制：256 个字符。",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -4387,6 +4572,7 @@
         {
           "default": "",
           "document": "智能分类任务控制参数。",
+          "example": "无",
           "member": "ClassificationConfigureInfo",
           "name": "ClassificationConfigure",
           "required": false,
@@ -4395,6 +4581,7 @@
         {
           "default": "",
           "document": "智能标签任务控制参数。",
+          "example": "无",
           "member": "TagConfigureInfo",
           "name": "TagConfigure",
           "required": false,
@@ -4403,6 +4590,7 @@
         {
           "default": "",
           "document": "智能封面任务控制参数。",
+          "example": "无",
           "member": "CoverConfigureInfo",
           "name": "CoverConfigure",
           "required": false,
@@ -4411,6 +4599,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务控制参数。",
+          "example": "无",
           "member": "FrameTagConfigureInfo",
           "name": "FrameTagConfigure",
           "required": false,
@@ -4424,8 +4613,10 @@
       "members": [
         {
           "document": "视频内容分析模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4534,6 +4725,7 @@
         {
           "default": "",
           "document": "自适应转码格式，取值范围：\n<li>HLS，</li>\n<li>MPEG-DASH。</li>",
+          "example": "HLS",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -4542,6 +4734,7 @@
         {
           "default": "",
           "document": "转自适应码流输出子流参数信息，最多输出10路子流。\n注意：各个子流的帧率必须保持一致；如果不一致，采用第一个子流的帧率作为输出帧率。",
+          "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
           "required": true,
@@ -4550,6 +4743,7 @@
         {
           "default": "",
           "document": "模板名称，长度限制：64 个字符。",
+          "example": "转自适应码流模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4558,6 +4752,7 @@
         {
           "default": "",
           "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
           "required": false,
@@ -4566,6 +4761,7 @@
         {
           "default": "",
           "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>\n默认为否。",
+          "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
           "required": false,
@@ -4574,6 +4770,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "测试",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -4587,8 +4784,10 @@
       "members": [
         {
           "document": "自适应转码模板唯一标识。",
+          "example": "30018",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4607,6 +4806,7 @@
         {
           "default": "",
           "document": "帧率，取值范围：[1, 30]，单位：Hz。",
+          "example": "30",
           "member": "uint64",
           "name": "Fps",
           "required": true,
@@ -4615,6 +4815,7 @@
         {
           "default": "",
           "document": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -4623,6 +4824,7 @@
         {
           "default": "",
           "document": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -4631,6 +4833,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "无",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -4639,6 +4842,7 @@
         {
           "default": "",
           "document": "动图格式，取值为 gif 和 webp。默认为 gif。",
+          "example": "gif",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -4647,6 +4851,7 @@
         {
           "default": "",
           "document": "图片质量，取值范围：[1, 100]，默认值为 75。",
+          "example": "无",
           "member": "float",
           "name": "Quality",
           "required": false,
@@ -4655,6 +4860,7 @@
         {
           "default": "",
           "document": "转动图模板名称，长度限制：64 个字符。",
+          "example": "动图图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4663,6 +4869,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -4676,8 +4883,10 @@
       "members": [
         {
           "document": "转动图模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4786,6 +4995,7 @@
         {
           "default": "",
           "document": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -4794,6 +5004,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -4802,6 +5013,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的行数。",
+          "example": "5",
           "member": "uint64",
           "name": "RowCount",
           "required": true,
@@ -4810,6 +5022,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的列数。",
+          "example": "10",
           "member": "uint64",
           "name": "ColumnCount",
           "required": true,
@@ -4818,6 +5031,7 @@
         {
           "default": "",
           "document": "雪碧图模板名称，长度限制：64 个字符。",
+          "example": "雪碧图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4826,6 +5040,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "54",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -4834,6 +5049,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "96",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -4842,6 +5058,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -4850,6 +5067,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
+          "example": "black ",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -4858,6 +5076,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "测试",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -4871,8 +5090,10 @@
       "members": [
         {
           "document": "雪碧图模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4963,6 +5184,7 @@
         {
           "default": "",
           "document": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": true,
@@ -4971,6 +5193,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": true,
@@ -4979,6 +5202,7 @@
         {
           "default": "",
           "document": "采样截图模板名称，长度限制：64 个字符。",
+          "example": "采样截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4987,6 +5211,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -4995,6 +5220,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -5003,6 +5229,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -5011,6 +5238,7 @@
         {
           "default": "",
           "document": "图片格式，取值为 jpg 和 png。默认为 jpg。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -5019,6 +5247,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "测试",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -5027,6 +5256,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black ",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -5040,8 +5270,10 @@
       "members": [
         {
           "document": "采样截图模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5060,6 +5292,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板名称，长度限制：64 个字符。",
+          "example": "指定时间点截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5068,6 +5301,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -5076,6 +5310,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -5084,6 +5319,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "无",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -5092,6 +5328,7 @@
         {
           "default": "",
           "document": "图片格式，取值可以为 jpg 和 png。默认为 jpg。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -5100,6 +5337,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -5108,6 +5346,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "无",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -5121,8 +5360,10 @@
       "members": [
         {
           "document": "时间点截图模板唯一标识。",
+          "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5141,6 +5382,7 @@
         {
           "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": true,
@@ -5149,6 +5391,7 @@
         {
           "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
+          "example": "转码模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5157,6 +5400,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -5165,6 +5409,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -5173,6 +5418,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>\n默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -5181,6 +5427,7 @@
         {
           "default": "",
           "document": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。",
+          "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
           "required": false,
@@ -5189,6 +5436,7 @@
         {
           "default": "",
           "document": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。",
+          "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
           "required": false,
@@ -5197,6 +5445,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。",
+          "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
           "required": false,
@@ -5210,8 +5459,10 @@
       "members": [
         {
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5230,6 +5481,7 @@
         {
           "default": "",
           "document": "水印类型，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印；</li>\n<li>svg：SVG 水印。</li>",
+          "example": "image",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5238,6 +5490,7 @@
         {
           "default": "",
           "document": "水印模板名称，长度限制：64 个字符。",
+          "example": "模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5246,6 +5499,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -5254,6 +5508,7 @@
         {
           "default": "",
           "document": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>\n默认值：TopLeft。",
+          "example": "无",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -5262,6 +5517,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。",
+          "example": "无",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -5270,6 +5526,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。",
+          "example": "无",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -5278,6 +5535,7 @@
         {
           "default": "",
           "document": "图片水印模板，仅当 Type 为 image，该字段必填且有效。",
+          "example": "无",
           "member": "ImageWatermarkInput",
           "name": "ImageTemplate",
           "required": false,
@@ -5286,6 +5544,7 @@
         {
           "default": "",
           "document": "文字水印模板，仅当 Type 为 text，该字段必填且有效。",
+          "example": "无",
           "member": "TextWatermarkTemplateInput",
           "name": "TextTemplate",
           "required": false,
@@ -5294,6 +5553,7 @@
         {
           "default": "",
           "document": "SVG 水印模板，仅当 Type 为 svg，该字段必填且有效。",
+          "example": "无",
           "member": "SvgWatermarkInput",
           "name": "SvgTemplate",
           "required": false,
@@ -5307,15 +5567,19 @@
       "members": [
         {
           "document": "水印模板唯一标识。",
+          "example": "1001",
           "member": "int64",
           "name": "Definition",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "水印图片地址，仅当 Type 为 image，该字段有效。",
+          "example": "http://1256768367.vts2.myqcloud.com/8b0dd2b5vtscq1256768367/4d27b39f5285890783754292994/aa.jpeg",
           "member": "string",
           "name": "ImageUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5385,7 +5649,7 @@
         },
         {
           "default": "",
-          "document": "视频处理的文件输出存储位置。不填则继承 Trigger 中的存储位置。",
+          "document": "媒体处理的文件输出存储位置。不填则继承 Trigger 中的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -5394,7 +5658,7 @@
         },
         {
           "default": "",
-          "document": "视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。",
+          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。",
           "example": "\"\"",
           "member": "string",
           "name": "OutputDir",
@@ -5403,7 +5667,7 @@
         },
         {
           "default": "",
-          "document": "视频处理类型任务参数。",
+          "document": "媒体处理类型任务参数。",
           "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
@@ -5485,6 +5749,7 @@
         {
           "default": "",
           "document": "视频内容分析模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -5511,6 +5776,7 @@
         {
           "default": "",
           "document": "视频内容识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -5537,6 +5803,7 @@
         {
           "default": "",
           "document": "自适应转码模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -5563,6 +5830,7 @@
         {
           "default": "",
           "document": "转动图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -5588,7 +5856,8 @@
       "members": [
         {
           "default": "",
-          "document": "内容智能识别模板唯一标识。",
+          "document": "内容审核模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -5615,6 +5884,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -5667,6 +5937,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -5693,6 +5964,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -5719,6 +5991,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -5745,6 +6018,7 @@
         {
           "default": "",
           "document": "水印模板唯一标识。",
+          "example": "1001",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -5967,6 +6241,7 @@
         {
           "default": "",
           "document": "转自适应码流模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -5975,6 +6250,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5983,6 +6259,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5991,6 +6268,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6004,15 +6282,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转自适应码流模板详情列表。",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6031,6 +6313,7 @@
         {
           "default": "",
           "document": "转动图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -6039,6 +6322,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6047,6 +6331,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6055,6 +6340,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6068,15 +6354,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转动图模板详情列表。",
+          "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6094,7 +6384,7 @@
       "members": [
         {
           "default": "",
-          "document": "内容智能识别模板唯一标识过滤条件，数组长度限制：50。",
+          "document": "智能审核模板唯一标识过滤条件，数组长度限制：50。",
           "example": "无",
           "member": "int64",
           "name": "Definitions",
@@ -6167,6 +6457,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -6175,6 +6466,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6183,6 +6475,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6191,6 +6484,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6204,15 +6498,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "雪碧图模板详情列表。",
+          "example": "无",
           "member": "ImageSpriteTemplate",
           "name": "ImageSpriteTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6344,6 +6642,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -6352,6 +6651,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6360,6 +6660,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6368,6 +6669,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6381,15 +6683,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "采样截图模板详情列表。",
+          "example": "无",
           "member": "SampleSnapshotTemplate",
           "name": "SampleSnapshotTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6408,6 +6714,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -6416,6 +6723,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6424,6 +6732,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6432,6 +6741,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6445,15 +6755,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "指定时间点截图模板详情列表。",
+          "example": "无",
           "member": "SnapshotByTimeOffsetTemplate",
           "name": "SnapshotByTimeOffsetTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6645,6 +6959,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -6653,6 +6968,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6661,6 +6977,7 @@
         {
           "default": "",
           "document": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>",
+          "example": "“”",
           "member": "string",
           "name": "ContainerType",
           "required": false,
@@ -6669,6 +6986,7 @@
         {
           "default": "",
           "document": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>",
+          "example": "“”",
           "member": "string",
           "name": "TEHDType",
           "required": false,
@@ -6677,6 +6995,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6685,6 +7004,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6698,15 +7018,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转码模板详情列表。",
+          "example": "无",
           "member": "TranscodeTemplate",
           "name": "TranscodeTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6725,6 +7049,7 @@
         {
           "default": "",
           "document": "水印模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"1001\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -6733,6 +7058,7 @@
         {
           "default": "",
           "document": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -6741,6 +7067,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6749,6 +7076,7 @@
         {
           "default": "",
           "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6762,15 +7090,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "水印模板详情列表。",
+          "example": "无",
           "member": "WatermarkTemplate",
           "name": "WatermarkTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6861,6 +7193,7 @@
         {
           "default": "",
           "document": "工作流 ID 过滤条件，数组长度限制：100。",
+          "example": "[\"78459\\n\"]",
           "member": "int64",
           "name": "WorkflowIds",
           "required": false,
@@ -6869,6 +7202,7 @@
         {
           "default": "",
           "document": "工作流状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区分工作流状态。",
+          "example": "“”",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -6877,6 +7211,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6885,6 +7220,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6898,15 +7234,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "工作流信息数组。",
+          "example": "无",
           "member": "WorkflowInfo",
           "name": "WorkflowInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7008,7 +7348,7 @@
         },
         {
           "default": "",
-          "document": "视频处理输出文件的目标存储。",
+          "document": "媒体处理输出文件的目标存储。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -7017,7 +7357,7 @@
         },
         {
           "default": "",
-          "document": "视频处理输出文件的目标路径。",
+          "document": "媒体处理输出文件的目标路径。",
           "example": "/clip_result/clip_WildAnimal.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -7224,6 +7564,7 @@
         {
           "default": "",
           "document": "调用后端接口名称。",
+          "example": "ExampleFunc",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -7232,6 +7573,7 @@
         {
           "default": "",
           "document": "接口参数，具体参数格式调用时与后端协调。",
+          "example": "XXX",
           "member": "string",
           "name": "FunctionArg",
           "required": true,
@@ -7245,8 +7587,10 @@
       "members": [
         {
           "document": "处理结果打包后的字符串，具体与后台一同协调。",
+          "example": "XXX",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8473,7 +8817,8 @@
       "members": [
         {
           "default": "",
-          "document": "视频处理任务 ID。",
+          "document": "媒体处理任务 ID。",
+          "example": "NULL",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -8483,6 +8828,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8492,6 +8838,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -8501,6 +8848,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -8510,6 +8858,7 @@
         {
           "default": "",
           "document": "直播流 URL。",
+          "example": "NULL",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -9279,11 +9628,12 @@
       "usage": "out"
     },
     "MediaInputInfo": {
-      "document": "视频处理的输入对象信息。",
+      "document": "媒体处理的输入对象信息。",
       "members": [
         {
           "default": "",
           "document": "输入来源对象的类型，支持 COS 和 URL 两种。",
+          "example": "NULL",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -9292,7 +9642,8 @@
         },
         {
           "default": "",
-          "document": "当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。",
+          "document": "当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。",
+          "example": "NULL",
           "member": "CosInputInfo",
           "name": "CosInputInfo",
           "required": false,
@@ -9301,7 +9652,8 @@
         },
         {
           "default": "",
-          "document": "当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "UrlInputInfo",
           "name": "UrlInputInfo",
           "required": false,
@@ -9422,6 +9774,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9430,7 +9783,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -9440,6 +9794,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -9449,6 +9804,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -9458,6 +9814,7 @@
         {
           "default": "",
           "document": "对视频转自适应码流任务的输入。",
+          "example": "NULL",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "Input",
           "required": true,
@@ -9467,6 +9824,7 @@
         {
           "default": "",
           "document": "对视频转自适应码流任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AdaptiveDynamicStreamingInfoItem",
           "name": "Output",
           "required": true,
@@ -9482,6 +9840,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9490,7 +9849,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -9500,6 +9860,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -9509,6 +9870,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -9518,6 +9880,7 @@
         {
           "default": "",
           "document": "转动图任务的输入。",
+          "example": "NULL",
           "member": "AnimatedGraphicTaskInput",
           "name": "Input",
           "required": true,
@@ -9527,6 +9890,7 @@
         {
           "default": "",
           "document": "转动图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaAnimatedGraphicsItem",
           "name": "Output",
           "required": true,
@@ -9542,6 +9906,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9550,7 +9915,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -9560,6 +9926,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -9569,6 +9936,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -9578,6 +9946,7 @@
         {
           "default": "",
           "document": "对视频截雪碧图任务的输入。",
+          "example": "NULL",
           "member": "ImageSpriteTaskInput",
           "name": "Input",
           "required": true,
@@ -9587,6 +9956,7 @@
         {
           "default": "",
           "document": "对视频截雪碧图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaImageSpriteItem",
           "name": "Output",
           "required": true,
@@ -9597,11 +9967,12 @@
       "usage": "out"
     },
     "MediaProcessTaskInput": {
-      "document": "视频处理任务类型",
+      "document": "媒体处理任务类型",
       "members": [
         {
           "default": "",
           "document": "视频转码任务列表。",
+          "example": "NULL",
           "member": "TranscodeTaskInput",
           "name": "TranscodeTaskSet",
           "required": false,
@@ -9611,6 +9982,7 @@
         {
           "default": "",
           "document": "视频转动图任务列表。",
+          "example": "NULL",
           "member": "AnimatedGraphicTaskInput",
           "name": "AnimatedGraphicTaskSet",
           "required": false,
@@ -9620,6 +9992,7 @@
         {
           "default": "",
           "document": "对视频按时间点截图任务列表。",
+          "example": "NULL",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "SnapshotByTimeOffsetTaskSet",
           "required": false,
@@ -9629,6 +10002,7 @@
         {
           "default": "",
           "document": "对视频采样截图任务列表。",
+          "example": "NULL",
           "member": "SampleSnapshotTaskInput",
           "name": "SampleSnapshotTaskSet",
           "required": false,
@@ -9638,6 +10012,7 @@
         {
           "default": "",
           "document": "对视频截雪碧图任务列表。",
+          "example": "NULL",
           "member": "ImageSpriteTaskInput",
           "name": "ImageSpriteTaskSet",
           "required": false,
@@ -9647,6 +10022,7 @@
         {
           "default": "",
           "document": "转自适应码流任务列表。",
+          "example": "NULL",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "AdaptiveDynamicStreamingTaskSet",
           "required": false,
@@ -9731,6 +10107,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9739,7 +10116,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -9749,6 +10127,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -9758,6 +10137,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -9767,6 +10147,7 @@
         {
           "default": "",
           "document": "对视频做采样截图任务输入。",
+          "example": "NULL",
           "member": "SampleSnapshotTaskInput",
           "name": "Input",
           "required": true,
@@ -9776,6 +10157,7 @@
         {
           "default": "",
           "document": "对视频做采样截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaSampleSnapshotItem",
           "name": "Output",
           "required": true,
@@ -9791,6 +10173,7 @@
         {
           "default": "",
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -9799,7 +10182,8 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
           "required": true,
@@ -9809,6 +10193,7 @@
         {
           "default": "",
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -9818,6 +10203,7 @@
         {
           "default": "",
           "document": "错误信息。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -9827,6 +10213,7 @@
         {
           "default": "",
           "document": "对视频按指定时间点截图任务输入。",
+          "example": "NULL",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "Input",
           "required": true,
@@ -9836,6 +10223,7 @@
         {
           "default": "",
           "document": "对视频按指定时间点截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaSnapshotByTimeOffsetItem",
           "name": "Output",
           "required": true,
@@ -9860,7 +10248,7 @@
         },
         {
           "default": "",
-          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
@@ -10266,6 +10654,7 @@
         {
           "default": "",
           "document": "视频内容分析模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -10274,6 +10663,7 @@
         {
           "default": "",
           "document": "视频内容分析模板名称，长度限制：64 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10282,6 +10672,7 @@
         {
           "default": "",
           "document": "视频内容分析模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10290,6 +10681,7 @@
         {
           "default": "",
           "document": "智能分类任务控制参数。",
+          "example": "无",
           "member": "ClassificationConfigureInfoForUpdate",
           "name": "ClassificationConfigure",
           "required": false,
@@ -10298,6 +10690,7 @@
         {
           "default": "",
           "document": "智能标签任务控制参数。",
+          "example": "无",
           "member": "TagConfigureInfoForUpdate",
           "name": "TagConfigure",
           "required": false,
@@ -10306,6 +10699,7 @@
         {
           "default": "",
           "document": "智能封面任务控制参数。",
+          "example": "无",
           "member": "CoverConfigureInfoForUpdate",
           "name": "CoverConfigure",
           "required": false,
@@ -10314,6 +10708,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务控制参数。",
+          "example": "无",
           "member": "FrameTagConfigureInfoForUpdate",
           "name": "FrameTagConfigure",
           "required": false,
@@ -10430,6 +10825,7 @@
         {
           "default": "",
           "document": "转自适应码流模板唯一标识。",
+          "example": "10038",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -10438,6 +10834,7 @@
         {
           "default": "",
           "document": "模板名称，长度限制：64 个字符。",
+          "example": "转自适应码流模板2",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10446,6 +10843,7 @@
         {
           "default": "",
           "document": "转自适应码流格式，取值范围：\n<li>HLS，</li>\n<li>MPEG-DASH。</li>",
+          "example": "HLS",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -10454,6 +10852,7 @@
         {
           "default": "",
           "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
           "required": false,
@@ -10462,6 +10861,7 @@
         {
           "default": "",
           "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
+          "example": "0",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
           "required": false,
@@ -10470,6 +10870,7 @@
         {
           "default": "",
           "document": "转自适应码流输入流参数信息，最多输入10路流。\n注意：各个流的帧率必须保持一致；如果不一致，采用第一个流的帧率作为输出帧率。",
+          "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
           "required": false,
@@ -10478,6 +10879,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10504,6 +10906,7 @@
         {
           "default": "",
           "document": "转动图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -10512,6 +10915,7 @@
         {
           "default": "",
           "document": "转动图模板名称，长度限制：64 个字符。",
+          "example": "转动图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10520,6 +10924,7 @@
         {
           "default": "",
           "document": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -10528,6 +10933,7 @@
         {
           "default": "",
           "document": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -10536,6 +10942,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -10544,6 +10951,7 @@
         {
           "default": "",
           "document": "动图格式，取值为 gif 和 webp。",
+          "example": "gif",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -10552,6 +10960,7 @@
         {
           "default": "",
           "document": "帧率，取值范围：[1, 30]，单位：Hz。",
+          "example": "30",
           "member": "uint64",
           "name": "Fps",
           "required": false,
@@ -10560,6 +10969,7 @@
         {
           "default": "",
           "document": "图片质量，取值范围：[1, 100]，默认值为 75。",
+          "example": "75",
           "member": "float",
           "name": "Quality",
           "required": false,
@@ -10568,6 +10978,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10593,7 +11004,7 @@
       "members": [
         {
           "default": "",
-          "document": "内容智能识别模板唯一标识。",
+          "document": "内容审核模板唯一标识。",
           "example": "30",
           "member": "int64",
           "name": "Definition",
@@ -10602,7 +11013,7 @@
         },
         {
           "default": "",
-          "document": "内容智能识别模板名称，长度限制：64 个字符。",
+          "document": "内容审核模板名称，长度限制：64 个字符。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -10611,7 +11022,7 @@
         },
         {
           "default": "",
-          "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "document": "内容审核模板描述信息，长度限制：256 个字符。",
           "example": "无",
           "member": "string",
           "name": "Comment",
@@ -10656,7 +11067,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义内容智能识别控制参数。",
+          "document": "用户自定义内容审核控制参数。",
           "example": "无",
           "member": "UserDefineConfigureInfoForUpdate",
           "name": "UserDefineConfigure",
@@ -10684,6 +11095,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -10692,6 +11104,7 @@
         {
           "default": "",
           "document": "雪碧图模板名称，长度限制：64 个字符。",
+          "example": "雪碧图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10700,6 +11113,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "54",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -10708,6 +11122,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "96",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -10716,6 +11131,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -10724,6 +11140,7 @@
         {
           "default": "",
           "document": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": false,
@@ -10732,6 +11149,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": false,
@@ -10740,6 +11158,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的行数。",
+          "example": "5",
           "member": "uint64",
           "name": "RowCount",
           "required": false,
@@ -10748,6 +11167,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的列数。",
+          "example": "10",
           "member": "uint64",
           "name": "ColumnCount",
           "required": false,
@@ -10756,6 +11176,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
+          "example": "black ",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -10764,6 +11185,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10870,6 +11292,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -10878,6 +11301,7 @@
         {
           "default": "",
           "document": "采样截图模板名称，长度限制：64 个字符。",
+          "example": "采样截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10886,6 +11310,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -10894,6 +11319,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -10902,6 +11328,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -10910,6 +11337,7 @@
         {
           "default": "",
           "document": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": false,
@@ -10918,6 +11346,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": false,
@@ -10926,6 +11355,7 @@
         {
           "default": "",
           "document": "图片格式，取值为 jpg 和 png。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -10934,6 +11364,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -10942,6 +11373,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black ",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -10968,6 +11400,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -10976,6 +11409,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板名称，长度限制：64 个字符。",
+          "example": "指定时间点截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10984,6 +11418,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -10992,6 +11427,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -11000,6 +11436,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -11008,6 +11445,7 @@
         {
           "default": "",
           "document": "图片格式，取值可以为 jpg 和 png。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -11016,6 +11454,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -11024,6 +11463,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "black ",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -11050,6 +11490,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -11058,6 +11499,7 @@
         {
           "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": false,
@@ -11066,6 +11508,7 @@
         {
           "default": "",
           "document": "转码模板名称，长度限制：64 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11074,6 +11517,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -11082,6 +11526,7 @@
         {
           "default": "",
           "document": "是否去除视频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "无",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -11090,6 +11535,7 @@
         {
           "default": "",
           "document": "是否去除音频数据，可选值：\n<li>0：保留</li>\n<li>1：去除</li>",
+          "example": "无",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -11098,6 +11544,7 @@
         {
           "default": "",
           "document": "视频流配置参数。",
+          "example": "无",
           "member": "VideoTemplateInfoForUpdate",
           "name": "VideoTemplate",
           "required": false,
@@ -11106,6 +11553,7 @@
         {
           "default": "",
           "document": "音频流配置参数。",
+          "example": "无",
           "member": "AudioTemplateInfoForUpdate",
           "name": "AudioTemplate",
           "required": false,
@@ -11114,6 +11562,7 @@
         {
           "default": "",
           "document": "极速高清转码参数。",
+          "example": "无",
           "member": "TEHDConfigForUpdate",
           "name": "TEHDConfig",
           "required": false,
@@ -11140,6 +11589,7 @@
         {
           "default": "",
           "document": "水印模板唯一标识。",
+          "example": "1001",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -11148,6 +11598,7 @@
         {
           "default": "",
           "document": "水印模板名称，长度限制：64 个字符。",
+          "example": "模板2",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11156,6 +11607,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "\"\"",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -11164,6 +11616,7 @@
         {
           "default": "",
           "document": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>",
+          "example": "TopLeft",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -11172,6 +11625,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>",
+          "example": "100px",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -11180,6 +11634,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>",
+          "example": "100px",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -11188,6 +11643,7 @@
         {
           "default": "",
           "document": "图片水印模板，该字段仅对图片水印模板有效。",
+          "example": "无",
           "member": "ImageWatermarkInputForUpdate",
           "name": "ImageTemplate",
           "required": false,
@@ -11196,6 +11652,7 @@
         {
           "default": "",
           "document": "文字水印模板，该字段仅对文字水印模板有效。",
+          "example": "无",
           "member": "TextWatermarkTemplateInputForUpdate",
           "name": "TextTemplate",
           "required": false,
@@ -11204,6 +11661,7 @@
         {
           "default": "",
           "document": "SVG水印模板，当 Type 为 svg，该字段必填。当 Type 为 image 或 text，该字段无效。",
+          "example": "无",
           "member": "SvgWatermarkInputForUpdate",
           "name": "SvgTemplate",
           "required": false,
@@ -11217,8 +11675,10 @@
       "members": [
         {
           "document": "图片水印地址，仅当 ImageTemplate.ImageContent 非空，该字段有效。",
+          "example": "\"\"",
           "member": "string",
           "name": "ImageUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11277,11 +11737,12 @@
       "type": "object"
     },
     "MosaicInput": {
-      "document": "视频处理任务中的马赛克参数类型",
+      "document": "媒体处理任务中的马赛克参数类型",
       "members": [
         {
           "default": "",
           "document": "原点位置，目前仅支持：\n<li>TopLeft：表示坐标原点位于视频图像左上角，马赛克原点为图片或文字的左上角。</li>\n默认值：TopLeft。",
+          "example": "NULL",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -11291,6 +11752,7 @@
         {
           "default": "",
           "document": "马赛克原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>\n默认值：0px。",
+          "example": "NULL",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -11300,6 +11762,7 @@
         {
           "default": "",
           "document": "马赛克原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>\n默认值：0px。",
+          "example": "NULL",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -11309,6 +11772,7 @@
         {
           "default": "",
           "document": "马赛克的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>\n默认值：10%。",
+          "example": "NULL",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -11318,6 +11782,7 @@
         {
           "default": "",
           "document": "马赛克的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示马赛克 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示马赛克 Height 单位为像素，如 100px 表示 Height 为 100 像素。</li>\n默认值：10%。",
+          "example": "NULL",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -11327,6 +11792,7 @@
         {
           "default": "",
           "document": "马赛克的起始时间偏移，单位：秒。不填或填0，表示马赛克从画面出现时开始显现。\n<li>不填或填0，表示马赛克从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示马赛克从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示马赛克从离画面结束 n 秒前开始出现。</li>",
+          "example": "NULL",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -11336,6 +11802,7 @@
         {
           "default": "",
           "document": "马赛克的结束时间偏移，单位：秒。\n<li>不填或填0，表示马赛克持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示马赛克持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示马赛克持续到离画面结束 n 秒前消失。</li>",
+          "example": "NULL",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,
@@ -12355,7 +12822,7 @@
       "members": [
         {
           "default": "",
-          "document": "视频处理的文件输入信息。",
+          "document": "媒体处理的文件输入信息。",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
@@ -12364,7 +12831,7 @@
         },
         {
           "default": "",
-          "document": "视频处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
+          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
@@ -12373,7 +12840,7 @@
         },
         {
           "default": "",
-          "document": "视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。",
+          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与 InputInfo 中文件所在的目录一致。",
           "example": "无",
           "member": "string",
           "name": "OutputDir",
@@ -12382,7 +12849,7 @@
         },
         {
           "default": "",
-          "document": "视频处理类型任务参数。",
+          "document": "媒体处理类型任务参数。",
           "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
@@ -13447,7 +13914,7 @@
       "members": [
         {
           "default": "",
-          "document": "CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。",
+          "document": "CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。",
           "example": "Queue ",
           "member": "string",
           "name": "CmqModel",
@@ -13457,7 +13924,7 @@
         },
         {
           "default": "",
-          "document": "CMQ 的园区，如 sh，bj 等。",
+          "document": "CMQ或TDMQ-CMQ 的园区，如 sh，bj 等。",
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
@@ -13467,20 +13934,20 @@
         },
         {
           "default": "",
-          "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。",
+          "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的主题名。",
           "example": "test",
           "member": "string",
-          "name": "QueueName",
+          "name": "TopicName",
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。",
-          "example": "test",
+          "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 或 TDMQ-CMQ 的队列名。",
+          "example": "\"\"",
           "member": "string",
-          "name": "TopicName",
+          "name": "QueueName",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13497,7 +13964,7 @@
         },
         {
           "default": "",
-          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。",
+          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n目前 默认CMQ。",
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
@@ -13519,11 +13986,12 @@
       "usage": "both"
     },
     "TaskOutputStorage": {
-      "document": "视频处理输出对象信息。",
+      "document": "媒体处理输出对象信息。",
       "members": [
         {
           "default": "",
-          "document": "视频处理输出对象存储位置的类型，现在仅支持 COS。",
+          "document": "媒体处理输出对象存储位置的类型，现在仅支持 COS。",
+          "example": "NULL",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -13532,7 +14000,8 @@
         },
         {
           "default": "",
-          "document": "当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 输出位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "CosOutputStorage",
           "name": "CosOutputStorage",
           "required": false,
@@ -14143,11 +14612,12 @@
       "usage": "out"
     },
     "UrlInputInfo": {
-      "document": "视频处理 URL 对象信息。",
+      "document": "媒体处理 URL 对象信息。",
       "members": [
         {
           "default": "",
           "document": "视频的 URL。",
+          "example": "NULL",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -14678,11 +15148,12 @@
       "usage": "in"
     },
     "WatermarkInput": {
-      "document": "视频处理任务中的水印参数类型",
+      "document": "媒体处理任务中的水印参数类型",
       "members": [
         {
           "default": "",
           "document": "水印模板 ID。",
+          "example": "NULL",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -14692,6 +15163,7 @@
         {
           "default": "",
           "document": "水印自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定水印参数。\n水印自定义参数不支持截图打水印。",
+          "example": "NULL",
           "member": "RawWatermarkParameter",
           "name": "RawParameter",
           "required": false,
@@ -14701,6 +15173,7 @@
         {
           "default": "",
           "document": "文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。\n文字水印不支持截图打水印。",
+          "example": "NULL",
           "member": "string",
           "name": "TextContent",
           "required": false,
@@ -14710,6 +15183,7 @@
         {
           "default": "",
           "document": "SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。\nSVG 水印不支持截图打水印。",
+          "example": "NULL",
           "member": "string",
           "name": "SvgContent",
           "required": false,
@@ -14719,6 +15193,7 @@
         {
           "default": "",
           "document": "水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。\n<li>不填或填0，表示水印从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>",
+          "example": "NULL",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -14728,6 +15203,7 @@
         {
           "default": "",
           "document": "水印的结束时间偏移，单位：秒。\n<li>不填或填0，表示水印持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>",
+          "example": "NULL",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,
@@ -14857,6 +15333,7 @@
         {
           "default": "",
           "document": "工作流 ID。",
+          "example": "NULL",
           "member": "int64",
           "name": "WorkflowId",
           "required": true,
@@ -14866,6 +15343,7 @@
         {
           "default": "",
           "document": "工作流名称。",
+          "example": "NULL",
           "member": "string",
           "name": "WorkflowName",
           "required": true,
@@ -14875,6 +15353,7 @@
         {
           "default": "",
           "document": "工作流状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -14884,6 +15363,7 @@
         {
           "default": "",
           "document": "工作流绑定的输入规则，当上传视频命中该规则到该对象时即触发工作流。",
+          "example": "NULL",
           "member": "WorkflowTrigger",
           "name": "Trigger",
           "required": true,
@@ -14892,7 +15372,8 @@
         },
         {
           "default": "",
-          "document": "视频处理的文件输出存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体处理的文件输出存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "required": true,
@@ -14901,7 +15382,8 @@
         },
         {
           "default": "",
-          "document": "视频处理类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体处理类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": true,
@@ -14911,6 +15393,7 @@
         {
           "default": "",
           "document": "视频内容审核类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": true,
@@ -14920,6 +15403,7 @@
         {
           "default": "",
           "document": "视频内容分析类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": true,
@@ -14929,6 +15413,7 @@
         {
           "default": "",
           "document": "视频内容识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": true,
@@ -14938,6 +15423,7 @@
         {
           "default": "",
           "document": "任务的事件通知信息，不填代表不获取事件通知。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
           "required": true,
@@ -14947,6 +15433,7 @@
         {
           "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "NULL",
           "member": "int64",
           "name": "TaskPriority",
           "required": true,
@@ -14955,7 +15442,8 @@
         },
         {
           "default": "",
-          "document": "视频处理生成的文件输出的目标目录，如`/movie/201907/`。",
+          "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。",
+          "example": "NULL",
           "member": "string",
           "name": "OutputDir",
           "required": true,
@@ -14965,6 +15453,7 @@
         {
           "default": "",
           "document": "工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "NULL",
           "member": "string",
           "name": "CreateTime",
           "required": true,
@@ -14974,6 +15463,7 @@
         {
           "default": "",
           "document": "工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "NULL",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -14984,11 +15474,12 @@
       "usage": "out"
     },
     "WorkflowTask": {
-      "document": "视频处理任务信息",
+      "document": "媒体处理任务信息",
       "members": [
         {
           "default": "",
-          "document": "视频处理任务 ID。",
+          "document": "媒体处理任务 ID。",
+          "example": "NULL",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -14998,6 +15489,7 @@
         {
           "default": "",
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "NULL",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -15007,6 +15499,7 @@
         {
           "default": "",
           "document": "已弃用，请使用各个具体任务的 ErrCode。",
+          "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
           "required": true,
@@ -15016,6 +15509,7 @@
         {
           "default": "",
           "document": "已弃用，请使用各个具体任务的 Message。",
+          "example": "NULL",
           "member": "string",
           "name": "Message",
           "required": true,
@@ -15024,7 +15518,8 @@
         },
         {
           "default": "",
-          "document": "视频处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "required": true,
@@ -15034,6 +15529,7 @@
         {
           "default": "",
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
           "member": "MediaMetaData",
           "name": "MetaData",
           "required": true,
@@ -15042,7 +15538,8 @@
         },
         {
           "default": "",
-          "document": "视频处理任务的执行状态与结果。",
+          "document": "媒体处理任务的执行状态与结果。",
+          "example": "NULL",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
           "required": true,
@@ -15052,6 +15549,7 @@
         {
           "default": "",
           "document": "视频内容审核任务的执行状态与结果。",
+          "example": "NULL",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
           "required": true,
@@ -15061,6 +15559,7 @@
         {
           "default": "",
           "document": "视频内容分析任务的执行状态与结果。",
+          "example": "NULL",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
           "required": true,
@@ -15070,6 +15569,7 @@
         {
           "default": "",
           "document": "视频内容识别任务的执行状态与结果。",
+          "example": "NULL",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
           "required": true,

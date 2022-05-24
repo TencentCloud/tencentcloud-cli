@@ -3,19 +3,19 @@
     "CreateAIAnalysisTemplate": [
       {
         "document": "创建一个自定义视频内容分析模板，开启智能分类任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板1\r\n&ClassificationConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板1\n&ClassificationConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定一项分析任务的模板"
       },
       {
         "document": "创建一个自定义视频内容分析模板，开启智能分类和智能标签任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板2\r\n&ClassificationConfigure.Switch=ON\r\n&TagConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板2\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定多项分析任务的模板"
       },
       {
         "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\r\n&Name=智能分析模板\r\n&Comment=模板3\r\n&ClassificationConfigure.Switch=ON\r\n&TagConfigure.Switch=ON\r\n&CoverConfigure.Switch=NO\r\n&FrameTagConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板3\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=NO\n&FrameTagConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建开启全部内容分析任务的模板"
       }
@@ -45,7 +45,7 @@
     "CreateAnimatedGraphicsTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAnimatedGraphicsTemplate\r\n&Name=动图图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=gif\r\n&Fps=30\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAnimatedGraphicsTemplate\n&Name=动图图模板1\n&Width=540\n&Height=960\n&Format=gif\n&Fps=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转动图模板"
       }
@@ -79,7 +79,7 @@
     "CreateImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateImageSpriteTemplate\r\n&Name=雪碧图模板1\r\n&Width=54\r\n&Height=96\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&RowCount=5\r\n&ColumnCount=10\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateImageSpriteTemplate\n&Name=雪碧图模板1\n&Width=54\n&Height=96\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建雪碧图模板"
       }
@@ -95,7 +95,7 @@
     "CreateSampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateSampleSnapshotTemplate\r\n&Name=采样截图模板1\r\n&Width=540\r\n&Height=960\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateSampleSnapshotTemplate\n&Name=采样截图模板1\n&Width=540\n&Height=960\n&SampleType=Percent\n&SampleInterval=10\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建采样截图模板"
       }
@@ -103,7 +103,7 @@
     "CreateSnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateSnapshotByTimeOffsetTemplate\r\n&Name=指定时间点截图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateSnapshotByTimeOffsetTemplate\n&Name=指定时间点截图模板1\n&Width=540\n&Height=960\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定时间点截图模板"
       }
@@ -161,7 +161,7 @@
     "DeleteAIAnalysisTemplate": [
       {
         "document": "删除用户自定义视频内容分析模板。",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\n&Definition=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的内容分析模板"
       }
@@ -169,7 +169,7 @@
     "DeleteAIRecognitionTemplate": [
       {
         "document": "删除用户自定义视频内容识别模板。",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\n&Definition=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的视频内容识别模板"
       }
@@ -177,7 +177,7 @@
     "DeleteAdaptiveDynamicStreamingTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAdaptiveDynamicStreamingTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAdaptiveDynamicStreamingTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转自适应码流模板"
       }
@@ -185,23 +185,23 @@
     "DeleteAnimatedGraphicsTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteAnimatedGraphicsTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转动图模板"
       }
     ],
     "DeleteContentReviewTemplate": [
       {
-        "document": "删除用户自定义 AI 内容智能识别模板。",
+        "document": "删除用户自定义 AI 内容审核模板。",
         "input": "https://mps.tencentcloudapi.com/?Action=DeleteContentReviewTemplate\n&Definition=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
-        "title": "删除模板 ID 为 30 的内容智能识别模板"
+        "title": "删除模板 ID 为 30 的内容审核模板"
       }
     ],
     "DeleteImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除雪碧图模板"
       }
@@ -217,7 +217,7 @@
     "DeleteSampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSampleSnapshotTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSampleSnapshotTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除采样截图模板"
       }
@@ -225,7 +225,7 @@
     "DeleteSnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除指定时间点截图模板"
       }
@@ -233,7 +233,7 @@
     "DeleteTranscodeTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\r\n&Definition=1008\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\n&Definition=1008\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转码模板"
       }
@@ -241,7 +241,7 @@
     "DeleteWatermarkTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DeleteWatermarkTemplate\r\n&Definition=1001\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=DeleteWatermarkTemplate\n&Definition=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除水印模板"
       }
@@ -301,8 +301,8 @@
     "DescribeAnimatedGraphicsTemplates": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"ResolutionAdaptive\": \"xx\",\n                \"Type\": \"Preset\",\n                \"Quality\": 0.0,\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获转动图模板列表"
       }
     ],
@@ -310,21 +310,21 @@
       {
         "document": "",
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Definitions.0=30\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"内容智能识别模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取模板 ID 为 30 的内容智能识别模板"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"智能审核模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取模板 ID 为 30 的智能审核模板"
       },
       {
-        "document": "从序号 0 开始，获取 10 个内容智能识别模板，包括系统默认内容智能识别模板。",
+        "document": "从序号 0 开始，获取 10 个智能审核模板，包括系统默认智能审核模板。",
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"内容智能识别模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"内容审核模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取指定个数的内容智能识别模板"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"智能审核模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"内容审核模板\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取指定个数的智能审核模板"
       }
     ],
     "DescribeImageSpriteTemplates": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"雪碧图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"RowCount\": 10,\n                \"ColumnCount\": 5,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"雪碧图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"RowCount\": 10,\n                \"ColumnCount\": 5,\n                \"ResolutionAdaptive\": \"xx\",\n                \"FillType\": \"black\",\n                \"Comment\": \"\",\n                \"Type\": \"Preset\",\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取雪碧图模板列表"
       }
     ],
@@ -347,16 +347,16 @@
     "DescribeSampleSnapshotTemplates": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSampleSnapshotTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SampleSnapshotTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"采样截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSampleSnapshotTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SampleSnapshotTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"采样截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"ResolutionAdaptive\": \"xx\",\n                \"FillType\": \"black\",\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询采样截图模板列表"
       }
     ],
     "DescribeSnapshotByTimeOffsetTemplates": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSnapshotByTimeOffsetTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotByTimeOffsetTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"指定时间点截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://mps.tencentcloudapi.com/?Action=DescribeSnapshotByTimeOffsetTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotByTimeOffsetTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"指定时间点截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"ResolutionAdaptive\": \"xx\",\n                \"FillType\": \"black\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取指定时间点截图模板列表"
       }
     ],
@@ -455,7 +455,7 @@
         "document": "",
         "input": "https://mps.tencentcloudapi.com/?Action=ExecuteFunction\n&FunctionName=ExampleFunc\n&FunctionArg=XXX\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"XXX\"\n    }\n}",
-        "title": "A 客户发起定制的视频处理"
+        "title": "A 客户发起定制的媒体处理"
       }
     ],
     "ManageTask": [
@@ -469,19 +469,19 @@
     "ModifyAIAnalysisTemplate": [
       {
         "document": "修改自定义视频内容分析模板，开启智能封面任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "开启智能封面任务"
       },
       {
         "document": "修改自定义视频内容分析模板，关闭智能封面任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "关闭智能封面任务"
       },
       {
         "document": "修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&TagConfigure.Switch=ON\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时开启一项和关闭一项内容分析任务"
       }
@@ -505,35 +505,35 @@
     "ModifyAnimatedGraphicsTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&Name=转动图模板1\r\n&Width=540\r\n&Height=960\r\n&Fps=30\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\n&Definition=10001\n&Name=转动图模板1\n&Width=540\n&Height=960\n&Fps=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转动图模板"
       }
     ],
     "ModifyContentReviewTemplate": [
       {
-        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面令人反感的信息的任务判定为违规的分数阈值和画面令人反感的信息的任务判定为需要人工智能识别的分数阈值修改为默认。",
+        "document": "修改自定义 AI 内容审核模板。不指定过滤标签，将画面令人反感的信息的任务判定为违规的分数阈值和画面令人反感的信息的任务判定为需要人工内容审核的分数阈值修改为默认。",
         "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改内容智能识别模板，开启画面令人反感的智能识别任务"
+        "title": "修改内容审核模板，开启画面令人反感的内容审核任务"
       },
       {
-        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "document": "修改自定义 AI 内容审核模板。不指定过滤标签，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息任务判定为需要人工识别的分数阈值修改为 60 分。",
         "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"82ae8d8e-dce3-4151-9d4b-5594145223e1\"\n    }\n}",
-        "title": "修改内容智能识别模板，开启画面令人反感的信息的智能识别任务并指定分数阈值"
+        "title": "修改内容审核模板，开启画面令人反感的信息的内容审核任务并指定分数阈值"
       },
       {
-        "document": "修改自定义 AI 内容智能识别模板。指定过滤标签为性感，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息的任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "document": "修改自定义 AI 内容审核模板。指定过滤标签为性感，将画面令人反感的信息任务判定为违规的分数阈值修改为 90 分，将画面令人反感的信息的任务判定为需要人工识别的分数阈值修改为 60 分。",
         "input": "https://mps.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=sexy\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改内容智能识别模板，开启画面令人反感的信息任务并指定过滤标签及分数阈值"
+        "title": "修改内容审核模板，开启画面令人反感的信息任务并指定过滤标签及分数阈值"
       }
     ],
     "ModifyImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\r\n&Definition=10001\r\n&Name=雪碧图模板1\r\n&Width=54\r\n&Height=96\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&RowCount=5\r\n&ColumnCount=10\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\n&Definition=10001\n&Name=雪碧图模板1\n&Width=54\n&Height=96\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改雪碧图模板"
       }
@@ -567,7 +567,7 @@
     "ModifySampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\r\n&Definition=10001\r\n&Name=采样截图模板1\r\n&Width=540\r\n&Height=960\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\n&Definition=10001\n&Name=采样截图模板1\n&Width=540\n&Height=960\n&SampleType=Percent\n&SampleInterval=10\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改采样截图模板"
       }
@@ -575,7 +575,7 @@
     "ModifySnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&Name=指定时间点截图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\n&Definition=10001\n&Name=指定时间点截图模板1\n&Width=540\n&Height=960\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改指定时间点截图模板"
       }

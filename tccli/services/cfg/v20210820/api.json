@@ -1512,8 +1512,8 @@
         },
         {
           "default": "",
-          "document": "任务状态",
-          "example": "1",
+          "document": "任务状态(1001 -- 未开始   1002 -- 进行中  1003 -- 暂停中   1004 -- 任务结束)",
+          "example": "1004",
           "member": "int64",
           "name": "TaskStatus",
           "required": true,

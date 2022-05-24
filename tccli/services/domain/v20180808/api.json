@@ -1981,6 +1981,15 @@
           "name": "TransferDns",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "转入账户的appid。",
+          "example": "123456",
+          "member": "string",
+          "name": "NewOwnerAppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
