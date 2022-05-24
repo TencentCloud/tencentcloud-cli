@@ -51,6 +51,8 @@ class BaseArgParser(argparse.ArgumentParser):
                 for word in possible:
                     extra.append('  * %s' % word)
                 msg.extend(extra)
+            msg.append("Invalid choice: The specified command or option is not found, " \
+                       "try lastest version by running `pip install --upgrade tccli`.")
             raise argparse.ArgumentError(action, '\n'.join(msg))
 
     def parse_known_args(self, args=None, namespace=None):
