@@ -19,9 +19,13 @@ Output:
         "WhiteListSet": [
             {
                 "UpdateTime": "2020-09-22 00:00:00",
-                "DstIp": "xx",
+                "ImageIds": [
+                    "xx"
+                ],
+                "IsGlobal": true,
                 "CreateTime": "2020-09-22 00:00:00",
                 "ProcessName": "xx",
+                "DstIp": "xx",
                 "DstPort": "xx",
                 "Id": "xx",
                 "ImageCount": 1

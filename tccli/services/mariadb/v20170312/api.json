@@ -138,6 +138,12 @@
       "name": "查看实例资源使用详情",
       "output": "DescribeDBResourceUsageDetailsResponse"
     },
+    "DescribeDBSecurityGroups": {
+      "document": "本接口（DescribeDBSecurityGroups）用于查询实例安全组信息",
+      "input": "DescribeDBSecurityGroupsRequest",
+      "name": "查询实例安全组信息",
+      "output": "DescribeDBSecurityGroupsResponse"
+    },
     "DescribeDBSlowLogs": {
       "document": "本接口(DescribeDBSlowLogs)用于查询慢查询日志列表。",
       "input": "DescribeDBSlowLogsRequest",
@@ -191,6 +197,12 @@
       "input": "DescribeLogFileRetentionPeriodRequest",
       "name": "查看备份日志备份天数",
       "output": "DescribeLogFileRetentionPeriodResponse"
+    },
+    "DescribeOrders": {
+      "document": "本接口（DescribeOrders）用于查询云数据库订单信息。传入订单ID来查询订单关联的云数据库实例，和对应的任务流程ID。",
+      "input": "DescribeOrdersRequest",
+      "name": "查询订单信息",
+      "output": "DescribeOrdersResponse"
     },
     "DescribePrice": {
       "document": "本接口（DescribePrice）用于在购买实例前，查询实例的价格。",
@@ -2553,6 +2565,66 @@
       ],
       "usage": "out"
     },
+    "Deal": {
+      "document": "订单信息",
+      "members": [
+        {
+          "default": "",
+          "document": "订单号",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属账号",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "商品数量",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的流程 Id，可用于查询流程执行状态",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付费模式，0后付费/1预付费",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteAccountRequest": {
       "document": "DeleteAccount请求参数结构体",
       "members": [
@@ -3569,6 +3641,69 @@
       ],
       "type": "object"
     },
+    "DescribeDBSecurityGroupsRequest": {
+      "document": "DescribeDBSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库引擎名称，本接口取值：mariadb。",
+          "example": "mariadb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID。",
+          "example": "tdsql-eb2w7dto",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBSecurityGroupsResponse": {
+      "document": "DescribeDBSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "安全组详情。",
+          "example": "无",
+          "member": "SecurityGroup",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "实例端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSlowLogsRequest": {
       "document": "DescribeDBSlowLogs请求参数结构体",
       "members": [
@@ -4143,6 +4278,51 @@
           "name": "Days",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersRequest": {
+      "document": "DescribeOrders请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。",
+          "example": "[\"20171103110035\\r\\n\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrdersResponse": {
+      "document": "DescribeOrders返回参数结构体",
+      "members": [
+        {
+          "document": "返回的订单数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "订单信息列表。",
+          "example": "无",
+          "member": "Deal",
+          "name": "Deals",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

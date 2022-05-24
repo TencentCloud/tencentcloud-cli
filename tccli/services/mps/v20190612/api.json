@@ -25,9 +25,9 @@
       "output": "CreateAnimatedGraphicsTemplateResponse"
     },
     "CreateContentReviewTemplate": {
-      "document": "创建用户自定义内容智能识别模板，数量上限：50。",
+      "document": "创建用户自定义内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
-      "name": "创建内容智能识别模板",
+      "name": "创建内容审核模板",
       "output": "CreateContentReviewTemplateResponse"
     },
     "CreateImageSpriteTemplate": {
@@ -4904,8 +4904,8 @@
       "members": [
         {
           "default": "",
-          "document": "内容智能识别模板名称，长度限制：64 个字符。",
-          "example": "内容智能识别模板",
+          "document": "内容审核模板名称，长度限制：64 个字符。",
+          "example": "内容审核模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4913,7 +4913,7 @@
         },
         {
           "default": "",
-          "document": "内容智能识别模板描述信息，长度限制：256 个字符。",
+          "document": "内容审核模板描述信息，长度限制：256 个字符。",
           "example": "模板1",
           "member": "string",
           "name": "Comment",
@@ -4958,7 +4958,7 @@
         },
         {
           "default": "",
-          "document": "用户自定义内容智能识别控制参数。",
+          "document": "用户自定义内容审核控制参数。",
           "example": "无",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
@@ -4972,7 +4972,7 @@
       "document": "CreateContentReviewTemplate返回参数结构体",
       "members": [
         {
-          "document": "内容智能识别模板唯一标识。",
+          "document": "内容审核模板唯一标识。",
           "example": "30",
           "member": "int64",
           "name": "Definition",

@@ -18,8 +18,10 @@ Output:
             "ImageIds": [
                 "xx"
             ],
+            "ProcessName": "xx",
+            "DstIp": "xx",
             "Id": "xx",
-            "ProcessName": "xx"
+            "DstPort": "xx"
         }
     }
 }

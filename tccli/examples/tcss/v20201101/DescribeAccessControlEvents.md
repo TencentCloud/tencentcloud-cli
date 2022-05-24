@@ -38,7 +38,10 @@ Output:
                 "EventCount": 0,
                 "RuleExist": true,
                 "Description": "xx",
-                "RuleId": "xx"
+                "RuleId": "xx",
+                "ContainerIsolateOperationSrc": "xx",
+                "ContainerNetSubStatus": "xx",
+                "ContainerNetStatus": "xx"
             }
         ],
         "TotalCount": 1,

@@ -45,7 +45,11 @@ Output:
         "RequestId": "9915f397-3268-4c12-85c9-03b07b6db718",
         "RunAs": "",
         "Status": "exited",
-        "WebServiceCnt": 0
+        "WebServiceCnt": 0,
+        "NetStatus": "",
+        "NetSubStatus": "",
+        "IsolateSource": "xx",
+        "IsolateTime": "xx"
     }
 }
 ```

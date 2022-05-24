@@ -28,7 +28,10 @@ Output:
             "PodName": "xx",
             "ClientIP": "xx",
             "LatestFoundTime": "xx",
-            "NodeName": "xx"
+            "NodeName": "xx",
+            "ContainerNetStatus": "xx",
+            "ContainerNetSubStatus": "xx",
+            "ContainerIsolateOperationSrc": "xx"
         },
         "AncestorProcessInfo": {
             "ProcessPath": "xx",

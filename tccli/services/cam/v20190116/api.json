@@ -426,6 +426,18 @@
       "name": "设置子用户的登录保护和敏感操作校验方式",
       "output": "SetMfaFlagResponse"
     },
+    "TagRole": {
+      "document": "角色绑定标签",
+      "input": "TagRoleRequest",
+      "name": "角色绑定标签",
+      "output": "TagRoleResponse"
+    },
+    "UntagRole": {
+      "document": "角色解绑标签。",
+      "input": "UntagRoleRequest",
+      "name": "角色解绑标签",
+      "output": "UntagRoleResponse"
+    },
     "UpdateAssumeRolePolicy": {
       "document": "本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。",
       "input": "UpdateAssumeRolePolicyRequest",
@@ -5705,6 +5717,96 @@
         }
       ],
       "usage": "out"
+    },
+    "TagRoleRequest": {
+      "document": "TagRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签",
+          "example": "无",
+          "member": "RoleTags",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "角色名，与角色ID至少输入一个",
+          "example": "CAM_QCSRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色ID，与角色名至少输入一个",
+          "example": "46111234567890",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagRoleResponse": {
+      "document": "TagRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UntagRoleRequest": {
+      "document": "UntagRole请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "[\"AKey\", \"BKey\"]",
+          "member": "string",
+          "name": "TagKeys",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "角色名，与角色ID至少输入一个",
+          "example": "CAM_QCSRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "角色ID，与角色名至少输入一个",
+          "example": "46111234567890",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UntagRoleResponse": {
+      "document": "UntagRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAssumeRolePolicyRequest": {
       "document": "UpdateAssumeRolePolicy请求参数结构体",

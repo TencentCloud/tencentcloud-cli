@@ -58,7 +58,10 @@ Output:
         "PProcessUserGroup": "xx",
         "PodName": "xx",
         "CreateTime": "xx",
-        "Size": 1
+        "Size": 1,
+        "ContainerNetStatus": "xx",
+        "ContainerNetSubStatus": "xx",
+        "ContainerIsolateOperationSrc": "xx"
     }
 }
 ```

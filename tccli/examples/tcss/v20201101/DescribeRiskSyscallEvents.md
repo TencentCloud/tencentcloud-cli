@@ -33,7 +33,10 @@ Output:
                 "NodeName": "VM-0-13-centos",
                 "PodName": "pod-name",
                 "RuleExist": true,
-                "Remark": "xx"
+                "Remark": "xx",
+                "ContainerIsolateOperationSrc": "xx",
+                "ContainerNetSubStatus": "xx",
+                "ContainerNetStatus": "xx"
             }
         ],
         "TotalCount": 10,

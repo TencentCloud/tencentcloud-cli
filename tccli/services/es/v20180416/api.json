@@ -1,16 +1,40 @@
 {
   "actions": {
+    "CreateIndex": {
+      "document": "创建索引",
+      "input": "CreateIndexRequest",
+      "name": "创建索引",
+      "output": "CreateIndexResponse"
+    },
     "CreateInstance": {
       "document": "创建指定规格的ES集群实例",
       "input": "CreateInstanceRequest",
       "name": "创建ES集群实例",
       "output": "CreateInstanceResponse"
     },
+    "DeleteIndex": {
+      "document": "删除索引",
+      "input": "DeleteIndexRequest",
+      "name": "删除索引",
+      "output": "DeleteIndexResponse"
+    },
     "DeleteInstance": {
       "document": "销毁集群实例 ",
       "input": "DeleteInstanceRequest",
       "name": "销毁ES集群实例",
       "output": "DeleteInstanceResponse"
+    },
+    "DescribeIndexList": {
+      "document": "获取索引列表",
+      "input": "DescribeIndexListRequest",
+      "name": "获取索引列表",
+      "output": "DescribeIndexListResponse"
+    },
+    "DescribeIndexMeta": {
+      "document": "获取索引元数据",
+      "input": "DescribeIndexMetaRequest",
+      "name": "获取索引元数据",
+      "output": "DescribeIndexMetaResponse"
     },
     "DescribeInstanceLogs": {
       "document": "查询用户该地域下符合条件的ES集群的日志",
@@ -78,6 +102,12 @@
       "name": "更新ES集群词典",
       "output": "UpdateDictionariesResponse"
     },
+    "UpdateIndex": {
+      "document": "更新索引",
+      "input": "UpdateIndexRequest",
+      "name": "更新索引",
+      "output": "UpdateIndexResponse"
+    },
     "UpdateInstance": {
       "document": "对集群进行节点规格变更，修改实例名称，修改配置，重置密码， 添加Kibana黑白名单等操作。参数中InstanceId为必传参数，ForceRestart为选填参数，剩余参数传递组合及含义如下：\n- InstanceName：修改实例名称(仅用于标识实例)\n- NodeInfoList: 修改节点配置（节点横向扩缩容，纵向扩缩容，增加主节点，增加冷节点等）\n- EsConfig：修改集群配置\n- Password：修改默认用户elastic的密码\n- EsAcl：修改访问控制列表\n- CosBackUp: 设置集群COS自动备份信息\n以上参数组合只能传递一种，多传或少传均会导致请求失败",
       "input": "UpdateInstanceRequest",
@@ -122,6 +152,62 @@
     "serviceShortName": "es"
   },
   "objects": {
+    "BackingIndexMetaField": {
+      "document": "后备索引元数据字段",
+      "members": [
+        {
+          "default": "",
+          "document": "后备索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后备索引状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GREEN",
+          "member": "string",
+          "name": "IndexStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后备索引存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30GB",
+          "member": "int64",
+          "name": "IndexStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后备索引当前生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hot",
+          "member": "string",
+          "name": "IndexPhrase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后备索引创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "IndexCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterView": {
       "document": "集群维度视图数据",
       "members": [
@@ -371,6 +457,78 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateIndexRequest": {
+      "document": "CreateIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建的索引类型。auto：自治索引；normal：普通索引",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建的索引名",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建的索引元数据JSON，如mappings、settings",
+          "example": "{}",
+          "member": "string",
+          "name": "IndexMetaJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIndexResponse": {
+      "document": "CreateIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateInstanceRequest": {
       "document": "CreateInstance请求参数结构体",
@@ -678,6 +836,78 @@
       ],
       "type": "object"
     },
+    "DeleteIndexRequest": {
+      "document": "DeleteIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除的索引类型。auto：自治索引；normal：普通索引",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "删除的索引名",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "后备索引名",
+          "example": "test",
+          "member": "string",
+          "name": "BackingIndexName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIndexResponse": {
+      "document": "DeleteIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteInstanceRequest": {
       "document": "DeleteInstance请求参数结构体",
       "members": [
@@ -695,6 +925,204 @@
     "DeleteInstanceResponse": {
       "document": "DeleteInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexListRequest": {
+      "document": "DescribeIndexList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "索引类型。auto：自治索引；normal：普通索引",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引名，若填空则获取所有索引",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "一页展示数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime",
+          "example": "storage",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤索引状态",
+          "example": "[\"GREEN\"]",
+          "member": "string",
+          "name": "IndexStatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序顺序，支持asc、desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexListResponse": {
+      "document": "DescribeIndexList返回参数结构体",
+      "members": [
+        {
+          "document": "索引元数据字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexMetaField",
+          "name": "IndexMetaFields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexMetaRequest": {
+      "document": "DescribeIndexMeta请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引类型。auto：自治索引；normal：普通索引",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "索引名，若填空则获取所有索引",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexMetaResponse": {
+      "document": "DescribeIndexMeta返回参数结构体",
+      "members": [
+        {
+          "document": "索引元数据字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexMetaField",
+          "name": "IndexMetaField",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1163,6 +1591,32 @@
       ],
       "usage": "both"
     },
+    "EsConfigSetInfo": {
+      "document": "配置组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "配置组类型，如ldap,ad等",
+          "example": "ldap",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "\"{\\\"order\\\":0,\\\"url\\\":\\\"ldap://10.0.1.72:389\\\",\\\"bind_dn\\\":\\\"cn=admin,dc=tencent,dc=com\\\",\\\"user_search.base_dn\\\":\\\"dc=tencent,dc=com\\\",\\\"user_search.filter\\\":\\\"(cn={0})\\\",\\\"group_search.base_dn\\\":\\\"dc=tencent,dc=com\\\"}\"",
+          "example": "参考描述",
+          "member": "string",
+          "name": "EsConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EsDictionaryInfo": {
       "document": "ES 词库信息",
       "members": [
@@ -1270,6 +1724,320 @@
         }
       ],
       "type": "object"
+    },
+    "IndexMetaField": {
+      "document": "索引元数据字段",
+      "members": [
+        {
+          "default": "",
+          "document": "索引类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GREEN",
+          "member": "string",
+          "name": "IndexStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引存储大小，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "IndexStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "IndexCreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "后备索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackingIndexMetaField",
+          "name": "BackingIndices",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引所属集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引所属集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.14.2",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引生命周期字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexPolicyField",
+          "name": "IndexPolicyField",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引自治字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexOptionsField",
+          "name": "IndexOptionsField",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引配置字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexSettingsField",
+          "name": "IndexSettingsField",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引所属集群APP ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10004222",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IndexOptionsField": {
+      "document": "索引自治字段",
+      "members": [
+        {
+          "default": "",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d",
+          "member": "string",
+          "name": "ExpireMaxAge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "过期大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2GB",
+          "member": "string",
+          "name": "ExpireMaxSize",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "滚动周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1d",
+          "member": "string",
+          "name": "RolloverMaxAge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启动态滚动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "RolloverDynamic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启动态分片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "ShardNumDynamic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时间分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "@timestamp",
+          "member": "string",
+          "name": "TimestampField",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "写入模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "append_only",
+          "member": "string",
+          "name": "WriteMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IndexPolicyField": {
+      "document": "索引生命周期字段",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启warm阶段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "WarmEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "warm阶段转入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d",
+          "member": "string",
+          "name": "WarmMinAge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启cold阶段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "ColdEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "cold阶段转入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d",
+          "member": "string",
+          "name": "ColdMinAge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启frozen阶段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "FrozenEnable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "frozen阶段转入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3d",
+          "member": "string",
+          "name": "FrozenMinAge",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IndexSettingsField": {
+      "document": "索引配置字段",
+      "members": [
+        {
+          "default": "",
+          "document": "索引主分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "string",
+          "name": "NumberOfShards",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引副本分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "NumberOfReplicas",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "索引刷新频率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20s",
+          "member": "string",
+          "name": "RefreshInterval",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "InstanceInfo": {
       "document": "实例详细信息",
@@ -3067,6 +3835,78 @@
       ],
       "type": "object"
     },
+    "UpdateIndexRequest": {
+      "document": "UpdateIndex请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "ES集群ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新的索引类型。auto：自治索引；normal：普通索引",
+          "example": "auto",
+          "member": "string",
+          "name": "IndexType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新的索引名",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新的索引元数据JSON，如mappings、settings",
+          "example": "{}",
+          "member": "string",
+          "name": "UpdateMetaJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问用户名",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIndexResponse": {
+      "document": "UpdateIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateInstanceRequest": {
       "document": "UpdateInstance请求参数结构体",
       "members": [
@@ -3330,6 +4170,15 @@
           "name": "CerebroPrivateAccess",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新增或修改的配置组信息",
+          "example": "无",
+          "member": "EsConfigSetInfo",
+          "name": "EsConfigSet",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -14,7 +14,8 @@ Output:
 {
     "Response": {
         "RequestId": "xx",
-        "DownloadUrl": "xx"
+        "DownloadUrl": "xx",
+        "JobId": "xx"
     }
 }
 ```

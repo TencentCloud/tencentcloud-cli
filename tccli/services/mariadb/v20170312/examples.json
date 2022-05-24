@@ -184,6 +184,14 @@
         "title": "查看实例资源使用详情"
       }
     ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=mariadb\n&InstanceId=tdsql-eb2w7dto\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": \"3306\",\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"mariadb\"\n            }\n        ]\n    }\n}",
+        "title": "示例1 查询实例安全组信息"
+      }
+    ],
     "DescribeDBSlowLogs": [
       {
         "document": "",
@@ -254,6 +262,14 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeLogFileRetentionPeriod\n&InstanceId=tdsql-ige1a5k3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"tdsql-ige1a5k3\",\n        \"Days\": 30,\n        \"RequestId\": \"87e86e78-340f-48f3-a84b-a42517d7aa46\"\n    }\n}",
         "title": "查看备份日志备份天数"
+      }
+    ],
+    "DescribeOrders": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20171103110035\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": 1,\n        \"Deals\": [\n            {\n                \"DealName\": \"20171103110035\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"tdsql-1234\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询订单信息"
       }
     ],
     "DescribePrice": [

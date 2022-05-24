@@ -14,9 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a",
-        "TotalCount": [
-            1
-        ],
+        "TotalCount": 1,
         "Deals": [
             {
                 "DealName": "20171103110035",

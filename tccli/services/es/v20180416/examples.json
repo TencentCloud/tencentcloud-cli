@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateIndex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIndex\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"IndexType\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"IndexMetaJson\": \"xx\",\n    \"Password\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "创建自治索引"
+      }
+    ],
     "CreateInstance": [
       {
         "document": "根据输入参数创建ES集群实例",
@@ -8,12 +16,36 @@
         "title": "创建ES集群实例"
       }
     ],
+    "DeleteIndex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIndex\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"IndexType\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"BackingIndexName\": \"xx\",\n    \"Password\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除自治索引"
+      }
+    ],
     "DeleteInstance": [
       {
         "document": "删除指定ID的集群实例",
         "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\r\n&InstanceId=es-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
         "title": "删除ES集群实例"
+      }
+    ],
+    "DescribeIndexList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIndexList\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"IndexType\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Password\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"IndexMetaFields\": [\n            {\n                \"BackingIndices\": [\n                    {\n                        \"IndexPhrase\": \"xx\",\n                        \"IndexStatus\": \"xx\",\n                        \"IndexStorage\": 0,\n                        \"IndexName\": \"xx\",\n                        \"IndexCreateTime\": \"xx\"\n                    }\n                ],\n                \"IndexOptionsField\": {\n                    \"WriteMode\": \"xx\",\n                    \"RolloverMaxAge\": \"xx\",\n                    \"ExpireMaxAge\": \"xx\",\n                    \"RolloverDynamic\": \"xx\",\n                    \"ExpireMaxSize\": \"xx\",\n                    \"ShardNumDynamic\": \"xx\",\n                    \"TimestampField\": \"xx\"\n                },\n                \"IndexName\": \"xx\",\n                \"IndexType\": \"xx\",\n                \"IndexPolicyField\": {\n                    \"WarmEnable\": \"xx\",\n                    \"WarmMinAge\": \"xx\",\n                    \"ColdMinAge\": \"xx\",\n                    \"FrozenEnable\": \"xx\",\n                    \"FrozenMinAge\": \"xx\",\n                    \"ColdEnable\": \"xx\"\n                },\n                \"ClusterName\": \"xx\",\n                \"IndexStatus\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"IndexCreateTime\": \"xx\",\n                \"ClusterVersion\": \"xx\",\n                \"IndexStorage\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取索引元数据"
+      }
+    ],
+    "DescribeIndexMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIndexMeta\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Username\": \"xx\",\n    \"Password\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"IndexType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"IndexMetaField\": {\n            \"BackingIndices\": [\n                {\n                    \"IndexPhrase\": \"xx\",\n                    \"IndexStatus\": \"xx\",\n                    \"IndexStorage\": 0,\n                    \"IndexName\": \"xx\",\n                    \"IndexCreateTime\": \"xx\"\n                }\n            ],\n            \"IndexOptionsField\": {\n                \"WriteMode\": \"xx\",\n                \"RolloverMaxAge\": \"xx\",\n                \"ExpireMaxAge\": \"xx\",\n                \"RolloverDynamic\": \"xx\",\n                \"ExpireMaxSize\": \"xx\",\n                \"ShardNumDynamic\": \"xx\",\n                \"TimestampField\": \"xx\"\n            },\n            \"IndexName\": \"xx\",\n            \"IndexType\": \"xx\",\n            \"IndexPolicyField\": {\n                \"WarmEnable\": \"xx\",\n                \"WarmMinAge\": \"xx\",\n                \"ColdMinAge\": \"xx\",\n                \"FrozenEnable\": \"xx\",\n                \"FrozenMinAge\": \"xx\",\n                \"ColdEnable\": \"xx\"\n            },\n            \"ClusterName\": \"xx\",\n            \"IndexStatus\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"IndexCreateTime\": \"xx\",\n            \"ClusterVersion\": \"xx\",\n            \"IndexStorage\": 0,\n            \"IndexSettingsField\": {\n                \"NumberOfShards\": \"xx\",\n                \"NumberOfReplicas\": \"xx\",\n                \"RefreshInterval\": \"xx\"\n            }\n        }\n    }\n}",
+        "title": "获取索引元数据"
       }
     ],
     "DescribeInstanceLogs": [
@@ -102,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDictionaries\n<公共请求参数>\n\n{\n    \"IkStopwords\": [\n        \"xx\"\n    ],\n    \"Synonym\": [\n        \"xx\"\n    ],\n    \"InstanceId\": \"xx\",\n    \"UpdateType\": 0,\n    \"ForceRestart\": true,\n    \"QQDict\": [\n        \"xx\"\n    ],\n    \"IkMainDicts\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "更新ES集群词典"
+      }
+    ],
+    "UpdateIndex": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIndex\n<公共请求参数>\n\n{\n    \"Username\": \"xx\",\n    \"UpdateMetaJson\": \"xx\",\n    \"IndexType\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"IndexName\": \"xx\",\n    \"Password\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "更新索引元数据"
       }
     ],
     "UpdateInstance": [

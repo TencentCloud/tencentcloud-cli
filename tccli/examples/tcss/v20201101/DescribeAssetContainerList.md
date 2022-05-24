@@ -15,6 +15,8 @@ Output:
         "List": [
             {
                 "Status": "xx",
+                "NetStatus": "xx",
+                "NetSubStatus": "xx",
                 "ContainerName": "xx",
                 "UpdateTime": "xx",
                 "HostID": "xx",

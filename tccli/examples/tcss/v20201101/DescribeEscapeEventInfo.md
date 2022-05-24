@@ -32,7 +32,10 @@ Output:
                 "PodName": "xx",
                 "NodeIP": "xx",
                 "LatestFoundTime": "2020-09-22 00:00:00",
-                "NodeName": "xx"
+                "NodeName": "xx",
+                "ContainerNetStatus": "xx",
+                "ContainerNetSubStatus": "xx",
+                "ContainerIsolateOperationSrc": "xx"
             }
         ],
         "TotalCount": 1,

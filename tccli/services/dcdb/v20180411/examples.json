@@ -120,6 +120,14 @@
         "title": "获取数据库当前参数"
       }
     ],
+    "DescribeDBSecurityGroups": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=dcdb\n&InstanceId=tdsqlshard-eb2w7dto\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": \"3306\",\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"dcdb\"\n            }\n        ]\n    }\n}",
+        "title": "示例1 查询实例安全组信息"
+      }
+    ],
     "DescribeDBSlowLogs": [
       {
         "document": "",
@@ -238,6 +246,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeFlow\n&FlowId=3340\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f63a9e3a-cfe9-4fa3-a690-9671ebdf6bd8\",\n        \"Status\": 1\n    }\n}",
         "title": "查询任务流程执行状态"
+      }
+    ],
+    "DescribeOrders": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20181103110163\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": 1,\n        \"Deals\": [\n            {\n                \"DealName\": \"20181103110163\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"dcdbt-avw0207d\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询订单信息"
       }
     ],
     "DescribeProjectSecurityGroups": [

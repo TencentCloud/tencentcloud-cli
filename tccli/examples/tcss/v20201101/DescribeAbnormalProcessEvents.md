@@ -37,7 +37,10 @@ Output:
                 "ProcessPath": "xx",
                 "FoundTime": "2020-09-22 00:00:00",
                 "RuleExist": true,
-                "Id": "xx"
+                "Id": "xx",
+                "ContainerNetStatus": "xx",
+                "ContainerNetSubStatus": "xx",
+                "ContainerIsolateOperationSrc": "xx"
             }
         ],
         "TotalCount": 1,

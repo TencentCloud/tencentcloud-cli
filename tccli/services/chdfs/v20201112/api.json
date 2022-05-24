@@ -511,6 +511,15 @@
           "name": "RangerServiceAddresses",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "多个资源标签，可以为空数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -2225,6 +2225,54 @@ def doSetDefaultPolicyVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreatePolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePolicyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreatePolicy(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2447,6 +2495,54 @@ def doGetAccountSummary(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.GetAccountSummary(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUntagRole(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UntagRoleRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UntagRole(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2705,7 +2801,7 @@ def doDeleteOIDCConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListEntitiesForPolicy(args, parsed_globals):
+def doAttachRolePolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2730,11 +2826,11 @@ def doListEntitiesForPolicy(args, parsed_globals):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListEntitiesForPolicyRequest()
+    model = models.AttachRolePolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ListEntitiesForPolicy(model)
+        rsp = client.AttachRolePolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2993,7 +3089,7 @@ def doListCollaborators(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doAttachRolePolicy(args, parsed_globals):
+def doTagRole(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3018,11 +3114,11 @@ def doAttachRolePolicy(args, parsed_globals):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.AttachRolePolicyRequest()
+    model = models.TagRoleRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.AttachRolePolicy(model)
+        rsp = client.TagRole(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3617,7 +3713,7 @@ def doGetPolicyVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePolicy(args, parsed_globals):
+def doListEntitiesForPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3642,11 +3738,11 @@ def doCreatePolicy(args, parsed_globals):
     client = mod.CamClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePolicyRequest()
+    model = models.ListEntitiesForPolicyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreatePolicy(model)
+        rsp = client.ListEntitiesForPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3962,23 +4058,25 @@ ACTION_MAP = {
     "UpdateAssumeRolePolicy": doUpdateAssumeRolePolicy,
     "ListAttachedUserAllPolicies": doListAttachedUserAllPolicies,
     "SetDefaultPolicyVersion": doSetDefaultPolicyVersion,
+    "CreatePolicy": doCreatePolicy,
     "DeleteUser": doDeleteUser,
     "AddUserToGroup": doAddUserToGroup,
     "UpdateSAMLProvider": doUpdateSAMLProvider,
     "DescribeSafeAuthFlagColl": doDescribeSafeAuthFlagColl,
     "GetAccountSummary": doGetAccountSummary,
+    "UntagRole": doUntagRole,
     "DescribeSafeAuthFlag": doDescribeSafeAuthFlag,
     "DescribeSafeAuthFlagIntl": doDescribeSafeAuthFlagIntl,
     "GetRole": doGetRole,
     "UpdateRoleDescription": doUpdateRoleDescription,
     "DeleteOIDCConfig": doDeleteOIDCConfig,
-    "ListEntitiesForPolicy": doListEntitiesForPolicy,
+    "AttachRolePolicy": doAttachRolePolicy,
     "ListAttachedUserPolicies": doListAttachedUserPolicies,
     "ListGroups": doListGroups,
     "ListWeChatWorkSubAccounts": doListWeChatWorkSubAccounts,
     "CreatePolicyVersion": doCreatePolicyVersion,
     "ListCollaborators": doListCollaborators,
-    "AttachRolePolicy": doAttachRolePolicy,
+    "TagRole": doTagRole,
     "DescribeSubAccounts": doDescribeSubAccounts,
     "RemoveUserFromGroup": doRemoveUserFromGroup,
     "ListSAMLProviders": doListSAMLProviders,
@@ -3991,7 +4089,7 @@ ACTION_MAP = {
     "UpdateGroup": doUpdateGroup,
     "DisableUserSSO": doDisableUserSSO,
     "GetPolicyVersion": doGetPolicyVersion,
-    "CreatePolicy": doCreatePolicy,
+    "ListEntitiesForPolicy": doListEntitiesForPolicy,
     "DetachGroupPolicy": doDetachGroupPolicy,
     "DetachUserPolicy": doDetachUserPolicy,
     "ListGroupsForUser": doListGroupsForUser,

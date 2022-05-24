@@ -769,9 +769,9 @@
       "output": "DescribeVirusDetailResponse"
     },
     "DescribeVirusList": {
-      "document": "运行时文件查杀事件列表",
+      "document": "查询运行时文件查杀事件列表",
       "input": "DescribeVirusListRequest",
-      "name": "运行时文件查杀事件列表",
+      "name": "查询运行时文件查杀事件列表",
       "output": "DescribeVirusListResponse"
     },
     "DescribeVirusMonitorSetting": {
@@ -1358,6 +1358,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1848,6 +1878,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2249,7 +2309,7 @@
       "members": [
         {
           "default": "",
-          "document": "仅在添加白名单时候使用",
+          "document": "仅在添加事件白名单时候使用",
           "example": "\"\"",
           "member": "string",
           "name": "EventId",
@@ -2258,7 +2318,7 @@
         },
         {
           "default": "",
-          "document": "增加白名单信息，白名单id为空，编辑白名单id不能为空",
+          "document": "增加或编辑白名单信。新增白名单时WhiteListInfo.id为空，编辑白名单WhiteListInfo.id不能为空.",
           "example": "{}",
           "member": "RiskSyscallWhiteListInfo",
           "name": "WhiteListInfo",
@@ -4641,6 +4701,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xx",
+          "member": "string",
+          "name": "NetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络子状态",
+          "example": "xx",
+          "member": "string",
+          "name": "NetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "隔离来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "IsolateSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "IsolateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6200,15 +6300,6 @@
       "members": [
         {
           "default": "",
-          "document": "导出字段",
-          "example": "[]",
-          "member": "string",
-          "name": "ExportField",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -6251,6 +6342,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "[]",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6263,6 +6363,15 @@
           "example": "https://",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "JobId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -7176,6 +7285,42 @@
           "value_allowed_null": false
         },
         {
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xxx",
+          "member": "string",
+          "name": "NetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "网络子状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "NetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "隔离来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsolateSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IsolateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7207,7 +7352,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>\n<li>Status - String - 是否必填：否 - 容器运行状态筛选，0：\"created\",1：\"running\", 2：\"paused\", 3：\"restarting\", 4：\"removing\", 5：\"exited\", 6：\"dead\" </li>\n<li>Runas - String - 是否必填：否 - 运行用户筛选</li>\n<li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 [\"cpu_usage\",\"+\"]  '+'升序、'-'降序</li>",
+          "document": "过滤条件。\n<li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>\n<li>Status - String - 是否必填：否 - 容器运行状态筛选，0：\"created\",1：\"running\", 2：\"paused\", 3：\"restarting\", 4：\"removing\", 5：\"exited\", 6：\"dead\" </li>\n<li>Runas - String - 是否必填：否 - 运行用户筛选</li>\n<li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 [\"cpu_usage\",\"+\"]  '+'升序、'-'降序</li>\n<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -12879,15 +13024,6 @@
       "members": [
         {
           "default": "",
-          "document": "导出字段",
-          "example": "[]",
-          "member": "string",
-          "name": "ExportField",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -12930,6 +13066,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "[]",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12942,6 +13087,15 @@
           "example": "https://",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "JobId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13320,15 +13474,6 @@
       "members": [
         {
           "default": "",
-          "document": "导出字段",
-          "example": "[]",
-          "member": "string",
-          "name": "ExportField",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -13371,6 +13516,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出字段",
+          "example": "[]",
+          "member": "string",
+          "name": "ExportField",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13383,6 +13537,15 @@
           "example": "https://",
           "member": "string",
           "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "JobId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14293,6 +14456,33 @@
           "value_allowed_null": true
         },
         {
+          "document": "容器隔离状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器隔离子状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "容器隔离操作来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -14324,7 +14514,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>",
+          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -15109,6 +15299,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15190,7 +15410,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>",
+          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -17776,7 +17996,7 @@
         },
         {
           "default": "",
-          "document": "标记事件的状态，   \n    EVENT_DEALED:事件处理\n    EVENT_INGNORE\"：事件忽略\n     EVENT_DEL:事件删除\n     EVENT_ADD_WHITE:事件加白\n     EVENT_PENDING: 事件待处理",
+          "document": "标记事件的状态，   \n    EVENT_DEALED:事件处理\n    EVENT_INGNORE\"：事件忽略\n    EVENT_DEL:事件删除\n    EVENT_ADD_WHITE:事件加白\n    EVENT_PENDING: 事件待处理\n\tEVENT_ISOLATE_CONTAINER: 隔离容器\n\tEVENT_RESOTRE_CONTAINER: 恢复容器",
           "example": "EVENT_DEALED",
           "member": "string",
           "name": "Status",
@@ -17791,6 +18011,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否后续自动隔离相同MD5文件",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoIsolate",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -18766,6 +18995,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\t\"NODE_DESTROYED\"      //节点已销毁\n\t\"CONTAINER_EXITED\"    //容器已退出\n\t\"CONTAINER_DESTROYED\" //容器已销毁\n\t\"SHARED_HOST\"         // 容器与主机共享网络\n\t\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\t\"UNKNOW\"              // 原因未知",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19157,6 +19416,36 @@
           "example": "2020-2-2 13:00:00",
           "member": "string",
           "name": "LatestFoundTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\"NODE_DESTROYED\"      //节点已销毁\n\"CONTAINER_EXITED\"    //容器已退出\n\"CONTAINER_DESTROYED\" //容器已销毁\n\"SHARED_HOST\"         // 容器与主机共享网络\n\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\"UNKNOW\"              // 原因未知",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20542,6 +20831,46 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络状态\n未隔离  \tNORMAL\n已隔离\t\tISOLATED\n隔离中\t\tISOLATING\n隔离失败\tISOLATE_FAILED\n解除隔离中  RESTORING\n解除隔离失败 RESTORE_FAILED",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器子状态\n\"AGENT_OFFLINE\"       //Agent离线\n\t\"NODE_DESTROYED\"      //节点已销毁\n\t\"CONTAINER_EXITED\"    //容器已退出\n\t\"CONTAINER_DESTROYED\" //容器已销毁\n\t\"SHARED_HOST\"         // 容器与主机共享网络\n\t\"RESOURCE_LIMIT\"      //隔离操作资源超限\n\t\"UNKNOW\"              // 原因未知",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerNetSubStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器隔离操作来源",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "md5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "MD5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
