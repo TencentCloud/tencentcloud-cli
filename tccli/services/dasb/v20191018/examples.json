@@ -1,0 +1,103 @@
+{
+  "actions": {
+    "CreateAcl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAcl\n<公共请求参数>\n\n{\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AccountSet\": [\n        \"xx\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"UserIdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建访问权限"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\",\n    \"AuthType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建用户"
+      }
+    ],
+    "DeleteAcls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcls\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除访问权限"
+      }
+    ],
+    "DeleteUsers": [
+      {
+        "document": "删除用户",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUsers\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户"
+      }
+    ],
+    "DescribeAcls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcls\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AclSet\": [\n            {\n                \"UserGroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowShellFileUp\": true,\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"AllowDiskFileDown\": true,\n                \"UserSet\": [\n                    {\n                        \"UserName\": \"xx\",\n                        \"AuthType\": 1,\n                        \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                        \"RealName\": \"xx\",\n                        \"Email\": \"xx\",\n                        \"Phone\": \"xx\",\n                        \"GroupSet\": [\n                            {\n                                \"Id\": 1,\n                                \"Name\": \"xx\"\n                            }\n                        ],\n                        \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                        \"Id\": 1\n                    }\n                ],\n                \"AllowFileUp\": true,\n                \"Status\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"DeviceSet\": [\n                    {\n                        \"Kind\": 1,\n                        \"GroupSet\": [\n                            {\n                                \"Id\": 1,\n                                \"Name\": \"xx\"\n                            }\n                        ],\n                        \"Resource\": {\n                            \"RenewFlag\": 1,\n                            \"Zone\": \"xx\",\n                            \"SubnetName\": \"xx\",\n                            \"Nodes\": 1,\n                            \"Status\": 1,\n                            \"VpcId\": \"xx\",\n                            \"SubProductCode\": \"xx\",\n                            \"ResourceId\": \"xx\",\n                            \"VpcName\": \"xx\",\n                            \"ApCode\": \"xx\",\n                            \"SubnetId\": \"xx\",\n                            \"ResourceName\": \"xx\",\n                            \"Expired\": true,\n                            \"Deployed\": true,\n                            \"ProductCode\": \"xx\",\n                            \"PublicIpSet\": [\n                                \"xx\"\n                            ],\n                            \"PrivateIpSet\": [\n                                \"xx\"\n                            ],\n                            \"Pid\": 1,\n                            \"VpcCidrBlock\": \"xx\",\n                            \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"SvArgs\": \"xx\",\n                            \"CidrBlock\": \"xx\",\n                            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n                        },\n                        \"Name\": \"xx\",\n                        \"InstanceId\": \"xx\",\n                        \"OsName\": \"xx\",\n                        \"AccountCount\": 1,\n                        \"PrivateIp\": \"xx\",\n                        \"PublicIp\": \"xx\",\n                        \"VpcId\": \"xx\",\n                        \"ApCode\": \"xx\",\n                        \"SubnetId\": \"xx\",\n                        \"Port\": 1,\n                        \"Id\": 1\n                    }\n                ],\n                \"AllowDiskRedirect\": false,\n                \"AllowAnyAccount\": true,\n                \"MaxFileDownSize\": 1,\n                \"Name\": \"xx\",\n                \"AllowDiskFileUp\": true,\n                \"AllowClipFileUp\": false,\n                \"AllowClipTextUp\": true,\n                \"AllowFileDown\": true,\n                \"DeviceGroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CmdTemplateSet\": [\n                    {\n                        \"CmdList\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"Id\": 1\n                    }\n                ],\n                \"AccountSet\": [\n                    \"xx\"\n                ],\n                \"AllowClipFileDown\": false,\n                \"MaxFileUpSize\": 1,\n                \"Id\": 1,\n                \"AllowFileDel\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询访问权限列表"
+      },
+      {
+        "document": "根据用户和主机查询对应的权限",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcls\n<公共请求参数>\n\n{\n    \"AuthorizedUserIdSet\": [\n        1,\n        7,\n        8,\n        238\n    ],\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AclSet\": [\n            {\n                \"UserGroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"AllowClipTextDown\": true,\n                \"AllowShellFileDown\": true,\n                \"AllowShellFileUp\": true,\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"AllowDiskFileDown\": true,\n                \"UserSet\": [\n                    {\n                        \"UserName\": \"xx\",\n                        \"AuthType\": 1,\n                        \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                        \"RealName\": \"xx\",\n                        \"Email\": \"xx\",\n                        \"Phone\": \"xx\",\n                        \"GroupSet\": [\n                            {\n                                \"Id\": 1,\n                                \"Name\": \"xx\"\n                            }\n                        ],\n                        \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                        \"Id\": 1\n                    }\n                ],\n                \"AllowFileUp\": true,\n                \"Status\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"DeviceSet\": [\n                    {\n                        \"Kind\": 1,\n                        \"GroupSet\": [\n                            {\n                                \"Id\": 1,\n                                \"Name\": \"xx\"\n                            }\n                        ],\n                        \"Resource\": {\n                            \"RenewFlag\": 1,\n                            \"Zone\": \"xx\",\n                            \"SubnetName\": \"xx\",\n                            \"Nodes\": 1,\n                            \"Status\": 1,\n                            \"VpcId\": \"xx\",\n                            \"SubProductCode\": \"xx\",\n                            \"ResourceId\": \"xx\",\n                            \"VpcName\": \"xx\",\n                            \"ApCode\": \"xx\",\n                            \"SubnetId\": \"xx\",\n                            \"ResourceName\": \"xx\",\n                            \"Expired\": true,\n                            \"Deployed\": true,\n                            \"ProductCode\": \"xx\",\n                            \"PublicIpSet\": [\n                                \"xx\"\n                            ],\n                            \"PrivateIpSet\": [\n                                \"xx\"\n                            ],\n                            \"Pid\": 1,\n                            \"VpcCidrBlock\": \"xx\",\n                            \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"SvArgs\": \"xx\",\n                            \"CidrBlock\": \"xx\",\n                            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n                        },\n                        \"Name\": \"xx\",\n                        \"InstanceId\": \"xx\",\n                        \"OsName\": \"xx\",\n                        \"AccountCount\": 1,\n                        \"PrivateIp\": \"xx\",\n                        \"PublicIp\": \"xx\",\n                        \"VpcId\": \"xx\",\n                        \"ApCode\": \"xx\",\n                        \"SubnetId\": \"xx\",\n                        \"Port\": 1,\n                        \"Id\": 1\n                    }\n                ],\n                \"AllowDiskRedirect\": false,\n                \"AllowAnyAccount\": true,\n                \"MaxFileDownSize\": 1,\n                \"Name\": \"xx\",\n                \"AllowDiskFileUp\": true,\n                \"AllowClipFileUp\": false,\n                \"AllowClipTextUp\": true,\n                \"AllowFileDown\": true,\n                \"DeviceGroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"CmdTemplateSet\": [\n                    {\n                        \"CmdList\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"Id\": 1\n                    }\n                ],\n                \"AccountSet\": [\n                    \"xx\"\n                ],\n                \"AllowClipFileDown\": false,\n                \"MaxFileUpSize\": 1,\n                \"Id\": 1,\n                \"AllowFileDel\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据用户和主机查询对应的权限"
+      }
+    ],
+    "DescribeDasbImageIds": [
+      {
+        "document": "",
+        "input": "https://dasb.tencentcloudapi.com/?Action=DescribeDasbImageIds\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BaseImageId\": \"SDFEEF\",\n        \"AiImageId\": \"XXXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取镜像列表"
+      }
+    ],
+    "DescribeDevices": [
+      {
+        "document": "查询资产列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DeviceSet\": [\n            {\n                \"Kind\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Resource\": {\n                    \"Status\": 1,\n                    \"ProductCode\": \"xx\",\n                    \"VpcId\": \"xx\",\n                    \"RenewFlag\": 1,\n                    \"Zone\": \"xx\",\n                    \"SubProductCode\": \"xx\",\n                    \"ResourceId\": \"xx\",\n                    \"Pid\": 1,\n                    \"CidrBlock\": \"xx\",\n                    \"VpcCidrBlock\": \"xx\",\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"SubnetName\": \"xx\",\n                    \"VpcName\": \"xx\",\n                    \"ApCode\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ResourceName\": \"xx\",\n                    \"Nodes\": 1,\n                    \"PublicIpSet\": [\n                        \"xx\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"xx\"\n                    ],\n                    \"Expired\": true,\n                    \"SvArgs\": \"xx\",\n                    \"Deployed\": true\n                },\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"OsName\": \"xx\",\n                \"AccountCount\": 1,\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"Port\": 1,\n                \"Id\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询资产列表"
+      },
+      {
+        "document": "根据用户查询有访问权限的资产",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{\n    \"AuthorizedUserIdSet\": [\n        1,\n        7,\n        8\n    ],\n    \"Name\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DeviceSet\": [\n            {\n                \"Kind\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Resource\": {\n                    \"Status\": 1,\n                    \"ProductCode\": \"xx\",\n                    \"VpcId\": \"xx\",\n                    \"RenewFlag\": 1,\n                    \"Zone\": \"xx\",\n                    \"SubProductCode\": \"xx\",\n                    \"ResourceId\": \"xx\",\n                    \"Pid\": 1,\n                    \"CidrBlock\": \"xx\",\n                    \"VpcCidrBlock\": \"xx\",\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"SubnetName\": \"xx\",\n                    \"VpcName\": \"xx\",\n                    \"ApCode\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ResourceName\": \"xx\",\n                    \"PublicIpSet\": [\n                        \"xx\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"xx\"\n                    ],\n                    \"Nodes\": 1,\n                    \"Expired\": true,\n                    \"SvArgs\": \"xx\",\n                    \"Deployed\": true\n                },\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"OsName\": \"xx\",\n                \"AccountCount\": 1,\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"Port\": 1,\n                \"Id\": 1\n            }\n        ]\n    }\n}",
+        "title": "根据用户查询有访问权限的资产"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "查询用户列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户列表"
+      },
+      {
+        "document": "根据主机查询有访问权限的用户信息",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ],\n    \"Name\": \"u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据主机查询有访问权限的用户信息"
+      }
+    ],
+    "ModifyAcl": [
+      {
+        "document": "修改访问权限",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"xx\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"xx\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改访问权限"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "修改用户信息",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改用户信息"
+      }
+    ]
+  },
+  "version": "1.0"
+}

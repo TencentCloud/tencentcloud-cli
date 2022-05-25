@@ -27,6 +27,10 @@ Output:
                 }
             ],
             "TagSet": [],
+            "UsageSet": [
+                "Recognition.Face",
+                "Review.Face"
+            ],
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
@@ -74,6 +78,10 @@ Output:
             "TagSet": [
                 "中国",
                 "明星"
+            ],
+            "UsageSet": [
+                "Recognition.Face",
+                "Review.Face"
             ],
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
@@ -123,6 +131,10 @@ Output:
                 "中国",
                 "明星"
             ],
+            "UsageSet": [
+                "Recognition.Face",
+                "Review.Face"
+            ],
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
@@ -165,6 +177,10 @@ Output:
             ],
             "TagSet": [
                 "明星"
+            ],
+            "UsageSet": [
+                "Recognition.Face",
+                "Review.Face"
             ],
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"

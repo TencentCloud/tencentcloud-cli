@@ -2291,6 +2291,7 @@
         {
           "default": "",
           "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "example": "ins-6lafsaz0",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2304,8 +2305,10 @@
       "members": [
         {
           "document": "带宽配置信息列表。",
+          "example": "无",
           "member": "InternetBandwidthConfig",
           "name": "InternetBandwidthConfigSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6905,6 +6908,7 @@
         {
           "default": "",
           "document": "待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "example": "[\"ins-r8hr2upy\\n\",\"ins-5d8a23rs\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6913,6 +6917,7 @@
         {
           "default": "",
           "document": "私有网络相关信息配置，通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。<br><li>当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。<br><li>可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。<br><li>不指定`PrivateIpAddresses`时随机分配私有网络子网IP。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": true,
@@ -6921,6 +6926,7 @@
         {
           "default": "",
           "document": "是否对运行中的实例选择强制关机。默认为TRUE。",
+          "example": "无",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -6929,6 +6935,7 @@
         {
           "default": "",
           "document": "是否保留主机名。默认为FALSE。",
+          "example": "无",
           "member": "bool",
           "name": "ReserveHostName",
           "required": false,
@@ -8193,6 +8200,7 @@
         {
           "default": "",
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。",
+          "example": "[\"ins-r8hr2upy\\r\\n\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8201,6 +8209,7 @@
         {
           "default": "",
           "document": "公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持 `InternetMaxBandwidthOut` 参数。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": true,
@@ -8209,6 +8218,7 @@
         {
           "default": "",
           "document": "带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。",
+          "example": "2017-03-15",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -8217,6 +8227,7 @@
         {
           "default": "",
           "document": "带宽生效的终止时间。格式： `YYYY-MM-DD` ，例如：`2016-10-30` 。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。",
+          "example": "2017-03-16",
           "member": "string",
           "name": "EndTime",
           "required": false,

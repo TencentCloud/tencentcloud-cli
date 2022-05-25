@@ -191,7 +191,7 @@
     "DescribeInstanceInternetBandwidthConfigs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceInternetBandwidthConfigs\r\n&InstanceId=ins-6lafsaz0\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceInternetBandwidthConfigs\n&InstanceId=ins-6lafsaz0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"InternetBandwidthConfigSet\": [\n            {\n                \"StartTime\": \"2017-03-12T16:00:00Z\",\n                \"EndTime\": \"2017-04-12T16:00:00Z\",\n                \"InternetAccessible\": {\n                    \"InternetMaxBandwidthOut\": 50,\n                    \"InternetChargeType\": \"BANDWIDTH_PREPAID\"\n                }\n            }\n        ],\n        \"RequestId\": \"314161cd-ee40-4c37-921e-b10c4ed5607c\"\n    }\n}",
         "title": "查询实例带宽配置"
       }
@@ -547,7 +547,7 @@
     "ModifyInstancesVpcAttribute": [
       {
         "document": "实例 r8hr2upy 和 5d8a23rs 迁移至私有网络 1urkhbj4 子网 dcs9x3gz 中，指定实例 r8hr2upy  的私有网络IP为 10.0.0.18，实例 5d8a23rs 的私有网络IP为 10.0.0.19。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesVpcAttribute\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InstanceIds.1=ins-5d8a23rs\r\n&VirtualPrivateCloud.SubnetId=subnet-dcs9x3gz\r\n&VirtualPrivateCloud.VpcId=vpc-1urkhbj4\r\n&VirtualPrivateCloud.PrivateIpAddresses.0=10.0.0.18\r\n&VirtualPrivateCloud.PrivateIpAddresses.1=10.0.0.19\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesVpcAttribute\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&VirtualPrivateCloud.SubnetId=subnet-dcs9x3gz\n&VirtualPrivateCloud.VpcId=vpc-1urkhbj4\n&VirtualPrivateCloud.PrivateIpAddresses.0=10.0.0.18\n&VirtualPrivateCloud.PrivateIpAddresses.1=10.0.0.19\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c14def19-cfes-470e-b241-90787u6jf5uj\"\n    }\n}",
         "title": "迁移实例私有网络且指定子网IP"
       }
@@ -625,7 +625,7 @@
     "ResetInstancesInternetMaxBandwidth": [
       {
         "document": "本示例用于调整一个实例的公网带宽上限。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesInternetMaxBandwidth\r\n&InstanceIds.0=ins-r8hr2upy\r\n&InternetAccessible.InternetMaxBandwidthOut=10\r\n&StartTime=2017-03-15\r\n&EndTime=2017-03-16\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesInternetMaxBandwidth\n&InstanceIds.0=ins-r8hr2upy\n&InternetAccessible.InternetMaxBandwidthOut=10\n&StartTime=2017-03-15\n&EndTime=2017-03-16\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "调整实例公网带宽上限"
       }

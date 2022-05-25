@@ -1604,7 +1604,7 @@
       "usage": "out"
     },
     "TaskStatus": {
-      "document": "获取录音识别结果结果的返回参数",
+      "document": "获取录音识别结果的返回参数",
       "members": [
         {
           "default": "",

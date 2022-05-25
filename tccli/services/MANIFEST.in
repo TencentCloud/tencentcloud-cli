@@ -129,6 +129,8 @@ include tccli/services/cws/v20180312/api.json
 include tccli/services/cws/v20180312/examples.json
 include tccli/services/cynosdb/v20190107/api.json
 include tccli/services/cynosdb/v20190107/examples.json
+include tccli/services/dasb/v20191018/api.json
+include tccli/services/dasb/v20191018/examples.json
 include tccli/services/dayu/v20180709/api.json
 include tccli/services/dayu/v20180709/examples.json
 include tccli/services/dbbrain/v20210527/api.json

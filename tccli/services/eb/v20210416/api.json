@@ -1060,6 +1060,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件发生的毫秒时间戳，\ntime.Now().UnixNano()/1e6",
+          "example": "1631186355147",
+          "member": "int64",
+          "name": "Time",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

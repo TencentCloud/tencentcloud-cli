@@ -9569,6 +9569,7 @@
         {
           "default": "",
           "document": "指标告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Condition",
           "name": "Conditions",
           "required": true,
@@ -9578,6 +9579,7 @@
         {
           "default": "",
           "document": "事件告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "EventCondition",
           "name": "EventConditions",
           "required": true,
@@ -9587,6 +9589,7 @@
         {
           "default": "",
           "document": "关联告警策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PolicyGroup",
           "name": "PolicyGroups",
           "required": true,
@@ -9596,6 +9599,7 @@
         {
           "default": "",
           "document": "模板策略组ID",
+          "example": "1",
           "member": "int64",
           "name": "GroupID",
           "required": true,
@@ -9605,6 +9609,7 @@
         {
           "default": "",
           "document": "模板策略组名称",
+          "example": "test",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -9614,6 +9619,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "11",
           "member": "int64",
           "name": "InsertTime",
           "required": true,
@@ -9623,6 +9629,7 @@
         {
           "default": "",
           "document": "最后修改人UIN",
+          "example": "1",
           "member": "int64",
           "name": "LastEditUin",
           "required": true,
@@ -9632,6 +9639,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "\"\"",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -9641,6 +9649,7 @@
         {
           "default": "",
           "document": "更新时间",
+          "example": "1",
           "member": "int64",
           "name": "UpdateTime",
           "required": true,
@@ -9650,6 +9659,7 @@
         {
           "default": "",
           "document": "视图",
+          "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -9659,6 +9669,7 @@
         {
           "default": "",
           "document": "是否为与关系",
+          "example": "1",
           "member": "int64",
           "name": "IsUnionRule",
           "required": true,

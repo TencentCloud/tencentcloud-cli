@@ -33,9 +33,8 @@ Input:
 ```
 tccli vod CreateSampleSnapshotTemplate --cli-unfold-argument  \
     --Name 长边截图 \
-    --Width 0 \
+    --Width 1920 \
     --Height 0 \
-    --Long 1080 \
     --SampleType Percent \
     --SampleInterval 10 \
     --Format jpg
