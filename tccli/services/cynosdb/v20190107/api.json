@@ -4136,7 +4136,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-45knmnra",
+          "example": "cynosdbmysql-45knmnra",
           "member": "string",
           "name": "ClusterId",
           "required": true,

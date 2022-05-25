@@ -6675,29 +6675,57 @@
         {
           "default": "",
           "document": "位置点的时间",
+          "example": "1597042572000",
           "member": "int64",
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "位置点的经度",
+          "example": "106.04509595706622",
           "member": "float",
           "name": "Longitude",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "位置点的纬度",
+          "example": "27.030664678580806",
           "member": "float",
           "name": "Latitude",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "位置点的定位类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NAV",
+          "member": "string",
+          "name": "LocationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "位置点的精度预估，单位为米\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42.3",
+          "member": "float",
+          "name": "Accuracy",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

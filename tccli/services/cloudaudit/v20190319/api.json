@@ -655,7 +655,8 @@
           "member": "uint64",
           "name": "StartTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -664,7 +665,8 @@
           "member": "uint64",
           "name": "EndTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -673,7 +675,8 @@
           "member": "uint64",
           "name": "NextToken",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -682,16 +685,18 @@
           "member": "uint64",
           "name": "MaxResults",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码）",
+          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]））",
           "example": "[{\"AttributeKey:XX,\"AttributeValue\":xx}]",
           "member": "LookupAttribute",
           "name": "LookupAttributes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -700,7 +705,8 @@
           "member": "uint64",
           "name": "IsReturnLocation",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -715,7 +721,8 @@
           "name": "ListOver",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "查看更多日志的凭证",
@@ -724,7 +731,8 @@
           "name": "NextToken",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -733,7 +741,8 @@
           "name": "Events",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -742,7 +751,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

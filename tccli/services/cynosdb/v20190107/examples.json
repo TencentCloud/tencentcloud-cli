@@ -219,7 +219,7 @@
     "ModifyBackupConfig": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&ClusterId=cynosdbpg-45knmnra\n&BackupTimeBeg=7200\n&BackupTimeEnd=21600\n&ReserveDuration=604800\n&<公共请求参数>",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&ClusterId=cynosdbmysql-45knmnra\n&BackupTimeBeg=7200\n&BackupTimeEnd=21600\n&ReserveDuration=604800\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改集群备份配置"
       }

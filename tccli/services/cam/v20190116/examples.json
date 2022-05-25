@@ -580,6 +580,22 @@
         "title": "设置登录保护校验方式为微信"
       }
     ],
+    "TagRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagRole\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"AKey\",\n            \"Value\": \"AValue\"\n        }\n    ],\n    \"RoleName\": \"CAM_QCSRole\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "title": "角色绑定标签"
+      }
+    ],
+    "UntagRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UntagRole\n<公共请求参数>\n\n{\n    \"TagKeys\": [\n        \"AKey\"\n    ],\n    \"RoleName\": \"CAM_QCSRole\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\"\n    }\n}",
+        "title": "角色解绑标签"
+      }
+    ],
     "UpdateAssumeRolePolicy": [
       {
         "document": "",

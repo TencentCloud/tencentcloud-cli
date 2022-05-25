@@ -438,7 +438,8 @@
           "member": "string",
           "name": "FileSystemName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -447,7 +448,8 @@
           "member": "uint64",
           "name": "CapacityQuota",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -456,7 +458,8 @@
           "member": "bool",
           "name": "PosixAcl",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -465,7 +468,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -474,7 +478,8 @@
           "member": "string",
           "name": "SuperUsers",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -483,7 +488,8 @@
           "member": "string",
           "name": "RootInodeUser",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -492,7 +498,8 @@
           "member": "string",
           "name": "RootInodeGroup",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -501,7 +508,8 @@
           "member": "bool",
           "name": "EnableRanger",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -510,7 +518,18 @@
           "member": "string",
           "name": "RangerServiceAddresses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "多个资源标签，可以为空数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -525,7 +544,8 @@
           "name": "FileSystem",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

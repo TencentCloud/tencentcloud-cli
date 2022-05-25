@@ -21,7 +21,10 @@ Output:
                 "OwnerUin": "1235674890",
                 "Count": 1,
                 "PayMode": 1,
-                "FlowId": 1234
+                "FlowId": 1234,
+                "InstanceIds": [
+                    "tdsql-1234"
+                ]
             }
         ]
     }

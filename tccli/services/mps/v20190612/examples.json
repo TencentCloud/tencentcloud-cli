@@ -52,28 +52,28 @@
     ],
     "CreateContentReviewTemplate": [
       {
-        "document": "创建一个自定义 AI 内容智能识别模板，仅开启画面内容令人反感的信息任务，判定为违规的分数阈值和判定为需要人工识别的分数阈值都为默认值，不指定过滤标签。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建仅开启画面令人反感的信息的内容智能识别模板"
-      },
-      {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工识别的阈值分数为 30 分。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板2\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=80\n&PornConfigure.ImgReviewInfo.ReviewConfidence=30\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
-        "title": "创建仅开启画面令人反感的信息的任务内容智能识别模板，并指定分数阈值和截帧间隔"
-      },
-      {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板3\n&PornConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.OcrReviewInfo.Switch=OFF\n&PoliticalConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"88aee3e9-2qd3-4151-9d4b-4390a45227a9\"\n    }\n}",
-        "title": "创建开启多项识别任务的内容智能识别模板"
-      },
-      {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模块\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=porn\n&PornConfigure.ImgReviewInfo.LabelSet.1=sexy\n&<公共请求参数>",
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容审核模块\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=porn\n&PornConfigure.ImgReviewInfo.LabelSet.1=sexy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"67aee3e9-2qd3-2395-9d4b-4390a96837a7\"\n    }\n}",
         "title": "创建开启画面令人反感的信息的内容识别模板，并指定过滤标签"
+      },
+      {
+        "document": "创建一个自定义 AI 内容审核模板，仅开启画面内容令人反感的信息任务，判定为违规的分数阈值和判定为需要人工识别的分数阈值都为默认值，不指定过滤标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容审核模板\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的内容审核模板"
+      },
+      {
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工识别的阈值分数为 30 分。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容审核模板\n&Comment=模板2\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=80\n&PornConfigure.ImgReviewInfo.ReviewConfidence=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的任务内容审核模板，并指定分数阈值和截帧间隔"
+      },
+      {
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容审核模板\n&Comment=模板3\n&PornConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.OcrReviewInfo.Switch=OFF\n&PoliticalConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"88aee3e9-2qd3-4151-9d4b-4390a45227a9\"\n    }\n}",
+        "title": "创建开启多项识别任务的内容审核模板"
       }
     ],
     "CreateImageSpriteTemplate": [
