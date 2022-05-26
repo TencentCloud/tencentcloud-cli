@@ -620,7 +620,8 @@
           "member": "string",
           "name": "UserName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -629,7 +630,8 @@
           "member": "string",
           "name": "RealName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -638,7 +640,8 @@
           "member": "string",
           "name": "Phone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -647,7 +650,8 @@
           "member": "string",
           "name": "Email",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -656,7 +660,8 @@
           "member": "datetime_iso",
           "name": "ValidateFrom",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -665,7 +670,8 @@
           "member": "datetime_iso",
           "name": "ValidateTo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -674,16 +680,18 @@
           "member": "uint64",
           "name": "GroupIdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "认证方式，0-本地 1-ldap,不传则默认为0",
+          "document": "认证方式，0-本地 1-ldap 2-oauth,不传则默认为0",
           "example": "1",
           "member": "uint64",
           "name": "AuthType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -692,7 +700,8 @@
           "member": "string",
           "name": "ValidateTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -707,7 +716,8 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1047,7 +1057,8 @@
           "member": "uint64",
           "name": "IdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1056,7 +1067,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1065,7 +1077,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1074,7 +1087,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1083,7 +1097,8 @@
           "member": "string",
           "name": "UserName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1092,7 +1107,8 @@
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1101,16 +1117,18 @@
           "member": "uint64",
           "name": "AuthorizedDeviceIdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "认证方式，0-本地，1-ldap,不传为全部",
+          "document": "认证方式，0-本地，1-ldap, 2-oauth 不传为全部",
           "example": "[0,1]",
           "member": "uint64",
           "name": "AuthTypeSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1125,7 +1143,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "用户信息列表",
@@ -1134,7 +1153,8 @@
           "name": "UserSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1570,7 +1590,8 @@
           "member": "uint64",
           "name": "Id",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1579,7 +1600,8 @@
           "member": "string",
           "name": "RealName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1588,7 +1610,8 @@
           "member": "string",
           "name": "Phone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1597,7 +1620,8 @@
           "member": "string",
           "name": "Email",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1606,7 +1630,8 @@
           "member": "datetime_iso",
           "name": "ValidateFrom",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1615,7 +1640,8 @@
           "member": "datetime_iso",
           "name": "ValidateTo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1624,16 +1650,18 @@
           "member": "uint64",
           "name": "GroupIdSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "认证方式，0-本地 1-ldap,不传则默认为0",
+          "document": "认证方式，0-本地 1-ldap, 2-oauth不传则默认为0",
           "example": "0",
           "member": "uint64",
           "name": "AuthType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1642,7 +1670,8 @@
           "member": "string",
           "name": "ValidateTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
