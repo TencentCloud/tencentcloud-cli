@@ -312,6 +312,12 @@
       "name": "获取设备sdk日志",
       "output": "ListSDKLogResponse"
     },
+    "ListTopicRules": {
+      "document": "本接口（ListTopicRules）用于分页获取规则列表",
+      "input": "ListTopicRulesRequest",
+      "name": "获取规则列表",
+      "output": "ListTopicRulesResponse"
+    },
     "PublishBroadcastMessage": {
       "document": "发布广播消息",
       "input": "PublishBroadcastMessageRequest",
@@ -4755,6 +4761,60 @@
       ],
       "type": "object"
     },
+    "ListTopicRulesRequest": {
+      "document": "ListTopicRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求的页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTopicRulesResponse": {
+      "document": "ListTopicRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则总数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则列表",
+          "example": "无",
+          "member": "TopicRuleInfo",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PayloadLogItem": {
       "document": "内容日志项",
       "members": [
@@ -5809,6 +5869,62 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopicRuleInfo": {
+      "document": "规则详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "test",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不生效",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleDisabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则模式",
+          "example": "test",
+          "member": "string",
+          "name": "TopicPattern",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

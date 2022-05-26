@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeInstanceDetail --cli-unfold-argument  \
-    --InstanceId cynosdbpg-ins-bzkxxrmt
+    --InstanceId cynosdbmysql-ins-bzkxxrmt
 ```
 
 Output: 
@@ -27,8 +27,8 @@ Output:
             "Status": "running",
             "UpdateTime": "2018-06-20 19:12:54",
             "VpcId": "vpc-1ptuei0b",
-            "InstanceId": "cynosdbpg-ins-bzkxxrmt",
-            "ClusterId": "cynosdbpg-cluster-5ne6bjyx",
+            "InstanceId": "cynosdbmysql-ins-bzkxxrmt",
+            "ClusterId": "cynosdbmysql-cluster-5ne6bjyx",
             "CynosVersion": "2.0.12",
             "NetType": 1,
             "PeriodEndTime": "2018-07-20 19:17:16",
@@ -38,13 +38,13 @@ Output:
             "PayMode": 0,
             "SubnetId": "subnet-1tmw9t4o",
             "StatusDesc": "运行中",
-            "InstanceName": "ahhah哈哈呵呵",
+            "InstanceName": "ahhahhhhh",
             "Cpu": 2,
             "WanDomain": "",
-            "ClusterName": "cynosdbpg-cluster-5ne6bjyx",
+            "ClusterName": "cynosdbmysql-cluster-5ne6bjyx",
             "InstanceRole": "master",
             "Uin": "3374998458",
-            "DbType": "POSTGRESQL",
+            "DbType": "MYSQL",
             "Vip": "10.0.1.2",
             "AppId": 1251006243,
             "Vport": 5432,

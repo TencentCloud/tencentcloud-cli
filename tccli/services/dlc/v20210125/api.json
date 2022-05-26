@@ -54,6 +54,18 @@
       "name": "创建sql脚本",
       "output": "CreateScriptResponse"
     },
+    "CreateSparkApp": {
+      "document": "创建spark应用",
+      "input": "CreateSparkAppRequest",
+      "name": "创建spark应用",
+      "output": "CreateSparkAppResponse"
+    },
+    "CreateSparkAppTask": {
+      "document": "创建spark任务",
+      "input": "CreateSparkAppTaskRequest",
+      "name": "创建spark任务",
+      "output": "CreateSparkAppTaskResponse"
+    },
     "CreateStoreLocation": {
       "document": "该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。",
       "input": "CreateStoreLocationRequest",
@@ -102,6 +114,12 @@
       "name": "删除sql脚本",
       "output": "DeleteScriptResponse"
     },
+    "DeleteSparkApp": {
+      "document": "删除spark应用",
+      "input": "DeleteSparkAppRequest",
+      "name": "删除spark应用",
+      "output": "DeleteSparkAppResponse"
+    },
     "DeleteUser": {
       "document": "删除用户",
       "input": "DeleteUserRequest",
@@ -131,6 +149,24 @@
       "input": "DescribeScriptsRequest",
       "name": "查询script列表",
       "output": "DescribeScriptsResponse"
+    },
+    "DescribeSparkAppJob": {
+      "document": "查询具体的spark应用",
+      "input": "DescribeSparkAppJobRequest",
+      "name": "查询具体的spark应用",
+      "output": "DescribeSparkAppJobResponse"
+    },
+    "DescribeSparkAppJobs": {
+      "document": "获取spark应用列表",
+      "input": "DescribeSparkAppJobsRequest",
+      "name": "获取spark应用列表",
+      "output": "DescribeSparkAppJobsResponse"
+    },
+    "DescribeSparkAppTasks": {
+      "document": "查询spark应用的运行任务实例列表",
+      "input": "DescribeSparkAppTasksRequest",
+      "name": "查询spark应用的运行任务实例列表",
+      "output": "DescribeSparkAppTasksResponse"
     },
     "DescribeStoreLocation": {
       "document": "查询计算结果存储位置。",
@@ -191,6 +227,12 @@
       "input": "DetachWorkGroupPolicyRequest",
       "name": "解绑工作组鉴权策略",
       "output": "DetachWorkGroupPolicyResponse"
+    },
+    "ModifySparkApp": {
+      "document": "更新spark应用",
+      "input": "ModifySparkAppRequest",
+      "name": "更新spark应用",
+      "output": "ModifySparkAppResponse"
     },
     "ModifyUser": {
       "document": "修改用户信息",
@@ -765,6 +807,249 @@
     "CreateScriptResponse": {
       "document": "CreateScript返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkAppRequest": {
+      "document": "CreateSparkApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark应用名",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1代表spark jar应用，2代表spark streaming应用",
+          "example": "1,2",
+          "member": "int64",
+          "name": "AppType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "执行spark作业的数据引擎",
+          "example": "spark-engine",
+          "member": "string",
+          "name": "DataEngine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark应用的执行入口",
+          "example": "test.jar",
+          "member": "string",
+          "name": "AppFile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行spark作业的角色ID",
+          "example": "12",
+          "member": "int64",
+          "name": "RoleArn",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppDriverSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppExecutorSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业executor个数",
+          "example": "1",
+          "member": "int64",
+          "name": "AppExecutorNums",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "该字段已下线，请使用字段Datasource",
+          "example": "kafka-datasource",
+          "member": "string",
+          "name": "Eni",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，可去cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark jar作业时的主类",
+          "example": "org.test.WordCount",
+          "member": "string",
+          "name": "MainClass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark配置，以换行符分隔",
+          "example": "spark.default.parallelism=2000",
+          "member": "string",
+          "name": "AppConf",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，包含cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark jar作业依赖jars，以逗号分隔",
+          "example": "com.test.jar",
+          "member": "string",
+          "name": "AppJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，包含cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业依赖资源，以逗号分隔",
+          "example": "spark-default.properties",
+          "member": "string",
+          "name": "AppFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业命令行参数",
+          "example": "10",
+          "member": "string",
+          "name": "CmdArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只对spark流任务生效",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxRetries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源名",
+          "example": "kafka-datasource",
+          "member": "string",
+          "name": "DataSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkAppResponse": {
+      "document": "CreateSparkApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkAppTaskRequest": {
+      "document": "CreateSparkAppTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark作业名",
+          "example": "spark-test-app",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业的命令行参数，以空格分隔；一般用于周期性调用使用",
+          "example": "10",
+          "member": "string",
+          "name": "CmdArgs",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSparkAppTaskResponse": {
+      "document": "CreateSparkAppTask返回参数结构体",
+      "members": [
+        {
+          "document": "批Id",
+          "example": "batch-9vsx3lh0",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务Id",
+          "example": "4a7cad6bb86211ec9c616e6f30623d72",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1374,6 +1659,33 @@
       ],
       "type": "object"
     },
+    "DeleteSparkAppRequest": {
+      "document": "DeleteSparkApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark应用名",
+          "example": "spark-app",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSparkAppResponse": {
+      "document": "DeleteSparkApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteUserRequest": {
       "document": "DeleteUser请求参数结构体",
       "members": [
@@ -1611,6 +1923,222 @@
         {
           "document": "实例总数",
           "example": "21",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppJobRequest": {
+      "document": "DescribeSparkAppJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark作业Id，与JobName同时存在时，JobName无效",
+          "example": "batch_133e005d-6486-4517-8ea7-b6b97b183a6b",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业名",
+          "example": "spark_app",
+          "member": "string",
+          "name": "JobName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppJobResponse": {
+      "document": "DescribeSparkAppJob返回参数结构体",
+      "members": [
+        {
+          "document": "spark作业详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparkJobInfo",
+          "name": "Job",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询的spark作业是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExists",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppJobsRequest": {
+      "document": "DescribeSparkAppJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "返回结果按照该字段排序",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "正序或者倒序，例如：desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照该参数过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "更新时间起始点",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "更新时间截止点",
+          "example": "2022-01-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询列表偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询列表限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppJobsResponse": {
+      "document": "DescribeSparkAppJobs返回参数结构体",
+      "members": [
+        {
+          "document": "spark作业列表详情",
+          "example": "无",
+          "member": "SparkJobInfo",
+          "name": "SparkAppJobs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "spark作业总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppTasksRequest": {
+      "document": "DescribeSparkAppTasks请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark作业Id",
+          "example": "batch_133e005d-6486-4517-8ea7-b6b97b183a6b",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkAppTasksResponse": {
+      "document": "DescribeSparkAppTasks返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskResponseInfo",
+          "name": "Tasks",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -2440,6 +2968,204 @@
       ],
       "usage": "in"
     },
+    "ModifySparkAppRequest": {
+      "document": "ModifySparkApp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "spark应用名",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1代表spark jar应用，2代表spark streaming应用",
+          "example": "1,2",
+          "member": "int64",
+          "name": "AppType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "执行spark作业的数据引擎",
+          "example": "spark-engine",
+          "member": "string",
+          "name": "DataEngine",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark应用的执行入口",
+          "example": "test.jar",
+          "member": "string",
+          "name": "AppFile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "执行spark作业的角色ID",
+          "example": "12",
+          "member": "int64",
+          "name": "RoleArn",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "spark作业driver资源规格大小, 可取small,medium,large,xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppDriverSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业executor资源规格大小, 可取small,medium,large,xlarge",
+          "example": "small",
+          "member": "string",
+          "name": "AppExecutorSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业executor个数",
+          "example": "1",
+          "member": "int64",
+          "name": "AppExecutorNums",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "spark应用Id",
+          "example": "batch_ssta",
+          "member": "string",
+          "name": "SparkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "该字段已下线，请使用字段Datasource",
+          "example": "kafka-datasource",
+          "member": "string",
+          "name": "Eni",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，可取cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark jar作业时的主类",
+          "example": "org.test.WordCount",
+          "member": "string",
+          "name": "MainClass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark配置，以换行符分隔",
+          "example": "spark.default.parallelism=2000",
+          "member": "string",
+          "name": "AppConf",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，可去cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark jar作业依赖jars，以逗号分隔",
+          "example": "com.test.jar",
+          "member": "string",
+          "name": "AppJars",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否本地上传，可去cos,lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业依赖资源，以逗号分隔",
+          "example": "spark-default.properties",
+          "member": "string",
+          "name": "AppFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "spark作业命令行参数",
+          "example": "10",
+          "member": "string",
+          "name": "CmdArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "只对spark流任务生效",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxRetries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源名",
+          "example": "kafka-datasource",
+          "member": "string",
+          "name": "DataSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySparkAppResponse": {
+      "document": "ModifySparkApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserRequest": {
       "document": "ModifyUser请求参数结构体",
       "members": [
@@ -2874,6 +3600,388 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SparkJobInfo": {
+      "document": "spark作业详情",
+      "members": [
+        {
+          "default": "",
+          "document": "spark作业ID",
+          "example": "4a7cad6bb86211ec9c616e6f30623d72",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业名",
+          "example": "test-app",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业",
+          "example": "1",
+          "member": "int64",
+          "name": "JobType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎名",
+          "example": "spark-engine",
+          "member": "string",
+          "name": "DataEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该字段已下线，请使用字段Datasource",
+          "example": "kafka",
+          "member": "string",
+          "name": "Eni",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "程序包是否本地上传，cos或者lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocal",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "程序包路径",
+          "example": "cosn://bucket/example.jar",
+          "member": "string",
+          "name": "JobFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RoleArn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业运行主类",
+          "example": "org.tencent.Example",
+          "member": "string",
+          "name": "MainClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "命令行参数，spark作业命令行参数，空格分隔",
+          "example": "1 2",
+          "member": "string",
+          "name": "CmdArgs",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark原生配置，换行符分隔",
+          "example": "spark.network.timeout=120s",
+          "member": "string",
+          "name": "JobConf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "依赖jars是否本地上传，cos或者lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalJars",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业依赖jars，逗号分隔",
+          "example": "example.jar",
+          "member": "string",
+          "name": "JobJars",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "依赖文件是否本地上传，cos或者lakefs",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalFiles",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业依赖文件，逗号分隔",
+          "example": "cos",
+          "member": "string",
+          "name": "JobFiles",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业driver资源大小",
+          "example": "small",
+          "member": "string",
+          "name": "JobDriverSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业executor资源大小",
+          "example": "small",
+          "member": "string",
+          "name": "JobExecutorSize",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业executor个数",
+          "example": "1",
+          "member": "int64",
+          "name": "JobExecutorNums",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark流任务最大重试次数",
+          "example": "3",
+          "member": "int64",
+          "name": "JobMaxAttempts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业创建者",
+          "example": "test",
+          "member": "string",
+          "name": "JobCreator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业创建时间",
+          "example": "1",
+          "member": "int64",
+          "name": "JobCreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业更新时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "JobUpdateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业最近任务ID",
+          "example": "4a7cad6bb86211ec9c616e6f30623d72",
+          "member": "string",
+          "name": "CurrentTaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark作业最近运行状态",
+          "example": "0",
+          "member": "int64",
+          "name": "JobStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "spark流作业统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamingStatistics",
+          "name": "StreamingStat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka-datasource",
+          "member": "string",
+          "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamingStatistics": {
+      "document": "spark流任务统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务开始时间",
+          "example": "2022-05-16 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据接收器数",
+          "example": "1",
+          "member": "int64",
+          "name": "Receivers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行中的接收器数",
+          "example": "1",
+          "member": "int64",
+          "name": "NumActiveReceivers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不活跃的接收器数",
+          "example": "0",
+          "member": "int64",
+          "name": "NumInactiveReceivers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行中的批数",
+          "example": "1",
+          "member": "int64",
+          "name": "NumActiveBatches",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "待处理的批数",
+          "example": "1",
+          "member": "int64",
+          "name": "NumRetainedCompletedBatches",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已完成的批数",
+          "example": "1",
+          "member": "int64",
+          "name": "NumTotalCompletedBatches",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均输入速率",
+          "example": "0.2",
+          "member": "float",
+          "name": "AverageInputRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均等待时长",
+          "example": "1.0",
+          "member": "float",
+          "name": "AverageSchedulingDelay",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均处理时长",
+          "example": "2.0",
+          "member": "float",
+          "name": "AverageProcessingTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "平均延时",
+          "example": "3.0",
+          "member": "float",
+          "name": "AverageTotalDelay",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

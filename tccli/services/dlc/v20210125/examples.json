@@ -72,6 +72,22 @@
         "title": "创建sql查询"
       }
     ],
+    "CreateSparkApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "title": "创建spark应用"
+      }
+    ],
+    "CreateSparkAppTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateSparkAppTask\n<公共请求参数>\n\n{\n    \"JobName\": \"spark-app-test\",\n    \"CmdArgs\": \"10 test 20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"BatchId\": \"batch-9vsx3lh0\",\n        \"TaskId\": \"4a7cad6bb86211ec9c616e6f30623d72\"\n    }\n}",
+        "title": "创建spark任务"
+      }
+    ],
     "CreateStoreLocation": [
       {
         "document": "",
@@ -136,6 +152,14 @@
         "title": "删除sql查询"
       }
     ],
+    "DeleteSparkApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-app\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "title": "删除spark应用"
+      }
+    ],
     "DeleteUser": [
       {
         "document": "",
@@ -174,6 +198,30 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScripts\n<公共请求参数>\n\n{\n    \"Sorting\": \"update-time\",\n    \"Limit\": 1,\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebcba6f-38bf-4023-80d0-2023d51e9b1e\",\n        \"Scripts\": [\n            {\n                \"ScriptId\": \"644980fb-09f3-467a-847f-b9d628c9663d\",\n                \"UpdateTime\": 1630498019026,\n                \"ScriptName\": \"Script1\",\n                \"ScriptDesc\": \"create by nick\",\n                \"SQLStatement\": \"SELECT * FROM `testdb`.`table1` LIMIT 10\",\n                \"DatabaseName\": \"\"\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
         "title": "获取所有sql查询"
+      }
+    ],
+    "DescribeSparkAppJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJob\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"JobName\": \"spark_app\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"Job\": {\n            \"JobId\": \"batch_e6c5ae75-fb02-4831-a5b8-88999d09003c\",\n            \"JobType\": 1,\n            \"CmdArgs\": \"\",\n            \"CurrentTaskId\": \"\",\n            \"DataEngine\": \"testjar3\",\n            \"Eni\": \"testeni2\",\n            \"IsLocal\": \"cos\",\n            \"IsLocalFiles\": \"lakefs\",\n            \"IsLocalJars\": \"lakefs\",\n            \"JobConf\": \"\",\n            \"JobCreateTime\": 1652442914350,\n            \"JobCreator\": \"100019868890\",\n            \"JobDriverSize\": \"small\",\n            \"JobExecutorNums\": 1,\n            \"JobExecutorSize\": \"small\",\n            \"JobFile\": \"cosn://danierwei-test-1305424723/sparkjar/spark-ckafka-1.0-SNAPSHOT.jar\",\n            \"JobFiles\": \"\",\n            \"JobJars\": \"lakefs://4000002928ef2638d7ab6aabb088bd51b7db914729a5c43b13a998ffa9750511f511d0ab@dlcda57-100018379117-1636704841-100017307912-1304028854/1305424723/.system/sparkAppJar/20220513/dd3c6ad3-a746-40d8-806c-fa8b15b5e9f9/spark-examples_2.12-3.1.2.jar\",\n            \"JobMaxAttempts\": 1,\n            \"JobName\": \"andy_test\",\n            \"JobUpdateTime\": 1652769991248,\n            \"MainClass\": \"org.apache.spark.examples.SparkPi\",\n            \"RoleArn\": 3\n        },\n        \"IsExists\": true\n    }\n}",
+        "title": "查询具体的spark应用"
+      }
+    ],
+    "DescribeSparkAppJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppJobs\n<公共请求参数>\n\n{\n    \"Sorting\": \"desc\",\n    \"SortBy\": \"create-time\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 00:00:00\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\",\n        \"SparkAppJobs\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "获取spark应用列表"
+      }
+    ],
+    "DescribeSparkAppTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeSparkAppTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"batch_133e005d-6486-4517-8ea7-b6b97b183a6b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"CanDownload\": true,\n                \"DataSet\": \"{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}\",\n                \"State\": 2,\n                \"DataAmount\": 1024,\n                \"Percentage\": 100,\n                \"SQLType\": \"DDL\",\n                \"RowAffectInfo\": \"500 rows selected (0.077 seconds)\",\n                \"InputConf\": \"[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]\",\n                \"DataEngineId\": \"resource-1gghpd1t\",\n                \"UpdateTime\": \"1611646962000\",\n                \"TaskType\": \"presto\",\n                \"ProgressDetail\": \"[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]\",\n                \"InputType\": \"local\",\n                \"DataNumber\": 100,\n                \"ResultExpired\": true,\n                \"OutputPath\": \"cosn://test-bucket-123434324234/result/\",\n                \"DataEngineName\": \"shared_presto\",\n                \"Error\": \"****\",\n                \"OperateUin\": \"****\",\n                \"OutputMessage\": \"****\",\n                \"CreateTime\": \"1611646962000\",\n                \"UsedTime\": 60000,\n                \"DatabaseName\": \"database1\",\n                \"SQL\": \"U0VMRUNUICogRlJPTSBgdGVzdGA7\",\n                \"Id\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\"\n            }\n        ],\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\"\n    }\n}",
+        "title": "查询spark应用的运行任务实例列表"
       }
     ],
     "DescribeStoreLocation": [
@@ -254,6 +302,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachWorkGroupPolicy\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 112,\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"94899a6b-a3e0-4d61-ad83-b51cb2473305\"\n    }\n}",
         "title": "解绑工作组鉴权策略"
+      }
+    ],
+    "ModifySparkApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"SparkAppId\": \"batch_sadfafd\",\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "title": "创建spark应用"
       }
     ],
     "ModifyUser": [

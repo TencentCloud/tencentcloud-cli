@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeRollbackTimeRange --cli-unfold-argument  \
-    --ClusterId cynosdbpg-oib3wx0i
+    --ClusterId cynosdbmysql-oib3wx0i
 ```
 
 Output: 

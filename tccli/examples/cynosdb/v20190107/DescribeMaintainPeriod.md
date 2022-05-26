@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeMaintainPeriod --cli-unfold-argument  \
-    --InstanceId cynosdbpg-ins-n7ocdslw
+    --InstanceId cynosdbmysql-ins-n7ocdslw
 ```
 
 Output: 

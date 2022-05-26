@@ -337,7 +337,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-bzxxrmtq",
+          "example": "cynosdbmysql-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -345,8 +345,8 @@
         },
         {
           "default": "",
-          "document": "实例ID数组",
-          "example": "[\"cynosdbpg-ins-7upukfpw\\r\\n\"]",
+          "document": "实例 ID 列表，单个实例 ID 格式如：cynosdbmysql-ins-n7ocdslw，与TDSQL-C MySQL数据库控制台页面中显示的实例 ID 相同，可使用 查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "[\"cynosdbmysql-ins-7upukfpw\\r\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -399,7 +399,7 @@
         },
         {
           "default": "",
-          "document": "内存",
+          "document": "内存，单位为GB",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -408,7 +408,7 @@
         },
         {
           "default": "",
-          "document": "新增只读实例数",
+          "document": "新增只读实例数，取值范围为(0,16]",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyCount",
@@ -435,7 +435,7 @@
         },
         {
           "default": "",
-          "document": "所属子网ID",
+          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填",
           "example": "subnet-1tmw9t4o",
           "member": "string",
           "name": "SubnetId",
@@ -444,7 +444,7 @@
         },
         {
           "default": "",
-          "document": "新增RO组时使用的Port",
+          "document": "新增RO组时使用的Port，取值范围为[0,65535)",
           "example": "2000",
           "member": "int64",
           "name": "Port",
@@ -453,7 +453,7 @@
         },
         {
           "default": "",
-          "document": "实例名称",
+          "document": "实例名称，字符串长度范围为[0,64)",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "InstanceName",
@@ -480,7 +480,7 @@
         },
         {
           "default": "",
-          "document": "订单来源",
+          "document": "订单来源，字符串长度范围为[0,64)",
           "example": "api",
           "member": "string",
           "name": "OrderSource",
@@ -577,7 +577,7 @@
         {
           "default": "",
           "document": "实例组ID数组",
-          "example": "cynosdbpg-ins-4senc2fm",
+          "example": "cynosdbmysql-ins-4senc2fm",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -948,7 +948,7 @@
         },
         {
           "default": "",
-          "document": "数据库版本，取值范围: \n<li> MYSQL可选值：5.7 </li>",
+          "document": "数据库版本，取值范围: \n<li> MYSQL可选值：5.7，8.0 </li>",
           "example": "5.7",
           "member": "string",
           "name": "DbVersion",
@@ -993,7 +993,7 @@
         },
         {
           "default": "",
-          "document": "集群名称",
+          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
           "example": "MyClusterName",
           "member": "string",
           "name": "ClusterName",
@@ -1110,7 +1110,7 @@
         },
         {
           "default": "",
-          "document": "包年包月购买时长单位",
+          "document": "包年包月购买时长单位，['s','d','m','y']",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -3154,7 +3154,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-oib3wx0i",
+          "example": "cynosdbmysql-oib3wx0i",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3207,7 +3207,7 @@
         },
         {
           "default": "",
-          "document": "返回数量，默认为 20，最大值为 100",
+          "document": "返回数量，默认为 20，取值范围为(0,100]",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -3216,7 +3216,7 @@
         },
         {
           "default": "",
-          "document": "记录偏移量，默认值为0",
+          "document": "记录偏移量，默认值为0，取值范围为[0,INF)",
           "example": "20",
           "member": "int64",
           "name": "Offset",
@@ -3231,7 +3231,7 @@
       "members": [
         {
           "document": "记录总数",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -3388,7 +3388,7 @@
         {
           "default": "",
           "document": "实例ID",
-          "example": "cynosdbpg-ins-bzkxxrmt",
+          "example": "cynosdbmysql-ins-bzkxxrmt",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3568,7 +3568,7 @@
         {
           "default": "",
           "document": "实例ID",
-          "example": "cynosdbpg-ins-n7ocdslw",
+          "example": "cynosdbmysql-ins-n7ocdslw",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3694,7 +3694,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-oib3wx0i",
+          "example": "cynosdbmysql-oib3wx0i",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3809,7 +3809,7 @@
         {
           "default": "",
           "document": "实例组ID数组",
-          "example": "cynosdbpg-ins-4senc2fm",
+          "example": "cynosdbmysql-ins-4senc2fm",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3817,7 +3817,7 @@
         },
         {
           "default": "",
-          "document": "要修改的安全组ID列表，一个或者多个安全组Id组成的数组。",
+          "document": "要修改的安全组ID列表，一个或者多个安全组ID组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -4028,7 +4028,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-ins-bzkxxrmt",
+          "example": "cynosdbmysql-ins-bzkxxrmt",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4037,7 +4037,7 @@
         {
           "default": "",
           "document": "实例ID数组",
-          "example": "[\"cynosdbpg-ixgbd0di\\n\"]",
+          "example": "[\"cynosdbmysql-ixgbd0di\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -4090,7 +4090,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群id",
+          "document": "集群id，不超过32个字符",
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
@@ -4298,7 +4298,7 @@
         {
           "default": "",
           "document": "实例组ID",
-          "example": "cynosdbpg-ins-4senc2fm",
+          "example": "cynosdbmysql-ins-4senc2fm",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4306,7 +4306,7 @@
         },
         {
           "default": "",
-          "document": "要修改的安全组ID列表，一个或者多个安全组Id组成的数组。",
+          "document": "要修改的安全组ID列表，一个或者多个安全组ID组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -4582,7 +4582,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-bzxxrmtq",
+          "example": "cynosdbmysql-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4618,7 +4618,7 @@
         {
           "default": "",
           "document": "集群ID",
-          "example": "cynosdbpg-bzxxrmtq",
+          "example": "cynosdbmysql-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4627,7 +4627,7 @@
         {
           "default": "",
           "document": "实例ID数组",
-          "example": "[\"cynosdbpg-ins-7upukfpw\\n\"]",
+          "example": "[\"cynosdbmysql-ins-7upukfpw\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -4698,7 +4698,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群id",
+          "document": "集群ID",
           "example": "cynosdbmysql-8vcxoq75",
           "member": "string",
           "name": "ClusterId",
@@ -4721,7 +4721,7 @@
       "document": "PauseServerless返回参数结构体",
       "members": [
         {
-          "document": "异步流程Id",
+          "document": "异步流程ID",
           "example": "1008306",
           "member": "int64",
           "name": "FlowId",
@@ -4863,7 +4863,7 @@
       "members": [
         {
           "default": "",
-          "document": "集群id",
+          "document": "集群ID",
           "example": "cynosdbmysql-xxxx",
           "member": "string",
           "name": "ClusterId",
@@ -4877,7 +4877,7 @@
       "document": "ResumeServerless返回参数结构体",
       "members": [
         {
-          "document": "异步流程Id",
+          "document": "异步流程ID",
           "example": "1008306",
           "member": "int64",
           "name": "FlowId",
@@ -5199,7 +5199,7 @@
         },
         {
           "default": "",
-          "document": "自动续费标志位",
+          "document": "自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -5312,7 +5312,7 @@
         },
         {
           "default": "",
-          "document": "数据库内存",
+          "document": "数据库内存，单位GB",
           "example": "4",
           "member": "int64",
           "name": "Memory",

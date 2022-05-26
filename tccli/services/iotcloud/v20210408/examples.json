@@ -422,6 +422,14 @@
         "title": "查询设备SDK日志"
       }
     ],
+    "ListTopicRules": [
+      {
+        "document": "",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=ListTopicRules\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCnt\": 2,\n        \"Rules\": [\n            {\n                \"RuleName\": \"test2\",\n                \"CreatedAt\": 1524455688,\n                \"RuleDisabled\": false,\n                \"Description\": \"test2\",\n                \"TopicPattern\": \"xx\"\n            },\n            {\n                \"RuleName\": \"test\",\n                \"CreatedAt\": 1524192248,\n                \"RuleDisabled\": false,\n                \"Description\": \"Describe\",\n                \"TopicPattern\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "title": "获取规则列表示例"
+      }
+    ],
     "PublishBroadcastMessage": [
       {
         "document": "",
