@@ -4026,7 +4026,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4035,7 +4036,8 @@
           "member": "string",
           "name": "IkMainDicts",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4044,7 +4046,8 @@
           "member": "string",
           "name": "IkStopwords",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4053,7 +4056,8 @@
           "member": "string",
           "name": "Synonym",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4062,7 +4066,8 @@
           "member": "string",
           "name": "QQDict",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4071,7 +4076,8 @@
           "member": "int64",
           "name": "UpdateType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4080,7 +4086,8 @@
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

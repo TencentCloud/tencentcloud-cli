@@ -7615,7 +7615,8 @@
           "member": "string",
           "name": "Uuid",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

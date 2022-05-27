@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb OfflineCluster --cli-unfold-argument  \
-    --ClusterId cynosdbpg-bzxxrmtq
+    --ClusterId cynosdbmysql-bzxxrmtq
 ```
 
 Output: 

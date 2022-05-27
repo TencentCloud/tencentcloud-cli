@@ -10,7 +10,7 @@ tccli cynosdb CreateClusters --cli-unfold-argument  \
     --ProjectId 0 \
     --VpcId vpc-1ptuei0b \
     --SubnetId subnet-1tmw9t4o \
-    --DbType POSTGRESQL \
+    --DbType MYSQL \
     --DbVersion 10.0 \
     --Cpu 2 \
     --Memory 4 \
@@ -30,7 +30,7 @@ Output:
 {
     "Response": {
         "ResourceIds": [
-            "cynosdbpg-ins-67rmucgk"
+            "cynosdbmysql-ins-67rmucgk"
         ],
         "RequestId": "132075",
         "TranId": "20190522160000003106844584180998",

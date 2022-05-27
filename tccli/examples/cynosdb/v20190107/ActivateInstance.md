@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb ActivateInstance --cli-unfold-argument  \
-    --ClusterId cynosdbpg-bzxxrmtq \
-    --InstanceIdList cynosdbpg-ins-7upukfpw
+    --ClusterId cynosdbmysql-bzxxrmtq \
+    --InstanceIdList cynosdbmysql-ins-7upukfpw
 ```
 
 Output: 
