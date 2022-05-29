@@ -630,6 +630,22 @@
         "title": "示例"
       }
     ],
+    "UpgradeProxyVersion": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeProxyVersion\n&InstanceId=crs-94w4mqbt\n&CurrentProxyVersion=4.1.1\n&UpgradeProxyVersion=4.3.0\n&InstanceTypeUpgradeNow=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 327,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "实例proxy升级"
+      }
+    ],
+    "UpgradeSmallVersion": [
+      {
+        "document": "",
+        "input": "https://redis.tencentcloudapi.com/?Action=UpgradeSmallVersion\n&InstanceId=crs-2btr9ryn\n&CurrentRedisVersion=2.3.0\n&UpgradeRedisVersion=2.4.0\n&InstanceTypeUpgradeNow=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 329,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
+        "title": "实例小版本升级"
+      }
+    ],
     "UpgradeVersionToMultiAvailabilityZones": [
       {
         "document": "",

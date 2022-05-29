@@ -16,6 +16,14 @@
         "title": "创建成员"
       }
     ],
+    "CreateOrganizationMemberPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMemberPolicy\n<公共请求参数>\n\n{\n    \"PolicyName\": \"test\",\n    \"MemberUin\": \"100000546922\",\n    \"Description\": \"test\",\n    \"IdentityId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 98081,\n        \"RequestId\": \"a1a10c6e-6723-408a-858b-2cb84e92776c\"\n    }\n}",
+        "title": "创建组织成员授权策略"
+      }
+    ],
     "DescribeOrganization": [
       {
         "document": "",

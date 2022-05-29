@@ -12,6 +12,12 @@
       "name": "创建组织成员",
       "output": "CreateOrganizationMemberResponse"
     },
+    "CreateOrganizationMemberPolicy": {
+      "document": "创建组织成员的授权策略",
+      "input": "CreateOrganizationMemberPolicyRequest",
+      "name": "创建组织成员的授权策略",
+      "output": "CreateOrganizationMemberPolicyResponse"
+    },
     "DescribeOrganization": {
       "document": "获取企业组织信息",
       "input": "DescribeOrganizationRequest",
@@ -68,6 +74,69 @@
     "BindOrganizationMemberAuthAccountResponse": {
       "document": "BindOrganizationMemberAuthAccount返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMemberPolicyRequest": {
+      "document": "CreateOrganizationMemberPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "成员Uin。",
+          "example": "1000001",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "策略名。",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "身份ID。",
+          "example": "11",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "描述。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMemberPolicyResponse": {
+      "document": "CreateOrganizationMemberPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

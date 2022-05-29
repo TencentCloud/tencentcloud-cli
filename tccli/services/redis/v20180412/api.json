@@ -468,6 +468,18 @@
       "name": "升级实例版本或者结构",
       "output": "UpgradeInstanceVersionResponse"
     },
+    "UpgradeProxyVersion": {
+      "document": "实例proxy版本升级",
+      "input": "UpgradeProxyVersionRequest",
+      "name": "实例proxy版本升级接口",
+      "output": "UpgradeProxyVersionResponse"
+    },
+    "UpgradeSmallVersion": {
+      "document": "实例小版本升级",
+      "input": "UpgradeSmallVersionRequest",
+      "name": "实例小版本升级接口",
+      "output": "UpgradeSmallVersionResponse"
+    },
     "UpgradeVersionToMultiAvailabilityZones": {
       "document": "升级实例支持多AZ",
       "input": "UpgradeVersionToMultiAvailabilityZonesRequest",
@@ -8954,6 +8966,132 @@
           "name": "DealId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyVersionRequest": {
+      "document": "UpgradeProxyVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dvchdv5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前proxy版本",
+          "example": "5.0.0",
+          "member": "string",
+          "name": "CurrentProxyVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可升级的redis版本",
+          "example": "5.0.1",
+          "member": "string",
+          "name": "UpgradeProxyVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1-立即升级   0-维护时间窗口升级",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceTypeUpgradeNow",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeProxyVersionResponse": {
+      "document": "UpgradeProxyVersion返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeSmallVersionRequest": {
+      "document": "UpgradeSmallVersion请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "crs-dvchdv5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "当前redis版本",
+          "example": "5.0.0",
+          "member": "string",
+          "name": "CurrentRedisVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可升级的redis版本",
+          "example": "5.0.1",
+          "member": "string",
+          "name": "UpgradeRedisVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "1-立即升级   0-维护时间窗口升级",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceTypeUpgradeNow",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeSmallVersionResponse": {
+      "document": "UpgradeSmallVersion返回参数结构体",
+      "members": [
+        {
+          "document": "异步流程ID",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
