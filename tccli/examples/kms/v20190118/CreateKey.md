@@ -23,7 +23,8 @@ Output:
         "TagCode": 0,
         "KeyState": "Enabled",
         "KeyUsage": "ENCRYPT_DECRYPT",
-        "RequestId": "850bf779-2249-4995-8c55-b3966daf0a8c"
+        "RequestId": "850bf779-2249-4995-8c55-b3966daf0a8c",
+        "HsmClusterId": ""
     }
 }
 ```

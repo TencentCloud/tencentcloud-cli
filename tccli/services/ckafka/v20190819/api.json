@@ -6063,7 +6063,7 @@
         },
         {
           "default": "",
-          "document": "发送消息内容",
+          "document": "发送消息内容(单次请求最多500条)",
           "example": "无",
           "member": "BatchContent",
           "name": "Message",

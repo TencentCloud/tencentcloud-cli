@@ -1,13 +1,13 @@
 **Example 1: 发起小程序视频发布任务**
 
-对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 10。
+对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 100030。
 
 Input: 
 
 ```
 tccli vod WeChatMiniProgramPublish --cli-unfold-argument  \
     --FileId 5285485487985271487 \
-    --SourceDefinition 10
+    --SourceDefinition 100030
 ```
 
 Output: 

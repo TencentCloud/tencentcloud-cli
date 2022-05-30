@@ -20,10 +20,24 @@ Output:
 ```
 {
     "Response": {
-        "Total": 0,
-        "AllTotal": 0,
+        "AllTotal": 1,
+        "Total": 1,
+        "Data": [
+            {
+                "Count": 1,
+                "Protocol": "xx",
+                "Detail": "xx",
+                "Strategy": 1,
+                "LogId": "xx",
+                "OrderIndex": 1,
+                "TargetIp": "xx",
+                "Port": "xx",
+                "SourceIp": "xx",
+                "Id": 1
+            }
+        ],
         "Enable": 1,
-        "Data": []
+        "RequestId": "xx"
     }
 }
 ```

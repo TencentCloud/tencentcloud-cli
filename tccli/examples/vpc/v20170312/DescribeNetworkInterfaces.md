@@ -20,6 +20,7 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "NetworkInterfaceId": "eni-f1xjkw1b",
                 "Primary": false,
+                "CdcId": "",
                 "PrivateIpAddressSet": [
                     {
                         "Description": "",
@@ -71,7 +72,8 @@ Output:
                 "EniType": 1,
                 "CreatedTime": "2021-01-07 16:32:55",
                 "SubnetId": "subnet-nao8lfro",
-                "NetworkInterfaceName": "royhyangtest-main"
+                "NetworkInterfaceName": "royhyangtest-main",
+                "AttachType": 1
             }
         ],
         "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
@@ -169,6 +171,9 @@ Output:
                         "State": "AVAILABLE"
                     }
                 ],
+                "AttachType": 1,
+                "EniType": 1,
+                "CdcId": "",
                 "TagSet": [
                     {
                         "Key": "Version",

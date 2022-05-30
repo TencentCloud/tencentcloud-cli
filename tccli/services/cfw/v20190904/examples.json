@@ -144,7 +144,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcLists\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Protocol\": \"TCP\",\n    \"Strategy\": \"\",\n    \"SearchValue\": \"\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Area\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AllTotal\": 0,\n        \"Enable\": 1,\n        \"Data\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AllTotal\": 1,\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"Protocol\": \"xx\",\n                \"Detail\": \"xx\",\n                \"Strategy\": 1,\n                \"LogId\": \"xx\",\n                \"OrderIndex\": 1,\n                \"TargetIp\": \"xx\",\n                \"Port\": \"xx\",\n                \"SourceIp\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"Enable\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "访问控制列表"
       }
     ],

@@ -1404,8 +1404,8 @@
     ],
     "WeChatMiniProgramPublish": [
       {
-        "document": "对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=WeChatMiniProgramPublish\n&FileId=5285485487985271487\n&SourceDefinition=10\n&<公共请求参数>",
+        "document": "对 fileId 为 5285485487985271487 的视频发起微信小程发布任务，且发布视频所对应的转码模板 ID 为 100030。",
+        "input": "https://vod.tencentcloudapi.com/?Action=WeChatMiniProgramPublish\n&FileId=5285485487985271487\n&SourceDefinition=100030\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-wechat-mini-program-publish-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起小程序视频发布任务"
       }

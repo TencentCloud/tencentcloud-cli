@@ -625,6 +625,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "cluster-123",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -700,6 +709,15 @@
           "example": "success",
           "member": "string",
           "name": "TagMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-hsm-1234abcd",
+          "member": "string",
+          "name": "HsmClusterId",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1986,6 +2004,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "是否开通 KMS 托管版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExclusiveVSMEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开通 KMS 独享版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExclusiveHSMEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2215,6 +2251,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-hsm-1a2b3c4d",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2346,6 +2392,15 @@
           "name": "TagFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "无",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2409,6 +2464,15 @@
           "name": "Role",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "无",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

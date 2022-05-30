@@ -415,34 +415,18 @@
       "members": [
         {
           "default": "",
-          "document": "定期快照策略ID。",
+          "document": "已绑定当前定期快照策略的云盘ID列表。",
+          "example": "[\"disk-pe1vkgim\"]",
           "member": "string",
-          "name": "AutoSnapshotPolicyId",
+          "name": "DiskIdSet",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "定期快照策略名称。",
-          "member": "string",
-          "name": "AutoSnapshotPolicyName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
-          "member": "string",
-          "name": "AutoSnapshotPolicyState",
-          "required": false,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "default": "",
           "document": "定期快照策略是否激活。",
+          "example": "true",
           "member": "bool",
           "name": "IsActivated",
           "required": false,
@@ -451,7 +435,28 @@
         },
         {
           "default": "",
+          "document": "定期快照策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "AutoSnapshotPolicyState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是跨账号复制快照快照, 1：是, 0: 不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsCopyToRemote",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
           "document": "使用该定期快照策略创建出来的快照是否永久保留。",
+          "example": "false",
           "member": "bool",
           "name": "IsPermanent",
           "required": false,
@@ -460,25 +465,8 @@
         },
         {
           "default": "",
-          "document": "使用该定期快照策略创建出来的快照保留天数。",
-          "member": "uint64",
-          "name": "RetentionDays",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "定期快照策略的创建时间。",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "document": "定期快照下次触发的时间。",
+          "example": "2022-05-31 11:00:00",
           "member": "datetime",
           "name": "NextTriggerTime",
           "required": false,
@@ -487,7 +475,28 @@
         },
         {
           "default": "",
+          "document": "定期快照策略名称。",
+          "example": "test",
+          "member": "string",
+          "name": "AutoSnapshotPolicyName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "定期快照策略ID。",
+          "example": "asp-nz3ytdwj",
+          "member": "string",
+          "name": "AutoSnapshotPolicyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "定期快照的执行策略。",
+          "example": "无",
           "member": "Policy",
           "name": "Policy",
           "required": false,
@@ -496,12 +505,43 @@
         },
         {
           "default": "",
-          "document": "已绑定当前定期快照策略的云盘ID列表。",
-          "member": "string",
-          "name": "DiskIdSet",
+          "document": "定期快照策略的创建时间。",
+          "example": "2022-01-11 10:45:51",
+          "member": "datetime",
+          "name": "CreateTime",
           "required": false,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用该定期快照策略创建出来的快照保留天数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "复制的目标账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "CopyToAccountUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已绑定当前定期快照策略的实例ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins-og3j7lue\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -524,7 +564,7 @@
           "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -997,6 +1037,15 @@
           "name": "DiskBackupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "快照绑定的标签。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3118,6 +3167,7 @@
         {
           "default": "",
           "document": "指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。",
+          "example": "[0,1,2]",
           "member": "uint64",
           "name": "DayOfWeek",
           "required": true,
@@ -3127,6 +3177,7 @@
         {
           "default": "",
           "document": "指定定期快照策略的触发时间。单位为小时，取值范围：[0, 23]。00:00 ~ 23:00 共 24 个时间点可选，1表示 01:00，依此类推。",
+          "example": "[11,12,13]",
           "member": "uint64",
           "name": "Hour",
           "required": true,
@@ -3614,6 +3665,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "快照绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3791,19 +3852,21 @@
       "members": [
         {
           "default": "",
-          "document": "要解绑定期快照策略的云盘ID列表。",
-          "member": "string",
-          "name": "DiskIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
           "document": "要解绑的定期快照策略ID。",
+          "example": "asp-mrsrn243",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要解绑定期快照策略的云盘ID列表。",
+          "example": "[\"disk-dw0bbzws\\r\\n\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

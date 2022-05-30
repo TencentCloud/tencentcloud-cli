@@ -751,7 +751,7 @@
       "output": "SplitMediaResponse"
     },
     "WeChatMiniProgramPublish": {
-      "document": "将点播视频发布到微信小程序，供微信小程序播放器播放。",
+      "document": "将点播视频发布到微信小程序，供微信小程序播放器播放。\n本接口支持发布原始视频和转码后视频，暂不支持发布自适应码流。",
       "input": "WeChatMiniProgramPublishRequest",
       "name": "微信小程序视频发布",
       "output": "WeChatMiniProgramPublishResponse"
@@ -25335,7 +25335,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "125",
           "member": "uint64",
           "name": "SubAppId",
