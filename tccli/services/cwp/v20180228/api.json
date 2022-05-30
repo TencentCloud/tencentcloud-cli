@@ -20789,7 +20789,18 @@
           "member": "string",
           "name": "Status",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "''",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

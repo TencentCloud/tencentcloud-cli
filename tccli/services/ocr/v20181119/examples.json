@@ -462,6 +462,14 @@
         "title": "健康码识别示例代码"
       }
     ],
+    "RecognizeIndonesiaIDCardOCR": [
+      {
+        "document": "",
+        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeIndonesiaIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&ReturnHeadImage=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Agama\": \"ATHOLIK\",\n        \"Alamat\": \"BANJARSARI\",\n        \"BerlakuHingga\": \"SEUMUR HIDUP\",\n        \"GolDarah\": \"O\",\n        \"IssuedDate\": \"15-05-2015\",\n        \"JenisKelamin\": \"LAKEI AKI\",\n        \"Kecamatan\": \"\",\n        \"KelDesa\": \"PAKEMBINANGUN\",\n        \"KewargaNegaraan\": \"INM\",\n        \"NIK\": \"360000000006\",\n        \"Nama\": \"\",\n        \"Perkerjaan\": \"KARYAWAN SWASTA\",\n        \"Photo\": \"\",\n        \"RTRW\": \"00/000\",\n        \"RequestId\": \"0000-0000-0000-0001\",\n        \"StatusPerkawinan\": \"KAWFN\",\n        \"TempatTglLahir\": \"JAKARTA 13-01-1987\"\n    }\n}",
+        "title": "RecognizeIndonesiaIDCardOCR"
+      }
+    ],
     "RecognizeOnlineTaxiItineraryOCR": [
       {
         "document": "",

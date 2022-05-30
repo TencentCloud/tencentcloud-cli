@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cwp ModifyInquireRenewFlag --cli-unfold-argument  \
-    --Status xx
+    --Status xx \
+    --ResourceId xxx
 ```
 
 Output: 
