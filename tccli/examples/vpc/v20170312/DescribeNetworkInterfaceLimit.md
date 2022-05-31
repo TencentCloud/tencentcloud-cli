@@ -17,7 +17,9 @@ Output:
         "ExtendEniPrivateIpAddressQuantity": 20,
         "ExtendEniQuantity": 0,
         "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1",
-        "EniQuantity": 2
+        "EniQuantity": 2,
+        "SubEniQuantity": 0,
+        "SubEniPrivateIpAddressQuantity": 0
     }
 }
 ```
@@ -41,7 +43,9 @@ Output:
         "EniPrivateIpAddressQuantity": 10,
         "ExtendEniQuantity": 0,
         "ExtendEniPrivateIpAddressQuantity": 0,
-        "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1"
+        "RequestId": "01f14f34-e9ae-470d-a71b-e8616ad3fae1",
+        "SubEniQuantity": 0,
+        "SubEniPrivateIpAddressQuantity": 0
     }
 }
 ```

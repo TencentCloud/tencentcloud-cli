@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli vpc ModifyNetworkInterfaceAttribute --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --NetworkInterfaceId eni-afo43z61 \
     --NetworkInterfaceName NewName
 ```

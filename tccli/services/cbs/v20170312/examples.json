@@ -333,7 +333,7 @@
     "UnbindAutoSnapshotPolicy": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=UnbindAutoSnapshotPolicy\r\n&AutoSnapshotPolicyId=asp-mrsrn243\r\n&DiskIds.0=disk-dw0bbzws\r\n&<公共请求参数>",
+        "input": "https://cbs.tencentcloudapi.com/?Action=UnbindAutoSnapshotPolicy\n&AutoSnapshotPolicyId=asp-mrsrn243\n&DiskIds.0=disk-dw0bbzws\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52ba40b8-018b-d906-cad3-5a1fa6542fd6\"\n    }\n}",
         "title": "解绑定期快照策略"
       }

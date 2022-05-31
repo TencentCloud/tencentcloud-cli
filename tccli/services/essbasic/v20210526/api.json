@@ -498,7 +498,8 @@
           "member": "Agent",
           "name": "Agent",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -507,7 +508,8 @@
           "member": "string",
           "name": "ProxyOrganizationName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -516,7 +518,8 @@
           "member": "string",
           "name": "UniformSocialCreditCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -525,7 +528,8 @@
           "member": "string",
           "name": "ProxyOperatorName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -534,7 +538,8 @@
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -543,7 +548,8 @@
           "member": "string",
           "name": "Module",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -552,7 +558,8 @@
           "member": "string",
           "name": "ModuleId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -567,7 +574,8 @@
           "name": "ConsoleUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "渠道合作企业是否认证开通腾讯电子签。\n当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。",
@@ -576,7 +584,8 @@
           "name": "IsActivated",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

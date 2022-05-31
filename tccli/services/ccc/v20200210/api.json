@@ -1886,7 +1886,7 @@
       "document": "DescribeTelCallInfo返回参数结构体",
       "members": [
         {
-          "document": "电话呼出统计分钟数",
+          "document": "呼出套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
@@ -1896,7 +1896,7 @@
           "visibility": 1
         },
         {
-          "document": "电话呼入统计分钟数",
+          "document": "呼入套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
           "name": "TelCallInCount",

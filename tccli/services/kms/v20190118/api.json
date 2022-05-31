@@ -588,7 +588,8 @@
           "member": "string",
           "name": "Alias",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -597,7 +598,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -606,7 +608,8 @@
           "member": "string",
           "name": "KeyUsage",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -615,7 +618,8 @@
           "member": "uint64",
           "name": "Type",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -624,7 +628,18 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "cluster-123",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -639,7 +654,8 @@
           "name": "KeyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "作为密钥更容易辨识，更容易被人看懂的别名",
@@ -648,7 +664,8 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "密钥创建时间，unix时间戳",
@@ -657,7 +674,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CMK的描述\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -666,7 +684,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "CMK的状态",
@@ -675,7 +694,8 @@
           "name": "KeyState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "CMK的用途",
@@ -684,7 +704,8 @@
           "name": "KeyUsage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -693,7 +714,8 @@
           "name": "TagCode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "标签操作的返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -702,7 +724,18 @@
           "name": "TagMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-hsm-1234abcd",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1938,7 +1971,8 @@
           "name": "ServiceEnabled",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "服务不可用类型： 0-未购买，1-正常， 2-欠费停服， 3-资源释放\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1947,7 +1981,8 @@
           "name": "InvalidType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "0-普通版，1-旗舰版",
@@ -1956,7 +1991,8 @@
           "name": "UserLevel",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "旗舰版到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1965,7 +2001,8 @@
           "name": "ProExpireTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "旗舰版是否自动续费：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1974,7 +2011,8 @@
           "name": "ProRenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1983,7 +2021,28 @@
           "name": "ProResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否开通 KMS 托管版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExclusiveVSMEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否开通 KMS 独享版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExclusiveHSMEnabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2074,7 +2133,8 @@
           "name": "KeyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2084,7 +2144,8 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2094,7 +2155,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2104,7 +2166,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2114,7 +2177,8 @@
           "name": "KeyState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2124,7 +2188,8 @@
           "name": "KeyUsage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2134,7 +2199,8 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2144,7 +2210,8 @@
           "name": "CreatorUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2154,7 +2221,8 @@
           "name": "KeyRotationEnabled",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2164,7 +2232,8 @@
           "name": "Owner",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2174,7 +2243,8 @@
           "name": "NextRotateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2184,7 +2254,8 @@
           "name": "DeletionDate",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2194,7 +2265,8 @@
           "name": "Origin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2204,7 +2276,8 @@
           "name": "ValidTo",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2214,7 +2287,19 @@
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-hsm-1a2b3c4d",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2273,7 +2358,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2282,7 +2368,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2291,7 +2378,8 @@
           "member": "uint64",
           "name": "Role",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2300,7 +2388,8 @@
           "member": "uint64",
           "name": "OrderType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2309,7 +2398,8 @@
           "member": "uint64",
           "name": "KeyState",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2318,7 +2408,8 @@
           "member": "string",
           "name": "SearchKeyAlias",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2327,7 +2418,8 @@
           "member": "string",
           "name": "Origin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2336,7 +2428,8 @@
           "member": "string",
           "name": "KeyUsage",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2345,7 +2438,18 @@
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "无",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2360,7 +2464,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回的属性信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2369,7 +2474,8 @@
           "name": "KeyMetadatas",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2390,7 +2496,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2399,7 +2506,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2408,7 +2516,18 @@
           "member": "uint64",
           "name": "Role",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）。",
+          "example": "无",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2423,7 +2542,8 @@
           "name": "Keys",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "CMK的总数量",
@@ -2432,7 +2552,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

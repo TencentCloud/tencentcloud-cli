@@ -454,6 +454,14 @@
         "title": "请求示例DEMO"
       }
     ],
+    "TerminateDedicatedDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDedicatedDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-lyzax5rb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6581df-7914-46e5-9693-0663617c756e\",\n        \"FlowId\": 1\n    }\n}",
+        "title": "无"
+      }
+    ],
     "UpgradeDCDBInstance": [
       {
         "document": "",
