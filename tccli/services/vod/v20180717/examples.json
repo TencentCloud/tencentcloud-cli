@@ -299,7 +299,7 @@
     "DeleteAIAnalysisTemplate": [
       {
         "document": "删除用户自定义视频内容分析模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\n&Definition=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的内容分析模板"
       }
@@ -307,7 +307,7 @@
     "DeleteAIRecognitionTemplate": [
       {
         "document": "删除用户自定义视频内容识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\r\n&Definition=30\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\n&Definition=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的视频内容识别模板"
       }
@@ -323,7 +323,7 @@
     "DeleteAnimatedGraphicsTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAnimatedGraphicsTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转动图模板"
       }
@@ -363,7 +363,7 @@
     "DeleteImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除雪碧图模板"
       }
@@ -407,7 +407,7 @@
     "DeleteSampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSampleSnapshotTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSampleSnapshotTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除采样截图模板"
       }
@@ -415,7 +415,7 @@
     "DeleteSnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSnapshotByTimeOffsetTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除指定时间点截图模板"
       }
@@ -431,7 +431,7 @@
     "DeleteTranscodeTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\r\n&Definition=1008\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteTranscodeTemplate\n&Definition=1008\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除转码模板"
       }
@@ -463,36 +463,36 @@
     "DescribeAIAnalysisTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\r\n&Definitions.0=30\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\n&Definitions.0=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
         "title": "获取模板 ID 为 30 的视频内容分析模板"
       },
       {
         "document": "指定从序号 0 开始，总共 10 个视频内容分析模板，包括系统默认视频内容分析模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T13:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T17:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T13:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T17:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
         "title": "获取指定个数的视频内容分析模板"
       }
     ],
     "DescribeAIRecognitionTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\r\n&Definitions.0=30\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Definitions.0=30\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
         "title": "获取模板 ID 为 30 的视频内容识别模板"
       },
       {
         "document": "获取序号从 0 开始，总共 10 个视频内容识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"CreateTime\": \"2019-01-01T11:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T12:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T11:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T12:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
         "title": "获取指定个数的视频内容识别模板"
       }
     ],
     "DescribeAdaptiveDynamicStreamingTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"Custom\",\n                \"Name\": \"转自适应码流模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DrmType\": \"\",\n                \"DisableHigherVideoBitrate\": 1,\n                \"DisableHigherVideoResolution\": 0\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"Custom\",\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DrmType\": \"\",\n                \"DisableHigherVideoResolution\": 0,\n                \"DisableHigherVideoBitrate\": 0,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 128\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 720,\n                            \"Height\": 1080,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 12500,\n                            \"Vcrf\": 23,\n                            \"Gop\": 0\n                        },\n                        \"RemoveAudio\": 0,\n                        \"TEHDConfig\": {\n                            \"MaxVideoBitrate\": 10000,\n                            \"Type\": \"TEHD-100\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
       }
     ],
@@ -507,8 +507,8 @@
     "DescribeAnimatedGraphicsTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAnimatedGraphicsTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AnimatedGraphicsTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"转动图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"Width\": 960,\n                \"Format\": \"gif\",\n                \"Fps\": 30,\n                \"Quality\": 75,\n                \"ResolutionAdaptive\": \"open\",\n                \"Type\": \"Custom\",\n                \"Comment\": \"\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获转动图模板列表"
       }
     ],
@@ -637,8 +637,8 @@
     "DescribeImageSpriteTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Name\": \"雪碧图模板1\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"雪碧图模板1\",\n                \"Comment\": \"test\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"ColumnCount\": 1,\n                \"RowCount\": 1,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取雪碧图模板列表"
       }
     ],
@@ -721,16 +721,16 @@
     "DescribeSampleSnapshotTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeSampleSnapshotTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SampleSnapshotTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"采样截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeSampleSnapshotTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SampleSnapshotTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"采样截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"SampleInterval\": 10,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询采样截图模板列表"
       }
     ],
     "DescribeSnapshotByTimeOffsetTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeSnapshotByTimeOffsetTemplates\r\n&Definitions.0=10001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotByTimeOffsetTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"指定时间点截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeSnapshotByTimeOffsetTemplates\n&Definitions.0=10001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SnapshotByTimeOffsetTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"指定时间点截图模板1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"Format\": \"jpg\",\n                \"Height\": 540,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取指定时间点截图模板列表"
       }
     ],
@@ -823,7 +823,7 @@
     "DescribeTranscodeTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeTranscodeTemplates\r\n&Definitions.0=10\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeTranscodeTemplates\n&Definitions.0=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": 1008,\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": null,\n                \"Type\": 0,\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"Bitrate\": 256,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取转码模板"
       }
@@ -949,19 +949,19 @@
     "ModifyAIAnalysisTemplate": [
       {
         "document": "修改自定义视频内容分析模板，开启智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=ON\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "开启智能封面任务"
       },
       {
         "document": "修改自定义视频内容分析模板，关闭智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "关闭智能封面任务"
       },
       {
         "document": "修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\r\n&Definition=30\r\n&TagConfigure.Switch=ON\r\n&CoverConfigure.Switch=OFF\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时开启一项和关闭一项内容分析任务"
       }
@@ -997,7 +997,7 @@
     "ModifyAnimatedGraphicsTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\r\n&Definition=10001\r\n&Name=转动图模板1\r\n&Width=540\r\n&Height=960\r\n&Fps=30\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAnimatedGraphicsTemplate\n&Definition=10001\n&Name=转动图模板1\n&Width=540\n&Height=960\n&Fps=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转动图模板"
       }
@@ -1057,7 +1057,7 @@
     "ModifyImageSpriteTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\r\n&Definition=10001\r\n&Name=雪碧图模板1\r\n&Width=128\r\n&Height=128\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&RowCount=5\r\n&ColumnCount=10\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyImageSpriteTemplate\n&Definition=10001\n&Name=雪碧图模板1\n&Width=128\n&Height=128\n&SampleType=Percent\n&SampleInterval=10\n&RowCount=5\n&ColumnCount=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改雪碧图模板"
       }
@@ -1131,7 +1131,7 @@
     "ModifySampleSnapshotTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\r\n&Definition=10001\r\n&Name=采样截图模板1\r\n&Width=540\r\n&Height=960\r\n&SampleType=Percent\r\n&SampleInterval=10\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifySampleSnapshotTemplate\n&Definition=10001\n&Name=采样截图模板1\n&Width=540\n&Height=960\n&SampleType=Percent\n&SampleInterval=10\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改采样截图模板"
       }
@@ -1139,7 +1139,7 @@
     "ModifySnapshotByTimeOffsetTemplate": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\r\n&Definition=10001\r\n&Name=指定时间点截图模板1\r\n&Width=540\r\n&Height=960\r\n&Format=jpg\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifySnapshotByTimeOffsetTemplate\n&Definition=10001\n&Name=指定时间点截图模板1\n&Width=540\n&Height=960\n&Format=jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改指定时间点截图模板"
       }

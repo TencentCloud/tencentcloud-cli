@@ -1,0 +1,1441 @@
+{
+  "actions": {
+    "DescribeDBInstances": {
+      "document": "本接口用于查询独享集群内的DB实例列表",
+      "input": "DescribeDBInstancesRequest",
+      "name": "查询独享集群内的DB实例列表",
+      "output": "DescribeDBInstancesResponse"
+    },
+    "DescribeInstanceDetail": {
+      "document": "本接口用于查询独享集群详情",
+      "input": "DescribeInstanceDetailRequest",
+      "name": "查询独享集群详情",
+      "output": "DescribeInstanceDetailResponse"
+    },
+    "DescribeInstanceList": {
+      "document": "本接口用于查询独享集群实例列表",
+      "input": "DescribeInstanceListRequest",
+      "name": "查询独享集群实例列表",
+      "output": "DescribeInstanceListResponse"
+    },
+    "DescribeInstances": {
+      "document": "根据不同地域不同用户，获取集群列表信息",
+      "input": "DescribeInstancesRequest",
+      "name": "查询独享集群列表",
+      "output": "DescribeInstancesResponse"
+    },
+    "ModifyInstanceName": {
+      "document": "本接口用于修改集群名称",
+      "input": "ModifyInstanceNameRequest",
+      "name": "修改独享集群名称",
+      "output": "ModifyInstanceNameResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-10-29",
+    "api_brief": "使用api对独享集群进行拉取、创建、删除等管理操作",
+    "serviceNameCN": "云数据库独享集群",
+    "serviceShortName": "dbdc"
+  },
+  "objects": {
+    "DBInstanceDetail": {
+      "document": "DB实例详情",
+      "members": [
+        {
+          "default": "",
+          "document": "DB实例Id",
+          "example": "tdsql-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例名称",
+          "example": "tdsql-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例状态,-1:已隔离, 0:创建中, 1:流程中, 2:运行中, 3:未初始化",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例状态描述,-1:已隔离, 0:创建中, 1:流程中, 2:运行中, 3:未初始化",
+          "example": "2",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例版本",
+          "example": "5.7.17",
+          "member": "string",
+          "name": "DbVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vip信息",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vip使用的端口号",
+          "example": "3306",
+          "member": "int64",
+          "name": "Vport",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串型的私有网络ID",
+          "example": "vpc-test",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字符串型的私有网络子网ID",
+          "example": "subnet-test",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否为分布式版本,0:否,1:是",
+          "example": "1",
+          "member": "int64",
+          "name": "Shard",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例节点数",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU规格(单位:核数)",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存规格(单位:GB)",
+          "example": "10",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘规格(单位:GB)",
+          "example": "10",
+          "member": "int64",
+          "name": "Disk",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分布式类型的实例的分片数",
+          "example": "2",
+          "member": "int64",
+          "name": "ShardNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Db所在主机列表, 格式: m1,s1|m2,s2",
+          "example": "svr-test1|svr-test2",
+          "member": "string",
+          "name": "DbHosts",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机角色, 1:主, 2:从, 3:主+从",
+          "example": "1",
+          "member": "int64",
+          "name": "HostRole",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB引擎，MySQL,Percona,MariaDB",
+          "example": "MySQL",
+          "member": "string",
+          "name": "DbEngine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDBInstancesRequest": {
+      "document": "DescribeDBInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享集群主机Id",
+          "example": "svr-test",
+          "member": "string",
+          "name": "HostId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "实例类型,0:mariadb, 1:tdsql",
+          "example": "1",
+          "member": "int64",
+          "name": "ShardType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstancesResponse": {
+      "document": "DescribeDBInstances返回参数结构体",
+      "members": [
+        {
+          "document": "独享集群内的DB实例列表",
+          "example": "无",
+          "member": "DBInstanceDetail",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群内的DB实例总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDetail": {
+      "document": "独享集群详情",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "独享集群实例名称",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "产品ID, 0:CDB, 1:TDSQL",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型, 0:公有云, 1:金融围笼",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘",
+          "example": "0",
+          "member": "int64",
+          "name": "HostType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费标志, 0:未设置, 1:自动续费, 2:到期不续费",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-04-28 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "到期时间",
+          "example": "2021-05-28 00:00:00",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机数",
+          "example": "1",
+          "member": "int64",
+          "name": "HostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "DbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分配策略, 0:紧凑, 1:均匀",
+          "example": "0",
+          "member": "int64",
+          "name": "AssignStrategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总主机CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总已分配CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总可分配CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总主机内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemorySpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总已分配内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemoryAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总可分配内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemoryAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总机器磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总已分配磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总可分配磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cage-x-x",
+          "member": "string",
+          "name": "FenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInstanceDetailRequest": {
+      "document": "DescribeInstanceDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDetailResponse": {
+      "document": "DescribeInstanceDetail返回参数结构体",
+      "members": [
+        {
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群实例名称",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "产品ID, 0:CDB, 1:TDSQL",
+          "example": "1",
+          "member": "int64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群类型, 0:公有云, 1:金融围笼",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘",
+          "example": "0",
+          "member": "int64",
+          "name": "HostType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "自动续费标志, 0:未设置, 1:自动续费, 2:到期不续费",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "2021-04-28 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "到期时间",
+          "example": "2021-05-28 00:00:00",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机数",
+          "example": "2",
+          "member": "int64",
+          "name": "HostNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Db实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "DbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分配策略, 0:紧凑, 1:均匀",
+          "example": "0",
+          "member": "int64",
+          "name": "AssignStrategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总主机CPU(单位:核)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总已分配CPU(单位:核)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总可分配CPU(单位:核)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总主机内存(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "MemorySpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总已分配内存(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "MemoryAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总可分配内存(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "MemoryAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总机器磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总已分配磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总可分配磁盘(单位:GB)",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cage-x-x",
+          "member": "string",
+          "name": "FenceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceListRequest": {
+      "document": "DescribeInstanceList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页返回数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，createTime,instancename两者之一",
+          "example": "createTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序规则，desc,asc两者之一",
+          "example": "desc",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按产品过滤，0:CDB, 1:TDSQL",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ProductId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按实例ID过滤",
+          "example": "[\"dbdc-1234\"]",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按实例名称过滤",
+          "example": "[\"dbdc-name\"]",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按金融围笼ID过滤",
+          "example": "[\"cage-1-2\"]",
+          "member": "string",
+          "name": "FenceId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "按实例状态过滤, -1:已隔离, 0:创建中, 1:运行中, 2:扩容中, 3:删除中",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceListResponse": {
+      "document": "DescribeInstanceList返回参数结构体",
+      "members": [
+        {
+          "document": "独享集群列表",
+          "example": "无",
+          "member": "DescribeInstanceDetail",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "独享集群实例总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群类型: 0 一主一备, 1 一主两备...N-1 一主N备",
+          "member": "int64",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "产品ID:  0 MYSQL，1 TDSQL",
+          "member": "int64",
+          "name": "ProductIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "集群uuid: 如 dbdc-q810131s",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否按金融围笼标志搜索",
+          "member": "bool",
+          "name": "FenceFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "按实例名字模糊匹配",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页数目, 整型",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页码, 整型",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段，枚举：createtime,groupname",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序方式: asc升序, desc降序",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群状态: -2 已删除, -1 已隔离, 0 创建中, 1 运行中, 2 扩容中, 3 删除中",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "集群数量",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群扩展信息",
+          "member": "InstanceExpand",
+          "name": "Instances",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceInfo": {
+      "document": "设备信息",
+      "members": [
+        {
+          "default": "",
+          "document": "设备ID",
+          "member": "int64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备No",
+          "member": "string",
+          "name": "DeviceNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备类型",
+          "member": "string",
+          "name": "DevClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备总内存，单位GB",
+          "member": "float",
+          "name": "MaxMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备总磁盘，单位GB",
+          "member": "float",
+          "name": "MaxDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备剩余内存，单位GB",
+          "member": "float",
+          "name": "RestMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备剩余磁盘，单位GB",
+          "member": "float",
+          "name": "RestDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备机器个数",
+          "member": "uint64",
+          "name": "RawDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库实例个数",
+          "member": "uint64",
+          "name": "InstanceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDetail": {
+      "document": "集群容量信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "集群状态，0：运行中，1：不在运行",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写集群剩余内存容量，单位GB",
+          "member": "float",
+          "name": "ReadWriteTotalLeaveMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写集群剩余磁盘容量，单位GB",
+          "member": "float",
+          "name": "ReadWriteTotalLeaveDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写集群总内存容量，单位GB",
+          "member": "float",
+          "name": "ReadWriteTotalMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "读写集群总磁盘容量，单位GB",
+          "member": "float",
+          "name": "ReadWriteTotalDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读集群剩余内存容量，单位GB",
+          "member": "float",
+          "name": "ReadOnlyTotalLeaveMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读集群剩余磁盘容量，单位GB",
+          "member": "float",
+          "name": "ReadOnlyTotalLeaveDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读集群总内存容量，单位GB",
+          "member": "float",
+          "name": "ReadOnlyTotalMemory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "只读集群总磁盘容量，单位GB",
+          "member": "float",
+          "name": "ReadOnlyTotalDisk",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群设备详情",
+          "member": "InstanceDeviceInfo",
+          "name": "InstanceDeviceInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDeviceInfo": {
+      "document": "集群设备组信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "读写设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeviceInfo",
+          "name": "ReadWriteDevice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "只读设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeviceInfo",
+          "name": "ReadOnlyDevice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "空闲设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeviceInfo",
+          "name": "FreeDevice",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceExpand": {
+      "document": "集群扩展信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型： 0：一主一备，1：一主两备",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态: 0 集群创建中, 1 集群有效, 2 集群扩容中, 3 集群删除中, 4 集群缩容中 -1 集群已隔离 -2 集群已删除",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例自动续费标识： 0正常续费 1自动续费 2到期不续费",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "member": "string",
+          "name": "Machine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "member": "string",
+          "name": "PeriodEndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群信息",
+          "member": "InstanceDetail",
+          "name": "InstanceDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费侧的产品ID",
+          "member": "int64",
+          "name": "Pid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyInstanceNameRequest": {
+      "document": "ModifyInstanceName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "独享集群实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameResponse": {
+      "document": "ModifyInstanceName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

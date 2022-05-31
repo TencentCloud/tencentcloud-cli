@@ -1433,6 +1433,33 @@
           "value_allowed_null": true
         },
         {
+          "document": "根证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RootCertificates",
+          "name": "RootCert",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国密加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "国密加密私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptPrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3010,6 +3037,11 @@
           "value_allowed_null": true
         }
       ],
+      "usage": "out"
+    },
+    "RootCertificates": {
+      "document": "根证书",
+      "members": [],
       "usage": "out"
     },
     "SubmitAuditManagerRequest": {

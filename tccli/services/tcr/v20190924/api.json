@@ -1448,6 +1448,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tcr-okmju7",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1456,6 +1457,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "team-01",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -1464,6 +1466,7 @@
         {
           "default": "",
           "document": "仓库名称",
+          "example": "nginx",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
@@ -1472,6 +1475,7 @@
         {
           "default": "",
           "document": "仓库简短描述",
+          "example": "this is brief description",
           "member": "string",
           "name": "BriefDescription",
           "required": false,
@@ -1480,6 +1484,7 @@
         {
           "default": "",
           "document": "仓库详细描述",
+          "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3367,6 +3372,7 @@
         {
           "default": "",
           "document": "实例Id",
+          "example": "tcr-f7g1ir99",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3375,6 +3381,7 @@
         {
           "default": "",
           "document": "指定命名空间，不填写默认查询所有命名空间",
+          "example": "project1",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
@@ -3383,6 +3390,7 @@
         {
           "default": "",
           "document": "每页个数",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3391,6 +3399,7 @@
         {
           "default": "",
           "document": "页偏移",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3404,15 +3413,19 @@
       "members": [
         {
           "document": "命名空间列表信息",
+          "example": "无",
           "member": "TcrNamespaceInfo",
           "name": "NamespaceList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "document": "总个数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

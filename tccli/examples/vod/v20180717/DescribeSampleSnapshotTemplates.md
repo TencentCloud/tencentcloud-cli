@@ -25,6 +25,8 @@ Output:
                 "Format": "jpg",
                 "Height": 540,
                 "SampleType": "Percent",
+                "ResolutionAdaptive": "open",
+                "FillType": "black",
                 "SampleInterval": 10,
                 "Width": 960
             }

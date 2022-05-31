@@ -989,6 +989,24 @@
           "name": "DataSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3126,6 +3144,24 @@
         },
         {
           "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "spark作业命令行参数",
           "example": "10",
           "member": "string",
@@ -3863,6 +3899,26 @@
           "example": "kafka-datasource",
           "member": "string",
           "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
           "required": true,
           "type": "string",
           "value_allowed_null": true

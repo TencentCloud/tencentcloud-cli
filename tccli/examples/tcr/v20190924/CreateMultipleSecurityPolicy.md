@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr CreateMultipleSecurityPolicy --cli-unfold-argument  \
-    --RegistryId tcr-test123 \
+    --RegistryId tcr-12345 \
     --SecurityGroupPolicySet.0.CidrBlock 192.168.0.0/24 \
     --SecurityGroupPolicySet.0.Description test
 ```

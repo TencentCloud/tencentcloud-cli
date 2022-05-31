@@ -22,6 +22,8 @@ Output:
                 "Comment": "",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
+                "ResolutionAdaptive": "open",
+                "FillType": "black",
                 "Format": "jpg",
                 "Height": 540,
                 "Width": 960

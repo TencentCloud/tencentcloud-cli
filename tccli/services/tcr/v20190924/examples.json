@@ -89,7 +89,7 @@
     "CreateMultipleSecurityPolicy": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateMultipleSecurityPolicy\n&RegistryId=tcr-test123\n&SecurityGroupPolicySet.0.CidrBlock=192.168.0.0/24\n&SecurityGroupPolicySet.0.Description=test\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateMultipleSecurityPolicy\n&RegistryId=tcr-12345\n&SecurityGroupPolicySet.0.CidrBlock=192.168.0.0/24\n&SecurityGroupPolicySet.0.Description=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建实例公网访问多白名单策略"
       }
@@ -121,7 +121,7 @@
     "CreateRepository": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateRepository\r\n&RegistryId=tcr-okmju7\r\n&NamespaceName=team-01\r\n&RepositoryName=nginx\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateRepository\n&RegistryId=tcr-okmju7\n&NamespaceName=team-01\n&RepositoryName=nginx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "创建镜像仓库"
       }
@@ -337,9 +337,9 @@
     "DescribeExternalEndpointStatus": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeExternalEndpointStatus\n&RegistryId=tcr-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"Opened\",\n        \"Reason\": \"\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "查询开启公网实例的状态"
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeExternalEndpointStatus\n&RegistryId=tcr-12345\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"55d06f7c-c488-4910-8f67-8d7f77f0fe0f\",\n        \"Status\": \"Opened\",\n        \"Reason\": \"\"\n    }\n}",
+        "title": "查询实例公网访问入口状态"
       }
     ],
     "DescribeFavorRepositoryPersonal": [
@@ -457,7 +457,7 @@
     "DescribeNamespaces": [
       {
         "document": "查询实例内所有的命名空间信息",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeNamespaces\r\n&RegistryId=tcr-f7g1ir99\r\n&Limit=20&Offset=0\r\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeNamespaces\n&RegistryId=tcr-f7g1ir99\n&Limit=20\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d92365c7-3484-4d52-8add-93f682e127bd\",\n        \"NamespaceList\": [\n            {\n                \"Name\": \"mytest1\",\n                \"CreationTime\": \"2020-02-27T00:49:22+08:00\",\n                \"Public\": true,\n                \"NamespaceId\": 2\n            },\n            {\n                \"Name\": \"mytest\",\n                \"CreationTime\": \"2020-02-27T00:44:49+08:00\",\n                \"Public\": true,\n                \"NamespaceId\": 1\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询命名空间信息"
       }

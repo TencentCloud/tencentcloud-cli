@@ -7542,6 +7542,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "模板描述信息，长度限制 256 个字符。",
           "example": "描述信息",
           "member": "string",
@@ -7575,15 +7584,6 @@
           "name": "FillType",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "125000",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -7623,6 +7623,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "图片处理模板名称，长度限制：64 个字符。",
           "example": "MyCenterCut",
           "member": "string",
@@ -7638,15 +7647,6 @@
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "0",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -8840,6 +8840,7 @@
         {
           "default": "",
           "document": "视频内容分析模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -8847,7 +8848,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8874,6 +8876,7 @@
         {
           "default": "",
           "document": "视频内容识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -8881,7 +8884,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8916,7 +8920,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -8944,6 +8948,7 @@
         {
           "default": "",
           "document": "转动图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -8951,7 +8956,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9012,6 +9018,7 @@
         {
           "default": "",
           "document": "内容智能识别模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -9019,7 +9026,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9054,7 +9062,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "25100",
           "member": "uint64",
           "name": "SubAppId",
@@ -9090,7 +9098,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "0",
           "member": "uint64",
           "name": "SubAppId",
@@ -9118,6 +9126,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -9125,7 +9134,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9267,6 +9277,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -9274,7 +9285,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9301,6 +9313,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -9308,7 +9321,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9369,6 +9383,7 @@
         {
           "default": "",
           "document": "转码模板唯一标识。",
+          "example": "1008",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -9376,7 +9391,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9439,6 +9455,7 @@
         {
           "default": "",
           "document": "水印模板唯一标识。",
+          "example": "1001",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -9446,7 +9463,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9508,7 +9526,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "视频内容分析模板唯一标识过滤条件，数组长度最大值：100。",
+          "example": "[\"30\\r\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -9517,6 +9545,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9525,16 +9554,9 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -9546,15 +9568,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "视频内容分析模板详情列表。",
+          "example": "无",
           "member": "AIAnalysisTemplateItem",
           "name": "AIAnalysisTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9572,7 +9598,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"30\\r\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -9581,6 +9617,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9589,16 +9626,9 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -9610,15 +9640,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "视频内容识别模板详情列表。",
+          "example": "无",
           "member": "AIRecognitionTemplateItem",
           "name": "AIRecognitionTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9636,7 +9670,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "转自适应码流模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -9645,6 +9689,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9653,6 +9698,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9661,18 +9707,11 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -9682,15 +9721,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转自适应码流模板详情列表。",
+          "example": "无",
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9741,7 +9784,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "转动图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -9750,6 +9803,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9758,6 +9812,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -9766,18 +9821,11 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -9787,15 +9835,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转动图模板详情列表。",
+          "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10109,6 +10161,15 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "内容智能识别模板唯一标识过滤条件，数组长度限制：100。",
           "example": "无",
           "member": "int64",
@@ -10131,15 +10192,6 @@
           "example": "无",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -10493,6 +10545,15 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "片头片尾模板号，数组长度限制：100。",
           "example": "[\"10\\n\"]",
           "member": "int64",
@@ -10515,15 +10576,6 @@
           "example": "100",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "125000",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -10565,6 +10617,15 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "图片处理模板标识列表。长度限制：100。",
           "example": "[1000]",
           "member": "uint64",
@@ -10596,15 +10657,6 @@
           "example": "100",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "0",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -10700,7 +10752,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "雪碧图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -10709,6 +10771,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -10717,6 +10780,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -10725,18 +10789,11 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -10746,15 +10803,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "雪碧图模板详情列表。",
+          "example": "无",
           "member": "ImageSpriteTemplate",
           "name": "ImageSpriteTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11286,7 +11347,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "采样截图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -11295,6 +11366,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -11303,6 +11375,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -11311,18 +11384,11 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -11332,15 +11398,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "采样截图模板详情列表。",
+          "example": "无",
           "member": "SampleSnapshotTemplate",
           "name": "SampleSnapshotTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11358,7 +11428,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "指定时间点截图模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10001\\r\\n\"]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -11367,6 +11447,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -11375,6 +11456,7 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -11383,18 +11465,11 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -11404,15 +11479,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "指定时间点截图模板详情列表。",
+          "example": "无",
           "member": "SnapshotByTimeOffsetTemplate",
           "name": "SnapshotByTimeOffsetTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12046,7 +12125,17 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "转码模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"10\\n\"]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -12055,6 +12144,7 @@
         {
           "default": "",
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -12063,6 +12153,7 @@
         {
           "default": "",
           "document": "封装格式过滤条件，可选值：\n<li>Video：视频格式，可以同时包含视频流和音频流的封装格式板；</li>\n<li>PureAudio：纯音频格式，只能包含音频流的封装格式。</li>",
+          "example": "Video",
           "member": "string",
           "name": "ContainerType",
           "required": false,
@@ -12071,6 +12162,7 @@
         {
           "default": "",
           "document": "极速高清过滤条件，用于过滤普通转码或极速高清转码模板，可选值：\n<li>Common：普通转码模板；</li>\n<li>TEHD：极速高清模板。</li>",
+          "example": "Common",
           "member": "string",
           "name": "TEHDType",
           "required": false,
@@ -12079,6 +12171,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12087,16 +12180,9 @@
         {
           "default": "",
           "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -12108,15 +12194,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "转码模板详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TranscodeTemplate",
           "name": "TranscodeTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12206,15 +12296,17 @@
       "members": [
         {
           "default": "",
-          "document": "水印模板唯一标识过滤条件，数组长度限制：100。",
-          "member": "int64",
-          "name": "Definitions",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
           "required": false,
-          "type": "list"
+          "type": "int"
         },
         {
           "default": "",
           "document": "水印类型过滤条件，可选值：\n<li>image：图片水印；</li>\n<li>text：文字水印；</li>\n<li>svg：SVG 水印。</li>",
+          "example": "text",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -12223,6 +12315,7 @@
         {
           "default": "",
           "document": "分页偏移量，默认值：0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12230,17 +12323,19 @@
         },
         {
           "default": "",
-          "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
-          "member": "uint64",
-          "name": "Limit",
+          "document": "水印模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"1001\\n\"]",
+          "member": "int64",
+          "name": "Definitions",
           "required": false,
-          "type": "int"
+          "type": "list"
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
+          "example": "20",
           "member": "uint64",
-          "name": "SubAppId",
+          "name": "Limit",
           "required": false,
           "type": "int"
         }
@@ -12252,15 +12347,19 @@
       "members": [
         {
           "document": "符合过滤条件的记录总数。",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "水印模板详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WatermarkTemplate",
           "name": "WatermarkTemplateSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17235,6 +17334,7 @@
         {
           "default": "",
           "document": "视频内容分析模板唯一标识。",
+          "example": "30",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -17242,7 +17342,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "视频内容分析模板名称，长度限制：64 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -17251,6 +17361,7 @@
         {
           "default": "",
           "document": "视频内容分析模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -17259,6 +17370,7 @@
         {
           "default": "",
           "document": "智能分类任务控制参数。",
+          "example": "无",
           "member": "ClassificationConfigureInfoForUpdate",
           "name": "ClassificationConfigure",
           "required": false,
@@ -17267,6 +17379,7 @@
         {
           "default": "",
           "document": "智能标签任务控制参数。",
+          "example": "无",
           "member": "TagConfigureInfoForUpdate",
           "name": "TagConfigure",
           "required": false,
@@ -17275,6 +17388,7 @@
         {
           "default": "",
           "document": "智能封面任务控制参数。",
+          "example": "无",
           "member": "CoverConfigureInfoForUpdate",
           "name": "CoverConfigure",
           "required": false,
@@ -17283,6 +17397,7 @@
         {
           "default": "",
           "document": "智能按帧标签任务控制参数。",
+          "example": "无",
           "member": "FrameTagConfigureInfoForUpdate",
           "name": "FrameTagConfigure",
           "required": false,
@@ -17291,18 +17406,11 @@
         {
           "default": "",
           "document": "智能精彩集锦任务控制参数。",
+          "example": "无",
           "member": "HighlightsConfigureInfoForUpdate",
           "name": "HighlightConfigure",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -17329,6 +17437,15 @@
           "member": "int64",
           "name": "Definition",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
           "type": "int"
         },
         {
@@ -17429,15 +17546,6 @@
           "name": "ScreenshotInterval",
           "required": false,
           "type": "float"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -17550,6 +17658,7 @@
         {
           "default": "",
           "document": "转动图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -17557,7 +17666,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "转动图模板名称，长度限制：64 个字符。",
+          "example": "转动图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -17566,6 +17685,7 @@
         {
           "default": "",
           "document": "动图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -17574,6 +17694,7 @@
         {
           "default": "",
           "document": "动图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -17582,6 +17703,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -17590,6 +17712,7 @@
         {
           "default": "",
           "document": "动图格式，取值为 gif 和 webp。",
+          "example": "gif",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -17598,6 +17721,7 @@
         {
           "default": "",
           "document": "帧率，取值范围：[1, 30]，单位：Hz。",
+          "example": "30",
           "member": "uint64",
           "name": "Fps",
           "required": false,
@@ -17606,6 +17730,7 @@
         {
           "default": "",
           "document": "图片质量，取值范围：[1, 100]，默认值为 75。",
+          "example": "75",
           "member": "float",
           "name": "Quality",
           "required": false,
@@ -17614,18 +17739,11 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -17697,6 +17815,15 @@
           "member": "int64",
           "name": "Definition",
           "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
           "type": "int"
         },
         {
@@ -17779,15 +17906,6 @@
           "name": "ReviewWallSwitch",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -17915,6 +18033,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "125000",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "模板名，长度限制 64 个字符。不传代表不修改。",
           "example": "模板名1",
           "member": "string",
@@ -17957,15 +18084,6 @@
           "name": "FillType",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "125000",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -17988,6 +18106,7 @@
         {
           "default": "",
           "document": "雪碧图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -17995,7 +18114,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "雪碧图模板名称，长度限制：64 个字符。",
+          "example": "雪碧图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -18004,6 +18133,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的宽度，取值范围： [128, 4096]，单位：px。",
+          "example": "128",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -18012,6 +18142,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的高度，取值范围： [128, 4096]，单位：px。",
+          "example": "128",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -18020,6 +18151,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -18028,6 +18160,7 @@
         {
           "default": "",
           "document": "采样类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": false,
@@ -18036,6 +18169,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": false,
@@ -18044,6 +18178,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的行数。",
+          "example": "5",
           "member": "uint64",
           "name": "RowCount",
           "required": false,
@@ -18052,6 +18187,7 @@
         {
           "default": "",
           "document": "雪碧图中小图的列数。",
+          "example": "10",
           "member": "uint64",
           "name": "ColumnCount",
           "required": false,
@@ -18060,6 +18196,7 @@
         {
           "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
+          "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -18068,18 +18205,11 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -18435,6 +18565,7 @@
         {
           "default": "",
           "document": "采样截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -18442,7 +18573,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "采样截图模板名称，长度限制：64 个字符。",
+          "example": "采样截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -18451,6 +18592,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -18459,6 +18601,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -18467,6 +18610,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -18475,6 +18619,7 @@
         {
           "default": "",
           "document": "采样截图类型，取值：\n<li>Percent：按百分比。</li>\n<li>Time：按时间间隔。</li>",
+          "example": "Percent",
           "member": "string",
           "name": "SampleType",
           "required": false,
@@ -18483,6 +18628,7 @@
         {
           "default": "",
           "document": "采样间隔。\n<li>当 SampleType 为 Percent 时，指定采样间隔的百分比。</li>\n<li>当 SampleType 为 Time 时，指定采样间隔的时间，单位为秒。</li>",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
           "required": false,
@@ -18491,6 +18637,7 @@
         {
           "default": "",
           "document": "图片格式，取值为 jpg 和 png。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -18499,6 +18646,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -18506,15 +18654,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -18541,6 +18682,7 @@
         {
           "default": "",
           "document": "指定时间点截图模板唯一标识。",
+          "example": "10001",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -18548,7 +18690,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "指定时间点截图模板名称，长度限制：64 个字符。",
+          "example": "指定时间点截图模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -18557,6 +18709,7 @@
         {
           "default": "",
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "540",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -18565,6 +18718,7 @@
         {
           "default": "",
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "example": "960",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -18573,6 +18727,7 @@
         {
           "default": "",
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
@@ -18581,6 +18736,7 @@
         {
           "default": "",
           "document": "图片格式，取值可以为 jpg 和 png。",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -18589,6 +18745,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -18596,15 +18753,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
+          "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -18841,6 +18991,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
           "example": "mp4",
           "member": "string",
@@ -18910,15 +19069,6 @@
           "name": "TEHDConfig",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "0",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -19049,6 +19199,7 @@
         {
           "default": "",
           "document": "水印模板唯一标识。",
+          "example": "1001",
           "member": "int64",
           "name": "Definition",
           "required": true,
@@ -19056,7 +19207,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "水印模板名称，长度限制：64 个字符。",
+          "example": "模板2",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -19065,6 +19226,7 @@
         {
           "default": "",
           "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "123",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -19073,6 +19235,7 @@
         {
           "default": "",
           "document": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>",
+          "example": "TopRight",
           "member": "string",
           "name": "CoordinateOrigin",
           "required": false,
@@ -19081,6 +19244,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 XPos 为指定像素，如 100px 表示 XPos 为 100 像素。</li>",
+          "example": "1%",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -19089,6 +19253,7 @@
         {
           "default": "",
           "document": "水印原点距离视频图像坐标原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 YPos 为指定像素，如 100px 表示 YPos 为 100 像素。</li>",
+          "example": "1%",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -19097,6 +19262,7 @@
         {
           "default": "",
           "document": "图片水印模板，该字段仅对图片水印模板有效。",
+          "example": "无",
           "member": "ImageWatermarkInputForUpdate",
           "name": "ImageTemplate",
           "required": false,
@@ -19105,6 +19271,7 @@
         {
           "default": "",
           "document": "文字水印模板，该字段仅对文字水印模板有效。",
+          "example": "无",
           "member": "TextWatermarkTemplateInputForUpdate",
           "name": "TextTemplate",
           "required": false,
@@ -19113,18 +19280,11 @@
         {
           "default": "",
           "document": "SVG 水印模板，该字段仅对 SVG 水印模板有效。",
+          "example": "无",
           "member": "SvgWatermarkInputForUpdate",
           "name": "SvgTemplate",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -19134,8 +19294,10 @@
       "members": [
         {
           "document": "图片水印地址，仅当 ImageTemplate.ImageContent 非空，该字段有值。",
+          "example": "http://xxx/xxx/abc.jpg",
           "member": "string",
           "name": "ImageUrl",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21939,7 +22101,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
