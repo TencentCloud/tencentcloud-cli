@@ -1,7 +1,7 @@
 {
   "actions": {
     "AttachInstances": {
-      "document": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n",
+      "document": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n* 仅支持添加处于`RUNNING`（运行中）或`STOPPED`（已关机）状态的 CVM 实例\n* 添加的 CVM 实例需要和伸缩组 VPC 网络一致\n",
       "input": "AttachInstancesRequest",
       "name": "添加 CVM 实例到伸缩组",
       "output": "AttachInstancesResponse"

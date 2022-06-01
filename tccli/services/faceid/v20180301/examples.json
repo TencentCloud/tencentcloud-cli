@@ -308,6 +308,14 @@
         "title": "核验成功"
       }
     ],
+    "ParseNfcData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseNfcData\n<公共请求参数>\n\n{\n    \"ReqId\": \"eyJyZXFJZCI6IjEyMzEiLCJkZXZpY2VJZCI6IjQ1NiJ9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"北京**********\",\n        \"BeginTime\": \"20******\",\n        \"BirthDate\": \"19******\",\n        \"CheckMRTD\": \"\",\n        \"EnName\": \"\",\n        \"EndTime\": \"20******\",\n        \"IdNum\": \"3****************6\",\n        \"IdType\": \"\",\n        \"ImageA\": \"/9j/4A\",\n        \"ImageB\": \"/9j/4A\",\n        \"Name\": \"*四\",\n        \"Nation\": \"汉\",\n        \"Nationality\": \"\",\n        \"OtherIdNum\": \"\",\n        \"PersonalNumber\": \"\",\n        \"Picture\": \"iVBORw\",\n        \"RequestId\": \"cdd7a769-d288-42a5-8e2e-6a5e5c9c08ae\",\n        \"ResultCode\": \"0\",\n        \"Sex\": \"男\",\n        \"SigningOrganization\": \"*******阳分局\",\n        \"ResultDescription\": \"首次查询成功\"\n    }\n}",
+        "title": "success"
+      }
+    ],
     "PhoneVerification": [
       {
         "document": "",

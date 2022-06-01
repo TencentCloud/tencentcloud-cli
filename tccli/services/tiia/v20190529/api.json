@@ -530,6 +530,7 @@
         {
           "default": "",
           "document": "需要裁剪区域的宽度，与Height共同组成所需裁剪的图片宽高比例；\n输入数字请大于0、小于图片宽度的像素值；",
+          "example": "1100",
           "member": "int64",
           "name": "Width",
           "required": true,
@@ -538,6 +539,7 @@
         {
           "default": "",
           "document": "需要裁剪区域的高度，与Width共同组成所需裁剪的图片宽高比例；\n输入数字请请大于0、小于图片高度的像素值；\n宽高比例（Width : Height）会简化为最简分数，即如果Width输入10、Height输入20，会简化为1：2。\nWidth : Height建议取值在[1, 2.5]之间，超过这个范围可能会影响效果；",
+          "example": "880",
           "member": "int64",
           "name": "Height",
           "required": true,
@@ -546,6 +548,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -554,6 +557,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -567,50 +571,64 @@
       "members": [
         {
           "document": "裁剪区域左上角X坐标值",
+          "example": "0",
           "member": "int64",
           "name": "X",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "裁剪区域左上角Y坐标值",
+          "example": "110",
           "member": "int64",
           "name": "Y",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "裁剪区域的宽度，单位为像素",
+          "example": "1100",
           "member": "int64",
           "name": "Width",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "裁剪区域的高度，单位为像素",
+          "example": "880",
           "member": "int64",
           "name": "Height",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "原图宽度，单位为像素",
+          "example": "1100",
           "member": "int64",
           "name": "OriginalWidth",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "原图高度，单位为像素",
+          "example": "1390",
           "member": "int64",
           "name": "OriginalHeight",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "0：抠图正常；\n1：原图过长，指原图的高度是宽度的1.8倍以上；\n2：原图过宽，指原图的宽度是高度的1.8倍以上；\n3：抠图区域过长，指抠图的高度是主体备选框高度的1.6倍以上；\n4：抠图区域过宽，指当没有检测到人脸时，抠图区域宽度是检测出的原图主体区域宽度的1.6倍以上；\n5：纯色图，指裁剪区域视觉较为单一、缺乏主体部分 ；\n6：宽高比异常，指Width : Height取值超出[1, 2.5]的范围；\n\n以上是辅助决策的参考建议，可以根据业务需求选择采纳或忽视。",
+          "example": "0",
           "member": "int64",
           "name": "CropResult",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -848,6 +866,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -856,6 +875,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -869,15 +889,19 @@
       "members": [
         {
           "document": "对于图片中包含恶心内容的置信度，取值[0,1]，一般超过0.5则表明可能是恶心图片。",
+          "example": "0.98",
           "member": "float",
           "name": "Confidence",
+          "required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "document": "与图像内容最相似的恶心内容的类别，包含腐烂、密集、畸形、血腥、蛇、虫子、牙齿等。",
+          "example": "蛇",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1248,6 +1272,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "xxxxx",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1256,6 +1281,7 @@
         {
           "default": "",
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1269,8 +1295,10 @@
       "members": [
         {
           "document": "商品识别结果数组",
+          "example": "无",
           "member": "Product",
           "name": "Products",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1289,6 +1317,7 @@
         {
           "default": "",
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，最大不超过250万像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1297,6 +1326,7 @@
         {
           "default": "",
           "document": "支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1310,8 +1340,10 @@
       "members": [
         {
           "document": "增强后图片的base64编码。",
+          "example": "/9j/4AAQSkZJRgABAQAAAQABA...",
           "member": "string",
           "name": "EnhancedImage",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

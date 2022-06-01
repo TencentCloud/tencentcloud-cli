@@ -186,6 +186,12 @@
       "name": "手机号状态查询",
       "output": "MobileStatusResponse"
     },
+    "ParseNfcData": {
+      "document": "解析SDK获取到的证件NFC数据，接口传入SDK返回的ReqId，返回证件信息（个别字段为特定证件类型特有）。SDK生成的ReqId五分钟内有效，重复查询仅收一次费。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。",
+      "input": "ParseNfcDataRequest",
+      "name": "获取证件NFC结果",
+      "output": "ParseNfcDataResponse"
+    },
     "PhoneVerification": {
       "document": "本接口用于校验手机号、姓名和身份证号的真实性和一致性。支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "PhoneVerificationRequest",
@@ -3524,6 +3530,213 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseNfcDataRequest": {
+      "document": "ParseNfcData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "前端SDK返回",
+          "example": "ECBEC1E6-F05A-40DE-9CC3-C9EF19F55FE1",
+          "member": "string",
+          "name": "ReqId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseNfcDataResponse": {
+      "document": "ParseNfcData返回参数结构体",
+      "members": [
+        {
+          "document": "0为首次查询成功，-1为查询失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ResultCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "string",
+          "name": "IdNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李四",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "照片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Picture",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20220222",
+          "member": "string",
+          "name": "BirthDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "有效期起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20220222",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20220222",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "住址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
+          "member": "string",
+          "name": "Nation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
+          "member": "string",
+          "name": "Sex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份证 01 中国护照 03 军官证 04 武警证 05 港澳通行证 06 台胞证 07 外国护照 08 士兵证 09 临时身份证 10 户口本 11 警官证 12 外国人永久居留证 13 港澳台居民居住证 14 回乡证 15 大陆居民来往台湾通行证 16 其他证件 99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01",
+          "member": "string",
+          "name": "IdType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lisi",
+          "member": "string",
+          "name": "EnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "签发机关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省",
+          "member": "string",
+          "name": "SigningOrganization",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "港澳台居民居住证，通行证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OtherIdNum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "旅行证件国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Nationality",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "旅行证件机读区第二行 29~42 位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "PersonalNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "旅行证件类的核验结果。JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_pape r\":\"证件安全对象合法性验证 结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} \n 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "CheckMRTD",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份证照片面合成图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ImageA",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "身份证国徽面合成图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ImageB",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "对result code的结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ResultDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1,5 +1,41 @@
 {
   "actions": {
+    "CheckCertificate": {
+      "document": "校验证书",
+      "input": "CheckCertificateRequest",
+      "name": "校验证书",
+      "output": "CheckCertificateResponse"
+    },
+    "CreateApplicationProxy": {
+      "document": "创建应用代理",
+      "input": "CreateApplicationProxyRequest",
+      "name": "创建应用代理",
+      "output": "CreateApplicationProxyResponse"
+    },
+    "CreateApplicationProxyRule": {
+      "document": "创建应用代理规则",
+      "input": "CreateApplicationProxyRuleRequest",
+      "name": "创建应用代理规则",
+      "output": "CreateApplicationProxyRuleResponse"
+    },
+    "CreateApplicationProxyRules": {
+      "document": "批量创建应用代理规则",
+      "input": "CreateApplicationProxyRulesRequest",
+      "name": "批量创建应用代理规则",
+      "output": "CreateApplicationProxyRulesResponse"
+    },
+    "CreateDnsRecord": {
+      "document": "创建 DNS 记录",
+      "input": "CreateDnsRecordRequest",
+      "name": "创建 DNS 记录",
+      "output": "CreateDnsRecordResponse"
+    },
+    "CreateLoadBalancing": {
+      "document": "创建负载均衡",
+      "input": "CreateLoadBalancingRequest",
+      "name": "创建负载均衡",
+      "output": "CreateLoadBalancingResponse"
+    },
     "CreatePrefetchTask": {
       "document": "创建预热任务",
       "input": "CreatePrefetchTaskRequest",
@@ -11,6 +47,114 @@
       "input": "CreatePurgeTaskRequest",
       "name": "创建清除缓存任务",
       "output": "CreatePurgeTaskResponse"
+    },
+    "CreateZone": {
+      "document": "用于用户接入新的站点",
+      "input": "CreateZoneRequest",
+      "name": "创建站点",
+      "output": "CreateZoneResponse"
+    },
+    "DeleteApplicationProxy": {
+      "document": "删除应用代理",
+      "input": "DeleteApplicationProxyRequest",
+      "name": "删除应用代理",
+      "output": "DeleteApplicationProxyResponse"
+    },
+    "DeleteApplicationProxyRule": {
+      "document": "删除应用代理规则",
+      "input": "DeleteApplicationProxyRuleRequest",
+      "name": "删除应用代理规则",
+      "output": "DeleteApplicationProxyRuleResponse"
+    },
+    "DeleteDnsRecords": {
+      "document": "批量删除 DNS 记录",
+      "input": "DeleteDnsRecordsRequest",
+      "name": "批量删除 DNS 记录",
+      "output": "DeleteDnsRecordsResponse"
+    },
+    "DeleteLoadBalancing": {
+      "document": "删除负载均衡",
+      "input": "DeleteLoadBalancingRequest",
+      "name": "删除负载均衡",
+      "output": "DeleteLoadBalancingResponse"
+    },
+    "DeleteZone": {
+      "document": "删除站点",
+      "input": "DeleteZoneRequest",
+      "name": "删除站点",
+      "output": "DeleteZoneResponse"
+    },
+    "DescribeApplicationProxy": {
+      "document": "获取应用代理列表",
+      "input": "DescribeApplicationProxyRequest",
+      "name": "获取应用代理列表",
+      "output": "DescribeApplicationProxyResponse"
+    },
+    "DescribeApplicationProxyDetail": {
+      "document": "获取应用代理详细信息",
+      "input": "DescribeApplicationProxyDetailRequest",
+      "name": "获取应用代理详细信息",
+      "output": "DescribeApplicationProxyDetailResponse"
+    },
+    "DescribeCnameStatus": {
+      "document": "查询域名 CNAME 状态",
+      "input": "DescribeCnameStatusRequest",
+      "name": "查询域名 CNAME 状态",
+      "output": "DescribeCnameStatusResponse"
+    },
+    "DescribeDefaultCertificates": {
+      "document": "查询默认证书列表",
+      "input": "DescribeDefaultCertificatesRequest",
+      "name": "查询默认证书列表",
+      "output": "DescribeDefaultCertificatesResponse"
+    },
+    "DescribeDnsData": {
+      "document": "获取DNS请求数统计曲线",
+      "input": "DescribeDnsDataRequest",
+      "name": "获取DNS请求数统计曲线",
+      "output": "DescribeDnsDataResponse"
+    },
+    "DescribeDnsRecords": {
+      "document": "查询 DNS 记录列表，支持搜索、分页、排序、过滤。",
+      "input": "DescribeDnsRecordsRequest",
+      "name": "查询 DNS 记录列表",
+      "output": "DescribeDnsRecordsResponse"
+    },
+    "DescribeDnssec": {
+      "document": "用于查询 DNSSEC 相关信息",
+      "input": "DescribeDnssecRequest",
+      "name": "查询 DNSSEC 信息",
+      "output": "DescribeDnssecResponse"
+    },
+    "DescribeHostsCertificate": {
+      "document": "查询域名证书列表，支持搜索、分页、排序、过滤。",
+      "input": "DescribeHostsCertificateRequest",
+      "name": "查询域名证书列表",
+      "output": "DescribeHostsCertificateResponse"
+    },
+    "DescribeHostsSetting": {
+      "document": "用于查询域名配置信息",
+      "input": "DescribeHostsSettingRequest",
+      "name": "查询域名详细配置",
+      "output": "DescribeHostsSettingResponse"
+    },
+    "DescribeIdentification": {
+      "document": "查询验证结果",
+      "input": "DescribeIdentificationRequest",
+      "name": "查询站点的验证状态",
+      "output": "DescribeIdentificationResponse"
+    },
+    "DescribeLoadBalancing": {
+      "document": "获取负载均衡列表",
+      "input": "DescribeLoadBalancingRequest",
+      "name": "获取负载均衡列表",
+      "output": "DescribeLoadBalancingResponse"
+    },
+    "DescribeLoadBalancingDetail": {
+      "document": "获取负载均衡详细信息",
+      "input": "DescribeLoadBalancingDetailRequest",
+      "name": "获取负载均衡详细信息",
+      "output": "DescribeLoadBalancingDetailResponse"
     },
     "DescribePrefetchTasks": {
       "document": "查询预热任务状态",
@@ -24,6 +168,18 @@
       "name": "查询清除缓存历史记录",
       "output": "DescribePurgeTasksResponse"
     },
+    "DescribeZoneDetails": {
+      "document": "根据站点 ID 查询站点的详细信息",
+      "input": "DescribeZoneDetailsRequest",
+      "name": "查询某个站点的详细信息",
+      "output": "DescribeZoneDetailsResponse"
+    },
+    "DescribeZoneSetting": {
+      "document": "用于查询站点的所有配置信息。",
+      "input": "DescribeZoneSettingRequest",
+      "name": "查询站点配置",
+      "output": "DescribeZoneSettingResponse"
+    },
     "DescribeZones": {
       "document": "用户查询用户站点信息列表，支持分页",
       "input": "DescribeZonesRequest",
@@ -35,6 +191,114 @@
       "input": "DownloadL7LogsRequest",
       "name": "七层离线日志下载",
       "output": "DownloadL7LogsResponse"
+    },
+    "IdentifyZone": {
+      "document": "用于验证站点所有权",
+      "input": "IdentifyZoneRequest",
+      "name": "认证站点",
+      "output": "IdentifyZoneResponse"
+    },
+    "ImportDnsRecords": {
+      "document": "导入 DNS 记录",
+      "input": "ImportDnsRecordsRequest",
+      "name": "导入 DNS 记录",
+      "output": "ImportDnsRecordsResponse"
+    },
+    "ModifyApplicationProxy": {
+      "document": "修改应用代理",
+      "input": "ModifyApplicationProxyRequest",
+      "name": "修改应用代理",
+      "output": "ModifyApplicationProxyResponse"
+    },
+    "ModifyApplicationProxyRule": {
+      "document": "修改应用代理规则",
+      "input": "ModifyApplicationProxyRuleRequest",
+      "name": "修改应用代理规则",
+      "output": "ModifyApplicationProxyRuleResponse"
+    },
+    "ModifyApplicationProxyRuleStatus": {
+      "document": "修改应用代理规则的状态",
+      "input": "ModifyApplicationProxyRuleStatusRequest",
+      "name": "修改应用代理规则的状态",
+      "output": "ModifyApplicationProxyRuleStatusResponse"
+    },
+    "ModifyApplicationProxyStatus": {
+      "document": "修改应用代理的状态",
+      "input": "ModifyApplicationProxyStatusRequest",
+      "name": "修改应用代理的状态",
+      "output": "ModifyApplicationProxyStatusResponse"
+    },
+    "ModifyDefaultCertificate": {
+      "document": "修改默认证书状态",
+      "input": "ModifyDefaultCertificateRequest",
+      "name": "修改默认证书状态",
+      "output": "ModifyDefaultCertificateResponse"
+    },
+    "ModifyDnsRecord": {
+      "document": "修改 DNS 记录",
+      "input": "ModifyDnsRecordRequest",
+      "name": "修改 DNS 记录",
+      "output": "ModifyDnsRecordResponse"
+    },
+    "ModifyDnssec": {
+      "document": "修改 DNSSEC 状态",
+      "input": "ModifyDnssecRequest",
+      "name": "修改 DNSSEC",
+      "output": "ModifyDnssecResponse"
+    },
+    "ModifyHostsCertificate": {
+      "document": "用于修改域名证书",
+      "input": "ModifyHostsCertificateRequest",
+      "name": "修改域名证书",
+      "output": "ModifyHostsCertificateResponse"
+    },
+    "ModifyLoadBalancing": {
+      "document": "修改负载均衡",
+      "input": "ModifyLoadBalancingRequest",
+      "name": "修改负载均衡",
+      "output": "ModifyLoadBalancingResponse"
+    },
+    "ModifyLoadBalancingStatus": {
+      "document": "修改负载均衡状态",
+      "input": "ModifyLoadBalancingStatusRequest",
+      "name": "修改负载均衡状态",
+      "output": "ModifyLoadBalancingStatusResponse"
+    },
+    "ModifyZone": {
+      "document": "用该站点信息",
+      "input": "ModifyZoneRequest",
+      "name": "修改站点",
+      "output": "ModifyZoneResponse"
+    },
+    "ModifyZoneCnameSpeedUp": {
+      "document": "开启，关闭 CNAME 加速",
+      "input": "ModifyZoneCnameSpeedUpRequest",
+      "name": "修改 CNAME 加速状态",
+      "output": "ModifyZoneCnameSpeedUpResponse"
+    },
+    "ModifyZoneSetting": {
+      "document": "用于修改站点配置",
+      "input": "ModifyZoneSettingRequest",
+      "name": "修改站点配置",
+      "output": "ModifyZoneSettingResponse"
+    },
+    "ModifyZoneStatus": {
+      "document": "用于开启，关闭站点",
+      "input": "ModifyZoneStatusRequest",
+      "name": "切换站点状态",
+      "output": "ModifyZoneStatusResponse"
+    },
+    "ReclaimZone": {
+      "document": "站点被其他用户接入后，验证了站点所有权之后，可以找回该站点",
+      "input": "ReclaimZoneRequest",
+      "name": "找回站点",
+      "output": "ReclaimZoneResponse"
+    },
+    "ScanDnsRecords": {
+      "document": "扫描站点历史解析记录",
+      "input": "ScanDnsRecordsRequest",
+      "name": "扫描站点历史解析记录",
+      "output": "ScanDnsRecordsResponse"
     }
   },
   "metadata": {
@@ -44,6 +308,1132 @@
     "serviceShortName": "teo"
   },
   "objects": {
+    "ApplicationProxy": {
+      "document": "应用代理实例",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "a proxy",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
+          "example": "ip",
+          "member": "string",
+          "name": "PlatType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0关闭安全，1开启安全",
+          "example": "1",
+          "member": "int64",
+          "name": "SecurityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "0关闭加速，1开启加速",
+          "example": "1",
+          "member": "int64",
+          "name": "AccelerateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段已经移至Rule.ForwardClientIp",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段已经移至Rule.SessionPersist",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "无",
+          "member": "ApplicationProxyRule",
+          "name": "Rule",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中\nstopping：停用中\nfail：部署失败/停用失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调度信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ScheduleValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123.com",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "会话保持时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "uint64",
+          "name": "SessionPersistTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务类型\nhostname：子域名\ninstance：实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostname",
+          "member": "string",
+          "name": "ProxyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "七层实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "edge-xxx",
+          "member": "string",
+          "name": "HostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationProxyRule": {
+      "document": "应用代理规则",
+      "members": [
+        {
+          "default": "",
+          "document": "协议，取值为TCP或者UDP",
+          "example": "TCP",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口，支持格式：\n80：80端口\n81-90：81至90端口",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "example": "custom",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
+          "member": "string",
+          "name": "OriginValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中\nstopping：停用中\nfail：部署失败/停用失败",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "传递客户端IP，当Proto=TCP时，取值：\nTOA：TOA\nPPV1: Proxy Protocol传递，协议版本V1\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递\n当Proto=UDP时，取值：\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启会话保持",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfig": {
+      "document": "缓存规则配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigCache",
+          "name": "Cache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "不缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigNoCache",
+          "name": "NoCache",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "遵循源站配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigFollowOrigin",
+          "name": "FollowOrigin",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigCache": {
+      "document": "缓存时间设置",
+      "members": [
+        {
+          "default": "",
+          "document": "缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "缓存过期时间设置\n单位为秒，最大可设置为 365 天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36000",
+          "member": "int64",
+          "name": "CacheTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启强制缓存\n开启：on\n关闭：off\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "IgnoreCacheControl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigFollowOrigin": {
+      "document": "缓存遵循源站配置",
+      "members": [
+        {
+          "default": "",
+          "document": "遵循源站配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigNoCache": {
+      "document": "不缓存配置",
+      "members": [
+        {
+          "default": "",
+          "document": "不缓存配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheKey": {
+      "document": "缓存键配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启全路径缓存\non：开启全路径缓存（即关闭参数忽略）\noff：关闭全路径缓存（即开启参数忽略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "FullUrlCache",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "IgnoreCase",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CacheKey中包含请求参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueryString",
+          "name": "QueryString",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CertFilter": {
+      "document": "证书查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名，支持的列表如下:\n - host：域名。\n - certId: 证书ID\n - certAlias: 证书备用名\n - certType: default: 默认证书, upload: 上传证书, managed:腾讯云证书",
+          "example": "host",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "test.com",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用模糊查询，仅支持过滤字段名host。\n模糊查询时，Value长度最大为1。",
+          "example": "false",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CertSort": {
+      "document": "查询结果排序条件。",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段，当前支持：\ncreateTime，域名创建时间\ncertExpireTime，证书过期时间\ncertDeployTime,  证书部署时间",
+          "example": "certExpireTime",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "asc/desc，默认desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sequence",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CheckCertificateRequest": {
+      "document": "CheckCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证书",
+          "example": "无",
+          "member": "string",
+          "name": "Certificate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "私钥",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCertificateResponse": {
+      "document": "CheckCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClientIp": {
+      "document": "客户端IP头部",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端IP头部配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "回源客户端IP请求头名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "X-ClientIp",
+          "member": "string",
+          "name": "HeaderName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CnameStatus": {
+      "document": "CNAME 状态",
+      "members": [
+        {
+          "default": "",
+          "document": "记录名称",
+          "example": "xxx.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CNAME 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx,com",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n生效：active\n不生效：moved\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Compression": {
+      "document": "智能压缩配置",
+      "members": [
+        {
+          "default": "",
+          "document": "智能压缩配置开关\non：开启\noff：关闭",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateApplicationProxyRequest": {
+      "document": "CreateApplicationProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "123.com",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理名称",
+          "example": "a proxy",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
+          "example": "cname",
+          "member": "string",
+          "name": "PlatType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "0关闭安全，1开启安全",
+          "example": "1",
+          "member": "int64",
+          "name": "SecurityType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "0关闭加速，1开启加速",
+          "example": "1",
+          "member": "int64",
+          "name": "AccelerateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "字段已经移至Rule.ForwardClientIp",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "字段已经移至Rule.SessionPersist",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "规则详细信息",
+          "example": "无",
+          "member": "ApplicationProxyRule",
+          "name": "Rule",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，取值范围：30-3600，单位：秒",
+          "example": "3600",
+          "member": "uint64",
+          "name": "SessionPersistTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "example": "hostname",
+          "member": "string",
+          "name": "ProxyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProxyResponse": {
+      "document": "CreateApplicationProxy返回参数结构体",
+      "members": [
+        {
+          "document": "新增的四层代理应用ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProxyRuleRequest": {
+      "document": "CreateApplicationProxyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议，取值为TCP或者UDP",
+          "example": "TCP",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口，支持格式：\n80：80端口\n81-90：81至90端口",
+          "example": "[\"80\"]",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "example": "custom",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
+          "member": "string",
+          "name": "OriginValue",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "传递客户端IP，当Proto=TCP时，取值：\nTOA：TOA\nPPV1: Proxy Protocol传递，协议版本V1\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递\n当Proto=UDP时，取值：\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启会话保持",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProxyRuleResponse": {
+      "document": "CreateApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProxyRulesRequest": {
+      "document": "CreateApplicationProxyRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "无",
+          "member": "ApplicationProxyRule",
+          "name": "Rule",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationProxyRulesResponse": {
+      "document": "CreateApplicationProxyRules返回参数结构体",
+      "members": [
+        {
+          "document": "新增的规则ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDnsRecordRequest": {
+      "document": "CreateDnsRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录名",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录内容",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理模式，可选值：dns_only, cdn_only, secure_cdn",
+          "example": "dns",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生存时间值",
+          "example": "300",
+          "member": "int64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDnsRecordResponse": {
+      "document": "CreateDnsRecord返回参数结构体",
+      "members": [
+        {
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录内容",
+          "example": "xxx",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生存时间值",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "优先级",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代理模式",
+          "example": "dns",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析状态\nactive: 生效\npending: 不生效",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "已锁定",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Locked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CNAME 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancingRequest": {
+      "document": "CreateLoadBalancing请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子域名，填写@表示根域",
+          "example": "loadbalancing.123.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理模式：\ndns_only: 仅DNS\nproxied: 开启代理",
+          "example": "cdn_only",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用的源站组ID",
+          "example": "[]",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当Type=dns_only表示DNS的TTL时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLoadBalancingResponse": {
+      "document": "CreateLoadBalancing返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrefetchTaskRequest": {
       "document": "CreatePrefetchTask请求参数结构体",
       "members": [
@@ -178,6 +1568,1496 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateZoneRequest": {
+      "document": "CreateZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名字",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "接入方式，默认full\n- full NS接入\n- partial CNAME接入",
+          "example": "full",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否跳过站点历史解析记录扫描",
+          "example": "false",
+          "member": "bool",
+          "name": "JumpStart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateZoneResponse": {
+      "document": "CreateZone返回参数结构体",
+      "members": [
+        {
+          "document": "站点ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点接入方式",
+          "example": "full",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点状态\n- pending 未切换NS\n- active NS 已切换到分配的 NS\n- moved NS 从腾讯云切走",
+          "example": "pending",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前使用的 NS 列表",
+          "example": "[\"ns1.dp.com\"]",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "给用户分配的 NS 列表",
+          "example": "[\"ns1.dp.com\"]",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点创建时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataItem": {
+      "document": "统计曲线数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DefaultServerCertInfo": {
+      "document": "https 服务端证书配置",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EO-dsfdsf",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认证书",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书类型:\ndefault: 默认证书\nupload:用户上传\nmanaged:腾讯云托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EffectiveTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书公用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "CommonName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书SAN域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "SubjectAltName",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书状态:\napplying: 证书申请中\nfailed: 证书(申请)失败\nprocessing: 证书部署中\ndeployed: 证书已部署\ndisabled: 证书被禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deployed",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Status为失败时,此字段返回失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "失败",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteApplicationProxyRequest": {
+      "document": "DeleteApplicationProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationProxyResponse": {
+      "document": "DeleteApplicationProxy返回参数结构体",
+      "members": [
+        {
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationProxyRuleRequest": {
+      "document": "DeleteApplicationProxyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationProxyRuleResponse": {
+      "document": "DeleteApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDnsRecordsRequest": {
+      "document": "DeleteDnsRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDnsRecordsResponse": {
+      "document": "DeleteDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancingRequest": {
+      "document": "DeleteLoadBalancing请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoadBalancingResponse": {
+      "document": "DeleteLoadBalancing返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteZoneRequest": {
+      "document": "DeleteZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteZoneResponse": {
+      "document": "DeleteZone返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProxyDetailRequest": {
+      "document": "DescribeApplicationProxyDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProxyDetailResponse": {
+      "document": "DescribeApplicationProxyDetail返回参数结构体",
+      "members": [
+        {
+          "document": "实例ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "实例名称",
+          "example": "name",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "调度模式：\nip表示Anycast IP\ndomain表示CNAME",
+          "example": "ip",
+          "member": "string",
+          "name": "PlatType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0关闭安全，1开启安全",
+          "example": "1",
+          "member": "int64",
+          "name": "SecurityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "0关闭加速，1开启加速",
+          "example": "1",
+          "member": "int64",
+          "name": "AccelerateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "字段已经移至Rule.ForwardClientIp",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "字段已经移至Rule.SessionPersist",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则列表",
+          "example": "[]",
+          "member": "ApplicationProxyRule",
+          "name": "Rule",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态：\nonline：启用\noffline：停用\nprogress：部署中",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "调度信息",
+          "example": "[]",
+          "member": "string",
+          "name": "ScheduleValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "123.com",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "会话保持时间",
+          "example": "3600",
+          "member": "uint64",
+          "name": "SessionPersistTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "example": "hostname",
+          "member": "string",
+          "name": "ProxyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "七层实例ID",
+          "example": "edgeone-xxx",
+          "member": "string",
+          "name": "HostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProxyRequest": {
+      "document": "DescribeApplicationProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationProxyResponse": {
+      "document": "DescribeApplicationProxy返回参数结构体",
+      "members": [
+        {
+          "document": "数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationProxy",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "当ZoneId不为空时，表示当前站点允许创建的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Quota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCnameStatusRequest": {
+      "document": "DescribeCnameStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCnameStatusResponse": {
+      "document": "DescribeCnameStatus返回参数结构体",
+      "members": [
+        {
+          "document": "状态列表",
+          "example": "无",
+          "member": "CnameStatus",
+          "name": "Status",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultCertificatesRequest": {
+      "document": "DescribeDefaultCertificates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Zone ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultCertificatesResponse": {
+      "document": "DescribeDefaultCertificates返回参数结构体",
+      "members": [
+        {
+          "document": "证书总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "默认证书列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DefaultServerCertInfo",
+          "name": "CertInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsDataRequest": {
+      "document": "DescribeDnsData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤参数",
+          "example": "无",
+          "member": "DnsDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "时间粒度，默认为1分钟粒度，服务端根据时间范围自适应。\n支持指定以下几种粒度：\nmin：1分钟粒度\n5min：5分钟粒度\nhour：1小时粒度\nday：天粒度",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsDataResponse": {
+      "document": "DescribeDnsData返回参数结构体",
+      "members": [
+        {
+          "document": "统计曲线数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "时间粒度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsRecordsRequest": {
+      "document": "DescribeDnsRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "example": "无",
+          "member": "DnsRecordFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序",
+          "example": "name",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选值 asc, desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可选值 all, any",
+          "example": "all",
+          "member": "string",
+          "name": "Match",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsRecordsResponse": {
+      "document": "DescribeDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "总数，用于分页查询",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNS 记录列表",
+          "example": "无",
+          "member": "DnsRecord",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnssecRequest": {
+      "document": "DescribeDnssec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnssecResponse": {
+      "document": "DescribeDnssec返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNSSEC 状态\n- enabled 开启\n- disabled 关闭",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNSSEC 相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DnssecInfo",
+          "name": "Dnssec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修改时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsCertificateRequest": {
+      "document": "DescribeHostsCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Zone ID",
+          "example": "8afj24jzg9",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询条件过滤器",
+          "example": "无",
+          "member": "CertFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式",
+          "example": "无",
+          "member": "CertSort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsCertificateResponse": {
+      "document": "DescribeHostsCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "总数，用于分页查询",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名证书配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostCertSetting",
+          "name": "Hosts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsSettingRequest": {
+      "document": "DescribeHostsSetting请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页查询偏移量，默认为 0",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "指定域名查询",
+          "example": "[\"www.test.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsSettingResponse": {
+      "document": "DescribeHostsSetting返回参数结构体",
+      "members": [
+        {
+          "document": "域名列表",
+          "example": "无",
+          "member": "DetailHost",
+          "name": "Hosts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdentificationRequest": {
+      "document": "DescribeIdentification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdentificationResponse": {
+      "document": "DescribeIdentification返回参数结构体",
+      "members": [
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "验证状态\n- pending 验证中\n- finished 验证完成",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子域",
+          "example": "reclaim",
+          "member": "string",
+          "name": "Subdomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录类型",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录值",
+          "example": "无",
+          "member": "string",
+          "name": "RecordValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名当前的 NS 记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancingDetailRequest": {
+      "document": "DescribeLoadBalancingDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancingDetailResponse": {
+      "document": "DescribeLoadBalancingDetail返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子域名，填写@表示根域",
+          "example": "loadbalancing.123.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代理模式：\ndns_only: 仅DNS\nproxied: 开启代理",
+          "example": "dns_only",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当Type=dns_only表示DNS的TTL时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用的源站组ID",
+          "example": "[]",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "使用的源站信息",
+          "example": "无",
+          "member": "OriginGroup",
+          "name": "Origin",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "调度域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4.com",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancingRequest": {
+      "document": "DescribeLoadBalancing请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页参数Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页参数Limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤参数Host",
+          "example": "a.123.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤参数Host是否支持模糊匹配",
+          "example": "true",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoadBalancingResponse": {
+      "document": "DescribeLoadBalancing返回参数结构体",
+      "members": [
+        {
+          "document": "记录总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "负载均衡信息",
+          "example": "[]",
+          "member": "LoadBalancing",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -431,6 +3311,321 @@
       ],
       "type": "object"
     },
+    "DescribeZoneDetailsRequest": {
+      "document": "DescribeZoneDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneDetailsResponse": {
+      "document": "DescribeZoneDetails返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户当前使用的 NS 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[example1.dp.com,example2.dp.com]",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "腾讯云分配给用户的 NS 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[example1.dp.com,example2.dp.com]",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "站点状态\n- active：NS 已切换\n- pending：NS 未切换\n- moved：NS 已切走\n- deactivated：被封禁",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点接入方式\n- full：NS 接入\n- partial：CNAME 接入",
+          "example": "full",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点是否关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点创建时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点修改时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户自定义 NS 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VanityNameServers",
+          "name": "VanityNameServers",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户自定义 NS IP 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VanityNameServersIps",
+          "name": "VanityNameServersIps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启 CNAME 加速\n- enabled：开启\n- disabled：关闭",
+          "example": "disabled",
+          "member": "string",
+          "name": "CnameSpeedUp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cname切换验证状态\n- finished 切换完成\n- pending 切换验证中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pending",
+          "member": "string",
+          "name": "CnameStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneSettingRequest": {
+      "document": "DescribeZoneSetting请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneSettingResponse": {
+      "document": "DescribeZoneSetting返回参数结构体",
+      "members": [
+        {
+          "document": "缓存过期时间配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfig",
+          "name": "Cache",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "节点缓存键配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKey",
+          "name": "CacheKey",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "浏览器缓存配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAge",
+          "name": "MaxAge",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "离线缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OfflineCache",
+          "name": "OfflineCache",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Quic访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Quic",
+          "name": "Quic",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "POST请求传输配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostMaxSize",
+          "name": "PostMaxSize",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "智能压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Compression",
+          "name": "Compression",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "http2回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHttp2",
+          "name": "UpstreamHttp2",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "访问协议强制https跳转配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirect",
+          "name": "ForceRedirect",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Https 加速配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Https",
+          "name": "Https",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "源站配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Origin",
+          "name": "Origin",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "动态加速配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartRouting",
+          "name": "SmartRouting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "WebSocket配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebSocket",
+          "name": "WebSocket",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "客户端IP回源请求头配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIp",
+          "name": "ClientIpHeader",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [
@@ -493,6 +3688,376 @@
         }
       ],
       "type": "object"
+    },
+    "DetailHost": {
+      "document": "域名配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "腾讯云账号ID",
+          "example": "123456789",
+          "member": "int64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加速服务状态\nprocess：部署中\nonline：已启动\noffline：已关闭",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DnsDataFilter": {
+      "document": "Dns数据曲线过滤参数",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名称，取值范围：\nzone：站点名\nhost：域名\ntype：dns解析类型\ncode：dns返回状态码\narea：解析服务器所在区域",
+          "example": "zone",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值\n当Name=area时，Value取值范围：\n亚洲：Asia\n欧洲：Europe\n非洲：Africa\n大洋洲：Oceania\n美洲：Americas\n\n当Name=code时，Value取值范围：\nNoError：成功的响应\nNXDomain：只在权威域名服务器的响应消息中有效，标示请求中请求的域不存在\nNotImp：域名服务器不支持请求的类型\nRefused：域名服务器因为策略的原因拒绝执行请求的操作",
+          "example": "1.com",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参数值\n当Name=area时，Value取值范围：\n亚洲：Asia\n欧洲：Europe\n非洲：Africa\n大洋洲：Oceania\n美洲：Americas\n\n当Name=code时，Value取值范围：\nNoError：成功的响应\nNXDomain：只在权威域名服务器的响应消息中有效，标示请求中请求的域不存在\nNotImp：域名服务器不支持请求的类型\nRefused：域名服务器因为策略的原因拒绝执行请求的操作",
+          "example": "[1.com]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DnsRecord": {
+      "document": "DNS 记录",
+      "members": [
+        {
+          "default": "",
+          "document": "记录 ID",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机记录",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录值",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理模式",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TTL 值",
+          "example": "无",
+          "member": "int64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名锁",
+          "example": "无",
+          "member": "bool",
+          "name": "Locked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "example.com",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析状态\nactive: 生效\npending: 不生效",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CNAME 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名是否开启了lb，四层，安全\n- lb 负载均衡\n- security 安全\n- l4 四层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DnsRecordFilter": {
+      "document": "DNS 记录查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "过滤字段名，支持的列表如下：\n- name: 站点名。\n- status: 站点状态",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过滤字段值",
+          "example": "www",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1",
+          "example": "false",
+          "member": "bool",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DnssecInfo": {
+      "document": "DNSSEC 相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标志",
+          "example": "257",
+          "member": "int64",
+          "name": "Flags",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密算法",
+          "example": "13",
+          "member": "string",
+          "name": "Algorithm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加密类型",
+          "example": "ECDSAP256SHA256",
+          "member": "string",
+          "name": "KeyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摘要类型",
+          "example": "2",
+          "member": "string",
+          "name": "DigestType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摘要算法",
+          "example": "SHA256",
+          "member": "string",
+          "name": "DigestAlgorithm",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "摘要信息",
+          "example": "48E939042E82C22542CB377B580DFDC52A361CEFDC72E7F9107E2B6BD9306A45",
+          "member": "string",
+          "name": "Digest",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DS 记录值",
+          "example": "example.com. 3600 IN DS 16953 13 2 48E939042E82C22542CB377B580DF",
+          "member": "string",
+          "name": "DS",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密钥标签",
+          "example": "2371",
+          "member": "int64",
+          "name": "KeyTag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "公钥",
+          "example": "oXiGYrSTO+LSCJ3mohc8EP+CzF9KxBj8/ydXJ22pKuZP3VAC3/Md/k7xZfz470Co",
+          "member": "string",
+          "name": "PublicKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DownloadL7LogsRequest": {
       "document": "DownloadL7Logs请求参数结构体",
@@ -637,6 +4202,32 @@
       ],
       "usage": "out"
     },
+    "ForceRedirect": {
+      "document": "访问协议强制https跳转配置",
+      "members": [
+        {
+          "default": "",
+          "document": "访问强制跳转配置开关\non：开启\noff：关闭",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "重定向状态码\n301\n302\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "302",
+          "member": "int64",
+          "name": "RedirectStatusCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Header": {
       "document": "刷新预热附带的头部信息",
       "members": [
@@ -662,6 +4253,232 @@
         }
       ],
       "usage": "in"
+    },
+    "HostCertSetting": {
+      "document": "域名证书配置",
+      "members": [
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx.test.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务端证书配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerCertInfo",
+          "name": "CertInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Hsts": {
+      "document": "Hsts配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启，on或off。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "MaxAge数值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "MaxAge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否包含子域名，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "IncludeSubDomains",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否预加载，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Preload",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Https": {
+      "document": "域名 https 加速配置，默认为关闭状态",
+      "members": [
+        {
+          "default": "",
+          "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Http2",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "OCSP 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "OcspStapling",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"TLSv1\", \"TLSv1.1\"]",
+          "member": "string",
+          "name": "TlsVersion",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "HSTS 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Hsts",
+          "name": "Hsts",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IdentifyZoneRequest": {
+      "document": "IdentifyZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IdentifyZoneResponse": {
+      "document": "IdentifyZone返回参数结构体",
+      "members": [
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子域",
+          "example": "reclaim",
+          "member": "string",
+          "name": "Subdomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录类型",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录值",
+          "example": "无",
+          "member": "string",
+          "name": "RecordValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportDnsRecordsRequest": {
+      "document": "ImportDnsRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件内容",
+          "example": "无",
+          "member": "string",
+          "name": "File",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportDnsRecordsResponse": {
+      "document": "ImportDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "L7OfflineLog": {
       "document": "离线日志详细信息",
@@ -718,6 +4535,1879 @@
         }
       ],
       "usage": "out"
+    },
+    "LoadBalancing": {
+      "document": "负载均衡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子域名，填写@表示根域",
+          "example": "loadbalancing.123.com",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "代理模式：\ndns_only: 仅DNS\nproxied: 开启代理",
+          "example": "dns_only",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当Type=dns_only表示DNS的TTL时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用的源站组ID",
+          "example": "[]",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "使用的源站信息",
+          "example": "[]",
+          "member": "OriginGroup",
+          "name": "Origin",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "调度域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.com",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MaxAge": {
+      "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态",
+      "members": [
+        {
+          "default": "",
+          "document": "MaxAge 时间设置，单位秒，最大365天\n注意：时间为0，即不缓存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "MaxAgeTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否遵循源站，on或off，开启时忽略时间设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "FollowOrigin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyApplicationProxyRequest": {
+      "document": "ModifyApplicationProxy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理名称",
+          "example": "a proxy",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数已经废弃",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参数已经废弃",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "会话保持时间，取值范围：30-3600，单位：秒",
+          "example": "3600",
+          "member": "uint64",
+          "name": "SessionPersistTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "example": "hostname",
+          "member": "string",
+          "name": "ProxyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyResponse": {
+      "document": "ModifyApplicationProxy返回参数结构体",
+      "members": [
+        {
+          "document": "四层代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyRuleRequest": {
+      "document": "ModifyApplicationProxyRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "协议，取值为TCP或者UDP",
+          "example": "TCP",
+          "member": "string",
+          "name": "Proto",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "端口，支持格式：\n80：80端口\n81-90：81至90端口",
+          "example": "[\"90\"]",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "example": "custom",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
+          "member": "string",
+          "name": "OriginValue",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "传递客户端IP，当Proto=TCP时，取值：\nTOA：TOA\nPPV1: Proxy Protocol传递，协议版本V1\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递\n当Proto=UDP时，取值：\nPPV2: Proxy Protocol传递，协议版本V2\nOFF：不传递",
+          "example": "TOA",
+          "member": "string",
+          "name": "ForwardClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否开启会话保持",
+          "example": "false",
+          "member": "bool",
+          "name": "SessionPersist",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyRuleResponse": {
+      "document": "ModifyApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyRuleStatusRequest": {
+      "document": "ModifyApplicationProxyRuleStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态\noffline: 停用\nonline: 启用",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyRuleStatusResponse": {
+      "document": "ModifyApplicationProxyRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "规则ID",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyStatusRequest": {
+      "document": "ModifyApplicationProxyStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "四层代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态\noffline: 停用\nonline: 启用",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationProxyStatusResponse": {
+      "document": "ModifyApplicationProxyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "四层代理ID",
+          "example": "proxy-xxx",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultCertificateRequest": {
+      "document": "ModifyDefaultCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Zone ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "默认证书ID",
+          "example": "EO-xxx",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证书状态\ndeployed: 部署证书\ndisabled:禁用证书\n失败状态下重新deployed即可重试失败",
+          "example": "deploy",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultCertificateResponse": {
+      "document": "ModifyDefaultCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordRequest": {
+      "document": "ModifyDnsRecord请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "记录内容",
+          "example": "xxx",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "生存时间值",
+          "example": "600",
+          "member": "int64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "代理模式",
+          "example": "true",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordResponse": {
+      "document": "ModifyDnsRecord返回参数结构体",
+      "members": [
+        {
+          "document": "记录 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录类型",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "记录内容",
+          "example": "xxx",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "生存时间值",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "优先级",
+          "example": "xxx",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "代理模式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "解析状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CNAME 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "锁定状态",
+          "example": "xxx",
+          "member": "bool",
+          "name": "Locked",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnssecRequest": {
+      "document": "ModifyDnssec请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DNSSEC 状态\n- enabled 开启\n- disabled 关闭",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnssecResponse": {
+      "document": "ModifyDnssec返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNSSEC 状态\n- enabled 开启\n- disabled 关闭",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "DNSSEC 相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DnssecInfo",
+          "name": "Dnssec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "修改时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostsCertificateRequest": {
+      "document": "ModifyHostsCertificate请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Zone ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "本次变更的域名",
+          "example": "xxx.test.com",
+          "member": "string",
+          "name": "Hosts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书",
+          "example": "teo-xxxxx",
+          "member": "ServerCertInfo",
+          "name": "CertInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostsCertificateResponse": {
+      "document": "ModifyHostsCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancingRequest": {
+      "document": "ModifyLoadBalancing请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "代理模式：\ndns_only: 仅DNS\nproxied: 开启代理",
+          "example": "dns_only",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用的源站组ID",
+          "example": "origin-xxx",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当Type=dns_only表示DNS的TTL时间",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancingResponse": {
+      "document": "ModifyLoadBalancing返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancingStatusRequest": {
+      "document": "ModifyLoadBalancingStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态\nonline: 启用\noffline: 停用",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancingStatusResponse": {
+      "document": "ModifyLoadBalancingStatus返回参数结构体",
+      "members": [
+        {
+          "document": "负载均衡ID",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "LoadBalancingId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneCnameSpeedUpRequest": {
+      "document": "ModifyZoneCnameSpeedUp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "CNAME 加速状态\n- enabled 开启\n- disabled 关闭",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneCnameSpeedUpResponse": {
+      "document": "ModifyZoneCnameSpeedUp返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CNAME 加速状态\n- enabled 开启\n- disabled 关闭",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneRequest": {
+      "document": "ModifyZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID，用于唯一标识站点信息",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点接入方式\n- full NS 接入\n- partial CNAME 接入",
+          "example": "partial",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "自定义站点信息",
+          "example": "无",
+          "member": "VanityNameServers",
+          "name": "VanityNameServers",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneResponse": {
+      "document": "ModifyZone返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点当前使用的 NS",
+          "example": "[\"ns1.dp.com\",\"ns2.dp.com\"]",
+          "member": "string",
+          "name": "OriginalNameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点状态\n- pending 未接入 NS\n- active 已接入 NS\n- moved NS 已切走",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点接入方式\n- full NS 接入\n- partial CNAME 接入",
+          "example": "full",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "腾讯云分配的 NS 列表",
+          "example": "[\"ns1.dp.com\",\"ns2.dp.com\"]",
+          "member": "string",
+          "name": "NameServers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "修改时间",
+          "example": "xxx",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "cname 接入状态\n- finished 站点验证完成\n- pending 站点验证中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pending",
+          "member": "string",
+          "name": "CnameStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneSettingRequest": {
+      "document": "ModifyZoneSetting请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待变更的站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "缓存过期时间配置",
+          "example": "无",
+          "member": "CacheConfig",
+          "name": "Cache",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点缓存键配置",
+          "example": "无",
+          "member": "CacheKey",
+          "name": "CacheKey",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "浏览器缓存配置",
+          "example": "无",
+          "member": "MaxAge",
+          "name": "MaxAge",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "离线缓存",
+          "example": "无",
+          "member": "OfflineCache",
+          "name": "OfflineCache",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Quic访问",
+          "example": "无",
+          "member": "Quic",
+          "name": "Quic",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "POST请求传输配置",
+          "example": "无",
+          "member": "PostMaxSize",
+          "name": "PostMaxSize",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "智能压缩配置",
+          "example": "无",
+          "member": "Compression",
+          "name": "Compression",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "http2回源配置",
+          "example": "无",
+          "member": "UpstreamHttp2",
+          "name": "UpstreamHttp2",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "访问协议强制https跳转配置",
+          "example": "无",
+          "member": "ForceRedirect",
+          "name": "ForceRedirect",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Https 加速配置",
+          "example": "无",
+          "member": "Https",
+          "name": "Https",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "源站配置",
+          "example": "无",
+          "member": "Origin",
+          "name": "Origin",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "智能加速配置",
+          "example": "无",
+          "member": "SmartRouting",
+          "name": "SmartRouting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "WebSocket配置",
+          "example": "无",
+          "member": "WebSocket",
+          "name": "WebSocket",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "客户端IP回源请求头配置",
+          "example": "无",
+          "member": "ClientIp",
+          "name": "ClientIpHeader",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneSettingResponse": {
+      "document": "ModifyZoneSetting返回参数结构体",
+      "members": [
+        {
+          "document": "站点ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneStatusRequest": {
+      "document": "ModifyZoneStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点状态\n- false 开启站点\n- true 关闭站点",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneStatusResponse": {
+      "document": "ModifyZoneStatus返回参数结构体",
+      "members": [
+        {
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点名称",
+          "example": "test.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "站点状态\n- false 开启站点\n- true 关闭站点",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OfflineCache": {
+      "document": "离线缓存是否开启",
+      "members": [
+        {
+          "default": "",
+          "document": "on | off, 离线缓存是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Origin": {
+      "document": "源站配置。",
+      "members": [
+        {
+          "default": "",
+          "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源，https 回源时仅支持源站 443 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "OriginPullProtocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginGroup": {
+      "document": "源站组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "源站组ID",
+          "example": "origin-xxx",
+          "member": "string",
+          "name": "OriginId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站组名称",
+          "example": "name",
+          "member": "string",
+          "name": "OriginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置类型",
+          "example": "area",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录",
+          "example": "[]",
+          "member": "OriginRecord",
+          "name": "Record",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点ID",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "123.com",
+          "member": "string",
+          "name": "ZoneName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "源站类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "self",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为四层代理使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ApplicationProxyUsed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否为负载均衡使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "LoadBalancingUsed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginRecord": {
+      "document": "源站组记录",
+      "members": [
+        {
+          "default": "",
+          "document": "记录值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Record",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当源站配置类型Type=area时，表示区域\n当源站类型Type=area时，为空表示默认区域",
+          "example": "[]",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当源站配置类型Type=weight时，表示权重",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "端口",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "记录ID",
+          "example": "origin-xxx",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否私有鉴权\n当源站类型OriginType=third_part时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Private",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "私有鉴权参数\n当源站类型Private=true时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginRecordPrivateParameter",
+          "name": "PrivateParameter",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginRecordPrivateParameter": {
+      "document": "源站记录私有鉴权参数",
+      "members": [
+        {
+          "default": "",
+          "document": "私有鉴权参数名称：\n\"AccessKeyId\"：Access Key ID\n\"SecretAccessKey\"：Secret Access Key",
+          "example": "AccessKeyId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "私有鉴权参数数值",
+          "example": "123",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PostMaxSize": {
+      "document": "POST请求上传文件流式传输最大限制",
+      "members": [
+        {
+          "default": "",
+          "document": "是调整POST请求限制，平台默认为32MB。\n关闭：off，\n开启：on。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大限制，取值在1MB和500MB之间。单位字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000000",
+          "member": "int64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "QueryString": {
+      "document": "CacheKey中包含请求参数",
+      "members": [
+        {
+          "default": "",
+          "document": "on | off CacheKey是否由QueryString组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "includeCustom:使用部分url参数\nexcludeCustom:排除部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "includeCustom",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用/排除的url参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key1;key2",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Quic": {
+      "document": "Quic配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启动Quic配置",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReclaimZoneRequest": {
+      "document": "ReclaimZone请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点名称",
+          "example": "example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReclaimZoneResponse": {
+      "document": "ReclaimZone返回参数结构体",
+      "members": [
+        {
+          "document": "站点名称",
+          "example": "example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanDnsRecordsRequest": {
+      "document": "ScanDnsRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "站点 ID",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScanDnsRecordsResponse": {
+      "document": "ScanDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "扫描状态\n- doing 扫描中\n- done 扫描完成",
+          "example": "doing",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "扫描后添加的记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "RecordsAdded",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ServerCertInfo": {
+      "document": "https 服务端证书配置",
+      "members": [
+        {
+          "default": "",
+          "document": "服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EO-dsfdsf",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书备注名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认证书",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书类型:\ndefault: 默认证书\nupload:用户上传\nmanaged:腾讯云托管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证书部署时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "DeployTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署状态:\nprocessing: 部署中\ndeployed: 已部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deployed",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartRouting": {
+      "document": "智能加速配置",
+      "members": [
+        {
+          "default": "",
+          "document": "智能加速配置开关\non：开启\noff：关闭",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Task": {
       "document": "内容管理任务结果",
@@ -784,6 +6474,100 @@
         }
       ],
       "usage": "out"
+    },
+    "UpstreamHttp2": {
+      "document": "Http2回源配置",
+      "members": [
+        {
+          "default": "",
+          "document": "http2回源配置开关\non：开启\noff：关闭",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VanityNameServers": {
+      "document": "自定义 nameservers",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义 ns 开关\n- on 开启\n- off 关闭",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义 ns 列表",
+          "example": "[\"ns1.test.com\",\"ns2.test.com\"]",
+          "member": "string",
+          "name": "Servers",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "VanityNameServersIps": {
+      "document": "自定义名字服务器 IP 信息",
+      "members": [
+        {
+          "default": "",
+          "document": "自定义名字服务器名称",
+          "example": "example1.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义名字服务器 IPv4 地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IPv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WebSocket": {
+      "document": "WebSocket配置",
+      "members": [
+        {
+          "default": "",
+          "document": "WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设置超时时间，单位为秒，最大超时时间120秒。",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Zone": {
       "document": "站点信息",
@@ -877,6 +6661,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "cname 接入状态\n- finished 站点已验证\n- pending 站点验证中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "finished",
+          "member": "string",
+          "name": "CnameStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -1,5 +1,53 @@
 {
   "actions": {
+    "CheckCertificate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificate\n<公共请求参数>\n\n{\n    \"Certificate\": \"Certificate\",\n    \"PrivateKey\": \"PrivateKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "证书校验"
+      }
+    ],
+    "CreateApplicationProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ZoneName\": \"zonename-123\",\n    \"ProxyName\": \"ins name\",\n    \"ProxyType\": \"instance\",\n    \"PlatType\": \"ip\",\n    \"SecurityType\": 1,\n    \"AccelerateType\": 1,\n    \"ForwardClientIp\": \"\",\n    \"SessionPersist\": false,\n    \"SessionPersistTime\": 3600,\n    \"Rule\": [\n        {\n            \"Proto\": \"TCP\",\n            \"Port\": [\n                \"80\",\n                \"90\",\n                \"99-110\"\n            ],\n            \"OriginType\": \"custom\",\n            \"OriginValue\": [\n                \"1.1.1.1:80\"\n            ]\n        },\n        {\n            \"Proto\": \"UDP\",\n            \"Port\": [\n                \"999\",\n                \"888\",\n                \"99-110\"\n            ],\n            \"OriginType\": \"custom\",\n            \"OriginValue\": [\n                \"1.1.1.1:80\",\n                \"2.2.2.2:80\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProxyId\": \"proxy-xxx\"\n    }\n}",
+        "title": "创建应用代理"
+      }
+    ],
+    "CreateApplicationProxyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"Proto\": \"TCP\",\n    \"Port\": [\n        \"80\",\n        \"90\",\n        \"99-110\"\n    ],\n    \"OriginType\": \"custom\",\n    \"OriginValue\": [\n        \"1.1.1.1:80\"\n    ],\n    \"ForwardClientIp\": \"TOA\",\n    \"SessionPersist\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleId\": \"rule-xxx\"\n    }\n}",
+        "title": "创建应用代理规则"
+      }
+    ],
+    "CreateApplicationProxyRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationProxyRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"Rule\": [\n        {\n            \"Proto\": \"TCP\",\n            \"Port\": [\n                \"80\",\n                \"90\",\n                \"99-110\"\n            ],\n            \"OriginType\": \"custom\",\n            \"OriginValue\": [\n                \"1.1.1.1:80\"\n            ],\n            \"ForwardClientIp\": \"TOA\",\n            \"SessionPersist\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleId\": [\n            \"rule-xxx\"\n        ]\n    }\n}",
+        "title": "批量创建应用代理规则"
+      }
+    ],
+    "CreateDnsRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"Priority\": 0,\n    \"Name\": \"xx\",\n    \"ZoneId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Mode\": \"xx\",\n    \"Ttl\": 0,\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Priority\": 0,\n        \"Locked\": true,\n        \"Name\": \"xx\",\n        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"ZoneId\": \"xx\",\n        \"Content\": \"xx\",\n        \"Cname\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Ttl\": 0,\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Mode\": \"xx\",\n        \"Type\": \"xx\",\n        \"Id\": \"xx\",\n        \"ZoneName\": \"xx\"\n    }\n}",
+        "title": "创建 DNS 记录"
+      }
+    ],
+    "CreateLoadBalancing": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"OriginId\": [\n        \"origin-xxx\",\n        \"origin-yyy\"\n    ],\n    \"ZoneId\": \"zone-xxx\",\n    \"Host\": \"test.123.com\",\n    \"Type\": \"dns_only\",\n    \"TTL\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
+        "title": "创建负载均衡"
+      }
+    ],
     "CreatePrefetchTask": [
       {
         "document": "",
@@ -22,6 +70,150 @@
         "title": "清除abc站点下的所有资源"
       }
     ],
+    "CreateZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"JumpStart\": true,\n    \"Type\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"NameServers\": [\n            \"xx\"\n        ],\n        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"OriginalNameServers\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Type\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "title": "创建站点"
+      }
+    ],
+    "DeleteApplicationProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationProxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProxyId\": \"proxy-xxx\"\n    }\n}",
+        "title": "删除应用代理"
+      }
+    ],
+    "DeleteApplicationProxyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"RuleId\": \"rule-id123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleId\": \"rule-xxx\"\n    }\n}",
+        "title": "删除应用代理规则"
+      }
+    ],
+    "DeleteDnsRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDnsRecords\n<公共请求参数>\n\n{\n    \"Ids\": [\n        \"xx\"\n    ],\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Ids\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量删除 DNS 记录"
+      }
+    ],
+    "DeleteLoadBalancing": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"LoadBalancingId\": \"lb-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
+        "title": "删除负载均衡"
+      }
+    ],
+    "DeleteZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteZone\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除站点"
+      }
+    ],
+    "DescribeApplicationProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationProxy\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a84ae15a-aca5-4c24-a4f4-c419cf2c18af\",\n        \"Data\": [\n            {\n                \"AccelerateType\": 1,\n                \"PlatType\": \"domain\",\n                \"ProxyId\": \"proxy-34c74aa7-9a9f-11ec-bcb0-52540015711d\",\n                \"ProxyName\": \"zone-f835533b8998f\",\n                \"ZoneId\": \"zone-xxx\",\n                \"ZoneName\": \"123.com\",\n                \"Rule\": [\n                    {\n                        \"OriginType\": \"custom\",\n                        \"OriginValue\": [\n                            \"81.69.174.153:80\"\n                        ],\n                        \"Port\": [\n                            \"80\"\n                        ],\n                        \"Proto\": \"TCP\",\n                        \"Status\": \"online\",\n                        \"RuleId\": \"rule-34c74ab8-9a9f-11ec-bcb0-52540015711d\"\n                    },\n                    {\n                        \"OriginType\": \"custom\",\n                        \"OriginValue\": [\n                            \"81.69.174.153:553\"\n                        ],\n                        \"Port\": [\n                            \"553\"\n                        ],\n                        \"Proto\": \"UDP\",\n                        \"Status\": \"online\",\n                        \"RuleId\": \"rule-4bc1d3d6-9aa0-11ec-bcb0-52540015711d\"\n                    }\n                ],\n                \"ScheduleValue\": [],\n                \"SecurityType\": 1,\n                \"SessionPersist\": false,\n                \"Status\": \"progress\",\n                \"UpdateTime\": \"2022-03-03T06:06:10Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Quota\": 1\n    }\n}",
+        "title": "获取应用代理列表"
+      }
+    ],
+    "DescribeApplicationProxyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationProxyDetail\n<公共请求参数>\n\n{\n    \"ProxyId\": \"proxy-xxx\",\n    \"ZoneId\": \"zone-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProxyId\": \"xx\",\n        \"ProxyName\": \"ins name\",\n        \"ProxyType\": \"instance\",\n        \"PlatType\": \"domain\",\n        \"SecurityType\": 1,\n        \"AccelerateType\": 0,\n        \"ForwardClientIp\": \"OFF\",\n        \"SessionPersist\": false,\n        \"SessionPersistTime\": 0,\n        \"Status\": \"xx\",\n        \"ZoneId\": \"zone-xxx\",\n        \"ZoneName\": \"123.com\",\n        \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n        \"ScheduleValue\": [\n            \"xx\"\n        ],\n        \"Rule\": [],\n        \"HostId\": \"\"\n    }\n}",
+        "title": "获取应用代理详细信息"
+      }
+    ],
+    "DescribeCnameStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCnameStatus\n<公共请求参数>\n\n{\n    \"Names\": [\n        \"xx\"\n    ],\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": [\n            {\n                \"Status\": \"xx\",\n                \"Cname\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询域名 CNAME 状态"
+      }
+    ],
+    "DescribeDefaultCertificates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDefaultCertificates\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxxx-xxxx\",\n        \"TotalCount\": 1,\n        \"CertInfo\": [\n            {\n                \"CertId\": \"EO-xxxx\",\n                \"CommonName\": \"test.com\",\n                \"SubjectAltName\": [\n                    \"*.test.com\",\n                    \"test.com\"\n                ],\n                \"Type\": \"default\",\n                \"Alias\": \"默认证书\",\n                \"EffectiveTime\": \"2014-08-03T12:00:00+08:00\",\n                \"ExpireTime\": \"2014-08-03T12:00:00+08:00\",\n                \"Status\": \"deployed\"\n            }\n        ]\n    }\n}",
+        "title": "获取默认证书"
+      }
+    ],
+    "DescribeDnsData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:01:00+00:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Value\": \"a.com\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Interval\": \"min\",\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Time\": \"2020-09-22T00:00:00+00:00\",\n                \"Value\": 100\n            },\n            {\n                \"Time\": \"2020-09-22T00:01:00+00:00\",\n                \"Value\": 200\n            }\n        ]\n    }\n}",
+        "title": "获取DNS请求数统计曲线"
+      }
+    ],
+    "DescribeDnsRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRecords\n<公共请求参数>\n\n{\n    \"Direction\": \"xx\",\n    \"ZoneId\": \"xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"Match\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Records\": [\n            {\n                \"Status\": \"xx\",\n                \"Priority\": 0,\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Name\": \"xx\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ZoneId\": \"xx\",\n                \"Content\": \"xx\",\n                \"Cname\": \"xx\",\n                \"Mode\": \"xx\",\n                \"Ttl\": 0,\n                \"Locked\": true,\n                \"Type\": \"xx\",\n                \"Id\": \"xx\",\n                \"ZoneName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "dns_records"
+      }
+    ],
+    "DescribeDnssec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnssec\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"Dnssec\": {\n            \"KeyTag\": 0,\n            \"Algorithm\": \"xx\",\n            \"DigestAlgorithm\": \"xx\",\n            \"KeyType\": \"xx\",\n            \"DS\": \"xx\",\n            \"PublicKey\": \"xx\",\n            \"Flags\": 0,\n            \"DigestType\": \"xx\",\n            \"Digest\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "title": "查询 DNSSEC 信息"
+      }
+    ],
+    "DescribeHostsCertificate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"xx\",\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Hosts\": [\n            {\n                \"Host\": \"www.test,com\",\n                \"CertInfo\": [\n                    {\n                        \"CertId\": \"xxxx\",\n                        \"Type\": \"default\",\n                        \"Alias\": \"xxxx\",\n                        \"ExpireTime\": \"2014-08-03T12:00:00+08:00\",\n                        \"DeployTime\": \"2014-08-03T12:00:00+08:00\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "查询域名证书列表"
+      }
+    ],
+    "DescribeHostsSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostsSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Hosts\": [\n            {\n                \"Status\": \"xx\",\n                \"Host\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"AppId\": 0\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalNumber\": 0\n    }\n}",
+        "title": "查询域名详细配置"
+      }
+    ],
+    "DescribeIdentification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentification\n<公共请求参数>\n\n{\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Name\": \"xx\",\n        \"RecordType\": \"xx\",\n        \"OriginalNameServers\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Subdomain\": \"xx\",\n        \"RecordValue\": \"xx\"\n    }\n}",
+        "title": "查询站点的验证状态"
+      }
+    ],
+    "DescribeLoadBalancing": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"Host\": \"host\",\n                \"LoadBalancingId\": \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\",\n                \"Origin\": [],\n                \"OriginId\": [],\n                \"TTL\": 123,\n                \"Type\": \"type\",\n                \"UpdateTime\": \"2022-02-14T08:48:03Z\",\n                \"ZoneId\": \"zid\",\n                \"Status\": \"online\",\n                \"Cname\": \"1.2.3.4.com\"\n            }\n        ]\n    }\n}",
+        "title": "获取负载均衡列表"
+      }
+    ],
+    "DescribeLoadBalancingDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancingDetail\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"LoadBalancingId\": \"lb-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Host\": \"host\",\n        \"LoadBalancingId\": \"lb-d21bfaf7-8d72-11ec-841d-00ff977fb3c8\",\n        \"Origin\": [],\n        \"OriginId\": [],\n        \"TTL\": 123,\n        \"Type\": \"type\",\n        \"UpdateTime\": \"2022-02-14T08:48:03Z\",\n        \"ZoneId\": \"zid\",\n        \"Status\": \"online\",\n        \"Cname\": \"1.2.3.4.com\"\n    }\n}",
+        "title": "获取负载均衡详细信息"
+      }
+    ],
     "DescribePrefetchTasks": [
       {
         "document": "",
@@ -38,6 +230,22 @@
         "title": "查询清除缓存历史记录"
       }
     ],
+    "DescribeZoneDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneDetails\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"NameServers\": [\n            \"xx\"\n        ],\n        \"VanityNameServers\": {\n            \"Switch\": \"xx\",\n            \"Servers\": [\n                \"xx\"\n            ]\n        },\n        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"OriginalNameServers\": [\n            \"xx\"\n        ],\n        \"Paused\": true,\n        \"CnameSpeedUp\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Type\": \"xx\",\n        \"Id\": \"xx\",\n        \"VanityNameServersIps\": [\n            {\n                \"Name\": \"xx\",\n                \"IPv4\": \"xx\"\n            }\n        ],\n        \"CnameStatus\": \"xx\"\n    }\n}",
+        "title": "查询某个站点的详细信息"
+      }
+    ],
+    "DescribeZoneSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Origin\": {\n            \"OriginPullProtocol\": \"xx\"\n        },\n        \"CacheKey\": {\n            \"FullUrlCache\": \"xx\",\n            \"IgnoreCase\": \"xx\",\n            \"QueryString\": {\n                \"Action\": \"xx\",\n                \"Switch\": \"xx\",\n                \"Value\": [\n                    \"xx\"\n                ]\n            }\n        },\n        \"WebSocket\": {\n            \"Switch\": \"xx\",\n            \"Timeout\": 0\n        },\n        \"Compression\": {\n            \"Switch\": \"xx\"\n        },\n        \"Zone\": \"xx\",\n        \"ForceRedirect\": {\n            \"Switch\": \"xx\",\n            \"RedirectStatusCode\": 0\n        },\n        \"Https\": {\n            \"Hsts\": {\n                \"IncludeSubDomains\": \"xx\",\n                \"Preload\": \"xx\",\n                \"Switch\": \"xx\",\n                \"MaxAge\": 0\n            },\n            \"OcspStapling\": \"xx\",\n            \"TlsVersion\": [\n                \"xx\"\n            ],\n            \"Http2\": \"xx\"\n        },\n        \"Cache\": {\n            \"FollowOrigin\": {\n                \"Switch\": \"xx\"\n            },\n            \"Cache\": {\n                \"CacheTime\": 0,\n                \"Switch\": \"xx\",\n                \"IgnoreCacheControl\": \"xx\"\n            },\n            \"NoCache\": {\n                \"Switch\": \"xx\"\n            }\n        },\n        \"PostMaxSize\": {\n            \"Switch\": \"xx\",\n            \"MaxSize\": 0\n        },\n        \"MaxAge\": {\n            \"FollowOrigin\": \"xx\",\n            \"MaxAgeTime\": 0\n        },\n        \"ZoneId\": \"xx\",\n        \"UpstreamHttp2\": {\n            \"Switch\": \"xx\"\n        },\n        \"OfflineCache\": {\n            \"Switch\": \"xx\"\n        },\n        \"Quic\": {\n            \"Switch\": \"xx\"\n        },\n        \"ClientIpHeader\": {\n            \"HeaderName\": \"xxx\",\n            \"Switch\": \"xx\"\n        },\n        \"SmartRouting\": {\n            \"Switch\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询站点配置"
+      }
+    ],
     "DescribeZones": [
       {
         "document": "",
@@ -52,6 +260,150 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadL7Logs\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"Zones\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2022-05-04T03:27:00+08:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2022-05-10T23:59:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"PageSize\": 0,\n        \"PageNo\": 0,\n        \"TotalSize\": 0,\n        \"RequestId\": \"xx\",\n        \"Data\": [\n            {\n                \"Url\": \"xx\",\n                \"Domain\": \"xx\",\n                \"LogPacketName\": \"xx\",\n                \"LogTime\": 0,\n                \"Size\": 0\n            }\n        ],\n        \"Pages\": 0\n    }\n}",
         "title": "七层离线日志"
+      }
+    ],
+    "IdentifyZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdentifyZone\n<公共请求参数>\n\n{\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"Subdomain\": \"xx\",\n        \"RecordType\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"RecordValue\": \"xx\"\n    }\n}",
+        "title": "认证站点"
+      }
+    ],
+    "ImportDnsRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportDnsRecords\n<公共请求参数>\n\n{\n    \"File\": \"xx\",\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Ids\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "导入 DNS 记录"
+      }
+    ],
+    "ModifyApplicationProxy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"ProxyName\": \"123.123.com\",\n    \"ProxyType\": \"hostname\",\n    \"ForwardClientIp\": \"\",\n    \"SessionPersist\": false,\n    \"SessionPersistTime\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProxyId\": \"proxy-xxx\"\n    }\n}",
+        "title": "修改应用代理"
+      }
+    ],
+    "ModifyApplicationProxyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"RuleId\": \"rule-id123\",\n    \"Proto\": \"TCP\",\n    \"Port\": [\n        \"80\",\n        \"90\",\n        \"99-110\"\n    ],\n    \"OriginType\": \"custom\",\n    \"OriginValue\": [\n        \"1.1.1.1:80\"\n    ],\n    \"ForwardClientIp\": \"TOA\",\n    \"SessionPersist\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleId\": \"rule-xxx\"\n    }\n}",
+        "title": "修改应用代理规则"
+      }
+    ],
+    "ModifyApplicationProxyRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyRuleStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"RuleId\": \"rule-id123\",\n    \"Status\": \"offline\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"RuleId\": \"rule-xxx\"\n    }\n}",
+        "title": "修改应用代理规则的状态"
+      }
+    ],
+    "ModifyApplicationProxyStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-id123\",\n    \"ProxyId\": \"proxy-id123\",\n    \"Status\": \"online\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProxyId\": \"proxy-xxx\"\n    }\n}",
+        "title": "修改应用代理的状态"
+      }
+    ],
+    "ModifyDefaultCertificate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefaultCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxx\",\n    \"CertId\": \"EO-xxxx\",\n    \"Status\": \"deploy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2346602a-0bbf-409b-922c-ae3071c27594\"\n    }\n}",
+        "title": "修改默认证书状态"
+      }
+    ],
+    "ModifyDnsRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecord\n<公共请求参数>\n\n{\n    \"Priority\": 0,\n    \"Name\": \"xx\",\n    \"ZoneId\": \"xx\",\n    \"Content\": \"xx\",\n    \"Mode\": \"xx\",\n    \"Ttl\": 0,\n    \"Type\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"Priority\": 0,\n        \"Locked\": true,\n        \"Name\": \"xx\",\n        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"ZoneId\": \"xx\",\n        \"Content\": \"xx\",\n        \"Cname\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Ttl\": 0,\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Mode\": \"xx\",\n        \"Type\": \"xx\",\n        \"Id\": \"xx\",\n        \"ZoneName\": \"xx\"\n    }\n}",
+        "title": "修改 DNS 记录"
+      }
+    ],
+    "ModifyDnssec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnssec\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"Dnssec\": {\n            \"KeyTag\": 0,\n            \"Algorithm\": \"xx\",\n            \"DigestAlgorithm\": \"xx\",\n            \"KeyType\": \"xx\",\n            \"DS\": \"xx\",\n            \"PublicKey\": \"xx\",\n            \"Flags\": 0,\n            \"DigestType\": \"xx\",\n            \"Digest\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "title": "修改 DNSSEC"
+      }
+    ],
+    "ModifyHostsCertificate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxx\",\n    \"Hosts\": [\n        \"xxx.test.com\"\n    ],\n    \"CertInfo\": [\n        {\n            \"CertId\": \"EO-xxxxxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改域名证书配置"
+      }
+    ],
+    "ModifyLoadBalancing": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancing\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"LoadBalancingId\": \"lb-xxx\",\n    \"Type\": \"dns_only\",\n    \"OriginId\": [\n        \"origin-xxx\",\n        \"origin-yyy\"\n    ],\n    \"TTL\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
+        "title": "修改负载均衡"
+      }
+    ],
+    "ModifyLoadBalancingStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancingStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"LoadBalancingId\": \"lb-xxx\",\n    \"Status\": \"online\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
+        "title": "修改负载均衡启用状态"
+      }
+    ],
+    "ModifyZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZone\n<公共请求参数>\n\n{\n    \"VanityNameServers\": {\n        \"Switch\": \"xx\",\n        \"Servers\": [\n            \"xx\"\n        ]\n    },\n    \"Type\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"NameServers\": [\n            \"xx\"\n        ],\n        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"OriginalNameServers\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Type\": \"xx\",\n        \"Id\": \"xx\",\n        \"CnameStatus\": \"xx\"\n    }\n}",
+        "title": "修改站点"
+      }
+    ],
+    "ModifyZoneCnameSpeedUp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneCnameSpeedUp\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "title": "修改 CNAME 加速状态"
+      }
+    ],
+    "ModifyZoneSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneSetting\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ZoneId\": \"zone-xxxx\"\n    }\n}",
+        "title": "修改站点配置"
+      }
+    ],
+    "ModifyZoneStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneStatus\n<公共请求参数>\n\n{\n    \"Paused\": true,\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Paused\": true,\n        \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n        \"Name\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "title": "切换站点状态"
+      }
+    ],
+    "ReclaimZone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReclaimZone\n<公共请求参数>\n\n{\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "找回站点"
+      }
+    ],
+    "ScanDnsRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanDnsRecords\n<公共请求参数>\n\n{\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"xx\",\n        \"RecordsAdded\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "扫描站点历史解析记录"
       }
     ]
   },

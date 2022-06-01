@@ -12,7 +12,10 @@ tccli essbasic DescribeTemplates --cli-unfold-argument  \
     --Agent.ProxyOperator.ClientIp 8.8.8.8 \
     --Agent.ProxyOperator.ProxyIp 8.8.8.8 \
     --Agent.AppId ed68bc6904fbd4795b4658c480214e4e \
-    --TemplateId templated_test_id
+    --TemplateId templated_test_id \
+    --ContentType 1 \
+    --Offset 0 \
+    --Limit 2
 ```
 
 Output: 
@@ -82,7 +85,10 @@ Output:
                 "TemplateId": "yDxlTUyKQWX7hOUupHcb78bbdrxhT5th"
             }
         ],
-        "RequestId": "s1631799397530469887"
+        "RequestId": "s1631799397530469887",
+        "TotalCount": 1,
+        "Limit": 1,
+        "Offset": 0
     }
 }
 ```

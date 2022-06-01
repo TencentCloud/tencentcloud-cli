@@ -6406,6 +6406,15 @@
           "name": "UniqSubnetIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签键值",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14218,6 +14227,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Tag": {
+      "document": "标签结构",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "zhang",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TagInfo": {
       "document": "标签信息",

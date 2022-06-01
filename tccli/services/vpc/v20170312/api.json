@@ -17794,6 +17794,7 @@
         {
           "default": "",
           "document": "子网实例ID。形如：subnet-pxir56ns。",
+          "example": "subnet-test1234",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -17802,6 +17803,7 @@
         {
           "default": "",
           "document": "子网名称，最大长度不能超过60个字节。",
+          "example": "NewSubnetName",
           "member": "string",
           "name": "SubnetName",
           "required": false,
@@ -17810,6 +17812,7 @@
         {
           "default": "",
           "document": "子网是否开启广播。",
+          "example": "true",
           "member": "string",
           "name": "EnableBroadcast",
           "required": false,

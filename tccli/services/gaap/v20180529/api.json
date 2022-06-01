@@ -7786,7 +7786,7 @@
         },
         {
           "default": "",
-          "document": "通道组状态：\n0表示正常运行；\n1表示创建中；\n4表示销毁中；\n11表示迁移中；",
+          "document": "通道组状态：\n0表示正常运行；\n1表示创建中；\n4表示销毁中；\n11表示迁移中；\n12表示部分部署中。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8002,7 +8002,7 @@
         },
         {
           "default": "",
-          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中。",
+          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中；\nCHANGING表示部分部署中。",
           "example": "0",
           "member": "string",
           "name": "Status",
@@ -8052,7 +8052,7 @@
         },
         {
           "default": "",
-          "document": "支持Http3特性的标识，其中：\n0，表示不支持Http3；\n1，表示支持Http3。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持Http3特性的标识，其中：\n0表示关闭；\n1表示启用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Http3Supported",
@@ -8163,7 +8163,7 @@
         },
         {
           "default": "",
-          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nRECOVERING表示通道维护中。",
+          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nRECOVERING表示通道维护中；\nMOVING表示迁移中。",
           "example": "\"RUNNING\"",
           "member": "string",
           "name": "Status",
@@ -8363,7 +8363,7 @@
         },
         {
           "default": "",
-          "document": "网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"normal\"",
           "member": "string",
           "name": "NetworkType",
@@ -8472,7 +8472,7 @@
         },
         {
           "default": "",
-          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离。",
+          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nMOVING表示迁移中。",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",

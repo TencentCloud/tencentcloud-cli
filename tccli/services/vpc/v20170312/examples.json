@@ -2231,7 +2231,7 @@
     "ModifySubnetAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySubnetAttribute\r\n&Version=2017-03-12\r\n&SubnetId=subnet-test1234\r\n&SubnetName=NewSubnetName\r\n&EnableBroadcast=true\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifySubnetAttribute\n&SubnetId=subnet-test1234\n&SubnetName=NewSubnetName\n&EnableBroadcast=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "修改子网属性"
       }

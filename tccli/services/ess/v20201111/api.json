@@ -25,7 +25,7 @@
       "output": "CreateFlowByFilesResponse"
     },
     "CreateSchemeUrl": {
-      "document": "获取小程序跳转链接",
+      "document": "获取小程序跳转链接\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://tcloud-doc.isd.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
       "input": "CreateSchemeUrlRequest",
       "name": "获取小程序跳转链接",
       "output": "CreateSchemeUrlResponse"
@@ -41,6 +41,12 @@
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse"
+    },
+    "DescribeFlowTemplates": {
+      "document": "二期接口-查询模板",
+      "input": "DescribeFlowTemplatesRequest",
+      "name": "查询模板",
+      "output": "DescribeFlowTemplatesResponse"
     },
     "DescribeThirdPartyAuthCode": {
       "document": "通过AuthCode查询用户是否实名",
@@ -937,7 +943,7 @@
         },
         {
           "default": "",
-          "document": "链接类型 HTTP：跳转电子签小程序的http_url，APP：第三方APP或小程序跳转电子签小程序，默认为HTTP类型",
+          "document": "链接类型\nHTTP：跳转电子签小程序的http_url，\nAPP：第三方APP或小程序跳转电子签小程序的path。\n默认为HTTP类型",
           "example": "HTTP",
           "member": "string",
           "name": "EndPoint",
@@ -1166,6 +1172,105 @@
       ],
       "type": "object"
     },
+    "DescribeFlowTemplatesRequest": {
+      "document": "DescribeFlowTemplates请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "查询偏移位置，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询个数，默认20，最大100",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "暂未开放",
+          "example": "无",
+          "member": "uint64",
+          "name": "GenerateSource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询内容：0-模版列表及详情（默认），1-仅模版列表",
+          "example": "无",
+          "member": "int64",
+          "name": "ContentType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlowTemplatesResponse": {
+      "document": "DescribeFlowTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "模板详情列表",
+          "example": "无",
+          "member": "TemplateInfo",
+          "name": "Templates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询到的总个数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeThirdPartyAuthCodeRequest": {
       "document": "DescribeThirdPartyAuthCode请求参数结构体",
       "members": [
@@ -1202,6 +1307,48 @@
       ],
       "type": "object"
     },
+    "FileInfo": {
+      "document": "二期接口返回的模板中文件的信息结构",
+      "members": [
+        {
+          "default": "",
+          "document": "文件Id",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小，单位为Byte",
+          "member": "int64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件上传时间，10位时间戳（精确到秒）",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FileUrl": {
       "document": "下载文件的URL信息",
       "members": [
@@ -1225,6 +1372,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "查询过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "查询过滤条件的Key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "查询过滤条件的Value列表",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FlowBrief": {
       "document": "流程信息摘要",
@@ -1474,6 +1645,129 @@
       ],
       "usage": "both"
     },
+    "Recipient": {
+      "document": "签署参与者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "签署参与者ID",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "参与者类型（ENTERPRISE/INDIVIDUAL）",
+          "member": "string",
+          "name": "RecipientType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要验证，默认为false",
+          "member": "bool",
+          "name": "RequireValidation",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要签署，默认为true",
+          "member": "bool",
+          "name": "RequireSign",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "添加序列",
+          "member": "int64",
+          "name": "RoutingOrder",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否需要发送，默认为true",
+          "member": "bool",
+          "name": "RequireDelivery",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱地址",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "电话号码",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "关联的用户ID",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发送方式（EMAIL/MOBILE）",
+          "member": "string",
+          "name": "DeliveryMethod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附属信息",
+          "member": "string",
+          "name": "RecipientExtra",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StartFlowRequest": {
       "document": "StartFlow请求参数结构体",
       "members": [
@@ -1536,6 +1830,138 @@
         }
       ],
       "type": "object"
+    },
+    "TemplateInfo": {
+      "document": "二期接口返回的模板的信息结构",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板名字",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板关联的资源IDs",
+          "member": "string",
+          "name": "DocumentResourceIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回的文件信息结构",
+          "member": "FileInfo",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "附件关联的资源ID是",
+          "member": "string",
+          "name": "AttachmentResourceIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署顺序",
+          "member": "int64",
+          "name": "SignOrder",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署参与者的信息",
+          "member": "Recipient",
+          "name": "Recipients",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板信息结构",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署区模板信息结构",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板状态(-1:不可用；0:草稿态；1:正式态)",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板的创建人",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板创建的时间戳（精确到秒）",
+          "member": "int64",
+          "name": "CreatedOn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起人角色信息",
+          "member": "Recipient",
+          "name": "Promoter",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UploadFile": {
       "document": "此结构体 (UploadFile) 用于描述多文件上传的文件信息。",

@@ -10,7 +10,7 @@ tccli dasb CreateUser --cli-unfold-argument  \
     --ValidateTo 2020-09-22T00:00:00+00:00 \
     --RealName xx \
     --GroupIdSet 1 1 1 \
-    --Phone xx \
+    --Phone 13811111111 \
     --ValidateFrom 2020-09-22T00:00:00+00:00 \
     --Email xx \
     --AuthType 1

@@ -13,17 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "22dfcc05-1ba1-49b4-a751-f5611cdb3420",
-        "Status": 0,
+        "Status": 1,
         "MainTaskId": "xx",
         "Results": [
             {
+                "TaskFiles": [
+                    "xx"
+                ],
                 "Code": 1,
-                "SubTaskId": "xx",
                 "StructureResult": "xx",
-                "TaskType": "HealthReport"
+                "SubTaskId": "xx",
+                "TaskType": "xx"
             }
-        ]
+        ],
+        "RequestId": "xx"
     }
 }
 ```

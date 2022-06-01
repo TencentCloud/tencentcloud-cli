@@ -1,10 +1,34 @@
 {
   "actions": {
+    "AddDeviceGroupMembers": {
+      "document": "添加资产组成员",
+      "input": "AddDeviceGroupMembersRequest",
+      "name": "添加资产组成员",
+      "output": "AddDeviceGroupMembersResponse"
+    },
+    "AddUserGroupMembers": {
+      "document": "添加用户组成员",
+      "input": "AddUserGroupMembersRequest",
+      "name": "添加用户组成员",
+      "output": "AddUserGroupMembersResponse"
+    },
+    "BindDeviceResource": {
+      "document": "修改资产绑定的堡垒机服务",
+      "input": "BindDeviceResourceRequest",
+      "name": "修改资产绑定的堡垒机服务",
+      "output": "BindDeviceResourceResponse"
+    },
     "CreateAcl": {
       "document": "新建访问权限",
       "input": "CreateAclRequest",
       "name": "新建访问权限",
       "output": "CreateAclResponse"
+    },
+    "CreateDeviceGroup": {
+      "document": "新建资产组",
+      "input": "CreateDeviceGroupRequest",
+      "name": "新建资产组",
+      "output": "CreateDeviceGroupResponse"
     },
     "CreateUser": {
       "document": "新建用户",
@@ -12,11 +36,41 @@
       "name": "新建用户",
       "output": "CreateUserResponse"
     },
+    "CreateUserGroup": {
+      "document": "新建用户组",
+      "input": "CreateUserGroupRequest",
+      "name": "新建用户组",
+      "output": "CreateUserGroupResponse"
+    },
     "DeleteAcls": {
       "document": "删除访问权限",
       "input": "DeleteAclsRequest",
       "name": "删除访问权限",
       "output": "DeleteAclsResponse"
+    },
+    "DeleteDeviceGroupMembers": {
+      "document": "删除资产组成员",
+      "input": "DeleteDeviceGroupMembersRequest",
+      "name": "删除资产组成员",
+      "output": "DeleteDeviceGroupMembersResponse"
+    },
+    "DeleteDeviceGroups": {
+      "document": "删除资产组",
+      "input": "DeleteDeviceGroupsRequest",
+      "name": "删除资产组",
+      "output": "DeleteDeviceGroupsResponse"
+    },
+    "DeleteUserGroupMembers": {
+      "document": "删除用户组成员",
+      "input": "DeleteUserGroupMembersRequest",
+      "name": "删除用户组成员",
+      "output": "DeleteUserGroupMembersResponse"
+    },
+    "DeleteUserGroups": {
+      "document": "删除用户组",
+      "input": "DeleteUserGroupsRequest",
+      "name": "删除用户组",
+      "output": "DeleteUserGroupsResponse"
     },
     "DeleteUsers": {
       "document": "删除用户",
@@ -36,11 +90,41 @@
       "name": "数盾-DASB-获取镜像列表",
       "output": "DescribeDasbImageIdsResponse"
     },
+    "DescribeDeviceGroupMembers": {
+      "document": "查询资产组成员列表",
+      "input": "DescribeDeviceGroupMembersRequest",
+      "name": "查询资产组成员列表",
+      "output": "DescribeDeviceGroupMembersResponse"
+    },
+    "DescribeDeviceGroups": {
+      "document": "查询资产组列表",
+      "input": "DescribeDeviceGroupsRequest",
+      "name": "查询资产组列表",
+      "output": "DescribeDeviceGroupsResponse"
+    },
     "DescribeDevices": {
       "document": "查询资产列表",
       "input": "DescribeDevicesRequest",
       "name": "查询资产列表",
       "output": "DescribeDevicesResponse"
+    },
+    "DescribeResources": {
+      "document": "查询用户购买的堡垒机服务信息，包括资源ID、授权点数、VPC、过期时间等。",
+      "input": "DescribeResourcesRequest",
+      "name": "查询堡垒机服务信息",
+      "output": "DescribeResourcesResponse"
+    },
+    "DescribeUserGroupMembers": {
+      "document": "查询用户组成员列表",
+      "input": "DescribeUserGroupMembersRequest",
+      "name": "查询用户组成员列表",
+      "output": "DescribeUserGroupMembersResponse"
+    },
+    "DescribeUserGroups": {
+      "document": "查询用户组列表",
+      "input": "DescribeUserGroupsRequest",
+      "name": "查询用户组列表",
+      "output": "DescribeUserGroupsResponse"
     },
     "DescribeUsers": {
       "document": "查询用户列表",
@@ -83,7 +167,7 @@
         },
         {
           "default": "",
-          "document": "规则名",
+          "document": "访问权限名称",
           "example": "xx",
           "member": "string",
           "name": "Name",
@@ -123,7 +207,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（目前含图片）上行",
+          "document": "是否开启剪贴板文本（目前含图片）上行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextUp",
@@ -133,7 +217,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（目前含图片）下行",
+          "document": "是否开启剪贴板文本（目前含图片）下行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextDown",
@@ -153,7 +237,7 @@
         },
         {
           "default": "",
-          "document": "文件传输上传大小限制",
+          "document": "文件传输上传大小限制（预留参数，暂未启用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileUpSize",
@@ -173,7 +257,7 @@
         },
         {
           "default": "",
-          "document": "文件传输下载大小限制",
+          "document": "文件传输下载大小限制（预留参数，暂未启用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileDownSize",
@@ -183,7 +267,7 @@
         },
         {
           "default": "",
-          "document": "是否允许任意账号登陆",
+          "document": "是否允许任意账号登录",
           "example": "true",
           "member": "bool",
           "name": "AllowAnyAccount",
@@ -213,7 +297,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机列表",
+          "document": "关联的资产列表",
           "example": "[]",
           "member": "Device",
           "name": "DeviceSet",
@@ -223,7 +307,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机组列表",
+          "document": "关联的资产组列表",
           "example": "[]",
           "member": "Group",
           "name": "DeviceGroupSet",
@@ -253,7 +337,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rdp磁盘映射文件上传",
+          "document": "是否开启 RDP 磁盘映射文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileUp",
@@ -263,7 +347,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rdp磁盘映射文件下载",
+          "document": "是否开启 RDP 磁盘映射文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileDown",
@@ -273,7 +357,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rz sz文件上传",
+          "document": "是否开启 rz sz 文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileUp",
@@ -283,7 +367,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rz sz文件下载",
+          "document": "是否开启 rz sz 文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileDown",
@@ -293,7 +377,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SFTP文件删除",
+          "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDel",
@@ -303,7 +387,7 @@
         },
         {
           "default": "",
-          "document": "生效日期",
+          "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -313,7 +397,7 @@
         },
         {
           "default": "",
-          "document": "失效日期",
+          "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -323,7 +407,7 @@
         },
         {
           "default": "",
-          "document": "策略状态，1-已生效，2-未生效，3-已过期",
+          "document": "访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -334,12 +418,121 @@
       ],
       "usage": "out"
     },
-    "CmdTemplate": {
-      "document": "命令模板",
+    "AddDeviceGroupMembersRequest": {
+      "document": "AddDeviceGroupMembers请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "模板ID",
+          "document": "资产组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要添加到资产组的资产ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "MemberIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddDeviceGroupMembersResponse": {
+      "document": "AddDeviceGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserGroupMembersRequest": {
+      "document": "AddUserGroupMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "成员用户ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "MemberIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUserGroupMembersResponse": {
+      "document": "AddUserGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceResourceRequest": {
+      "document": "BindDeviceResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "DeviceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "堡垒机服务ID",
+          "example": "bh-saas-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindDeviceResourceResponse": {
+      "document": "BindDeviceResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CmdTemplate": {
+      "document": "高危命令模板",
+      "members": [
+        {
+          "default": "",
+          "document": "高危命令模板ID",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -348,7 +541,8 @@
         },
         {
           "default": "",
-          "document": "模板名称",
+          "document": "高危命令模板名称",
+          "example": "\"我的命令模板\"",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -357,7 +551,8 @@
         },
         {
           "default": "",
-          "document": "命令列表，\\n分隔",
+          "document": "命令列表，命令之间用换行符（\"\\n\"）分隔",
+          "example": "rm -rf",
           "member": "string",
           "name": "CmdList",
           "required": true,
@@ -372,7 +567,7 @@
       "members": [
         {
           "default": "",
-          "document": "权限名称，最大32字符，不能为空，不能包含空白字符",
+          "document": "权限名称，最大32字符，不能包含空白字符",
           "example": "acl1",
           "member": "string",
           "name": "Name",
@@ -390,7 +585,7 @@
         },
         {
           "default": "",
-          "document": "是否允许任意账号登陆",
+          "document": "是否允许任意账号登录",
           "example": "false",
           "member": "bool",
           "name": "AllowAnyAccount",
@@ -417,7 +612,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（含图片）上行",
+          "document": "是否开启剪贴板文本（含图片）上行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextUp",
@@ -426,7 +621,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（含图片）下行",
+          "document": "是否开启剪贴板文本（含图片）下行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextDown",
@@ -435,7 +630,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SFTP文件上传",
+          "document": "是否开启 SFTP 文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowFileUp",
@@ -444,7 +639,7 @@
         },
         {
           "default": "",
-          "document": "文件传输上传大小限制",
+          "document": "文件传输上传大小限制（预留参数，目前暂未使用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileUpSize",
@@ -453,7 +648,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SFTP文件下载",
+          "document": "是否开启 SFTP 文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDown",
@@ -462,7 +657,7 @@
         },
         {
           "default": "",
-          "document": "文件传输下载大小限制",
+          "document": "文件传输下载大小限制（预留参数，目前暂未使用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileDownSize",
@@ -471,7 +666,7 @@
         },
         {
           "default": "",
-          "document": "关联的用户ID",
+          "document": "关联的用户ID集合",
           "example": "[1]",
           "member": "uint64",
           "name": "UserIdSet",
@@ -489,7 +684,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机ID",
+          "document": "关联的资产ID集合",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceIdSet",
@@ -498,7 +693,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机组ID",
+          "document": "关联的资产组ID",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceGroupIdSet",
@@ -507,7 +702,7 @@
         },
         {
           "default": "",
-          "document": "关联的账号，账号name",
+          "document": "关联的账号",
           "example": "[]",
           "member": "string",
           "name": "AccountSet",
@@ -561,7 +756,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SFTP文件删除",
+          "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDel",
@@ -570,7 +765,7 @@
         },
         {
           "default": "",
-          "document": "生效日期，如果为空，默认1970-01-01T08:00:01+08:00",
+          "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -579,7 +774,7 @@
         },
         {
           "default": "",
-          "document": "失效日期，如果为空，默认1970-01-01T08:00:01+08:00",
+          "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -593,7 +788,79 @@
       "document": "CreateAcl返回参数结构体",
       "members": [
         {
-          "document": "访问权限ID",
+          "document": "新建成功的访问权限ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceGroupRequest": {
+      "document": "CreateDeviceGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产组名，最大长度32字符",
+          "example": "运维资产组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceGroupResponse": {
+      "document": "CreateDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "新建成功的资产组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupRequest": {
+      "document": "CreateUserGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组名，最大长度32字符",
+          "example": "运维用户组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserGroupResponse": {
+      "document": "CreateUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "新建成功的用户组ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -615,7 +882,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户名，最大长度32字符，不能为空",
+          "document": "用户名, 3-20个字符, 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符",
           "example": "user001",
           "member": "string",
           "name": "UserName",
@@ -624,7 +891,7 @@
         },
         {
           "default": "",
-          "document": "用户姓名，最大长度32字符，不能为空",
+          "document": "用户姓名，最大长度20个字符，不能包含空白字符",
           "example": "张三",
           "member": "string",
           "name": "RealName",
@@ -633,7 +900,7 @@
         },
         {
           "default": "",
-          "document": "手机号",
+          "document": "大陆手机号直接填写，如果是其他国家、地区号码， 按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13312341234",
           "member": "string",
           "name": "Phone",
@@ -651,7 +918,7 @@
         },
         {
           "default": "",
-          "document": "生效起始时间,不设置则为1970-01-01T08:00:01+08:00",
+          "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -660,7 +927,7 @@
         },
         {
           "default": "",
-          "document": "生效结束时间,不设置则为1970-01-01T08:00:01+08:00",
+          "document": "用户失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -678,7 +945,7 @@
         },
         {
           "default": "",
-          "document": "认证方式，0-本地 1-ldap 2-oauth,不传则默认为0",
+          "document": "认证方式，0 - 本地， 1 - LDAP， 2 - OAuth 不传则默认为0",
           "example": "1",
           "member": "uint64",
           "name": "AuthType",
@@ -687,7 +954,7 @@
         },
         {
           "default": "",
-          "document": "生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效",
+          "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",
@@ -701,7 +968,7 @@
       "document": "CreateUser返回参数结构体",
       "members": [
         {
-          "document": "新建成功后返回的记录ID",
+          "document": "新建用户的ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -745,6 +1012,132 @@
       ],
       "type": "object"
     },
+    "DeleteDeviceGroupMembersRequest": {
+      "document": "DeleteDeviceGroupMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要删除的资产ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "MemberIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceGroupMembersResponse": {
+      "document": "DeleteDeviceGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceGroupsRequest": {
+      "document": "DeleteDeviceGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的资产组ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceGroupsResponse": {
+      "document": "DeleteDeviceGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupMembersRequest": {
+      "document": "DeleteUserGroupMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需删除的成员用户ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "MemberIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupMembersResponse": {
+      "document": "DeleteUserGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsRequest": {
+      "document": "DeleteUserGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "待删除的用户组ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserGroupsResponse": {
+      "document": "DeleteUserGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteUsersRequest": {
       "document": "DeleteUsers请求参数结构体",
       "members": [
@@ -777,7 +1170,7 @@
       "members": [
         {
           "default": "",
-          "document": "访问权限ID集合，非必需",
+          "document": "访问权限ID集合",
           "example": "[1,2]",
           "member": "uint64",
           "name": "IdSet",
@@ -795,7 +1188,7 @@
         },
         {
           "default": "",
-          "document": "分页，偏移位置",
+          "document": "分页偏移位置",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -804,7 +1197,7 @@
         },
         {
           "default": "",
-          "document": "每页条目数量，默认20",
+          "document": "每页条目数量，默认20，最大500",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -813,7 +1206,7 @@
         },
         {
           "default": "",
-          "document": "是否根据Name进行精确查询,默认值false",
+          "document": "是否根据Name进行精确查询，默认值false",
           "example": "true",
           "member": "bool",
           "name": "Exact",
@@ -822,7 +1215,7 @@
         },
         {
           "default": "",
-          "document": "有权限的用户ID集合",
+          "document": "有访问权限的用户ID集合",
           "example": "无",
           "member": "uint64",
           "name": "AuthorizedUserIdSet",
@@ -831,7 +1224,7 @@
         },
         {
           "default": "",
-          "document": "有权限的主机ID集合",
+          "document": "有访问权限的资产ID集合",
           "example": "无",
           "member": "uint64",
           "name": "AuthorizedDeviceIdSet",
@@ -840,7 +1233,7 @@
         },
         {
           "default": "",
-          "document": "策略状态，0-不限，1-已生效，2-未生效，3-已过期",
+          "document": "访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -854,7 +1247,7 @@
       "document": "DescribeAcls返回参数结构体",
       "members": [
         {
-          "document": "记录总数",
+          "document": "访问权限总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -863,7 +1256,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "访问权限记录集合，当前分页",
+          "document": "访问权限列表",
           "example": "[]",
           "member": "Acl",
           "name": "AclSet",
@@ -911,12 +1304,174 @@
       ],
       "type": "object"
     },
+    "DescribeDeviceGroupMembersRequest": {
+      "document": "DescribeDeviceGroupMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "true - 查询已在该资产组的资产，false - 查询未在该资产组的资产",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "资产名或资产IP，模糊查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数，默认20, 最大500",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "资产类型，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer",
+          "example": "0",
+          "member": "uint64",
+          "name": "Kind",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceGroupMembersResponse": {
+      "document": "DescribeDeviceGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "资产组成员总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资产组成员列表",
+          "example": "[]",
+          "member": "Device",
+          "name": "DeviceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceGroupsRequest": {
+      "document": "DescribeDeviceGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资产组ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资产组名，最长64个字符，模糊查询",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数量，缺省20，最大500",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceGroupsResponse": {
+      "document": "DescribeDeviceGroups返回参数结构体",
+      "members": [
+        {
+          "document": "资产组总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资产组列表",
+          "example": "[]",
+          "member": "Group",
+          "name": "GroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDevicesRequest": {
       "document": "DescribeDevices请求参数结构体",
       "members": [
         {
           "default": "",
-          "document": "主机ID集合，非必需",
+          "document": "资产ID集合",
           "example": "无",
           "member": "uint64",
           "name": "IdSet",
@@ -925,7 +1480,7 @@
         },
         {
           "default": "",
-          "document": "主机名或主机IP，模糊查询",
+          "document": "资产名或资产IP，模糊查询",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -952,7 +1507,7 @@
         },
         {
           "default": "",
-          "document": "操作系统类型",
+          "document": "操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "无",
           "member": "uint64",
           "name": "Kind",
@@ -979,7 +1534,7 @@
         },
         {
           "default": "",
-          "document": "有该主机访问权限的用户ID集合",
+          "document": "有该资产访问权限的用户ID集合",
           "example": "无",
           "member": "uint64",
           "name": "AuthorizedUserIdSet",
@@ -988,7 +1543,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，主机绑定的堡垒机服务ID集合",
+          "document": "过滤条件，资产绑定的堡垒机服务ID集合",
           "example": "无",
           "member": "string",
           "name": "ResourceIdSet",
@@ -997,7 +1552,7 @@
         },
         {
           "default": "",
-          "document": "可提供按照多种类型过滤, 1-Linux, 2-Windows, 3-MySQL",
+          "document": "可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "无",
           "member": "uint64",
           "name": "KindSet",
@@ -1011,7 +1566,7 @@
       "document": "DescribeDevices返回参数结构体",
       "members": [
         {
-          "document": "记录总数",
+          "document": "资产总数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -1020,10 +1575,217 @@
           "value_allowed_null": false
         },
         {
-          "document": "主机信息列表",
+          "document": "资产信息列表",
           "example": "[]",
           "member": "Device",
           "name": "DeviceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesRequest": {
+      "document": "DescribeResources请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "地域码, 如: ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "按照堡垒机开通的 VPC 实例ID查询",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId",
+          "example": "[]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourcesResponse": {
+      "document": "DescribeResources返回参数结构体",
+      "members": [
+        {
+          "document": "堡垒机资源列表",
+          "example": "无",
+          "member": "Resource",
+          "name": "ResourceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupMembersRequest": {
+      "document": "DescribeUserGroupMembers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "用户名或用户姓名，最长64个字符，模糊查询",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数量，默认20, 最大500",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupMembersResponse": {
+      "document": "DescribeUserGroupMembers返回参数结构体",
+      "members": [
+        {
+          "document": "用户组成员总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组成员列表",
+          "example": "[]",
+          "member": "User",
+          "name": "UserSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupsRequest": {
+      "document": "DescribeUserGroups请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户组ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "用户组名，模糊查询,长度：0-64字符",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页偏移位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "每页条目数量，缺省20，最大500",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserGroupsResponse": {
+      "document": "DescribeUserGroups返回参数结构体",
+      "members": [
+        {
+          "document": "用户组总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户组列表",
+          "example": "[]",
+          "member": "Group",
+          "name": "GroupSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1069,7 +1831,7 @@
         },
         {
           "default": "",
-          "document": "每页条目数量，默认20",
+          "document": "每页条目数量，默认20, 最大500",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1087,7 +1849,7 @@
         },
         {
           "default": "",
-          "document": "精确查询，IdSet、UserName为空时才生效",
+          "document": "精确查询，IdSet、UserName为空时才生效。\n大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13112341234",
           "member": "string",
           "name": "Phone",
@@ -1096,7 +1858,7 @@
         },
         {
           "default": "",
-          "document": "有访问权限的主机ID集合",
+          "document": "查询具有指定资产ID访问权限的用户",
           "example": "无",
           "member": "uint64",
           "name": "AuthorizedDeviceIdSet",
@@ -1105,7 +1867,7 @@
         },
         {
           "default": "",
-          "document": "认证方式，0-本地，1-ldap, 2-oauth 不传为全部",
+          "document": "认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部",
           "example": "[0,1]",
           "member": "uint64",
           "name": "AuthTypeSet",
@@ -1119,7 +1881,7 @@
       "document": "DescribeUsers返回参数结构体",
       "members": [
         {
-          "document": "记录总数",
+          "document": "用户总数",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -1128,7 +1890,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "用户信息列表",
+          "document": "用户列表",
           "example": "[]",
           "member": "User",
           "name": "UserSet",
@@ -1146,11 +1908,11 @@
       "type": "object"
     },
     "Device": {
-      "document": "主机信息",
+      "document": "资产信息",
       "members": [
         {
           "default": "",
-          "document": "主机记录ID",
+          "document": "资产ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -1160,7 +1922,7 @@
         },
         {
           "default": "",
-          "document": "主机ID，对应cvm实例id",
+          "document": "实例ID，对应CVM、CDB等实例ID",
           "example": "xxx",
           "member": "string",
           "name": "InstanceId",
@@ -1170,7 +1932,7 @@
         },
         {
           "default": "",
-          "document": "主机名",
+          "document": "资产名",
           "example": "xxx",
           "member": "string",
           "name": "Name",
@@ -1220,7 +1982,7 @@
         },
         {
           "default": "",
-          "document": "主机类型，1-Linux, 2-Windows",
+          "document": "资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "1",
           "member": "uint64",
           "name": "Kind",
@@ -1240,7 +2002,7 @@
         },
         {
           "default": "",
-          "document": "所属主机组信息列表",
+          "document": "所属资产组列表",
           "example": "[]",
           "member": "Group",
           "name": "GroupSet",
@@ -1250,7 +2012,7 @@
         },
         {
           "default": "",
-          "document": "主机绑定的账号数",
+          "document": "资产绑定的账号数",
           "example": "10",
           "member": "uint64",
           "name": "AccountCount",
@@ -1322,7 +2084,7 @@
       "members": [
         {
           "default": "",
-          "document": "权限名称，最大32字符，不能包含空白字符",
+          "document": "访问权限名称，最大32字符，不能包含空白字符",
           "example": "xx",
           "member": "string",
           "name": "Name",
@@ -1340,7 +2102,7 @@
         },
         {
           "default": "",
-          "document": "是否允许任意账号登陆",
+          "document": "是否允许任意账号登录",
           "example": "false",
           "member": "bool",
           "name": "AllowAnyAccount",
@@ -1376,7 +2138,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（含图片）上行",
+          "document": "是否开启剪贴板文本（含图片）上行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextUp",
@@ -1385,7 +2147,7 @@
         },
         {
           "default": "",
-          "document": "是否开启剪贴板text（含图片）下行",
+          "document": "是否开启剪贴板文本（含图片）下行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextDown",
@@ -1403,7 +2165,7 @@
         },
         {
           "default": "",
-          "document": "文件传输上传大小限制",
+          "document": "文件传输上传大小限制（预留参数，目前暂未使用）",
           "example": "1",
           "member": "uint64",
           "name": "MaxFileUpSize",
@@ -1421,7 +2183,7 @@
         },
         {
           "default": "",
-          "document": "文件传输下载大小限制",
+          "document": "文件传输下载大小限制（预留参数，目前暂未使用）",
           "example": "1",
           "member": "uint64",
           "name": "MaxFileDownSize",
@@ -1448,7 +2210,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机ID",
+          "document": "关联的资产ID",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceIdSet",
@@ -1457,7 +2219,7 @@
         },
         {
           "default": "",
-          "document": "关联的主机组ID",
+          "document": "关联的资产组ID",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceGroupIdSet",
@@ -1466,7 +2228,7 @@
         },
         {
           "default": "",
-          "document": "关联的账号，账号name",
+          "document": "关联的账号",
           "example": "[\"admin\"]",
           "member": "string",
           "name": "AccountSet",
@@ -1484,7 +2246,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rdp磁盘映射文件上传",
+          "document": "是否开启 RDP 磁盘映射文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileUp",
@@ -1493,7 +2255,7 @@
         },
         {
           "default": "",
-          "document": "是否开启rdp磁盘映射文件下载",
+          "document": "是否开启 RDP 磁盘映射文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileDown",
@@ -1520,7 +2282,7 @@
         },
         {
           "default": "",
-          "document": "是否开启SFTP文件删除",
+          "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDel",
@@ -1529,7 +2291,7 @@
         },
         {
           "default": "",
-          "document": "生效日期，如果为空，默认1970-01-01T08:00:01+08:00",
+          "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -1538,7 +2300,7 @@
         },
         {
           "default": "",
-          "document": "失效日期，如果为空，默认1970-01-01T08:00:01+08:00",
+          "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -1574,7 +2336,7 @@
         },
         {
           "default": "",
-          "document": "用户姓名，最大长度32字符，不能为空",
+          "document": "用户姓名，最大长度20个字符，不能包含空格",
           "example": "xx",
           "member": "string",
           "name": "RealName",
@@ -1583,7 +2345,7 @@
         },
         {
           "default": "",
-          "document": "手机号",
+          "document": "大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "13311111111",
           "member": "string",
           "name": "Phone",
@@ -1601,7 +2363,7 @@
         },
         {
           "default": "",
-          "document": "生效起始时间,不设置则为1970-01-01 08:00:01",
+          "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -1610,7 +2372,7 @@
         },
         {
           "default": "",
-          "document": "生效结束时间,不设置则为1970-01-01 08:00:01",
+          "document": "用户失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -1628,7 +2390,7 @@
         },
         {
           "default": "",
-          "document": "认证方式，0-本地 1-ldap, 2-oauth不传则默认为0",
+          "document": "认证方式，0 - 本地，1 - LDAP，2 - OAuth 不传则默认为0",
           "example": "0",
           "member": "uint64",
           "name": "AuthType",
@@ -1637,7 +2399,7 @@
         },
         {
           "default": "",
-          "document": "生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效",
+          "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",
@@ -1660,11 +2422,11 @@
       "type": "object"
     },
     "Resource": {
-      "document": "用户购买的堡垒机资源信息",
+      "document": "堡垒机服务信息",
       "members": [
         {
           "default": "",
-          "document": "资源实例id，如bh-saas-s3ed4r5e",
+          "document": "服务实例ID，如bh-saas-s3ed4r5e",
           "example": "bh-saas-s3ed4r5e",
           "member": "string",
           "name": "ResourceId",
@@ -1684,7 +2446,7 @@
         },
         {
           "default": "",
-          "document": "实例规格信息（询价参数）",
+          "document": "服务实例规格信息",
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
           "name": "SvArgs",
@@ -1694,7 +2456,7 @@
         },
         {
           "default": "",
-          "document": "vpc id",
+          "document": "VPC ID",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -1704,7 +2466,7 @@
         },
         {
           "default": "",
-          "document": "堡垒机规格对应的资产数",
+          "document": "服务规格对应的资产数",
           "example": "50",
           "member": "uint64",
           "name": "Nodes",
@@ -1714,7 +2476,7 @@
         },
         {
           "default": "",
-          "document": "自动续费标记，0表示默认状态，1表示自动续费，2表示明确不自动续费",
+          "document": "自动续费标记，0 - 表示默认状态，1 - 表示自动续费，2 - 表示明确不自动续费",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -1734,7 +2496,7 @@
         },
         {
           "default": "",
-          "document": "资源状态，0未初始化，1正常，2隔离，3销毁，4初始化失败，5初始化中",
+          "document": "资源状态，0 - 未初始化，1 - 正常，2 - 隔离，3 - 销毁，4 - 初始化失败，5 - 初始化中",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -1744,7 +2506,7 @@
         },
         {
           "default": "",
-          "document": "实例名，如T-Sec-堡垒机（SaaS型）",
+          "document": "服务实例名，如T-Sec-堡垒机（SaaS型）",
           "example": "T-Sec-堡垒机（SaaS型）",
           "member": "string",
           "name": "ResourceName",
@@ -1824,7 +2586,7 @@
         },
         {
           "default": "",
-          "document": "开通服务的VPC名称",
+          "document": "开通服务的 VPC 名称",
           "example": "vpc1",
           "member": "string",
           "name": "VpcName",
@@ -1834,7 +2596,7 @@
         },
         {
           "default": "",
-          "document": "开通服务的VPC对应的网段",
+          "document": "开通服务的 VPC 对应的网段",
           "example": "10.10.10.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
@@ -1894,7 +2656,7 @@
         },
         {
           "default": "",
-          "document": "资源开通的高级功能列表，如:[DB]",
+          "document": "服务开通的高级功能列表，如:[DB]",
           "example": "无",
           "member": "string",
           "name": "ModuleSet",
@@ -1950,7 +2712,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户名",
+          "document": "用户名, 3-20个字符 必须以英文字母开头，且不能包含字母、数字、.、_、-以外的字符",
           "example": "user001",
           "member": "string",
           "name": "UserName",
@@ -1960,7 +2722,7 @@
         },
         {
           "default": "",
-          "document": "用户姓名",
+          "document": "用户姓名， 最大20个字符，不能包含空白字符",
           "example": "张三",
           "member": "string",
           "name": "RealName",
@@ -1970,7 +2732,7 @@
         },
         {
           "default": "",
-          "document": "手机号码",
+          "document": "手机号码， 大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
           "example": "138xxxx1111",
           "member": "string",
           "name": "Phone",
@@ -2000,7 +2762,7 @@
         },
         {
           "default": "",
-          "document": "生效起始时间",
+          "document": "用户生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
@@ -2010,7 +2772,7 @@
         },
         {
           "default": "",
-          "document": "生效结束时间",
+          "document": "用户失效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则用户长期有效",
           "example": "2021-01-01T08:00:01+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
@@ -2030,7 +2792,7 @@
         },
         {
           "default": "",
-          "document": "认证方式，0-本地 1-ldap",
+          "document": "认证方式，0 - 本地，1 - LDAP，2 - OAuth",
           "example": "0",
           "member": "uint64",
           "name": "AuthType",
@@ -2040,7 +2802,7 @@
         },
         {
           "default": "",
-          "document": "生效时间段, 0、1组成的字符串，长度168(7*24), 代表该用户的生效时间. 0 - 未生效，1 - 生效",
+          "document": "访问时间段限制， 由0、1组成的字符串，长度168(7 × 24)，代表该用户在一周中允许访问的时间段。字符串中第N个字符代表在一周中的第N个小时， 0 - 代表不允许访问，1 - 代表允许访问",
           "example": "0000000000000000000000000000000000000000000000000000000000000000",
           "member": "string",
           "name": "ValidateTime",

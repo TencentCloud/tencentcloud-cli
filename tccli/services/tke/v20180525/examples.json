@@ -40,6 +40,14 @@
         "title": "为VPC-CNI模式集群增加子网"
       }
     ],
+    "CheckEdgeClusterCIDR": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CheckEdgeClusterCIDR\r\n&VpcId=vpc-xxx\r\n&PodCIDR=10.0.1.10/24\r\n&ServiceCIDR=192.168.0.0/16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ConflictCode\": \"0\",\n        \"ConflictMsg\": \"OK\"\n    }\n}",
+        "title": "检查边缘计算集群的CIDR是否冲突示例"
+      }
+    ],
     "CheckInstancesUpgradeAble": [
       {
         "document": "",
@@ -124,6 +132,14 @@
         "title": "创建集群路由表"
       }
     ],
+    "CreateECMInstances": [
+      {
+        "document": "创建边缘计算ECM机器",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateECMInstances\n&ClusterID=cls-xxxxx\n&ZoneInstanceCountISPSet.0.Zone=ap-zhengzhou-1\n&ZoneInstanceCountISPSet.0.InstanceCount=2\n&ZoneInstanceCountISPSet.0.ISP=CMCC\n&ImageId=img-q9fy0if9\n&HostName=oldhen_4986\n&DataDiskSize=100\n&ModuleId=em-0vag13d1\n&InstanceName=直播弹幕\n&EnhancedService.SecurityService.Enabled=false\n&EnhancedService.MonitorService.Enabled=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d40cdb72-7bc0-4b48-b3aa-25e8401f6999\",\n        \"EcmIdSet\": [\n            \"ecm-197252sp\",\n            \"ecm-19725win\",\n            \"ecm-19623ash\"\n        ]\n    }\n}",
+        "title": "创建边缘计算ECM机器"
+      }
+    ],
     "CreateEKSCluster": [
       {
         "document": "创建托管集群",
@@ -202,6 +218,14 @@
         "title": "创建一个模板"
       }
     ],
+    "CreateTKEEdgeCluster": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateTKEEdgeCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&PodCIDR=172.16.0.0/20\n&ServiceCIDR=192.168.0.0/18\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建边缘计算集群示例"
+      }
+    ],
     "DeleteCluster": [
       {
         "document": "删除集群",
@@ -266,6 +290,14 @@
         "title": "删除集群路由表"
       }
     ],
+    "DeleteECMInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteECMInstances\r\n&ClusterID=cls-xxxxx\r\n&EcmIdSet.0=ecm-xxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除ECM实例"
+      }
+    ],
     "DeleteEKSCluster": [
       {
         "document": "删除弹性集群",
@@ -280,6 +312,22 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-6mr3o7eu\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"34d9ea5a-6e9e-4384-88da-84229e133457\"\n    }\n}",
         "title": "删除容器实例"
+      }
+    ],
+    "DeleteEdgeCVMInstances": [
+      {
+        "document": "删除边缘容器CVM实例",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&CvmIdSet.0=ecm-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除边缘容器CVM实例"
+      }
+    ],
+    "DeleteEdgeClusterInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\r\n&ClusterId=cls-xxxxx\r\n&InstanceIds.0=xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除边缘计算实例"
       }
     ],
     "DeleteImageCaches": [
@@ -338,12 +386,28 @@
         "title": "解除模板同步"
       }
     ],
+    "DeleteTKEEdgeCluster": [
+      {
+        "document": "删除边缘计算集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteTKEEdgeCluster\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除边缘计算集群"
+      }
+    ],
     "DescribeAvailableClusterVersion": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableClusterVersion\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"xx\",\n                \"Versions\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Versions\": [\n            \"1.8.13\"\n        ]\n    }\n}",
         "title": "获取集群可以升级的版本"
+      }
+    ],
+    "DescribeAvailableTKEEdgeVersion": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableTKEEdgeVersion\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            \"1.14.1\",\n            \"1.16.1\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "检查当前支持的k8s版本"
       }
     ],
     "DescribeClusterAsGroupOption": [
@@ -490,6 +554,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeECMInstances": [
+      {
+        "document": "获取实例相关信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeECMInstances\r\n&ClusterID=cls-xxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "获取实例相关信息"
+      }
+    ],
     "DescribeEKSClusterCredential": [
       {
         "document": "",
@@ -528,6 +600,38 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-6mr3o7eu\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"34d9ea5a-6e9e-4384-88da-84229e133412\",\n        \"TotalCount\": 1,\n        \"EksCis\": [\n            {\n                \"EksCiId\": \"eksci-iu09upos\",\n                \"EksCiName\": \"未命名\",\n                \"Memory\": 2,\n                \"Cpu\": 1,\n                \"SecurityGroupIds\": [\n                    \"sg-12345678\"\n                ],\n                \"RestartPolicy\": \"Always\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"Status\": \"Running\",\n                \"CreationTime\": \"2021-06-24 03:32:02 +0000 UTC\",\n                \"SucceededTime\": \"2021-06-24 11:32:21 +0000 UTC\",\n                \"Containers\": [\n                    {\n                        \"Image\": \"ccr.ccs.tencentyun.com/ploto/cputest:1.4\",\n                        \"Name\": \"simple-cputest\",\n                        \"Cpu\": 0,\n                        \"Memory\": 0,\n                        \"Commands\": [\n                            \"sleep\"\n                        ],\n                        \"Args\": [\n                            \"100000\"\n                        ],\n                        \"EnvironmentVars\": [],\n                        \"CurrentState\": {\n                            \"StartTime\": \"2021-06-24 03:32:43.420750215 +0000 UTC\",\n                            \"State\": \"running\",\n                            \"FinishTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                            \"ExitCode\": 0,\n                            \"Reason\": \"\",\n                            \"Message\": \"\",\n                            \"RestartCount\": 0\n                        },\n                        \"RestartCount\": 0,\n                        \"WorkingDir\": \"\"\n                    }\n                ],\n                \"InitContainers\": null,\n                \"EksCiVolume\": {\n                    \"CbsVolumes\": null,\n                    \"NfsVolumes\": null\n                },\n                \"SecurityContext\": null,\n                \"PrivateIp\": \"10.1.0.1\",\n                \"EipAddress\": \"\",\n                \"CpuType\": \"amd,intel\",\n                \"GpuType\": \"\",\n                \"GpuCount\": 0,\n                \"CamRoleName\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询容器实例"
+      }
+    ],
+    "DescribeEdgeAvailableExtraArgs": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeAvailableExtraArgs\n&ClusterVersion=1.12.4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.12.4\",\n        \"AvailableExtraArgs\": {\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"kube-api-burst\",\n                    \"Type\": \"int32\",\n                    \"Usage\": \"Burst to use while talking with kubernetes apiserver. (default 30)\",\n                    \"Default\": \"30\"\n                }\n            ],\n            \"KubeScheduler\": [],\n            \"Kubelet\": [\n                {}\n            ]\n        }\n    },\n    \"RequestId\": \"xxx-xxxx\"\n}",
+        "title": "查询集群可用的自定义参数"
+      }
+    ],
+    "DescribeEdgeCVMInstances": [
+      {
+        "document": "获取边缘容器CVM实例相关信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "获取边缘容器CVM实例相关信息"
+      }
+    ],
+    "DescribeEdgeClusterExtraArgs": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeClusterExtraArgs\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"max-mutating-requests-inflight=500\"\n            ],\n            \"KubeControllerManager\": [\n                \"kube-api-burst=500\"\n            ],\n            \"KubeScheduler\": [\n                \"kube-api-burst=500\"\n            ]\n        },\n        \"RequestId\": \"5a489220-1730-43ee-9a59-7d3a752ac750\"\n    }\n}",
+        "title": "查询集群自定义参数"
+      }
+    ],
+    "DescribeEdgeClusterInstances": [
+      {
+        "document": "查询边缘计算集群的节点信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeClusterInstances\r\n&ClusterID=cls-xxxxx\r\n&Limit=5\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "查询边缘计算集群的节点信息"
       }
     ],
     "DescribeEksContainerInstanceLog": [
@@ -728,6 +832,38 @@
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeRouteTableConflicts\n&RouteTableCidrBlock=10.4.0.0/16\n&VpcId=vpc-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HasConflict\": false,\n        \"RouteTableConflictSet\": [\n            {\n                \"RouteTableType\": \"CcsCluster\",\n                \"RouteTableCidrBlock\": \"172.20.0.0/16\",\n                \"RouteTableName\": \"xxxx\",\n                \"RouteTableId\": \"xxxx\"\n            }\n        ],\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询路由表冲突列表"
+      }
+    ],
+    "DescribeTKEEdgeClusterCredential": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterCredential\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Addresses\": [\n            {\n                \"Type\": \"advertise\",\n                \"Ip\": \"169.254.128.200\",\n                \"Port\": 60002\n            },\n            {\n                \"Type\": \"public\",\n                \"Ip\": \"100.98.109.15\",\n                \"Port\": 11126\n            }\n        ],\n        \"Credential\": {\n            \"CACert\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FULQo=\",\n            \"Token\": \"WBnCe69iqui0HuEZJ0Yac2hvwxQ1jG0j\"\n        },\n        \"CoreDns\": \"yes\",\n        \"HealthRegion\": \"yes\",\n        \"Health\": \"yes\",\n        \"GridDaemon\": \"yes\",\n        \"PublicLB\": {\n            \"Enabled\": true,\n            \"AllowFromCidrs\": [\n                \"xx\"\n            ]\n        },\n        \"InternalLB\": {\n            \"SubnetId\": [\n                \"xx\"\n            ],\n            \"Enabled\": true\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算集群的接入认证信息"
+      }
+    ],
+    "DescribeTKEEdgeClusterStatus": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterStatus\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Phase\": \"Initializing\",\n        \"Conditions\": [\n            {\n                \"Type\": \"初始化Master部署环境\",\n                \"Status\": \"True\",\n                \"LastProbeTime\": \"2020-02-25 12:10:15\",\n                \"LastTransitionTime\": \"2020-02-25 12:10:15\",\n                \"Reason\": \"WaitingProcess\",\n                \"Message\": \"waiting process\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算集群的当前状态以及过程信息"
+      }
+    ],
+    "DescribeTKEEdgeClusters": [
+      {
+        "document": "查询集群列表，用于获取集群列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusters\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"cls-xxxxxxx\",\n                \"ClusterName\": \"集群AA\",\n                \"K8SVersion\": \"1.10.5\",\n                \"VpcId\": \"vpc-xxxxx\",\n                \"PodCIDR\": \"172.16.0.0/20\",\n                \"ServiceCIDR\": \"192.168.0.0/18\",\n                \"Status\": \"running\",\n                \"CreatedTime\": \"2019-08-16T04:31:26Z\",\n                \"ClusterDesc\": \"test edge cluster\"\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "集群信息列表"
+      }
+    ],
+    "DescribeTKEEdgeExternalKubeconfig": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeExternalKubeconfig\r\n&ClusterId=cls123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Kubeconfig\": \"123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算外部访问的kubeconfig"
       }
     ],
     "DescribeTKEEdgeScript": [
@@ -1064,6 +1200,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageCache\n<公共请求参数>\n\n{\n    \"ImageCacheName\": \"modified-imc-name\",\n    \"ImageCacheId\": \"imc-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"232323-5ed9-4cb7-9194-a95e2cd626e5\"\n    }\n}",
         "title": "更新镜像缓存"
+      }
+    ],
+    "UpdateTKEEdgeCluster": [
+      {
+        "document": "修改边缘计算集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateTKEEdgeCluster\n&ClusterId=cls-xxxxxx\n&ClusterName=test_cluster1\n&ClusterDesc=my_test_cluster888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改边缘计算集群"
       }
     ],
     "UpgradeClusterInstances": [
