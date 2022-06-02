@@ -18,7 +18,19 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "cac925c7-c939-4eb6-8db5-d642f7385c30"
+        "Object": {
+            "Box": {
+                "Score": 0,
+                "Rect": {
+                    "Y": 0,
+                    "X": 0,
+                    "Height": 0,
+                    "Width": 0
+                }
+            },
+            "CategoryId": 0
+        },
+        "RequestId": "da8eedd6-5977-4db8-9334-3b6b190e242b"
     }
 }
 ```
@@ -32,7 +44,7 @@ Input:
 ```
 tccli tiia CreateImage --cli-unfold-argument  \
     --CustomContent custom \
-    --ImageUrl https://img1.gtimg.com/chinanba/pics/hv1/86/220/2312/150393986.jpg \
+    --ImageUrl http://www.test.com/a.jpg \
     --EntityId 456 \
     --GroupId hello \
     --PicName 456
@@ -42,6 +54,18 @@ Output:
 ```
 {
     "Response": {
+        "Object": {
+            "Box": {
+                "Score": 0,
+                "Rect": {
+                    "Y": 0,
+                    "X": 0,
+                    "Height": 0,
+                    "Width": 0
+                }
+            },
+            "CategoryId": 0
+        },
         "RequestId": "da8eedd6-5977-4db8-9334-3b6b190e242b"
     }
 }

@@ -2336,6 +2336,16 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreServiceCIDRConflict",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2777,6 +2787,16 @@
           "name": "Subnets",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreServiceCIDRConflict",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

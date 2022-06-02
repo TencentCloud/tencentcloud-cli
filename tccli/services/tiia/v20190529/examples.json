@@ -20,13 +20,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"1\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"CustomContent\": \"test\",\n    \"Tags\": \"{\\\"k\\\": \\\"123\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
         "title": "调用成功示例"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"CustomContent\": \"custom\",\n    \"ImageUrl\": \"https://img1.gtimg.com/chinanba/pics/hv1/86/220/2312/150393986.jpg\",\n    \"EntityId\": \"456\",\n    \"GroupId\": \"hello\",\n    \"PicName\": \"456\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"CustomContent\": \"custom\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"EntityId\": \"456\",\n    \"GroupId\": \"hello\",\n    \"PicName\": \"456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
         "title": "调用成功"
       }
     ],
@@ -193,8 +193,8 @@
     "SearchImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://crawl.ws.126.net/img/999674ed516ef903e486cd2ff83e1d2f.jpg\",\n    \"Filter\": \"value > 10\",\n    \"MatchThreshold\": \"1\",\n    \"Limit\": \"30\",\n    \"Offset\": \"0\",\n    \"GroupId\": \"work\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 2,\n        \"ImageInfos\": [\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3001\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 15}\"\n            },\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3002\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            }\n        ],\n        \"RequestId\": \"2d658a05-62d5-4f82-913c-50832146f6f3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://test.com/1.jpg\",\n    \"Filter\": \"value > 10\",\n    \"MatchThreshold\": \"1\",\n    \"Limit\": \"30\",\n    \"Offset\": \"0\",\n    \"GroupId\": \"work\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 2,\n        \"ImageInfos\": [\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3001\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 15}\"\n            },\n            {\n                \"CustomContent\": \"\",\n                \"EntityId\": \"test2\",\n                \"PicName\": \"3002\",\n                \"Score\": 0,\n                \"Tags\": \"{\\\"value\\\": 20}\"\n            }\n        ],\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0.0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"2d658a05-62d5-4f82-913c-50832146f6f3\"\n    }\n}",
         "title": "调用成功示例"
       }
     ]

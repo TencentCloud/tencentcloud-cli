@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia SearchImage --cli-unfold-argument  \
-    --ImageUrl http://crawl.ws.126.net/img/999674ed516ef903e486cd2ff83e1d2f.jpg \
+    --ImageUrl http://test.com/1.jpg \
     --Filter value > 10 \
     --MatchThreshold 1 \
     --Limit 30 \
@@ -35,6 +35,18 @@ Output:
                 "Tags": "{\"value\": 20}"
             }
         ],
+        "Object": {
+            "Box": {
+                "Score": 0.0,
+                "Rect": {
+                    "Y": 0,
+                    "X": 0,
+                    "Height": 0,
+                    "Width": 0
+                }
+            },
+            "CategoryId": 0
+        },
         "RequestId": "2d658a05-62d5-4f82-913c-50832146f6f3"
     }
 }
