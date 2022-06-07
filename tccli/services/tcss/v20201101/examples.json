@@ -1122,7 +1122,7 @@
       {
         "document": "运行时查询木马概览信息",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirusSummary\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xx\",\n        \"RiskContainerCnt\": 1,\n        \"RiskCnt\": 1,\n        \"VirusDataBaseModifyTime\": \"xx\",\n        \"RiskContainerIncrease\": 1,\n        \"RiskIncrease\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xx\",\n        \"RiskContainerCnt\": 1,\n        \"RiskCnt\": 1,\n        \"VirusDataBaseModifyTime\": \"xx\",\n        \"RiskContainerIncrease\": 1,\n        \"RiskIncrease\": 1,\n        \"IsolateIncrease\": 1,\n        \"IsolateCnt\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "运行时查询木马概览信息"
       }
     ],

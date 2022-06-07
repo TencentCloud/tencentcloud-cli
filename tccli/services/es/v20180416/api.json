@@ -914,6 +914,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,

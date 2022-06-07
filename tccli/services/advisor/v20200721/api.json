@@ -217,6 +217,24 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "环境",
+          "example": "\"public\"",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务类型",
+          "example": "\"allTaskType\"",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -258,6 +276,15 @@
           "name": "Risks",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "巡检资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "ResourceCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

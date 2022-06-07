@@ -14957,6 +14957,24 @@
           "value_allowed_null": true
         },
         {
+          "document": "隔离事件个数较昨日新增\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsolateIncrease",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "隔离事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsolateCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -14997,7 +15015,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>ContainerName - String - 是否必填：否 - 容器名称</li>\n<li>ContainerId - String - 是否必填：否 - 容器id</li>\n<li>Hostname - String - 是否必填：否 - 主机名称</li>\n<li>HostIp- String - 是否必填：是 - 容器名称</li>",
+          "document": "过滤条件。\n<li>ContainerName - String - 是否必填：否 - 容器名称</li>\n<li>ContainerId - String - 是否必填：否 - 容器id</li>\n<li>Hostname - String - 是否必填：否 - 主机名称</li>\n<li>HostIp- String - 是否必填：否 - 主机IP</li>\n<li>ImageId- String - 是否必填：否 - 镜像ID</li>\n<li>ImageName- String - 是否必填：否 - 镜像名称</li>\n<li>Status- String - 是否必填：否 - 状态</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",

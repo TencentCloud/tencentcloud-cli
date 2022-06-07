@@ -13494,6 +13494,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "引擎类型描述，可能的取值范围有：Innodb，RocksDB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

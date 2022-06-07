@@ -118,6 +118,36 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "GRPC第三方服务器地址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用GRPC第三方服务器",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableServer",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用标准输出",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStdout",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -417,6 +447,72 @@
         }
       ],
       "usage": "out"
+    },
+    "CustomPromConfig": {
+      "document": "第三方 Prometheus 配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 访问地址",
+          "example": "http://x.x.x.x:909",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "认证方式",
+          "example": "none, basic",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否公网地址，缺省为 false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPublicAddr",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "虚拟网络id",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Prometheus 用户名（用于 basic 认证方式）",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Prometheus 密码（用于 basic 认证方式）",
+          "example": "test",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "DeployConfig": {
       "document": "部署配置",
@@ -1321,6 +1417,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第三方 Prometheus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomPromConfig",
+          "name": "CustomProm",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -1309,7 +1309,7 @@
         },
         {
           "default": "",
-          "document": "需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_和\\_\\_TIMESTAMP\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
           "member": "string",
           "name": "MetaFields",
@@ -1325,6 +1325,16 @@
           "name": "TagJsonNotTiled",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimestampAccuracy",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

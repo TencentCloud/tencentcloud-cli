@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli emr AddUsersForUserManager --cli-unfold-argument  \
+    --InstanceId xx \
     --UserManagerUserList.0.UserName test1 \
     --UserManagerUserList.0.UserGroup test1 \
     --UserManagerUserList.0.PassWord test1 \
@@ -28,7 +29,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "782d3570-9f82-4bff-974a-17cf684fdfe9"
+        "FailedUserList": [],
+        "RequestId": "782d3570-9f82-4bff-974a-17cf684fdfe9",
+        "SuccessUserList": [
+            "test1",
+            "test2",
+            "test3",
+            "test4"
+        ]
     }
 }
 ```

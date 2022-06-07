@@ -1356,7 +1356,7 @@
       "members": [
         {
           "document": "分类结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "无",
           "member": "TextType",
           "name": "TextTypeList",
           "required": true,
@@ -1419,11 +1419,20 @@
       "members": [
         {
           "document": "报告结构化结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无",
           "member": "Template",
           "name": "Template",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "多级分类结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextType",
+          "name": "TextTypeList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -3587,7 +3596,7 @@
         {
           "default": "",
           "document": "类别Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "11",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -3607,7 +3616,7 @@
         {
           "default": "",
           "document": "类别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "病理报告",
+          "example": "检验报告",
           "member": "string",
           "name": "Name",
           "required": true,

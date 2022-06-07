@@ -32,6 +32,14 @@
         "title": "批量创建应用代理规则"
       }
     ],
+    "CreateCustomErrorPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomErrorPage\n<公共请求参数>\n\n{\n    \"Content\": \"xx\",\n    \"Entity\": \"xx\",\n    \"Name\": \"xx\",\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageId\": 1234546,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建自定义页面"
+      }
+    ],
     "CreateDnsRecord": [
       {
         "document": "",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancing\n<公共请求参数>\n\n{\n    \"OriginId\": [\n        \"origin-xxx\",\n        \"origin-yyy\"\n    ],\n    \"ZoneId\": \"zone-xxx\",\n    \"Host\": \"test.123.com\",\n    \"Type\": \"dns_only\",\n    \"TTL\": 123\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
         "title": "创建负载均衡"
+      }
+    ],
+    "CreateOriginGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"OriginName\": \"oname\",\n    \"Type\": \"weight\",\n    \"OriginType\": \"self\",\n    \"Record\": [\n        {\n            \"Area\": [],\n            \"Record\": \"1.2.3.4\",\n            \"Weight\": 50,\n            \"Port\": 10\n        },\n        {\n            \"Area\": [],\n            \"Record\": \"123123123.com.com.cn\",\n            \"Weight\": 50,\n            \"Port\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"OriginId\": \"origin-xxx\"\n    }\n}",
+        "title": "创建源站组"
       }
     ],
     "CreatePrefetchTask": [
@@ -110,6 +126,14 @@
         "title": "删除负载均衡"
       }
     ],
+    "DeleteOriginGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"OriginId\": \"origin-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"OriginId\": \"origin-xxx\"\n    }\n}",
+        "title": "删除源站组"
+      }
+    ],
     "DeleteZone": [
       {
         "document": "",
@@ -134,12 +158,28 @@
         "title": "获取应用代理详细信息"
       }
     ],
+    "DescribeBotManagedRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotManagedRules\n<公共请求参数>\n\n{\n    \"PerPage\": 0,\n    \"Entity\": \"xx\",\n    \"Page\": 0,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"RuleTypeName\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询门神规则"
+      }
+    ],
     "DescribeCnameStatus": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCnameStatus\n<公共请求参数>\n\n{\n    \"Names\": [\n        \"xx\"\n    ],\n    \"ZoneId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": [\n            {\n                \"Status\": \"xx\",\n                \"Cname\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询域名 CNAME 状态"
+      }
+    ],
+    "DescribeDDoSPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 0,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询DDoS防护配置"
       }
     ],
     "DescribeDefaultCertificates": [
@@ -214,6 +254,22 @@
         "title": "获取负载均衡详细信息"
       }
     ],
+    "DescribeOriginGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginGroup\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ZoneId\": \"zone-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"OriginId\": \"origin-136db381-8d3d-11ec-89a4-00ff977fb3c8\",\n                \"OriginName\": \"oname\",\n                \"ZoneId\": \"zone-xxx\",\n                \"ZoneName\": \"123.com\",\n                \"Record\": [\n                    {\n                        \"Area\": [],\n                        \"Port\": 10,\n                        \"Record\": \"1.2.3.4\",\n                        \"RecordId\": \"record-4b2dbd84-8d9a-11ec-9527-00ff977fb3c8\",\n                        \"Weight\": 100\n                    }\n                ],\n                \"Type\": \"weight\",\n                \"OriginType\": \"self\",\n                \"ApplicationProxyUsed\": false,\n                \"LoadBalancingUsed\": false,\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeOrigins"
+      }
+    ],
+    "DescribeOriginGroupDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginGroupDetail\n<公共请求参数>\n\n{\n    \"OriginId\": \"origin-xxx\",\n    \"ZoneId\": \"zone-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"OriginId\": \"origin-136db381-8d3d-11ec-89a4-00ff977fb3c8\",\n        \"OriginName\": \"oname\",\n        \"ZoneId\": \"zone-xxx\",\n        \"ZoneName\": \"123.com\",\n        \"Record\": [\n            {\n                \"Area\": [],\n                \"Port\": 10,\n                \"Record\": \"1.2.3.4\",\n                \"RecordId\": \"record-4b2dbd84-8d9a-11ec-9527-00ff977fb3c8\",\n                \"Weight\": 100\n            }\n        ],\n        \"Type\": \"weight\",\n        \"OriginType\": \"self\",\n        \"ApplicationProxyUsed\": false,\n        \"LoadBalancingUsed\": false,\n        \"UpdateTime\": \"2020-09-22T00:00:00+00:00\"\n    }\n}",
+        "title": "获取源站组详情"
+      }
+    ],
     "DescribePrefetchTasks": [
       {
         "document": "",
@@ -228,6 +284,60 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurgeTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Statuses\": [\n        \"success\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 7,\n    \"Domains\": [\n        \"www.qq.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"purge_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
         "title": "查询清除缓存历史记录"
+      }
+    ],
+    "DescribeSecurityPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicy\n<公共请求参数>\n\n{\n    \"Entity\": \"www.example.com\",\n    \"ZoneId\": \"zone-xxqr76cy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 123456,\n        \"Config\": null,\n        \"Entity\": \"www.example.com\",\n        \"RequestId\": \"08b32010-ab25-42a4-b923-2e6c481dae23\",\n        \"ZoneId\": \"zone-xxqr76cy\"\n    }\n}",
+        "title": "查询安全防护配置"
+      }
+    ],
+    "DescribeSecurityPolicyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyList\n<公共请求参数>\n\n{\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Entities\": [],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询安全实例"
+      }
+    ],
+    "DescribeSecurityPolicyManagedRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyManagedRules\n<公共请求参数>\n\n{\n    \"PerPage\": 0,\n    \"Entity\": \"xx\",\n    \"Page\": 0,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询门神规则"
+      }
+    ],
+    "DescribeSecurityPolicyManagedRulesId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyManagedRulesId\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        \"16\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 16,\n                \"RuleTypeId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\",\n                \"RuleTags\": [\n                    \"xx\"\n                ],\n                \"RuleTypeDesc\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyManagedRulesId\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        16\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "规则id查询门神规则"
+      }
+    ],
+    "DescribeSecurityPolicyRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"GeoIp\": [\n            {\n                \"Country\": \"xx\",\n                \"CountryEn\": \"xx\",\n                \"RegionId\": 0,\n                \"Continent\": \"xx\",\n                \"ContinentEn\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询地域信息"
+      }
+    ],
+    "DescribeZoneDDoSPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneDDoSPolicy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxqr76cy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ShieldAreas\": [\n            {\n                \"TcpNum\": 0,\n                \"EntityName\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Application\": [\n                    {\n                        \"Status\": \"xx\",\n                        \"AccelerateType\": \"xx\",\n                        \"Host\": \"xx\"\n                    }\n                ],\n                \"PolicyId\": 0,\n                \"Entity\": \"xx\",\n                \"Type\": \"xx\",\n                \"UdpNum\": 0\n            }\n        ],\n        \"Domains\": [\n            {\n                \"Status\": \"xx\",\n                \"AccelerateType\": \"xx\",\n                \"Host\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AppId\": 123456\n    }\n}",
+        "title": "查询所有防护分区"
       }
     ],
     "DescribeZoneDetails": [
@@ -310,6 +420,22 @@
         "title": "修改应用代理的状态"
       }
     ],
+    "ModifyDDoSPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSPolicy\n<公共请求参数>\n\n{\n    \"DdosRule\": {\n        \"DdosAntiPly\": {\n            \"DestinationConnectLimit\": 0,\n            \"AbnormalSynNum\": 0,\n            \"ConnectTimeout\": 0,\n            \"DropOther\": \"xx\",\n            \"AbnormalConnectNum\": 0,\n            \"SourceCreateLimit\": 0,\n            \"DropTcp\": \"xx\",\n            \"DropUdp\": \"xx\",\n            \"EmptyConnectProtect\": \"xx\",\n            \"DropIcmp\": \"xx\",\n            \"SourceConnectLimit\": 0,\n            \"DestinationCreateLimit\": 1,\n            \"AbnormalSynRatio\": 0\n        },\n        \"DdosStatusInfo\": {\n            \"AiStatus\": \"xx\",\n            \"PlyLevel\": \"xx\",\n            \"Appid\": \"xx\"\n        },\n        \"Switch\": \"xx\",\n        \"DdosAcl\": {\n            \"Switch\": \"xx\",\n            \"Acl\": [\n                {\n                    \"Protocol\": \"xx\",\n                    \"DportStart\": 0,\n                    \"SportEnd\": 0,\n                    \"Action\": \"xx\",\n                    \"DportEnd\": 0,\n                    \"SportStart\": 0\n                }\n            ]\n        },\n        \"DdosGeoIp\": {\n            \"Switch\": \"xx\",\n            \"RegionId\": [\n                0\n            ]\n        },\n        \"DdosPacketFilter\": {\n            \"Switch\": \"xx\",\n            \"PacketFilter\": [\n                {\n                    \"DportStart\": 0,\n                    \"MatchType2\": \"xx\",\n                    \"MatchBegin2\": \"xx\",\n                    \"DportEnd\": 0,\n                    \"MatchLogic\": \"xx\",\n                    \"Offset2\": 0,\n                    \"Str2\": \"xx\",\n                    \"PacketMax\": 0,\n                    \"IsNot2\": 0,\n                    \"Depth2\": 0,\n                    \"Depth\": 0,\n                    \"MatchBegin\": \"xx\",\n                    \"SportEnd\": 0,\n                    \"Str\": \"xx\",\n                    \"Offset\": 0,\n                    \"Action\": \"xx\",\n                    \"Protocol\": \"xx\",\n                    \"IsNot\": 0,\n                    \"SportStart\": 0,\n                    \"MatchType\": \"xx\",\n                    \"PacketMin\": 0\n                }\n            ]\n        },\n        \"DdosAllowBlock\": {\n            \"Switch\": \"xx\",\n            \"UserAllowBlockIp\": [\n                {\n                    \"Ip\": \"xx\",\n                    \"UpdateTime\": 0,\n                    \"Type\": \"xx\",\n                    \"Mask\": 0\n                }\n            ]\n        }\n    },\n    \"PolicyId\": 542,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb1f63d0-9173-4a1e-adb9-bd1ee2642b58\",\n        \"PolicyId\": 542\n    }\n}",
+        "title": "修改DDoS防护分区"
+      }
+    ],
+    "ModifyDDoSPolicyHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSPolicyHost\n<公共请求参数>\n\n{\n    \"AccelerateType\": \"xx\",\n    \"Host\": \"xx\",\n    \"PolicyId\": 0,\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Host\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "域名高可用开启关闭"
+      }
+    ],
     "ModifyDefaultCertificate": [
       {
         "document": "",
@@ -356,6 +482,22 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancingStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"LoadBalancingId\": \"lb-xxx\",\n    \"Status\": \"online\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LoadBalancingId\": \"lb-xxx\"\n    }\n}",
         "title": "修改负载均衡启用状态"
+      }
+    ],
+    "ModifyOriginGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxx\",\n    \"OriginId\": \"orgin-xxx\",\n    \"OriginName\": \"oname\",\n    \"Type\": \"weight\",\n    \"OriginType\": \"self\",\n    \"Record\": [\n        {\n            \"Area\": [],\n            \"Record\": \"1.2.3.4\",\n            \"Weight\": 50,\n            \"Port\": 10\n        },\n        {\n            \"Area\": [],\n            \"Record\": \"123123123.com.com.cn\",\n            \"Weight\": 50,\n            \"Port\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"OriginId\": \"origin-xxx\"\n    }\n}",
+        "title": "修改源站组"
+      }
+    ],
+    "ModifySecurityPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityPolicy\n<公共请求参数>\n\n{\n    \"Entity\": \"xx\",\n    \"Config\": {\n        \"WafConfig\": {\n            \"Switch\": \"xx\",\n            \"WafRules\": {\n                \"Switch\": \"xx\",\n                \"BlockRuleIDs\": [\n                    0\n                ]\n            },\n            \"Mode\": \"xx\",\n            \"Level\": \"xx\"\n        },\n        \"DdosConfig\": {\n            \"Switch\": \"xx\"\n        },\n        \"RateLimitConfig\": {\n            \"Switch\": \"xx\",\n            \"UserRules\": [\n                {\n                    \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"RuleID\": 0,\n                    \"PunishTimeUnit\": \"xx\",\n                    \"RulePriority\": 0,\n                    \"FreqFields\": [\n                        \"xx\"\n                    ],\n                    \"Period\": 0,\n                    \"PunishTime\": 0,\n                    \"Action\": \"xx\",\n                    \"RuleName\": \"xx\",\n                    \"Threshold\": 0,\n                    \"RuleStatus\": \"xx\",\n                    \"Conditions\": [\n                        {\n                            \"MatchParam\": \"xx\",\n                            \"Operator\": \"xx\",\n                            \"MatchFrom\": \"xx\",\n                            \"MatchContent\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"AclConfig\": {\n            \"Switch\": \"xx\",\n            \"UserRules\": [\n                {\n                    \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"RuleID\": 0,\n                    \"RulePriority\": 0,\n                    \"RuleName\": \"xx\",\n                    \"Action\": \"xx\",\n                    \"RuleStatus\": \"xx\",\n                    \"Conditions\": [\n                        {\n                            \"MatchParam\": \"xx\",\n                            \"Operator\": \"xx\",\n                            \"MatchFrom\": \"xx\",\n                            \"MatchContent\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        }\n    },\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b32010-ab25-42a4-b923-2e6c481dae23\"\n    }\n}",
+        "title": "修改安全配置"
       }
     ],
     "ModifyZone": [

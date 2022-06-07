@@ -644,7 +644,7 @@
           "example": "1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -654,7 +654,7 @@
           "example": "* * *",
           "member": "string",
           "name": "Period",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -664,7 +664,7 @@
           "example": "1",
           "member": "CronHorizontalAutoscalerSchedule",
           "name": "Schedules",
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -674,7 +674,7 @@
           "example": "1",
           "member": "bool",
           "name": "Enabled",
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2243,21 +2243,21 @@
       "members": [
         {
           "default": "",
-          "document": "最小实例数",
+          "document": "最小实例数（可以不传）",
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "default": "",
-          "document": "最大实例数",
+          "document": "最大实例数（可以不传）",
           "example": "1",
           "member": "int64",
           "name": "MaxReplicas",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2267,7 +2267,7 @@
           "example": "1",
           "member": "string",
           "name": "Metrics",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2277,8 +2277,18 @@
           "example": "1",
           "member": "int64",
           "name": "Threshold",
-          "required": true,
+          "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "1",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

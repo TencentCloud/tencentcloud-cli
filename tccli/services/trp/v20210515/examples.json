@@ -1,0 +1,229 @@
+{
+  "actions": {
+    "CreateCodeBatch": [
+      {
+        "document": "新增批次",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"BatchType\": 1,\n    \"MerchantId\": \"xx\",\n    \"ProductId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增批次"
+      }
+    ],
+    "CreateCodePack": [
+      {
+        "document": "生成普通码包",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCodePack\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"Amount\": 10,\n    \"CodeLength\": 18,\n    \"CodeType\": \"number\",\n    \"PackType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"PackId\": \"i655d7d68dzbbc4edi\",\n        \"RequestId\": \"384f8d0c-0c15-4dce-9b23-85ca839364ad\"\n    }\n}",
+        "title": "生成普通码包"
+      }
+    ],
+    "CreateMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMerchant\n<公共请求参数>\n\n{\n    \"Name\": \"demo\",\n    \"Remark\": \"demoss\",\n    \"CorpId\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"MerchantId\": \"awai9jd37ng3de7p3t\",\n        \"RequestId\": \"233c09fe-7ba7-42e1-8801-acaca177582b\"\n    }\n}",
+        "title": "新建商户"
+      }
+    ],
+    "CreateProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProduct\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"Name\": \"xx\",\n    \"Specification\": \"xx\",\n    \"Ext\": {},\n    \"Logo\": [\n        \"url1\"\n    ],\n    \"MerchantId\": \"xx\",\n    \"MerchantName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductId\": \"tz6jpscwky41u23o9b\",\n        \"RequestId\": \"5ef09b37-e0c0-49b2-89ad-3345916d7abb\"\n    }\n}",
+        "title": "新建商品"
+      }
+    ],
+    "CreateTraceChain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceChain\n<公共请求参数>\n\n{\n    \"TraceId\": \"VyKxxkmi_myRD6ulG6HFo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "上链溯源信息"
+      }
+    ],
+    "CreateTraceCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceCodes\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Codes\": [\n        {\n            \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_021351149823032923\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"ActiveCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"CodeCnt\": 1\n    }\n}",
+        "title": "批量导入二维码"
+      }
+    ],
+    "CreateTraceData": [
+      {
+        "document": "新增溯源信息",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTraceData\n<公共请求参数>\n\n{\n    \"TraceItems\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\",\n            \"ReadOnly\": true,\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Hidden\": true,\n            \"Type\": \"xx\"\n        },\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\",\n            \"ReadOnly\": true,\n            \"Values\": [\n                \"https://webcdn.m.qq.com/dpsw/cdn/1653cdd0ba37ee5faa421c8a0adfab0d.jpg\"\n            ],\n            \"Hidden\": true,\n            \"Type\": \"xx\"\n        }\n    ],\n    \"BatchId\": \"xx\",\n    \"PhaseName\": \"xx\",\n    \"Phase\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增溯源信息"
+      }
+    ],
+    "DeleteCodeBatch": [
+      {
+        "document": "删除批次",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"d60qv5xp23wk6daw56\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除批次"
+      }
+    ],
+    "DeleteMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMerchant\n<公共请求参数>\n\n{\n    \"CorpId\": 0,\n    \"MerchantId\": \"awai9jd37ng3de7p3t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MerchantId\": \"awai9jd37ng3de7p3t\",\n        \"RequestId\": \"7412c068-06c1-4104-a23f-f42b3ba8d762\"\n    }\n}",
+        "title": "删除商户"
+      }
+    ],
+    "DeleteProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"awai9jd37ng3de7p3t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductId\": \"awai9jd37ng3de7p3t\",\n        \"RequestId\": \"7412c068-06c1-4104-a23f-f42b3ba8d762\"\n    }\n}",
+        "title": "删除商品"
+      }
+    ],
+    "DeleteTraceData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTraceData\n<公共请求参数>\n\n{\n    \"TraceId\": \"awai9jd37ng3de7p3t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除溯源信息"
+      }
+    ],
+    "DescribeCodeBatchById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeBatchById\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CodeBatch\": {\n            \"MpTpl\": \"xx\",\n            \"Status\": 0,\n            \"Remark\": \"xx\",\n            \"MerchantName\": \"xx\",\n            \"CorpId\": 0,\n            \"UpdateTime\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"BatchId\": \"xx\",\n            \"Ext\": {},\n            \"BatchCode\": \"xx\",\n            \"CodeCnt\": 0,\n            \"BatchType\": 0,\n            \"CreateTime\": \"xx\",\n            \"MerchantId\": \"xx\",\n            \"ProductId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询批次信息"
+      }
+    ],
+    "DescribeCodeBatchs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeBatchs\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"ProductId\": \"\",\n    \"Keyword\": \"20121212000001\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"CodeBatchs\": [\n            {\n                \"MpTpl\": \"xx\",\n                \"Status\": 0,\n                \"Remark\": \"xx\",\n                \"MerchantName\": \"xx\",\n                \"CorpId\": 0,\n                \"UpdateTime\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"BatchId\": \"xx\",\n                \"Ext\": 0,\n                \"BatchCode\": \"xx\",\n                \"CodeCnt\": 0,\n                \"BatchType\": 0,\n                \"CreateTime\": \"xx\",\n                \"MerchantId\": \"xx\",\n                \"ProductId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询批次列表"
+      }
+    ],
+    "DescribeCodePacks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodePacks\n<公共请求参数>\n\n{\n    \"Keyword\": \"\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7dfc004-bad6-47f9-b74e-5765ff42bc3f\"\n    }\n}",
+        "title": "查询码包列表"
+      }
+    ],
+    "DescribeCodesByPack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodesByPack\n<公共请求参数>\n\n{\n    \"PackId\": \"6w26rg8booqnjfumnu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Codes\": [\n            {\n                \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_008353371080418270\"\n            }\n        ],\n        \"RequestId\": \"590de8f6-fb28-4c35-89da-e31bca7cc7ac\"\n    }\n}",
+        "title": "查询码包的二维码列表"
+      }
+    ],
+    "DescribeMerchantById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMerchantById\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Merchant\": {\n            \"MerchantId\": \"eqdmnz7020bmtvi9\",\n            \"CorpId\": 10000,\n            \"Name\": \"demo\",\n            \"Remark\": \"abcdd\",\n            \"CreateTime\": \"2021-11-30T08:19:40.000Z\",\n            \"UpdateTime\": \"2021-12-06T08:09:17.000Z\",\n            \"CodeRule\": \"^https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_(.*)\"\n        },\n        \"RequestId\": \"55fa060c-fa0a-4704-a8b5-08ce336192a4\"\n    }\n}",
+        "title": "查询商户信息"
+      }
+    ],
+    "DescribeMerchants": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMerchants\n<公共请求参数>\n\n{\n    \"Name\": \"\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Merchants\": [\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"xx\",\n                \"CorpId\": 0,\n                \"UpdateTime\": \"xx\",\n                \"MerchantId\": \"xx\",\n                \"CodeRule\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询商户列表"
+      }
+    ],
+    "DescribeProductById": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductById\n<公共请求参数>\n\n{\n    \"ProductId\": \"eqdmnz7020bmtvi9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"85tfp1sn78r9m1568i\",\n            \"CorpId\": 10000,\n            \"MerchantId\": \"eqdmnz7020bmtvi9\",\n            \"ProductCode\": \"85tfp1sn78r9m1568i\",\n            \"Name\": \"demo5\",\n            \"Specification\": \"100ml\",\n            \"Remark\": \"\",\n            \"Logo\": [],\n            \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n            \"UpdateTime\": \"2021-12-07T02:14:37.000Z\",\n            \"Ext\": {},\n            \"MerchantName\": \"demo\"\n        },\n        \"RequestId\": \"06356857-6961-4b9d-bf1e-df5e0311358e\"\n    }\n}",
+        "title": "查询商品信息"
+      }
+    ],
+    "DescribeProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Name\": \"\",\n    \"MerchantId\": \"\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"85tfp1sn78r9m1568i\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"eqdmnz7020bmtvi9\",\n                \"ProductCode\": \"85tfp1sn78r9m1568i\",\n                \"Name\": \"demo5\",\n                \"Specification\": \"100ml\",\n                \"Remark\": \"desc\",\n                \"Logo\": [\n                    \"url1\"\n                ],\n                \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n                \"UpdateTime\": \"2021-11-30T09:16:23.000Z\",\n                \"Ext\": {},\n                \"MerchantName\": \"demo\"\n            },\n            {\n                \"ProductId\": \"4girpwhw677zdo9c6t\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"0\",\n                \"ProductCode\": \"4girpwhw677zdo9c6t\",\n                \"Name\": \"demo\",\n                \"Specification\": \"\",\n                \"Remark\": \"\",\n                \"Logo\": [],\n                \"CreateTime\": \"2021-11-30T08:50:48.000Z\",\n                \"UpdateTime\": \"2021-11-30T08:51:11.000Z\",\n                \"Ext\": {},\n                \"MerchantName\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"fe9462f4-bded-4b52-a84a-27cf6b2b46b4\"\n    }\n}",
+        "title": "查询商品列表"
+      }
+    ],
+    "DescribeTraceCodeById": [
+      {
+        "document": "根据ID查询码",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraceCodeById\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceCode\": {\n            \"Status\": 1,\n            \"UpdateTime\": \"xx\",\n            \"Code\": \"xx\",\n            \"MerchantName\": \"xx\",\n            \"CorpId\": 1,\n            \"PackId\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"BatchId\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"MerchantId\": \"xx\",\n            \"ProductId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "根据ID查询码"
+      }
+    ],
+    "DescribeTraceCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraceCodes\n<公共请求参数>\n\n{\n    \"Keyword\": \"xfetmgoiky2nms6nk8\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceCodes\": [\n            {\n                \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003\",\n                \"CorpId\": 10000,\n                \"PackId\": \"z1vt4ma2jpladh362o\",\n                \"BatchId\": \"xfetmgoiky2nms6nk8\",\n                \"MerchantId\": \"eqdmnz7020bmtvi9\",\n                \"ProductId\": \"85tfp1sn78r9m1568i\",\n                \"Status\": 0,\n                \"CreateTime\": \"2021-12-01T09:04:50.000Z\",\n                \"UpdateTime\": \"2021-12-03T07:50:43.000Z\",\n                \"MerchantName\": \"demo\",\n                \"ProductName\": \"demo5\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"310c65d3-9be0-4d65-892c-fa09e9b69d25\"\n    }\n}",
+        "title": "查询标识列表"
+      }
+    ],
+    "DescribeTraceDataList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTraceDataList\n<公共请求参数>\n\n{\n    \"BatchId\": \"xfetmgoiky2nms6nk8\",\n    \"Code\": \"\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TraceDataList\": [\n            {\n                \"Type\": 1,\n                \"ChainStatus\": 1,\n                \"Code\": \"xx\",\n                \"CorpId\": 1,\n                \"TraceItems\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"ReadOnly\": true,\n                        \"Value\": \"xx\",\n                        \"Values\": [\n                            \"xx\"\n                        ],\n                        \"Hidden\": true,\n                        \"Type\": \"xx\"\n                    }\n                ],\n                \"Rank\": 1,\n                \"TraceId\": \"xx\",\n                \"PhaseName\": \"xx\",\n                \"TraceTime\": \"xx\",\n                \"Phase\": 1,\n                \"ChainData\": {\n                    \"BlockHeight\": 1,\n                    \"BlockHash\": \"xx\"\n                },\n                \"ChainTime\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询溯源信息"
+      }
+    ],
+    "ModifyCodeBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeBatch\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改批次状态"
+      }
+    ],
+    "ModifyMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMerchant\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"Name\": \"demo\",\n    \"Remark\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MerchantId\": \"eqdmnz7020bmtvi9\",\n        \"RequestId\": \"511b8969-7d23-46f6-bd64-cdfab11c9134\"\n    }\n}",
+        "title": "编辑商户"
+      }
+    ],
+    "ModifyProduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"Name\": \"demo5\",\n    \"ProductId\": \"85tfp1sn78r9m1568i\",\n    \"Remark\": \"\",\n    \"Specification\": \"100ml\",\n    \"Logo\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductId\": \"85tfp1sn78r9m1568i\",\n        \"RequestId\": \"43ad9b9f-ccc0-4051-a482-34da3422ceab\"\n    }\n}",
+        "title": "编辑商品"
+      }
+    ],
+    "ModifyTraceCode": [
+      {
+        "document": "修改码包",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceCode\n<公共请求参数>\n\n{\n    \"Code\": \"https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003\",\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改码包"
+      }
+    ],
+    "ModifyTraceData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceData\n<公共请求参数>\n\n{\n    \"TraceItems\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\",\n            \"ReadOnly\": true,\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Hidden\": true,\n            \"Type\": \"xx\"\n        }\n    ],\n    \"BatchId\": \"xx\",\n    \"Code\": \"xx\",\n    \"PhaseName\": \"xx\",\n    \"TaskId\": \"xx\",\n    \"Phase\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TraceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改溯源信息"
+      }
+    ],
+    "ModifyTraceDataRanks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraceDataRanks\n<公共请求参数>\n\n{\n    \"BatchId\": \"xx\",\n    \"TraceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改溯源信息的排序"
+      }
+    ]
+  },
+  "version": "1.0"
+}

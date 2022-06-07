@@ -211,7 +211,7 @@
       "output": "MixedInvoiceDetectResponse"
     },
     "MixedInvoiceOCR": {
-      "document": "本接口支持多张、多类型票据的混合识别，系统自动实现分割、分类和识别，同时支持自选需要识别的票据类型。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共11种票据。",
+      "document": "本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。",
       "input": "MixedInvoiceOCRRequest",
       "name": "混贴票据识别",
       "output": "MixedInvoiceOCRResponse"
@@ -4264,12 +4264,21 @@
         },
         {
           "default": "",
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票",
           "example": "无",
           "member": "int64",
           "name": "Types",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否识别其他类型发票，默认为Yes\nYes：识别其他类型发票\nNo：不识别其他类型发票",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnOther",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8340,6 +8349,7 @@
         {
           "default": "",
           "document": "发票代码",
+          "example": "1300000000",
           "member": "string",
           "name": "Code",
           "required": true,
@@ -8349,6 +8359,7 @@
         {
           "default": "",
           "document": "发票号码",
+          "example": "04000000",
           "member": "string",
           "name": "Number",
           "required": true,
@@ -8358,6 +8369,7 @@
         {
           "default": "",
           "document": "开票日期",
+          "example": "20191211",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -8367,6 +8379,7 @@
         {
           "default": "",
           "document": "购方抬头",
+          "example": "城区",
           "member": "string",
           "name": "BuyerName",
           "required": true,
@@ -8376,6 +8389,7 @@
         {
           "default": "",
           "document": "购方税号",
+          "example": "92XXXXMAXXXXXX",
           "member": "string",
           "name": "BuyerTaxCode",
           "required": true,
@@ -8385,6 +8399,7 @@
         {
           "default": "",
           "document": "购方地址电话",
+          "example": "栾城区北留营村15012345678",
           "member": "string",
           "name": "BuyerAddressPhone",
           "required": true,
@@ -8394,6 +8409,7 @@
         {
           "default": "",
           "document": "购方银行账号",
+          "example": "中国农业银行股份有限公司",
           "member": "string",
           "name": "BuyerBankAccount",
           "required": true,
@@ -8403,6 +8419,7 @@
         {
           "default": "",
           "document": "销方名称",
+          "example": "石家庄市XXX石油经销有限公司",
           "member": "string",
           "name": "SellerName",
           "required": true,
@@ -8412,6 +8429,7 @@
         {
           "default": "",
           "document": "销方税号",
+          "example": "911301047981234567",
           "member": "string",
           "name": "SellerTaxCode",
           "required": true,
@@ -8421,6 +8439,7 @@
         {
           "default": "",
           "document": "销方地址电话",
+          "example": "石家庄市桥西区师范街xx号 0311-12345678",
           "member": "string",
           "name": "SellerAddressPhone",
           "required": true,
@@ -8430,6 +8449,7 @@
         {
           "default": "",
           "document": "销方银行账号",
+          "example": "911301047981234567",
           "member": "string",
           "name": "SellerBankAccount",
           "required": true,
@@ -8439,6 +8459,7 @@
         {
           "default": "",
           "document": "备注",
+          "example": "空",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -8448,6 +8469,7 @@
         {
           "default": "",
           "document": "机器编码",
+          "example": "661510100000",
           "member": "string",
           "name": "MachineNo",
           "required": true,
@@ -8456,7 +8478,8 @@
         },
         {
           "default": "",
-          "document": "发票类型\n01：专用发票 \n02：货运发票\n03：机动车发票 \n04：普通发票 \n10：电子发票 \n11：卷式发票 \n14：通行费发票 \n15：二手车发票",
+          "document": "发票类型\n01：专用发票 \n02：货运发票\n03：机动车发票 \n04：普通发票 \n10：电子发票 \n11：卷式发票 \n14：通行费发票 \n15：二手车发票\n32：深圳区块链发票（仅支持新版接口）",
+          "example": "01",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8466,6 +8489,7 @@
         {
           "default": "",
           "document": "检验码",
+          "example": "85518065011000000000",
           "member": "string",
           "name": "CheckCode",
           "required": true,
@@ -8475,6 +8499,7 @@
         {
           "default": "",
           "document": "是否作废（红冲）是否作废（红冲）\nY: 已作废 N：未作废 H：红冲",
+          "example": "否",
           "member": "string",
           "name": "IsAbandoned",
           "required": true,
@@ -8484,6 +8509,7 @@
         {
           "default": "",
           "document": "是否有销货清单 \nY: 有清单 N：无清单 \n卷票无",
+          "example": "否",
           "member": "string",
           "name": "HasSellerList",
           "required": true,
@@ -8493,6 +8519,7 @@
         {
           "default": "",
           "document": "销货清单标题",
+          "example": "无",
           "member": "string",
           "name": "SellerListTitle",
           "required": true,
@@ -8502,6 +8529,7 @@
         {
           "default": "",
           "document": "销货清单税额",
+          "example": "99.9",
           "member": "string",
           "name": "SellerListTax",
           "required": true,
@@ -8511,6 +8539,7 @@
         {
           "default": "",
           "document": "不含税金额",
+          "example": "129.0",
           "member": "string",
           "name": "AmountWithoutTax",
           "required": true,
@@ -8520,6 +8549,7 @@
         {
           "default": "",
           "document": "税额",
+          "example": "9.0",
           "member": "string",
           "name": "TaxAmount",
           "required": true,
@@ -8529,6 +8559,7 @@
         {
           "default": "",
           "document": "含税金额",
+          "example": "123.0",
           "member": "string",
           "name": "AmountWithTax",
           "required": true,
@@ -8538,6 +8569,7 @@
         {
           "default": "",
           "document": "项目明细",
+          "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
           "required": true,

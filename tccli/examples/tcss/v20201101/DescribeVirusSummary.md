@@ -17,6 +17,8 @@ Output:
         "VirusDataBaseModifyTime": "xx",
         "RiskContainerIncrease": 1,
         "RiskIncrease": 1,
+        "IsolateIncrease": 1,
+        "IsolateCnt": 1,
         "RequestId": "xx"
     }
 }

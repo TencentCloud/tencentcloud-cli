@@ -502,6 +502,7 @@
         {
           "default": "",
           "document": "组件类型:资源组件类型的名称，如内存、硬盘等",
+          "example": "内存",
           "member": "string",
           "name": "ComponentCodeName",
           "required": true,
@@ -511,6 +512,7 @@
         {
           "default": "",
           "document": "组件名称:资源组件的名称，如云数据库MySQL-内存等",
+          "example": "高效云系统盘",
           "member": "string",
           "name": "ItemCodeName",
           "required": true,
@@ -520,6 +522,7 @@
         {
           "default": "",
           "document": "组件刊例价:资源组件的原始价格，保持原始粒度",
+          "example": "0.35000000",
           "member": "string",
           "name": "SinglePrice",
           "required": true,
@@ -529,6 +532,7 @@
         {
           "default": "",
           "document": "组件指定价",
+          "example": "0.00000000",
           "member": "string",
           "name": "SpecifiedPrice",
           "required": true,
@@ -538,6 +542,7 @@
         {
           "default": "",
           "document": "价格单位",
+          "example": "元/GB/月",
           "member": "string",
           "name": "PriceUnit",
           "required": true,
@@ -547,6 +552,7 @@
         {
           "default": "",
           "document": "组件用量",
+          "example": "50.00000000",
           "member": "string",
           "name": "UsedAmount",
           "required": true,
@@ -556,6 +562,7 @@
         {
           "default": "",
           "document": "组件用量单位",
+          "example": "GB",
           "member": "string",
           "name": "UsedAmountUnit",
           "required": true,
@@ -565,6 +572,7 @@
         {
           "default": "",
           "document": "使用时长",
+          "example": "1.00000000",
           "member": "string",
           "name": "TimeSpan",
           "required": true,
@@ -574,6 +582,7 @@
         {
           "default": "",
           "document": "时长单位",
+          "example": "月",
           "member": "string",
           "name": "TimeUnitName",
           "required": true,
@@ -583,6 +592,7 @@
         {
           "default": "",
           "document": "组件原价",
+          "example": "17.50000000",
           "member": "string",
           "name": "Cost",
           "required": true,
@@ -592,6 +602,7 @@
         {
           "default": "",
           "document": "折扣率",
+          "example": "0.00000000",
           "member": "string",
           "name": "Discount",
           "required": true,
@@ -601,6 +612,7 @@
         {
           "default": "",
           "document": "优惠类型",
+          "example": "折扣",
           "member": "string",
           "name": "ReduceType",
           "required": true,
@@ -610,6 +622,7 @@
         {
           "default": "",
           "document": "优惠后总价",
+          "example": "0.00000000",
           "member": "string",
           "name": "RealCost",
           "required": true,
@@ -619,6 +632,7 @@
         {
           "default": "",
           "document": "代金券支付金额",
+          "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
@@ -628,6 +642,7 @@
         {
           "default": "",
           "document": "现金支付金额",
+          "example": "0.00000000",
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
@@ -637,6 +652,7 @@
         {
           "default": "",
           "document": "赠送账户支付金额",
+          "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "required": true,
@@ -646,6 +662,7 @@
         {
           "default": "",
           "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_cvm_rootdisk_cbspremium",
           "member": "string",
           "name": "ItemCode",
           "required": true,
@@ -655,6 +672,7 @@
         {
           "default": "",
           "document": "组件名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_cvm_rootdisk",
           "member": "string",
           "name": "ComponentCode",
           "required": true,
@@ -664,8 +682,79 @@
         {
           "default": "",
           "document": "合同价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
           "member": "string",
           "name": "ContractPrice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RI",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "预留实例抵扣的使用时长，时长单位与被抵扣的时长单位保持一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RiTimeSpan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "按组件原价的口径换算的预留实例抵扣金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "OriginalCostWithRI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节省计划可用余额额度范围内，节省计划对于此组件打的折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeductionRate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "节省计划抵扣的SP包面值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "SPDeduction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "按组件原价的口径换算的节省计划抵扣金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "OriginalCostWithSP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "综合了官网折扣、预留实例抵扣、节省计划抵扣的混合折扣率。若没有预留实例抵扣、节省计划抵扣,混合折扣率等于折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "BlendedDiscount",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1004,6 +1093,46 @@
           "name": "RegionId",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：\n\nri=Standard RI\n\nsvp=Savings Plan\n\nsi=Spot Instances\n\nrp=Resource Pack",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按组件原价的口径换算的预留实例抵扣金额",
+          "example": "0",
+          "member": "string",
+          "name": "OriginalCostWithRI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节省计划抵扣的SP包面值",
+          "example": "0",
+          "member": "string",
+          "name": "SPDeduction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按组件原价的口径换算的节省计划抵扣金额",
+          "example": "0",
+          "member": "string",
+          "name": "OriginalCostWithSP",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2793,7 +2922,7 @@
         },
         {
           "default": "",
-          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n包年包月转按量",
+          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n包年包月转按量",
           "example": "按量计费日结",
           "member": "string",
           "name": "ActionType",
@@ -3090,7 +3219,7 @@
         },
         {
           "default": "",
-          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n按量计费冲正\n包年包月转按量",
+          "document": "查询交易类型，如下：\n包年包月新购\n包年包月续费\n包年包月配置变更\n包年包月退款\n按量计费扣费\n按量计费小时结\n按量计费日结\n按量计费月结\n线下项目扣费\n线下产品扣费\n调账扣费\n调账补偿\n竞价实例小时结\n线下项目调账补偿\n线下产品调账补偿\n优惠扣费\n优惠补偿\n按量计费迁入资源\n按量计费迁出资源\n包年包月迁入资源\n包年包月迁出资源\n预付费用\n小时费用\n预留实例退款\n按量计费冲正\n包年包月转按量",
           "example": "按量计费扣费",
           "member": "string",
           "name": "ActionType",

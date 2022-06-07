@@ -395,6 +395,8 @@ include tccli/services/tiems/v20190416/api.json
 include tccli/services/tiems/v20190416/examples.json
 include tccli/services/tiia/v20190529/api.json
 include tccli/services/tiia/v20190529/examples.json
+include tccli/services/tione/v20211111/api.json
+include tccli/services/tione/v20211111/examples.json
 include tccli/services/tione/v20191022/api.json
 include tccli/services/tione/v20191022/examples.json
 include tccli/services/tiw/v20190919/api.json
@@ -409,6 +411,8 @@ include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
+include tccli/services/trp/v20210515/api.json
+include tccli/services/trp/v20210515/examples.json
 include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tse/v20201207/api.json

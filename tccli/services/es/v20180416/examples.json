@@ -27,7 +27,7 @@
     "DeleteInstance": [
       {
         "document": "删除指定ID的集群实例",
-        "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\r\n&InstanceId=es-xxxxxxxx\r\n&<公共请求参数>",
+        "input": "https://es.tencentcloudapi.com/?Action=DeleteInstance\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
         "title": "删除ES集群实例"
       }

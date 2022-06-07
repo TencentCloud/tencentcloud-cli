@@ -55,7 +55,7 @@
       "output": "DescribeResourceScheduleResponse"
     },
     "DescribeUsersForUserManager": {
-      "document": "批量导出用户",
+      "document": "批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）",
       "input": "DescribeUsersForUserManagerRequest",
       "name": "用户管理-查询用户列表",
       "output": "DescribeUsersForUserManagerResponse"
@@ -151,6 +151,15 @@
       "members": [
         {
           "default": "",
+          "document": "集群字符串ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "用户信息列表",
           "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
           "member": "UserInfoForUserManager",
@@ -164,6 +173,24 @@
     "AddUsersForUserManagerResponse": {
       "document": "AddUsersForUserManager返回参数结构体",
       "members": [
+        {
+          "document": "添加成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "SuccessUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "FailedUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1914,6 +1941,42 @@
       "members": [
         {
           "default": "",
+          "document": "集群实例ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询用户列表过滤器",
+          "example": "无",
+          "member": "UserManagerFilter",
+          "name": "UserManagerFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false",
           "example": "true",
           "member": "bool",
@@ -1927,6 +1990,24 @@
     "DescribeUsersForUserManagerResponse": {
       "document": "DescribeUsersForUserManager返回参数结构体",
       "members": [
+        {
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserManagerUserBriefInfo",
+          "name": "UserManagerUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6122,6 +6203,77 @@
         }
       ],
       "usage": "in"
+    },
+    "UserManagerFilter": {
+      "document": "用户管理列表过滤器",
+      "members": [],
+      "usage": "both"
+    },
+    "UserManagerUserBriefInfo": {
+      "document": "用户管理中用户的简要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "hadoop",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户所属的组",
+          "example": "hadoop",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Manager表示管理员、NormalUser表示普通用户",
+          "example": "NormalUser",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-28 18:08:28",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDownLoadKeyTab",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "keytab文件的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://image-xxx.cos.region.xx.com/12323/someone.keytab",
+          "member": "string",
+          "name": "DownLoadKeyTabUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VPCSettings": {
       "document": "VPC 参数",
