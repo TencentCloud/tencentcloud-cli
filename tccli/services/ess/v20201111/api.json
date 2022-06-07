@@ -1231,7 +1231,7 @@
         },
         {
           "default": "",
-          "document": "查询内容：0-模版列表及详情（默认），1-仅模版列表",
+          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
           "example": "无",
           "member": "int64",
           "name": "ContentType",

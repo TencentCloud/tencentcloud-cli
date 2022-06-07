@@ -1,0 +1,64 @@
+{
+  "actions": {
+    "CreateBlockNodeRecords": {
+      "document": "创建节点记录",
+      "input": "CreateBlockNodeRecordsRequest",
+      "name": "创建节点记录",
+      "output": "CreateBlockNodeRecordsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-04-20",
+    "api_brief": "介绍如何通过API实现从各类应用系统中快速、灵活、高效地将数据接入碳引擎。",
+    "serviceNameCN": "碳引擎",
+    "serviceShortName": "tan"
+  },
+  "objects": {
+    "CreateBlockNodeRecordsRequest": {
+      "document": "CreateBlockNodeRecords请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "盘查实例id",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点id",
+          "example": "无",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "节点记录-json",
+          "example": "无",
+          "member": "string",
+          "name": "Records",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockNodeRecordsResponse": {
+      "document": "CreateBlockNodeRecords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

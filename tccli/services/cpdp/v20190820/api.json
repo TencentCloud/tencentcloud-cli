@@ -24,6 +24,18 @@
       "name": "跨境-提交申报材料",
       "output": "ApplyApplicationMaterialResponse"
     },
+    "ApplyFlexPayment": {
+      "document": "灵云V2-付款",
+      "input": "ApplyFlexPaymentRequest",
+      "name": "灵云V2-付款",
+      "output": "ApplyFlexPaymentResponse"
+    },
+    "ApplyFlexSettlement": {
+      "document": "灵云V2-结算",
+      "input": "ApplyFlexSettlementRequest",
+      "name": "灵云V2-结算",
+      "output": "ApplyFlexSettlementResponse"
+    },
     "ApplyOpenBankOrderDetailReceipt": {
       "document": "云企付-申请单笔交易回单",
       "input": "ApplyOpenBankOrderDetailReceiptRequest",
@@ -185,6 +197,12 @@
       "input": "CreateExternalAnchorRequest",
       "name": "灵云-主播入驻",
       "output": "CreateExternalAnchorResponse"
+    },
+    "CreateFlexPayee": {
+      "document": "灵云V2-收款用户开立",
+      "input": "CreateFlexPayeeRequest",
+      "name": "灵云V2-收款用户开立",
+      "output": "CreateFlexPayeeResponse"
     },
     "CreateInvoice": {
       "document": "智慧零售-发票开具",
@@ -396,6 +414,12 @@
       "name": "会员间交易接口",
       "output": "ExecuteMemberTransactionResponse"
     },
+    "FreezeFlexBalance": {
+      "document": "灵云V2-冻结余额",
+      "input": "FreezeFlexBalanceRequest",
+      "name": "灵云V2-冻结余额",
+      "output": "FreezeFlexBalanceResponse"
+    },
     "GetBillDownloadUrl": {
       "document": "调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：\n订单号,订单归属日期,机构编号,订单描述,交易类型,订单状态,支付场景,原始金额,折扣金额,实际交易金额,支付渠道优惠金额,抹零金额,币种,下单时间,付款成功时间,商户编号,门店编号,付款方式编号,付款方式名称,商户手续费T1,商户扣率,是否信用卡交易,原始订单号,用户账号,外部订单号,订单备注",
       "input": "GetBillDownloadUrlRequest",
@@ -449,6 +473,12 @@
       "input": "ModifyBindedAccountRequest",
       "name": "灵云-重新绑定账号",
       "output": "ModifyBindedAccountResponse"
+    },
+    "ModifyFlexPayeeAccountRightStatus": {
+      "document": "灵云V2-收款用户账户权益状态修改",
+      "input": "ModifyFlexPayeeAccountRightStatusRequest",
+      "name": "灵云V2-收款用户账户权益状态修改",
+      "output": "ModifyFlexPayeeAccountRightStatusResponse"
     },
     "ModifyMerchant": {
       "document": "云鉴-商户信息修改的接口",
@@ -623,6 +653,60 @@
       "input": "QueryExchangeRateRequest",
       "name": "跨境-查询汇率",
       "output": "QueryExchangeRateResponse"
+    },
+    "QueryFlexAmountBeforeTax": {
+      "document": "灵云V2-查询税前金额",
+      "input": "QueryFlexAmountBeforeTaxRequest",
+      "name": "灵云V2-查询税前金额",
+      "output": "QueryFlexAmountBeforeTaxResponse"
+    },
+    "QueryFlexFreezeOrderList": {
+      "document": "灵云V2-查询冻结订单列表",
+      "input": "QueryFlexFreezeOrderListRequest",
+      "name": "灵云V2-查询冻结订单列表",
+      "output": "QueryFlexFreezeOrderListResponse"
+    },
+    "QueryFlexPayeeAccountBalance": {
+      "document": "灵云V2-收款用户账户余额查询",
+      "input": "QueryFlexPayeeAccountBalanceRequest",
+      "name": "灵云V2-收款用户账户余额查询",
+      "output": "QueryFlexPayeeAccountBalanceResponse"
+    },
+    "QueryFlexPayeeAccountInfo": {
+      "document": "灵云V2-收款用户账户信息查询",
+      "input": "QueryFlexPayeeAccountInfoRequest",
+      "name": "灵云V2-收款用户账户信息查询",
+      "output": "QueryFlexPayeeAccountInfoResponse"
+    },
+    "QueryFlexPayeeAccountList": {
+      "document": "灵云V2-收款用户账户列表查询",
+      "input": "QueryFlexPayeeAccountListRequest",
+      "name": "灵云V2-收款用户账户列表查询",
+      "output": "QueryFlexPayeeAccountListResponse"
+    },
+    "QueryFlexPayeeInfo": {
+      "document": "灵云V2-收款用户信息查询",
+      "input": "QueryFlexPayeeInfoRequest",
+      "name": "灵云V2-收款用户信息查询",
+      "output": "QueryFlexPayeeInfoResponse"
+    },
+    "QueryFlexPaymentOrderList": {
+      "document": "灵云V2-查询付款订单列表",
+      "input": "QueryFlexPaymentOrderListRequest",
+      "name": "灵云V2-查询付款订单列表",
+      "output": "QueryFlexPaymentOrderListResponse"
+    },
+    "QueryFlexPaymentOrderStatus": {
+      "document": "灵云V2-查询付款订单状态",
+      "input": "QueryFlexPaymentOrderStatusRequest",
+      "name": "灵云V2-查询付款订单状态",
+      "output": "QueryFlexPaymentOrderStatusResponse"
+    },
+    "QueryFlexSettlementOrderList": {
+      "document": "灵云V2-查询结算订单列表",
+      "input": "QueryFlexSettlementOrderListRequest",
+      "name": "灵云V2-查询结算订单列表",
+      "output": "QueryFlexSettlementOrderListResponse"
     },
     "QueryFundsTransactionDetails": {
       "document": "聚鑫-查询会员资金交易信息列表",
@@ -2514,6 +2598,22 @@
       ],
       "usage": "out"
     },
+    "AmountBeforeTaxResult": {
+      "document": "税前金额结果",
+      "members": [
+        {
+          "default": "",
+          "document": "税前金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AnchorContractInfo": {
       "document": "主播签约信息",
       "members": [
@@ -2787,6 +2887,287 @@
           "name": "Data",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyFlexPaymentRequest": {
+      "document": "ApplyFlexPayment请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资金账户信息",
+          "example": "无",
+          "member": "FlexFundingAccountInfo",
+          "name": "FundingAccountInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "提现备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFlexPaymentResponse": {
+      "document": "ApplyFlexPayment返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyFlexPaymentResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFlexPaymentResult": {
+      "document": "付款结果",
+      "members": [
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税后金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountAfterTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税金",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyFlexSettlementRequest": {
+      "document": "ApplyFlexSettlement请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFlexSettlementResponse": {
+      "document": "ApplyFlexSettlement返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplyFlexSettlementResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFlexSettlementResult": {
+      "document": "结算结果",
+      "members": [
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税后金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountAfterTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税金",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8644,6 +9025,139 @@
       ],
       "type": "object"
     },
+    "CreateFlexPayeeRequest": {
+      "document": "CreateFlexPayee请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户外部业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "证件号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户名称",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务商ID",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceProviderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "计税信息",
+          "example": "无",
+          "member": "PayeeTaxInfo",
+          "name": "TaxInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "证件类型\n0:身份证\n1:社会信用代码",
+          "example": "无",
+          "member": "int64",
+          "name": "IdType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlexPayeeResponse": {
+      "document": "CreateFlexPayee返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateFlexPayeeResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlexPayeeResult": {
+      "document": "账户开立结果",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateInvoiceItem": {
       "document": "发票开具明细",
       "members": [
@@ -14352,6 +14866,289 @@
       ],
       "usage": "out"
     },
+    "FlexFundingAccountInfo": {
+      "document": "灵云V2-银行信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资金账户号",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资金账户类型",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资金账户绑定序列号",
+          "example": "无",
+          "member": "string",
+          "name": "FundingAccountBindSerialNo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "FreezeFlexBalanceRequest": {
+      "document": "FreezeFlexBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型\nFREEZE:冻结\nUNFREEZE:解冻",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "冻结备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FreezeFlexBalanceResponse": {
+      "document": "FreezeFlexBalance返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FreezeFlexBalanceResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FreezeFlexBalanceResult": {
+      "document": "冻结余额结果",
+      "members": [
+        {
+          "default": "",
+          "document": "冻结订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FreezeOrderResult": {
+      "document": "冻结单结果",
+      "members": [
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型\nFREEZE:冻结\nUNFREEZE:解冻",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起时间",
+          "example": "无",
+          "member": "string",
+          "name": "InitiateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\nACCEPTED:已受理\nACCOUNTED:已记账\nSUCCEED:已成功\nFAILED:已失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "冻结备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FreezeOrders": {
+      "document": "冻结订单列表",
+      "members": [
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FreezeOrderResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FundsTransactionItem": {
       "document": "会员资金交易明细信息",
       "members": [
@@ -15563,6 +16360,78 @@
         },
         {
           "document": "该字段为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlexPayeeAccountRightStatusRequest": {
+      "document": "ModifyFlexPayeeAccountRightStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户权益类型\nSETTLEMENT:结算权益\nPAYMENT:付款权益",
+          "example": "无",
+          "member": "string",
+          "name": "AccountRightType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "账户权益状态\nENABLE:启用\nDISABLE:停用",
+          "example": "无",
+          "member": "string",
+          "name": "AccountRightStatus",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlexPayeeAccountRightStatusResponse": {
+      "document": "ModifyFlexPayeeAccountRightStatus返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果。默认为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Result",
@@ -17082,6 +17951,582 @@
           "name": "SubMerchantId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeAccountBalanceResult": {
+      "document": "账户余额信息",
+      "members": [
+        {
+          "default": "",
+          "document": "账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IncomeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Balance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "系统冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SystemFreezeBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "人工冻结余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ManualFreezeBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可提现余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayableBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已提现余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaidBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "提现中余额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InPayBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeAccountInfoResult": {
+      "document": "账户信息结果",
+      "members": [
+        {
+          "default": "",
+          "document": "账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "账户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountUserInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountPropertyInfo",
+          "name": "PropertyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeAccountInfos": {
+      "document": "账户信息列表",
+      "members": [
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountInfoResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeAccountPropertyInfo": {
+      "document": "账户属性信息",
+      "members": [
+        {
+          "default": "",
+          "document": "结算权益状态\nENABLE:启用\nDISABLE:停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SettleRightStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "付款权益状态\nENABLE:启用\nDISABLE:停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentRightStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PayeeAccountUserInfo": {
+      "document": "账户用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "外部用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户类型\n0:B端用户\n1:C端用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UserType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证件类型\n0:身份证\n1:社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IdType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "证件号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeInfoResult": {
+      "document": "收款用户信息结果",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户外部业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证件类型\n0:身份证\n1:社会信用代码",
+          "example": "无",
+          "member": "int64",
+          "name": "IdType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "证件号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务商ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceProviderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PayeeTaxInfo": {
+      "document": "计税信息",
+      "members": [
+        {
+          "default": "",
+          "document": "计税模板列表",
+          "example": "无",
+          "member": "PayeeTaxTemplateInfo",
+          "name": "TaxTemplateInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纳税人识别号",
+          "example": "无",
+          "member": "string",
+          "name": "TaxpayerIdNo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "纳税主体类型\nNATURAL:自然人\nNON_NATURAL:非自然人",
+          "example": "无",
+          "member": "string",
+          "name": "TaxEntityType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "财税服务商ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaxServiceProviderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PayeeTaxTemplateInfo": {
+      "document": "收款用户计税模板信息",
+      "members": [
+        {
+          "default": "",
+          "document": "收入类型\nLABOR: 劳务所得\nOCCASION: 偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计税模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaxTemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PaymentOrderResult": {
+      "document": "付款订单结果",
+      "members": [
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税后金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountAfterTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税金",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起时间",
+          "example": "无",
+          "member": "string",
+          "name": "InitiateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\nACCEPTED:已受理\nACCOUNTED:已记账\nPAYING:付款中\nPAYED:完成付款渠道调用\nSUCCEED:已成功\nFAILED:已失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "提现备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PaymentOrderStatusResult": {
+      "document": "付款订单状态结果",
+      "members": [
+        {
+          "default": "",
+          "document": "状态\nACCEPTED:已受理\nACCOUNTED:已记账\nPAYING:付款中\nPAYED:完成付款渠道调用\nSUCCEED:已成功\nFAILED:已失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PaymentOrders": {
+      "document": "付款订单列表",
+      "members": [
+        {
+          "default": "",
+          "document": "列表",
+          "example": "无",
+          "member": "PaymentOrderResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -20448,6 +21893,663 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryFlexAmountBeforeTaxRequest": {
+      "document": "QueryFlexAmountBeforeTax请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "税后金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountAfterTax",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexAmountBeforeTaxResponse": {
+      "document": "QueryFlexAmountBeforeTax返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AmountBeforeTaxResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexFreezeOrderListRequest": {
+      "document": "QueryFlexFreezeOrderList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作类型\nFREEZE:冻结\nUNFREEZE:解冻",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexFreezeOrderListResponse": {
+      "document": "QueryFlexFreezeOrderList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FreezeOrders",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountBalanceRequest": {
+      "document": "QueryFlexPayeeAccountBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountBalanceResponse": {
+      "document": "QueryFlexPayeeAccountBalance返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountBalanceResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountInfoRequest": {
+      "document": "QueryFlexPayeeAccountInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountInfoResponse": {
+      "document": "QueryFlexPayeeAccountInfo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountInfoResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountListRequest": {
+      "document": "QueryFlexPayeeAccountList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "账户属性信息",
+          "example": "无",
+          "member": "PayeeAccountPropertyInfo",
+          "name": "PropertyInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeAccountListResponse": {
+      "document": "QueryFlexPayeeAccountList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeAccountInfos",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeInfoRequest": {
+      "document": "QueryFlexPayeeInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPayeeInfoResponse": {
+      "document": "QueryFlexPayeeInfo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PayeeInfoResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPaymentOrderListRequest": {
+      "document": "QueryFlexPaymentOrderList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPaymentOrderListResponse": {
+      "document": "QueryFlexPaymentOrderList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PaymentOrders",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPaymentOrderStatusRequest": {
+      "document": "QueryFlexPaymentOrderStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexPaymentOrderStatusResponse": {
+      "document": "QueryFlexPaymentOrderStatus返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PaymentOrderStatusResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexSettlementOrderListRequest": {
+      "document": "QueryFlexSettlementOrderList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间，格式\"yyyy-MM-dd hh:mm:ss\"",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexSettlementOrderListResponse": {
+      "document": "QueryFlexSettlementOrderList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SettlementOrders",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QueryFundsTransactionDetailsRequest": {
       "document": "QueryFundsTransactionDetails请求参数结构体",
@@ -29478,6 +31580,148 @@
           "name": "UserClientIp",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SettlementOrderResult": {
+      "document": "结算订单结果",
+      "members": [
+        {
+          "default": "",
+          "document": "收入类型\nLABOR:劳务所得\nOCCASION:偶然所得",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税前金额",
+          "example": "无",
+          "member": "string",
+          "name": "AmountBeforeTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "税后金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AmountAfterTax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "税金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外部订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutOrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发起时间",
+          "example": "无",
+          "member": "string",
+          "name": "InitiateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\nACCEPTED:已受理\nACCOUNTED:已记账\nSUCCEED:已成功\nFAILED:已失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SettlementOrders": {
+      "document": "结算订单列表",
+      "members": [
+        {
+          "default": "",
+          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SettlementOrderResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

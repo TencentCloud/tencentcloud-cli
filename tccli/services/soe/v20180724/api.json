@@ -346,6 +346,7 @@
         {
           "default": "",
           "document": "关键词",
+          "example": "word",
           "member": "string",
           "name": "Keyword",
           "required": true,
@@ -355,6 +356,7 @@
         {
           "default": "",
           "document": "发音精准度，取值范围[-1, 100]，当取-1时指完全不匹配，当为句子模式时，是所有已识别单词准确度的加权平均值，在reftext中但未识别出来的词不计入分数中。当为流式模式且请求中IsEnd未置1时，取值无意义。",
+          "example": "99.9",
           "member": "float",
           "name": "PronAccuracy",
           "required": true,
@@ -364,6 +366,7 @@
         {
           "default": "",
           "document": "发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "1.0",
           "member": "float",
           "name": "PronFluency",
           "required": true,
@@ -373,6 +376,7 @@
         {
           "default": "",
           "document": "发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义",
+          "example": "1.0",
           "member": "float",
           "name": "PronCompletion",
           "required": true,
@@ -382,6 +386,7 @@
         {
           "default": "",
           "document": "详细发音评估结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "WordRsp",
           "name": "Words",
           "required": true,
@@ -390,7 +395,8 @@
         },
         {
           "default": "",
-          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracy）× 完整度（PronCompletion）×（2 - 完整度（PronCompletion）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "example": "99.9",
           "member": "float",
           "name": "SuggestedScore",
           "required": true,
@@ -719,7 +725,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracyfloat）× 完整度（PronCompletionfloat）×（2 - 完整度（PronCompletionfloat）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
+          "document": "建议评分，取值范围[0,100]，评分方式为建议评分 = 准确度（PronAccuracy）× 完整度（PronCompletion）×（2 - 完整度（PronCompletion）），如若评分策略不符合请参考Words数组中的详细分数自定义评分逻辑。",
           "example": "65",
           "member": "float",
           "name": "SuggestedScore",

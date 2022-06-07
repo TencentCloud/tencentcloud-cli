@@ -15,7 +15,7 @@ tccli ess DescribeFlowTemplates --cli-unfold-argument  \
     --Limit 20 \
     --ContentType 0 \
     --Filters.0.Key template-id \
-    --Filters.0.Values 162509089e82f9479cb4cb1949e047d8
+    --Filters.0.Values 16250***********49e047d8
 ```
 
 Output: 
@@ -24,17 +24,17 @@ Output:
     "Response": {
         "Templates": [
             {
-                "TemplateId": "162509089e82f9479cb4cb1949e047d8",
+                "TemplateId": "162509******b1949e047d8",
                 "TemplateName": "string",
                 "Description": "XXXXX",
                 "DocumentResourceIds": [
-                    "12345678123456781234567812345678"
+                    "123456******7812345678"
                 ],
                 "FileInfos": [
                     {
                         "CreatedOn": 1234567890,
-                        "FileId": "04100497d78304b5a0dd9d02494f43bb",
-                        "FileName": "7530fbd040cc79b9784c7922f1c26aaf-verify.pdf",
+                        "FileId": "0410049******2494f43bb",
+                        "FileName": "7530fbd040c*********26aaf-verify.pdf",
                         "FileSize": 45435
                     }
                 ],

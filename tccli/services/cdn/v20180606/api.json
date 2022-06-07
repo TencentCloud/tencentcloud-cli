@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddCLSTopicDomains": {
+      "document": "AddCLSTopicDomains 用于新增域名到某日志主题下",
+      "input": "AddCLSTopicDomainsRequest",
+      "name": "新增日志主题下绑定的域名",
+      "output": "AddCLSTopicDomainsResponse"
+    },
     "AddCdnDomain": {
       "document": "AddCdnDomain 用于新增内容分发网络加速域名。1分钟内最多可新增100个域名。",
       "input": "AddCdnDomainRequest",
@@ -544,6 +550,60 @@
         }
       ],
       "usage": "both"
+    },
+    "AddCLSTopicDomainsRequest": {
+      "document": "AddCLSTopicDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名区域配置",
+          "example": "无",
+          "member": "DomainAreaConfig",
+          "name": "DomainAreaConfigs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCLSTopicDomainsResponse": {
+      "document": "AddCLSTopicDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddCdnDomainRequest": {
       "document": "AddCdnDomain请求参数结构体",

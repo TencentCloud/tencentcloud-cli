@@ -32,6 +32,22 @@
         "title": "ApplyApplicationMaterial"
       }
     ],
+    "ApplyFlexPayment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFlexPayment\n<公共请求参数>\n\n{\n    \"Remark\": \"字符串\",\n    \"FundingAccountInfo\": {\n        \"FundingAccountType\": \"字符串\",\n        \"FundingAccountNo\": \"字符串\",\n        \"FundingAccountBindSerialNo\": \"字符串\"\n    },\n    \"AmountBeforeTax\": \"字符串\",\n    \"OutOrderId\": \"字符串\",\n    \"IncomeType\": \"字符串\",\n    \"PayeeId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"COMMON.INVALID_PARAMETER\",\n        \"ErrMessage\": \"参数错误:收入类型不规范, 可选范围[LABOR, OCCASION],\",\n        \"Result\": null,\n        \"RequestId\": \"55e276c9-2c82-4777-b141-a0d4fc6ab475\"\n    }\n}",
+        "title": "提现"
+      }
+    ],
+    "ApplyFlexSettlement": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFlexSettlement\n<公共请求参数>\n\n{\n    \"OutOrderId\": \"3022050500029\",\n    \"Remark\": \"字符串\",\n    \"IncomeType\": \"LABOR\",\n    \"PayeeId\": \"1524640861699108864\",\n    \"AmountBeforeTax\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SETTLEMENT.ADAPTER_ACCOUNT_SYSTEM_ERROR\",\n        \"ErrMessage\": \"账户未开立\",\n        \"Result\": null,\n        \"RequestId\": \"e6161e57-b348-4bd8-a581-c1946c9c34a0\"\n    }\n}",
+        "title": "结算"
+      }
+    ],
     "ApplyOpenBankOrderDetailReceipt": [
       {
         "document": "",
@@ -264,6 +280,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalAnchor\n<公共请求参数>\n\n{\n    \"IdCardFront\": \"xx\",\n    \"IdNo\": \"xx\",\n    \"IdCardReverse\": \"xx\",\n    \"Uid\": \"xx\",\n    \"Name\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": {\n            \"AnchorId\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "CreateExternalAnchor"
+      }
+    ],
+    "CreateFlexPayee": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlexPayee\n<公共请求参数>\n\n{\n    \"IdType\": \"1\",\n    \"Remark\": \"字符串\",\n    \"ServiceProviderId\": \"channel-002\",\n    \"Name\": \"字符串\",\n    \"OutUserId\": \"00013\",\n    \"TaxInfo\": {\n        \"TaxServiceProviderId\": \"7\",\n        \"TaxEntityType\": \"NATURAL\",\n        \"TaxpayerIdNo\": \"111\",\n        \"TaxTemplateInfoList\": [\n            {\n                \"IncomeType\": \"LABOR\",\n                \"TaxTemplateId\": \"106\"\n            }\n        ]\n    },\n    \"AccountName\": \"李二的账户\",\n    \"IdNo\": \"36011119940625093X\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"COMMON.INVALID_PARAMETER\",\n        \"ErrMessage\": \"参数错误:纳税人识别号不能为空,\",\n        \"Result\": null,\n        \"RequestId\": \"aa7d2d8d-c1f9-4251-ba1a-71bd5a6fe172\"\n    }\n}",
+        "title": "结算中心-创建用户"
       }
     ],
     "CreateInvoice": [
@@ -564,6 +588,14 @@
         "title": "会员间交易"
       }
     ],
+    "FreezeFlexBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeFlexBalance\n<公共请求参数>\n\n{\n    \"Remark\": \"xxx\",\n    \"AmountBeforeTax\": \"0.3\",\n    \"OutOrderId\": \"freeze012\",\n    \"IncomeType\": \"LABOR\",\n    \"OperationType\": \"FREEZE\",\n    \"PayeeId\": \"1524013479128928256\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"OrderId\": \"1524597398137180160\"\n        },\n        \"RequestId\": \"7062a383-4203-4b8e-9e6d-e0eaa9f895ca\"\n    }\n}",
+        "title": "结算中心-冻结资金"
+      }
+    ],
     "GetBillDownloadUrl": [
       {
         "document": "",
@@ -634,6 +666,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBindedAccount\n<公共请求参数>\n\n{\n    \"PhoneNum\": \"xx\",\n    \"AnchorId\": \"xx\",\n    \"TransferType\": 0,\n    \"AccountNo\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrMessage\": \"xx\",\n        \"Result\": null,\n        \"RequestId\": \"xx\",\n        \"ErrCode\": \"xx\"\n    }\n}",
         "title": "ModifyBindedAccount"
+      }
+    ],
+    "ModifyFlexPayeeAccountRightStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlexPayeeAccountRightStatus\n<公共请求参数>\n\n{\n    \"AccountRightType\": \"字符串\",\n    \"PayeeId\": \"字符串\",\n    \"AccountRightStatus\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"1\",\n        \"ErrMessage\": \"fail\",\n        \"Result\": null,\n        \"RequestId\": \"8fd1c191-a3da-4759-bc4a-13587bd8a89f\"\n    }\n}",
+        "title": "结算中心-查询payee用户信息"
       }
     ],
     "ModifyMerchant": [
@@ -866,6 +906,78 @@
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryExchangeRate\n&SourceCurrency=CNY\n&TargetCurrency=USD\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2993188e-6ea2-4e27-b9ab-8adcd21a259d\",\n        \"Result\": {\n            \"Data\": [\n                {\n                    \"SourceCurrency\": \"CNY\",\n                    \"Rate\": \"6.85220000\",\n                    \"BaseCurrency\": \"USD\",\n                    \"RateTime\": \"2020-04-13 09:45:00\",\n                    \"TargetCurrency\": \"USD\"\n                }\n            ],\n            \"Code\": \"000000\"\n        }\n    }\n}",
         "title": "QueryExchangeRate"
+      }
+    ],
+    "QueryFlexAmountBeforeTax": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexAmountBeforeTax\n<公共请求参数>\n\n{\n    \"AmountAfterTax\": \"800\",\n    \"IncomeType\": \"OCCASION\",\n    \"PayeeId\": \"1524013479128928256\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"AmountBeforeTax\": \"1000.000000\"\n        },\n        \"RequestId\": \"08ce6fb8-9321-4d7e-be49-2a95dd8ebebc\"\n    }\n}",
+        "title": "计算中心-计算税前金额"
+      }
+    ],
+    "QueryFlexFreezeOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexFreezeOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"字符串\",\n    \"OperationType\": \"1\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": null,\n            \"Count\": null\n        },\n        \"RequestId\": \"8eab2787-decd-470d-8d2d-1f5f2e31ecb3\"\n    }\n}",
+        "title": "结算中心-查询冻结单列表"
+      }
+    ],
+    "QueryFlexPayeeAccountBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPayeeAccountBalance\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"IncomeType\": \"OCCASION\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"AccountId\": \"AC615499841879322625\",\n            \"IncomeType\": null,\n            \"Balance\": \"331300.89\",\n            \"PayableBalance\": \"331.89\",\n            \"PaidBalance\": \"578.00\",\n            \"InPayBalance\": \"448.00\",\n            \"SystemFreezeBalance\": \"0.00\",\n            \"ManualFreezeBalance\": \"9.00\"\n        },\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "查询账户余额"
+      }
+    ],
+    "QueryFlexPayeeAccountInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPayeeAccountInfo\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"OutUserId\": \"test123123213\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"AccountId\": \"AC615499841879322625\",\n            \"AccountName\": \"account0526105637\",\n            \"Remark\": null,\n            \"CreateTime\": \"2022-05-26 10:56:37\",\n            \"UserInfo\": {\n                \"OutUserId\": \"0526105637test\",\n                \"UserType\": 1,\n                \"IdType\": 0,\n                \"IdNo\": \"610113192105041627\",\n                \"Name\": \"张三\"\n            },\n            \"PropertyInfo\": {\n                \"SettleRightStatus\": \"ENABLE\",\n                \"PaymentRightStatus\": \"ENABLE\"\n            }\n        },\n        \"RequestId\": \"8b4aee61-a20a-4135-96e1-144596a7e3bc\"\n    }\n}",
+        "title": "收款用户账户信息查询"
+      }
+    ],
+    "QueryFlexPayeeAccountList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPayeeAccountList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"StartTime\": \"2022-05-06 00:00:00\",\n    \"PropertyInfo\": {\n        \"SettleRightStatus\": \"ENABLE\",\n        \"PaymentRightStatus\": \"ENABLE\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": [],\n            \"Count\": 0\n        },\n        \"RequestId\": \"38d7b2b1-4c14-4a04-81d4-889267bad6db\"\n    }\n}",
+        "title": "收款用户账户列表查询"
+      }
+    ],
+    "QueryFlexPayeeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPayeeInfo\n<公共请求参数>\n\n{\n    \"PayeeId\": \"字符串\",\n    \"OutUserId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"COMMON.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"记录不存在:收款用户不存在\",\n        \"Result\": null,\n        \"RequestId\": \"37691590-4912-4697-bf7b-e8ce6ac34465\"\n    }\n}",
+        "title": "查询收款用户"
+      }
+    ],
+    "QueryFlexPaymentOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPaymentOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"90609c1035c348db88b752a69194b1ea\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": [],\n            \"Count\": 0\n        },\n        \"RequestId\": \"38d7b2b1-4c14-4a04-81d4-889267bad6db\"\n    }\n}",
+        "title": "计算中心-查询提现单列表"
+      }
+    ],
+    "QueryFlexPaymentOrderStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPaymentOrderStatus\n<公共请求参数>\n\n{\n    \"OrderId\": \"1524418188867043328\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"Status\": \"ACCEPTED\",\n            \"StatusDesc\": \"已受理\"\n        },\n        \"RequestId\": \"46108f36-2dee-4674-b0df-920dbc54edf1\"\n    }\n}",
+        "title": "结算中心-查询提现单状态"
+      }
+    ],
+    "QueryFlexSettlementOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexSettlementOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"1524013479128928256\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": null,\n            \"Count\": null\n        },\n        \"RequestId\": \"66a06170-e747-41ec-b6cc-ff81bd7f43f3\"\n    }\n}",
+        "title": "结算中心-查询结算单"
       }
     ],
     "QueryFundsTransactionDetails": [

@@ -54,6 +54,12 @@
       "name": "查询详细事件",
       "output": "DescribeDetailEventResponse"
     },
+    "DescribeExternalTrtcMeasure": {
+      "document": "获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据",
+      "input": "DescribeExternalTrtcMeasureRequest",
+      "name": "查询音视频用量计费时长(新)",
+      "output": "DescribeExternalTrtcMeasureResponse"
+    },
     "DescribeHistoryScale": {
       "document": "可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。 ",
       "input": "DescribeHistoryScaleRequest",
@@ -101,6 +107,12 @@
       "input": "DismissRoomByStrRoomIdRequest",
       "name": "解散房间（字符串房间号）",
       "output": "DismissRoomByStrRoomIdResponse"
+    },
+    "MeasureTrtcMcuExternal": {
+      "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过2天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
+      "input": "MeasureTrtcMcuExternalRequest",
+      "name": "查询旁路转码计费时长(新)",
+      "output": "MeasureTrtcMcuExternalResponse"
     },
     "ModifyCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来更新录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。更新操作是全量覆盖，并不是增量更新的模式，也就是说每次更新都需要携带全量的信息。",
@@ -1054,6 +1066,78 @@
       ],
       "type": "object"
     },
+    "DescribeExternalTrtcMeasureRequest": {
+      "document": "DescribeExternalTrtcMeasure请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始日期。",
+          "example": "2022-01-03 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束日期。",
+          "example": "2022-01-03 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "对应的应用。如果没有这个参数，表示获取用户名下全部实时音视频应用的汇总。",
+          "example": "134324524",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalTrtcMeasureResponse": {
+      "document": "DescribeExternalTrtcMeasure返回参数结构体",
+      "members": [
+        {
+          "document": "每个SdkAppId的时长使用信息",
+          "example": "无",
+          "member": "SdkAppIdNewTrtcTimeUsage",
+          "name": "SdkAppIdTrtrTimeUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主播的用量统计方式。取值\"InRoomTime\":房间时长,\"SubscribeTime\":\"订阅时长\",\"Bandwidth\":带宽",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorUsageMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "观众的用量统计方式。取值\"InRoomTime\":在房间时长,\"SubscribeTime\":\"订阅时长\",\"Bandwidth\":带宽,\"MergeWithAnchor\":\"不区分麦上麦下\"",
+          "example": "无",
+          "member": "string",
+          "name": "AudienceUsageMode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHistoryScaleRequest": {
       "document": "DescribeHistoryScale请求参数结构体",
       "members": [
@@ -1860,6 +1944,51 @@
         }
       ],
       "usage": "in"
+    },
+    "MeasureTrtcMcuExternalRequest": {
+      "document": "MeasureTrtcMcuExternal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "查询开始时间，格式为YYYY-MM-DD。",
+          "example": "2020-09-07 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过2天。",
+          "example": "2020-09-07 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
+          "example": "1400123456",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "MeasureTrtcMcuExternalResponse": {
+      "document": "MeasureTrtcMcuExternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MixLayout": {
       "document": "用户自定义混流布局参数列表。",
@@ -2847,6 +2976,42 @@
       ],
       "usage": "out"
     },
+    "SdkAppIdNewTrtcTimeUsage": {
+      "document": "SdkAppId级别实时音视频的用量数据",
+      "members": [
+        {
+          "default": "",
+          "document": "SdkAppId的值。",
+          "example": "无",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计的时间点数据。",
+          "example": "无",
+          "member": "TrtcTimeNewUsage",
+          "name": "TrtcTimeUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "统计的麦下用量的时间点数据。",
+          "example": "无",
+          "member": "TrtcTimeNewUsage",
+          "name": "AudienceTrtcTimeUsages",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SdkAppIdRecordUsage": {
       "document": "SdkAppId级别录制时长数据。",
       "members": [
@@ -3407,6 +3572,112 @@
           "name": "Value",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TrtcTimeNewUsage": {
+      "document": "实时音视频用量的某一时间段的统计信息.  ",
+      "members": [
+        {
+          "default": "",
+          "document": "时间点。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通话人数。仅供参考。在线人数以仪表盘查询结果为准。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VoiceUserNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标清视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Class1VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "高清视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Class2VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "超高清视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Class3VideoTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AudioTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带宽。单位：Mbps。",
+          "example": "无",
+          "member": "float",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "2k视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Video2KTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "4k视频通话时长。单位：秒。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Video4KTime",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CreateBlockNodeRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockNodeRecords\n<公共请求参数>\n\n{\n    \"Records\": \"xx\",\n    \"GroupId\": \"xx\",\n    \"NodeId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "批量创建节点"
+      }
+    ]
+  },
+  "version": "1.0"
+}

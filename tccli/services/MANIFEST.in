@@ -339,6 +339,8 @@ include tccli/services/taf/v20200210/api.json
 include tccli/services/taf/v20200210/examples.json
 include tccli/services/tag/v20180813/api.json
 include tccli/services/tag/v20180813/examples.json
+include tccli/services/tan/v20220420/api.json
+include tccli/services/tan/v20220420/examples.json
 include tccli/services/tat/v20201028/api.json
 include tccli/services/tat/v20201028/examples.json
 include tccli/services/tav/v20190118/api.json
