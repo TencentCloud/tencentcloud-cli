@@ -827,7 +827,7 @@
     "ForbidLiveStream": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ForbidLiveStream\r\n&DomainName=5000.livepush.myqcloud.com\r\n&AppName=live\r\n&StreamName=stream1\r\n&ResumeTime=2018-11-24T12:00:00Z\r\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=ForbidLiveStream\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&ResumeTime=2018-11-24T12:00:00Z\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e50cdb5-56dc-408b-89b0-31818958d424\"\n    }\n}",
         "title": "请求示例"
       }

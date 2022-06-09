@@ -23,6 +23,12 @@
       "input": "DescribeKBVulnerabilityRequest",
       "name": "查询知识库漏洞详情列表",
       "output": "DescribeKBVulnerabilityResponse"
+    },
+    "MatchKBPURLList": {
+      "document": "本接口(MatchKBPURLList)用于在知识库中匹配与特征对应的开源组件列表。",
+      "input": "MatchKBPURLListRequest",
+      "name": "匹配知识库组件列表",
+      "output": "MatchKBPURLListResponse"
     }
   },
   "metadata": {
@@ -687,6 +693,42 @@
         }
       ],
       "usage": "out"
+    },
+    "MatchKBPURLListRequest": {
+      "document": "MatchKBPURLList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "SHA1。",
+          "example": "7ed845de1dfe070d43511fab321784e6c4118398",
+          "member": "string",
+          "name": "SHA1",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MatchKBPURLListResponse": {
+      "document": "MatchKBPURLList返回参数结构体",
+      "members": [
+        {
+          "document": "组件列表。",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURLList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PURL": {
       "document": "PURL(Package URL)用于定位一个产品或组件，见 https://github.com/package-url/purl-spec。",

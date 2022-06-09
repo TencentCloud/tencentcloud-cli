@@ -55,7 +55,7 @@
       "output": "CreateLiveCertResponse"
     },
     "CreateLivePullStreamTask": {
-      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到直播系统。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
+      "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
       "input": "CreateLivePullStreamTaskRequest",
       "name": "创建直播拉流任务",
       "output": "CreateLivePullStreamTaskResponse"
@@ -8692,6 +8692,7 @@
         {
           "default": "",
           "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -8700,6 +8701,7 @@
         {
           "default": "",
           "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -8708,6 +8710,7 @@
         {
           "default": "",
           "document": "流名称。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
           "required": true,
@@ -8715,7 +8718,8 @@
         },
         {
           "default": "",
-          "document": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁播7天，且最长支持禁播90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "恢复流的时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 默认禁推7天，且最长支持禁推90天。\n2. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-11-24T12:00:00Z",
           "member": "string",
           "name": "ResumeTime",
           "required": false,
@@ -8724,6 +8728,7 @@
         {
           "default": "",
           "document": "禁推原因。\n注明：请务必填写禁推原因，防止误操作。\n长度限制：2048字节。",
+          "example": "forbid reason",
           "member": "string",
           "name": "Reason",
           "required": false,

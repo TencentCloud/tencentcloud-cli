@@ -66,6 +66,12 @@
       "name": "图像标签测试接口",
       "output": "DetectLabelBetaResponse"
     },
+    "DetectLabelPro": {
+      "document": "通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等，广泛应用于拍照识物、场景分析、图像内容审核与推荐、智能相册分类等场景。\n\n>     \n- 通用图像标签在原图像标签接口的基础上进行了升级，识别精度和标签覆盖范围相比原图像标签接口更优，推荐使用。",
+      "input": "DetectLabelProRequest",
+      "name": "通用图像标签",
+      "output": "DetectLabelProResponse"
+    },
     "DetectMisbehavior": {
       "document": "可以识别输入的图片中是否包含不良行为，例如打架斗殴、赌博、抽烟等，可以应用于广告图、直播截图、短视频截图等审核，减少不良行为对平台内容质量的影响，维护健康向上的互联网环境。\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectMisbehaviorRequest",
@@ -1182,6 +1188,51 @@
         }
       ],
       "usage": "out"
+    },
+    "DetectLabelProRequest": {
+      "document": "DetectLabelPro请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
+          "example": "https://test.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectLabelProResponse": {
+      "document": "DetectLabelPro返回参数结构体",
+      "members": [
+        {
+          "document": "返回标签数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLabelItem",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DetectLabelRequest": {
       "document": "DetectLabel请求参数结构体",

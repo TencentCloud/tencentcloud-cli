@@ -160,6 +160,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecognitionResult",
+          "name": "RecognitionResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1096,6 +1106,32 @@
       ],
       "usage": "out"
     },
+    "RecognitionResult": {
+      "document": "识别类标签结果信息",
+      "members": [
+        {
+          "default": "",
+          "document": "可能的取值有：Teenager 、Gender\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StorageInfo": {
       "document": "用于表示数据存储的相关信息",
       "members": [
@@ -1131,6 +1167,52 @@
         }
       ],
       "usage": "in"
+    },
+    "Tag": {
+      "document": "音频切片识别标签",
+      "members": [
+        {
+          "default": "",
+          "document": "根据Label字段确定具体名称：\n当Label 为Teenager 时 Name可能取值有：Teenager \n当Label 为Gender 时 Name可能取值有：Male 、Female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别开始偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "float",
+          "name": "StartTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "识别结束偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "float",
+          "name": "EndTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaskData": {
       "document": "任务数据",

@@ -124,6 +124,20 @@
         "title": "图像标签检测请求成功"
       }
     ],
+    "DetectLabelPro": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "图像标签检测请求失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Name\": \"塔楼\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 81\n            },\n            {\n                \"Name\": \"夜晚\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 79\n            },\n            {\n                \"Name\": \"天际线\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市景观\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 72\n            },\n            {\n                \"Name\": \"都市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 69\n            }\n        ],\n        \"RequestId\": \"e6d685b1-d898-4dc9-a545-cfeb3a988da8\"\n    }\n}",
+        "title": "图像标签检测请求成功"
+      }
+    ],
     "DetectMisbehavior": [
       {
         "document": "",

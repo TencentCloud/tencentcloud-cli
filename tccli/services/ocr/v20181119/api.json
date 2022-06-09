@@ -270,11 +270,29 @@
       "name": "健康码识别",
       "output": "RecognizeHealthCodeOCRResponse"
     },
+    "RecognizeIndonesiaIDCardOCR": {
+      "document": "印尼身份证识别",
+      "input": "RecognizeIndonesiaIDCardOCRRequest",
+      "name": "印尼身份证识别",
+      "output": "RecognizeIndonesiaIDCardOCRResponse"
+    },
     "RecognizeOnlineTaxiItineraryOCR": {
       "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。",
       "input": "RecognizeOnlineTaxiItineraryOCRRequest",
       "name": "网约车行程单识别",
       "output": "RecognizeOnlineTaxiItineraryOCRResponse"
+    },
+    "RecognizePhilippinesDrivingLicenseOCR": {
+      "document": "菲律宾驾驶证识别",
+      "input": "RecognizePhilippinesDrivingLicenseOCRRequest",
+      "name": "菲律宾驾驶证识别",
+      "output": "RecognizePhilippinesDrivingLicenseOCRResponse"
+    },
+    "RecognizePhilippinesVoteIDOCR": {
+      "document": "菲律宾VoteID识别",
+      "input": "RecognizePhilippinesVoteIDOCRRequest",
+      "name": "菲律宾VoteID识别",
+      "output": "RecognizePhilippinesVoteIDOCRResponse"
     },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
@@ -5598,6 +5616,204 @@
       ],
       "type": "object"
     },
+    "RecognizeIndonesiaIDCardOCRRequest": {
+      "document": "RecognizeIndonesiaIDCardOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "场景参数，默认值为V1\n可选值：\nV1\nV2",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeIndonesiaIDCardOCRResponse": {
+      "document": "RecognizeIndonesiaIDCardOCR返回参数结构体",
+      "members": [
+        {
+          "document": "证件号码",
+          "example": "360XXXXXX",
+          "member": "string",
+          "name": "NIK",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "example": "INM",
+          "member": "string",
+          "name": "Nama",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出生地/出生时间",
+          "example": "JAKARTA 13-01-1987",
+          "member": "string",
+          "name": "TempatTglLahir",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "性别",
+          "example": "LAKEI",
+          "member": "string",
+          "name": "JenisKelamin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "血型",
+          "example": "o",
+          "member": "string",
+          "name": "GolDarah",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "example": "BANJARSARI",
+          "member": "string",
+          "name": "Alamat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "街道",
+          "example": "00/000",
+          "member": "string",
+          "name": "RTRW",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "村",
+          "example": "PAKEMBINANGUN",
+          "member": "string",
+          "name": "KelDesa",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地区",
+          "example": "LAKEI",
+          "member": "string",
+          "name": "Kecamatan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "宗教信仰",
+          "example": "ATHOLIK",
+          "member": "string",
+          "name": "Agama",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "婚姻状况",
+          "example": "KAWFN",
+          "member": "string",
+          "name": "StatusPerkawinan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "职业",
+          "example": "KARYAWAN",
+          "member": "string",
+          "name": "Perkerjaan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国籍",
+          "example": "INM",
+          "member": "string",
+          "name": "KewargaNegaraan",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "身份证有效期限",
+          "example": "SEUMUR",
+          "member": "string",
+          "name": "BerlakuHingga",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "发证日期",
+          "example": "15-05-2015",
+          "member": "string",
+          "name": "IssuedDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "人像截图",
+          "example": "无",
+          "member": "string",
+          "name": "Photo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeOnlineTaxiItineraryOCRRequest": {
       "document": "RecognizeOnlineTaxiItineraryOCR请求参数结构体",
       "members": [
@@ -5650,6 +5866,285 @@
           "name": "OnlineTaxiItineraryInfos",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesDrivingLicenseOCRRequest": {
+      "document": "RecognizePhilippinesDrivingLicenseOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesDrivingLicenseOCRResponse": {
+      "document": "RecognizePhilippinesDrivingLicenseOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Name",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓氏",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LastName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "首姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FirstName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "中间姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "MiddleName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国籍",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Nationality",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "性别",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Sex",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "证号",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LicenseNo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "有效期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "ExpiresDate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "机构代码",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "AgencyCode",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出生日期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesVoteIDOCRRequest": {
+      "document": "RecognizePhilippinesVoteIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesVoteIDOCRResponse": {
+      "document": "RecognizePhilippinesVoteIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "菲律宾VoteID的VIN",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "VIN",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FirstName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "姓氏",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LastName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "出生日期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "婚姻状况",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "CivilStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "国籍",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Citizenship",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "地区",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "PrecinctNo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -7295,6 +7790,32 @@
           "document": "识别出来的单词信息（包括单词Character和单词置信度confidence）",
           "member": "Words",
           "name": "Words",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextDetectionResult": {
+      "document": "识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的文本行内容",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐标，以四个顶点坐标表示",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
           "required": true,
           "type": "list",
           "value_allowed_null": false

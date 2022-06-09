@@ -1149,6 +1149,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "ap-xian-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -1157,6 +1158,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，形如：eni-1snva0vd。目前只支持主网卡上分配。",
+          "example": "eni-1snva0vd",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -1165,6 +1167,7 @@
         {
           "default": "",
           "document": "指定的IPv6地址列表，单次最多指定10个。与入参Ipv6AddressCount合并计算配额。与Ipv6AddressCount必填一个。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -1173,10 +1176,20 @@
         {
           "default": "",
           "document": "自动分配IPv6地址个数，内网IP地址个数总和不能超过配数。与入参Ipv6Addresses合并计算配额。与Ipv6Addresses必填一个。",
+          "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ipv6运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动",
+          "example": "CTCC",
+          "member": "string",
+          "name": "Ipv6ISP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1186,8 +1199,10 @@
       "members": [
         {
           "document": "分配给弹性网卡的IPv6地址列表。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8629,6 +8644,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "ap-guangzhou-ecm-cu2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -8637,6 +8653,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，形如：eni-m6dyj72l。",
+          "example": "eni-9c8zkfev",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -8645,6 +8662,7 @@
         {
           "default": "",
           "document": "指定的IPv6地址信息。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": true,
@@ -11053,6 +11071,7 @@
         {
           "default": "",
           "document": "ECM 地域",
+          "example": "ap-xian-ecm ",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -11061,6 +11080,7 @@
         {
           "default": "",
           "document": "弹性网卡实例ID，形如：eni-m6dyj72l。",
+          "example": "eni-9c8zkfev",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -11069,6 +11089,7 @@
         {
           "default": "",
           "document": "指定的IPv6地址列表，单次最多指定10个。",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": true,
@@ -11082,8 +11103,10 @@
       "members": [
         {
           "document": "任务ID，可以通过DescribeTaskResult查询任务状态",
+          "example": "3082",
           "member": "int64",
           "name": "TaskId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

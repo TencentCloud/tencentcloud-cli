@@ -4057,6 +4057,15 @@
           "name": "TagSpecification",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子网信息列表",
+          "example": "{aa}",
+          "member": "SubnetInfos",
+          "name": "SubnetInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15481,6 +15490,32 @@
         }
       ],
       "type": "object"
+    },
+    "SubnetInfos": {
+      "document": "子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网id",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网节点名称",
+          "example": "access-server",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "SyncPrometheusTempRequest": {
       "document": "SyncPrometheusTemp请求参数结构体",

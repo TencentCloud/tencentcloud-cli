@@ -7,6 +7,7 @@ Input:
 ```
 tccli emr DescribeUsersForUserManager --cli-unfold-argument  \
     --InstanceId xx \
+    --UserManagerFilter.UserName xx \
     --PageSize 0 \
     --PageNo 0 \
     --NeedKeytabInfo True

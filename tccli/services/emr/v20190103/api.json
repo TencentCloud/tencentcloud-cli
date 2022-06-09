@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddUsersForUserManager": {
-      "document": "新增用户列表（用户管理）",
+      "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
       "name": "用户管理-新增用户列表",
       "output": "AddUsersForUserManagerResponse"
@@ -55,7 +55,7 @@
       "output": "DescribeResourceScheduleResponse"
     },
     "DescribeUsersForUserManager": {
-      "document": "批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）",
+      "document": "该接口支持安装了OpenLdap组件的集群。\n批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。",
       "input": "DescribeUsersForUserManagerRequest",
       "name": "用户管理-查询用户列表",
       "output": "DescribeUsersForUserManagerResponse"
@@ -6206,7 +6206,18 @@
     },
     "UserManagerFilter": {
       "document": "用户管理列表过滤器",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "UserManagerUserBriefInfo": {

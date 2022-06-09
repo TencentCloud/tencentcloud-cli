@@ -3,6 +3,8 @@ include tccli/services/aa/v20200224/api.json
 include tccli/services/aa/v20200224/examples.json
 include tccli/services/aai/v20180522/api.json
 include tccli/services/aai/v20180522/examples.json
+include tccli/services/acp/v20220105/api.json
+include tccli/services/acp/v20220105/examples.json
 include tccli/services/advisor/v20200721/api.json
 include tccli/services/advisor/v20200721/examples.json
 include tccli/services/af/v20200226/api.json
@@ -259,6 +261,8 @@ include tccli/services/mgobe/v20201014/api.json
 include tccli/services/mgobe/v20201014/examples.json
 include tccli/services/mgobe/v20190929/api.json
 include tccli/services/mgobe/v20190929/examples.json
+include tccli/services/mmps/v20200710/api.json
+include tccli/services/mmps/v20200710/examples.json
 include tccli/services/mna/v20210119/api.json
 include tccli/services/mna/v20210119/examples.json
 include tccli/services/mongodb/v20190725/api.json
