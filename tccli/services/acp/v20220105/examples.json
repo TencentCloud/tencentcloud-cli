@@ -56,13 +56,13 @@
       {
         "document": "获取灵鲲app隐私诊断上传url",
         "input": "https://acp.tencentcloudapi.com/?Action=DescribeFileTicket\n&Source=2\n&Platform=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://private-7****2.gzc.vod.tencent-cloud.com/52423182d35\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://private-7****2.gz***d.tence***d.com/524***d35\"\n    }\n}",
         "title": "获取App隐私诊断上传url"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTicket\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79fd20b9-211d-4121-b2ad-1929c047c17e\",\n        \"Result\": 0,\n        \"UploadUrl\": \"https://evid.urlsec.qq.com/cos?nonce=8340144340601255658&secretId=KLhXXcNBeJVvW4eHCa2RlN6dRkuLx2nL&token=76b936bbfda9e65e837ba7049fe531e3&ts=1641547235\",\n        \"UploadSign\": \"\",\n        \"FildID\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79fd20b9-211d-4121-b2ad-1929c047c17e\",\n        \"Result\": 0,\n        \"UploadUrl\": \"https://evi***c.qq.com/cos?nonce=8340****06012***58&secretId=K***NBeJ****HCa2RlN6dL&token=76b93***837ba70***1e3&ts=164***35\",\n        \"UploadSign\": \"\",\n        \"FildID\": \"\"\n    }\n}",
         "title": "获取App隐私诊断文件上传url"
       }
     ],

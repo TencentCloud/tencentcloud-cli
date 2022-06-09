@@ -18,7 +18,7 @@ Output:
         "UploadSign": "",
         "Result": 0,
         "FildID": "",
-        "UploadUrl": "https://private-7****2.gzc.vod.tencent-cloud.com/52423182d35"
+        "UploadUrl": "https://private-7****2.gz***d.tence***d.com/524***d35"
     }
 }
 ```
@@ -41,7 +41,7 @@ Output:
     "Response": {
         "RequestId": "79fd20b9-211d-4121-b2ad-1929c047c17e",
         "Result": 0,
-        "UploadUrl": "https://evid.urlsec.qq.com/cos?nonce=8340144340601255658&secretId=KLhXXcNBeJVvW4eHCa2RlN6dRkuLx2nL&token=76b936bbfda9e65e837ba7049fe531e3&ts=1641547235",
+        "UploadUrl": "https://evi***c.qq.com/cos?nonce=8340****06012***58&secretId=K***NBeJ****HCa2RlN6dL&token=76b93***837ba70***1e3&ts=164***35",
         "UploadSign": "",
         "FildID": ""
     }

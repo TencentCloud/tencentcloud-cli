@@ -1,5 +1,17 @@
 {
   "actions": {
+    "CreateEngine": {
+      "document": "创建引擎实例",
+      "input": "CreateEngineRequest",
+      "name": "创建引擎实例",
+      "output": "CreateEngineResponse"
+    },
+    "DeleteEngine": {
+      "document": "删除引擎实例",
+      "input": "DeleteEngineRequest",
+      "name": "删除引擎实例",
+      "output": "DeleteEngineResponse"
+    },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
@@ -20,6 +32,72 @@
     "serviceShortName": "tse"
   },
   "objects": {
+    "ApolloEnvParam": {
+      "document": "Apollo 环境配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "环境名称",
+          "example": "prod",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境内引擎的节点规格 ID",
+          "example": "spec-xxxxxx",
+          "member": "string",
+          "name": "EngineResourceSpec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境内引擎的节点数量",
+          "example": "3",
+          "member": "int64",
+          "name": "EngineNodeNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置存储空间大小，以GB为单位",
+          "example": "50",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "BoundK8SInfo": {
       "document": "服务治理引擎绑定的kubernetes信息",
       "members": [
@@ -55,6 +133,195 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateEngineRequest": {
+      "document": "CreateEngine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎类型。参考值：\n- zookeeper\n- nacos\n- consul\n- apollo\n- eureka\n- polaris",
+          "example": "zookeeper",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎的开源版本。每种引擎支持的开源版本不同，请参考产品文档或者控制台购买页",
+          "example": "3.4.14",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎的产品版本。参考值：\n- STANDARD： 标准版\n\n引擎各版本及可选择的规格、节点数说明：\napollo - STANDARD版本\n规格列表：spec-qcr53kf1t（1C2G）,spec-qdr53kf2w（2C4G）\n节点数：1，2，3，4，5\n\neureka - STANDARD版本\n规格列表：spec-qvj6k7t4q（1C2G）,spec-qcr53kfjt（2C4G）,spec-qvj6k7t4m（4G8G）,spec-qcr54kfjt（8C16G）,spec-qcr55kfjt（16C32G）\n节点数：3，4，5",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "EngineProductVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎所在地域。参考值说明：\n中国区 参考值：\n- ap-guangzhou：广州\n- ap-beijing：北京\n- ap-chengdu：成都\n- ap-chongqing：重庆\n- ap-nanjing：南京\n- ap-shanghai：上海\n- ap-hongkong：香港\n- ap-taipei：台北\n亚太区 参考值：\n- ap-jakarta：雅加达\n- ap-singapore：新加坡\n北美区 参考值\n- na-toronto：多伦多\n金融专区 参考值\n- ap-beijing-fsi：北京金融\n- ap-shanghai-fsi：上海金融\n- ap-shenzhen-fsi：深圳金融",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "EngineRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎名称。参考值：\n- eurek-test",
+          "example": "qzone-photo-prod",
+          "member": "string",
+          "name": "EngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "付费类型。参考值：\n- 0：后付费\n- 1：预付费",
+          "example": "0",
+          "member": "int64",
+          "name": "TradeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "引擎的节点规格 ID。参见EngineProductVersion字段说明",
+          "example": "spec-xxxxxx",
+          "member": "string",
+          "name": "EngineResourceSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎的节点数量。参见EngineProductVersion字段说明",
+          "example": "3",
+          "member": "int64",
+          "name": "EngineNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- vpc-conz6aix",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为引擎的访问地址。参考值：\n- subnet-ahde9me9",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Apollo 环境配置参数列表。参数说明：\n如果创建Apollo类型，此参数为必填的环境信息列表，最多可选4个环境。环境信息参数说明：\n- Name：环境名。参考值：prod, dev, fat, uat\n- EngineResourceSpec：环境内引擎的节点规格ID。参见EngineProductVersion参数说明\n- EngineNodeNum：环境内引擎的节点数量。参见EngineProductVersion参数说明，其中prod环境支持的节点数为2，3，4，5\n- StorageCapacity：配置存储空间大小，以GB为单位，步长为5.参考值：35\n- VpcId：VPC ID。参考值：vpc-conz6aix\n- SubnetId：子网 ID。参考值：subnet-ahde9me9",
+          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
+          "member": "ApolloEnvParam",
+          "name": "ApolloEnvParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引擎的标签列表。用户自定义的key/value形式，无参考值",
+          "example": "[{\"key\":\"value\"}]",
+          "member": "InstanceTagInfo",
+          "name": "EngineTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "引擎的初始帐号信息。可设置参数：\n- Name：控制台初始用户名\n- Password：控制台初始密码\n- Token：引擎接口的管理员 Token",
+          "example": "{\"Name\":\"nacos\",\"Password\":\"xxxxxx\",\"Token\":\"xxxxxx\"}",
+          "member": "EngineAdmin",
+          "name": "EngineAdmin",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "预付费时长，以月为单位",
+          "example": "1",
+          "member": "int64",
+          "name": "PrepaidPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自动续费标记，仅预付费使用。参考值：\n- 0：不自动续费\n- 1：自动续费",
+          "example": "0",
+          "member": "int64",
+          "name": "PrepaidRenewFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEngineResponse": {
+      "document": "CreateEngine返回参数结构体",
+      "members": [
+        {
+          "document": "引擎实例 ID",
+          "example": "ins-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEngineRequest": {
+      "document": "DeleteEngine请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎实例 ID",
+          "example": "ins-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEngineResponse": {
+      "document": "DeleteEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeSREInstanceAccessAddressRequest": {
       "document": "DescribeSREInstanceAccessAddress请求参数结构体",
@@ -245,6 +512,42 @@
       ],
       "type": "object"
     },
+    "EngineAdmin": {
+      "document": "引擎的初始管理帐号",
+      "members": [
+        {
+          "default": "",
+          "document": "控制台初始用户名",
+          "example": "nacos",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "控制台初始密码",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "引擎接口的管理员 Token",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EnvAddressInfo": {
       "document": "多环境网络信息",
       "members": [
@@ -430,6 +733,32 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceTagInfo": {
+      "document": "引擎实例的标签信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "KVPair": {
       "document": "键值对",

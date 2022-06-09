@@ -715,7 +715,7 @@
       "output": "PullUploadResponse"
     },
     "PushUrlCache": {
-      "document": "1. 预热指定的 URL 列表。\n2. URL 的域名必须已在云点播中注册。\n3. 单次请求最多指定20个 URL。",
+      "document": "1. 预热指定的 URL 列表。\n2. URL 的域名必须已在云点播中注册。\n3. 单次请求最多指定20个 URL。\n4. 默认预热配额为每天10000个 URL。",
       "input": "PushUrlCacheRequest",
       "name": "预热URL",
       "output": "PushUrlCacheResponse"
@@ -21806,6 +21806,7 @@
         {
           "default": "",
           "document": "预热的 URL 列表，单次最多指定20个 URL。",
+          "example": "无",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -21813,7 +21814,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,

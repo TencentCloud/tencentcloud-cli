@@ -5931,13 +5931,33 @@
         },
         {
           "default": "",
-          "document": "项目状态，取值有：\n<li>Working：云转推推流开始；</li>\n<li>Stopped：云转推推流结束。</li>",
+          "document": "项目状态，取值有：\n<li>Working：云转推推流开始；</li>\n<li>Stopped：云转推推流结束；</li>\n<li>InputInterrupted：云转推输入断流；</li>\n<li>OutputInterrupted：云转推输出断流。</li>",
           "example": "PushStreamFinish",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamConnectInputInterruptInfo",
+          "name": "InputInterruptInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StreamConnectOutputInterruptInfo",
+          "name": "OutputInterruptInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6542,6 +6562,22 @@
       ],
       "usage": "out"
     },
+    "StreamConnectInputInterruptInfo": {
+      "document": "云转推输入断流信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推输入源标识，取值有：\n<li>Main：主源；</li>\n<li>Backup：备源。</li>",
+          "example": "Main",
+          "member": "string",
+          "name": "EndPoint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "StreamConnectOutput": {
       "document": "云转推输出源。",
       "members": [
@@ -6607,6 +6643,42 @@
           "example": "On",
           "member": "string",
           "name": "PushSwitch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamConnectOutputInterruptInfo": {
+      "document": "云转推输出断流信息",
+      "members": [
+        {
+          "default": "",
+          "document": "云转推输出标识。",
+          "example": "outputId",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云转推输出地址。",
+          "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
+          "member": "string",
+          "name": "Url",
           "required": true,
           "type": "string",
           "value_allowed_null": false

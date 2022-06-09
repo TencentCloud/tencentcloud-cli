@@ -11455,6 +11455,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发生时间。ModifyTime-处理时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11590,6 +11608,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-首次攻击时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12533,6 +12569,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：LoginTime-发生时间",
+          "example": "LoginTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14083,6 +14137,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发现时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14604,6 +14676,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发生时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14742,7 +14832,7 @@
         },
         {
           "default": "",
-          "document": "排序字段：AccessCount-请求次数",
+          "document": "排序字段：AccessCount-请求次数。MergeTime-最近请求时间",
           "example": "AccessCount",
           "member": "string",
           "name": "By",

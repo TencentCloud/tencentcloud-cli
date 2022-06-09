@@ -292,6 +292,24 @@
           "name": "SearchKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主体名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AuthName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集团服务（服务管理员查询时，必须指定）",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -335,6 +353,15 @@
           "example": "en",
           "member": "string",
           "name": "Lang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "产品简称（查询是否集团服务委派管理员必须）",
+          "example": "test",
+          "member": "string",
+          "name": "Product",
           "required": false,
           "type": "string"
         }
@@ -468,6 +495,15 @@
           "name": "PayName",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否集团服务委派管理员 true-是、false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAssignManager",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         },
         {

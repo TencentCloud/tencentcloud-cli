@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateEngine": [
+      {
+        "document": "",
+        "input": "https://tse.tencentcloudapi.com/?Action=CreateEngine\n&EngineType=zookeeper\n&EngineVersion=3.4.14\n&EngineProductVersion=STANDARD\n&EngineRegion=ap-beijing\n&EngineResourceSpec=spec-xxxxxx\n&EngineNodeNum=3\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&EngineName=qzone-photo-prod\n&TradeType=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"InstanceId\": \"ers-12345678\"\n    }\n}",
+        "title": "创建引擎实例"
+      }
+    ],
+    "DeleteEngine": [
+      {
+        "document": "",
+        "input": "https://tse.tencentcloudapi.com/?Action=DeleteEngine\n&InstanceId=ins-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\n    }\n}",
+        "title": "删除引擎实例"
+      }
+    ],
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",

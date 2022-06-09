@@ -1327,7 +1327,7 @@
     "PushUrlCache": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=PushUrlCache\r\n&Urls.0=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/aaa.mp4\r\n&Urls.1=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/bbb.mp4\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=PushUrlCache\n&Urls.0=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/aaa.mp4\n&Urls.1=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/bbb.mp4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "预热示例"
       }
