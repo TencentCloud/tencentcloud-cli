@@ -4093,7 +4093,8 @@
           "name": "ImageId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4103,7 +4104,8 @@
           "name": "OsName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4113,7 +4115,8 @@
           "name": "ImageType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4123,7 +4126,8 @@
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4133,7 +4137,8 @@
           "name": "ImageName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4143,7 +4148,8 @@
           "name": "ImageDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4153,7 +4159,8 @@
           "name": "ImageSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4163,7 +4170,8 @@
           "name": "Architecture",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4173,7 +4181,8 @@
           "name": "ImageState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4183,7 +4192,8 @@
           "name": "Platform",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4193,7 +4203,8 @@
           "name": "ImageCreator",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4203,7 +4214,8 @@
           "name": "ImageSource",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4213,7 +4225,8 @@
           "name": "SyncPercent",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4223,7 +4236,8 @@
           "name": "IsSupportCloudinit",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4233,7 +4247,8 @@
           "name": "SnapshotSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4243,7 +4258,19 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "镜像许可类型",
+          "example": "TencentCloud",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4308,7 +4335,8 @@
           "member": "string",
           "name": "Architecture",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4317,7 +4345,8 @@
           "member": "string",
           "name": "OsType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4326,7 +4355,8 @@
           "member": "string",
           "name": "OsVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4335,7 +4365,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4344,7 +4375,8 @@
           "member": "string",
           "name": "ImageName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4353,7 +4385,8 @@
           "member": "string",
           "name": "ImageDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4362,7 +4395,8 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4371,7 +4405,8 @@
           "member": "bool",
           "name": "Force",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4380,7 +4415,8 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5477,6 +5513,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例的操作系统许可类型，默认为TencentCloud",
+          "example": "TencentCloud",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],
@@ -7070,7 +7117,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7079,7 +7127,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7088,7 +7137,18 @@
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "给实例绑定用户角色，传空值为解绑操作",
+          "example": "TKE_QCSLinkedRoleInPrometheusService",
+          "member": "string",
+          "name": "CamRoleName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7097,7 +7157,18 @@
           "member": "bool",
           "name": "DisableApiTermination",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。\n举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。\n该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。",
+          "example": "'user'",
+          "member": "string",
+          "name": "CamRoleType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

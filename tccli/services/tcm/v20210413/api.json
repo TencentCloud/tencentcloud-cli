@@ -1,5 +1,53 @@
 {
   "actions": {
+    "CreateIngressGateway": {
+      "document": "创建IngressGateway",
+      "input": "CreateIngressGatewayRequest",
+      "name": "创建IngressGateway",
+      "output": "CreateIngressGatewayResponse"
+    },
+    "CreateIstioResource": {
+      "document": "在网格中创建Istio资源",
+      "input": "CreateIstioResourceRequest",
+      "name": "创建Istio资源",
+      "output": "CreateIstioResourceResponse"
+    },
+    "CreateMesh": {
+      "document": "创建网格",
+      "input": "CreateMeshRequest",
+      "name": "创建网格",
+      "output": "CreateMeshResponse"
+    },
+    "DeleteIngressGateway": {
+      "document": "删除IngressGateway",
+      "input": "DeleteIngressGatewayRequest",
+      "name": "删除IngressGateway",
+      "output": "DeleteIngressGatewayResponse"
+    },
+    "DeleteIstioResource": {
+      "document": "删除网格中的Istio资源",
+      "input": "DeleteIstioResourceRequest",
+      "name": "删除Istio资源",
+      "output": "DeleteIstioResourceResponse"
+    },
+    "DeleteMesh": {
+      "document": "删除网格",
+      "input": "DeleteMeshRequest",
+      "name": "删除网格",
+      "output": "DeleteMeshResponse"
+    },
+    "DescribeIngressGatewayList": {
+      "document": "查询 IngressGateway 列表",
+      "input": "DescribeIngressGatewayListRequest",
+      "name": "查询IngressGateway列表",
+      "output": "DescribeIngressGatewayListResponse"
+    },
+    "DescribeIstioResource": {
+      "document": "获取网格中生效的Istio资源",
+      "input": "DescribeIstioResourceRequest",
+      "name": "获取Istio资源",
+      "output": "DescribeIstioResourceResponse"
+    },
     "DescribeMesh": {
       "document": "查询网格详情",
       "input": "DescribeMeshRequest",
@@ -11,6 +59,36 @@
       "input": "DescribeMeshListRequest",
       "name": "查询网格列表",
       "output": "DescribeMeshListResponse"
+    },
+    "LinkClusterList": {
+      "document": "关联集群",
+      "input": "LinkClusterListRequest",
+      "name": "关联集群",
+      "output": "LinkClusterListResponse"
+    },
+    "ModifyIngressGateway": {
+      "document": "修改IngressGateway",
+      "input": "ModifyIngressGatewayRequest",
+      "name": "修改IngressGateway",
+      "output": "ModifyIngressGatewayResponse"
+    },
+    "ModifyIstioResource": {
+      "document": "修改网格中的Istio资源",
+      "input": "ModifyIstioResourceRequest",
+      "name": "修改Istio资源",
+      "output": "ModifyIstioResourceResponse"
+    },
+    "RelinkCluster": {
+      "document": "重新关联集群",
+      "input": "RelinkClusterRequest",
+      "name": "重新关联集群",
+      "output": "RelinkClusterResponse"
+    },
+    "UnlinkCluster": {
+      "document": "解关联集群",
+      "input": "UnlinkClusterRequest",
+      "name": "解关联集群",
+      "output": "UnlinkClusterResponse"
     }
   },
   "metadata": {
@@ -67,7 +145,8 @@
           "name": "Enable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -77,7 +156,8 @@
           "name": "Template",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -87,7 +167,8 @@
           "name": "SelectedRange",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -97,7 +178,8 @@
           "name": "CLS",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -107,7 +189,8 @@
           "name": "Encoding",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -117,7 +200,41 @@
           "name": "Format",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "GRPC第三方服务器地址",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否启用GRPC第三方服务器",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableServer",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否启用标准输出",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableStdout",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -418,6 +535,393 @@
       ],
       "usage": "out"
     },
+    "CreateIngressGatewayRequest": {
+      "document": "CreateIngressGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IngressGateway 实例名字",
+          "example": "istio-ingressgateway",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间",
+          "example": "istio-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "负载均衡配置，自动创建 CLB 时指定，不可和 LoadBalancerId 同时使用",
+          "example": "无",
+          "member": "LoadBalancer",
+          "name": "LoadBalancer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Service 配置",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Workload 配置",
+          "example": "无",
+          "member": "WorkloadConfig",
+          "name": "Workload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "负载均衡实例ID，使用已有 CLB 时指定，不可和 LoadBalancer 同时使用",
+          "example": "lb-xxxxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIngressGatewayResponse": {
+      "document": "CreateIngressGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIstioResourceRequest": {
+      "document": "CreateIstioResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-0boi759g",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源API路径",
+          "example": "/apis/networking.istio.io/v1alpha3/namespaces//serviceentries",
+          "member": "string",
+          "name": "ResourcePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待创建资源",
+          "example": "无",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIstioResourceResponse": {
+      "document": "CreateIstioResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMeshRequest": {
+      "document": "CreateMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Mesh名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh版本",
+          "example": "1.8.1",
+          "member": "string",
+          "name": "MeshVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh类型，取值范围：\n- HOSTED：托管网格",
+          "example": "HOSTED",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Mesh配置",
+          "example": "无",
+          "member": "MeshConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "关联集群",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMeshResponse": {
+      "document": "CreateMesh返回参数结构体",
+      "members": [
+        {
+          "document": "创建的Mesh的Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomPromConfig": {
+      "document": "第三方 Prometheus 配置参数",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 访问地址",
+          "example": "http://x.x.x.x:909",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "认证方式",
+          "example": "none, basic",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否公网地址，缺省为 false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPublicAddr",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "虚拟网络id",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Prometheus 用户名（用于 basic 认证方式）",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Prometheus 密码（用于 basic 认证方式）",
+          "example": "test",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteIngressGatewayRequest": {
+      "document": "DeleteIngressGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IngressGateway 实例名字",
+          "example": "istio-ingressgateway",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIngressGatewayResponse": {
+      "document": "DeleteIngressGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIstioResourceRequest": {
+      "document": "DeleteIstioResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-0boi759g",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源API路径",
+          "example": "/apis/networking.istio.io/v1alpha3/namespaces//serviceentries",
+          "member": "string",
+          "name": "ResourcePath",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIstioResourceResponse": {
+      "document": "DeleteIstioResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMeshRequest": {
+      "document": "DeleteMesh请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要删除的MeshId",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMeshResponse": {
+      "document": "DeleteMesh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeployConfig": {
       "document": "部署配置",
       "members": [
@@ -443,6 +947,96 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeIngressGatewayListRequest": {
+      "document": "DescribeIngressGatewayList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IngressGateway 实例名字",
+          "example": "istio-ingressgateway",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIngressGatewayListResponse": {
+      "document": "DescribeIngressGatewayList返回参数结构体",
+      "members": [
+        {
+          "document": "IngressGateway 列表",
+          "example": "无",
+          "member": "IngressGateway",
+          "name": "IngressGatewayList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIstioResourceRequest": {
+      "document": "DescribeIstioResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-0boi759g",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源API路径",
+          "example": "/apis/networking.istio.io/v1alpha3/namespaces//serviceentries",
+          "member": "string",
+          "name": "ResourcePath",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIstioResourceResponse": {
+      "document": "DescribeIstioResource返回参数结构体",
+      "members": [
+        {
+          "document": "资源信息",
+          "example": "\"{\\\"apiVersion\\\":\\\"networking.istio.io/v1alpha3\\\",\\\"items\\\":[]}\"",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeMeshListRequest": {
       "document": "DescribeMeshList请求参数结构体",
@@ -887,6 +1481,42 @@
       ],
       "usage": "both"
     },
+    "LinkClusterListRequest": {
+      "document": "LinkClusterList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格Id",
+          "example": "mesh-xxxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关联集群",
+          "example": "无",
+          "member": "Cluster",
+          "name": "ClusterList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkClusterListResponse": {
+      "document": "LinkClusterList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LoadBalancer": {
       "document": "负载均衡配置",
       "members": [
@@ -1253,6 +1883,105 @@
       ],
       "usage": "both"
     },
+    "ModifyIngressGatewayRequest": {
+      "document": "ModifyIngressGateway请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "服务网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IngressGateway 实例名字",
+          "example": "istio-ingressgateway",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Service 配置",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Workload 配置",
+          "example": "无",
+          "member": "WorkloadConfig",
+          "name": "Workload",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIngressGatewayResponse": {
+      "document": "ModifyIngressGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIstioResourceRequest": {
+      "document": "ModifyIstioResource请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格ID",
+          "example": "mesh-0boi759g",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源API路径",
+          "example": "/apis/networking.istio.io/v1alpha3/namespaces//serviceentries",
+          "member": "string",
+          "name": "ResourcePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待修改资源",
+          "example": "无",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIstioResourceResponse": {
+      "document": "ModifyIstioResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PodsMetricSource": {
       "document": "PodsMetricSource 定义了如何根据特定指标进行扩缩容",
       "members": [
@@ -1290,7 +2019,8 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1300,7 +2030,8 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1310,7 +2041,8 @@
           "name": "Region",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1320,7 +2052,19 @@
           "name": "InstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "第三方 Prometheus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomPromConfig",
+          "name": "CustomProm",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1410,6 +2154,42 @@
         }
       ],
       "usage": "out"
+    },
+    "RelinkClusterRequest": {
+      "document": "RelinkCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "重新关联集群Id",
+          "example": "clx-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RelinkClusterResponse": {
+      "document": "RelinkCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Resource": {
       "document": "Resource 定义了资源类型和数量",
@@ -1607,6 +2387,45 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "k1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "v1",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否透传给其他关联产品",
+          "example": "true",
+          "member": "bool",
+          "name": "Passthrough",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "TracingConfig": {
       "document": "调用链配置",
       "members": [
@@ -1668,6 +2487,42 @@
         }
       ],
       "usage": "both"
+    },
+    "UnlinkClusterRequest": {
+      "document": "UnlinkCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "网格Id",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "取消关联的集群Id",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlinkClusterResponse": {
+      "document": "UnlinkCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "WorkloadConfig": {
       "document": "工作负载配置",

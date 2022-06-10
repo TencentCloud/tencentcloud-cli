@@ -1,5 +1,69 @@
 {
   "actions": {
+    "CreateIngressGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIngressGateway\n<公共请求参数>\n\n{\n    \"Workload\": {\n        \"SelectedNodeList\": [\n            \"10.0.0.2\"\n        ],\n        \"HorizontalPodAutoscaler\": {\n            \"MinReplicas\": 1,\n            \"Metrics\": [\n                {\n                    \"Pods\": {\n                        \"TargetAverageValue\": \"80\",\n                        \"MetricName\": \"k8s_pod_rate_cpu_core_used_request\"\n                    },\n                    \"Type\": \"Pods\"\n                }\n            ],\n            \"MaxReplicas\": 3\n        },\n        \"Resources\": {\n            \"Requests\": [\n                {\n                    \"Name\": \"cpu\",\n                    \"Quantity\": \"1\"\n                }\n            ],\n            \"Limits\": [\n                {\n                    \"Name\": \"cpu\",\n                    \"Quantity\": \"2\"\n                }\n            ]\n        },\n        \"Replicas\": 1\n    },\n    \"Name\": \"istio-ingressgateway\",\n    \"Service\": {\n        \"ExternalTrafficPolicy\": \"Cluster\",\n        \"Type\": \"LoadBalancer\",\n        \"CLBDirectAccess\": true\n    },\n    \"ClusterId\": \"cls-xxxxxxxx\",\n    \"Namespace\": \"istio-system\",\n    \"MeshId\": \"mesh-xxxxxxxx\",\n    \"LoadBalancer\": {\n        \"LoadBalancerType\": \"OPEN\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "CreateIngressGateway"
+      }
+    ],
+    "CreateIstioResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIstioResource\n<公共请求参数>\n\n{\n    \"MeshId\": \"xxxxx\",\n    \"ResourcePath\": \"/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices\",\n    \"Resource\": \"...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request_id\"\n    }\n}",
+        "title": "CreateIstioResource"
+      }
+    ],
+    "CreateMesh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMesh\n<公共请求参数>\n\n{\n    \"DisplayName\": \"test\",\n    \"MeshVersion\": \"1.8.1\",\n    \"Type\": \"HOSTED\",\n    \"Config\": {\n        \"Istio\": {\n            \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n            \"Tracing\": {\n                \"Sampling\": 1\n            }\n        }\n    },\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"MeshId\": \"mesh-xxxxxxxx\"\n    }\n}",
+        "title": "CreateMesh"
+      }
+    ],
+    "DeleteIngressGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIngressGateway\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"MeshId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "DeleteIngressGateway"
+      }
+    ],
+    "DeleteIstioResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIstioResource\n<公共请求参数>\n\n{\n    \"MeshId\": \"xxxxx\",\n    \"ResourcePath\": \"/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request_id\"\n    }\n}",
+        "title": "DeleteIstioResource"
+      }
+    ],
+    "DeleteMesh": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMesh\n<公共请求参数>\n\n{\n    \"MeshId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "DeleteMesh"
+      }
+    ],
+    "DescribeIngressGatewayList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIngressGatewayList\n<公共请求参数>\n\n{\n    \"MeshId\": \"mesh-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"IngressGatewayList\": [\n            {\n                \"Status\": {\n                    \"LoadBalancer\": {\n                        \"LoadBalancerName\": \"cls-xxxxxxxx_istio_istio-ingressgateway\",\n                        \"LoadBalancerVip\": \"150.158.238.54\",\n                        \"LoadBalancerId\": \"lb-xxxxxxxx\"\n                    }\n                },\n                \"Workload\": {\n                    \"SelectedNodeList\": [\n                        \"10.0.0.2\"\n                    ],\n                    \"HorizontalPodAutoscaler\": {\n                        \"MinReplicas\": 1,\n                        \"Metrics\": [\n                            {\n                                \"Pods\": {\n                                    \"TargetAverageValue\": \"80\",\n                                    \"MetricName\": \"k8s_pod_rate_cpu_core_used_request\"\n                                },\n                                \"Type\": \"Pods\"\n                            }\n                        ],\n                        \"MaxReplicas\": 3\n                    },\n                    \"Resources\": {\n                        \"Requests\": [\n                            {\n                                \"Name\": \"cpu\",\n                                \"Quantity\": \"1\"\n                            }\n                        ],\n                        \"Limits\": [\n                            {\n                                \"Name\": \"cpu\",\n                                \"Quantity\": \"2\"\n                            }\n                        ]\n                    },\n                    \"Replicas\": 1\n                },\n                \"Name\": \"istio-ingressgateway\",\n                \"Service\": {\n                    \"ExternalTrafficPolicy\": \"Cluster\",\n                    \"Type\": \"LoadBalancer\",\n                    \"CLBDirectAccess\": true\n                },\n                \"ClusterId\": \"cls-xxxxxxxx\",\n                \"Namespace\": \"istio-system\",\n                \"LoadBalancer\": {\n                    \"LoadBalancerType\": \"OPEN\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "DescribeIngressGatewayList"
+      }
+    ],
+    "DescribeIstioResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIstioResource\n<公共请求参数>\n\n{\n    \"MeshId\": \"xxxxxx\",\n    \"ResourcePath\": \"/apis/networking.istio.io/v1alpha3/namespaces//serviceentries\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request_id\",\n        \"Resource\": \"{\\\"apiVersion\\\":\\\"networking.istio.io/v1alpha3\\\",\\\"items\\\":[],\\\"kind\\\":\\\"ServiceEntryList\\\",\\\"metadata\\\":{\\\"continue\\\":\\\"\\\",\\\"resourceVersion\\\":\\\"3737767636\\\",\\\"selfLink\\\":\\\"/apis/networking.istio.io/v1alpha3/namespaces//serviceentries\\\"}}\\n\"\n    }\n}",
+        "title": "DescribeIstioResource"
+      }
+    ],
     "DescribeMesh": [
       {
         "document": "",
@@ -14,6 +78,46 @@
         "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeshList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"MeshList\": [\n            {\n                \"MeshId\": \"xxxxx\",\n                \"DisplayName\": \"test\",\n                \"Region\": \"xx\",\n                \"Type\": \"HOSTED\",\n                \"State\": \"xx\",\n                \"Version\": \"xx\",\n                \"CreatedTime\": \"2020-09-22 00:00:00\",\n                \"UpdatedTime\": \"2020-09-22 00:00:00\",\n                \"Config\": {\n                    \"Istio\": {\n                        \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n                        \"Tracing\": {\n                            \"Sampling\": 1\n                        }\n                    }\n                },\n                \"ClusterList\": [\n                    {\n                        \"ClusterId\": \"{{clusterId}}\",\n                        \"DisplayName\": \"\",\n                        \"Region\": \"sh\",\n                        \"Role\": \"MASTER\",\n                        \"VpcId\": \"{{vpcId}}\",\n                        \"SubnetId\": \"{{subnetId}}\",\n                        \"Config\": {\n                            \"AutoInjectionNamespaceList\": [\n                                \"default\"\n                            ]\n                        }\n                    }\n                ],\n                \"Status\": {\n                    \"CanaryVersion\": \"xx\",\n                    \"ServiceCount\": 0,\n                    \"Prometheus\": null\n                }\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "DescribeMeshList"
+      }
+    ],
+    "LinkClusterList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LinkClusterList\n<公共请求参数>\n\n{\n    \"MeshId\": \"xx\",\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"DisplayName\": \"\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "LinkClusterList"
+      }
+    ],
+    "ModifyIngressGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIngressGateway\n<公共请求参数>\n\n{\n    \"Workload\": {\n        \"SelectedNodeList\": [\n            \"xx\"\n        ],\n        \"HorizontalPodAutoscaler\": {\n            \"MinReplicas\": 0,\n            \"Metrics\": [\n                {\n                    \"Pods\": {\n                        \"TargetAverageValue\": \"xx\",\n                        \"MetricName\": \"xx\"\n                    },\n                    \"Type\": \"xx\",\n                    \"Resource\": {\n                        \"TargetAverageUtilization\": 0,\n                        \"Name\": \"xx\",\n                        \"TargetAverageValue\": \"xx\"\n                    }\n                }\n            ],\n            \"MaxReplicas\": 0\n        },\n        \"Resources\": {\n            \"Requests\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Quantity\": \"xx\"\n                }\n            ],\n            \"Limits\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Quantity\": \"xx\"\n                }\n            ]\n        },\n        \"Replicas\": 0\n    },\n    \"Service\": {\n        \"ExternalTrafficPolicy\": \"xx\",\n        \"Type\": \"xx\",\n        \"CLBDirectAccess\": true\n    },\n    \"MeshId\": \"xx\",\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "ModifyIngressGateway"
+      }
+    ],
+    "ModifyIstioResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIstioResource\n<公共请求参数>\n\n{\n    \"MeshId\": \"xxxxxx\",\n    \"ResourcePath\": \"/apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/test\",\n    \"Resource\": \"...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request_id\"\n    }\n}",
+        "title": "ModifyIstioResource"
+      }
+    ],
+    "RelinkCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RelinkCluster\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"ClusterId\": \"{{clusterId}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "RelinkCluster"
+      }
+    ],
+    "UnlinkCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlinkCluster\n<公共请求参数>\n\n{\n    \"MeshId\": \"{{meshId}}\",\n    \"ClusterId\": \"{{clusterId}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "UnlinkCluster"
       }
     ]
   },
