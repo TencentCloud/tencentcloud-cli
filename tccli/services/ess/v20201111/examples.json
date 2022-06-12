@@ -8,6 +8,14 @@
         "title": "撤销流程样例"
       }
     ],
+    "CancelMultiFlowSignQRCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Channel\": \"xx\",\n        \"ProxyIp\": \"xx\"\n    },\n    \"QrCodeId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CancelMultiFlowSignQRCode"
+      }
+    ],
     "CreateDocument": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowByFiles\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"19561039******de6a\"\n    },\n    \"FlowName\": \"合同名称\",\n    \"NeedPreview\": false,\n    \"FlowDescription\": \"测试流程的描述信息\",\n    \"Unordered\": false,\n    \"FlowType\": \"劳动合同\",\n    \"Deadline\": 1604912664,\n    \"Approvers\": [\n        {\n            \"ApproverType\": 0,\n            \"OrganizationName\": \"xxx有限公司\",\n            \"ApproverName\": \"张三\",\n            \"ApproverMobile\": \"15912345678\",\n            \"SignComponents\": [\n                {\n                    \"ComponentValue\": \"SealId\",\n                    \"ComponentPosY\": 100,\n                    \"ComponentWidth\": 100,\n                    \"FileIndex\": 0,\n                    \"ComponentType\": \"SIGN_SEAL\",\n                    \"ComponentPage\": 1,\n                    \"ComponentPosX\": 100,\n                    \"ComponentHeight\": 100\n                },\n                {\n                    \"ComponentValue\": \"\",\n                    \"ComponentPosY\": 120,\n                    \"ComponentWidth\": 120,\n                    \"FileIndex\": 0,\n                    \"ComponentType\": \"SIGN_DATE\",\n                    \"ComponentPage\": 1,\n                    \"ComponentPosX\": 120,\n                    \"ComponentHeight\": 120\n                }\n            ]\n        },\n        {\n            \"ApproverType\": 1,\n            \"ApproverName\": \"李四\",\n            \"ApproverMobile\": \"185111111111\",\n            \"SignComponents\": [\n                {\n                    \"ComponentValue\": \"\",\n                    \"ComponentPosY\": 100,\n                    \"ComponentWidth\": 100,\n                    \"FileIndex\": 0,\n                    \"ComponentType\": \"SIGN_SIGNATURE\",\n                    \"ComponentPage\": 1,\n                    \"ComponentPosX\": 100,\n                    \"ComponentHeight\": 100\n                },\n                {\n                    \"ComponentValue\": \"\",\n                    \"ComponentPosY\": 120,\n                    \"ComponentWidth\": 120,\n                    \"FileIndex\": 0,\n                    \"ComponentType\": \"SIGN_DATE\",\n                    \"ComponentPage\": 1,\n                    \"ComponentPosX\": 120,\n                    \"ComponentHeight\": 120\n                }\n            ]\n        }\n    ],\n    \"FileIds\": [\n        \"61a82f0*******c2d0d807\"\n    ],\n    \"Components\": [\n        {\n            \"ComponentValue\": \"自定义单行文本内容\",\n            \"ComponentPosY\": 100,\n            \"ComponentWidth\": 100,\n            \"FileIndex\": 0,\n            \"ComponentType\": \"TEXT\",\n            \"ComponentPage\": 1,\n            \"ComponentPosX\": 100,\n            \"ComponentHeight\": 100,\n            \"ComponentExtra\": \"{\\\"FontSize\\\":20}\"\n        },\n        {\n            \"ComponentValue\": \"自定义多行文本内容\",\n            \"ComponentPosY\": 100,\n            \"ComponentWidth\": 100,\n            \"FileIndex\": 0,\n            \"ComponentType\": \"MULTI_LINE_TEXT\",\n            \"ComponentPage\": 1,\n            \"ComponentPosX\": 100,\n            \"ComponentHeight\": 100,\n            \"ComponentExtra\": \"{\\\"FontSize\\\":20}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"61a82f0c********0d807\",\n        \"PreviewUrl\": \"\",\n        \"RequestId\": \"requestId-xxx\"\n    }\n}",
         "title": "创建电子签流程"
+      }
+    ],
+    "CreateMultiFlowSignQRCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"FlowName\": \"xx\",\n    \"MaxFlowNum\": 0,\n    \"FlowEffectiveDay\": 0,\n    \"Operator\": {\n        \"OpenId\": \"xx\",\n        \"ClientIp\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Channel\": \"xx\",\n        \"ProxyIp\": \"xx\"\n    },\n    \"TemplateId\": \"xx\",\n    \"QrEffectiveDay\": 0,\n    \"CallbackUrl\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QrCode\": {\n            \"QrCodeUrl\": \"xx\",\n            \"ExpiredTime\": 5,\n            \"QrCodeId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "CreateMultiFlowSignQRCode"
       }
     ],
     "CreateSchemeUrl": [

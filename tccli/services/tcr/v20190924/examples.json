@@ -59,9 +59,15 @@
     "CreateInstance": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstance\n&RegistryName=tcr-test\n&RegistryType=standard\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstance\n&RegistryName=tcr-test\n&RegistryType=standard\n&SyncTag=True\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"XXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建企业版实例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"RegistryName\": \"dongjwwang-my-test\",\n    \"RegistryType\": \"basic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"947cec54-bafd-4da9-8e07-2ac22e8ed6d4\",\n        \"RegistryId\": \"for-test\"\n    }\n}",
+        "title": "test"
       }
     ],
     "CreateInstanceToken": [

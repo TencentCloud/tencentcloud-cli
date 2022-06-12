@@ -148,7 +148,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MeasureTrtcMcuExternal\n<公共请求参数>\n\n{\n    \"EndTime\": \"2021-01-01 00:00:00\",\n    \"StartTime\": \"2021-01-01 00:00:00\",\n    \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"xx\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"VideoTimeH2642K\": 1,\n                        \"VideoTimeH265FHD\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"VideoTimeH264HD\": 1,\n                        \"VideoTimeH264SD\": 1,\n                        \"VideoTimeH2652K\": 1,\n                        \"VideoTimeH265HD\": 1,\n                        \"Flux\": 0.0,\n                        \"VideoTimeH264FHD\": 1,\n                        \"VideoTimeH2644K\": 1,\n                        \"VideoTimeH2654K\": 1,\n                        \"VideoTimeH265SD\": 1\n                    }\n                ]\n            }\n        ],\n        \"Type\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询旁路转码计费时长 通过计费二期接口"
       }
     ],

@@ -27,7 +27,11 @@ Output:
             "DomainNumber": "3",
             "RenewOrder": null
         },
-        "RootCert": {},
+        "RootCert": {
+            "Standard": "xx",
+            "Encrypt": "xx",
+            "Sign": "xx"
+        },
         "RenewAble": false,
         "Status": 5,
         "IsDv": false,
@@ -132,7 +136,11 @@ Output:
         },
         "RenewAble": true,
         "Status": 1,
-        "RootCert": {},
+        "RootCert": {
+            "Standard": "xx",
+            "Encrypt": "xx",
+            "Sign": "xx"
+        },
         "IsDv": false,
         "IsVulnerability": true,
         "CertBeginTime": "2020-09-22 00:00:00",

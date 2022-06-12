@@ -5669,7 +5669,8 @@
       "members": [
         {
           "default": "",
-          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
+          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>",
+          "example": "无",
           "member": "string",
           "name": "Codec",
           "required": true,
@@ -5679,6 +5680,7 @@
         {
           "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "无",
           "member": "uint64",
           "name": "Bitrate",
           "required": true,
@@ -5688,6 +5690,7 @@
         {
           "default": "",
           "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "example": "无",
           "member": "uint64",
           "name": "SampleRate",
           "required": true,
@@ -5697,6 +5700,7 @@
         {
           "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
+          "example": "无",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
@@ -5711,7 +5715,8 @@
       "members": [
         {
           "default": "",
-          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
+          "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac。</li>\n当外层参数 Format 为 HLS 或 MPEG-DASH 时，可选值为：\n<li>libfdk_aac。</li>",
+          "example": "无",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -5721,6 +5726,7 @@
         {
           "default": "",
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。",
+          "example": "无",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
@@ -5730,6 +5736,7 @@
         {
           "default": "",
           "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
+          "example": "无",
           "member": "uint64",
           "name": "SampleRate",
           "required": false,
@@ -5739,6 +5746,7 @@
         {
           "default": "",
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
+          "example": "无",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
@@ -7160,7 +7168,7 @@
       "members": [
         {
           "default": "",
-          "document": "自适应转码格式，取值范围：\n<li>HLS。</li>",
+          "document": "自适应转码格式，取值范围：\n<li>HLS；</li>\n<li>MPEG-DASH。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Format",
@@ -17576,6 +17584,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "模板名称，长度限制：64 个字符。",
           "example": "转自适应码流模板2",
           "member": "string",
@@ -17585,7 +17602,7 @@
         },
         {
           "default": "",
-          "document": "自适应转码格式，取值范围：\n<li>HLS。</li>",
+          "document": "自适应转码格式，取值范围：\n<li>HLS；</li>\n<li>MPEG-DASH。</li>",
           "example": "HLS",
           "member": "string",
           "name": "Format",
@@ -17627,15 +17644,6 @@
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"

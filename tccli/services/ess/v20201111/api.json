@@ -6,6 +6,12 @@
       "name": "撤销流程",
       "output": "CancelFlowResponse"
     },
+    "CancelMultiFlowSignQRCode": {
+      "document": "此接口（CancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。",
+      "input": "CancelMultiFlowSignQRCodeRequest",
+      "name": "取消一码多扫二维码",
+      "output": "CancelMultiFlowSignQRCodeResponse"
+    },
     "CreateDocument": {
       "document": "创建电子文档",
       "input": "CreateDocumentRequest",
@@ -23,6 +29,12 @@
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建流程",
       "output": "CreateFlowByFilesResponse"
+    },
+    "CreateMultiFlowSignQRCode": {
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
+      "input": "CreateMultiFlowSignQRCodeRequest",
+      "name": "创建一码多扫流程签署二维码",
+      "output": "CreateMultiFlowSignQRCodeResponse"
     },
     "CreateSchemeUrl": {
       "document": "获取小程序跳转链接\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://tcloud-doc.isd.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
@@ -285,6 +297,51 @@
     },
     "CancelFlowResponse": {
       "document": "CancelFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelMultiFlowSignQRCodeRequest": {
+      "document": "CancelMultiFlowSignQRCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "二维码id",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelMultiFlowSignQRCodeResponse": {
+      "document": "CancelMultiFlowSignQRCode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -864,6 +921,105 @@
           "name": "FlowId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultiFlowSignQRCodeRequest": {
+      "document": "CreateMultiFlowSignQRCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同名称",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "应用信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同有效天数 默认7天 最高设置不超过30天",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowEffectiveDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "二维码有效天数 默认7天 最高设置不超过90天",
+          "example": "无",
+          "member": "int64",
+          "name": "QrEffectiveDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大合同份数，默认5份 超过此上限 二维码自动失效",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxFlowNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMultiFlowSignQRCodeResponse": {
+      "document": "CreateMultiFlowSignQRCode返回参数结构体",
+      "members": [
+        {
+          "document": "签署二维码对象",
+          "example": "无",
+          "member": "SignQrCode",
+          "name": "QrCode",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1767,6 +1923,42 @@
         }
       ],
       "usage": "both"
+    },
+    "SignQrCode": {
+      "document": "一码多扫签署二维码对象",
+      "members": [
+        {
+          "default": "",
+          "document": "二维码id",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二维码url",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二维码过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StartFlowRequest": {
       "document": "StartFlow请求参数结构体",

@@ -3041,7 +3041,38 @@
     },
     "RootCertificates": {
       "document": "根证书",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "国密签名证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asd",
+          "member": "string",
+          "name": "Sign",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国密加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asd",
+          "member": "string",
+          "name": "Encrypt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标准证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asc",
+          "member": "string",
+          "name": "Standard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "SubmitAuditManagerRequest": {

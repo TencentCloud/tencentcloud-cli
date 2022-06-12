@@ -1061,6 +1061,15 @@
           "name": "RegistryChargeType",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否同步TCR云标签至生成的COS Bucket",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncTag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1375,6 +1384,15 @@
           "name": "ReplicationRegionName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否同步TCR云标签至生成的COS Bucket",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncTag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1948,6 +1966,7 @@
         {
           "default": "",
           "document": "实例id",
+          "example": "tcr-abc123",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1956,8 +1975,18 @@
         {
           "default": "",
           "document": "是否删除存储桶，默认为false",
+          "example": "true",
           "member": "bool",
           "name": "DeleteBucket",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否dryRun模式，缺省值：false",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
           "required": false,
           "type": "bool"
         }

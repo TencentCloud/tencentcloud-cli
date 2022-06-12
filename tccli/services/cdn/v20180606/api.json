@@ -15213,6 +15213,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量包实际生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 10:00:00",
+          "member": "string",
+          "name": "TrueEnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量包实际过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 23:59:59",
+          "member": "string",
+          "name": "TrueExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16180,7 +16200,7 @@
         },
         {
           "default": "",
-          "document": "设置超时时间，单位为秒，最大超时时间65秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置超时时间，单位为秒，最大超时时间300秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Timeout",

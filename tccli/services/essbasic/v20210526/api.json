@@ -1,10 +1,22 @@
 {
   "actions": {
+    "ChannelCancelMultiFlowSignQRCode": {
+      "document": "此接口（ChannelCancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。",
+      "input": "ChannelCancelMultiFlowSignQRCodeRequest",
+      "name": "取消一码多扫二维码",
+      "output": "ChannelCancelMultiFlowSignQRCodeResponse"
+    },
     "ChannelCreateFlowByFiles": {
       "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建流程。此接口不可直接使用，需要运营申请",
       "input": "ChannelCreateFlowByFilesRequest",
       "name": "渠道版通过文件创建流程",
       "output": "ChannelCreateFlowByFilesResponse"
+    },
+    "ChannelCreateMultiFlowSignQRCode": {
+      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
+      "input": "ChannelCreateMultiFlowSignQRCodeRequest",
+      "name": "创建一码多扫流程签署二维码",
+      "output": "ChannelCreateMultiFlowSignQRCodeResponse"
     },
     "CreateConsoleLoginUrl": {
       "document": "此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息\n",
@@ -196,6 +208,51 @@
       ],
       "usage": "in"
     },
+    "ChannelCancelMultiFlowSignQRCodeRequest": {
+      "document": "ChannelCancelMultiFlowSignQRCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "二维码id",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCancelMultiFlowSignQRCodeResponse": {
+      "document": "ChannelCancelMultiFlowSignQRCode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateFlowByFilesRequest": {
       "document": "ChannelCreateFlowByFiles请求参数结构体",
       "members": [
@@ -312,6 +369,105 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateMultiFlowSignQRCodeRequest": {
+      "document": "ChannelCreateMultiFlowSignQRCode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "模版ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同名称",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "合同有效天数 默认7天 最高设置不超过30天",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowEffectiveDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "二维码有效天数 默认7天 最高设置不超过90天",
+          "example": "无",
+          "member": "int64",
+          "name": "QrEffectiveDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大合同份数，默认5份 超过此上限 二维码自动失效",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxFlowNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateMultiFlowSignQRCodeResponse": {
+      "document": "ChannelCreateMultiFlowSignQRCode返回参数结构体",
+      "members": [
+        {
+          "document": "签署二维码对象",
+          "example": "无",
+          "member": "SignQrCode",
+          "name": "QrCode",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -997,7 +1153,7 @@
         },
         {
           "default": "",
-          "document": "查询内容：0-模版列表及详情（默认），1-仅模版列表",
+          "document": "查询内容：0-模板列表及详情（默认），1-仅模板列表",
           "example": "无",
           "member": "int64",
           "name": "ContentType",
@@ -2161,6 +2317,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SignQrCode": {
+      "document": "一码多扫签署二维码对象",
+      "members": [
+        {
+          "default": "",
+          "document": "二维码id",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二维码url",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "二维码过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -133,7 +133,7 @@
       "output": "ListSendTasksResponse"
     },
     "SendEmail": {
-      "document": "您可以通过此API发送TEXT或者HTML邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件。",
+      "document": "您可以通过此API发送HTML或者TEXT邮件，适用于触发类邮件（验证码、交易类）。默认仅支持使用模板发送邮件。",
       "input": "SendEmailRequest",
       "name": "发送邮件",
       "output": "SendEmailResponse"
@@ -225,7 +225,7 @@
         },
         {
           "default": "",
-          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。",
           "example": "abc@ef.com",
           "member": "string",
           "name": "ReplyToAddresses",
@@ -1544,7 +1544,7 @@
         },
         {
           "default": "",
-          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。",
+          "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
           "name": "ReplyToAddresses",

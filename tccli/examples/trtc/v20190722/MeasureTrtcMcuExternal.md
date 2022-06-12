@@ -15,7 +15,31 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "644956b8-9f7c-44c5-b833-31d91dba1b23"
+        "Usages": [
+            {
+                "SdkAppId": "xx",
+                "TotalNum": 1,
+                "SdkAppIdTranscodeTimeUsages": [
+                    {
+                        "AudioTime": 1,
+                        "VideoTimeH2642K": 1,
+                        "VideoTimeH265FHD": 1,
+                        "TimeKey": "xx",
+                        "VideoTimeH264HD": 1,
+                        "VideoTimeH264SD": 1,
+                        "VideoTimeH2652K": 1,
+                        "VideoTimeH265HD": 1,
+                        "Flux": 0.0,
+                        "VideoTimeH264FHD": 1,
+                        "VideoTimeH2644K": 1,
+                        "VideoTimeH2654K": 1,
+                        "VideoTimeH265SD": 1
+                    }
+                ]
+            }
+        ],
+        "Type": "xx",
+        "RequestId": "xx"
     }
 }
 ```
