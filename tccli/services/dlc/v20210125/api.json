@@ -512,7 +512,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -522,7 +523,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -532,7 +534,8 @@
           "name": "Comment",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -542,7 +545,8 @@
           "name": "Precision",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -552,7 +556,8 @@
           "name": "Scale",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -562,7 +567,8 @@
           "name": "Nullable",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -572,7 +578,8 @@
           "name": "Position",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -582,7 +589,8 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -592,7 +600,19 @@
           "name": "ModifiedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPartition",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -1011,6 +1031,26 @@
           "example": "kafka-datasource",
           "member": "string",
           "name": "DataSource",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -1828,6 +1868,17 @@
           "name": "EngineExecType",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -2661,7 +2712,7 @@
       "document": "DescribeSparkAppTasks返回参数结构体",
       "members": [
         {
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结果（该字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskResponseInfo",
           "name": "Tasks",
@@ -2678,6 +2729,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "任务结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskResponseInfo",
+          "name": "SparkAppTasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -3678,6 +3739,26 @@
         },
         {
           "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "spark作业命令行参数",
           "example": "10",
           "member": "string",
@@ -4459,6 +4540,28 @@
           "example": "kafka-datasource",
           "member": "string",
           "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos",
+          "member": "string",
+          "name": "IsLocalPythonFiles",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.py",
+          "member": "string",
+          "name": "AppPythonFiles",
           "required": true,
           "type": "string",
           "value_allowed_null": true,

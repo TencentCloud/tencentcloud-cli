@@ -27,6 +27,10 @@ Output:
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
                 "StorageType": "cls",
+                "FlowLogStorage": {
+                    "StorageTopic": "topic-siqmaox1",
+                    "StorageId": "ckafka-akwiqms1"
+                },
                 "TagSet": [],
                 "Enable": true
             },
@@ -42,12 +46,59 @@ Output:
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
                 "StorageType": "cls",
+                "FlowLogStorage": {
+                    "StorageTopic": "topic-siqmaox1",
+                    "StorageId": "ckafka-akwiqms1"
+                },
                 "TagSet": [],
                 "Enable": true
             }
         ],
         "TotalNum": 2,
         "RequestId": "404428db-f850-40c2-803d-0aae49aba43a"
+    }
+}
+```
+
+**Example 2: 获取流日志信息**
+
+
+
+Input: 
+
+```
+tccli vpc DescribeFlowLogs --cli-unfold-argument  \
+    --VpcId vpc-ew41hsdj \
+    --FlowLogId fl-m4vogmhf
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowLog": [
+            {
+                "VpcId": "vpc-ew41hsdj",
+                "FlowLogId": "fl-m4vogmhf",
+                "FlowLogName": "sflow-nat",
+                "ResourceType": "NAT",
+                "ResourceId": "nat-prlux840",
+                "TrafficType": "ALL",
+                "CloudLogId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca",
+                "CloudLogRegion": "ap-guangzhou",
+                "CloudLogState": "SUCCESS",
+                "FlowLogDescription": "",
+                "CreatedTime": "2022-05-18 15:26:50",
+                "Enable": true,
+                "StorageType": "cls",
+                "FlowLogStorage": {
+                    "StorageId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca"
+                },
+                "TagSet": []
+            }
+        ],
+        "TotalNum": 1,
+        "RequestId": "811bbd89-3c38-4926-9a8c-4bc97792aa34"
     }
 }
 ```

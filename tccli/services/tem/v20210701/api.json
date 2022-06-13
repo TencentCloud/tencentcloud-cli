@@ -644,9 +644,10 @@
           "example": "1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -654,9 +655,10 @@
           "example": "* * *",
           "member": "string",
           "name": "Period",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -664,9 +666,10 @@
           "example": "1",
           "member": "CronHorizontalAutoscalerSchedule",
           "name": "Schedules",
-          "required": true,
+          "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -674,9 +677,10 @@
           "example": "1",
           "member": "bool",
           "name": "Enabled",
-          "required": true,
+          "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -686,7 +690,8 @@
           "name": "Priority",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -853,7 +858,8 @@
           "member": "string",
           "name": "ApplicationId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -862,7 +868,8 @@
           "member": "uint64",
           "name": "InitPodNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -871,7 +878,8 @@
           "member": "float",
           "name": "CpuSpec",
           "required": true,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -880,7 +888,8 @@
           "member": "float",
           "name": "MemorySpec",
           "required": true,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -889,7 +898,8 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -898,7 +908,8 @@
           "member": "string",
           "name": "ImgRepo",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -907,7 +918,8 @@
           "member": "string",
           "name": "VersionDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -916,7 +928,8 @@
           "member": "string",
           "name": "JvmOpts",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -925,7 +938,8 @@
           "member": "EsInfo",
           "name": "EsInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -934,7 +948,8 @@
           "member": "Pair",
           "name": "EnvConf",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -943,7 +958,8 @@
           "member": "string",
           "name": "LogConfs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -952,7 +968,8 @@
           "member": "StorageConf",
           "name": "StorageConfs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -961,7 +978,8 @@
           "member": "StorageMountConf",
           "name": "StorageMountConfs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -970,7 +988,8 @@
           "member": "string",
           "name": "DeployMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -979,7 +998,8 @@
           "member": "string",
           "name": "DeployVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -988,7 +1008,8 @@
           "member": "string",
           "name": "PkgName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -997,7 +1018,8 @@
           "member": "string",
           "name": "JdkVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1006,7 +1028,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1015,7 +1038,8 @@
           "member": "LogOutputConf",
           "name": "LogOutputConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1024,7 +1048,8 @@
           "member": "int64",
           "name": "SourceChannel",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1033,7 +1058,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1042,7 +1068,8 @@
           "member": "string",
           "name": "ImageCommand",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1051,7 +1078,8 @@
           "member": "string",
           "name": "ImageArgs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1060,7 +1088,8 @@
           "member": "bool",
           "name": "UseRegistryDefaultConfig",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1069,7 +1098,8 @@
           "member": "MountedSettingConf",
           "name": "SettingConfs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1078,7 +1108,8 @@
           "member": "EksService",
           "name": "Service",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1087,7 +1118,8 @@
           "member": "string",
           "name": "VersionId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1096,7 +1128,8 @@
           "member": "string",
           "name": "PostStart",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1105,7 +1138,8 @@
           "member": "string",
           "name": "PreStop",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1114,7 +1148,8 @@
           "member": "HealthCheckConfig",
           "name": "Liveness",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1123,7 +1158,8 @@
           "member": "HealthCheckConfig",
           "name": "Readiness",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1132,25 +1168,28 @@
           "member": "DeployStrategyConf",
           "name": "DeployStrategyConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "弹性策略",
+          "document": "弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）",
           "example": "1",
           "member": "HorizontalAutoscaler",
           "name": "HorizontalAutoscaler",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "定时弹性策略",
+          "document": "定时弹性策略（已弃用，请使用弹性伸缩策略组合相关接口）",
           "example": "1",
           "member": "CronHorizontalAutoscaler",
           "name": "CronHorizontalAutoscaler",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1159,7 +1198,8 @@
           "member": "int64",
           "name": "LogEnable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1168,7 +1208,8 @@
           "member": "bool",
           "name": "ConfEdited",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1177,7 +1218,8 @@
           "member": "bool",
           "name": "SpeedUp",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1186,7 +1228,8 @@
           "member": "HealthCheckConfig",
           "name": "StartupProbe",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1195,7 +1238,8 @@
           "member": "string",
           "name": "OsFlavour",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1204,7 +1248,18 @@
           "member": "EnablePrometheusConf",
           "name": "EnablePrometheusConf",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "1：开始apm采集；0：关闭apm采集",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableTracing",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1219,7 +1274,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2243,23 +2299,25 @@
       "members": [
         {
           "default": "",
-          "document": "最小实例数",
+          "document": "最小实例数（可以不传）",
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "最大实例数",
+          "document": "最大实例数（可以不传）",
           "example": "1",
           "member": "int64",
           "name": "MaxReplicas",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2267,9 +2325,10 @@
           "example": "1",
           "member": "string",
           "name": "Metrics",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2277,9 +2336,21 @@
           "example": "1",
           "member": "int64",
           "name": "Threshold",
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "1",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -24,6 +24,9 @@ Output:
                 "Width": 960,
                 "Format": "gif",
                 "Fps": 30,
+                "Quality": 75,
+                "ResolutionAdaptive": "open",
+                "Type": "Custom",
                 "Comment": ""
             }
         ],

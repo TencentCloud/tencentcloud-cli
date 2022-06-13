@@ -6,6 +6,12 @@
         "input": "https://gaap.tencentcloudapi.com/?Action=AddRealServers\n&ProjectId=0\n&RealServerIP.0=1.1.1.1\n&RealServerName='test'\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RealServerSet\": [\n            {\n                \"RealServerId\": \"id-5dr8gu4\",\n                \"RealServerIP\": \"1.1.1.1\"\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "添加源站"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRealServers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"RealServerName\": \"benny\",\n    \"RealServerIP\": [\n        \"106.52.70.76\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be13ee03-60e8-4af1-880a-e84e5abdf6bc\",\n        \"RealServerSet\": [\n            {\n                \"RealServerIP\": \"106.52.70.76\",\n                \"RealServerId\": \"rs-hx4u5379\"\n            }\n        ]\n    }\n}",
+        "title": "AddRealServers"
       }
     ],
     "BindListenerRealServers": [
@@ -138,6 +144,12 @@
         "input": "https://gaap.tencentcloudapi.com/?Action=CreateProxyGroup\n&ProjectId=0\n&GroupName=test\n&RealServerRegion=EastChina\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19a021f8-dff3-4890-8e7a-ed5054e22e49\",\n        \"GroupId\": \"lg-negxun2x\"\n    }\n}",
         "title": "创建通道组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyGroup\n<公共请求参数>\n\n{\n    \"Http3Supported\": \"0\",\n    \"ProjectId\": \"0\",\n    \"RealServerRegion\": \"Shanghai\",\n    \"GroupName\": \"benny-test\",\n    \"PackageType\": \"Thunder\",\n    \"IPAddressVersion\": \"IPv4\",\n    \"AccessRegionSet\": [\n        {\n            \"NetworkType\": \"normal\",\n            \"Bandwidth\": \"10\",\n            \"AccessRegion\": \"Guangzho\",\n            \"Concurrent\": \"2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1858c87c-2110-430d-bd09-f86091127fe0\",\n        \"GroupId\": \"lg-cj8rn2up\"\n    }\n}",
+        "title": "CreateProxyGroup"
       }
     ],
     "CreateProxyGroupDomain": [

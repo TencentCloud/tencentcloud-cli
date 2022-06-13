@@ -223,7 +223,7 @@
       "output": "MixedInvoiceDetectResponse"
     },
     "MixedInvoiceOCR": {
-      "document": "本接口支持多张、多类型票据的混合识别，系统自动实现分割、分类和识别，同时支持自选需要识别的票据类型。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共11种票据。",
+      "document": "本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。",
       "input": "MixedInvoiceOCRRequest",
       "name": "混贴票据识别",
       "output": "MixedInvoiceOCRResponse"
@@ -300,6 +300,18 @@
       "name": "网约车行程单识别",
       "output": "RecognizeOnlineTaxiItineraryOCRResponse"
     },
+    "RecognizePhilippinesDrivingLicenseOCR": {
+      "document": "菲律宾驾驶证识别",
+      "input": "RecognizePhilippinesDrivingLicenseOCRRequest",
+      "name": "菲律宾驾驶证识别",
+      "output": "RecognizePhilippinesDrivingLicenseOCRResponse"
+    },
+    "RecognizePhilippinesVoteIDOCR": {
+      "document": "菲律宾VoteID识别",
+      "input": "RecognizePhilippinesVoteIDOCRRequest",
+      "name": "菲律宾VoteID识别",
+      "output": "RecognizePhilippinesVoteIDOCRResponse"
+    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。",
       "input": "RecognizeTableOCRRequest",
@@ -337,7 +349,7 @@
       "output": "RideHailingTransportLicenseOCRResponse"
     },
     "SealOCR": {
-      "document": "印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。",
+      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。",
       "input": "SealOCRRequest",
       "name": "印章识别",
       "output": "SealOCRResponse"
@@ -4678,7 +4690,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4687,16 +4700,28 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票",
           "example": "无",
           "member": "int64",
           "name": "Types",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否识别其他类型发票，默认为Yes\nYes：识别其他类型发票\nNo：不识别其他类型发票",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnOther",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4711,7 +4736,8 @@
           "name": "MixedInvoiceItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6385,6 +6411,312 @@
       ],
       "type": "object"
     },
+    "RecognizePhilippinesDrivingLicenseOCRRequest": {
+      "document": "RecognizePhilippinesDrivingLicenseOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesDrivingLicenseOCRResponse": {
+      "document": "RecognizePhilippinesDrivingLicenseOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Name",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓氏",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LastName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "首姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FirstName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "中间姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "MiddleName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国籍",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Nationality",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "性别",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Sex",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "证号",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LicenseNo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "有效期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "ExpiresDate",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "机构代码",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "AgencyCode",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "出生日期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesVoteIDOCRRequest": {
+      "document": "RecognizePhilippinesVoteIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": true,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizePhilippinesVoteIDOCRResponse": {
+      "document": "RecognizePhilippinesVoteIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "人像照片Base64后的结果",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "HeadPortrait",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "菲律宾VoteID的VIN",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "VIN",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓名",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "FirstName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓氏",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "LastName",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "出生日期",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Birthday",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "婚姻状况",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "CivilStatus",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国籍",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Citizenship",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "Address",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地区",
+          "example": "无",
+          "member": "TextDetectionResult",
+          "name": "PrecinctNo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeTableOCRRequest": {
       "document": "RecognizeTableOCR请求参数结构体",
       "members": [
@@ -7130,24 +7462,67 @@
       ],
       "type": "object"
     },
+    "SealInfo": {
+      "document": "印章信息",
+      "members": [
+        {
+          "default": "",
+          "document": "印章主体内容",
+          "example": "无",
+          "member": "string",
+          "name": "SealBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "印章坐标",
+          "example": "无",
+          "member": "Rect",
+          "name": "Location",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "印章其它文本内容",
+          "example": "无",
+          "member": "string",
+          "name": "OtherTexts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "SealOCRRequest": {
       "document": "SealOCR请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7157,24 +7532,43 @@
       "members": [
         {
           "document": "印章内容",
+          "example": "上海市宝山区市场监督管理局",
           "member": "string",
           "name": "SealBody",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "印章坐标",
+          "example": "无",
           "member": "Rect",
           "name": "Location",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "其它文本内容",
+          "example": "[]",
           "member": "string",
           "name": "OtherTexts",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "全部印章信息",
+          "example": "无",
+          "member": "SealInfo",
+          "name": "SealInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8027,6 +8421,34 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TextDetectionResult": {
+      "document": "识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "识别出的文本行内容",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "坐标，以四个顶点坐标表示",
+          "example": "无",
+          "member": "Coord",
+          "name": "Polygon",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -9078,209 +9500,255 @@
         {
           "default": "",
           "document": "发票代码",
+          "example": "1300000000",
           "member": "string",
           "name": "Code",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "发票号码",
+          "example": "04000000",
           "member": "string",
           "name": "Number",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "开票日期",
+          "example": "20191211",
           "member": "string",
           "name": "Date",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "购方抬头",
+          "example": "城区",
           "member": "string",
           "name": "BuyerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "购方税号",
+          "example": "92XXXXMAXXXXXX",
           "member": "string",
           "name": "BuyerTaxCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "购方地址电话",
+          "example": "栾城区北留营村15012345678",
           "member": "string",
           "name": "BuyerAddressPhone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "购方银行账号",
+          "example": "中国农业银行股份有限公司",
           "member": "string",
           "name": "BuyerBankAccount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销方名称",
+          "example": "石家庄市XXX石油经销有限公司",
           "member": "string",
           "name": "SellerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销方税号",
+          "example": "911301047981234567",
           "member": "string",
           "name": "SellerTaxCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销方地址电话",
+          "example": "石家庄市桥西区师范街xx号 0311-12345678",
           "member": "string",
           "name": "SellerAddressPhone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销方银行账号",
+          "example": "911301047981234567",
           "member": "string",
           "name": "SellerBankAccount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "备注",
+          "example": "空",
           "member": "string",
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "机器编码",
+          "example": "661510100000",
           "member": "string",
           "name": "MachineNo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "发票类型\n01：专用发票 \n02：货运发票\n03：机动车发票 \n04：普通发票 \n10：电子发票 \n11：卷式发票 \n14：通行费发票 \n15：二手车发票",
+          "document": "发票类型\n01：专用发票 \n02：货运发票\n03：机动车发票 \n04：普通发票 \n10：电子发票 \n11：卷式发票 \n14：通行费发票 \n15：二手车发票\n32：深圳区块链发票（仅支持新版接口）",
+          "example": "01",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "检验码",
+          "example": "85518065011000000000",
           "member": "string",
           "name": "CheckCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "是否作废（红冲）是否作废（红冲）\nY: 已作废 N：未作废 H：红冲",
+          "example": "否",
           "member": "string",
           "name": "IsAbandoned",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "是否有销货清单 \nY: 有清单 N：无清单 \n卷票无",
+          "example": "否",
           "member": "string",
           "name": "HasSellerList",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销货清单标题",
+          "example": "无",
           "member": "string",
           "name": "SellerListTitle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "销货清单税额",
+          "example": "99.9",
           "member": "string",
           "name": "SellerListTax",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "不含税金额",
+          "example": "129.0",
           "member": "string",
           "name": "AmountWithoutTax",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "税额",
+          "example": "9.0",
           "member": "string",
           "name": "TaxAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "含税金额",
+          "example": "123.0",
           "member": "string",
           "name": "AmountWithTax",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "项目明细",
+          "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

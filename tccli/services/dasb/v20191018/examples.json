@@ -1,5 +1,29 @@
 {
   "actions": {
+    "AddDeviceGroupMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "添加资产组成员"
+      }
+    ],
+    "AddUserGroupMembers": [
+      {
+        "document": "添加用户组成员",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "添加用户组成员"
+      }
+    ],
+    "BindDeviceResource": [
+      {
+        "document": "修改资产绑定的堡垒机服务",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"DeviceIdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改资产绑定的堡垒机服务"
+      }
+    ],
     "CreateAcl": [
       {
         "document": "",
@@ -8,12 +32,28 @@
         "title": "新建访问权限"
       }
     ],
+    "CreateDeviceGroup": [
+      {
+        "document": "新建资产组",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"我的资产组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建资产组"
+      }
+    ],
     "CreateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\",\n    \"AuthType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"13811111111\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\",\n    \"AuthType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "新建用户"
+      }
+    ],
+    "CreateUserGroup": [
+      {
+        "document": "新建用户组",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"Name\": \"研发一部\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建用户组"
       }
     ],
     "DeleteAcls": [
@@ -22,6 +62,38 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcls\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除访问权限"
+      }
+    ],
+    "DeleteDeviceGroupMembers": [
+      {
+        "document": "删除资产组成员",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除资产组成员"
+      }
+    ],
+    "DeleteDeviceGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除资产组"
+      }
+    ],
+    "DeleteUserGroupMembers": [
+      {
+        "document": "删除用户组成员",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"MemberIdSet\": [\n        1,\n        2,\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户组成员"
+      }
+    ],
+    "DeleteUserGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserGroups\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除用户组"
       }
     ],
     "DeleteUsers": [
@@ -54,6 +126,22 @@
         "title": "获取镜像列表"
       }
     ],
+    "DescribeDeviceGroupMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"研发主机\",\n    \"Bound\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"DeviceSet\": [\n            {\n                \"Kind\": 1,\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"Resource\": {\n                    \"Status\": 1,\n                    \"ProductCode\": \"xx\",\n                    \"VpcId\": \"xx\",\n                    \"RenewFlag\": 1,\n                    \"Zone\": \"xx\",\n                    \"SubProductCode\": \"xx\",\n                    \"ResourceId\": \"xx\",\n                    \"Pid\": 1,\n                    \"CidrBlock\": \"xx\",\n                    \"VpcCidrBlock\": \"xx\",\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"SubnetName\": \"xx\",\n                    \"VpcName\": \"xx\",\n                    \"ApCode\": \"xx\",\n                    \"SubnetId\": \"xx\",\n                    \"ResourceName\": \"xx\",\n                    \"PublicIpSet\": [\n                        \"xx\"\n                    ],\n                    \"PrivateIpSet\": [\n                        \"xx\"\n                    ],\n                    \"Nodes\": 1,\n                    \"Expired\": true,\n                    \"SvArgs\": \"xx\",\n                    \"Deployed\": true\n                },\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"OsName\": \"xx\",\n                \"AccountCount\": 1,\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"Port\": 1,\n                \"Id\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询资产组成员列表"
+      }
+    ],
+    "DescribeDeviceGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"产研资产\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询资产组列表"
+      }
+    ],
     "DescribeDevices": [
       {
         "document": "查询资产列表",
@@ -68,6 +156,30 @@
         "title": "根据用户查询有访问权限的资产"
       }
     ],
+    "DescribeResources": [
+      {
+        "document": "查询用户购买的资源信息，包括资源ID，授权点数，vpc，过期时间等。",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"RenewFlag\": 1,\n                \"Zone\": \"xx\",\n                \"SubnetName\": \"xx\",\n                \"Nodes\": 1,\n                \"Status\": 1,\n                \"VpcId\": \"xx\",\n                \"SubProductCode\": \"xx\",\n                \"ResourceId\": \"xx\",\n                \"PackageBandwidth\": 1,\n                \"VpcName\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"ResourceName\": \"xx\",\n                \"Expired\": true,\n                \"Deployed\": true,\n                \"ProductCode\": \"xx\",\n                \"PublicIpSet\": [\n                    \"xx\"\n                ],\n                \"ModuleSet\": [\n                    \"xx\"\n                ],\n                \"ExtendPoints\": 1,\n                \"UsedNodes\": 1,\n                \"PrivateIpSet\": [\n                    \"xx\"\n                ],\n                \"Pid\": 1,\n                \"VpcCidrBlock\": \"xx\",\n                \"PackageNode\": 1,\n                \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SvArgs\": \"xx\",\n                \"CidrBlock\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询资源信息"
+      }
+    ],
+    "DescribeUserGroupMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroupMembers\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"张三\",\n    \"Bound\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"张三\",\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": 1\n                    }\n                ],\n                \"RealName\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户组成员列表"
+      }
+    ],
+    "DescribeUserGroups": [
+      {
+        "document": "查询用户组列表",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"GroupSet\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"研发一部\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户组列表"
+      }
+    ],
     "DescribeUsers": [
       {
         "document": "查询用户列表",
@@ -77,8 +189,8 @@
       },
       {
         "document": "根据主机查询有访问权限的用户信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ],\n    \"Name\": \"u\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"xx\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"AuthorizedDeviceIdSet\": [\n        63,\n        64,\n        82,\n        100\n    ],\n    \"Name\": \"zhanghongyu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"UserName\": \"zhanghongyu\",\n                \"AuthType\": 1,\n                \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n                \"RealName\": \"xx\",\n                \"Email\": \"xx\",\n                \"Phone\": \"xx\",\n                \"GroupSet\": [\n                    {\n                        \"Id\": 1,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "根据主机查询有访问权限的用户信息"
       }
     ],
@@ -93,7 +205,7 @@
     "ModifyUser": [
       {
         "document": "修改用户信息",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUser\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"xx\",\n    \"GroupIdSet\": [\n        1,\n        2,\n        3\n    ],\n    \"Phone\": \"xx\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改用户信息"
       }

@@ -47,6 +47,7 @@ Output:
                     "Switch": "ON",
                     "ObjectLibrary": "All"
                 },
+                "ScreenshotInterval": 10,
                 "CreateTime": "2019-01-01T12:00:00Z",
                 "UpdateTime": "2019-01-01T16:00:00Z"
             }
@@ -106,6 +107,7 @@ Output:
                     "Switch": "ON",
                     "ObjectLibrary": "All"
                 },
+                "ScreenshotInterval": 10,
                 "CreateTime": "2019-01-01T12:00:00Z",
                 "UpdateTime": "2019-01-01T16:00:00Z"
             },
@@ -141,6 +143,7 @@ Output:
                     "Switch": "ON",
                     "ObjectLibrary": "All"
                 },
+                "ScreenshotInterval": 10,
                 "CreateTime": "2019-01-01T11:00:00Z",
                 "UpdateTime": "2019-01-01T12:00:00Z"
             }

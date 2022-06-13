@@ -6144,7 +6144,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6153,7 +6154,8 @@
           "member": "uint64",
           "name": "InstanceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6162,7 +6164,8 @@
           "member": "string",
           "name": "Vips",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6171,7 +6174,8 @@
           "member": "uint64",
           "name": "Status",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6180,7 +6184,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6189,7 +6194,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6198,7 +6204,8 @@
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6207,7 +6214,8 @@
           "member": "uint64",
           "name": "PayTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6216,7 +6224,8 @@
           "member": "string",
           "name": "InstanceNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6225,7 +6234,8 @@
           "member": "uint64",
           "name": "TaskStatus",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6234,7 +6244,8 @@
           "member": "string",
           "name": "EngineVersions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6243,7 +6254,8 @@
           "member": "uint64",
           "name": "VpcIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6252,7 +6264,8 @@
           "member": "uint64",
           "name": "ZoneIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6261,7 +6274,8 @@
           "member": "uint64",
           "name": "SubnetIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6270,7 +6284,8 @@
           "member": "int64",
           "name": "CdbErrors",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6279,7 +6294,8 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6288,7 +6304,8 @@
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6297,7 +6314,8 @@
           "member": "int64",
           "name": "WithSecurityGroup",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6306,7 +6324,8 @@
           "member": "int64",
           "name": "WithExCluster",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6315,7 +6334,8 @@
           "member": "string",
           "name": "ExClusterId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6324,7 +6344,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6333,7 +6354,8 @@
           "member": "int64",
           "name": "InitFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6342,7 +6364,8 @@
           "member": "int64",
           "name": "WithDr",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6351,7 +6374,8 @@
           "member": "int64",
           "name": "WithRo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6360,7 +6384,8 @@
           "member": "int64",
           "name": "WithMaster",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6369,7 +6394,8 @@
           "member": "string",
           "name": "DeployGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6378,7 +6404,8 @@
           "member": "string",
           "name": "TagKeysForSearch",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6387,7 +6414,8 @@
           "member": "string",
           "name": "CageIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6396,7 +6424,8 @@
           "member": "string",
           "name": "TagValues",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6405,7 +6434,8 @@
           "member": "string",
           "name": "UniqueVpcIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6414,7 +6444,18 @@
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签键值",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6429,7 +6470,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例详细信息。",
@@ -6438,7 +6480,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13351,7 +13394,8 @@
           "name": "Device",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13361,7 +13405,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13371,7 +13416,8 @@
           "name": "CdbType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13381,7 +13427,8 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13391,7 +13438,8 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13401,7 +13449,8 @@
           "name": "VolumeMin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13411,7 +13460,8 @@
           "name": "VolumeMax",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13421,7 +13471,8 @@
           "name": "VolumeStep",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13431,7 +13482,8 @@
           "name": "Connection",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13441,7 +13493,8 @@
           "name": "Qps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13451,7 +13504,8 @@
           "name": "Iops",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13461,7 +13515,8 @@
           "name": "Info",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13471,7 +13526,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13481,7 +13537,8 @@
           "name": "Tag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13491,7 +13548,8 @@
           "name": "DeviceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13501,7 +13559,19 @@
           "name": "DeviceTypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "引擎类型描述，可能的取值范围有：Innodb，RocksDB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -14235,6 +14305,34 @@
         }
       ],
       "usage": "both"
+    },
+    "Tag": {
+      "document": "标签结构",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "zhang",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
     },
     "TagInfo": {
       "document": "标签信息",

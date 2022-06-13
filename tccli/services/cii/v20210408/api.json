@@ -492,7 +492,8 @@
           "member": "string",
           "name": "ServiceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -501,7 +502,8 @@
           "member": "CreateStructureTaskInfo",
           "name": "TaskInfos",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -510,7 +512,8 @@
           "member": "string",
           "name": "PolicyId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -519,7 +522,8 @@
           "member": "string",
           "name": "TriggerType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -528,7 +532,8 @@
           "member": "string",
           "name": "InsuranceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -537,7 +542,8 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -552,7 +558,8 @@
           "name": "MainTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -708,7 +715,8 @@
           "member": "binary",
           "name": "File",
           "required": true,
-          "type": "binary"
+          "type": "binary",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -723,7 +731,8 @@
           "name": "QualityScore",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -744,7 +753,8 @@
           "member": "string",
           "name": "ServiceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -753,7 +763,8 @@
           "member": "string",
           "name": "FileList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -768,7 +779,8 @@
           "name": "Reports",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1005,7 +1017,8 @@
           "member": "string",
           "name": "MainTaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1020,7 +1033,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "结构化结果",
@@ -1029,7 +1043,8 @@
           "name": "Results",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主任务ID",
@@ -1038,7 +1053,8 @@
           "name": "MainTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1059,7 +1075,8 @@
           "member": "string",
           "name": "MainTaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1074,7 +1091,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "结构化识别结果数组，每个数组元素对应一个图片的结构化结果，顺序和输入参数的ImageList或FileList对应。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1083,7 +1101,8 @@
           "name": "Results",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

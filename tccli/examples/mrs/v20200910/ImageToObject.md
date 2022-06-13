@@ -1427,7 +1427,14 @@ Output:
             "Hospitalization": null,
             "Surgery": null,
             "Electrocardiogram": null
-        }
+        },
+        "TextTypeList": [
+            {
+                "Id": 12,
+                "Name": "检查报告",
+                "Level": 1
+            }
+        ]
     }
 }
 ```

@@ -267,7 +267,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -276,7 +277,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -285,7 +287,8 @@
           "member": "string",
           "name": "Lang",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -294,7 +297,28 @@
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "主体名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AuthName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集团服务（服务管理员查询时，必须指定）",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -309,7 +333,8 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总数目",
@@ -318,7 +343,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -339,7 +365,18 @@
           "member": "string",
           "name": "Lang",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "产品简称（查询是否集团服务委派管理员必须）",
+          "example": "test",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -354,7 +391,8 @@
           "name": "OrgId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -363,7 +401,8 @@
           "name": "HostUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -372,7 +411,8 @@
           "name": "NickName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "企业组织类型\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -381,7 +421,8 @@
           "name": "OrgType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "组织管理员：true，组织成员：false\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -390,7 +431,8 @@
           "name": "IsManager",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -399,7 +441,8 @@
           "name": "OrgPolicyType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -408,7 +451,8 @@
           "name": "OrgPolicyName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "策略权限\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -417,7 +461,8 @@
           "name": "OrgPermission",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "根节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -426,7 +471,8 @@
           "name": "RootNodeId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -435,7 +481,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "成员加入时间\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -444,7 +491,8 @@
           "name": "JoinTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "是否允许退出。允许：Allow，不允许：Denied。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -453,7 +501,8 @@
           "name": "IsAllowQuit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "代付者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -462,7 +511,8 @@
           "name": "PayUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "代付者名称\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -471,7 +521,18 @@
           "name": "PayName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否集团服务委派管理员 true-是、false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAssignManager",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

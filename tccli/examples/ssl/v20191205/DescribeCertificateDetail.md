@@ -18,12 +18,19 @@ Output:
         "VulnerabilityReport": null,
         "CertificatePrivateKey": "-----BEGIN RSA PRIVATE KEY-----......-----END RSA PRIVATE KEY-----",
         "CertificatePublicKey": null,
+        "EncryptCert": "",
+        "EncryptPrivateKey": "",
         "CertificateExtra": {
             "OriginCertificateId": null,
             "ReplacedBy": null,
             "ReplacedFor": null,
             "DomainNumber": "3",
             "RenewOrder": null
+        },
+        "RootCert": {
+            "Standard": "xx",
+            "Encrypt": "xx",
+            "Sign": "xx"
         },
         "RenewAble": false,
         "Status": 5,
@@ -115,6 +122,8 @@ Output:
         "SubjectAltName": [
             "test-ev-dawe23r243qfa.com"
         ],
+        "EncryptCert": "",
+        "EncryptPrivateKey": "",
         "VulnerabilityReport": "xx",
         "CertificatePrivateKey": "xx",
         "CertificatePublicKey": "xx",
@@ -127,6 +136,11 @@ Output:
         },
         "RenewAble": true,
         "Status": 1,
+        "RootCert": {
+            "Standard": "xx",
+            "Encrypt": "xx",
+            "Sign": "xx"
+        },
         "IsDv": false,
         "IsVulnerability": true,
         "CertBeginTime": "2020-09-22 00:00:00",

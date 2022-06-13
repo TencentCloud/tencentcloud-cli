@@ -32,6 +32,8 @@ Output:
                 "Parameters": "",
                 "DefaultParameters": "",
                 "Username": "root",
+                "OutputCOSKeyPrefix": "cosprefix",
+                "OutputCOSBucketUrl": "https://example-123456789.cos.ap-beijing.myqcloud.com",
                 "InvocationTaskBasicInfoSet": [
                     {
                         "InvocationTaskId": "invt-kakne8h2",

@@ -28,6 +28,9 @@ Output:
                 "CoverConfigure": {
                     "Switch": "ON"
                 },
+                "HighlightConfigure": {
+                    "Switch": "ON"
+                },
                 "FrameTagConfigure": {
                     "Switch": "ON",
                     "ScreenshotInterval": 1
@@ -72,6 +75,9 @@ Output:
                 "CoverConfigure": {
                     "Switch": "ON"
                 },
+                "HighlightConfigure": {
+                    "Switch": "ON"
+                },
                 "FrameTagConfigure": {
                     "Switch": "ON",
                     "ScreenshotInterval": 1
@@ -90,6 +96,9 @@ Output:
                     "Switch": "ON"
                 },
                 "CoverConfigure": {
+                    "Switch": "ON"
+                },
+                "HighlightConfigure": {
                     "Switch": "ON"
                 },
                 "FrameTagConfigure": {

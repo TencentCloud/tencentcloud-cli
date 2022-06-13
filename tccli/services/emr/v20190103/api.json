@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddUsersForUserManager": {
-      "document": "新增用户列表（用户管理）",
+      "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
       "name": "用户管理-新增用户列表",
       "output": "AddUsersForUserManagerResponse"
@@ -55,7 +55,7 @@
       "output": "DescribeResourceScheduleResponse"
     },
     "DescribeUsersForUserManager": {
-      "document": "批量导出用户",
+      "document": "该接口支持安装了OpenLdap组件的集群。\n批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。",
       "input": "DescribeUsersForUserManagerRequest",
       "name": "用户管理-查询用户列表",
       "output": "DescribeUsersForUserManagerResponse"
@@ -151,6 +151,16 @@
       "members": [
         {
           "default": "",
+          "document": "集群字符串ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "用户信息列表",
           "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
           "member": "UserInfoForUserManager",
@@ -165,6 +175,26 @@
     "AddUsersForUserManagerResponse": {
       "document": "AddUsersForUserManager返回参数结构体",
       "members": [
+        {
+          "document": "添加成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "SuccessUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "FailedUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1012,7 +1042,8 @@
           "member": "uint64",
           "name": "ProductId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1021,7 +1052,8 @@
           "member": "string",
           "name": "Software",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1030,7 +1062,8 @@
           "member": "uint64",
           "name": "SupportHA",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1039,7 +1072,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1048,7 +1082,8 @@
           "member": "uint64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1057,7 +1092,8 @@
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1066,7 +1102,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1075,7 +1112,8 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1084,7 +1122,8 @@
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1093,7 +1132,8 @@
           "member": "NewResourceSpec",
           "name": "ResourceSpec",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1102,7 +1142,8 @@
           "member": "COSSettings",
           "name": "COSSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1111,7 +1152,8 @@
           "member": "Placement",
           "name": "Placement",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1120,7 +1162,8 @@
           "member": "string",
           "name": "SgId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1129,7 +1172,8 @@
           "member": "PreExecuteFileSettings",
           "name": "PreExecutedFileSettings",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1138,7 +1182,8 @@
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1147,7 +1192,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1156,7 +1202,8 @@
           "member": "string",
           "name": "NeedMasterWan",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1165,7 +1212,8 @@
           "member": "int64",
           "name": "RemoteLoginAtCreate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1174,7 +1222,8 @@
           "member": "int64",
           "name": "CheckSecurity",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1183,7 +1232,8 @@
           "member": "string",
           "name": "ExtendFsField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1192,7 +1242,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1201,7 +1252,8 @@
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1210,7 +1262,8 @@
           "member": "uint64",
           "name": "CbsEncrypt",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1219,7 +1272,8 @@
           "member": "string",
           "name": "MetaType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1228,7 +1282,8 @@
           "member": "string",
           "name": "UnifyMetaInstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1237,7 +1292,8 @@
           "member": "CustomMetaInfo",
           "name": "MetaDBInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1246,7 +1302,8 @@
           "member": "string",
           "name": "ApplicationRole",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1255,7 +1312,8 @@
           "member": "string",
           "name": "SceneName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1264,7 +1322,8 @@
           "member": "ExternalService",
           "name": "ExternalService",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1273,7 +1332,8 @@
           "member": "int64",
           "name": "VersionID",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1282,7 +1342,8 @@
           "member": "bool",
           "name": "MultiZone",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1291,7 +1352,8 @@
           "member": "MultiZoneSetting",
           "name": "MultiZoneSettings",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1306,7 +1368,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1915,6 +1978,46 @@
       "members": [
         {
           "default": "",
+          "document": "集群实例ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页的大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "查询用户列表过滤器",
+          "example": "无",
+          "member": "UserManagerFilter",
+          "name": "UserManagerFilter",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false",
           "example": "true",
           "member": "bool",
@@ -1929,6 +2032,26 @@
     "DescribeUsersForUserManagerResponse": {
       "document": "DescribeUsersForUserManager返回参数结构体",
       "members": [
+        {
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCnt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "用户信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserManagerUserBriefInfo",
+          "name": "UserManagerUserList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6197,6 +6320,89 @@
         }
       ],
       "usage": "in"
+    },
+    "UserManagerFilter": {
+      "document": "用户管理列表过滤器",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "UserManagerUserBriefInfo": {
+      "document": "用户管理中用户的简要信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "hadoop",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户所属的组",
+          "example": "hadoop",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Manager表示管理员、NormalUser表示普通用户",
+          "example": "NormalUser",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-04-28 18:08:28",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDownLoadKeyTab",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "keytab文件的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://image-xxx.cos.region.xx.com/12323/someone.keytab",
+          "member": "string",
+          "name": "DownLoadKeyTabUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VPCSettings": {
       "document": "VPC 参数",

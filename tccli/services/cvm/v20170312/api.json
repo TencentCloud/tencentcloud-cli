@@ -7027,7 +7027,8 @@
           "member": "string",
           "name": "ImageId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7036,7 +7037,8 @@
           "member": "string",
           "name": "AccountIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7045,7 +7047,8 @@
           "member": "string",
           "name": "Permission",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8546,7 +8549,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8555,7 +8559,8 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8564,7 +8569,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8573,7 +8579,8 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8582,7 +8589,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8591,7 +8599,8 @@
           "member": "string",
           "name": "HostName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

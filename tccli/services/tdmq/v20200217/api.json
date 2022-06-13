@@ -2933,7 +2933,8 @@
           "member": "string",
           "name": "QueueName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2942,7 +2943,8 @@
           "member": "uint64",
           "name": "MaxMsgHeapNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2951,7 +2953,8 @@
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2960,7 +2963,8 @@
           "member": "uint64",
           "name": "VisibilityTimeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2969,7 +2973,8 @@
           "member": "uint64",
           "name": "MaxMsgSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2978,7 +2983,8 @@
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2987,7 +2993,8 @@
           "member": "uint64",
           "name": "RewindSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2996,7 +3003,8 @@
           "member": "uint64",
           "name": "Transaction",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3005,7 +3013,8 @@
           "member": "uint64",
           "name": "FirstQueryInterval",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3014,7 +3023,8 @@
           "member": "uint64",
           "name": "MaxQueryCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3023,7 +3033,8 @@
           "member": "string",
           "name": "DeadLetterQueueName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3032,7 +3043,8 @@
           "member": "uint64",
           "name": "Policy",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3041,7 +3053,8 @@
           "member": "uint64",
           "name": "MaxReceiveCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3050,7 +3063,8 @@
           "member": "uint64",
           "name": "MaxTimeToLive",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3059,7 +3073,8 @@
           "member": "bool",
           "name": "Trace",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3068,16 +3083,18 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启",
+          "document": "队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0",
           "example": "0",
           "member": "uint64",
           "name": "RetentionSizeInMB",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3092,7 +3109,8 @@
           "name": "QueueId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8109,7 +8127,8 @@
           "member": "string",
           "name": "QueueName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8118,7 +8137,8 @@
           "member": "uint64",
           "name": "MaxMsgHeapNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8127,7 +8147,8 @@
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8136,7 +8157,8 @@
           "member": "uint64",
           "name": "VisibilityTimeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8145,7 +8167,8 @@
           "member": "uint64",
           "name": "MaxMsgSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8154,7 +8177,8 @@
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8163,7 +8187,8 @@
           "member": "uint64",
           "name": "RewindSeconds",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8172,7 +8197,8 @@
           "member": "uint64",
           "name": "FirstQueryInterval",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8181,7 +8207,8 @@
           "member": "uint64",
           "name": "MaxQueryCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8190,7 +8217,8 @@
           "member": "string",
           "name": "DeadLetterQueueName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8199,7 +8227,8 @@
           "member": "uint64",
           "name": "MaxTimeToLive",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8208,7 +8237,8 @@
           "member": "uint64",
           "name": "MaxReceiveCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8217,7 +8247,8 @@
           "member": "uint64",
           "name": "Policy",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8226,7 +8257,8 @@
           "member": "bool",
           "name": "Trace",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8235,16 +8267,18 @@
           "member": "uint64",
           "name": "Transaction",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启",
+          "document": "队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0",
           "example": "0",
           "member": "uint64",
           "name": "RetentionSizeInMB",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9060,25 +9094,28 @@
           "member": "string",
           "name": "TopicName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "消息内容",
+          "document": "消息内容，消息总大小需不大于1024K",
           "example": "xxx",
           "member": "string",
           "name": "MsgContent",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "消息标签",
+          "document": "消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。",
           "example": "无",
           "member": "string",
           "name": "MsgTag",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9093,7 +9130,8 @@
           "name": "Result",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "消息id",
@@ -9102,7 +9140,8 @@
           "name": "MsgId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

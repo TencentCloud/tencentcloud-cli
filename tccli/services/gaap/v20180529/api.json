@@ -720,7 +720,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -729,7 +730,8 @@
           "member": "string",
           "name": "RealServerIP",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -738,7 +740,8 @@
           "member": "string",
           "name": "RealServerName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -747,7 +750,8 @@
           "member": "TagPair",
           "name": "TagSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -762,7 +766,8 @@
           "name": "RealServerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1409,7 +1414,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1424,7 +1430,8 @@
           "name": "InvalidStatusInstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开启操作失败的通道实例ID列表。",
@@ -1433,7 +1440,8 @@
           "name": "OperationFailedInstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2117,7 +2125,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2126,7 +2135,8 @@
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2135,7 +2145,8 @@
           "member": "string",
           "name": "RealServerRegion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2144,7 +2155,8 @@
           "member": "TagPair",
           "name": "TagSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2153,7 +2165,8 @@
           "member": "AccessConfiguration",
           "name": "AccessRegionSet",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2162,7 +2175,8 @@
           "member": "string",
           "name": "IPAddressVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2171,7 +2185,8 @@
           "member": "string",
           "name": "PackageType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2180,7 +2195,8 @@
           "member": "int64",
           "name": "Http3Supported",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2195,7 +2211,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3053,7 +3070,8 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3062,7 +3080,8 @@
           "member": "uint64",
           "name": "Force",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4434,7 +4453,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4449,7 +4469,8 @@
           "name": "ProxyGroupDetail",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4551,7 +4572,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4560,7 +4582,8 @@
           "member": "datetime",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4569,7 +4592,8 @@
           "member": "datetime",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4578,7 +4602,8 @@
           "member": "string",
           "name": "MetricNames",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4587,7 +4612,8 @@
           "member": "uint64",
           "name": "Granularity",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4602,7 +4628,8 @@
           "name": "StatisticsData",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4900,7 +4927,8 @@
           "member": "string",
           "name": "RealServerIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4915,7 +4943,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "源站被绑定状态列表",
@@ -4924,7 +4953,8 @@
           "name": "RealServerStatusSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7168,7 +7198,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7177,7 +7208,8 @@
           "member": "string",
           "name": "GroupName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7186,7 +7218,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7213,7 +7246,8 @@
           "member": "string",
           "name": "RealServerName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7222,7 +7256,8 @@
           "member": "string",
           "name": "RealServerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7729,7 +7764,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7744,7 +7780,8 @@
           "name": "InvalidStatusInstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "开启操作失败的通道实例ID列表。",
@@ -7753,7 +7790,8 @@
           "name": "OperationFailedInstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7820,7 +7858,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7830,7 +7869,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7840,17 +7880,19 @@
           "name": "ProxyNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "通道组状态：\n0表示正常运行；\n1表示创建中；\n4表示销毁中；\n11表示迁移中；",
+          "document": "通道组状态：\n0表示正常运行；\n1表示创建中；\n4表示销毁中；\n11表示迁移中；\n12表示部分部署中。",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7860,7 +7902,8 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7870,7 +7913,8 @@
           "name": "CreateUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7880,7 +7924,8 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7890,7 +7935,8 @@
           "name": "DnsDefaultIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7900,7 +7946,8 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7910,7 +7957,8 @@
           "name": "RealServerRegionInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7920,7 +7968,8 @@
           "name": "IsOldGroup",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7930,7 +7979,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7940,7 +7990,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7950,7 +8001,8 @@
           "name": "PolicyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7960,7 +8012,8 @@
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7970,7 +8023,8 @@
           "name": "ClientIPMethod",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7980,7 +8034,8 @@
           "name": "IPAddressVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -7990,7 +8045,8 @@
           "name": "PackageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8000,7 +8056,8 @@
           "name": "Http3Supported",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -8016,7 +8073,8 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8026,7 +8084,8 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8036,7 +8095,8 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8046,7 +8106,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8056,17 +8117,19 @@
           "name": "RealServerRegionInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中。",
+          "document": "通道组状态。\n其中，\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nMOVING表示通道迁移中；\nCHANGING表示部分部署中。",
           "example": "0",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8076,7 +8139,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8086,7 +8150,8 @@
           "name": "Version",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8096,7 +8161,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -8106,17 +8172,19 @@
           "name": "ProxyType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "支持Http3特性的标识，其中：\n0，表示不支持Http3；\n1，表示支持Http3。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持Http3特性的标识，其中：\n0表示关闭；\n1表示启用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Http3Supported",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -8229,7 +8297,7 @@
         },
         {
           "default": "",
-          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nRECOVERING表示通道维护中。",
+          "document": "通道状态。其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nCLONING表示复制中；\nRECOVERING表示通道维护中；\nMOVING表示迁移中。",
           "example": "\"RUNNING\"",
           "member": "string",
           "name": "Status",
@@ -8449,7 +8517,7 @@
         },
         {
           "default": "",
-          "document": "网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全eip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"normal\"",
           "member": "string",
           "name": "NetworkType",
@@ -8560,17 +8628,19 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离。",
+          "document": "通道状态。\n其中：\nRUNNING表示运行中；\nCREATING表示创建中；\nDESTROYING表示销毁中；\nOPENING表示开启中；\nCLOSING表示关闭中；\nCLOSED表示已关闭；\nADJUSTING表示配置变更中；\nISOLATING表示隔离中；\nISOLATED表示已隔离；\nMOVING表示迁移中。",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -8809,7 +8879,8 @@
           "member": "string",
           "name": "RealServerIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

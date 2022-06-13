@@ -9352,7 +9352,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9360,8 +9361,29 @@
           "example": "[\"manual_instance_58001_20180702010430.bak.tar\\r\\n\"]",
           "member": "string",
           "name": "BackupNames",
-          "required": true,
-          "type": "list"
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "批量删除手动备份起始时间",
+          "example": "2022-04-20 22:23:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "批量删除手动备份截止时间",
+          "example": "2022-04-21 22:23:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

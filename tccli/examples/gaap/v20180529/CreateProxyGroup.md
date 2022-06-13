@@ -21,3 +21,33 @@ Output:
 }
 ```
 
+**Example 2: CreateProxyGroup**
+
+
+
+Input: 
+
+```
+tccli gaap CreateProxyGroup --cli-unfold-argument  \
+    --Http3Supported 0 \
+    --ProjectId 0 \
+    --RealServerRegion Shanghai \
+    --GroupName benny-test \
+    --PackageType Thunder \
+    --IPAddressVersion IPv4 \
+    --AccessRegionSet.0.NetworkType normal \
+    --AccessRegionSet.0.Bandwidth 10 \
+    --AccessRegionSet.0.AccessRegion Guangzho \
+    --AccessRegionSet.0.Concurrent 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1858c87c-2110-430d-bd09-f86091127fe0",
+        "GroupId": "lg-cj8rn2up"
+    }
+}
+```
+

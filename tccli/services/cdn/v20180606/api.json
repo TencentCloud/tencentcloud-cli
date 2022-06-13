@@ -1,5 +1,11 @@
 {
   "actions": {
+    "AddCLSTopicDomains": {
+      "document": "AddCLSTopicDomains 用于新增域名到某日志主题下",
+      "input": "AddCLSTopicDomainsRequest",
+      "name": "新增日志主题下绑定的域名",
+      "output": "AddCLSTopicDomainsResponse"
+    },
     "AddCdnDomain": {
       "document": "AddCdnDomain 用于新增内容分发网络加速域名。1分钟内最多可新增100个域名。",
       "input": "AddCdnDomainRequest",
@@ -544,6 +550,64 @@
         }
       ],
       "usage": "both"
+    },
+    "AddCLSTopicDomainsRequest": {
+      "document": "AddCLSTopicDomains请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "日志集ID",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志主题ID",
+          "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "域名区域配置",
+          "example": "无",
+          "member": "DomainAreaConfig",
+          "name": "DomainAreaConfigs",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "接入渠道，cdn或者ecdn，默认值为cdn",
+          "example": "cdn",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AddCLSTopicDomainsResponse": {
+      "document": "AddCLSTopicDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddCdnDomainRequest": {
       "document": "AddCdnDomain请求参数结构体",
@@ -15050,7 +15114,8 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15060,7 +15125,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15070,7 +15136,8 @@
           "name": "Bytes",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15080,7 +15147,8 @@
           "name": "BytesUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15090,7 +15158,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15100,7 +15169,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15110,7 +15180,8 @@
           "name": "EnableTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15120,7 +15191,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15130,7 +15202,8 @@
           "name": "ContractExtension",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15140,7 +15213,8 @@
           "name": "AutoExtension",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15150,7 +15224,8 @@
           "name": "Channel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15160,7 +15235,8 @@
           "name": "Area",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15170,7 +15246,8 @@
           "name": "LifeTimeMonth",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15180,7 +15257,8 @@
           "name": "ExtensionAvailable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15190,7 +15268,8 @@
           "name": "RefundAvailable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15200,7 +15279,8 @@
           "name": "Region",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15210,7 +15290,8 @@
           "name": "ConfigId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15220,7 +15301,30 @@
           "name": "ExtensionMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "流量包实际生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 10:00:00",
+          "member": "string",
+          "name": "TrueEnableTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "流量包实际过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 23:59:59",
+          "member": "string",
+          "name": "TrueExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -16189,7 +16293,7 @@
         },
         {
           "default": "",
-          "document": "设置超时时间，单位为秒，最大超时时间65秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置超时时间，单位为秒，最大超时时间300秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Timeout",

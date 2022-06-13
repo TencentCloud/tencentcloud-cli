@@ -44,7 +44,7 @@ Input:
 ```
 tccli dasb DescribeUsers --cli-unfold-argument  \
     --AuthorizedDeviceIdSet 63 64 82 100 \
-    --Name u
+    --Name zhanghongyu
 ```
 
 Output: 
@@ -54,7 +54,7 @@ Output:
         "TotalCount": 1,
         "UserSet": [
             {
-                "UserName": "xx",
+                "UserName": "zhanghongyu",
                 "AuthType": 1,
                 "ValidateTo": "2020-09-22T00:00:00+00:00",
                 "RealName": "xx",

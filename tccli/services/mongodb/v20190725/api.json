@@ -4399,29 +4399,46 @@
         {
           "default": "",
           "document": "地域信息",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "可用区信息",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "售卖规格信息",
+          "example": "无",
           "member": "SpecItem",
           "name": "SpecItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否支持跨可用区部署 1-支持，0-不支持",
+          "example": "1",
+          "member": "int64",
+          "name": "SupportMultiAZ",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -11443,7 +11443,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11452,7 +11453,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11461,7 +11463,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发生时间。ModifyTime-处理时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11476,7 +11499,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "高危命令事件列表",
@@ -11485,7 +11509,8 @@
           "name": "List",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11578,7 +11603,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11587,7 +11613,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11596,7 +11623,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-首次攻击时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11611,7 +11659,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "密码破解列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -11620,7 +11669,8 @@
           "name": "BruteAttackList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12528,7 +12578,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12537,7 +12588,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12546,7 +12598,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：LoginTime-发生时间",
+          "example": "LoginTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12561,7 +12634,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "登录审计列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -12570,7 +12644,8 @@
           "name": "HostLoginList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14078,7 +14153,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14087,7 +14163,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14096,7 +14173,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发现时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14111,7 +14209,8 @@
           "name": "List",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总条数",
@@ -14120,7 +14219,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14599,7 +14699,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14608,7 +14709,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14617,7 +14719,28 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序方式：根据请求次数排序：asc-升序/desc-降序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "排序字段：CreateTime-发生时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14632,7 +14755,8 @@
           "name": "List",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总条数",
@@ -14641,7 +14765,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14725,7 +14850,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14734,7 +14860,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14743,7 +14870,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -14752,16 +14880,18 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "排序字段：AccessCount-请求次数",
+          "document": "排序字段：AccessCount-请求次数。MergeTime-最近请求时间",
           "example": "AccessCount",
           "member": "string",
           "name": "By",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14776,7 +14906,8 @@
           "name": "RiskDnsList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "总数量",
@@ -14785,7 +14916,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -20828,7 +20960,7 @@
           "example": "''",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "required": true,
           "type": "string",
           "visibility": 1
         }

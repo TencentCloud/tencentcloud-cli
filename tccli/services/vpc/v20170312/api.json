@@ -36,6 +36,12 @@
       "name": "IPv6地址分配公网带宽",
       "output": "AllocateIp6AddressesBandwidthResponse"
     },
+    "ApplyIpInternal": {
+      "document": "用于从指定 VPC 中申请一个可用 IP 原始VPC OSS接口: ApplyIp",
+      "input": "ApplyIpInternalRequest",
+      "name": "用于从指定 VPC 中申请一个可用 IP",
+      "output": "ApplyIpInternalResponse"
+    },
     "AssignIpv6Addresses": {
       "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。",
       "input": "AssignIpv6AddressesRequest",
@@ -276,6 +282,12 @@
       "name": "创建弹性网卡",
       "output": "CreateNetworkInterfaceResponse"
     },
+    "CreateRouteInternal": {
+      "document": "用于添加vpc内的服务的Route信息 原始VPC OSS接口: AddRoute",
+      "input": "CreateRouteInternalRequest",
+      "name": "用于添加vpc内的服务的Route信息",
+      "output": "CreateRouteInternalResponse"
+    },
     "CreateRouteTable": {
       "document": "本接口(CreateRouteTable)用于创建路由表。\n* 创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。\n* 创建路由表同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateRouteTableRequest",
@@ -305,6 +317,12 @@
       "input": "CreateSecurityGroupWithPoliciesRequest",
       "name": "创建安全组和规则",
       "output": "CreateSecurityGroupWithPoliciesResponse"
+    },
+    "CreateServiceInternal": {
+      "document": "用于添加vpc内的服务 原始VPC OSS接口: AddService",
+      "input": "CreateServiceInternalRequest",
+      "name": "用于添加vpc内的服务",
+      "output": "CreateServiceInternalResponse"
     },
     "CreateServiceTemplate": {
       "document": "本接口（CreateServiceTemplate）用于创建协议端口模板",
@@ -498,6 +516,12 @@
       "name": "删除弹性网卡",
       "output": "DeleteNetworkInterfaceResponse"
     },
+    "DeleteRouteInternal": {
+      "document": "用于删除vpc内的服务的Route信息 原始VPC OSS接口: DelRoute",
+      "input": "DeleteRouteInternalRequest",
+      "name": "用于删除vpc内的服务的Route信息",
+      "output": "DeleteRouteInternalResponse"
+    },
     "DeleteRouteTable": {
       "document": "删除路由表",
       "input": "DeleteRouteTableRequest",
@@ -521,6 +545,12 @@
       "input": "DeleteSecurityGroupPoliciesRequest",
       "name": "删除安全组规则",
       "output": "DeleteSecurityGroupPoliciesResponse"
+    },
+    "DeleteServiceInternal": {
+      "document": "用于删除vpc内的服务 原始VPC OSS接口: DelService",
+      "input": "DeleteServiceInternalRequest",
+      "name": "用于删除vpc内的服务",
+      "output": "DeleteServiceInternalResponse"
     },
     "DeleteServiceTemplate": {
       "document": "本接口（DeleteServiceTemplate）用于删除协议端口模板",
@@ -899,6 +929,18 @@
       "input": "DescribeSecurityGroupsRequest",
       "name": "查看安全组",
       "output": "DescribeSecurityGroupsResponse"
+    },
+    "DescribeServiceByRealServerInternal": {
+      "document": "用于获取根据rs查询规则 原始VPC OSS接口: GetServiceByRs",
+      "input": "DescribeServiceByRealServerInternalRequest",
+      "name": "用于获取根据rs查询规则",
+      "output": "DescribeServiceByRealServerInternalResponse"
+    },
+    "DescribeServiceInternal": {
+      "document": "该接口支持查询vpc公共服务信息列表，仅用于内部调用",
+      "input": "DescribeServiceInternalRequest",
+      "name": "查询公共服务信息",
+      "output": "DescribeServiceInternalResponse"
     },
     "DescribeServiceTemplateGroups": {
       "document": "本接口（DescribeServiceTemplateGroups）用于查询协议端口模板集合",
@@ -1626,6 +1668,12 @@
       "name": "调整VPN网关带宽上限",
       "output": "ResetVpnGatewayInternetMaxBandwidthResponse"
     },
+    "ReturnIpInternal": {
+      "document": "用于退还 VPC IP 原始VPC OSS接口: ReturnIp",
+      "input": "ReturnIpInternalRequest",
+      "name": "用于退还 VPC IP",
+      "output": "ReturnIpInternalResponse"
+    },
     "ReturnPrivateIpAddress": {
       "document": "本接口（ReturnPrivateIpAddress）仅用于内部服务退还保留IP。",
       "input": "ReturnPrivateIpAddressRequest",
@@ -1679,6 +1727,12 @@
       "input": "UnlockCcnsRequest",
       "name": "安全解锁云联网实例",
       "output": "UnlockCcnsResponse"
+    },
+    "UpdateRouteWeightInternal": {
+      "document": "用于更新vpc内的服务的Route信息的权重 原始VPC OSS接口: UpdateRouteWeight",
+      "input": "UpdateRouteWeightInternalRequest",
+      "name": "用于更新vpc内的服务的Route信息的权重",
+      "output": "UpdateRouteWeightInternalResponse"
     },
     "WithdrawNotifyRoutes": {
       "document": "路由表列表页操作增加“从云联网撤销”，用于撤销已发布到云联网的路由。",
@@ -2521,6 +2575,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyIpInternalRequest": {
+      "document": "ApplyIpInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ApplyIpInternalResponse": {
+      "document": "ApplyIpInternal返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5046,7 +5117,8 @@
           "member": "string",
           "name": "FlowLogName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5055,7 +5127,8 @@
           "member": "string",
           "name": "ResourceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5064,7 +5137,8 @@
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5073,7 +5147,8 @@
           "member": "string",
           "name": "TrafficType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5082,7 +5157,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5091,7 +5167,8 @@
           "member": "string",
           "name": "FlowLogDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5100,7 +5177,8 @@
           "member": "string",
           "name": "CloudLogId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5109,7 +5187,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5118,7 +5197,8 @@
           "member": "string",
           "name": "StorageType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5127,7 +5207,18 @@
           "member": "FlowLogStorage",
           "name": "FlowLogStorage",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "流日志存储ID对应的地域，不传递默认为本地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudLogRegion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5142,7 +5233,8 @@
           "name": "FlowLog",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5807,6 +5899,23 @@
       ],
       "type": "object"
     },
+    "CreateRouteInternalRequest": {
+      "document": "CreateRouteInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateRouteInternalResponse": {
+      "document": "CreateRouteInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRouteTableRequest": {
       "document": "CreateRouteTable请求参数结构体",
       "members": [
@@ -6051,6 +6160,23 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServiceInternalRequest": {
+      "document": "CreateServiceInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateServiceInternalResponse": {
+      "document": "CreateServiceInternal返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8086,6 +8212,23 @@
       ],
       "type": "object"
     },
+    "DeleteRouteInternalRequest": {
+      "document": "DeleteRouteInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteRouteInternalResponse": {
+      "document": "DeleteRouteInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRouteTableRequest": {
       "document": "DeleteRouteTable请求参数结构体",
       "members": [
@@ -8203,6 +8346,23 @@
     },
     "DeleteSecurityGroupResponse": {
       "document": "DeleteSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceInternalRequest": {
+      "document": "DeleteServiceInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteServiceInternalResponse": {
+      "document": "DeleteServiceInternal返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10049,7 +10209,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10058,7 +10219,8 @@
           "member": "string",
           "name": "FlowLogId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10067,7 +10229,8 @@
           "member": "string",
           "name": "FlowLogName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10076,7 +10239,8 @@
           "member": "string",
           "name": "ResourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10085,7 +10249,8 @@
           "member": "string",
           "name": "ResourceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10094,7 +10259,8 @@
           "member": "string",
           "name": "TrafficType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10103,7 +10269,8 @@
           "member": "string",
           "name": "CloudLogId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10112,7 +10279,8 @@
           "member": "string",
           "name": "CloudLogState",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10121,7 +10289,8 @@
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10130,7 +10299,8 @@
           "member": "string",
           "name": "OrderDirection",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10139,7 +10309,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10148,7 +10319,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10157,7 +10329,18 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "流日志存储ID对应的地域信息",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudLogRegion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10172,7 +10355,8 @@
           "name": "FlowLog",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "流日志总数目",
@@ -10181,7 +10365,8 @@
           "name": "TotalNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10845,7 +11030,8 @@
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10854,7 +11040,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10863,7 +11050,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -10872,7 +11060,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -10887,7 +11076,8 @@
           "name": "NatDirectConnectGatewayRouteSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "路由总数",
@@ -10896,7 +11086,8 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11765,6 +11956,40 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceByRealServerInternalRequest": {
+      "document": "DescribeServiceByRealServerInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeServiceByRealServerInternalResponse": {
+      "document": "DescribeServiceByRealServerInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceInternalRequest": {
+      "document": "DescribeServiceInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeServiceInternalResponse": {
+      "document": "DescribeServiceInternal返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14619,7 +14844,8 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14629,7 +14855,8 @@
           "name": "FlowLogId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14639,7 +14866,8 @@
           "name": "FlowLogName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14649,7 +14877,8 @@
           "name": "ResourceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14659,7 +14888,8 @@
           "name": "ResourceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14669,7 +14899,8 @@
           "name": "TrafficType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14679,7 +14910,8 @@
           "name": "CloudLogId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14689,7 +14921,8 @@
           "name": "CloudLogState",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14699,7 +14932,8 @@
           "name": "FlowLogDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14709,7 +14943,8 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14719,7 +14954,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14729,7 +14965,8 @@
           "name": "Enable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14739,7 +14976,8 @@
           "name": "StorageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -14749,7 +14987,19 @@
           "name": "FlowLogStorage",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "流日志存储ID对应的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudLogRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -17889,26 +18139,42 @@
         {
           "default": "",
           "document": "子网实例ID。形如：subnet-pxir56ns。",
+          "example": "subnet-test1234",
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子网名称，最大长度不能超过60个字节。",
+          "example": "NewSubnetName",
           "member": "string",
           "name": "SubnetName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "子网是否开启广播。",
+          "example": "true",
           "member": "string",
           "name": "EnableBroadcast",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网所在的可用区ID。不同子网选择不同可用区可以做跨可用区灾备。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -19704,7 +19970,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19713,7 +19980,8 @@
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19722,7 +19990,8 @@
           "member": "bool",
           "name": "DryRun",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -19737,7 +20006,8 @@
           "name": "DirectConnectSubnetSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -20827,6 +21097,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ReturnIpInternalRequest": {
+      "document": "ReturnIpInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReturnIpInternalResponse": {
+      "document": "ReturnIpInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReturnPrivateIpAddressRequest": {
       "document": "ReturnPrivateIpAddress请求参数结构体",
@@ -22534,6 +22821,23 @@
       ],
       "type": "object"
     },
+    "UpdateRouteWeightInternalRequest": {
+      "document": "UpdateRouteWeightInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateRouteWeightInternalResponse": {
+      "document": "UpdateRouteWeightInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Vpc": {
       "document": "私有网络(VPC)对象。",
       "members": [
@@ -22545,7 +22849,8 @@
           "name": "VpcName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22555,7 +22860,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22565,7 +22871,8 @@
           "name": "CidrBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22575,7 +22882,8 @@
           "name": "IsDefault",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22585,7 +22893,8 @@
           "name": "EnableMulticast",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22595,7 +22904,8 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22605,7 +22915,8 @@
           "name": "DnsServerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22615,7 +22926,8 @@
           "name": "DomainName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22625,7 +22937,8 @@
           "name": "DhcpOptionsId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22635,7 +22948,8 @@
           "name": "EnableDhcp",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22645,7 +22959,8 @@
           "name": "Ipv6CidrBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22655,7 +22970,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -22665,7 +22981,8 @@
           "name": "AssistantCidrSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cii.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStructureResult\n<公共请求参数>\n\n{\n    \"MainTaskId\": \"37835597617481728\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22dfcc05-1ba1-49b4-a751-f5611cdb3420\",\n        \"Status\": 0,\n        \"MainTaskId\": \"xx\",\n        \"Results\": [\n            {\n                \"Code\": 1,\n                \"SubTaskId\": \"xx\",\n                \"StructureResult\": \"xx\",\n                \"TaskType\": \"HealthReport\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"MainTaskId\": \"xx\",\n        \"Results\": [\n            {\n                \"TaskFiles\": [\n                    \"xx\"\n                ],\n                \"Code\": 1,\n                \"StructureResult\": \"xx\",\n                \"SubTaskId\": \"xx\",\n                \"TaskType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询结构化结果接口示例"
       }
     ],

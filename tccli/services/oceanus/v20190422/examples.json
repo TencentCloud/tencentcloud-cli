@@ -141,6 +141,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
         "title": "批量停止作业示例"
       }
+    ],
+    "TriggerJobSavepoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerJobSavepoint\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-52xkpymp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"xx\",\n        \"FinalSavepointPath\": \"xx\",\n        \"SavepointTrigger\": true,\n        \"RequestId\": \"cc75a49d-a99b-4840-b3cb-7d3bdd9a0e33\",\n        \"SavepointId\": \"svp-asdf5678\"\n    }\n}",
+        "title": "1"
+      }
     ]
   },
   "version": "1.0"

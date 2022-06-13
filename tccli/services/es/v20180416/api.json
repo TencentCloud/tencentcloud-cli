@@ -552,7 +552,8 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -561,7 +562,8 @@
           "member": "string",
           "name": "EsVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -570,7 +572,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -579,7 +582,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -588,7 +592,8 @@
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -597,7 +602,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -606,7 +612,8 @@
           "member": "uint64",
           "name": "NodeNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -615,7 +622,8 @@
           "member": "string",
           "name": "ChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -624,7 +632,8 @@
           "member": "uint64",
           "name": "ChargePeriod",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -633,7 +642,8 @@
           "member": "string",
           "name": "RenewFlag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -642,7 +652,8 @@
           "member": "string",
           "name": "NodeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -651,7 +662,8 @@
           "member": "string",
           "name": "DiskType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -660,7 +672,8 @@
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -669,7 +682,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -678,7 +692,8 @@
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -687,7 +702,8 @@
           "member": "string",
           "name": "VoucherIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -696,7 +712,8 @@
           "member": "bool",
           "name": "EnableDedicatedMaster",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -705,7 +722,8 @@
           "member": "uint64",
           "name": "MasterNodeNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -714,7 +732,8 @@
           "member": "string",
           "name": "MasterNodeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -723,7 +742,8 @@
           "member": "uint64",
           "name": "MasterNodeDiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -732,7 +752,8 @@
           "member": "string",
           "name": "ClusterNameInConf",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -741,7 +762,8 @@
           "member": "uint64",
           "name": "DeployMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -750,7 +772,8 @@
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -759,7 +782,8 @@
           "member": "string",
           "name": "LicenseType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -768,7 +792,8 @@
           "member": "NodeInfo",
           "name": "NodeInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -777,7 +802,8 @@
           "member": "TagInfo",
           "name": "TagList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -786,7 +812,8 @@
           "member": "uint64",
           "name": "BasicSecurityType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -795,7 +822,8 @@
           "member": "int64",
           "name": "SceneType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -804,7 +832,8 @@
           "member": "WebNodeTypeInfo",
           "name": "WebNodeTypeInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -813,7 +842,8 @@
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -828,7 +858,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -837,7 +868,8 @@
           "name": "DealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -932,10 +964,12 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

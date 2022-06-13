@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddCLSTopicDomains": [
+      {
+        "document": "",
+        "input": "https://cdn.tencentcloudapi.com/?Action=AddCLSTopicDomains\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&DomainAreaConfigs.0.Domain=a.b.com\n&DomainAreaConfigs.0.Area.0=mainland\n&DomainAreaConfigs.0.Area.1=overseas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
+        "title": "新增日志主题下绑定的域名"
+      }
+    ],
     "AddCdnDomain": [
       {
         "document": "",

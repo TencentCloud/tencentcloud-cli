@@ -1505,7 +1505,7 @@ def doDeleteVpnConnection(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableVpcEndPointConnect(args, parsed_globals):
+def doCreateServiceInternal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1530,11 +1530,11 @@ def doEnableVpcEndPointConnect(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableVpcEndPointConnectRequest()
+    model = models.CreateServiceInternalRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.EnableVpcEndPointConnect(model)
+        rsp = client.CreateServiceInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1697,7 +1697,7 @@ def doDescribeAddresses(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClassicLinkInstances(args, parsed_globals):
+def doDescribeVpcEndPointService(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1722,11 +1722,11 @@ def doDescribeClassicLinkInstances(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClassicLinkInstancesRequest()
+    model = models.DescribeVpcEndPointServiceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClassicLinkInstances(model)
+        rsp = client.DescribeVpcEndPointService(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2273,7 +2273,7 @@ def doDisassociateVpcEndPointSecurityGroups(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteRouteTable(args, parsed_globals):
+def doCreateDirectConnectGatewayCcnRoutes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2298,11 +2298,11 @@ def doDeleteRouteTable(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRouteTableRequest()
+    model = models.CreateDirectConnectGatewayCcnRoutesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteRouteTable(model)
+        rsp = client.CreateDirectConnectGatewayCcnRoutes(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2465,7 +2465,7 @@ def doAssignPrivateIpAddresses(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpcEndPointService(args, parsed_globals):
+def doEnableVpcEndPointConnect(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2490,11 +2490,11 @@ def doDescribeVpcEndPointService(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcEndPointServiceRequest()
+    model = models.EnableVpcEndPointConnectRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeVpcEndPointService(model)
+        rsp = client.EnableVpcEndPointConnect(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3647,6 +3647,54 @@ def doAcceptAttachCcnInstances(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.AcceptAttachCcnInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateRouteInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateRouteInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateRouteInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4847,6 +4895,54 @@ def doDeleteSubnet(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteSubnet(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServiceInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServiceInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServiceInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6881,6 +6977,54 @@ def doAssociateDhcpIpWithAddressIp(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeClassicLinkInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClassicLinkInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeClassicLinkInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteServiceTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -8897,7 +9041,7 @@ def doDescribeVpnGatewaySslServers(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateDirectConnectGatewayCcnRoutes(args, parsed_globals):
+def doDeleteRouteTable(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -8922,11 +9066,11 @@ def doCreateDirectConnectGatewayCcnRoutes(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateDirectConnectGatewayCcnRoutesRequest()
+    model = models.DeleteRouteTableRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateDirectConnectGatewayCcnRoutes(model)
+        rsp = client.DeleteRouteTable(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9521,7 +9665,7 @@ def doDescribeServiceTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnassignIpv6CidrBlock(args, parsed_globals):
+def doReturnIpInternal(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9546,11 +9690,11 @@ def doUnassignIpv6CidrBlock(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnassignIpv6CidrBlockRequest()
+    model = models.ReturnIpInternalRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.UnassignIpv6CidrBlock(model)
+        rsp = client.ReturnIpInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9791,6 +9935,54 @@ def doHaVipAssociateAddressIp(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.HaVipAssociateAddressIp(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUnassignIpv6CidrBlock(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UnassignIpv6CidrBlockRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UnassignIpv6CidrBlock(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10913,6 +11105,54 @@ def doCreateVpnGateway(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doApplyIpInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ApplyIpInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ApplyIpInternal(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPrivateIpAddressesAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -11039,6 +11279,54 @@ def doReplaceDirectConnectGatewayCcnRoutes(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ReplaceDirectConnectGatewayCcnRoutes(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateRouteWeightInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateRouteWeightInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateRouteWeightInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -11423,6 +11711,54 @@ def doMigrateNetworkInterface(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.MigrateNetworkInterface(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteRouteInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteRouteInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteRouteInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12287,6 +12623,54 @@ def doCreateServiceTemplateGroup(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateServiceTemplateGroup(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServiceByRealServerInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServiceByRealServerInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServiceByRealServerInternal(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13313,6 +13697,54 @@ def doResetNatGatewayConnection(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDeleteServiceInternal(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteServiceInternalRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteServiceInternal(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDisableRoutes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -13547,11 +13979,11 @@ ACTION_MAP = {
     "UnassignIpv6Addresses": doUnassignIpv6Addresses,
     "AssociateDirectConnectGatewayNatGateway": doAssociateDirectConnectGatewayNatGateway,
     "DeleteVpnConnection": doDeleteVpnConnection,
-    "EnableVpcEndPointConnect": doEnableVpcEndPointConnect,
+    "CreateServiceInternal": doCreateServiceInternal,
     "DeleteAddressTemplateGroup": doDeleteAddressTemplateGroup,
     "DescribeCustomerGatewayVendors": doDescribeCustomerGatewayVendors,
     "DescribeAddresses": doDescribeAddresses,
-    "DescribeClassicLinkInstances": doDescribeClassicLinkInstances,
+    "DescribeVpcEndPointService": doDescribeVpcEndPointService,
     "DescribeVpcTaskResult": doDescribeVpcTaskResult,
     "DeleteLocalGateway": doDeleteLocalGateway,
     "CreateDirectConnectGateway": doCreateDirectConnectGateway,
@@ -13563,11 +13995,11 @@ ACTION_MAP = {
     "DescribeVpnGatewayRoutes": doDescribeVpnGatewayRoutes,
     "ModifyVpnGatewayRoutes": doModifyVpnGatewayRoutes,
     "DisassociateVpcEndPointSecurityGroups": doDisassociateVpcEndPointSecurityGroups,
-    "DeleteRouteTable": doDeleteRouteTable,
+    "CreateDirectConnectGatewayCcnRoutes": doCreateDirectConnectGatewayCcnRoutes,
     "RemoveBandwidthPackageResources": doRemoveBandwidthPackageResources,
     "CloneSecurityGroup": doCloneSecurityGroup,
     "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
-    "DescribeVpcEndPointService": doDescribeVpcEndPointService,
+    "EnableVpcEndPointConnect": doEnableVpcEndPointConnect,
     "RefreshDirectConnectGatewayRouteToNatGateway": doRefreshDirectConnectGatewayRouteToNatGateway,
     "CreateAndAttachNetworkInterface": doCreateAndAttachNetworkInterface,
     "ModifyVpcEndPointServiceWhiteList": doModifyVpcEndPointServiceWhiteList,
@@ -13592,6 +14024,7 @@ ACTION_MAP = {
     "LockCcnBandwidths": doLockCcnBandwidths,
     "ModifyAddressTemplateAttribute": doModifyAddressTemplateAttribute,
     "AcceptAttachCcnInstances": doAcceptAttachCcnInstances,
+    "CreateRouteInternal": doCreateRouteInternal,
     "DeleteTemplateMember": doDeleteTemplateMember,
     "DeleteServiceTemplateGroup": doDeleteServiceTemplateGroup,
     "DescribeGatewayFlowQos": doDescribeGatewayFlowQos,
@@ -13617,6 +14050,7 @@ ACTION_MAP = {
     "AssociateAddress": doAssociateAddress,
     "DeleteCustomerGateway": doDeleteCustomerGateway,
     "DeleteSubnet": doDeleteSubnet,
+    "DescribeServiceInternal": doDescribeServiceInternal,
     "AttachClassicLinkVpc": doAttachClassicLinkVpc,
     "DisassociateNatGatewayAddress": doDisassociateNatGatewayAddress,
     "ModifyTemplateMember": doModifyTemplateMember,
@@ -13659,6 +14093,7 @@ ACTION_MAP = {
     "DescribeCcnRegionBandwidthLimits": doDescribeCcnRegionBandwidthLimits,
     "AddIp6Rules": doAddIp6Rules,
     "AssociateDhcpIpWithAddressIp": doAssociateDhcpIpWithAddressIp,
+    "DescribeClassicLinkInstances": doDescribeClassicLinkInstances,
     "DeleteServiceTemplate": doDeleteServiceTemplate,
     "UnassignPrivateIpAddresses": doUnassignPrivateIpAddresses,
     "ModifyAddressTemplateGroupAttribute": doModifyAddressTemplateGroupAttribute,
@@ -13701,7 +14136,7 @@ ACTION_MAP = {
     "DescribeVpcInstances": doDescribeVpcInstances,
     "AssociateNetworkInterfaceSecurityGroups": doAssociateNetworkInterfaceSecurityGroups,
     "DescribeVpnGatewaySslServers": doDescribeVpnGatewaySslServers,
-    "CreateDirectConnectGatewayCcnRoutes": doCreateDirectConnectGatewayCcnRoutes,
+    "DeleteRouteTable": doDeleteRouteTable,
     "DescribeSecurityGroupLimits": doDescribeSecurityGroupLimits,
     "DisassociateAddress": doDisassociateAddress,
     "WithdrawNotifyRoutes": doWithdrawNotifyRoutes,
@@ -13714,12 +14149,13 @@ ACTION_MAP = {
     "MigratePrivateIpAddress": doMigratePrivateIpAddress,
     "DescribeIpGeolocationInfos": doDescribeIpGeolocationInfos,
     "DescribeServiceTemplates": doDescribeServiceTemplates,
-    "UnassignIpv6CidrBlock": doUnassignIpv6CidrBlock,
+    "ReturnIpInternal": doReturnIpInternal,
     "DescribeNatGatewayDirectConnectGatewayRoute": doDescribeNatGatewayDirectConnectGatewayRoute,
     "ModifyNatGatewayDestinationIpPortTranslationNatRule": doModifyNatGatewayDestinationIpPortTranslationNatRule,
     "DescribeVpcLimits": doDescribeVpcLimits,
     "CreateVpcEndPoint": doCreateVpcEndPoint,
     "HaVipAssociateAddressIp": doHaVipAssociateAddressIp,
+    "UnassignIpv6CidrBlock": doUnassignIpv6CidrBlock,
     "CreateNatGatewaySourceIpTranslationNatRule": doCreateNatGatewaySourceIpTranslationNatRule,
     "AddTemplateMember": doAddTemplateMember,
     "RemoveIp6Rules": doRemoveIp6Rules,
@@ -13743,9 +14179,11 @@ ACTION_MAP = {
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DescribeSecurityGroups": doDescribeSecurityGroups,
     "CreateVpnGateway": doCreateVpnGateway,
+    "ApplyIpInternal": doApplyIpInternal,
     "ModifyPrivateIpAddressesAttribute": doModifyPrivateIpAddressesAttribute,
     "DescribeAssistantCidr": doDescribeAssistantCidr,
     "ReplaceDirectConnectGatewayCcnRoutes": doReplaceDirectConnectGatewayCcnRoutes,
+    "UpdateRouteWeightInternal": doUpdateRouteWeightInternal,
     "ModifyNetworkInterfaceQos": doModifyNetworkInterfaceQos,
     "DetachCcnInstances": doDetachCcnInstances,
     "DetachClassicLinkVpc": doDetachClassicLinkVpc,
@@ -13754,6 +14192,7 @@ ACTION_MAP = {
     "CreateHaVip": doCreateHaVip,
     "ModifyServiceTemplateAttribute": doModifyServiceTemplateAttribute,
     "MigrateNetworkInterface": doMigrateNetworkInterface,
+    "DeleteRouteInternal": doDeleteRouteInternal,
     "DescribeTenantCcns": doDescribeTenantCcns,
     "ManageDockerSubnetInternal": doManageDockerSubnetInternal,
     "DescribeVpcInternal": doDescribeVpcInternal,
@@ -13772,6 +14211,7 @@ ACTION_MAP = {
     "ModifyVpcEndPointServiceAttribute": doModifyVpcEndPointServiceAttribute,
     "DescribeBandwidthPackages": doDescribeBandwidthPackages,
     "CreateServiceTemplateGroup": doCreateServiceTemplateGroup,
+    "DescribeServiceByRealServerInternal": doDescribeServiceByRealServerInternal,
     "ReleaseIp6AddressesBandwidth": doReleaseIp6AddressesBandwidth,
     "CreateDhcpIp": doCreateDhcpIp,
     "ReplaceRoutes": doReplaceRoutes,
@@ -13793,6 +14233,7 @@ ACTION_MAP = {
     "CreateSecurityGroupPolicies": doCreateSecurityGroupPolicies,
     "ModifyNetworkAclAttribute": doModifyNetworkAclAttribute,
     "ResetNatGatewayConnection": doResetNatGatewayConnection,
+    "DeleteServiceInternal": doDeleteServiceInternal,
     "DisableRoutes": doDisableRoutes,
     "DescribeVpcEndPoint": doDescribeVpcEndPoint,
     "DescribeIp6TranslatorQuota": doDescribeIp6TranslatorQuota,

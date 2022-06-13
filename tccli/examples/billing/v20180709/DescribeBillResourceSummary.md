@@ -22,6 +22,7 @@ Output:
         "ResourceSummarySet": [
             {
                 "ReduceType": "xx",
+                "SPDeduction": "xx",
                 "ProductCode": "xx",
                 "FeeEndTime": "2020-09-22 00:00:00",
                 "CashPayAmount": "xx",
@@ -38,6 +39,7 @@ Output:
                 "ConfigDesc": "xx",
                 "Discount": "xx",
                 "ResourceName": "xx",
+                "InstanceType": "xx",
                 "RegionName": "xx",
                 "TotalCost": "xx",
                 "BusinessCode": "xx",
@@ -54,10 +56,12 @@ Output:
                 "VoucherPayAmount": "xx",
                 "ExtendField5": "xx",
                 "PayModeName": "xx",
+                "OriginalCostWithRI": "xx",
                 "FeeBeginTime": "2020-09-22 00:00:00",
                 "IncentivePayAmount": "xx",
                 "ProjectName": "xx",
                 "PayTime": "2020-09-22 00:00:00",
+                "OriginalCostWithSP": "xx",
                 "ZoneName": "xx"
             }
         ]
