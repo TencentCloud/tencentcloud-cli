@@ -332,6 +332,14 @@
         "title": "查询地域信息"
       }
     ],
+    "DescribeSecurityPortraitRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPortraitRules\n<公共请求参数>\n\n{\n    \"Entity\": \"xx\",\n    \"ZoneId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"RuleTypeName\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询用户画像规则"
+      }
+    ],
     "DescribeZoneDDoSPolicy": [
       {
         "document": "",

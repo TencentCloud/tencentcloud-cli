@@ -60,7 +60,8 @@ Output:
                         "Value": "86.5",
                         "Description": "CPU利用率"
                     }
-                ]
+                ],
+                "Dimensions": null
             },
             {
                 "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
@@ -90,7 +91,8 @@ Output:
                 "OriginId": "1276973",
                 "Region": "gz",
                 "PolicyExists": 1,
-                "MetricsInfo": null
+                "MetricsInfo": null,
+                "Dimensions": null
             }
         ],
         "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",

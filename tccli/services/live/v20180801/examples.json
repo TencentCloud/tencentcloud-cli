@@ -608,6 +608,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveTimeShiftBillInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveTimeShiftBillInfoList\n<公共请求参数>\n\n{\n    \"PushDomains\": [\n        \"start-push.elliotxing.com\"\n    ],\n    \"StartTime\": \"2022-05-06T00:30:00Z\",\n    \"EndTime\": \"2022-05-06T12:30:00Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Domain\": \"x.com\",\n                \"Duration\": 1,\n                \"StoragePeriod\": 1,\n                \"Time\": \"2022-05-06T10:30:00Z\"\n            },\n            {\n                \"Domain\": \"x.com\",\n                \"Duration\": 1,\n                \"StoragePeriod\": 1,\n                \"Time\": \"2022-05-06T10:35:00Z\"\n            }\n        ],\n        \"RequestId\": \"ca0bb85f-6b95-4b9f-b85f-fdsafasds\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveTranscodeDetailInfo": [
       {
         "document": "",

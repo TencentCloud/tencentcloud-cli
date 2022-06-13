@@ -258,6 +258,12 @@
       "name": "查询独享实例列表",
       "output": "DescribeExclusiveInstancesResponse"
     },
+    "DescribeExclusiveInstancesStatus": {
+      "document": "查询专享实例列表（新）",
+      "input": "DescribeExclusiveInstancesStatusRequest",
+      "name": "查询专享实例列表（新）",
+      "output": "DescribeExclusiveInstancesStatusResponse"
+    },
     "DescribeIPStrategy": {
       "document": "本接口（DescribeIPStrategy）用于查询IP策略详情。",
       "input": "DescribeIPStrategyRequest",
@@ -5651,6 +5657,60 @@
       ],
       "type": "object"
     },
+    "DescribeExclusiveInstancesStatusRequest": {
+      "document": "DescribeExclusiveInstancesStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分页查询，limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页查询，offset",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExclusiveInstancesStatusResponse": {
+      "document": "DescribeExclusiveInstancesStatus返回参数结构体",
+      "members": [
+        {
+          "document": "独享实例列表查询结果",
+          "example": "无",
+          "member": "InstanceSummary",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIPStrategyApisStatusRequest": {
       "document": "DescribeIPStrategyApisStatus请求参数结构体",
       "members": [
@@ -8482,6 +8542,32 @@
         }
       ],
       "usage": "in"
+    },
+    "InstanceSummary": {
+      "document": "专享查询列表",
+      "members": [
+        {
+          "default": "",
+          "document": "专享实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "专享实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "InstanceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "K8sLabel": {
       "document": "k8s Label",

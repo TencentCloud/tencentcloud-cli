@@ -438,6 +438,12 @@
       "name": "查询流状态",
       "output": "DescribeLiveStreamStateResponse"
     },
+    "DescribeLiveTimeShiftBillInfoList": {
+      "document": "提供给客户对账，按天统计，维度：推流域名、时移文件时长（累加）、配置天数（不累加）、时移总时长（累加）。",
+      "input": "DescribeLiveTimeShiftBillInfoListRequest",
+      "name": "直播时移计费信息查询",
+      "output": "DescribeLiveTimeShiftBillInfoListResponse"
+    },
     "DescribeLiveTranscodeDetailInfo": {
       "document": "支持查询某天或某段时间的转码详细信息。",
       "input": "DescribeLiveTranscodeDetailInfoRequest",
@@ -6210,6 +6216,60 @@
           "name": "StreamState",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftBillInfoListRequest": {
+      "document": "DescribeLiveTimeShiftBillInfoList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "UTC开始时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "UTC结束时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推流域名列表，若不传递此参数，则表示查询总体数据。",
+          "example": "[\"5000.playdomain.com\"]",
+          "member": "string",
+          "name": "PushDomains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveTimeShiftBillInfoListResponse": {
+      "document": "DescribeLiveTimeShiftBillInfoList返回参数结构体",
+      "members": [
+        {
+          "document": "时移计费明细数据。",
+          "example": "无",
+          "member": "TimeShiftBillData",
+          "name": "DataInfoList",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12522,6 +12582,52 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TimeShiftBillData": {
+      "document": "时移计费明细数据。",
+      "members": [
+        {
+          "default": "",
+          "document": "推流域名。",
+          "example": "\"5000.playdomain.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时移时长,单位分钟。",
+          "example": "3.25",
+          "member": "float",
+          "name": "Duration",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时移配置天数，单位天。",
+          "example": "1",
+          "member": "float",
+          "name": "StoragePeriod",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时间点，格式: yyyy-mm-ddTHH:MM:SSZ。",
+          "example": "2022-02-21T17:37:43+08:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

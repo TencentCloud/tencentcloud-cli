@@ -240,6 +240,12 @@
       "name": "查询所有地域信息",
       "output": "DescribeSecurityPolicyRegionsResponse"
     },
+    "DescribeSecurityPortraitRules": {
+      "document": "查询Bot用户画像规则",
+      "input": "DescribeSecurityPortraitRulesRequest",
+      "name": "查询Bot用户画像规则",
+      "output": "DescribeSecurityPortraitRulesResponse"
+    },
     "DescribeZoneDDoSPolicy": {
       "document": "查询所有DDoS防护分区",
       "input": "DescribeZoneDDoSPolicyRequest",
@@ -1185,6 +1191,16 @@
           "name": "DropManagedIds",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "本功能的开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5486,6 +5502,69 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityPortraitRulesRequest": {
+      "document": "DescribeSecurityPortraitRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "一级域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子域名/应用名",
+          "example": "a.test.com",
+          "member": "string",
+          "name": "Entity",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityPortraitRulesResponse": {
+      "document": "DescribeSecurityPortraitRules返回参数结构体",
+      "members": [
+        {
+          "document": "本次返回的规则数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Bot用户画像规则",
+          "example": "无",
+          "member": "PortraitManagedRuleDetail",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总规则数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZoneDDoSPolicyRequest": {
       "document": "DescribeZoneDDoSPolicy请求参数结构体",
       "members": [
@@ -8823,6 +8902,62 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PortraitManagedRuleDetail": {
+      "document": "用户画像规则详情",
+      "members": [
+        {
+          "default": "",
+          "document": "规则唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则所属类型的名字, botdb(用户画像)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yy",
+          "member": "string",
+          "name": "RuleTypeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则内的功能分类Id(扫描器，Bot行为等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassificationId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则当前所属动作状态(block, alg, ...)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "block",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

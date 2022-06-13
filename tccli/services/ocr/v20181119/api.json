@@ -331,7 +331,7 @@
       "output": "RideHailingTransportLicenseOCRResponse"
     },
     "SealOCR": {
-      "document": "印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。",
+      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。",
       "input": "SealOCRRequest",
       "name": "印章识别",
       "output": "SealOCRResponse"
@@ -6901,12 +6901,49 @@
       ],
       "type": "object"
     },
+    "SealInfo": {
+      "document": "印章信息",
+      "members": [
+        {
+          "default": "",
+          "document": "印章主体内容",
+          "example": "无",
+          "member": "string",
+          "name": "SealBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章坐标",
+          "example": "无",
+          "member": "Rect",
+          "name": "Location",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "印章其它文本内容",
+          "example": "无",
+          "member": "string",
+          "name": "OtherTexts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SealOCRRequest": {
       "document": "SealOCR请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -6915,6 +6952,7 @@
         {
           "default": "",
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -6928,22 +6966,37 @@
       "members": [
         {
           "document": "印章内容",
+          "example": "上海市宝山区市场监督管理局",
           "member": "string",
           "name": "SealBody",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "印章坐标",
+          "example": "无",
           "member": "Rect",
           "name": "Location",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "其它文本内容",
+          "example": "[]",
           "member": "string",
           "name": "OtherTexts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "全部印章信息",
+          "example": "无",
+          "member": "SealInfo",
+          "name": "SealInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
