@@ -54,6 +54,7 @@ Output:
                 }
             ],
             "DBCharset": "UTF8",
+            "IsSupportTDE": 0,
             "DBVersion": "10.4",
             "DBMajorVersion": "10",
             "DBKernelVersion": "v10.4_r1.0",

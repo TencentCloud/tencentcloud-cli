@@ -54,6 +54,12 @@
       "name": "恶心检测",
       "output": "DetectDisgustResponse"
     },
+    "DetectEnvelope": {
+      "document": "文件封识别可检测图片中是否包含符合文件封（即文件、单据、资料等的袋状包装）特征的物品，覆盖顺丰快递文件封、文件袋、档案袋等多种文件封类型，可应用于物流行业对文件快递的包装审核等场景。\n\n>?   \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectEnvelopeRequest",
+      "name": "文件封识别",
+      "output": "DetectEnvelopeResponse"
+    },
     "DetectLabel": {
       "document": ">!\n- **图像标签已升级服务，建议前往使用新版接口[通用图像标签](https://cloud.tencent.com/document/product/865/75196)。**\n- **与本接口相比，[通用图像标签](https://cloud.tencent.com/document/product/865/75196)新版接口提供更高精度的图像标签识别服务，覆盖更广泛的物体与场景类型，效果和通用性更优。**\n\n图像标签利用深度学习技术，可以对图片进行智能分类、物体识别等。\n\n目前支持8个大类、六十多个子类、数千个标签。涵盖各种日常场景、动植物、物品、美食、卡证等。具体分类请见[图像分析常见问题功能与限制相关](https://cloud.tencent.com/document/product/865/39164)。\n\n图像标签提供四个版本供选择：\n\n• 摄像头版：针对搜索、手机摄像头照片进行优化，涵盖大量卡证、日常物品、二维码条形码。\n\n• 相册版：针对手机相册、网盘进行优化，去除相册和网盘中不常见的标签，针对相册常见图片类型（人像、日常活动、日常物品等）识别效果更好。\n\n• 网络版：针对网络图片进行优化，涵盖标签更多，满足长尾识别需求。\n\n• 新闻版：针对新闻、资讯、广电等行业进行优化，增加定制识别，支持万级图像标签。\n\n每个产品的图像类型都有独特性，建议在接入初期，对四个版本进行对比评估后选择合适的版本使用。\n\n为了方便使用、减少图片传输次数，图像标签包装成多合一接口，实际上是多个服务。\n\n图像标签按照服务的实际使用数量进行收费。例如一张图片同时调用相册版、摄像头版两个服务，那么此次调用按照两次计费。\n\n>?\n- 图像标签摄像头版、相册版、网络版、新闻版分别按照各自的使用次数进行收费，例如一张图片同时使用相册版、摄像头版，则按照两次调用计费。建议测试对比后从中选择一个最合适的版本使用即可。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectLabelRequest",
@@ -1044,6 +1050,60 @@
       ],
       "type": "object"
     },
+    "DetectEnvelopeRequest": {
+      "document": "DetectEnvelope请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n图片大小的限制为4M，图片像素的限制为4k。",
+          "example": "https://test.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 \n图片大小的限制为4M，图片像素的限制为4k。\n**注意：图片需要base64编码，并且要去掉编码头部。",
+          "example": "1234",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectEnvelopeResponse": {
+      "document": "DetectEnvelope返回参数结构体",
+      "members": [
+        {
+          "document": "一级标签结果数组。识别是否文件封。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageTag",
+          "name": "FirstTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "二级标签结果数组。识别文件封正反面。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageTag",
+          "name": "SecondTags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetectLabelBetaRequest": {
       "document": "DetectLabelBeta请求参数结构体",
       "members": [
@@ -1811,6 +1871,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ImageTag": {
+      "document": "图片标签。",
+      "members": [
+        {
+          "default": "",
+          "document": "标签内容。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。",
+          "example": "99",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Labels": {
       "document": "名人识别的标签",

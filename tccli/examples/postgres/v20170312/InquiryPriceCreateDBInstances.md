@@ -21,7 +21,8 @@ Output:
     "Response": {
         "RequestId": "8a61e500-aa33-454c-9ec2-da2a368c39ab",
         "OriginalPrice": 27600,
-        "Price": 27600
+        "Price": 27600,
+        "Currency": "CNY"
     }
 }
 ```

@@ -19,7 +19,15 @@ Output:
             {
                 "Zone": "ap-guangzhou-2",
                 "DBInstanceName": "xxx",
+                "DBNodeSet": [
+                    {
+                        "Role": "Primary",
+                        "Zone": "ap-guangzhou-2"
+                    }
+                ],
                 "Type": 1,
+                "IsSupportTDE": 0,
+                "DBMajorVersion": "10",
                 "ReadOnlyInstanceNum": 1,
                 "MasterDBInstanceId": "",
                 "UpdateTime": "2020-09-22 00:00:00",
@@ -112,6 +120,12 @@ Output:
                 "VpcId": "vpc-xxxxxxxx",
                 "SubnetId": "subnet-xxxxxxxx",
                 "Type": 1,
+                "DBNodeSet": [
+                    {
+                        "Role": "Primary",
+                        "Zone": "ap-guangzhou-2"
+                    }
+                ],
                 "DBInstanceId": "postgres-xxxxxxxx",
                 "MasterDBInstanceId": "",
                 "DBInstanceName": "test",
@@ -144,6 +158,8 @@ Output:
                 ],
                 "DBCharset": "UTF8",
                 "DBVersion": "10",
+                "IsSupportTDE": 0,
+                "DBMajorVersion": "10",
                 "DBKernelVersion": "v10.4_r1.0",
                 "CreateTime": "2017-12-28 19:23:19",
                 "UpdateTime": "2018-01-18 15:54:32",

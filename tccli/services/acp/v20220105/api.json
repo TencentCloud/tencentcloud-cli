@@ -18,6 +18,12 @@
       "name": "获取应用合规文件上传凭证接口",
       "output": "DescribeFileTicketResponse"
     },
+    "DescribeResourceUsageInfo": {
+      "document": "查询应用合规平台用户资源的使用情况",
+      "input": "DescribeResourceUsageInfoRequest",
+      "name": "查询应用合规资源使用情况",
+      "output": "DescribeResourceUsageInfoResponse"
+    },
     "DescribeScanTaskList": {
       "document": "获取App隐私合规诊断任务列表",
       "input": "DescribeScanTaskListRequest",
@@ -653,6 +659,51 @@
       ],
       "type": "object"
     },
+    "DescribeResourceUsageInfoRequest": {
+      "document": "DescribeResourceUsageInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源计费项名称",
+          "example": "sp_011886_maats_inquire",
+          "member": "string",
+          "name": "PriceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUsageInfoResponse": {
+      "document": "DescribeResourceUsageInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义，暂时未定",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源使用信息",
+          "example": "无",
+          "member": "ResourceUsageInfoData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScanTaskListRequest": {
       "document": "DescribeScanTaskList请求参数结构体",
       "members": [
@@ -958,6 +1009,42 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceUsageInfoData": {
+      "document": "资源使用情况信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源计费项名称",
+          "example": "sp_011886_maats_inquire",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未使用资源数",
+          "example": "5",
+          "member": "int64",
+          "name": "UnusedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TaskFlowStepsInfo": {
       "document": "任务流步骤详情",

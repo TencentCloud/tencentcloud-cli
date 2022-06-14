@@ -11,7 +11,7 @@ tccli postgres CreateDBInstances --cli-unfold-argument  \
     --InstanceCount 1 \
     --Period 1 \
     --InstanceChargeType prepaid \
-    --Zone ap-guangzhou-2 \
+    --Zone ap-guangzhou-5 \
     --DBVersion 12.4 \
     --AutoVoucher 0 \
     --AutoRenewFlag 1
@@ -26,9 +26,9 @@ Output:
             "20180119110001"
         ],
         "DBInstanceIdSet": [
-            "123"
+            "postgres-xxxx"
         ],
-        "BillId": "123"
+        "BillId": "xxxxxxxxx"
     }
 }
 ```

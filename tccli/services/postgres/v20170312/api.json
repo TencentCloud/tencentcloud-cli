@@ -877,6 +877,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-6r233v55",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -885,6 +886,7 @@
         {
           "default": "",
           "document": "是否关闭Ipv6外网，1：是，0：否",
+          "example": "0",
           "member": "int64",
           "name": "IsIpv6",
           "required": false,
@@ -898,8 +900,10 @@
       "members": [
         {
           "document": "异步任务流程ID",
+          "example": "1234",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -918,6 +922,7 @@
         {
           "default": "",
           "document": "实例唯一标识符",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": false,
@@ -926,6 +931,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "test",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -1473,7 +1479,7 @@
         },
         {
           "default": "",
-          "document": "自定义密钥的keyId，若选择自定义密匙加密，则需要传入自定义密匙的keyId，keyId是CMK的唯一标识。",
+          "document": "自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。",
           "example": "无",
           "member": "string",
           "name": "KMSKeyId",
@@ -1482,7 +1488,7 @@
         },
         {
           "default": "",
-          "document": "使用KMS服务的地域，KMSRegion为空默认使用本地域的kms，本地域不支持的情况下需自选其他KMS支持的地域。",
+          "document": "使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "KMSRegion",
@@ -1969,6 +1975,7 @@
         {
           "default": "",
           "document": "可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1977,6 +1984,7 @@
         {
           "default": "",
           "document": "DB实例名称，同一个账号下该值必须唯一。",
+          "example": "serverlessdb-test",
           "member": "string",
           "name": "DBInstanceName",
           "required": true,
@@ -1985,6 +1993,7 @@
         {
           "default": "",
           "document": "PostgreSQL内核版本，目前只支持：10.4。",
+          "example": "10.4",
           "member": "string",
           "name": "DBVersion",
           "required": true,
@@ -1993,6 +2002,7 @@
         {
           "default": "",
           "document": "PostgreSQL数据库字符集，目前支持UTF8。",
+          "example": "UTF8",
           "member": "string",
           "name": "DBCharset",
           "required": true,
@@ -2001,6 +2011,7 @@
         {
           "default": "",
           "document": "项目ID。",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -2009,6 +2020,7 @@
         {
           "default": "",
           "document": "私有网络ID。",
+          "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2017,6 +2029,7 @@
         {
           "default": "",
           "document": "私有网络子网ID。",
+          "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2025,6 +2038,7 @@
         {
           "default": "",
           "document": "实例需要绑定的标签数组信息",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "required": false,
@@ -2038,8 +2052,10 @@
       "members": [
         {
           "document": "实例ID，该ID全局唯一，如：postgres-xxxxx",
+          "example": "postgres-xxxxx",
           "member": "string",
           "name": "DBInstanceId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2824,6 +2840,7 @@
         {
           "default": "",
           "document": "DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
+          "example": "test",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -2832,6 +2849,7 @@
         {
           "default": "",
           "document": "DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
+          "example": "postgres-xxxxx",
           "member": "string",
           "name": "DBInstanceId",
           "required": false,
@@ -2858,6 +2876,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-6fego161",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -2865,7 +2884,8 @@
         },
         {
           "default": "",
-          "document": "分页返回，每页最大返回数目，默认20，取值范围为1-100",
+          "document": "分页返回，每页最大返回数目，默认10，取值范围为1-100",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2873,7 +2893,8 @@
         },
         {
           "default": "",
-          "document": "分页返回，返回第几页的用户数据。页码从0开始计数",
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2882,6 +2903,7 @@
         {
           "default": "",
           "document": "返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序",
+          "example": "createTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2890,6 +2912,7 @@
         {
           "default": "",
           "document": "返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序",
+          "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -2903,15 +2926,19 @@
       "members": [
         {
           "document": "本次调用接口共返回了多少条数据。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "帐号列表详细信息。",
+          "example": "无",
           "member": "AccountInfo",
           "name": "Details",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3074,6 +3101,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-4wdeb0zv。",
+          "example": "postgres-6fego161",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -3082,6 +3110,7 @@
         {
           "default": "",
           "document": "备份方式（1-全量）。目前只支持全量，取值为1。",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -3090,6 +3119,7 @@
         {
           "default": "",
           "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -3098,6 +3128,7 @@
         {
           "default": "",
           "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -3106,6 +3137,7 @@
         {
           "default": "",
           "document": "备份列表分页返回，每页返回数量，默认为 20，最小为1，最大值为 100。（当该参数不传或者传0时按默认值处理）",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3114,6 +3146,7 @@
         {
           "default": "",
           "document": "返回结果中的第几页，从第0页开始。默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3127,15 +3160,19 @@
       "members": [
         {
           "document": "返回备份列表中备份文件的个数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "备份列表",
+          "example": "无",
           "member": "DBBackup",
           "name": "BackupList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3360,21 +3397,21 @@
         },
         {
           "default": "",
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "页码偏移量，从0开始。",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
         },
         {
           "default": "",
@@ -3532,6 +3569,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-4wdeb0zv。",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -3540,6 +3578,7 @@
         {
           "default": "",
           "document": "查询开始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
+          "example": "2018-06-10 17:06:38",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -3548,6 +3587,7 @@
         {
           "default": "",
           "document": "查询结束时间，形如2018-06-10 17:06:38",
+          "example": "2018-06-11 17:06:38",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -3556,6 +3596,7 @@
         {
           "default": "",
           "document": "分页返回，表示返回第几页的条目。从第0页开始计数。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3564,6 +3605,7 @@
         {
           "default": "",
           "document": "分页返回，表示每页有多少条目。取值为1-100。",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3577,15 +3619,19 @@
       "members": [
         {
           "document": "表示此次返回结果有多少条数据。",
+          "example": "6",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "Xlog列表",
+          "example": "无",
           "member": "Xlog",
           "name": "XlogList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3604,6 +3650,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "postgres-6bwgamo3",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -3617,8 +3664,10 @@
       "members": [
         {
           "document": "数据库信息",
+          "example": "[\"postgres\",\"testdatabase\"]",
           "member": "string",
           "name": "Items",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3673,6 +3722,7 @@
         {
           "default": "",
           "document": "订单名集合",
+          "example": "[\"20180615110033\\n\"]",
           "member": "string",
           "name": "DealNames",
           "required": true,
@@ -3686,15 +3736,19 @@
       "members": [
         {
           "document": "订单数量",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "订单数组",
+          "example": "无",
           "member": "PgDeal",
           "name": "Deals",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3870,15 +3924,19 @@
       "members": [
         {
           "document": "返回的结果数量。",
+          "example": "7",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "地域信息集合。",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4300,7 +4358,7 @@
       "members": [
         {
           "default": "",
-          "document": "资源ID列表",
+          "document": "资源ID列表。注意：当前已不支持同时解隔离多个实例，这里只能传入单个实例ID。",
           "example": "[\"postgres-xxxxxxx\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
@@ -4633,6 +4691,7 @@
         {
           "default": "",
           "document": "实例ID集合。",
+          "example": "[\"postgres-6fego161\\n\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "required": true,
@@ -4641,6 +4700,7 @@
         {
           "default": "",
           "document": "实例根账号用户名。",
+          "example": "testuser",
           "member": "string",
           "name": "AdminName",
           "required": true,
@@ -4649,6 +4709,7 @@
         {
           "default": "",
           "document": "实例根账号用户名对应的密码。",
+          "example": "testuser%40123",
           "member": "string",
           "name": "AdminPassword",
           "required": true,
@@ -4657,6 +4718,7 @@
         {
           "default": "",
           "document": "实例字符集，目前只支持：UTF8、LATIN1。",
+          "example": "UTF8",
           "member": "string",
           "name": "Charset",
           "required": true,
@@ -4670,8 +4732,10 @@
       "members": [
         {
           "document": "实例ID集合。",
+          "example": "[\"postgres-6fego161\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4690,6 +4754,7 @@
         {
           "default": "",
           "document": "可用区ID。该参数可以通过调用 DescribeZones 接口的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -4698,6 +4763,7 @@
         {
           "default": "",
           "document": "规格ID。该参数可以通过调用DescribeProductConfig接口的返回值中的SpecCode字段来获取。",
+          "example": "cdb.pg.z1.2g",
           "member": "string",
           "name": "SpecCode",
           "required": true,
@@ -4706,6 +4772,7 @@
         {
           "default": "",
           "document": "存储容量大小，单位：GB。",
+          "example": "100",
           "member": "uint64",
           "name": "Storage",
           "required": true,
@@ -4714,6 +4781,7 @@
         {
           "default": "",
           "document": "实例数量。目前最大数量不超过100，如需一次性创建更多实例，请联系客服支持。",
+          "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -4722,6 +4790,7 @@
         {
           "default": "",
           "document": "购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -4730,6 +4799,7 @@
         {
           "default": "",
           "document": "计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。",
+          "example": "11004",
           "member": "uint64",
           "name": "Pid",
           "required": true,
@@ -4738,6 +4808,7 @@
         {
           "default": "",
           "document": "实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -4751,16 +4822,29 @@
       "members": [
         {
           "document": "原始价格，单位：分",
+          "example": "27600",
           "member": "uint64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "折后价格，单位：分",
+          "example": "27600",
           "member": "uint64",
           "name": "Price",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "币种。例如，CNY：人民币。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4778,6 +4862,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "postgres-6fego161",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -4786,6 +4871,7 @@
         {
           "default": "",
           "document": "续费周期，按月计算，最大不超过48",
+          "example": "12",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -4799,16 +4885,29 @@
       "members": [
         {
           "document": "总费用，打折前的。比如24650表示246.5元",
+          "example": "253440",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际需要付款金额。比如24650表示246.5元",
+          "example": "210355",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "币种。例如，CNY：人民币。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4826,6 +4925,7 @@
         {
           "default": "",
           "document": "实例的磁盘大小，单位GB",
+          "example": "500",
           "member": "int64",
           "name": "Storage",
           "required": true,
@@ -4834,6 +4934,7 @@
         {
           "default": "",
           "document": "实例的内存大小，单位GB",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
           "required": true,
@@ -4842,6 +4943,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-hez4fh0v",
+          "example": "postgres-6fego161",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -4850,6 +4952,7 @@
         {
           "default": "",
           "document": "实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -4863,16 +4966,29 @@
       "members": [
         {
           "document": "总费用，打折前的",
+          "example": "1300",
           "member": "int64",
           "name": "OriginalPrice",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "实际需要付款金额",
+          "example": "1300",
           "member": "int64",
           "name": "Price",
+          "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "币种。例如，CNY：人民币。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4889,7 +5005,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID集合",
+          "document": "实例ID集合。注意：当前已不支持同时隔离多个实例，这里只能传入单个实例ID。",
           "example": "[\"postgres-xxxxxxxx\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
@@ -4917,6 +5033,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-4wdeb0zv",
+          "example": "postgres-6bwgamo3",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -4925,6 +5042,7 @@
         {
           "default": "",
           "document": "实例用户名",
+          "example": "test",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4933,6 +5051,7 @@
         {
           "default": "",
           "document": "用户UserName对应的新备注",
+          "example": "testModifyRemark",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -5085,6 +5204,7 @@
         {
           "default": "",
           "document": "数据库实例ID，形如postgres-6fego161",
+          "example": "postgres-6fego161",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -5093,6 +5213,7 @@
         {
           "default": "",
           "document": "新的数据库实例名字",
+          "example": "testModifyInstanceName",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5325,7 +5446,8 @@
       "members": [
         {
           "default": "",
-          "document": "postgresql实例ID数组",
+          "document": "实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。",
+          "example": "[\"postgres-6bwgamo3\\n\",\"postgres-lnp6j6172\\n\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "required": true,
@@ -5333,7 +5455,8 @@
         },
         {
           "default": "",
-          "document": "postgresql实例所属新项目的ID",
+          "document": "所属新项目的ID",
+          "example": "10467",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5347,8 +5470,10 @@
       "members": [
         {
           "document": "转移项目成功的实例个数",
+          "example": "2",
           "member": "int64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5720,6 +5845,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-hez4fh0v",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -5728,6 +5854,7 @@
         {
           "default": "",
           "document": "是否开通Ipv6外网，1：是，0：否",
+          "example": "0",
           "member": "int64",
           "name": "IsIpv6",
           "required": false,
@@ -5741,8 +5868,10 @@
       "members": [
         {
           "document": "异步任务流程ID",
+          "example": "1234",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5761,6 +5890,7 @@
         {
           "default": "",
           "document": "实例的唯一标识符",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": false,
@@ -5769,6 +5899,7 @@
         {
           "default": "",
           "document": "实例名称",
+          "example": "test",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -6437,6 +6568,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-6fego161",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -6445,6 +6577,7 @@
         {
           "default": "",
           "document": "续费多少个月",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -6453,6 +6586,7 @@
         {
           "default": "",
           "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -6461,6 +6595,7 @@
         {
           "default": "",
           "document": "代金券ID列表，目前仅支持指定一张代金券",
+          "example": "100010010100101",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -6474,8 +6609,10 @@
       "members": [
         {
           "document": "订单名",
+          "example": "201806181256",
           "member": "string",
           "name": "DealName",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6494,6 +6631,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-4wdeb0zv",
+          "example": "postgres-lnp6j6172",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -6502,6 +6640,7 @@
         {
           "default": "",
           "document": "实例账户名",
+          "example": "test",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -6510,6 +6649,7 @@
         {
           "default": "",
           "document": "UserName账户对应的新密码",
+          "example": "1234qwer()",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -6536,6 +6676,7 @@
         {
           "default": "",
           "document": "实例ID，形如postgres-6r233v55",
+          "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -6549,8 +6690,10 @@
       "members": [
         {
           "document": "异步流程ID",
+          "example": "1234",
           "member": "int64",
           "name": "FlowId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6828,7 +6971,8 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID数组",
+          "document": "实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。",
+          "example": "[\"postgres-6fego161\\n\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "required": true,
@@ -6837,6 +6981,7 @@
         {
           "default": "",
           "document": "续费标记。0-正常续费；1-自动续费；2-到期不续费",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": true,
@@ -6850,8 +6995,10 @@
       "members": [
         {
           "document": "设置成功的实例个数",
+          "example": "1",
           "member": "int64",
           "name": "Count",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },

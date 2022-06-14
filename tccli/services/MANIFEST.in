@@ -95,6 +95,8 @@ include tccli/services/chdfs/v20201112/api.json
 include tccli/services/chdfs/v20201112/examples.json
 include tccli/services/chdfs/v20190718/api.json
 include tccli/services/chdfs/v20190718/examples.json
+include tccli/services/ciam/v20220331/api.json
+include tccli/services/ciam/v20220331/examples.json
 include tccli/services/cii/v20210408/api.json
 include tccli/services/cii/v20210408/examples.json
 include tccli/services/cii/v20201210/api.json

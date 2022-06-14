@@ -12,6 +12,7 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ClusterCIDRSettings.MaxNodePodNum 1 \
     --ClusterCIDRSettings.EniSubnetIds xx \
     --ClusterCIDRSettings.ClusterCIDR xx \
+    --ClusterCIDRSettings.IgnoreServiceCIDRConflict True \
     --ClusterCIDRSettings.IgnoreClusterCIDRConflict True \
     --ClusterAdvancedSettings.AuditEnabled True \
     --ClusterAdvancedSettings.DeletionProtection True \
@@ -52,6 +53,9 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Labels.0.Name xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Labels.0.Value xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.ExtraArgs.Kubelet xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Value xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Key xx \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Effect xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Unschedulable 0 \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.UserScript xx \
     --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DesiredPodNumber 0 \
@@ -72,6 +76,9 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --InstanceAdvancedSettings.Labels.0.Name xx \
     --InstanceAdvancedSettings.Labels.0.Value xx \
     --InstanceAdvancedSettings.ExtraArgs.Kubelet xx \
+    --InstanceAdvancedSettings.Taints.0.Value xx \
+    --InstanceAdvancedSettings.Taints.0.Key xx \
+    --InstanceAdvancedSettings.Taints.0.Effect xx \
     --InstanceAdvancedSettings.Unschedulable 0 \
     --InstanceAdvancedSettings.UserScript xx \
     --InstanceAdvancedSettings.DesiredPodNumber 0 \
@@ -87,6 +94,9 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Labels.0.Name xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Labels.0.Value xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.ExtraArgs.Kubelet xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Value xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Key xx \
+    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Effect xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Unschedulable 0 \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.UserScript xx \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DesiredPodNumber 0 \
@@ -106,21 +116,6 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ExistedInstancesForNode.0.ExistedInstancesPara.EnhancedService.MonitorService.Enabled True \
     --ExistedInstancesForNode.0.ExistedInstancesPara.EnhancedService.AutomationService.Enabled True \
     --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceIds xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.PreStartUserScript xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DockerGraphPath xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.Labels.0.Name xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.Labels.0.Value xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.ExtraArgs.Kubelet xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.Unschedulable 0 \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.UserScript xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DesiredPodNumber 0 \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.MountTarget xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.DiskPartition xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.DiskType xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.DiskSize 0 \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.FileSystem xx \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.AutoFormatAndMount True \
-    --ExistedInstancesForNode.0.InstanceAdvancedSettingsOverride.DataDisks.0.MountTarget xx \
     --ExistedInstancesForNode.0.DesiredPodNumbers 0 \
     --ExistedInstancesForNode.0.NodeRole xx \
     --InstanceDataDiskMountSettings.0.InstanceType xx \

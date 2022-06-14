@@ -3503,8 +3503,8 @@
         },
         {
           "default": "",
-          "document": "区块高度，-1表示最新区块",
-          "example": "-1",
+          "document": "区块高度",
+          "example": "1",
           "member": "int64",
           "name": "BlockHeight",
           "required": true,

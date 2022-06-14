@@ -96,6 +96,20 @@
         "title": "恶心检测接口调用成功"
       }
     ],
+    "DetectEnvelope": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectEnvelope\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectEnvelope\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FirstTags\": [\n            {\n                \"Name\": \"非文件封\",\n                \"Confidence\": 97.76\n            },\n            {\n                \"Name\": \"文件封\",\n                \"Confidence\": 2.24\n            }\n        ],\n        \"SecondTags\": [\n            {\n                \"Name\": \"非文件封\",\n                \"Confidence\": 97.5\n            },\n            {\n                \"Name\": \"非顺丰文件封正面\",\n                \"Confidence\": 2.28\n            },\n            {\n                \"Name\": \"顺丰文件封正面\",\n                \"Confidence\": 0.09\n            },\n            {\n                \"Name\": \"非顺丰文件封反面\",\n                \"Confidence\": 0.07\n            },\n            {\n                \"Name\": \"顺丰文件封反面\",\n                \"Confidence\": 0.05\n            }\n        ],\n        \"RequestId\": \"c7552894-0e1c-468d-afc7-685483c3e3be\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
     "DetectLabel": [
       {
         "document": "",

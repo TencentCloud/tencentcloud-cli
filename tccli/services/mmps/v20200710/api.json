@@ -24,6 +24,12 @@
       "name": "重新提交诊断任务",
       "output": "CreateFlySecMiniAppScanTaskRepeatResponse"
     },
+    "DescribeBasicDiagnosisResourceUsageInfo": {
+      "document": "查询翼扬安全基础诊断资源使用情况",
+      "input": "DescribeBasicDiagnosisResourceUsageInfoRequest",
+      "name": "查询基础诊断资源使用情况",
+      "output": "DescribeBasicDiagnosisResourceUsageInfoResponse"
+    },
     "DescribeFlySecMiniAppReportUrl": {
       "document": "获取翼扬诊断任务报告链接地址",
       "input": "DescribeFlySecMiniAppReportUrlRequest",
@@ -47,6 +53,12 @@
       "input": "DescribeFlySecMiniAppScanTaskStatusRequest",
       "name": "查询诊断任务状态",
       "output": "DescribeFlySecMiniAppScanTaskStatusResponse"
+    },
+    "DescribeResourceUsageInfo": {
+      "document": "查询翼扬安全资源使用情况",
+      "input": "DescribeResourceUsageInfoRequest",
+      "name": "查询安全资源使用情况",
+      "output": "DescribeResourceUsageInfoResponse"
     },
     "DescribeScanTaskList": {
       "document": "获取小程序隐私合规诊断任务列表",
@@ -678,6 +690,69 @@
       ],
       "type": "object"
     },
+    "DescribeBasicDiagnosisResourceUsageInfoRequest": {
+      "document": "DescribeBasicDiagnosisResourceUsageInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "诊断模式 1:基础诊断，2:深度诊断",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBasicDiagnosisResourceUsageInfoResponse": {
+      "document": "DescribeBasicDiagnosisResourceUsageInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
+          "example": "0",
+          "member": "int64",
+          "name": "Ret",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源类型",
+          "example": "sv_mps_safety_diagnosis_basic_diagnosis",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "资源未使用次数",
+          "example": "1",
+          "member": "int64",
+          "name": "UnusedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlySecMiniAppReportUrlRequest": {
       "document": "DescribeFlySecMiniAppReportUrl请求参数结构体",
       "members": [
@@ -974,6 +1049,50 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUsageInfoRequest": {
+      "document": "DescribeResourceUsageInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeResourceUsageInfoResponse": {
+      "document": "DescribeResourceUsageInfo返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
+          "example": "0",
+          "member": "int64",
+          "name": "Ret",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全资源数据列表",
+          "example": "无",
+          "member": "ResourceUsageInfoData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "安全资源数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1369,6 +1488,42 @@
           "example": "100010",
           "member": "int64",
           "name": "Error",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceUsageInfoData": {
+      "document": "翼扬安全资源使用情况",
+      "members": [
+        {
+          "default": "",
+          "document": "资源名称, 具体名称请查看产品配置",
+          "example": "sv_mps_detection_public_basic",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源未使用次数",
+          "example": "5",
+          "member": "int64",
+          "name": "UnusedCount",
           "required": true,
           "type": "int",
           "value_allowed_null": false

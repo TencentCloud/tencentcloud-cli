@@ -32,6 +32,14 @@
         "title": "重新创建小程序翼扬安全基础诊断任务"
       }
     ],
+    "DescribeBasicDiagnosisResourceUsageInfo": [
+      {
+        "document": "查询当前用户的基础诊断资源使用情况",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeBasicDiagnosisResourceUsageInfo\n&Mode=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"ResourceName\": \"sv_mps_safety_diagnosis_basic_diagnosis\",\n        \"Total\": 10,\n        \"UnusedCount\": 5\n    }\n}",
+        "title": "查询基础诊断资源使用情况"
+      }
+    ],
     "DescribeFlySecMiniAppReportUrl": [
       {
         "document": "",
@@ -62,6 +70,14 @@
         "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppScanTaskStatus\n&TaskID=1701438134******0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Status\": 2,\n        \"Errno\": 100010,\n        \"MiniAppName\": \"测试小程序\",\n        \"MiniAppVersion\": \"V125\"\n    }\n}",
         "title": "查询诊断任务状态"
+      }
+    ],
+    "DescribeResourceUsageInfo": [
+      {
+        "document": "查询当前用户的安全资源使用情况",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeResourceUsageInfo\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Data\": [\n            {\n                \"ResourceName\": \"sv_mps_detection_public_basic\",\n                \"Total\": 10,\n                \"UnusedCount\": 5\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询安全资源使用情况"
       }
     ],
     "DescribeScanTaskList": [

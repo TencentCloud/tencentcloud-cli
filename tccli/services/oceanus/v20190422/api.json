@@ -90,6 +90,12 @@
       "name": "描述系统资源接口",
       "output": "DescribeSystemResourcesResponse"
     },
+    "ModifyJob": {
+      "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
+      "input": "ModifyJobRequest",
+      "name": "更新作业",
+      "output": "ModifyJobResponse"
+    },
     "RunJobs": {
       "document": "批量启动或者恢复作业，批量操作数量上限20",
       "input": "RunJobsRequest",
@@ -1956,6 +1962,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyJobRequest": {
+      "document": "ModifyJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id",
+          "example": "cql-6iaginqp",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "作业名称，支持长度小于50的中文/英文/数字/”-”/”_”/”.”，不能重名",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "测试",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "拖拽文件需传入此参数",
+          "example": "folder-xxxxxxxx",
+          "member": "string",
+          "name": "TargetFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1237",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJobResponse": {
+      "document": "ModifyJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Property": {
       "document": "系统配置属性",

@@ -1,0 +1,64 @@
+{
+  "actions": {
+    "ResetPassword": {
+      "document": "重置用户密码",
+      "input": "ResetPasswordRequest",
+      "name": "重置用户密码",
+      "output": "ResetPasswordResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-03-31",
+    "api_brief": "介绍如何使用ciam进行账号同步、身份认证、授权管理。",
+    "serviceNameCN": "数字身份管控平台（公众版）",
+    "serviceShortName": "ciam"
+  },
+  "objects": {
+    "ResetPasswordRequest": {
+      "document": "ResetPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetPasswordResponse": {
+      "document": "ResetPassword返回参数结构体",
+      "members": [
+        {
+          "document": "重置后的用户密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

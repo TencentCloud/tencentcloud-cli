@@ -6293,6 +6293,7 @@
         {
           "default": "",
           "document": "标签键key",
+          "example": "project",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -6302,6 +6303,7 @@
         {
           "default": "",
           "document": "标签值value",
+          "example": "xxx",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -6309,7 +6311,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ResourceUsageMonitorSet": {
       "document": "DB资源使用情况监控指标集合",
