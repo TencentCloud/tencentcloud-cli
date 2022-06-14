@@ -3059,7 +3059,8 @@
           "member": "int64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3068,7 +3069,8 @@
           "member": "int64",
           "name": "Memory",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3077,7 +3079,8 @@
           "member": "int64",
           "name": "Volume",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3086,7 +3089,8 @@
           "member": "string",
           "name": "EngineVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3095,7 +3099,8 @@
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3104,7 +3109,8 @@
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3113,7 +3119,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3122,7 +3129,8 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3131,7 +3139,8 @@
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3140,7 +3149,8 @@
           "member": "string",
           "name": "InstanceRole",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3149,7 +3159,8 @@
           "member": "string",
           "name": "MasterRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3158,7 +3169,8 @@
           "member": "int64",
           "name": "Port",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3167,7 +3179,8 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3176,7 +3189,8 @@
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3185,7 +3199,8 @@
           "member": "int64",
           "name": "ProtectMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3194,7 +3209,8 @@
           "member": "int64",
           "name": "DeployMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3203,7 +3219,8 @@
           "member": "string",
           "name": "SlaveZone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3212,7 +3229,8 @@
           "member": "string",
           "name": "BackupZone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3221,7 +3239,8 @@
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3230,7 +3249,8 @@
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3239,16 +3259,18 @@
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例名称。",
+          "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
           "example": "***",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3257,7 +3279,8 @@
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3266,7 +3289,8 @@
           "member": "string",
           "name": "DeployGroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3275,7 +3299,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3284,7 +3309,8 @@
           "member": "string",
           "name": "DeviceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3293,7 +3319,8 @@
           "member": "int64",
           "name": "ParamTemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3302,7 +3329,8 @@
           "member": "int64",
           "name": "AlarmPolicyList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3311,7 +3339,8 @@
           "member": "int64",
           "name": "InstanceNodes",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3320,7 +3349,8 @@
           "member": "int64",
           "name": "Cpu",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3329,7 +3359,8 @@
           "member": "int64",
           "name": "AutoSyncFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3338,7 +3369,8 @@
           "member": "string",
           "name": "CageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3347,7 +3379,8 @@
           "member": "string",
           "name": "ParamTemplateType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3356,7 +3389,8 @@
           "member": "string",
           "name": "AlarmPolicyIdList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3365,7 +3399,8 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3374,7 +3409,8 @@
           "member": "string",
           "name": "EngineType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3383,7 +3419,8 @@
           "member": "string",
           "name": "Vips",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3398,7 +3435,8 @@
           "name": "DealIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例 ID 列表。",
@@ -3407,7 +3445,8 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3428,7 +3467,8 @@
           "member": "int64",
           "name": "Memory",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3437,7 +3477,8 @@
           "member": "int64",
           "name": "Volume",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3446,7 +3487,8 @@
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3455,7 +3497,8 @@
           "member": "int64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3464,7 +3507,8 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3473,7 +3517,8 @@
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3482,7 +3527,8 @@
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3491,7 +3537,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3500,7 +3547,8 @@
           "member": "int64",
           "name": "Port",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3509,7 +3557,8 @@
           "member": "string",
           "name": "InstanceRole",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3518,7 +3567,8 @@
           "member": "string",
           "name": "MasterInstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3527,7 +3577,8 @@
           "member": "string",
           "name": "EngineVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3536,7 +3587,8 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3545,7 +3597,8 @@
           "member": "int64",
           "name": "ProtectMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3554,7 +3607,8 @@
           "member": "int64",
           "name": "DeployMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3563,7 +3617,8 @@
           "member": "string",
           "name": "SlaveZone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3572,7 +3627,8 @@
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3581,7 +3637,8 @@
           "member": "string",
           "name": "BackupZone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3590,7 +3647,8 @@
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3599,7 +3657,8 @@
           "member": "string",
           "name": "MasterRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3608,7 +3667,8 @@
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3617,16 +3677,18 @@
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例名称。",
+          "document": "实例名称。一次购买多个实例命名会用后缀数字区分，例instnaceName=db，goodsNum=3，实例命名分别为db1，db2，db3。",
           "example": "***",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3635,7 +3697,8 @@
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3644,7 +3707,8 @@
           "member": "string",
           "name": "DeployGroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3653,7 +3717,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3662,7 +3727,8 @@
           "member": "string",
           "name": "DeviceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3671,7 +3737,8 @@
           "member": "int64",
           "name": "ParamTemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3680,7 +3747,8 @@
           "member": "int64",
           "name": "AlarmPolicyList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3689,7 +3757,8 @@
           "member": "int64",
           "name": "InstanceNodes",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3698,7 +3767,8 @@
           "member": "int64",
           "name": "Cpu",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3707,7 +3777,8 @@
           "member": "int64",
           "name": "AutoSyncFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3716,7 +3787,8 @@
           "member": "string",
           "name": "CageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3725,7 +3797,8 @@
           "member": "string",
           "name": "ParamTemplateType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3734,7 +3807,8 @@
           "member": "string",
           "name": "AlarmPolicyIdList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3743,7 +3817,8 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3752,7 +3827,8 @@
           "member": "string",
           "name": "EngineType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3761,7 +3837,8 @@
           "member": "string",
           "name": "Vips",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3776,7 +3853,8 @@
           "name": "DealIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例 ID 列表。",
@@ -3785,7 +3863,8 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

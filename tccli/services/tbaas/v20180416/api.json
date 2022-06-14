@@ -3490,7 +3490,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3499,16 +3500,18 @@
           "member": "string",
           "name": "ChainId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "区块高度，-1表示最新区块",
-          "example": "-1",
+          "document": "区块高度",
+          "example": "1",
           "member": "int64",
           "name": "BlockHeight",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3523,7 +3526,8 @@
           "name": "Result",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "区块高度",
@@ -3532,7 +3536,8 @@
           "name": "BlockHeight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "交易数量\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3541,7 +3546,8 @@
           "name": "TxCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "区块时间戳，单位是秒",
@@ -3550,7 +3556,8 @@
           "name": "BlockTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

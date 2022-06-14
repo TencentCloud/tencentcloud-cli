@@ -126,6 +126,14 @@
         "title": "查询系统资源配置列表示例"
       }
     ],
+    "ModifyJob": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=ModifyJob\n&JobId=cql-6iaginqp\n&Name=test\n&Remark=测试\n&TargetFolderId=folder-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
+        "title": "更新作业示例"
+      }
+    ],
     "RunJobs": [
       {
         "document": "",

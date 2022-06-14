@@ -40,6 +40,14 @@
         "title": "为VPC-CNI模式集群增加子网"
       }
     ],
+    "CheckEdgeClusterCIDR": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CheckEdgeClusterCIDR\r\n&VpcId=vpc-xxx\r\n&PodCIDR=10.0.1.10/24\r\n&ServiceCIDR=192.168.0.0/16\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ConflictCode\": \"0\",\n        \"ConflictMsg\": \"OK\"\n    }\n}",
+        "title": "检查边缘计算集群的CIDR是否冲突示例"
+      }
+    ],
     "CheckInstancesUpgradeAble": [
       {
         "document": "",
@@ -51,7 +59,7 @@
     "CreateCluster": [
       {
         "document": "创建托管集群",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCluster\n<公共请求参数>\n\n{\n    \"ClusterCIDRSettings\": {\n        \"ServiceCIDR\": \"xx\",\n        \"ClaimExpiredSeconds\": 0,\n        \"MaxClusterServiceNum\": 1,\n        \"MaxNodePodNum\": 1,\n        \"EniSubnetIds\": [\n            \"xx\"\n        ],\n        \"ClusterCIDR\": \"xx\",\n        \"IgnoreClusterCIDRConflict\": true\n    },\n    \"ClusterAdvancedSettings\": {\n        \"AuditEnabled\": true,\n        \"DeletionProtection\": true,\n        \"RuntimeVersion\": \"xx\",\n        \"IsNonStaticIpMode\": true,\n        \"KubeProxyMode\": \"xx\",\n        \"AuditLogTopicId\": \"xx\",\n        \"ExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"xx\"\n            ],\n            \"KubeScheduler\": [\n                \"xx\"\n            ],\n            \"KubeControllerManager\": [\n                \"xx\"\n            ],\n            \"Etcd\": [\n                \"xx\"\n            ]\n        },\n        \"AuditLogsetId\": \"xx\",\n        \"EnableCustomizedPodCIDR\": true,\n        \"CiliumMode\": \"xx\",\n        \"AsEnabled\": true,\n        \"ContainerRuntime\": \"xx\",\n        \"VpcCniType\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"NodeNameType\": \"xx\",\n        \"IPVS\": true,\n        \"BasePodNumber\": 0\n    },\n    \"ClusterBasicSettings\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"VpcId\": \"xx\",\n        \"ClusterVersion\": \"xx\",\n        \"TagSpecification\": [\n            {\n                \"ResourceType\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"ClusterName\": \"xx\",\n        \"ProjectId\": 0,\n        \"ClusterDescription\": \"xx\",\n        \"NeedWorkSecurityGroup\": true,\n        \"SubnetId\": \"xx\",\n        \"OsCustomizeType\": \"xx\",\n        \"ClusterLevel\": \"xx\",\n        \"ClusterOs\": \"xx\"\n    },\n    \"RunInstancesForNode\": [\n        {\n            \"InstanceAdvancedSettingsOverrides\": [\n                {\n                    \"PreStartUserScript\": \"xx\",\n                    \"DockerGraphPath\": \"xx\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"xx\",\n                    \"DesiredPodNumber\": 0,\n                    \"MountTarget\": \"xx\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"xx\",\n                            \"DiskType\": \"xx\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"xx\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"xx\"\n                        }\n                    ]\n                }\n            ],\n            \"NodeRole\": \"xx\",\n            \"RunInstancesPara\": [\n                \"{\\\"VirtualPrivateCloud\\\":{\\\"SubnetId\\\":\\\"subnet-xxx\\\",\\\"VpcId\\\":\\\"vpc-xxx\\\"},\\\"Placement\\\":{\\\"Zone\\\":\\\"ap-region-1\\\",\\\"ProjectId\\\":1032509},\\\"InstanceType\\\":\\\"S3.LARGE8\\\",\\\"SystemDisk\\\":{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\"},\\\"DataDisks\\\":[{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50}],\\\"InstanceCount\\\":1,\\\"InternetAccessible\\\":{\\\"PublicIpAssigned\\\":true,\\\"InternetMaxBandwidthOut\\\":1},\\\"LoginSettings\\\":{\\\"Password\\\":\\\"YourPassword\\\"},\\\"UserData\\\":\\\"IyEvYmluL3NoCgplY2hvIGFhYQo=\\\"}\"\n            ]\n        }\n    ],\n    \"ExtensionAddons\": [\n        {\n            \"AddonName\": \"xx\",\n            \"AddonParam\": \"xx\"\n        }\n    ],\n    \"ClusterType\": \"xx\",\n    \"InstanceAdvancedSettings\": {\n        \"PreStartUserScript\": \"xx\",\n        \"DockerGraphPath\": \"xx\",\n        \"Labels\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ExtraArgs\": {\n            \"Kubelet\": [\n                \"xx\"\n            ]\n        },\n        \"Unschedulable\": 0,\n        \"UserScript\": \"xx\",\n        \"DesiredPodNumber\": 0,\n        \"MountTarget\": \"xx\",\n        \"DataDisks\": [\n            {\n                \"DiskPartition\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"DiskSize\": 0,\n                \"FileSystem\": \"xx\",\n                \"AutoFormatAndMount\": true,\n                \"MountTarget\": \"xx\"\n            }\n        ]\n    },\n    \"ExistedInstancesForNode\": [\n        {\n            \"ExistedInstancesPara\": {\n                \"InstanceAdvancedSettings\": {\n                    \"PreStartUserScript\": \"xx\",\n                    \"DockerGraphPath\": \"xx\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"xx\",\n                    \"DesiredPodNumber\": 0,\n                    \"MountTarget\": \"xx\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"xx\",\n                            \"DiskType\": \"xx\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"xx\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"xx\"\n                        }\n                    ]\n                },\n                \"HostName\": \"xx\",\n                \"LoginSettings\": {\n                    \"Password\": \"xx\",\n                    \"KeepImageLogin\": \"xx\",\n                    \"KeyIds\": [\n                        \"xx\"\n                    ]\n                },\n                \"SecurityGroupIds\": [\n                    \"xx\"\n                ],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    },\n                    \"AutomationService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"InstanceIds\": [\n                    \"xx\"\n                ]\n            },\n            \"InstanceAdvancedSettingsOverride\": {\n                \"PreStartUserScript\": \"xx\",\n                \"DockerGraphPath\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"ExtraArgs\": {\n                    \"Kubelet\": [\n                        \"xx\"\n                    ]\n                },\n                \"Unschedulable\": 0,\n                \"UserScript\": \"xx\",\n                \"DesiredPodNumber\": 0,\n                \"MountTarget\": \"xx\",\n                \"DataDisks\": [\n                    {\n                        \"DiskPartition\": \"xx\",\n                        \"DiskType\": \"xx\",\n                        \"DiskSize\": 0,\n                        \"FileSystem\": \"xx\",\n                        \"AutoFormatAndMount\": true,\n                        \"MountTarget\": \"xx\"\n                    }\n                ]\n            },\n            \"DesiredPodNumbers\": [\n                0\n            ],\n            \"NodeRole\": \"xx\"\n        }\n    ],\n    \"InstanceDataDiskMountSettings\": [\n        {\n            \"InstanceType\": \"xx\",\n            \"Zone\": \"xx\",\n            \"DataDisks\": [\n                {\n                    \"DiskPartition\": \"xx\",\n                    \"DiskType\": \"xx\",\n                    \"DiskSize\": 0,\n                    \"FileSystem\": \"xx\",\n                    \"AutoFormatAndMount\": true,\n                    \"MountTarget\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCluster\n<公共请求参数>\n\n{\n    \"ClusterCIDRSettings\": {\n        \"ServiceCIDR\": \"xx\",\n        \"ClaimExpiredSeconds\": 0,\n        \"MaxClusterServiceNum\": 1,\n        \"MaxNodePodNum\": 1,\n        \"EniSubnetIds\": [\n            \"xx\"\n        ],\n        \"ClusterCIDR\": \"xx\",\n        \"IgnoreServiceCIDRConflict\": true,\n        \"IgnoreClusterCIDRConflict\": true\n    },\n    \"ClusterAdvancedSettings\": {\n        \"AuditEnabled\": true,\n        \"DeletionProtection\": true,\n        \"RuntimeVersion\": \"xx\",\n        \"IsNonStaticIpMode\": true,\n        \"KubeProxyMode\": \"xx\",\n        \"AuditLogTopicId\": \"xx\",\n        \"ExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"xx\"\n            ],\n            \"KubeScheduler\": [\n                \"xx\"\n            ],\n            \"KubeControllerManager\": [\n                \"xx\"\n            ],\n            \"Etcd\": [\n                \"xx\"\n            ]\n        },\n        \"AuditLogsetId\": \"xx\",\n        \"EnableCustomizedPodCIDR\": true,\n        \"CiliumMode\": \"xx\",\n        \"AsEnabled\": true,\n        \"ContainerRuntime\": \"xx\",\n        \"VpcCniType\": \"xx\",\n        \"NetworkType\": \"xx\",\n        \"NodeNameType\": \"xx\",\n        \"IPVS\": true,\n        \"BasePodNumber\": 0\n    },\n    \"ClusterBasicSettings\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"VpcId\": \"xx\",\n        \"ClusterVersion\": \"xx\",\n        \"TagSpecification\": [\n            {\n                \"ResourceType\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"ClusterName\": \"xx\",\n        \"ProjectId\": 0,\n        \"ClusterDescription\": \"xx\",\n        \"NeedWorkSecurityGroup\": true,\n        \"SubnetId\": \"xx\",\n        \"OsCustomizeType\": \"xx\",\n        \"ClusterLevel\": \"xx\",\n        \"ClusterOs\": \"xx\"\n    },\n    \"RunInstancesForNode\": [\n        {\n            \"InstanceAdvancedSettingsOverrides\": [\n                {\n                    \"PreStartUserScript\": \"xx\",\n                    \"DockerGraphPath\": \"xx\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"Taints\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\",\n                            \"Effect\": \"xx\"\n                        }\n                    ],\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"xx\",\n                    \"DesiredPodNumber\": 0,\n                    \"MountTarget\": \"xx\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"xx\",\n                            \"DiskType\": \"xx\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"xx\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"xx\"\n                        }\n                    ]\n                }\n            ],\n            \"NodeRole\": \"xx\",\n            \"RunInstancesPara\": [\n                \"{\\\"VirtualPrivateCloud\\\":{\\\"SubnetId\\\":\\\"subnet-xxx\\\",\\\"VpcId\\\":\\\"vpc-xxx\\\"},\\\"Placement\\\":{\\\"Zone\\\":\\\"ap-region-1\\\",\\\"ProjectId\\\":1032509},\\\"InstanceType\\\":\\\"S3.LARGE8\\\",\\\"SystemDisk\\\":{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\"},\\\"DataDisks\\\":[{\\\"DiskType\\\":\\\"CLOUD_PREMIUM\\\",\\\"DiskSize\\\":50}],\\\"InstanceCount\\\":1,\\\"InternetAccessible\\\":{\\\"PublicIpAssigned\\\":true,\\\"InternetMaxBandwidthOut\\\":1},\\\"LoginSettings\\\":{\\\"Password\\\":\\\"YourPassword\\\"},\\\"UserData\\\":\\\"IyEvYmluL3NoCgplY2hvIGFhYQo=\\\"}\"\n            ]\n        }\n    ],\n    \"ExtensionAddons\": [\n        {\n            \"AddonName\": \"xx\",\n            \"AddonParam\": \"xx\"\n        }\n    ],\n    \"ClusterType\": \"xx\",\n    \"InstanceAdvancedSettings\": {\n        \"PreStartUserScript\": \"xx\",\n        \"DockerGraphPath\": \"xx\",\n        \"Labels\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"ExtraArgs\": {\n            \"Kubelet\": [\n                \"xx\"\n            ]\n        },\n        \"Taints\": [\n            {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\",\n                \"Effect\": \"xx\"\n            }\n        ],\n        \"Unschedulable\": 0,\n        \"UserScript\": \"xx\",\n        \"DesiredPodNumber\": 0,\n        \"MountTarget\": \"xx\",\n        \"DataDisks\": [\n            {\n                \"DiskPartition\": \"xx\",\n                \"DiskType\": \"xx\",\n                \"DiskSize\": 0,\n                \"FileSystem\": \"xx\",\n                \"AutoFormatAndMount\": true,\n                \"MountTarget\": \"xx\"\n            }\n        ]\n    },\n    \"ExistedInstancesForNode\": [\n        {\n            \"ExistedInstancesPara\": {\n                \"InstanceAdvancedSettings\": {\n                    \"PreStartUserScript\": \"xx\",\n                    \"DockerGraphPath\": \"xx\",\n                    \"Labels\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"Value\": \"xx\"\n                        }\n                    ],\n                    \"ExtraArgs\": {\n                        \"Kubelet\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"Taints\": [\n                        {\n                            \"Value\": \"xx\",\n                            \"Key\": \"xx\",\n                            \"Effect\": \"xx\"\n                        }\n                    ],\n                    \"Unschedulable\": 0,\n                    \"UserScript\": \"xx\",\n                    \"DesiredPodNumber\": 0,\n                    \"MountTarget\": \"xx\",\n                    \"DataDisks\": [\n                        {\n                            \"DiskPartition\": \"xx\",\n                            \"DiskType\": \"xx\",\n                            \"DiskSize\": 0,\n                            \"FileSystem\": \"xx\",\n                            \"AutoFormatAndMount\": true,\n                            \"MountTarget\": \"xx\"\n                        }\n                    ]\n                },\n                \"HostName\": \"xx\",\n                \"LoginSettings\": {\n                    \"Password\": \"xx\",\n                    \"KeepImageLogin\": \"xx\",\n                    \"KeyIds\": [\n                        \"xx\"\n                    ]\n                },\n                \"SecurityGroupIds\": [\n                    \"xx\"\n                ],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    },\n                    \"AutomationService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"InstanceIds\": [\n                    \"xx\"\n                ]\n            },\n            \"DesiredPodNumbers\": [\n                0\n            ],\n            \"NodeRole\": \"xx\"\n        }\n    ],\n    \"InstanceDataDiskMountSettings\": [\n        {\n            \"InstanceType\": \"xx\",\n            \"Zone\": \"xx\",\n            \"DataDisks\": [\n                {\n                    \"DiskPartition\": \"xx\",\n                    \"DiskType\": \"xx\",\n                    \"DiskSize\": 0,\n                    \"FileSystem\": \"xx\",\n                    \"AutoFormatAndMount\": true,\n                    \"MountTarget\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建托管集群示例"
       },
@@ -124,6 +132,14 @@
         "title": "创建集群路由表"
       }
     ],
+    "CreateECMInstances": [
+      {
+        "document": "创建边缘计算ECM机器",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateECMInstances\n&ClusterID=cls-xxxxx\n&ZoneInstanceCountISPSet.0.Zone=ap-zhengzhou-1\n&ZoneInstanceCountISPSet.0.InstanceCount=2\n&ZoneInstanceCountISPSet.0.ISP=CMCC\n&ImageId=img-q9fy0if9\n&HostName=oldhen_4986\n&DataDiskSize=100\n&ModuleId=em-0vag13d1\n&InstanceName=直播弹幕\n&EnhancedService.SecurityService.Enabled=false\n&EnhancedService.MonitorService.Enabled=false\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d40cdb72-7bc0-4b48-b3aa-25e8401f6999\",\n        \"EcmIdSet\": [\n            \"ecm-197252sp\",\n            \"ecm-19725win\",\n            \"ecm-19623ash\"\n        ]\n    }\n}",
+        "title": "创建边缘计算ECM机器"
+      }
+    ],
     "CreateEKSCluster": [
       {
         "document": "创建托管集群",
@@ -148,6 +164,20 @@
         "title": "创建镜像缓存"
       }
     ],
+    "CreatePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"AlertManager\": {\n                \"Url\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            },\n            \"RepeatInterval\": \"xx\",\n            \"WebHook\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"TimeRangeStart\": \"xx\",\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"TemplateId\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增告警"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"RuleState\": 0,\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"AlertManager\": {\n                \"Url\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            },\n            \"RepeatInterval\": \"xx\",\n            \"WebHook\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                \"xx\"\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"TimeRangeStart\": \"xx\",\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"TemplateId\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"alert-xxx\",\n        \"RequestId\": \"3dfe620f-11b8-4301-b279-1fdadedf7a59\"\n    }\n}",
+        "title": "添加告警策略，告警渠道为Alertmanager"
+      }
+    ],
     "CreatePrometheusAlertRule": [
       {
         "document": "",
@@ -164,12 +194,36 @@
         "title": "创建grafana面板"
       }
     ],
+    "CreatePrometheusGlobalNotification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusGlobalNotification\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Notification\": {\n        \"AlertManager\": {\n            \"Url\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"ClusterType\": \"xx\"\n        },\n        \"RepeatInterval\": \"xx\",\n        \"WebHook\": \"xx\",\n        \"Enabled\": true,\n        \"PhoneNotifyOrder\": [\n            1\n        ],\n        \"PhoneInnerInterval\": 0,\n        \"PhoneCircleInterval\": 0,\n        \"NotifyWay\": [\n            \"xx\"\n        ],\n        \"ReceiverGroups\": [\n            \"xx\"\n        ],\n        \"PhoneArriveNotice\": true,\n        \"PhoneCircleTimes\": 0,\n        \"TimeRangeStart\": \"xx\",\n        \"Type\": \"xx\",\n        \"TimeRangeEnd\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建全局告警通知渠道"
+      }
+    ],
+    "CreatePrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusTemp\n&Template.Name=t1\n&Template.Describe=一个模板\n&Template.ServiceMonitors.0.Name=s\n&Template.ServiceMonitors.0.Config=xx\n&Template.Level=cluster\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TemplateId\": \"temp-xxx\"\n    }\n}",
+        "title": "创建一个模板"
+      }
+    ],
     "CreatePrometheusTemplate": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=CreatePrometheusTemplate\n&Template.Name=t1\n&Template.Describe=一个模板\n&Template.ServiceMonitors.0.Name=s\n&Template.ServiceMonitors.0.Config=xx\n&Template.Level=cluster\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TemplateId\": \"temp-xxx\"\n    }\n}",
         "title": "创建一个模板"
+      }
+    ],
+    "CreateTKEEdgeCluster": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateTKEEdgeCluster\n&K8SVersion=1.12.4\n&VpcId=vpc-xxx\n&ClusterName=for_test\n&PodCIDR=172.16.0.0/20\n&ServiceCIDR=192.168.0.0/18\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cls-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建边缘计算集群示例"
       }
     ],
     "DeleteCluster": [
@@ -236,6 +290,14 @@
         "title": "删除集群路由表"
       }
     ],
+    "DeleteECMInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteECMInstances\r\n&ClusterID=cls-xxxxx\r\n&EcmIdSet.0=ecm-xxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除ECM实例"
+      }
+    ],
     "DeleteEKSCluster": [
       {
         "document": "删除弹性集群",
@@ -252,6 +314,22 @@
         "title": "删除容器实例"
       }
     ],
+    "DeleteEdgeCVMInstances": [
+      {
+        "document": "删除边缘容器CVM实例",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&CvmIdSet.0=ecm-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除边缘容器CVM实例"
+      }
+    ],
+    "DeleteEdgeClusterInstances": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEdgeClusterInstances\r\n&ClusterId=cls-xxxxx\r\n&InstanceIds.0=xxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\"\n    }\n}",
+        "title": "删除边缘计算实例"
+      }
+    ],
     "DeleteImageCaches": [
       {
         "document": "",
@@ -260,12 +338,36 @@
         "title": "删除镜像缓存"
       }
     ],
+    "DeletePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertIds\": [\n        \"xx\"\n    ],\n    \"Names\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除Prometheus告警规则"
+      }
+    ],
     "DeletePrometheusAlertRule": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusAlertRule\n&InstanceId=prom-xxx\n&AlertIds.0=a1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除Prometheus告警规则"
+      }
+    ],
+    "DeletePrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTemp\n&TemplateId=temp-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除一个模板实例"
+      }
+    ],
+    "DeletePrometheusTempSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeletePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "解除模板同步"
       }
     ],
     "DeletePrometheusTemplate": [
@@ -284,12 +386,28 @@
         "title": "解除模板同步"
       }
     ],
+    "DeleteTKEEdgeCluster": [
+      {
+        "document": "删除边缘计算集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=DeleteTKEEdgeCluster\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "删除边缘计算集群"
+      }
+    ],
     "DescribeAvailableClusterVersion": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableClusterVersion\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"xx\",\n                \"Versions\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Versions\": [\n            \"1.8.13\"\n        ]\n    }\n}",
         "title": "获取集群可以升级的版本"
+      }
+    ],
+    "DescribeAvailableTKEEdgeVersion": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeAvailableTKEEdgeVersion\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            \"1.14.1\",\n            \"1.16.1\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "检查当前支持的k8s版本"
       }
     ],
     "DescribeClusterAsGroupOption": [
@@ -436,6 +554,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeECMInstances": [
+      {
+        "document": "获取实例相关信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeECMInstances\r\n&ClusterID=cls-xxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "获取实例相关信息"
+      }
+    ],
     "DescribeEKSClusterCredential": [
       {
         "document": "",
@@ -474,6 +600,38 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEKSContainerInstances\n<公共请求参数>\n\n{\n    \"EksCiIds\": [\n        \"eksci-6mr3o7eu\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"34d9ea5a-6e9e-4384-88da-84229e133412\",\n        \"TotalCount\": 1,\n        \"EksCis\": [\n            {\n                \"EksCiId\": \"eksci-iu09upos\",\n                \"EksCiName\": \"未命名\",\n                \"Memory\": 2,\n                \"Cpu\": 1,\n                \"SecurityGroupIds\": [\n                    \"sg-12345678\"\n                ],\n                \"RestartPolicy\": \"Always\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"Status\": \"Running\",\n                \"CreationTime\": \"2021-06-24 03:32:02 +0000 UTC\",\n                \"SucceededTime\": \"2021-06-24 11:32:21 +0000 UTC\",\n                \"Containers\": [\n                    {\n                        \"Image\": \"ccr.ccs.tencentyun.com/ploto/cputest:1.4\",\n                        \"Name\": \"simple-cputest\",\n                        \"Cpu\": 0,\n                        \"Memory\": 0,\n                        \"Commands\": [\n                            \"sleep\"\n                        ],\n                        \"Args\": [\n                            \"100000\"\n                        ],\n                        \"EnvironmentVars\": [],\n                        \"CurrentState\": {\n                            \"StartTime\": \"2021-06-24 03:32:43.420750215 +0000 UTC\",\n                            \"State\": \"running\",\n                            \"FinishTime\": \"0001-01-01 00:00:00 +0000 UTC\",\n                            \"ExitCode\": 0,\n                            \"Reason\": \"\",\n                            \"Message\": \"\",\n                            \"RestartCount\": 0\n                        },\n                        \"RestartCount\": 0,\n                        \"WorkingDir\": \"\"\n                    }\n                ],\n                \"InitContainers\": null,\n                \"EksCiVolume\": {\n                    \"CbsVolumes\": null,\n                    \"NfsVolumes\": null\n                },\n                \"SecurityContext\": null,\n                \"PrivateIp\": \"10.1.0.1\",\n                \"EipAddress\": \"\",\n                \"CpuType\": \"amd,intel\",\n                \"GpuType\": \"\",\n                \"GpuCount\": 0,\n                \"CamRoleName\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询容器实例"
+      }
+    ],
+    "DescribeEdgeAvailableExtraArgs": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeAvailableExtraArgs\n&ClusterVersion=1.12.4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.12.4\",\n        \"AvailableExtraArgs\": {\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"kube-api-burst\",\n                    \"Type\": \"int32\",\n                    \"Usage\": \"Burst to use while talking with kubernetes apiserver. (default 30)\",\n                    \"Default\": \"30\"\n                }\n            ],\n            \"KubeScheduler\": [],\n            \"Kubelet\": [\n                {}\n            ]\n        }\n    },\n    \"RequestId\": \"xxx-xxxx\"\n}",
+        "title": "查询集群可用的自定义参数"
+      }
+    ],
+    "DescribeEdgeCVMInstances": [
+      {
+        "document": "获取边缘容器CVM实例相关信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeCVMInstances\n&ClusterID=cls-xxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "获取边缘容器CVM实例相关信息"
+      }
+    ],
+    "DescribeEdgeClusterExtraArgs": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeClusterExtraArgs\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"max-mutating-requests-inflight=500\"\n            ],\n            \"KubeControllerManager\": [\n                \"kube-api-burst=500\"\n            ],\n            \"KubeScheduler\": [\n                \"kube-api-burst=500\"\n            ]\n        },\n        \"RequestId\": \"5a489220-1730-43ee-9a59-7d3a752ac750\"\n    }\n}",
+        "title": "查询集群自定义参数"
+      }
+    ],
+    "DescribeEdgeClusterInstances": [
+      {
+        "document": "查询边缘计算集群的节点信息",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeClusterInstances\r\n&ClusterID=cls-xxxxx\r\n&Limit=5\r\n&Offset=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "title": "查询边缘计算集群的节点信息"
       }
     ],
     "DescribeEksContainerInstanceLog": [
@@ -548,12 +706,36 @@
         "title": "查询告警历史"
       }
     ],
+    "DescribePrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"xx\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"For\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"Rule\": \"xx\",\n                        \"Template\": \"xx\",\n                        \"Annotations\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ]\n                    }\n                ],\n                \"Notification\": {\n                    \"AlertManager\": {\n                        \"Url\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"ClusterType\": \"xx\"\n                    },\n                    \"RepeatInterval\": \"xx\",\n                    \"WebHook\": \"xx\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"xx\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"TimeRangeStart\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"TimeRangeEnd\": \"xx\"\n                },\n                \"TemplateId\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"UpdatedAt\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "告警列表"
+      }
+    ],
     "DescribePrometheusAlertRule": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusAlertRule\n&InstanceId=prom-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AlertRules\": [\n            {\n                \"Name\": \"xx\",\n                \"Rules\": [\n                    {\n                        \"Describe\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"For\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"Rule\": \"xx\",\n                        \"Template\": \"xx\"\n                    }\n                ],\n                \"Notification\": {\n                    \"WebHook\": \"xx\",\n                    \"RepeatInterval\": \"xx\",\n                    \"TimeRangeStart\": \"xx\",\n                    \"Enabled\": true,\n                    \"PhoneNotifyOrder\": [\n                        1\n                    ],\n                    \"PhoneInnerInterval\": 0,\n                    \"PhoneCircleInterval\": 0,\n                    \"NotifyWay\": [\n                        \"xx\"\n                    ],\n                    \"ReceiverGroups\": [\n                        1\n                    ],\n                    \"PhoneArriveNotice\": true,\n                    \"PhoneCircleTimes\": 0,\n                    \"Type\": \"xx\",\n                    \"TimeRangeEnd\": \"xx\"\n                },\n                \"UpdatedAt\": \"xx\",\n                \"TemplateId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "告警列表"
+      }
+    ],
+    "DescribePrometheusClusterAgents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusClusterAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Agents\": [\n            {\n                \"Status\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取agent信息"
+      }
+    ],
+    "DescribePrometheusGlobalNotification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusGlobalNotification\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Notification\": {\n            \"AlertManager\": {\n                \"Url\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            },\n            \"RepeatInterval\": \"xx\",\n            \"WebHook\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                \"xx\"\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"TimeRangeStart\": \"xx\",\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询全局告警通知渠道"
       }
     ],
     "DescribePrometheusInstance": [
@@ -564,6 +746,14 @@
         "title": "查看托管prometheus实例详情"
       }
     ],
+    "DescribePrometheusInstancesOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstancesOverview\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"InstanceStatus\": 0,\n                \"BoundNormal\": 0,\n                \"VpcId\": \"xx\",\n                \"AutoRenewFlag\": 0,\n                \"InstanceId\": \"xx\",\n                \"BoundTotal\": 0,\n                \"ExpireTime\": \"xx\",\n                \"SpecName\": \"xx\",\n                \"InstanceChargeType\": 0,\n                \"EnableGrafana\": 0,\n                \"DataRetentionTime\": 0,\n                \"GrafanaURL\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"ChargeStatus\": 0\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
     "DescribePrometheusOverviews": [
       {
         "document": "",
@@ -572,12 +762,36 @@
         "title": "拉取实例列表"
       }
     ],
+    "DescribePrometheusRecordRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusRecordRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"Name\": \"xx\",\n                \"TemplateId\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取聚合规则"
+      }
+    ],
     "DescribePrometheusTargets": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTargets\n&InstanceId=prom-xxx\n&ClusterType=tke\n&ClusterId=cls-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Jobs\": [\n            {\n                \"Targets\": [\n                    {\n                        \"LastScrape\": \"xx\",\n                        \"ScrapeDuration\": 0.0,\n                        \"Url\": \"xx\",\n                        \"Labels\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"Value\": \"xx\"\n                            }\n                        ],\n                        \"State\": \"xx\",\n                        \"Error\": \"xx\"\n                    }\n                ],\n                \"Total\": 1,\n                \"Up\": 1,\n                \"JobName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取targets列表"
+      }
+    ],
+    "DescribePrometheusTemp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusTemp\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"RecordRules\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"Version\": \"xx\",\n                \"Name\": \"xx\",\n                \"Level\": \"xx\",\n                \"Describe\": \"xx\",\n                \"TargetsTotal\": 0,\n                \"RawJobs\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"PodMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ],\n                \"TemplateId\": \"xx\",\n                \"AlertDetailRules\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Rules\": [\n                            {\n                                \"Describe\": \"xx\",\n                                \"Name\": \"xx\",\n                                \"For\": \"xx\",\n                                \"Labels\": [\n                                    {\n                                        \"Name\": \"xx\",\n                                        \"Value\": \"xx\"\n                                    }\n                                ],\n                                \"Rule\": \"xx\",\n                                \"Template\": \"xx\",\n                                \"Annotations\": [\n                                    {\n                                        \"Name\": \"xx\",\n                                        \"Value\": \"xx\"\n                                    }\n                                ]\n                            }\n                        ],\n                        \"Notification\": {\n                            \"AlertManager\": {\n                                \"Url\": \"xx\",\n                                \"ClusterId\": \"xx\",\n                                \"ClusterType\": \"xx\"\n                            },\n                            \"RepeatInterval\": \"xx\",\n                            \"WebHook\": \"xx\",\n                            \"Enabled\": true,\n                            \"PhoneNotifyOrder\": [\n                                1\n                            ],\n                            \"PhoneInnerInterval\": 0,\n                            \"PhoneCircleInterval\": 0,\n                            \"NotifyWay\": [\n                                \"xx\"\n                            ],\n                            \"ReceiverGroups\": [\n                                \"xx\"\n                            ],\n                            \"PhoneArriveNotice\": true,\n                            \"PhoneCircleTimes\": 0,\n                            \"TimeRangeStart\": \"xx\",\n                            \"Type\": \"xx\",\n                            \"TimeRangeEnd\": \"xx\"\n                        },\n                        \"TemplateId\": \"xx\",\n                        \"ClusterId\": \"xx\",\n                        \"UpdatedAt\": \"xx\",\n                        \"Id\": \"xx\"\n                    }\n                ],\n                \"IsDefault\": true,\n                \"ServiceMonitors\": [\n                    {\n                        \"Config\": \"xx\",\n                        \"Name\": \"xx\",\n                        \"TemplateId\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "拉取模板列表"
+      }
+    ],
+    "DescribePrometheusTempSync": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribePrometheusTempSync\n&TemplateId=\"temp-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Targets\": [\n            {\n                \"Region\": \"ap-shanghai\",\n                \"InstanceId\": \"prom-xxx\",\n                \"ClusterId\": \"xxx\",\n                \"SyncTime\": \"2020-02-2\"\n            }\n        ]\n    }\n}",
+        "title": "拉取同步目标"
       }
     ],
     "DescribePrometheusTemplateSync": [
@@ -620,6 +834,38 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "DescribeTKEEdgeClusterCredential": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterCredential\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Addresses\": [\n            {\n                \"Type\": \"advertise\",\n                \"Ip\": \"169.254.128.200\",\n                \"Port\": 60002\n            },\n            {\n                \"Type\": \"public\",\n                \"Ip\": \"100.98.109.15\",\n                \"Port\": 11126\n            }\n        ],\n        \"Credential\": {\n            \"CACert\": \"LS0tLS1CRUdJTiBDRVJUSUZJQ0FULQo=\",\n            \"Token\": \"WBnCe69iqui0HuEZJ0Yac2hvwxQ1jG0j\"\n        },\n        \"CoreDns\": \"yes\",\n        \"HealthRegion\": \"yes\",\n        \"Health\": \"yes\",\n        \"GridDaemon\": \"yes\",\n        \"PublicLB\": {\n            \"Enabled\": true,\n            \"AllowFromCidrs\": [\n                \"xx\"\n            ]\n        },\n        \"InternalLB\": {\n            \"SubnetId\": [\n                \"xx\"\n            ],\n            \"Enabled\": true\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算集群的接入认证信息"
+      }
+    ],
+    "DescribeTKEEdgeClusterStatus": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusterStatus\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Phase\": \"Initializing\",\n        \"Conditions\": [\n            {\n                \"Type\": \"初始化Master部署环境\",\n                \"Status\": \"True\",\n                \"LastProbeTime\": \"2020-02-25 12:10:15\",\n                \"LastTransitionTime\": \"2020-02-25 12:10:15\",\n                \"Reason\": \"WaitingProcess\",\n                \"Message\": \"waiting process\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算集群的当前状态以及过程信息"
+      }
+    ],
+    "DescribeTKEEdgeClusters": [
+      {
+        "document": "查询集群列表，用于获取集群列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusters\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"cls-xxxxxxx\",\n                \"ClusterName\": \"集群AA\",\n                \"K8SVersion\": \"1.10.5\",\n                \"VpcId\": \"vpc-xxxxx\",\n                \"PodCIDR\": \"172.16.0.0/20\",\n                \"ServiceCIDR\": \"192.168.0.0/18\",\n                \"Status\": \"running\",\n                \"CreatedTime\": \"2019-08-16T04:31:26Z\",\n                \"ClusterDesc\": \"test edge cluster\"\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "集群信息列表"
+      }
+    ],
+    "DescribeTKEEdgeExternalKubeconfig": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeExternalKubeconfig\r\n&ClusterId=cls123\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Kubeconfig\": \"123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "获取边缘计算外部访问的kubeconfig"
+      }
+    ],
     "DescribeTKEEdgeScript": [
       {
         "document": "",
@@ -644,12 +890,28 @@
         "title": "查询广州3区下的S5实例族机型可支持的 VPC-CNI Pod 数量"
       }
     ],
+    "DisableClusterAudit": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterAudit\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "关闭集群审计"
+      }
+    ],
     "DisableClusterDeletionProtection": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DisableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "关闭集群删除保护"
+      }
+    ],
+    "DisableEventPersistence": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DisableEventPersistence\n&ClusterId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "关闭事件持久化功能示例"
       }
     ],
     "DisableVpcCniNetworkType": [
@@ -660,12 +922,28 @@
         "title": "关闭vpc-cni网络"
       }
     ],
+    "EnableClusterAudit": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterAudit\n&ClusterId=cls-65r1c5nu\n&LogsetId=d93d9f91-a27a-4756-8575-e367fe885556\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "开启集群审计"
+      }
+    ],
     "EnableClusterDeletionProtection": [
       {
         "document": "集群删除保护一定程度上可以避免您误删集群，启用集群删除保护后，您将无法直接通过控制台和API来删除集群，如需删除集群，需要先关闭集群删除保护。",
         "input": "https://tke.tencentcloudapi.com/?Action=EnableClusterDeletionProtection\r\n&ClusterId=cls-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启用集群删除保护"
+      }
+    ],
+    "EnableEventPersistence": [
+      {
+        "document": "开启事件采集功能",
+        "input": "https://tke.tencentcloudapi.com/?Action=EnableEventPersistence\n&ClusterId=xxx\n&LogsetId=xxx\n&TopicId=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "开启事件采集功能示例"
       }
     ],
     "EnableVpcCniNetworkType": [
@@ -714,6 +992,14 @@
         "input": "https://tke.tencentcloudapi.com/?Action=GetUpgradeInstanceProgress\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LifeState\": \"xx\",\n        \"Instances\": [\n            {\n                \"StartAt\": \"xx\",\n                \"InstanceID\": \"xx\",\n                \"Detail\": [\n                    {\n                        \"StartAt\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"LifeState\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    },\n                    {\n                        \"LifeState\": \"xx\",\n                        \"Step\": \"xx\",\n                        \"StartAt\": \"xx\",\n                        \"EndAt\": \"xx\",\n                        \"FailedMsg\": \"xx\"\n                    }\n                ],\n                \"EndAt\": \"xx\",\n                \"CheckResult\": {\n                    \"Items\": [\n                        {\n                            \"WorkLoadKind\": \"xx\",\n                            \"After\": 1,\n                            \"Namespace\": \"xx\",\n                            \"WorkLoadName\": \"xx\",\n                            \"Pods\": [\n                                \"xx\"\n                            ],\n                            \"Before\": 1\n                        }\n                    ],\n                    \"CheckPass\": true,\n                    \"SinglePods\": [\n                        \"xx\"\n                    ]\n                },\n                \"LifeState\": \"xx\"\n            }\n        ],\n        \"Done\": 1,\n        \"RequestId\": \"xx\",\n        \"ClusterStatus\": {\n            \"PodTotal\": 0,\n            \"NotReadyPod\": 0\n        },\n        \"Total\": 3\n    }\n}",
         "title": "查询升级状态"
+      }
+    ],
+    "InstallLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=InstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "安装日志插件"
       }
     ],
     "ModifyClusterAsGroupAttribute": [
@@ -780,12 +1066,36 @@
         "title": "修改节点池机型"
       }
     ],
+    "ModifyPrometheusAlertPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"AlertManager\": {\n                \"Url\": \"xx\",\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\"\n            },\n            \"RepeatInterval\": \"xx\",\n            \"WebHook\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"TimeRangeStart\": \"xx\",\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"TemplateId\": \"xx\",\n        \"ClusterId\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改告警"
+      }
+    ],
     "ModifyPrometheusAlertRule": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusAlertRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AlertRule\": {\n        \"TemplateId\": \"xx\",\n        \"Name\": \"xx\",\n        \"Rules\": [\n            {\n                \"Describe\": \"xx\",\n                \"Name\": \"xx\",\n                \"For\": \"xx\",\n                \"Labels\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Rule\": \"xx\",\n                \"Template\": \"xx\",\n                \"Annotations\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Notification\": {\n            \"WebHook\": \"xx\",\n            \"RepeatInterval\": \"xx\",\n            \"TimeRangeStart\": \"xx\",\n            \"Enabled\": true,\n            \"PhoneNotifyOrder\": [\n                1\n            ],\n            \"PhoneInnerInterval\": 0,\n            \"PhoneCircleInterval\": 0,\n            \"NotifyWay\": [\n                \"xx\"\n            ],\n            \"ReceiverGroups\": [\n                1\n            ],\n            \"PhoneArriveNotice\": true,\n            \"PhoneCircleTimes\": 0,\n            \"Type\": \"xx\",\n            \"TimeRangeEnd\": \"xx\"\n        },\n        \"Interval\": \"xx\",\n        \"UpdatedAt\": \"xx\",\n        \"Id\": \"xx\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "新增告警"
+      }
+    ],
+    "ModifyPrometheusGlobalNotification": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusGlobalNotification\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Notification\": {\n        \"AlertManager\": {\n            \"Url\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"ClusterType\": \"xx\"\n        },\n        \"RepeatInterval\": \"xx\",\n        \"WebHook\": \"xx\",\n        \"Enabled\": true,\n        \"PhoneNotifyOrder\": [\n            1\n        ],\n        \"PhoneInnerInterval\": 0,\n        \"PhoneCircleInterval\": 0,\n        \"NotifyWay\": [\n            \"xx\"\n        ],\n        \"ReceiverGroups\": [\n            \"xx\"\n        ],\n        \"PhoneArriveNotice\": true,\n        \"PhoneCircleTimes\": 0,\n        \"TimeRangeStart\": \"xx\",\n        \"Type\": \"xx\",\n        \"TimeRangeEnd\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改全局告警通知渠道"
+      }
+    ],
+    "ModifyPrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=ModifyPrometheusTemp\n&TemplateId=temp-xxx\n&Template.Describe=一个模板\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改模板描述"
       }
     ],
     "ModifyPrometheusTemplate": [
@@ -836,12 +1146,28 @@
         "title": "给节点池中的节点设置移出保护"
       }
     ],
+    "SyncPrometheusTemp": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemp\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "同步模板到实例"
+      }
+    ],
     "SyncPrometheusTemplate": [
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=SyncPrometheusTemplate\n&TemplateId=\"temp-xxx\"\n&Targets.0.Region=\"ap-shanghai\"\n&Targets.0.InstanceId=\"prom-xxx\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "同步模板到实例"
+      }
+    ],
+    "UninstallLogAgent": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=UninstallLogAgent\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "title": "卸载日志插件"
       }
     ],
     "UpdateClusterVersion": [
@@ -874,6 +1200,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImageCache\n<公共请求参数>\n\n{\n    \"ImageCacheName\": \"modified-imc-name\",\n    \"ImageCacheId\": \"imc-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"232323-5ed9-4cb7-9194-a95e2cd626e5\"\n    }\n}",
         "title": "更新镜像缓存"
+      }
+    ],
+    "UpdateTKEEdgeCluster": [
+      {
+        "document": "修改边缘计算集群",
+        "input": "https://tke.tencentcloudapi.com/?Action=UpdateTKEEdgeCluster\n&ClusterId=cls-xxxxxx\n&ClusterName=test_cluster1\n&ClusterDesc=my_test_cluster888\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改边缘计算集群"
       }
     ],
     "UpgradeClusterInstances": [

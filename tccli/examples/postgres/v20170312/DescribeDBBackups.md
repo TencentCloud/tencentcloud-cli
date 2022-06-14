@@ -21,6 +21,7 @@ Output:
         "TotalCount": 2,
         "BackupList": [
             {
+                "SetId": "xx",
                 "Status": 2,
                 "InternalAddr": "http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=",
                 "StartTime": "2018-06-22 01:56:01.181971",
@@ -36,6 +37,7 @@ Output:
                 "Size": 3654968
             },
             {
+                "SetId": "xx",
                 "Status": 2,
                 "InternalAddr": "http://172.16.16.30:8366/download/20180621015515.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIse2MDEI7vd/CuyMUMMyDXAd4ld69sCMdEKwkpFWIVcfE+PZ0+MYTbsBHzW84KtSGw8=",
                 "StartTime": "2018-06-21 01:55:04.199169",

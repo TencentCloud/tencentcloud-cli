@@ -30,6 +30,12 @@
       "name": "增加集群子网",
       "output": "AddVpcCniSubnetsResponse"
     },
+    "CheckEdgeClusterCIDR": {
+      "document": "检查边缘计算集群的CIDR是否冲突",
+      "input": "CheckEdgeClusterCIDRRequest",
+      "name": "检查边缘计算集群的CIDR是否冲突",
+      "output": "CheckEdgeClusterCIDRResponse"
+    },
     "CheckInstancesUpgradeAble": {
       "document": "检查给定节点列表中哪些是可升级的 ",
       "input": "CheckInstancesUpgradeAbleRequest",
@@ -84,6 +90,12 @@
       "name": "创建集群路由表",
       "output": "CreateClusterRouteTableResponse"
     },
+    "CreateECMInstances": {
+      "document": "创建边缘计算ECM机器",
+      "input": "CreateECMInstancesRequest",
+      "name": "创建边缘计算ECM机器",
+      "output": "CreateECMInstancesResponse"
+    },
     "CreateEKSCluster": {
       "document": "创建弹性集群",
       "input": "CreateEKSClusterRequest",
@@ -102,6 +114,12 @@
       "name": "创建镜像缓存",
       "output": "CreateImageCacheResponse"
     },
+    "CreatePrometheusAlertPolicy": {
+      "document": "创建告警策略",
+      "input": "CreatePrometheusAlertPolicyRequest",
+      "name": "创建告警策略",
+      "output": "CreatePrometheusAlertPolicyResponse"
+    },
     "CreatePrometheusAlertRule": {
       "document": "创建告警规则",
       "input": "CreatePrometheusAlertRuleRequest",
@@ -114,11 +132,29 @@
       "name": "创建grafana监控面板",
       "output": "CreatePrometheusDashboardResponse"
     },
+    "CreatePrometheusGlobalNotification": {
+      "document": "创建全局告警通知渠道",
+      "input": "CreatePrometheusGlobalNotificationRequest",
+      "name": "创建全局告警通知渠道",
+      "output": "CreatePrometheusGlobalNotificationResponse"
+    },
+    "CreatePrometheusTemp": {
+      "document": "创建一个云原生Prometheus模板",
+      "input": "CreatePrometheusTempRequest",
+      "name": "新建模板",
+      "output": "CreatePrometheusTempResponse"
+    },
     "CreatePrometheusTemplate": {
       "document": "创建一个云原生Prometheus模板实例",
       "input": "CreatePrometheusTemplateRequest",
       "name": "创建模板",
       "output": "CreatePrometheusTemplateResponse"
+    },
+    "CreateTKEEdgeCluster": {
+      "document": "创建边缘计算集群",
+      "input": "CreateTKEEdgeClusterRequest",
+      "name": "创建边缘计算集群",
+      "output": "CreateTKEEdgeClusterResponse"
     },
     "DeleteCluster": {
       "document": "删除集群(YUNAPI V3版本)",
@@ -168,6 +204,12 @@
       "name": "删除集群路由表",
       "output": "DeleteClusterRouteTableResponse"
     },
+    "DeleteECMInstances": {
+      "document": "删除ECM实例",
+      "input": "DeleteECMInstancesRequest",
+      "name": "删除ECM实例",
+      "output": "DeleteECMInstancesResponse"
+    },
     "DeleteEKSCluster": {
       "document": "删除弹性集群(yunapiv3)",
       "input": "DeleteEKSClusterRequest",
@@ -180,17 +222,47 @@
       "name": "删除容器实例",
       "output": "DeleteEKSContainerInstancesResponse"
     },
+    "DeleteEdgeCVMInstances": {
+      "document": "删除边缘容器CVM实例",
+      "input": "DeleteEdgeCVMInstancesRequest",
+      "name": "删除边缘容器CVM实例",
+      "output": "DeleteEdgeCVMInstancesResponse"
+    },
+    "DeleteEdgeClusterInstances": {
+      "document": "删除边缘计算实例",
+      "input": "DeleteEdgeClusterInstancesRequest",
+      "name": "删除边缘计算实例",
+      "output": "DeleteEdgeClusterInstancesResponse"
+    },
     "DeleteImageCaches": {
       "document": "批量删除镜像缓存",
       "input": "DeleteImageCachesRequest",
       "name": "删除镜像缓存",
       "output": "DeleteImageCachesResponse"
     },
+    "DeletePrometheusAlertPolicy": {
+      "document": "删除2.0实例告警策略",
+      "input": "DeletePrometheusAlertPolicyRequest",
+      "name": "删除2.0实例告警策略",
+      "output": "DeletePrometheusAlertPolicyResponse"
+    },
     "DeletePrometheusAlertRule": {
       "document": "删除告警规则",
       "input": "DeletePrometheusAlertRuleRequest",
       "name": "删除告警规则",
       "output": "DeletePrometheusAlertRuleResponse"
+    },
+    "DeletePrometheusTemp": {
+      "document": "删除一个云原生Prometheus配置模板",
+      "input": "DeletePrometheusTempRequest",
+      "name": "删除模板实例",
+      "output": "DeletePrometheusTempResponse"
+    },
+    "DeletePrometheusTempSync": {
+      "document": "解除模板同步，这将会删除目标中该模板所生产的配置，针对V2版本实例",
+      "input": "DeletePrometheusTempSyncRequest",
+      "name": "解除模板同步",
+      "output": "DeletePrometheusTempSyncResponse"
     },
     "DeletePrometheusTemplate": {
       "document": "删除一个云原生Prometheus配置模板",
@@ -204,11 +276,23 @@
       "name": "取消模板同步",
       "output": "DeletePrometheusTemplateSyncResponse"
     },
+    "DeleteTKEEdgeCluster": {
+      "document": "删除边缘计算集群",
+      "input": "DeleteTKEEdgeClusterRequest",
+      "name": "删除边缘计算集群",
+      "output": "DeleteTKEEdgeClusterResponse"
+    },
     "DescribeAvailableClusterVersion": {
       "document": "获取集群可以升级的所有版本",
       "input": "DescribeAvailableClusterVersionRequest",
       "name": "获取集群可以升级的所有版本",
       "output": "DescribeAvailableClusterVersionResponse"
+    },
+    "DescribeAvailableTKEEdgeVersion": {
+      "document": "边缘计算支持的k8s版本",
+      "input": "DescribeAvailableTKEEdgeVersionRequest",
+      "name": "边缘计算支持的k8s版本",
+      "output": "DescribeAvailableTKEEdgeVersionResponse"
     },
     "DescribeClusterAsGroupOption": {
       "document": "集群弹性伸缩配置",
@@ -318,6 +402,12 @@
       "name": "查询集群列表",
       "output": "DescribeClustersResponse"
     },
+    "DescribeECMInstances": {
+      "document": "获取ECM实例相关信息",
+      "input": "DescribeECMInstancesRequest",
+      "name": "获取ECM实例相关信息",
+      "output": "DescribeECMInstancesResponse"
+    },
     "DescribeEKSClusterCredential": {
       "document": "获取弹性容器集群的接入认证信息",
       "input": "DescribeEKSClusterCredentialRequest",
@@ -347,6 +437,30 @@
       "input": "DescribeEKSContainerInstancesRequest",
       "name": "查询容器实例",
       "output": "DescribeEKSContainerInstancesResponse"
+    },
+    "DescribeEdgeAvailableExtraArgs": {
+      "document": "查询边缘容器集群可用的自定义参数",
+      "input": "DescribeEdgeAvailableExtraArgsRequest",
+      "name": "查询边缘容器集群可用的自定义参数",
+      "output": "DescribeEdgeAvailableExtraArgsResponse"
+    },
+    "DescribeEdgeCVMInstances": {
+      "document": "获取边缘容器CVM实例相关信息",
+      "input": "DescribeEdgeCVMInstancesRequest",
+      "name": "获取边缘容器CVM实例相关信息",
+      "output": "DescribeEdgeCVMInstancesResponse"
+    },
+    "DescribeEdgeClusterExtraArgs": {
+      "document": "查询边缘集群自定义参数",
+      "input": "DescribeEdgeClusterExtraArgsRequest",
+      "name": "查询边缘集群自定义参数",
+      "output": "DescribeEdgeClusterExtraArgsResponse"
+    },
+    "DescribeEdgeClusterInstances": {
+      "document": "查询边缘计算集群的节点信息",
+      "input": "DescribeEdgeClusterInstancesRequest",
+      "name": "查询边缘计算集群的节点信息",
+      "output": "DescribeEdgeClusterInstancesResponse"
     },
     "DescribeEksContainerInstanceLog": {
       "document": "查询容器实例中容器日志",
@@ -402,11 +516,29 @@
       "name": "获取告警历史",
       "output": "DescribePrometheusAlertHistoryResponse"
     },
+    "DescribePrometheusAlertPolicy": {
+      "document": "获取2.0实例告警策略列表",
+      "input": "DescribePrometheusAlertPolicyRequest",
+      "name": "获取2.0实例告警策略列表",
+      "output": "DescribePrometheusAlertPolicyResponse"
+    },
     "DescribePrometheusAlertRule": {
       "document": "获取告警规则列表",
       "input": "DescribePrometheusAlertRuleRequest",
       "name": "获取告警规则列表",
       "output": "DescribePrometheusAlertRuleResponse"
+    },
+    "DescribePrometheusClusterAgents": {
+      "document": "获取2.0实例关联集群列表",
+      "input": "DescribePrometheusClusterAgentsRequest",
+      "name": "获取2.0实例关联集群列表",
+      "output": "DescribePrometheusClusterAgentsResponse"
+    },
+    "DescribePrometheusGlobalNotification": {
+      "document": "查询全局告警通知渠道",
+      "input": "DescribePrometheusGlobalNotificationRequest",
+      "name": "查询全局告警通知渠道",
+      "output": "DescribePrometheusGlobalNotificationResponse"
     },
     "DescribePrometheusInstance": {
       "document": "获取实例详细信息",
@@ -414,17 +546,41 @@
       "name": "获取实例详细信息",
       "output": "DescribePrometheusInstanceResponse"
     },
+    "DescribePrometheusInstancesOverview": {
+      "document": "获取与云监控融合实例列表",
+      "input": "DescribePrometheusInstancesOverviewRequest",
+      "name": "获取2.0实例列表",
+      "output": "DescribePrometheusInstancesOverviewResponse"
+    },
     "DescribePrometheusOverviews": {
       "document": "获取实例列表",
       "input": "DescribePrometheusOverviewsRequest",
       "name": "获取实例列表",
       "output": "DescribePrometheusOverviewsResponse"
     },
+    "DescribePrometheusRecordRules": {
+      "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
+      "input": "DescribePrometheusRecordRulesRequest",
+      "name": "获取聚合规则列表，包含关联集群内的资源",
+      "output": "DescribePrometheusRecordRulesResponse"
+    },
     "DescribePrometheusTargets": {
       "document": "获取targets信息",
       "input": "DescribePrometheusTargetsRequest",
       "name": "获取targets信息",
       "output": "DescribePrometheusTargetsResponse"
+    },
+    "DescribePrometheusTemp": {
+      "document": "拉取模板列表，默认模板将总是在最前面",
+      "input": "DescribePrometheusTempRequest",
+      "name": "拉取模板列表",
+      "output": "DescribePrometheusTempResponse"
+    },
+    "DescribePrometheusTempSync": {
+      "document": "获取模板关联实例信息，针对V2版本实例",
+      "input": "DescribePrometheusTempSyncRequest",
+      "name": "获取模板关联实例信息",
+      "output": "DescribePrometheusTempSyncResponse"
     },
     "DescribePrometheusTemplateSync": {
       "document": "获取模板同步信息",
@@ -456,6 +612,30 @@
       "name": "查询路由表冲突列表",
       "output": "DescribeRouteTableConflictsResponse"
     },
+    "DescribeTKEEdgeClusterCredential": {
+      "document": "获取边缘计算集群的认证信息",
+      "input": "DescribeTKEEdgeClusterCredentialRequest",
+      "name": "获取边缘计算集群的认证信息",
+      "output": "DescribeTKEEdgeClusterCredentialResponse"
+    },
+    "DescribeTKEEdgeClusterStatus": {
+      "document": "获取边缘计算集群的当前状态以及过程信息",
+      "input": "DescribeTKEEdgeClusterStatusRequest",
+      "name": "查询边缘计算集群状态",
+      "output": "DescribeTKEEdgeClusterStatusResponse"
+    },
+    "DescribeTKEEdgeClusters": {
+      "document": "查询边缘集群列表",
+      "input": "DescribeTKEEdgeClustersRequest",
+      "name": "查询边缘集群列表",
+      "output": "DescribeTKEEdgeClustersResponse"
+    },
+    "DescribeTKEEdgeExternalKubeconfig": {
+      "document": "获取边缘计算外部访问的kubeconfig",
+      "input": "DescribeTKEEdgeExternalKubeconfigRequest",
+      "name": "获取边缘计算外部访问的kubeconfig",
+      "output": "DescribeTKEEdgeExternalKubeconfigResponse"
+    },
     "DescribeTKEEdgeScript": {
       "document": "获取边缘脚本链接",
       "input": "DescribeTKEEdgeScriptRequest",
@@ -474,11 +654,23 @@
       "name": "查询机型可支持的最大VPC-CNI模式Pod数量",
       "output": "DescribeVpcCniPodLimitsResponse"
     },
+    "DisableClusterAudit": {
+      "document": "关闭集群审计",
+      "input": "DisableClusterAuditRequest",
+      "name": "关闭集群审计",
+      "output": "DisableClusterAuditResponse"
+    },
     "DisableClusterDeletionProtection": {
       "document": "关闭集群删除保护",
       "input": "DisableClusterDeletionProtectionRequest",
       "name": "关闭集群删除保护",
       "output": "DisableClusterDeletionProtectionResponse"
+    },
+    "DisableEventPersistence": {
+      "document": "关闭事件持久化功能",
+      "input": "DisableEventPersistenceRequest",
+      "name": "关闭事件持久化功能",
+      "output": "DisableEventPersistenceResponse"
     },
     "DisableVpcCniNetworkType": {
       "document": "提供给附加了VPC-CNI能力的Global-Route集群关闭VPC-CNI",
@@ -486,11 +678,23 @@
       "name": "关闭附加的VPC-CNI网络能力",
       "output": "DisableVpcCniNetworkTypeResponse"
     },
+    "EnableClusterAudit": {
+      "document": "开启集群审计",
+      "input": "EnableClusterAuditRequest",
+      "name": "开启集群审计",
+      "output": "EnableClusterAuditResponse"
+    },
     "EnableClusterDeletionProtection": {
       "document": "启用集群删除保护",
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
       "output": "EnableClusterDeletionProtectionResponse"
+    },
+    "EnableEventPersistence": {
+      "document": "开启事件持久化功能",
+      "input": "EnableEventPersistenceRequest",
+      "name": "开启事件持久化功能",
+      "output": "EnableEventPersistenceResponse"
     },
     "EnableVpcCniNetworkType": {
       "document": "GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力",
@@ -527,6 +731,12 @@
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse"
+    },
+    "InstallLogAgent": {
+      "document": "在TKE集群中安装CLS日志采集组件",
+      "input": "InstallLogAgentRequest",
+      "name": "安装日志采集组件",
+      "output": "InstallLogAgentResponse"
     },
     "ModifyClusterAsGroupAttribute": {
       "document": "修改集群伸缩组属性",
@@ -576,11 +786,29 @@
       "name": "修改节点池的机型配置",
       "output": "ModifyNodePoolInstanceTypesResponse"
     },
+    "ModifyPrometheusAlertPolicy": {
+      "document": "修改2.0实例告警策略",
+      "input": "ModifyPrometheusAlertPolicyRequest",
+      "name": "修改2.0实例告警策略",
+      "output": "ModifyPrometheusAlertPolicyResponse"
+    },
     "ModifyPrometheusAlertRule": {
       "document": "修改告警规则 ",
       "input": "ModifyPrometheusAlertRuleRequest",
       "name": "修改告警规则",
       "output": "ModifyPrometheusAlertRuleResponse"
+    },
+    "ModifyPrometheusGlobalNotification": {
+      "document": "修改全局告警通知渠道",
+      "input": "ModifyPrometheusGlobalNotificationRequest",
+      "name": "修改全局告警通知渠道",
+      "output": "ModifyPrometheusGlobalNotificationResponse"
+    },
+    "ModifyPrometheusTemp": {
+      "document": "修改模板内容",
+      "input": "ModifyPrometheusTempRequest",
+      "name": "修改模板实例",
+      "output": "ModifyPrometheusTempResponse"
     },
     "ModifyPrometheusTemplate": {
       "document": "修改模板内容",
@@ -618,11 +846,23 @@
       "name": "节点池节点设置移出保护",
       "output": "SetNodePoolNodeProtectionResponse"
     },
+    "SyncPrometheusTemp": {
+      "document": "同步模板到实例或者集群，针对V2版本实例",
+      "input": "SyncPrometheusTempRequest",
+      "name": "同步模板",
+      "output": "SyncPrometheusTempResponse"
+    },
     "SyncPrometheusTemplate": {
       "document": "同步模板到实例或者集群",
       "input": "SyncPrometheusTemplateRequest",
       "name": "同步模板到实例或者集群",
       "output": "SyncPrometheusTemplateResponse"
+    },
+    "UninstallLogAgent": {
+      "document": "从TKE集群中卸载CLS日志采集组件",
+      "input": "UninstallLogAgentRequest",
+      "name": "卸载日志采集组件",
+      "output": "UninstallLogAgentResponse"
     },
     "UpdateClusterVersion": {
       "document": "升级集群 Master 组件到指定版本",
@@ -647,6 +887,12 @@
       "input": "UpdateImageCacheRequest",
       "name": "更新镜像缓存",
       "output": "UpdateImageCacheResponse"
+    },
+    "UpdateTKEEdgeCluster": {
+      "document": "修改边缘计算集群名称等属性 ",
+      "input": "UpdateTKEEdgeClusterRequest",
+      "name": "修改边缘计算的集群",
+      "output": "UpdateTKEEdgeClusterResponse"
     },
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级 ",
@@ -743,7 +989,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -752,7 +999,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -761,7 +1009,8 @@
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -770,7 +1019,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -779,7 +1029,8 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -788,7 +1039,8 @@
           "member": "string",
           "name": "HostName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -797,7 +1049,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -806,7 +1059,8 @@
           "member": "NodePoolOption",
           "name": "NodePool",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -815,7 +1069,8 @@
           "member": "string",
           "name": "SkipValidateOptions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -824,7 +1079,18 @@
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettingsOverrides",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "节点镜像（节点选项时，该参数是必传参数）",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -839,7 +1105,8 @@
           "name": "FailedInstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "成功的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -848,7 +1115,8 @@
           "name": "SuccInstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "超时未返回出来节点的ID(可能失败，也可能成功)\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -857,7 +1125,8 @@
           "name": "TimeoutInstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "失败的节点的失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -866,7 +1135,8 @@
           "name": "FailedReasons",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1133,6 +1403,62 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckEdgeClusterCIDRRequest": {
+      "document": "CheckEdgeClusterCIDR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群的vpc-id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的pod CIDR",
+          "member": "string",
+          "name": "PodCIDR",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群的service CIDR",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckEdgeClusterCIDRResponse": {
+      "document": "CheckEdgeClusterCIDR返回参数结构体",
+      "members": [
+        {
+          "document": "返回码，具体如下\n-1 内部错误\n0 没冲突\n1 vpc 和 serviceCIDR 冲突\n2 vpc 和 podCIDR 冲突\n3 serviceCIDR  和 podCIDR 冲突",
+          "member": "int64",
+          "name": "ConflictCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "CIDR冲突描述信息。",
+          "member": "string",
+          "name": "ConflictMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckInstancesUpgradeAbleRequest": {
       "document": "CheckInstancesUpgradeAble请求参数结构体",
@@ -1455,7 +1781,8 @@
           "name": "IPVS",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1465,7 +1792,8 @@
           "name": "AsEnabled",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1475,7 +1803,8 @@
           "name": "ContainerRuntime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1485,7 +1814,8 @@
           "name": "NodeNameType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1495,7 +1825,8 @@
           "name": "ExtraArgs",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1505,7 +1836,8 @@
           "name": "NetworkType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1515,7 +1847,8 @@
           "name": "IsNonStaticIpMode",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1525,7 +1858,8 @@
           "name": "DeletionProtection",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1535,7 +1869,8 @@
           "name": "KubeProxyMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1545,7 +1880,8 @@
           "name": "AuditEnabled",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1555,7 +1891,8 @@
           "name": "AuditLogsetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1565,7 +1902,8 @@
           "name": "AuditLogTopicId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1575,7 +1913,8 @@
           "name": "VpcCniType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1585,7 +1924,8 @@
           "name": "RuntimeVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1595,7 +1935,8 @@
           "name": "EnableCustomizedPodCIDR",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1605,7 +1946,8 @@
           "name": "BasePodNumber",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1615,7 +1957,8 @@
           "name": "CiliumMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -1838,7 +2181,8 @@
           "name": "ClusterOs",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1848,7 +2192,8 @@
           "name": "ClusterVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1858,7 +2203,8 @@
           "name": "ClusterName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1868,7 +2214,8 @@
           "name": "ClusterDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1878,7 +2225,8 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1888,7 +2236,8 @@
           "name": "ProjectId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1898,7 +2247,8 @@
           "name": "TagSpecification",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1908,7 +2258,8 @@
           "name": "OsCustomizeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1918,7 +2269,8 @@
           "name": "NeedWorkSecurityGroup",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1928,7 +2280,8 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1938,7 +2291,8 @@
           "name": "ClusterLevel",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1948,7 +2302,8 @@
           "name": "AutoUpgradeClusterLevel",
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -1964,7 +2319,8 @@
           "name": "ClusterCIDR",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1974,7 +2330,8 @@
           "name": "IgnoreClusterCIDRConflict",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1984,7 +2341,8 @@
           "name": "MaxNodePodNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1994,7 +2352,8 @@
           "name": "MaxClusterServiceNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2004,7 +2363,8 @@
           "name": "ServiceCIDR",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2014,7 +2374,8 @@
           "name": "EniSubnetIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2024,10 +2385,82 @@
           "name": "ClaimExpiredSeconds",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreServiceCIDRConflict",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
+    },
+    "ClusterCondition": {
+      "document": "集群创建过程",
+      "members": [
+        {
+          "default": "",
+          "document": "集群创建过程类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建过程状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后一次探测到该状态的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "LastProbeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后一次转换到该过程的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "datetime",
+          "name": "LastTransitionTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转换到该过程的简明原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转换到该过程的更多信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClusterCredential": {
       "document": "接入k8s 的认证信息",
@@ -2316,7 +2749,8 @@
           "name": "ClusterCIDR",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2326,7 +2760,8 @@
           "name": "IgnoreClusterCIDRConflict",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2336,7 +2771,8 @@
           "name": "MaxNodePodNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2346,7 +2782,8 @@
           "name": "MaxClusterServiceNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2356,7 +2793,8 @@
           "name": "Ipvs",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2366,7 +2804,8 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2376,7 +2815,8 @@
           "name": "Cni",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2386,7 +2826,8 @@
           "name": "KubeProxyMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2396,7 +2837,8 @@
           "name": "ServiceCIDR",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -2406,7 +2848,19 @@
           "name": "Subnets",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreServiceCIDRConflict",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2918,6 +3372,33 @@
           "name": "IsExtranet",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "设置域名",
+          "example": "cls.domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "使用的安全组，只有外网访问需要传递",
+          "example": "sg-xxx",
+          "member": "string",
+          "name": "SecurityGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "创建lb参数，只有外网访问需要设置",
+          "example": "无",
+          "member": "string",
+          "name": "ExtensiveParameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3092,7 +3573,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3101,7 +3583,8 @@
           "member": "string",
           "name": "AutoScalingGroupPara",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3110,7 +3593,8 @@
           "member": "string",
           "name": "LaunchConfigurePara",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3119,7 +3603,8 @@
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3128,7 +3613,8 @@
           "member": "bool",
           "name": "EnableAutoscale",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3137,7 +3623,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3146,7 +3633,8 @@
           "member": "Label",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3155,7 +3643,28 @@
           "member": "Taint",
           "name": "Taints",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "节点池纬度运行时类型及版本",
+          "example": "docker",
+          "member": "string",
+          "name": "ContainerRuntime",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "运行时版本",
+          "example": "18.06",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3164,7 +3673,8 @@
           "member": "string",
           "name": "NodePoolOs",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3173,7 +3683,8 @@
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3182,7 +3693,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3197,7 +3709,8 @@
           "name": "NodePoolId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3218,7 +3731,8 @@
           "member": "ClusterCIDRSettings",
           "name": "ClusterCIDRSettings",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3227,7 +3741,8 @@
           "member": "string",
           "name": "ClusterType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3236,7 +3751,8 @@
           "member": "RunInstancesForNode",
           "name": "RunInstancesForNode",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3245,7 +3761,8 @@
           "member": "ClusterBasicSettings",
           "name": "ClusterBasicSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3254,7 +3771,8 @@
           "member": "ClusterAdvancedSettings",
           "name": "ClusterAdvancedSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3263,7 +3781,8 @@
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3272,7 +3791,8 @@
           "member": "ExistedInstancesForNode",
           "name": "ExistedInstancesForNode",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3281,7 +3801,8 @@
           "member": "InstanceDataDiskMountSetting",
           "name": "InstanceDataDiskMountSettings",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3290,7 +3811,8 @@
           "member": "ExtensionAddon",
           "name": "ExtensionAddons",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3305,7 +3827,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3408,6 +3931,127 @@
       ],
       "type": "object"
     },
+    "CreateECMInstancesRequest": {
+      "document": "CreateECMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模块id",
+          "member": "string",
+          "name": "ModuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "需要创建实例的可用区及创建数目及运营商的列表",
+          "member": "ECMZoneInstanceCountISP",
+          "name": "ZoneInstanceCountISPSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "公网带宽",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "镜像id",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增强服务，包括云镜和云监控",
+          "member": "ECMEnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "用户自定义脚本",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例扩展信息",
+          "member": "string",
+          "name": "External",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例所属安全组",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateECMInstancesResponse": {
+      "document": "CreateECMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "ecm id 列表",
+          "member": "string",
+          "name": "EcmIdSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEKSClusterRequest": {
       "document": "CreateEKSCluster请求参数结构体",
       "members": [
@@ -3418,7 +4062,8 @@
           "member": "string",
           "name": "K8SVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3427,7 +4072,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3436,7 +4082,8 @@
           "member": "string",
           "name": "ClusterName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3445,7 +4092,8 @@
           "member": "string",
           "name": "SubnetIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3454,7 +4102,8 @@
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3463,7 +4112,8 @@
           "member": "string",
           "name": "ServiceSubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3472,7 +4122,8 @@
           "member": "DnsServerConf",
           "name": "DnsServers",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3481,7 +4132,8 @@
           "member": "string",
           "name": "ExtraParam",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3490,7 +4142,8 @@
           "member": "bool",
           "name": "EnableVpcCoreDNS",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3499,7 +4152,18 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网信息列表",
+          "example": "{aa}",
+          "member": "SubnetInfos",
+          "name": "SubnetInfos",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3514,7 +4178,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3858,6 +4523,54 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAlertPolicyRequest": {
+      "document": "CreatePrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警配置",
+          "example": "参考复杂类型",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusAlertPolicyResponse": {
+      "document": "CreatePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "告警id",
+          "example": "alert-xx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertRuleRequest": {
       "document": "CreatePrometheusAlertRule请求参数结构体",
       "members": [
@@ -3945,6 +4658,92 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusGlobalNotificationRequest": {
+      "document": "CreatePrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警通知渠道",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusGlobalNotificationResponse": {
+      "document": "CreatePrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "全局告警通知渠道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "global",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusTempRequest": {
+      "document": "CreatePrometheusTemp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板设置",
+          "example": "无",
+          "member": "PrometheusTemp",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusTempResponse": {
+      "document": "CreatePrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "模板Id",
+          "example": "temp-xxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusTemplateRequest": {
       "document": "CreatePrometheusTemplate请求参数结构体",
       "members": [
@@ -3966,6 +4765,114 @@
           "document": "模板Id",
           "member": "string",
           "name": "TemplateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTKEEdgeClusterRequest": {
+      "document": "CreateTKEEdgeCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "k8s版本号",
+          "example": "1.12.4",
+          "member": "string",
+          "name": "K8SVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "vpc 的Id",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "for_test",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群pod cidr",
+          "example": "172.16.0.0/20",
+          "member": "string",
+          "name": "PodCIDR",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群service cidr",
+          "example": "192.168.0.0/18",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群高级设置",
+          "example": "无",
+          "member": "EdgeClusterAdvancedSettings",
+          "name": "ClusterAdvancedSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "节点上最大Pod数量",
+          "example": "64",
+          "member": "int64",
+          "name": "MaxNodePodNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群公网访问LB信息",
+          "example": "无",
+          "member": "EdgeClusterPublicLB",
+          "name": "PublicLB",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTKEEdgeClusterResponse": {
+      "document": "CreateTKEEdgeCluster返回参数结构体",
+      "members": [
+        {
+          "document": "边缘计算集群Id",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4049,7 +4956,8 @@
           "name": "DiskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4059,7 +4967,8 @@
           "name": "FileSystem",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4069,7 +4978,8 @@
           "name": "DiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4079,7 +4989,8 @@
           "name": "AutoFormatAndMount",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4089,7 +5000,8 @@
           "name": "MountTarget",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -4099,7 +5011,8 @@
           "name": "DiskPartition",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -4439,6 +5352,40 @@
       ],
       "type": "object"
     },
+    "DeleteECMInstancesRequest": {
+      "document": "DeleteECMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ecm id集合",
+          "member": "string",
+          "name": "EcmIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteECMInstancesResponse": {
+      "document": "DeleteECMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEKSClusterRequest": {
       "document": "DeleteEKSCluster请求参数结构体",
       "members": [
@@ -4502,6 +5449,74 @@
       ],
       "type": "object"
     },
+    "DeleteEdgeCVMInstancesRequest": {
+      "document": "DeleteEdgeCVMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "cvm id集合",
+          "member": "string",
+          "name": "CvmIdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeCVMInstancesResponse": {
+      "document": "DeleteEdgeCVMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeClusterInstancesRequest": {
+      "document": "DeleteEdgeClusterInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "待删除实例ID数组",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEdgeClusterInstancesResponse": {
+      "document": "DeleteEdgeClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteImageCachesRequest": {
       "document": "DeleteImageCaches请求参数结构体",
       "members": [
@@ -4519,6 +5534,54 @@
     },
     "DeleteImageCachesResponse": {
       "document": "DeleteImageCaches返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertPolicyRequest": {
+      "document": "DeletePrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警策略id列表",
+          "example": "[\"alert-xx\"]",
+          "member": "string",
+          "name": "AlertIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警策略名称",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertPolicyResponse": {
+      "document": "DeletePrometheusAlertPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4555,6 +5618,72 @@
     },
     "DeletePrometheusAlertRuleResponse": {
       "document": "DeletePrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempRequest": {
+      "document": "DeletePrometheusTemp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板id",
+          "example": "temp-xxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempResponse": {
+      "document": "DeletePrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempSyncRequest": {
+      "document": "DeletePrometheusTempSync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板id",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "取消同步的对象列表",
+          "example": "无",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusTempSyncResponse": {
+      "document": "DeletePrometheusTempSync返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4626,6 +5755,32 @@
       ],
       "type": "object"
     },
+    "DeleteTKEEdgeClusterRequest": {
+      "document": "DeleteTKEEdgeCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTKEEdgeClusterResponse": {
+      "document": "DeleteTKEEdgeCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAvailableClusterVersionRequest": {
       "document": "DescribeAvailableClusterVersion请求参数结构体",
       "members": [
@@ -4664,6 +5819,30 @@
           "name": "Clusters",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableTKEEdgeVersionRequest": {
+      "document": "DescribeAvailableTKEEdgeVersion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAvailableTKEEdgeVersionResponse": {
+      "document": "DescribeAvailableTKEEdgeVersion返回参数结构体",
+      "members": [
+        {
+          "document": "版本列表",
+          "member": "string",
+          "name": "Versions",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5443,7 +6622,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5458,7 +6638,8 @@
           "name": "UserName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的访问密码",
@@ -5467,7 +6648,8 @@
           "name": "Password",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群访问CA证书",
@@ -5476,7 +6658,8 @@
           "name": "CertificationAuthority",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群访问的地址",
@@ -5485,7 +6668,8 @@
           "name": "ClusterExternalEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群访问的域名",
@@ -5494,7 +6678,8 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群Endpoint地址",
@@ -5503,7 +6688,8 @@
           "name": "PgwEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群访问策略组\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5512,7 +6698,8 @@
           "name": "SecurityPolicy",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群Kubeconfig文件\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5521,7 +6708,8 @@
           "name": "Kubeconfig",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群JnsGw的访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -5530,7 +6718,8 @@
           "name": "JnsGwEndpoint",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5655,6 +6844,54 @@
           "member": "Cluster",
           "name": "Clusters",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeECMInstancesRequest": {
+      "document": "DescribeECMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件\n仅支持ecm-id过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeECMInstancesResponse": {
+      "document": "DescribeECMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "返回的实例相关信息列表的长度",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的实例相关信息列表",
+          "member": "string",
+          "name": "InstanceInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -5968,6 +7205,194 @@
           "name": "EksCis",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeAvailableExtraArgsRequest": {
+      "document": "DescribeEdgeAvailableExtraArgs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群版本",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeAvailableExtraArgsResponse": {
+      "document": "DescribeEdgeAvailableExtraArgs返回参数结构体",
+      "members": [
+        {
+          "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterVersion",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeAvailableExtraArgs",
+          "name": "AvailableExtraArgs",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeCVMInstancesRequest": {
+      "document": "DescribeEdgeCVMInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤条件\n仅支持cvm-id过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeCVMInstancesResponse": {
+      "document": "DescribeEdgeCVMInstances返回参数结构体",
+      "members": [
+        {
+          "document": "返回的实例相关信息列表的长度",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的实例相关信息列表",
+          "member": "string",
+          "name": "InstanceInfoSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterExtraArgsRequest": {
+      "document": "DescribeEdgeClusterExtraArgs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-abc123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterExtraArgsResponse": {
+      "document": "DescribeEdgeClusterExtraArgs返回参数结构体",
+      "members": [
+        {
+          "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "EdgeClusterExtraArgs",
+          "name": "ClusterExtraArgs",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterInstancesRequest": {
+      "document": "DescribeEdgeClusterInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询总数",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件，仅支持NodeName过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeClusterInstancesResponse": {
+      "document": "DescribeEdgeClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "该集群总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "节点信息集合",
+          "member": "string",
+          "name": "InstanceInfoSet",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6598,6 +8023,84 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAlertPolicyRequest": {
+      "document": "DescribePrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "过滤\n支持ID，Name",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertPolicyResponse": {
+      "document": "DescribePrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "告警详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusAlertRuleRequest": {
       "document": "DescribePrometheusAlertRule请求参数结构体",
       "members": [
@@ -6660,6 +8163,112 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusClusterAgentsRequest": {
+      "document": "DescribePrometheusClusterAgents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusClusterAgentsResponse": {
+      "document": "DescribePrometheusClusterAgents返回参数结构体",
+      "members": [
+        {
+          "document": "被关联集群信息",
+          "example": "无",
+          "member": "PrometheusAgentOverview",
+          "name": "Agents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "被关联集群总量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalNotificationRequest": {
+      "document": "DescribePrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalNotificationResponse": {
+      "document": "DescribePrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "全局告警通知渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6769,6 +8378,74 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusInstancesOverviewRequest": {
+      "document": "DescribePrometheusInstancesOverview请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用于分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于分页",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "过滤实例，目前支持：\nID: 通过实例ID来过滤 \nName: 通过实例名称来过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstancesOverviewResponse": {
+      "document": "DescribePrometheusInstancesOverview返回参数结构体",
+      "members": [
+        {
+          "document": "实例列表",
+          "example": "无",
+          "member": "PrometheusInstancesOverview",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusOverviewsRequest": {
       "document": "DescribePrometheusOverviews请求参数结构体",
       "members": [
@@ -6815,6 +8492,84 @@
           "name": "Total",
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusRecordRulesRequest": {
+      "document": "DescribePrometheusRecordRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusRecordRulesResponse": {
+      "document": "DescribePrometheusRecordRules返回参数结构体",
+      "members": [
+        {
+          "document": "聚合规则",
+          "example": "无",
+          "member": "PrometheusRecordRuleYamlItem",
+          "name": "Records",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6872,6 +8627,112 @@
           "name": "Jobs",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempRequest": {
+      "document": "DescribePrometheusTemp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模糊过滤条件，支持\nLevel 按模板级别过滤\nName 按名称过滤\nDescribe 按描述过滤\nID 按templateId过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页偏移",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "总数限制",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempResponse": {
+      "document": "DescribePrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "模板列表",
+          "example": "无",
+          "member": "PrometheusTemp",
+          "name": "Templates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempSyncRequest": {
+      "document": "DescribePrometheusTempSync请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusTempSyncResponse": {
+      "document": "DescribePrometheusTempSync返回参数结构体",
+      "members": [
+        {
+          "document": "同步目标详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7123,6 +8984,242 @@
       ],
       "type": "object"
     },
+    "DescribeTKEEdgeClusterCredentialRequest": {
+      "document": "DescribeTKEEdgeClusterCredential请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeClusterCredentialResponse": {
+      "document": "DescribeTKEEdgeClusterCredential返回参数结构体",
+      "members": [
+        {
+          "document": "集群的接入地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IPAddress",
+          "name": "Addresses",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "集群的认证信息",
+          "example": "无",
+          "member": "ClusterCredential",
+          "name": "Credential",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的公网访问信息",
+          "example": "无",
+          "member": "EdgeClusterPublicLB",
+          "name": "PublicLB",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的内网访问信息",
+          "example": "无",
+          "member": "EdgeClusterInternalLB",
+          "name": "InternalLB",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的CoreDns部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "CoreDns",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的健康检查多地域部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "HealthRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群的健康检查部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "Health",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否部署GridDaemon以支持headless service",
+          "example": "yes",
+          "member": "string",
+          "name": "GridDaemon",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeClusterStatusRequest": {
+      "document": "DescribeTKEEdgeClusterStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘计算容器集群Id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeClusterStatusResponse": {
+      "document": "DescribeTKEEdgeClusterStatus返回参数结构体",
+      "members": [
+        {
+          "document": "集群当前状态",
+          "member": "string",
+          "name": "Phase",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群过程数组",
+          "member": "ClusterCondition",
+          "name": "Conditions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeClustersRequest": {
+      "document": "DescribeTKEEdgeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量,默认0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "最大输出条数，默认20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤条件,当前只支持按照单个条件ClusterName进行过滤",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeClustersResponse": {
+      "document": "DescribeTKEEdgeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群总个数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群信息列表",
+          "member": "EdgeCluster",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeExternalKubeconfigRequest": {
+      "document": "DescribeTKEEdgeExternalKubeconfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTKEEdgeExternalKubeconfigResponse": {
+      "document": "DescribeTKEEdgeExternalKubeconfig返回参数结构体",
+      "members": [
+        {
+          "document": "kubeconfig文件内容",
+          "member": "string",
+          "name": "Kubeconfig",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTKEEdgeScriptRequest": {
       "document": "DescribeTKEEdgeScript请求参数结构体",
       "members": [
@@ -7275,6 +9372,34 @@
       ],
       "type": "object"
     },
+    "DisableClusterAuditRequest": {
+      "document": "DisableClusterAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DisableClusterAuditResponse": {
+      "document": "DisableClusterAudit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableClusterDeletionProtectionRequest": {
       "document": "DisableClusterDeletionProtection请求参数结构体",
       "members": [
@@ -7291,6 +9416,34 @@
     },
     "DisableClusterDeletionProtectionResponse": {
       "document": "DisableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEventPersistenceRequest": {
+      "document": "DisableEventPersistence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DisableEventPersistenceResponse": {
+      "document": "DisableEventPersistence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7348,6 +9501,396 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ECMEnhancedService": {
+      "document": "ECM增强服务",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启云监控服务",
+          "member": "ECMRunMonitorServiceEnabled",
+          "name": "SecurityService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启云镜服务",
+          "member": "ECMRunSecurityServiceEnabled",
+          "name": "MonitorService",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ECMRunMonitorServiceEnabled": {
+      "document": "ECM云监控服务",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ECMRunSecurityServiceEnabled": {
+      "document": "ECM云镜服务",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云镜版本：0 基础版，1 专业版",
+          "member": "int64",
+          "name": "Version",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ECMZoneInstanceCountISP": {
+      "document": "ECM实例可用区及对应的实例创建数目及运营商的组合",
+      "members": [
+        {
+          "default": "",
+          "document": "创建实例的可用区",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "在当前可用区欲创建的实例数目",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运营商",
+          "member": "string",
+          "name": "ISP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EdgeArgsFlag": {
+      "document": "边缘容器参数描述",
+      "members": [
+        {
+          "default": "",
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Usage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Default",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "参数可选范围（目前包含range和in两种，\"[]\"代表range，如\"[1, 5]\"表示参数必须>=1且 <=5, \"()\"代表in， 如\"('aa', 'bb')\"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Constraint",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeAvailableExtraArgs": {
+      "document": "边缘容器集群可用的自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "kube-apiserver可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeArgsFlag",
+          "name": "KubeAPIServer",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-controller-manager可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeArgsFlag",
+          "name": "KubeControllerManager",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-scheduler可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeArgsFlag",
+          "name": "KubeScheduler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kubelet可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeArgsFlag",
+          "name": "Kubelet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeCluster": {
+      "document": "边缘计算集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群Id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Vpc Id",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群pod cidr",
+          "member": "string",
+          "name": "PodCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群 service cidr",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s 版本号",
+          "member": "string",
+          "name": "K8SVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群描述信息",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建时间",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "边缘集群版本",
+          "member": "string",
+          "name": "EdgeClusterVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "节点最大Pod数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "MaxNodePodNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeClusterAdvancedSettings": {
+      "document": "边缘容器集群高级配置",
+      "members": [
+        {
+          "default": "",
+          "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "EdgeClusterExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeClusterExtraArgs": {
+      "document": "边缘容器集群master自定义参数",
+      "members": [
+        {
+          "default": "",
+          "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeAPIServer",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-controller-manager自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeControllerManager",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kube-scheduler自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KubeScheduler",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeClusterInternalLB": {
+      "document": "边缘计算集群内网访问LB信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启内网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内网访问LB关联的子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EdgeClusterPublicLB": {
+      "document": "边缘计算集群公网访问负载均衡信息",
+      "members": [
+        {
+          "default": "",
+          "document": "是否开启公网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "允许访问的公网cidr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AllowFromCidrs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7822,6 +10365,54 @@
       ],
       "usage": "both"
     },
+    "EnableClusterAuditRequest": {
+      "document": "EnableClusterAudit请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CLS日志集ID",
+          "example": "d93d9f91-a27a-4756-8575-e367fe885556",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "CLS日志主题ID",
+          "example": "xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "EnableClusterAuditResponse": {
+      "document": "EnableClusterAudit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableClusterDeletionProtectionRequest": {
       "document": "EnableClusterDeletionProtection请求参数结构体",
       "members": [
@@ -7838,6 +10429,54 @@
     },
     "EnableClusterDeletionProtectionResponse": {
       "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEventPersistenceRequest": {
+      "document": "EnableEventPersistence请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cls服务的logsetID",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "cls服务的topicID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "EnableEventPersistenceResponse": {
+      "document": "EnableEventPersistence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8319,11 +10958,11 @@
       "usage": "in"
     },
     "Filter": {
-      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "document": "过滤器",
       "members": [
         {
-          "default": "无",
-          "document": "需要过滤的字段。",
+          "default": "",
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8331,8 +10970,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "无",
-          "document": "字段的过滤值。",
+          "default": "",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -8982,6 +11621,44 @@
       ],
       "usage": "both"
     },
+    "InstallLogAgentRequest": {
+      "document": "InstallLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TKE集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "kubelet根目录",
+          "example": "/var/lib/kubelet",
+          "member": "string",
+          "name": "KubeletRootDir",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "InstallLogAgentResponse": {
+      "document": "InstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Instance": {
       "document": "集群的实例信息",
       "members": [
@@ -9099,7 +11776,8 @@
           "name": "MountTarget",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9109,7 +11787,8 @@
           "name": "DockerGraphPath",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9119,7 +11798,8 @@
           "name": "UserScript",
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9129,7 +11809,8 @@
           "name": "Unschedulable",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9139,7 +11820,8 @@
           "name": "Labels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9149,7 +11831,8 @@
           "name": "DataDisks",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9159,7 +11842,8 @@
           "name": "ExtraArgs",
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9169,7 +11853,8 @@
           "name": "DesiredPodNumber",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9179,7 +11864,19 @@
           "name": "PreStartUserScript",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "节点污点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -10037,6 +12734,44 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusAlertPolicyRequest": {
+      "document": "ModifyPrometheusAlertPolicy请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警配置",
+          "example": "无",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertRule",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAlertPolicyResponse": {
+      "document": "ModifyPrometheusAlertPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusAlertRuleRequest": {
       "document": "ModifyPrometheusAlertRule请求参数结构体",
       "members": [
@@ -10063,6 +12798,82 @@
     },
     "ModifyPrometheusAlertRuleResponse": {
       "document": "ModifyPrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusGlobalNotificationRequest": {
+      "document": "ModifyPrometheusGlobalNotification请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "告警通知渠道",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusGlobalNotificationResponse": {
+      "document": "ModifyPrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusTempRequest": {
+      "document": "ModifyPrometheusTemp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "模板ID",
+          "example": "temp-xxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "修改内容",
+          "example": "无",
+          "member": "PrometheusTempModify",
+          "name": "Template",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusTempResponse": {
+      "document": "ModifyPrometheusTemp返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10664,6 +13475,118 @@
       ],
       "usage": "both"
     },
+    "PrometheusAlertManagerConfig": {
+      "document": "告警渠道使用自建alertmanager的配置",
+      "members": [
+        {
+          "default": "",
+          "document": "alertmanager url",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "alertmanager部署所在集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "alertmanager部署所在集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertPolicyItem": {
+      "document": "托管prometheus告警策略实例",
+      "members": [
+        {
+          "default": "",
+          "document": "策略名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "无",
+          "member": "PrometheusAlertRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警策略 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果该告警来自模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警渠道，模板中使用可能返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusNotificationItem",
+          "name": "Notification",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果告警策略来源于用户集群CRD资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PrometheusAlertRule": {
       "document": "Prometheus告警规则",
       "members": [
@@ -11011,6 +13934,162 @@
       ],
       "usage": "out"
     },
+    "PrometheusInstancesOverview": {
+      "document": "托管prometheusV2实例概览",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "xxx",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:销毁中； 6:已停机； 7: 已删除）",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费状态（1:正常；2:过期; 3:销毁; 4:分配中; 5:分配失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启 Grafana（0:不开启，1:开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableGrafana",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://prom-xxx.grafana.xxx.prom.tencent-cloud.com",
+          "member": "string",
+          "name": "GrafanaURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例付费类型（1:试用版；2:预付费）",
+          "example": "2",
+          "member": "int64",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "基础1",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "DataRetentionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-14T17:16:12+08:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记(0:不自动续费；1:开启自动续费；2:禁止自动续费；-1:无效)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定集群总数",
+          "example": "2",
+          "member": "int64",
+          "name": "BoundTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定集群正常状态总数",
+          "example": "2",
+          "member": "int64",
+          "name": "BoundNormal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusJobTargets": {
       "document": "prometheus一个job的targets",
       "members": [
@@ -11176,6 +14255,208 @@
       ],
       "usage": "both"
     },
+    "PrometheusNotificationItem": {
+      "document": "告警通知渠道配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否启用",
+          "example": "无",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "通道类型，默认为amp，支持以下\namp\nwebhook\nalertmanager",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果Type为webhook, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WebHook",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "如果Type为alertmanager, 则该字段为必填项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertManagerConfig",
+          "name": "AlertManager",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收敛时间",
+          "example": "无",
+          "member": "string",
+          "name": "RepeatInterval",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeRangeStart",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生效结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeRangeEnd",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "告警通知方式。目前有SMS、EMAIL、CALL、WECHAT方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyWay",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "告警接收组（用户组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverGroups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警顺序。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PhoneNotifyOrder",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警次数。\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PhoneCircleTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警轮内间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PhoneInnerInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警轮外间隔。单位：秒\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PhoneCircleInterval",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "电话告警触达通知\n注：NotifyWay选择CALL，采用该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "PhoneArriveNotice",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusRecordRuleYamlItem": {
+      "document": "prometheus聚合规则实例详情，包含所属集群ID",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最近更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Yaml内容",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果该聚合规则来至模板，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusTarget": {
       "document": "prometheus一个抓取目标的信息",
       "members": [
@@ -11235,6 +14516,218 @@
         }
       ],
       "usage": "out"
+    },
+    "PrometheusTemp": {
+      "document": "模板实例",
+      "members": [
+        {
+          "default": "",
+          "document": "模板名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板维度，支持以下类型\ninstance 实例级别\ncluster 集群级别",
+          "example": "无",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RecordRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "模板的ID, 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近更新时间，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否系统提供的默认模板，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertDetailRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetsTotal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusTempModify": {
+      "document": "云原生Prometheus模板可修改项",
+      "members": [
+        {
+          "default": "",
+          "document": "修改名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RecordRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "修改内容，只有当模板类型是Alert时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertPolicyItem",
+          "name": "AlertDetailRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PrometheusTemplate": {
       "document": "模板实例",
@@ -12184,6 +15677,72 @@
       ],
       "type": "object"
     },
+    "SubnetInfos": {
+      "document": "子网信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子网id",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "子网节点名称",
+          "example": "access-server",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "SyncPrometheusTempRequest": {
+      "document": "SyncPrometheusTemp请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "同步目标",
+          "example": "无",
+          "member": "PrometheusTemplateSyncTarget",
+          "name": "Targets",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "SyncPrometheusTempResponse": {
+      "document": "SyncPrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SyncPrometheusTemplateRequest": {
       "document": "SyncPrometheusTemplate请求参数结构体",
       "members": [
@@ -12365,6 +15924,34 @@
         }
       ],
       "usage": "both"
+    },
+    "UninstallLogAgentRequest": {
+      "document": "UninstallLogAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallLogAgentResponse": {
+      "document": "UninstallLogAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateClusterVersionRequest": {
       "document": "UpdateClusterVersion请求参数结构体",
@@ -12671,6 +16258,123 @@
     },
     "UpdateImageCacheResponse": {
       "document": "UpdateImageCache返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTKEEdgeClusterRequest": {
+      "document": "UpdateTKEEdgeCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "边缘计算集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群名称",
+          "example": "test_cluster1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群描述信息",
+          "example": "my_test_cluster888",
+          "member": "string",
+          "name": "ClusterDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的pod cidr",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "PodCIDR",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的service cidr",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "ServiceCIDR",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群公网访问LB信息",
+          "example": "无",
+          "member": "EdgeClusterPublicLB",
+          "name": "PublicLB",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群内网访问LB信息",
+          "example": "无",
+          "member": "EdgeClusterInternalLB",
+          "name": "InternalLB",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的CoreDns部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "CoreDns",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的健康检查多地域部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "HealthRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的健康检查部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "Health",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "边缘计算集群的GridDaemon部署信息",
+          "example": "yes",
+          "member": "string",
+          "name": "GridDaemon",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTKEEdgeClusterResponse": {
+      "document": "UpdateTKEEdgeCluster返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

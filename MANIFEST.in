@@ -327,6 +327,8 @@ include tccli/services/tione/v20191022/api.json
 include tccli/services/tione/v20191022/examples.json
 include tccli/services/tiw/v20190919/api.json
 include tccli/services/tiw/v20190919/examples.json
+include tccli/services/tke/v20220501/api.json
+include tccli/services/tke/v20220501/examples.json
 include tccli/services/tke/v20180525/api.json
 include tccli/services/tke/v20180525/examples.json
 include tccli/services/tms/v20201229/api.json

@@ -196,7 +196,8 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -205,7 +206,8 @@
           "member": "string",
           "name": "ModelId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -214,7 +216,8 @@
           "member": "string",
           "name": "RspImgType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -223,7 +226,8 @@
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -232,7 +236,8 @@
           "member": "int64",
           "name": "PornDetect",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -241,16 +246,18 @@
           "member": "int64",
           "name": "CelebrityIdentify",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "图片Url地址，目前Url方式还不支持，后续会支持，可以使用FuseFace接口",
+          "document": "图片Url地址",
           "example": "image_url",
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -265,7 +272,8 @@
           "name": "Image",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "不适宜内容识别结果",
@@ -274,7 +282,8 @@
           "name": "ReviewResultSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -2998,7 +2998,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3007,7 +3008,8 @@
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3016,7 +3018,8 @@
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3025,7 +3028,8 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3034,7 +3038,8 @@
           "member": "int64",
           "name": "StartTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3043,16 +3048,18 @@
           "member": "int64",
           "name": "EndTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控",
+          "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能观测；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3061,7 +3068,8 @@
           "member": "string",
           "name": "AlarmObject",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3070,7 +3078,8 @@
           "member": "string",
           "name": "AlarmStatus",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3079,7 +3088,8 @@
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3088,7 +3098,8 @@
           "member": "int64",
           "name": "InstanceGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3097,7 +3108,8 @@
           "member": "MonitorTypeNamespace",
           "name": "Namespaces",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3106,7 +3118,8 @@
           "member": "string",
           "name": "MetricNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3115,7 +3128,8 @@
           "member": "string",
           "name": "PolicyName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3124,7 +3138,8 @@
           "member": "string",
           "name": "Content",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3133,7 +3148,8 @@
           "member": "int64",
           "name": "ReceiverUids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3142,7 +3158,8 @@
           "member": "int64",
           "name": "ReceiverGroups",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3151,7 +3168,8 @@
           "member": "string",
           "name": "PolicyIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3166,7 +3184,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "告警历史列表",
@@ -3175,7 +3194,8 @@
           "name": "Histories",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

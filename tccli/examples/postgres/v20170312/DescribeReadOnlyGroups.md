@@ -32,33 +32,57 @@ Output:
                     {
                         "Zone": "xx",
                         "DBInstanceName": "xx",
+                        "DBNodeSet": [
+                            {
+                                "Role": "xx",
+                                "Zone": "xx"
+                            }
+                        ],
                         "Type": "xx",
                         "ReadOnlyInstanceNum": 0,
+                        "DBKernelVersion": "xx",
                         "UpdateTime": "2020-09-22 00:00:00",
                         "VpcId": "xx",
+                        "DBMajorVersion": "xx",
                         "IsolatedTime": "2020-09-22 00:00:00",
+                        "NetworkAccessList": [
+                            {
+                                "Vip6": "xx",
+                                "VpcId": "xx",
+                                "ResourceType": 1,
+                                "ResourceId": "xx",
+                                "Vip": "xx",
+                                "SubnetId": "xx",
+                                "Vport": 0,
+                                "VpcStatus": 0
+                            }
+                        ],
                         "DBVersion": "xx",
                         "DBInstanceVersion": "xx",
                         "AutoRenew": 1,
-                        "StatusInReadonlyGroup": "xx",
+                        "OfflineTime": "xx",
                         "SubnetId": "xx",
                         "DBInstanceMemory": 1,
                         "DBInstanceType": "xx",
                         "DBInstanceStatus": "xx",
                         "ProjectId": 1,
                         "Region": "xx",
+                        "StatusInReadonlyGroup": "xx",
                         "MasterDBInstanceId": "xx",
                         "DBInstanceNetInfo": [
                             {
                                 "Status": "xx",
+                                "VpcId": "xx",
                                 "Ip": "xx",
-                                "Port": 1,
                                 "NetType": "xx",
-                                "Address": "xx"
+                                "Address": "xx",
+                                "SubnetId": "xx",
+                                "Port": 1
                             }
                         ],
                         "DBInstanceStorage": 1,
                         "Uid": 1,
+                        "IsSupportTDE": 0,
                         "DBCharset": "xx",
                         "DBInstanceId": "xx",
                         "PayType": "xx",
@@ -83,14 +107,28 @@ Output:
                 "ReadOnlyGroupId": "xx",
                 "ReplayLatencyEliminate": 0,
                 "SubnetId": "xx",
+                "NetworkAccessList": [
+                    {
+                        "Vip6": "xx",
+                        "VpcId": "xx",
+                        "ResourceType": 1,
+                        "ResourceId": "xx",
+                        "Vip": "xx",
+                        "SubnetId": "xx",
+                        "Vport": 0,
+                        "VpcStatus": 0
+                    }
+                ],
                 "Rebalance": 0,
                 "DBInstanceNetInfo": [
                     {
                         "Status": "xx",
+                        "VpcId": "xx",
                         "Ip": "xx",
-                        "Port": 1,
                         "NetType": "xx",
-                        "Address": "xx"
+                        "Address": "xx",
+                        "SubnetId": "xx",
+                        "Port": 1
                     }
                 ]
             }
