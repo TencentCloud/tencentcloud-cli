@@ -1210,6 +1210,22 @@
       ],
       "usage": "out"
     },
+    "Location": {
+      "document": "位置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "位置信息",
+          "example": "[{\"x\"=1,\"y\" =1}]",
+          "member": "Point",
+          "name": "Points",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MachinePredict": {
       "document": "机器核保预测结果",
       "members": [
@@ -1302,6 +1318,52 @@
       ],
       "usage": "out"
     },
+    "OcrRecognise": {
+      "document": "Ocr识别结果",
+      "members": [
+        {
+          "default": "",
+          "document": "原文字段",
+          "example": "“”",
+          "member": "string",
+          "name": "OriginalField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "识别结果",
+          "example": "“”",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "置信度",
+          "example": "0",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "位置信息",
+          "example": "{}",
+          "member": "Location",
+          "name": "Location",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PerStructDifference": {
       "document": "复核差异接口的每一份报告的差异结果",
       "members": [
@@ -1353,6 +1415,42 @@
           "name": "RemoveItems",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Point": {
+      "document": "点信息",
+      "members": [
+        {
+          "default": "",
+          "document": "x坐标",
+          "example": "1",
+          "member": "int64",
+          "name": "XCoordinate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "y坐标",
+          "example": "1",
+          "member": "int64",
+          "name": "YCoordinate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1554,6 +1652,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结构化字段结果数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "OcrRecognise",
+          "name": "ResultFields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

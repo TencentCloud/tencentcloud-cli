@@ -1,4 +1,4 @@
-**Example 1: 获取CC防护等级列表**
+**Example 1: 获取边界防护CC防护等级列表**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli antiddos DescribeCCLevelList --cli-unfold-argument  \
-    --Business bgp-multip \
+    --Business edge \
     --Offset 0 \
     --Limit 1
 ```
@@ -19,7 +19,7 @@ Output:
         "Total": 1,
         "LevelList": [
             {
-                "InstanceId": "bgp-000000432",
+                "InstanceId": "edge-000000xe",
                 "Ip": "1.2.1.1",
                 "Protocol": "HTTP",
                 "Domain": "1.ase.com",

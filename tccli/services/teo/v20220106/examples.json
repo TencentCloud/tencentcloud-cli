@@ -158,6 +158,14 @@
         "title": "获取应用代理详细信息"
       }
     ],
+    "DescribeBotLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotLog\n<公共请求参数>\n\n{\n    \"PageSize\": 0,\n    \"PageNo\": 0,\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"QueryCondition\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Data\": {\n            \"TotalSize\": 0,\n            \"List\": [\n                {\n                    \"EventId\": \"xx\",\n                    \"HttpLog\": \"xx\",\n                    \"Domain\": \"xx\",\n                    \"SipCountryCode\": \"xx\",\n                    \"AttackIp\": \"xx\",\n                    \"RiskLevel\": \"xx\",\n                    \"RequestUri\": \"xx\",\n                    \"RuleId\": 1,\n                    \"Confidence\": \"xx\",\n                    \"AttackContent\": \"xx\",\n                    \"RequestMethod\": \"xx\",\n                    \"Maliciousness\": \"xx\",\n                    \"AttackTime\": 1,\n                    \"AttackType\": \"xx\",\n                    \"DisposalMethod\": \"xx\",\n                    \"DetectionMethod\": \"xx\",\n                    \"Ua\": \"xx\"\n                }\n            ],\n            \"PageSize\": 0,\n            \"PageNo\": 0,\n            \"Pages\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Bot攻击日志"
+      }
+    ],
     "DescribeBotManagedRules": [
       {
         "document": "",
@@ -180,6 +188,54 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 0,\n    \"ZoneId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询DDoS防护配置"
+      }
+    ],
+    "DescribeDDosAttackData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosAttackData\n<公共请求参数>\n\n{\n    \"AttackType\": \"xx\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"ProtocolType\": \"xx\",\n    \"Interval\": \"xx\",\n    \"PolicyIds\": [\n        0\n    ],\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Port\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Interval\": \"xx\",\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 0,\n                        \"Metric\": \"xx\",\n                        \"Avg\": 0.0,\n                        \"Detail\": [\n                            {\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Sum\": 0.0\n                    }\n                ],\n                \"Key\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询DDos攻击日志"
+      }
+    ],
+    "DescribeDDosAttackEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosAttackEvent\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"ProtocolType\": \"xx\",\n    \"PolicyIds\": [\n        12,\n        45,\n        78\n    ],\n    \"ZoneIds\": [\n        \"zoneId1\",\n        \"zoneid2\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"IsShowDetail\": \"N\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Data\": {\n            \"TotalSize\": 0,\n            \"List\": [\n                {\n                    \"EventId\": \"xx\",\n                    \"AttackPacketMaxRate\": 0,\n                    \"AttackEndTime\": 0,\n                    \"AttackMaxBandWidth\": 0,\n                    \"AttackStartTime\": 0,\n                    \"ZoneId\": \"xx\",\n                    \"PolicyId\": 0,\n                    \"AttackType\": \"xx\",\n                    \"AttackStatus\": 0\n                }\n            ],\n            \"PageSize\": 0,\n            \"PageNo\": 0,\n            \"Pages\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询DDos攻击事件"
+      }
+    ],
+    "DescribeDDosAttackEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosAttackEventDetail\n<公共请求参数>\n\n{\n    \"EventId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Data\": {\n            \"EventId\": \"xx\",\n            \"PacketMaxRate\": 0,\n            \"AttackType\": \"xx\",\n            \"PolicyId\": 0,\n            \"StartTime\": 0,\n            \"MaxBandWidth\": 0,\n            \"EndTime\": 0,\n            \"AttackStatus\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeDDosAttackEventDetail"
+      }
+    ],
+    "DescribeDDosAttackSourceEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosAttackSourceEvent\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"ProtocolType\": \"xx\",\n    \"PolicyIds\": [\n        12,\n        45,\n        78\n    ],\n    \"ZoneIds\": [\n        \"zoneId1\",\n        \"zoneid2\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"Status\": 0,\n        \"Msg\": \"success\",\n        \"Data\": {\n            \"PageSize\": 20,\n            \"PageNo\": 1,\n            \"Pages\": 1,\n            \"TotalSize\": 1,\n            \"List\": [\n                {\n                    \"AttackSourceIp\": \"3.3.3.3\",\n                    \"AttackRegion\": \"GB\",\n                    \"AttackFlow\": 4000,\n                    \"AttackPacketNum\": 160000\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询DDos攻击源"
+      }
+    ],
+    "DescribeDDosAttackTopData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosAttackTopData\n<公共请求参数>\n\n{\n    \"AttackType\": \"xx\",\n    \"MetricName\": \"xx\",\n    \"ProtocolType\": \"xx\",\n    \"PolicyIds\": [\n        0\n    ],\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Port\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"success\",\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Count\": 123,\n                        \"Name\": \"udp\"\n                    }\n                ],\n                \"Key\": \"subzoneId2\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DDos攻击TopN数据"
+      }
+    ],
+    "DescribeDDosMajorAttackEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDosMajorAttackEvent\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"ProtocolType\": \"xx\",\n    \"PolicyIds\": [\n        0\n    ],\n    \"ZoneIds\": [\n        \"zoneId1\",\n        \"zoneid2\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"success\",\n        \"Data\": {\n            \"TotalSize\": 36,\n            \"List\": [\n                {\n                    \"AttackMaxBandWidth\": 0,\n                    \"PolicyId\": 0,\n                    \"AttackTime\": 0\n                }\n            ],\n            \"PageSize\": 12,\n            \"PageNo\": 2,\n            \"Pages\": 3\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DDos查询主攻击事件"
       }
     ],
     "DescribeDefaultCertificates": [
@@ -270,6 +326,14 @@
         "title": "获取源站组详情"
       }
     ],
+    "DescribeOverviewL7Data": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewL7Data\n<公共请求参数>\n\n{\n    \"Protocol\": \"xx\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TypeKey\": \"xx\",\n                \"TypeValue\": [\n                    {\n                        \"Max\": 0,\n                        \"Sum\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"DetailData\": [\n                            0\n                        ],\n                        \"Avg\": 0,\n                        \"MetricName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"xx\",\n        \"Type\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "七层时序流量数据查询接口示例"
+      }
+    ],
     "DescribePrefetchTasks": [
       {
         "document": "",
@@ -313,14 +377,8 @@
     "DescribeSecurityPolicyManagedRulesId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyManagedRulesId\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        \"16\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 16,\n                \"RuleTypeId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\",\n                \"RuleTags\": [\n                    \"xx\"\n                ],\n                \"RuleTypeDesc\": \"xx\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "test"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicyManagedRulesId\n<公共请求参数>\n\n{\n    \"RuleId\": [\n        16\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0,\n                \"RuleLevelDesc\": \"xx\",\n                \"RuleTypeName\": \"xx\"\n            }\n        ],\n        \"Total\": 0,\n        \"Count\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "规则id查询门神规则"
       }
     ],
@@ -338,6 +396,86 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPortraitRules\n<公共请求参数>\n\n{\n    \"Entity\": \"xx\",\n    \"ZoneId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"Rules\": [\n            {\n                \"Status\": \"xx\",\n                \"RuleTypeName\": \"xx\",\n                \"Description\": \"xx\",\n                \"RuleId\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询用户画像规则"
+      }
+    ],
+    "DescribeTimingL4Data": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL4Data\n<公共请求参数>\n\n{\n    \"Protocol\": \"xx\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"RuleId\": \"xx\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"InstanceIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TypeKey\": \"xx\",\n                \"TypeValue\": [\n                    {\n                        \"Max\": 0,\n                        \"Sum\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"DetailData\": [\n                            0\n                        ],\n                        \"Avg\": 0,\n                        \"MetricName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"xx\",\n        \"Type\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "四层时序流量数据查询接口示例"
+      }
+    ],
+    "DescribeTimingL7AnalysisData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7AnalysisData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Filters\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"xx\",\n        \"Interval\": \"xx\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"xx\",\n                \"TypeValue\": [\n                    {\n                        \"Max\": 0,\n                        \"Sum\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"DetailData\": [\n                            0\n                        ],\n                        \"Avg\": 0,\n                        \"MetricName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "七层数据分析类时序访问流量数据"
+      }
+    ],
+    "DescribeTopL7AnalysisData": [
+      {
+        "document": "七层数据分析类top流量数据接口",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7AnalysisData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"xx\",\n        \"Data\": {\n            \"DetailData\": [\n                {\n                    \"Value\": 3000,\n                    \"Key\": \"xx\"\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 5000\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 8000\n                }\n            ],\n            \"TypeKey\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
+        "title": "七层数据分析类top流量数据接口"
+      }
+    ],
+    "DescribeWebManagedRulesAttackEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesAttackEvents\n<公共请求参数>\n\n{\n    \"PageNo\": 3,\n    \"PageSize\": 1,\n    \"PolicyIds\": [\n        1,\n        2\n    ],\n    \"ZoneIds\": [\n        \"www.huolala.com\"\n    ],\n    \"StartTime\": \"2022-01-10T16:01:00Z\",\n    \"EndTime\": \"2022-01-10T16:05:00Z\",\n    \"IsShowDetail\": \"Y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec73285b-033e-483e-ac38-2dacce32b7eb\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"AttackTime\": 1641801840,\n                    \"AttackUrl\": \"/uri/demo\",\n                    \"ClientIp\": \"1.1.1.1\"\n                },\n                {\n                    \"AttackTime\": 1641801720,\n                    \"AttackUrl\": \"/uri/demo\",\n                    \"ClientIp\": \"1.1.1.1\"\n                }\n            ],\n            \"PageNo\": 1,\n            \"PageSize\": 2,\n            \"Pages\": 2,\n            \"TotalSize\": 4\n        },\n        \"Msg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "查询DDos攻击事件"
+      }
+    ],
+    "DescribeWebManagedRulesData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesData\n<公共请求参数>\n\n{\n    \"AttackType\": \"xx\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"ProtocolType\": \"xx\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Interval\": \"xx\",\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 0,\n                        \"Metric\": \"xx\",\n                        \"Avg\": 0.0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Sum\": 0.0\n                    }\n                ],\n                \"Key\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Web托管规则数据"
+      }
+    ],
+    "DescribeWebManagedRulesLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesLog\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zoneId1\",\n        \"zoneId2\"\n    ],\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"QueryCondition\": [\n        {\n            \"Key\": \"key test\",\n            \"Operator\": \"operator test\",\n            \"Value\": [\n                \"v1\",\n                \"v2\"\n            ]\n        }\n    ],\n    \"StartTime\": \"2020-04-30T00:00:00Z\",\n    \"EndTime\": \"2020-04-30T00:00:00Z\",\n    \"PageSize\": 2,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Data\": {\n            \"TotalSize\": 0,\n            \"List\": [\n                {\n                    \"EventId\": \"xx\",\n                    \"HttpLog\": \"xx\",\n                    \"Domain\": \"xx\",\n                    \"SipCountryCode\": \"xx\",\n                    \"AttackIp\": \"xx\",\n                    \"RiskLevel\": \"xx\",\n                    \"RequestUri\": \"xx\",\n                    \"RuleId\": 1,\n                    \"AttackContent\": \"xx\",\n                    \"RequestMethod\": \"xx\",\n                    \"Msuuid\": \"xx\",\n                    \"AttackTime\": 1,\n                    \"AttackType\": \"xx\",\n                    \"DisposalMethod\": \"xx\",\n                    \"Ua\": \"xx\"\n                }\n            ],\n            \"PageSize\": 0,\n            \"PageNo\": 0,\n            \"Pages\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Web托管日志入参"
+      }
+    ],
+    "DescribeWebManagedRulesTopData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebManagedRulesTopData\n<公共请求参数>\n\n{\n    \"AttackType\": \"xx\",\n    \"MetricName\": \"xx\",\n    \"ProtocolType\": \"xx\",\n    \"PolicyIds\": [\n        0\n    ],\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"success\",\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Count\": 123,\n                        \"Name\": \"udp\"\n                    }\n                ],\n                \"Key\": \"subzoneId2\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Web攻击TopN数据"
+      }
+    ],
+    "DescribeWebProtectionAttackEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionAttackEvents\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"dloc3.huolala.cn\"\n    ],\n    \"ZoneIds\": [\n        \"www.huolala.com\"\n    ],\n    \"StartTime\": \"2022-01-10T16:01:00Z\",\n    \"EndTime\": \"2022-01-10T16:05:00Z\",\n    \"PageSize\": 2,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58bacbc7-b47b-435d-abf2-c98ca34be020\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ClientIp\": \"1.1.1.1\",\n                    \"InterceptNum\": 20000,\n                    \"InterceptTime\": 1641801660\n                },\n                {\n                    \"ClientIp\": \"1.1.1.1\",\n                    \"InterceptNum\": 10000,\n                    \"InterceptTime\": 1641801660\n                }\n            ],\n            \"PageNo\": 1,\n            \"PageSize\": 2,\n            \"Pages\": 1,\n            \"TotalSize\": 2\n        },\n        \"Msg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "查询DDos攻击事件"
+      }
+    ],
+    "DescribeWebProtectionData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionData\n<公共请求参数>\n\n{\n    \"AttackType\": \"xx\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"ProtocolType\": \"xx\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Domains\": [\n        \"xx\"\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Interval\": \"xx\",\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 0,\n                        \"Metric\": \"xx\",\n                        \"Avg\": 0.0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Sum\": 0.0\n                    }\n                ],\n                \"Key\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "Web攻击数据"
+      }
+    ],
+    "DescribeWebProtectionLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebProtectionLog\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zoneId1\",\n        \"zoneId2\"\n    ],\n    \"Domains\": [\n        \"www.baidu.com\"\n    ],\n    \"QueryCondition\": [\n        {\n            \"Key\": \"key test\",\n            \"Operator\": \"operator test\",\n            \"Value\": [\n                \"v1\",\n                \"v2\"\n            ]\n        }\n    ],\n    \"StartTime\": \"2020-04-30T00:00:00Z\",\n    \"EndTime\": \"2020-04-30T00:00:00Z\",\n    \"PageSize\": 2,\n    \"PageNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Msg\": \"xx\",\n        \"Data\": {\n            \"TotalSize\": 0,\n            \"List\": [\n                {\n                    \"EventId\": \"xx\",\n                    \"HttpLog\": \"xx\",\n                    \"SipCountryCode\": \"xx\",\n                    \"RuleId\": 1,\n                    \"RiskLevel\": \"xx\",\n                    \"RequestUri\": \"xx\",\n                    \"AttackDomain\": \"xx\",\n                    \"AttackTime\": 1,\n                    \"DisposalMethod\": \"xx\",\n                    \"HitCount\": 1,\n                    \"AttackSip\": \"xx\"\n                }\n            ],\n            \"PageSize\": 0,\n            \"PageNo\": 0,\n            \"Pages\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "限速拦截日志"
       }
     ],
     "DescribeZoneDDoSPolicy": [

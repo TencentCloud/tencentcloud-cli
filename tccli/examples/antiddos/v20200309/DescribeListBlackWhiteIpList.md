@@ -16,34 +16,38 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "83978459-3a66-46e7-bb97-c946656d16eb",
         "IpList": [
             {
-                "Ip": "123.123.123.2",
-                "Type": "white",
                 "InstanceDetailList": [
                     {
+                        "InstanceId": "xx",
                         "EipList": [
                             "1.2.2.19"
-                        ],
-                        "InstanceId": "bgpip-0000011x"
+                        ]
                     }
-                ]
+                ],
+                "Ip": "xx",
+                "Type": "xx",
+                "Mask": 1,
+                "ModifyTime": "xx"
             },
             {
-                "Ip": "123.123.123.1",
-                "Type": "black",
                 "InstanceDetailList": [
                     {
+                        "InstanceId": "xx",
                         "EipList": [
                             "1.2.2.19"
-                        ],
-                        "InstanceId": "bgpip-0000011x"
+                        ]
                     }
-                ]
+                ],
+                "Ip": "xx",
+                "Type": "xx",
+                "Mask": 1,
+                "ModifyTime": "xx"
             }
         ],
-        "Total": 2
+        "Total": 2,
+        "RequestId": "xx"
     }
 }
 ```

@@ -1,19 +1,549 @@
 {
   "actions": {
+    "CreateUser": {
+      "document": "创建用户",
+      "input": "CreateUserRequest",
+      "name": "创建用户",
+      "output": "CreateUserResponse"
+    },
+    "DeleteUsers": {
+      "document": "批量删除用户",
+      "input": "DeleteUsersRequest",
+      "name": "批量删除用户",
+      "output": "DeleteUsersResponse"
+    },
+    "DescribeUserById": {
+      "document": "根据ID查询用户信息",
+      "input": "DescribeUserByIdRequest",
+      "name": "根据ID查询用户信息",
+      "output": "DescribeUserByIdResponse"
+    },
+    "LinkAccount": {
+      "document": "账号融合",
+      "input": "LinkAccountRequest",
+      "name": "账号融合",
+      "output": "LinkAccountResponse"
+    },
+    "ListUser": {
+      "document": "查询用户列表",
+      "input": "ListUserRequest",
+      "name": "查询用户列表",
+      "output": "ListUserResponse"
+    },
+    "ListUserByProperty": {
+      "document": "根据属性查询用户列表",
+      "input": "ListUserByPropertyRequest",
+      "name": "根据属性查询用户列表",
+      "output": "ListUserByPropertyResponse"
+    },
     "ResetPassword": {
       "document": "重置用户密码",
       "input": "ResetPasswordRequest",
       "name": "重置用户密码",
       "output": "ResetPasswordResponse"
+    },
+    "SetPassword": {
+      "document": "设置用户密码",
+      "input": "SetPasswordRequest",
+      "name": "设置用户密码",
+      "output": "SetPasswordResponse"
+    },
+    "UpdateUser": {
+      "document": "更新用户",
+      "input": "UpdateUserRequest",
+      "name": "更新用户",
+      "output": "UpdateUserResponse"
+    },
+    "UpdateUserStatus": {
+      "document": "更新用户状态",
+      "input": "UpdateUserStatusRequest",
+      "name": "更新用户状态",
+      "output": "UpdateUserStatusResponse"
     }
   },
   "metadata": {
     "apiVersion": "2022-03-31",
-    "api_brief": "介绍如何使用ciam进行账号同步、身份认证、授权管理。",
-    "serviceNameCN": "数字身份管控平台（公众版）",
+    "api_brief": "介绍如何使用ciam进行用户管理、用户导入导出等管理动作",
+    "serviceNameCN": "账号风控平台",
     "serviceShortName": "ciam"
   },
   "objects": {
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "xxx",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "UserGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生日",
+          "example": "0",
+          "member": "int64",
+          "name": "Birthdate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义属性",
+          "example": "无",
+          "member": "MemberMap",
+          "name": "CustomizationAttributes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "创建的用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "User",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersRequest": {
+      "document": "DeleteUsers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID数组",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUsersResponse": {
+      "document": "DeleteUsers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserByIdRequest": {
+      "document": "DescribeUserById请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserByIdResponse": {
+      "document": "DescribeUserById返回参数结构体",
+      "members": [
+        {
+          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "User",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询条件",
+      "members": [
+        {
+          "default": "",
+          "document": "key值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "value值",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "逻辑值",
+          "example": "true",
+          "member": "bool",
+          "name": "Logic",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LinkAccountRequest": {
+      "document": "LinkAccount请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "PrimaryUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "从用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SecondaryUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "融合属性(PHONENUMBER,EMAIL)",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserLinkedOnAttribute",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkAccountResponse": {
+      "document": "LinkAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserByPropertyRequest": {
+      "document": "ListUserByProperty请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的属性（支持phoneNumber，email）",
+          "example": "xxx",
+          "member": "string",
+          "name": "PropertyCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "属性值",
+          "example": "xxx",
+          "member": "string",
+          "name": "PropertyValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserByPropertyResponse": {
+      "document": "ListUserByProperty返回参数结构体",
+      "members": [
+        {
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserRequest": {
+      "document": "ListUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页数据",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "Key可选值为condition、userGroupId\n\n<li> **condition** </li>\tValues = 查询条件，用户ID，用户名称，手机或邮箱\n<li> **userGroupId** </li>\tValues = 用户组ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListUserResponse": {
+      "document": "ListUser返回参数结构体",
+      "members": [
+        {
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MemberMap": {
+      "document": "Map数据类型",
+      "members": [
+        {
+          "default": "",
+          "document": "健",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Pageable": {
+      "document": "分页对象",
+      "members": [
+        {
+          "default": "",
+          "document": "每页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ResetPasswordRequest": {
       "document": "ResetPassword请求参数结构体",
       "members": [
@@ -58,6 +588,579 @@
         }
       ],
       "type": "object"
+    },
+    "SetPasswordRequest": {
+      "document": "SetPassword请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "密码",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetPasswordResponse": {
+      "document": "SetPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserRequest": {
+      "document": "UpdateUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "xxx",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户组",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "UserGroup",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "生日",
+          "example": "0",
+          "member": "int64",
+          "name": "Birthdate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "自定义属性",
+          "example": "无",
+          "member": "MemberMap",
+          "name": "CustomizationAttributes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserResponse": {
+      "document": "UpdateUser返回参数结构体",
+      "members": [
+        {
+          "document": "更新之后的用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "User",
+          "name": "User",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStatusRequest": {
+      "document": "UpdateUserStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserStatusResponse": {
+      "document": "UpdateUserStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "int64",
+          "name": "LastSignOn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "int64",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户来源",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserDataSourceEnum",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nickname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Birthdate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "UserGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LastModifiedDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "MemberMap",
+          "name": "CustomAttributes",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResidentIdentityCard",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "QQ的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "QqOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "QQ的UnionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "QqUnionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信的WechatOpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatOpenId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "微信的WechatUnionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatUnionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支付宝的AlipayUserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AlipayUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Locale",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Gender",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实名核验方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "IdentityVerificationMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否已经实名核验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IdentityVerified",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Job",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nationality",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否主账号（进行过账号融合后，主账号为true，从账号为false）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Primary",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否已经首次登录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AlreadyFirstLogin",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户目录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Version",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "锁定类型（分为管理员锁定，和登录策略锁定）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "LockType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "锁定时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LockTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

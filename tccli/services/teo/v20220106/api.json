@@ -114,6 +114,12 @@
       "name": "获取应用代理详细信息",
       "output": "DescribeApplicationProxyDetailResponse"
     },
+    "DescribeBotLog": {
+      "document": "查询Bot攻击日志",
+      "input": "DescribeBotLogRequest",
+      "name": "Bot攻击日志",
+      "output": "DescribeBotLogResponse"
+    },
     "DescribeBotManagedRules": {
       "document": "分页查询Bot托管规则",
       "input": "DescribeBotManagedRulesRequest",
@@ -131,6 +137,42 @@
       "input": "DescribeDDoSPolicyRequest",
       "name": "查询DDoS防护配置详情",
       "output": "DescribeDDoSPolicyResponse"
+    },
+    "DescribeDDosAttackData": {
+      "document": "查询DDos攻击数据",
+      "input": "DescribeDDosAttackDataRequest",
+      "name": "查询DDos攻击数据",
+      "output": "DescribeDDosAttackDataResponse"
+    },
+    "DescribeDDosAttackEvent": {
+      "document": "查询DDos攻击事件",
+      "input": "DescribeDDosAttackEventRequest",
+      "name": "查询DDos攻击事件",
+      "output": "DescribeDDosAttackEventResponse"
+    },
+    "DescribeDDosAttackEventDetail": {
+      "document": "查询DDos攻击事件详情",
+      "input": "DescribeDDosAttackEventDetailRequest",
+      "name": "查询DDos攻击事件详情",
+      "output": "DescribeDDosAttackEventDetailResponse"
+    },
+    "DescribeDDosAttackSourceEvent": {
+      "document": "查询DDos攻击源",
+      "input": "DescribeDDosAttackSourceEventRequest",
+      "name": "查询DDos攻击源",
+      "output": "DescribeDDosAttackSourceEventResponse"
+    },
+    "DescribeDDosAttackTopData": {
+      "document": "查询DDos攻击Top数据",
+      "input": "DescribeDDosAttackTopDataRequest",
+      "name": "查询DDos攻击Top数据",
+      "output": "DescribeDDosAttackTopDataResponse"
+    },
+    "DescribeDDosMajorAttackEvent": {
+      "document": "查询DDos主攻击事件",
+      "input": "DescribeDDosMajorAttackEventRequest",
+      "name": "查询DDos主攻击事件",
+      "output": "DescribeDDosMajorAttackEventResponse"
     },
     "DescribeDefaultCertificates": {
       "document": "查询默认证书列表",
@@ -198,6 +240,12 @@
       "name": "获取源站组详细信息",
       "output": "DescribeOriginGroupDetailResponse"
     },
+    "DescribeOverviewL7Data": {
+      "document": "查询七层监控类时序流量数据",
+      "input": "DescribeOverviewL7DataRequest",
+      "name": "查询七层监控类时序流量数据",
+      "output": "DescribeOverviewL7DataResponse"
+    },
     "DescribePrefetchTasks": {
       "document": "查询预热任务状态",
       "input": "DescribePrefetchTasksRequest",
@@ -245,6 +293,66 @@
       "input": "DescribeSecurityPortraitRulesRequest",
       "name": "查询Bot用户画像规则",
       "output": "DescribeSecurityPortraitRulesResponse"
+    },
+    "DescribeTimingL4Data": {
+      "document": "四层时序流量数据查询",
+      "input": "DescribeTimingL4DataRequest",
+      "name": "四层时序流量数据查询接口",
+      "output": "DescribeTimingL4DataResponse"
+    },
+    "DescribeTimingL7AnalysisData": {
+      "document": "查询七层数据分析类时序流量数据",
+      "input": "DescribeTimingL7AnalysisDataRequest",
+      "name": "查询七层数据分析类时序流量数据",
+      "output": "DescribeTimingL7AnalysisDataResponse"
+    },
+    "DescribeTopL7AnalysisData": {
+      "document": "查询top类流量数据",
+      "input": "DescribeTopL7AnalysisDataRequest",
+      "name": "七层数据分析类top流量数据接口",
+      "output": "DescribeTopL7AnalysisDataResponse"
+    },
+    "DescribeWebManagedRulesAttackEvents": {
+      "document": "查询Web托管攻击事件",
+      "input": "DescribeWebManagedRulesAttackEventsRequest",
+      "name": "查询Web托管攻击事件",
+      "output": "DescribeWebManagedRulesAttackEventsResponse"
+    },
+    "DescribeWebManagedRulesData": {
+      "document": "查询Web托管规则数据",
+      "input": "DescribeWebManagedRulesDataRequest",
+      "name": "查询Web托管规则数据",
+      "output": "DescribeWebManagedRulesDataResponse"
+    },
+    "DescribeWebManagedRulesLog": {
+      "document": "查询Web托管日志",
+      "input": "DescribeWebManagedRulesLogRequest",
+      "name": "查询Web托管日志",
+      "output": "DescribeWebManagedRulesLogResponse"
+    },
+    "DescribeWebManagedRulesTopData": {
+      "document": "查询Web托管规则Top数据",
+      "input": "DescribeWebManagedRulesTopDataRequest",
+      "name": "查询Web托管规则Top数据",
+      "output": "DescribeWebManagedRulesTopDataResponse"
+    },
+    "DescribeWebProtectionAttackEvents": {
+      "document": "查询web防护攻击事件",
+      "input": "DescribeWebProtectionAttackEventsRequest",
+      "name": "查询web防护攻击事件",
+      "output": "DescribeWebProtectionAttackEventsResponse"
+    },
+    "DescribeWebProtectionData": {
+      "document": "查询web防护数据",
+      "input": "DescribeWebProtectionDataRequest",
+      "name": "查询web防护数据",
+      "output": "DescribeWebProtectionDataResponse"
+    },
+    "DescribeWebProtectionLog": {
+      "document": "查询web防护日志",
+      "input": "DescribeWebProtectionLogRequest",
+      "name": "查询web防护日志",
+      "output": "DescribeWebProtectionLogResponse"
     },
     "DescribeZoneDDoSPolicy": {
       "document": "查询所有DDoS防护分区",
@@ -948,6 +1056,238 @@
       ],
       "usage": "both"
     },
+    "BotLog": {
+      "document": "Bot攻击日志",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AttackTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "AttackIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"www.baidu.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RequestUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RequestMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "AttackContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP所在国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SipCountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处置方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DisposalMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "http_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HttpLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "user agent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Ua",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "检出方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DetectionMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "置信度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Confidence",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "恶意度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Maliciousness",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BotLogData": {
+      "document": "限速拦截日志",
+      "members": [
+        {
+          "default": "",
+          "document": "Bot攻击日志数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "BotLog",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BotManagedRule": {
       "document": "Bot 规则",
       "members": [
@@ -1205,6 +1545,270 @@
         }
       ],
       "usage": "both"
+    },
+    "CCInterceptEvent": {
+      "document": "CC拦截事件",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.23.1",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "拦截次数/min\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "InterceptNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "速拦截时间，分钟时间/min,单位为s",
+          "example": "4930",
+          "member": "int64",
+          "name": "InterceptTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CCInterceptEventData": {
+      "document": "CC拦截事件数据",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击事件数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "CCInterceptEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CCLog": {
+      "document": "限速拦截日志",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "uint64",
+          "name": "AttackTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "AttackSip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "AttackDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/login",
+          "member": "string",
+          "name": "RequestUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HitCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP所在国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"China\"",
+          "member": "string",
+          "name": "SipCountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处置方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DisposalMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "http_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HttpLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CCLogData": {
+      "document": "限速拦截日志",
+      "members": [
+        {
+          "default": "",
+          "document": "CC拦截日志数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "CCLog",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CacheConfig": {
       "document": "缓存规则配置。",
@@ -3094,6 +3698,438 @@
       ],
       "usage": "both"
     },
+    "DDosAttackEvent": {
+      "document": "DDos攻击事件对象",
+      "members": [
+        {
+          "default": "",
+          "document": "ddos 策略组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击类型(对应交互事件名称)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ddos攻击",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "攻击中",
+          "member": "int64",
+          "name": "AttackStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击最大带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "AttackMaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击包速率峰值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "AttackPacketMaxRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击开始时间 单位为s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "AttackStartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击结束时间 单位为s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "int64",
+          "name": "AttackEndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "站点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"zone-xx\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosAttackEventData": {
+      "document": "DDos攻击事件数据",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击事件数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "DDosAttackEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosAttackEventDetailData": {
+      "document": "ddos 攻击事件的详情",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击状态",
+          "example": "2",
+          "member": "int64",
+          "name": "AttackStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击类型",
+          "example": "SYNFLOOD",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "1646659806",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "1646659806",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大带宽",
+          "example": "829000000",
+          "member": "int64",
+          "name": "MaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最大包速率",
+          "example": "200000",
+          "member": "int64",
+          "name": "PacketMaxRate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事件Id",
+          "example": "\"12321231\"",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ddos 策略组id",
+          "example": "12345",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosAttackSourceEvent": {
+      "document": "DDos攻击事件对象",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "AttackSourceIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地区(国家)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "攻击中",
+          "member": "string",
+          "name": "AttackRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "累计攻击流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "uint64",
+          "name": "AttackFlow",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "累计攻击包量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4930",
+          "member": "uint64",
+          "name": "AttackPacketNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosAttackSourceEventData": {
+      "document": "DDos攻击源数据",
+      "members": [
+        {
+          "default": "",
+          "document": "DDos攻击源数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "DDosAttackSourceEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosMajorAttackEvent": {
+      "document": "DDos主攻击事件",
+      "members": [
+        {
+          "default": "",
+          "document": "ddos 策略组id",
+          "example": "4930",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击最大带宽",
+          "example": "235",
+          "member": "int64",
+          "name": "AttackMaxBandWidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "攻击时间 单位为s",
+          "example": "1389999239923",
+          "member": "int64",
+          "name": "AttackTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDosMajorAttackEventData": {
+      "document": "主攻击对象Data",
+      "members": [
+        {
+          "default": "",
+          "document": "DDosMajorAttackEvent ddos 攻击事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "DDosMajorAttackEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DataItem": {
       "document": "统计曲线数据项",
       "members": [
@@ -3892,6 +4928,114 @@
       ],
       "type": "object"
     },
+    "DescribeBotLogRequest": {
+      "document": "DescribeBotLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名集合",
+          "example": "[\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "[{\"Key\":\"test key\",\"Operator\":\"equal\",\"Value\":[\"123\",\"33\"]}]",
+          "member": "QueryCondition",
+          "name": "QueryCondition",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotLogResponse": {
+      "document": "DescribeBotLog返回参数结构体",
+      "members": [
+        {
+          "document": "Bot攻击Data",
+          "example": "{}",
+          "member": "BotLogData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1：失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBotManagedRulesRequest": {
       "document": "DescribeBotManagedRules请求参数结构体",
       "members": [
@@ -4054,6 +5198,654 @@
     "DescribeDDoSPolicyResponse": {
       "document": "DescribeDDoSPolicy返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackDataRequest": {
+      "document": "DescribeDDosAttackData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计指标列表",
+          "example": "[\"ddos_attackFlowBandwidth\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点id列表",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id列表",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "端口号",
+          "example": "4930",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "协议类型,tcp,udp,all",
+          "example": "icmp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "攻击类型,flood,icmpFlood......,all",
+          "example": "icmp",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "“min”",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackDataResponse": {
+      "document": "DescribeDDosAttackData返回参数结构体",
+      "members": [
+        {
+          "document": "DDos攻击数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"Key\":\"policyId1\",         \"Value\":[            ",
+          "member": "SecEntry",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackEventDetailRequest": {
+      "document": "DescribeDDosAttackEventDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "时间id",
+          "example": "16466592545378000409",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackEventDetailResponse": {
+      "document": "DescribeDDosAttackEventDetail返回参数结构体",
+      "members": [
+        {
+          "document": "DDos攻击事件详情",
+          "example": "{}",
+          "member": "DDosAttackEventDetailData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackEventRequest": {
+      "document": "DescribeDDosAttackEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id 集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型,{tcp,udp,all}",
+          "example": "tcp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "选填{Y、N},默认为Y；Y：展示，N：不展示",
+          "example": "Y",
+          "member": "string",
+          "name": "IsShowDetail",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackEventResponse": {
+      "document": "DescribeDDosAttackEvent返回参数结构体",
+      "members": [
+        {
+          "document": "DDos攻击事件数据",
+          "example": "[{}]",
+          "member": "DDosAttackEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackSourceEventRequest": {
+      "document": "DescribeDDosAttackSourceEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id 集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型,{tcp,udp,all}",
+          "example": "tcp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackSourceEventResponse": {
+      "document": "DescribeDDosAttackSourceEvent返回参数结构体",
+      "members": [
+        {
+          "document": "DDos攻击源数据",
+          "example": "[{}]",
+          "member": "DDosAttackSourceEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackTopDataRequest": {
+      "document": "DescribeDDosAttackTopData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤指标",
+          "example": "ddos_attackSource_region",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询前多少名,传值为0 全量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id 集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "端口号",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "协议类型,tcp,udp,all",
+          "example": "udp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "攻击类型,flood,icmpFlood......,all",
+          "example": "icmp",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosAttackTopDataResponse": {
+      "document": "DescribeDDosAttackTopData返回参数结构体",
+      "members": [
+        {
+          "document": "topn数据",
+          "example": "[{}]",
+          "member": "TopNEntry",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosMajorAttackEventRequest": {
+      "document": "DescribeDDosMajorAttackEvent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ddos 策略组id集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型，{tcp,udp,all}",
+          "example": "tcp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDosMajorAttackEventResponse": {
+      "document": "DescribeDDosMajorAttackEvent返回参数结构体",
+      "members": [
+        {
+          "document": "DDos查询主攻击事件",
+          "example": "[{}]",
+          "member": "DDosMajorAttackEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4990,6 +6782,114 @@
       ],
       "type": "object"
     },
+    "DescribeOverviewL7DataRequest": {
+      "document": "DescribeOverviewL7Data请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339格式，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339格式，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标列表",
+          "example": "无",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day, week}",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ZoneId列表，仅在zone/domain维度下查询时该参数有效",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Domain列表，仅在domain维度下查询时该参数有效",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型， 选填{http,http2,https,all}",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewL7DataResponse": {
+      "document": "DescribeOverviewL7Data返回参数结构体",
+      "members": [
+        {
+          "document": "查询维度",
+          "example": "user",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间间隔",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细数据",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrefetchTasksRequest": {
       "document": "DescribePrefetchTasks请求参数结构体",
       "members": [
@@ -5306,6 +7206,15 @@
           "value_allowed_null": false
         },
         {
+          "document": "返回总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5554,6 +7463,1149 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL4DataRequest": {
+      "document": "DescribeTimingL4Data请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339格式，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339格式，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "指标列表",
+          "example": "无",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ZoneId列表，仅在zone/instance维度下查询时该参数有效",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "InstanceId列表，仅在Instance维度下查询时该参数有效",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型， 该字段当前无效",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day}",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则ID，仅在instance维度有效",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL4DataResponse": {
+      "document": "DescribeTimingL4Data返回参数结构体",
+      "members": [
+        {
+          "document": "查询维度",
+          "example": "user",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间间隔",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7AnalysisDataRequest": {
+      "document": "DescribeTimingL7AnalysisData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "”2020-04-20T00:00:00Z“",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时序类访问流量指标",
+          "example": "l7Flow_flow”",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day, week}",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ZoneId数组",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7AnalysisDataResponse": {
+      "document": "DescribeTimingL7AnalysisData返回参数结构体",
+      "members": [
+        {
+          "document": "详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询维度",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间间隔",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopL7AnalysisDataRequest": {
+      "document": "DescribeTopL7AnalysisData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "2020-04-20T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时序类访问流量指标",
+          "example": "l7Flow_flow",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topN,填0时返回全量数据",
+          "example": "3",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day, week}",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ZoneId数组",
+          "example": "[\"qq.com\", \"baidu.com\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopL7AnalysisDataResponse": {
+      "document": "DescribeTopL7AnalysisData返回参数结构体",
+      "members": [
+        {
+          "document": "top详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询维度",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询指标",
+          "example": "无",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesAttackEventsRequest": {
+      "document": "DescribeWebManagedRulesAttackEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id 集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型,{tcp,udp,all}",
+          "example": "[\"dloc3.huolala.cn\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "选填{Y、N},默认为Y；Y：展示，N：不展示",
+          "example": "Y",
+          "member": "string",
+          "name": "IsShowDetail",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesAttackEventsResponse": {
+      "document": "DescribeWebManagedRulesAttackEvents返回参数结构体",
+      "members": [
+        {
+          "document": "Web攻击事件数据",
+          "example": "[{}]",
+          "member": "WebEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回数据",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesDataRequest": {
+      "document": "DescribeWebManagedRulesData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计指标列表",
+          "example": "[\"attack_wafAttackFlow\",\"\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点id列表",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子域名列表",
+          "example": "[\"www.baidu.com\",\"www.google.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型",
+          "example": "http2",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "\"webshell\" : Webshell检测防护\n\"oa\" : 常见OA漏洞防护\n\"xss\" : XSS跨站脚本攻击防护\n\"xxe\" : XXE攻击防护\n\"webscan\" : 扫描器攻击漏洞防护\n\"cms\" : 常见CMS漏洞防护\n\"upload\" : 恶意文件上传攻击防护\n\"sql\" : SQL注入攻击防护\n\"cmd_inject\": 命令/代码注入攻击防护\n\"osc\" : 开源组件漏洞防护\n\"file_read\" : 任意文件读取\n\"ldap\" : LDAP注入攻击防护\n\"other\" : 其它漏洞防护\n\n\"all\":\"所有\"",
+          "example": "webshell",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "\"hour\"",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesDataResponse": {
+      "document": "DescribeWebManagedRulesData返回参数结构体",
+      "members": [
+        {
+          "document": "Web攻击日志实体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "SecEntry",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "\"hour\"",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesLogRequest": {
+      "document": "DescribeWebManagedRulesLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "2",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名集合",
+          "example": "[\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "[{\"Key\":\"test key\",\"Operator\":\"equal\",\"Value\":[\"123\",\"33\"]}]",
+          "member": "QueryCondition",
+          "name": "QueryCondition",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesLogResponse": {
+      "document": "DescribeWebManagedRulesLog返回参数结构体",
+      "members": [
+        {
+          "document": "web攻击日志data",
+          "example": "{}",
+          "member": "WebLogData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesTopDataRequest": {
+      "document": "DescribeWebManagedRulesTopData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "过滤指标",
+          "example": "ddos_attackSource_region",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询前多少名,传值为0 全量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "ddos策略组id 集合",
+          "example": "[123,456]",
+          "member": "int64",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "端口号",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "协议类型,tcp,udp,all",
+          "example": "udp",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "攻击类型,flood,icmpFlood......,all",
+          "example": "icmp",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名集合",
+          "example": "[\"baidu.com\",\"google.como\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebManagedRulesTopDataResponse": {
+      "document": "DescribeWebManagedRulesTopData返回参数结构体",
+      "members": [
+        {
+          "document": "topn数据",
+          "example": "[{}]",
+          "member": "TopNEntry",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionAttackEventsRequest": {
+      "document": "DescribeWebProtectionAttackEvents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "域名",
+          "example": "[\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionAttackEventsResponse": {
+      "document": "DescribeWebProtectionAttackEvents返回参数结构体",
+      "members": [
+        {
+          "document": "DDos攻击事件数据",
+          "example": "[{}]",
+          "member": "CCInterceptEventData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionDataRequest": {
+      "document": "DescribeWebProtectionData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "统计指标列表",
+          "example": "[\"cc_interceptNum\",\"\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "站点id列表",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "子域名列表",
+          "example": "[\"www.baidu.com\",\"www.google.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "协议类型",
+          "example": "http2",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "\"webshell\" : Webshell检测防护\n\"oa\" : 常见OA漏洞防护\n\"xss\" : XSS跨站脚本攻击防护\n\"xxe\" : XXE攻击防护\n\"webscan\" : 扫描器攻击漏洞防护\n\"cms\" : 常见CMS漏洞防护\n\"upload\" : 恶意文件上传攻击防护\n\"sql\" : SQL注入攻击防护\n\"cmd_inject\": 命令/代码注入攻击防护\n\"osc\" : 开源组件漏洞防护\n\"file_read\" : 任意文件读取\n\"ldap\" : LDAP注入攻击防护\n\"other\" : 其它漏洞防护\n\n\"all\":\"所有\"",
+          "example": "webshell",
+          "member": "string",
+          "name": "AttackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionDataResponse": {
+      "document": "DescribeWebProtectionData返回参数结构体",
+      "members": [
+        {
+          "document": "数据详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "SecEntry",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "状态，1:失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "消息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询时间粒度，可选{min,5min,hour,day}",
+          "example": "\"min\"",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionLogRequest": {
+      "document": "DescribeWebProtectionLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "起始时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "每页条数",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "当前页",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "站点集合",
+          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名集合",
+          "example": "[\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "查询条件",
+          "example": "[{\"Key\":\"test key\",\"Operator\":\"equal\",\"Value\":[\"123\",\"33\"]}]",
+          "member": "QueryCondition",
+          "name": "QueryCondition",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebProtectionLogResponse": {
+      "document": "DescribeWebProtectionLog返回参数结构体",
+      "members": [
+        {
+          "document": "限速拦截Data",
+          "example": "{}",
+          "member": "CCLogData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "状态，1：失败，0:成功",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6509,6 +9561,42 @@
         }
       ],
       "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "default": "",
+          "document": "筛选维度",
+          "example": "url",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作符",
+          "example": "notEquals",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "筛选维度值",
+          "example": "[\"www.qq.com\",\"www.baidu.com\"]",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ForceRedirect": {
       "document": "访问协议强制https跳转配置",
@@ -8988,6 +12076,42 @@
       ],
       "usage": "both"
     },
+    "QueryCondition": {
+      "document": "查询条件",
+      "members": [
+        {
+          "default": "",
+          "document": "维度",
+          "example": "查询键",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作符",
+          "example": "equals '等于',notEquals '不等于',include '包含',notInclude '不包含',startW",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维度值",
+          "example": "查询值",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "QueryString": {
       "document": "CacheKey中包含请求参数",
       "members": [
@@ -9375,6 +12499,88 @@
       ],
       "type": "object"
     },
+    "SecEntry": {
+      "document": "安全数据Entry返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "Entry的Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ddos_attackFlowBandwidth",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Entry的Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Metric\":\"cc_interceptNum\",\"Detail\":[1,2,3,4],\"Max\":123,\"Avg\":",
+          "member": "SecEntryValue",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SecEntryValue": {
+      "document": "安全数据Entry对应的值",
+      "members": [
+        {
+          "default": "",
+          "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ddos_attackFlowBandwidth",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标数据明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataItem",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Max",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平均值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.52",
+          "member": "float",
+          "name": "Avg",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数据总和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "float",
+          "name": "Sum",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SecurityConfig": {
       "document": "安全配置",
       "members": [
@@ -9747,6 +12953,228 @@
       ],
       "usage": "out"
     },
+    "TimingDataItem": {
+      "document": "统计曲线数据项",
+      "members": [
+        {
+          "default": "",
+          "document": "秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1652659200",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TimingDataRecord": {
+      "document": "L7数据分析时序数据",
+      "members": [
+        {
+          "default": "",
+          "document": "查询维度值",
+          "example": "l7Flow_flux",
+          "member": "string",
+          "name": "TypeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "详细时序数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "TimingTypeValue",
+          "name": "TypeValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TimingTypeValue": {
+      "document": "时序类型详细数据",
+      "members": [
+        {
+          "default": "",
+          "document": "数据和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "321",
+          "member": "int64",
+          "name": "Sum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "int64",
+          "name": "Max",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "平均\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "231",
+          "member": "int64",
+          "name": "Avg",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标名",
+          "example": "flow_flux",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "废弃字段，即将下线，请使用Detail字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[12,3]",
+          "member": "int64",
+          "name": "DetailData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataItem",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopDataRecord": {
+      "document": "七层数据分析类top数据",
+      "members": [
+        {
+          "default": "",
+          "document": "查询维度值",
+          "example": "\"1234\"",
+          "member": "string",
+          "name": "TypeKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "top数据排行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopDetailData",
+          "name": "DetailData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TopDetailData": {
+      "document": "用于对top数据排序的结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "字段名",
+          "example": "china",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字段值",
+          "example": "500",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopNEntry": {
+      "document": "TopN entry",
+      "members": [
+        {
+          "default": "",
+          "document": "Entry key",
+          "example": "subzoneId1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TopN数据",
+          "example": "[{}]",
+          "member": "TopNEntryValue",
+          "name": "Value",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopNEntryValue": {
+      "document": "TopN数据Entry",
+      "members": [
+        {
+          "default": "",
+          "document": "Entry的name",
+          "example": "subzoneId2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数量",
+          "example": "23",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UpstreamHttp2": {
       "document": "Http2回源配置",
       "members": [
@@ -9906,6 +13334,310 @@
         }
       ],
       "usage": "both"
+    },
+    "WebAttackEvent": {
+      "document": "Web拦截事件",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.23.1",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.23.1",
+          "member": "string",
+          "name": "AttackUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击时间 单位为s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "AttackTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WebEventData": {
+      "document": "web事件数据",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击事件数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "WebAttackEvent",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WebLogData": {
+      "document": "web攻击日志Data",
+      "members": [
+        {
+          "default": "",
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "WebLogs",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "每页展示条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Pages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WebLogs": {
+      "document": "web攻击日志",
+      "members": [
+        {
+          "default": "",
+          "document": "攻击内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Attack Content\"",
+          "member": "string",
+          "name": "AttackContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "AttackIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ddos攻击",
+          "member": "string",
+          "name": "AttackType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.baidu.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "msuuid test",
+          "member": "string",
+          "name": "Msuuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "RequestMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "请求URI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/login",
+          "member": "string",
+          "name": "RequestUri",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "高危",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“17”",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP所在国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"China\"",
+          "member": "string",
+          "name": "SipCountryCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "处置方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DisposalMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "http_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "HttpLog",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "user agent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Ua",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "攻击时间，为保持统一，原参数time更名为AttackTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-01-25 00:00:00",
+          "member": "uint64",
+          "name": "AttackTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "WebSocket": {
       "document": "WebSocket配置",

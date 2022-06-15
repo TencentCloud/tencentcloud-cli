@@ -241,7 +241,7 @@
       "output": "DescribeBlackWhiteIpListResponse"
     },
     "DescribeCCLevelList": {
-      "document": "获取CC防护等级列表",
+      "document": "获取边界防护CC防护等级列表",
       "input": "DescribeCCLevelListRequest",
       "name": "获取CC防护等级列表",
       "output": "DescribeCCLevelListResponse"
@@ -273,7 +273,7 @@
     "DescribeCCTrend": {
       "document": "获取CC攻击指标数据，包括总请求峰值(QPS)和攻击请求(QPS)以及总请求次数和攻击请求次数",
       "input": "DescribeCCTrendRequest",
-      "name": "获取CC攻击指标数据",
+      "name": "获取CC攻击指标曲线",
       "output": "DescribeCCTrendResponse"
     },
     "DescribeCcBlackWhiteIpList": {
@@ -303,7 +303,7 @@
     "DescribeDDoSTrend": {
       "document": "获取DDoS攻击流量带宽和攻击包速率数据",
       "input": "DescribeDDoSTrendRequest",
-      "name": "获取DDoS攻击指标数据",
+      "name": "获取DDoS攻击指标曲线",
       "output": "DescribeDDoSTrendResponse"
     },
     "DescribeDefaultAlarmThreshold": {
@@ -963,6 +963,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源关联标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1208,6 +1218,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源关联标签",
+          "example": "null",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1392,6 +1412,16 @@
           "name": "Mask",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-11-23 14:56:59",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2518,6 +2548,15 @@
           "name": "Policy",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否为兜底频控",
+          "example": "1",
+          "member": "int64",
+          "name": "IsGlobal",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4213,7 +4252,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "分级策略列表详情",
+          "document": "分级策略列表总数",
           "example": "无",
           "member": "CCLevelPolicy",
           "name": "LevelList",
@@ -5438,6 +5477,15 @@
           "name": "FilterInstanceIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "标签搜索",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "FilterTag",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5573,6 +5621,15 @@
           "name": "FilterEnterpriseFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签搜索",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "FilterTag",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7802,6 +7859,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "www.8cname.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7810,7 +7868,8 @@
         },
         {
           "default": "",
-          "document": "协议（可取值htttps）",
+          "document": "协议（可取值https）",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -7820,6 +7879,7 @@
         {
           "default": "",
           "document": "开关状态（0：关闭，1：开启）",
+          "example": "1",
           "member": "int64",
           "name": "CCEnable",
           "required": true,
@@ -7829,6 +7889,7 @@
         {
           "default": "",
           "document": "cc防护阈值",
+          "example": "1",
           "member": "int64",
           "name": "CCThreshold",
           "required": true,
@@ -9241,6 +9302,7 @@
         {
           "default": "",
           "document": "特征过滤配置",
+          "example": "无",
           "member": "PacketFilterConfig",
           "name": "PacketFilterConfig",
           "required": true,
@@ -9250,10 +9312,21 @@
         {
           "default": "",
           "document": "特征过滤配置所属的实例",
+          "example": "无",
           "member": "InstanceRelation",
           "name": "InstanceDetailList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-11-23 14:56:59",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9775,6 +9848,58 @@
         }
       ],
       "type": "object"
+    },
+    "TagFilter": {
+      "document": "标签类型",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "232",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签键值列表",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TagInfo": {
+      "document": "标签信息，用于资源列表返回关联的标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键",
+          "example": "sdf",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签值",
+          "example": "sdfss",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WaterPrintConfig": {
       "document": "水印防护配置",

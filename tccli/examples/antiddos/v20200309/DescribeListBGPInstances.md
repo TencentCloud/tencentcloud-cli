@@ -61,6 +61,7 @@ Output:
                     "UnionPackFlag": 1,
                     "ProtectIPNumberLimit": 1,
                     "BattleEditionFlag": 0,
+                    "ElasticLimit": 1,
                     "ChannelEditionFlag": 0,
                     "EnterpriseFlag": 0
                 },
