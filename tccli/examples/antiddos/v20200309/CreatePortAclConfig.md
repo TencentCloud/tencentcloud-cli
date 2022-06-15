@@ -12,7 +12,8 @@ tccli antiddos CreatePortAclConfig --cli-unfold-argument  \
     --AclConfig.DPortEnd 65535 \
     --AclConfig.SPortStart 0 \
     --AclConfig.SPortEnd 65535 \
-    --AclConfig.Action drop
+    --AclConfig.Action drop \
+    --AclConfig.Priority 10
 ```
 
 Output: 

@@ -24,7 +24,11 @@ Output:
                 "RuntimeId": 123,
                 "CreatedAt": 1624354153,
                 "WorkerSize": 2,
-                "RunningInstanceCount": 2
+                "RunningInstanceCount": 2,
+                "CpuLimit": 2,
+                "CpuUsed": 0.055,
+                "MemoryLimit": 4096,
+                "MemoryUsed": 703.605
             }
         ]
     }

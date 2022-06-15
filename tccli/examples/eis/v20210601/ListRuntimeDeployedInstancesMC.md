@@ -21,6 +21,7 @@ Output:
         "Instances": [
             {
                 "Status": 0,
+                "ProjectType": 0,
                 "InstanceCreatedAt": 1619656971,
                 "InstanceId": 3,
                 "ProjectId": 2,

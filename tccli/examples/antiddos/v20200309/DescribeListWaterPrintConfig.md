@@ -25,13 +25,16 @@ Output:
                             "KeyVersion": "xx",
                             "KeyContent": "xx",
                             "KeyId": "xx",
+                            "KeyOpenStatus": 0,
                             "CreateTime": "2020-09-22 00:00:00"
                         }
                     ],
+                    "Verify": "xx",
                     "Listeners": [
                         {
                             "ForwardProtocol": "xx",
-                            "FrontendPort": 80
+                            "FrontendPort": 80,
+                            "FrontendPortEnd": 0
                         }
                     ],
                     "OpenStatus": 0,

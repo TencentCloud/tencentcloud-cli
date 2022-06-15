@@ -16,44 +16,45 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "53f8e307-fc36-41dd-99a4-0b8e3b3a9408",
+        "Total": 1,
         "ConfigList": [
             {
-                "PacketFilterConfig": {
-                    "Protocol": "",
-                    "SportStart": 0,
-                    "SportEnd": 0,
-                    "DportStart": 0,
-                    "DportEnd": 0,
-                    "PktlenMin": 0,
-                    "PktlenMax": 1500,
-                    "Action": "drop",
-                    "MatchBegin": "begin_l5",
-                    "MatchType": "sunday",
-                    "Str": "hello",
-                    "Depth": 20,
-                    "Offset": 0,
-                    "IsNot": 0,
-                    "MatchLogic": "and",
-                    "MatchBegin2": "begin_l5",
-                    "MatchType2": "sunday",
-                    "Str2": "world",
-                    "Depth2": 20,
-                    "Offset2": 5,
-                    "IsNot2": 0,
-                    "Id": "00e8v4zj"
-                },
                 "InstanceDetailList": [
                     {
+                        "InstanceId": "xx",
                         "EipList": [
                             "1.1.1.1"
-                        ],
-                        "InstanceId": "bgpip-0000011x"
+                        ]
                     }
-                ]
+                ],
+                "PacketFilterConfig": {
+                    "MatchType2": "xx",
+                    "MatchBegin2": "xx",
+                    "Str2": "xx",
+                    "SportEnd": 0,
+                    "IsNot": 0,
+                    "PktlenMax": 1500,
+                    "MatchLogic": "xx",
+                    "MatchBegin": "xx",
+                    "Offset": 0,
+                    "SportStart": 0,
+                    "DportStart": 0,
+                    "PktlenMin": 0,
+                    "IsNot2": 0,
+                    "Depth": 20,
+                    "Str": "xx",
+                    "Action": "xx",
+                    "Protocol": "xx",
+                    "MatchType": "xx",
+                    "DportEnd": 0,
+                    "Offset2": 5,
+                    "Depth2": 20,
+                    "Id": "xx"
+                },
+                "ModifyTime": "xx"
             }
         ],
-        "Total": 1
+        "RequestId": "xx"
     }
 }
 ```

@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRuntimeMC\n<公共请求参数>\n\n{\n    \"RuntimeId\": 12,\n    \"Zone\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtime\": {\n            \"Status\": 1,\n            \"DisplayName\": \"xx\",\n            \"Zone\": \"xx\",\n            \"Uin\": \"xx\",\n            \"WorkerReplica\": 0,\n            \"UpdatedAt\": 1624354153,\n            \"Type\": 2,\n            \"RuntimeId\": 123,\n            \"CreatedAt\": 1624354153,\n            \"WorkerSize\": 2,\n            \"RunningInstanceCount\": 3\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Runtime\": {\n            \"Status\": 1,\n            \"AutoRenewal\": true,\n            \"CpuLimit\": 0.0,\n            \"DisplayName\": \"xx\",\n            \"RunningInstanceCount\": 3,\n            \"Zone\": \"xx\",\n            \"Type\": 2,\n            \"ExpiredAt\": 0,\n            \"WorkerReplica\": 0,\n            \"MemoryLimit\": 0.0,\n            \"CpuUsed\": 0.055,\n            \"ChargeType\": 0,\n            \"UpdatedAt\": 1624354153,\n            \"ResourceLimitType\": 0,\n            \"RuntimeId\": 123,\n            \"Uin\": \"xx\",\n            \"MemoryUsed\": 703.605,\n            \"CreatedAt\": 1624354153,\n            \"WorkerSize\": 2\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取运行时详情"
       }
     ],
@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimeDeployedInstancesMC\n<公共请求参数>\n\n{\n    \"Sort\": \"xx\",\n    \"SortType\": 2,\n    \"Zone\": \"xx\",\n    \"Limit\": 20,\n    \"Offset\": 21,\n    \"RuntimeId\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": 0,\n                \"InstanceCreatedAt\": 1619656971,\n                \"InstanceId\": 3,\n                \"ProjectId\": 2,\n                \"UpdatedAt\": 1624354153,\n                \"GroupName\": \"xx\",\n                \"ProjectName\": \"xx\",\n                \"InstanceVersion\": 2,\n                \"GroupId\": 1,\n                \"CreatedAt\": 1624354153\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": 0,\n                \"ProjectType\": 0,\n                \"InstanceCreatedAt\": 1619656971,\n                \"InstanceId\": 3,\n                \"ProjectId\": 2,\n                \"UpdatedAt\": 1624354153,\n                \"GroupName\": \"xx\",\n                \"ProjectName\": \"xx\",\n                \"InstanceVersion\": 2,\n                \"GroupId\": 1,\n                \"CreatedAt\": 1624354153\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 100\n    }\n}",
         "title": "ListRuntimeDeployedInstances"
       }
     ],
@@ -36,7 +36,7 @@
       {
         "document": "返回用户的运行时列表，运行时管理主页使用，包含沙箱、共享运行时及独立运行时环境，不包含已经删除的运行时",
         "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimesMC\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtimes\": [\n            {\n                \"Status\": 0,\n                \"DisplayName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Uin\": \"xx\",\n                \"WorkerReplica\": 0,\n                \"UpdatedAt\": 1624354153,\n                \"Type\": 2,\n                \"RuntimeId\": 123,\n                \"CreatedAt\": 1624354153,\n                \"WorkerSize\": 2,\n                \"RunningInstanceCount\": 2\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Runtimes\": [\n            {\n                \"Status\": 0,\n                \"DisplayName\": \"xx\",\n                \"Zone\": \"xx\",\n                \"Uin\": \"xx\",\n                \"WorkerReplica\": 0,\n                \"UpdatedAt\": 1624354153,\n                \"Type\": 2,\n                \"RuntimeId\": 123,\n                \"CreatedAt\": 1624354153,\n                \"WorkerSize\": 2,\n                \"RunningInstanceCount\": 2,\n                \"CpuLimit\": 2,\n                \"CpuUsed\": 0.055,\n                \"MemoryLimit\": 4096,\n                \"MemoryUsed\": 703.605\n            }\n        ]\n    }\n}",
         "title": "获取运行时列表"
       }
     ]

@@ -4683,7 +4683,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4692,7 +4693,8 @@
           "member": "InstallBundle",
           "name": "InstallBundleList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4701,7 +4703,8 @@
           "member": "string",
           "name": "RemoveBundleList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

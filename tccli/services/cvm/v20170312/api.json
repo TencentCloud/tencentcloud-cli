@@ -841,7 +841,8 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -850,7 +851,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -859,7 +861,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -874,7 +877,8 @@
           "name": "DisasterRecoverGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架",
@@ -883,7 +887,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
@@ -892,7 +897,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "置放群组内可容纳的云服务器数量。",
@@ -901,7 +907,8 @@
           "name": "CvmQuotaTotal",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "置放群组内已有的云服务器数量。",
@@ -910,7 +917,8 @@
           "name": "CurrentNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "置放群组创建时间。",
@@ -919,7 +927,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1048,7 +1057,8 @@
           "member": "string",
           "name": "KeyName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1057,7 +1067,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1070,9 +1081,10 @@
           "example": "无",
           "member": "KeyPair",
           "name": "KeyPair",
-          "required": true,
+          "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1734,6 +1746,7 @@
         {
           "default": "",
           "document": "分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。每次请求允许操作的分散置放群组数量上限是100。",
+          "example": "[\"ps-58l1hu01\\r\\n\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": true,
@@ -1944,36 +1957,46 @@
       "members": [
         {
           "document": "可创建置放群组数量的上限。",
+          "example": "10",
           "member": "int64",
           "name": "GroupQuota",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前用户已经创建的置放群组数量。",
+          "example": "25",
           "member": "int64",
           "name": "CurrentNum",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "物理机类型容灾组内实例的配额数。",
+          "example": "50",
           "member": "int64",
           "name": "CvmInHostGroupQuota",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "交换机类型容灾组内实例的配额数。",
+          "example": "20",
           "member": "int64",
           "name": "CvmInSwGroupQuota",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "机架类型容灾组内实例的配额数。",
+          "example": "30",
           "member": "int64",
           "name": "CvmInRackGroupQuota",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2758,16 +2781,18 @@
           "member": "string",
           "name": "KeyIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>\n<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。",
+          "document": "过滤条件。\n<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>\n<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对过滤。tag-key使用具体的标签键进行替换。</li>\n参数不支持同时指定 `KeyIds` 和 `Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2776,7 +2801,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2785,7 +2811,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2800,7 +2827,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "密钥对详细信息列表。",
@@ -2809,7 +2837,8 @@
           "name": "KeyPairSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4443,7 +4472,8 @@
           "member": "string",
           "name": "KeyName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4452,7 +4482,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4461,7 +4492,8 @@
           "member": "string",
           "name": "PublicKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4474,9 +4506,10 @@
           "example": "skey-4e5ty7i8",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6291,74 +6324,101 @@
         {
           "default": "",
           "document": "密钥对的`ID`，是密钥对的唯一标识。",
+          "example": "skey-q29u65hu",
           "member": "string",
           "name": "KeyId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥对名称。",
+          "example": "test",
           "member": "string",
           "name": "KeyName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥对所属的项目`ID`。",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥对描述信息。",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥对的纯文本公钥。",
+          "example": "xxx",
           "member": "string",
           "name": "PublicKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。",
+          "example": "xxx",
           "member": "string",
           "name": "PrivateKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "密钥关联的实例`ID`列表。",
+          "example": "[]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "密钥关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -6890,6 +6950,7 @@
         {
           "default": "",
           "document": "分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。",
+          "example": "ps-58l1hu01",
           "member": "string",
           "name": "DisasterRecoverGroupId",
           "required": true,
@@ -6898,6 +6959,7 @@
         {
           "default": "",
           "document": "分散置放群组名称，长度1-60个字符，支持中、英文。",
+          "example": "物理机容灾组1",
           "member": "string",
           "name": "Name",
           "required": true,

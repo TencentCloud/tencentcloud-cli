@@ -234,6 +234,12 @@
       "name": "解绑工作组鉴权策略",
       "output": "DetachWorkGroupPolicyResponse"
     },
+    "ListTaskJobLogDetail": {
+      "document": "本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表",
+      "input": "ListTaskJobLogDetailRequest",
+      "name": "日志列表",
+      "output": "ListTaskJobLogDetailResponse"
+    },
     "ModifySparkApp": {
       "document": "更新spark应用",
       "input": "ModifySparkAppRequest",
@@ -2840,7 +2846,8 @@
           "member": "string",
           "name": "DatabaseName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2849,7 +2856,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2858,7 +2866,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2867,7 +2876,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2876,7 +2886,8 @@
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2885,7 +2896,8 @@
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2894,7 +2906,8 @@
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2903,16 +2916,18 @@
           "member": "string",
           "name": "Sort",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "排序字段，false：降序（默认）；true",
+          "document": "排序字段，false：降序（默认）；true：升序",
           "example": "false",
           "member": "bool",
           "name": "Asc",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2921,7 +2936,8 @@
           "member": "string",
           "name": "TableType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2930,7 +2946,8 @@
           "member": "string",
           "name": "TableFormat",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2945,7 +2962,8 @@
           "name": "TableList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例总数。",
@@ -2954,7 +2972,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3227,7 +3246,8 @@
           "member": "string",
           "name": "DatabaseName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3236,7 +3256,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3245,7 +3266,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3254,7 +3276,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3263,7 +3286,8 @@
           "member": "string",
           "name": "DatasourceConnectionName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3272,34 +3296,38 @@
           "member": "string",
           "name": "Sort",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "排序规则",
+          "document": "排序规则，true:升序；false:降序",
           "example": "false",
           "member": "bool",
           "name": "Asc",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "开始时间",
+          "document": "按视图更新时间筛选，开始时间，如2021-11-11 00:00:00",
           "example": "2021-11-11 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "结束时间",
+          "document": "按视图更新时间筛选，结束时间，如2021-11-12 00:00:00",
           "example": "2021-11-11 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3314,7 +3342,8 @@
           "name": "ViewList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例总数。",
@@ -3323,7 +3352,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3538,6 +3568,56 @@
       ],
       "usage": "in"
     },
+    "JobLogResult": {
+      "document": "日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "日志时间戳，毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1608794854001",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志topic id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-id-1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志topic name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-name-1",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志内容，json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "LogJson",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "KVPair": {
       "document": "配置格式",
       "members": [
@@ -3563,6 +3643,104 @@
         }
       ],
       "usage": "in"
+    },
+    "ListTaskJobLogDetailRequest": {
+      "document": "ListTaskJobLogDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "列表返回的Id",
+          "example": "eks-1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "开始运行时间，unix时间戳（毫秒）",
+          "example": "165234344221",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "结束运行时间，unix时间戳（毫秒）",
+          "example": "165234344221",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页大小，最大100，配合Context一起使用",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "下一次分页参数，第一次传空",
+          "example": "xx",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "ListTaskJobLogDetailResponse": {
+      "document": "ListTaskJobLogDetail返回参数结构体",
+      "members": [
+        {
+          "document": "下一次分页参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否获取完结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JobLogResult",
+          "name": "Results",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifySparkAppRequest": {
       "document": "ModifySparkApp请求参数结构体",
@@ -3699,7 +3877,7 @@
         },
         {
           "default": "",
-          "document": "是否本地上传，可去cos,lakefs",
+          "document": "jar资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalJars",
@@ -3719,7 +3897,7 @@
         },
         {
           "default": "",
-          "document": "是否本地上传，可去cos,lakefs",
+          "document": "file资源依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）",
           "example": "cos",
           "member": "string",
           "name": "IsLocalFiles",
