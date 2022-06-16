@@ -363,6 +363,8 @@ include tccli/services/tcaplusdb/v20190823/api.json
 include tccli/services/tcaplusdb/v20190823/examples.json
 include tccli/services/tcb/v20180608/api.json
 include tccli/services/tcb/v20180608/examples.json
+include tccli/services/tcbr/v20220217/api.json
+include tccli/services/tcbr/v20220217/examples.json
 include tccli/services/tcex/v20200727/api.json
 include tccli/services/tcex/v20200727/examples.json
 include tccli/services/tci/v20190318/api.json

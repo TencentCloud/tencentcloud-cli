@@ -720,11 +720,23 @@
       "name": "预热URL",
       "output": "PushUrlCacheResponse"
     },
+    "RefreshUrlCache": {
+      "document": "1. 刷新指定的 URL 列表。\n2. URL 的域名必须已在云点播中注册。\n3. 单次请求最多指定20个 URL。\n4. 默认刷新配额为每天100000个 URL。",
+      "input": "RefreshUrlCacheRequest",
+      "name": "刷新URL",
+      "output": "RefreshUrlCacheResponse"
+    },
     "ResetProcedureTemplate": {
       "document": "重新设置用户自定义任务流模板的内容。  ",
       "input": "ResetProcedureTemplateRequest",
       "name": "重设任务流模板",
       "output": "ResetProcedureTemplateResponse"
+    },
+    "RestoreMedia": {
+      "document": "当媒体文件的存储类型是归档存储或深度归档存储时，是不可访问的。如需访问，则需要调用本接口进行解冻，解冻后可访问的媒体文件是临时的，在有效期过后，则不可访问。",
+      "input": "RestoreMediaRequest",
+      "name": "解冻媒体文件",
+      "output": "RestoreMediaResponse"
     },
     "ReviewImage": {
       "document": "对点播中的图片文件发起智能识别（令人反感的信息、不安全的信息、不适宜的信息）任务。\n\n><li>图片文件大小支持：文件 < 5M；</li>\n><li>图片文件分辨率支持：建议分辨率大于256x256，否则可能会影响智能识别效果；</li>\n><li>图片文件支持格式：PNG、JPG、JPEG、BMP、GIF、WEBP格式。</li>\n",
@@ -5642,7 +5654,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -6055,6 +6067,7 @@
         {
           "default": "",
           "document": "点播会话，取申请上传接口的返回值 VodSessionKey。",
+          "example": "3KEGq9DWHl1xF819mM4jVFkGn5WON80NwN/rTrx56UoEFApIV9DQ7t5m1g4...",
           "member": "string",
           "name": "VodSessionKey",
           "required": true,
@@ -6062,7 +6075,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -6076,24 +6090,30 @@
       "members": [
         {
           "document": "媒体文件的唯一标识。",
+          "example": "24820810452266399",
           "member": "string",
           "name": "FileId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "媒体播放地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体播放地址。",
+          "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
           "member": "string",
           "name": "MediaUrl",
+          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "媒体封面地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体封面地址。",
+          "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
           "member": "string",
           "name": "CoverUrl",
+          "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6214,6 +6234,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "制作视频文件时使用的画布。",
           "example": "无",
           "member": "Canvas",
@@ -6238,15 +6267,6 @@
           "name": "SessionId",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "123",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -7376,6 +7396,7 @@
         {
           "default": "",
           "document": "父类 ID，一级分类填写 -1。",
+          "example": "-1",
           "member": "int64",
           "name": "ParentId",
           "required": true,
@@ -7384,6 +7405,7 @@
         {
           "default": "",
           "document": "分类名称，长度限制：1-64 个字符。",
+          "example": "一级分类1",
           "member": "string",
           "name": "ClassName",
           "required": true,
@@ -7391,7 +7413,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -7405,8 +7428,10 @@
       "members": [
         {
           "document": "分类 ID",
+          "example": "1",
           "member": "uint64",
           "name": "ClassId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8277,6 +8302,7 @@
         {
           "default": "",
           "document": "待开通的存储地域，必须是系统支持的地域。",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "StorageRegion",
           "required": true,
@@ -8284,7 +8310,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8357,6 +8384,15 @@
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -8447,15 +8483,6 @@
           "name": "Comment",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -8594,21 +8621,21 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "需要开启 CDN 加速的区域：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>Outside Chinese Mainland: 中国境外。</li>\n<li>Global: 全球范围。</li>\n如果没有设置 AccelerateArea， 点播会根据用户在腾讯云设置的地域信息自动开通中国境内或者中国境外的 CDN 加速。开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。",
           "example": "无",
           "member": "string",
           "name": "AccelerateArea",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -8992,6 +9019,7 @@
         {
           "default": "",
           "document": "分类 ID",
+          "example": "1",
           "member": "int64",
           "name": "ClassId",
           "required": true,
@@ -8999,7 +9027,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9178,21 +9207,21 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "指定本次需要删除的部分。默认值为 \"[]\", 表示删除媒体及其对应的全部视频处理文件。",
           "example": "无",
           "member": "MediaDeleteItem",
           "name": "DeleteParts",
           "required": false,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "1",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -9251,6 +9280,7 @@
         {
           "default": "",
           "document": "任务流名字。",
+          "example": "我的一个任务流",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9258,7 +9288,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9357,6 +9388,7 @@
         {
           "default": "",
           "document": "播放器配置名称。",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -9364,7 +9396,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9435,7 +9468,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -9759,7 +9792,8 @@
       "members": [
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -9773,8 +9807,10 @@
       "members": [
         {
           "document": "分类信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaClassInfo",
           "name": "ClassInfoSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9900,6 +9936,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "域名列表。一次最多查询20个域名的数据。默认返回所有域名叠加的用量数据。",
           "example": "无",
           "member": "string",
@@ -9942,15 +9987,6 @@
           "name": "DataInterval",
           "required": false,
           "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -9991,6 +10027,7 @@
         {
           "default": "",
           "document": "起始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -9999,6 +10036,7 @@
         {
           "default": "",
           "document": "结束日期，需大于开始日期，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-03T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -10007,6 +10045,7 @@
         {
           "default": "",
           "document": "CDN 统计数据类型，有效值：\n<li>Flux：流量，单位为 byte。</li>\n<li>Bandwidth：带宽，单位为 bps。</li>",
+          "example": "Flux",
           "member": "string",
           "name": "DataType",
           "required": true,
@@ -10014,7 +10053,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "用量数据的时间粒度，单位：分钟，取值有：\n<li>5：5 分钟粒度，返回指定查询时间内5分钟粒度的明细数据。</li>\n<li>60：小时粒度，返回指定查询时间内1小时粒度的数据。</li>\n<li>1440：天粒度，返回指定查询时间内1天粒度的数据。</li>\n默认值为1440，返回天粒度的数据。",
+          "example": "5",
           "member": "uint64",
           "name": "DataInterval",
           "required": false,
@@ -10023,18 +10072,11 @@
         {
           "default": "",
           "document": "域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。",
+          "example": "无",
           "member": "string",
           "name": "DomainNames",
           "required": false,
           "type": "list"
-        },
-        {
-          "default": "",
-          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -10044,15 +10086,19 @@
       "members": [
         {
           "document": "时间粒度，单位：分钟。",
+          "example": "1440",
           "member": "int64",
           "name": "DataInterval",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "CDN 统计数据。",
+          "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10097,6 +10143,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "分页拉取的最大返回结果数。默认值：100；最大值：1000。",
           "example": "100",
           "member": "uint64",
@@ -10110,15 +10165,6 @@
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "0",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -10268,7 +10314,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -10385,7 +10431,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -10520,7 +10566,8 @@
       "members": [
         {
           "default": "",
-          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -10534,8 +10581,10 @@
       "members": [
         {
           "document": "待进行拉取的事件通知数，为近似值，约5秒延迟。",
+          "example": "1",
           "member": "uint64",
           "name": "CountOfEventsToPull",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10724,7 +10773,7 @@
         },
         {
           "default": "",
-          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -10987,21 +11036,21 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1450001234",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "统计时间粒度，有效值：\n<li>Hour：以小时为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于1天以小时为粒度，大于等于1天则以天为粒度。",
           "example": "Day",
           "member": "string",
           "name": "Interval",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "1450001234",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -11293,6 +11342,7 @@
         {
           "default": "",
           "document": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-01T16:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -11301,6 +11351,7 @@
         {
           "default": "",
           "document": "结束日期，需大于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2018-12-03T16:00:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -11308,7 +11359,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -11322,22 +11374,28 @@
       "members": [
         {
           "document": "发起内容智能识别次数。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "内容智能识别总时长。",
+          "example": "11901",
           "member": "int64",
           "name": "TotalDuration",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "内容智能识别时长统计数据，每天一个数据。",
+          "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11517,7 +11575,8 @@
       "members": [
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1250000001",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -11531,36 +11590,64 @@
       "members": [
         {
           "document": "当前媒体总量。",
+          "example": "100",
           "member": "uint64",
           "name": "MediaCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前总存储量，单位是字节。",
+          "example": "4000000",
           "member": "uint64",
           "name": "TotalStorage",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "当前低频存储量，单位是字节。",
-          "member": "uint64",
-          "name": "InfrequentStorage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "当前标准存储量，单位是字节。",
+          "example": "2000000",
           "member": "uint64",
           "name": "StandardStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前低频存储量，单位是字节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "InfrequentStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前归档存储量，单位是字节。",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "ArchiveStorage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "当前深度归档存储量，单位是字节。",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "DeepArchiveStorage",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "各计费区域的存储用量。",
+          "example": "无",
           "member": "StorageStatData",
           "name": "StorageStat",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11596,6 +11683,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。</b>",
+          "example": "1450001234",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "统计时间粒度，有效值：\n<li>Minute：以5分钟为粒度。</li>\n<li>Day：以天为粒度。</li>\n默认按时间跨度决定，小于等于1天以5分钟为粒度，大于1天则以天为粒度。",
           "example": "Minute",
           "member": "string",
@@ -11611,15 +11707,6 @@
           "name": "StorageType",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。",
-          "example": "1450001234",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         },
         {
           "default": "",
@@ -11659,7 +11746,8 @@
       "members": [
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -11673,8 +11761,10 @@
       "members": [
         {
           "document": "存储地域信息列表。",
+          "example": "无",
           "member": "StorageRegionInfo",
           "name": "StorageRegionInfos",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12025,6 +12115,15 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "145xxx",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
           "example": "FINISH",
           "member": "string",
@@ -12085,15 +12184,6 @@
           "name": "ScrollToken",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "145xxx",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -12747,6 +12837,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "输入的视频文件信息，当 InputType 为 File 时必填。",
           "example": "无",
           "member": "EditMediaFileInfo",
@@ -12825,15 +12924,6 @@
           "name": "ExtInfo",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -13366,6 +13456,7 @@
         {
           "default": "",
           "document": "调用后端接口名称。",
+          "example": "ExampleFunc",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -13374,6 +13465,7 @@
         {
           "default": "",
           "document": "接口参数，具体参数格式调用时与后端协调。",
+          "example": "XXX",
           "member": "string",
           "name": "FunctionArg",
           "required": true,
@@ -13381,7 +13473,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -13390,6 +13492,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -13398,18 +13501,11 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -13419,8 +13515,10 @@
       "members": [
         {
           "document": "处理结果打包后的字符串，具体与后台一同协调。",
+          "example": "XXX",
           "member": "string",
           "name": "Result",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13645,6 +13743,7 @@
         {
           "default": "",
           "document": "媒体文件列表，每次最多可提交 20 条。",
+          "example": "[\"7447398156998994860\\r\\n\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -13653,6 +13752,7 @@
         {
           "default": "",
           "document": "forbid：禁播，recover：解禁。",
+          "example": "forbid",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -13660,7 +13760,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -13674,8 +13775,10 @@
       "members": [
         {
           "document": "不存在的文件 ID 列表。",
+          "example": "[]",
           "member": "string",
           "name": "NotExistFileIdSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14533,6 +14636,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "是否固化。0 不固化，1 固化。默认不固化。",
           "example": "无",
           "member": "int64",
@@ -14584,15 +14696,6 @@
           "name": "ExtInfo",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -14660,6 +14763,7 @@
         {
           "default": "",
           "document": "视频处理的任务 ID。",
+          "example": "251000333-procedure-c27bdf65ea06646171e714f25f5aac6",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -14668,6 +14772,7 @@
         {
           "default": "",
           "document": "操作类型，取值范围：\n<li>Abort：终止任务。只能终止已发起且状态为等待中（WAITING）的任务。</li>",
+          "example": "Abort",
           "member": "string",
           "name": "OperationType",
           "required": true,
@@ -14675,7 +14780,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -17791,7 +17897,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -17935,7 +18041,8 @@
       "members": [
         {
           "default": "",
-          "document": "默认的存储地域，必须是已经开通的地域」，建议改成「默认的存储地域，必须是已经开通的地域（通过 DescribeStorageRegions 接口查询）。",
+          "document": "默认的存储地域，必须是已经开通的地域（通过 DescribeStorageRegions 接口查询）。",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "StorageRegion",
           "required": true,
@@ -17943,7 +18050,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -18248,6 +18356,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "媒体文件名称，最长 64 个字符。",
           "example": "新的视频名称",
           "member": "string",
@@ -18371,15 +18488,6 @@
           "name": "ClearSubtitles",
           "required": false,
           "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -18437,7 +18545,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -18788,7 +18896,8 @@
       "members": [
         {
           "default": "",
-          "document": "子应用 ID。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -18797,6 +18906,7 @@
         {
           "default": "",
           "document": "子应用名称，长度限制：40个字符。",
+          "example": "更新子应用名",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -18805,6 +18915,7 @@
         {
           "default": "",
           "document": "子应用简介，长度限制： 300个字符。",
+          "example": "更新子应用简介",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -18830,7 +18941,8 @@
       "members": [
         {
           "default": "",
-          "document": "子应用 ID。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -18839,6 +18951,7 @@
         {
           "default": "",
           "document": "子应用状态，取值范围：\n<li>On：启用。</li>\n<li>Off：停用。</li>\n<li>Destroyed：销毁。</li>\n当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。",
+          "example": "Off",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -19125,7 +19238,7 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
@@ -19161,6 +19274,15 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "[Referer 防盗链](/document/product/266/14046)规则。",
           "example": "无",
           "member": "RefererAuthPolicy",
@@ -19176,15 +19298,6 @@
           "name": "UrlSignatureAuthPolicy",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -20888,6 +21001,7 @@
         {
           "default": "",
           "document": "媒体文件 ID。",
+          "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -20896,6 +21010,7 @@
         {
           "default": "",
           "document": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字。",
+          "example": "TranscodeAndSnapshot",
           "member": "string",
           "name": "ProcedureName",
           "required": true,
@@ -20903,7 +21018,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到10，不填代表0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -20912,6 +21037,7 @@
         {
           "default": "",
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
+          "example": "无",
           "member": "string",
           "name": "TasksNotifyMode",
           "required": false,
@@ -20920,6 +21046,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -20928,6 +21055,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -20936,18 +21064,11 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -20957,8 +21078,10 @@
       "members": [
         {
           "document": "任务 ID。",
+          "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21576,7 +21699,8 @@
       "members": [
         {
           "default": "",
-          "document": "要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。",
+          "document": "要拉取的媒体 URL，暂不支持拉取 Dash 格式（可以支持 HLS）。\n支持的扩展名详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。请确保媒体 URL 可以访问。",
+          "example": "http://www.abc.com/abc.mp4",
           "member": "string",
           "name": "MediaUrl",
           "required": true,
@@ -21584,7 +21708,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "媒体名称。",
+          "example": "无",
           "member": "string",
           "name": "MediaName",
           "required": false,
@@ -21593,6 +21727,7 @@
         {
           "default": "",
           "document": "要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。",
+          "example": "无",
           "member": "string",
           "name": "CoverUrl",
           "required": false,
@@ -21601,6 +21736,7 @@
         {
           "default": "",
           "document": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。",
+          "example": "无",
           "member": "string",
           "name": "Procedure",
           "required": false,
@@ -21609,6 +21745,7 @@
         {
           "default": "",
           "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "无",
           "member": "datetime_iso",
           "name": "ExpireTime",
           "required": false,
@@ -21617,6 +21754,7 @@
         {
           "default": "",
           "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户：\n<li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li>\n<li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
+          "example": "无",
           "member": "string",
           "name": "StorageRegion",
           "required": false,
@@ -21625,6 +21763,7 @@
         {
           "default": "",
           "document": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。",
+          "example": "无",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -21633,6 +21772,7 @@
         {
           "default": "",
           "document": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -21641,6 +21781,7 @@
         {
           "default": "",
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -21649,6 +21790,7 @@
         {
           "default": "",
           "document": "保留字段，特殊用途时使用。",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -21656,15 +21798,8 @@
         },
         {
           "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
           "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
+          "example": "无",
           "member": "string",
           "name": "SourceContext",
           "required": false,
@@ -21678,8 +21813,10 @@
       "members": [
         {
           "document": "拉取上传视频的任务 ID，可以通过该 ID 查询拉取上传任务的状态。",
+          "example": "125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21890,6 +22027,42 @@
       ],
       "usage": "both"
     },
+    "RefreshUrlCacheRequest": {
+      "document": "RefreshUrlCache请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "刷新的 URL 列表，单次最多指定20个 URL。",
+          "example": "[\"http:\\/\\/1251634155-test.vod2.myqcloud.com\\/079cf6a3vodcq12516",
+          "member": "string",
+          "name": "Urls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshUrlCacheResponse": {
+      "document": "RefreshUrlCache返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetProcedureTemplateRequest": {
       "document": "ResetProcedureTemplate请求参数结构体",
       "members": [
@@ -22011,6 +22184,60 @@
         }
       ],
       "usage": "in"
+    },
+    "RestoreMediaRequest": {
+      "document": "RestoreMedia请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "媒体文件唯一标识列表。",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "解冻出的临时媒体文件的可访问持续时长，单位为“天”。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RestoreDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "解冻模式。当媒体文件当前的存储类型为归档存储时，有以下取值：\n<li>极速模式：Expedited，解冻任务在5分钟后完成。</li>\n<li>标准模式：Standard，解冻任务在5小时后完成 。</li>\n<li>批量模式：Bulk，，解冻任务在12小时后完成。</li>\n当媒体文件的存储类型为深度归档存储时，有以下取值：\n<li>标准模式：Standard，解冻任务在24小时后完成。</li>\n<li>批量模式：Bulk，解冻任务在48小时后完成。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RestoreTier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreMediaResponse": {
+      "document": "RestoreMedia返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RestoreMediaTask": {
       "document": "取回视频任务信息",
@@ -22625,6 +22852,7 @@
         {
           "default": "",
           "document": "需要裁剪的腾讯云点播 HLS 视频 URL。",
+          "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -22632,7 +22860,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "裁剪的开始偏移时间，单位秒。默认 0，即从视频开头开始裁剪。负数表示距离视频结束多少秒开始裁剪。例如 -10 表示从倒数第 10 秒开始裁剪。",
+          "example": "2",
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
@@ -22641,6 +22879,7 @@
         {
           "default": "",
           "document": "裁剪的结束偏移时间，单位秒。默认 0，即裁剪到视频尾部。负数表示距离视频结束多少秒结束裁剪。例如 -10 表示到倒数第 10 秒结束裁剪。",
+          "example": "10",
           "member": "float",
           "name": "EndTimeOffset",
           "required": false,
@@ -22649,16 +22888,9 @@
         {
           "default": "",
           "document": "是否固化。0 不固化，1 固化。默认不固化。",
+          "example": "0",
           "member": "int64",
           "name": "IsPersistence",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -22670,22 +22902,28 @@
       "members": [
         {
           "document": "裁剪后的视频地址。",
+          "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
           "member": "string",
           "name": "Url",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "裁剪后的视频元信息。目前`Size`，`Rotate`，`VideoDuration`，`AudioDuration` 几个字段暂时缺省，没有真实数据。",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "剪辑固化后的视频的媒体文件的唯一标识。",
+          "example": "无",
           "member": "string",
           "name": "FileId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23027,6 +23265,7 @@
         {
           "default": "",
           "document": "视频的 ID。",
+          "example": "5285485487985271487",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -23035,6 +23274,7 @@
         {
           "default": "",
           "document": "视频拆条任务信息列表，最多同时支持100个拆条信息。",
+          "example": "无",
           "member": "SplitMediaTaskConfig",
           "name": "Segments",
           "required": true,
@@ -23042,7 +23282,17 @@
         },
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
           "document": "标识来源上下文，用于透传用户请求信息，在 SplitMediaComplete 回调和任务流状态变更回调将返回该字段值，最长 1000个字符。",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -23051,6 +23301,7 @@
         {
           "default": "",
           "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -23059,16 +23310,9 @@
         {
           "default": "",
           "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "无",
           "member": "int64",
           "name": "TasksPriority",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "member": "uint64",
-          "name": "SubAppId",
           "required": false,
           "type": "int"
         }
@@ -23080,8 +23324,10 @@
       "members": [
         {
           "document": "视频拆条的任务 ID，可以通过该 ID 查询拆条任务（任务类型为 SplitMedia）的状态。",
+          "example": "125xxx65-SplitMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25498,19 +25744,19 @@
         },
         {
           "default": "",
-          "document": "发布视频所对应的转码模板 ID，为0代表原始视频。",
-          "example": "10",
-          "member": "int64",
-          "name": "SourceDefinition",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "125",
+          "member": "uint64",
+          "name": "SubAppId",
           "required": false,
           "type": "int"
         },
         {
           "default": "",
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "125",
-          "member": "uint64",
-          "name": "SubAppId",
+          "document": "发布视频所对应的转码模板 ID，为0代表原始视频。",
+          "example": "10",
+          "member": "int64",
+          "name": "SourceDefinition",
           "required": false,
           "type": "int"
         }

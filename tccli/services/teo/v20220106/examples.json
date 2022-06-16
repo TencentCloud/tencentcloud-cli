@@ -414,10 +414,26 @@
         "title": "七层数据分析类时序访问流量数据"
       }
     ],
+    "DescribeTimingL7CacheData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7CacheData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricNames\": [\n        \"xx\"\n    ],\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Filters\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"xx\",\n        \"Interval\": \"xx\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"xx\",\n                \"TypeValue\": [\n                    {\n                        \"Max\": 0,\n                        \"Sum\": 0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 0,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"DetailData\": [\n                            0\n                        ],\n                        \"Avg\": 0,\n                        \"MetricName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "七层缓存分析类时序流量数据"
+      }
+    ],
     "DescribeTopL7AnalysisData": [
       {
         "document": "七层数据分析类top流量数据接口",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7AnalysisData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"xx\",\n        \"Data\": {\n            \"DetailData\": [\n                {\n                    \"Value\": 3000,\n                    \"Key\": \"xx\"\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 5000\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 8000\n                }\n            ],\n            \"TypeKey\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
+        "title": "七层数据分析类top流量数据接口"
+      }
+    ],
+    "DescribeTopL7CacheData": [
+      {
+        "document": "七层数据分析类top流量数据接口",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopL7CacheData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Interval\": \"xx\",\n    \"ZoneIds\": [\n        \"xx\"\n    ],\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Operator\": \"xx\",\n            \"Value\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"MetricName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"Type\": \"xx\",\n        \"Data\": {\n            \"DetailData\": [\n                {\n                    \"Value\": 3000,\n                    \"Key\": \"xx\"\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 5000\n                },\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": 8000\n                }\n            ],\n            \"TypeKey\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"MetricName\": \"xx\"\n    }\n}",
         "title": "七层数据分析类top流量数据接口"
       }

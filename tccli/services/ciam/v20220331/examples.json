@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateApiImportUserJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiImportUserJob\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"DataFlowUserCreateList\": [\n        {\n            \"UserName\": \"xx\",\n            \"Zone\": \"xx\",\n            \"ResidentIdentityCard\": \"xx\",\n            \"WechatOpenId\": \"xx\",\n            \"Email\": \"xx\",\n            \"CustomizationAttributes\": [\n                {\n                    \"Type\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Description\": \"xx\",\n            \"Job\": \"xx\",\n            \"Address\": \"xx\",\n            \"Nationality\": \"xx\",\n            \"Password\": \"xx\",\n            \"Nickname\": \"xx\",\n            \"QqOpenId\": \"xx\",\n            \"Name\": \"xx\",\n            \"Gender\": \"xx\",\n            \"IdentityVerificationMethod\": \"xx\",\n            \"AlipayUserId\": \"xx\",\n            \"Birthdate\": \"2020-09-22\",\n            \"PhoneNumber\": \"xx\",\n            \"UserGroup\": [\n                \"xx\"\n            ],\n            \"PasswordEncryptTypeEnum\": \"xx\",\n            \"Salt\": {\n                \"SaltLocation\": {},\n                \"SaltValue\": \"xx\"\n            },\n            \"QqUnionId\": \"xx\",\n            \"Locale\": \"xx\",\n            \"IdentityVerified\": true,\n            \"WechatUnionId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"Status\": \"xx\",\n            \"Format\": \"xx\",\n            \"ErrorDetails\": [\n                {\n                    \"UserId\": \"xx\",\n                    \"Error\": \"xx\"\n                }\n            ],\n            \"Location\": \"xx\",\n            \"CreatedDate\": 0,\n            \"FailedUsers\": [\n                {\n                    \"FailedUserIdentification\": \"xx\",\n                    \"FailedReason\": \"xx\"\n                }\n            ],\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建接口导入用户任务"
+      }
+    ],
+    "CreateFileExportUserJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileExportUserJob\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"ExportPropertyMaps\": [\n        {\n            \"ColumnName\": \"xx\",\n            \"UserPropertyCode\": \"xx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ],\n    \"Format\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"Status\": \"xx\",\n            \"Format\": \"xx\",\n            \"ErrorDetails\": [\n                {\n                    \"UserId\": \"xx\",\n                    \"Error\": \"xx\"\n                }\n            ],\n            \"Location\": \"xx\",\n            \"CreatedDate\": 0,\n            \"FailedUsers\": [\n                {\n                    \"FailedUserIdentification\": \"xx\",\n                    \"FailedReason\": \"xx\"\n                }\n            ],\n            \"Type\": \"xx\",\n            \"Id\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建文件导出用户任务"
+      }
+    ],
     "CreateUser": [
       {
         "document": "",
@@ -30,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LinkAccount\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"PrimaryUserId\": \"xx\",\n    \"UserLinkedOnAttribute\": \"xx\",\n    \"SecondaryUserId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "账号融合"
+      }
+    ],
+    "ListJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListJobs\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"Status\": \"xx\",\n                \"Format\": \"xx\",\n                \"FailedUsers\": [\n                    {\n                        \"FailedUserIdentification\": \"xx\",\n                        \"FailedReason\": \"xx\"\n                    }\n                ],\n                \"Location\": \"xx\",\n                \"Type\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询任务详情"
       }
     ],
     "ListUser": [

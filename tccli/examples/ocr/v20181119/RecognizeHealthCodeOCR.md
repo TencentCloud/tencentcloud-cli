@@ -20,6 +20,7 @@ Output:
         "TestingInterval": "xx",
         "TestingTime": "xx",
         "IDNumber": "xx",
+        "Vaccination": "xx",
         "RequestId": "210103d3-db06-4691-abe0-c0853aae606b"
     }
 }

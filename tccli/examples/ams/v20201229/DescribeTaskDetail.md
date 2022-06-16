@@ -24,7 +24,8 @@ Output:
             {
                 "Label": "Abuse",
                 "Suggestion": "Review",
-                "Score": 0
+                "Score": 0,
+                "SubLabel": ""
             }
         ],
         "InputInfo": {
@@ -45,7 +46,8 @@ Output:
                     "LanguageResults": [],
                     "Duration": "60000",
                     "Score": 0,
-                    "Extra": ""
+                    "Extra": "",
+                    "SubLabel": ""
                 },
                 "OffsetTime": "0"
             }
@@ -54,7 +56,8 @@ Output:
         "ErrorDescription": "",
         "CreatedAt": "2021-01-05T08:48:13.069Z",
         "UpdatedAt": "2021-01-05T08:49:31.421Z",
-        "RequestId": "34785328532523"
+        "RequestId": "34785328532523",
+        "Label": "Abuse"
     }
 }
 ```

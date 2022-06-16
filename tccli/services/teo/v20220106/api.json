@@ -306,11 +306,23 @@
       "name": "查询七层数据分析类时序流量数据",
       "output": "DescribeTimingL7AnalysisDataResponse"
     },
+    "DescribeTimingL7CacheData": {
+      "document": "七层查询缓存分析时序类流量数据",
+      "input": "DescribeTimingL7CacheDataRequest",
+      "name": "七层缓存分析类时序流量数据接口",
+      "output": "DescribeTimingL7CacheDataResponse"
+    },
     "DescribeTopL7AnalysisData": {
       "document": "查询top类流量数据",
       "input": "DescribeTopL7AnalysisDataRequest",
       "name": "七层数据分析类top流量数据接口",
       "output": "DescribeTopL7AnalysisDataResponse"
+    },
+    "DescribeTopL7CacheData": {
+      "document": "七层查询缓存分析top类流量数据",
+      "input": "DescribeTopL7CacheDataRequest",
+      "name": "七层缓存分析类top流量数据接口",
+      "output": "DescribeTopL7CacheDataResponse"
     },
     "DescribeWebManagedRulesAttackEvents": {
       "document": "查询Web托管攻击事件",
@@ -5347,7 +5359,7 @@
       "members": [
         {
           "default": "",
-          "document": "时间id",
+          "document": "事件id",
           "example": "16466592545378000409",
           "member": "string",
           "name": "EventId",
@@ -7690,6 +7702,105 @@
       ],
       "type": "object"
     },
+    "DescribeTimingL7CacheDataRequest": {
+      "document": "DescribeTimingL7CacheData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "”2020-04-20T00:00:00Z“",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时序类访问流量指标列表",
+          "example": "l7Flow_flow”",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day, week}",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "站点id列表",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7CacheDataResponse": {
+      "document": "DescribeTimingL7CacheData返回参数结构体",
+      "members": [
+        {
+          "document": "详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询维度",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "时间间隔",
+          "example": "无",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopL7AnalysisDataRequest": {
       "document": "DescribeTopL7AnalysisData请求参数结构体",
       "members": [
@@ -7798,6 +7909,114 @@
       ],
       "type": "object"
     },
+    "DescribeTopL7CacheDataRequest": {
+      "document": "DescribeTopL7CacheData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "2020-04-20T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "RFC3339标准，客户端时间",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "时序类访问流量指标",
+          "example": "l7Flow_flow",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "topN,填0时返回全量数据",
+          "example": "3",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "时间间隔，选填{min, 5min, hour, day, week}",
+          "example": "min",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ZoneId数组",
+          "example": "[\"qq.com\", \"baidu.com\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopL7CacheDataResponse": {
+      "document": "DescribeTopL7CacheData返回参数结构体",
+      "members": [
+        {
+          "document": "top详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopDataRecord",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "查询维度",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "查询指标",
+          "example": "无",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWebManagedRulesAttackEventsRequest": {
       "document": "DescribeWebManagedRulesAttackEvents请求参数结构体",
       "members": [
@@ -7839,7 +8058,7 @@
         },
         {
           "default": "",
-          "document": "ddos策略组id 集合",
+          "document": "ddos策略组id列表",
           "example": "[123,456]",
           "member": "int64",
           "name": "PolicyIds",
@@ -7857,7 +8076,7 @@
         },
         {
           "default": "",
-          "document": "协议类型,{tcp,udp,all}",
+          "document": "子域名列表",
           "example": "[\"dloc3.huolala.cn\"]",
           "member": "string",
           "name": "Domains",

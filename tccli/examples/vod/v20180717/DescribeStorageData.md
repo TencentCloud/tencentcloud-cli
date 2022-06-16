@@ -11,25 +11,31 @@ Output:
 ```
 {
     "Response": {
-        "MediaCount": 0,
-        "TotalStorage": 2000000,
+        "MediaCount": 100,
+        "TotalStorage": 4700000,
         "InfrequentStorage": 0,
         "StandardStorage": 2000000,
+        "ArchiveStorage": 1500000,
+        "DeepArchiveStorage": 1200000,
         "StorageStat": [
             {
                 "Area": "Chinese Mainland",
-                "TotalStorage": 1800000,
+                "TotalStorage": 3800000,
                 "InfrequentStorage": 0,
-                "StandardStorage": 1800000
+                "StandardStorage": 1800000,
+                "ArchiveStorage": 1000000,
+                "DeepArchiveStorage": 1000000
             },
             {
-                "Area": "outside Chinese Mainland",
-                "TotalStorage": 200000,
+                "Area": "Outside Chinese Mainland",
+                "TotalStorage": 900000,
                 "InfrequentStorage": 0,
-                "StandardStorage": 200000
+                "StandardStorage": 200000,
+                "ArchiveStorage": 500000,
+                "DeepArchiveStorage": 200000
             }
         ],
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287s3"
+        "RequestId": "12345678-90ab-cdef-1234-567890abcdef"
     }
 }
 ```

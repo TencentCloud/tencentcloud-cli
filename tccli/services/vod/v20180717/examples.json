@@ -19,7 +19,7 @@
     "CommitUpload": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CommitUpload\r\n&VodSessionKey=3KEGq9DWHl1xF819mM4jVFkGn5WON80NwN/rTrx56UoEFApIV9DQ7t5m1g4hASR11gKWwGxkignB3AmhKOpUnym7wyNEHOwDJPcT5fBu66iCLcW7bhyRfDSsQcVpX0Wt96RKSsZFf62jeAB+e5640U8rMPV3Rf2eR+y1AgI+EC3JZU5iZbjLX4qNVI4R&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CommitUpload\n&VodSessionKey=3KEGq9DWHl1xF819mM4jVFkGn5WON80NwN/rTrx56UoEFApIV9DQ7t5m1g4hASR11gKWwGxkignB3AmhKOpUnym7wyNEHOwDJPcT5fBu66iCLcW7bhyRfDSsQcVpX0Wt96RKSsZFf62jeAB+e5640U8rMPV3Rf2eR+y1AgI+EC3JZU5iZbjLX4qNVI4R\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FileId\": \"24820810452266399\",\n        \"MediaUrl\": \"http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4\",\n        \"CoverUrl\": \"http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg\",\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "确认上传成功例子"
       }
@@ -111,7 +111,7 @@
     "CreateClass": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateClass\r\n&ParentId=-1\r\n&ClassName=一级分类1\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateClass\n&ParentId=-1\n&ClassName=一级分类1\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClassId\": 1,\n        \"RequestId\": \"38bac707-7f64-42fa-9369-cdddcc36550d\"\n    }\n}",
         "title": "创建视频分类"
       }
@@ -231,7 +231,7 @@
     "CreateStorageRegion": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=CreateStorageRegion\n&StorageRegion=ap-chongqing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "开通重庆地域的存储"
       }
@@ -331,7 +331,7 @@
     "DeleteClass": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteClass\r\n&ClassId=1\r\n&SubAppId=1\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteClass\n&ClassId=1\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "删除视频分类"
       }
@@ -399,7 +399,7 @@
     "DeleteProcedureTemplate": [
       {
         "document": "删除名为“我的一个任务流”的任务流模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteProcedureTemplate\r\n&Name=我的一个任务流\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteProcedureTemplate\n&Name=我的一个任务流\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "删除指定名字的任务流模板"
       }
@@ -423,7 +423,7 @@
     "DeleteSuperPlayerConfig": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSuperPlayerConfig\r\n&Name=test\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DeleteSuperPlayerConfig\n&Name=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除超级播放器配置"
       }
@@ -499,7 +499,7 @@
     "DescribeAllClass": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAllClass\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAllClass\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClassInfoSet\": [\n            {\n                \"ClassId\": 0,\n                \"Level\": 0,\n                \"ClassName\": \"其他\",\n                \"ParentId\": -1,\n                \"SubClassIdSet\": null\n            },\n            {\n                \"ClassId\": 1,\n                \"Level\": 0,\n                \"ClassName\": \"自定义一级分类\",\n                \"ParentId\": -1,\n                \"SubClassIdSet\": [\n                    2,\n                    3\n                ]\n            },\n            {\n                \"ClassId\": 2,\n                \"Level\": 2,\n                \"ClassName\": \"自定义二级分类\",\n                \"ParentId\": 1,\n                \"SubClassIdSet\": [\n                    4,\n                    5\n                ]\n            },\n            {\n                \"ClassId\": 3,\n                \"Level\": 2,\n                \"ClassName\": \"自定义二级分类\",\n                \"ParentId\": 1,\n                \"SubClassIdSet\": null\n            },\n            {\n                \"ClassId\": 4,\n                \"Level\": 3,\n                \"ClassName\": \"自定义三级分类\",\n                \"ParentId\": 2,\n                \"SubClassIdSet\": null\n            },\n            {\n                \"ClassId\": 5,\n                \"Level\": 3,\n                \"ClassName\": \"自定义三级分类\",\n                \"ParentId\": 2,\n                \"SubClassIdSet\": null\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "获取视频分类层次结构"
       }
@@ -606,7 +606,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeEventsState\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CountOfEventsToPull\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\",\n        \"CountOfEventsToPull\": 1\n    }\n}",
         "title": "获取回调事件通知状态成功示例"
       }
     ],
@@ -738,7 +738,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageData\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MediaCount\": 0,\n        \"TotalStorage\": 2000000,\n        \"InfrequentStorage\": 0,\n        \"StandardStorage\": 2000000,\n        \"StorageStat\": [\n            {\n                \"Area\": \"Chinese Mainland\",\n                \"TotalStorage\": 1800000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 1800000\n            },\n            {\n                \"Area\": \"outside Chinese Mainland\",\n                \"TotalStorage\": 200000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 200000\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287s3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaCount\": 100,\n        \"TotalStorage\": 4700000,\n        \"InfrequentStorage\": 0,\n        \"StandardStorage\": 2000000,\n        \"ArchiveStorage\": 1500000,\n        \"DeepArchiveStorage\": 1200000,\n        \"StorageStat\": [\n            {\n                \"Area\": \"Chinese Mainland\",\n                \"TotalStorage\": 3800000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 1800000,\n                \"ArchiveStorage\": 1000000,\n                \"DeepArchiveStorage\": 1000000\n            },\n            {\n                \"Area\": \"Outside Chinese Mainland\",\n                \"TotalStorage\": 900000,\n                \"InfrequentStorage\": 0,\n                \"StandardStorage\": 200000,\n                \"ArchiveStorage\": 500000,\n                \"DeepArchiveStorage\": 200000\n            }\n        ],\n        \"RequestId\": \"12345678-90ab-cdef-1234-567890abcdef\"\n    }\n}",
         "title": "查询当前存储情况"
       }
     ],
@@ -753,7 +753,7 @@
     "DescribeStorageRegions": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageRegions\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeStorageRegions\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"StorageRegionInfos\": [\n            {\n                \"Region\": \"ap-chongqing\",\n                \"Description\": \"重庆\",\n                \"Status\": \"opened\",\n                \"IsDefault\": true\n            }\n        ]\n    }\n}",
         "title": "查询存储桶地域列表"
       }
@@ -911,7 +911,7 @@
     "ExecuteFunction": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ExecuteFunction\r\n&FunctionName=ExampleFunc\r\n&FunctionArg=XXX\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ExecuteFunction\n&FunctionName=ExampleFunc\n&FunctionArg=XXX\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"XXX\"\n    }\n}",
         "title": "A 客户发起定制的视频处理"
       }
@@ -919,7 +919,7 @@
     "ForbidMediaDistribution": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ForbidMediaDistribution\r\n&FileIds.0=7447398156998994860\r\n&SubAppId=1&Operation=forbid\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ForbidMediaDistribution\n&FileIds.0=7447398156998994860\n&SubAppId=1\n&Operation=forbid\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-1d4b-5594145287e1\",\n        \"NotExistFileIdSet\": []\n    }\n}",
         "title": "禁播"
       }
@@ -1033,7 +1033,7 @@
     "ModifyDefaultStorageRegion": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyDefaultStorageRegion\r\n&StorageRegion=ap-chongqing\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyDefaultStorageRegion\n&StorageRegion=ap-chongqing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "设置重庆为默认的存储桶地域"
       }
@@ -1147,7 +1147,7 @@
     "ModifySubAppIdInfo": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifySubAppIdInfo\r\n&SubAppId=1400000001\r\n&Name=更新子应用名\r\n&Description=更新子应用简介\r\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifySubAppIdInfo\n&SubAppId=1400000001\n&Name=更新子应用名\n&Description=更新子应用简介\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改子应用信息"
       }
@@ -1332,12 +1332,28 @@
         "title": "预热示例"
       }
     ],
+    "RefreshUrlCache": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=RefreshUrlCache\n&Urls.0=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/aaa.mp4\n&Urls.1=http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/bbb.mp4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "刷新示例"
+      }
+    ],
     "ResetProcedureTemplate": [
       {
         "document": "修改一个名为“我的一个任务流”的任务流模板，将任务流转码输出改成220，230，240三种格式。",
         "input": "https://vod.tencentcloudapi.com/?Action=ResetProcedureTemplate\r\n&Name=我的一个任务流&MediaProcessTask.TranscodeTaskSet.0.Definition=220\r\n&MediaProcessTask.TranscodeTaskSet.1.Definition=230\r\n&MediaProcessTask.TranscodeTaskSet.2.Definition=240\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "重设一个任务流模板的内容"
+      }
+    ],
+    "RestoreMedia": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=RestoreMedia\n&FileIds.0=5285485487985271487\n&RestoreDay=1\n&RestoreTier=Expedited\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "使用极速模式解冻媒体文件"
       }
     ],
     "ReviewImage": [

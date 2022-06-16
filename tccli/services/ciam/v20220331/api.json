@@ -1,5 +1,17 @@
 {
   "actions": {
+    "CreateApiImportUserJob": {
+      "document": "新建接口导入用户任务",
+      "input": "CreateApiImportUserJobRequest",
+      "name": "新建接口导入用户任务",
+      "output": "CreateApiImportUserJobResponse"
+    },
+    "CreateFileExportUserJob": {
+      "document": "新建文件导出用户任务",
+      "input": "CreateFileExportUserJobRequest",
+      "name": "新建文件导出用户任务",
+      "output": "CreateFileExportUserJobResponse"
+    },
     "CreateUser": {
       "document": "创建用户",
       "input": "CreateUserRequest",
@@ -23,6 +35,12 @@
       "input": "LinkAccountRequest",
       "name": "账号融合",
       "output": "LinkAccountResponse"
+    },
+    "ListJobs": {
+      "document": "查询任务详情",
+      "input": "ListJobsRequest",
+      "name": "查询任务详情",
+      "output": "ListJobsResponse"
     },
     "ListUser": {
       "document": "查询用户列表",
@@ -68,6 +86,114 @@
     "serviceShortName": "ciam"
   },
   "objects": {
+    "CreateApiImportUserJobRequest": {
+      "document": "CreateApiImportUserJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导入的用户数据",
+          "example": "xxx",
+          "member": "ImportUser",
+          "name": "DataFlowUserCreateList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiImportUserJobResponse": {
+      "document": "CreateApiImportUserJob返回参数结构体",
+      "members": [
+        {
+          "document": "数据流任务",
+          "example": "无",
+          "member": "Job",
+          "name": "Job",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileExportUserJobRequest": {
+      "document": "CreateFileExportUserJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "导出的数据类型\n\n<li> **JSON** </li>  JSON\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values",
+          "example": "xxx",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Key可选值为condition、userGroupId\n\n<li> **condition** </li>\tValues = 查询条件，用户ID，用户名称，手机或邮箱\n<li> **userGroupId** </li>\tValues = 用户组ID",
+          "example": "xxx",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "导出用户包含的属性和映射名称，为空时包含所有的属性",
+          "example": "xxx",
+          "member": "ExportPropertyMap",
+          "name": "ExportPropertyMaps",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileExportUserJobResponse": {
+      "document": "CreateFileExportUserJob返回参数结构体",
+      "members": [
+        {
+          "document": "数据流任务",
+          "example": "无",
+          "member": "Job",
+          "name": "Job",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserRequest": {
       "document": "CreateUser请求参数结构体",
       "members": [
@@ -266,6 +392,84 @@
       ],
       "type": "object"
     },
+    "ErrorDetails": {
+      "document": "失败详情",
+      "members": [
+        {
+          "default": "",
+          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "xxx",
+          "member": "string",
+          "name": "Error",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExportPropertyMap": {
+      "document": "导出属性映射",
+      "members": [
+        {
+          "default": "",
+          "document": "用户属性code",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserPropertyCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户属性映射名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "ColumnName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FailedUsers": {
+      "document": "失败的用户",
+      "members": [
+        {
+          "default": "",
+          "document": "失败用户标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FailedUserIdentification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "导入的用户失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FailedReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "查询条件",
       "members": [
@@ -302,6 +506,358 @@
       ],
       "usage": "in"
     },
+    "ImportUser": {
+      "document": "导入用户信息\n1、UserName，PhoneNumber ，Email ，WechatOpenId ，WechatUnionId ，AlipayUserId ，QqOpenId ，QqUnionId 八个属性中，导入时必须包含其中一个属性并遵守初始化自定义属性的正则表达式规则。UserName，PhoneNumber，Email的正则表达式在控制台的自定义属性中可以查询到。\n2、对于密码的导入，导入的密码支持明文导入，MD5密文导入，SHA1密文导入，BCRYPT密文导入 ，这个需要在PasswordEncryptTypeEnum 字段中指定。\n3、IdentityVerified，IdentityVerificationMethod 支持导入，\nIdentityVerified 为true，IdentityVerificationMethod必传；\nIdentityVerificationMethod 为nameAndIdCard，Name,ResidentIdentityCard必传\nIdentityVerificationMethod 为nameIdCardAndPhone，Name,PhoneNumber,ResidentIdentityCard必传;",
+      "members": [
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "xxx",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "邮箱",
+          "example": "xxx",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "身份证号",
+          "example": "xxx",
+          "member": "string",
+          "name": "ResidentIdentityCard",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "昵称",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "UserGroup",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QQ qqOpenId",
+          "example": "xxx",
+          "member": "string",
+          "name": "QqOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "QQ qqUnionId",
+          "example": "xxx",
+          "member": "string",
+          "name": "QqUnionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信wechatOpenId",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信wechatUnionId",
+          "example": "xxx",
+          "member": "string",
+          "name": "WechatUnionId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "支付宝alipayUserId",
+          "example": "xxx",
+          "member": "string",
+          "name": "AlipayUserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "生日",
+          "example": "xxx",
+          "member": "date",
+          "name": "Birthdate",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "姓名",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "坐标",
+          "example": "xxx",
+          "member": "string",
+          "name": "Locale",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "性别（MALE;FEMALE;UNKNOWN）",
+          "example": "xxx",
+          "member": "string",
+          "name": "Gender",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实名核验方式",
+          "example": "xxx",
+          "member": "string",
+          "name": "IdentityVerificationMethod",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否已实名核验",
+          "example": "xxx",
+          "member": "bool",
+          "name": "IdentityVerified",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作",
+          "example": "xxx",
+          "member": "string",
+          "name": "Job",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家",
+          "example": "xxx",
+          "member": "string",
+          "name": "Nationality",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时区",
+          "example": "xxx",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码密文",
+          "example": "xxx",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义属性",
+          "example": "无",
+          "member": "MemberMap",
+          "name": "CustomizationAttributes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码盐",
+          "example": "无",
+          "member": "Salt",
+          "name": "Salt",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "密码加密方式（SHA1;BCRYPT）",
+          "example": "xxx",
+          "member": "string",
+          "name": "PasswordEncryptTypeEnum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Job": {
+      "document": "任务详情",
+      "members": [
+        {
+          "default": "",
+          "document": "任务ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务状态\n\n<li> **PENDING** </li>  待执行\n<li> **PROCESSING** </li>  执行中\n<li> **COMPLETED** </li>  完成\n<li> **FAILED** </li>  失败",
+          "example": "xxx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务类型\n\n<li> **IMPORT_USER** </li>  用户导入\n<li> **EXPORT_USER** </li>  用户导出",
+          "example": "xxx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务创建时间",
+          "example": "10",
+          "member": "int64",
+          "name": "CreatedDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务的数据类型\n\n<li> **JSON** </li>  JSON\n<li> **NDJSON** </li>  New-line Delimited JSON\n<li> **CSV** </li>  Comma-Separated Values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Format",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结果下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ErrorDetails",
+          "name": "ErrorDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "失败的用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "FailedUsers",
+          "name": "FailedUsers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LinkAccountRequest": {
       "document": "LinkAccount请求参数结构体",
       "members": [
@@ -334,7 +890,7 @@
         },
         {
           "default": "",
-          "document": "融合属性(PHONENUMBER,EMAIL)",
+          "document": "融合属性\n\n<li> **PHONENUMBER** </li>\t  手机号码\n<li> **EMAIL** </li>  邮箱",
           "example": "xxx",
           "member": "string",
           "name": "UserLinkedOnAttribute",
@@ -347,6 +903,51 @@
     "LinkAccountResponse": {
       "document": "LinkAccount返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListJobsRequest": {
+      "document": "ListJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户目录ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务ID列表，为空时返回全部任务",
+          "example": "[xxx]",
+          "member": "string",
+          "name": "JobIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListJobsResponse": {
+      "document": "ListJobs返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Job",
+          "name": "JobSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -370,7 +971,7 @@
         },
         {
           "default": "",
-          "document": "查询的属性（支持phoneNumber，email）",
+          "document": "查询的属性\n\n<li> **phoneNumber** </li>\t  手机号码\n<li> **email** </li>  邮箱",
           "example": "xxx",
           "member": "string",
           "name": "PropertyCode",
@@ -589,6 +1190,37 @@
       ],
       "type": "object"
     },
+    "Salt": {
+      "document": "密码盐",
+      "members": [
+        {
+          "default": "",
+          "document": "盐值",
+          "example": "xxx",
+          "member": "string",
+          "name": "SaltValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "盐值位置",
+          "example": "无",
+          "member": "SaltLocation",
+          "name": "SaltLocation",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SaltLocation": {
+      "document": "盐位",
+      "members": [],
+      "usage": "in"
+    },
     "SetPasswordRequest": {
       "document": "SetPassword请求参数结构体",
       "members": [
@@ -774,7 +1406,7 @@
         },
         {
           "default": "",
-          "document": "NORMAL（正常）,LOCK（锁定）,FREEZE（冻结）,请传英文大写字母",
+          "document": "用户状态\n\n<li> **NORMAL** </li>\t  正常\n<li> **LOCK** </li>  锁定\n<li> **FREEZE** </li>\t  冻结",
           "example": "xxx",
           "member": "string",
           "name": "Status",
