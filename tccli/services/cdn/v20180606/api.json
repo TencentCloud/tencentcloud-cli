@@ -8598,7 +8598,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -8607,7 +8608,8 @@
           "member": "string",
           "name": "ReferenceDomain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
