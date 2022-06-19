@@ -57,6 +57,7 @@ Output:
                 "PackageTypeName": "TrustAsia TLS RSA CA",
                 "VulnerabilityStatus": "INACTIVE",
                 "Deployable": true,
+                "IsIgnore": true,
                 "Tags": [
                     {
                         "TagKey": "testtag",
@@ -122,6 +123,7 @@ Output:
                 "IsVulnerability": false,
                 "RenewAble": false,
                 "Deployable": true,
+                "IsIgnore": false,
                 "ProjectInfo": {
                     "ProjectId": "0",
                     "OwnerUin": 0,

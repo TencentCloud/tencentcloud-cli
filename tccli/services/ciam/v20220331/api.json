@@ -1218,7 +1218,44 @@
     },
     "SaltLocation": {
       "document": "盐位",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "密码加盐的类型（HEAD，TAIL，OTHER）",
+          "example": "xxx",
+          "member": "string",
+          "name": "SaltLocationTypeEnum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "加盐规则",
+          "example": "xxx",
+          "member": "SaltLocationRule",
+          "name": "SaltLocationRule",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "SaltLocationRule": {
+      "document": "盐位规则",
+      "members": [
+        {
+          "default": "",
+          "document": "表达式",
+          "example": "xxx",
+          "member": "string",
+          "name": "Regex",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "in"
     },
     "SetPasswordRequest": {

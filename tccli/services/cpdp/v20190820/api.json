@@ -3229,6 +3229,15 @@
           "name": "ChannelOrderId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10421,6 +10430,15 @@
           "name": "PaymentMethod",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11222,6 +11240,15 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string"
         }
@@ -24977,6 +25004,15 @@
           "name": "ChannelAccountBookId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25423,6 +25459,15 @@
           "example": "无",
           "member": "string",
           "name": "ChannelApplyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string"
         }

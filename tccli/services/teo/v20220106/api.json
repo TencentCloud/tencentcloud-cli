@@ -7752,7 +7752,7 @@
         },
         {
           "default": "",
-          "document": "筛选条件",
+          "document": "筛选条件，筛选EO/源站响应如下：\nEO响应：{Key: \"cacheType\", Value: [\"hit\"], Operator: \"equals\"}；\n源站响应：{Key: \"cacheType\", Value: [\"miss\", \"dynamic\"], Operator: \"equals\"}",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

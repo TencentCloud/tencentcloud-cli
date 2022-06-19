@@ -78,6 +78,12 @@
       "name": "获取域名别名列表",
       "output": "DescribeDomainAliasListResponse"
     },
+    "DescribeDomainAnalytics": {
+      "document": "统计各个域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况",
+      "input": "DescribeDomainAnalyticsRequest",
+      "name": "域名解析量统计",
+      "output": "DescribeDomainAnalyticsResponse"
+    },
     "DescribeDomainList": {
       "document": "获取域名列表",
       "input": "DescribeDomainListRequest",
@@ -125,6 +131,12 @@
       "input": "DescribeRecordTypeRequest",
       "name": "获取等级允许的记录类型",
       "output": "DescribeRecordTypeResponse"
+    },
+    "DescribeSubdomainAnalytics": {
+      "document": "统计子域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况。仅付费套餐域名可用。",
+      "input": "DescribeSubdomainAnalyticsRequest",
+      "name": "子域名解析量统计",
+      "output": "DescribeSubdomainAnalyticsResponse"
     },
     "DescribeUserDetail": {
       "document": "获取帐户信息",
@@ -1563,6 +1575,96 @@
       ],
       "type": "object"
     },
+    "DescribeDomainAnalyticsRequest": {
+      "document": "DescribeDomainAnalytics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询解析量的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的开始时间，格式：YYYY-MM-DD",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的结束时间，格式：YYYY-MM-DD",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DnsFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "1111",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAnalyticsResponse": {
+      "document": "DescribeDomainAnalytics返回参数结构体",
+      "members": [
+        {
+          "document": "当前统计维度解析量小计",
+          "example": "无",
+          "member": "DomainAnalyticsDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名解析量统计查询信息",
+          "example": "无",
+          "member": "DomainAnalyticsInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "域名别名解析量统计信息",
+          "example": "无",
+          "member": "DomainAliasAnalyticsItem",
+          "name": "AliasData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainListRequest": {
       "document": "DescribeDomainList请求参数结构体",
       "members": [
@@ -2166,6 +2268,105 @@
       ],
       "type": "object"
     },
+    "DescribeSubdomainAnalyticsRequest": {
+      "document": "DescribeSubdomainAnalytics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "要查询解析量的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的开始时间，格式：YYYY-MM-DD",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "查询的结束时间，格式：YYYY-MM-DD",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要查询解析量的子域名",
+          "example": "www",
+          "member": "string",
+          "name": "Subdomain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DnsFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "example": "1111",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubdomainAnalyticsResponse": {
+      "document": "DescribeSubdomainAnalytics返回参数结构体",
+      "members": [
+        {
+          "document": "当前统计维度解析量小计",
+          "example": "无",
+          "member": "DomainAnalyticsDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子域名解析量统计查询信息",
+          "example": "无",
+          "member": "SubdomainAnalyticsInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子域名别名解析量统计信息",
+          "example": "无",
+          "member": "SubdomainAliasAnalyticsItem",
+          "name": "AliasData",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserDetailRequest": {
       "document": "DescribeUserDetail请求参数结构体",
       "members": [],
@@ -2192,6 +2393,32 @@
       ],
       "type": "object"
     },
+    "DomainAliasAnalyticsItem": {
+      "document": "域名别名解析量统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "域名解析量统计查询信息",
+          "example": "无",
+          "member": "DomainAnalyticsInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计维度解析量小计",
+          "example": "无",
+          "member": "DomainAnalyticsDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DomainAliasInfo": {
       "document": "域名别名信息",
       "members": [
@@ -2211,6 +2438,98 @@
           "example": "mm.com",
           "member": "string",
           "name": "DomainAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainAnalyticsDetail": {
+      "document": "当前统计维度解析量小计",
+      "members": [
+        {
+          "default": "",
+          "document": "当前统计维度解析量小计",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按天统计时，为统计日期",
+          "example": "2022-05-16",
+          "member": "string",
+          "name": "DateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HourKey",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainAnalyticsInfo": {
+      "document": "域名解析量统计查询信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DnsFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期解析量总计",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DnsTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前查询的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期开始时间",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期结束时间",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4151,6 +4470,98 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubdomainAliasAnalyticsItem": {
+      "document": "子域名别名解析量统计信息",
+      "members": [
+        {
+          "default": "",
+          "document": "子域名解析量统计查询信息",
+          "example": "无",
+          "member": "SubdomainAnalyticsInfo",
+          "name": "Info",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计维度解析量小计",
+          "example": "无",
+          "member": "DomainAnalyticsDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubdomainAnalyticsInfo": {
+      "document": "子域名解析量统计查询信息",
+      "members": [
+        {
+          "default": "",
+          "document": "DATE:按天维度统计 HOUR:按小时维度统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DnsFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期解析量总计",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DnsTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前查询的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期开始时间",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计周期结束时间",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "当前统计的子域名",
+          "example": "www",
+          "member": "string",
+          "name": "Subdomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

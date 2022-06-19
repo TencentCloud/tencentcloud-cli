@@ -580,6 +580,15 @@
           "name": "LanguageEnvironment",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报方式",
+          "example": "http",
+          "member": "string",
+          "name": "ReportMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -700,7 +709,7 @@
         },
         {
           "default": "",
-          "document": "视图名称",
+          "document": "视图名称，不可自定义输入。支持：service_metric",
           "example": "service_metric",
           "member": "string",
           "name": "ViewName",

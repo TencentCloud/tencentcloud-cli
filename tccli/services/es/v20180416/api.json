@@ -2782,6 +2782,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的配置组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EsConfigSetInfo",
+          "name": "EsConfigSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

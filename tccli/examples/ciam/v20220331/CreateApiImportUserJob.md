@@ -30,6 +30,8 @@ tccli ciam CreateApiImportUserJob --cli-unfold-argument  \
     --DataFlowUserCreateList.0.PhoneNumber xx \
     --DataFlowUserCreateList.0.UserGroup xx \
     --DataFlowUserCreateList.0.PasswordEncryptTypeEnum xx \
+    --DataFlowUserCreateList.0.Salt.SaltLocation.SaltLocationRule.Regex xx \
+    --DataFlowUserCreateList.0.Salt.SaltLocation.SaltLocationTypeEnum xx \
     --DataFlowUserCreateList.0.Salt.SaltValue xx \
     --DataFlowUserCreateList.0.QqUnionId xx \
     --DataFlowUserCreateList.0.Locale xx \
