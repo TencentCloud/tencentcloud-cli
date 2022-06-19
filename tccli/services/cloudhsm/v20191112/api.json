@@ -228,20 +228,32 @@
     },
     "DescribeSupportedHsmRequest": {
       "document": "DescribeSupportedHsm请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "Hsm类型，可选值all、virtulization、GHSM、EHSM、SHSM",
+          "example": "virtulization",
+          "member": "string",
+          "name": "HsmType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeSupportedHsmResponse": {
       "document": "DescribeSupportedHsm返回参数结构体",
       "members": [
         {
-          "document": "当前地域所支持的设备列表",
+          "document": "当前地域所支持的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeviceInfo",
           "name": "DeviceTypes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -699,6 +711,15 @@
           "name": "Manufacturer",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all",
+          "example": "virtualization",
+          "member": "string",
+          "name": "HsmType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -795,7 +816,8 @@
           "member": "int64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -804,16 +826,18 @@
           "member": "int64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "商品的时间大小",
+          "document": "商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格",
           "example": "1",
           "member": "string",
           "name": "TimeSpan",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -822,7 +846,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -831,7 +856,8 @@
           "member": "string",
           "name": "Currency",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -840,7 +866,18 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM",
+          "example": "virtualization",
+          "member": "string",
+          "name": "HsmType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -849,13 +886,14 @@
       "document": "InquiryPriceBuyVsm返回参数结构体",
       "members": [
         {
-          "document": "原始总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始总金额，浮点型参数，精确到小数点后两位，如：2000.99\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20000.0",
           "member": "float",
           "name": "TotalCost",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "购买的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -864,7 +902,8 @@
           "name": "GoodsNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "商品的时间大小\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -873,7 +912,8 @@
           "name": "TimeSpan",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "商品的时间单位\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -882,16 +922,18 @@
           "name": "TimeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "document": "应付总金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应付总金额，浮点型参数，精确到小数点后两位，如：2000.99\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20000.0",
           "member": "float",
           "name": "OriginalCost",
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

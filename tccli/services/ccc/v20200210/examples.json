@@ -16,6 +16,14 @@
         "title": "创建任务"
       }
     ],
+    "CreateCCCSkillGroup": [
+      {
+        "document": "",
+        "input": "https://ccc.tencentcloudapi.com/?Action=CreateCCCSkillGroup\n&SdkAppId=1400000000\n&SkillGroupName=“test”\n&SkillGroupType=0\n&MaxConcurrency=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"SkillGroupId\": 602\n    }\n}",
+        "title": "创建技能组实例"
+      }
+    ],
     "CreateCallOutSession": [
       {
         "document": "在不加载前端 SDK 的场景下，可以通过在后台触发此接口进行外呼，当前只支持通过手机端回拨外呼（先拨通客服手机），并且确认已经申请并通过添加外呼白名单。",

@@ -24396,7 +24396,8 @@
           "name": "EventId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24406,7 +24407,8 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24416,7 +24418,8 @@
           "name": "LastTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24426,7 +24429,8 @@
           "name": "Level",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24436,7 +24440,8 @@
           "name": "Quuid",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24446,7 +24451,8 @@
           "name": "Uuid",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24456,7 +24462,8 @@
           "name": "HostIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24466,7 +24473,8 @@
           "name": "AliasName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24476,7 +24484,8 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24486,17 +24495,19 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "版本信息 0=普通版本 1=专业版 2=旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "HostVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24506,7 +24517,8 @@
           "name": "IsSupportAutoFix",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -24516,7 +24528,30 @@
           "name": "FixStatusMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "首次发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-24 16:37:57",
+          "member": "string",
+          "name": "FirstDiscoveryTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "实例状态：\"PENDING\"-创建中 \"LAUNCH_FAILED\"-创建失败 \"RUNNING\"-运行中 \"STOPPED\"-关机 \"STARTING\"-表示开机中 \"STOPPING\"-表示关机中 \"REBOOTING\"-重启中 \"SHUTDOWN\"-表示停止待销毁 \"TERMINATING\"-表示销毁中 \"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

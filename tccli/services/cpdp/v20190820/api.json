@@ -222,6 +222,12 @@
       "name": "智慧零售-商户注册",
       "output": "CreateMerchantResponse"
     },
+    "CreateOnlineOpenBankSingleSubMerchant": {
+      "document": "云企付-渠道子商户入驻。调用此接口之前，必须先调用创建子商户，拿到渠道子商户ID。",
+      "input": "CreateOnlineOpenBankSingleSubMerchantRequest",
+      "name": "云企付-渠道子商户入驻",
+      "output": "CreateOnlineOpenBankSingleSubMerchantResponse"
+    },
     "CreateOpenBankExternalSubMerchantAccountBook": {
       "document": "第三方子商户电子记账本创建接口",
       "input": "CreateOpenBankExternalSubMerchantAccountBookRequest",
@@ -251,6 +257,12 @@
       "input": "CreateOpenBankRechargeOrderRequest",
       "name": "云企付-创建充值订单",
       "output": "CreateOpenBankRechargeOrderResponse"
+    },
+    "CreateOpenBankSingleSubMerchant": {
+      "document": "云企付-子商户创建",
+      "input": "CreateOpenBankSingleSubMerchantRequest",
+      "name": "云企付-子商户创建",
+      "output": "CreateOpenBankSingleSubMerchantResponse"
     },
     "CreateOrder": {
       "document": "云鉴-消费订单发起的接口",
@@ -3241,6 +3253,16 @@
           "member": "string",
           "name": "ChannelOrderId",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
           "type": "string",
           "visibility": 1
         }
@@ -10420,6 +10442,134 @@
       ],
       "usage": "out"
     },
+    "CreateOnlineOpenBankSingleSubMerchantRequest": {
+      "document": "CreateOnlineOpenBankSingleSubMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "外部进件序列号。",
+          "example": "无",
+          "member": "string",
+          "name": "OutRegistrationNo",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "渠道商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "渠道子商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "渠道名称。详见附录-枚举类型-ChannelName。",
+          "example": "TENPAY",
+          "member": "string",
+          "name": "ChannelName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "支付方式。详见附录-枚举类型-PaymentMethod。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentMethod",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "第三方子商户进件信息，为JSON格式字符串。详情见附录-复杂类型。",
+          "example": "无",
+          "member": "string",
+          "name": "ExternalSubMerchantRegistrationData",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "通知地址。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOnlineOpenBankSingleSubMerchantResponse": {
+      "document": "CreateOnlineOpenBankSingleSubMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。\n__SUCCESS__: 成功\n__其他__: 见附录-错误码表",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateOpenBankExternalSubMerchantRegistrationResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOpenBankExternalSubMerchantAccountBookRequest": {
       "document": "CreateOpenBankExternalSubMerchantAccountBook请求参数结构体",
       "members": [
@@ -10470,6 +10620,16 @@
           "member": "string",
           "name": "PaymentMethod",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
           "type": "string",
           "visibility": 1
         }
@@ -11338,6 +11498,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11383,6 +11553,141 @@
         }
       ],
       "type": "object"
+    },
+    "CreateOpenBankSingleSubMerchantRequest": {
+      "document": "CreateOpenBankSingleSubMerchant请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道商户ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelMerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "外部子商户ID,平台侧商户唯一ID。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "外部子商户名称。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "外部子商户简称。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantShortName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "外部子商户描述。",
+          "example": "无",
+          "member": "string",
+          "name": "OutSubMerchantDescription",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "管理员ID。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOpenBankSingleSubMerchantResponse": {
+      "document": "CreateOpenBankSingleSubMerchant返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。\n__SUCCESS__: 成功\n__其他__: 见附录-错误码表",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息。",
+          "example": "成功",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateOpenBankSubMerchantResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOpenBankSubMerchantResult": {
+      "document": "创建子商户返回值",
+      "members": [
+        {
+          "default": "",
+          "document": "渠道子商户ID。",
+          "example": "CM8476672623",
+          "member": "string",
+          "name": "ChannelSubMerchantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "CreateOrderRequest": {
       "document": "CreateOrder请求参数结构体",
@@ -25239,6 +25544,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -25708,6 +26023,16 @@
           "example": "无",
           "member": "string",
           "name": "ChannelApplyId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型。\n__release__:生产环境\n__sandbox__:沙箱环境\n_不填默认为生产环境_",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string",
           "visibility": 1

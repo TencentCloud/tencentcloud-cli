@@ -1793,6 +1793,54 @@ def doQueryInvoice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateOnlineOpenBankSingleSubMerchant(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateOnlineOpenBankSingleSubMerchantRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateOnlineOpenBankSingleSubMerchant(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doQueryFlexPayeeInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2177,7 +2225,7 @@ def doQueryFlexPaymentOrderList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doQueryFlexPayeeAccountInfo(args, parsed_globals):
+def doCreateOpenBankSingleSubMerchant(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2202,11 +2250,11 @@ def doQueryFlexPayeeAccountInfo(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryFlexPayeeAccountInfoRequest()
+    model = models.CreateOpenBankSingleSubMerchantRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.QueryFlexPayeeAccountInfo(model)
+        rsp = client.CreateOpenBankSingleSubMerchant(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2849,7 +2897,7 @@ def doCreateCloudSubMerchant(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteAgentTaxPaymentInfo(args, parsed_globals):
+def doCloseCloudOrder(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2874,11 +2922,11 @@ def doDeleteAgentTaxPaymentInfo(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteAgentTaxPaymentInfoRequest()
+    model = models.CloseCloudOrderRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteAgentTaxPaymentInfo(model)
+        rsp = client.CloseCloudOrder(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3089,7 +3137,7 @@ def doGetPayRollAuthList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRegisterBehavior(args, parsed_globals):
+def doQueryFlexPayeeAccountInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3114,11 +3162,11 @@ def doRegisterBehavior(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RegisterBehaviorRequest()
+    model = models.QueryFlexPayeeAccountInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RegisterBehavior(model)
+        rsp = client.QueryFlexPayeeAccountInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -7217,6 +7265,54 @@ def doGetDistributeBillDownloadUrl(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRegisterBehavior(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterBehaviorRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RegisterBehavior(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateCustAcctId(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -9041,7 +9137,7 @@ def doQueryReconciliationDocument(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCloseCloudOrder(args, parsed_globals):
+def doDeleteAgentTaxPaymentInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9066,11 +9162,11 @@ def doCloseCloudOrder(args, parsed_globals):
     client = mod.CpdpClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CloseCloudOrderRequest()
+    model = models.DeleteAgentTaxPaymentInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CloseCloudOrder(model)
+        rsp = client.DeleteAgentTaxPaymentInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9233,6 +9329,7 @@ ACTION_MAP = {
     "CreateTransferBatch": doCreateTransferBatch,
     "CreateInvoiceV2": doCreateInvoiceV2,
     "QueryInvoice": doQueryInvoice,
+    "CreateOnlineOpenBankSingleSubMerchant": doCreateOnlineOpenBankSingleSubMerchant,
     "QueryFlexPayeeInfo": doQueryFlexPayeeInfo,
     "QueryOpenBankBankBranchList": doQueryOpenBankBankBranchList,
     "QueryExchangeRate": doQueryExchangeRate,
@@ -9241,7 +9338,7 @@ ACTION_MAP = {
     "QuerySinglePaymentResult": doQuerySinglePaymentResult,
     "ApplyOpenBankOrderDetailReceipt": doApplyOpenBankOrderDetailReceipt,
     "QueryFlexPaymentOrderList": doQueryFlexPaymentOrderList,
-    "QueryFlexPayeeAccountInfo": doQueryFlexPayeeAccountInfo,
+    "CreateOpenBankSingleSubMerchant": doCreateOpenBankSingleSubMerchant,
     "DeduceQuota": doDeduceQuota,
     "UploadTaxPayment": doUploadTaxPayment,
     "CreatePayRollPreOrderWithAuth": doCreatePayRollPreOrderWithAuth,
@@ -9255,12 +9352,12 @@ ACTION_MAP = {
     "QueryContractPayWayList": doQueryContractPayWayList,
     "CreatePayRollPreOrder": doCreatePayRollPreOrder,
     "CreateCloudSubMerchant": doCreateCloudSubMerchant,
-    "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
+    "CloseCloudOrder": doCloseCloudOrder,
     "CreateAgentTaxPaymentInfos": doCreateAgentTaxPaymentInfos,
     "DeleteAgentTaxPaymentInfos": doDeleteAgentTaxPaymentInfos,
     "ContractOrder": doContractOrder,
     "GetPayRollAuthList": doGetPayRollAuthList,
-    "RegisterBehavior": doRegisterBehavior,
+    "QueryFlexPayeeAccountInfo": doQueryFlexPayeeAccountInfo,
     "QueryMerchantBalance": doQueryMerchantBalance,
     "UnifiedOrder": doUnifiedOrder,
     "UnBindAcct": doUnBindAcct,
@@ -9346,6 +9443,7 @@ ACTION_MAP = {
     "RechargeByThirdPay": doRechargeByThirdPay,
     "GetPayRollAuth": doGetPayRollAuth,
     "GetDistributeBillDownloadUrl": doGetDistributeBillDownloadUrl,
+    "RegisterBehavior": doRegisterBehavior,
     "CreateCustAcctId": doCreateCustAcctId,
     "CloseOrder": doCloseOrder,
     "QueryMerchantInfoForManagement": doQueryMerchantInfoForManagement,
@@ -9384,7 +9482,7 @@ ACTION_MAP = {
     "QueryAcctInfoList": doQueryAcctInfoList,
     "CreateOpenBankMerchant": doCreateOpenBankMerchant,
     "QueryReconciliationDocument": doQueryReconciliationDocument,
-    "CloseCloudOrder": doCloseCloudOrder,
+    "DeleteAgentTaxPaymentInfo": doDeleteAgentTaxPaymentInfo,
     "QueryExceedingInfo": doQueryExceedingInfo,
     "RefundOrder": doRefundOrder,
 

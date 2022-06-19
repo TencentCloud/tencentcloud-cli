@@ -82,7 +82,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=ApplyIpInternal\n&IpType=11\n&VpcId=1\n&UniqueVpcId=vpc-xxx\n&SubnetId=1\n&UniqueSubnetId=subnet-xxx\n&ZoneId=1\n&Subnet=172.16.0.0\n&Mask=255.255.240.0\n&Expire=0\n&Ip=1.1.1.1\n&IntIp=1231231\n&UniqueInstanceId=ins-xxxx\n&Owner=2323232\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IntGateway\": 2886729729,\n        \"Subnet\": \"172.16.0.0\",\n        \"VpcId\": 78257,\n        \"IntSubnet\": 2886729728,\n        \"UniqueVpcId\": \"vpc-jmaywf6r\",\n        \"Min\": 2886729728,\n        \"Max\": 2886733823,\n        \"Mask\": \"255.255.240.0\",\n        \"IntIp\": 2886729760,\n        \"Ip\": \"172.16.0.32\",\n        \"Gateway\": \"172.16.0.1\",\n        \"IpType\": 0,\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于从指定 VPC 中申请一个可用 IP"
       }
     ],
@@ -1478,7 +1478,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceByRealServerInternal\n&VpcId=1\n&UniqueVpcId=vpc-xxx\n&Vip=1.1.1.1\n&VirtualPort=4432\n&PrivateIp=1.1.1.1\n&PrivatePort=3232\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceSet\": [\n            {\n                \"VpcId\": 2598864,\n                \"UniqueVpcId\": \"vpc-rpufyveg\",\n                \"ToaHostIpFlag\": 0,\n                \"VpcGatewayIp\": \"9.105.119.10\",\n                \"NoSnatFlag\": 0,\n                \"LbType\": 0,\n                \"Vip\": \"169.254.0.30\",\n                \"StickyMaxCount\": 0,\n                \"VirtualPort\": 443,\n                \"StickyFlag\": 0,\n                \"VipVpcGatewayId\": \"vpcgw-7hk70tq8\",\n                \"Protocol\": \"tcp\",\n                \"BypassFlag\": 0,\n                \"ResetFlag\": 0,\n                \"HealthFlag\": 1,\n                \"Type\": 1,\n                \"SubnetRouteAlgorithm\": 0,\n                \"StickyTimeout\": 0,\n                \"VipSetId\": 0,\n                \"Business\": \"\",\n                \"GroupId\": [\n                    0\n                ],\n                \"RouteSet\": [\n                    {\n                        \"Weight\": 16,\n                        \"PrivatePort\": 443,\n                        \"ZoneId\": 0,\n                        \"UdpOption\": 0,\n                        \"HostIp\": \"0.0.0.0\",\n                        \"PrivateIp\": \"10.112.65.50\"\n                    }\n                ],\n                \"RemoteVpcId\": 0,\n                \"UniqueVpcGatewayId\": \"vpcgw-7hk70tq8\",\n                \"UniqueClassicVpcGatewayId\": \"vpcgw-7hk70tq8\",\n                \"SetId\": 0\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于获取根据rs查询规则"
       }
     ],
@@ -1486,7 +1486,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceInternal\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-e3t30r8t\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceSet\": [\n            {\n                \"IpType\": 1,\n                \"VpcGatewayIp\": \"10.0.0.1\",\n                \"VpcGatewayId\": \"vpcgw-12efr432\",\n                \"RsZoneVpcGatewayId\": 1,\n                \"VpcGatewayAttrFlag\": 1,\n                \"SetId\": 1,\n                \"Type\": 1,\n                \"SubnetRouteAlgorithm\": 1,\n                \"VpcId\": \"xx\",\n                \"VipSetId\": 1,\n                \"Business\": \"xx\",\n                \"ToaHostIpFlag\": 1,\n                \"ClassicVpcGatewayId\": \"vpcgw-12efr432\",\n                \"LbType\": 1,\n                \"SnatFlag\": 1,\n                \"StickyFlag\": 1,\n                \"VpcGatewayZoneId\": 1,\n                \"BypassFlag\": 1,\n                \"ResetFlag\": 1,\n                \"RemoteVpcId\": 1,\n                \"HealthFlag\": 1,\n                \"StickyTimeout\": 1,\n                \"RouteSet\": [\n                    {\n                        \"Weight\": 1,\n                        \"PrivateIP\": \"123.0.0.0\",\n                        \"HostIp\": \"196.0.0.1\",\n                        \"ProtocolPort\": 1,\n                        \"ForwardingMode\": 1,\n                        \"ZoneId\": 1\n                    }\n                ],\n                \"Protocol\": \"tcp\",\n                \"VipVpcGatewayId\": \"vpcgw-3rft532\",\n                \"Vip\": \"10.0.0.1\",\n                \"VirtualPort\": 1,\n                \"StickyMaxCount\": 1,\n                \"GroupId\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询接口"
       }
     ],
@@ -1592,7 +1592,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcInternal\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-p5sf61yj\n&Filters.1.Name=vpc-name\n&Filters.1.Values.0=测试dhcp\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a44afb7-0644-4ff9-9761-3502f99d3a15\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-p5sf61yj\",\n                \"VpcName\": \"测试dhcp\",\n                \"CidrBlock\": \"10.0.0.0/16\",\n                \"Ipv6CidrBlock\": \"3402:4e00:20:1200::/56\",\n                \"IsDefault\": false,\n                \"EnableMulticast\": false,\n                \"CreatedTime\": \"2018-04-25 10:26:26\",\n                \"EnableDhcp\": true,\n                \"DhcpOptionsId\": \"dopt-8g7k5qfq\",\n                \"DnsServerSet\": [\n                    \"10.0.0.1\",\n                    \"183.60.82.98\"\n                ],\n                \"DomainName\": \"aa.bb.cc\",\n                \"TagSet\": [],\n                \"AssistantCidrSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6a44afb7-0644-4ff9-9761-3502f99d3a15\"\n    }\n}",
         "title": "查询VPC列表"
       }
     ],

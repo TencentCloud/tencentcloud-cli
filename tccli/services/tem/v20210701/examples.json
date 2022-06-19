@@ -70,6 +70,14 @@
         "title": "获取应用实例列表"
       }
     ],
+    "DescribeApplicationsStatus": [
+      {
+        "document": "单环境下所有应用状态查看",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationsStatus\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Status\": \"xx\",\n                \"CurrentInstances\": 0,\n                \"LogOutputConf\": {\n                    \"ClsLogTopicId\": \"xx\",\n                    \"ClsLogsetName\": \"xx\",\n                    \"ClsLogsetId\": \"xx\",\n                    \"ClsLogTopicName\": \"xx\",\n                    \"OutputType\": \"xx\"\n                },\n                \"EnableEs\": 0,\n                \"EnvironmentId\": \"xx\",\n                \"BuildTaskId\": \"xx\",\n                \"DeployMode\": \"xx\",\n                \"VersionId\": \"xx\",\n                \"VersionName\": \"xx\",\n                \"ExpectedInstances\": 0,\n                \"ApplicationId\": \"xx\",\n                \"EnvironmentName\": \"xx\",\n                \"ApplicationName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "单环境下所有应用状态查看"
+      }
+    ],
     "DescribeDeployApplicationDetail": [
       {
         "document": "获取分批发布详情",

@@ -2586,12 +2586,273 @@
     },
     "ApplyIpInternalRequest": {
       "document": "ApplyIpInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.ipType",
+          "example": "11",
+          "member": "uint64",
+          "name": "IpType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数subnetId",
+          "example": "1",
+          "member": "int64",
+          "name": "SubnetId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一SubnetId",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.zoneId",
+          "example": "1",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "子网地址",
+          "example": "172.16.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "掩码",
+          "example": "255.255.240.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.expire",
+          "example": "0",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.intIp",
+          "example": "1231231",
+          "member": "int64",
+          "name": "IntIp",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.uniqInstanceId",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "UniqueInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "2323232",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ApplyIp.type",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "ApplyIpInternalResponse": {
       "document": "ApplyIpInternal返回参数结构体",
       "members": [
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.igw",
+          "example": "2886729729",
+          "member": "int64",
+          "name": "IntGateway",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "子网地址",
+          "example": "172.16.0.0",
+          "member": "string",
+          "name": "Subnet",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "整数vpcId",
+          "example": "78257",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.intSubnet",
+          "example": "2886729728",
+          "member": "int64",
+          "name": "IntSubnet",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.min",
+          "example": "2886729728",
+          "member": "int64",
+          "name": "Min",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.max",
+          "example": "2886733823",
+          "member": "int64",
+          "name": "Max",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "掩码",
+          "example": "255.255.240.0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.intIp",
+          "example": "2886729760",
+          "member": "int64",
+          "name": "IntIp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.ip",
+          "example": "172.16.0.32",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.gateway",
+          "example": "172.16.0.1",
+          "member": "string",
+          "name": "Gateway",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "原VPC OSS APIv2名称: ApplyIp.ipType",
+          "example": "0",
+          "member": "int64",
+          "name": "IpType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5901,7 +6162,18 @@
     },
     "CreateRouteInternalRequest": {
       "document": "CreateRouteInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddRoute.detail",
+          "example": "无",
+          "member": "VpcOssRouteInfoRequest",
+          "name": "RouteInfoRequestSet",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "CreateRouteInternalResponse": {
@@ -6171,7 +6443,18 @@
     },
     "CreateServiceInternalRequest": {
       "document": "CreateServiceInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.detail",
+          "example": "无",
+          "member": "VpcOssNewService",
+          "name": "NewServiceSet",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "CreateServiceInternalResponse": {
@@ -8214,7 +8497,18 @@
     },
     "DeleteRouteInternalRequest": {
       "document": "DeleteRouteInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.detail",
+          "example": "无",
+          "member": "VpcOssRouteInfoRequest",
+          "name": "RouteInfoRequestSet",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DeleteRouteInternalResponse": {
@@ -8358,7 +8652,18 @@
     },
     "DeleteServiceInternalRequest": {
       "document": "DeleteServiceInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.detail",
+          "example": "无",
+          "member": "VpcOssServiceRequest",
+          "name": "ServiceRequestSet",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DeleteServiceInternalResponse": {
@@ -11967,12 +12272,93 @@
     },
     "DescribeServiceByRealServerInternalRequest": {
       "document": "DescribeServiceByRealServerInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vport",
+          "example": "4432",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.pip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.privatePort",
+          "example": "3232",
+          "member": "int64",
+          "name": "PrivatePort",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DescribeServiceByRealServerInternalResponse": {
       "document": "DescribeServiceByRealServerInternal返回参数结构体",
       "members": [
+        {
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.serviceSet",
+          "example": "无",
+          "member": "VpcOssService",
+          "name": "ServiceSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11984,12 +12370,63 @@
     },
     "DescribeServiceInternalRequest": {
       "document": "DescribeServiceInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件\n<li>vip - String - （过滤条件）vip地址过滤。</li>\n<li>uniq-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpc-id - String - （过滤条件）VPC数字ID形如：123456。</li>\n<li>vport - Int - （过滤条件）按照vport端口值进行过滤。</li>\n<li>group-id - Int - （过滤条件）按照组id进行过滤。</li>\n<li>type - Int - （过滤条件）按照类型进行过滤。</li>\n<li>protocol - String - （过滤条件）按照协议类型进行过滤。</li>",
+          "example": "-",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "123456",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DescribeServiceInternalResponse": {
       "document": "DescribeServiceInternal返回参数结构体",
       "members": [
+        {
+          "document": "公共服务信息。",
+          "example": "无",
+          "member": "Service",
+          "name": "ServiceSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12544,12 +12981,73 @@
     },
     "DescribeVpcInternalRequest": {
       "document": "DescribeVpcInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "过滤条件\n<li>vpc-name - String - （过滤条件）VPC实例名称。</li>\n<li>uniq-vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpc-id - String - （过滤条件）VPC数字ID形如：123456。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "2",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "用户AppId。",
+          "example": "123456",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "DescribeVpcInternalResponse": {
       "document": "DescribeVpcInternal返回参数结构体",
       "members": [
+        {
+          "document": "符合条件的对象数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "VPC对象。",
+          "example": "无",
+          "member": "Vpc",
+          "name": "VpcSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21100,7 +21598,58 @@
     },
     "ReturnIpInternalRequest": {
       "document": "ReturnIpInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "用户AppId",
+          "example": "121212",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ReturnIp.ip",
+          "example": "Ip",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: ReturnIp.uniqInstanceId",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "UniqueInstanceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "ReturnIpInternalResponse": {
@@ -21791,6 +22340,408 @@
         }
       ],
       "usage": "in"
+    },
+    "Service": {
+      "document": "服务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "vpc id",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当vpcgw集群类型为3（按照RS可用区选择的vpcgw逻辑集群）时，标记是否按照vpcid + vip粒度的集群Id属性转发",
+          "example": "0",
+          "member": "uint64",
+          "name": "VpcGatewayAttrFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "toa中是否携带client的母机ip标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "ToaHostIpFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "经专线访问的vpcgwip",
+          "example": "10.112.98.185",
+          "member": "string",
+          "name": "VpcGatewayIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "snat标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "SnatFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否是lb规则",
+          "example": "0",
+          "member": "uint64",
+          "name": "LbType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "VIP信息",
+          "example": "172.16.48.216",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "会话保持表项最大值",
+          "example": "1",
+          "member": "uint64",
+          "name": "StickyMaxCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "会话保持标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "StickyFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "切换vpcGwIp, 按vip所在子网的zone，就近选择vpcGwIp所对应的vpcgwid",
+          "example": "vpcgw-7hk7255d",
+          "member": "string",
+          "name": "VipVpcGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Vport端口号",
+          "example": "23",
+          "member": "uint64",
+          "name": "VirtualPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "协议",
+          "example": "udp",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "bypass 标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "BypassFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "RST报文标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "ResetFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Health标识",
+          "example": "0",
+          "member": "uint64",
+          "name": "HealthFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当vpcgw集群类型为3（按照RS可用区选择的vpcgw逻辑集群）时，标记是否按照vpcid + vip粒度转发的集群Id（bVpcgwAttrFlag=1时返回集群Id否则返回0表示关闭按照集群Id转发",
+          "example": "0",
+          "member": "uint64",
+          "name": "RsZoneVpcGatewayId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "hash 算法",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubnetRouteAlgorithm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "会话保持超时时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "StickyTimeout",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "VIP集合id",
+          "example": "1",
+          "member": "uint64",
+          "name": "VipSetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "业务类型标识",
+          "example": "无",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分组id",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "远端VPCID",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteVpcId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "IP Type",
+          "example": "29",
+          "member": "uint64",
+          "name": "IpType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "经cvm访问是的vpcgw集群id",
+          "example": "vpcgw-7hk7255d",
+          "member": "string",
+          "name": "VpcGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "经classiclink访问该vip的vpcgw集群",
+          "example": "vpcgw-7hk7255d",
+          "member": "string",
+          "name": "ClassicVpcGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Set id",
+          "example": "0",
+          "member": "uint64",
+          "name": "SetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当vpcgw集群类型为3（按照RS可用区选择的vpcgw逻辑集群）时，用来返回rs的可用区",
+          "example": "0",
+          "member": "uint64",
+          "name": "VpcGatewayZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "路由信息集合",
+          "example": "无",
+          "member": "ServiceRoute",
+          "name": "RouteSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Vpc数字Id",
+          "example": "122211",
+          "member": "uint64",
+          "name": "VpcNumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceRoute": {
+      "document": "服务路由信息",
+      "members": [
+        {
+          "default": "",
+          "document": "权重",
+          "example": "12",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "协议端口号",
+          "example": "21",
+          "member": "uint64",
+          "name": "ProtocolPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区ID",
+          "example": "10002",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机 ip",
+          "example": "193.0.0.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内网IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "PrivateIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Forwarding模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "ForwardingMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ServiceTemplate": {
       "document": "协议端口模板",
@@ -22823,7 +23774,18 @@
     },
     "UpdateRouteWeightInternalRequest": {
       "document": "UpdateRouteWeightInternal请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.detail",
+          "example": "无",
+          "member": "VpcOssRouteWeightRequest",
+          "name": "RouteWeightRequestSet",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "UpdateRouteWeightInternalResponse": {
@@ -22983,6 +23945,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "vpc数字Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18293",
+          "member": "uint64",
+          "name": "VpcNumId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -23108,6 +24081,1055 @@
         }
       ],
       "usage": "out"
+    },
+    "VpcOssNewService": {
+      "document": "复杂类型: VpcOssNewService",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.type",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.vport",
+          "example": "22",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.vip",
+          "example": "172.16.0.18",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.remoteVpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "RemoteVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.uniqVpcgwId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqueVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.uniqClassicVpcgwId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqueClassicVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.uniqVpcGwIpVpcgwId",
+          "example": "xxx",
+          "member": "string",
+          "name": "VipVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.vpcGwIp",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "VpcGatewayIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.vpcGwType",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcGatewayType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.vpcgwZoneId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcGatewayZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.bVpcgwAttrFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "VpcGatewayAttrFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.subnetRouteAlgorithm",
+          "example": "0",
+          "member": "int64",
+          "name": "SubnetRouteAlgorithm",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.noSnatFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "NoSnatFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.stickyFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.stickyTimeout",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.stickyMaxCount",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyMaxCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.lbType",
+          "example": "0",
+          "member": "int64",
+          "name": "LbType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.rstFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "ResetFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.bypassFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "BypassFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.business",
+          "example": "xxx",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.routeGroupFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "RouteGroupFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.routeGroupId",
+          "example": "1",
+          "member": "int64",
+          "name": "RouteGroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.uniqRouteGroupId",
+          "example": "xxx",
+          "member": "string",
+          "name": "UniqueRouteGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: AddService.route",
+          "example": "无",
+          "member": "VpcOssRouteForDeleteRouteInternal",
+          "name": "RouteSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssRoute": {
+      "document": "复杂类型: VpcOssRoute",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.weight",
+          "example": "16",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.privatePort",
+          "example": "443",
+          "member": "int64",
+          "name": "PrivatePort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.zoneId",
+          "example": "0",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.udpOption",
+          "example": "0",
+          "member": "int64",
+          "name": "UdpOption",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.hostIp",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.pip",
+          "example": "10.112.65.50",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssRouteForDeleteRouteInternal": {
+      "document": "复杂类型: VpcOssRouteForDeleteRouteInternal",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.pip",
+          "example": "10.19.0.121",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.pport",
+          "example": "8080",
+          "member": "int64",
+          "name": "ProtocolPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.weight",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.zoneId",
+          "example": "1",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.udpOption",
+          "example": "1",
+          "member": "int64",
+          "name": "UdpOption",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.hostIp",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "HostIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssRouteForUpdateRouteWeightInternal": {
+      "document": "复杂类型: VpcOssRouteForUpdateRouteWeightInternal",
+      "members": [
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.pip",
+          "example": "10.19.0.121",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.pport",
+          "example": "8080",
+          "member": "int64",
+          "name": "ProtocolPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.weight",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssRouteInfoRequest": {
+      "document": "复杂类型: VpcOssRouteInfoRequest",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.groupId",
+          "example": "0",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.type",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.vport",
+          "example": "22",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.vip",
+          "example": "172.16.0.18",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelRoute.route",
+          "example": "无",
+          "member": "VpcOssRouteForDeleteRouteInternal",
+          "name": "RouteSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssRouteWeightRequest": {
+      "document": "复杂类型: VpcOssRouteWeightRequest",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.groupId",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.vip",
+          "example": "172.16.0.18",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.vport",
+          "example": "22",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: UpdateRouteWeight.route",
+          "example": "无",
+          "member": "VpcOssRouteForUpdateRouteWeightInternal",
+          "name": "RouteSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssService": {
+      "document": "复杂类型: VpcOssService",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "2598864",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-rpufyveg",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.toaHostIpFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "ToaHostIpFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vpcGwIp",
+          "example": "9.105.119.10",
+          "member": "string",
+          "name": "VpcGatewayIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.noSnatFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "NoSnatFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.lbType",
+          "example": "0",
+          "member": "int64",
+          "name": "LbType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vip",
+          "example": "169.254.0.30",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.stickyMaxCount",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyMaxCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vport",
+          "example": "443",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.stickyFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.uniqVpcGwIpVpcgwId",
+          "example": "vpcgw-7hk70tq8",
+          "member": "string",
+          "name": "VipVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.bypassFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "BypassFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.rstFlag",
+          "example": "0",
+          "member": "int64",
+          "name": "ResetFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.healthFlag",
+          "example": "1",
+          "member": "int64",
+          "name": "HealthFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.type",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.subnetRouteAlgorithm",
+          "example": "0",
+          "member": "int64",
+          "name": "SubnetRouteAlgorithm",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.stickyTimeout",
+          "example": "0",
+          "member": "int64",
+          "name": "StickyTimeout",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.vipSetId",
+          "example": "0",
+          "member": "int64",
+          "name": "VipSetId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.business",
+          "example": "bus",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.groupId",
+          "example": "[0]",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.route",
+          "example": "无",
+          "member": "VpcOssRoute",
+          "name": "RouteSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.remoteVpcId",
+          "example": "0",
+          "member": "int64",
+          "name": "RemoteVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.uniqVpcgwId",
+          "example": "vpcgw-7hk70tq8",
+          "member": "string",
+          "name": "UniqueVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.uniqClassicVpcgwId",
+          "example": "vpcgw-7hk70tq8",
+          "member": "string",
+          "name": "UniqueClassicVpcGatewayId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: GetServiceByRs.setId",
+          "example": "0",
+          "member": "int64",
+          "name": "SetId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcOssServiceRequest": {
+      "document": "复杂类型: VpcOssServiceRequest",
+      "members": [
+        {
+          "default": "",
+          "document": "整数vpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "对外唯一VpcId",
+          "example": "vpc-jmaywf6r",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.type",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.proto",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.vport",
+          "example": "22",
+          "member": "int64",
+          "name": "VirtualPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.vip",
+          "example": "172.16.0.18",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.remoteVpcId",
+          "example": "1",
+          "member": "int64",
+          "name": "RemoteVpcId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "原VPC OSS APIv2名称: DelService.bDelRoute",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteRouteFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "VpcPrivateIpAddress": {
       "document": "VPC内网IP对象。",

@@ -314,6 +314,14 @@
         "title": "CreateMerchant"
       }
     ],
+    "CreateOnlineOpenBankSingleSubMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOnlineOpenBankSingleSubMerchant\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"12345678\",\n    \"ChannelName\": \"TENPAY\",\n    \"OutRegistrationNo\": \"202102181612\",\n    \"ChannelSubMerchantId\": \"CM9889877444\",\n    \"PaymentMethod\": \"EBANK_PAYMENT\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"RegistrationStatus\": \"SUCCESS\",\n            \"RegistrationMessage\": \"success\",\n            \"ChannelRegistrationNo\": \"R1234567\",\n            \"ChannelSubMerchantId\": \"CM12345678\",\n            \"ExternalReturnData\": null\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
+      }
+    ],
     "CreateOpenBankExternalSubMerchantAccountBook": [
       {
         "document": "",
@@ -363,6 +371,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankRechargeOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"ChannelName\": \"ALIPAY\",\n    \"NotifyUrl\": \"https://xxx.xxx.com/notify\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ExpireTime\": \"2022-04-12 18:00:00\",\n    \"OutOrderId\": \"28881889\",\n    \"PayeeInfo\": {\n        \"PayeeId\": \"BID599250164788457472\",\n        \"PayeeIdType\": \"ACCOUNT_BOOK_ID\"\n    },\n    \"TotalAmount\": \"100\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"SAFT_ISV\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"445df192-1201-4ffe-849f-11bb63b8e6ae\",\n        \"Result\": {\n            \"OutOrderId\": \"28881889\",\n            \"ChannelOrderId\": \"599631052579004416\",\n            \"RedirectInfo\": {\n                \"Url\": \"https://xxx.xx.com/xx?alipsion=1.0\"\n            }\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常示例"
+      }
+    ],
+    "CreateOpenBankSingleSubMerchant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankSingleSubMerchant\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"12345678\",\n    \"OutSubMerchantId\": \"sub_test_20220218\",\n    \"OutSubMerchantName\": \"测试\",\n    \"OutSubMerchantShortName\": \"测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"ChannelSubMerchantId\": \"CM12345678\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "正常示例"
       }
     ],
