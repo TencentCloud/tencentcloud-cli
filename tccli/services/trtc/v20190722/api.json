@@ -108,12 +108,6 @@
       "name": "解散房间（字符串房间号）",
       "output": "DismissRoomByStrRoomIdResponse"
     },
-    "MeasureTrtcMcuExternal": {
-      "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过2天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
-      "input": "MeasureTrtcMcuExternalRequest",
-      "name": "查询旁路转码计费时长",
-      "output": "MeasureTrtcMcuExternalResponse"
-    },
     "ModifyCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来更新录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。更新操作是全量覆盖，并不是增量更新的模式，也就是说每次更新都需要携带全量的信息。",
       "input": "ModifyCloudRecordingRequest",
@@ -1945,69 +1939,6 @@
       ],
       "usage": "in"
     },
-    "MeasureTrtcMcuExternalRequest": {
-      "document": "MeasureTrtcMcuExternal请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "查询开始时间，格式为YYYY-MM-DD。",
-          "example": "2020-09-07 00:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过2天。",
-          "example": "2020-09-07 00:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
-          "example": "1400123456",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "MeasureTrtcMcuExternalResponse": {
-      "document": "MeasureTrtcMcuExternal返回参数结构体",
-      "members": [
-        {
-          "document": "应用的用量信息数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OneSdkAppIdTranscodeTimeUsagesNewInfo",
-          "name": "Usages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "用户计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "MixLayout": {
       "document": "用户自定义混流布局参数列表。",
       "members": [
@@ -2405,42 +2336,6 @@
         {
           "default": "",
           "document": "所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。",
-          "member": "string",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "OneSdkAppIdTranscodeTimeUsagesNewInfo": {
-      "document": "旁路转码时长的查询结果",
-      "members": [
-        {
-          "default": "",
-          "document": "旁路转码时长查询结果数组",
-          "example": "无",
-          "member": "SdkAppIdTrtcMcuTranscodeTimeNewUsage",
-          "name": "SdkAppIdTranscodeTimeUsages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "查询记录数量",
-          "example": "无",
-          "member": "uint64",
-          "name": "TotalNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。",
-          "example": "无",
           "member": "string",
           "name": "SdkAppId",
           "required": true,
@@ -3085,142 +2980,6 @@
           "name": "Usages",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SdkAppIdTrtcMcuTranscodeTimeNewUsage": {
-      "document": "查询旁路转码计费时长。\n查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。",
-      "members": [
-        {
-          "default": "",
-          "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
-          "example": "无",
-          "member": "string",
-          "name": "TimeKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "语音时长，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "AudioTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清SD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH264SD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-高清HD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH264HD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-全高清FHD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH264FHD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-带宽，单位：mbps。",
-          "example": "无",
-          "member": "float",
-          "name": "Flux",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清2K，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH2642K",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清4K，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH2644K",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清265SD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH265SD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-高清265HD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH265HD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-全高清265FHD，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH265FHD",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清2652K，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH2652K",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "视频时长-标清265 4K，单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTimeH2654K",
-          "required": true,
-          "type": "int",
           "value_allowed_null": false
         }
       ],

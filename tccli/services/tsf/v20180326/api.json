@@ -12,6 +12,18 @@
       "name": "集群导入云主机",
       "output": "AddInstancesResponse"
     },
+    "AssociateBusinessLogConfig": {
+      "document": "关联日志配置项到应用",
+      "input": "AssociateBusinessLogConfigRequest",
+      "name": "关联日志配置项到应用",
+      "output": "AssociateBusinessLogConfigResponse"
+    },
+    "AssociateConfigWithGroup": {
+      "document": "关联投递配置到部署组",
+      "input": "AssociateConfigWithGroupRequest",
+      "name": "关联投递配置到部署组",
+      "output": "AssociateConfigWithGroupResponse"
+    },
     "BindApiGroup": {
       "document": "网关与API分组批量绑定",
       "input": "BindApiGroupRequest",
@@ -324,6 +336,12 @@
       "name": "获取应用列表其它字段",
       "output": "DescribeApplicationAttributeResponse"
     },
+    "DescribeApplicationBusinessLogConfig": {
+      "document": "查询应用关联日志配置项信息",
+      "input": "DescribeApplicationBusinessLogConfigRequest",
+      "name": "查询应用关联日志配置项信息",
+      "output": "DescribeApplicationBusinessLogConfigResponse"
+    },
     "DescribeApplications": {
       "document": "获取应用列表",
       "input": "DescribeApplicationsRequest",
@@ -335,6 +353,18 @@
       "input": "DescribeBasicResourceUsageRequest",
       "name": "TSF基本资源信息概览",
       "output": "DescribeBasicResourceUsageResponse"
+    },
+    "DescribeBusinessLogConfig": {
+      "document": "查询业务日志配置项信息",
+      "input": "DescribeBusinessLogConfigRequest",
+      "name": "查询业务日志配置项信息",
+      "output": "DescribeBusinessLogConfigResponse"
+    },
+    "DescribeBusinessLogConfigs": {
+      "document": "查询日志配置项列表",
+      "input": "DescribeBusinessLogConfigsRequest",
+      "name": "查询日志配置项列表",
+      "output": "DescribeBusinessLogConfigsResponse"
     },
     "DescribeClusterInstances": {
       "document": "查询集群实例",
@@ -402,6 +432,24 @@
       "name": "查询一键导入API分组任务的状态",
       "output": "DescribeCreateGatewayApiStatusResponse"
     },
+    "DescribeDeliveryConfig": {
+      "document": "获取单个投递项配置信息",
+      "input": "DescribeDeliveryConfigRequest",
+      "name": "获取单个投递项配置",
+      "output": "DescribeDeliveryConfigResponse"
+    },
+    "DescribeDeliveryConfigByGroupId": {
+      "document": "用部署组id获取绑定信息",
+      "input": "DescribeDeliveryConfigByGroupIdRequest",
+      "name": "用部署组id获取绑定信息",
+      "output": "DescribeDeliveryConfigByGroupIdResponse"
+    },
+    "DescribeDeliveryConfigs": {
+      "document": "获取多个投递项配置 ",
+      "input": "DescribeDeliveryConfigsRequest",
+      "name": "获取多个投递项配置",
+      "output": "DescribeDeliveryConfigsResponse"
+    },
     "DescribeDownloadInfo": {
       "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
       "input": "DescribeDownloadInfoRequest",
@@ -461,6 +509,12 @@
       "input": "DescribeGroupBindedGatewaysRequest",
       "name": "查询某个API分组已绑定的网关部署组信息列表",
       "output": "DescribeGroupBindedGatewaysResponse"
+    },
+    "DescribeGroupBusinessLogConfigs": {
+      "document": "查询分组管理日志配置列表",
+      "input": "DescribeGroupBusinessLogConfigsRequest",
+      "name": "查询分组管理日志配置列表",
+      "output": "DescribeGroupBusinessLogConfigsResponse"
     },
     "DescribeGroupGateways": {
       "document": "查询某个网关绑定的API 分组信息列表",
@@ -780,6 +834,18 @@
       "name": "禁用单元化规则",
       "output": "DisableUnitRuleResponse"
     },
+    "DisassociateBusinessLogConfig": {
+      "document": "取消关联业务日志配置项和应用",
+      "input": "DisassociateBusinessLogConfigRequest",
+      "name": "取消关联业务日志配置项和应用",
+      "output": "DisassociateBusinessLogConfigResponse"
+    },
+    "DisassociateKafkaConfig": {
+      "document": "取消关联投递信息和部署组",
+      "input": "DisassociateKafkaConfigRequest",
+      "name": "取消关联投递信息和部署组",
+      "output": "DisassociateKafkaConfigResponse"
+    },
     "DraftApiGroup": {
       "document": "下线Api分组",
       "input": "DraftApiGroupRequest",
@@ -881,6 +947,12 @@
       "input": "OperateApplicationTcrBindingRequest",
       "name": "绑定解绑tcr仓库",
       "output": "OperateApplicationTcrBindingResponse"
+    },
+    "ReassociateBusinessLogConfig": {
+      "document": "重关联业务日志配置",
+      "input": "ReassociateBusinessLogConfigRequest",
+      "name": "重关联业务日志配置",
+      "output": "ReassociateBusinessLogConfigResponse"
     },
     "RedoTask": {
       "document": "重新执行任务",
@@ -2290,6 +2362,128 @@
       ],
       "usage": "out"
     },
+    "AssociateBusinessLogConfigRequest": {
+      "document": "AssociateBusinessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TSF分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志配置项ID列表",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateBusinessLogConfigResponse": {
+      "document": "AssociateBusinessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateConfigWithGroupRequest": {
+      "document": "AssociateConfigWithGroup请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项id",
+          "example": "dddd",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组信息",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否选择全部投递，1 表示全部，0或不填表示非全部",
+          "example": "1",
+          "member": "int64",
+          "name": "SelectAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "命名空间id",
+          "example": "namespace-xxxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "模糊搜索关键词",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateConfigWithGroupResponse": {
+      "document": "AssociateConfigWithGroup返回参数结构体",
+      "members": [
+        {
+          "document": "绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BindApiGroupRequest": {
       "document": "BindApiGroup请求参数结构体",
       "members": [
@@ -2358,6 +2552,267 @@
         }
       ],
       "type": "object"
+    },
+    "BusinesLogConfigAssociatedGroup": {
+      "document": "业务日志配置关联部署组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组所属集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署组关联日志配置时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AssociatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BusinessLogConfig": {
+      "document": "业务日志配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项ID",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置项名称",
+          "member": "string",
+          "name": "ConfigName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置项日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigTags",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项对应的ES管道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigPipeline",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigCreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigUpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项解析规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessLogConfigSchema",
+          "name": "ConfigSchema",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项关联部署组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinesLogConfigAssociatedGroup",
+          "name": "ConfigAssociatedGroups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BusinessLogConfigSchema": {
+      "document": "业务日志配置解析规则",
+      "members": [
+        {
+          "default": "",
+          "document": "解析规则类型",
+          "member": "int64",
+          "name": "SchemaType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "解析规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SchemaContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析规则时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SchemaDateFormat",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析规则对应的多行匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SchemaMultilinePattern",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "解析规则创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SchemaCreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户填写的解析规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "SchemaPatternLayout",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BusinessLogV2": {
       "document": "业务日志",
@@ -6844,6 +7299,81 @@
       ],
       "type": "object"
     },
+    "DeliveryConfigBindGroup": {
+      "document": "描述投递配置项绑定的部署组",
+      "members": [
+        {
+          "default": "",
+          "document": "配置id",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置名",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CollectPath",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeliveryConfigBindGroups": {
+      "document": "描述配置项绑定的部署组",
+      "members": [
+        {
+          "default": "",
+          "document": "公共条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeliveryConfigBindGroup",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeployContainerGroupRequest": {
       "document": "DeployContainerGroup请求参数结构体",
       "members": [
@@ -7753,6 +8283,32 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationBusinessLogConfigRequest": {
+      "document": "DescribeApplicationBusinessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "TSF应用ID",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationBusinessLogConfigResponse": {
+      "document": "DescribeApplicationBusinessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationRequest": {
       "document": "DescribeApplication请求参数结构体",
       "members": [
@@ -7895,6 +8451,111 @@
           "document": "TSF基本资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OverviewBasicResourceUsage",
           "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBusinessLogConfigRequest": {
+      "document": "DescribeBusinessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项ID",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBusinessLogConfigResponse": {
+      "document": "DescribeBusinessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "日志配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessLogConfig",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBusinessLogConfigsRequest": {
+      "document": "DescribeBusinessLogConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移量，取值范围大于等于0，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "单页请求配置数量，取值范围[1, 50]，默认值为10",
+          "example": "50",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "模糊匹配关键词",
+          "example": "无",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "DisableProgramAuthCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBusinessLogConfigsResponse": {
+      "document": "DescribeBusinessLogConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "业务日志配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfPageBusinessLogConfig",
+          "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8647,6 +9308,121 @@
       ],
       "type": "object"
     },
+    "DescribeDeliveryConfigByGroupIdRequest": {
+      "document": "DescribeDeliveryConfigByGroupId请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组id",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryConfigByGroupIdResponse": {
+      "document": "DescribeDeliveryConfigByGroupId返回参数结构体",
+      "members": [
+        {
+          "document": "投递kafak配置项",
+          "member": "SimpleKafkaDeliveryConfig",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryConfigRequest": {
+      "document": "DescribeDeliveryConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "投递配置id",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryConfigResponse": {
+      "document": "DescribeDeliveryConfig返回参数结构体",
+      "members": [
+        {
+          "document": "投递kafka配置",
+          "member": "KafkaDeliveryConfig",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryConfigsRequest": {
+      "document": "DescribeDeliveryConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "关键字",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "搜索条数",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryConfigsResponse": {
+      "document": "DescribeDeliveryConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "投递项关联部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "DeliveryConfigBindGroups",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDownloadInfoRequest": {
       "document": "DescribeDownloadInfo请求参数结构体",
       "members": [
@@ -9092,6 +9868,39 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupBusinessLogConfigsRequest": {
+      "document": "DescribeGroupBusinessLogConfigs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupBusinessLogConfigsResponse": {
+      "document": "DescribeGroupBusinessLogConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "业务日志配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "TsfPageBusinessLogConfig",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12874,6 +13683,88 @@
       ],
       "type": "object"
     },
+    "DisassociateBusinessLogConfigRequest": {
+      "document": "DisassociateBusinessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务日志配置项ID列表",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "TSF分组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateBusinessLogConfigResponse": {
+      "document": "DisassociateBusinessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateKafkaConfigRequest": {
+      "document": "DisassociateKafkaConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项id",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "部署组id",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateKafkaConfigResponse": {
+      "document": "DisassociateKafkaConfig返回参数结构体",
+      "members": [
+        {
+          "document": "解除绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "bool",
+          "name": "Result",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DraftApiGroupRequest": {
       "document": "DraftApiGroup请求参数结构体",
       "members": [
@@ -13914,6 +14805,75 @@
         }
       ],
       "usage": "out"
+    },
+    "GroupInfo": {
+      "document": "日志投递kafka用，描述部署组信息",
+      "members": [
+        {
+          "default": "",
+          "document": "部署组id",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "NamespaceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AssociateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GroupPod": {
       "document": "部署组实例列表",
@@ -15702,6 +16662,75 @@
           "name": "ClassCount",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KafkaDeliveryConfig": {
+      "document": "投递kafka配置项",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "CollectPath",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kafka vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KafkaVIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kafka vport\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "KafkaVPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "换行规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LineRule",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18377,6 +19406,56 @@
       ],
       "usage": "out"
     },
+    "ReassociateBusinessLogConfigRequest": {
+      "document": "ReassociateBusinessLogConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "原关联日志配置ID",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新关联日志配置ID",
+          "member": "string",
+          "name": "NewConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TSF应用ID",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TSF部署组ID",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReassociateBusinessLogConfigResponse": {
+      "document": "ReassociateBusinessLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RedoTaskBatchRequest": {
       "document": "RedoTaskBatch请求参数结构体",
       "members": [
@@ -20281,6 +21360,30 @@
       ],
       "usage": "out"
     },
+    "SimpleKafkaDeliveryConfig": {
+      "document": "日志投递kafka配置描述的缩简版",
+      "members": [
+        {
+          "default": "",
+          "document": "配置项id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StartContainerGroupRequest": {
       "document": "StartContainerGroup请求参数结构体",
       "members": [
@@ -21196,6 +22299,30 @@
           "default": "",
           "document": "应用信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "ApplicationForPage",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TsfPageBusinessLogConfig": {
+      "document": "业务日志配置项列表",
+      "members": [
+        {
+          "default": "",
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "业务日志配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "BusinessLogConfig",
           "name": "Content",
           "required": true,
           "type": "list",

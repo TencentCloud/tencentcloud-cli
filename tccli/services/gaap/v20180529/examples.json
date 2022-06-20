@@ -293,7 +293,7 @@
         "document": "",
         "input": "https://gaap.tencentcloudapi.com/?Action=DescribeBlackHeader\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"BlackHeaders\": [\n            \"X-Forward-For\",\n            \"allow\"\n        ]\n    }\n}",
-        "title": "查询源站 区域"
+        "title": "查询禁用自定义header 名称列表"
       }
     ],
     "DescribeCertificateDetail": [
@@ -325,7 +325,7 @@
         "document": "",
         "input": "https://gaap.tencentcloudapi.com/?Action=DescribeCustomHeader\n&RuleId=rule-18vhg67\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"RuleId\": \"rule-18vhg67\",\n        \"Headers\": [\n            {\n                \"HeaderName\": \"X-REAL_IP\",\n                \"HeaderValue\": \"$remote_addr\"\n            },\n            {\n                \"HeaderName\": \"X-FORWORD-IP\",\n                \"HeaderValue\": \"192.168.2.101\"\n            }\n        ]\n    }\n}",
-        "title": "查询源站 区域"
+        "title": "查询自定义header列表"
       }
     ],
     "DescribeDestRegions": [
