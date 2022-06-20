@@ -691,7 +691,7 @@
       "output": "ProcessImageResponse"
     },
     "ProcessMedia": {
-      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。",
+      "document": "对点播中的音视频媒体发起处理任务，功能包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频截取一张图做封面；\n7. 对视频转自适应码流（并加密）；\n8. 智能识别（令人反感的信息、不安全的信息、不适宜的信息）；\n9. 智能内容分析（标签、分类、封面、按帧标签）；\n10. 内容识别（视频片头片尾、人脸、文本全文、文本关键词、语音全文、语音关键词、物体）。\n\n如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。\n\n使用溯源水印存在以下限制条件：\n<li> 溯源水印仅支持图片水印； </li>\n<li> 溯源水印仅支持水印重复类型为水印循环播放； </li>\n<li> 溯源水印仅支持输出文件封装格式为 HLS； </li>\n<li> 溯源水印的位置仅支持位于视频的上半部分。 </li>",
       "input": "ProcessMediaRequest",
       "name": "视频处理",
       "output": "ProcessMediaResponse"
@@ -1113,7 +1113,8 @@
           "name": "Definition",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1123,7 +1124,19 @@
           "name": "WatermarkSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "溯源水印。",
+          "example": "无",
+          "member": "TraceWatermarkInput",
+          "name": "TraceWatermark",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1133,7 +1146,8 @@
           "name": "SubtitleSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -21850,7 +21864,18 @@
           "member": "string",
           "name": "FileId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21859,7 +21884,8 @@
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21868,7 +21894,8 @@
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21877,7 +21904,8 @@
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21886,7 +21914,8 @@
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21895,7 +21924,8 @@
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21904,7 +21934,8 @@
           "member": "string",
           "name": "TasksNotifyMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21913,7 +21944,8 @@
           "member": "string",
           "name": "SessionContext",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21922,7 +21954,8 @@
           "member": "string",
           "name": "SessionId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -21931,16 +21964,8 @@
           "member": "string",
           "name": "ExtInfo",
           "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -21955,7 +21980,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25214,6 +25240,23 @@
       ],
       "usage": "in"
     },
+    "TraceWatermarkInput": {
+      "document": "溯源水印参数",
+      "members": [
+        {
+          "default": "",
+          "document": "水印模板 ID。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "TranscodePlayInfo2017": {
       "document": "视频转码播放信息（2017 版）",
       "members": [
@@ -25354,7 +25397,8 @@
           "name": "Definition",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -25364,17 +25408,19 @@
           "name": "WatermarkSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "马赛克列表，最大可支持 10 张。",
+          "document": "溯源水印。",
           "example": "无",
-          "member": "MosaicInput",
-          "name": "MosaicSet",
+          "member": "TraceWatermarkInput",
+          "name": "TraceWatermark",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -25384,17 +25430,19 @@
           "name": "HeadTailSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
-          "example": "2",
-          "member": "float",
-          "name": "StartTimeOffset",
+          "document": "马赛克列表，最大可支持 10 张。",
+          "example": "无",
+          "member": "MosaicInput",
+          "name": "MosaicSet",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -25404,7 +25452,19 @@
           "name": "EndTimeOffset",
           "required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "转码后的视频的起始时间偏移，单位：秒。\n<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>\n<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>\n<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>",
+          "example": "2",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

@@ -456,7 +456,8 @@
           "member": "string",
           "name": "CommandName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -465,7 +466,8 @@
           "member": "string",
           "name": "Content",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -474,7 +476,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -483,7 +486,8 @@
           "member": "string",
           "name": "CommandType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -492,7 +496,8 @@
           "member": "string",
           "name": "WorkingDirectory",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -501,7 +506,8 @@
           "member": "uint64",
           "name": "Timeout",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -510,7 +516,8 @@
           "member": "bool",
           "name": "EnableParameter",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -519,7 +526,8 @@
           "member": "string",
           "name": "DefaultParameters",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -528,7 +536,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -537,7 +546,8 @@
           "member": "string",
           "name": "Username",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -546,7 +556,8 @@
           "member": "string",
           "name": "OutputCOSBucketUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -555,7 +566,8 @@
           "member": "string",
           "name": "OutputCOSKeyPrefix",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -570,7 +582,8 @@
           "name": "CommandId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

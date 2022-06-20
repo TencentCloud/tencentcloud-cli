@@ -16660,7 +16660,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16669,7 +16670,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -16678,16 +16680,18 @@
           "member": "uint64",
           "name": "VulId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>AliasName - String - 主机名筛选</li>\n<li>TagIds - String - 主机标签id串，多个用英文逗号分隔</li>\n<li>Status - String - 状态,0: 待处理 1:忽略  3:已修复  5:检测中  6:修复中  8=:修复失败.</li>\n<li>Uuid - String数组 - Uuid串数组</li>",
+          "document": "过滤条件：\n<li>AliasName - String - 主机名筛选</li>\n<li>TagIds - String - 主机标签id串，多个用英文用逗号分隔</li>\n<li>Status - String - 状态：0-待处理 1-忽略  3-已修复  5-检测中  6-修复中  8-修复失败</li>\n<li>Uuid - String数组 - Uuid串数组</li>\n<li>Version - String数组 - 付费版本数组：\"Flagship\"-旗舰版 \"PRO_VERSION\"-专业版 \"BASIC_VERSION\"-基础版</li>\n<li>InstanceState - String数组 - 实例状态数组：\"PENDING\"-创建中 \"LAUNCH_FAILED\"-创建失败 \"RUNNING\"-运行中 \"STOPPED\"-关机 \"STARTING\"-开机中 \"STOPPING\"-关机中 \"REBOOTING\"-重启中 \"SHUTDOWN\"-待销毁 \"TERMINATING\"-销毁中 \"UNKNOWN\"-未知（针对非腾讯云机器，且客户端离线的场景） </li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16702,7 +16706,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "影响主机列表\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -16711,7 +16716,8 @@
           "name": "VulEffectHostList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
