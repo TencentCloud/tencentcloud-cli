@@ -36,6 +36,18 @@
       "name": "查询环境基础信息",
       "output": "DescribeEnvBaseInfoResponse"
     },
+    "OperateServerManage": {
+      "document": "操作发布单",
+      "input": "OperateServerManageRequest",
+      "name": "操作发布单",
+      "output": "OperateServerManageResponse"
+    },
+    "ReleaseGray": {
+      "document": "灰度发布",
+      "input": "ReleaseGrayRequest",
+      "name": "灰度发布",
+      "output": "ReleaseGrayResponse"
+    },
     "UpdateCloudRunServer": {
       "document": "更新云托管服务",
       "input": "UpdateCloudRunServerRequest",
@@ -1034,6 +1046,176 @@
       ],
       "usage": "out"
     },
+    "ObjectKV": {
+      "document": "通用Key Value",
+      "members": [
+        {
+          "default": "",
+          "document": "键值对Key",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "键值对Value",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OperateServerManageRequest": {
+      "document": "OperateServerManage请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任报Id",
+          "example": "1111",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作类型:cancel | go_back | done",
+          "example": "cancel",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateServerManageResponse": {
+      "document": "OperateServerManage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseGrayRequest": {
+      "document": "ReleaseGray请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "灰度类型",
+          "example": "gray",
+          "member": "string",
+          "name": "GrayType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量类型",
+          "example": "HEADERS",
+          "member": "string",
+          "name": "TrafficType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量策略",
+          "example": "无",
+          "member": "VersionFlowInfo",
+          "name": "VersionFlowItems",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "流量比例",
+          "example": "100",
+          "member": "int64",
+          "name": "GrayFlowRatio",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseGrayResponse": {
+      "document": "ReleaseGray返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RepositoryInfo": {
       "document": "代码仓库信息",
       "members": [
@@ -1531,6 +1713,62 @@
         }
       ],
       "type": "object"
+    },
+    "VersionFlowInfo": {
+      "document": "版本流量信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名",
+          "example": "server-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否默认版本",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefaultPriority",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流量比例",
+          "example": "10",
+          "member": "int64",
+          "name": "FlowRatio",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "测试KV值",
+          "example": "无",
+          "member": "ObjectKV",
+          "name": "UrlParam",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "权重",
+          "example": "100",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

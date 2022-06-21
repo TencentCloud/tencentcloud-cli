@@ -24,6 +24,12 @@
       "name": "增加模板对象成员",
       "output": "AddTemplateMemberResponse"
     },
+    "AdjustPublicAddress": {
+      "document": "本接口 (AdjustPublicAddress) 用于更换IP地址，支持更换CVM实例的普通公网IP和包月带宽的EIP。\n",
+      "input": "AdjustPublicAddressRequest",
+      "name": "更换公网IP",
+      "output": "AdjustPublicAddressResponse"
+    },
     "AllocateAddresses": {
       "document": "本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* EIP 是专为动态云计算设计的静态 IP 地址。借助 EIP，您可以快速将 EIP 重新映射到您的另一个实例上，从而屏蔽实例故障。\n* 您的 EIP 与腾讯云账户相关联，而不是与某个实例相关联。在您选择显式释放该地址，或欠费超过24小时之前，它会一直与您的腾讯云账户保持关联。\n* 一个腾讯云账户在每个地域能申请的 EIP 最大配额有所限制，可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)，上述配额可通过 DescribeAddressQuota 接口获取。",
       "input": "AllocateAddressesRequest",
@@ -2288,6 +2294,51 @@
         }
       ],
       "usage": "out"
+    },
+    "AdjustPublicAddressRequest": {
+      "document": "AdjustPublicAddress请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。",
+          "example": "ins-11112222",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标识EIP实例的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。",
+          "example": "eip-11112222",
+          "member": "string",
+          "name": "AddressId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AdjustPublicAddressResponse": {
+      "document": "AdjustPublicAddress返回参数结构体",
+      "members": [
+        {
+          "document": "异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "5513621",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AlgType": {
       "document": "ALG协议类型",
@@ -6997,6 +7048,33 @@
           "name": "Compress",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启SSO认证",
+          "example": "False",
+          "member": "bool",
+          "name": "SsoEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否开启策略访问控制",
+          "example": "False",
+          "member": "bool",
+          "name": "AccessPolicyEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "SAML-DATA",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SamlData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

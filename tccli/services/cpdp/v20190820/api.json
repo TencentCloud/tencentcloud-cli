@@ -16773,7 +16773,7 @@
       "members": [
         {
           "default": "",
-          "document": "商品标题，默认值“商品支付”",
+          "document": "商品标题。默认值“商品支付”。",
           "example": "商品支付",
           "member": "string",
           "name": "GoodsName",
@@ -16783,7 +16783,7 @@
         },
         {
           "default": "",
-          "document": "商品详细描述（商品列表）",
+          "document": "商品详细描述（商品列表）。",
           "example": "商品详细描述（商品列表，默认值“商品支付”）",
           "member": "string",
           "name": "GoodsDetail",
@@ -16793,10 +16793,20 @@
         },
         {
           "default": "",
-          "document": "银行附言，不可以有以下字符：<>+{}()%*&';\"[]等特殊符号",
+          "document": "银行附言。不可以有以下字符：<>+{}()%*&';\"[]等特殊符号",
           "example": "商品简单描述。需传入应用市场上的",
           "member": "string",
           "name": "GoodsDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务类型。汇付渠道必填，汇付渠道传入固定值100099。",
+          "example": "100099",
+          "member": "string",
+          "name": "GoodsBizType",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16905,7 +16915,7 @@
         },
         {
           "default": "",
-          "document": "付款方付款账户标识。\n当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID。",
+          "document": "付款方付款账户标识。\n当付款方式为OPENBANK_PAYMENT时，必输表示企业账户ID；当付款方式为SAFT_ISV时，必须上送付款方的渠道电子记账本ID；当付款方式为ONLINEBANK，上送付款方银行编号BankId。",
           "example": "10232043567",
           "member": "string",
           "name": "BindSerialNo",
@@ -16919,6 +16929,16 @@
           "example": "ACCOUNT_BOOK_ID",
           "member": "string",
           "name": "AccountType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付款卡类型。汇付渠道必填。\nDEBIT_CARD：借记卡\nCREDIT_CARD：信用卡",
+          "example": "DEBIT_CARD",
+          "member": "string",
+          "name": "BankCardType",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17085,7 +17105,7 @@
       "members": [
         {
           "default": "",
-          "document": "用户端实际 ip，示例值：14.17.22.32",
+          "document": "用户端实际 ip。汇付渠道必填。",
           "example": "14.17.22.32",
           "member": "string",
           "name": "PayerClientIp",
@@ -17095,7 +17115,7 @@
         },
         {
           "default": "",
-          "document": "浏览器 User-Agent",
+          "document": "浏览器 User-Agent。",
           "example": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.3",
           "member": "string",
           "name": "PayerUa",
@@ -17105,7 +17125,7 @@
         },
         {
           "default": "",
-          "document": "用户下单时间，若不上送，服务端默认当前时间",
+          "document": "用户下单时间。若不上送，服务端默认当前时间。",
           "example": "2020-12-11 11:33:43",
           "member": "string",
           "name": "OrderTime",
@@ -17115,10 +17135,20 @@
         },
         {
           "default": "",
-          "document": "终端设备号（门店号或收银设备 ID），示例值：POS1:1",
+          "document": "终端设备号（门店号或收银设备 ID），示例值：POS1:1。",
           "example": "POS1:1",
           "member": "string",
           "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "终端设备类型。MOBILE_BROWSER:手机浏览器，MOBILE_APP:手机应用程序，TABLET:平板；WATCH:手表，PC:电脑PC，OTHER:其他。\n汇付渠道必填。",
+          "example": "MOBILE_BROWSER",
+          "member": "string",
+          "name": "DeviceType",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31811,6 +31841,26 @@
           "example": "无",
           "member": "string",
           "name": "BankNotice",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "支持银行代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BankId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "卡类型。\nD：借记卡，C：信用卡，Z：借贷合一卡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "D",
+          "member": "string",
+          "name": "CardType",
           "required": true,
           "type": "string",
           "value_allowed_null": true

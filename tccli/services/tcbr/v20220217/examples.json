@@ -72,6 +72,22 @@
         "title": "查询环境基础信息"
       }
     ],
+    "OperateServerManage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateServerManage\n<公共请求参数>\n\n{\n    \"ServerName\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"OperatorRemark\": \"xx\",\n    \"TaskId\": 0,\n    \"OperateType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "操作发布单"
+      }
+    ],
+    "ReleaseGray": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseGray\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"VersionFlowItems\": [\n        {\n            \"FlowRatio\": 0,\n            \"Priority\": 0,\n            \"UrlParam\": {\n                \"Value\": \"xx\",\n                \"Key\": \"xx\"\n            },\n            \"IsDefaultPriority\": true,\n            \"VersionName\": \"xx\"\n        }\n    ],\n    \"ServerName\": \"xx\",\n    \"TrafficType\": \"xx\",\n    \"GrayType\": \"xx\",\n    \"GrayFlowRatio\": 0,\n    \"OperatorRemark\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "灰度发布"
+      }
+    ],
     "UpdateCloudRunServer": [
       {
         "document": "",
