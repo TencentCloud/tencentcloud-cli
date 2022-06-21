@@ -6507,7 +6507,8 @@
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6516,7 +6517,8 @@
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6525,7 +6527,8 @@
           "member": "string",
           "name": "Md5sum",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6534,7 +6537,8 @@
           "member": "uint64",
           "name": "FileSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6543,7 +6547,8 @@
           "member": "string",
           "name": "FirmwareName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6552,7 +6557,8 @@
           "member": "string",
           "name": "FirmwareDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
