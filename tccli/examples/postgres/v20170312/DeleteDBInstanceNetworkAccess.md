@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli postgres DeleteDBInstanceNetworkAccess --cli-unfold-argument  \
-    --DBInstanceId postgres-6bwgamo3 \
-    --VpcId vpc-gaestjaf \
     --SubnetId subnet-4s9dejli \
-    --Vip 127.0.01
+    --Vip 127.0.01 \
+    --VpcId vpc-gaestjaf \
+    --DBInstanceId postgres-6bwgamo3
 ```
 
 Output: 

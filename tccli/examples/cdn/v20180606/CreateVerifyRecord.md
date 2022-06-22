@@ -17,7 +17,11 @@ Output:
         "SubDomain": "_cdnauth",
         "Record": "202009071516044acd018wf498457628cn75ba018ec9cv",
         "RecordType": "TXT",
-        "FileVerifyUrl": "http://abc.com/verification.html"
+        "FileVerifyUrl": "http://abc.com/verification.html",
+        "FileVerifyDomains": [
+            "abc.com"
+        ],
+        "FileVerifyName": "verification.html"
     }
 }
 ```

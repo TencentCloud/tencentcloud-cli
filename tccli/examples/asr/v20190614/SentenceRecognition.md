@@ -1,6 +1,6 @@
 **Example 1: 通过语音Url来调用接口**
 
-用户通过语音Url的方式（SourceType为0）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav（采样率为8k，单声道）
+用户通过语音Url的方式（SourceType为0）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav
 
 Input: 
 
@@ -51,7 +51,7 @@ Output:
 
 **Example 2: 通过语音数据来调用接口**
 
-用户通过上传语音数据（Data）的方式（SourceType为1）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav（采样率为8k，单声道）
+用户通过上传语音数据（Data）的方式（SourceType为1）请求一句话识别服务，请求模型为电话 8k中文 （EngSerViceType = 8k_zh），音频格式为wav
 
 Input: 
 

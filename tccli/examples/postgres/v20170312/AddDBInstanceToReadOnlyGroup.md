@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres AddDBInstanceToReadOnlyGroup --cli-unfold-argument  \
-    --DBInstanceId "postgres-k95qzetn" \
-    --ReadOnlyGroupId "pgrogrp-test"
+    --ReadOnlyGroupId "pgrogrp-test" \
+    --DBInstanceId "postgres-k95qzetn"
 ```
 
 Output: 

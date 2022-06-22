@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=CreateVerifyRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\",\n        \"FileVerifyUrl\": \"http://abc.com/verification.html\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\",\n        \"FileVerifyUrl\": \"http://abc.com/verification.html\",\n        \"FileVerifyDomains\": [\n            \"abc.com\"\n        ],\n        \"FileVerifyName\": \"verification.html\"\n    }\n}",
         "title": "生成解析记录"
       }
     ],

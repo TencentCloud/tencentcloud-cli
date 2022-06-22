@@ -9548,7 +9548,8 @@
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9557,7 +9558,8 @@
           "member": "int64",
           "name": "PlayType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

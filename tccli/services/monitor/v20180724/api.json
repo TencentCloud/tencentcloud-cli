@@ -1518,7 +1518,8 @@
           "member": "string",
           "name": "Module",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1527,7 +1528,8 @@
           "member": "string",
           "name": "PolicyId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1536,16 +1538,8 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "策略标签",
-          "example": "无",
-          "member": "PolicyTag",
-          "name": "Tag",
-          "required": true,
-          "type": "object"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1554,7 +1548,18 @@
           "member": "string",
           "name": "ServiceType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略标签",
+          "example": "无",
+          "member": "PolicyTag",
+          "name": "Tag",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1563,7 +1568,18 @@
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "批量绑定标签",
+          "example": "无",
+          "member": "PolicyTag",
+          "name": "BatchTag",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"

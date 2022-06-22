@@ -3460,11 +3460,10 @@ def parse_global_arg(parsed_globals):
             if 'waiter' in conf and 'interval' in conf['waiter']:
                 param['interval'] = conf['waiter']['interval']
             else:
-                param['timeout'] = 5
+                param['interval'] = 5
         param['interval'] = min(param['interval'], param['timeout'])
         g_param['OptionsDefine.WaiterInfo'] = param
-    
-    # 如果在配置文件中读取字段的值，python2中的json.load函数会读取unicode类型的值，因此这里要转化类型
+
     if six.PY2:
         for key, value in g_param.items():
             if isinstance(value, six.text_type):

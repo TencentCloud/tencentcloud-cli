@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli postgres CreateReadOnlyDBInstance --cli-unfold-argument  \
-    --SpecCode cdb.pg.z1.2g \
-    --Storage 10 \
     --InstanceCount 1 \
-    --Period 1 \
-    --InstanceChargeType prepaid \
-    --Zone ap-guangzhou-2 \
-    --DBVersion 9.3.5 \
-    --AutoVoucher 0 \
     --AutoRenewFlag 1 \
-    --MasterDBInstanceId Postgres-testmaster
+    --Zone ap-guangzhou-2 \
+    --MasterDBInstanceId Postgres-testmaster \
+    --DBVersion 9.3.5 \
+    --Storage 10 \
+    --Period 1 \
+    --SpecCode cdb.pg.z1.2g \
+    --InstanceChargeType prepaid \
+    --AutoVoucher 0
 ```
 
 Output: 

@@ -1057,7 +1057,8 @@
           "name": "Definition",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1067,7 +1068,8 @@
           "name": "Package",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1077,7 +1079,8 @@
           "name": "DrmType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1087,7 +1090,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1097,7 +1101,8 @@
           "name": "Size",
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -15643,7 +15648,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15653,7 +15659,8 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15663,7 +15670,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15673,7 +15681,8 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15683,7 +15692,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15693,7 +15703,8 @@
           "name": "ClassId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15703,7 +15714,8 @@
           "name": "ClassName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15713,7 +15725,8 @@
           "name": "ClassPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15723,7 +15736,8 @@
           "name": "CoverUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15733,7 +15747,8 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15743,7 +15758,8 @@
           "name": "MediaUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15753,7 +15769,8 @@
           "name": "SourceInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15763,7 +15780,8 @@
           "name": "StorageRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15773,7 +15791,8 @@
           "name": "TagSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15783,7 +15802,8 @@
           "name": "Vid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15793,7 +15813,8 @@
           "name": "Category",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15803,7 +15824,8 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -15813,7 +15835,8 @@
           "name": "StorageClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -17750,101 +17773,123 @@
         {
           "default": "",
           "document": "转码后的视频文件地址。",
+          "example": "http://xxxx/xxx.mp4",
           "member": "string",
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。",
+          "example": "10010",
           "member": "int64",
           "name": "Definition",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频流码率平均值与音频流码率平均值之和， 单位：bps。",
+          "example": "125000",
           "member": "int64",
           "name": "Bitrate",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频流高度的最大值，单位：px。",
+          "example": "720",
           "member": "int64",
           "name": "Height",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频流宽度的最大值，单位：px。",
+          "example": "1080",
           "member": "int64",
           "name": "Width",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。",
+          "document": "媒体文件总大小，单位：字节。\n<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和。</li>",
+          "example": "123000",
           "member": "int64",
           "name": "Size",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频时长，单位：秒。",
+          "example": "10",
           "member": "float",
           "name": "Duration",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "容器类型，例如 m4a，mp4 等。",
-          "member": "string",
-          "name": "Container",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频的 md5 值。",
+          "example": "1231",
           "member": "string",
           "name": "Md5",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "音频流信息。",
-          "member": "MediaAudioStreamItem",
-          "name": "AudioStreamSet",
+          "document": "容器类型，例如 m4a，mp4 等。",
+          "example": "mp4",
+          "member": "string",
+          "name": "Container",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "视频流信息。",
+          "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "音频流信息。",
+          "example": "无",
+          "member": "MediaAudioStreamItem",
+          "name": "AudioStreamSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -23222,12 +23267,23 @@
       "members": [
         {
           "default": "",
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
           "document": "文件 ID 集合，匹配集合中的任意元素。\n<li>数组长度限制：10。</li>\n<li>单个 ID 长度限制：40个字符。</li>",
           "example": "无",
           "member": "string",
           "name": "FileIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23236,7 +23292,8 @@
           "member": "string",
           "name": "Names",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23245,7 +23302,8 @@
           "member": "string",
           "name": "NamePrefixes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23254,7 +23312,8 @@
           "member": "string",
           "name": "Descriptions",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23263,16 +23322,18 @@
           "member": "int64",
           "name": "ClassIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "标签集合，匹配集合中任意元素。\n<li>单个标签长度限制：8个字符。</li>\n<li>数组长度限制：10。</li>",
+          "document": "标签集合，匹配集合中任意元素。\n<li>单个标签长度限制：16个字符。</li>\n<li>数组长度限制：10。</li>",
           "example": "无",
           "member": "string",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23281,7 +23342,8 @@
           "member": "string",
           "name": "Categories",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23290,7 +23352,8 @@
           "member": "string",
           "name": "SourceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23299,7 +23362,8 @@
           "member": "string",
           "name": "StreamIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23308,7 +23372,8 @@
           "member": "string",
           "name": "Vids",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23317,7 +23382,8 @@
           "member": "TimeRange",
           "name": "CreateTime",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23326,7 +23392,8 @@
           "member": "TimeRange",
           "name": "ExpireTime",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23335,7 +23402,8 @@
           "member": "SortBy",
           "name": "Sort",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23344,7 +23412,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23353,7 +23422,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23362,7 +23432,8 @@
           "member": "string",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23371,16 +23442,8 @@
           "member": "string",
           "name": "StorageRegions",
           "required": false,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "无",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23389,7 +23452,8 @@
           "member": "string",
           "name": "StorageClasses",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23398,7 +23462,8 @@
           "member": "string",
           "name": "Text",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23407,7 +23472,8 @@
           "member": "string",
           "name": "SourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23416,7 +23482,8 @@
           "member": "string",
           "name": "StreamId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23425,7 +23492,8 @@
           "member": "string",
           "name": "Vid",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23434,7 +23502,8 @@
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -23443,7 +23512,8 @@
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -23458,7 +23528,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "媒体文件信息列表。",
@@ -23467,7 +23538,8 @@
           "name": "MediaInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -99,9 +99,9 @@ Input:
 ```
 tccli postgres DescribeDBInstances --cli-unfold-argument  \
     --Limit 10 \
-    --Offset 0 \
+    --Filters.0.Values postgres-xxxxxxxx \
     --Filters.0.Name db-instance-id \
-    --Filters.0.Values postgres-xxxxxxxx
+    --Offset 0
 ```
 
 Output: 

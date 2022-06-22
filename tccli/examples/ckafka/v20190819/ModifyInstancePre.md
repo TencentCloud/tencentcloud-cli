@@ -7,8 +7,8 @@ Input:
 ```
 tccli ckafka ModifyInstancePre --cli-unfold-argument  \
     --InstanceId ckafka-xxxx \
-    --DiskSize 600 \
-    --BandWidth 40
+    --BandWidth 40 \
+    --DiskSize 600
 ```
 
 Output: 

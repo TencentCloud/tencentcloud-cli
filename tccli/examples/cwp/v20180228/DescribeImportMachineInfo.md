@@ -31,7 +31,8 @@ Output:
                 ],
                 "MachinePublicIp": "xx",
                 "Quuid": "xx",
-                "MachinePrivateIp": "xx"
+                "MachinePrivateIp": "xx",
+                "LicenseOrder": null
             }
         ]
     }

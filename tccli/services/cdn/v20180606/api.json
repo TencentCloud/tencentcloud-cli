@@ -4134,7 +4134,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4149,7 +4150,8 @@
           "name": "SubDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "解析值",
@@ -4158,7 +4160,8 @@
           "name": "Record",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "解析类型",
@@ -4167,7 +4170,8 @@
           "name": "RecordType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "文件验证 URL 指引\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4176,7 +4180,28 @@
           "name": "FileVerifyUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "文件校验域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileVerifyDomains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "文件校验文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "verification.html",
+          "member": "string",
+          "name": "FileVerifyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -5424,7 +5424,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5433,7 +5434,8 @@
           "member": "int64",
           "name": "MsgRetentionTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5442,7 +5444,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5451,7 +5454,8 @@
           "member": "ModifyInstanceAttributesConfig",
           "name": "Config",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5460,7 +5464,8 @@
           "member": "DynamicRetentionTime",
           "name": "DynamicRetentionConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5469,7 +5474,8 @@
           "member": "int64",
           "name": "RebalanceTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5478,7 +5484,8 @@
           "member": "int64",
           "name": "PublicNetwork",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5487,7 +5494,8 @@
           "member": "DynamicDiskConfig",
           "name": "DynamicDiskConfig",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5502,7 +5510,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

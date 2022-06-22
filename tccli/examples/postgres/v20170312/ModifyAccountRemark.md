@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli postgres ModifyAccountRemark --cli-unfold-argument  \
-    --DBInstanceId postgres-6bwgamo3 \
     --UserName test \
-    --Remark testModifyRemark
+    --Remark testModifyRemark \
+    --DBInstanceId postgres-6bwgamo3
 ```
 
 Output: 

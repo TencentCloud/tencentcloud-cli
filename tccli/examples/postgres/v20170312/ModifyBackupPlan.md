@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli postgres ModifyBackupPlan --cli-unfold-argument  \
-    --DBInstanceId postgres-xxxxxxxx \
-    --BackupPeriod monday tuesday \
+    --BackupPeriod tuesday monday \
     --BaseBackupRetentionPeriod 3 \
+    --DBInstanceId postgres-xxxxxxxx \
     --MinBackupStartTime 01:00:00 \
     --MaxBackupStartTime 02:00:00
 ```

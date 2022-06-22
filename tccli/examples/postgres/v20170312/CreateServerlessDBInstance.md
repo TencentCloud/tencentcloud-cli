@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli postgres CreateServerlessDBInstance --cli-unfold-argument  \
-    --Zone ap-guangzhou-3 \
     --VpcId vpc-xxxx \
-    --SubnetId subnet-xxx \
-    --DBInstanceName serverlessdb-test \
+    --Zone ap-guangzhou-3 \
     --DBVersion 10.4 \
-    --DBCharset UTF8
+    --DBInstanceName serverlessdb-test \
+    --DBCharset UTF8 \
+    --SubnetId subnet-xxx
 ```
 
 Output: 

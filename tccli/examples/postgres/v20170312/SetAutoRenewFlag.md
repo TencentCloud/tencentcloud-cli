@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres SetAutoRenewFlag --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6fego161 \
-    --AutoRenewFlag 1
+    --AutoRenewFlag 1 \
+    --DBInstanceIdSet postgres-6fego161
 ```
 
 Output: 

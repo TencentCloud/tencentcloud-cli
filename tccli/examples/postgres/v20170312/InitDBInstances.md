@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli postgres InitDBInstances --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6fego161 \
-    --AdminName testuser \
     --AdminPassword testuser%40123 \
-    --Charset UTF8
+    --Charset UTF8 \
+    --AdminName testuser \
+    --DBInstanceIdSet postgres-6fego161
 ```
 
 Output: 
@@ -32,10 +32,10 @@ Input:
 
 ```
 tccli postgres InitDBInstances --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6fego161 postgres-lnp6j617 \
-    --AdminName testuser \
     --AdminPassword testuser%40123 \
-    --Charset UTF8
+    --Charset UTF8 \
+    --AdminName testuser \
+    --DBInstanceIdSet postgres-lnp6j617 postgres-6fego161
 ```
 
 Output: 

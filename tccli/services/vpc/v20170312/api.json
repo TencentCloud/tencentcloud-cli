@@ -1790,6 +1790,67 @@
       ],
       "type": "object"
     },
+    "AccessPolicy": {
+      "document": "策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目的CIDR",
+          "example": "178.16.0.0/16",
+          "member": "string",
+          "name": "TargetCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "无",
+          "member": "string",
+          "name": "VpnGatewayIdSslAccessPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否对所有用户都生效。1 生效 0不生效",
+          "example": "0",
+          "member": "uint64",
+          "name": "ForAllClient",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "AccountAttribute": {
       "document": "账户属性对象",
       "members": [
@@ -3709,6 +3770,17 @@
           "example": "20",
           "member": "int64",
           "name": "GuaranteedRatio",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "当日设置最大带宽值（用于保底/日结场景）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DailyMaxBandwidth",
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -13634,7 +13706,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13643,7 +13716,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13652,7 +13726,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13661,7 +13736,18 @@
           "member": "string",
           "name": "SslVpnClientIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "VPN门户网站使用。默认是False。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13676,7 +13762,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "符合条件的实例个数。",
@@ -13685,7 +13772,8 @@
           "name": "SslVpnClientSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13706,7 +13794,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13715,7 +13804,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13724,7 +13814,8 @@
           "member": "string",
           "name": "SslVpnServerIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13733,7 +13824,18 @@
           "member": "FilterObject",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "vpn门户使用。 默认Flase",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13748,7 +13850,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "SSL-VPN-SERVER 实例详细信息列表。",
@@ -13757,7 +13860,8 @@
           "name": "SslVpnSeverSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14897,11 +15001,32 @@
         {
           "default": "",
           "document": "SSL-VPN-CLIENT 实例ID。",
-          "example": "vpngwSslClient-123456",
+          "example": "vpnc-123456",
           "member": "string",
           "name": "SslVpnClientId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "SAML-TOKEN",
+          "example": "无",
+          "member": "string",
+          "name": "SamlToken",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "VPN门户网站使用。默认Flase",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -14910,13 +15035,34 @@
       "document": "DownloadVpnGatewaySslClientCert返回参数结构体",
       "members": [
         {
-          "document": "SSL-VPN-CLIENT 证书配置",
+          "document": "无",
           "example": "无",
           "member": "string",
           "name": "SslClientConfigsSet",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "SSL-VPN client配置",
+          "example": "无",
+          "member": "SslClientConfig",
+          "name": "SslClientConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "是否鉴权成功 只有传入SamlToken 才生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Authenticated",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -23126,6 +23272,52 @@
       ],
       "usage": "both"
     },
+    "SslClientConfig": {
+      "document": "DownloadVpnGatewaySslClientCert 使用",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端配置",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnClientConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更证书",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnRootCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端密钥",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SslVpnClient": {
       "document": "SSL-VPN-CLIENT 出参",
       "members": [
@@ -23223,7 +23415,8 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23233,7 +23426,8 @@
           "name": "SslVpnServerId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23243,7 +23437,8 @@
           "name": "VpnGatewayId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23253,7 +23448,8 @@
           "name": "SslVpnServerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23263,7 +23459,8 @@
           "name": "LocalAddress",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23273,7 +23470,8 @@
           "name": "RemoteAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23283,7 +23481,8 @@
           "name": "MaxConnection",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23293,7 +23492,8 @@
           "name": "WanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23303,7 +23503,8 @@
           "name": "SslVpnProtocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23313,7 +23514,8 @@
           "name": "SslVpnPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23323,7 +23525,8 @@
           "name": "EncryptAlgorithm",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23333,7 +23536,8 @@
           "name": "IntegrityAlgorithm",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23343,7 +23547,8 @@
           "name": "Compress",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23353,7 +23558,8 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -23363,7 +23569,52 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启SSO认证。1：开启  0： 不开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "SsoEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "EIAM应用ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "EiamApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启策略控制。0：不开启 1： 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AccessPolicyEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "策略信息",
+          "example": "无",
+          "member": "AccessPolicy",
+          "name": "AccessPolicy",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

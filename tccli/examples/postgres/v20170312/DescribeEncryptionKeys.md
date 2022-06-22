@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres DescribeEncryptionKeys --cli-unfold-argument  \
-    --DBInstanceId ' postgres-abcdefg'
+    --DBInstanceId  postgres-abcdefg
 ```
 
 Output: 
