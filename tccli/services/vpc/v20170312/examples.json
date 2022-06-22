@@ -1636,7 +1636,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewaySslServers\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpn-gateway-id\n&Filters.0.Values.0=vpn-123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"a5852809-b825-4e56-a52a-db8daeb8833c\",\n        \"SslVpnSeverSet\": [\n            {\n                \"VpcId\": \"vpc-j522iytf\",\n                \"VpnGatewayId\": \"vpngw-aw2tu307\",\n                \"SslVpnServerName\": \"SERVER-004\",\n                \"LocalAddress\": \"172.16.0.0/16\",\n                \"RemoteAddress\": \"192.168.0.0/16\",\n                \"MaxConnection\": 5,\n                \"WanIp\": \"42.193.56.85\",\n                \"SslVpnProtocol\": \"UDP\",\n                \"SslVpnPort\": 1194,\n                \"EncryptAlgorithm\": \"AES-128-CBC\",\n                \"IntegrityAlgorithm\": \"SHA1\",\n                \"Compress\": 0,\n                \"CreateTime\": \"2021-07-13 11:25:57\",\n                \"State\": 6\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SslVpnSeverSet\": [\n            {\n                \"SslVpnProtocol\": \"xx\",\n                \"SsoEnabled\": 1,\n                \"VpcId\": \"xx\",\n                \"IntegrityAlgorithm\": \"xx\",\n                \"RemoteAddress\": \"xx\",\n                \"EncryptAlgorithm\": \"xx\",\n                \"Compress\": 1,\n                \"LocalAddress\": [\n                    \"xx\"\n                ],\n                \"AccessPolicy\": [\n                    {\n                        \"UserGroupIds\": [\n                            \"xx\"\n                        ],\n                        \"VpnGatewayIdSslAccessPolicyId\": \"xx\",\n                        \"UpdateTime\": \"xx\",\n                        \"TargetCidr\": \"xx\",\n                        \"ForAllClient\": 1\n                    }\n                ],\n                \"State\": 1,\n                \"MaxConnection\": 1,\n                \"EiamApplicationId\": \"xx\",\n                \"VpnGatewayId\": \"xx\",\n                \"SslVpnServerId\": \"xx\",\n                \"WanIp\": \"xx\",\n                \"AccessPolicyEnabled\": 1,\n                \"SslVpnServerName\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"SslVpnPort\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询SSL-VPN-SERVER"
       }
     ],
@@ -1786,7 +1786,7 @@
       {
         "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DownloadVpnGatewaySslClientCert\n&SslVpnClientId=vpnc--84tby4k2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"SslClientConfigsSet\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslClientConfig\": [\n            {\n                \"SslVpnCert\": \"xx\",\n                \"SslVpnKey\": \"xx\",\n                \"SslVpnRootCert\": \"xx\",\n                \"SslVpnClientConfiguration\": \"xx\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"xx\",\n        \"SslClientConfigsSet\": \"xx\"\n    }\n}",
         "title": "下载SSL-VPN-CLIENT配置"
       }
     ],

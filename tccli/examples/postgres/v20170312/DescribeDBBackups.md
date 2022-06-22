@@ -7,11 +7,11 @@ Input:
 ```
 tccli postgres DescribeDBBackups --cli-unfold-argument  \
     --DBInstanceId postgres-6fego161 \
-    --Type 1 \
-    --StartTime '2018-06-10 17:06:38' \
-    --EndTime '2018-06-11 17:06:38' \
     --Limit 20 \
-    --Offset 0
+    --StartTime 2018-06-10 17:06:38 \
+    --Offset 0 \
+    --EndTime 2018-06-11 17:06:38 \
+    --Type 1
 ```
 
 Output: 

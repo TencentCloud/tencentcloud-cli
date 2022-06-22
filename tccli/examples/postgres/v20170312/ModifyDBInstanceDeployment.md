@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli postgres ModifyDBInstanceDeployment --cli-unfold-argument  \
-    --DBInstanceId postgres-abcd1234 \
-    --DBNodeSet.0.Role Primary \
-    --DBNodeSet.0.Zone ap-guangzhou-1 \
-    --DBNodeSet.1.Role Standby \
-    --DBNodeSet.1.Zone ap-guangzhou-2 \
-    --SwitchTag 1 \
     --SwitchStartTime 12:00:00 \
+    --DBNodeSet.0.Role Standby \
+    --DBNodeSet.0.Zone ap-guangzhou-2 \
+    --DBNodeSet.1.Role Primary \
+    --DBNodeSet.1.Zone ap-guangzhou-1 \
+    --DBInstanceId postgres-abcd1234 \
+    --SwitchTag 1 \
     --SwitchEndTime 12:30:00
 ```
 
@@ -33,13 +33,13 @@ Input:
 
 ```
 tccli postgres ModifyDBInstanceDeployment --cli-unfold-argument  \
-    --DBInstanceId postgres-abcd1234 \
-    --DBNodeSet.0.Role Primary \
-    --DBNodeSet.0.Zone ap-guangzhou-3 \
-    --DBNodeSet.1.Role Standby \
-    --DBNodeSet.1.Zone ap-guangzhou-3 \
-    --SwitchTag 1 \
     --SwitchStartTime 12:00:00 \
+    --DBNodeSet.0.Role Standby \
+    --DBNodeSet.0.Zone ap-guangzhou-3 \
+    --DBNodeSet.1.Role Primary \
+    --DBNodeSet.1.Zone ap-guangzhou-3 \
+    --DBInstanceId postgres-abcd1234 \
+    --SwitchTag 1 \
     --SwitchEndTime 12:30:00
 ```
 

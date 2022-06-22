@@ -1718,6 +1718,62 @@
       ],
       "type": "object"
     },
+    "AccessPolicy": {
+      "document": "策略信息",
+      "members": [
+        {
+          "default": "",
+          "document": "目的CIDR",
+          "example": "178.16.0.0/16",
+          "member": "string",
+          "name": "TargetCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略ID",
+          "example": "无",
+          "member": "string",
+          "name": "VpnGatewayIdSslAccessPolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否对所有用户都生效。1 生效 0不生效",
+          "example": "0",
+          "member": "uint64",
+          "name": "ForAllClient",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户组ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroupIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AccountAttribute": {
       "document": "账户属性对象",
       "members": [
@@ -12865,6 +12921,15 @@
           "name": "SslVpnClientIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "VPN门户网站使用。默认是False。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12937,6 +13002,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "vpn门户使用。 默认Flase",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14100,11 +14174,29 @@
         {
           "default": "",
           "document": "SSL-VPN-CLIENT 实例ID。",
-          "example": "vpngwSslClient-123456",
+          "example": "vpnc-123456",
           "member": "string",
           "name": "SslVpnClientId",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "SAML-TOKEN",
+          "example": "无",
+          "member": "string",
+          "name": "SamlToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPN门户网站使用。默认Flase",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVpnPortal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14113,12 +14205,30 @@
       "document": "DownloadVpnGatewaySslClientCert返回参数结构体",
       "members": [
         {
-          "document": "SSL-VPN-CLIENT 证书配置",
+          "document": "无",
           "example": "无",
           "member": "string",
           "name": "SslClientConfigsSet",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "SSL-VPN client配置",
+          "example": "无",
+          "member": "SslClientConfig",
+          "name": "SslClientConfig",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "是否鉴权成功 只有传入SamlToken 才生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Authenticated",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -21745,6 +21855,52 @@
       ],
       "usage": "both"
     },
+    "SslClientConfig": {
+      "document": "DownloadVpnGatewaySslClientCert 使用",
+      "members": [
+        {
+          "default": "",
+          "document": "客户端配置",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnClientConfiguration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "更证书",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnRootCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端密钥",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端证书",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SslVpnCert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SslVpnClient": {
       "document": "SSL-VPN-CLIENT 出参",
       "members": [
@@ -21982,6 +22138,46 @@
           "name": "State",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启SSO认证。1：开启  0： 不开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "SsoEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "EIAM应用ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "EiamApplicationId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启策略控制。0：不开启 1： 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AccessPolicyEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "策略信息",
+          "example": "无",
+          "member": "AccessPolicy",
+          "name": "AccessPolicy",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

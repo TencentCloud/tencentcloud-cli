@@ -1241,7 +1241,7 @@
         },
         {
           "default": "",
-          "document": "分之名",
+          "document": "分支名",
           "example": "master",
           "member": "string",
           "name": "Branch",

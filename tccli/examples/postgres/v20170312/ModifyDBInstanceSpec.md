@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli postgres ModifyDBInstanceSpec --cli-unfold-argument  \
+    --Storage 200 \
     --DBInstanceId postgres-6bwgamo3 \
-    --Memory 2 \
-    --Storage 200
+    --Memory 2
 ```
 
 Output: 

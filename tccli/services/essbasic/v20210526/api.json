@@ -640,6 +640,26 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字时横坐标偏移量",
+          "example": "无",
+          "member": "float",
+          "name": "OffsetX",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定关键字时纵坐标偏移量",
+          "example": "无",
+          "member": "float",
+          "name": "OffsetY",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

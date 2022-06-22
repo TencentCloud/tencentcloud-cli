@@ -9679,7 +9679,7 @@
         },
         {
           "default": "",
-          "document": "站点集合",
+          "document": "站点名集合",
           "example": "[\"zone1\",\"zone2\"]",
           "member": "string",
           "name": "Zones",
@@ -9688,7 +9688,7 @@
         },
         {
           "default": "",
-          "document": "域名集合",
+          "document": "子域名集合",
           "example": "[\"www.baidu.com\"]",
           "member": "string",
           "name": "Domains",
@@ -10166,7 +10166,7 @@
         },
         {
           "default": "",
-          "document": "站点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"baidu.com\"",
           "member": "string",
           "name": "Domain",

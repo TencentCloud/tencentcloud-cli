@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateDeal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeal\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"NewPackageType\": \"xx\",\n    \"GoodsNum\": 1,\n    \"TimeSpan\": 1,\n    \"AutoRenew\": 1,\n    \"DealType\": 1,\n    \"GoodsChildType\": \"xx\",\n    \"GoodsType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DealList\": [\n            {\n                \"DealName\": \"xx\",\n                \"DealId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "DNSPod商品下单"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeal\n<公共请求参数>\n\n{\n    \"Domain\": \"8988.ltd\",\n    \"NewPackageType\": \"\",\n    \"GoodsNum\": \"1\",\n    \"TimeSpan\": \"12\",\n    \"AutoRenew\": \"1\",\n    \"DealType\": \"1\",\n    \"GoodsChildType\": \"DP_PLUS\",\n    \"GoodsType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\",\n        \"DealList\": [\n            {\n                \"DealName\": \"20220519328000975112751\",\n                \"DealId\": \"223011900\"\n            }\n        ],\n        \"BigDealId\": \"20220519328000975112741\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CreateDomain": [
       {
         "document": "",
@@ -252,6 +266,20 @@
         "title": "更新动态 DNS 记录"
       }
     ],
+    "ModifyPackageAutoRenew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
+        "title": "解析套餐关闭自动续费"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
+        "title": "解析套餐开启自动续费"
+      }
+    ],
     "ModifyRecord": [
       {
         "document": "",
@@ -296,6 +324,28 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubdomainStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"SubDomain\": \"www\",\n    \"RecordType\": \"A,TXT,CNAME\",\n    \"Status\": \"disable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "暂停www子域名A/TXT/CNAME类型的解析记录"
+      }
+    ],
+    "ModifyVasAutoRenewStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVasAutoRenewStatus\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"disable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
+        "title": "增值服务关闭自动续费"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVasAutoRenewStatus\n<公共请求参数>\n\n{\n    \"ResourceId\": \"a0bed80e\",\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"896a1b04-814d-49d1-b404-42cc8d5b67f0\"\n    }\n}",
+        "title": "增值服务开启自动续费"
+      }
+    ],
+    "PayOrderWithBalance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PayOrderWithBalance\n<公共请求参数>\n\n{\n    \"BigDealIdList\": [\n        \"20220614328001008099351\"\n    ],\n    \"VoucherIdList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96065f69-df89-42e7-8023-c65f87588c64\",\n        \"DealIdList\": [\n            \"223853617\"\n        ],\n        \"BigDealIdList\": [\n            \"20220614328001008099351\"\n        ],\n        \"DealNameList\": [\n            \"20220614328001008099361\"\n        ]\n    }\n}",
+        "title": "成功"
       }
     ]
   },

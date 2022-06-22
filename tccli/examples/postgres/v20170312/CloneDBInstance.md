@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli postgres CloneDBInstance --cli-unfold-argument  \
+    --VpcId vpc-2ot3acw1 \
+    --AutoRenewFlag 1 \
     --DBInstanceId postgres-abcd1234 \
-    --SpecCode cdb.pg.z1.2g \
+    --RecoveryTargetTime 2021-12-25 01:27:35 \
     --Storage 10 \
     --Period 1 \
-    --InstanceChargeType prepaid \
     --AutoVoucher 0 \
-    --AutoRenewFlag 1 \
-    --DBNodeSet.0.Role Primary \
+    --InstanceChargeType prepaid \
+    --SpecCode cdb.pg.z1.2g \
+    --SubnetId subnet-ppv9iw34 \
+    --DBNodeSet.0.Role Standby \
     --DBNodeSet.0.Zone ap-guangzhou-3 \
-    --DBNodeSet.1.Role Standby \
-    --DBNodeSet.1.Zone ap-guangzhou-3 \
-    --RecoveryTargetTime '2021-12-25 01:27:35' \
-    --VpcId vpc-2ot3acw1 \
-    --SubnetId subnet-ppv9iw34
+    --DBNodeSet.1.Role Primary \
+    --DBNodeSet.1.Zone ap-guangzhou-3
 ```
 
 Output: 

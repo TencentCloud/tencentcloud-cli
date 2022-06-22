@@ -1,5 +1,11 @@
 {
   "actions": {
+    "CreateDeal": {
+      "document": "DNSPod商品下单",
+      "input": "CreateDealRequest",
+      "name": "商品下单",
+      "output": "CreateDealResponse"
+    },
     "CreateDomain": {
       "document": "添加域名\n",
       "input": "CreateDomainRequest",
@@ -180,6 +186,12 @@
       "name": "更新动态 DNS 记录",
       "output": "ModifyDynamicDNSResponse"
     },
+    "ModifyPackageAutoRenew": {
+      "document": " DNS 解析套餐自动续费设置",
+      "input": "ModifyPackageAutoRenewRequest",
+      "name": "DNS 解析套餐自动续费设置",
+      "output": "ModifyPackageAutoRenewResponse"
+    },
     "ModifyRecord": {
       "document": "修改记录",
       "input": "ModifyRecordRequest",
@@ -209,6 +221,18 @@
       "input": "ModifySubdomainStatusRequest",
       "name": "暂停子域名的解析记录",
       "output": "ModifySubdomainStatusResponse"
+    },
+    "ModifyVasAutoRenewStatus": {
+      "document": "增值服务自动续费设置",
+      "input": "ModifyVasAutoRenewStatusRequest",
+      "name": "增值服务自动续费设置",
+      "output": "ModifyVasAutoRenewStatusResponse"
+    },
+    "PayOrderWithBalance": {
+      "document": "DNSPod商品余额支付",
+      "input": "PayOrderWithBalanceRequest",
+      "name": "DNSPod商品余额支付",
+      "output": "PayOrderWithBalanceResponse"
     }
   },
   "metadata": {
@@ -449,6 +473,114 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateDealRequest": {
+      "document": "CreateDeal请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "询价类型，1 新购，2 续费，3 套餐升级（增值服务暂时只支持新购）",
+          "example": "1",
+          "member": "uint64",
+          "name": "DealType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "商品类型，1 域名套餐 2 增值服务",
+          "example": "1",
+          "member": "uint64",
+          "name": "GoodsType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "套餐类型：\nDP_PLUS：专业版\nDP_EXPERT：企业版\nDP_ULTRA：尊享版\n\n增值服务类型\nLB：负载均衡\nURL：URL转发\nDMONITOR_TASKS：D监控任务数\nDMONITOR_IP：D监控备用 IP 数\nCUSTOMLINE：自定义线路数",
+          "example": "DP_PLUS",
+          "member": "string",
+          "name": "GoodsChildType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "增值服务购买数量，如果是域名套餐固定为1，如果是增值服务则按以下规则：\n负载均衡、D监控任务数、D监控备用 IP 数、自定义线路数、URL 转发（必须是5的正整数倍，如 5、10、15 等）",
+          "example": "1",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否开启自动续费，1 开启，2 不开启（增值服务暂不支持自动续费），默认值为 2 不开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "需要绑定套餐的域名，如 dnspod.cn，如果是续费或升级，domain 参数必须要传，新购可不传。",
+          "example": "testses.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "套餐时长：\n1. 套餐以月为单位（按月只能是 3、6 还有 12 的倍数），套餐例如购买一年则传12，最大120 。（续费最低一年）\n2. 升级套餐时不需要传。\n3. 增值服务的时长单位为年，买一年传1（增值服务新购按年只能是 1，增值服务续费最大为 10）",
+          "example": "3",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "套餐类型，需要升级到的套餐类型，只有升级时需要。",
+          "example": "DP_EXTRA",
+          "member": "string",
+          "name": "NewPackageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDealResponse": {
+      "document": "CreateDeal返回参数结构体",
+      "members": [
+        {
+          "document": "大订单号，一个大订单号下可以有多个子订单，说明是同一次下单",
+          "example": "xxxx",
+          "member": "string",
+          "name": "BigDealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "子订单列表",
+          "example": "[{\"DealId\":\"xxx\",\"DealName\":\"xxx\"\"}]",
+          "member": "Deals",
+          "name": "DealList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDomainAliasRequest": {
       "document": "CreateDomainAlias请求参数结构体",
@@ -1191,6 +1323,32 @@
         }
       ],
       "type": "object"
+    },
+    "Deals": {
+      "document": "子订单号列表",
+      "members": [
+        {
+          "default": "",
+          "document": "子订单ID",
+          "example": "238112403",
+          "member": "string",
+          "name": "DealId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子订单号",
+          "example": "2021042313242309098981923090934",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteDomainAliasRequest": {
       "document": "DeleteDomainAlias请求参数结构体",
@@ -3648,6 +3806,42 @@
       ],
       "type": "object"
     },
+    "ModifyPackageAutoRenewRequest": {
+      "document": "ModifyPackageAutoRenew请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "a0bed80e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "enable 开启自动续费；disable 关闭自动续费",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageAutoRenewResponse": {
+      "document": "ModifyPackageAutoRenew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRecordBatchDetail": {
       "document": "批量添加记录返回结构",
       "members": [
@@ -4121,6 +4315,105 @@
     "ModifySubdomainStatusResponse": {
       "document": "ModifySubdomainStatus返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVasAutoRenewStatusRequest": {
+      "document": "ModifyVasAutoRenewStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "a0bed80e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "enable 开启自动续费；disable 关闭自动续费",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVasAutoRenewStatusResponse": {
+      "document": "ModifyVasAutoRenewStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PayOrderWithBalanceRequest": {
+      "document": "PayOrderWithBalance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "需要支付的大订单号数组",
+          "example": "[ \"xx\" ]",
+          "member": "string",
+          "name": "BigDealIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "代金券ID数组",
+          "example": "[ \"xx\" ]",
+          "member": "string",
+          "name": "VoucherIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PayOrderWithBalanceResponse": {
+      "document": "PayOrderWithBalance返回参数结构体",
+      "members": [
+        {
+          "document": "此次操作支付成功的订单id数组",
+          "example": " [   \"236674026\"     ]",
+          "member": "string",
+          "name": "DealIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "此次操作支付成功的大订单号数组",
+          "example": "[   \"2020111161300016142108\"     ]",
+          "member": "string",
+          "name": "BigDealIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "此次操作支付成功的订单号数组",
+          "example": "[  \"2020111161300016142141\"     ]",
+          "member": "string",
+          "name": "DealNameList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

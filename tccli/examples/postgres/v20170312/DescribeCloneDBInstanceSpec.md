@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres DescribeCloneDBInstanceSpec --cli-unfold-argument  \
-    --DBInstanceId postgres-apzvwncr \
-    --RecoveryTargetTime '2021-12-24 03:41:50'
+    --RecoveryTargetTime 2021-12-24 03:41:50 \
+    --DBInstanceId postgres-apzvwncr
 ```
 
 Output: 

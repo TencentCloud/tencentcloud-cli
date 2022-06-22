@@ -12797,7 +12797,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>",
+          "document": "过滤条件：\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship：旗舰版 | ProtectedMachines：专业版+旗舰版） | BASIC_PROPOST_GENERAL_DISCOUNT：普惠版+专业版按量计费+基础版主机 | UnFlagship：专业版预付费+专业版后付费+基础版+普惠版</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -17652,6 +17652,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "授权订单对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "LicenseOrder",
+          "name": "LicenseOrder",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19685,6 +19695,62 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LicenseOrder": {
+      "document": "授权订单对象内容",
+      "members": [
+        {
+          "default": "",
+          "document": "授权ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "授权订单资源状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "resource_id",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

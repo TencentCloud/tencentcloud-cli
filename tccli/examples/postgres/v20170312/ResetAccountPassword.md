@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli postgres ResetAccountPassword --cli-unfold-argument  \
-    --DBInstanceId postgres-lnp6j6172 \
     --UserName test \
-    --Password 1234qwer()
+    --Password 1234qwer() \
+    --DBInstanceId postgres-lnp6j6172
 ```
 
 Output: 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli postgres ResetAccountPassword --cli-unfold-argument  \
-    --DBInstanceId postgres-lnp6j6172 \
     --UserName test \
-    --Password 1234qwer()
+    --Password 1234qwer() \
+    --DBInstanceId postgres-lnp6j6172
 ```
 
 Output: 

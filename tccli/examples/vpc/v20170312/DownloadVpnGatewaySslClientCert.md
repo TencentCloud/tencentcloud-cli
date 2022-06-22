@@ -13,8 +13,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "aeabeab6-f74b-453a-b25d-d7b460193c3b",
-        "SslClientConfigsSet": "xxx"
+        "SslClientConfig": [
+            {
+                "SslVpnCert": "xx",
+                "SslVpnKey": "xx",
+                "SslVpnRootCert": "xx",
+                "SslVpnClientConfiguration": "xx"
+            }
+        ],
+        "Authenticated": 1,
+        "RequestId": "xx",
+        "SslClientConfigsSet": "xx"
     }
 }
 ```

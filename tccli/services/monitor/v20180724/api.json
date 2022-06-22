@@ -1487,15 +1487,6 @@
         },
         {
           "default": "",
-          "document": "策略标签",
-          "example": "无",
-          "member": "PolicyTag",
-          "name": "Tag",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "产品类型",
           "example": "cvm",
           "member": "string",
@@ -1505,12 +1496,30 @@
         },
         {
           "default": "",
+          "document": "策略标签",
+          "example": "无",
+          "member": "PolicyTag",
+          "name": "Tag",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "实例分组ID",
           "example": "78",
           "member": "int64",
           "name": "InstanceGroupId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "批量绑定标签",
+          "example": "无",
+          "member": "PolicyTag",
+          "name": "BatchTag",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

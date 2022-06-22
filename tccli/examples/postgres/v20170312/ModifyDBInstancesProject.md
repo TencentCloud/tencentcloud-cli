@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres ModifyDBInstancesProject --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6bwgamo3 postgres-lnp6j6172 \
-    --ProjectId 10467
+    --ProjectId 10467 \
+    --DBInstanceIdSet postgres-lnp6j6172 postgres-6bwgamo3
 ```
 
 Output: 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli postgres ModifyDBInstancesProject --cli-unfold-argument  \
-    --DBInstanceIdSet postgres-6bwgamo3 \
-    --ProjectId 10467
+    --ProjectId 10467 \
+    --DBInstanceIdSet postgres-6bwgamo3
 ```
 
 Output: 

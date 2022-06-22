@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli postgres DescribeReadOnlyGroups --cli-unfold-argument  \
-    --PageSize 10 \
-    --PageNumber 0 \
     --OrderBy Name \
     --OrderByType desc \
+    --PageNumber 0 \
+    --Filters.0.Values postgres-6bwgamo3 \
     --Filters.0.Name db-master-instance-id \
-    --Filters.0.Values postgres-6bwgamo3
+    --PageSize 10
 ```
 
 Output: 

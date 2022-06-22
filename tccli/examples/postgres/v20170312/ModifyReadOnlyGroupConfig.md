@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli postgres ModifyReadOnlyGroupConfig --cli-unfold-argument  \
-    --ReadOnlyGroupId "vpc-e0tfm161" \
-    --ReadOnlyGroupName "test" \
-    --ReplayLagEliminate 0 \
     --MaxReplayLag 0 \
+    --ReplayLagEliminate 0 \
     --MaxReplayLatency 512 \
     --MinDelayEliminateReserve 0 \
+    --ReadOnlyGroupName "test" \
+    --ReadOnlyGroupId "vpc-e0tfm161" \
     --Rebalance 1
 ```
 

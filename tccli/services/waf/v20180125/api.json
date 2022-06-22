@@ -114,6 +114,12 @@
       "name": "获取waf流量访问趋势",
       "output": "DescribeFlowTrendResponse"
     },
+    "DescribeInstances": {
+      "document": "查询用户所有实例的详细信息",
+      "input": "DescribeInstancesRequest",
+      "name": "查询用户所有实例的详细信息",
+      "output": "DescribeInstancesResponse"
+    },
     "DescribeIpAccessControl": {
       "document": "Waf ip黑白名单查询",
       "input": "DescribeIpAccessControlRequest",
@@ -1002,6 +1008,82 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotPkg": {
+      "document": "Bot资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2188,6 +2270,69 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "容量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤数组",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "instance列表",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "Instances",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIpAccessControlRequest": {
       "document": "DescribeIpAccessControl请求参数结构体",
       "members": [
@@ -2572,6 +2717,62 @@
       "members": [],
       "usage": "both"
     },
+    "DomainPackageNew": {
+      "document": "clb-waf 域名扩展套餐",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "waf",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "年月日",
+          "member": "string",
+          "name": "ValidTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐购买个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐购买地域，clb-waf暂时没有用到",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ExportAccessInfo": {
       "document": "DescribeAccessExports接口",
       "members": [
@@ -2733,6 +2934,298 @@
         }
       ],
       "usage": "in"
+    },
+    "FraudPkg": {
+      "document": "业务安全资源信息",
+      "members": [
+        {
+          "default": "",
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceInfo": {
+      "document": "一个实例的详细信息",
+      "members": [
+        {
+          "default": "",
+          "document": "id",
+          "example": "waf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "name",
+          "example": "waf",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "资源id",
+          "example": "waf",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "付费模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "弹性计费",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐版本",
+          "example": "2",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "年月日",
+          "member": "string",
+          "name": "ValidTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "年月日",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已用",
+          "example": "4",
+          "member": "uint64",
+          "name": "DomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上限",
+          "example": "5",
+          "member": "uint64",
+          "name": "SubDomainLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已用",
+          "example": "4",
+          "member": "uint64",
+          "name": "MainDomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上限",
+          "example": "5",
+          "member": "uint64",
+          "name": "MainDomainLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "峰值",
+          "example": "111",
+          "member": "uint64",
+          "name": "MaxQPS",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "qps套餐",
+          "example": "11",
+          "member": "QPSPackageNew",
+          "name": "QPS",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "域名套餐",
+          "example": "11",
+          "member": "DomainPackageNew",
+          "name": "DomainPkg",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户appid",
+          "example": "11",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "clb或saas",
+          "example": "clb",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "业务安全包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FraudPkg",
+          "name": "FraudPkg",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Bot资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BotPkg",
+          "name": "BotPkg",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "IpAccessControlData": {
       "document": "数据封装",
@@ -3255,6 +3748,62 @@
         }
       ],
       "usage": "both"
+    },
+    "QPSPackageNew": {
+      "document": "clb-waf QPS套餐 New",
+      "members": [
+        {
+          "default": "",
+          "document": "资源ID",
+          "example": "waf_000q6ntyb",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "过期时间",
+          "example": "年月日",
+          "member": "string",
+          "name": "ValidTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐购买个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "套餐购买地域，clb-waf暂时没有用到",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ResponseCode": {
       "document": "响应体的返回码",

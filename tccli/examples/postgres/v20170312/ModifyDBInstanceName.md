@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres ModifyDBInstanceName --cli-unfold-argument  \
-    --DBInstanceId postgres-6fego161 \
-    --InstanceName testModifyInstanceName
+    --InstanceName testModifyInstanceName \
+    --DBInstanceId postgres-6fego161
 ```
 
 Output: 
@@ -27,8 +27,8 @@ Input:
 
 ```
 tccli postgres ModifyDBInstanceName --cli-unfold-argument  \
-    --DBInstanceId postgres-6ougo465 \
-    --InstanceName testModifyInstanceName
+    --InstanceName testModifyInstanceName \
+    --DBInstanceId postgres-6ougo465
 ```
 
 Output: 

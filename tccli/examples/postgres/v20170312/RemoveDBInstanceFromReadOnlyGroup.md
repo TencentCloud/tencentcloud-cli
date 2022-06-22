@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres RemoveDBInstanceFromReadOnlyGroup --cli-unfold-argument  \
-    --DBInstanceId "pgro-k95qzetn" \
-    --ReadOnlyGroupId "pgrogrp-k95qzetn"
+    --ReadOnlyGroupId "pgrogrp-k95qzetn" \
+    --DBInstanceId "pgro-k95qzetn"
 ```
 
 Output: 
