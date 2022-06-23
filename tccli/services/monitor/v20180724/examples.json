@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BindPrometheusManagedGrafana": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindPrometheusManagedGrafana\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-dafxx32\",\n    \"GrafanaId\": \"grafana-sf2fswer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "绑定 Grafana 可视化服务"
+      }
+    ],
     "BindingPolicyObject": [
       {
         "document": "",
@@ -40,12 +48,36 @@
         "title": "创建报警规则"
       }
     ],
+    "CreateExporterIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"xx\\\"]}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
+        "title": "创建 exporter 集成"
+      }
+    ],
     "CreatePolicyGroup": [
       {
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=CreatePolicyGroup\n&Module=monitor\n&GroupName=test_group\n&ViewName=cvm_device\n&ProjectId=0\n&Remark=backup_group\n&BackEndCall=0\n&IsUnionRule=1\n&Conditions.0.MetricId=19\n&Conditions.0.CalcType=1\n&Conditions.0.CalcValue=100\n&Conditions.0.CalcPeriod=1\n&Conditions.0.ContinuePeriod=1\n&Conditions.0.AlarmNotifyType=0\n&Conditions.0.AlarmNotifyPeriod=0\n&EventConditions.0.EventId=42\n&EventConditions.0.AlarmNotifyType=0\n&EventConditions.0.AlarmNotifyPeriod=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GroupId\": 1288099,\n        \"RequestId\": \"a91f70ed-e385-4817-9928-994ff06e56ec\"\n    }\n}",
         "title": "增加策略组"
+      }
+    ],
+    "CreatePrometheusAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sd234234\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建 Prometheus Agent"
+      }
+    ],
+    "CreatePrometheusScrapeJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"Config\": \"job_name:xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建 Prometheus 抓取任务"
       }
     ],
     "CreateServiceDiscovery": [
@@ -80,12 +112,28 @@
         "title": "删除报警规则"
       }
     ],
+    "DeleteExporterIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"mysql-exporter\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
+        "title": "DeleteExporterIntegration"
+      }
+    ],
     "DeletePolicyGroup": [
       {
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=DeletePolicyGroup\n&Module=monitor\n&GroupId.0=11111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-b4d6-4c2c-90a9-617d80347ab5\"\n    }\n}",
         "title": "删除告警策略组"
+      }
+    ],
+    "DeletePrometheusScrapeJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "删除 Prometheus 抓取任务"
       }
     ],
     "DeleteServiceDiscovery": [
@@ -234,6 +282,14 @@
         "title": "获取告警策略模板列表"
       }
     ],
+    "DescribeExporterIntegrations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"KubeType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\",\n        \"IntegrationSet\": []\n    }\n}",
+        "title": "查询 exporter 集成列表"
+      }
+    ],
     "DescribeMonitorTypes": [
       {
         "document": "",
@@ -282,12 +338,28 @@
         "title": "分页查询产品列表"
       }
     ],
+    "DescribePrometheusAgents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"HeartbeatTime\": \"xx\",\n                \"Ipv4\": \"xx\",\n                \"LastError\": \"xx\",\n                \"AgentVersion\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 12\n    }\n}",
+        "title": "列出 Prometheus Agent"
+      }
+    ],
     "DescribePrometheusInstances": [
       {
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusInstances\n&InstanceIds.0=prom-ncxkwqr8\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"InstanceName\": \"name\",\n                \"InstanceChargeType\": 1,\n                \"InstanceId\": \"prom-xxxxx\",\n                \"InstanceStatus\": 1,\n                \"RegionId\": 1,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"VpcId\": \"vpcID\",\n                \"SubnetId\": \"subnetid\",\n                \"IPv4Address\": \"\",\n                \"DataRetentionTime\": 30,\n                \"EnableGrafana\": 0,\n                \"GrafanaURL\": \"\",\n                \"CreatedAt\": \"2020-07-07T10:39:18Z\"\n            }\n        ],\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "查看 Prometheus 实例列表"
+      }
+    ],
+    "DescribePrometheusScrapeJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"ScrapeJobSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Config\": \"xx\",\n                \"Name\": \"xx\",\n                \"JobId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "列出 Prometheus 抓取任务"
       }
     ],
     "DescribeServiceDiscovery": [
@@ -304,6 +376,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticData\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"Namespace\": \"QCE/TKE\",\n    \"MetricNames\": [\n        \"K8sPodCpuCoreUsed\"\n    ],\n    \"Period\": 300,\n    \"Conditions\": [\n        {\n            \"Key\": \"tke_cluster_instance_id\",\n            \"Operator\": \"=\",\n            \"Value\": [\n                \"cls-mw2w40s7\"\n            ]\n        }\n    ],\n    \"StartTime\": \"2020-11-24T15:15:50+08:00\",\n    \"EndTime\": \"2020-11-24T15:25:50+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"MetricName\": \"K8sPodCpuCoreUsed\",\n                \"Points\": [\n                    {\n                        \"Dimensions\": [\n                            {\n                                \"Name\": \"tke_cluster_instance_id\",\n                                \"Value\": \"cls-mw2w40s7\"\n                            },\n                            {\n                                \"Name\": \"node\",\n                                \"Value\": \"cls-gn7vut9a-virtual-kubelet-subnet-node-2\"\n                            },\n                            {\n                                \"Name\": \"pod_name\",\n                                \"Value\": \"proxy-edge-j7j95\"\n                            },\n                            {\n                                \"Name\": \"workload_name\",\n                                \"Value\": \"init-test-nfs02\"\n                            },\n                            {\n                                \"Name\": \"namespace\",\n                                \"Value\": \"default-test\"\n                            },\n                            {\n                                \"Name\": \"node_role\",\n                                \"Value\": \"node\"\n                            },\n                            {\n                                \"Name\": \"un_instance_id\",\n                                \"Value\": \"cls-gn7vut9a-virtual-kubelet-subnet-nmpi5ecw-1\"\n                            },\n                            {\n                                \"Name\": \"workload_kind\",\n                                \"Value\": \"Deployment\"\n                            }\n                        ],\n                        \"Values\": [\n                            {\n                                \"Timestamp\": 1606202100,\n                                \"Value\": 41.066\n                            },\n                            {\n                                \"Timestamp\": 1606202400,\n                                \"Value\": 38.666\n                            },\n                            {\n                                \"Timestamp\": 1606202700,\n                                \"Value\": 37.866\n                            }\n                        ]\n                    },\n                    {\n                        \"Dimensions\": [\n                            {\n                                \"Name\": \"namespace\",\n                                \"Value\": \"default-test\"\n                            },\n                            {\n                                \"Name\": \"node\",\n                                \"Value\": \"cls-gn7vut9a-virtual-kubelet-subnet-node-3\"\n                            },\n                            {\n                                \"Name\": \"node_role\",\n                                \"Value\": \"node\"\n                            },\n                            {\n                                \"Name\": \"pod_name\",\n                                \"Value\": \"network-tools-b94d6dd89-flf7n\"\n                            },\n                            {\n                                \"Name\": \"un_instance_id\",\n                                \"Value\": \"cls-gn7vut9a-virtual-kubelet-subnet-nmpi5ecw-1\"\n                            },\n                            {\n                                \"Name\": \"workload_kind\",\n                                \"Value\": \"Deployment\"\n                            },\n                            {\n                                \"Name\": \"workload_name\",\n                                \"Value\": \"init-test-nfs00\"\n                            },\n                            {\n                                \"Name\": \"tke_cluster_instance_id\",\n                                \"Value\": \"cls-mw2w40s7\"\n                            }\n                        ],\n                        \"Values\": [\n                            {\n                                \"Timestamp\": 1606202100,\n                                \"Value\": 42.666\n                            },\n                            {\n                                \"Timestamp\": 1606202400,\n                                \"Value\": 33.6\n                            },\n                            {\n                                \"Timestamp\": 1606202700,\n                                \"Value\": 40.266\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"EndTime\": \"2020-11-24 15:25:00\",\n        \"Period\": 300,\n        \"RequestId\": \"0d25d659-71ee-4c93-b8e1-f3992c61ff46\",\n        \"StartTime\": \"2020-11-24 15:15:00\"\n    }\n}",
         "title": "根据维度条件查询监控数据"
+      }
+    ],
+    "DestroyPrometheusInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-w3rkj7835b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "强制释放 Prometheus 实例"
       }
     ],
     "GetMonitorData": [
@@ -324,6 +404,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorData\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CDB\",\n    \"MetricName\": \"SlowQueries\",\n    \"Period\": 300,\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"InstanceId\",\n                    \"Value\": \"cdb-k5d6z7p0\"\n                },\n                {\n                    \"Name\": \"InstanceType\",\n                    \"Value\": \"2\"\n                }\n            ]\n        }\n    ],\n    \"StartTime\": \"2018-09-22T19:23:07+08:00\",\n    \"EndTime\": \"2018-09-22T20:23:07+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-09-22T19:20:00+08:00\",\n        \"EndTime\": \"2018-09-22T20:20:00+08:00\",\n        \"Period\": 300,\n        \"MetricName\": \"SlowQueries\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceType\",\n                        \"Value\": \"2\"\n                    },\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"cdb-k5d6z7p0\"\n                    }\n                ],\n                \"Timestamps\": [],\n                \"Values\": []\n            }\n        ],\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
         "title": "拉取单台CDB监控数据"
+      }
+    ],
+    "GetPrometheusAgentManagementCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPrometheusAgentManagementCommand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-23kdafdf\",\n    \"AgentId\": \"agent-23kdafdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": {\n            \"Install\": \"xx\",\n            \"Restart\": \"xx\",\n            \"Stop\": \"xx\",\n            \"StatusCheck\": \"xx\",\n            \"LogCheck\": \"xx\"\n        },\n        \"RequestId\": \"as131asfjl23dsf342lxdsf\"\n    }\n}",
+        "title": "获取 Prometheus Agent 管理相关的命令行"
       }
     ],
     "ModifyAlarmNotice": [
@@ -390,6 +478,14 @@
         "title": "更新策略组"
       }
     ],
+    "ModifyPrometheusInstanceAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrometheusInstanceAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2rsas2\",\n    \"InstanceName\": \"my-prom-gg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "修改 Prometheus 实例相关属性"
+      }
+    ],
     "PutMonitorData": [
       {
         "document": "",
@@ -414,6 +510,14 @@
         "title": "设为默认告警策略"
       }
     ],
+    "TerminatePrometheusInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminatePrometheusInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"prom-w3rkj7835b\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "销毁 Prometheus 实例"
+      }
+    ],
     "UnBindingAllPolicyObject": [
       {
         "document": "",
@@ -428,6 +532,22 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=UnBindingPolicyObject\n&Module=monitor\n&GroupId=11111\n&UniqueId.0=3dd5113208fd467b2e5d0c1111111111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-1111-1111-1111-11111111111\"\n    }\n}",
         "title": "删除策略的关联对象"
+      }
+    ],
+    "UnbindPrometheusManagedGrafana": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindPrometheusManagedGrafana\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xfdafw\",\n    \"GrafanaId\": \"grafana-sdjl2r\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "解除实例绑定的 Grafana 可视化实例"
+      }
+    ],
+    "UninstallGrafanaDashboard": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallGrafanaDashboard\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-c0wy130a\",\n    \"IntegrationCodes\": [\n        \"spring-mvc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49h8tychqjqzl63wzfvxfkyucee87tmz\"\n    }\n}",
+        "title": "删除 Grafana Dashboard"
       }
     ],
     "UpdateAlertRule": [
@@ -446,12 +566,44 @@
         "title": "更新报警策略状态"
       }
     ],
+    "UpdateExporterIntegration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"xx\\\"]}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wpkysykx8k9tu1urmlyo54gq33f4kxwz\"\n    }\n}",
+        "title": "更新 exporter 集成配置"
+      }
+    ],
+    "UpdatePrometheusAgentStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentIds\": [\n        \"xx\"\n    ],\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "更新 Prometheus Agent 状态"
+      }
+    ],
+    "UpdatePrometheusScrapeJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"Config\": \"job_name:xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "更新 Prometheus 抓取任务"
+      }
+    ],
     "UpdateServiceDiscovery": [
       {
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=UpdateServiceDiscovery\n&InstanceId=prom-sdfk2342a\n&KubeClusterId=cls-pwerf3k3\n&KubeType=1\n&Type=1\n&Yaml=yaml\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ServiceDiscovery\": {\n            \"Kind\": \"ServiceMonitor\",\n            \"Name\": \"name\",\n            \"Namespace\": \"namespace\",\n            \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\",\n            \"Yaml\": \"apiVersion: monitoring.coreos.com...\",\n            \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\",\n            \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"\n        },\n        \"RequestId\": \"nrtlca1qmunlpf51noe13qp5vyvg7mq5\"\n    }\n}",
         "title": "更新服务发现"
+      }
+    ],
+    "UpgradeGrafanaDashboard": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaDashboard\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-gds3q53s\",\n    \"IntegrationCodes\": [\n        \"spring-mvc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "升级 Grafana Dashboard"
       }
     ]
   },

@@ -473,8 +473,8 @@
     "CreateSecurityGroup": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateSecurityGroup\r\n&Version=2017-03-12\r\n&GroupName=TestGroup\r\n&GroupDescription=test-group-desc\r\n&Tags.0.Key=city\r\n&Tags.0.Value=shanghai\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-3g7ftkp3\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateSecurityGroup\n&GroupName=TestGroup\n&GroupDescription=test-group-desc\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-3g7ftkp3\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"0\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
         "title": "创建安全组"
       }
     ],
@@ -759,7 +759,7 @@
     "DeleteRouteTable": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteRouteTable\r\n&Version=2017-03-12\r\n&RouteTableId=rtb-azd4dt1c\r\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteRouteTable\n&RouteTableId=rtb-azd4dt1c\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除路由表"
       }

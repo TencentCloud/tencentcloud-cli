@@ -6803,7 +6803,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "集群的认证信息",
+          "document": "集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）",
           "example": "{}",
           "member": "ClusterCredential",
           "name": "Credential",

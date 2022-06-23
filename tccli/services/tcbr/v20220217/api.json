@@ -36,6 +36,12 @@
       "name": "查询环境基础信息",
       "output": "DescribeEnvBaseInfoResponse"
     },
+    "DescribeServerManageTask": {
+      "document": "查询服务管理任务信息",
+      "input": "DescribeServerManageTaskRequest",
+      "name": "查询服务管理任务信息",
+      "output": "DescribeServerManageTaskResponse"
+    },
     "OperateServerManage": {
       "document": "操作发布单",
       "input": "OperateServerManageRequest",
@@ -623,6 +629,78 @@
           "example": "无",
           "member": "EnvBaseInfo",
           "name": "EnvBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerManageTaskRequest": {
+      "document": "DescribeServerManageTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "环境Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "server",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "1111",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerManageTaskResponse": {
+      "document": "DescribeServerManageTask返回参数结构体",
+      "members": [
+        {
+          "document": "是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExist",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "任务信息",
+          "example": "无",
+          "member": "ServerManageTaskInfo",
+          "name": "Task",
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -1514,6 +1592,172 @@
       ],
       "usage": "out"
     },
+    "ServerManageTaskInfo": {
+      "document": "服务管理任务信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id",
+          "example": "1111",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "环境Id",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务名",
+          "example": "test",
+          "member": "string",
+          "name": "ServerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "变更类型",
+          "example": "CONFIG",
+          "member": "string",
+          "name": "ChangeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布类型",
+          "example": "GRAY",
+          "member": "string",
+          "name": "ReleaseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "部署类型",
+          "example": "package",
+          "member": "string",
+          "name": "DeployType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "上一个版本名",
+          "example": "test-001",
+          "member": "string",
+          "name": "PreVersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "版本名",
+          "example": "test-002",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水线Id",
+          "example": "111",
+          "member": "int64",
+          "name": "PipelineId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "流水线任务Id",
+          "example": "12121",
+          "member": "int64",
+          "name": "PipelineTaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "发布单Id",
+          "example": "1212",
+          "member": "int64",
+          "name": "ReleaseId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "步骤信息",
+          "example": "无",
+          "member": "TaskStepInfo",
+          "name": "Steps",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作标识",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorRemark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "StaticStorageInfo": {
       "document": "静态CDN资源信息",
       "members": [
@@ -1641,6 +1885,72 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskStepInfo": {
+      "document": "任务步骤信息",
+      "members": [
+        {
+          "default": "",
+          "document": "步骤名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "未启动：\"todo\"\n运行中：\"running\"\n失败：\"failed\"\n成功结束：\"finished\"",
+          "example": "failed",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2022-05-27 15:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "消耗时间：秒",
+          "example": "10",
+          "member": "int64",
+          "name": "CostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpdateCloudRunServerRequest": {
       "document": "UpdateCloudRunServer请求参数结构体",

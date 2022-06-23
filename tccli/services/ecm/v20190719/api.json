@@ -10016,7 +10016,7 @@
         {
           "default": "",
           "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cvm",
+          "example": "eks",
           "member": "string",
           "name": "Business",
           "required": true,

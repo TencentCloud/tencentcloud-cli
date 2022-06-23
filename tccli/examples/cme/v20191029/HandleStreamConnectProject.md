@@ -26,6 +26,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -59,6 +60,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "rtmp://liveplay-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b4500018xxx?txSecret=4478cfdfe0fd0eb3820705aebaa328ed&txTime=608FA1CE",
+        "VodPullInputPlayInfo": null,
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
 }
@@ -93,6 +95,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e85a"
     }
 }
@@ -127,6 +130,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "c93cbb5b-b809-4061-8c45-7469b64e8e69"
     }
 }
@@ -157,6 +161,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "a48cbb3b-b901-4052-8c48-9869b64e8e69"
     }
 }
@@ -191,6 +196,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "983cbb5b-b809-4061-8c45-7469b64e8e41"
     }
 }
@@ -222,6 +228,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "1938bb5b-b809-4061-8c45-7469b64e8e893"
     }
 }
@@ -252,6 +259,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "kd83bb5b-b809-4061-8c45-7469b64e9183"
     }
 }
@@ -283,6 +291,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "832dbb5b-b809-4061-8c45-7469b648329dl"
     }
 }
@@ -313,6 +322,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "l90dbb5b-b809-4061-8c45-7469b64e928d"
     }
 }
@@ -343,6 +353,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "7819bb5b-b809-4061-8c45-7469b64e8370"
     }
 }
@@ -375,6 +386,7 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
         "RequestId": "9303bb5b-b809-4061-8c45-7469b64e7630"
     }
 }
@@ -407,6 +419,43 @@ Output:
 {
     "Response": {
         "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": null,
+        "RequestId": "kkd89b5b-b809-4061-8c45-7469b64e9263"
+    }
+}
+```
+
+**Example 14: 查询点播输入源播放进度**
+
+查询当前正在转推项目的点播输入源播放进度。
+
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 DescribeInputPlayInfo
+InputEndpoint | 是 | String | Main 或 Backup
+
+Input: 
+
+```
+tccli cme HandleStreamConnectProject --cli-unfold-argument  \
+    --Platform test \
+    --ProjectId 12522d74de35ff \
+    --Operation DescribeInputPlayInfo \
+    --InputEndpoint Main
+```
+
+Output: 
+```
+{
+    "Response": {
+        "StreamInputRtmpPushUrl": "",
+        "VodPullInputPlayInfo": {
+            "Url": "https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b5352858907805464143/AfJuJAzie5QA.mp4",
+            "TimeOffset": 15
+        },
         "RequestId": "kkd89b5b-b809-4061-8c45-7469b64e9263"
     }
 }

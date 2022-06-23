@@ -72,6 +72,14 @@
         "title": "查询环境基础信息"
       }
     ],
+    "DescribeServerManageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:  DescribeServerManageTask\n<公共请求参数>\n\n{\n    \"ServerName\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"OperatorRemark\": \"xx\",\n    \"TaskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Task\": {\n            \"Status\": \"xx\",\n            \"EnvId\": \"xx\",\n            \"PreVersionName\": \"xx\",\n            \"ServerName\": \"xx\",\n            \"PipelineId\": 0,\n            \"ReleaseType\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"ReleaseId\": 0,\n            \"FailReason\": \"xx\",\n            \"DeployType\": \"xx\",\n            \"PipelineTaskId\": 0,\n            \"VersionName\": \"xx\",\n            \"Steps\": [\n                {\n                    \"Status\": \"xx\",\n                    \"CostTime\": 0,\n                    \"Name\": \"xx\",\n                    \"FailReason\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"EndTime\": \"xx\"\n                }\n            ],\n            \"OperatorRemark\": \"xx\",\n            \"Id\": 0,\n            \"ChangeType\": \"xx\"\n        },\n        \"RequestId\": \"xx\",\n        \"IsExist\": true\n    }\n}",
+        "title": "查询服务管理任务信息"
+      }
+    ],
     "OperateServerManage": [
       {
         "document": "",

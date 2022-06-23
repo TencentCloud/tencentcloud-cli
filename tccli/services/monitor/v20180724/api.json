@@ -1,5 +1,11 @@
 {
   "actions": {
+    "BindPrometheusManagedGrafana": {
+      "document": "绑定 Grafana 可视化服务实例",
+      "input": "BindPrometheusManagedGrafanaRequest",
+      "name": "绑定 Grafana 可视化服务实例",
+      "output": "BindPrometheusManagedGrafanaResponse"
+    },
     "BindingPolicyObject": {
       "document": "将告警策略绑定到特定对象",
       "input": "BindingPolicyObjectRequest",
@@ -30,11 +36,29 @@
       "name": "创建告警规则",
       "output": "CreateAlertRuleResponse"
     },
+    "CreateExporterIntegration": {
+      "document": "创建 exporter 集成",
+      "input": "CreateExporterIntegrationRequest",
+      "name": "创建 exporter 集成",
+      "output": "CreateExporterIntegrationResponse"
+    },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
       "name": "增加策略组",
       "output": "CreatePolicyGroupResponse"
+    },
+    "CreatePrometheusAgent": {
+      "document": "创建 Prometheus CVM Agent",
+      "input": "CreatePrometheusAgentRequest",
+      "name": "创建 Prometheus CVM Agent",
+      "output": "CreatePrometheusAgentResponse"
+    },
+    "CreatePrometheusScrapeJob": {
+      "document": "创建 Prometheus 抓取任务",
+      "input": "CreatePrometheusScrapeJobRequest",
+      "name": "创建 Prometheus 抓取任务",
+      "output": "CreatePrometheusScrapeJobResponse"
     },
     "CreateServiceDiscovery": {
       "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -60,11 +84,23 @@
       "name": "删除报警规则",
       "output": "DeleteAlertRulesResponse"
     },
+    "DeleteExporterIntegration": {
+      "document": "删除 exporter 集成",
+      "input": "DeleteExporterIntegrationRequest",
+      "name": "删除 exporter 集成",
+      "output": "DeleteExporterIntegrationResponse"
+    },
     "DeletePolicyGroup": {
       "document": "删除告警策略组",
       "input": "DeletePolicyGroupRequest",
       "name": "删除告警策略组",
       "output": "DeletePolicyGroupResponse"
+    },
+    "DeletePrometheusScrapeJobs": {
+      "document": "删除 Prometheus 抓取任务",
+      "input": "DeletePrometheusScrapeJobsRequest",
+      "name": "删除 Prometheus 抓取任务",
+      "output": "DeletePrometheusScrapeJobsResponse"
     },
     "DeleteServiceDiscovery": {
       "document": "删除在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -162,6 +198,12 @@
       "name": "获取条件模板列表",
       "output": "DescribeConditionsTemplateListResponse"
     },
+    "DescribeExporterIntegrations": {
+      "document": "查询 exporter 集成列表",
+      "input": "DescribeExporterIntegrationsRequest",
+      "name": "查询 exporter 集成列表",
+      "output": "DescribeExporterIntegrationsResponse"
+    },
     "DescribeMonitorTypes": {
       "document": "云监控支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
@@ -198,11 +240,23 @@
       "name": "查询云监控产品列表",
       "output": "DescribeProductListResponse"
     },
+    "DescribePrometheusAgents": {
+      "document": "列出 Prometheus CVM Agent",
+      "input": "DescribePrometheusAgentsRequest",
+      "name": "列出 Prometheus CVM Agent",
+      "output": "DescribePrometheusAgentsResponse"
+    },
     "DescribePrometheusInstances": {
       "document": "本接口 (DescribePrometheusInstances) 用于查询一个或多个实例的详细信息。\n<ul>\n<li>可以根据实例ID、实例名称或者实例状态等信息来查询实例的详细信息</li>\n<li>如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。</li>\n</ul>",
       "input": "DescribePrometheusInstancesRequest",
       "name": "查看 Prometheus 实例列表",
       "output": "DescribePrometheusInstancesResponse"
+    },
+    "DescribePrometheusScrapeJobs": {
+      "document": "列出 Prometheus 抓取任务",
+      "input": "DescribePrometheusScrapeJobsRequest",
+      "name": "列出 Prometheus 抓取任务",
+      "output": "DescribePrometheusScrapeJobsResponse"
     },
     "DescribeServiceDiscovery": {
       "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -216,11 +270,23 @@
       "name": "根据维度条件查询监控数据",
       "output": "DescribeStatisticDataResponse"
     },
+    "DestroyPrometheusInstance": {
+      "document": "彻底删除 Prometheus 实例相关数据，给定的实例必须先被 Terminate",
+      "input": "DestroyPrometheusInstanceRequest",
+      "name": "强制释放 Prometheus 实例",
+      "output": "DestroyPrometheusInstanceResponse"
+    },
     "GetMonitorData": {
       "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse"
+    },
+    "GetPrometheusAgentManagementCommand": {
+      "document": "获取 Prometheus Agent 管理相关的命令行",
+      "input": "GetPrometheusAgentManagementCommandRequest",
+      "name": "获取 Prometheus Agent 管理相关的命令行",
+      "output": "GetPrometheusAgentManagementCommandResponse"
     },
     "ModifyAlarmNotice": {
       "document": "云监控告警编辑告警通知模板",
@@ -270,6 +336,12 @@
       "name": "更新策略组",
       "output": "ModifyPolicyGroupResponse"
     },
+    "ModifyPrometheusInstanceAttributes": {
+      "document": "修改 Prometheus 实例相关属性",
+      "input": "ModifyPrometheusInstanceAttributesRequest",
+      "name": "修改 Prometheus 实例相关属性",
+      "output": "ModifyPrometheusInstanceAttributesResponse"
+    },
     "PutMonitorData": {
       "document": "默认接口请求频率限制：50次/秒。\n默认单租户指标上限：100个。\n单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。\n\n上报的时间戳为期望保存的时间戳，建议构造整数分钟时刻的时间戳。\n时间戳时间范围必须为当前时间到 300 秒前之间。\n同一 IP 指标对的数据需按分钟先后顺序上报。",
       "input": "PutMonitorDataRequest",
@@ -288,6 +360,12 @@
       "name": "设为默认告警策略",
       "output": "SetDefaultAlarmPolicyResponse"
     },
+    "TerminatePrometheusInstances": {
+      "document": "销毁按量 Prometheus 实例",
+      "input": "TerminatePrometheusInstancesRequest",
+      "name": "销毁按量 Prometheus 实例",
+      "output": "TerminatePrometheusInstancesResponse"
+    },
     "UnBindingAllPolicyObject": {
       "document": "删除全部的关联对象",
       "input": "UnBindingAllPolicyObjectRequest",
@@ -299,6 +377,18 @@
       "input": "UnBindingPolicyObjectRequest",
       "name": "删除策略的关联对象",
       "output": "UnBindingPolicyObjectResponse"
+    },
+    "UnbindPrometheusManagedGrafana": {
+      "document": "解除实例绑定的 Grafana 可视化实例",
+      "input": "UnbindPrometheusManagedGrafanaRequest",
+      "name": "解除实例绑定的 Grafana 可视化实例",
+      "output": "UnbindPrometheusManagedGrafanaResponse"
+    },
+    "UninstallGrafanaDashboard": {
+      "document": "删除 Grafana Dashboard",
+      "input": "UninstallGrafanaDashboardRequest",
+      "name": "删除 Grafana Dashboard",
+      "output": "UninstallGrafanaDashboardResponse"
     },
     "UpdateAlertRule": {
       "document": "更新 Prometheus 的报警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
@@ -312,11 +402,35 @@
       "name": "更新报警策略状态",
       "output": "UpdateAlertRuleStateResponse"
     },
+    "UpdateExporterIntegration": {
+      "document": "更新 exporter 集成配置",
+      "input": "UpdateExporterIntegrationRequest",
+      "name": "更新 exporter 集成配置",
+      "output": "UpdateExporterIntegrationResponse"
+    },
+    "UpdatePrometheusAgentStatus": {
+      "document": "更新 Prometheus CVM Agent 状态",
+      "input": "UpdatePrometheusAgentStatusRequest",
+      "name": "更新 Prometheus CVM Agent 状态",
+      "output": "UpdatePrometheusAgentStatusResponse"
+    },
+    "UpdatePrometheusScrapeJob": {
+      "document": "更新 Prometheus 抓取任务",
+      "input": "UpdatePrometheusScrapeJobRequest",
+      "name": "更新 Prometheus 抓取任务",
+      "output": "UpdatePrometheusScrapeJobResponse"
+    },
     "UpdateServiceDiscovery": {
       "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "UpdateServiceDiscoveryRequest",
       "name": "更新服务发现",
       "output": "UpdateServiceDiscoveryResponse"
+    },
+    "UpgradeGrafanaDashboard": {
+      "document": "升级 Grafana Dashboard",
+      "input": "UpgradeGrafanaDashboardRequest",
+      "name": "升级 Grafana Dashboard",
+      "output": "UpgradeGrafanaDashboardResponse"
     }
   },
   "metadata": {
@@ -1346,6 +1460,42 @@
       ],
       "usage": "both"
     },
+    "BindPrometheusManagedGrafanaRequest": {
+      "document": "BindPrometheusManagedGrafana请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-ads2xxd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Grafana 可视化服务实例 ID",
+          "example": "grafana-adf2adf",
+          "member": "string",
+          "name": "GrafanaId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindPrometheusManagedGrafanaResponse": {
+      "document": "BindPrometheusManagedGrafana返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BindingPolicyObjectDimension": {
       "document": "策略绑定实例维度信息",
       "members": [
@@ -2149,6 +2299,69 @@
       ],
       "type": "object"
     },
+    "CreateExporterIntegrationRequest": {
+      "document": "CreateExporterIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "3",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "mysql-exporter",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集成配置",
+          "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExporterIntegrationResponse": {
+      "document": "CreateExporterIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
       "members": [
@@ -2390,6 +2603,87 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAgentRequest": {
+      "document": "CreatePrometheusAgent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-dfae2323",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent 名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusAgentResponse": {
+      "document": "CreatePrometheusAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusScrapeJobRequest": {
+      "document": "CreatePrometheusScrapeJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "example": "xx",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务内容",
+          "example": "job_name:xx",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusScrapeJobResponse": {
+      "document": "CreatePrometheusScrapeJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateServiceDiscoveryRequest": {
       "document": "CreateServiceDiscovery请求参数结构体",
       "members": [
@@ -2592,6 +2886,69 @@
       ],
       "type": "object"
     },
+    "DeleteExporterIntegrationRequest": {
+      "document": "DeleteExporterIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "3",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "mysql-exporter",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名字",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExporterIntegrationResponse": {
+      "document": "DeleteExporterIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePolicyGroupRequest": {
       "document": "DeletePolicyGroup请求参数结构体",
       "members": [
@@ -2616,6 +2973,48 @@
     },
     "DeletePolicyGroupResponse": {
       "document": "DeletePolicyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusScrapeJobsRequest": {
+      "document": "DeletePrometheusScrapeJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务 ID 列表",
+          "member": "string",
+          "name": "JobIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusScrapeJobsResponse": {
+      "document": "DeletePrometheusScrapeJobs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4595,6 +4994,78 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExporterIntegrationsRequest": {
+      "document": "DescribeExporterIntegrations请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "3",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "mysql-exporter",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "名字",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExporterIntegrationsResponse": {
+      "document": "DescribeExporterIntegrations返回参数结构体",
+      "members": [
+        {
+          "document": "集成配置列表",
+          "example": "[]",
+          "member": "IntegrationConfiguration",
+          "name": "IntegrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6698,6 +7169,87 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAgentsRequest": {
+      "document": "DescribePrometheusAgents请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent 名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID 列表",
+          "example": "无",
+          "member": "string",
+          "name": "AgentIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAgentsResponse": {
+      "document": "DescribePrometheusAgents返回参数结构体",
+      "members": [
+        {
+          "document": "Agent 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAgent",
+          "name": "AgentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "Agent 总量",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusInstancesRequest": {
       "document": "DescribePrometheusInstances请求参数结构体",
       "members": [
@@ -6803,6 +7355,86 @@
           "member": "int64",
           "name": "TotalCount",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusScrapeJobsRequest": {
+      "document": "DescribePrometheusScrapeJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务名",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务 ID 列表",
+          "member": "string",
+          "name": "JobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusScrapeJobsResponse": {
+      "document": "DescribePrometheusScrapeJobs返回参数结构体",
+      "members": [
+        {
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "PrometheusScrapeJob",
+          "name": "ScrapeJobSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "任务总量",
+          "member": "int64",
+          "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
@@ -6981,6 +7613,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPrometheusInstanceRequest": {
+      "document": "DestroyPrometheusInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，该实例必须先被 terminate",
+          "example": "prom-w3rkj7835b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPrometheusInstanceResponse": {
+      "document": "DestroyPrometheusInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7197,6 +7856,47 @@
       ],
       "type": "object"
     },
+    "GetPrometheusAgentManagementCommandRequest": {
+      "document": "GetPrometheusAgentManagementCommand请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus Agent ID",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPrometheusAgentManagementCommandResponse": {
+      "document": "GetPrometheusAgentManagementCommand返回参数结构体",
+      "members": [
+        {
+          "document": "Agent 管理命令",
+          "member": "ManagementCommand",
+          "name": "Command",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Instance": {
       "document": "实例维度组合数组",
       "members": [
@@ -7256,6 +7956,133 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntegrationConfiguration": {
+      "document": "export 集成配置",
+      "members": [
+        {
+          "default": "",
+          "document": "名字",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "blackbox-exporter",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容",
+          "example": "{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"in",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例类型",
+          "example": "MySQL",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例描述",
+          "example": "root:**@localhost:3306",
+          "member": "string",
+          "name": "InstanceDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "dashboard 的 URL",
+          "example": "http://xx",
+          "member": "string",
+          "name": "GrafanaDashboardURL",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagementCommand": {
+      "document": "Prometheus Agent 管理命令行",
+      "members": [
+        {
+          "default": "",
+          "document": "Agent 安装命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Install",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 重启命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Restart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 停止命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Stop",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 状态检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "StatusCheck",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 日志检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LogCheck",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8254,6 +9081,51 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusInstanceAttributesRequest": {
+      "document": "ModifyPrometheusInstanceAttributes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名称",
+          "example": "my-prom-gg",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-2rsas2",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "存储时长（取值为 15、30、45。此参数不适用于包年包月实例）",
+          "example": "15",
+          "member": "int64",
+          "name": "DataRetentionTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusInstanceAttributesResponse": {
+      "document": "ModifyPrometheusInstanceAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MonitorTypeNamespace": {
       "document": "策略类型",
       "members": [
@@ -8652,6 +9524,84 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusAgent": {
+      "document": "prometheus agent",
+      "members": [
+        {
+          "default": "",
+          "document": "Agent 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例 ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Agent IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Ipv4",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "HeartbeatTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最近一次错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "LastError",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "AgentVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent 状态",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9129,6 +10079,48 @@
           "document": "规则更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusScrapeJob": {
+      "document": "Prometheus 抓取任务",
+      "members": [
+        {
+          "default": "",
+          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "任务 ID",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "Config",
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -9688,6 +10680,33 @@
       ],
       "usage": "out"
     },
+    "TerminatePrometheusInstancesRequest": {
+      "document": "TerminatePrometheusInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID 列表",
+          "example": "[\"prom-w3rkj7835b\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminatePrometheusInstancesResponse": {
+      "document": "TerminatePrometheusInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "URLNotice": {
       "document": "云监控告警通知模板 - 回调通知详情",
       "members": [
@@ -9862,6 +10881,78 @@
       ],
       "type": "object"
     },
+    "UnbindPrometheusManagedGrafanaRequest": {
+      "document": "UnbindPrometheusManagedGrafana请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-x2jlskf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Grafana 实例 ID",
+          "example": "grafana-sdjl2r",
+          "member": "string",
+          "name": "GrafanaId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindPrometheusManagedGrafanaResponse": {
+      "document": "UnbindPrometheusManagedGrafana返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallGrafanaDashboardRequest": {
+      "document": "UninstallGrafanaDashboard请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-c0wy130a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 集成项 Code，删除对应的 Dashboard，Code 如下：\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>",
+          "example": "[\"spring_mvc\"]",
+          "member": "string",
+          "name": "IntegrationCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallGrafanaDashboardResponse": {
+      "document": "UninstallGrafanaDashboard返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateAlertRuleRequest": {
       "document": "UpdateAlertRule请求参数结构体",
       "members": [
@@ -10024,6 +11115,168 @@
       ],
       "type": "object"
     },
+    "UpdateExporterIntegrationRequest": {
+      "document": "UpdateExporterIntegration请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "KubeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cls-xx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "类型",
+          "example": "mysql-exporter",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "配置内容",
+          "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateExporterIntegrationResponse": {
+      "document": "UpdateExporterIntegration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAgentStatusRequest": {
+      "document": "UpdatePrometheusAgentStatus请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID 列表",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "AgentIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要更新的状态\n<li> 1= 开启 </li>\n<li> 2= 关闭 </li>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAgentStatusResponse": {
+      "document": "UpdatePrometheusAgentStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusScrapeJobRequest": {
+      "document": "UpdatePrometheusScrapeJob请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Agent ID",
+          "example": "xx",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "抓取任务 ID",
+          "example": "xx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "抓取任务配置",
+          "example": "job_name:xx",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusScrapeJobResponse": {
+      "document": "UpdatePrometheusScrapeJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateServiceDiscoveryRequest": {
       "document": "UpdateServiceDiscovery请求参数结构体",
       "members": [
@@ -10080,6 +11333,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeGrafanaDashboardRequest": {
+      "document": "UpgradeGrafanaDashboard请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID",
+          "example": "prom-gds3q53s",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>",
+          "example": "[\"spring-mvc\"]",
+          "member": "string",
+          "name": "IntegrationCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeGrafanaDashboardResponse": {
+      "document": "UpgradeGrafanaDashboard返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

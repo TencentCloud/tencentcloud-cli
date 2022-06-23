@@ -6007,6 +6007,7 @@
         {
           "default": "",
           "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "example": "TestGroup",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -6015,6 +6016,7 @@
         {
           "default": "",
           "document": "安全组备注，最多100个字符。",
+          "example": "test-group-desc",
           "member": "string",
           "name": "GroupDescription",
           "required": true,
@@ -6023,6 +6025,7 @@
         {
           "default": "",
           "document": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -6031,6 +6034,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6044,8 +6048,10 @@
       "members": [
         {
           "document": "安全组对象。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8174,6 +8180,7 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-azd4dt1c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -17632,11 +17639,11 @@
         },
         {
           "default": "",
-          "document": "网络ACL规则集。",
+          "document": "网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
           "example": "无",
           "member": "NetworkAclEntrySet",
           "name": "NetworkAclEntrySet",
-          "required": true,
+          "required": false,
           "type": "object"
         }
       ],
@@ -19134,6 +19141,7 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。",
+          "example": "vpc-q26u781x",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -19143,6 +19151,7 @@
         {
           "default": "",
           "document": "网络ACL实例`ID`。",
+          "example": "acl-fy0ys38q",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
@@ -19152,6 +19161,7 @@
         {
           "default": "",
           "document": "网络ACL名称，最大长度为60。",
+          "example": "test",
           "member": "string",
           "name": "NetworkAclName",
           "required": true,
@@ -19161,6 +19171,7 @@
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2021-03-22 20:59:55",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -19170,6 +19181,7 @@
         {
           "default": "",
           "document": "网络ACL关联的子网数组。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
           "required": true,
@@ -19179,6 +19191,7 @@
         {
           "default": "",
           "document": "网络ACl入站规则。",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "IngressEntries",
           "required": true,
@@ -19188,6 +19201,7 @@
         {
           "default": "",
           "document": "网络ACL出站规则。",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "EgressEntries",
           "required": true,

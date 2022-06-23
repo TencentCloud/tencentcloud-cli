@@ -10514,7 +10514,7 @@
         },
         {
           "default": "",
-          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
+          "document": "渠道名称。详见附录-云企付枚举类说明-ChannelName。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝",
           "example": "TENPAY",
           "member": "string",
           "name": "ChannelName",
@@ -10523,7 +10523,7 @@
         },
         {
           "default": "",
-          "document": "支付方式。\n__EBANK_PAYMENT__: ebank支付\n__OPENBANK_PAYMENT__: openbank支付",
+          "document": "支付方式。详见附录-云企付枚举类说明-PaymentMethod。\n__EBANK_PAYMENT__: ebank支付\n__OPENBANK_PAYMENT__: openbank支付",
           "example": "无",
           "member": "string",
           "name": "PaymentMethod",
@@ -10930,7 +10930,7 @@
         },
         {
           "default": "",
-          "document": "渠道名称。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝\n__WECHAT__: 微信支付",
+          "document": "渠道名称。详见附录-云企付枚举类说明-ChannelName。\n__TENPAY__: 商企付\n__WECHAT__: 微信支付\n__ALIPAY__: 支付宝\n__WECHAT__: 微信支付",
           "example": "TENPAY",
           "member": "string",
           "name": "ChannelName",
@@ -10939,7 +10939,7 @@
         },
         {
           "default": "",
-          "document": "付款方式。如\n__EBANK_PAYMENT__:B2B EBank付款\n__OPENBANK_PAYMENT__:B2C  openbank付款\n__SAFT_ISV__:支付宝安心发\n__TRANS_TO_CHANGE__: 微信支付转账到零钱v2",
+          "document": "付款方式。详见附录-云企付枚举类说明-PaymentMethod。\n__EBANK_PAYMENT__:B2B EBank付款\n__OPENBANK_PAYMENT__:B2C  openbank付款\n__SAFT_ISV__:支付宝安心发\n__TRANS_TO_CHANGE__: 微信支付转账到零钱v2",
           "example": "EBANK_PAYMENT",
           "member": "string",
           "name": "PaymentMethod",
@@ -25725,7 +25725,7 @@
         },
         {
           "default": "",
-          "document": "INIT：初始化\nPAYING：支付中\nDEDUCTED：扣款成功\nACCEPTED：支付受理成功\nSUCCESS：支付成功\nCLOSED：关单\nPAY_FAIL：支付失败\nREVOKE：退票",
+          "document": "订单状态。\nINIT：初始化\nPAYING：支付中\nACCEPTED：支付受理成功\nSUCCESS：支付成功\nCLOSED：关单\nPAY_FAIL：支付失败\nREVOKE：退票",
           "example": "SUCCESS",
           "member": "string",
           "name": "OrderStatus",
@@ -25821,6 +25821,26 @@
           "name": "BankApprovalGuideInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手续费金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FeeAmount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "手续费费率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FeeRate",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

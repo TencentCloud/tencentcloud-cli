@@ -45,6 +45,7 @@ Output:
                 "IdCard": "",
                 "HealthCardNo": "",
                 "SocialSecurityCardNo": "",
+                "BedNo": "",
                 "Birthday": "",
                 "Ethnicity": "",
                 "Married": "",
