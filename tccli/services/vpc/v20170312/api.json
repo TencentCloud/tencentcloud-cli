@@ -6140,7 +6140,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6149,7 +6150,28 @@
           "member": "string",
           "name": "NetworkAclName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络ACL类型，三元组或五元组",
+          "example": "TUPLE5,TUPLE3",
+          "member": "string",
+          "name": "NetworkAclType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -6164,7 +6186,8 @@
           "name": "NetworkAcl",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6456,34 +6479,42 @@
         {
           "default": "",
           "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "example": "TestGroup",
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "安全组备注，最多100个字符。",
+          "example": "test-group-desc",
           "member": "string",
           "name": "GroupDescription",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。",
+          "example": "0",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6493,10 +6524,13 @@
       "members": [
         {
           "document": "安全组对象。",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6697,7 +6731,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6706,7 +6741,8 @@
           "member": "string",
           "name": "SubnetName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6715,7 +6751,8 @@
           "member": "string",
           "name": "CidrBlock",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6724,7 +6761,8 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6733,7 +6771,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6742,7 +6781,8 @@
           "member": "string",
           "name": "CdcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6757,7 +6797,8 @@
           "name": "Subnet",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6778,7 +6819,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6787,7 +6829,8 @@
           "member": "SubnetInput",
           "name": "Subnets",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6796,7 +6839,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6805,7 +6849,8 @@
           "member": "string",
           "name": "CdcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6820,7 +6865,8 @@
           "name": "SubnetSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8693,10 +8739,12 @@
         {
           "default": "",
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-azd4dt1c",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -18493,16 +18541,28 @@
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "网络ACL规则集。",
+          "document": "网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
           "example": "无",
           "member": "NetworkAclEntrySet",
           "name": "NetworkAclEntrySet",
-          "required": true,
-          "type": "object"
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
+          "example": "无",
+          "member": "NetworkAclQuintupleEntries",
+          "name": "NetworkAclQuintupleSet",
+          "required": false,
+          "type": "object",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -20030,65 +20090,101 @@
         {
           "default": "",
           "document": "`VPC`实例`ID`。",
+          "example": "vpc-q26u781x",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "网络ACL实例`ID`。",
+          "example": "acl-fy0ys38q",
           "member": "string",
           "name": "NetworkAclId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "网络ACL名称，最大长度为60。",
+          "example": "test",
           "member": "string",
           "name": "NetworkAclName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "创建时间。",
+          "example": "2021-03-22 20:59:55",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "网络ACL关联的子网数组。",
+          "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "网络ACl入站规则。",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "IngressEntries",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "网络ACL出站规则。",
+          "example": "无",
           "member": "NetworkAclEntry",
           "name": "EgressEntries",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'",
+          "example": "TRIPLE",
+          "member": "string",
+          "name": "NetworkAclType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "标签键值对",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
         }
       ],
       "usage": "out"
@@ -20185,6 +20281,161 @@
         }
       ],
       "usage": "in"
+    },
+    "NetworkAclQuintupleEntries": {
+      "document": "网络ACL五元组",
+      "members": [
+        {
+          "default": "",
+          "document": "网络ACL五元组入站规则。",
+          "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
+          "member": "NetworkAclQuintupleEntry",
+          "name": "Ingress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "网络ACL五元组出站规则",
+          "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
+          "member": "NetworkAclQuintupleEntry",
+          "name": "Egress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
+    "NetworkAclQuintupleEntry": {
+      "document": "网络ACL五元组Entry",
+      "members": [
+        {
+          "default": "",
+          "document": "协议, 取值: TCP,UDP, ICMP, ALL。",
+          "example": "UDP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
+          "example": "446",
+          "member": "string",
+          "name": "SourcePort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "源CIDR。",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "SourceCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
+          "example": "446",
+          "member": "string",
+          "name": "DestinationPort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "目的CIDR。",
+          "example": "192.168.0.0/24",
+          "member": "string",
+          "name": "DestinationCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "动作，ACCEPT 或 DROP。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "网络ACL条目唯一ID。",
+          "example": "acli45-ahnu4rv5",
+          "member": "string",
+          "name": "NetworkAclQuintupleEntryId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "优先级，从1开始。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "创建时间，用于DescribeNetworkAclQuintupleEntries的出参。",
+          "example": "2021-03-02 14:41:15",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "default": "",
+          "document": "方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。",
+          "example": "INGRESS",
+          "member": "string",
+          "name": "NetworkAclDirection",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "NetworkInterface": {
       "document": "弹性网卡",

@@ -6914,7 +6914,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6929,16 +6930,18 @@
           "name": "Addresses",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "集群的认证信息",
+          "document": "集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）",
           "example": "{}",
           "member": "ClusterCredential",
           "name": "Credential",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的公网访问信息",
@@ -6947,7 +6950,8 @@
           "name": "PublicLB",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群的内网访问信息",
@@ -6956,7 +6960,8 @@
           "name": "InternalLB",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "标记是否新的内外网功能",
@@ -6965,7 +6970,8 @@
           "name": "ProxyLB",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "连接用户集群k8s 的Config",
@@ -6974,7 +6980,8 @@
           "name": "Kubeconfig",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
