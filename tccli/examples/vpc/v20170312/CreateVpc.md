@@ -23,6 +23,7 @@ Output:
             "Ipv6CidrBlock": "",
             "IsDefault": false,
             "EnableMulticast": false,
+            "EnableRouteVpcPublish": false,
             "CreatedTime": "2020-09-24 15:57:39",
             "EnableDhcp": true,
             "DhcpOptionsId": "dopt-5f5lzouo",

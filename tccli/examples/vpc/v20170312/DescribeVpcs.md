@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
-    --Offset 0 \
     --Limit 2 \
-    --Filters.0.Name is-default \
-    --Filters.0.Values false \
-    --Filters.1.Name cidr-block \
-    --Filters.1.Values 10.8.0.0 192.168.0.0
+    --Filters.0.Values 192.168.0.0 10.8.0.0 \
+    --Filters.0.Name cidr-block \
+    --Filters.1.Values false \
+    --Filters.1.Name is-default \
+    --Offset 0
 ```
 
 Output: 
@@ -28,6 +28,7 @@ Output:
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
                 "EnableDhcp": true,
+                "EnableRouteVpcPublish": false,
                 "DhcpOptionsId": "dopt-8g7k5qfq",
                 "DnsServerSet": [
                     "10.0.0.1",
@@ -52,10 +53,10 @@ Input:
 
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
-    --Offset 0 \
     --Limit 2 \
+    --Filters.0.Values shanghai \
     --Filters.0.Name tag:city \
-    --Filters.0.Values shanghai
+    --Offset 0
 ```
 
 Output: 
@@ -70,6 +71,7 @@ Output:
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
                 "EnableDhcp": true,
+                "EnableRouteVpcPublish": false,
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
                 "DhcpOptionsId": "dopt-8g7k5qfq",
