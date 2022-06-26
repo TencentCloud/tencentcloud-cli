@@ -6564,6 +6564,7 @@
         {
           "default": "",
           "document": "vpc名称，最大长度不能超过60个字节。",
+          "example": "TestVPC",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -6572,6 +6573,7 @@
         {
           "default": "",
           "document": "vpc的cidr，仅能在10.0.0.0/16，172.16.0.0/16，192.168.0.0/16这三个内网网段内。",
+          "example": "10.8.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -6580,6 +6582,7 @@
         {
           "default": "",
           "document": "是否开启组播。true: 开启, false: 不开启。",
+          "example": "true",
           "member": "string",
           "name": "EnableMulticast",
           "required": false,
@@ -6588,6 +6591,7 @@
         {
           "default": "",
           "document": "DNS地址，最多支持4个。",
+          "example": "无",
           "member": "string",
           "name": "DnsServers",
           "required": false,
@@ -6596,6 +6600,7 @@
         {
           "default": "",
           "document": "DHCP使用的域名。",
+          "example": "无",
           "member": "string",
           "name": "DomainName",
           "required": false,
@@ -6604,6 +6609,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6617,8 +6623,10 @@
       "members": [
         {
           "document": "Vpc对象。",
+          "example": "无",
           "member": "Vpc",
           "name": "Vpc",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12649,7 +12657,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。",
+          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -18107,6 +18115,7 @@
         {
           "default": "",
           "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -18115,6 +18124,7 @@
         {
           "default": "",
           "document": "私有网络名称，可任意命名，但不得超过60个字符。",
+          "example": "MyTest",
           "member": "string",
           "name": "VpcName",
           "required": false,
@@ -18123,6 +18133,7 @@
         {
           "default": "",
           "document": "是否开启组播。true: 开启, false: 关闭。",
+          "example": "true",
           "member": "string",
           "name": "EnableMulticast",
           "required": false,
@@ -18131,6 +18142,7 @@
         {
           "default": "",
           "document": "DNS地址，最多支持4个，第1个默认为主，其余为备",
+          "example": "无",
           "member": "string",
           "name": "DnsServers",
           "required": false,
@@ -18139,6 +18151,7 @@
         {
           "default": "",
           "document": "域名",
+          "example": "无",
           "member": "string",
           "name": "DomainName",
           "required": false,

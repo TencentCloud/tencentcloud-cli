@@ -60,6 +60,12 @@
       "name": "创建 Prometheus 抓取任务",
       "output": "CreatePrometheusScrapeJobResponse"
     },
+    "CreateRecordingRule": {
+      "document": "创建 Prometheus 的预聚合规则",
+      "input": "CreateRecordingRuleRequest",
+      "name": "创建预聚合规则",
+      "output": "CreateRecordingRuleResponse"
+    },
     "CreateServiceDiscovery": {
       "document": "在腾讯云容器服务下创建 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
       "input": "CreateServiceDiscoveryRequest",
@@ -101,6 +107,12 @@
       "input": "DeletePrometheusScrapeJobsRequest",
       "name": "删除 Prometheus 抓取任务",
       "output": "DeletePrometheusScrapeJobsResponse"
+    },
+    "DeleteRecordingRules": {
+      "document": "批量删除 Prometheus 预聚合规则",
+      "input": "DeleteRecordingRulesRequest",
+      "name": "删除预聚合规则",
+      "output": "DeleteRecordingRulesResponse"
     },
     "DeleteServiceDiscovery": {
       "document": "删除在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -257,6 +269,12 @@
       "input": "DescribePrometheusScrapeJobsRequest",
       "name": "列出 Prometheus 抓取任务",
       "output": "DescribePrometheusScrapeJobsResponse"
+    },
+    "DescribeRecordingRules": {
+      "document": "根据条件查询 Prometheus 预聚合规则",
+      "input": "DescribeRecordingRulesRequest",
+      "name": "查询预聚合规则",
+      "output": "DescribeRecordingRulesResponse"
     },
     "DescribeServiceDiscovery": {
       "document": "列出在腾讯云容器服务下创建的 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -419,6 +437,12 @@
       "input": "UpdatePrometheusScrapeJobRequest",
       "name": "更新 Prometheus 抓取任务",
       "output": "UpdatePrometheusScrapeJobResponse"
+    },
+    "UpdateRecordingRule": {
+      "document": "更新 Prometheus 的预聚合规则",
+      "input": "UpdateRecordingRuleRequest",
+      "name": "更新预聚合规则",
+      "output": "UpdateRecordingRuleResponse"
     },
     "UpdateServiceDiscovery": {
       "document": "在腾讯云容器服务下更新 Prometheus 服务发现。\n<p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考\n<a href=\"https://cloud.tencent.com/document/product/248/48859\" target=\"_blank\">Agent 安装</a>。</p>",
@@ -2684,6 +2708,69 @@
       ],
       "type": "object"
     },
+    "CreateRecordingRuleRequest": {
+      "document": "CreateRecordingRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚合规则名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合规则组内容，格式为 yaml",
+          "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-x2323",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRecordingRuleResponse": {
+      "document": "CreateRecordingRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rrule-fzhp4p7c",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateServiceDiscoveryRequest": {
       "document": "CreateServiceDiscovery请求参数结构体",
       "members": [
@@ -3015,6 +3102,42 @@
     },
     "DeletePrometheusScrapeJobsResponse": {
       "document": "DeletePrometheusScrapeJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRulesRequest": {
+      "document": "DeleteRecordingRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则 ID 列表",
+          "example": "[\"rrule-m74lrt6g\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-xxxerwer",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRecordingRulesResponse": {
+      "document": "DeleteRecordingRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7447,6 +7570,96 @@
       ],
       "type": "object"
     },
+    "DescribeRecordingRulesRequest": {
+      "document": "DescribeRecordingRules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-sdf342",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为 0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则 ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordingRulesResponse": {
+      "document": "DescribeRecordingRules返回参数结构体",
+      "members": [
+        {
+          "document": "规则组数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "规则组详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordingRuleSet",
+          "name": "RecordingRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceDiscoveryRequest": {
       "document": "DescribeServiceDiscovery请求参数结构体",
       "members": [
@@ -10343,6 +10556,75 @@
       ],
       "usage": "in"
     },
+    "RecordingRuleSet": {
+      "document": "Prometheus 聚合规则响应结构体内信息",
+      "members": [
+        {
+          "default": "",
+          "document": "规则 ID",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则状态码",
+          "member": "int64",
+          "name": "RuleState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则内容组",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则数量",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则创建时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则最近更新时间",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SendCustomAlarmMsgRequest": {
       "document": "SendCustomAlarmMsg请求参数结构体",
       "members": [
@@ -11268,6 +11550,78 @@
     "UpdatePrometheusScrapeJobResponse": {
       "document": "UpdatePrometheusScrapeJob返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRecordingRuleRequest": {
+      "document": "UpdateRecordingRule请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "聚合规则名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合规则组内容，格式为 yaml，通过 base64 进行编码。",
+          "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-xrwerwe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Prometheus 聚合规则 ID",
+          "example": "rrule-m74lrt6g",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
+          "example": "2",
+          "member": "int64",
+          "name": "RuleState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRecordingRuleResponse": {
+      "document": "UpdateRecordingRule返回参数结构体",
+      "members": [
+        {
+          "document": "规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rrule-m74lrt6g",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

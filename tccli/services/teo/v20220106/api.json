@@ -1962,6 +1962,32 @@
       ],
       "usage": "both"
     },
+    "CachePrefresh": {
+      "document": "缓存预刷新",
+      "members": [
+        {
+          "default": "",
+          "document": "缓存预刷新配置开关",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "缓存预刷新百分比：1-99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Percent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CertFilter": {
       "document": "证书查询过滤条件",
       "members": [
@@ -9197,6 +9223,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "缓存预刷新配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CachePrefresh",
+          "name": "CachePrefresh",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11848,6 +11883,15 @@
           "example": "无",
           "member": "ClientIp",
           "name": "ClientIpHeader",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "缓存预刷新配置",
+          "example": "无",
+          "member": "CachePrefresh",
+          "name": "CachePrefresh",
           "required": false,
           "type": "object"
         }

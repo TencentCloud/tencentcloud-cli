@@ -77,15 +77,19 @@ Output:
         "UpstreamHttp2": {
             "Switch": "xx"
         },
+        "ClientIpHeader": {
+            "HeaderName": "xx",
+            "Switch": "xx"
+        },
         "OfflineCache": {
             "Switch": "xx"
         },
         "Quic": {
             "Switch": "xx"
         },
-        "ClientIpHeader": {
-            "HeaderName": "xxx",
-            "Switch": "xx"
+        "CachePrefresh": {
+            "Switch": "xx",
+            "Percent": 0
         },
         "SmartRouting": {
             "Switch": "xx"

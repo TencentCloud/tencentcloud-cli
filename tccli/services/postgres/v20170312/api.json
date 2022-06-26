@@ -4965,7 +4965,7 @@
       "document": "InquiryPriceUpgradeDBInstance返回参数结构体",
       "members": [
         {
-          "document": "总费用，打折前的",
+          "document": "刊例价费用",
           "example": "1300",
           "member": "int64",
           "name": "OriginalPrice",
@@ -4974,7 +4974,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实际需要付款金额",
+          "document": "折后实际付款金额",
           "example": "1300",
           "member": "int64",
           "name": "Price",

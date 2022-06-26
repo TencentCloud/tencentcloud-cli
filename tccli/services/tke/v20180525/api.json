@@ -708,6 +708,12 @@
       "name": "操作TKE集群的addon",
       "output": "ForwardApplicationRequestV3Response"
     },
+    "ForwardTKEEdgeApplicationRequestV3": {
+      "document": "操作TKEEdge集群的addon",
+      "input": "ForwardTKEEdgeApplicationRequestV3Request",
+      "name": "操作TKEEdge集群的addon",
+      "output": "ForwardTKEEdgeApplicationRequestV3Response"
+    },
     "GetClusterLevelPrice": {
       "document": "获取集群规模价格",
       "input": "GetClusterLevelPriceRequest",
@@ -10884,6 +10890,96 @@
     },
     "ForwardApplicationRequestV3Response": {
       "document": "ForwardApplicationRequestV3返回参数结构体",
+      "members": [
+        {
+          "document": "请求集群addon后返回的数据",
+          "example": "[]",
+          "member": "string",
+          "name": "ResponseBody",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForwardTKEEdgeApplicationRequestV3Request": {
+      "document": "ForwardTKEEdgeApplicationRequestV3请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "请求集群addon的访问",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的路径",
+          "example": "/api/v1/namespaces",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon后允许接收的数据格式",
+          "example": "无",
+          "member": "string",
+          "name": "Accept",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的数据格式",
+          "example": "无",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求集群addon的数据",
+          "example": "无",
+          "member": "string",
+          "name": "RequestBody",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群名称，例如cls-1234abcd",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否编码请求内容",
+          "example": "无",
+          "member": "string",
+          "name": "EncodedBody",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForwardTKEEdgeApplicationRequestV3Response": {
+      "document": "ForwardTKEEdgeApplicationRequestV3返回参数结构体",
       "members": [
         {
           "document": "请求集群addon后返回的数据",
