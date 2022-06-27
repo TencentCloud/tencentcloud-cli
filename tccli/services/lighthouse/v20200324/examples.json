@@ -225,7 +225,7 @@
     "DescribeInstanceVncUrl": [
       {
         "document": "本示例用于查询实例管理终端地址。",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstanceVncUrl\n&InstanceId=lhins-ruy9d2tw\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceVncUrl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ruy9d2tw\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceVncUrl\": \"wss%3A%2F%2Fusevnc.qcloud.com%3A443%2Fvnc%3Fs%3DTnVQUEpVYkc4eUMvMEkyUERKUjhRbzJhbGcyWHFaWmVMU1dRbUQwd0hVVHo2WU4wOEpLWjlQd0JVSWQwUXZOK2FDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9%26password%3D%26isWindows%3Dfalse%26isUbuntu%3Dfalse\",\n        \"RequestId\": \"f9f6fa33-679c-40ea-bb30-b1e9a8989305\"\n    }\n}",
         "title": "查询实例管理终端地址"
       }
