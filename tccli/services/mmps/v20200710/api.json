@@ -36,6 +36,12 @@
       "name": "获取诊断任务报告链接",
       "output": "DescribeFlySecMiniAppReportUrlResponse"
     },
+    "DescribeFlySecMiniAppScanReportList": {
+      "document": "查询指定小程序版本的翼扬诊断安全得分",
+      "input": "DescribeFlySecMiniAppScanReportListRequest",
+      "name": "查询指定小程序版本的安全得分",
+      "output": "DescribeFlySecMiniAppScanReportListResponse"
+    },
     "DescribeFlySecMiniAppScanTaskList": {
       "document": "获取翼扬安全诊断任务列表",
       "input": "DescribeFlySecMiniAppScanTaskListRequest",
@@ -835,6 +841,96 @@
       ],
       "type": "object"
     },
+    "DescribeFlySecMiniAppScanReportListRequest": {
+      "document": "DescribeFlySecMiniAppScanReportList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "wx66e50f1e*******6f",
+          "member": "string",
+          "name": "MiniAppID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "诊断方式 1:基础诊断，2:深度诊断",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询数量, 0:查询所有, 其他值:最近几次的诊断数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "小程序版本",
+          "example": "V125",
+          "member": "string",
+          "name": "MiniAppVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFlySecMiniAppScanReportListResponse": {
+      "document": "DescribeFlySecMiniAppScanReportList返回参数结构体",
+      "members": [
+        {
+          "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
+          "example": "0",
+          "member": "int64",
+          "name": "Ret",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "诊断报告数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlySecMiniAppReportData",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "诊断任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlySecMiniAppScanTaskListRequest": {
       "document": "DescribeFlySecMiniAppScanTaskList请求参数结构体",
       "members": [
@@ -1418,6 +1514,198 @@
         }
       ],
       "type": "object"
+    },
+    "FlySecMiniAppReportData": {
+      "document": "翼扬诊断小程序报告数据",
+      "members": [
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "1701438134******0",
+          "member": "string",
+          "name": "TaskID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序appid",
+          "example": "wx66e50f1e*******6f",
+          "member": "string",
+          "name": "MiniAppID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序名称",
+          "example": "微信小程序",
+          "member": "string",
+          "name": "MiniAppName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小程序版本",
+          "example": "V125",
+          "member": "string",
+          "name": "MiniAppVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断模式 1:基础诊断，2:深度诊断",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断时间",
+          "example": "1617796174",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断得分",
+          "example": "62.1",
+          "member": "string",
+          "name": "RiskScore",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断风险等级 1:高风险 2:中风险 3:低风险",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "诊断8大维度得分情况(每项总分100分)",
+          "example": "无",
+          "member": "FlySecMiniAppRiskItems",
+          "name": "RiskItems",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlySecMiniAppRiskItems": {
+      "document": "翼扬诊断小程序的诊断报告风险数据",
+      "members": [
+        {
+          "default": "",
+          "document": "代码防护(基础诊断)",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskItem1Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "开发测试信息泄露(基础诊断)",
+          "example": "30",
+          "member": "int64",
+          "name": "RiskItem2Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "编码规范(基础诊断)",
+          "example": "70",
+          "member": "int64",
+          "name": "RiskItem3Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置风险(基础诊断)",
+          "example": "40",
+          "member": "int64",
+          "name": "RiskItem4Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "账号安全(基础诊断)",
+          "example": "50",
+          "member": "int64",
+          "name": "RiskItem5Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户信息安全(基础诊断)",
+          "example": "100",
+          "member": "int64",
+          "name": "RiskItem6Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内部信息泄露(基础诊断)",
+          "example": "80",
+          "member": "int64",
+          "name": "RiskItem7Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "其他安全(基础诊断)",
+          "example": "100",
+          "member": "int64",
+          "name": "RiskItem8Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FlySecMiniAppTaskData": {
       "document": "翼扬诊断小程序任务数据",

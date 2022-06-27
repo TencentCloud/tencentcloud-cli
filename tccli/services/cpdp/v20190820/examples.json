@@ -314,6 +314,14 @@
         "title": "CreateMerchant"
       }
     ],
+    "CreateOpenBankAggregatedSubMerchantRegistration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankAggregatedSubMerchantRegistration\n<公共请求参数>\n\n{\n    \"OutRegistrationNo\": \"123456\",\n    \"ChannelMerchantId\": \"12345678\",\n    \"OutSubMerchantId\": \"12345678\",\n    \"ChannelName\": \"HELIPAY\",\n    \"PaymentMethod\": \"UNIFIED_PAYMENT\",\n    \"OutSubMerchantType\": \"ENTERPRISE\",\n    \"OutSubMerchantName\": \"测试\",\n    \"OutSubMerchantShortName\": \"测试\",\n    \"NotifyUrl\": \"http://xxxx.com\",\n    \"BusinessLicenseInfo\": {\n        \"BusinessLicenseType\": \"CREDITCODE\",\n        \"BusinessLicenseNumber\": \"123456\",\n        \"BusinessLicenseValidityType\": \"LONGTERM\",\n        \"BusinessLicenseEffectiveDate\": \"2021-09-01\",\n        \"BusinessLicenseExpireDate\": \"2031-09-01\"\n    },\n    \"OutSubMerchantExtensionInfo\": {\n        \"RegionCode\": \"110101\",\n        \"RegisterAddress\": \"北京市-朝阳区\",\n        \"MailingAddress\": \"测试\",\n        \"BusinessAddress\": \"测试\",\n        \"ServicePhone\": \"156*****567\",\n        \"WebSiteUrl\": \"http://xxx.com\",\n        \"EmailAddress\": \"\"\n    },\n    \"LegalPersonInfo\": {\n        \"IdType\": \"IDCARD\",\n        \"IdNumber\": \"12345678\",\n        \"PersonName\": \"测试\",\n        \"IdValidityType\": \"OTHER\",\n        \"IdEffectiveDate\": \"2010-09-01\",\n        \"IdExpireDate\": \"2030-09-01\",\n        \"ContactPhone\": \"156*****567\",\n        \"ContactAddress\": \"测试\",\n        \"EmailAddress\": \"\"\n    },\n    \"NaturalPersonList\": [\n        {\n            \"PersonType\": \"4\",\n            \"IdType\": \"IDCARD\",\n            \"IdNumber\": \"12345678\",\n            \"PersonName\": \"测试\",\n            \"IdValidityType\": \"OTHER\",\n            \"IdEffectiveDate\": \"2010-09-01\",\n            \"IdExpireDate\": \"2030-09-01\",\n            \"ContactPhone\": \"156*****567\",\n            \"ContactAddress\": \"测试\",\n            \"EmailAddress\": \"123456@qq.com\"\n        },\n        {\n            \"PersonType\": \"2\",\n            \"IdType\": \"IDCARD\",\n            \"IdNumber\": \"12345678\",\n            \"PersonName\": \"测试\",\n            \"IdValidityType\": \"OTHER\",\n            \"IdEffectiveDate\": \"2010-09-01\",\n            \"IdExpireDate\": \"2030-09-01\",\n            \"ContactPhone\": \"156*****567\",\n            \"ContactAddress\": \"测试\",\n            \"EmailAddress\": \"\"\n        }\n    ],\n    \"SettleInfo\": {\n        \"SettleAccountType\": \"BUSINESS\",\n        \"SettleAccountNumber\": \"12345678\",\n        \"SettleAccountName\": \"测试名称\",\n        \"BankBranchId\": \"12345678\",\n        \"BankBranchName\": \"\",\n        \"SettleMode\": \"AUTO\",\n        \"SettlePeriod\": \"T1\"\n    },\n    \"InterConnectionSubMerchantData\": \"{\\\"IndustryType\\\":\\\"171\\\",\\\"MerchantCategory\\\":\\\"TICKETING_TRAVEL\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"RegistrationStatus\": \"SUCCESS\",\n            \"RegistrationMessage\": \"success\",\n            \"ChannelRegistrationNo\": \"R1234567\",\n            \"ChannelSubMerchantId\": \"CM12345678\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "CreateOpenBankAggregatedSubMerchantRegistration"
+      }
+    ],
     "CreateOpenBankExternalSubMerchantAccountBook": [
       {
         "document": "",
@@ -364,6 +372,22 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankRechargeOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"ChannelName\": \"ALIPAY\",\n    \"NotifyUrl\": \"https://xxx.xxx.com/notify\",\n    \"ChannelMerchantId\": \"CM598093665441488896\",\n    \"ChannelSubMerchantId\": \"CM599202010869022720\",\n    \"ExpireTime\": \"2022-04-12 18:00:00\",\n    \"OutOrderId\": \"28881889\",\n    \"PayeeInfo\": {\n        \"PayeeId\": \"BID599250164788457472\",\n        \"PayeeIdType\": \"ACCOUNT_BOOK_ID\"\n    },\n    \"TotalAmount\": \"100\",\n    \"Currency\": \"CNY\",\n    \"PaymentMethod\": \"SAFT_ISV\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"445df192-1201-4ffe-849f-11bb63b8e6ae\",\n        \"Result\": {\n            \"OutOrderId\": \"28881889\",\n            \"ChannelOrderId\": \"599631052579004416\",\n            \"RedirectInfo\": {\n                \"Url\": \"https://xxx.xx.com/xx?alipsion=1.0\"\n            }\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
         "title": "正常示例"
+      }
+    ],
+    "CreateOpenBankSubMerchantRateConfigure": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankSubMerchantRateConfigure\n<公共请求参数>\n\n{\n    \"ChannelRegistrationNo\": \"R123456\",\n    \"OutProductFeeNo\": \"P123456\",\n    \"ChannelMerchantId\": \"CM1234567\",\n    \"ChannelSubMerchantId\": \"CM456789\",\n    \"ChannelName\": \"HELIPAY\",\n    \"PayType\": \"SDK\",\n    \"PayChannel\": \"WXPAY\",\n    \"FeeMode\": \"SINGLE\",\n    \"FeeValue\": 24,\n    \"MinFee\": 1,\n    \"MaxFee\": 2,\n    \"NotifyUrl\": \"http://xxx.com\",\n    \"FeeRangeList\": [\n        {\n            \"RangeStartValue\": 1,\n            \"MaxFee\": 1,\n            \"RangeFeeMode\": \"SINGLE\",\n            \"RangeEndValue\": 1,\n            \"MinFee\": 1,\n            \"CardType\": \"DEBIT\",\n            \"FeeValue\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"DealStatus\": \"SUCCESS\",\n            \"DealMessage\": \"success\",\n            \"ChannelProductFeeNo\": \"R1234567\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "CreateOpenBankSubMerchantRateConfigure"
+      }
+    ],
+    "CreateOpenBankUnifiedOrder": [
+      {
+        "document": "订单已受理",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankUnifiedOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"ChannelName\": \"HELIPAY\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"PayChannel\": \"WXPAY\",\n    \"GoodsDetail\": \"1111111\",\n    \"PayType\": \"SDK\",\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ExpireTime\": \"2022-02-02 11:10:44\",\n    \"OutOrderId\": \"test212123286713412120022\",\n    \"SceneInfo\": {\n        \"PayerUa\": \"user agent\",\n        \"PayerClientIp\": \"127.0.0.1\",\n        \"DeviceId\": \"deviceId0001\"\n    },\n    \"ChannelSubMerchantId\": \"CM617722188426043392\",\n    \"FrontUrl\": \"http://127.0.0.1/pay/notfiy\",\n    \"TotalAmount\": \"20\",\n    \"Currency\": \"CNY\",\n    \"OrderSubject\": \"苹果7\",\n    \"ExternalPaymentData\": \"{\\\"wx_app_id\\\":\\\"wxbc55d5c804754e36\\\"}\",\n    \"Attachment\": \"test123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad81b292-b018-47ef-9ded-f8693ec64653\",\n        \"Result\": null,\n        \"ErrCode\": \"ORDER.RECORD_ALREADY_EXISTED\",\n        \"ErrMessage\": \"订单已受理，请使用查询接口确认订单状态\"\n    }\n}",
+        "title": "订单已受理"
       }
     ],
     "CreateOrder": [
@@ -1106,6 +1130,14 @@
         "title": "云企付-查询联行号"
       }
     ],
+    "QueryOpenBankBillDataPage": [
+      {
+        "document": "查询对账单分页数据成功示例",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankBillDataPage\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM614829654947741696\",\n    \"BillDate\": \"2022-05-20\",\n    \"ChannelName\": \"HELIPAY\",\n    \"PageNo\": \"1\",\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"431712c3-4c1e-4028-921a-ccb4df715f23\",\n        \"Result\": {\n            \"PageNo\": 1,\n            \"PageSize\": 10,\n            \"Count\": 1,\n            \"DataList\": [\n                {\n                    \"BillDate\": \"2022-05-20\",\n                    \"Channel\": \"HELIPAY\",\n                    \"SubChannel\": \"\",\n                    \"ParentMerchantId\": \"\",\n                    \"OutMerchantId\": \"\",\n                    \"MerchantId\": \"CM615222155219103744\",\n                    \"EndMerchantId\": \"\",\n                    \"OutTradeNo\": \"test21212328671312312112\",\n                    \"TradeNo\": \"614841264310980609\",\n                    \"EndTradeNo\": \"22052015010525635420411\",\n                    \"PaymentType\": \"payment\",\n                    \"BusinessType\": \"PAY\",\n                    \"TradeTime\": \"2022-05-24 15:19:41\",\n                    \"FinishTime\": \"2022-05-20 15:19:40\",\n                    \"TradeStatus\": \"1\",\n                    \"CheckStatus\": \"1\",\n                    \"CheckFailReason\": \"\",\n                    \"OrderAmount\": \"0.03\",\n                    \"ServiceFee\": \"0.00\",\n                    \"PayeeAccount\": \"\",\n                    \"PayeeName\": \"\",\n                    \"PayerAccount\": \"\",\n                    \"PayerName\": \"\",\n                    \"Description\": \"成功\"\n                }\n            ]\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询对账单分页数据成功示例"
+      }
+    ],
     "QueryOpenBankBindExternalSubMerchantBankAccount": [
       {
         "document": "",
@@ -1180,6 +1212,42 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankPaymentOrder\n<公共请求参数>\n\n{\n    \"Environment\": \"20220218580408557254664192\",\n    \"OutOrderId\": \"test202202180004\",\n    \"ChannelOrderId\": \"字符串\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"77898adf-26af-4ac0-983c-d542ef6bacca\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_ERROR\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
         "title": "查询订单结果内部异常"
+      }
+    ],
+    "QueryOpenBankRefundOrder": [
+      {
+        "document": "查询成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankRefundOrder\n<公共请求参数>\n\n{\n    \"OutRefundId\": \"R211123213\",\n    \"ChannelMerchantId\": \"CM782119999\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"ErrCode\": \"SUCCESS\",\n        \"Result\": {\n            \"OutRefundId\": \"202206060000013\",\n            \"ChannelRefundId\": \"R20220606619543476274466816\",\n            \"RefundReason\": \"\",\n            \"RefundAmount\": 20,\n            \"RealRefundAmount\": 0,\n            \"TotalAmount\": 20,\n            \"TimeFinish\": \"2022-06-06 14:44:47\",\n            \"RefundStatus\": \"SUCCESS\",\n            \"RefundInfo\": \"\"\n        },\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankRefundOrder\n<公共请求参数>\n\n{\n    \"OutRefundId\": \"202206060000013\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ad88b16-54f4-4dd4-bc08-842af0bced2a\",\n        \"Result\": {\n            \"OutRefundId\": \"202206060000013\",\n            \"ChannelRefundId\": \"R20220606619543476274466816\",\n            \"RefundReason\": \"\",\n            \"RefundAmount\": 20,\n            \"RealRefundAmount\": 0,\n            \"TotalAmount\": 20,\n            \"TimeFinish\": \"2022-06-06 14:44:47\",\n            \"RefundStatus\": \"SUCCESS\",\n            \"RefundInfo\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询成功2"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankRefundOrder\n<公共请求参数>\n\n{\n    \"OutRefundId\": \"202206060000023\",\n    \"ChannelMerchantId\": \"CM572433237990035456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"495507d6-c7c7-454d-9cf8-9865d9534951\",\n        \"Result\": {\n            \"OutRefundId\": \"202206060000023\",\n            \"ChannelRefundId\": \"R20220609620651710292955136\",\n            \"RefundStatus\": \"SUCCESS\",\n            \"RefundReason\": \"\",\n            \"RefundMessage\": \"退款中\",\n            \"RefundAmount\": 20,\n            \"RealRefundAmount\": 0,\n            \"TotalAmount\": 20,\n            \"FeeAmount\": 0,\n            \"TimeFinish\": \"2022-06-09 16:08:30\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "查询结果：退款成功"
+      }
+    ],
+    "QueryOpenBankSubMerchantCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSubMerchantCredential\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"123456\",\n    \"ChannelSubMerchantId\": \"1234567\",\n    \"ChannelName\": \"HELIPAY\",\n    \"OutApplyId\": \"R6152221530716200192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"948948503842433243\",\n        \"Result\": {\n            \"UploadStatus\": \"SUCCESS\",\n            \"UploadMessage\": \"\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
+      }
+    ],
+    "QueryOpenBankSubMerchantRateConfigure": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankSubMerchantRateConfigure\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM123456\",\n    \"ChannelSubMerchantId\": \"CM345678\",\n    \"ChannelRegistrationNo\": \"R123456\",\n    \"ChannelName\": \"HELIPAY\",\n    \"ChannelProductFeeNo\": \"P345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"DealStatus\": \"SUCCESS\",\n            \"DealMessage\": \"success\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "QueryOpenBankSubMerchantRateConfigure"
       }
     ],
     "QueryOpenBankSupportBankList": [
@@ -1372,6 +1440,20 @@
         "title": "会员间交易退款"
       }
     ],
+    "RefundOpenBankOrder": [
+      {
+        "document": "退款成功",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundOpenBankOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"RefundAmount\": 0,\n    \"ChannelOrderId\": \"xx\",\n    \"NotifyUrl\": \"xx\",\n    \"OutRefundId\": \"xx\",\n    \"RefundReason\": \"xx\",\n    \"ChannelMerchantId\": \"xx\",\n    \"OutOrderId\": \"xx\",\n    \"ExternalRefundData\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340b9ddc-09f1-43ab-8edc-cfaf1532f974\",\n        \"Result\": {\n            \"ChannelOrderId\": \"xx\",\n            \"RefundAmount\": 0,\n            \"OutRefundId\": \"xx\",\n            \"OutOrderId\": \"xx\",\n            \"ChannelRefundId\": \"xx\",\n            \"RefundMessage\": \"xx\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "退款成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundOpenBankOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"字符串\",\n    \"ChannelOrderId\": \"字符串\",\n    \"RefundAmount\": \"1\",\n    \"NotifyUrl\": \"字符串\",\n    \"OutRefundId\": \"字符串\",\n    \"RefundReason\": \"字符串\",\n    \"ChannelMerchantId\": \"字符串\",\n    \"OutOrderId\": \"字符串\",\n    \"ExternalRefundData\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46d39578-875e-47d6-b4a7-4f2895cbbaf2\",\n        \"Result\": null,\n        \"ErrCode\": \"ORDER.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"该笔订单字符串不存在\"\n    }\n}",
+        "title": "订单不存在"
+      }
+    ],
     "RefundOrder": [
       {
         "document": "消费订单退款接口正常的示例",
@@ -1536,6 +1618,14 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"FileName\": \"demo.png\",\n    \"FileType\": \"IdCardCheck\",\n    \"FileExtendInfo\": [\n        {\n            \"Type\": \"id_card_no\",\n            \"Value\": \"110108200001011234\"\n        },\n        {\n            \"Type\": \"id_card_name\",\n            \"Value\": \"陈小小\"\n        }\n    ],\n    \"FileContent\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5QmCC\"\n}",
         "output": "{\n    \"Response\": {\n        \"FileId\": \"file.png\",\n        \"RequestId\": \"f64267a7-6a7d-4b0f-86de-b0e5fbae6847\"\n    }\n}",
         "title": "身份证图片上传加验证"
+      }
+    ],
+    "UploadOpenBankSubMerchantCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadOpenBankSubMerchantCredential\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"123456\",\n    \"ChannelSubMerchantId\": \"1234567\",\n    \"ChannelName\": \"HELIPAY\",\n    \"OutApplyId\": \"R6152221530716200192\",\n    \"CredentialType\": \"011\",\n    \"FileType\": \"jpg\",\n    \"CredentialUrl\": \"http://xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"948948503842433243\",\n        \"Result\": {\n            \"UploadStatus\": \"SUCCESS\",\n            \"UploadMessage\": null,\n            \"ChannelApplyId\": \"CID6181264040260xxxxx\"\n        },\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\"\n    }\n}",
+        "title": "正常返回"
       }
     ],
     "UploadOrgFile": [

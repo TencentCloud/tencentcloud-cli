@@ -16,6 +16,22 @@
         "title": "删除引擎实例"
       }
     ],
+    "DescribeNacosReplicas": [
+      {
+        "document": "查询Nacos类型引擎实例副本信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosReplicas\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Replicas\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Role\": \"xx\",\n                \"SubnetId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询Nacos类型引擎实例副本信息"
+      }
+    ],
+    "DescribeNacosServerInterfaces": [
+      {
+        "document": "查询nacos服务接口列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Interface\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询nacos服务接口列表"
+      }
+    ],
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",
@@ -30,6 +46,22 @@
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeSREInstances\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"EnvInfos\": [\n                    {\n                        \"VpcInfos\": [\n                            {\n                                \"SubnetId\": \"xx\",\n                                \"VpcId\": \"xx\",\n                                \"IntranetAddress\": \"xx\"\n                            }\n                        ],\n                        \"Status\": \"xx\",\n                        \"SpecId\": \"xx\",\n                        \"EnableConfigInternet\": true,\n                        \"ConfigServiceIp\": \"xx\",\n                        \"StorageCapacity\": 0,\n                        \"EnvName\": \"xx\",\n                        \"EnvReplica\": 0,\n                        \"ConfigInternetServiceIp\": \"xx\",\n                        \"AdminServiceIp\": \"xx\",\n                        \"RunningCount\": 0\n                    }\n                ],\n                \"TradeType\": 0,\n                \"CurDeadline\": \"xx\",\n                \"AutoRenewFlag\": 0,\n                \"Type\": \"xx\",\n                \"Edition\": \"xx\",\n                \"Status\": \"xx\",\n                \"EnableInternet\": true,\n                \"VpcId\": \"xx\",\n                \"SpecId\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"InstanceId\": \"xx\",\n                \"EnableConsoleInternet\": true,\n                \"EnableConsoleIntranet\": true,\n                \"EngineRegion\": \"xx\",\n                \"ConfigInfoVisible\": true,\n                \"Name\": \"xx\",\n                \"ServiceGovernanceInfos\": [\n                    {\n                        \"VpcInfos\": [\n                            {\n                                \"SubnetId\": \"xx\",\n                                \"VpcId\": \"xx\",\n                                \"IntranetAddress\": \"xx\"\n                            }\n                        ],\n                        \"BoundK8SInfos\": [\n                            {\n                                \"BoundClusterId\": \"xx\",\n                                \"SyncMode\": \"xx\",\n                                \"BoundClusterType\": \"xx\"\n                            }\n                        ],\n                        \"Features\": [\n                            \"xx\"\n                        ],\n                        \"AuthOpen\": true,\n                        \"EngineRegion\": \"xx\",\n                        \"MainPassword\": \"xx\"\n                    }\n                ],\n                \"ConsoleDefaultPwd\": \"xx\",\n                \"StorageCapacity\": 0,\n                \"EKSClusterID\": \"xx\",\n                \"VpcInfos\": [\n                    {\n                        \"SubnetId\": \"xx\",\n                        \"VpcId\": \"xx\",\n                        \"IntranetAddress\": \"xx\"\n                    }\n                ],\n                \"StorageType\": \"xx\",\n                \"SubnetIds\": [\n                    \"a\"\n                ],\n                \"Paymode\": \"xx\",\n                \"EnableStorage\": true,\n                \"Replica\": 3,\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询引擎实例列表"
+      }
+    ],
+    "DescribeZookeeperReplicas": [
+      {
+        "document": "",
+        "input": "https://tse.tencentcloudapi.com/?Action=DescribeZookeeperReplicas\n&InstanceId=ers-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Replicas\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Role\": \"xx\",\n                \"SubnetId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询consul类型注册引擎实例副本信息"
+      }
+    ],
+    "DescribeZookeeperServerInterfaces": [
+      {
+        "document": "查询nacos服务接口列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZookeeperServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Interface\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询nacos服务接口列表"
       }
     ]
   },

@@ -1489,6 +1489,7 @@
         {
           "default": "",
           "document": "国家名称。",
+          "example": "华北地区",
           "member": "string",
           "name": "NationCountryName",
           "required": true,
@@ -1498,6 +1499,7 @@
         {
           "default": "",
           "document": "国家编码。",
+          "example": "101001",
           "member": "string",
           "name": "NationCountryInnerCode",
           "required": true,
@@ -1507,6 +1509,7 @@
         {
           "default": "",
           "document": "地区名称。",
+          "example": "东亚",
           "member": "string",
           "name": "GeographicalZoneName",
           "required": true,
@@ -1516,6 +1519,7 @@
         {
           "default": "",
           "document": "地区编码。",
+          "example": "101000",
           "member": "string",
           "name": "GeographicalZoneInnerCode",
           "required": true,
@@ -1525,6 +1529,7 @@
         {
           "default": "",
           "document": "大洲名称。",
+          "example": "亚洲",
           "member": "string",
           "name": "ContinentName",
           "required": true,
@@ -1534,11 +1539,22 @@
         {
           "default": "",
           "document": "大洲编码。",
+          "example": "100000",
           "member": "string",
           "name": "ContinentInnerCode",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华北地区（包括北京、天津、河北、山西、内蒙古）",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

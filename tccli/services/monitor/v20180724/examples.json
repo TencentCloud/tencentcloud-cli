@@ -72,6 +72,14 @@
         "title": "创建 Prometheus Agent"
       }
     ],
+    "CreatePrometheusMultiTenantInstancePostPayMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusMultiTenantInstancePostPayMode\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-hjkasfd\",\n    \"DataRetentionTime\": \"30\",\n    \"VpcId\": \"vpc-thnssd\",\n    \"InstanceName\": \"my-prom-gg\",\n    \"Zone\": \"ap-chengdu-1\",\n    \"GrafanaInstanceId\": \"grafana-xfa222\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"prom-xxxxxx\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建按量 Prometheus 实例"
+      }
+    ],
     "CreatePrometheusScrapeJob": [
       {
         "document": "",

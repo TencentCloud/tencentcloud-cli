@@ -9231,6 +9231,33 @@
           "name": "SubInitialPosition",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxNumMessages",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy",
+          "example": "100000",
+          "member": "int64",
+          "name": "MaxNumBytes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy",
+          "example": "100",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9279,6 +9306,24 @@
           "example": "my-sub",
           "member": "string",
           "name": "SubName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BatchReceivePolicy 一次性返回的多条消息的 MessageID，用 ‘###’ 来区分不同的 MessageID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " \"71:12:0:0###71:13:0:0###71:16:0:0\"",
+          "member": "string",
+          "name": "MessageIDList",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "BatchReceivePolicy 一次性返回的多条消息的消息内容，用 ‘###’ 来区分不同的消息内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"hello-1###hello-2###hello-3\"",
+          "member": "string",
+          "name": "MessagesPayload",
           "required": true,
           "type": "string",
           "value_allowed_null": true

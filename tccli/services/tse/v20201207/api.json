@@ -12,6 +12,18 @@
       "name": "删除引擎实例",
       "output": "DeleteEngineResponse"
     },
+    "DescribeNacosReplicas": {
+      "document": "查询Nacos类型引擎实例副本信息",
+      "input": "DescribeNacosReplicasRequest",
+      "name": "查询Nacos类型引擎实例副本信息",
+      "output": "DescribeNacosReplicasResponse"
+    },
+    "DescribeNacosServerInterfaces": {
+      "document": "查询nacos服务接口列表",
+      "input": "DescribeNacosServerInterfacesRequest",
+      "name": "查询nacos服务接口列表",
+      "output": "DescribeNacosServerInterfacesResponse"
+    },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
@@ -23,6 +35,18 @@
       "input": "DescribeSREInstancesRequest",
       "name": "查询引擎实例列表",
       "output": "DescribeSREInstancesResponse"
+    },
+    "DescribeZookeeperReplicas": {
+      "document": "查询Zookeeper类型注册引擎实例副本信息",
+      "input": "DescribeZookeeperReplicasRequest",
+      "name": "查询Zookeeper类型注册引擎实例副本信息",
+      "output": "DescribeZookeeperReplicasResponse"
+    },
+    "DescribeZookeeperServerInterfaces": {
+      "document": "查询zookeeper服务接口列表",
+      "input": "DescribeZookeeperServerInterfacesRequest",
+      "name": "查询zookeeper服务接口列表",
+      "output": "DescribeZookeeperServerInterfacesResponse"
     }
   },
   "metadata": {
@@ -323,6 +347,132 @@
       ],
       "type": "object"
     },
+    "DescribeNacosReplicasRequest": {
+      "document": "DescribeNacosReplicas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "引擎实例ID",
+          "example": "ins-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "副本列表Limit",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "副本列表Offset",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNacosReplicasResponse": {
+      "document": "DescribeNacosReplicas返回参数结构体",
+      "members": [
+        {
+          "document": "引擎实例副本信息",
+          "example": "无",
+          "member": "NacosReplica",
+          "name": "Replicas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副本个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNacosServerInterfacesRequest": {
+      "document": "DescribeNacosServerInterfaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的列表个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回的列表起始偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNacosServerInterfacesResponse": {
+      "document": "DescribeNacosServerInterfaces返回参数结构体",
+      "members": [
+        {
+          "document": "接口总个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "接口列表",
+          "example": "无",
+          "member": "NacosServerInterface",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSREInstanceAccessAddressRequest": {
       "document": "DescribeSREInstanceAccessAddress请求参数结构体",
       "members": [
@@ -498,6 +648,132 @@
           "document": "实例记录",
           "example": "无",
           "member": "SREInstance",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZookeeperReplicasRequest": {
+      "document": "DescribeZookeeperReplicas请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "注册引擎实例ID",
+          "example": "ers-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "副本列表Limit",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "副本列表Offset",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZookeeperReplicasResponse": {
+      "document": "DescribeZookeeperReplicas返回参数结构体",
+      "members": [
+        {
+          "document": "注册引擎实例副本信息",
+          "example": "无",
+          "member": "ZookeeperReplica",
+          "name": "Replicas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "副本个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZookeeperServerInterfacesRequest": {
+      "document": "DescribeZookeeperServerInterfaces请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回的列表个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回的列表起始偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZookeeperServerInterfacesResponse": {
+      "document": "DescribeZookeeperServerInterfaces返回参数结构体",
+      "members": [
+        {
+          "document": "接口总个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "接口列表",
+          "example": "无",
+          "member": "ZookeeperServerInterface",
           "name": "Content",
           "required": true,
           "type": "list",
@@ -782,6 +1058,88 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NacosReplica": {
+      "document": "Nacos副本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色",
+          "example": "leader",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NacosServerInterface": {
+      "document": "nacos服务端接口列表，用于云监控",
+      "members": [
+        {
+          "default": "",
+          "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET:/nacos/v1/config",
+          "member": "string",
+          "name": "Interface",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1183,6 +1541,88 @@
         }
       ],
       "usage": "both"
+    },
+    "ZookeeperReplica": {
+      "document": "Zookeeper副本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "名称",
+          "example": "zk-xxxxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "角色",
+          "example": "leading",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300001",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZookeeperServerInterface": {
+      "document": "Zookeeper服务端接口列表，用于云监控",
+      "members": [
+        {
+          "default": "",
+          "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "getChildren",
+          "member": "string",
+          "name": "Interface",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

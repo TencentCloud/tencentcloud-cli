@@ -222,6 +222,52 @@
       ],
       "usage": "out"
     },
+    "Coordinate": {
+      "document": "坐标",
+      "members": [
+        {
+          "default": "",
+          "document": "左上角x坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "X",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "左上角y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Y",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "宽度，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "高度，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Desc": {
       "document": "描述",
       "members": [
@@ -1561,6 +1607,26 @@
           "name": "ItemString",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "指标项坐标位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "object",
+          "member": "Coordinate",
+          "name": "Coords",
+          "required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

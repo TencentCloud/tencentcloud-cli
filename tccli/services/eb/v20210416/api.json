@@ -1720,15 +1720,6 @@
       "members": [
         {
           "default": "",
-          "document": "事件规则ID",
-          "example": "rule-xxxxxxxx",
-          "member": "string",
-          "name": "RuleId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
@@ -1742,6 +1733,15 @@
           "example": "ModTime",
           "member": "string",
           "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
           "required": false,
           "type": "string"
         },

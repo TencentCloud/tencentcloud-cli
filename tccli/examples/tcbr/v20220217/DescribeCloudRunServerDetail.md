@@ -37,6 +37,12 @@ Output:
             "Port": "xx",
             "Cpu": 0.0
         },
+        "OnlineVersionInfos": [
+            {
+                "VersionName": "test-001",
+                "ImageUrl": "test:01"
+            }
+        ],
         "RequestId": "xx"
     }
 }
@@ -60,7 +66,8 @@ Output:
     "Response": {
         "BaseInfo": null,
         "RequestId": "34143393-ede8-43ac-ad78-12a5bfea9663",
-        "ServerConfig": null
+        "ServerConfig": null,
+        "OnlineVersionInfos": null
     }
 }
 ```

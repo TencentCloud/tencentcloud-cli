@@ -23,7 +23,10 @@ Output:
                     "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
                 },
                 "TargetId": "target-azwj7s7g",
-                "Type": "scf"
+                "Type": "scf",
+                "EnableBatchDelivery": false,
+                "BatchEventCount": 1,
+                "BatchTimeout": 1
             },
             {
                 "EventBusId": "eb-l65vlc2u",
@@ -32,7 +35,10 @@ Output:
                     "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
                 },
                 "TargetId": "target-o5yx01oq",
-                "Type": "scf"
+                "Type": "scf",
+                "EnableBatchDelivery": false,
+                "BatchEventCount": 1,
+                "BatchTimeout": 1
             },
             {
                 "EventBusId": "eb-l65vlc2u",
@@ -41,7 +47,10 @@ Output:
                     "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
                 },
                 "TargetId": "target-prp1ovqi",
-                "Type": "scf"
+                "Type": "scf",
+                "EnableBatchDelivery": false,
+                "BatchEventCount": 1,
+                "BatchTimeout": 1
             },
             {
                 "EventBusId": "eb-l65vlc2u",
@@ -50,7 +59,10 @@ Output:
                     "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
                 },
                 "TargetId": "target-krcwchke",
-                "Type": "scf"
+                "Type": "scf",
+                "EnableBatchDelivery": false,
+                "BatchEventCount": 1,
+                "BatchTimeout": 1
             },
             {
                 "EventBusId": "eb-l65vlc2u",
@@ -59,7 +71,10 @@ Output:
                     "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
                 },
                 "TargetId": "target-e9r3a1l0",
-                "Type": "scf"
+                "Type": "scf",
+                "EnableBatchDelivery": false,
+                "BatchEventCount": 1,
+                "BatchTimeout": 1
             }
         ],
         "TotalCount": 5

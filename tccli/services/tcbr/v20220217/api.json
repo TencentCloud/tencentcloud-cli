@@ -562,6 +562,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "在线版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OnlineVersionInfo",
+          "name": "OnlineVersionInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1149,6 +1158,42 @@
         }
       ],
       "usage": "both"
+    },
+    "OnlineVersionInfo": {
+      "document": "在线版本信息",
+      "members": [
+        {
+          "default": "",
+          "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-001",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "FlowRatio",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OperateServerManageRequest": {
       "document": "OperateServerManage请求参数结构体",

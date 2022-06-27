@@ -40,13 +40,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServerDetail\n<公共请求参数>\n\n{\n    \"ServerName\": \"xx\",\n    \"EnvId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Status\": \"xx\",\n            \"ServerName\": \"xx\",\n            \"CustomDomainName\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"DefaultDomainName\": \"xx\"\n        },\n        \"ServerConfig\": {\n            \"EnvId\": \"xx\",\n            \"MaxNum\": 1,\n            \"BuildDir\": \"xx\",\n            \"Mem\": 0.0,\n            \"ServerName\": \"xx\",\n            \"InitialDelaySeconds\": 1,\n            \"CustomLogs\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"MinNum\": 1,\n            \"HasDockerfile\": true,\n            \"EnvParams\": \"xx\",\n            \"Dockerfile\": \"xx\",\n            \"Port\": \"xx\",\n            \"Cpu\": 0.0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Status\": \"xx\",\n            \"ServerName\": \"xx\",\n            \"CustomDomainName\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"DefaultDomainName\": \"xx\"\n        },\n        \"ServerConfig\": {\n            \"EnvId\": \"xx\",\n            \"MaxNum\": 1,\n            \"BuildDir\": \"xx\",\n            \"Mem\": 0.0,\n            \"ServerName\": \"xx\",\n            \"InitialDelaySeconds\": 1,\n            \"CustomLogs\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"MinNum\": 1,\n            \"HasDockerfile\": true,\n            \"EnvParams\": \"xx\",\n            \"Dockerfile\": \"xx\",\n            \"Port\": \"xx\",\n            \"Cpu\": 0.0\n        },\n        \"OnlineVersionInfos\": [\n            {\n                \"VersionName\": \"test-001\",\n                \"ImageUrl\": \"test:01\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DescribeCloudRunServerDetail"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServerDetail\n<公共请求参数>\n\n{\n    \"ServerName\": \"字符串\",\n    \"EnvId\": \"字符串\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BaseInfo\": null,\n        \"RequestId\": \"34143393-ede8-43ac-ad78-12a5bfea9663\",\n        \"ServerConfig\": null\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": null,\n        \"RequestId\": \"34143393-ede8-43ac-ad78-12a5bfea9663\",\n        \"ServerConfig\": null,\n        \"OnlineVersionInfos\": null\n    }\n}",
         "title": "success"
       }
     ],

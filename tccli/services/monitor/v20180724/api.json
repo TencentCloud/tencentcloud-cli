@@ -54,6 +54,12 @@
       "name": "创建 Prometheus CVM Agent",
       "output": "CreatePrometheusAgentResponse"
     },
+    "CreatePrometheusMultiTenantInstancePostPayMode": {
+      "document": "创建按量 Prometheus 实例，根据用量收费实例",
+      "input": "CreatePrometheusMultiTenantInstancePostPayModeRequest",
+      "name": "创建按量 Prometheus 实例",
+      "output": "CreatePrometheusMultiTenantInstancePostPayModeResponse"
+    },
     "CreatePrometheusScrapeJob": {
       "document": "创建 Prometheus 抓取任务",
       "input": "CreatePrometheusScrapeJobRequest",
@@ -2654,6 +2660,96 @@
     "CreatePrometheusAgentResponse": {
       "document": "CreatePrometheusAgent返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusMultiTenantInstancePostPayModeRequest": {
+      "document": "CreatePrometheusMultiTenantInstancePostPayMode请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例名",
+          "example": "my-prom-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "VPC ID",
+          "example": "vpc-345xdef",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "子网 ID",
+          "example": "subnet-axxersx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据存储时间（单位天），限制值为15，30，45之一",
+          "example": "30",
+          "member": "int64",
+          "name": "DataRetentionTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "实例的标签",
+          "example": "无",
+          "member": "PrometheusTag",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要关联的 Grafana 实例",
+          "example": "grafana-xxxx",
+          "member": "string",
+          "name": "GrafanaInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusMultiTenantInstancePostPayModeResponse": {
+      "document": "CreatePrometheusMultiTenantInstancePostPayMode返回参数结构体",
+      "members": [
+        {
+          "document": "实例 ID",
+          "example": "prom-3xz2asxa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

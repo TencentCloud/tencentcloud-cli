@@ -48,6 +48,14 @@
         "title": "获取小程序的诊断报告链接"
       }
     ],
+    "DescribeFlySecMiniAppScanReportList": [
+      {
+        "document": "",
+        "input": "https://mmps.tencentcloudapi.com/?Action=DescribeFlySecMiniAppScanReportList\n&MiniAppID=wx66e50f1e*******6f\n&MiniAppVersion=V125\n&Mode=1\n&Status=1\n&Size=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Ret\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"1701438134******0\",\n                \"MiniAppID\": \"wx66e50f1e*******6f\",\n                \"MiniAppName\": \"测试小程序\",\n                \"MiniAppVersion\": \"V125\",\n                \"Mode\": 1,\n                \"Status\": 1,\n                \"CreateTime\": 1617796174,\n                \"RiskScore\": \"62.1\",\n                \"RiskLevel\": 1,\n                \"RiskItems\": {\n                    \"RiskItem1Score\": 0,\n                    \"RiskItem2Score\": 30,\n                    \"RiskItem3Score\": 70,\n                    \"RiskItem4Score\": 40,\n                    \"RiskItem5Score\": 50,\n                    \"RiskItem6Score\": 100,\n                    \"RiskItem7Score\": 80,\n                    \"RiskItem8Score\": 100\n                }\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询当前用户指定小程序的诊断安全得分情况"
+      }
+    ],
     "DescribeFlySecMiniAppScanTaskList": [
       {
         "document": "",
