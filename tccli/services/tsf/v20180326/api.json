@@ -14881,6 +14881,7 @@
         {
           "default": "",
           "document": "实例名称(对应到kubernetes的pod名称)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "PodName",
           "required": true,
@@ -14890,6 +14891,7 @@
         {
           "default": "",
           "document": "实例ID(对应到kubernetes的pod id)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
           "member": "string",
           "name": "PodId",
           "required": true,
@@ -14898,7 +14900,8 @@
         },
         {
           "default": "",
-          "document": "实例状态，请参考后面的实例以及容器的状态定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -14908,6 +14911,7 @@
         {
           "default": "",
           "document": "实例处于当前状态的原因，例如容器下载镜像失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "Reason",
           "required": true,
@@ -14917,6 +14921,7 @@
         {
           "default": "",
           "document": "主机IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.10.0.1",
           "member": "string",
           "name": "NodeIp",
           "required": true,
@@ -14926,6 +14931,7 @@
         {
           "default": "",
           "document": "实例IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.10.0.2",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -14935,6 +14941,7 @@
         {
           "default": "",
           "document": "实例中容器的重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RestartCount",
           "required": true,
@@ -14944,6 +14951,7 @@
         {
           "default": "",
           "document": "实例中已就绪容器的个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ReadyCount",
           "required": true,
@@ -14953,6 +14961,7 @@
         {
           "default": "",
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "Runtime",
           "required": true,
@@ -14962,6 +14971,7 @@
         {
           "default": "",
           "document": "实例启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "CreatedAt",
           "required": true,
@@ -14971,6 +14981,7 @@
         {
           "default": "",
           "document": "服务实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "ServiceInstanceStatus",
           "required": true,
@@ -14980,6 +14991,7 @@
         {
           "default": "",
           "document": "机器实例可使用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "InstanceAvailableStatus",
           "required": true,
@@ -14989,6 +15001,7 @@
         {
           "default": "",
           "document": "机器实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "InstanceStatus",
           "required": true,
@@ -14998,6 +15011,7 @@
         {
           "default": "",
           "document": "节点实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "NodeInstanceId",
           "required": true,

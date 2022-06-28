@@ -5684,6 +5684,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "监听器的属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Stop",
+          "member": "string",
+          "name": "AttrFlags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

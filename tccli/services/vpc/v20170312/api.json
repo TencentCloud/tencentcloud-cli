@@ -9070,8 +9070,10 @@
       "members": [
         {
           "document": "带宽包配额详细信息",
+          "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

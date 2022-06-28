@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mmps DescribeFlySecMiniAppScanReportList --cli-unfold-argument  \
-    --MiniAppID wx66e50f1e*******6f \
-    --MiniAppVersion V125 \
-    --Mode 1 \
     --Status 1 \
+    --MiniAppVersion V125 \
+    --MiniAppID wx66e50f1e*******6f \
+    --Mode 1 \
     --Size 10
 ```
 

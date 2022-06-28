@@ -19541,6 +19541,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "主机quuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "Quuid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

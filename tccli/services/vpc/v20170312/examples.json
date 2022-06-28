@@ -993,7 +993,7 @@
     "DescribeBandwidthPackageQuota": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeBandwidthPackageQuota\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthPackageQuota\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_BANDWIDTHPKG_QUOTA\",\n                \"QuotaCurrent\": 1,\n                \"QuotaLimit\": 20\n            }\n        ],\n        \"RequestId\": \"8882b478-0d3a-4fe2-bae3-ff93865a199c\"\n    }\n}",
         "title": "查询带宽包配额"
       }

@@ -111,7 +111,7 @@
     "CreateEnvironment": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateEnvironment\n&EnvironmentId=test1\n&MsgTTL=100\n&ClusterId=pulsar-xxxxxxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test1\",\n    \"MsgTTL\": \"100\",\n    \"ClusterId\": \"pulsar-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test1\",\n        \"NamespaceId\": \"namespace-8893gp3428\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"0843ea4f-d6ba-463b-952c-75708a7e8901\"\n    }\n}",
         "title": "创建命名空间"
       }
@@ -175,7 +175,7 @@
     "CreateTopic": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=CreateTopic\n&EnvironmentId=default\n&TopicName=test_topic\n&Partitions=2\n&Remark=2个分区的普通消息队列\n&TopicType=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"default\",\n    \"Remark\": \"2个分区的普通消息队列\",\n    \"TopicType\": \"0\",\n    \"TopicName\": \"test_topic\",\n    \"Partitions\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"default\",\n        \"TopicName\": \"test_topic\",\n        \"Partitions\": 2,\n        \"TopicType\": 0,\n        \"Remark\": \"2个分区的普通消息队列\",\n        \"RequestId\": \"d9686bf9-8d7d-4e78-bb44-5140d70a1ffa\"\n    }\n}",
         "title": "创建主题"
       }
@@ -583,7 +583,7 @@
     "DescribeTopics": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeTopics\n&EnvironmentId=test1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"TopicSets\": [\n            {\n                \"PulsarTopicType\": 0,\n                \"TopicType\": 1,\n                \"ProducerCount\": \"xx\",\n                \"ConsumerLimit\": \"xx\",\n                \"ConsumerCount\": \"xx\",\n                \"LastLedgerCreatedTimestamp\": \"xx\",\n                \"MsgThroughputIn\": \"xx\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"AverageMsgSize\": \"xx\",\n                \"Partitions\": 1,\n                \"Remark\": \"xx\",\n                \"LastConfirmedEntry\": \"xx\",\n                \"TotalSize\": \"xx\",\n                \"NumberOfEntries\": \"xx\",\n                \"MsgRateOut\": \"xx\",\n                \"ProducerLimit\": \"xx\",\n                \"EnvironmentId\": \"xx\",\n                \"TopicName\": \"xx\",\n                \"MsgRateIn\": \"xx\",\n                \"MsgThroughputOut\": \"xx\",\n                \"SubTopicSets\": [\n                    {\n                        \"TopicType\": 1,\n                        \"ProducerCount\": \"xx\",\n                        \"LastConfirmedEntry\": \"xx\",\n                        \"TotalSize\": \"xx\",\n                        \"NumberOfEntries\": \"xx\",\n                        \"ConsumerCount\": \"xx\",\n                        \"MsgRateOut\": \"xx\",\n                        \"AverageMsgSize\": \"xx\",\n                        \"MsgThroughputIn\": \"xx\",\n                        \"MsgRateIn\": \"xx\",\n                        \"Partitions\": 0,\n                        \"LastLedgerCreatedTimestamp\": \"xx\",\n                        \"MsgThroughputOut\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ]\n    }\n}",
         "title": "获取环境下主题列表"
       }
@@ -655,7 +655,7 @@
     "ModifyEnvironmentAttributes": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=ModifyEnvironmentAttributes\n&EnvironmentId=test\n&ClusterId=pulsar-xxxxxxxx\n&MsgTTL=100\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentAttributes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test\",\n    \"MsgTTL\": \"100\",\n    \"ClusterId\": \"pulsar-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"test\",\n        \"NamespaceId\": \"namespace-5r59xen74x\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"\",\n        \"RequestId\": \"7db00a30-933c-4f6f-bba9-79cdf6be7d8c\"\n    }\n}",
         "title": "修改指定命名空间的属性值"
       }
@@ -727,7 +727,7 @@
     "ReceiveMessage": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=ReceiveMessage\n&Topic=tenant/namespace/topic\n&SubscriptionName=\"test-sub\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"tenant/namespace/topic\",\n    \"SubscriptionName\": \"\\\"test-sub\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageID\": \"71:12:0:0\",\n        \"MessageIDList\": \"\",\n        \"MessagesPayload\": \"\",\n        \"MessagePayload\": \"hello TDMQ\",\n        \"SubName\": \"xx\",\n        \"AckTopic\": \"persistent://tenant/namespace/topic\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
         "title": "接收消息"
       }

@@ -846,7 +846,7 @@
       "members": [
         {
           "default": "",
-          "document": "任务id",
+          "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
           "name": "MiniAppID",

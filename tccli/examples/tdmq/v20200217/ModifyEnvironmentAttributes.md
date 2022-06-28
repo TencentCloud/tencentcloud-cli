@@ -7,8 +7,8 @@ Input:
 ```
 tccli tdmq ModifyEnvironmentAttributes --cli-unfold-argument  \
     --EnvironmentId test \
-    --ClusterId pulsar-xxxxxxxx \
-    --MsgTTL 100
+    --MsgTTL 100 \
+    --ClusterId pulsar-xxxxxxxx
 ```
 
 Output: 
