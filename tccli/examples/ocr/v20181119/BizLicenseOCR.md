@@ -23,6 +23,12 @@ Output:
         "Type": "有限责任公司",
         "ComposingForm": "",
         "SetDate": "1998年11月",
+        "RecognizeWarnCode": [
+            -9102
+        ],
+        "RecognizeWarnMsg": [
+            "WARN_COPY_CARD"
+        ],
         "RequestId": "c3025c22-e159-44fe-9850-91f30b2e2593"
     }
 }

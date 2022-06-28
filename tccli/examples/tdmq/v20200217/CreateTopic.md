@@ -7,10 +7,10 @@ Input:
 ```
 tccli tdmq CreateTopic --cli-unfold-argument  \
     --EnvironmentId default \
-    --TopicName test_topic \
-    --Partitions 2 \
     --Remark 2个分区的普通消息队列 \
-    --TopicType 0
+    --TopicType 0 \
+    --TopicName test_topic \
+    --Partitions 2
 ```
 
 Output: 

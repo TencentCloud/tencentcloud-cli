@@ -9675,10 +9675,13 @@
       "members": [
         {
           "document": "带宽包配额详细信息",
+          "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

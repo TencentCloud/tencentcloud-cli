@@ -940,18 +940,22 @@
         {
           "default": "",
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -961,87 +965,123 @@
       "members": [
         {
           "document": "统一社会信用代码（三合一之前为注册号）",
+          "example": "110000012345678",
           "member": "string",
           "name": "RegNum",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "公司名称",
+          "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "Name",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "注册资本",
+          "example": "人民币600000万元整",
           "member": "string",
           "name": "Capital",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "法定代表人",
+          "example": "艾米",
           "member": "string",
           "name": "Person",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "地址",
+          "example": "深圳市南山区高新区高新南一路飞亚达大厦",
           "member": "string",
           "name": "Address",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "经营范围",
+          "example": "计算机软、硬件的设计、技术开发、销售(不含专营、专控、专卖商品及限制项目);数据库及计算机网络服务;国内商业、物资供销业(不含专营、专控、专卖商品)",
           "member": "string",
           "name": "Business",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "主体类型",
+          "example": "有限责任公司",
           "member": "string",
           "name": "Type",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "营业期限",
+          "example": "1998年11月至长期",
           "member": "string",
           "name": "Period",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "组成形式",
+          "example": "无",
           "member": "string",
           "name": "ComposingForm",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "成立日期",
+          "example": "1998年11月",
           "member": "string",
           "name": "SetDate",
+          "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "Code 告警码列表和释义：\n-20001 非营业执照\n注：告警码可以同时存在多个",
+          "document": "Code 告警码列表和释义：\n-20001 非营业执照\n-9102 黑白复印件告警\n注：告警码可以同时存在多个",
+          "example": "无",
           "member": "int64",
           "name": "RecognizeWarnCode",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "document": "告警码说明：\nOCR_WARNING_TPYE_NOT_MATCH 非营业执照\n注：告警信息可以同时存在多个",
+          "document": "告警码说明：\nOCR_WARNING_TPYE_NOT_MATCH 非营业执照\nWARN_COPY_CARD 黑白复印件告警\n注：告警信息可以同时存在多个",
+          "example": "无",
           "member": "string",
           "name": "RecognizeWarnMsg",
+          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9047,7 +9087,8 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9056,7 +9097,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9071,7 +9113,8 @@
           "name": "TicketNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "出发站",
@@ -9080,7 +9123,8 @@
           "name": "StartStation",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "到达站",
@@ -9089,7 +9133,8 @@
           "name": "DestinationStation",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "出发时间",
@@ -9098,7 +9143,8 @@
           "name": "Date",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "车次",
@@ -9107,7 +9153,8 @@
           "name": "TrainNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "座位号",
@@ -9116,7 +9163,8 @@
           "name": "Seat",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "姓名",
@@ -9125,7 +9173,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "票价",
@@ -9134,7 +9183,8 @@
           "name": "Price",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "席别",
@@ -9143,7 +9193,8 @@
           "name": "SeatCategory",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "身份证号",
@@ -9152,7 +9203,8 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票消费类型：交通",
@@ -9161,7 +9213,8 @@
           "name": "InvoiceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "序列号",
@@ -9170,7 +9223,8 @@
           "name": "SerialNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "加收票价",
@@ -9179,7 +9233,8 @@
           "name": "AdditionalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "手续费",
@@ -9188,7 +9243,8 @@
           "name": "HandlingFee",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "大写金额（票面有大写金额该字段才有值）",
@@ -9197,7 +9253,8 @@
           "name": "LegalAmount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "售票站",
@@ -9206,7 +9263,8 @@
           "name": "TicketStation",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "原票价（一般有手续费的才有原始票价字段）",
@@ -9215,7 +9273,8 @@
           "name": "OriginalPrice",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发票类型：火车票、火车票补票、火车票退票凭证",
@@ -9224,7 +9283,8 @@
           "name": "InvoiceStyle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "收据号码",
@@ -9233,7 +9293,8 @@
           "name": "ReceiptNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "仅供报销使用：1为是，0为否",
@@ -9242,7 +9303,8 @@
           "name": "IsReceipt",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

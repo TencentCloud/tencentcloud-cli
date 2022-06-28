@@ -64,14 +64,6 @@
         "title": "创建仪表盘"
       }
     ],
-    "CreateDataTransform": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"xx\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"errorcode\",\n            \"DstTopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"LogContent\": \"XXXX\",\n            \"Time\": \"2017-08-08 12:12:12\"\n        }\n    ],\n    \"SrcTopicId\": \"xx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EtlContent\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "创建数据加工任务"
-      }
-    ],
     "CreateExport": [
       {
         "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",
@@ -176,14 +168,6 @@
         "title": "删除仪表盘"
       }
     ],
-    "DeleteDataTransform": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "删除数据加工任务"
-      }
-    ],
     "DeleteExport": [
       {
         "document": "",
@@ -286,14 +270,6 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboards\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DashboardInfos\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"DashboardName\": \"xx\",\n                \"DashboardRegion\": \"xx\",\n                \"AssumerName\": \"xx\",\n                \"DashboardId\": \"xx\",\n                \"RoleName\": \"xx\",\n                \"Data\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"AssumerUin\": 1,\n                \"DashboardTopicInfos\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取仪表盘"
-      }
-    ],
-    "DescribeDataTransformInfo": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTransformInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DataTransformTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"2021-08-08 12:12:12\",\n                \"LastEnableTime\": \"xx\",\n                \"Name\": \"我的加工任务\",\n                \"LogsetId\": \"xx\",\n                \"SrcTopicName\": \"我的日志主题\",\n                \"SrcTopicId\": \"61b9XXXX-971a-48c7-984d-ca147cf242c1\",\n                \"DstResources\": [\n                    {\n                        \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n                        \"Alias\": \"别名\"\n                    }\n                ],\n                \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\",\n                \"EtlContent\": \"ields_set()\",\n                \"Type\": 0,\n                \"CreateTime\": \"2021-08-0712: 12: 12\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "获取数据加工任务基本信息"
       }
     ],
     "DescribeExports": [
@@ -454,14 +430,6 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"xx\",\n    \"DashboardName\": \"xx\",\n    \"Data\": \"xx\",\n    \"Tags\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改仪表盘"
-      }
-    ],
-    "ModifyDataTransform": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EnableFlag\": 0,\n    \"EtlContent\": \"fields_set()\",\n    \"Name\": \"我的数据加工\",\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "修改数据加工任务"
       }
     ],
     "ModifyIndex": [
