@@ -1510,7 +1510,8 @@
           "member": "string",
           "name": "LaunchConfigurationName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1519,7 +1520,8 @@
           "member": "string",
           "name": "ImageId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1528,7 +1530,8 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1537,7 +1540,8 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1546,7 +1550,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1555,7 +1560,8 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1564,7 +1570,8 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1573,7 +1580,8 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1582,7 +1590,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1591,7 +1600,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1600,7 +1610,8 @@
           "member": "string",
           "name": "UserData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1609,7 +1620,8 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1618,7 +1630,8 @@
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1627,7 +1640,8 @@
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1636,7 +1650,8 @@
           "member": "string",
           "name": "InstanceTypesCheckPolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1645,7 +1660,8 @@
           "member": "InstanceTag",
           "name": "InstanceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1654,7 +1670,8 @@
           "member": "string",
           "name": "CamRoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1663,7 +1680,8 @@
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1672,7 +1690,8 @@
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1681,7 +1700,8 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1690,7 +1710,8 @@
           "member": "string",
           "name": "DiskTypePolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1705,7 +1726,8 @@
           "name": "LaunchConfigurationId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4550,7 +4572,8 @@
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4559,7 +4582,8 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4568,7 +4592,8 @@
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4577,7 +4602,8 @@
           "member": "string",
           "name": "InstanceTypesCheckPolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4586,7 +4612,8 @@
           "member": "string",
           "name": "LaunchConfigurationName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4595,7 +4622,8 @@
           "member": "string",
           "name": "UserData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4604,7 +4632,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4613,7 +4642,8 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4622,7 +4652,8 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4631,7 +4662,8 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4640,7 +4672,8 @@
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4649,7 +4682,8 @@
           "member": "string",
           "name": "DiskTypePolicy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4658,7 +4692,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4667,7 +4702,8 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4676,7 +4712,8 @@
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4685,7 +4722,8 @@
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4694,7 +4732,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4703,7 +4742,8 @@
           "member": "string",
           "name": "CamRoleName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

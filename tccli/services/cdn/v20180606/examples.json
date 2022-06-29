@@ -523,7 +523,7 @@
     "PurgePathCache": [
       {
         "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=PurgePathCache\n&Paths.0=http://www.test.com/test/\n&FlushType=flush\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PurgePathCache\n<公共请求参数>\n\n{\n    \"Paths\": [\n        \"http://www.test.com/test/\"\n    ],\n    \"FlushType\": \"flush\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "提交目录刷新任务"
       }

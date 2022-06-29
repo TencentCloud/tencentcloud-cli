@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam DescribeRoleList --cli-unfold-argument  \
-    --Page 1 \
-    --Rp 5
+    --Rp 5 \
+    --Page 1
 ```
 
 Output: 

@@ -891,7 +891,7 @@
     "ModifyLivePullStreamTask": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLivePullStreamTask\n&TaskId=123\n&SourceUrls.0=rtmp://your.domainname.com/live/stream1\n&StartTime=2020-04-16T11:02:00Z\n&EndTime=2020-04-17T12:02:00Z\n&Operator=yourname\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLivePullStreamTask\n<公共请求参数>\n\n{\n    \"Operator\": \"yourname\",\n    \"EndTime\": \"2020-04-17T12:02:00Z\",\n    \"StartTime\": \"2020-04-16T11:02:00Z\",\n    \"TaskId\": \"123\",\n    \"SourceUrls\": [\n        \"rtmp://your.domainname.com/live/stream1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

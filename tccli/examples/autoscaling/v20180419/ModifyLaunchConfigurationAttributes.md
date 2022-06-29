@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli as ModifyLaunchConfigurationAttributes --cli-unfold-argument  \
-    --LaunchConfigurationId asc-291kq6ku \
     --ImageId img-8toqc6s3 \
     --InstanceTypes S2.SMALL1 \
-    --LaunchConfigurationName updated_config
+    --LaunchConfigurationName updated_config \
+    --LaunchConfigurationId asc-291kq6ku
 ```
 
 Output: 

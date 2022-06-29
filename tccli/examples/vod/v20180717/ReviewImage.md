@@ -1,4 +1,4 @@
-**Example 1: 发起图片智能识别任务**
+**Example 1: 发起图片审核任务**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod ReviewImage --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --Definition 10
+    --Definition 10 \
+    --FileId 5285485487985271487
 ```
 
 Output: 

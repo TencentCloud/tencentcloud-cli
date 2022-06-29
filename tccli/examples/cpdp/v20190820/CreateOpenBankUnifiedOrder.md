@@ -23,7 +23,7 @@ tccli cpdp CreateOpenBankUnifiedOrder --cli-unfold-argument  \
     --TotalAmount 20 \
     --Currency CNY \
     --OrderSubject 苹果7 \
-    --ExternalPaymentData {"wx_app_id":"wxbc55d5c804754e36"} \
+    --ExternalPaymentData {"WxAppId":"wxbc55d5c804774e36"} \
     --Attachment test123
 ```
 

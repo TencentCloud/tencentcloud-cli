@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
-    --MediaProcessTask.TranscodeTaskSet.2.Definition 40
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
+    --FileId 5285485487985271487
 ```
 
 Output: 
@@ -30,13 +30,13 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 30 \
     --MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition 15780 \
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 20 \
     --MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition 15780 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
-    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition 15780
+    --MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition 15780 \
+    --FileId 5285485487985271487
 ```
 
 Output: 
@@ -57,11 +57,11 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --MediaProcessTask.TranscodeTaskSet.0.Definition 20 \
-    --MediaProcessTask.TranscodeTaskSet.1.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.0.Definition 30 \
+    --MediaProcessTask.TranscodeTaskSet.1.Definition 20 \
     --MediaProcessTask.TranscodeTaskSet.2.Definition 40 \
-    --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10
+    --MediaProcessTask.SampleSnapshotTaskSet.0.Definition 10 \
+    --FileId 5285485487985271487
 ```
 
 Output: 
@@ -74,29 +74,7 @@ Output:
 }
 ```
 
-**Example 4: 发起智能识别任务**
-
-对 fileId 为 5285485487985271487 的视频发起智能识别任务（令人反感的信息、不安全的信息、不适宜的信息），使用的智能识别模板 ID 是 10。
-
-Input: 
-
-```
-tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --AiContentReviewTask.Definition 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
-        "TaskId": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca"
-    }
-}
-```
-
-**Example 5: 发起智能内容分析任务**
+**Example 4: 发起智能内容分析任务**
 
 对 fileId 为 5285485487985271487 的视频发起内容分析任务 (包括智能分类、智能标签、智能封面)，使用的内容分析的模板 ID 是 10。
 
@@ -104,8 +82,8 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --AiAnalysisTask.Definition 10
+    --AiAnalysisTask.Definition 10 \
+    --FileId 5285485487985271487
 ```
 
 Output: 
@@ -118,7 +96,29 @@ Output:
 }
 ```
 
-**Example 6: 发起智能内容识别任务**
+**Example 5: 发起内容审核任务**
+
+对 fileId 为 5285485487985271487 的视频发起内容审核任务（令人反感的信息、不安全的信息、不适宜的信息），使用的内容审核模板 ID 是 10。
+
+Input: 
+
+```
+tccli vod ProcessMedia --cli-unfold-argument  \
+    --AiContentReviewTask.Definition 10 \
+    --FileId 5285485487985271487
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
+        "TaskId": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca"
+    }
+}
+```
+
+**Example 6: 发起内容识别任务**
 
 对 fileId 为 5285485487985271487 的视频发起内容识别任务 (包括人脸识别)，使用的内容识别的模板 ID 是 10。
 
@@ -126,8 +126,8 @@ Input:
 
 ```
 tccli vod ProcessMedia --cli-unfold-argument  \
-    --FileId 5285485487985271487 \
-    --AiRecognitionTask.Definition 10
+    --AiRecognitionTask.Definition 10 \
+    --FileId 5285485487985271487
 ```
 
 Output: 

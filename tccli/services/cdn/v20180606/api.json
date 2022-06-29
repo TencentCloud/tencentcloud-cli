@@ -12083,7 +12083,8 @@
           "member": "string",
           "name": "Paths",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12092,7 +12093,8 @@
           "member": "string",
           "name": "FlushType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12101,7 +12103,18 @@
           "member": "bool",
           "name": "UrlEncode",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "刷新区域\n无此参数时，默认刷新加速域名所在加速区域\n填充 mainland 时，仅刷新中国境内加速节点上缓存内容\n填充 overseas 时，仅刷新中国境外加速节点上缓存内容\n指定刷新区域时，需要与域名加速区域匹配",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -12116,7 +12129,8 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1,4 +1,4 @@
-**Example 1: 获取模板 ID 为 30 的视频内容识别模板**
+**Example 1: 获取模板 ID 为 30 的音视频内容识别模板**
 
 
 
@@ -57,16 +57,16 @@ Output:
 }
 ```
 
-**Example 2: 获取指定个数的视频内容识别模板**
+**Example 2: 获取指定个数的音视频内容识别模板**
 
-获取序号从 0 开始，总共 10 个视频内容识别模板。
+获取序号从 0 开始，总共 10 个音视频内容识别模板。
 
 Input: 
 
 ```
 tccli vod DescribeAIRecognitionTemplates --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 

@@ -54,42 +54,42 @@
     ],
     "CreateAIAnalysisTemplate": [
       {
-        "document": "创建一个自定义视频内容分析模板，开启智能分类任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板1\n&ClassificationConfigure.Switch=ON\n&<公共请求参数>",
+        "document": "创建一个自定义音视频内容分析模板，开启智能分类任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板1\",\n    \"ClassificationConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"Name\": \"智能分析模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定一项分析任务的模板"
       },
       {
-        "document": "创建一个自定义视频内容分析模板，开启智能分类和智能标签任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板2\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&<公共请求参数>",
+        "document": "创建一个自定义音视频内容分析模板，开启智能分类和智能标签任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板2\",\n    \"TagConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"ClassificationConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"Name\": \"智能分析模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定多项分析任务的模板"
       },
       {
-        "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板3\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=NO\n&FrameTagConfigure.Switch=ON\n&FrameTagConfigure.ScreenshotInterval=0.5\n&<公共请求参数>",
+        "document": "创建一个自定义音视频内容分析模板，开启全部智能分析任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"ClassificationConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"Name\": \"智能分析模板\",\n    \"TagConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"FrameTagConfigure\": {\n        \"Switch\": \"ON\",\n        \"ScreenshotInterval\": \"0.5\"\n    },\n    \"CoverConfigure\": {\n        \"Switch\": \"NO\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建开启全部内容分析任务的模板"
       }
     ],
     "CreateAIRecognitionTemplate": [
       {
-        "document": "创建一个自定义视频内容识别模板，仅开启视频片头片尾识别任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=视频片头片尾识别任务模板\n&Comment=模板1\n&HeadTailConfigure.Switch=ON\n&<公共请求参数>",
+        "document": "创建一个自定义音视频内容识别模板，仅开启视频片头片尾识别任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板1\",\n    \"HeadTailConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"Name\": \"视频片头片尾识别任务模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建仅支持视频片头片尾识别的任务模板"
       },
       {
-        "document": "创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板2\n&SegmentConfigure.Switch=ON\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=Default\n&FaceConfigure.Score=90\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建支持多项视频内容识别任务的模板"
-      },
-      {
-        "document": "创建一个自定义视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分，指定截帧间隔为 1.0  秒。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateAIRecognitionTemplate\n&Name=智能识别模板\n&Comment=模板3\n&SegmentConfigure.Switch=ON\n&FaceConfigure.Switch=ON\n&FaceConfigure.FaceLibrary=All\n&ScreenshotInterval=1.0\n&<公共请求参数>",
+        "document": "创建一个自定义音视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库及用户自定义库，人脸识别过滤分数为 90 分，指定截帧间隔为 1.0  秒。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"FaceLibrary\": \"All\"\n    },\n    \"ScreenshotInterval\": \"1.0\",\n    \"Name\": \"智能识别模板\",\n    \"SegmentConfigure\": {\n        \"Switch\": \"ON\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
+      },
+      {
+        "document": "创建一个自定义音视频内容识别模板，开启拆条任务，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板2\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"Score\": \"90\",\n        \"FaceLibrary\": \"Default\"\n    },\n    \"Name\": \"智能识别模板\",\n    \"SegmentConfigure\": {\n        \"Switch\": \"ON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建支持多项音视频内容识别任务的模板"
       }
     ],
     "CreateAdaptiveDynamicStreamingTemplate": [
@@ -118,28 +118,28 @@
     ],
     "CreateContentReviewTemplate": [
       {
-        "document": "创建一个自定义 AI 内容智能识别模板，仅开启画面内容令人反感的信息任务，判定为违规的分数阈值和判定为需要人工识别的分数阈值都为默认值，不指定过滤标签。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&ReviewWallSwitch=OFF\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建仅开启画面令人反感的信息的内容智能识别模板"
-      },
-      {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工识别的阈值分数为 30 分，截帧间隔为 1 秒。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板2\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=80\n&PornConfigure.ImgReviewInfo.ReviewConfidence=30\n&ScreenshotInterval=1\n&ReviewWallSwitch=OFF\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
-        "title": "创建仅开启画面令人反感的信息的任务内容智能识别模板，并指定分数阈值和截帧间隔"
-      },
-      {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模板\n&Comment=模板3\n&PornConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.ImgReviewInfo.Switch=ON\n&TerrorismConfigure.OcrReviewInfo=null\n&PoliticalConfigure.ImgReviewInfo.Switch=ON\n&ReviewWallSwitch=OFF\n&<公共请求参数>",
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\"\n        }\n    },\n    \"ReviewWallSwitch\": \"OFF\",\n    \"Name\": \"内容审核模板\",\n    \"PoliticalConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\"\n        }\n    },\n    \"TerrorismConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\"\n        },\n        \"OcrReviewInfo\": \"null\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"88aee3e9-2qd3-4151-9d4b-4390a45227a9\"\n    }\n}",
         "title": "创建开启多项识别任务的内容智能审核模板"
       },
       {
-        "document": "创建一个自定义 AI 内容智能识别模板，开启画面内容鉴黄任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工审核的分数阈值都为默认。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateContentReviewTemplate\n&Name=内容智能识别模块\n&Comment=模板1\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=porn\n&PornConfigure.ImgReviewInfo.LabelSet.1=sexy\n&ReviewWallSwitch=OFF\n&<公共请求参数>",
+        "document": "创建一个自定义 AI 内容审核模板，仅开启画面内容令人反感的信息任务，判定为违规的分数阈值和判定为需要人工识别的分数阈值都为默认值，不指定过滤标签。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板1\",\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\"\n        }\n    },\n    \"ReviewWallSwitch\": \"OFF\",\n    \"Name\": \"内容审核模板\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的内容审核模板"
+      },
+      {
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，指定判定为画面违规的分数阈值为 80 分，判定为画面需要人工识别的阈值分数为 30 分，截帧间隔为 1 秒。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板2\",\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"BlockConfidence\": \"80\",\n            \"Switch\": \"ON\",\n            \"ReviewConfidence\": \"30\"\n        }\n    },\n    \"ReviewWallSwitch\": \"OFF\",\n    \"Name\": \"内容审核模板\",\n    \"ScreenshotInterval\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"97aee3e9-2qd3-4151-9d4b-9730a45227a9\"\n    }\n}",
+        "title": "创建仅开启画面令人反感的信息的任务内容审核模板，并指定分数阈值和截帧间隔"
+      },
+      {
+        "document": "创建一个自定义 AI 内容审核模板，开启画面内容鉴黄任务，指定过滤标签为涉黄及性感，判定为违规的分数阈值及判定为需要人工审核的分数阈值都为默认。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板1\",\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\",\n            \"LabelSet\": [\n                \"sexy\",\n                \"porn\"\n            ]\n        }\n    },\n    \"ReviewWallSwitch\": \"OFF\",\n    \"Name\": \"内容审核模块\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"67aee3e9-2qd3-2395-9d4b-4390a96837a7\"\n    }\n}",
-        "title": "创建开启画面令人反感的信息的内容智能识别模板，并指定过滤标签"
+        "title": "创建开启画面令人反感的信息的内容审核模板，并指定过滤标签"
       }
     ],
     "CreateHeadTailTemplate": [
@@ -183,27 +183,27 @@
     "CreateProcedureTemplate": [
       {
         "document": "创建一个名为“我的一个任务流”的任务流模板，任务流转码20，30，40三种格式。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateProcedureTemplate\n&Name=我的一个任务流\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起转码任务的任务流模板"
       },
       {
         "document": "创建一个名为“我的一个任务流”的任务流模板，转出20，30，40三种格式，并且转出的每一个视频都打上一个水印，水印的模板 ID 为15780。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateProcedureTemplate\n&Name=我的一个任务流\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition=15780\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.EndTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.StartTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.TextContent= \n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.SvgContent= \n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition=15780\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.EndTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.StartTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.TextContent= \n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.SvgContent= \n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition=15780\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.EndTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.StartTimeOffset=0.0\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.TextContent= \n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.SvgContent= \n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"20\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"40\",\n                \"WatermarkSet\": [\n                    {\n                        \"EndTimeOffset\": \"0.0\",\n                        \"Definition\": \"15780\",\n                        \"TextContent\": \" \",\n                        \"SvgContent\": \" \",\n                        \"StartTimeOffset\": \"0.0\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起带水印的转码任务的任务流模板"
       },
       {
         "document": "创建一个名为“我的一个任务流”的任务流模板，转出20，30，40三种格式，同时还对视频做采样截图，使用的采样截图的模板 ID 是10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateProcedureTemplate\n&Name=我的一个任务流\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&MediaProcessTask.SampleSnapshotTaskSet.0.Definition=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": \"10\"\n            }\n        ]\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建一个发起转码和采样截图任务的任务流模板"
       },
       {
-        "document": "创建一个名为“我的一个任务流”的任务流模板，发起智能识别任务 (包括涉及令人反感的信息、涉及不安全的信息、涉及不适宜的信息)，使用的智能识别模板 ID 是 10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=CreateProcedureTemplate\n&Name=我的一个任务流\n&AiContentReviewTask.Definition=10\n&<公共请求参数>",
+        "document": "创建一个名为“我的一个任务流”的任务流模板，发起内容审核任务 (包括涉及令人反感的信息、涉及不安全的信息、涉及不适宜的信息)，使用的内容审核模板 ID 是 10。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProcedureTemplate\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": \"10\"\n    },\n    \"Name\": \"我的一个任务流\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
-        "title": "创建一个发起智能识别任务的任务流模板"
+        "title": "创建一个发起内容审核任务的任务流模板"
       }
     ],
     "CreateSampleSnapshotTemplate": [
@@ -298,18 +298,18 @@
     ],
     "DeleteAIAnalysisTemplate": [
       {
-        "document": "删除用户自定义视频内容分析模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIAnalysisTemplate\n&Definition=30\n&<公共请求参数>",
+        "document": "删除用户自定义音视频内容分析模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
         "title": "删除模板 ID 为 30 的内容分析模板"
       }
     ],
     "DeleteAIRecognitionTemplate": [
       {
-        "document": "删除用户自定义视频内容识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteAIRecognitionTemplate\n&Definition=30\n&<公共请求参数>",
+        "document": "删除用户自定义音视频内容识别模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
-        "title": "删除模板 ID 为 30 的视频内容识别模板"
+        "title": "删除模板 ID 为 30 的音视频内容识别模板"
       }
     ],
     "DeleteAdaptiveDynamicStreamingTemplate": [
@@ -338,10 +338,10 @@
     ],
     "DeleteContentReviewTemplate": [
       {
-        "document": "删除用户自定义 AI 内容智能识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DeleteContentReviewTemplate\n&Definition=30\n&<公共请求参数>",
+        "document": "删除用户自定义 AI 内容审核模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteContentReviewTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"35ae8d8e-dce3-42851-9d4b-559414529d931\"\n    }\n}",
-        "title": "删除模板 ID 为 30 的内容智能识别模板"
+        "title": "删除模板 ID 为 30 的内容审核模板"
       }
     ],
     "DeleteHeadTailTemplate": [
@@ -463,29 +463,29 @@
     "DescribeAIAnalysisTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\n&Definitions.0=30\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAnalysisTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        \"30\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取模板 ID 为 30 的视频内容分析模板"
+        "title": "获取模板 ID 为 30 的音视频内容分析模板"
       },
       {
-        "document": "指定从序号 0 开始，总共 10 个视频内容分析模板，包括系统默认视频内容分析模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIAnalysisTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "document": "指定从序号 0 开始，总共 10 个音视频内容分析模板，包括系统默认音视频内容分析模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAnalysisTemplates\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIAnalysisTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能分析模板\",\n                \"ClassificationConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"TagConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"CoverConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"HighlightConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FrameTagConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ScreenshotInterval\": 1\n                },\n                \"CreateTime\": \"2019-01-01T13:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T17:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取指定个数的视频内容分析模板"
+        "title": "获取指定个数的音视频内容分析模板"
       }
     ],
     "DescribeAIRecognitionTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Definitions.0=30\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIRecognitionTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        \"30\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取模板 ID 为 30 的视频内容识别模板"
+        "title": "获取模板 ID 为 30 的音视频内容识别模板"
       },
       {
-        "document": "获取序号从 0 开始，总共 10 个视频内容识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "document": "获取序号从 0 开始，总共 10 个音视频内容识别模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIRecognitionTemplates\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"智能识别模板\",\n                \"HeadTailConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"SegmentConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"FaceConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"FaceLibrary\": \"All\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"LabelSet\": null\n                },\n                \"ObjectConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"ObjectLibrary\": \"All\"\n                },\n                \"ScreenshotInterval\": 10,\n                \"CreateTime\": \"2019-01-01T11:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T12:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取指定个数的视频内容识别模板"
+        "title": "获取指定个数的音视频内容识别模板"
       }
     ],
     "DescribeAdaptiveDynamicStreamingTemplates": [
@@ -551,15 +551,15 @@
     "DescribeContentReviewTemplates": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Definitions.0=30\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容智能识别模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取模板 ID 为 30 的内容智能识别模板"
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContentReviewTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        \"30\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容审核模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取模板 ID 为 30 的内容审核模板"
       },
       {
-        "document": "从序号 0 开始，获取 10 个内容智能识别模板，包括系统默认内容智能识别模板。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容智能识别模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"内容审核模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
-        "title": "获取指定个数的内容智能识别模板"
+        "document": "从序号 0 开始，获取 10 个内容审核模板，包括系统默认内容审核模板。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContentReviewTemplates\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"模板1\",\n                \"Comment\": \"内容审核模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"porn\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"bloody\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            },\n            {\n                \"Definition\": 31,\n                \"Name\": \"模板2\",\n                \"Comment\": \"内容审核模板\",\n                \"ReviewWallSwitch\": \"ON\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"OFF\"\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"OFF\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [\n                            \"politician\"\n                        ],\n                        \"BlockConfidence\": 80,\n                        \"ReviewConfidence\": 30\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ProhibitedConfigure\": null,\n                \"UserDefineConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"ON\",\n                        \"LabelSet\": [],\n                        \"BlockConfidence\": 100,\n                        \"ReviewConfidence\": 75\n                    }\n                },\n                \"ScreenshotInterval\": 1,\n                \"CreateTime\": \"2019-01-01T12:00:00Z\",\n                \"UpdateTime\": \"2019-01-01T16:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"19ae8d8e-dce3-4151-9d4b-5594384987a9\"\n    }\n}",
+        "title": "获取指定个数的内容审核模板"
       }
     ],
     "DescribeDailyMediaPlayStat": [
@@ -629,9 +629,9 @@
     "DescribeImageReviewUsageData": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageReviewUsageData\n&StartTime=2020-09-07T00:00:00+08:00\n&EndTime=2020-09-09T23:59:59+08:00\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageReviewUsageData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-09T23:59:59+08:00\",\n    \"StartTime\": \"2020-09-07T00:00:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ImageReviewUsageDataSet\": [\n            {\n                \"Time\": \"2020-09-07T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-08T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-09T00:00:00+08:00\",\n                \"Count\": 2\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "查询图片智能识别统计数据"
+        "title": "查询图片审核统计数据"
       }
     ],
     "DescribeImageSpriteTemplates": [
@@ -948,40 +948,40 @@
     ],
     "ModifyAIAnalysisTemplate": [
       {
-        "document": "修改自定义视频内容分析模板，开启智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=ON\n&<公共请求参数>",
+        "document": "修改自定义音视频内容分析模板，开启智能封面任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\",\n    \"CoverConfigure\": {\n        \"Switch\": \"ON\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "开启智能封面任务"
       },
       {
-        "document": "修改自定义视频内容分析模板，关闭智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
+        "document": "修改自定义音视频内容分析模板，关闭智能封面任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\",\n    \"CoverConfigure\": {\n        \"Switch\": \"OFF\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "关闭智能封面任务"
       },
       {
-        "document": "修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
+        "document": "修改自定义音视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIAnalysisTemplate\n<公共请求参数>\n\n{\n    \"TagConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"Definition\": \"30\",\n    \"CoverConfigure\": {\n        \"Switch\": \"OFF\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时开启一项和关闭一项内容分析任务"
       }
     ],
     "ModifyAIRecognitionTemplate": [
       {
-        "document": "修改自定义视频内容识别模板，关闭视频片头片尾识别任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&HeadTailConfigure.Switch=OFF\n&<公共请求参数>",
+        "document": "修改自定义音视频内容识别模板，关闭视频片头片尾识别任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\",\n    \"HeadTailConfigure\": {\n        \"Switch\": \"OFF\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "关闭视频片头片尾识别任务"
       },
       {
-        "document": "修改自定义视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&HeadTailConfigure.Switch=OFF\n&SegmentConfigure.Switch=ON\n&<公共请求参数>",
+        "document": "修改自定义音视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\",\n    \"SegmentConfigure\": {\n        \"Switch\": \"ON\"\n    },\n    \"HeadTailConfigure\": {\n        \"Switch\": \"OFF\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时关闭和开启一项识别任务"
       },
       {
         "document": "修改自定义智能识别模板，将截帧间隔修改为 0.5 秒。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyAIRecognitionTemplate\n&Definition=30\n&ScreenshotInterval=0.5\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Definition\": \"30\",\n    \"ScreenshotInterval\": \"0.5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改内容识别截帧间隔时间"
       }
@@ -1012,22 +1012,22 @@
     ],
     "ModifyContentReviewTemplate": [
       {
-        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面智能识别不适宜信息的任务判定为违规的分数阈值和画面智能识别任务判定为需要人工识别的分数阈值修改为默认。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&<公共请求参数>",
+        "document": "修改自定义 AI 内容审核模板。不指定过滤标签，将画面审核不适宜信息的任务判定为违规的分数阈值和画面审核任务判定为需要人工识别的分数阈值修改为默认。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContentReviewTemplate\n<公共请求参数>\n\n{\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"Switch\": \"ON\"\n        }\n    },\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改内容智能识别模板，开启画面令人反感信息的智能识别任务"
+        "title": "修改内容审核模板，开启画面令人反感信息的审核任务"
       },
       {
-        "document": "修改自定义 AI 内容智能识别模板。不指定过滤标签，将画面令人反感的任务判定为违规的分数阈值修改为 90 分，将画面令人反感的任务判定为需要人工识别的分数阈值修改为 60 分。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
+        "document": "修改自定义 AI 内容审核模板。不指定过滤标签，将画面令人反感的任务判定为违规的分数阈值修改为 90 分，将画面令人反感的任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContentReviewTemplate\n<公共请求参数>\n\n{\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"BlockConfidence\": \"90\",\n            \"Switch\": \"ON\",\n            \"ReviewConfidence\": \"60\"\n        }\n    },\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"82ae8d8e-dce3-4151-9d4b-5594145223e1\"\n    }\n}",
-        "title": "修内容智能识别模板，开启画面不适宜的信息的智能识别任务并指定分数阈值"
+        "title": "修内容审核模板，开启画面不适宜的信息的审核任务并指定分数阈值"
       },
       {
-        "document": "修改自定义 AI 内容智能识别模板。指定过滤标签为性感，将画面令人反感任务判定为违规的分数阈值修改为 90 分，将画面令人反感的任务判定为需要人工识别的分数阈值修改为 60 分。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyContentReviewTemplate\n&Definition=30\n&PornConfigure.ImgReviewInfo.Switch=ON\n&PornConfigure.ImgReviewInfo.LabelSet.0=sexy\n&PornConfigure.ImgReviewInfo.BlockConfidence=90\n&PornConfigure.ImgReviewInfo.ReviewConfidence=60\n&<公共请求参数>",
+        "document": "修改自定义 AI 内容审核模板。指定过滤标签为性感，将画面令人反感任务判定为违规的分数阈值修改为 90 分，将画面令人反感的任务判定为需要人工识别的分数阈值修改为 60 分。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContentReviewTemplate\n<公共请求参数>\n\n{\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"BlockConfidence\": \"90\",\n            \"Switch\": \"ON\",\n            \"ReviewConfidence\": \"60\",\n            \"LabelSet\": [\n                \"sexy\"\n            ]\n        }\n    },\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改内容智能识别模板，开启令人反感的信息的智能识别任务并指定过滤标签及分数阈值"
+        "title": "修改内容审核模板，开启令人反感的信息的审核任务并指定过滤标签及分数阈值"
       }
     ],
     "ModifyDefaultStorageRegion": [
@@ -1233,39 +1233,39 @@
     "ProcessMedia": [
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40；并且所有转码视频都打上水印，水印的模板 ID 为15780。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.0.WatermarkSet.0.Definition=15780\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.1.WatermarkSet.0.Definition=15780\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&MediaProcessTask.TranscodeTaskSet.2.WatermarkSet.0.Definition=15780\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"20\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            },\n            {\n                \"Definition\": \"40\",\n                \"WatermarkSet\": [\n                    {\n                        \"Definition\": \"15780\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起带水印的转码任务"
       },
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起转码任务，转出三种规格，使用的转码模板 ID 分别是20、30和40；同时还对视频做采样截图，使用的采样截图的模板 ID 是10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&MediaProcessTask.TranscodeTaskSet.0.Definition=20\n&MediaProcessTask.TranscodeTaskSet.1.Definition=30\n&MediaProcessTask.TranscodeTaskSet.2.Definition=40\n&MediaProcessTask.SampleSnapshotTaskSet.0.Definition=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ],\n        \"SampleSnapshotTaskSet\": [\n            {\n                \"Definition\": \"10\"\n            }\n        ]\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码和采样截图任务"
       },
       {
-        "document": "对 fileId 为 5285485487985271487 的视频发起智能识别任务（令人反感的信息、不安全的信息、不适宜的信息），使用的智能识别模板 ID 是 10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&AiContentReviewTask.Definition=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
-        "title": "发起智能识别任务"
-      },
-      {
         "document": "对 fileId 为 5285485487985271487 的视频发起内容分析任务 (包括智能分类、智能标签、智能封面)，使用的内容分析的模板 ID 是 10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&AiAnalysisTask.Definition=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiAnalysisTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07586237bcecodb01fac7kdikk\"\n    }\n}",
         "title": "发起智能内容分析任务"
       },
       {
+        "document": "对 fileId 为 5285485487985271487 的视频发起内容审核任务（令人反感的信息、不安全的信息、不适宜的信息），使用的内容审核模板 ID 是 10。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiContentReviewTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
+        "title": "发起内容审核任务"
+      },
+      {
         "document": "对 fileId 为 5285485487985271487 的视频发起内容识别任务 (包括人脸识别)，使用的内容识别的模板 ID 是 10。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ProcessMedia\n&FileId=5285485487985271487\n&AiRecognitionTask.Definition=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"AiRecognitionTask\": {\n        \"Definition\": \"10\"\n    },\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc70006fje1\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07586237bcecodb01fac7kdabc\"\n    }\n}",
-        "title": "发起智能内容识别任务"
+        "title": "发起内容识别任务"
       }
     ],
     "ProcessMediaByProcedure": [
@@ -1359,9 +1359,9 @@
     "ReviewImage": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ReviewImage\n&FileId=5285485487985271487\n&Definition=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReviewImage\n<公共请求参数>\n\n{\n    \"Definition\": \"10\",\n    \"FileId\": \"5285485487985271487\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ReviewResultSet\": [\n            {\n                \"Type\": \"Porn.Image\",\n                \"PornImageResult\": {\n                    \"Confidence\": 99,\n                    \"Suggestion\": \"block\",\n                    \"Label\": \"sexy\"\n                },\n                \"TerrorismImageResult\": null,\n                \"PoliticalImageResult\": null,\n                \"PornOcrResult\": null,\n                \"TerrorismOcrResult\": null,\n                \"PoliticalOcrResult\": null\n            }\n        ]\n    }\n}",
-        "title": "发起图片智能识别任务"
+        "title": "发起图片审核任务"
       }
     ],
     "SearchMedia": [

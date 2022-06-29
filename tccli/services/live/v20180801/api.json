@@ -9586,7 +9586,8 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9595,7 +9596,8 @@
           "member": "string",
           "name": "Operator",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9604,7 +9606,8 @@
           "member": "string",
           "name": "SourceUrls",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9613,7 +9616,8 @@
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9622,7 +9626,8 @@
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9631,7 +9636,8 @@
           "member": "int64",
           "name": "VodLoopTimes",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9640,7 +9646,8 @@
           "member": "string",
           "name": "VodRefreshType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9649,7 +9656,8 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9658,7 +9666,8 @@
           "member": "string",
           "name": "CallbackEvents",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9667,7 +9676,8 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9676,7 +9686,8 @@
           "member": "int64",
           "name": "FileIndex",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9685,7 +9696,8 @@
           "member": "int64",
           "name": "OffsetTime",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9694,7 +9706,8 @@
           "member": "string",
           "name": "Comment",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9703,7 +9716,8 @@
           "member": "string",
           "name": "BackupSourceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -9712,7 +9726,8 @@
           "member": "string",
           "name": "BackupSourceUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
