@@ -42,6 +42,12 @@
       "name": "查询任务详情",
       "output": "ListJobsResponse"
     },
+    "ListLogMessageByCondition": {
+      "document": "查询日志信息",
+      "input": "ListLogMessageByConditionRequest",
+      "name": "查询日志信息",
+      "output": "ListLogMessageByConditionResponse"
+    },
     "ListUser": {
       "document": "查询用户列表",
       "input": "ListUserRequest",
@@ -957,6 +963,87 @@
       ],
       "type": "object"
     },
+    "ListLogMessageByConditionRequest": {
+      "document": "ListLogMessageByCondition请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "用户池ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页数据",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "开始时间，时间戳精确到毫秒",
+          "example": "10",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "Key可选值为events\n\n<li> **events** </li>\tValues为[\"SIGNUP\", \"USER_UPDATE\", \"USER_DELETE\", \"USER_CREATE\", \"ACCOUNT_LINKING\"] 中的一个或多个",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLogMessageByConditionResponse": {
+      "document": "ListLogMessageByCondition返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "分页对象",
+          "example": "无",
+          "member": "Pageable",
+          "name": "Pageable",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogMessage",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListUserByPropertyRequest": {
       "document": "ListUserByProperty请求参数结构体",
       "members": [
@@ -1082,6 +1169,182 @@
         }
       ],
       "type": "object"
+    },
+    "LogMessage": {
+      "document": "日志详情",
+      "members": [
+        {
+          "default": "",
+          "document": "日志标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "LogId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserStoreId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "EventCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件发生时间戳，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "EventDate",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "事件参与者\n\n<li> **TENANT** </li>  租户\n<li> **USER** </li>  用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Participant",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用clientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "认证源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthSourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "认证源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthSourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "认证源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthSourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "认证源类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AuthSourceCategory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户代理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserAgent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MemberMap": {
       "document": "Map数据类型",

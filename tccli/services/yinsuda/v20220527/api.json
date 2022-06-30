@@ -1,0 +1,637 @@
+{
+  "actions": {
+    "BatchDescribeKTVMusicDetails": {
+      "document": "批量获取歌曲详细信息，包括：歌词下载链接、播放凭证、音高数据下载链接信息等。",
+      "input": "BatchDescribeKTVMusicDetailsRequest",
+      "name": "批量获取歌曲详情",
+      "output": "BatchDescribeKTVMusicDetailsResponse"
+    },
+    "DescribeKTVPlaylistDetail": {
+      "document": "根据歌单 Id 获取歌单详情。",
+      "input": "DescribeKTVPlaylistDetailRequest",
+      "name": "获取歌单详情",
+      "output": "DescribeKTVPlaylistDetailResponse"
+    },
+    "DescribeKTVPlaylists": {
+      "document": "获取推荐歌单列表。",
+      "input": "DescribeKTVPlaylistsRequest",
+      "name": "获取推荐歌单列表",
+      "output": "DescribeKTVPlaylistsResponse"
+    },
+    "DescribeKTVSuggestions": {
+      "document": "根据关键词获取联想词列表。",
+      "input": "DescribeKTVSuggestionsRequest",
+      "name": "获取联想词",
+      "output": "DescribeKTVSuggestionsResponse"
+    },
+    "SearchKTVMusics": {
+      "document": "根据关键词搜索歌曲，返回相关歌曲列表。",
+      "input": "SearchKTVMusicsRequest",
+      "name": "搜索歌曲",
+      "output": "SearchKTVMusicsResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-05-27",
+    "api_brief": "音速达直播音乐版权引擎服务基于是基于腾讯音乐娱乐集团（TME）海量线上直播音乐版权资源，结合腾讯云存储、内容加速分发等基础能力，搭配演唱评分、声音美化等智能音乐功能，为解决直播语聊场景中的正版音乐应用设计的 PaaS 产品。您可以前往API概览了解详情。",
+    "serviceNameCN": "音速达直播音乐版权引擎",
+    "serviceShortName": "yinsuda"
+  },
+  "objects": {
+    "BatchDescribeKTVMusicDetailsRequest": {
+      "document": "BatchDescribeKTVMusicDetails请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "歌曲 Id 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeKTVMusicDetailsResponse": {
+      "document": "BatchDescribeKTVMusicDetails返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲详细信息列表。",
+          "example": "无",
+          "member": "KTVMusicDetailInfo",
+          "name": "KTVMusicDetailInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "不存在歌曲Id列表。",
+          "example": "无",
+          "member": "string",
+          "name": "NotExistMusicIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChorusClip": {
+      "document": "副歌片段信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "开始时间，单位：毫秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "结束时间，单位：毫秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeKTVPlaylistDetailRequest": {
+      "document": "DescribeKTVPlaylistDetail请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "歌单 Id。",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回条数，默认：20，最大：50。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistDetailResponse": {
+      "document": "DescribeKTVPlaylistDetail返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsRequest": {
+      "document": "DescribeKTVPlaylists请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVPlaylistsResponse": {
+      "document": "DescribeKTVPlaylists返回参数结构体",
+      "members": [
+        {
+          "document": "歌单基础信息。",
+          "example": "无",
+          "member": "KTVPlaylistBaseInfo",
+          "name": "PlaylistBaseInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsRequest": {
+      "document": "DescribeKTVSuggestions请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "搜索词。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVSuggestionsResponse": {
+      "document": "DescribeKTVSuggestions返回参数结构体",
+      "members": [
+        {
+          "document": "联想词信息列表。",
+          "example": "无",
+          "member": "KTVSuggestionInfo",
+          "name": "KTVSuggestionInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KTVMusicBaseInfo": {
+      "document": "歌曲基础信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲Id。",
+          "example": "无",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手名称。",
+          "example": "无",
+          "member": "string",
+          "name": "SingerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放时长。",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌手图片链接。",
+          "example": "无",
+          "member": "string",
+          "name": "SingerImageUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MusicAlbumInfo",
+          "name": "AlbumInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVMusicDetailInfo": {
+      "document": "歌曲详细信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "歌曲基础信息。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicBaseInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "播放凭证。",
+          "example": "无",
+          "member": "string",
+          "name": "PlayToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌词下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "LyricsUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "音高数据下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "MidiUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "副歌片段信息。",
+          "example": "无",
+          "member": "ChorusClip",
+          "name": "ChorusClipSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVPlaylistBaseInfo": {
+      "document": "歌单基础信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "歌单Id。",
+          "example": "无",
+          "member": "string",
+          "name": "PlaylistId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌单标题。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "KTVSuggestionInfo": {
+      "document": "联想词信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "联想词。",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicAlbumCoverInfo": {
+      "document": "歌曲专辑封面信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "尺寸规格，取值有：\n<li>Mini：150 x 150 尺寸；</li>\n<li>Small：240 x 240 尺寸；</li>\n<li>Medium：480 x 480 尺寸。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "下载链接。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MusicAlbumInfo": {
+      "document": "歌曲专辑信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "专辑名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "封面列表。",
+          "example": "无",
+          "member": "MusicAlbumCoverInfo",
+          "name": "CoverInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchKTVMusicsRequest": {
+      "document": "SearchKTVMusics请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用名称。",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户标识。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "关键词。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyWord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "滚动标记。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "返回条数限制，默认 20，最大 50.",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "RightFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKTVMusicsResponse": {
+      "document": "SearchKTVMusics返回参数结构体",
+      "members": [
+        {
+          "document": "歌曲信息列表。",
+          "example": "无",
+          "member": "KTVMusicBaseInfo",
+          "name": "KTVMusicInfoSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ScrollToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

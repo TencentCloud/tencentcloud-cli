@@ -7,7 +7,7 @@ Input:
 ```
 tccli teo ModifyOriginGroup --cli-unfold-argument  \
     --ZoneId zone-xxx \
-    --OriginId orgin-xxx \
+    --OriginId origin-xxx \
     --OriginName oname \
     --Type weight \
     --OriginType self \

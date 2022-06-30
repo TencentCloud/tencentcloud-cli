@@ -126,6 +126,18 @@
       "name": "创建告警规则",
       "output": "CreatePrometheusAlertRuleResponse"
     },
+    "CreatePrometheusClusterAgent": {
+      "document": "与云监控融合的2.0实例关联集群",
+      "input": "CreatePrometheusClusterAgentRequest",
+      "name": "2.0实例关联集群",
+      "output": "CreatePrometheusClusterAgentResponse"
+    },
+    "CreatePrometheusConfig": {
+      "document": "创建prometheus配置",
+      "input": "CreatePrometheusConfigRequest",
+      "name": "创建prometheus配置",
+      "output": "CreatePrometheusConfigResponse"
+    },
     "CreatePrometheusDashboard": {
       "document": "创建grafana监控面板",
       "input": "CreatePrometheusDashboardRequest",
@@ -137,6 +149,12 @@
       "input": "CreatePrometheusGlobalNotificationRequest",
       "name": "创建全局告警通知渠道",
       "output": "CreatePrometheusGlobalNotificationResponse"
+    },
+    "CreatePrometheusRecordRuleYaml": {
+      "document": "以Yaml的方式创建聚合规则",
+      "input": "CreatePrometheusRecordRuleYamlRequest",
+      "name": "以Yaml的方式创建聚合规则",
+      "output": "CreatePrometheusRecordRuleYamlResponse"
     },
     "CreatePrometheusTemp": {
       "document": "创建一个云原生Prometheus模板",
@@ -251,6 +269,24 @@
       "input": "DeletePrometheusAlertRuleRequest",
       "name": "删除告警规则",
       "output": "DeletePrometheusAlertRuleResponse"
+    },
+    "DeletePrometheusClusterAgent": {
+      "document": "解除2.0实例的集群关联",
+      "input": "DeletePrometheusClusterAgentRequest",
+      "name": "解除2.0实例的集群关联",
+      "output": "DeletePrometheusClusterAgentResponse"
+    },
+    "DeletePrometheusConfig": {
+      "document": "删除Prometheus配置，如果目标不存在，将返回成功",
+      "input": "DeletePrometheusConfigRequest",
+      "name": "删除Prometheus配置",
+      "output": "DeletePrometheusConfigResponse"
+    },
+    "DeletePrometheusRecordRuleYaml": {
+      "document": "删除聚合实例",
+      "input": "DeletePrometheusRecordRuleYamlRequest",
+      "name": "删除聚合实例",
+      "output": "DeletePrometheusRecordRuleYamlResponse"
     },
     "DeletePrometheusTemp": {
       "document": "删除一个云原生Prometheus配置模板",
@@ -534,6 +570,18 @@
       "name": "获取2.0实例关联集群列表",
       "output": "DescribePrometheusClusterAgentsResponse"
     },
+    "DescribePrometheusConfig": {
+      "document": "拉取Prometheus配置",
+      "input": "DescribePrometheusConfigRequest",
+      "name": "拉取Prometheus配置",
+      "output": "DescribePrometheusConfigResponse"
+    },
+    "DescribePrometheusGlobalConfig": {
+      "document": "获得实例级别抓取配置",
+      "input": "DescribePrometheusGlobalConfigRequest",
+      "name": "获得实例级别抓取配置",
+      "output": "DescribePrometheusGlobalConfigResponse"
+    },
     "DescribePrometheusGlobalNotification": {
       "document": "查询全局告警通知渠道",
       "input": "DescribePrometheusGlobalNotificationRequest",
@@ -545,6 +593,12 @@
       "input": "DescribePrometheusInstanceRequest",
       "name": "获取实例详细信息",
       "output": "DescribePrometheusInstanceResponse"
+    },
+    "DescribePrometheusInstanceInitStatus": {
+      "document": "获取2.0实例初始化任务状态",
+      "input": "DescribePrometheusInstanceInitStatusRequest",
+      "name": "获取2.0实例初始化任务状态",
+      "output": "DescribePrometheusInstanceInitStatusResponse"
     },
     "DescribePrometheusInstancesOverview": {
       "document": "获取与云监控融合实例列表",
@@ -792,6 +846,12 @@
       "name": "修改节点池的机型配置",
       "output": "ModifyNodePoolInstanceTypesResponse"
     },
+    "ModifyPrometheusAgentExternalLabels": {
+      "document": "修改被关联集群的external labels",
+      "input": "ModifyPrometheusAgentExternalLabelsRequest",
+      "name": "修改被关联集群的external labels",
+      "output": "ModifyPrometheusAgentExternalLabelsResponse"
+    },
     "ModifyPrometheusAlertPolicy": {
       "document": "修改2.0实例告警策略",
       "input": "ModifyPrometheusAlertPolicyRequest",
@@ -804,11 +864,23 @@
       "name": "修改告警规则",
       "output": "ModifyPrometheusAlertRuleResponse"
     },
+    "ModifyPrometheusConfig": {
+      "document": "修改prometheus配置，如果配置项不存在，则会新增",
+      "input": "ModifyPrometheusConfigRequest",
+      "name": "修改prometheus配置",
+      "output": "ModifyPrometheusConfigResponse"
+    },
     "ModifyPrometheusGlobalNotification": {
       "document": "修改全局告警通知渠道",
       "input": "ModifyPrometheusGlobalNotificationRequest",
       "name": "修改全局告警通知渠道",
       "output": "ModifyPrometheusGlobalNotificationResponse"
+    },
+    "ModifyPrometheusRecordRuleYaml": {
+      "document": "通过yaml的方式修改Prometheus聚合实例",
+      "input": "ModifyPrometheusRecordRuleYamlRequest",
+      "name": "通过yaml的方式修改Prometheus聚合实例",
+      "output": "ModifyPrometheusRecordRuleYamlResponse"
     },
     "ModifyPrometheusTemp": {
       "document": "修改模板内容",
@@ -833,6 +905,12 @@
       "input": "RestartEKSContainerInstancesRequest",
       "name": "重启容器实例",
       "output": "RestartEKSContainerInstancesResponse"
+    },
+    "RunPrometheusInstance": {
+      "document": "初始化与云监控融合的2.0版本实例，开启集成中心时调用",
+      "input": "RunPrometheusInstanceRequest",
+      "name": "初始化2.0实例",
+      "output": "RunPrometheusInstanceResponse"
     },
     "ScaleInClusterMaster": {
       "document": "缩容独立集群master节点",
@@ -1932,6 +2010,16 @@
           "name": "CiliumMode",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDualStack",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -4520,6 +4608,89 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusClusterAgentRequest": {
+      "document": "CreatePrometheusClusterAgent请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreatePrometheusClusterAgentResponse": {
+      "document": "CreatePrometheusClusterAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusConfigRequest": {
+      "document": "CreatePrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ServiceMonitors配置",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "PodMonitors配置",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "prometheus原生Job配置",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusConfigResponse": {
+      "document": "CreatePrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusDashboardRequest": {
       "document": "CreatePrometheusDashboard请求参数结构体",
       "members": [
@@ -4598,6 +4769,40 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusRecordRuleYamlRequest": {
+      "document": "CreatePrometheusRecordRuleYaml请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "yaml的内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusRecordRuleYamlResponse": {
+      "document": "CreatePrometheusRecordRuleYaml返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5508,6 +5713,123 @@
     },
     "DeletePrometheusAlertRuleResponse": {
       "document": "DeletePrometheusAlertRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusClusterAgentRequest": {
+      "document": "DeletePrometheusClusterAgent请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeletePrometheusClusterAgentResponse": {
+      "document": "DeletePrometheusClusterAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusConfigRequest": {
+      "document": "DeletePrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "要删除的ServiceMonitor名字列表",
+          "member": "string",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要删除的PodMonitor名字列表",
+          "member": "string",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "要删除的RawJobs名字列表",
+          "member": "string",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusConfigResponse": {
+      "document": "DeletePrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusRecordRuleYamlRequest": {
+      "document": "DeletePrometheusRecordRuleYaml请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合规则列表",
+          "member": "string",
+          "name": "Names",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusRecordRuleYamlResponse": {
+      "document": "DeletePrometheusRecordRuleYaml返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8107,6 +8429,148 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusConfigRequest": {
+      "document": "DescribePrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusConfigResponse": {
+      "document": "DescribePrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "全局配置",
+          "member": "string",
+          "name": "Config",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ServiceMonitor配置",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "PodMonitor配置",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "原生Job",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalConfigRequest": {
+      "document": "DescribePrometheusGlobalConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例级别抓取配置",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否禁用统计",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableStatistics",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusGlobalConfigResponse": {
+      "document": "DescribePrometheusGlobalConfig返回参数结构体",
+      "members": [
+        {
+          "document": "配置内容",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Config",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "ServiceMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "PodMonitors列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "RawJobs列表以及对应targets信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusGlobalNotificationRequest": {
       "document": "DescribePrometheusGlobalNotification请求参数结构体",
       "members": [
@@ -8134,6 +8598,23 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusInstanceInitStatusRequest": {
+      "document": "DescribePrometheusInstanceInitStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrometheusInstanceInitStatusResponse": {
+      "document": "DescribePrometheusInstanceInitStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12650,6 +13131,51 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusAgentExternalLabelsRequest": {
+      "document": "ModifyPrometheusAgentExternalLabels请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的external_labels",
+          "example": "Name=xx, Value=xxx",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusAgentExternalLabelsResponse": {
+      "document": "ModifyPrometheusAgentExternalLabels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusAlertPolicyRequest": {
       "document": "ModifyPrometheusAlertPolicy请求参数结构体",
       "members": [
@@ -12722,6 +13248,72 @@
       ],
       "type": "object"
     },
+    "ModifyPrometheusConfigRequest": {
+      "document": "ModifyPrometheusConfig请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "集群id",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "ServiceMonitors配置",
+          "member": "PrometheusConfigItem",
+          "name": "ServiceMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "PodMonitors配置",
+          "member": "PrometheusConfigItem",
+          "name": "PodMonitors",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "prometheus原生Job配置",
+          "member": "PrometheusConfigItem",
+          "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusConfigResponse": {
+      "document": "ModifyPrometheusConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPrometheusGlobalNotificationRequest": {
       "document": "ModifyPrometheusGlobalNotification请求参数结构体",
       "members": [
@@ -12748,6 +13340,48 @@
     },
     "ModifyPrometheusGlobalNotificationResponse": {
       "document": "ModifyPrometheusGlobalNotification返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusRecordRuleYamlRequest": {
+      "document": "ModifyPrometheusRecordRuleYaml请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例id",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "聚合实例名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "新的内容",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrometheusRecordRuleYamlResponse": {
+      "document": "ModifyPrometheusRecordRuleYaml返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15312,6 +15946,23 @@
         }
       ],
       "usage": "both"
+    },
+    "RunPrometheusInstanceRequest": {
+      "document": "RunPrometheusInstance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RunPrometheusInstanceResponse": {
+      "document": "RunPrometheusInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RunSecurityServiceEnabled": {
       "document": "描述了 “云安全” 服务相关的信息",

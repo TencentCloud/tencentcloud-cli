@@ -1,4 +1,4 @@
-**Example 1: 服务统计**
+**Example 1: test**
 
 
 
@@ -6,25 +6,30 @@ Input:
 
 ```
 tccli tsf DescribeStatistics --cli-unfold-argument  \
-    --NamespaceId "test" \
-    --Type "test" \
-    --TimeStep 60 \
-    --OrderBy "AvgTimeConsuming" \
-    --StartTime '2020-06-02 16:37:30' \
-    --EndTime '2020-06-02 17:37:30' \
-    --Offset 0 \
-    --Limit 50
+    --OrderBy 字符串 \
+    --StartTime 2020-05-12 14:43:12 \
+    --TimeStep 1 \
+    --Offset 1 \
+    --DbName 字符串 \
+    --ServiceName 字符串 \
+    --Limit 1 \
+    --NamespaceIdList 字符串 \
+    --SearchWord 字符串 \
+    --OrderType 1 \
+    --EndTime 2020-05-12 14:43:12 \
+    --Type 字符串 \
+    --NamespaceId 字符串 \
+    --BucketKey 字符串 \
+    --MetricDimensionValues.0.Name 字符串 \
+    --MetricDimensionValues.0.Value 字符串
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4517c1fc-3c2b-44fa-a7c8-aa45b6c91ed6",
-        "Result": {
-            "TotalCount": 0,
-            "Content": null
-        }
+        "RequestId": "b057eeaa-ccdf-40be-995f-f059b4b974e8",
+        "Result": null
     }
 }
 ```

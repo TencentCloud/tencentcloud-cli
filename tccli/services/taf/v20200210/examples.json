@@ -8,14 +8,6 @@
         "title": "DetectFraudKOL-识别假量"
       }
     ],
-    "EnhanceTaDegree": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceTaDegree\n<公共请求参数>\n\n{\n    \"BspData\": {\n        \"Seq\": 1235467,\n        \"OsType\": \"1\",\n        \"AgeFloor\": 20,\n        \"AgeCeil\": 30,\n        \"Gender\": 2,\n        \"Imei\": \"86xxxxxxxxxxxx\"\n    },\n    \"BusinessEncryptData\": {}\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"IsCheck\": 0,\n                \"IsMatch\": 0\n            }\n        },\n        \"RequestId\": \"d12af039-0a21-4519-ba88-f621b1850720\"\n    }\n}",
-        "title": "EnhanceTaDegree"
-      }
-    ],
     "RecognizeCustomizedAudience": [
       {
         "document": "",

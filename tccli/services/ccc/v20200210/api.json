@@ -138,6 +138,12 @@
       "name": "获取 PSTN 会话信息",
       "output": "DescribeTelSessionResponse"
     },
+    "ModifyStaff": {
+      "document": "修改客服账号",
+      "input": "ModifyStaffRequest",
+      "name": "修改客服账号",
+      "output": "ModifyStaffResponse"
+    },
     "StopAutoCalloutTask": {
       "document": "停止自动外呼任务",
       "input": "StopAutoCalloutTaskRequest",
@@ -2356,6 +2362,78 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyStaffRequest": {
+      "document": "ModifyStaff请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "应用ID",
+          "example": "1400000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "坐席账户",
+          "example": "xx@tencent.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "坐席名称",
+          "example": "XXX",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "坐席手机号（带0086前缀,示例：008618011111111）",
+          "example": "008618088888888",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "坐席昵称",
+          "example": "XXX",
+          "member": "string",
+          "name": "Nick",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "绑定技能组ID列表",
+          "example": "[123,134]",
+          "member": "int64",
+          "name": "SkillGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStaffResponse": {
+      "document": "ModifyStaff返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PSTNSession": {
       "document": "PSTN 会话类型。",

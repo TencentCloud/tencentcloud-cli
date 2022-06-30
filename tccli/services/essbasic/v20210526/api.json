@@ -7,15 +7,15 @@
       "output": "ChannelCancelMultiFlowSignQRCodeResponse"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建流程。此接口不可直接使用，需要运营申请",
+      "document": "接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建签署流程。此接口不可直接使用，需要运营申请",
       "input": "ChannelCreateFlowByFilesRequest",
-      "name": "渠道版通过文件创建流程",
+      "name": "渠道版通过文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse"
     },
     "ChannelCreateMultiFlowSignQRCode": {
-      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
+      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫签署流程二维码。\n适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
-      "name": "创建一码多扫流程签署二维码",
+      "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse"
     },
     "CreateConsoleLoginUrl": {
@@ -25,9 +25,9 @@
       "output": "CreateConsoleLoginUrlResponse"
     },
     "CreateFlowsByTemplates": {
-      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建流程。当前可批量发起合同（流程）数量最大为20个。",
+      "document": "接口（CreateFlowsByTemplates）用于使用多个模板批量创建签署流程。当前可批量发起合同（签署流程）数量最大为20个。",
       "input": "CreateFlowsByTemplatesRequest",
-      "name": "使用多个模板批量创建流程",
+      "name": "使用多个模板批量创建签署流程",
       "output": "CreateFlowsByTemplatesResponse"
     },
     "CreateSealByImage": {
@@ -43,15 +43,15 @@
       "output": "CreateSignUrlsResponse"
     },
     "DescribeFlowDetailInfo": {
-      "document": "此接口（DescribeFlowDetailInfo）用于查询合同(流程)的详细信息。",
+      "document": "此接口（DescribeFlowDetailInfo）用于查询合同(签署流程)的详细信息。",
       "input": "DescribeFlowDetailInfoRequest",
-      "name": "查询合同(流程)的详细信息",
+      "name": "查询合同(签署流程)的详细信息",
       "output": "DescribeFlowDetailInfoResponse"
     },
     "DescribeResourceUrlsByFlows": {
-      "document": "根据流程信息批量获取资源下载链接，可直接下载\n限制：只能下载合作企业授权过的、单方签署的流程文件（若合作企业与渠道是同一企业，可以下载所有流程文件）",
+      "document": "根据签署流程信息批量获取资源下载链接，可直接下载\n限制：只能下载合作企业授权过的、单方签署的签署流程文件（若合作企业与渠道是同一企业，可以下载所有签署流程文件）",
       "input": "DescribeResourceUrlsByFlowsRequest",
-      "name": "根据流程信息批量获取资源下载链接",
+      "name": "根据签署流程信息批量获取资源下载链接",
       "output": "DescribeResourceUrlsByFlowsResponse"
     },
     "DescribeTemplates": {
@@ -79,7 +79,7 @@
       "output": "OperateChannelTemplateResponse"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用。",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse"
@@ -125,20 +125,10 @@
         },
         {
           "default": "",
-          "document": "腾讯电子签颁发给渠道侧合作企业的企业ID",
+          "document": "渠道/平台合作企业的企业ID",
           "example": "无",
           "member": "string",
-          "name": "ProxyOrganizationId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "腾讯电子签颁发给渠道侧合作企业的应用ID",
-          "example": "无",
-          "member": "string",
-          "name": "ProxyAppId",
+          "name": "ProxyOrganizationOpenId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -155,10 +145,20 @@
         },
         {
           "default": "",
-          "document": "渠道/平台合作企业的企业ID",
+          "document": "腾讯电子签颁发给渠道侧合作企业的应用ID",
           "example": "无",
           "member": "string",
-          "name": "ProxyOrganizationOpenId",
+          "name": "ProxyAppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "腾讯电子签颁发给渠道侧合作企业的企业ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -197,7 +197,7 @@
       "members": [
         {
           "default": "",
-          "document": "被抄送人手机号",
+          "document": "被抄送人手机号，大陆11位手机号",
           "example": "xxx",
           "member": "string",
           "name": "Mobile",
@@ -267,12 +267,21 @@
         },
         {
           "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "document": "签署流程名称，长度不超过200个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowName",
           "required": false,
-          "type": "object"
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署流程签约方列表，最多不超过5个参与方",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": false,
+          "type": "list"
         },
         {
           "default": "",
@@ -285,16 +294,16 @@
         },
         {
           "default": "",
-          "document": "流程名称，长度不超过200个字符",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "FlowName",
+          "document": "签署文件中的控件，如：填写控件等",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
           "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "default": "",
-          "document": "流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
+          "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
           "example": "3",
           "member": "int64",
           "name": "Deadline",
@@ -303,39 +312,12 @@
         },
         {
           "default": "",
-          "document": "流程的描述，长度不超过1000个字符",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "FlowDescription",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "流程的类型，长度不超过255个字符",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "FlowType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "流程回调地址，长度不超过255个字符",
+          "document": "签署流程回调地址，长度不超过255个字符",
           "example": "\"xxx\"",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "流程签约方列表，最多不超过5个参与方",
-          "example": "无",
-          "member": "FlowApproverInfo",
-          "name": "FlowApprovers",
-          "required": false,
-          "type": "list"
         },
         {
           "default": "",
@@ -348,12 +330,39 @@
         },
         {
           "default": "",
-          "document": "签署文件中的控件，如：填写控件等",
-          "example": "无",
-          "member": "Component",
-          "name": "Components",
+          "document": "签署流程的类型，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowType",
           "required": false,
-          "type": "list"
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "签署流程的描述，长度不超过1000个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "member": "string",
+          "name": "CustomShowMap",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -362,7 +371,7 @@
       "document": "ChannelCreateFlowByFiles返回参数结构体",
       "members": [
         {
-          "document": "合同流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同签署流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "FlowId",
@@ -402,7 +411,7 @@
         },
         {
           "default": "",
-          "document": "合同名称",
+          "document": "签署流程名称，最大长度200个字符。",
           "example": "无",
           "member": "string",
           "name": "FlowName",
@@ -411,16 +420,16 @@
         },
         {
           "default": "",
-          "document": "用户信息",
+          "document": "最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "int64",
+          "name": "MaxFlowNum",
           "required": false,
-          "type": "object"
+          "type": "int"
         },
         {
           "default": "",
-          "document": "合同有效天数 默认7天 最高设置不超过30天",
+          "document": "签署流程有效天数 默认7天 最高设置不超过30天",
           "example": "无",
           "member": "int64",
           "name": "FlowEffectiveDay",
@@ -438,21 +447,21 @@
         },
         {
           "default": "",
-          "document": "最大合同份数，默认5份 超过此上限 二维码自动失效",
-          "example": "无",
-          "member": "int64",
-          "name": "MaxFlowNum",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "回调地址",
+          "document": "回调地址，最大长度1000个字符\n不传默认使用渠道应用号配置的回调地址\n回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -503,7 +512,7 @@
         },
         {
           "default": "",
-          "document": "控件简称",
+          "document": "控件简称，不能超过30个字符",
           "example": "ComponentName",
           "member": "string",
           "name": "ComponentName",
@@ -523,7 +532,7 @@
         },
         {
           "default": "",
-          "document": "控件所属文件的序号 (文档中文件的排列序号)",
+          "document": "控件所属文件的序号 (文档中文件的排列序号，从0开始)",
           "example": "0",
           "member": "int64",
           "name": "FileIndex",
@@ -563,7 +572,7 @@
         },
         {
           "default": "",
-          "document": "参数控件所在页码",
+          "document": "参数控件所在页码，从1开始",
           "example": "0",
           "member": "int64",
           "name": "ComponentPage",
@@ -633,7 +642,7 @@
         },
         {
           "default": "",
-          "document": "控件描述",
+          "document": "控件描述，不能超过30个字符",
           "example": "desc",
           "member": "string",
           "name": "ComponentDescription",
@@ -643,7 +652,7 @@
         },
         {
           "default": "",
-          "document": "指定关键字时横坐标偏移量",
+          "document": "指定关键字时横坐标偏移量，单位pt",
           "example": "无",
           "member": "float",
           "name": "OffsetX",
@@ -653,7 +662,7 @@
         },
         {
           "default": "",
-          "document": "指定关键字时纵坐标偏移量",
+          "document": "指定关键字时纵坐标偏移量，单位pt",
           "example": "无",
           "member": "float",
           "name": "OffsetY",
@@ -669,7 +678,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -678,7 +687,7 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业名称",
+          "document": "渠道侧合作企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -687,30 +696,12 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业统一社会信用代码",
-          "example": "无",
-          "member": "string",
-          "name": "UniformSocialCreditCode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "渠道侧合作企业经办人的姓名",
+          "document": "渠道侧合作企业经办人的姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOperatorName",
           "required": false,
           "type": "string"
-        },
-        {
-          "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
         },
         {
           "default": "",
@@ -729,6 +720,24 @@
           "name": "ModuleId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道侧合作企业统一社会信用代码，最大长度200个字符",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -768,7 +777,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道应用相关信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -777,12 +786,21 @@
         },
         {
           "default": "",
-          "document": "多个合同（流程）信息",
+          "document": "多个合同（签署流程）信息，最多支持20个",
           "example": "无",
           "member": "FlowInfo",
           "name": "FlowInfos",
           "required": true,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；\n预览链接有效期300秒；",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
         },
         {
           "default": "",
@@ -792,15 +810,6 @@
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；",
-          "example": "false",
-          "member": "bool",
-          "name": "NeedPreview",
-          "required": false,
-          "type": "bool"
         }
       ],
       "type": "object"
@@ -858,7 +867,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道应用相关信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -867,7 +876,7 @@
         },
         {
           "default": "",
-          "document": "印章名称",
+          "document": "印章名称，最大长度不超过30字符",
           "example": "无",
           "member": "string",
           "name": "SealName",
@@ -930,7 +939,7 @@
         },
         {
           "default": "",
-          "document": "所签署合同ID数组",
+          "document": "签署流程编号数组，最多支持100个。",
           "example": "[\"xxx\", \"yyy\"]",
           "member": "string",
           "name": "FlowIds",
@@ -939,16 +948,7 @@
         },
         {
           "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;",
+          "document": "签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -957,7 +957,7 @@
         },
         {
           "default": "",
-          "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效",
+          "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。",
           "example": "“https://qq.com”",
           "member": "string",
           "name": "JumpUrl",
@@ -972,6 +972,15 @@
           "name": "AutoJumpBack",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1020,7 +1029,7 @@
         },
         {
           "default": "",
-          "document": "合同(流程)编号数组",
+          "document": "合同(流程)编号数组，最多支持100个。",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -1061,7 +1070,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "合同(流程)的具体详细描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同(签署流程)的具体详细描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FlowDetailInfo",
           "name": "FlowInfo",
@@ -1092,21 +1101,21 @@
         },
         {
           "default": "",
+          "document": "查询资源所对应的签署流程Id，最多支持50个。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "查询资源所对应的流程Id",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "FlowIds",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -1115,7 +1124,7 @@
       "document": "DescribeResourceUrlsByFlows返回参数结构体",
       "members": [
         {
-          "document": "流程资源对应链接信息",
+          "document": "签署流程资源对应链接信息",
           "example": "无",
           "member": "FlowResourceUrlInfo",
           "name": "FlowResourceUrlInfos",
@@ -1155,15 +1164,6 @@
         },
         {
           "default": "",
-          "document": "操作者的信息",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "default": "",
           "document": "模板唯一标识",
           "example": "无",
           "member": "string",
@@ -1197,6 +1197,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "操作者的信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1263,7 +1272,7 @@
         },
         {
           "default": "",
-          "document": "开始时间 eg:2021-03-21",
+          "document": "开始时间，例如：2021-03-21",
           "example": "无",
           "member": "date",
           "name": "StartDate",
@@ -1272,12 +1281,39 @@
         },
         {
           "default": "",
-          "document": "结束时间 eg:2021-06-21 \n开始时间到结束时间的区间长度小于等于90天",
+          "document": "结束时间，例如：2021-06-21；\n开始时间到结束时间的区间长度小于等于90天。",
           "example": "无",
           "member": "date",
           "name": "EndDate",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否汇总数据，默认不汇总。\n不汇总：返回在统计区间内渠道下所有企业的每日明细，即每个企业N条数据，N为统计天数；\n汇总：返回在统计区间内渠道下所有企业的汇总后数据，即每个企业一条数据；",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedAggregate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "单次返回的最多条目数量。默认为1000，且不能超过1000。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认是0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         },
         {
           "default": "",
@@ -1287,33 +1323,6 @@
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "是否汇总数据，默认不汇总\n不汇总:返回在统计区间内渠道下所有企业的每日明细，即每个企业N条数据，N为统计天数\n汇总:返回在统计区间内渠道下所有企业的汇总后数据，即每个企业一条数据",
-          "example": "无",
-          "member": "bool",
-          "name": "NeedAggregate",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "default": "",
-          "document": "单次返回的最多条目数量,默认为1000,且不能超过1000",
-          "example": "无",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "偏移量,默认是0",
-          "example": "无",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -1349,7 +1358,7 @@
       "type": "object"
     },
     "DownloadFlowInfo": {
-      "document": "合同（流程）下载信息",
+      "document": "签署流程下载信息",
       "members": [
         {
           "default": "",
@@ -1363,7 +1372,7 @@
         },
         {
           "default": "",
-          "document": "合同（流程）的标识数组",
+          "document": "签署流程的标识数组",
           "example": "[\"FlowId1\",\"FlowId2\"]",
           "member": "string",
           "name": "FlowIdList",
@@ -1491,11 +1500,11 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建流程签署人入参",
+      "document": "创建签署流程签署人入参",
       "members": [
         {
           "default": "",
-          "document": "签署人姓名",
+          "document": "签署人姓名，最大长度50个字符",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -1505,7 +1514,17 @@
         },
         {
           "default": "",
-          "document": "经办人身份证号",
+          "document": "经办人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "经办人证件号",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -1515,7 +1534,7 @@
         },
         {
           "default": "",
-          "document": "签署人手机号，脱敏显示",
+          "document": "签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。",
           "example": "13888888888",
           "member": "string",
           "name": "Mobile",
@@ -1525,100 +1544,10 @@
         },
         {
           "default": "",
-          "document": "签署完前端跳转的url，暂未使用",
-          "example": "https://qq.com",
-          "member": "string",
-          "name": "JumpUrl",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "签署截止时间",
-          "example": "1689688460",
-          "member": "int64",
-          "name": "Deadline",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "签署完回调url",
-          "example": "https://qq.com",
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "签署人类型，PERSON-个人；ORGANIZATION-企业；\nENTERPRISESERVER-企业静默签;\n注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；",
-          "example": "PERSON",
-          "member": "string",
-          "name": "ApproverType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "用户侧第三方id",
-          "example": "open_test_id",
-          "member": "string",
-          "name": "OpenId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
-          "example": "3",
-          "member": "int64",
-          "name": "PreReadTime",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)",
-          "example": "[\"OCR_ESIGN\"]",
-          "member": "string",
-          "name": "ComponentLimitType",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "RecipientId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；",
+          "document": "企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；",
           "example": "\"xxx\"",
           "member": "string",
           "name": "OrganizationName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；",
-          "example": "\"xxx\"",
-          "member": "string",
-          "name": "OrganizationOpenId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1635,12 +1564,102 @@
         },
         {
           "default": "",
+          "document": "用户侧第三方id，最大长度64个字符",
+          "example": "open_test_id",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署人类型，PERSON-个人；ORGANIZATION-企业；\nENTERPRISESERVER-企业静默签;\n注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；",
+          "example": "PERSON",
+          "member": "string",
+          "name": "ApproverType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署截止时间，默认一年",
+          "example": "1689688460",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署完回调url，最大长度1000个字符",
+          "example": "https://qq.com",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "使用PDF文件直接发起合同时，签署人指定的签署控件",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)",
+          "example": "[\"OCR_ESIGN\"]",
+          "member": "string",
+          "name": "ComponentLimitType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
+          "example": "3",
+          "member": "int64",
+          "name": "PreReadTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "签署完前端跳转的url，暂未使用",
+          "example": "https://qq.com",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1743,12 +1762,12 @@
       "usage": "out"
     },
     "FlowInfo": {
-      "document": "此结构体 (FlowInfo) 用于描述流程信息。",
+      "document": "此结构体 (FlowInfo) 用于描述签署流程信息。",
       "members": [
         {
           "default": "",
-          "document": "合同名字",
-          "example": "流程名称",
+          "document": "合同名字，最大长度200个字符",
+          "example": "签署流程名称",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -1777,27 +1796,7 @@
         },
         {
           "default": "",
-          "document": "合同类型：\n1. “劳务”\n2. “销售”\n3. “租赁”\n4. “其他”",
-          "example": "流程类型",
-          "member": "string",
-          "name": "FlowType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "回调地址",
-          "example": "回调地址",
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "多个签署人信息，渠道侧目前不支持超过5个签署方信息",
+          "document": "多个签署人信息，最大支持50个签署方",
           "example": "签署人信息",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -1817,8 +1816,28 @@
         },
         {
           "default": "",
-          "document": "合同描述",
-          "example": "流程详情",
+          "document": "回调地址，最大长度1000个字符",
+          "example": "回调地址",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符",
+          "example": "签署流程类型",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同描述，最大长度1000个字符",
+          "example": "签署流程详情",
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -1827,10 +1846,20 @@
         },
         {
           "default": "",
-          "document": "渠道的业务信息，限制1024字符",
+          "document": "渠道的业务信息，最大长度1000个字符",
           "example": "\"xxx\"",
           "member": "string",
           "name": "CustomerData",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "member": "string",
+          "name": "CustomShowMap",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1924,21 +1953,21 @@
         },
         {
           "default": "",
+          "document": "文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程",
+          "example": "无",
+          "member": "DownloadFlowInfo",
+          "name": "DownLoadFlows",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "操作者的信息",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "default": "",
-          "document": "文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），",
-          "example": "无",
-          "member": "DownloadFlowInfo",
-          "name": "DownLoadFlows",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -1978,15 +2007,6 @@
         },
         {
           "default": "",
-          "document": "渠道方模板库模板唯一标识",
-          "example": "无",
-          "member": "string",
-          "name": "TemplateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "操作类型，查询:\"SELECT\"，删除:\"DELETE\"，更新:\"UPDATE\"",
           "example": "无",
           "member": "string",
@@ -1996,12 +2016,21 @@
         },
         {
           "default": "",
-          "document": "操作者的信息",
+          "document": "渠道方模板库模板唯一标识",
           "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "合作企业方第三方机构唯一标识数据，支持多个， 用\",\"进行分隔",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationOpenIds",
           "required": false,
-          "type": "object"
+          "type": "string"
         },
         {
           "default": "",
@@ -2014,12 +2043,12 @@
         },
         {
           "default": "",
-          "document": "合作企业方第三方机构唯一标识数据，支持多个， 用\",\"进行分隔",
+          "document": "操作者的信息",
           "example": "无",
-          "member": "string",
-          "name": "ProxyOrganizationOpenIds",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
-          "type": "string"
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2095,7 +2124,7 @@
       "members": [
         {
           "default": "",
-          "document": "渠道应用相关信息",
+          "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2104,7 +2133,7 @@
         },
         {
           "default": "",
-          "document": "多个合同（流程）信息",
+          "document": "多个合同（签署流程）信息，最大支持20个签署流程。",
           "example": "无",
           "member": "FlowInfo",
           "name": "FlowInfos",
@@ -2113,7 +2142,7 @@
         },
         {
           "default": "",
-          "document": "操作完成后的跳转地址",
+          "document": "操作完成后的跳转地址，最大长度200",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
@@ -2158,7 +2187,7 @@
       "members": [
         {
           "default": "",
-          "document": "经办人ID（渠道颁发）",
+          "document": "经办人ID（渠道颁发），最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "Id",
@@ -2168,7 +2197,7 @@
         },
         {
           "default": "",
-          "document": "经办人姓名",
+          "document": "经办人姓名，最大长度50个字符",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -2178,7 +2207,7 @@
         },
         {
           "default": "",
-          "document": "经办人身份证件类型\n用户证件类型：默认ID_CARD\n1. ID_CARD - 居民身份证\n2. HOUSEHOLD_REGISTER - 户口本\n3. TEMP_ID_CARD - 临时居民身份证",
+          "document": "经办人身份证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -2188,7 +2217,7 @@
         },
         {
           "default": "",
-          "document": "经办人身份证号",
+          "document": "经办人证件号",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -2198,7 +2227,7 @@
         },
         {
           "default": "",
-          "document": "经办人手机号",
+          "document": "经办人手机号，大陆手机号输入11位，暂不支持海外手机号。",
           "example": "无",
           "member": "string",
           "name": "Mobile",
@@ -2534,6 +2563,15 @@
       "members": [
         {
           "default": "",
+          "document": "渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
           "document": "操作类型，新增:\"CREATE\"，修改:\"UPDATE\"，离职:\"RESIGN\"",
           "example": "无",
           "member": "string",
@@ -2543,16 +2581,7 @@
         },
         {
           "default": "",
-          "document": "应用信息",
-          "example": "无",
-          "member": "Agent",
-          "name": "Agent",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
-          "document": "经办人信息列表",
+          "document": "经办人信息列表，最大长度200",
           "example": "无",
           "member": "ProxyOrganizationOperator",
           "name": "ProxyOrganizationOperators",
@@ -2606,7 +2635,7 @@
       "members": [
         {
           "default": "",
-          "document": "应用信息\n此接口Agent.ProxyOrganizationOpenId必填",
+          "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2615,7 +2644,7 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业名称",
+          "document": "渠道侧合作企业名称，最大长度64个字符",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -2624,19 +2653,19 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业统一社会信用代码",
+          "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
           "example": "无",
           "member": "string",
-          "name": "UniformSocialCreditCode",
+          "name": "BusinessLicense",
           "required": false,
           "type": "string"
         },
         {
           "default": "",
-          "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
+          "document": "渠道侧合作企业统一社会信用代码，最大长度200个字符",
           "example": "无",
           "member": "string",
-          "name": "BusinessLicense",
+          "name": "UniformSocialCreditCode",
           "required": false,
           "type": "string"
         },
@@ -2719,6 +2748,36 @@
         },
         {
           "default": "",
+          "document": "模板中的流程参与人信息",
+          "example": "无",
+          "member": "Recipient",
+          "name": "Recipients",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "模板类型：1-静默签；2-静默签授权；3-普通模板",
+          "example": "3",
+          "member": "int64",
+          "name": "TemplateType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否是发起人",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPromoter",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
           "document": "模板的创建者信息",
           "example": "无",
           "member": "string",
@@ -2735,36 +2794,6 @@
           "name": "CreatedOn",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "模板类型：1-静默签；2-静默签授权；3-普通模板",
-          "example": "3",
-          "member": "int64",
-          "name": "TemplateType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "模板中的流程参与人信息",
-          "example": "无",
-          "member": "Recipient",
-          "name": "Recipients",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "是否是发起人",
-          "example": "true",
-          "member": "bool",
-          "name": "IsPromoter",
-          "required": true,
-          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -2799,21 +2828,21 @@
       "members": [
         {
           "default": "",
-          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
-          "example": "TEMPLATE",
-          "member": "string",
-          "name": "BusinessType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "应用相关信息，若是渠道版调用 appid 和proxyappid 必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "文件对应业务类型，用于区分文件存储路径：\n1. TEMPLATE - 模板； 文件类型：.pdf\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png",
+          "example": "TEMPLATE",
+          "member": "string",
+          "name": "BusinessType",
+          "required": true,
+          "type": "string"
         },
         {
           "default": "",
@@ -2890,13 +2919,13 @@
         },
         {
           "default": "",
-          "document": "消耗量",
-          "example": "50",
-          "member": "uint64",
-          "name": "Usage",
+          "document": "渠道侧合作企业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOrganizationName",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "default": "",
@@ -2910,13 +2939,13 @@
         },
         {
           "default": "",
-          "document": "渠道侧合作企业名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ProxyOrganizationName",
+          "document": "消耗量",
+          "example": "50",
+          "member": "uint64",
+          "name": "Usage",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2926,10 +2955,10 @@
       "members": [
         {
           "default": "",
-          "document": "自定义用户编号",
+          "document": "用户在渠道的编号",
           "example": "无",
           "member": "string",
-          "name": "CustomUserId",
+          "name": "OpenId",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2946,10 +2975,10 @@
         },
         {
           "default": "",
-          "document": "用户在渠道的编号",
+          "document": "自定义用户编号",
           "example": "无",
           "member": "string",
-          "name": "OpenId",
+          "name": "CustomUserId",
           "required": false,
           "type": "string",
           "value_allowed_null": false

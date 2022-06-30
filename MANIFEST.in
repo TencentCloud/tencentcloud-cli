@@ -451,6 +451,8 @@ include tccli/services/wav/v20210129/api.json
 include tccli/services/wav/v20210129/examples.json
 include tccli/services/wss/v20180426/api.json
 include tccli/services/wss/v20180426/examples.json
+include tccli/services/yinsuda/v20220527/api.json
+include tccli/services/yinsuda/v20220527/examples.json
 include tccli/services/youmall/v20180228/api.json
 include tccli/services/youmall/v20180228/examples.json
 include tccli/services/yunjing/v20180228/api.json

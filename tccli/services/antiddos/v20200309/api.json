@@ -644,6 +644,52 @@
       ],
       "usage": "out"
     },
+    "AnycastOutPackRelation": {
+      "document": "Anycast转外套餐详情",
+      "members": [
+        {
+          "default": "",
+          "document": "业务带宽(单位M)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "NormalBandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "转发规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "ForwardRulesLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-06-18 18:36:44",
+          "member": "string",
+          "name": "CurDeadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AssociateDDoSEipAddressRequest": {
       "document": "AssociateDDoSEipAddress请求参数结构体",
       "members": [
@@ -973,6 +1019,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资产实例所属的全力防护套餐包详情，\n注意：当资产实例不是全力防护套餐包的实例时，此字段为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnycastOutPackRelation",
+          "name": "AnycastOutPackRelation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1227,6 +1283,16 @@
           "name": "TagInfoList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "新版本1ip高防包",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpCountNewFlag",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5486,6 +5552,15 @@
           "name": "FilterTag",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "按照套餐类型进行过滤",
+          "example": "无",
+          "member": "string",
+          "name": "FilterPackType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

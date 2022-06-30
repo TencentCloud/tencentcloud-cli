@@ -1,4 +1,4 @@
-**Example 1: 创建电子签流程**
+**Example 1: 创建电子签签署流程**
 
 
 
@@ -9,10 +9,11 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Operator.UserId 19561039******de6a \
     --FlowName 合同名称 \
     --NeedPreview False \
-    --FlowDescription 测试流程的描述信息 \
+    --FlowDescription 测试签署流程的描述信息 \
     --Unordered False \
     --FlowType 劳动合同 \
     --Deadline 1604912664 \
+    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName xxx有限公司 \
     --Approvers.0.ApproverName 张三 \

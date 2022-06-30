@@ -32,6 +32,7 @@ Output:
         "OriginType": "self",
         "ApplicationProxyUsed": false,
         "LoadBalancingUsed": false,
+        "LoadBalancingUsedType": "none",
         "UpdateTime": "2020-09-22T00:00:00+00:00"
     }
 }

@@ -10,6 +10,7 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --FlowName 测试 \
     --Unordered False \
     --DeadLine 1604912664 \
+    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName ***有限公司 \
     --Approvers.0.Required True \
@@ -39,6 +40,7 @@ Input:
 
 ```
 tccli ess CreateFlow --cli-unfold-argument  \
+    --RelatedFlowId xxx \
     --UserData 字符串 \
     --FlowName 字符串 \
     --FlowDescription 字符串 \
@@ -51,16 +53,16 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --Approvers.0.UserId  \
     --Approvers.0.RecipientId  \
     --Approvers.0.NotifyType SMS \
-    --Approvers.0.ApproverMobile 13554456345 \
+    --Approvers.0.ApproverMobile 135****6345 \
     --Approvers.0.ApproverName 史国富 \
     --Approvers.0.PreReadTime 5 \
     --DeadLine 1652931170 \
     --ClientToken 字符串 \
     --Operator.ProxyIp 字符串 \
     --Operator.ClientIp 字符串 \
-    --Operator.UserId yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk \
+    --Operator.UserId yDxMkUy*****E8VI2JmKxPkk \
     --Operator.Channel YUFU \
-    --Operator.OpenId us-6c4f28eda1994ec6bafe176c2b1cb86a \
+    --Operator.OpenId us-6c4f2****bafe176c2b1cb86a \
     --Unordered true \
     --CallbackUrl 
 ```
@@ -69,7 +71,7 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": "yDR8YUUgygqpxi8zUuO4zjEuwxLMnR24",
+        "FlowId": "yDR8YUUg****O4zjEuwxLMnR24",
         "RequestId": "2846e98d-53bd-4d1f-807f-d2632a7fceef"
     }
 }

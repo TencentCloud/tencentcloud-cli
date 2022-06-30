@@ -184,6 +184,14 @@
         "title": "获取 PSTN 会话信息"
       }
     ],
+    "ModifyStaff": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStaff\n<公共请求参数>\n\n{\n    \"Phone\": \"008618092688910\",\n    \"Email\": \"xxx@tencent.com\",\n    \"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\"\n    }\n}",
+        "title": "修改客服示例"
+      }
+    ],
     "StopAutoCalloutTask": [
       {
         "document": "",

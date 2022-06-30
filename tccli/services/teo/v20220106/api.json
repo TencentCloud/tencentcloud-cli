@@ -765,7 +765,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代理ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -775,7 +775,7 @@
         },
         {
           "default": "",
-          "document": "实例名称",
+          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
           "example": "a proxy",
           "member": "string",
           "name": "ProxyName",
@@ -905,7 +905,7 @@
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名\ninstance：实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
@@ -915,7 +915,7 @@
         },
         {
           "default": "",
-          "document": "七层实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当ProxyType=hostname时：\nProxyName为域名，如：test.123.com\nHostId表示该域名，即test.123.com对应的代理加速唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "edge-xxx",
           "member": "string",
           "name": "HostId",
@@ -951,7 +951,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -961,7 +961,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]\n\n当OriginType=origins时，包含一个元素，表示源站组ID，如：\nOriginValue=[\"origin-xxx\"]",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -2187,7 +2187,7 @@
         },
         {
           "default": "",
-          "document": "四层代理名称",
+          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
           "example": "a proxy",
           "member": "string",
           "name": "ProxyName",
@@ -2259,7 +2259,7 @@
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
@@ -2331,7 +2331,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -2340,7 +2340,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -2799,7 +2799,7 @@
         },
         {
           "default": "",
-          "document": "配置类型，当OriginType=self 时，需要填写：\narea: 按区域配置\nweight: 按权重配置\n当OriginType=third_party 时，不需要填写",
+          "document": "配置类型，当OriginType=self 时，需要填写：\narea: 按区域配置\nweight: 按权重配置\n当OriginType=third_party/cos 时，不需要填写",
           "example": "area",
           "member": "string",
           "name": "Type",
@@ -2826,7 +2826,7 @@
         },
         {
           "default": "",
-          "document": "源站类型\nself：自有源站\nthird_party：第三方源站",
+          "document": "源站类型\nself：自有源站\nthird_party：第三方源站\ncos：腾讯云COS源站",
           "example": "self",
           "member": "string",
           "name": "OriginType",
@@ -4751,7 +4751,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "实例名称",
+          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
           "example": "name",
           "member": "string",
           "name": "ProxyName",
@@ -4868,7 +4868,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
@@ -4877,7 +4877,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "七层实例ID",
+          "document": "当ProxyType=hostname时：\nProxyName为域名，如：test.123.com\nHostId表示该域名，即test.123.com对应的代理加速唯一标识",
           "example": "edgeone-xxx",
           "member": "string",
           "name": "HostId",
@@ -4949,10 +4949,28 @@
           "value_allowed_null": true
         },
         {
-          "document": "当ZoneId不为空时，表示当前站点允许创建的实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Quota",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表示套餐内PlatType为ip的Anycast IP实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "表示套餐内PlatType为domain的CNAME实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DomainCount",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -6668,7 +6686,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "配置类型",
+          "document": "源站组配置类型\narea：表示按照Record记录中的Area字段进行按客户端IP所在区域回源。\nweight：表示按照Record记录中的Weight字段进行按权重回源。",
           "example": "area",
           "member": "string",
           "name": "Type",
@@ -6722,7 +6740,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否被四层代理使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前源站组是否被四层代理使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ApplicationProxyUsed",
@@ -6731,12 +6749,21 @@
           "value_allowed_null": true
         },
         {
-          "document": "是否被负载均衡使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前源站组是否被负载均衡使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "LoadBalancingUsed",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "使用当前源站组的负载均衡的类型：\nnone：未被使用\ndns_only：被仅DNS类型负载均衡使用\nproxied：被代理加速类型负载均衡使用\nboth：同时被仅DNS和代理加速类型负载均衡使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
+          "member": "string",
+          "name": "LoadBalancingUsedType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -9530,7 +9557,7 @@
         },
         {
           "default": "",
-          "document": "域名是否开启了lb，四层，安全\n- lb 负载均衡\n- security 安全\n- l4 四层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名是否开启了负载均衡，四层代理，安全\n- lb 负载均衡\n- security 安全\n- l4 四层代理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DomainStatus",
@@ -10484,7 +10511,7 @@
         },
         {
           "default": "",
-          "document": "四层代理ID",
+          "document": "代理ID",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -10493,7 +10520,7 @@
         },
         {
           "default": "",
-          "document": "四层代理名称",
+          "document": "代理名称\n当ProxyType=hostname时，表示域名或者子域名\n当ProxyType=instance时，表示实例名称",
           "example": "a proxy",
           "member": "string",
           "name": "ProxyName",
@@ -10529,7 +10556,7 @@
         },
         {
           "default": "",
-          "document": "服务类型\nhostname：子域名\ninstance：实例",
+          "document": "服务类型\nhostname：子域名模式\ninstance：实例模式",
           "example": "hostname",
           "member": "string",
           "name": "ProxyType",
@@ -10543,7 +10570,7 @@
       "document": "ModifyApplicationProxy返回参数结构体",
       "members": [
         {
-          "document": "四层代理ID",
+          "document": "代理ID",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -10610,7 +10637,7 @@
         },
         {
           "default": "",
-          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组\nload_balancing：负载均衡",
+          "document": "源站类型，取值：\ncustom：手动添加\norigins：源站组",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -10619,7 +10646,7 @@
         },
         {
           "default": "",
-          "document": "源站信息：\n当OriginType=custom时，表示多个：\nIP:端口\n域名:端口\n当OriginType=origins时，包含一个元素，表示源站组ID\n当OriginType=load_balancing时，包含一个元素，表示负载均衡ID",
+          "document": "源站信息：\n当OriginType=custom时，表示一个或多个源站，如：\nOriginValue=[\"8.8.8.8:80\",\"9.9.9.9:80\"]\nOriginValue=[\"test.com:80\"]\n\n当OriginType=origins时，包含一个元素，表示源站组ID，如：\nOriginValue=[\"origin-xxx\"]",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",
@@ -10682,7 +10709,7 @@
         },
         {
           "default": "",
-          "document": "四层代理ID",
+          "document": "代理ID",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -10745,7 +10772,7 @@
         },
         {
           "default": "",
-          "document": "四层代理ID",
+          "document": "代理ID",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -10768,7 +10795,7 @@
       "document": "ModifyApplicationProxyStatus返回参数结构体",
       "members": [
         {
-          "document": "四层代理ID",
+          "document": "代理ID",
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
@@ -11447,7 +11474,7 @@
         },
         {
           "default": "",
-          "document": "配置类型，当OriginType=self 时，需要填写：\narea: 按区域配置\nweight: 按权重配置\n当OriginType=third_party 时，不需要填写",
+          "document": "配置类型，当OriginType=self 时，需要填写：\narea: 按区域配置\nweight: 按权重配置\n当OriginType=third_party/cos 时，不需要填写",
           "example": "area",
           "member": "string",
           "name": "Type",
@@ -11474,7 +11501,7 @@
         },
         {
           "default": "",
-          "document": "源站类型\nself：自有源站\nthird_party：第三方源站",
+          "document": "源站类型\nself：自有源站\nthird_party：第三方源站\ncos：腾讯云COS源站",
           "example": "self",
           "member": "string",
           "name": "OriginType",
@@ -12023,6 +12050,32 @@
       ],
       "usage": "both"
     },
+    "OriginCheckOriginStatus": {
+      "document": "源站健康检查，源站状态信息",
+      "members": [
+        {
+          "default": "",
+          "document": "healthy: 健康，unhealthy: 不健康，process: 探测中",
+          "example": "healthy",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "host列表，源站组不健康时存在值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OriginFilter": {
       "document": "源站组查询过滤参数",
       "members": [
@@ -12074,7 +12127,7 @@
         },
         {
           "default": "",
-          "document": "配置类型",
+          "document": "源站组配置类型\narea：表示按照Record记录中的Area字段进行按客户端IP所在区域回源。\nweight：表示按照Record记录中的Weight字段进行按权重回源。",
           "example": "area",
           "member": "string",
           "name": "Type",
@@ -12134,7 +12187,7 @@
         },
         {
           "default": "",
-          "document": "是否为四层代理使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前源站组是否被四层代理使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ApplicationProxyUsed",
@@ -12144,12 +12197,32 @@
         },
         {
           "default": "",
-          "document": "是否为负载均衡使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前源站组是否被负载均衡使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "LoadBalancingUsed",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "源站状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginCheckOriginStatus",
+          "name": "Status",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "使用当前源站组的负载均衡的类型：\nnone：未被使用\ndns_only：被仅DNS类型负载均衡使用\nproxied：被代理加速类型负载均衡使用\nboth：同时被仅DNS和代理加速类型负载均衡使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
+          "member": "string",
+          "name": "LoadBalancingUsedType",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -12170,7 +12243,7 @@
         },
         {
           "default": "",
-          "document": "当源站配置类型Type=area时，表示区域\n当源站类型Type=area时，为空表示默认区域",
+          "document": "当源站配置类型Type=area时，表示区域\n为空表示默认区域",
           "example": "[]",
           "member": "string",
           "name": "Area",
@@ -12180,7 +12253,7 @@
         },
         {
           "default": "",
-          "document": "当源站配置类型Type=weight时，表示权重",
+          "document": "当源站配置类型Type=weight时，表示权重\n取值范围为[1-100]\n源站组内多个源站权重总和应为100",
           "example": "100",
           "member": "uint64",
           "name": "Weight",

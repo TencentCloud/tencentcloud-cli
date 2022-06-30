@@ -12028,6 +12028,15 @@
           "name": "UrlEncode",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "刷新区域\n无此参数时，默认刷新加速域名所在加速区域\n填充 mainland 时，仅刷新中国境内加速节点上缓存内容\n填充 overseas 时，仅刷新中国境外加速节点上缓存内容\n指定刷新区域时，需要与域名加速区域匹配",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

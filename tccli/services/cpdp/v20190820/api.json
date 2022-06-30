@@ -11203,7 +11203,7 @@
         },
         {
           "default": "",
-          "document": "小程序跳转参数\u000b渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳转参数\u000b渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OpenBankRedirectInfo",
           "name": "RedirectInfo",
@@ -17850,6 +17850,32 @@
       ],
       "usage": "out"
     },
+    "OpenBankFormInfo": {
+      "document": "网银页面提交html",
+      "members": [
+        {
+          "default": "",
+          "document": "网银页面提交html\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormHtml",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "网银提交页面字符集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormEncoding",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "OpenBankGoodsInfo": {
       "document": "云企付-商品信息",
       "members": [
@@ -18320,6 +18346,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网银支付提交页面信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankFormInfo",
+          "name": "FormInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

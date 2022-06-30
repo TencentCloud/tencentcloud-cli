@@ -1,6 +1,6 @@
 **Example 1: 关闭视频片头片尾识别任务**
 
-修改自定义视频内容识别模板，关闭视频片头片尾识别任务。
+修改自定义音视频内容识别模板，关闭视频片头片尾识别任务。
 
 Input: 
 
@@ -21,15 +21,15 @@ Output:
 
 **Example 2: 同时关闭和开启一项识别任务**
 
-修改自定义视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。
+修改自定义音视频内容识别模板，关闭视频片头片尾识别任务，开启视频拆条任务。
 
 Input: 
 
 ```
 tccli vod ModifyAIRecognitionTemplate --cli-unfold-argument  \
     --Definition 30 \
-    --HeadTailConfigure.Switch OFF \
-    --SegmentConfigure.Switch ON
+    --SegmentConfigure.Switch ON \
+    --HeadTailConfigure.Switch OFF
 ```
 
 Output: 

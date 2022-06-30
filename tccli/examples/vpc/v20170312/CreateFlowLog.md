@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vpc CreateFlowLog --cli-unfold-argument  \
-    --CloudLogId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
-    --FlowLogDescription test-flowlog \
     --FlowLogName test \
-    --ResourceId eni-xxxxxxxx \
+    --CloudLogId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    --VpcId vpc-xxxxxx \
+    --FlowLogDescription test-flowlog \
     --ResourceType NETWORKINTERFACE \
-    --TrafficType ACCEPT \
-    --VpcId vpc-xxxxxx
+    --ResourceId eni-xxxxxxxx \
+    --TrafficType ACCEPT
 ```
 
 Output: 
@@ -29,6 +29,7 @@ Output:
                 "TrafficType": "ACCEPT",
                 "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
                 "CloudLogState": "",
+                "CloudLogRegion": "",
                 "FlowLogDescription": "",
                 "Enable": true,
                 "StorageType": "cls",

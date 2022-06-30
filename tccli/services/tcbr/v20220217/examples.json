@@ -53,15 +53,15 @@
     "DescribeCloudRunServers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServerList\": [\n            {\n                \"Status\": \"xx\",\n                \"ServerName\": \"xx\",\n                \"CustomDomainName\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"DefaultDomainName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "DescribeCloudRunServers"
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"字符串\",\n    \"PageSize\": 15,\n    \"PageNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9fb51324-4592-4690-a6fe-f4a676321588\",\n        \"ServerList\": [],\n        \"Total\": 0\n    }\n}",
+        "title": "success"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"字符串\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9fb51324-4592-4690-a6fe-f4a676321588\",\n        \"ServerList\": []\n    }\n}",
-        "title": "success"
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunServers\n<公共请求参数>\n\n{\n    \"EnvId\": \"字符串\",\n    \"PageNum\": \"0\",\n    \"PageSize\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2e5dae7-7a84-4caf-b304-519aede64b82\",\n        \"ServerList\": [\n            {\n                \"ServerName\": \"\",\n                \"DefaultDomainName\": \"\",\n                \"CustomDomainName\": \"\",\n                \"Status\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "success 0630"
       }
     ],
     "DescribeEnvBaseInfo": [

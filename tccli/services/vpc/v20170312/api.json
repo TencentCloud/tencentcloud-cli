@@ -4802,6 +4802,7 @@
         {
           "default": "",
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
+          "example": "test-cgw",
           "member": "string",
           "name": "CustomerGatewayName",
           "required": true,
@@ -4810,6 +4811,7 @@
         {
           "default": "",
           "document": "对端网关公网IP。",
+          "example": "58.211.1.12",
           "member": "string",
           "name": "IpAddress",
           "required": true,
@@ -4818,6 +4820,7 @@
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -4831,8 +4834,10 @@
       "members": [
         {
           "document": "对端网关对象",
+          "example": "无",
           "member": "CustomerGateway",
           "name": "CustomerGateway",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },

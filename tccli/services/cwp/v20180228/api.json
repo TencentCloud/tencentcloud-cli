@@ -11943,7 +11943,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>\n<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>\n<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>\n<li>Uuids- String - 是否必填：否 - 主机uuid</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>\n<li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>\n<li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>\n<li>Uuids- String - 是否必填：否 - 主机uuid</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -11961,7 +11961,7 @@
         },
         {
           "default": "",
-          "document": "排序字段 PublishDate",
+          "document": "排序字段 PublishDate  LastScanTime HostCount",
           "example": "无",
           "member": "string",
           "name": "By",
@@ -15277,6 +15277,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "扫描出漏洞个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "VulCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16742,10 +16751,19 @@
         },
         {
           "default": "",
-          "document": "1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞",
+          "document": "1:web-cms 漏洞，2.应用漏洞   4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据",
           "example": "2",
           "member": "uint64",
           "name": "VulCategory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsFollowVul",
           "required": false,
           "type": "int"
         }
@@ -16918,6 +16936,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "已防御的攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "DefenseAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16931,10 +16958,19 @@
       "members": [
         {
           "default": "",
-          "document": "1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞",
+          "document": "1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据",
           "example": "1",
           "member": "uint64",
           "name": "VulCategory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsFollowVul",
           "required": false,
           "type": "int"
         }
@@ -16985,7 +17021,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>",
+          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>\n<li>Labels- string- 是否必填：否 - 标签搜索</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -17066,10 +17102,19 @@
         },
         {
           "default": "",
-          "document": "1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞",
+          "document": "1:web-cms 漏洞，2.应用漏洞 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据",
           "example": "3",
           "member": "uint64",
           "name": "VulCategory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsFollowVul",
           "required": false,
           "type": "int"
         }
@@ -17851,6 +17896,26 @@
           "example": "2",
           "member": "uint64",
           "name": "HostCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持防御， 0:不支持 1:支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSupportDefense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已防御的攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "DefenseAttackCount",
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -23020,6 +23085,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外网ip",
+          "example": "172.22.11.12",
+          "member": "string",
+          "name": "MachineWanIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24519,6 +24594,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120.12.78.73",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -24754,6 +24839,46 @@
           "example": "12",
           "member": "uint64",
           "name": "TaskId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否支持防御， 0:不支持 1:支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSupportDefense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "已防御的攻击次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "DefenseAttackCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "首次出现时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-30 19:17:28",
+          "member": "string",
+          "name": "FirstAppearTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulCategory",
           "required": true,
           "type": "int",
           "value_allowed_null": true

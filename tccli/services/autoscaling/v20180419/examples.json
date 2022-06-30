@@ -63,25 +63,25 @@
     "CreateLaunchConfiguration": [
       {
         "document": "只传必传的启动配置名称，实例机型，镜像ID，其他均采用系统默认值，具体配置如下：启动配置名称为：as_test，实例机型为：标准2型 1C1G（S2.SMALL1），镜像ID为：img-8toqc6s3。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration\n&LaunchConfigurationName=as_test\n&InstanceType=S2.SMALL1\n&ImageId=img-8toqc6s3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceType\": \"S2.SMALL1\",\n    \"LaunchConfigurationName\": \"as_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-23h37kyn\",\n        \"RequestId\": \"d639dd64-9e46-4246-b13c-80954f81c11b\"\n    }\n}",
         "title": "简单参数创建"
       },
       {
         "document": "启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，实例销毁时不保留数据盘，数据盘不加密，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration\n&LaunchConfigurationName=as_test\n&ImageId=img-8toqc6s3\n&InstanceType=S2.SMALL1\n&SystemDisk.DiskType=LOCAL_BASIC\n&SystemDisk.DiskSize=50\n&DataDisks.0.DiskType=CLOUD_BASIC\n&DataDisks.0.DiskSize=100\n&DataDisks.0.DeleteWithInstance=TRUE\n&DataDisks.0.Encrypt=FALSE\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=5\n&InternetAccessible.PublicIpAssigned=TRUE\n&LoginSettings.KeyIds.0=skey-k8eypc1l\n&EnhancedService.SecurityService.Enabled=TRUE\n&EnhancedService.MonitorService.Enabled=TRUE\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": \"TRUE\"\n        },\n        \"MonitorService\": {\n            \"Enabled\": \"TRUE\"\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"TRUE\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"5\"\n    },\n    \"InstanceType\": \"S2.SMALL1\",\n    \"DataDisks\": [\n        {\n            \"Encrypt\": \"FALSE\",\n            \"DeleteWithInstance\": \"TRUE\",\n            \"DiskSize\": \"100\",\n            \"DiskType\": \"CLOUD_BASIC\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-fdz8j7dh\",\n        \"RequestId\": \"9a7209d3-2260-49d7-952a-dfa2001f8822\"\n    }\n}",
         "title": "详细参数创建"
       },
       {
         "document": "启动配置名称为：spot-test，机型为：标准2型 2C4G（S2.MEDIUM4），计费配置为竞价（SPOTPAID），最高出价为0.99元/小时。",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration\n&LaunchConfigurationName=spot-test\n&InstanceType=S2.MEDIUM4\n&ImageId=img-8toqc6s3\n&SystemDisk.DiskType=CLOUD_PREMIUM\n&SystemDisk.DiskSize=50\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=20\n&InternetAccessible.PublicIpAssigned=true\n&InstanceChargeType=SPOTPAID\n&InstanceMarketOptions.MarketType=spot\n&InstanceMarketOptions.SpotOptions.MaxPrice=0.99\n&InstanceMarketOptions.SpotOptions.SpotInstanceType=one-time\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"InstanceMarketOptions\": {\n        \"SpotOptions\": {\n            \"SpotInstanceType\": \"one-time\",\n            \"MaxPrice\": \"0.99\"\n        },\n        \"MarketType\": \"spot\"\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceChargeType\": \"SPOTPAID\",\n    \"LaunchConfigurationName\": \"spot-test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"true\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"20\"\n    },\n    \"InstanceType\": \"S2.MEDIUM4\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-hpzwe3o2\",\n        \"RequestId\": \"ccfe3052-e9c9-47ee-bf3d-5bc2dfd972c0\"\n    }\n}",
         "title": "创建竞价实例配置"
       },
       {
         "document": "支持两种实例机型，分别是S2.SMALL2和S2.SMALL4",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration\n&LaunchConfigurationName=multi_instance_types\n&InstanceTypes.0=S2.SMALL2\n&InstanceTypes.1=S2.SMALL4\n&ImageId=img-8toqc6s3\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL4\",\n        \"S2.SMALL2\"\n    ],\n    \"LaunchConfigurationName\": \"multi_instance_types\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-77mh1cho\",\n        \"RequestId\": \"2864c860-27a0-439e-a1e1-0003b76734e7\"\n    }\n}",
         "title": "创建启动配置，支持多种实例机型"
       }
@@ -385,7 +385,7 @@
     "ModifyLaunchConfigurationAttributes": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=ModifyLaunchConfigurationAttributes\n&LaunchConfigurationId=asc-291kq6ku\n&ImageId=img-8toqc6s3\n&InstanceTypes.0=S2.SMALL1\n&LaunchConfigurationName=updated_config\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"LaunchConfigurationName\": \"updated_config\",\n    \"LaunchConfigurationId\": \"asc-291kq6ku\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"07022dcb-5bba-48f0-a2b0-800ad006d031\"\n    }\n}",
         "title": "指定启动配置，修改镜像、实例类型、名称"
       },

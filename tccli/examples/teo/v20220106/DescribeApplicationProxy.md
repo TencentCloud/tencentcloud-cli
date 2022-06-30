@@ -58,6 +58,8 @@ Output:
             }
         ],
         "TotalCount": 1,
+        "IpCount": 1,
+        "DomainCount": 1,
         "Quota": 1
     }
 }

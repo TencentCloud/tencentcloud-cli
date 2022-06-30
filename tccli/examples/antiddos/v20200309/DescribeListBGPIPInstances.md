@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli antiddos DescribeListBGPIPInstances --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 25 \
-    --FilterIp 1.1.1.1 \
-    --FilterInstanceId bgpip-00000001 \
-    --FilterLine 1 \
+    --FilterEipType 1 \
     --FilterRegion ap-guangzhou \
     --FilterName test \
-    --FilterEipType 1 \
-    --FilterEipEipAddressStatus BIND BINDING \
-    --FilterDamDDoSStatus 0
+    --FilterDamDDoSStatus 0 \
+    --Limit 25 \
+    --FilterEipEipAddressStatus BINDING BIND \
+    --Offset 0 \
+    --FilterInstanceId bgpip-00000001 \
+    --FilterIp 1.1.1.1 \
+    --FilterLine 1
 ```
 
 Output: 
@@ -29,6 +29,12 @@ Output:
                 "EipAddressStatus": "xx",
                 "Domain": "xx",
                 "DamDDoSStatus": 1,
+                "TagInfoList": [
+                    {
+                        "TagKey": "xx",
+                        "TagValue": "xx"
+                    }
+                ],
                 "Name": "xx",
                 "StaticPackRelation": {
                     "ForwardRulesLimit": 1,
@@ -69,6 +75,12 @@ Output:
                     "ProtectBandwidth": 1,
                     "ForwardRulesLimit": 1,
                     "Line": 1
+                },
+                "AnycastOutPackRelation": {
+                    "ForwardRulesLimit": 1,
+                    "AutoRenewFlag": 1,
+                    "CurDeadline": "xx",
+                    "NormalBandwidth": 1
                 },
                 "BGPIPChannelFlag": 1,
                 "Usage": {

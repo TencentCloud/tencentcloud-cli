@@ -8441,7 +8441,17 @@
     },
     "DescribeBasicResourceUsageRequest": {
       "document": "DescribeBasicResourceUsage请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "是否无视权限查询全租户的，默认 true。注：无论 true 还是 false，PackageSpaceUsed 和 ConsulInstanceCount  都是全租户的",
+          "example": "true",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeBasicResourceUsageResponse": {
@@ -8449,8 +8459,10 @@
       "members": [
         {
           "document": "TSF基本资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "OverviewBasicResourceUsage",
           "name": "Result",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12953,6 +12965,15 @@
           "name": "DbName",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "命名空间id数组",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16241,6 +16262,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器母机实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17345,6 +17376,16 @@
           "name": "MetricDataValue",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "日环比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "DailyPercent",
+          "required": true,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

@@ -56,6 +56,14 @@
         "title": "查询任务详情"
       }
     ],
+    "ListLogMessageByCondition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ciam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLogMessageByCondition\n<公共请求参数>\n\n{\n    \"UserStoreId\": \"xx\",\n    \"StartTime\": 0,\n    \"Pageable\": {\n        \"PageNumber\": 0,\n        \"PageSize\": 0\n    },\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\",\n            \"Logic\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"UserStoreId\": \"xx\",\n                \"ApplicationName\": \"xx\",\n                \"Participant\": \"xx\",\n                \"Description\": \"xx\",\n                \"EventCode\": \"xx\",\n                \"Ip\": \"xx\",\n                \"ApplicationClientId\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Detail\": \"xx\",\n                \"AuthSourceName\": \"xx\",\n                \"TenantId\": \"xx\",\n                \"LogId\": \"xx\",\n                \"AuthSourceId\": \"xx\",\n                \"AuthSourceType\": \"xx\",\n                \"UserAgent\": \"xx\",\n                \"AuthSourceCategory\": \"xx\",\n                \"EventDate\": 0\n            }\n        ],\n        \"Total\": 0,\n        \"Pageable\": {\n            \"PageNumber\": 0,\n            \"PageSize\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询日志信息"
+      }
+    ],
     "ListUser": [
       {
         "document": "",
