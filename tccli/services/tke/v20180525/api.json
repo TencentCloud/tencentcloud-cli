@@ -2043,6 +2043,17 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDualStack",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

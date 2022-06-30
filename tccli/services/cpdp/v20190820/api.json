@@ -11440,7 +11440,8 @@
           "name": "ChannelOrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11450,17 +11451,19 @@
           "name": "ThirdPayOrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "小程序跳转参数\u000b渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳转参数\u000b渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OpenBankRedirectInfo",
           "name": "RedirectInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -11470,7 +11473,8 @@
           "name": "OutOrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -18370,6 +18374,34 @@
       ],
       "usage": "out"
     },
+    "OpenBankFormInfo": {
+      "document": "网银页面提交html",
+      "members": [
+        {
+          "default": "",
+          "document": "网银页面提交html\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormHtml",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网银提交页面字符集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormEncoding",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "OpenBankGoodsInfo": {
       "document": "云企付-商品信息",
       "members": [
@@ -18801,7 +18833,8 @@
           "name": "QRCodeUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18811,7 +18844,8 @@
           "name": "QRCodeKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18821,7 +18855,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18831,7 +18866,8 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18841,7 +18877,8 @@
           "name": "MpAppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18851,7 +18888,8 @@
           "name": "MpPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -18861,7 +18899,19 @@
           "name": "MpUserName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "网银支付提交页面信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpenBankFormInfo",
+          "name": "FormInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

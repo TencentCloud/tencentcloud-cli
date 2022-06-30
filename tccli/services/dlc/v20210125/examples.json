@@ -72,6 +72,14 @@
         "title": "取消任务执行"
       }
     ],
+    "CheckLockMetaData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLockMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LockId\": 0,\n        \"LockState\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "元数据锁检查"
+      }
+    ],
     "CreateDMSDatabase": [
       {
         "document": "",
@@ -424,6 +432,14 @@
         "title": "日志列表"
       }
     ],
+    "LockMetaData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockMetaData\n<公共请求参数>\n\n{\n    \"LockComponentList\": [\n        {\n            \"DataOperationType\": \"xx\",\n            \"IsDynamicPartitionWrite\": true,\n            \"LockLevel\": \"xx\",\n            \"Partition\": \"xx\",\n            \"TableName\": \"xx\",\n            \"LockType\": \"xx\",\n            \"IsAcid\": true,\n            \"DbName\": \"xx\"\n        }\n    ],\n    \"TxnId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LockId\": 0,\n        \"LockState\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "元数据加锁"
+      }
+    ],
     "ModifySparkApp": [
       {
         "document": "",
@@ -454,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindWorkGroupsFromUser\n<公共请求参数>\n\n{\n    \"AddInfo\": {\n        \"UserId\": \"1000323\",\n        \"WorkGroupIds\": [\n            112\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"edb8ceac-68c9-4acf-9a38-ea26abc61dfc\"\n    }\n}",
         "title": "解绑用户上的用户组"
+      }
+    ],
+    "UnlockMetaData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\"\n    }\n}",
+        "title": "元数据解锁"
       }
     ]
   },

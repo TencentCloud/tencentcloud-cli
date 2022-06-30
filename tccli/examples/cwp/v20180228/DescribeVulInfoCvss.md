@@ -27,6 +27,7 @@ Output:
         "RepairPlan": "13412",
         "CVSS": "AV:L/AC:L/Au:N/C:N/I:P/A:N",
         "Labels": "tag1,tag2",
+        "DefenseAttackCount": 1,
         "PublicDate": "2020-12-30:00:00:00"
     }
 }

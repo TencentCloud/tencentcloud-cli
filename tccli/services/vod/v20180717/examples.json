@@ -642,6 +642,14 @@
         "title": "获取雪碧图模板列表"
       }
     ],
+    "DescribeLicenseUsageData": [
+      {
+        "document": "",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeLicenseUsageData\n&LicenseType=DRM\n&StartTime=2020-09-07T00:00:00+08:00\n&EndTime=2020-09-09T23:59:59+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LicenseUsageDataSet\": [\n            {\n                \"Time\": \"2020-09-07T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-08T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-09T00:00:00+08:00\",\n                \"Count\": 2\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "查询 DRM 加密播放 License 请求次数"
+      }
+    ],
     "DescribeMediaInfos": [
       {
         "document": "",

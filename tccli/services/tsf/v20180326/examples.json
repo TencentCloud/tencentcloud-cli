@@ -1015,9 +1015,9 @@
     "DescribeStatistics": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeStatistics\n&NamespaceId=\"test\"\n&Type=\"test\"\n&TimeStep=60\n&OrderBy=\"AvgTimeConsuming\"\n&StartTime=2020-06-02 16:37:30\n&EndTime=2020-06-02 17:37:30\n&Offset=0\n&Limit=50\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4517c1fc-3c2b-44fa-a7c8-aa45b6c91ed6\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": null\n        }\n    }\n}",
-        "title": "服务统计"
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"字符串\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": \"1\",\n    \"Offset\": \"1\",\n    \"DbName\": \"字符串\",\n    \"ServiceName\": \"字符串\",\n    \"Limit\": \"1\",\n    \"NamespaceIdList\": [\n        \"字符串\"\n    ],\n    \"SearchWord\": \"字符串\",\n    \"OrderType\": \"1\",\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"字符串\",\n    \"NamespaceId\": \"字符串\",\n    \"BucketKey\": \"字符串\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"字符串\",\n            \"Value\": [\n                \"字符串\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b057eeaa-ccdf-40be-995f-f059b4b974e8\",\n        \"Result\": null\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeTaskDetail": [

@@ -5110,7 +5110,8 @@
           "member": "string",
           "name": "CcnName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5119,7 +5120,8 @@
           "member": "string",
           "name": "CcnDescription",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5128,7 +5130,8 @@
           "member": "string",
           "name": "QosLevel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5137,7 +5140,8 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5146,7 +5150,8 @@
           "member": "string",
           "name": "BandwidthLimitType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -5155,7 +5160,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5170,7 +5176,8 @@
           "name": "Ccn",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5187,26 +5194,32 @@
         {
           "default": "",
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
+          "example": "test-cgw",
           "member": "string",
           "name": "CustomerGatewayName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "对端网关公网IP。",
+          "example": "58.211.1.12",
           "member": "string",
           "name": "IpAddress",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5216,10 +5229,13 @@
       "members": [
         {
           "document": "对端网关对象",
+          "example": "无",
           "member": "CustomerGateway",
           "name": "CustomerGateway",
+          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7183,7 +7199,8 @@
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7192,7 +7209,8 @@
           "member": "string",
           "name": "CustomerGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7201,7 +7219,8 @@
           "member": "string",
           "name": "VpnConnectionName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7210,7 +7229,8 @@
           "member": "string",
           "name": "PreShareKey",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7219,7 +7239,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7228,7 +7249,8 @@
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7237,7 +7259,8 @@
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7246,7 +7269,8 @@
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7255,7 +7279,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7264,7 +7289,8 @@
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7273,7 +7299,8 @@
           "member": "string",
           "name": "HealthCheckLocalIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7282,7 +7309,8 @@
           "member": "string",
           "name": "HealthCheckRemoteIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7291,7 +7319,8 @@
           "member": "string",
           "name": "RouteType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7300,7 +7329,8 @@
           "member": "string",
           "name": "NegotiationType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7309,7 +7339,8 @@
           "member": "int64",
           "name": "DpdEnable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7318,7 +7349,8 @@
           "member": "string",
           "name": "DpdTimeout",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7327,7 +7359,8 @@
           "member": "string",
           "name": "DpdAction",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7342,7 +7375,8 @@
           "name": "VpnConnection",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

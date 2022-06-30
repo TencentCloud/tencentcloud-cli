@@ -54,6 +54,12 @@
       "name": "取消任务执行",
       "output": "CancelTaskResponse"
     },
+    "CheckLockMetaData": {
+      "document": "元数据锁检查",
+      "input": "CheckLockMetaDataRequest",
+      "name": "元数据锁检查",
+      "output": "CheckLockMetaDataResponse"
+    },
     "CreateDMSDatabase": {
       "document": "DMS元数据创建库",
       "input": "CreateDMSDatabaseRequest",
@@ -318,6 +324,12 @@
       "name": "日志列表",
       "output": "ListTaskJobLogDetailResponse"
     },
+    "LockMetaData": {
+      "document": "元数据锁",
+      "input": "LockMetaDataRequest",
+      "name": "元数据锁",
+      "output": "LockMetaDataResponse"
+    },
     "ModifySparkApp": {
       "document": "更新spark应用",
       "input": "ModifySparkAppRequest",
@@ -341,6 +353,12 @@
       "input": "UnbindWorkGroupsFromUserRequest",
       "name": "解绑用户上的用户组",
       "output": "UnbindWorkGroupsFromUserResponse"
+    },
+    "UnlockMetaData": {
+      "document": "元数据解锁",
+      "input": "UnlockMetaDataRequest",
+      "name": "元数据解锁",
+      "output": "UnlockMetaDataResponse"
     }
   },
   "metadata": {
@@ -896,6 +914,78 @@
     "CancelTaskResponse": {
       "document": "CancelTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckLockMetaDataRequest": {
+      "document": "CheckLockMetaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "锁ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LockId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TxnId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过期时间ms",
+          "example": "100",
+          "member": "int64",
+          "name": "ElapsedMs",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckLockMetaDataResponse": {
+      "document": "CheckLockMetaData返回参数结构体",
+      "members": [
+        {
+          "document": "锁ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LockId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "锁状态：ACQUIRED、WAITING、ABORT、NOT_ACQUIRED",
+          "example": "ACQUIRED",
+          "member": "string",
+          "name": "LockState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5779,6 +5869,173 @@
       ],
       "type": "object"
     },
+    "LockComponentInfo": {
+      "document": "元数据加锁内容",
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "db",
+          "member": "string",
+          "name": "DbName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表名称",
+          "example": "table",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分区",
+          "example": "part",
+          "member": "string",
+          "name": "Partition",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE",
+          "example": "SHARED_READ",
+          "member": "string",
+          "name": "LockType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁级别：DB、TABLE、PARTITION",
+          "example": "DB",
+          "member": "string",
+          "name": "LockLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN",
+          "example": "SELECT",
+          "member": "string",
+          "name": "DataOperationType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否保持Acid",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAcid",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否动态分区写",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDynamicPartitionWrite",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LockMetaDataRequest": {
+      "document": "LockMetaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "加锁内容",
+          "example": "无",
+          "member": "LockComponentInfo",
+          "name": "LockComponentList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "数据源名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务id",
+          "example": "1",
+          "member": "int64",
+          "name": "TxnId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "客户端信息",
+          "example": "xx",
+          "member": "string",
+          "name": "AgentInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "主机名",
+          "example": "xx",
+          "member": "string",
+          "name": "Hostname",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LockMetaDataResponse": {
+      "document": "LockMetaData返回参数结构体",
+      "members": [
+        {
+          "document": "锁id",
+          "example": "1",
+          "member": "int64",
+          "name": "LockId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "锁状态：ACQUIRED、WAITING、ABORT、NOT_ACQUIRED",
+          "example": "ACQUIRED",
+          "member": "string",
+          "name": "LockState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySparkAppRequest": {
       "document": "ModifySparkApp请求参数结构体",
       "members": [
@@ -7813,6 +8070,42 @@
     },
     "UnbindWorkGroupsFromUserResponse": {
       "document": "UnbindWorkGroupsFromUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlockMetaDataRequest": {
+      "document": "UnlockMetaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "锁ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LockId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "数据源名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlockMetaDataResponse": {
+      "document": "UnlockMetaData返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

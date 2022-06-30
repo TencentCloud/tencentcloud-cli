@@ -17,6 +17,7 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ClusterAdvancedSettings.AuditEnabled True \
     --ClusterAdvancedSettings.DeletionProtection True \
     --ClusterAdvancedSettings.RuntimeVersion xx \
+    --ClusterAdvancedSettings.IsDualStack True \
     --ClusterAdvancedSettings.IsNonStaticIpMode True \
     --ClusterAdvancedSettings.KubeProxyMode xx \
     --ClusterAdvancedSettings.AuditLogTopicId xx \

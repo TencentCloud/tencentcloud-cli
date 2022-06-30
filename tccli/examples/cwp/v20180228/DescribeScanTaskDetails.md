@@ -57,6 +57,7 @@ Output:
         "TotalCount": 1,
         "RequestId": "xx",
         "RiskEventCount": 1,
+        "VulCount": 1,
         "RiskMachineCount": 1,
         "Type": 1,
         "StoppingAll": false
