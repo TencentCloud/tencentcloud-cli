@@ -1,0 +1,566 @@
+{
+  "actions": {
+    "DescribeRelatedInstances": {
+      "document": "查询任务实例的关联实例列表",
+      "input": "DescribeRelatedInstancesRequest",
+      "name": "查询任务实例的关联实例列表",
+      "output": "DescribeRelatedInstancesResponse"
+    },
+    "DescribeTaskInstances": {
+      "document": "查询任务实例列表",
+      "input": "DescribeTaskInstancesRequest",
+      "name": "查询任务实例列表",
+      "output": "DescribeTaskInstancesResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-08-20",
+    "api_brief": "欢迎使用数据开发治理平台 WeData。\n数据开发治理平台 WeData（以下简称 WeData） 是腾讯云推出的一站式数据开发治理平台，融合了包含数据集成 DataInLong、数据开发 DataStudio 的全链路 DataOps 数据开发能力，以及数据地图、数据质量、数据安全等一系列数据开发与治理能力，帮助企业在数据构建和应用的过程中实现降本增效，数据价值最大化。\nWeData将自身基础的能力以API的方式对外开放，方便企业进行定制开发或企业内部系统进行对接打通，详情请参考API概览。\n\n",
+    "serviceNameCN": "数据开发治理平台 WeData",
+    "serviceShortName": "wedata"
+  },
+  "objects": {
+    "DescribeRelatedInstancesRequest": {
+      "document": "DescribeRelatedInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据时间，格式yyyy-MM-dd HH:mm:ss",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "CurRunDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务id",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "距离当前任务的层级距离，-1表示取父节点，1表示子节点",
+          "example": "1",
+          "member": "int64",
+          "name": "Depth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页号，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小，默认为10，最大不超过200",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRelatedInstancesResponse": {
+      "document": "DescribeRelatedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "DescribeTaskInstancesData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInstancesData": {
+      "document": "查询任务实例列表",
+      "members": [
+        {
+          "default": "",
+          "document": "实例列表",
+          "example": "无",
+          "member": "TaskInstanceInfo",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页号",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTaskInstancesRequest": {
+      "document": "DescribeTaskInstances请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "页号，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页大小，默认为10，最大不超过200",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "工作流id列表",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作流名称列表，支持模糊搜索",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "起始数据时间，格式yyyy-MM-dd HH:mm:ss",
+          "example": "2022-01-01 00:00:00",
+          "member": "string",
+          "name": "DateFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束数据时间，格式yyyy-MM-dd HH:mm:ss",
+          "example": "2022-01-01 23:00:00",
+          "member": "string",
+          "name": "DateTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "任务id列表",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务名称列表，支持模糊搜索",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "责任人名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "InChargeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "任务类型码列表，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskTypeIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例状态列表，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功",
+          "example": "无",
+          "member": "string",
+          "name": "StateList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "周期类型列表，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab",
+          "example": "无",
+          "member": "string",
+          "name": "TaskCycleUnitList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "实例类型，0补录实例，1周期实例，2非周期实例",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "排序字段信息列表，ScheduleDateTime / CostTime / StartTime / EndTime",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInstancesResponse": {
+      "document": "DescribeTaskInstances返回参数结构体",
+      "members": [
+        {
+          "document": "无",
+          "example": "无",
+          "member": "DescribeTaskInstancesData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderField": {
+      "document": "通用排序字段",
+      "members": [
+        {
+          "default": "",
+          "document": "排序字段名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "排序方向：ASC|DESC",
+          "example": "ASC",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskInstanceInfo": {
+      "document": "任务实例信息",
+      "members": [
+        {
+          "default": "",
+          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"111\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"周期任务\"",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxxxx-yyyy\"",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"工作流名称\"",
+          "member": "string",
+          "name": "WorkflowName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"项目名称\"",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"项目标识\"",
+          "member": "string",
+          "name": "ProjectIdent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例状态，0等待事件，1等待上游，2等待运行，3运行中，4正在终止，5失败重试，6失败，7成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Y\"",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务类型id，26离线同步，30Python，31PySpark，32DLC，33Impala，34Hive SQL，35Shell，36Spark SQL，39Spark，40CDW PG，92MapReduce\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "TaskTypeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"shell\"",
+          "member": "string",
+          "name": "TaskTypeDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"12\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件夹名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"测试文件夹\"",
+          "member": "string",
+          "name": "FolderName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件夹id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"12\"",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调度计划展示描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "从2022-09-08 12:00:00 开始 ，间隔1天执行一次",
+          "member": "string",
+          "name": "SchedulerDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wang;ling;",
+          "member": "string",
+          "name": "InCharge",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "调度周期类型，I分钟，H小时，D天，W周，M月，Y年，O一次性，C crontab\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"O\"",
+          "member": "string",
+          "name": "CycleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-01-05 00:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-01-07 00:00:00\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "实例类型，0补录实例，1周期实例，2非周期实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "最大重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TryLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "当前重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Tries",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "计划调度时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-01-05 00:00:00\"",
+          "member": "string",
+          "name": "SchedulerDateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CostTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

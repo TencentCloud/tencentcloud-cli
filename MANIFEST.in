@@ -449,6 +449,8 @@ include tccli/services/waf/v20180125/api.json
 include tccli/services/waf/v20180125/examples.json
 include tccli/services/wav/v20210129/api.json
 include tccli/services/wav/v20210129/examples.json
+include tccli/services/wedata/v20210820/api.json
+include tccli/services/wedata/v20210820/examples.json
 include tccli/services/wss/v20180426/api.json
 include tccli/services/wss/v20180426/examples.json
 include tccli/services/yinsuda/v20220527/api.json

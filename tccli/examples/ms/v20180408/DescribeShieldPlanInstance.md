@@ -28,7 +28,6 @@ Output:
                     "PlanId": 1,
                     "PlanName": "部分加固",
                     "PlanInfo": {
-                        "ApkSizeopt": 1,
                         "Dex": 1,
                         "So": 1,
                         "Bugly": 1,

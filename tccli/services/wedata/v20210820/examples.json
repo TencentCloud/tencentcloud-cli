@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeRelatedInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelatedInstances\n<公共请求参数>\n\n{\n    \"PageSize\": 0,\n    \"CurRunDate\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"Depth\": 0,\n    \"PageNumber\": 0,\n    \"TaskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"FolderName\": \"xx\",\n                    \"State\": 0,\n                    \"WorkflowName\": \"xx\",\n                    \"EndTime\": \"xx\",\n                    \"TaskTypeDesc\": \"xx\",\n                    \"SchedulerDesc\": \"xx\",\n                    \"Tries\": 0,\n                    \"InstanceType\": 0,\n                    \"TaskId\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"CostTime\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"WorkflowId\": \"xx\",\n                    \"ProjectIdent\": \"xx\",\n                    \"ProjectName\": \"xx\",\n                    \"InCharge\": \"xx\",\n                    \"TryLimit\": 0,\n                    \"TaskTypeId\": 1,\n                    \"CycleType\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"SchedulerDateTime\": \"xx\",\n                    \"FolderId\": \"xx\"\n                }\n            ],\n            \"PageNumber\": 0,\n            \"PageSize\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTaskInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInstances\n<公共请求参数>\n\n{\n    \"TaskCycleUnitList\": [\n        \"xx\"\n    ],\n    \"InChargeList\": [\n        \"xx\"\n    ],\n    \"PageSize\": 0,\n    \"ProjectId\": \"xx\",\n    \"TaskNameList\": [\n        \"xx\"\n    ],\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"StateList\": [\n        \"xx\"\n    ],\n    \"TaskTypeIdList\": [\n        0\n    ],\n    \"TaskIdList\": [\n        0\n    ],\n    \"DateFrom\": \"xx\",\n    \"PageNumber\": 0,\n    \"WorkflowIdList\": [\n        \"xx\"\n    ],\n    \"DateTo\": \"xx\",\n    \"InstanceType\": 0,\n    \"WorkflowNameList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"FolderName\": \"xx\",\n                    \"State\": 0,\n                    \"WorkflowName\": \"xx\",\n                    \"EndTime\": \"xx\",\n                    \"TaskTypeDesc\": \"xx\",\n                    \"SchedulerDesc\": \"xx\",\n                    \"Tries\": 0,\n                    \"InstanceType\": 0,\n                    \"TaskId\": \"xx\",\n                    \"ProjectId\": \"xx\",\n                    \"CostTime\": \"xx\",\n                    \"TaskName\": \"xx\",\n                    \"WorkflowId\": \"xx\",\n                    \"ProjectIdent\": \"xx\",\n                    \"ProjectName\": \"xx\",\n                    \"InCharge\": \"xx\",\n                    \"TryLimit\": 0,\n                    \"TaskTypeId\": 1,\n                    \"CycleType\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"SchedulerDateTime\": \"xx\",\n                    \"FolderId\": \"xx\"\n                }\n            ],\n            \"PageNumber\": 0,\n            \"PageSize\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

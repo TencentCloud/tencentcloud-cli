@@ -6,6 +6,12 @@
       "name": "查询独享集群内的DB实例列表",
       "output": "DescribeDBInstancesResponse"
     },
+    "DescribeHostList": {
+      "document": "本接口用于查询主机列表",
+      "input": "DescribeHostListRequest",
+      "name": "查询主机列表",
+      "output": "DescribeHostListResponse"
+    },
     "DescribeInstanceDetail": {
       "document": "本接口用于查询独享集群详情",
       "input": "DescribeInstanceDetailRequest",
@@ -304,6 +310,78 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostListRequest": {
+      "document": "DescribeHostList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "独享集群实例Id",
+          "example": "dbdc-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "分页返回数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分页偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "分配状态过滤，0-可分配，1-禁止分配",
+          "example": "[0]",
+          "member": "int64",
+          "name": "AssignStatus",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostListResponse": {
+      "document": "DescribeHostList返回参数结构体",
+      "members": [
+        {
+          "document": "主机总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "主机详情",
+          "example": "无",
+          "member": "HostDetail",
+          "name": "Hosts",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1132,6 +1210,242 @@
           "document": "数据库实例个数",
           "member": "uint64",
           "name": "InstanceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HostDetail": {
+      "document": "主机详情",
+      "members": [
+        {
+          "default": "",
+          "document": "主机Id",
+          "example": "svr-test",
+          "member": "string",
+          "name": "HostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机名称",
+          "example": "svr-test",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "分配DB实例状态,0:可分配,1:不可分配",
+          "example": "0",
+          "member": "int64",
+          "name": "AssignStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘",
+          "example": "0",
+          "member": "int64",
+          "name": "HostType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "DB实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "DbNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已分配CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可分配CPU(单位:核数)",
+          "example": "100",
+          "member": "int64",
+          "name": "CpuAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemorySpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已分配内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemoryAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可分配内存(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "MemoryAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主机磁盘(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskSpec",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "已分配磁盘(单位:GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskAssigned",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可分配磁盘(GB)",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskAssignable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CPU分配比",
+          "example": "1",
+          "member": "float",
+          "name": "CpuRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内存分配比",
+          "example": "1",
+          "member": "float",
+          "name": "MemoryRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "磁盘分配比",
+          "example": "1",
+          "member": "float",
+          "name": "DiskRatio",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型名称",
+          "example": "HYI12A",
+          "member": "string",
+          "name": "MachineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型类别",
+          "example": "SH12",
+          "member": "string",
+          "name": "MachineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费标签",
+          "example": "excluster_xxx",
+          "member": "string",
+          "name": "PidTag",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "计费ID",
+          "example": "10811",
+          "member": "int64",
+          "name": "Pid",
           "required": true,
           "type": "int",
           "value_allowed_null": false

@@ -26,7 +26,6 @@ Output:
                 "ExpireTime": "",
                 "IsBind": 1,
                 "BindInfo": {
-                    "AppIcon": "",
                     "AppName": "微信",
                     "AppPkgName": "com.tencent.mm"
                 }
