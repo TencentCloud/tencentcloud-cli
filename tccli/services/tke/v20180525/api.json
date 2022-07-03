@@ -4610,7 +4610,26 @@
     },
     "CreatePrometheusClusterAgentRequest": {
       "document": "CreatePrometheusClusterAgent请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "prom-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "agent列表",
+          "example": "无",
+          "member": "PrometheusClusterAgentBasic",
+          "name": "Agents",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreatePrometheusClusterAgentResponse": {
@@ -14293,6 +14312,128 @@
       ],
       "usage": "both"
     },
+    "PrometheusClusterAgentBasic": {
+      "document": "与云监控融合托管prometheus实例，关联集群基础信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "xx-xxx",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启公网CLB",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableExternal",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群内部署组件的pod配置",
+          "example": "pod配置",
+          "member": "PrometheusClusterAgentPodConfig",
+          "name": "InClusterPodConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "该集群采集的所有指标都会带上这些labels",
+          "example": "额外的labels",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否安装默认采集配置",
+          "example": "无",
+          "member": "bool",
+          "name": "NotInstallBasicScrape",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否采集指标，true代表drop所有指标，false代表采集默认指标",
+          "example": "无",
+          "member": "bool",
+          "name": "NotScrape",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PrometheusClusterAgentPodConfig": {
+      "document": "关联集群时在集群内部署组件的pod额外配置",
+      "members": [
+        {
+          "default": "",
+          "document": "是否使用HostNetWork",
+          "example": "true",
+          "member": "bool",
+          "name": "HostNet",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定pod运行节点",
+          "example": "无",
+          "member": "Label",
+          "name": "NodeSelector",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容忍污点",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "PrometheusConfigItem": {
       "document": "prometheus配置",
       "members": [
@@ -16481,6 +16622,42 @@
         }
       ],
       "usage": "both"
+    },
+    "Toleration": {
+      "document": "kubernetes Taint",
+      "members": [
+        {
+          "default": "",
+          "document": "容忍应用到的 taint key",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "键与值的关系",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "要匹配的污点效果",
+          "example": "无",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "UninstallLogAgentRequest": {
       "document": "UninstallLogAgent请求参数结构体",

@@ -1,5 +1,25 @@
 {
   "actions": {
+    "DescribeProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"DescribeAdminUsers\": true,\n    \"DescribeMemberCount\": true,\n    \"DescribeExecutors\": true,\n    \"DescribeClusters\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "样例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"978203585769070592\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ef8a942-efbe-4f77-8617-a9eb8875fea6\"\n    }\n}",
+        "title": "describe project with params"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProject\n<公共请求参数>\n\n{\n    \"ProjectName\": \"unique_2rij3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"949cd55d-e683-4698-a1cd-c142cf7b1e75\"\n    }\n}",
+        "title": "projectName transfer"
+      }
+    ],
     "DescribeRelatedInstances": [
       {
         "document": "",

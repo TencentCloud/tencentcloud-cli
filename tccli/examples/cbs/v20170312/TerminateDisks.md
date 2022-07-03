@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs TerminateDisks --cli-unfold-argument  \
-    --DiskIds disk-lzrg2pwi disk-g27hqeo2
+    --DiskIds disk-g27hqeo2 disk-lzrg2pwi
 ```
 
 Output: 

@@ -342,6 +342,12 @@
       "name": "修改工作组信息",
       "output": "ModifyWorkGroupResponse"
     },
+    "ReportHeartbeatMetaData": {
+      "document": "上报元数据心跳",
+      "input": "ReportHeartbeatMetaDataRequest",
+      "name": "上报元数据心跳",
+      "output": "ReportHeartbeatMetaDataResponse"
+    },
     "UnbindWorkGroupsFromUser": {
       "document": "解绑用户上的用户组",
       "input": "UnbindWorkGroupsFromUserRequest",
@@ -5819,6 +5825,51 @@
         }
       ],
       "usage": "both"
+    },
+    "ReportHeartbeatMetaDataRequest": {
+      "document": "ReportHeartbeatMetaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "数据源名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "锁ID",
+          "example": "1",
+          "member": "int64",
+          "name": "LockId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "事务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TxnId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportHeartbeatMetaDataResponse": {
+      "document": "ReportHeartbeatMetaData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SQLTask": {
       "document": " SQL查询任务",

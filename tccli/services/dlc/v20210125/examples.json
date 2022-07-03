@@ -456,6 +456,14 @@
         "title": "修改工作组信息"
       }
     ],
+    "ReportHeartbeatMetaData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportHeartbeatMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 0,\n    \"TxnId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\"\n    }\n}",
+        "title": "元数据心跳上报"
+      }
+    ],
     "UnbindWorkGroupsFromUser": [
       {
         "document": "",

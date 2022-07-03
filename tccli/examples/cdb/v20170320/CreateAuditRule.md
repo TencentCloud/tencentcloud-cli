@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb CreateAuditRule --cli-unfold-argument  \
-    --RuleName audit1 \
     --Description audit_test \
-    --AuditAll true
+    --AuditAll true \
+    --RuleName audit1
 ```
 
 Output: 
@@ -29,11 +29,11 @@ Input:
 
 ```
 tccli cdb CreateAuditRule --cli-unfold-argument  \
-    --RuleName audit1 \
-    --Description audit_test \
-    --RuleFilters.0.Type DB \
     --RuleFilters.0.Compare INC \
-    --RuleFilters.0.Value CDB
+    --RuleFilters.0.Type DB \
+    --RuleFilters.0.Value CDB \
+    --Description audit_test \
+    --RuleName audit1
 ```
 
 Output: 

@@ -189,9 +189,15 @@
     "CreatePrometheusClusterAgent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Agents\": [\n        {\n            \"EnableExternal\": true,\n            \"Region\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"ClusterType\": \"xx\",\n            \"NotInstallBasicScrape\": true,\n            \"InClusterPodConfig\": {\n                \"HostNet\": true,\n                \"Tolerations\": [\n                    {\n                        \"Operator\": \"xx\",\n                        \"Effect\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"NodeSelector\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ]\n            },\n            \"NotScrape\": true,\n            \"ExternalLabels\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "关联集群"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2tghe0lv\",\n    \"Agents\": [\n        {\n            \"Region\": \"ap-beijing\",\n            \"EnableExternal\": \"false\",\n            \"ClusterId\": \"cls-ou716dcp\",\n            \"NotScrape\": \"true\",\n            \"ClusterType\": \"eks\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"562197b9-5253-4981-ab2c-8c648fc5dec8\"\n    }\n}",
+        "title": "关联eks集群"
       }
     ],
     "CreatePrometheusConfig": [

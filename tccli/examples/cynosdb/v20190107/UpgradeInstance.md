@@ -7,9 +7,9 @@ Input:
 ```
 tccli cynosdb UpgradeInstance --cli-unfold-argument  \
     --InstanceId cynosdbmysql-ins-n7ocdslw \
+    --UpgradeType upgradeImmediate \
     --Cpu 2 \
-    --Memory 4 \
-    --UpgradeType upgradeImmediate
+    --Memory 4
 ```
 
 Output: 

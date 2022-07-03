@@ -1,5 +1,11 @@
 {
   "actions": {
+    "DescribeProject": {
+      "document": "获取项目信息",
+      "input": "DescribeProjectRequest",
+      "name": "获取项目信息",
+      "output": "DescribeProjectResponse"
+    },
     "DescribeRelatedInstances": {
       "document": "查询任务实例的关联实例列表",
       "input": "DescribeRelatedInstancesRequest",
@@ -20,6 +26,87 @@
     "serviceShortName": "wedata"
   },
   "objects": {
+    "DescribeProjectRequest": {
+      "document": "DescribeProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "项目id。一般使用项目Id来查询，与projectName必须存在一个。",
+          "example": "123212",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "是否展示关联集群信息",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeClusters",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "是否展示关联执行组的信息，仅部分信息。",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeExecutors",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "默认不展示项目管理员信息",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeAdminUsers",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "默认不统计项目人员数量",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeMemberCount",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "默认不查询创建者的信息",
+          "example": "false",
+          "member": "bool",
+          "name": "DescribeCreator",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "项目名只在租户内唯一，一般用来转化为项目ID。",
+          "example": "abcd",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectResponse": {
+      "document": "DescribeProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRelatedInstancesRequest": {
       "document": "DescribeRelatedInstances请求参数结构体",
       "members": [

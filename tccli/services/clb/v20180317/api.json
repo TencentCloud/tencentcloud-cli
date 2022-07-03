@@ -5002,7 +5002,7 @@
         },
         {
           "default": "",
-          "document": "订单ID。",
+          "document": "订单ID。\n注意：参数TaskId和DealName必须传一个。",
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",

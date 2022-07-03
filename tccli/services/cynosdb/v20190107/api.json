@@ -48,11 +48,35 @@
       "name": "查询备份配置信息",
       "output": "DescribeBackupConfigResponse"
     },
+    "DescribeBackupDownloadUrl": {
+      "document": "此接口（DescribeBackupDownloadUrl）用于查询集群备份文件下载地址。",
+      "input": "DescribeBackupDownloadUrlRequest",
+      "name": "查询备份下载地址",
+      "output": "DescribeBackupDownloadUrlResponse"
+    },
     "DescribeBackupList": {
       "document": "查询备份文件列表",
       "input": "DescribeBackupListRequest",
       "name": "查询备份文件列表",
       "output": "DescribeBackupListResponse"
+    },
+    "DescribeBinlogDownloadUrl": {
+      "document": "此接口（DescribeBinlogDownloadUrl）用于查询Binlog的下载地址。",
+      "input": "DescribeBinlogDownloadUrlRequest",
+      "name": "查询Binlog下载地址",
+      "output": "DescribeBinlogDownloadUrlResponse"
+    },
+    "DescribeBinlogSaveDays": {
+      "document": "此接口（DescribeBinlogSaveDays）用于查询集群的Binlog保留天数。",
+      "input": "DescribeBinlogSaveDaysRequest",
+      "name": "查询Binlog保留天数",
+      "output": "DescribeBinlogSaveDaysResponse"
+    },
+    "DescribeBinlogs": {
+      "document": "此接口（DescribeBinlogs）用来查询集群Binlog日志列表。",
+      "input": "DescribeBinlogsRequest",
+      "name": "查询Binlog列表",
+      "output": "DescribeBinlogsResponse"
     },
     "DescribeClusterDetail": {
       "document": "显示集群详情",
@@ -89,6 +113,12 @@
       "input": "DescribeInstanceDetailRequest",
       "name": "查询实例详情",
       "output": "DescribeInstanceDetailResponse"
+    },
+    "DescribeInstanceSlowQueries": {
+      "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。",
+      "input": "DescribeInstanceSlowQueriesRequest",
+      "name": "查询实例慢查询日志",
+      "output": "DescribeInstanceSlowQueriesResponse"
     },
     "DescribeInstanceSpecs": {
       "document": "本接口（DescribeInstanceSpecs）用于查询实例规格",
@@ -138,6 +168,12 @@
       "name": "安全组批量解绑云资源",
       "output": "DisassociateSecurityGroupsResponse"
     },
+    "ExportInstanceSlowQueries": {
+      "document": "此接口（ExportInstanceSlowQueries）用于导出实例慢日志。",
+      "input": "ExportInstanceSlowQueriesRequest",
+      "name": "导出实例慢日志",
+      "output": "ExportInstanceSlowQueriesResponse"
+    },
     "GrantAccountPrivileges": {
       "document": "批量授权账号权限",
       "input": "GrantAccountPrivilegesRequest",
@@ -167,6 +203,12 @@
       "input": "ModifyBackupConfigRequest",
       "name": "修改备份配置",
       "output": "ModifyBackupConfigResponse"
+    },
+    "ModifyBackupName": {
+      "document": "此接口（ModifyBackupName）用于修改备份文件备注名。",
+      "input": "ModifyBackupNameRequest",
+      "name": "修改备份文件备注名",
+      "output": "ModifyBackupNameResponse"
     },
     "ModifyClusterName": {
       "document": "修改集群名称",
@@ -408,7 +450,7 @@
         },
         {
           "default": "",
-          "document": "新增只读实例数，取值范围为(0,16]",
+          "document": "新增只读实例数，取值范围为[0,4]",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyCount",
@@ -417,7 +459,7 @@
         },
         {
           "default": "",
-          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组",
+          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。",
           "example": "cynosmysql-grp-xxxxxxxx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -426,7 +468,7 @@
         },
         {
           "default": "",
-          "document": "所属VPC网络ID",
+          "document": "所属VPC网络ID，该参数已废弃",
           "example": "vpc-1ptuei0b",
           "member": "string",
           "name": "VpcId",
@@ -435,7 +477,7 @@
         },
         {
           "default": "",
-          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填",
+          "document": "所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。",
           "example": "subnet-1tmw9t4o",
           "member": "string",
           "name": "SubnetId",
@@ -453,7 +495,7 @@
         },
         {
           "default": "",
-          "document": "实例名称，字符串长度范围为[0,64)",
+          "document": "实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'",
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "InstanceName",
@@ -722,6 +764,62 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BinlogItem": {
+      "document": "Binlog描述",
+      "members": [
+        {
+          "default": "",
+          "document": "Binlog文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文件大小，单位：字节",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事务最早时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "事务最晚时间",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Binlog文件ID",
+          "example": "无",
+          "member": "int64",
+          "name": "BinlogId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3040,6 +3138,51 @@
       ],
       "type": "object"
     },
+    "DescribeBackupDownloadUrlRequest": {
+      "document": "DescribeBackupDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份ID",
+          "example": "100",
+          "member": "int64",
+          "name": "BackupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDownloadUrlResponse": {
+      "document": "DescribeBackupDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "备份下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupListRequest": {
       "document": "DescribeBackupList请求参数结构体",
       "members": [
@@ -3102,6 +3245,168 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogDownloadUrlRequest": {
+      "document": "DescribeBinlogDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "Binlog文件ID",
+          "example": "100",
+          "member": "int64",
+          "name": "BinlogId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogDownloadUrlResponse": {
+      "document": "DescribeBinlogDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogSaveDaysRequest": {
+      "document": "DescribeBinlogSaveDays请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogSaveDaysResponse": {
+      "document": "DescribeBinlogSaveDays返回参数结构体",
+      "members": [
+        {
+          "document": "Binlog保留天数",
+          "example": "7",
+          "member": "int64",
+          "name": "BinlogSaveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogsRequest": {
+      "document": "DescribeBinlogs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "开始时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "结束时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "限制条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogsResponse": {
+      "document": "DescribeBinlogs返回参数结构体",
+      "members": [
+        {
+          "document": "记录总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "Binlog列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BinlogItem",
+          "name": "Binlogs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3407,6 +3712,132 @@
           "name": "Detail",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSlowQueriesRequest": {
+      "document": "DescribeInstanceSlowQueries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务开始最早时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务开始最晚时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限制条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端host",
+          "example": "10.10.10.10",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序字段，可选值：QueryTime,LockTime,RowsExamined,RowsSent",
+          "example": "QueryTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "排序类型，可选值：asc,desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSlowQueriesResponse": {
+      "document": "DescribeInstanceSlowQueries返回参数结构体",
+      "members": [
+        {
+          "document": "总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "慢查询记录",
+          "example": "无",
+          "member": "SlowQueriesItem",
+          "name": "SlowQueries",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3848,6 +4279,114 @@
       ],
       "type": "object"
     },
+    "ExportInstanceSlowQueriesRequest": {
+      "document": "ExportInstanceSlowQueries请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务开始最早时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "事务开始最晚时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "限制条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "客户端host",
+          "example": "10.10.10.10",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "文件类型，可选值：csv, original",
+          "example": "csv",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportInstanceSlowQueriesResponse": {
+      "document": "ExportInstanceSlowQueries返回参数结构体",
+      "members": [
+        {
+          "document": "慢查询导出内容",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GrantAccountPrivilegesRequest": {
       "document": "GrantAccountPrivileges请求参数结构体",
       "members": [
@@ -3982,7 +4521,7 @@
         },
         {
           "default": "",
-          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "document": "该参数已废用",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -4045,7 +4584,7 @@
         },
         {
           "default": "",
-          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "document": "该参数已废弃",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -4108,7 +4647,7 @@
         },
         {
           "default": "",
-          "document": "数据库表权限数组,当前仅支持参数：max_user_connections",
+          "document": "数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240",
           "example": "无",
           "member": "AccountParam",
           "name": "AccountParams",
@@ -4162,7 +4701,7 @@
         },
         {
           "default": "",
-          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800",
+          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000",
           "example": "604800",
           "member": "uint64",
           "name": "ReserveDuration",
@@ -4171,7 +4710,7 @@
         },
         {
           "default": "",
-          "document": "备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
+          "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
           "example": "[full,full,full,full,full,full,full]",
           "member": "string",
           "name": "BackupFreq",
@@ -4180,7 +4719,7 @@
         },
         {
           "default": "",
-          "document": "备份方式，logic-逻辑备份，snapshot-快照备份",
+          "document": "该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份",
           "example": "snapshot",
           "member": "string",
           "name": "BackupType",
@@ -4192,6 +4731,51 @@
     },
     "ModifyBackupConfigResponse": {
       "document": "ModifyBackupConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupNameRequest": {
+      "document": "ModifyBackupName请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "集群ID",
+          "example": "cynosdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "备份文件ID",
+          "example": "100",
+          "member": "int64",
+          "name": "BackupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "备注名，长度不能超过60个字符",
+          "example": "无",
+          "member": "string",
+          "name": "BackupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupNameResponse": {
+      "document": "ModifyBackupName返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4379,7 +4963,7 @@
         {
           "default": "",
           "document": "实例ID",
-          "example": "cynosdbpg-ins-n7ocdslw",
+          "example": "cynosdbmysql-ins-n7ocdslw",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4405,7 +4989,7 @@
         },
         {
           "default": "",
-          "document": "每周维护日期",
+          "document": "每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]",
           "example": "[Mon]",
           "member": "string",
           "name": "MaintainWeekDays",
@@ -4822,6 +5406,7 @@
         {
           "default": "",
           "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
+          "example": "\"projectId\"",
           "member": "string",
           "name": "Names",
           "required": true,
@@ -4831,6 +5416,7 @@
         {
           "default": "",
           "document": "搜索字符串",
+          "example": "\"xxx\"",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -4840,6 +5426,7 @@
         {
           "default": "",
           "document": "是否精确匹配",
+          "example": "1",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -4849,6 +5436,7 @@
         {
           "default": "",
           "document": "搜索字段",
+          "example": "\"123\"",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5230,6 +5818,122 @@
       ],
       "type": "object"
     },
+    "SlowQueriesItem": {
+      "document": "实例慢查询信息",
+      "members": [
+        {
+          "default": "",
+          "document": "执行时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "执行时长，单位秒",
+          "example": "无",
+          "member": "float",
+          "name": "QueryTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql语句",
+          "example": "无",
+          "member": "string",
+          "name": "SqlText",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端host",
+          "example": "无",
+          "member": "string",
+          "name": "UserHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户名",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "数据库名",
+          "example": "无",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "锁时长，单位秒",
+          "example": "无",
+          "member": "float",
+          "name": "LockTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "扫描行数",
+          "example": "无",
+          "member": "int64",
+          "name": "RowsExamined",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "返回行数",
+          "example": "无",
+          "member": "int64",
+          "name": "RowsSent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql模版",
+          "example": "无",
+          "member": "string",
+          "name": "SqlTemplate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "sql语句md5",
+          "example": "无",
+          "member": "string",
+          "name": "SqlMd5",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TablePrivileges": {
       "document": "mysql表权限",
       "members": [
@@ -5330,7 +6034,7 @@
         },
         {
           "default": "",
-          "document": "存储上限，为0表示使用标准配置",
+          "document": "该参数已废弃",
           "example": "1000",
           "member": "uint64",
           "name": "StorageLimit",
@@ -5348,7 +6052,7 @@
         },
         {
           "default": "",
-          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "document": "该参数已废弃",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",

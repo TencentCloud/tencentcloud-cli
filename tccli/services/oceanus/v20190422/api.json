@@ -358,6 +358,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "日志级别",
+          "example": "INFO",
+          "member": "string",
+          "name": "LogLevel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

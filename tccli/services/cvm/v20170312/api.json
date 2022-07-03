@@ -84,6 +84,12 @@
       "name": "查询用户配额详情",
       "output": "DescribeAccountQuotaResponse"
     },
+    "DescribeChcHosts": {
+      "document": "本接口 (DescribeChcHosts) 用于查询一个或多个CHC物理服务器详细信息。\n\n* 可以根据实例`ID`、实例名称或者设备类型等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。",
+      "input": "DescribeChcHostsRequest",
+      "name": "查询CHC物理服务器",
+      "output": "DescribeChcHostsResponse"
+    },
     "DescribeDisasterRecoverGroupQuota": {
       "document": "本接口 (DescribeDisasterRecoverGroupQuota)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)配额。",
       "input": "DescribeDisasterRecoverGroupQuotaRequest",
@@ -798,6 +804,237 @@
         }
       ],
       "usage": "in"
+    },
+    "ChcDeployExtraConfig": {
+      "document": "chc部署网络minos引导配置。",
+      "members": [],
+      "usage": "in"
+    },
+    "ChcHost": {
+      "document": "CHC物理服务器信息",
+      "members": [
+        {
+          "default": "",
+          "document": "CHC物理服务器ID。",
+          "example": "chc-1a2b3c4d",
+          "member": "string",
+          "name": "ChcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例名称。",
+          "example": "托管服务器1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务器序列号。",
+          "example": "sn34asdfabd",
+          "member": "string",
+          "name": "SerialNumber",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CHC的状态<br/>\n<ul>\n<li>REGISTERED: 设备已录入。还未配置带外和部署网络</li>\n<li>VPC_READY: 已配置带外和部署网络</li>\n<li>PREPARED: 可分配云主机</li>\n<li>ONLINE: 已分配云主机</li>\n</ul>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "InstanceState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CHC_HS1",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "所属可用区",
+          "example": "NA",
+          "member": "Placement",
+          "name": "Placement",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "带外网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "VirtualPrivateCloud",
+          "name": "BmcVirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带外网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.12.10.34",
+          "member": "string",
+          "name": "BmcIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带外网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-1a2b34af\"]",
+          "member": "string",
+          "name": "BmcSecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NA",
+          "member": "VirtualPrivateCloud",
+          "name": "DeployVirtualPrivateCloud",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.12.10.34",
+          "member": "string",
+          "name": "DeployIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-1a2b34af\"]",
+          "member": "string",
+          "name": "DeploySecurityGroupIds",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关联的云主机Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-34as43at",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "服务器导入的时间。",
+          "example": "2020-03-10T02:43:51Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型的硬件描述，分别为CPU核数，内存容量和磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128C 22GB 2424GB",
+          "member": "string",
+          "name": "HardwareDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CHC物理服务器的CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128",
+          "member": "int64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CHC物理服务器的内存大小，单位为GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "CHC物理服务器的磁盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Disk",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "带外网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "51:94:20:9C:B1:CB",
+          "member": "string",
+          "name": "BmcMAC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "部署网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "51:94:20:9C:B1:CB",
+          "member": "string",
+          "name": "DeployMAC",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "设备托管类型。\nHOSTING: 托管\nTENANT: 租赁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOSTING",
+          "member": "string",
+          "name": "TenantType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "chc dhcp选项，用于minios调试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChcDeployExtraConfig",
+          "name": "DeployExtraConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateDisasterRecoverGroupRequest": {
       "document": "CreateDisasterRecoverGroup请求参数结构体",
@@ -1892,6 +2129,78 @@
           "name": "AccountQuotaOverview",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChcHostsRequest": {
+      "document": "DescribeChcHosts请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CHC物理服务器实例ID。每次请求的实例的上限为100。参数不支持同时指定`ChcIds`和`Filters`。",
+          "example": "['chc-1a2b3c4d']",
+          "member": "string",
+          "name": "ChcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>device-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>设备类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>vpc-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有网络唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>subnet-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有子网唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
+          "example": "NA",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChcHostsResponse": {
+      "document": "DescribeChcHosts返回参数结构体",
+      "members": [
+        {
+          "document": "符合条件的实例数量。",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "返回的实例列表",
+          "example": "NA",
+          "member": "ChcHost",
+          "name": "ChcHostSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
