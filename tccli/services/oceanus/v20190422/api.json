@@ -220,7 +220,8 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -229,7 +230,8 @@
           "member": "string",
           "name": "EntrypointClass",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -238,7 +240,8 @@
           "member": "string",
           "name": "ProgramArgs",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -247,7 +250,8 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -256,7 +260,8 @@
           "member": "ResourceRef",
           "name": "ResourceRefs",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -265,7 +270,8 @@
           "member": "uint64",
           "name": "DefaultParallelism",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -274,7 +280,8 @@
           "member": "Property",
           "name": "Properties",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -283,7 +290,8 @@
           "member": "int64",
           "name": "AutoDelete",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -292,7 +300,8 @@
           "member": "string",
           "name": "COSBucket",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -301,7 +310,8 @@
           "member": "bool",
           "name": "LogCollect",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -310,7 +320,8 @@
           "member": "float",
           "name": "JobManagerSpec",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -319,7 +330,8 @@
           "member": "float",
           "name": "TaskManagerSpec",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -328,7 +340,8 @@
           "member": "string",
           "name": "ClsLogsetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -337,7 +350,8 @@
           "member": "string",
           "name": "ClsTopicId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -346,7 +360,8 @@
           "member": "int64",
           "name": "LogCollectType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -355,7 +370,8 @@
           "member": "string",
           "name": "PythonVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -364,7 +380,18 @@
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "日志级别",
+          "example": "INFO",
+          "member": "string",
+          "name": "LogLevel",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -379,7 +406,8 @@
           "name": "Version",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -7,17 +7,17 @@ Input:
 ```
 tccli as CreateScalingPolicy --cli-unfold-argument  \
     --AutoScalingGroupId asg-12wjuh0s \
-    --ScalingPolicyName cpu_policy_test \
-    --AdjustmentType ' CHANGE_IN_CAPACITY' \
-    --AdjustmentValue 1 \
     --Cooldown 60 \
-    --MetricAlarm.ComparisonOperator GREATER_THAN \
-    --MetricAlarm.MetricName CPU_UTILIZATION \
-    --MetricAlarm.Statistic AVERAGE \
-    --MetricAlarm.Threshold 50 \
+    --ScalingPolicyName cpu_policy_test \
+    --AdjustmentType  CHANGE_IN_CAPACITY \
     --MetricAlarm.Period 60 \
     --MetricAlarm.ContinuousTime 5 \
-    --NotificationUserGroupIds 1678
+    --MetricAlarm.ComparisonOperator GREATER_THAN \
+    --MetricAlarm.Statistic AVERAGE \
+    --MetricAlarm.Threshold 50 \
+    --MetricAlarm.MetricName CPU_UTILIZATION \
+    --NotificationUserGroupIds 1678 \
+    --AdjustmentValue 1
 ```
 
 Output: 
@@ -39,17 +39,17 @@ Input:
 ```
 tccli as CreateScalingPolicy --cli-unfold-argument  \
     --AutoScalingGroupId asg-12wjuh0s \
-    --ScalingPolicyName mem_policy_test \
-    --AdjustmentType ' PERCENT_CHANGE_IN_CAPACITY' \
-    --AdjustmentValue -50 \
     --Cooldown 300 \
-    --MetricAlarm.ComparisonOperator LESS_THAN \
-    --MetricAlarm.MetricName MEM_UTILIZATION \
-    --MetricAlarm.Statistic AVERAGE \
-    --MetricAlarm.Threshold 50 \
+    --ScalingPolicyName mem_policy_test \
+    --AdjustmentType  PERCENT_CHANGE_IN_CAPACITY \
     --MetricAlarm.Period 60 \
     --MetricAlarm.ContinuousTime 5 \
-    --NotificationUserGroupIds 1678
+    --MetricAlarm.ComparisonOperator LESS_THAN \
+    --MetricAlarm.Statistic AVERAGE \
+    --MetricAlarm.Threshold 50 \
+    --MetricAlarm.MetricName MEM_UTILIZATION \
+    --NotificationUserGroupIds 1678 \
+    --AdjustmentValue -50
 ```
 
 Output: 

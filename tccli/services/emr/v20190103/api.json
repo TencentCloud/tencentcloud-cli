@@ -3178,7 +3178,8 @@
           "member": "string",
           "name": "TimeUnit",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3187,7 +3188,8 @@
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3196,7 +3198,8 @@
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3205,7 +3208,8 @@
           "member": "uint64",
           "name": "PayMode",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3214,7 +3218,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3223,7 +3228,8 @@
           "member": "uint64",
           "name": "CoreCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3232,7 +3238,8 @@
           "member": "uint64",
           "name": "TaskCount",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3241,7 +3248,8 @@
           "member": "string",
           "name": "Currency",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3250,7 +3258,8 @@
           "member": "uint64",
           "name": "RouterCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3259,7 +3268,8 @@
           "member": "uint64",
           "name": "MasterCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3274,7 +3284,8 @@
           "name": "OriginalCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "折扣价，单位为元。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3283,7 +3294,8 @@
           "name": "DiscountCost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3292,7 +3304,8 @@
           "name": "Unit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "询价的节点规格。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3301,7 +3314,8 @@
           "name": "PriceSpec",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

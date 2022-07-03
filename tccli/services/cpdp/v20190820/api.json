@@ -2968,7 +2968,8 @@
           "member": "string",
           "name": "PayeeId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2977,7 +2978,8 @@
           "member": "string",
           "name": "IncomeType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2986,7 +2988,8 @@
           "member": "string",
           "name": "AmountBeforeTax",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2995,7 +2998,8 @@
           "member": "string",
           "name": "OutOrderId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3004,7 +3008,8 @@
           "member": "FlexFundingAccountInfo",
           "name": "FundingAccountInfo",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3013,7 +3018,18 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3028,7 +3044,8 @@
           "name": "ErrCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "错误消息",
@@ -3037,7 +3054,8 @@
           "name": "ErrMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -3046,7 +3064,8 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3153,6 +3172,16 @@
           "member": "string",
           "name": "Remark",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
           "type": "string",
           "visibility": 1
         }
@@ -9276,6 +9305,26 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "手机号码",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNo",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -16351,6 +16400,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -17917,6 +17976,16 @@
           "member": "string",
           "name": "AccountRightStatus",
           "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
           "type": "string",
           "visibility": 1
         }
@@ -20600,6 +20669,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],
@@ -24051,6 +24131,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -24149,6 +24239,16 @@
           "required": true,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -24217,6 +24317,16 @@
           "required": true,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -24282,6 +24392,16 @@
           "example": "无",
           "member": "string",
           "name": "OutUserId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -24373,6 +24493,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -24438,6 +24568,16 @@
           "example": "无",
           "member": "string",
           "name": "OutUserId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -24529,6 +24669,16 @@
           "required": true,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -24594,6 +24744,16 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -24684,6 +24844,26 @@
           "name": "PageNumber",
           "required": true,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作类型。\nENABLE_SETTLE: 正常结算\nDISABLE_SETTLE: 停用结算\nUNFREEZE_SETTLE: 解冻结算\n若需要支持多个操作类型，则以;分隔",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],

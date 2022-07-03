@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli oceanus CreateJobConfig --cli-unfold-argument  \
-    --JobId cql-n8yaia0y \
+    --ProgramArgs 2000 \
     --EntrypointClass com.tencent.flink.test.WordCount \
-    --ProgramArgs 2000
+    --JobId cql-n8yaia0y
 ```
 
 Output: 

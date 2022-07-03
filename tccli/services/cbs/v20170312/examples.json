@@ -325,7 +325,7 @@
     "TerminateDisks": [
       {
         "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=TerminateDisks\n&DiskIds.0=disk-lzrg2pwi\n&DiskIds.1=disk-g27hqeo2\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"disk-g27hqeo2\",\n        \"disk-lzrg2pwi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"52c965d2-5deb-459a-8b5a-b3b9a1376544\"\n    }\n}",
         "title": "批量退还云硬盘"
       }

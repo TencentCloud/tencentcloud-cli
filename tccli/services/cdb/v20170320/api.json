@@ -2636,7 +2636,8 @@
           "member": "string",
           "name": "RuleName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2645,7 +2646,8 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2654,7 +2656,8 @@
           "member": "AuditFilter",
           "name": "RuleFilters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2663,7 +2666,8 @@
           "member": "bool",
           "name": "AuditAll",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2678,7 +2682,8 @@
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6102,7 +6107,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6117,7 +6123,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例名称。",
@@ -6126,7 +6133,8 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "是否开通加密，YES 已开通，NO 未开通。",
@@ -6135,7 +6143,8 @@
           "name": "Encryption",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "加密使用的密钥 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6144,7 +6153,8 @@
           "name": "KeyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "密钥所在地域。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6153,7 +6163,8 @@
           "name": "KeyRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "当前 CDB 后端服务使用的 KMS 服务的默认地域。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6162,7 +6173,8 @@
           "name": "DefaultKmsRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12584,7 +12596,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

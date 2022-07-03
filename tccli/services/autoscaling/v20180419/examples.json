@@ -129,13 +129,13 @@
     "CreateScalingPolicy": [
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateScalingPolicy\n&AutoScalingGroupId=asg-12wjuh0s\n&ScalingPolicyName=cpu_policy_test\n&AdjustmentType= CHANGE_IN_CAPACITY\n&AdjustmentValue=1\n&Cooldown=60\n&MetricAlarm.ComparisonOperator=GREATER_THAN\n&MetricAlarm.MetricName=CPU_UTILIZATION\n&MetricAlarm.Statistic=AVERAGE\n&MetricAlarm.Threshold=50\n&MetricAlarm.Period=60\n&MetricAlarm.ContinuousTime=5\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \" CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n        \"RequestId\": \"fb02c8bd-5f38-4786-91b6-0c6e06a88832\"\n    }\n}",
         "title": "1分钟内，CPU平均利用率大于50%，连续发生5次，期望实例数增加1"
       },
       {
         "document": "",
-        "input": "https://as.tencentcloudapi.com/?Action=CreateScalingPolicy\n&AutoScalingGroupId=asg-12wjuh0s\n&ScalingPolicyName=mem_policy_test\n&AdjustmentType= PERCENT_CHANGE_IN_CAPACITY\n&AdjustmentValue=-50\n&Cooldown=300\n&MetricAlarm.ComparisonOperator=LESS_THAN\n&MetricAlarm.MetricName=MEM_UTILIZATION\n&MetricAlarm.Statistic=AVERAGE\n&MetricAlarm.Threshold=50\n&MetricAlarm.Period=60\n&MetricAlarm.ContinuousTime=5\n&NotificationUserGroupIds.0=1678\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"Cooldown\": \"300\",\n    \"ScalingPolicyName\": \"mem_policy_test\",\n    \"AdjustmentType\": \" PERCENT_CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"LESS_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"MEM_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"-50\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-f59pppuh\",\n        \"RequestId\": \"116213d6-2269-44cc-af76-c4a8dc7dbdf9\"\n    }\n}",
         "title": "1分钟内，内存平均利用率小于35%，连续发生5次，减少50%实例"
       }

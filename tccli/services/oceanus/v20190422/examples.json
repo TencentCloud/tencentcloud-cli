@@ -25,7 +25,7 @@
     "CreateJobConfig": [
       {
         "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateJobConfig\n&JobId=cql-n8yaia0y\n&EntrypointClass=com.tencent.flink.test.WordCount\n&ProgramArgs=2000\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobConfig\n<公共请求参数>\n\n{\n    \"ProgramArgs\": \"2000\",\n    \"EntrypointClass\": \"com.tencent.flink.test.WordCount\",\n    \"JobId\": \"cql-n8yaia0y\"\n}",
         "output": "{\n    \"Response\": {\n        \"Version\": 2,\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
         "title": "新建作业配置示例"
       }

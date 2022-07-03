@@ -64,12 +64,44 @@
         "title": "查询备份配置信息"
       }
     ],
+    "DescribeBackupDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"BackupId\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xxxx\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "查询集群备份文件下载地址"
+      }
+    ],
     "DescribeBackupList": [
       {
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeBackupList\n&ClusterId=cynosdbpg-ilgo90hu\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"xx\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份文件列表"
+      }
+    ],
+    "DescribeBinlogDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"BinlogId\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"xxxx\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "查询Binlog的下载地址"
+      }
+    ],
+    "DescribeBinlogSaveDays": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogSaveDays\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-rtqj0kp5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BinlogSaveDays\": 7,\n        \"RequestId\": \"9bea88d4-9549-4101-b1b9-8d7ceb0581a2\"\n    }\n}",
+        "title": "Binlog保留天数查询"
+      }
+    ],
+    "DescribeBinlogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 23:59:59\",\n    \"Limit\": 100,\n    \"Offset\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Binlogs\": [\n            {\n                \"BinlogId\": 10782259,\n                \"FileName\": \"00000002_0010782259_mysql-bin.001002\",\n                \"FileSize\": 479,\n                \"FinishTime\": \"2022-06-16 18:36:14\",\n                \"StartTime\": \"2022-06-15 17:19:19\"\n            }\n        ]\n    }\n}",
+        "title": "查询集群Binlog日志列表"
       }
     ],
     "DescribeClusterDetail": [
@@ -118,6 +150,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeInstanceDetail\n&InstanceId=cynosdbmysql-ins-bzkxxrmt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"175707\",\n        \"Detail\": {\n            \"ServerlessStatus\": \"resume\",\n            \"RenewFlag\": 0,\n            \"Zone\": \"ap-guangzhou-3\",\n            \"DbVersion\": \"10.0\",\n            \"Storage\": 100,\n            \"Memory\": 4,\n            \"MinCpu\": 1.0,\n            \"MaxCpu\": 2.0,\n            \"Charset\": \"utf8\",\n            \"Status\": \"running\",\n            \"UpdateTime\": \"2018-06-20 19:12:54\",\n            \"VpcId\": \"vpc-1ptuei0b\",\n            \"InstanceId\": \"cynosdbmysql-ins-bzkxxrmt\",\n            \"ClusterId\": \"cynosdbmysql-cluster-5ne6bjyx\",\n            \"CynosVersion\": \"2.0.12\",\n            \"NetType\": 1,\n            \"PeriodEndTime\": \"2018-07-20 19:17:16\",\n            \"InstanceType\": \"rw\",\n            \"ProjectId\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"PayMode\": 0,\n            \"SubnetId\": \"subnet-1tmw9t4o\",\n            \"StatusDesc\": \"运行中\",\n            \"InstanceName\": \"ahhahhhhh\",\n            \"Cpu\": 2,\n            \"WanDomain\": \"\",\n            \"ClusterName\": \"cynosdbmysql-cluster-5ne6bjyx\",\n            \"InstanceRole\": \"master\",\n            \"Uin\": \"3374998458\",\n            \"DbType\": \"MYSQL\",\n            \"Vip\": \"10.0.1.2\",\n            \"AppId\": 1251006243,\n            \"Vport\": 5432,\n            \"CreateTime\": \"2018-06-20 19:12:54\"\n        }\n    }\n}",
         "title": "查询实例详情"
+      }
+    ],
+    "DescribeInstanceSlowQueries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSlowQueries\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-xxxxxxxx\",\n    \"StartTime\": \"2022-06-22 00:00:00\",\n    \"EndTime\": \"2022-06-24 23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"SlowQueries\": [\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.00011,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891555,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            },\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.000109,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891543,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            },\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.000107,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891531,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            },\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.000104,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891520,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            },\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.000108,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891508,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            },\n            {\n                \"Database\": \"information_schema\",\n                \"LockTime\": 0,\n                \"QueryTime\": 11.000122,\n                \"RowsExamined\": 0,\n                \"RowsSent\": 0,\n                \"SqlMd5\": \"267171214708E27C\",\n                \"SqlTemplate\": \"select sleep(?) limit ? offset ?;\",\n                \"SqlText\": \"SELECT sleep(11) LIMIT 11 offset 0\",\n                \"Timestamp\": 1655891496,\n                \"UserHost\": \"11.186.190.10\",\n                \"UserName\": \"root\"\n            }\n        ],\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "查询实例慢查询日志"
       }
     ],
     "DescribeInstanceSpecs": [
@@ -184,6 +224,14 @@
         "title": "安全组批量绑定云资源"
       }
     ],
+    "ExportInstanceSlowQueries": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportInstanceSlowQueries\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-xxxxxxxx\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 23:59:59\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Username\": \"root\",\n    \"Database\": \"db\",\n    \"FileType\": \"csv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileContent\": \"xxxx\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "导出实例慢日志"
+      }
+    ],
     "GrantAccountPrivileges": [
       {
         "document": "",
@@ -195,7 +243,7 @@
     "IsolateCluster": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=IsolateCluster\n&ClusterId=cynosdbmysql-bzxxrmtq\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-bzxxrmtq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\",\n        \"DealNames\": [\n            \"123\"\n        ]\n    }\n}",
         "title": "隔离集群"
       }
@@ -203,7 +251,7 @@
     "IsolateInstance": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=IsolateInstance\n&ClusterId=cynosdbmysql-ins-bzkxxrmt\n&InstanceIdList.0=cynosdbmysql-ixgbd0di\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateInstance\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"cynosdbmysql-ixgbd0di\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-ins-bzkxxrmt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "隔离实例访问"
       }
@@ -219,9 +267,17 @@
     "ModifyBackupConfig": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyBackupConfig\n&ClusterId=cynosdbmysql-45knmnra\n&BackupTimeBeg=7200\n&BackupTimeEnd=21600\n&ReserveDuration=604800\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupConfig\n<公共请求参数>\n\n{\n    \"BackupTimeBeg\": \"7200\",\n    \"ReserveDuration\": \"604800\",\n    \"ClusterId\": \"cynosdbmysql-45knmnra\",\n    \"BackupTimeEnd\": \"21600\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改集群备份配置"
+      }
+    ],
+    "ModifyBackupName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupName\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"BackupId\": 1000,\n    \"BackupName\": \"backupfile-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
+        "title": "修改备份文件备注名"
       }
     ],
     "ModifyClusterName": [
@@ -323,7 +379,7 @@
     "UpgradeInstance": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeInstance\n&InstanceId=cynosdbmysql-ins-n7ocdslw\n&Cpu=2\n&Memory=4\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-n7ocdslw\",\n    \"UpgradeType\": \"upgradeImmediate\",\n    \"Cpu\": \"2\",\n    \"Memory\": \"4\"\n}",
         "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"165202\",\n        \"TranId\": \"xx\",\n        \"DealNames\": [\n            \"xx\"\n        ]\n    }\n}",
         "title": "升级实例"
       }

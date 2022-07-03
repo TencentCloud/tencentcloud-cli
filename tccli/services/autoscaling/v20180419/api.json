@@ -1928,7 +1928,8 @@
           "member": "string",
           "name": "AutoScalingGroupId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1937,7 +1938,8 @@
           "member": "string",
           "name": "ScalingPolicyName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1946,7 +1948,8 @@
           "member": "string",
           "name": "AdjustmentType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1955,7 +1958,8 @@
           "member": "int64",
           "name": "AdjustmentValue",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1964,7 +1968,8 @@
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1973,16 +1978,18 @@
           "member": "uint64",
           "name": "Cooldown",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
+          "document": "此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。\n通知组ID，即为用户组ID集合。",
           "example": "[\"1678\\n\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1997,7 +2004,8 @@
           "name": "AutoScalingPolicyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

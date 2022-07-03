@@ -11776,7 +11776,8 @@
           "member": "ZoneInstanceCountISP",
           "name": "ZoneInstanceCountISPSet",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11785,7 +11786,8 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11794,7 +11796,8 @@
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11803,7 +11806,8 @@
           "member": "string",
           "name": "ModuleId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11812,7 +11816,8 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11821,7 +11826,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11830,7 +11836,8 @@
           "member": "string",
           "name": "HostName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11839,7 +11846,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11848,7 +11856,8 @@
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11857,7 +11866,8 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11866,7 +11876,8 @@
           "member": "string",
           "name": "UserData",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11875,7 +11886,8 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11884,7 +11896,8 @@
           "member": "int64",
           "name": "DataDiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11893,7 +11906,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11902,7 +11916,8 @@
           "member": "uint64",
           "name": "SystemDiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11911,7 +11926,8 @@
           "member": "int64",
           "name": "InternetMaxBandwidthIn",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11920,7 +11936,8 @@
           "member": "int64",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11929,7 +11946,8 @@
           "member": "string",
           "name": "KeyIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11938,7 +11956,8 @@
           "member": "string",
           "name": "KeepImageLogin",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11947,7 +11966,8 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11956,7 +11976,8 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -11971,7 +11992,8 @@
           "name": "InstanceIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

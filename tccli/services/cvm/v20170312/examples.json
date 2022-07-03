@@ -118,6 +118,14 @@
         "title": "查询用户概览数据"
       }
     ],
+    "DescribeChcHosts": [
+      {
+        "document": "根据CHC物理服务器ID查看实例",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeChcHosts\n&ChcIds.0=chc-1a2b3c4d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ChcHostSet\": [\n            {\n                \"ChcId\": \"chc-1a2b3c4d\",\n                \"InstanceName\": \"xx\",\n                \"SerialNumber\": \"sn34asdfabd\",\n                \"InstanceState\": \"RUNNING\",\n                \"DeviceType\": \"CHC_HS1\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"BmcVirtualPrivateCloud\": {\n                    \"SubnetId\": \"subnet-a2676p0e\",\n                    \"VpcId\": \"vpc-g7wzcv7n\"\n                },\n                \"BmcIp\": \"10.12.10.34\",\n                \"BmcSecurityGroupIds\": [\n                    \"sg-1a2b3c4d\"\n                ],\n                \"DeployVirtualPrivateCloud\": {\n                    \"SubnetId\": \"subnet-a26734fs\",\n                    \"VpcId\": \"vpc-g7wz234f\"\n                },\n                \"DeployIp\": \"10.12.20.34\",\n                \"DeploySecurityGroupIds\": [\n                    \"sg-1a2b34af\"\n                ],\n                \"CvmInstanceId\": \"ins-1a2bafst\",\n                \"CreatedTime\": \"2020-03-10T02:43:51Z\",\n                \"HardwareDescription\": \"50C 128G 12*4T\",\n                \"Memory\": 128,\n                \"DeployMAC\": \"xxxx:xxxx:xxxx:xxxx\",\n                \"BmcMAC\": \"xxxx:xxxx:xxxx:xxx\",\n                \"Disk\": \"12*4T\",\n                \"CPU\": 50\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "title": "查看CHC物理服务器实例"
+      }
+    ],
     "DescribeDisasterRecoverGroupQuota": [
       {
         "document": "查询用户置放群组配额",
