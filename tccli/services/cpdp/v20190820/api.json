@@ -6,6 +6,18 @@
       "name": "云支付-添加合同接口",
       "output": "AddContractResponse"
     },
+    "AddFlexIdInfo": {
+      "document": "灵云V2-补充证件信息",
+      "input": "AddFlexIdInfoRequest",
+      "name": "灵云V2-补充证件信息",
+      "output": "AddFlexIdInfoResponse"
+    },
+    "AddFlexPhoneNo": {
+      "document": "灵云V2-补充手机号信息",
+      "input": "AddFlexPhoneNoRequest",
+      "name": "灵云V2-补充手机号信息",
+      "output": "AddFlexPhoneNoResponse"
+    },
     "AddMerchant": {
       "document": "云支付-添加商户接口",
       "input": "AddMerchantRequest",
@@ -690,11 +702,23 @@
       "name": "灵云V2-查询税前金额",
       "output": "QueryFlexAmountBeforeTaxResponse"
     },
+    "QueryFlexBillDownloadUrl": {
+      "document": "灵云V2-查询对账单文件下载链接",
+      "input": "QueryFlexBillDownloadUrlRequest",
+      "name": "灵云V2-查询对账单文件下载链接",
+      "output": "QueryFlexBillDownloadUrlResponse"
+    },
     "QueryFlexFreezeOrderList": {
       "document": "灵云V2-查询冻结订单列表",
       "input": "QueryFlexFreezeOrderListRequest",
       "name": "灵云V2-查询冻结订单列表",
       "output": "QueryFlexFreezeOrderListResponse"
+    },
+    "QueryFlexOrderSummaryList": {
+      "document": "灵云V2-订单汇总列表查询",
+      "input": "QueryFlexOrderSummaryListRequest",
+      "name": "灵云V2-订单汇总列表查询",
+      "output": "QueryFlexOrderSummaryListResponse"
     },
     "QueryFlexPayeeAccountBalance": {
       "document": "灵云V2-收款用户账户余额查询",
@@ -1628,6 +1652,172 @@
         }
       ],
       "usage": "out"
+    },
+    "AddFlexIdInfoRequest": {
+      "document": "AddFlexIdInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "证件类型\n0:身份证\n1:社会信用代码",
+          "example": "无",
+          "member": "int64",
+          "name": "IdType",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "证件号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNo",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AddFlexIdInfoResponse": {
+      "document": "AddFlexIdInfo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddFlexPhoneNoRequest": {
+      "document": "AddFlexPhoneNo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "手机号",
+          "example": "无",
+          "member": "string",
+          "name": "PhoneNo",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "AddFlexPhoneNoResponse": {
+      "document": "AddFlexPhoneNo返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddMerchantRequest": {
       "document": "AddMerchant请求参数结构体",
@@ -16302,6 +16492,34 @@
       ],
       "usage": "out"
     },
+    "FlexBillDownloadUrlResult": {
+      "document": "对账单文件下载链接",
+      "members": [
+        {
+          "default": "",
+          "document": "对账单文件下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "下载链接过期时间",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
     "FlexFundingAccountInfo": {
       "document": "灵云V2-银行信息",
       "members": [
@@ -19369,6 +19587,117 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrderSummaries": {
+      "document": "订单汇总列表",
+      "members": [
+        {
+          "default": "",
+          "document": "汇总列表",
+          "example": "无",
+          "member": "OrderSummaryResult",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
+    },
+    "OrderSummaryResult": {
+      "document": "订单汇总结果",
+      "members": [
+        {
+          "default": "",
+          "document": "汇总ID",
+          "example": "无",
+          "member": "string",
+          "name": "SummaryId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款账户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款账户名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收入类型",
+          "example": "无",
+          "member": "string",
+          "name": "IncomeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "汇总金额",
+          "example": "无",
+          "member": "string",
+          "name": "SummaryAmount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "汇总日期",
+          "example": "无",
+          "member": "string",
+          "name": "SummaryTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "汇总记录数量",
+          "example": "无",
+          "member": "int64",
+          "name": "SummaryCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -24187,6 +24516,94 @@
       ],
       "type": "object"
     },
+    "QueryFlexBillDownloadUrlRequest": {
+      "document": "QueryFlexBillDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "对账单日期",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "对账单类型：FREEZE, SETTLEMENT,PAYMENT",
+          "example": "无",
+          "member": "string",
+          "name": "BillType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "服务商ID，如不填则查询平台级别对账单文件",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceProviderId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexBillDownloadUrlResponse": {
+      "document": "QueryFlexBillDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlexBillDownloadUrlResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryFlexFreezeOrderListRequest": {
       "document": "QueryFlexFreezeOrderList请求参数结构体",
       "members": [
@@ -24280,6 +24697,104 @@
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FreezeOrders",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexOrderSummaryListRequest": {
+      "document": "QueryFlexOrderSummaryList请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "汇总日期:yyyy-MM-dd",
+          "example": "无",
+          "member": "string",
+          "name": "SummaryDate",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "分页",
+          "example": "无",
+          "member": "Paging",
+          "name": "PageNumber",
+          "required": true,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "汇总订单类型:FREEZE, SETTLEMENT,PAYMENT",
+          "example": "无",
+          "member": "string",
+          "name": "OrderType",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "环境类型\n__release__:生产环境\n__sandbox__:沙箱环境\n__test__:测试环境\n缺省默认为生产环境",
+          "example": "无",
+          "member": "string",
+          "name": "Environment",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFlexOrderSummaryListResponse": {
+      "document": "QueryFlexOrderSummaryList返回参数结构体",
+      "members": [
+        {
+          "document": "错误码。SUCCESS为成功，其他为失败",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "错误消息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrderSummaries",
           "name": "Result",
           "required": true,
           "type": "object",

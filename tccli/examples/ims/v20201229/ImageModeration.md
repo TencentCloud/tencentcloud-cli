@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ims ImageModeration --cli-unfold-argument  \
-    --FileUrl https://xxx.jpg \
+    --BizType test_1001 \
     --DataId 1213 \
-    --BizType test_1001
+    --FileUrl https://xxx.jpg
 ```
 
 Output: 

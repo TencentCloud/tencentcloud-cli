@@ -696,6 +696,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "当前表名",
+          "example": "table1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

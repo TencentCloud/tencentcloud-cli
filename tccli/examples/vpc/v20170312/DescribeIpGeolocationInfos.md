@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc DescribeIpGeolocationInfos --cli-unfold-argument  \
-    --AddressIps 2001:1200:: 8.8.8.8 \
-    --Fields.Country True \
+    --AddressIps 8.8.8.8 2001:1200:: \
     --Fields.Province True \
-    --Fields.City True \
+    --Fields.Country True \
     --Fields.Region True \
-    --Fields.Isp True
+    --Fields.Isp True \
+    --Fields.City True
 ```
 
 Output: 

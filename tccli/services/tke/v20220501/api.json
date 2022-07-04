@@ -304,22 +304,24 @@
         {
           "default": "",
           "document": "map表中的Name",
-          "example": "key",
+          "example": "k8s-app",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
           "document": "map表中的Value",
-          "example": "value",
+          "example": "billing",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

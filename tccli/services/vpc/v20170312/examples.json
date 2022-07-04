@@ -390,6 +390,14 @@
         "title": "创建流日志"
       }
     ],
+    "CreateGlobalRouteInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateGlobalRouteInternal\n&GlobalRouteRequestSet.0.VpcId=1\n&GlobalRouteRequestSet.0.Subnet=10.0.0.0\n&GlobalRouteRequestSet.0.IntMask=16\n&GlobalRouteRequestSet.0.Remote=172.16.0.18\n&GlobalRouteRequestSet.0.Type=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加全局路由"
+      }
+    ],
     "CreateHaVip": [
       {
         "document": "",
@@ -428,6 +436,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateNatGatewayDestinationIpPortTranslationNatRule\n&NatGatewayId=nat-3isn9hr0\n&DestinationIpPortTranslationNatRules.0.IpProtocol=TCP\n&DestinationIpPortTranslationNatRules.0.PublicIpAddress=139.199.232.238\n&DestinationIpPortTranslationNatRules.0.PublicPort=8989\n&DestinationIpPortTranslationNatRules.0.PrivateIpAddress=10.80.80.41\n&DestinationIpPortTranslationNatRules.0.PrivatePort=8989\n&DestinationIpPortTranslationNatRules.0.Description=test_dnapt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f7ea4e-8452-4742-84b5-5a3aee304967\"\n    }\n}",
         "title": "创建NAT的转发规则"
+      }
+    ],
+    "CreateNatGatewayServiceInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateNatGatewayServiceInternal\n&NatServiceRequestSet.0.VpcId=123\n&NatServiceRequestSet.0.UniqueVpcId=vpc-jmaywf6r\n&NatServiceRequestSet.0.Owner=251198225\n&NatServiceRequestSet.0.Protocol=tcp\n&NatServiceRequestSet.0.PrivateIp=172.16.0.18\n&NatServiceRequestSet.0.ProtocolPort=554\n&NatServiceRequestSet.0.VirtualGatewayType=0\n&NatServiceRequestSet.0.VpcGatewayIndex=xxx\n&NatServiceRequestSet.0.UniqueVpcGatewayIndex=xxx\n&NatServiceRequestSet.0.SubnetId=123\n&NatServiceRequestSet.0.Count=10\n&NatServiceRequestSet.0.GatewayIp=1.1.1.1\n&NatServiceRequestSet.0.VirtualPort=111\n&NatServiceRequestSet.0.SkipCheckPrivateIpDatabaseFlag=0\n&NatServiceRequestSet.0.Business=xxx\n&NatServiceRequestSet.0.BusinessOwner=xxx\n&NatServiceRequestSet.0.Bandwidth=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NatServiceSet\": [\n            {\n                \"VpcId\": 78257,\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"SubnetId\": 1990866,\n                \"Owner\": \"251198225\",\n                \"Vip\": \"9.241.203.205\",\n                \"UniqueSubnetId\": \"subnet-am4aebsm\",\n                \"PrivateIp\": \"172.16.0.18\",\n                \"GatewayIp\": \"9.241.203.205\",\n                \"VirtualPort\": 13803,\n                \"Business\": \"xx\",\n                \"VirtualGatewayType\": 0,\n                \"Protocol\": \"tcp\",\n                \"ProtocolPort\": 554,\n                \"Bandwidth\": 0,\n                \"CreateTime\": \"2021-12-27 18:09:40\",\n                \"UniqueVpcGatewayIndex\": \"172.16.0.18\",\n                \"VpcGatewayIndex\": \"172.16.0.18\",\n                \"PoolId\": 33362,\n                \"BusinessOwner\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "添加经jnsgw的服务"
       }
     ],
     "CreateNatGatewaySourceIpTranslationNatRule": [
@@ -708,6 +724,14 @@
         "title": "删除流日志"
       }
     ],
+    "DeleteGlobalRouteInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteGlobalRouteInternal\n&GlobalRouteRequestSet.0.VpcId=1\n&GlobalRouteRequestSet.0.Subnet=10.0.0.0\n&GlobalRouteRequestSet.0.IntMask=16\n&GlobalRouteRequestSet.0.Remote=172.16.0.18\n&GlobalRouteRequestSet.0.Type=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "删除全局路由"
+      }
+    ],
     "DeleteHaVip": [
       {
         "document": "",
@@ -746,6 +770,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-3isn9hr0\",\n    \"DestinationIpPortTranslationNatRules\": [\n        {\n            \"Description\": \"xx\",\n            \"PublicIpAddress\": \"139.199.232.238\",\n            \"PrivatePort\": 9999,\n            \"IpProtocol\": \"TCP\",\n            \"PublicPort\": 999,\n            \"PrivateIpAddress\": \"10.0.9.2\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "删除NAT的端口转发规则"
+      }
+    ],
+    "DeleteNatGatewayServiceInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNatGatewayServiceInternal\n&NatServiceRequestSet.0.VpcId=123\n&NatServiceRequestSet.0.UniqueVpcId=vpc-jmaywf6r\n&NatServiceRequestSet.0.Owner=251198225\n&NatServiceRequestSet.0.Protocol=tcp\n&NatServiceRequestSet.0.Vip=1.1.1.1\n&NatServiceRequestSet.0.VirtualPort=111\n&NatServiceRequestSet.0.PrivateIp=172.16.0.18\n&NatServiceRequestSet.0.ProtocolPort=554\n&NatServiceRequestSet.0.VirtualGatewayType=0\n&NatServiceRequestSet.0.VpcGatewayIndex=xxx\n&NatServiceRequestSet.0.UniqueVpcGatewayIndex=xxx\n&NatServiceRequestSet.0.Business=xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NatServiceSet\": [\n            {\n                \"VpcId\": 78257,\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"SubnetId\": 1990866,\n                \"Owner\": \"251198225\",\n                \"Vip\": \"9.241.203.205\",\n                \"UniqueSubnetId\": \"subnet-am4aebsm\",\n                \"PrivateIp\": \"172.16.0.18\",\n                \"GatewayIp\": \"9.241.203.205\",\n                \"VirtualPort\": 13803,\n                \"VipBusiness\": \"\",\n                \"Business\": \"\",\n                \"VirtualGatewayType\": 0,\n                \"Protocol\": \"tcp\",\n                \"ProtocolPort\": 554,\n                \"Bandwidth\": 0,\n                \"CreateTime\": \"2021-12-27 18:09:40\",\n                \"UniqueVpcGatewayIndex\": \"172.16.0.18\",\n                \"VpcGatewayIndex\": \"172.16.0.18\",\n                \"PoolId\": 33362,\n                \"BusinessOwner\": \"\",\n                \"SkipReturnSnatIpFlag\": 1\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于删除经jnsgw的服务"
       }
     ],
     "DeleteNatGatewaySourceIpTranslationNatRule": [
@@ -1192,6 +1224,14 @@
         "title": "多条件过滤查询专线网关列表"
       }
     ],
+    "DescribeEniAllInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEniAllInternal\n<公共请求参数>\n\n{\n    \"Uuid\": \"xxx\",\n    \"SafeGroupId\": \"xxx\",\n    \"State\": \"0\",\n    \"IfnName\": \"xxx\",\n    \"Type\": \"0\",\n    \"UniqueSubnetId\": \"xxx\",\n    \"VpcId\": \"123\",\n    \"EniId\": \"1\",\n    \"Description\": \"xxx\",\n    \"Business\": \"xxx\",\n    \"InstanceId\": \"xxx\",\n    \"Mac\": \"xxx\",\n    \"Offset\": \"0\",\n    \"SubnetId\": \"123\",\n    \"Name\": \"xxx\",\n    \"TagValue\": \"xxx\",\n    \"Limit\": \"100\",\n    \"BusinessOwner\": \"xxx\",\n    \"TagKey\": \"xxx\",\n    \"EniPrivateIp\": \"1.1.1.1\",\n    \"UniqueEniId\": \"xxx\",\n    \"Owner\": \"251198225\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"EniSet\": [\n            {\n                \"DefaultFlag\": 0,\n                \"VpcId\": 16769060,\n                \"EniId\": 2609655,\n                \"UniqueVpcId\": \"vpc-7zayowkt\",\n                \"Mask\": \"255.255.128.0\",\n                \"VpcDefaultFlag\": 0,\n                \"TrunkingFlag\": 0,\n                \"SubnetId\": 2018313,\n                \"PrivateIpSet\": [\n                    {\n                        \"Description\": \"xxx\",\n                        \"State\": 1,\n                        \"DhcpIpFlag\": 0,\n                        \"WanIp\": \"0.0.0.0\",\n                        \"HavIpFlag\": 0,\n                        \"PrivateIp\": \"10.4.128.5\",\n                        \"Type\": 1,\n                        \"CreateTime\": \"2021-06-17 11:24:24\",\n                        \"BlockedFlag\": 0\n                    }\n                ],\n                \"EniQos\": {\n                    \"PortMax\": 65535,\n                    \"DirectSend\": 0,\n                    \"PortMin\": 1025,\n                    \"QosType\": 0\n                },\n                \"AclId\": 95805,\n                \"Owner\": \"251197522\",\n                \"UniqAclId\": \"acl-r762el0i\",\n                \"UniqueCdcId\": \"xxx\",\n                \"Subnet\": \"10.4.128.0\",\n                \"UniqueEniId\": \"eni-nl6govs9\",\n                \"VpcIntMask\": 16,\n                \"VpcMask\": \"255.255.0.0\",\n                \"ZoneId\": 100002,\n                \"Instance\": {\n                    \"WanInLimit\": 0,\n                    \"IfnIndex\": 0,\n                    \"LanInLimit\": 1610612736,\n                    \"AttachType\": 0,\n                    \"AttachTime\": \"2021-06-17 11:24:24\",\n                    \"LanOutLimit\": 1610612736,\n                    \"InstanceId\": \"ins-yn79rou1\",\n                    \"UniqueCdcId\": \"xxx\",\n                    \"Bandwidth\": 1,\n                    \"Owner\": \"251197522\",\n                    \"CdcFlag\": 0,\n                    \"HostIp\": \"100.99.164.201\",\n                    \"WanOutLimit\": 1048576,\n                    \"BridgeName\": \"vbr16769060\",\n                    \"Uuid\": \"84f9a2ad-6659-4864-808c-bd17f3c2acea\"\n                },\n                \"State\": 1,\n                \"ArpLearningFlag\": 1,\n                \"Ipv6\": [\n                    {\n                        \"Description\": \"\",\n                        \"State\": 1,\n                        \"WanIp\": \"\",\n                        \"HavIpFlag\": 0,\n                        \"PrivateIp\": \"2402:4e00:1000:2b00:0:90fb:c2c4:6995\",\n                        \"Type\": 0,\n                        \"CreateTime\": \"2020-07-07 16:16:28\",\n                        \"BlockedFlag\": 0\n                    }\n                ],\n                \"IntMask\": 17,\n                \"BusinessOwner\": \"xxx\",\n                \"DhcpFlag\": 0,\n                \"Type\": 1,\n                \"Description\": \"xx\",\n                \"Business\": \"xx\",\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"CdcFlag\": 0,\n                \"Mac\": \"52:54:00:51:48:6B\",\n                \"TagProto\": \"vlan\",\n                \"CreateTime\": \"2021-06-17 11:24:24\",\n                \"StreamFlowNumber\": 1,\n                \"Name\": \"ins-yn79rou1 Primary ENI\",\n                \"StreamFlow\": [\n                    {\n                        \"Name\": \"tsss\",\n                        \"Uin\": \"100000072292\",\n                        \"LogId\": \"38ed2b0e-28ac-47d3-834f-b425d6f83a78\",\n                        \"Policy\": 1,\n                        \"LogState\": 0,\n                        \"Description\": \"xxx\"\n                    }\n                ],\n                \"AclName\": \"ttttt\",\n                \"LocalZoneFlag\": 0,\n                \"VpcName\": \"cissytest\",\n                \"UniqueSubnetId\": \"subnet-oiqmspv4\",\n                \"ElasticNetworkCardName\": \"veth_51486Bf0\",\n                \"SubnetName\": \"testtt\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于获取弹性网卡极其附属的信息"
+      }
+    ],
     "DescribeFlowLog": [
       {
         "document": "",
@@ -1228,6 +1268,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGatewayFlowQos\n&GatewayId=vpngw-4je9dgin\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayQosSet\": [\n            {\n                \"VpcId\": \"vpc-mrzkofih\",\n                \"IpAddress\": \"10.0.0.12\",\n                \"Bandwidth\": 10,\n                \"CreateTime\": \"2020-01-01 10:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "示例1 查询VPN网关来访IP流控带宽"
+      }
+    ],
+    "DescribeGlobalRouteInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGlobalRouteInternal\n&VpcId=1\n&Remote=172.16.0.2\n&UniqueVpcId=vpc-jmaywf6r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GlobalRouteSet\": [\n            {\n                \"VpcId\": 22,\n                \"Subnet\": \"100.64.0.0\",\n                \"IntMask\": 24,\n                \"Remote\": \"172.16.0.2\",\n                \"Master\": \"16.5.3.6\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "查询全局路由"
       }
     ],
     "DescribeHaVips": [
@@ -1291,9 +1339,17 @@
     "DescribeIpGeolocationInfos": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationInfos\n&AddressIps.0=2001:1200::\n&AddressIps.1=8.8.8.8\n&Fields.Country=True\n&Fields.Province=True\n&Fields.City=True\n&Fields.Region=True\n&Fields.Isp=True\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpGeolocationInfos\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"8.8.8.8\",\n        \"2001:1200::\"\n    ],\n    \"Fields\": {\n        \"Province\": \"True\",\n        \"Country\": \"True\",\n        \"Region\": \"True\",\n        \"Isp\": \"True\",\n        \"City\": \"True\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"AddressInfo\": [\n            {\n                \"AddressIp\": \"2001:1200::\",\n                \"Country\": \"墨西哥\",\n                \"Province\": \"tabasco\",\n                \"City\": \"miguel hidalgo\",\n                \"Region\": \"未知\",\n                \"Isp\": \"protel i-next, s.a. de c.v., mx\"\n            },\n            {\n                \"AddressIp\": \"8.8.8.8\",\n                \"Country\": \"美国\",\n                \"Province\": \"california\",\n                \"City\": \"mountain view\",\n                \"Region\": \"未知\",\n                \"Isp\": \"google - google inc., us\"\n            }\n        ],\n        \"RequestId\": \"6d3e1ba5-a3d0-41d4-93f7-4992a2e18b9d\"\n    }\n}",
         "title": "查询IP地理位置信息"
+      }
+    ],
+    "DescribeIpInternal": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpInternal\n&VpcId=1\n&UniqueVpcId=vpc-xxx\n&Ip=1.1.1.1\n&Subnet=1.1.1.1\n&IpType=1\n&Flag=0\n&UniqueInstanceId=ins-xxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IpSet\": [\n            {\n                \"Subnet\": \"169.254.128.0\",\n                \"VpcId\": 78257,\n                \"DirtyFlag\": 0,\n                \"IntSubnet\": 2852028416,\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"Ip\": \"169.254.128.2\",\n                \"Mask\": \"255.255.128.0\",\n                \"Gateway\": \"169.254.128.1\",\n                \"Flag\": 0,\n                \"UniqueInstanceId\": \"\",\n                \"IpType\": 0,\n                \"CreateTime\": \"2021-03-22 21:35:59\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "用于查询IP地址的详情"
       }
     ],
     "DescribeLocalGateway": [
@@ -1568,6 +1624,20 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
         "title": "根据is-security-lock过滤查询"
+      }
+    ],
+    "DescribeVpcAndSubnetInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAndSubnetInternal\n<公共请求参数>\n\n{\n    \"VpcId\": [\n        \"123123\"\n    ],\n    \"Owner\": \"251198225\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\",\n    \"SubnetId\": [\n        \"123123\"\n    ],\n    \"UniqueVpcId\": [\n        \"vpc-jmaywf6r\"\n    ],\n    \"UniqueSubnetId\": [\n        \"subnet-xxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcSet\": [\n            {\n                \"Subnet\": \"172.16.0.0\",\n                \"SubnetSet\": [\n                    {\n                        \"Subnet\": \"172.16.0.0\",\n                        \"Name\": \"Default-Subnet\",\n                        \"DefaultFlag\": 1,\n                        \"ZoneId\": 100002,\n                        \"SubnetId\": 1990867,\n                        \"UniqueSubnetId\": \"subnet-dbrazzr0\",\n                        \"IntMask\": 20,\n                        \"DhcpFlag\": 0,\n                        \"CreateTime\": \"2021-03-22 20:59:55\"\n                    }\n                ],\n                \"VpcId\": 78257,\n                \"Name\": \"Default-VPC\",\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"DefaultFlag\": 1,\n                \"IntMask\": 16,\n                \"OwnedFlag\": 0,\n                \"BraceLinkFlag\": 0,\n                \"OwnerLevel\": -1,\n                \"Owner\": \"251198225\",\n                \"DhcpFlag\": 1,\n                \"CreateTime\": \"2021-03-22 20:59:55\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "title": "获取VPC和Subnet信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAndSubnetInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251198225\",\n    \"UniqueVpcId\": [\n        \"vpc-jmaywf6r\"\n    ],\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VpcSet\": [\n            {\n                \"Subnet\": \"172.16.0.0\",\n                \"SubnetSet\": [\n                    {\n                        \"Subnet\": \"172.16.0.0\",\n                        \"Name\": \"Default-Subnet\",\n                        \"DefaultFlag\": 1,\n                        \"ZoneId\": 100002,\n                        \"SubnetId\": 1990867,\n                        \"UniqueSubnetId\": \"subnet-dbrazzr0\",\n                        \"IntMask\": 20,\n                        \"DhcpFlag\": 0,\n                        \"CreateTime\": \"2021-03-22 20:59:55\"\n                    }\n                ],\n                \"VpcId\": 78257,\n                \"Name\": \"Default-VPC\",\n                \"UniqueVpcId\": \"vpc-jmaywf6r\",\n                \"DefaultFlag\": 1,\n                \"IntMask\": 16,\n                \"OwnedFlag\": 0,\n                \"BraceLinkFlag\": 0,\n                \"OwnerLevel\": -1,\n                \"Owner\": \"251198225\",\n                \"DhcpFlag\": 1,\n                \"CreateTime\": \"2021-03-22 20:59:55\"\n            }\n        ],\n        \"RequestId\": \"55278dc2-fe4c-4e32-b3b8-3eb25740722d\"\n    }\n}",
+        "title": "DescribeVpcAndSubnetInternal示例"
       }
     ],
     "DescribeVpcEndPoint": [
