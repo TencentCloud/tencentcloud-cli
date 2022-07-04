@@ -666,6 +666,15 @@
           "name": "Partitions",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "当前表名",
+          "example": "table1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

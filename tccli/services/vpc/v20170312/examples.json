@@ -1251,7 +1251,7 @@
     "DescribeIpGeolocationInfos": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIpGeolocationInfos\n&AddressIps.0=2001:1200::\n&AddressIps.1=8.8.8.8\n&Fields.Country=True\n&Fields.Province=True\n&Fields.City=True\n&Fields.Region=True\n&Fields.Isp=True\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIpGeolocationInfos\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"8.8.8.8\",\n        \"2001:1200::\"\n    ],\n    \"Fields\": {\n        \"Province\": \"True\",\n        \"Country\": \"True\",\n        \"Region\": \"True\",\n        \"Isp\": \"True\",\n        \"City\": \"True\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"AddressInfo\": [\n            {\n                \"AddressIp\": \"2001:1200::\",\n                \"Country\": \"墨西哥\",\n                \"Province\": \"tabasco\",\n                \"City\": \"miguel hidalgo\",\n                \"Region\": \"未知\",\n                \"Isp\": \"protel i-next, s.a. de c.v., mx\"\n            },\n            {\n                \"AddressIp\": \"8.8.8.8\",\n                \"Country\": \"美国\",\n                \"Province\": \"california\",\n                \"City\": \"mountain view\",\n                \"Region\": \"未知\",\n                \"Isp\": \"google - google inc., us\"\n            }\n        ],\n        \"RequestId\": \"6d3e1ba5-a3d0-41d4-93f7-4992a2e18b9d\"\n    }\n}",
         "title": "查询IP地理位置信息"
       }

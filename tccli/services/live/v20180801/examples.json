@@ -87,7 +87,7 @@
     "CreateLivePullStreamTask": [
       {
         "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLivePullStreamTask\n&SourceType=PullLivePushLive\n&SourceUrls.0=rtmp://5000.liveplay.myqcloud.com/live/stream1\n&DomainName=5000.livepush.myqcloud.com\n&AppName=live\n&StreamName=test\n&StartTime=2019-12-16T11:02:00Z\n&EndTime=2019-12-17T12:02:00Z\n&Operator=vinson\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLivePullStreamTask\n<公共请求参数>\n\n{\n    \"SourceType\": \"PullLivePushLive\",\n    \"DomainName\": \"5000.livepush.myqcloud.com\",\n    \"SourceUrls\": [\n        \"rtmp://5000.liveplay.myqcloud.com/live/stream1\"\n    ],\n    \"StreamName\": \"test\",\n    \"AppName\": \"live\",\n    \"StartTime\": \"2019-12-16T11:02:00Z\",\n    \"Operator\": \"vinson\",\n    \"EndTime\": \"2019-12-17T12:02:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"10000\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

@@ -643,6 +643,7 @@
         {
           "default": "",
           "document": "编辑处理任务参数。",
+          "example": "无",
           "member": "MediaProcessInfo",
           "name": "MediaProcessInfo",
           "required": true,
@@ -651,6 +652,7 @@
         {
           "default": "",
           "document": "编辑处理任务输入源列表。",
+          "example": "无",
           "member": "MediaSourceInfo",
           "name": "SourceInfoSet",
           "required": false,
@@ -659,6 +661,7 @@
         {
           "default": "",
           "document": "结果存储信息，对于涉及存储的请求必选。部子任务支持数组备份写，具体以对应任务文档为准。",
+          "example": "无",
           "member": "SaveInfo",
           "name": "SaveInfoSet",
           "required": false,
@@ -667,6 +670,7 @@
         {
           "default": "",
           "document": "任务结果回调地址信息。部子任务支持数组备份回调，具体以对应任务文档为准。",
+          "example": "无",
           "member": "CallbackInfo",
           "name": "CallbackInfoSet",
           "required": false,
@@ -680,8 +684,10 @@
       "members": [
         {
           "document": "编辑任务 ID，可以通过该 ID 查询任务状态和结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12001326083614739554304",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -905,6 +911,7 @@
         {
           "default": "",
           "document": "编辑处理任务ID。",
+          "example": "12001326083614739554304",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -918,8 +925,10 @@
       "members": [
         {
           "document": "任务处理结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "TaskResult",
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1026,6 +1035,22 @@
           "name": "CosInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DynamicImageInfo": {
+      "document": "动图参数",
+      "members": [
+        {
+          "default": "",
+          "document": "画面质量，范围：1~100。\n<li>对于webp格式，默认：75</li>\n<li>对于gif格式，小于10为低质量，大于50为高质量，其它为普通。默认：低质量。</li>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Quality",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1631,11 +1656,12 @@
       "usage": "in"
     },
     "MediaCuttingInfo": {
-      "document": "编辑处理/剪切任务信息",
+      "document": "编辑处理/剪切任务信息。\n截图结果默认存在 SaveInfoSet 的第一个存储位置。",
       "members": [
         {
           "default": "",
           "document": "截取时间信息。",
+          "example": "无",
           "member": "MediaCuttingTimeInfo",
           "name": "TimeInfo",
           "required": true,
@@ -1645,6 +1671,7 @@
         {
           "default": "",
           "document": "输出结果信息。",
+          "example": "无",
           "member": "MediaTargetInfo",
           "name": "TargetInfo",
           "required": true,
@@ -1654,6 +1681,7 @@
         {
           "default": "",
           "document": "截取结果形式信息。",
+          "example": "无",
           "member": "MediaCuttingOutForm",
           "name": "OutForm",
           "required": true,
@@ -1662,9 +1690,30 @@
         },
         {
           "default": "",
-          "document": "列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "document": "列表文件形式，存储到用户存储服务中，可选值：\n<li>NoListFile：不存储结果列表; </li>\n<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>\n<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>",
+          "example": "“”",
           "member": "string",
           "name": "ResultListSaveType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印信息，最多支持 10 个水印。",
+          "example": "无",
+          "member": "MediaCuttingWatermark",
+          "name": "WatermarkInfoSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。",
+          "example": "“”",
+          "member": "string",
+          "name": "DropPureColor",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1678,6 +1727,7 @@
         {
           "default": "",
           "document": "输出类型，可选值：\nStatic：静态图；\nDynamic：动态图；\nSprite：雪碧图；\nVideo：视频。\n\n注1：不同类型时，对应的 TargetInfo.Format 格式支持如下：\nStatic：jpg、png；\nDynamic：gif；\nSprite：jpg、png；\nVideo：mp4。\n\n注2：当 Type=Sprite时，TargetInfo指定的尺寸表示小图的大小，最终结果尺寸以输出为准。",
+          "example": "“”",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1687,6 +1737,7 @@
         {
           "default": "",
           "document": "背景填充方式，可选值：\nWhite：白色填充；\nBlack：黑色填充；\nStretch：拉伸；\nGaussian：高斯模糊；\n默认White。",
+          "example": "“”",
           "member": "string",
           "name": "FillType",
           "required": false,
@@ -1695,7 +1746,8 @@
         },
         {
           "default": "",
-          "document": "Type=Sprite时有效，表示雪碧图行数，范围为 [1,200]，默认100。",
+          "document": "【废弃】参考SpriteInfo",
+          "example": "0",
           "member": "int64",
           "name": "SpriteRowCount",
           "required": false,
@@ -1704,11 +1756,32 @@
         },
         {
           "default": "",
-          "document": "Type=Sprite时有效，表示雪碧图列数，范围为 [1,200]，默认100。",
+          "document": "【废弃】参考SpriteInfo",
+          "example": "0",
           "member": "int64",
           "name": "SpriteColumnCount",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Sprite时有效，表示雪碧图参数信息。",
+          "example": "无",
+          "member": "SpriteImageInfo",
+          "name": "SpriteInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Type=Dynamic时有效，表示动图参数信息。",
+          "example": "无",
+          "member": "DynamicImageInfo",
+          "name": "DynamicInfo",
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1720,6 +1793,7 @@
         {
           "default": "",
           "document": "如果ResultListType不为NoListFile时，结果（TaskResultFile）列表文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskResultFile",
           "name": "ListFile",
           "required": true,
@@ -1729,6 +1803,7 @@
         {
           "default": "",
           "document": "结果个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "ResultCount",
           "required": true,
@@ -1738,6 +1813,7 @@
         {
           "default": "",
           "document": "第一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskResultFile",
           "name": "FirstFile",
           "required": true,
@@ -1747,10 +1823,21 @@
         {
           "default": "",
           "document": "最后一个结果文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskResultFile",
           "name": "LastFile",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "任务结果包含的图片总数。\n静态图：总数即为文件数；\n雪碧图：所有小图总数；\n动图、视频：不计算图片数，为 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ImageCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1798,16 +1885,215 @@
       ],
       "usage": "in"
     },
+    "MediaCuttingWatermark": {
+      "document": "媒体剪切水印信息。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印类型，可选值：\n<li>Image：图像水印；</li>\n<li>Text：文字水印。</li>",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图像水印信息，当 Type=Image 时必选。",
+          "example": "无",
+          "member": "MediaCuttingWatermarkImage",
+          "name": "Image",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字水印信息，当 Type=Text 时必选。",
+          "example": "无",
+          "member": "MediaCuttingWatermarkText",
+          "name": "Text",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingWatermarkImage": {
+      "document": "媒体剪切图像水印参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印源的ID，对应SourceInfoSet内的源。\n注意1：对应的 MediaSourceInfo.Type需要为Image。\n注意2：对于动图，只取第一帧图像作为水印源。",
+          "example": "“”",
+          "member": "string",
+          "name": "SourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印水平坐标，单位像素，默认：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PosX",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印垂直坐标，单位像素，默认：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PosY",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印宽度，单位像素，默认：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印高度，单位像素，默认：0。\n注意：对于宽高符合以下规则：\n1、Width>0 且 Height>0，按指定宽高拉伸；\n2、Width=0 且 Height>0，以Height为基准等比缩放；\n3、Width>0 且 Height=0，以Width为基准等比缩放；\n4、Width=0 且 Height=0，采用源的宽高。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定坐标原点，可选值：\n<li>LeftTop：PosXY 表示水印左上点到图片左上点的相对位置</li>\n<li>RightTop：PosXY 表示水印右上点到图片右上点的相对位置</li>\n<li>LeftBottom：PosXY 表示水印左下点到图片左下点的相对位置</li>\n<li>RightBottom：PosXY 表示水印右下点到图片右下点的相对位置</li>\n<li>Center：PosXY 表示水印中心点到图片中心点的相对位置</li>\n默认：LeftTop。",
+          "example": "“”",
+          "member": "string",
+          "name": "PosOriginType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MediaCuttingWatermarkText": {
+      "document": "媒体剪切文字水印参数。",
+      "members": [
+        {
+          "default": "",
+          "document": "水印文字。",
+          "example": "“”",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "FontSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印水平坐标，单位像素，默认：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PosX",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "水印垂直坐标，单位像素，默认：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PosY",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字颜色，格式为：#RRGGBBAA，默认值：#000000。",
+          "example": "“”",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "文字透明度，范围：0~100，默认值：100。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FontAlpha",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "指定坐标原点，可选值：\n<li>LeftTop：PosXY 表示水印左上点到图片左上点的相对位置</li>\n<li>RightTop：PosXY 表示水印右上点到图片右上点的相对位置</li>\n<li>LeftBottom：PosXY 表示水印左下点到图片左下点的相对位置</li>\n<li>RightBottom：PosXY 表示水印右下点到图片右下点的相对位置</li>\n<li>Center：PosXY 表示水印中心点到图片中心点的相对位置</li>\n默认：LeftTop。",
+          "example": "“”",
+          "member": "string",
+          "name": "PosOriginType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "字体，可选值：\n<li>SimHei</li>\n<li>SimKai</li>\n<li>Arial</li>\n默认 SimHei。",
+          "example": "“”",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "MediaJoiningInfo": {
       "document": "编辑处理/拼接任务信息",
       "members": [
         {
           "default": "",
           "document": "输出目标信息，拼接只采用FileName和Format，用于指定目标文件名和格式。\n其中Format只支持mp4.",
+          "example": "null",
           "member": "MediaTargetInfo",
           "name": "TargetInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "拼接模式：\nFast：快速；\nNormal：正常；",
+          "example": "Fast",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2107,6 +2393,7 @@
         {
           "default": "",
           "document": "目标文件名，不能带特殊字符（如/等），无需后缀名，最长200字符。\n\n注1：部分子服务支持占位符，形式为： {parameter}\n预设parameter有：\nindex：序号；",
+          "example": "test",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -2116,6 +2403,7 @@
         {
           "default": "",
           "document": "媒体封装格式，最长5字符，具体格式支持根据子任务确定。",
+          "example": "mp4",
           "member": "string",
           "name": "Format",
           "required": true,
@@ -2125,6 +2413,7 @@
         {
           "default": "",
           "document": "视频流信息。",
+          "example": "null",
           "member": "TargetVideoInfo",
           "name": "TargetVideoInfo",
           "required": false,
@@ -2133,7 +2422,8 @@
         },
         {
           "default": "",
-          "document": "【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：\nUseSaveInfo：默认，结果列表和结果存储同一位置；\nNoListFile：不存储结果列表。",
+          "document": "【不再使用】",
+          "example": "\"\"",
           "member": "string",
           "name": "ResultListSaveType",
           "required": false,
@@ -2817,7 +3107,7 @@
         },
         {
           "default": "",
-          "document": "视频帧率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，如果高于原始帧率，部分服务将无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "int64",
           "name": "Fps",
@@ -2834,6 +3124,7 @@
         {
           "default": "",
           "document": "存储类型，可选值： \n1：CosInfo。",
+          "example": "0",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -2843,10 +3134,21 @@
         {
           "default": "",
           "document": "Cos形式存储信息，当Type等于1时必选。",
+          "example": "无",
           "member": "CosInfo",
           "name": "CosInfo",
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。\nID只能包含字母、数字、下划线、中划线，长读不能超过128。",
+          "example": "“”",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2957,12 +3259,129 @@
       ],
       "usage": "in"
     },
+    "SpriteImageInfo": {
+      "document": "雪碧图参数信息\n注意：雪碧图大图整体的宽和高都不能大于 65000 像素。",
+      "members": [
+        {
+          "default": "",
+          "document": "表示雪碧图行数，默认：10。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RowCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "表示雪碧图列数，默认：10。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ColumnCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "第一行元素与顶部像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "MarginTop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后一行元素与底部像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "MarginBottom",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最左一行元素与左边像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "MarginLeft",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最右一行元素与右边像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "MarginRight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小图与元素顶部像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "PaddingTop",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小图与元素底部像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "PaddingBottom",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小图与元素左边像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "PaddingLeft",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "小图与元素右边像素距离，默认：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "PaddingRight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "背景颜色，格式：#RRGGBB，默认：#FFFFFF。",
+          "example": "“”",
+          "member": "string",
+          "name": "BackgroundColor",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "StopMediaProcessTaskRequest": {
       "document": "StopMediaProcessTask请求参数结构体",
       "members": [
         {
           "default": "",
           "document": "编辑处理任务ID。",
+          "example": "12001326083614739554304",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -3549,7 +3968,8 @@
       "members": [
         {
           "default": "",
-          "document": "视频宽度，单位像素",
+          "document": "视频宽度，单位像素，一般要求是偶数，否则会向下对齐。",
+          "example": "0",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -3558,7 +3978,8 @@
         },
         {
           "default": "",
-          "document": "视频高度，单位像素",
+          "document": "视频高度，单位像素，一般要求是偶数，否则会向下对齐。",
+          "example": "0",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -3568,6 +3989,7 @@
         {
           "default": "",
           "document": "视频帧率，范围在1到120之间",
+          "example": "0",
           "member": "int64",
           "name": "FrameRate",
           "required": false,
@@ -3608,6 +4030,16 @@
           "name": "MediaInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "文件对应的md5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

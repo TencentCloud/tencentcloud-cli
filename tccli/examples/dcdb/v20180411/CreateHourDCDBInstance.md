@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dcdb CreateHourDCDBInstance --cli-unfold-argument  \
+    --ShardCount 2 \
     --ShardMemory 2 \
-    --ShardStorage 10 \
     --ShardNodeCount 2 \
-    --ShardCount 2
+    --ShardStorage 10
 ```
 
 Output: 

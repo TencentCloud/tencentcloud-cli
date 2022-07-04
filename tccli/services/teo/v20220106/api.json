@@ -1021,7 +1021,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1064,6 +1064,16 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "Bot智能分析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "IntelligenceRule",
+          "name": "IntelligenceRule",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3326,6 +3336,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "UDP分片开关；off-关闭，on-开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "UdpShard",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4341,6 +4361,16 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "UDP分片功能是否支持，off-不支持，on-支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "UdpShardOpen",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7571,7 +7601,7 @@
         },
         {
           "default": "",
-          "document": "ZoneId列表，仅在zone/instance维度下查询时该参数有效",
+          "document": "站点id列表",
           "example": "无",
           "member": "string",
           "name": "ZoneIds",
@@ -7580,7 +7610,7 @@
         },
         {
           "default": "",
-          "document": "InstanceId列表，仅在Instance维度下查询时该参数有效",
+          "document": "该字段已废弃，请使用ProxyIds字段",
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
@@ -7589,7 +7619,7 @@
         },
         {
           "default": "",
-          "document": "协议类型， 该字段当前无效",
+          "document": "该字段当前无效",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -7607,12 +7637,30 @@
         },
         {
           "default": "",
-          "document": "规则ID，仅在instance维度有效",
+          "document": "该字段当前无效，请使用Filter筛选",
           "example": "无",
           "member": "string",
           "name": "RuleId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "支持的 Filter：proxyd,ruleId",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "四层实例列表",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10213,6 +10261,140 @@
       ],
       "type": "object"
     },
+    "IntelligenceRule": {
+      "document": "智能分析规则",
+      "members": [
+        {
+          "default": "",
+          "document": "开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IntelligenceRuleItem",
+          "name": "Items",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IntelligenceRuleItem": {
+      "document": "Bot智能分析规则详情",
+      "members": [
+        {
+          "default": "",
+          "document": "恶意BOT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "evil_bot",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTableConfig": {
+      "document": "IP黑白名单及IP区域控制配置",
+      "members": [
+        {
+          "default": "",
+          "document": "开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "[]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "IpTableRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTableRule": {
+      "document": "IP黑白名单详细规则",
+      "members": [
+        {
+          "default": "",
+          "document": "动作: drop拦截，trans放行，monitor观察\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "drop",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "根据类型匹配：ip(根据ip), area(根据区域)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
+          "member": "string",
+          "name": "MatchFrom",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "匹配内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MatchContent",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "L7OfflineLog": {
       "document": "离线日志详细信息",
       "members": [
@@ -12532,6 +12714,42 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "智能客户端过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RateLimitIntelligence",
+          "name": "Intelligence",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitIntelligence": {
+      "document": "智能客户端过滤",
+      "members": [
+        {
+          "default": "",
+          "document": "功能开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "执行动作 monitor(观察), alg(挑战)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12976,6 +13194,16 @@
           "example": "无",
           "member": "SwitchConfig",
           "name": "SwitchConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "IP黑白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpTableConfig",
+          "name": "IpTableConfig",
           "required": false,
           "type": "object",
           "value_allowed_null": true

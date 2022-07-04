@@ -28,3 +28,32 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+
+
+Input: 
+
+```
+tccli ess UploadFiles --cli-unfold-argument  \
+    --FileType 字符串 \
+    --Caller.OperatorId yDxMkUyKQDWLhGUuO4zjE8VI2JmKxPkk \
+    --FileInfos.0.FileBody 字符串 \
+    --FileInfos.0.FileName 字符串 \
+    --BusinessType 字符串 \
+    --CoverRect true
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FileIds": [
+            "testfileid"
+        ],
+        "RequestId": "f56f474a-8b7d-4734-af82-a0872d6312bf",
+        "TotalCount": 1
+    }
+}
+```
+

@@ -8,6 +8,22 @@
         "title": "添加合同接口成功示例"
       }
     ],
+    "AddFlexIdInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddFlexIdInfo\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"IdType\": 0,\n    \"IdNo\": \"xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": null,\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "补充用户证件信息"
+      }
+    ],
+    "AddFlexPhoneNo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddFlexPhoneNo\n<公共请求参数>\n\n{\n    \"PayeeId\": \"1529657731805986816\",\n    \"PhoneNo\": 13412341234\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": null,\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "补充手机号信息"
+      }
+    ],
     "AddMerchant": [
       {
         "document": "添加商户接口成功",
@@ -940,12 +956,28 @@
         "title": "计算中心-计算税前金额"
       }
     ],
+    "QueryFlexBillDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexBillDownloadUrl\n<公共请求参数>\n\n{\n    \"BillDate\": \"2022-06-22\",\n    \"BillType\": \"FREEZE\",\n    \"ServiceProviderId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"Url\": \"xxxxx\",\n            \"ExpireTime\": \"2022-06-07 00:00:00\"\n        },\n        \"RequestId\": \"8ffecac1-2d89-43a9-9075-a985442ef466\"\n    }\n}",
+        "title": "查询对账单文件下载链接"
+      }
+    ],
     "QueryFlexFreezeOrderList": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexFreezeOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"字符串\",\n    \"OperationType\": \"1\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": null,\n            \"Count\": null\n        },\n        \"RequestId\": \"8eab2787-decd-470d-8d2d-1f5f2e31ecb3\"\n    }\n}",
         "title": "结算中心-查询冻结单列表"
+      }
+    ],
+    "QueryFlexOrderSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexOrderSummaryList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"PayeeId\": \"xxx\",\n    \"SummaryDate\": \"2022-05-06\",\n    \"OrderType\": \"FREEZE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": [],\n            \"Count\": 0\n        },\n        \"RequestId\": \"38d7b2b1-4c14-4a04-81d4-889267bad611\"\n    }\n}",
+        "title": "结算单汇总信息列表查询"
       }
     ],
     "QueryFlexPayeeAccountBalance": [

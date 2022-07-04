@@ -19,7 +19,7 @@
       "output": "DescribeDetailedSingleProbeDataResponse"
     },
     "DescribeProbeMetricData": {
-      "document": "列出云拨测指标详细数据",
+      "document": "查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询",
       "input": "DescribeProbeMetricDataRequest",
       "name": "列出云拨测指标详细数据",
       "output": "DescribeProbeMetricDataResponse"
@@ -400,7 +400,7 @@
       "members": [
         {
           "default": "",
-          "document": "分析任务类型",
+          "document": "分析任务类型，支持以下几种类型：\nAnalyzeTaskType_Network：网络质量\nAnalyzeTaskType_Browse：页面性能\nAnalyzeTaskType_Transport：端口性能\nAnalyzeTaskType_UploadDownload：文件传输\nAnalyzeTaskType_MediaStream：音视频体验",
           "example": "AnalyzeTaskType_UploadDownload",
           "member": "string",
           "name": "AnalyzeTaskType",
@@ -409,7 +409,7 @@
         },
         {
           "default": "",
-          "document": "指标类型，counter 或者 gauge",
+          "document": "指标类型，指标查询默认传gauge",
           "example": "gauge",
           "member": "string",
           "name": "MetricType",
@@ -418,8 +418,8 @@
         },
         {
           "default": "",
-          "document": "指标详细字段",
-          "example": "sum(counter)",
+          "document": "指标详细字段，可以传递传具体的指标也可以对指标进行聚合查询例如：\"avg(ping_time)\"代表整体时延(ms)",
+          "example": "avg(ping_time)",
           "member": "string",
           "name": "Field",
           "required": false,
@@ -427,7 +427,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件",
+          "document": "过滤条件可以传单个过滤条件也可以拼接多个参数",
           "example": "host = '123' and time >= now()-30m",
           "member": "string",
           "name": "Filter",
@@ -436,7 +436,7 @@
         },
         {
           "default": "",
-          "document": "聚合时间, 1m、1d、100d 等等",
+          "document": "聚合时间, 1m、1d、30d 等等",
           "example": "time(1m),  operator",
           "member": "string",
           "name": "GroupBy",
@@ -445,8 +445,8 @@
         },
         {
           "default": "",
-          "document": "过滤条件数组",
-          "example": "[\"\"]",
+          "document": "多条件过滤，支持多个过滤条件组合查询\n例如：[\"\"host\" = 'www.test.com'\", \"time >= now()-1h\"]",
+          "example": "\"\"host\" = 'https://test.com'\", \"time >= now()-1h\"]",
           "member": "string",
           "name": "Filters",
           "required": false,
@@ -459,8 +459,8 @@
       "document": "DescribeProbeMetricData返回参数结构体",
       "members": [
         {
-          "document": "指标 JSON 序列化后的字符串",
-          "example": "[{}]",
+          "document": "返回指标 JSON 序列化后的字符串,具体如下所示：\n\"[{\\\"name\\\":\\\"task_navigate_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(first_screen_time) / 1000\\\"],\\\"values\\\":[[1641571200,6.756600000000001]],\\\"tags\\\":null}]\"",
+          "example": "\"\"",
           "member": "string",
           "name": "MetricSet",
           "required": true,

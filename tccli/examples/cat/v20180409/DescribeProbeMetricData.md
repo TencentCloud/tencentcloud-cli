@@ -9,7 +9,7 @@ tccli cat DescribeProbeMetricData --cli-unfold-argument  \
     --AnalyzeTaskType AnalyzeTaskType_Browse \
     --MetricType gauge \
     --Field avg("count") \
-    --GroupBy time(1m), "operator" \
+    --GroupBy time(30d), "operator" \
     --Filters '"host" = 'default-host'' 'time >= now()-3h'
 ```
 

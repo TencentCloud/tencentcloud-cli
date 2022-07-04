@@ -26,7 +26,9 @@ Output:
                 "ClusterName": "tdcpg-77iesdqa",
                 "CreateTime": "2021-12-08T19:50:55+08:00",
                 "DBCharset": "UTF8",
+                "DBMajorVersion": "10",
                 "DBVersion": "10.17",
+                "DBKernelVersion": "v10.17_r1.4",
                 "EndpointSet": [
                     {
                         "ClusterId": "tdcpg-77iesdqa",

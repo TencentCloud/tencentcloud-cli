@@ -666,6 +666,12 @@
       "name": "下线隔离状态的云数据库实例",
       "output": "OfflineIsolatedInstancesResponse"
     },
+    "OpenAuditService": {
+      "document": "CDB实例开通审计服务",
+      "input": "OpenAuditServiceRequest",
+      "name": "开通审计服务",
+      "output": "OpenAuditServiceResponse"
+    },
     "OpenDBInstanceGTID": {
       "document": "本接口(OpenDBInstanceGTID)用于开启云数据库实例的 GTID，只支持版本为 5.6 以及以上的实例。",
       "input": "OpenDBInstanceGTIDRequest",
@@ -10224,6 +10230,15 @@
           "name": "CloseAudit",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "高频审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "example": "7",
+          "member": "int64",
+          "name": "HighLogExpireDay",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11377,6 +11392,51 @@
     },
     "OfflineIsolatedInstancesResponse": {
       "document": "OfflineIsolatedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceRequest": {
+      "document": "OpenAuditService请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "CDB实例ID",
+          "example": "cdb-etxaaa12",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "高频审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceResponse": {
+      "document": "OpenAuditService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

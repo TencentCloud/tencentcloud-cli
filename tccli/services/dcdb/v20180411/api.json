@@ -847,6 +847,24 @@
           "name": "DelayThresh",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
+          "example": "0",
+          "member": "int64",
+          "name": "SlaveConst",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxUserConnections",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1625,6 +1643,7 @@
         {
           "default": "",
           "document": "用户名",
+          "example": "无",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -1634,6 +1653,7 @@
         {
           "default": "",
           "document": "用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -1643,6 +1663,7 @@
         {
           "default": "",
           "document": "用户备注信息",
+          "example": "无",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -1652,6 +1673,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -1661,6 +1683,7 @@
         {
           "default": "",
           "document": "最后更新时间",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -1670,6 +1693,7 @@
         {
           "default": "",
           "document": "只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
+          "example": "无",
           "member": "int64",
           "name": "ReadOnly",
           "required": true,
@@ -1679,8 +1703,19 @@
         {
           "default": "",
           "document": "如果备机延迟超过本参数设置值，系统将认为备机发生故障\n建议该参数值大于10。当ReadOnly选择1、2时该参数生效。",
+          "example": "无",
           "member": "int64",
           "name": "DelayThresh",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。",
+          "example": "无",
+          "member": "int64",
+          "name": "SlaveConst",
           "required": true,
           "type": "int",
           "value_allowed_null": false

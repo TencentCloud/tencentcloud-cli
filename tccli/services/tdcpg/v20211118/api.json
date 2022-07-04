@@ -533,7 +533,7 @@
         },
         {
           "default": "",
-          "document": "数据库版本",
+          "document": "TDSQL-C PostgreSQL 合入的社区版本号",
           "example": "10.17",
           "member": "string",
           "name": "DBVersion",
@@ -660,6 +660,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 合入的社区主要版本号",
+          "example": "10",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 内核版本号",
+          "example": "v10.17_r1.4",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -750,15 +770,6 @@
         },
         {
           "default": "",
-          "document": "数据库版本，目前仅支持 10.17",
-          "example": "10.17",
-          "member": "string",
-          "name": "DBVersion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|\\(){}[]:;'<>,.?/中的任意三种",
           "example": "1111@AAAA",
           "member": "string",
@@ -822,6 +833,15 @@
         },
         {
           "default": "",
+          "document": "TDSQL-C PostgreSQL 合入的社区版本号。\n支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。\n注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。",
+          "example": "10.17",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
           "document": "项目Id，默认为0表示默认项目",
           "example": "0",
           "member": "uint64",
@@ -864,6 +884,24 @@
           "name": "AutoRenewFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 合入的社区主要版本号。\n支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。\n注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。",
+          "example": "10",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 内核版本号。\n支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。\n注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。",
+          "example": "v10.17_r1.4",
+          "member": "string",
+          "name": "DBKernelVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1658,6 +1696,26 @@
           "example": "RW",
           "member": "string",
           "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 合入的社区主要版本号",
+          "example": "10",
+          "member": "string",
+          "name": "DBMajorVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "TDSQL-C PostgreSQL 内核版本号",
+          "example": "v10.17_r1.4",
+          "member": "string",
+          "name": "DBKernelVersion",
           "required": true,
           "type": "string",
           "value_allowed_null": false
