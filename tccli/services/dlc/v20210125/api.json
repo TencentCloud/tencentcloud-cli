@@ -451,7 +451,48 @@
     },
     "AlterDMSDatabaseRequest": {
       "document": "AlterDMSDatabase请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "当前名称",
+          "example": "anme",
+          "member": "string",
+          "name": "CurrentName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "schema名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "路径",
+          "example": "cosn://aaa",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "基础对象",
+          "example": "无",
+          "member": "Asset",
+          "name": "Asset",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "AlterDMSDatabaseResponse": {
@@ -724,7 +765,162 @@
     },
     "Asset": {
       "document": "元数据基本对象",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "对象GUID值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx-xxxx-xxx-xxx",
+          "member": "string",
+          "name": "Guid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "描述信息",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "对象owner",
+          "example": "root",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "对象owner账户",
+          "example": "root",
+          "member": "string",
+          "name": "OwnerAccount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "权限",
+          "example": "无",
+          "member": "KVPair",
+          "name": "PermValues",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "附加属性",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Params",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "附加业务属性",
+          "example": "无",
+          "member": "KVPair",
+          "name": "BizParams",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据版本",
+          "example": "1",
+          "member": "int64",
+          "name": "DataVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "创建时间",
+          "example": "2021-01-01 12:12:12",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "修改时间",
+          "example": "2021-01-01 12:12:12",
+          "member": "datetime_iso",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "数据源主键",
+          "example": "1",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
       "usage": "both"
     },
     "AttachUserPolicyRequest": {
@@ -1130,6 +1326,36 @@
     "CreateDMSDatabaseRequest": {
       "document": "CreateDMSDatabase请求参数结构体",
       "members": [
+        {
+          "default": "",
+          "document": "基础元数据对象",
+          "example": "无",
+          "member": "Asset",
+          "name": "Asset",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Schema目录",
+          "example": "Schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Db存储路径",
+          "example": "cosn://bucket-1",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
         {
           "default": "",
           "document": "数据库名称",
@@ -3547,12 +3773,83 @@
     },
     "DescribeDMSDatabaseRequest": {
       "document": "DescribeDMSDatabase请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "schema名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "匹配规则",
+          "example": "*",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DescribeDMSDatabaseResponse": {
       "document": "DescribeDMSDatabase返回参数结构体",
       "members": [
+        {
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "n1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://123",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "数据对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Asset",
+          "name": "Asset",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3673,6 +3970,16 @@
           "name": "Limit",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "表达式",
+          "example": "base64()",
+          "member": "string",
+          "name": "Expression",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -5508,7 +5815,38 @@
     },
     "DropDMSDatabaseRequest": {
       "document": "DropDMSDatabase请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "default": "",
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否删除数据",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteData",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否级联删除",
+          "example": "true",
+          "member": "bool",
+          "name": "Cascade",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
       "type": "object"
     },
     "DropDMSDatabaseResponse": {

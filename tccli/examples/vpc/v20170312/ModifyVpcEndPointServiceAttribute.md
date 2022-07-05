@@ -9,7 +9,8 @@ tccli vpc ModifyVpcEndPointServiceAttribute --cli-unfold-argument  \
     --AutoAcceptFlag True \
     --EndPointServiceName 测试 \
     --EndPointServiceId vpcsvc-kngiybxl \
-    --VpcId vpc-hj3he929
+    --VpcId vpc-hj3he929 \
+    --ServiceType CLB
 ```
 
 Output: 

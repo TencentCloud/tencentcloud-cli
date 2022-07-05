@@ -4091,10 +4091,20 @@
         },
         {
           "default": "",
-          "document": "操作者Uin",
+          "document": "操作者Uin，该字段已废弃，使用OperateUin代替",
           "example": "[10002274123]",
           "member": "int64",
           "name": "OperatorUin",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作者Uin",
+          "example": "[\"10002274123\"]",
+          "member": "string",
+          "name": "OperateUin",
           "required": false,
           "type": "list",
           "visibility": 1
@@ -6353,7 +6363,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6362,7 +6373,8 @@
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -6371,7 +6383,8 @@
           "member": "int64",
           "name": "ShardIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6386,7 +6399,8 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

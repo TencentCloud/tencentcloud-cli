@@ -867,7 +867,7 @@
     "ModifyLocalBinlogConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyLocalBinlogConfig\n&InstanceId=cdb-c1nl9rpv\n&SaveHours=72\n&MaxUsage=30\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLocalBinlogConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"MaxUsage\": \"30\",\n    \"SaveHours\": \"72\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改本地binlog保留策略"
       }

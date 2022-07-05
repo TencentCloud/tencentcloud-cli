@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli dlc DropDMSDatabase --cli-unfold-argument ```
+tccli dlc DropDMSDatabase --cli-unfold-argument  \
+    --Name Name1 \
+    --DeleteData False \
+    --Cascade False
+```
 
 Output: 
 ```

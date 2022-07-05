@@ -7098,7 +7098,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7107,7 +7108,8 @@
           "member": "string",
           "name": "EndPointServiceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7116,7 +7118,8 @@
           "member": "bool",
           "name": "AutoAcceptFlag",
           "required": true,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7125,7 +7128,8 @@
           "member": "string",
           "name": "ServiceInstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7134,7 +7138,18 @@
           "member": "bool",
           "name": "IsPassService",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB",
+          "example": "CLB,CDB,CRS",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -7149,7 +7164,8 @@
           "name": "EndPointService",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19939,7 +19955,8 @@
           "member": "string",
           "name": "EndPointServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19948,7 +19965,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19957,7 +19975,8 @@
           "member": "string",
           "name": "EndPointServiceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19966,7 +19985,8 @@
           "member": "bool",
           "name": "AutoAcceptFlag",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -19975,7 +19995,18 @@
           "member": "string",
           "name": "ServiceInstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB",
+          "example": "CLB,CDB,CRS",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ie CreateEditingTask --cli-unfold-argument  \
-    --EditingInfo.TagEditingInfo.Switch 1 \
+    --DownInfo.UrlInfo.Url http://test.video.myqcloud.com/testA.mp4 \
     --DownInfo.Type 0 \
-    --DownInfo.UrlInfo.Url http://test.video.myqcloud.com/testA.mp4
+    --EditingInfo.TagEditingInfo.Switch 1
 ```
 
 Output: 

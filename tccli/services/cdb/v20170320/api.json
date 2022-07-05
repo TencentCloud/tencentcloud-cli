@@ -11271,16 +11271,18 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "本地binlog保留时长，可取值范围：[72,168]。",
+          "document": "本地binlog保留时长，可取值范围：[120,168]。",
           "example": "100",
           "member": "int64",
           "name": "SaveHours",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -11289,7 +11291,8 @@
           "member": "int64",
           "name": "MaxUsage",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"

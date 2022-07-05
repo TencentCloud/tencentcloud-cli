@@ -326,6 +326,14 @@
         "title": "查询扩容云数据库实例的价格"
       }
     ],
+    "DestroyDBInstance": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=DestroyDBInstance\n&InstanceId=tdsql-avw0207d\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c4fba95-01e4-61d9-4146-59fc5afdf962\",\n        \"FlowId\": 100,\n        \"InstanceId\": \"tdsql-avw0207d\"\n    }\n}",
+        "title": "请求示例DEMO"
+      }
+    ],
     "DestroyHourDBInstance": [
       {
         "document": "",

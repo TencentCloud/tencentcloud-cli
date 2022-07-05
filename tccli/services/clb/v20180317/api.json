@@ -2368,7 +2368,8 @@
           "member": "string",
           "name": "LoadBalancerType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2377,7 +2378,8 @@
           "member": "int64",
           "name": "Forward",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2386,7 +2388,8 @@
           "member": "string",
           "name": "LoadBalancerName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2395,7 +2398,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2404,7 +2408,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2413,7 +2418,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2422,7 +2428,8 @@
           "member": "string",
           "name": "AddressIPVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2431,7 +2438,8 @@
           "member": "uint64",
           "name": "Number",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2440,7 +2448,8 @@
           "member": "string",
           "name": "MasterZoneId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2449,7 +2458,8 @@
           "member": "string",
           "name": "ZoneId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2458,7 +2468,8 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2467,16 +2478,18 @@
           "member": "string",
           "name": "VipIsp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "购买负载均衡的同时，给负载均衡打上标签。",
+          "document": "购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2485,7 +2498,8 @@
           "member": "string",
           "name": "Vip",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2494,7 +2508,8 @@
           "member": "string",
           "name": "BandwidthPackageId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2503,7 +2518,8 @@
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2512,7 +2528,8 @@
           "member": "string",
           "name": "SlaType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2521,7 +2538,8 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2530,7 +2548,8 @@
           "member": "bool",
           "name": "SnatPro",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2539,7 +2558,8 @@
           "member": "SnatIp",
           "name": "SnatIps",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2548,7 +2568,8 @@
           "member": "string",
           "name": "ClusterTag",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2557,7 +2578,8 @@
           "member": "string",
           "name": "SlaveZoneId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2566,7 +2588,8 @@
           "member": "string",
           "name": "EipAddressId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2575,7 +2598,8 @@
           "member": "bool",
           "name": "LoadBalancerPassToTarget",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2590,7 +2614,8 @@
           "name": "LoadBalancerIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -2599,7 +2624,8 @@
           "name": "DealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
