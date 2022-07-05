@@ -240,6 +240,12 @@
       "name": "变配实例询价",
       "output": "DescribeUpgradePriceResponse"
     },
+    "DestroyDBInstance": {
+      "document": "本接口(DestroyDBInstance)用于销毁已隔离的包年包月实例。",
+      "input": "DestroyDBInstanceRequest",
+      "name": "销毁已隔离的包年包月实例",
+      "output": "DestroyDBInstanceResponse"
+    },
     "DestroyHourDBInstance": {
       "document": "本接口（DestroyHourDBInstance）用于销毁按量计费实例。",
       "input": "DestroyHourDBInstanceRequest",
@@ -4771,6 +4777,51 @@
           "name": "Formula",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBInstanceRequest": {
+      "document": "DestroyDBInstance请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "实例 ID，格式如：tdsqlshard-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "tdsql-avw0207d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyDBInstanceResponse": {
+      "document": "DestroyDBInstance返回参数结构体",
+      "members": [
+        {
+          "document": "实例 ID，与入参InstanceId一致。",
+          "example": "tdsql-avw0207d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/237/16177)。",
+          "example": "100",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

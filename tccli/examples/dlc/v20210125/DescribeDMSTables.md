@@ -131,7 +131,19 @@ Output:
                     "DbName": "xx",
                     "Retention": 0
                 },
-                "Asset": {}
+                "Asset": {
+                    "Description": "xx",
+                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                    "DataVersion": 0,
+                    "OwnerAccount": "xx",
+                    "CreateTime": "2020-09-22T00:00:00+00:00",
+                    "Catalog": "xx",
+                    "DatasourceId": 0,
+                    "Owner": "xx",
+                    "Guid": "xx",
+                    "Id": 0,
+                    "Name": "xx"
+                }
             }
         ],
         "TotalCount": 0,

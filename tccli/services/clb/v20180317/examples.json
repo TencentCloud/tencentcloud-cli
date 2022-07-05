@@ -97,13 +97,13 @@
     "CreateLoadBalancer": [
       {
         "document": "在私有网络中创建一个公网负载均衡",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancer\n&LoadBalancerType=OPEN\n&Forward=1\n&VpcId=vpc-30xqxt9p\n&LoadBalancerName=test\n&ProjectId=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"Forward\": \"1\",\n    \"ProjectId\": \"0\",\n    \"LoadBalancerType\": \"OPEN\",\n    \"VpcId\": \"vpc-30xqxt9p\",\n    \"LoadBalancerName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-6efswuxa\"\n        ],\n        \"DealName\": \"20220101660009831340631\",\n        \"RequestId\": \"9b3f0b57-fb64-4918-8dd6-ce02604fb52c\"\n    }\n}",
         "title": "创建一个公网负载均衡实例"
       },
       {
         "document": "在私有网络中创建一个内网负载均衡",
-        "input": "https://clb.tencentcloudapi.com/?Action=CreateLoadBalancer\n&LoadBalancerType=INTERNAL\n&Forward=1\n&LoadBalancerName=test_internal\n&VpcId=vpc-30xqxt9p\n&SubnetId=subnet-k57djpow\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"Forward\": \"1\",\n    \"SubnetId\": \"subnet-k57djpow\",\n    \"LoadBalancerType\": \"INTERNAL\",\n    \"VpcId\": \"vpc-30xqxt9p\",\n    \"LoadBalancerName\": \"test_internal\"\n}",
         "output": "{\n    \"Response\": {\n        \"LoadBalancerIds\": [\n            \"lb-kmfrnqci\"\n        ],\n        \"DealName\": \"20211230660009761735781\",\n        \"RequestId\": \"7ffa6830-cd1b-4bc4-8e24-1688885f594a\"\n    }\n}",
         "title": "创建一个内网负载均衡实例"
       }

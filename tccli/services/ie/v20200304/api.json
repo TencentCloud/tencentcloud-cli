@@ -586,6 +586,7 @@
         {
           "default": "",
           "document": "智能编辑任务参数。",
+          "example": "无",
           "member": "EditingInfo",
           "name": "EditingInfo",
           "required": true,
@@ -594,6 +595,7 @@
         {
           "default": "",
           "document": "视频源信息。",
+          "example": "无",
           "member": "DownInfo",
           "name": "DownInfo",
           "required": true,
@@ -602,6 +604,7 @@
         {
           "default": "",
           "document": "结果存储信息。对于包含智能拆条、智能集锦或者智能封面的任务必选。",
+          "example": "无",
           "member": "SaveInfo",
           "name": "SaveInfo",
           "required": false,
@@ -610,6 +613,7 @@
         {
           "default": "",
           "document": "任务结果回调地址信息。",
+          "example": "无",
           "member": "CallbackInfo",
           "name": "CallbackInfo",
           "required": false,
@@ -623,8 +627,10 @@
       "members": [
         {
           "document": "编辑任务 ID，可以通过该 ID 查询任务状态。",
+          "example": "8E312055EBF7A503B92947E6D3B21EFF_1573715265075",
           "member": "string",
           "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

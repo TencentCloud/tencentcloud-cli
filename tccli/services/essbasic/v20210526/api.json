@@ -948,7 +948,7 @@
         },
         {
           "default": "",
-          "document": "签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。",
+          "document": "签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -957,10 +957,55 @@
         },
         {
           "default": "",
-          "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。",
-          "example": "“https://qq.com”",
+          "document": "签署链接生成类型，默认是 \"ALL\"；\n\"ALL\"：全部签署方签署链接；\n\"CHANNEL\"：渠道合作企业；\n\"NOT_CHANNEL\"：非渠道合作企业；\n\"PERSON\"：个人；",
+          "example": "CHANNEL",
           "member": "string",
-          "name": "JumpUrl",
+          "name": "GenerateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "非渠道合作企业参与方的企业名称，GenerateType为\"NOT_CHANNEL\"时必填",
+          "example": "测试企业",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参与人姓名，GenerateType为\"PERSON\"时必填",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "参与人手机号，GenerateType为\"PERSON\"时必填",
+          "example": "xxx",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道合作企业的企业Id，GenerateType为\"CHANNEL\"时必填",
+          "example": "xxx",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "渠道合作企业参与人OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人",
+          "example": "xxx",
+          "member": "string",
+          "name": "OpenId",
           "required": false,
           "type": "string"
         },
@@ -972,6 +1017,15 @@
           "name": "AutoJumpBack",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。",
+          "example": "“https://qq.com”",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",

@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb ModifyLocalBinlogConfig --cli-unfold-argument  \
     --InstanceId cdb-c1nl9rpv \
-    --SaveHours 72 \
-    --MaxUsage 30
+    --MaxUsage 30 \
+    --SaveHours 72
 ```
 
 Output: 

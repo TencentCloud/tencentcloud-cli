@@ -3,7 +3,7 @@
     "CreateEditingTask": [
       {
         "document": "对一个视频进行标签识别",
-        "input": "https://ie.tencentcloudapi.com/?Action=CreateEditingTask\n&EditingInfo.TagEditingInfo.Switch=1\n&DownInfo.Type=0\n&DownInfo.UrlInfo.Url=http://test.video.myqcloud.com/testA.mp4\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ie.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEditingTask\n<公共请求参数>\n\n{\n    \"DownInfo\": {\n        \"UrlInfo\": {\n            \"Url\": \"http://test.video.myqcloud.com/testA.mp4\"\n        },\n        \"Type\": \"0\"\n    },\n    \"EditingInfo\": {\n        \"TagEditingInfo\": {\n            \"Switch\": \"1\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"8E312055EBF7A503B92947E6D3B21EFF_1573715265075\",\n        \"RequestId\": \"5z1993x8-05y9-14a8-ab55-192ff22297c9\"\n    }\n}",
         "title": "创建智能编辑任务"
       }

@@ -11120,7 +11120,7 @@
         },
         {
           "default": "",
-          "document": "本地binlog保留时长，可取值范围：[72,168]。",
+          "document": "本地binlog保留时长，可取值范围：[120,168]。",
           "example": "100",
           "member": "int64",
           "name": "SaveHours",

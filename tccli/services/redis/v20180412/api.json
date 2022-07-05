@@ -4081,10 +4081,19 @@
         },
         {
           "default": "",
-          "document": "操作者Uin",
+          "document": "操作者Uin，该字段已废弃，使用OperateUin代替",
           "example": "[10002274123]",
           "member": "int64",
           "name": "OperatorUin",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "操作者Uin",
+          "example": "[\"10002274123\"]",
+          "member": "string",
+          "name": "OperateUin",
           "required": false,
           "type": "list"
         }

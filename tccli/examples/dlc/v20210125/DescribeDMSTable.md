@@ -99,7 +99,37 @@ Output:
         "LifeTime": 0,
         "RequestId": "xx",
         "Retention": 0,
-        "Asset": {},
+        "Asset": {
+            "Description": "xx",
+            "ModifiedTime": "2020-09-22T00:00:00+00:00",
+            "DataVersion": 0,
+            "BizParams": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ],
+            "OwnerAccount": "xx",
+            "CreateTime": "2020-09-22T00:00:00+00:00",
+            "Catalog": "xx",
+            "Params": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ],
+            "PermValues": [
+                {
+                    "Value": "xx",
+                    "Key": "xx"
+                }
+            ],
+            "Owner": "xx",
+            "DatasourceId": 0,
+            "Guid": "xx",
+            "Id": 0,
+            "Name": "xx"
+        },
         "ViewExpandedText": "xx",
         "SchemaName": "xx",
         "LastAccessTime": "2020-09-22T00:00:00+00:00",

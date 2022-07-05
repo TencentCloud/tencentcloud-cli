@@ -35,7 +35,7 @@
     "CreateAutoSnapshotPolicy": [
       {
         "document": "创建一个定期快照策略，绑定该定期快照策略的云盘会在每周5的0点创建快照。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=CreateAutoSnapshotPolicy\r\n&AutoSnapshotPolicyName=backup_data_friday\r\n&Policy.0.DayOfWeek.0=4\r\n&Policy.0.Hour.0=0\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyName\": \"backup_data_friday\",\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                \"4\"\n            ],\n            \"Hour\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AutoSnapshotPolicyId\": \"asp-1lebc9r3\",\n        \"NextTriggerTime\": \"2018-08-08 16:00:00\",\n        \"RequestId\": \"88d95732-c4e9-bd97-4a23-5a1f978d3b72\"\n    }\n}",
         "title": "创建定期快照策略"
       }
@@ -241,9 +241,21 @@
     "ModifyAutoSnapshotPolicyAttribute": [
       {
         "document": "修改该定期快照策略的名称为data_disk_auto_snapshot，且将IsPermanent置为TRUE，通过该定期快照策略创建的快照为永久保留的快照。",
-        "input": "https://cbs.tencentcloudapi.com/?Action=ModifyAutoSnapshotPolicyAttribute\r\n&AutoSnapshotPolicyId=asp-nqu08k2l\r\n&AutoSnapshotPolicyName=data_disk_auto_snapshot\r\n&IsPermanent=TRUE\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoSnapshotPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-nqu08k2l\",\n    \"AutoSnapshotPolicyName\": \"data_disk_auto_snapshot\",\n    \"IsPermanent\": \"TRUE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"384c1fa8-6973-9623-b6bf-5a1fa9a7ad88\"\n    }\n}",
         "title": "修改定期快照策略属性"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoSnapshotPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-01928374\",\n    \"IsActivated\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88a4815c-4a09-4948-b0c9-fa6fdefe8e4a\"\n    }\n}",
+        "title": "示例请求"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoSnapshotPolicyAttribute\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-01928374\",\n    \"IsActivated\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88a4815c-4a09-4948-b0c9-fa6fdefe8e4a\"\n    }\n}",
+        "title": "示例请求2"
       }
     ],
     "ModifyDiskAttributes": [

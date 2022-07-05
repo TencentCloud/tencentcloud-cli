@@ -921,8 +921,8 @@
     "DescribePurchaseStateInfo": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribePurchaseStateInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuthorizedImageCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"GivenAuthorizedCnt\": 500,\n        \"AuthorizedCoresCnt\": 1,\n        \"ImageCnt\": 1,\n        \"State\": 0,\n        \"RequestId\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"CoresCnt\": 1,\n        \"AutomaticRenewal\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurchaseStateInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AuthorizedImageCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"GivenAuthorizedCnt\": 500,\n        \"AuthorizedCoresCnt\": 1,\n        \"ImageCnt\": 1,\n        \"State\": 4,\n        \"RequestId\": \"xx\",\n        \"ExpirationTime\": \"xx\",\n        \"CoresCnt\": 1,\n        \"AutomaticRenewal\": 0,\n        \"BeginTime\": \"xx\",\n        \"SubState\": \"ISOLATE\"\n    }\n}",
         "title": "查询容器安全服务已购买信息"
       }
     ],
