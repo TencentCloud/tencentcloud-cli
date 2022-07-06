@@ -6,58 +6,60 @@ Input:
 
 ```
 tccli ms DescribeShieldPlanInstance --cli-unfold-argument  \
-    --Pids 12750 \
-    --ResourceId jsihsih-xx
+    --ResourceId xxx \
+    --Pid 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5e93a212-ca01-0fdc-eedd-5a1fce5e83e6",
         "BindInfo": {
-            "AppIconUrl": "",
-            "AppName": "微信",
-            "AppPkgName": "com.tencent.mm"
+            "AppPkgName": "xx",
+            "AppIconUrl": "xx",
+            "AppName": "xx"
+        },
+        "ResourceServiceInfo": {
+            "ExpireTime": 1,
+            "ResourceName": "xx",
+            "CreateTime": 1
         },
         "ShieldPlanInfo": {
-            "TotalCount": 5,
+            "TotalCount": 1,
             "PlanSet": [
                 {
-                    "IsDefault": 0,
+                    "PlanName": "xx",
                     "PlanId": 1,
-                    "PlanName": "部分加固",
                     "PlanInfo": {
                         "Dex": 1,
-                        "So": 1,
-                        "Bugly": 1,
-                        "AntiRepack": 1,
-                        "SeperateDex": 0,
-                        "Db": 0,
-                        "DexSig": 1,
-                        "AntiLogLeak": 0,
-                        "AntiVMP": 0,
-                        "AntiQemuRoot": 0,
-                        "AntiAssets": 0,
-                        "AntiScreenshot": 0,
-                        "AntiSSL": 0,
                         "SoType": [
                             "so_low_com_dump_huidu"
                         ],
+                        "AntiLogLeak": 1,
+                        "ApkSizeOpt": 1,
                         "SoInfo": {
                             "SoFileNames": [
                                 "1.so",
                                 "2.so"
                             ]
-                        }
-                    }
+                        },
+                        "AntiQemuRoot": 1,
+                        "AntiVMP": 1,
+                        "Db": 1,
+                        "SeperateDex": 1,
+                        "AntiScreenshot": 1,
+                        "So": 1,
+                        "AntiRepack": 1,
+                        "AntiAssets": 1,
+                        "DexSig": 1,
+                        "Bugly": 1,
+                        "AntiSSL": 1
+                    },
+                    "IsDefault": 1
                 }
             ]
         },
-        "ResourceServiceInfo": {
-            "CreateTime": "",
-            "ExpireTime": ""
-        }
+        "RequestId": "xx"
     }
 }
 ```

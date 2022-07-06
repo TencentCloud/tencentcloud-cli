@@ -7,28 +7,29 @@ Input:
 ```
 tccli ms DescribeResourceInstances --cli-unfold-argument  \
     --Pids 12750 \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5e93a212-ca01-0fdc-eedd-5a1fce5e83e6",
-        "TotalCount": 10,
+        "TotalCount": 1,
+        "RequestId": "xx",
         "ResourceSet": [
             {
-                "ResourceId": "",
-                "ResourceName": "应用加固",
-                "Pid": "",
-                "CreateTime": "",
-                "ExpireTime": "",
+                "ResourceId": "xx",
+                "Pid": 1,
+                "ExpireTime": 1,
                 "IsBind": 1,
+                "ResourceName": "xx",
                 "BindInfo": {
-                    "AppName": "微信",
-                    "AppPkgName": "com.tencent.mm"
-                }
+                    "AppPkgName": "xx",
+                    "AppIconUrl": "xx",
+                    "AppName": "xx"
+                },
+                "CreateTime": 1
             }
         ]
     }

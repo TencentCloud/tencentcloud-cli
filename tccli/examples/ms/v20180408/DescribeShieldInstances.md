@@ -32,6 +32,7 @@ Output:
                 "ShieldCode": 0,
                 "AppUrl": "https://www.example.com/a.apk",
                 "AppIconUrl": "https://wwww.example.com/12334",
+                "ClientIp": "xx",
                 "ShieldMd5": "ae5df985a27b07f56d8c670fef70d7c9",
                 "ShieldSize": 1193311,
                 "TaskStatus": 1,

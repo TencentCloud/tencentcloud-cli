@@ -30,17 +30,18 @@ Output:
                 "Solution": "xx",
                 "ImageName": "xx",
                 "Behavior": "xx",
+                "ContainerNetStatus": "xx",
+                "ProcessPath": "xx",
                 "MatchRuleName": "xx",
+                "ContainerStatus": "xx",
                 "ContainerId": "xx",
                 "RuleId": "xx",
                 "MatchAction": "xx",
-                "ProcessPath": "xx",
+                "ContainerNetSubStatus": "xx",
                 "FoundTime": "2020-09-22 00:00:00",
                 "RuleExist": true,
-                "Id": "xx",
-                "ContainerNetStatus": "xx",
-                "ContainerNetSubStatus": "xx",
-                "ContainerIsolateOperationSrc": "xx"
+                "ContainerIsolateOperationSrc": "xx",
+                "Id": "xx"
             }
         ],
         "TotalCount": 1,

@@ -881,6 +881,7 @@
         {
           "default": "",
           "document": "待加固的应用信息",
+          "example": "无",
           "member": "AppInfo",
           "name": "AppInfo",
           "required": true,
@@ -889,6 +890,7 @@
         {
           "default": "",
           "document": "加固服务信息",
+          "example": "无",
           "member": "ServiceInfo",
           "name": "ServiceInfo",
           "required": true,
@@ -902,15 +904,19 @@
       "members": [
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "1",
           "member": "uint64",
           "name": "Progress",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "任务唯一标识",
+          "example": "shgugu-hiw72-334kd",
           "member": "string",
           "name": "ItemId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -929,6 +935,7 @@
         {
           "default": "",
           "document": "资源id",
+          "example": "127500-shi",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -937,6 +944,7 @@
         {
           "default": "",
           "document": "策略名称",
+          "example": "默认加固策略",
           "member": "string",
           "name": "PlanName",
           "required": true,
@@ -945,6 +953,7 @@
         {
           "default": "",
           "document": "策略具体信息",
+          "example": "无",
           "member": "PlanInfo",
           "name": "PlanInfo",
           "required": true,
@@ -958,15 +967,21 @@
       "members": [
         {
           "document": "策略id",
+          "example": "1",
           "member": "uint64",
           "name": "PlanId",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "1",
           "member": "uint64",
           "name": "Progress",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1015,6 +1030,7 @@
         {
           "default": "",
           "document": "任务唯一标识ItemId的列表",
+          "example": "satea",
           "member": "string",
           "name": "ItemIds",
           "required": true,
@@ -1028,9 +1044,12 @@
       "members": [
         {
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "5975134874",
           "member": "uint64",
           "name": "Progress",
-          "type": "int"
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1046,47 +1065,53 @@
       "members": [
         {
           "default": "",
-          "document": "资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。",
-          "member": "uint64",
-          "name": "Pids",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "document": "支持通过资源id，pid进行查询",
+          "document": "支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "数量限制，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "CreateTime",
+          "default": "",
+          "document": "资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。",
+          "example": "[\"12750\\r\\n\"]",
+          "member": "uint64",
+          "name": "Pids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
           "document": "按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。",
+          "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "desc",
+          "default": "",
           "document": "升序（asc）还是降序（desc），默认：desc。",
+          "example": "desc",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1100,15 +1125,19 @@
       "members": [
         {
           "document": "符合要求的资源数量",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "符合要求的资源数组",
+          "example": "无",
           "member": "ResourceInfo",
           "name": "ResourceSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1251,22 +1280,25 @@
         {
           "default": "",
           "document": "支持通过app名称，app包名，加固的服务版本，提交的渠道进行筛选。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "0",
+          "default": "",
           "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "20",
+          "default": "",
           "document": "数量限制，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1275,6 +1307,7 @@
         {
           "default": "",
           "document": "可以提供ItemId数组来查询一个或者多个结果。注意不可以同时指定ItemIds和Filters。",
+          "example": "无",
           "member": "string",
           "name": "ItemIds",
           "required": false,
@@ -1283,14 +1316,16 @@
         {
           "default": "",
           "document": "按某个字段排序，目前仅支持TaskTime排序。",
+          "example": "\"TaskTime\"",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "desc",
+          "default": "",
           "document": "升序（asc）还是降序（desc），默认：desc。",
+          "example": "\"desc\"",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1304,15 +1339,19 @@
       "members": [
         {
           "document": "符合要求的app数量",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "一个关于app详细信息的结构体，主要包括app的基本信息和加固信息。",
+          "example": "无",
           "member": "AppSetInfo",
           "name": "AppSet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1331,6 +1370,7 @@
         {
           "default": "",
           "document": "资源id",
+          "example": "jsihsih-xx",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1339,6 +1379,7 @@
         {
           "default": "",
           "document": "服务类别id",
+          "example": "123",
           "member": "uint64",
           "name": "Pid",
           "required": true,
@@ -1352,22 +1393,28 @@
       "members": [
         {
           "document": "绑定资源信息",
+          "example": "无",
           "member": "BindInfo",
           "name": "BindInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "加固策略信息",
+          "example": "无",
           "member": "ShieldPlanInfo",
           "name": "ShieldPlanInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "加固资源信息",
+          "example": "无",
           "member": "ResourceServiceInfo",
           "name": "ResourceServiceInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1386,6 +1433,7 @@
         {
           "default": "",
           "document": "任务唯一标识",
+          "example": "1shi2e-2387hjgus",
           "member": "string",
           "name": "ItemId",
           "required": true,
@@ -1399,36 +1447,46 @@
       "members": [
         {
           "document": "任务状态: 0-请返回,1-已完成,2-处理中,3-处理出错,4-处理超时",
+          "example": "0",
           "member": "uint64",
           "name": "TaskStatus",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "document": "app加固前的详细信息",
+          "example": "无",
           "member": "AppDetailInfo",
           "name": "AppDetailInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "app加固后的详细信息",
+          "example": "无",
           "member": "ShieldInfo",
           "name": "ShieldInfo",
+          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "document": "状态描述",
+          "example": "\"\"",
           "member": "string",
           "name": "StatusDesc",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "document": "状态指引",
+          "example": "\"\"",
           "member": "string",
           "name": "StatusRef",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

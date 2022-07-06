@@ -133,6 +133,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "调用者身份uin",
+          "example": "1000001",
+          "member": "string",
+          "name": "SourceIdentity",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

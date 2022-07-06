@@ -35,7 +35,8 @@ Output:
                 "NodeName": "xx",
                 "ContainerNetStatus": "xx",
                 "ContainerNetSubStatus": "xx",
-                "ContainerIsolateOperationSrc": "xx"
+                "ContainerIsolateOperationSrc": "xx",
+                "ContainerStatus": "xx"
             }
         ],
         "TotalCount": 1,

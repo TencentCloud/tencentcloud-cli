@@ -307,7 +307,7 @@
     "DescribeLaunchTemplates": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeLaunchTemplates\n&LaunchTemplateIds.0=lt-q9t8j8eg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchTemplates\n<公共请求参数>\n\n{\n    \"LaunchTemplateIds\": [\n        \"lt-q9t8j8eg\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchTemplateSet\": [\n            {\n                \"LatestVersionNumber\": 12,\n                \"LaunchTemplateId\": \"lt-q9t8j8eg\",\n                \"LaunchTemplateName\": \"未命名foo\\\"'\\\"'''\\\"\\\"\",\n                \"DefaultVersionNumber\": 5,\n                \"LaunchTemplateVersionCount\": 8,\n                \"CreatedBy\": \"251009920\",\n                \"CreationTime\": \"2020-12-16T08:05:02Z\"\n            }\n        ],\n        \"RequestId\": \"b2d70642-c69a-4115-ae4e-f6ddade68fea\"\n    }\n}",
         "title": "查询实例启动模板"
       }

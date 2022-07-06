@@ -35,7 +35,7 @@
     "CreateShieldInstance": [
       {
         "document": "通过该接口提交要加固的app信息（示例中的AppUrl和CallbackUrl仅示例，实际无法使用，请用实际可用的url进行替换）",
-        "input": "https://ms.tencentcloudapi.com/?Action=CreateShieldInstance\r\n&AppInfo.AppUrl=http://example.com/1.apk\r\n&AppInfo.AppMd5=dd5b29a800246d7089febf228286d901\r\n&AppInfo.AppSize=1024\r\n&ServiceInfo.ServiceEdition=basic\r\n&ServiceInfo.CallbackUrl=http://example.com/cb\r\n&ServiceInfo.SubmitSource=MC\r\n&<公共请求参数>",
+        "input": "https://ms.tencentcloudapi.com/?Action=CreateShieldInstance\n&AppInfo.AppUrl=http://example.com/1.apk\n&AppInfo.AppMd5=dd5b29a800246d7089febf228286d901\n&AppInfo.AppSize=1024\n&ServiceInfo.ServiceEdition=basic\n&ServiceInfo.CallbackUrl=http://example.com/cb\n&ServiceInfo.SubmitSource=MC\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1,\n        \"ItemId\": \"shgugu-hiw72-334kd\"\n    }\n}",
         "title": "提交一个app进行加固"
       }
@@ -43,7 +43,7 @@
     "CreateShieldPlanInstance": [
       {
         "document": "",
-        "input": "https://ms.tencentcloudapi.com/?Action=CreateShieldPlanInstance\r\n&ResourceId=127500-shi\r\n&PlanName=默认加固策略\r\n&PlanInfo.ApkSizeOpt=1\r\n&PlanInfo.Dex=1\r\n&PlanInfo.So=1\r\n&PlanInfo.Bugly=0\r\n&PlanInfo.AntiRepack=1\r\n&PlanInfo.Db=0\r\n&PlanInfo.DexSig=1\r\n&PlanInfo.SeperateDex=0\r\n&PlanInfo.AntiLogLeak=0\r\n&PlanInfo.AntiVMP=0\r\n&PlanInfo.AntiQemuRoot=0\r\n&PlanInfo.AntiAssets=0\r\n&PlanInfo.AntiScreenshot=0\r\n&PlanInfo.AntiSSL=0\r\n&PlanInfo.SoType=so_low_com_dump_huidu\r\n&PlanInfo.SoInfo.SoFileNames.0=1.so\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateShieldPlanInstance\n<公共请求参数>\n\n{\n    \"PlanName\": \"xx\",\n    \"ResourceId\": \"xx\",\n    \"PlanInfo\": {\n        \"Dex\": \"1\",\n        \"SoType\": [\n            \"xx\"\n        ],\n        \"AntiLogLeak\": \"0\",\n        \"ApkSizeOpt\": \"1\",\n        \"SoInfo\": {\n            \"SoFileNames\": [\n                \"xx\"\n            ]\n        },\n        \"AntiQemuRoot\": \"0\",\n        \"AntiVMP\": \"0\",\n        \"Db\": \"0\",\n        \"SeperateDex\": \"0\",\n        \"AntiScreenshot\": \"0\",\n        \"So\": \"1\",\n        \"AntiRepack\": \"1\",\n        \"AntiAssets\": \"0\",\n        \"DexSig\": \"1\",\n        \"Bugly\": \"0\",\n        \"AntiSSL\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1,\n        \"PlanId\": 1\n    }\n}",
         "title": "新增加固策略"
       }
@@ -59,7 +59,7 @@
     "DeleteShieldInstances": [
       {
         "document": "通过传入ItemId集合删除1个或者多个加固实例",
-        "input": "https://ms.tencentcloudapi.com/?Action=DeleteShieldInstances\r\n&ItemIds.0=hhussxu-hui2677-kk\r\n&ItemIds.1=xyuu-csu-ee78236l\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShieldInstances\n<公共请求参数>\n\n{\n    \"ItemIds\": [\n        \"xyuu-csu-ee78236l\",\n        \"hhussxu-hui2677-kk\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Progress\": 1\n    }\n}",
         "title": "根据ItemId对加固实例进行删除"
       }
@@ -67,8 +67,8 @@
     "DescribeResourceInstances": [
       {
         "document": "获取某个用户的加固资源信息",
-        "input": "https://ms.tencentcloudapi.com/?Action=DescribeResourceInstances\r\n&Pids.0=12750\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"TotalCount\": 10,\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"\",\n                \"ResourceName\": \"应用加固\",\n                \"Pid\": \"\",\n                \"CreateTime\": \"\",\n                \"ExpireTime\": \"\",\n                \"IsBind\": 1,\n                \"BindInfo\": {\n                    \"AppName\": \"微信\",\n                    \"AppPkgName\": \"com.tencent.mm\"\n                }\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceInstances\n<公共请求参数>\n\n{\n    \"Pids\": [\n        \"12750\"\n    ],\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"xx\",\n                \"Pid\": 1,\n                \"ExpireTime\": 1,\n                \"IsBind\": 1,\n                \"ResourceName\": \"xx\",\n                \"BindInfo\": {\n                    \"AppPkgName\": \"xx\",\n                    \"AppIconUrl\": \"xx\",\n                    \"AppName\": \"xx\"\n                },\n                \"CreateTime\": 1\n            }\n        ]\n    }\n}",
         "title": "获取某个用户的加固资源信息"
       }
     ],
@@ -91,25 +91,31 @@
     "DescribeShieldInstances": [
       {
         "document": "根据加固实例的包名和名称进行筛选，并返回最新的20条记录",
-        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldInstances\r\n&Filters.0.Name=AppName\r\n&Filters.0.Value=wechat\r\n&Filters.1.Name=AppPkgName\r\n&Filters.1.Value=com.tencent.mm\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"TotalCount\": 10,\n        \"AppSet\": [\n            {\n                \"ItemId\": \"1234-xcse-ddw1\",\n                \"AppName\": \"微信\",\n                \"AppPkgName\": \"com.tencent.mm\",\n                \"AppVersion\": \"6.5\",\n                \"AppMd5\": \"der2331ds\",\n                \"AppSize\": 123454,\n                \"ServiceEdition\": \"basic\",\n                \"ShieldCode\": 0,\n                \"AppUrl\": \"https://www.example.com/a.apk\",\n                \"AppIconUrl\": \"https://wwww.example.com/12334\",\n                \"ShieldMd5\": \"ae5df985a27b07f56d8c670fef70d7c9\",\n                \"ShieldSize\": 1193311,\n                \"TaskStatus\": 1,\n                \"TaskTime\": 1524744997\n            }\n        ]\n    }\n}",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldInstances\n&Filters.0.Name=AppName\n&Filters.0.Value=wechat\n&Filters.1.Name=AppPkgName\n&Filters.1.Value=com.tencent.mm\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"TotalCount\": 10,\n        \"AppSet\": [\n            {\n                \"ItemId\": \"1234-xcse-ddw1\",\n                \"AppName\": \"微信\",\n                \"AppPkgName\": \"com.tencent.mm\",\n                \"AppVersion\": \"6.5\",\n                \"AppMd5\": \"der2331ds\",\n                \"AppSize\": 123454,\n                \"ServiceEdition\": \"basic\",\n                \"ShieldCode\": 0,\n                \"AppUrl\": \"https://www.example.com/a.apk\",\n                \"AppIconUrl\": \"https://wwww.example.com/12334\",\n                \"ClientIp\": \"xx\",\n                \"ShieldMd5\": \"ae5df985a27b07f56d8c670fef70d7c9\",\n                \"ShieldSize\": 1193311,\n                \"TaskStatus\": 1,\n                \"TaskTime\": 1524744997\n            }\n        ]\n    }\n}",
         "title": "查询加固实例列表"
       }
     ],
     "DescribeShieldPlanInstance": [
       {
         "document": "",
-        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldPlanInstance\r\n&Pids=12750\r\n&ResourceId=jsihsih-xx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"BindInfo\": {\n            \"AppIconUrl\": \"\",\n            \"AppName\": \"微信\",\n            \"AppPkgName\": \"com.tencent.mm\"\n        },\n        \"ShieldPlanInfo\": {\n            \"TotalCount\": 5,\n            \"PlanSet\": [\n                {\n                    \"IsDefault\": 0,\n                    \"PlanId\": 1,\n                    \"PlanName\": \"部分加固\",\n                    \"PlanInfo\": {\n                        \"Dex\": 1,\n                        \"So\": 1,\n                        \"Bugly\": 1,\n                        \"AntiRepack\": 1,\n                        \"SeperateDex\": 0,\n                        \"Db\": 0,\n                        \"DexSig\": 1,\n                        \"AntiLogLeak\": 0,\n                        \"AntiVMP\": 0,\n                        \"AntiQemuRoot\": 0,\n                        \"AntiAssets\": 0,\n                        \"AntiScreenshot\": 0,\n                        \"AntiSSL\": 0,\n                        \"SoType\": [\n                            \"so_low_com_dump_huidu\"\n                        ],\n                        \"SoInfo\": {\n                            \"SoFileNames\": [\n                                \"1.so\",\n                                \"2.so\"\n                            ]\n                        }\n                    }\n                }\n            ]\n        },\n        \"ResourceServiceInfo\": {\n            \"CreateTime\": \"\",\n            \"ExpireTime\": \"\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShieldPlanInstance\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxx\",\n    \"Pid\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindInfo\": {\n            \"AppPkgName\": \"xx\",\n            \"AppIconUrl\": \"xx\",\n            \"AppName\": \"xx\"\n        },\n        \"ResourceServiceInfo\": {\n            \"ExpireTime\": 1,\n            \"ResourceName\": \"xx\",\n            \"CreateTime\": 1\n        },\n        \"ShieldPlanInfo\": {\n            \"TotalCount\": 1,\n            \"PlanSet\": [\n                {\n                    \"PlanName\": \"xx\",\n                    \"PlanId\": 1,\n                    \"PlanInfo\": {\n                        \"Dex\": 1,\n                        \"SoType\": [\n                            \"so_low_com_dump_huidu\"\n                        ],\n                        \"AntiLogLeak\": 1,\n                        \"ApkSizeOpt\": 1,\n                        \"SoInfo\": {\n                            \"SoFileNames\": [\n                                \"1.so\",\n                                \"2.so\"\n                            ]\n                        },\n                        \"AntiQemuRoot\": 1,\n                        \"AntiVMP\": 1,\n                        \"Db\": 1,\n                        \"SeperateDex\": 1,\n                        \"AntiScreenshot\": 1,\n                        \"So\": 1,\n                        \"AntiRepack\": 1,\n                        \"AntiAssets\": 1,\n                        \"DexSig\": 1,\n                        \"Bugly\": 1,\n                        \"AntiSSL\": 1\n                    },\n                    \"IsDefault\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询加固策略信息"
       }
     ],
     "DescribeShieldResult": [
       {
         "document": "通过唯一标识获取加固的结果，唯一标识ItemId通过请求加固接口返回",
-        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldResult\r\n&ItemId=1shi2e-2387hjgus\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"TaskStatus\": 0,\n        \"StatusDesc\": \"\",\n        \"StatusRef\": \"\",\n        \"AppDetailInfo\": {\n            \"AppName\": \"微信\",\n            \"AppPkgName\": \"com.tencent.mm\",\n            \"AppVersion\": \"1.0\",\n            \"AppSize\": 1234565,\n            \"AppMd5\": \"dd5b29a800246d7089febf228286d901\",\n            \"AppIconUrl\": \"https://example.com/1.png\"\n        },\n        \"ShieldInfo\": {\n            \"ShieldCode\": 1,\n            \"ShieldSize\": 1024,\n            \"ShieldMd5\": \"25787jhids\",\n            \"AppUrl\": \"https://example.com/1.apk\",\n            \"TaskTime\": 1245478744,\n            \"ItemId\": \"hji452-huhsxqwq1212\"\n        }\n    }\n}",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeShieldResult\n&ItemId=1shi2e-2387hjgus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"TaskStatus\": 0,\n        \"StatusDesc\": \"\",\n        \"StatusRef\": \"\",\n        \"AppDetailInfo\": {\n            \"AppName\": \"微信\",\n            \"AppPkgName\": \"com.tencent.mm\",\n            \"AppVersion\": \"1.0\",\n            \"AppSize\": 1234565,\n            \"AppMd5\": \"dd5b29a800246d7089febf228286d901\",\n            \"FileName\": \"xx\",\n            \"AppIconUrl\": \"https://example.com/1.png\"\n        },\n        \"ShieldInfo\": {\n            \"ShieldCode\": 1,\n            \"ShieldSize\": 1024,\n            \"ShieldMd5\": \"25787jhids\",\n            \"AppUrl\": \"https://example.com/1.apk\",\n            \"TaskTime\": 1245478744,\n            \"ItemId\": \"hji452-huhsxqwq1212\",\n            \"ServiceEdition\": \"xx\"\n        }\n    }\n}",
         "title": "查询加固结果"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShieldResult\n<公共请求参数>\n\n{\n    \"ItemId\": \"0b5465636cac72bb98e24b6aa4f4c488\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppDetailInfo\": {\n            \"AppIconUrl\": \"https://ms-shield-logo-1251001047-1252181758.cosgz.myqcloud.com/0/881ac0a49b3ae9967022217730cc0da8/onetools.apklogo\",\n            \"AppMd5\": \"881ac0a49b3ae9967022217730cc0da8\",\n            \"AppName\": \"一个木函\",\n            \"AppPkgName\": \"com.One.WoodenLetter\",\n            \"AppSize\": 4743475,\n            \"AppVersion\": \"7.8.1\",\n            \"FileName\": \"onetools.apk\"\n        },\n        \"RequestId\": \"5bcf07de-03fe-4f8b-b859-9b7b47316045\",\n        \"ShieldInfo\": {\n            \"AppUrl\": \"https://ms-shield-1251001047-1252181758.cos.ap-guangzhou.myqcloud.com/encrypt_dist/881ac0a49b3ae9967022217730cc0da8.20220412121930.apk?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID2oNhcKawrmdDWc9eO1TheMnxsZeT983h%26q-sign-time%3D1650339239%3B1650342839%26q-key-time%3D1650339239%3B1650342839%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dfbf5764a72c6e42c97aeb53c6cf6e6b85f6e7689%00\",\n            \"ItemId\": \"0b5465636cac72bb98e24b6aa4f4c488\",\n            \"ServiceEdition\": \"basic\",\n            \"ShieldCode\": 0,\n            \"ShieldMd5\": \"5c5d992097727c2f9789fea97441bd52\",\n            \"ShieldSize\": 5373548,\n            \"TaskTime\": 1649737137\n        },\n        \"StatusDesc\": \"\",\n        \"StatusRef\": \"\",\n        \"TaskStatus\": 1\n    }\n}",
+        "title": "返回"
       }
     ],
     "DescribeUrlDetectionResult": [

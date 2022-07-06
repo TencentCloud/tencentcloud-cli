@@ -37,9 +37,9 @@
       "output": "CreateSealByImageResponse"
     },
     "CreateSignUrls": {
-      "document": "创建参与者签署短链",
+      "document": "创建跳转小程序查看或签署的链接",
       "input": "CreateSignUrlsRequest",
-      "name": "获取跳转小程序签署链接",
+      "name": "获取跳转小程序查看或签署链接",
       "output": "CreateSignUrlsResponse"
     },
     "DescribeFlowDetailInfo": {
@@ -2923,7 +2923,7 @@
       "document": "UploadFiles返回参数结构体",
       "members": [
         {
-          "document": "文件id数组",
+          "document": "文件id数组，有效期一个小时",
           "example": "无",
           "member": "string",
           "name": "FileIds",
@@ -2993,13 +2993,23 @@
         },
         {
           "default": "",
-          "document": "消耗量",
+          "document": "消耗数量",
           "example": "50",
           "member": "uint64",
           "name": "Usage",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "撤回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cancel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

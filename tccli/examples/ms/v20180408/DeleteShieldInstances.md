@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ms DeleteShieldInstances --cli-unfold-argument  \
-    --ItemIds hhussxu-hui2677-kk xyuu-csu-ee78236l
+    --ItemIds xyuu-csu-ee78236l hhussxu-hui2677-kk
 ```
 
 Output: 

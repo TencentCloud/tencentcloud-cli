@@ -1835,6 +1835,16 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2018,6 +2028,16 @@
           "example": "false",
           "member": "bool",
           "name": "IsDualStack",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -2892,6 +2912,26 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDualStack",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "用于分配service的IP range，由系统自动分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "Ipv6ServiceCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3713,6 +3753,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12822,6 +12871,15 @@
           "name": "AutoUpgradeClusterLevel",
           "required": false,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12872,6 +12930,15 @@
           "name": "AutoUpgradeClusterLevel",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         },
         {
@@ -13074,6 +13141,15 @@
           "name": "Unschedulable",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13769,6 +13845,16 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

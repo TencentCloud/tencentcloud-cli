@@ -24,6 +24,7 @@ Output:
         "ClusterName": "xx",
         "ProjectId": 0,
         "ClusterDesc": "xx",
+        "QGPUShareEnable": true,
         "RequestId": "xx",
         "ClusterLevel": "xx"
     }

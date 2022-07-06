@@ -1388,6 +1388,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1905,6 +1915,16 @@
           "example": "xxx",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14562,7 +14582,7 @@
         },
         {
           "default": "",
-          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>",
+          "document": "过滤条件。\n<li>FileName - String - 是否必填：否 - 文件名称</li>\n<li>FilePath - String - 是否必填：否 - 文件路径</li>\n<li>VirusName - String - 是否必填：否 - 病毒名称</li>\n<li>ContainerName- String - 是否必填：是 - 容器名称</li>\n<li>ContainerId- string - 是否必填：否 - 容器id</li>\n<li>ImageName- string - 是否必填：否 - 镜像名称</li>\n<li>ImageId- string - 是否必填：否 - 镜像id</li>\n<li>IsRealTime- int - 是否必填：否 - 过滤是否实时监控数据</li>\n<li>TaskId- string - 是否必填：否 - 任务ID</li>\n<li>ContainerNetStatus - String -是否必填: 否 -  容器网络状态筛选 NORMAL ISOLATED ISOLATING RESTORING RESTORE_FAILED</li>\n<li>TimeRange - string -是否必填: 否 - 时间范围筛选 [\"2022-03-31 16:55:00\", \"2022-03-31 17:00:00\"]</li>\n<li>ContainerStatus - string -是否必填: 否 - 容器状态 RUNNING PAUSED STOPPED CREATED DESTROYED RESTARTING REMOVING</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -15395,6 +15415,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "xx",
+          "member": "string",
+          "name": "ContainerStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19091,6 +19121,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19512,6 +19552,16 @@
           "example": "xxx",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
+          "example": "xxx",
+          "member": "string",
+          "name": "ContainerStatus",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20820,7 +20870,7 @@
         },
         {
           "default": "",
-          "document": "容器状态，CS_RUNING:运行， CS_PAUSE:暂停，CS_STOP:停止，\n\t\t\t\t\t\t\t\t\t\t\t\t       CS_CREATE:已经创建， CS_DESTORY:销毁",
+          "document": "容器状态\n正在运行: RUNNING\n暂停: PAUSED\n停止: STOPPED\n已经创建: CREATED\n已经销毁: DESTROYED\n正在重启中: RESTARTING\n迁移中: REMOVING",
           "example": "xxx",
           "member": "string",
           "name": "ContainerStatus",

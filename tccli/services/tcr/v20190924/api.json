@@ -1339,6 +1339,15 @@
           "name": "IsPublic",
           "required": true,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "云标签描述",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3427,12 +3436,30 @@
         },
         {
           "default": "",
-          "document": "页偏移",
+          "document": "页面偏移（第几页）",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "列出所有命名空间",
+          "example": "0",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7254,6 +7281,7 @@
         {
           "default": "",
           "document": "命名空间名称",
+          "example": "ns1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7263,6 +7291,7 @@
         {
           "default": "",
           "document": "创建时间",
+          "example": "2022-07-06 14:20:38",
           "member": "datetime_iso",
           "name": "CreationTime",
           "required": true,
@@ -7272,6 +7301,7 @@
         {
           "default": "",
           "document": "访问级别",
+          "example": "true",
           "member": "bool",
           "name": "Public",
           "required": true,
@@ -7281,11 +7311,22 @@
         {
           "default": "",
           "document": "命名空间的Id",
+          "example": "1",
           "member": "int64",
           "name": "NamespaceId",
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
