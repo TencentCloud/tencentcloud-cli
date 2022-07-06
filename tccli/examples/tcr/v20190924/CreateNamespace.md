@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr CreateNamespace --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
     --NamespaceName mytest \
-    --IsPublic true
+    --IsPublic true \
+    --RegistryId tcr-okmj78
 ```
 
 Output: 

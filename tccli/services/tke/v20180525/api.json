@@ -1649,7 +1649,8 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1659,7 +1660,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1669,7 +1671,8 @@
           "name": "ClusterDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1679,7 +1682,8 @@
           "name": "ClusterVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1689,7 +1693,8 @@
           "name": "ClusterOs",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1699,7 +1704,8 @@
           "name": "ClusterType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1709,7 +1715,8 @@
           "name": "ClusterNetworkSettings",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1719,7 +1726,8 @@
           "name": "ClusterNodeNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1729,7 +1737,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1739,7 +1748,8 @@
           "name": "TagSpecification",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1749,7 +1759,8 @@
           "name": "ClusterStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1759,7 +1770,8 @@
           "name": "Property",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1769,7 +1781,8 @@
           "name": "ClusterMaterNodeNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1779,7 +1792,8 @@
           "name": "ImageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1789,7 +1803,8 @@
           "name": "OsCustomizeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1799,7 +1814,8 @@
           "name": "ContainerRuntime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1809,7 +1825,8 @@
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1819,7 +1836,8 @@
           "name": "DeletionProtection",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1829,7 +1847,8 @@
           "name": "EnableExternalNode",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1839,7 +1858,8 @@
           "name": "ClusterLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1849,7 +1869,19 @@
           "name": "AutoUpgradeClusterLevel",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -2050,6 +2082,17 @@
           "example": "false",
           "member": "bool",
           "name": "IsDualStack",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
           "required": false,
           "type": "bool",
           "value_allowed_null": false,
@@ -2956,6 +2999,28 @@
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDualStack",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "用于分配service的IP range，由系统自动分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "Ipv6ServiceCIDR",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3789,6 +3854,16 @@
           "name": "Tags",
           "required": false,
           "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -7135,7 +7210,8 @@
           "member": "string",
           "name": "ClusterIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7144,7 +7220,8 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7153,7 +7230,8 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7162,7 +7240,8 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7171,7 +7250,8 @@
           "member": "string",
           "name": "ClusterType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7186,7 +7266,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "集群信息列表",
@@ -7195,7 +7276,8 @@
           "name": "Clusters",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12310,7 +12392,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12320,7 +12403,8 @@
           "name": "InstanceRole",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12330,7 +12414,8 @@
           "name": "FailedReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12340,7 +12425,8 @@
           "name": "InstanceState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12350,7 +12436,8 @@
           "name": "DrainStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12360,7 +12447,8 @@
           "name": "InstanceAdvancedSettings",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12370,7 +12458,8 @@
           "name": "CreatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12380,7 +12469,8 @@
           "name": "LanIP",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12390,7 +12480,8 @@
           "name": "NodePoolId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -12400,7 +12491,8 @@
           "name": "AutoscalingGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -12973,7 +13065,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12982,7 +13075,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -12991,7 +13085,8 @@
           "member": "string",
           "name": "ClusterName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13000,7 +13095,8 @@
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13009,7 +13105,8 @@
           "member": "string",
           "name": "ClusterLevel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13018,7 +13115,18 @@
           "member": "AutoUpgradeClusterLevel",
           "name": "AutoUpgradeClusterLevel",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否开启QGPU共享",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13033,7 +13141,8 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -13042,7 +13151,8 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群描述\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -13051,7 +13161,8 @@
           "name": "ClusterDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群等级\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -13060,7 +13171,8 @@
           "name": "ClusterLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "自动变配集群等级\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -13069,7 +13181,18 @@
           "name": "AutoUpgradeClusterLevel",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QGPUShareEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13162,7 +13285,8 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13171,7 +13295,8 @@
           "member": "string",
           "name": "NodePoolId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13180,7 +13305,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13189,7 +13315,8 @@
           "member": "int64",
           "name": "MaxNodesNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13198,7 +13325,8 @@
           "member": "int64",
           "name": "MinNodesNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13207,7 +13335,8 @@
           "member": "Label",
           "name": "Labels",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13216,7 +13345,8 @@
           "member": "Taint",
           "name": "Taints",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13225,7 +13355,8 @@
           "member": "bool",
           "name": "EnableAutoscale",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13234,7 +13365,8 @@
           "member": "string",
           "name": "OsName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13243,7 +13375,8 @@
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13252,7 +13385,8 @@
           "member": "InstanceExtraArgs",
           "name": "ExtraArgs",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13261,7 +13395,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -13270,7 +13405,18 @@
           "member": "int64",
           "name": "Unschedulable",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "删除保护开关",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -13792,7 +13938,8 @@
           "name": "NodePoolId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13802,7 +13949,8 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13812,7 +13960,8 @@
           "name": "ClusterInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13822,7 +13971,8 @@
           "name": "LifeState",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13832,7 +13982,8 @@
           "name": "LaunchConfigurationId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13842,7 +13993,8 @@
           "name": "AutoscalingGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13852,7 +14004,8 @@
           "name": "Labels",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13862,7 +14015,8 @@
           "name": "Taints",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13872,7 +14026,8 @@
           "name": "NodeCountSummary",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13882,7 +14037,8 @@
           "name": "AutoscalingGroupStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13892,7 +14048,8 @@
           "name": "MaxNodesNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13902,7 +14059,8 @@
           "name": "MinNodesNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13912,7 +14070,8 @@
           "name": "DesiredNodesNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13922,7 +14081,8 @@
           "name": "NodePoolOs",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13932,7 +14092,8 @@
           "name": "OsCustomizeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13942,7 +14103,8 @@
           "name": "ImageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13952,7 +14114,8 @@
           "name": "DesiredPodNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13962,7 +14125,8 @@
           "name": "UserScript",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -13972,7 +14136,19 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "删除保护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

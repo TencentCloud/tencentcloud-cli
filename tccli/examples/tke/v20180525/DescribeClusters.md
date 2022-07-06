@@ -15,7 +15,11 @@ Output:
         "RequestId": "xx",
         "Clusters": [
             {
-                "DeletionProtection": true,
+                "QGPUShareEnable": true,
+                "EnableExternalNode": true,
+                "ClusterMaterNodeNum": 1,
+                "CreatedTime": "xx",
+                "ClusterLevel": "xx",
                 "ClusterVersion": "xx",
                 "TagSpecification": [
                     {
@@ -28,18 +32,20 @@ Output:
                         ]
                     }
                 ],
-                "ClusterName": "xx",
-                "ClusterId": "xx",
                 "ClusterNodeNum": 1,
-                "ClusterType": "xx",
                 "ClusterDescription": "xx",
                 "ImageId": "xx",
-                "CreatedTime": "xx",
-                "EnableExternalNode": true,
                 "ContainerRuntime": "xx",
-                "ClusterMaterNodeNum": 1,
-                "ProjectId": 1,
+                "ClusterOs": "xx",
+                "AutoUpgradeClusterLevel": true,
                 "OsCustomizeType": "xx",
+                "ProjectId": 1,
+                "ClusterId": "xx",
+                "ClusterType": "xx",
+                "ClusterStatus": "xx",
+                "Property": "xx",
+                "DeletionProtection": true,
+                "ClusterName": "xx",
                 "ClusterNetworkSettings": {
                     "Subnets": [
                         "xx"
@@ -51,12 +57,10 @@ Output:
                     "MaxNodePodNum": 1,
                     "Ipvs": true,
                     "ClusterCIDR": "xx",
+                    "IgnoreServiceCIDRConflict": true,
                     "IgnoreClusterCIDRConflict": true,
                     "Cni": true
-                },
-                "Property": "xx",
-                "ClusterOs": "xx",
-                "ClusterStatus": "xx"
+                }
             }
         ]
     }
