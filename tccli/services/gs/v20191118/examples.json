@@ -3,7 +3,7 @@
     "CreateSession": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=CreateSession\n&UserId=字符串型\n&GameId=字符串型\n&GameRegion=字符串型\n&ClientSession=字符串型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"GameRegion\": \"字符串型\",\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"ClientSession\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"xx\",\n        \"ServerSession\": \"xx\",\n        \"Role\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "CreateSession示例"
       }
@@ -19,7 +19,7 @@
     "SaveGameArchive": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=SaveGameArchive\n&UserId=字符串型\n&GameId=字符串型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveGameArchive\n<公共请求参数>\n\n{\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "SaveGameArchive示例"
       }
@@ -27,7 +27,7 @@
     "StartPublishStream": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=StartPublishStream\n&UserId=123123\n&PublishUrl=rtmp://live.stream.com/publish\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"123123\",\n    \"PublishUrl\": \"rtmp://live.stream.com/publish\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "开始云端推流"
       }
@@ -35,7 +35,7 @@
     "StopGame": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=StopGame\n&UserId=字符串型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopGame\n<公共请求参数>\n\n{\n    \"UserId\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"72864dc3-9537-432c-8f01-78b4d35ea18a\"\n    }\n}",
         "title": "StopGame示例"
       }
@@ -43,7 +43,7 @@
     "StopPublishStream": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=StopPublishStream\n&UserId=123123\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"123123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "停止云端推流"
       }
@@ -51,7 +51,7 @@
     "SwitchGameArchive": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=SwitchGameArchive\n&UserId=字符串型\n&GameId=字符串型\n&GameArchiveUrl=字符串型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchGameArchive\n<公共请求参数>\n\n{\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"GameArchiveUrl\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "SwitchGameArchive示例"
       }
@@ -59,7 +59,7 @@
     "TrylockWorker": [
       {
         "document": "",
-        "input": "https://gs.tencentcloudapi.com/?Action=TrylockWorker\n&UserId=字符串型\n&GameId=字符串型\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TrylockWorker\n<公共请求参数>\n\n{\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42a7c28d-6b1c-4b47-927c-035e3ffc1098\"\n    }\n}",
         "title": "TrylockWorker示例"
       }

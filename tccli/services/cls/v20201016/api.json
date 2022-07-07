@@ -392,6 +392,34 @@
     "serviceShortName": "cls"
   },
   "objects": {
+    "AlarmAnalysisConfig": {
+      "document": "告警多维分析一些配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "example": "k",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "v",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "AlarmInfo": {
       "document": "告警策略描述",
       "members": [
@@ -770,17 +798,19 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "分析类型：query，field",
+          "document": "分析类型：query，field ，original",
           "example": "query",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -790,7 +820,19 @@
           "name": "Content",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "example": "无",
+          "member": "AlarmAnalysisConfig",
+          "name": "ConfigInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

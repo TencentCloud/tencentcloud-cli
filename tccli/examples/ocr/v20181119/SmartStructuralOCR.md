@@ -7,7 +7,7 @@ Input:
 ```
 tccli ocr SmartStructuralOCR --cli-unfold-argument  \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralOCR1.jpg \
-    --ItemNames 标题 姓名
+    --ItemNames 姓名 标题
 ```
 
 Output: 

@@ -66,7 +66,8 @@
           "member": "string",
           "name": "ClientSession",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -75,7 +76,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -84,7 +86,8 @@
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -93,7 +96,8 @@
           "member": "string",
           "name": "GameRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -102,7 +106,8 @@
           "member": "string",
           "name": "GameParas",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -111,7 +116,8 @@
           "member": "string",
           "name": "Resolution",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -120,7 +126,8 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -129,7 +136,8 @@
           "member": "uint64",
           "name": "SetNo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -138,7 +146,8 @@
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -147,7 +156,8 @@
           "member": "uint64",
           "name": "MaxBitrate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -156,7 +166,8 @@
           "member": "uint64",
           "name": "MinBitrate",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -165,7 +176,8 @@
           "member": "uint64",
           "name": "Fps",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -174,7 +186,8 @@
           "member": "string",
           "name": "UserIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -183,7 +196,8 @@
           "member": "uint64",
           "name": "Optimization",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -192,7 +206,8 @@
           "member": "string",
           "name": "HostUserId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -201,7 +216,8 @@
           "member": "string",
           "name": "Role",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -210,7 +226,8 @@
           "member": "string",
           "name": "GameContext",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -219,7 +236,8 @@
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -234,7 +252,8 @@
           "name": "ServerSession",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "【已废弃】",
@@ -243,7 +262,8 @@
           "name": "RoleNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "【互动云游】角色；Player表示玩家；Viewer表示观察者",
@@ -252,7 +272,8 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -327,7 +348,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -336,7 +358,8 @@
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -363,7 +386,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -372,7 +396,8 @@
           "member": "string",
           "name": "PublishUrl",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -399,7 +424,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -408,7 +434,8 @@
           "member": "string",
           "name": "HostUserId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -435,7 +462,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -462,7 +490,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -471,7 +500,8 @@
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -480,7 +510,8 @@
           "member": "string",
           "name": "GameArchiveUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -489,7 +520,8 @@
           "member": "string",
           "name": "GameContext",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -516,7 +548,8 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -525,7 +558,8 @@
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -534,7 +568,8 @@
           "member": "string",
           "name": "GameRegion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -543,7 +578,8 @@
           "member": "uint64",
           "name": "SetNo",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -552,7 +588,8 @@
           "member": "string",
           "name": "UserIp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -561,7 +598,8 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

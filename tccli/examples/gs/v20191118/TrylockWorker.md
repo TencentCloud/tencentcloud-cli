@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gs TrylockWorker --cli-unfold-argument  \
-    --UserId 字符串型 \
-    --GameId 字符串型
+    --GameId 字符串型 \
+    --UserId 字符串型
 ```
 
 Output: 

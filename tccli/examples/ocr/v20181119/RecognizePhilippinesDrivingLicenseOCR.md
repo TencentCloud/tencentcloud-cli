@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ocr RecognizePhilippinesDrivingLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
-    --ReturnHeadImage true
+    --ReturnHeadImage true \
+    --ImageUrl https://xx/a.jpg
 ```
 
 Output: 

@@ -1,7 +1,7 @@
 {
   "actions": {
     "DismissRoom": {
-      "document": "通过game_id、room_id解散房间",
+      "document": "此接口无法使用，游戏联机对战引擎MGOBE已于6.1正式下架，感谢您的支持\n\n通过game_id、room_id解散房间",
       "input": "DismissRoomRequest",
       "name": "解散房间",
       "output": "DismissRoomResponse"

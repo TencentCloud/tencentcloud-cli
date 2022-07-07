@@ -16802,6 +16802,28 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -19698,6 +19720,17 @@
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -21006,6 +21039,17 @@
           "example": "无",
           "member": "string",
           "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
           "required": true,
           "type": "string",
           "value_allowed_null": false,
@@ -25147,16 +25191,6 @@
       "members": [
         {
           "default": "",
-          "document": "收款用户ID",
-          "example": "无",
-          "member": "string",
-          "name": "PayeeId",
-          "required": true,
-          "type": "string",
-          "visibility": 1
-        },
-        {
-          "default": "",
           "document": "开始时间，格式\"yyyy-MM-dd hh:mm:ss\"",
           "example": "无",
           "member": "string",
@@ -25183,6 +25217,16 @@
           "name": "PageNumber",
           "required": true,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": false,
+          "type": "string",
           "visibility": 1
         },
         {
@@ -35781,6 +35825,39 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "操作类型",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],
