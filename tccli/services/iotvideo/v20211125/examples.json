@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "CallDeviceActionAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionAsync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx_76854689_1\",\n    \"InputParams\": \"{\\\"test_para1\\\":22}\",\n    \"ActionId\": \"test_action\",\n    \"ProductId\": \"L78xxxxZ95\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b8a77a8-16f5-46a9-8456-0686c9420c7d\",\n        \"ClientToken\": \"141812200::8b8a77a8-16f5-46a9-8456-0686c9420c7d\",\n        \"Status\": \"Sent\"\n    }\n}",
+        "title": "异步调用设备行为"
+      }
+    ],
+    "CallDeviceActionSync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx_76854689_1\",\n    \"InputParams\": \"{\\\"test_para1\\\":22}\",\n    \"ActionId\": \"test_action\",\n    \"ProductId\": \"L78xxxxZ95\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea5f6542-3a2e-4bf7-8cac-11907e0a72a0\",\n        \"ClientToken\": \"141812200::ea5f6542-3a2e-4bf7-8cac-11907e0a72a0\",\n        \"OutputParams\": \"{\\\"test_res_para1\\\":3,\\\"test_res_para2\\\":5}\",\n        \"Status\": \"success\"\n    }\n}",
+        "title": "同步调用设备行为"
+      }
+    ],
+    "DescribeDeviceDataStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceDataStats\n<公共请求参数>\n\n{\n    \"StartDate\": \"2022-06-11\",\n    \"EndDate\": \"2022-06-13\",\n    \"ProductId\": \"L78xxxxZ95\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b658399-9313-4d92-8b0c-458c7765a0b6\",\n        \"RegisterCnt\": 15,\n        \"Data\": [\n            {\n                \"Date\": \"2022-06-11\",\n                \"NewRegisterCnt\": 0,\n                \"NewActivateCnt\": 0,\n                \"ActiveCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-12\",\n                \"NewRegisterCnt\": 0,\n                \"NewActivateCnt\": 0,\n                \"ActiveCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-13\",\n                \"NewRegisterCnt\": 0,\n                \"NewActivateCnt\": 0,\n                \"ActiveCnt\": 0\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "title": "查询设备数据统计"
+      }
+    ],
+    "DescribeMessageDataStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageDataStats\n<公共请求参数>\n\n{\n    \"StartDate\": \"2022-06-11\",\n    \"EndDate\": \"2022-06-13\",\n    \"ProductId\": \"L78xxxxZ95\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea134bab-41c7-426c-bfd9-559f453893db\",\n        \"Data\": [\n            {\n                \"Date\": \"2022-06-11\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-12\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            },\n            {\n                \"Date\": \"2022-06-13\",\n                \"UpMsgCnt\": 0,\n                \"DownMsgCnt\": 0,\n                \"NtpMsgCnt\": 0\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "title": "查询设备消息数据统计"
+      }
+    ]
+  },
+  "version": "1.0"
+}

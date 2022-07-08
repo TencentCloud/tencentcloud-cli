@@ -1018,6 +1018,12 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPaymentOrderList\n<公共请求参数>\n\n{\n    \"PageNumber\": {\n        \"Count\": \"10\",\n        \"Index\": \"1\"\n    },\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PayeeId\": \"90609c1035c348db88b752a69194b1ea\",\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrCode\": \"0\",\n        \"ErrMessage\": \"success\",\n        \"Result\": {\n            \"List\": [],\n            \"Count\": 0\n        },\n        \"RequestId\": \"38d7b2b1-4c14-4a04-81d4-889267bad6db\"\n    }\n}",
         "title": "计算中心-查询提现单列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFlexPaymentOrderList\n<公共请求参数>\n\n{\n    \"Environment\": \"字符串\",\n    \"EndTime\": \"2022-05-12 00:00:00\",\n    \"PageNumber\": {\n        \"Count\": \"1\",\n        \"Index\": \"1\"\n    },\n    \"StartTime\": \"2022-05-06 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"成功\",\n        \"Result\": {\n            \"List\": [],\n            \"Count\": 0\n        },\n        \"RequestId\": \"2dc80fdc-530f-4573-bcdb-4a69a82f945b\"\n    }\n}",
+        "title": "查询订单列表"
       }
     ],
     "QueryFlexPaymentOrderStatus": [

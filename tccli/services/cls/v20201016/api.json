@@ -368,6 +368,32 @@
     "serviceShortName": "cls"
   },
   "objects": {
+    "AlarmAnalysisConfig": {
+      "document": "告警多维分析一些配置信息",
+      "members": [
+        {
+          "default": "",
+          "document": "键",
+          "example": "k",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "值",
+          "example": "v",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "AlarmInfo": {
       "document": "告警策略描述",
       "members": [
@@ -750,7 +776,7 @@
         },
         {
           "default": "",
-          "document": "分析类型：query，field",
+          "document": "分析类型：query，field ，original",
           "example": "query",
           "member": "string",
           "name": "Type",
@@ -766,6 +792,16 @@
           "name": "Content",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "配置",
+          "example": "无",
+          "member": "AlarmAnalysisConfig",
+          "name": "ConfigInfo",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

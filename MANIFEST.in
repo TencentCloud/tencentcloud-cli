@@ -235,6 +235,8 @@ include tccli/services/iotexplorer/v20190423/api.json
 include tccli/services/iotexplorer/v20190423/examples.json
 include tccli/services/iottid/v20190411/api.json
 include tccli/services/iottid/v20190411/examples.json
+include tccli/services/iotvideo/v20211125/api.json
+include tccli/services/iotvideo/v20211125/examples.json
 include tccli/services/iotvideo/v20201215/api.json
 include tccli/services/iotvideo/v20201215/examples.json
 include tccli/services/iotvideo/v20191126/api.json

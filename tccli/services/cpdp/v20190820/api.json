@@ -16274,6 +16274,26 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19086,6 +19106,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20367,6 +20397,16 @@
           "example": "无",
           "member": "string",
           "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24450,15 +24490,6 @@
       "members": [
         {
           "default": "",
-          "document": "收款用户ID",
-          "example": "无",
-          "member": "string",
-          "name": "PayeeId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
           "document": "开始时间，格式\"yyyy-MM-dd hh:mm:ss\"",
           "example": "无",
           "member": "string",
@@ -24483,6 +24514,15 @@
           "name": "PageNumber",
           "required": true,
           "type": "object"
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": false,
+          "type": "string"
         },
         {
           "default": "",
@@ -34859,6 +34899,36 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "收款用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "PayeeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "外部用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "OutUserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作类型",
+          "example": "无",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

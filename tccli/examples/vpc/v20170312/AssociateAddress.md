@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc AssociateAddress --cli-unfold-argument  \
-    --AddressId eip-ek0cdz1g \
-    --InstanceId ins-1bmpb9tu
+    --InstanceId ins-1bmpb9tu \
+    --AddressId eip-ek0cdz1g
 ```
 
 Output: 

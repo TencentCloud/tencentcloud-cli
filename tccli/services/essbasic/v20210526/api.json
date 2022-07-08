@@ -2812,7 +2812,7 @@
         },
         {
           "default": "",
-          "document": "模板类型：1-静默签；2-静默签授权；3-普通模板",
+          "document": "模板类型：1-静默签；3-普通模板",
           "example": "3",
           "member": "int64",
           "name": "TemplateType",

@@ -67,19 +67,19 @@
     "AllocateAddresses": [
       {
         "document": "需开通Anycast公网加速白名单",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AllocateAddresses\n&AddressCount=1\n&AddressType=AnycastEIP\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressCount\": \"1\",\n    \"AddressType\": \"AnycastEIP\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-m44ku5d2\"\n        ],\n        \"TaskId\": \"61531428\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建加速IP"
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AllocateAddresses\n&AddressCount=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-m44ku5d2\"\n        ],\n        \"TaskId\": \"61531421\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建常规IP"
       },
       {
         "document": "需开通静态单线IP白名单",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AllocateAddresses\n&AddressCount=1\n&InternetServiceProvider=CTCC\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressCount\": \"1\",\n    \"InternetServiceProvider\": \"CTCC\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-m44ku5d2\"\n        ],\n        \"TaskId\": \"61531429\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建静态单线IP"
       }
@@ -133,7 +133,7 @@
     "AssociateAddress": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateAddress\n&AddressId=eip-ek0cdz1g\n&InstanceId=ins-1bmpb9tu\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-1bmpb9tu\",\n    \"AddressId\": \"eip-ek0cdz1g\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"50121411\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "绑定EIP到实例上"
       }
@@ -1721,7 +1721,7 @@
     "DisassociateAddress": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisassociateAddress\n&AddressId=eip-ek0cdz1g\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateAddress\n<公共请求参数>\n\n{\n    \"AddressId\": \"eip-ek0cdz1g\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"61531411\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "解绑 EIP"
       }
@@ -1947,7 +1947,7 @@
     "ModifyAddressAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyAddressAttribute\n&AddressId=eip-p2x6wxc0\n&AddressName=test_eip\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressAttribute\n<公共请求参数>\n\n{\n    \"AddressName\": \"test_eip\",\n    \"AddressId\": \"eip-p2x6wxc0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改EIP名称"
       }
@@ -2519,7 +2519,7 @@
     "TransformAddress": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=TransformAddress\n&InstanceId=ins-3ea0qeu6\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransformAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-3ea0qeu6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "普通IP转弹性IP"
       }

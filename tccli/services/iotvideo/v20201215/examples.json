@@ -307,8 +307,8 @@
     "DescribeDeviceData": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceData\n<公共请求参数>\n\n{\n    \"ProductId\": \"AQTV2839QJ\",\n    \"DeviceName\": \"p2p_32731213_1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac74ecca-b866-4ab1-87e0-18b92816fb20\",\n        \"Data\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceData\n<公共请求参数>\n\n{\n    \"ProductId\": \"8JEJGX22EY\",\n    \"DeviceName\": \"T0_73043894_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac74ecca-b866-4ab1-87e0-18b92816fb20\",\n        \"Data\": \"{\\\"_sys_cs_days\\\":{\\\"Value\\\":3,\\\"LastUpdate\\\":1650867145047},\\\"_sys_cs_status\\\":{\\\"Value\\\":1,\\\"LastUpdate\\\":1650867145047},\\\"_sys_cs_type\\\":{\\\"Value\\\":2,\\\"LastUpdate\\\":1650867145047}}\"\n    }\n}",
         "title": "获取设备属性数据"
       }
     ],

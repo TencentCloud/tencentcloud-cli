@@ -2403,7 +2403,7 @@
         },
         {
           "default": "",
-          "document": "集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。",
+          "document": "集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。",
           "example": "256",
           "member": "uint64",
           "name": "MaxNodePodNum",

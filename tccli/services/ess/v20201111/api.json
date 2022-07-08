@@ -856,7 +856,7 @@
         },
         {
           "default": "",
-          "document": "发送类型(true为无序签,false为顺序签)",
+          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致",
           "example": "true",
           "member": "bool",
           "name": "Unordered",
