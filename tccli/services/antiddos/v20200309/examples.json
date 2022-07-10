@@ -536,6 +536,14 @@
         "title": "获取DDoS防护的水印防护配置列表"
       }
     ],
+    "DescribeNewL7Rules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNewL7Rules\n<公共请求参数>\n\n{\n    \"StatusList\": [\n        1\n    ],\n    \"Domain\": \"xx\",\n    \"Business\": \"xx\",\n    \"Ip\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ProtocolList\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"KeepTime\": 1,\n                \"HttpsToHttpEnable\": 1,\n                \"Status\": 1,\n                \"LbType\": 1,\n                \"CCLevel\": \"xx\",\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"Region\": 1,\n                \"VirtualPort\": 1,\n                \"SourceList\": [\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    },\n                    {\n                        \"Source\": \"xx\",\n                        \"Weight\": 1\n                    }\n                ],\n                \"Cert\": \"xx\",\n                \"KeepEnable\": 1,\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"Domain\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"SourceType\": 1,\n                \"RuleId\": \"xx\",\n                \"Ip\": \"xx\",\n                \"PrivateKey\": \"xx\",\n                \"CertType\": 1,\n                \"RuleName\": \"xx\",\n                \"CCStatus\": 1,\n                \"SSLId\": \"xx\",\n                \"Id\": \"xx\"\n            }\n        ],\n        \"Healths\": [\n            {\n                \"Status\": 1,\n                \"Enable\": 1,\n                \"RuleId\": \"xx\",\n                \"Url\": \"xx\",\n                \"Interval\": 1,\n                \"AliveNum\": 1,\n                \"KickNum\": 1,\n                \"Method\": \"xx\",\n                \"StatusCode\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取7层规则"
+      }
+    ],
     "DescribeOverviewAttackTrend": [
       {
         "document": "",
