@@ -465,7 +465,7 @@
     "RecognizeTravelCardOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeTravelCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTravelCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RiskArea\": [\n            \"xx\"\n        ],\n        \"ReachedCity\": [\n            \"xx\"\n        ],\n        \"Color\": \"xx\",\n        \"Telephone\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Time\": \"XXXX - XX - XX XX: XX: XX\"\n    }\n}",
         "title": "通信行程卡识别示例代码"
       }

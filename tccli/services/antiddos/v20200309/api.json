@@ -402,6 +402,12 @@
       "name": "获取DDoS防护的水印防护配置列表",
       "output": "DescribeListWaterPrintConfigResponse"
     },
+    "DescribeNewL7Rules": {
+      "document": "高防IP获取7层规则",
+      "input": "DescribeNewL7RulesRequest",
+      "name": "高防IP获取7层规则",
+      "output": "DescribeNewL7RulesResponse"
+    },
     "DescribeOverviewAttackTrend": {
       "document": "拉取防护概览攻击趋势",
       "input": "DescribeOverviewAttackTrendRequest",
@@ -6593,6 +6599,123 @@
       ],
       "type": "object"
     },
+    "DescribeNewL7RulesRequest": {
+      "document": "DescribeNewL7Rules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "bgpip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
+          "example": "无",
+          "member": "uint64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "域名搜索，选填，当需要搜索域名请填写",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "IP搜索，选填，当需要搜索IP请填写",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "一页条数，填0表示不分页",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "转发协议搜索，选填，取值[http, https, http/https]",
+          "example": "无",
+          "member": "string",
+          "name": "ProtocolList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "高防IP实例的Cname",
+          "example": "abcdefg",
+          "member": "string",
+          "name": "Cname",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNewL7RulesResponse": {
+      "document": "DescribeNewL7Rules返回参数结构体",
+      "members": [
+        {
+          "document": "转发规则列表",
+          "example": "无",
+          "member": "NewL7RuleEntry",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "健康检查配置列表",
+          "example": "无",
+          "member": "L7RuleHealth",
+          "name": "Healths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "总规则数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOverviewAttackTrendRequest": {
       "document": "DescribeOverviewAttackTrend请求参数结构体",
       "members": [
@@ -7801,6 +7924,102 @@
           "name": "Id",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L7RuleHealth": {
+      "document": "L7规则健康检查参数",
+      "members": [
+        {
+          "default": "",
+          "document": "配置状态，0： 正常，1：配置中，2：配置失败",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "=1表示开启；=0表示关闭",
+          "example": "无",
+          "member": "uint64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检查目录的URL，默认为/",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "检测间隔时间，单位秒",
+          "example": "无",
+          "member": "uint64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康阈值，单位次",
+          "example": "无",
+          "member": "uint64",
+          "name": "AliveNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "不健康阈值，单位次",
+          "example": "无",
+          "member": "uint64",
+          "name": "KickNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "HTTP请求方式，取值[HEAD,GET]",
+          "example": "无",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
+          "example": "无",
+          "member": "uint64",
+          "name": "StatusCode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

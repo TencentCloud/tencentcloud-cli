@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm ModifyInstancesChargeType --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy \
     --InstanceChargeType PREPAID \
+    --InstanceIds ins-r8hr2upy \
     --InstanceChargePrepaid.Period 1
 ```
 
@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli cvm ModifyInstancesChargeType --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy \
-    --InstanceChargeType POSTPAID_BY_HOUR
+    --InstanceChargeType POSTPAID_BY_HOUR \
+    --InstanceIds ins-r8hr2upy
 ```
 
 Output: 

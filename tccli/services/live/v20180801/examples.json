@@ -24,14 +24,6 @@
         "title": "请求示例"
       }
     ],
-    "BindLiveDomainCert": [
-      {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=BindLiveDomainCert\r\n&CertId=1000\r\n&DomainName=5000.livepush.myqcloud.com\r\n&Status=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "请求示例"
-      }
-    ],
     "CancelCommonMixStream": [
       {
         "document": "根据session id取消混流。",
@@ -74,14 +66,6 @@
         "input": "https://live.tencentcloudapi.com/?Action=CreateLiveCallbackTemplate\n&TemplateName=testName\n&Description=test\n&CallbackKey=adasda131312\n&StreamBeginNotifyUrl=http://www.yourdomain.com/api/notify?action=streamBegin\n&StreamEndNotifyUrl=http://www.yourdomain.com/api/notify?action=streamEnd\n&RecordNotifyUrl=http://www.yourdomain.com/api/notify?action=record\n&SnapshotNotifyUrl=http://www.yourdomain.com/api/notify?action=snapshot\n&PornCensorshipNotifyUrl=http://www.yourdomain.com/api/notify?action=porn\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
-      }
-    ],
-    "CreateLiveCert": [
-      {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveCert\r\n&CertType=0\r\n&CertName=name-crt\r\n&HttpsCrt=XXXXX\r\n&HttpsKey=YYYYYY\r\n&Description=detail\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"CertId\": 17\n    }\n}",
-        "title": "添加证书"
       }
     ],
     "CreateLivePullStreamTask": [
@@ -206,14 +190,6 @@
         "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCallbackTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
-      }
-    ],
-    "DeleteLiveCert": [
-      {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveCert\r\n&CertId=1000\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "删除证书"
       }
     ],
     "DeleteLiveDomain": [
@@ -844,22 +820,6 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveCallbackTemplate\n&TemplateId=1000\n&TemplateName=testName\n&Description=test\n&CallbackKey=adasdas23432423\n&StreamBeginNotifyUrl=http://www.yourdomain.com/api/notify?action=streamBegin\n&StreamEndNotifyUrl=http://www.yourdomain.com/api/notify?action=streamEnd\n&RecordNotifyUrl=http://www.yourdomain.com/api/notify?action=record\n&SnapshotNotifyUrl=http://www.yourdomain.com/api/notify?action=snapshot\n&PornCensorshipNotifyUrl=http://www.yourdomain.com/api/notify?action=porn\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "请求示例"
-      }
-    ],
-    "ModifyLiveCert": [
-      {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveCert\r\n&CertId=1000\r\n&CertType=1\r\n&CertName=name-crt\r\n&HttpsCrt=XXXXX\r\n&HttpsKey=YYYYYY\r\n&Description=detail\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "修改证书"
-      }
-    ],
-    "ModifyLiveDomainCert": [
-      {
-        "document": "",
-        "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveDomainCert\r\n&DomainName=5000.livepush.myqcloud.com\r\n&CertId=1000\r\n&Status=0\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

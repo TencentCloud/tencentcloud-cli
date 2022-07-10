@@ -549,13 +549,13 @@
     "ModifyInstancesChargeType": [
       {
         "document": "本示例用于切换一个实例的计费模式。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesChargeType\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"Period\": \"1\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "本示例将实例计费模式切换为预付费模式，且时长为1个月。"
       },
       {
         "document": "本示例用于切换一个实例的计费模式。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesChargeType\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargeType=POSTPAID_BY_HOUR\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesChargeType\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "本示例将实例计费模式切换为按小时后付费模式。"
       }
@@ -563,7 +563,7 @@
     "ModifyInstancesProject": [
       {
         "document": "本示例用于修改两个实例所属的项目为指定的项目。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesProject\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ProjectId=1045\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1045\",\n    \"InstanceIds\": [\n        \"ins-5d8a23rs\",\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改两个实例所属的项目"
       }

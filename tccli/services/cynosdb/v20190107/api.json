@@ -751,6 +751,7 @@
         {
           "default": "",
           "document": "集群ID",
+          "example": "”cynosdbmysql-xxx\"",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -760,10 +761,21 @@
         {
           "default": "",
           "document": "实例ID列表",
+          "example": "[\"cynosdbmysql-ins-xxx\"]]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "订单ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5631,7 +5643,7 @@
       "members": [
         {
           "default": "",
-          "document": "旧数据库",
+          "document": "旧数据库名称",
           "example": "xxx",
           "member": "string",
           "name": "OldDatabase",
@@ -5641,7 +5653,7 @@
         },
         {
           "default": "",
-          "document": "新数据库",
+          "document": "新数据库名称",
           "example": "xxx",
           "member": "string",
           "name": "NewDatabase",

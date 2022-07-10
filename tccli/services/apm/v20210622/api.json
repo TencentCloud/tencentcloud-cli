@@ -702,7 +702,7 @@
       "members": [
         {
           "default": "",
-          "document": "要过滤的维度信息\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤。\nsql_metric视图支持：service.name（服务名）维度进行过滤。",
+          "document": "要过滤的维度信息\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤。\nsql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。\n查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。",
           "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
           "member": "GeneralFilter",
           "name": "Filters",
@@ -711,7 +711,7 @@
         },
         {
           "default": "",
-          "document": "需要查询的指标，不可自定义输入。\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）。",
+          "document": "需要查询的指标，不可自定义输入。\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。",
           "example": "\"service_request_count\"、“service_duration”",
           "member": "string",
           "name": "Metrics",
@@ -738,7 +738,7 @@
         },
         {
           "default": "",
-          "document": "聚合维度\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。\nruntime_metric视图支持：service.name（服务名）维度进行聚合。\nsql_metric视图支持：service.name（服务名）维度进行聚合。",
+          "document": "聚合维度\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。\nruntime_metric视图支持：service.name（服务名）维度进行聚合。\nsql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。\n查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。",
           "example": "\"service.name\"、\"span.kind\"",
           "member": "string",
           "name": "GroupBy",

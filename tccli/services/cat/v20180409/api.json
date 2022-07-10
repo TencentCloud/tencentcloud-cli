@@ -580,7 +580,7 @@
         },
         {
           "default": "",
-          "document": "任务状态列表",
+          "document": "任务状态列表\n<li>1 = 创建中</li>\n<li> 2 = 运行中 </li>\n<li> 3 = 运行异常 </li>\n<li> 4 = 暂停中 </li>\n<li> 5 = 暂停异常 </li>\n<li> 6 = 任务暂停 </li>\n<li> 7 = 任务删除中 </li>\n<li> 8 = 任务删除异常 </li>\n<li> 9 = 任务删除</li>\n<li> 10 = 定时任务暂停中 </li>",
           "example": "[1,2]",
           "member": "int64",
           "name": "TaskStatus",
@@ -625,7 +625,7 @@
         },
         {
           "default": "",
-          "document": "拨测类型\n\n<li>1 = 创建中</li>\n<li> 2 = 运行中 </li>\n<li> 3 = 运行异常 </li>\n<li> 4 = 暂停中 </li>\n<li> 5 = 暂停异常 </li>\n<li> 6 = 任务暂停 </li>\n<li> 7 = 任务删除中 </li>\n<li> 8 = 任务删除异常 </li>\n<li> 9 = 任务删除</li>\n<li> 10 = 定时任务暂停中 </li>",
+          "document": "拨测类型\n<li>1 = 页面浏览</li>\n<li> 2 =文件上传 </li>\n<li> 3 = 文件下载</li>\n<li> 4 = 端口性能 </li>\n<li> 5 = 网络质量 </li>\n<li> 6 =流媒体 </li>\n\n即使拨测只支持页面浏览，网络质量，文件下载",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "TaskType",

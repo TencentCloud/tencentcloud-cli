@@ -8806,11 +8806,22 @@
         {
           "default": "",
           "document": "回源跟随开关\non：开启\noff：关闭",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RedirectConfig",
+          "name": "RedirectConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12527,6 +12538,42 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RedirectConfig": {
+      "document": "自定义回源302 follow请求host配置",
+      "members": [
+        {
+          "default": "",
+          "document": "配置开关",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主源站follow302请求时带的自定义的host头部",
+          "example": "main.host.com",
+          "member": "string",
+          "name": "FollowRedirectHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "备份源站follow302请求时带的自定义的host头部",
+          "example": "backup.host.com",
+          "member": "string",
+          "name": "FollowRedirectBackupHost",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

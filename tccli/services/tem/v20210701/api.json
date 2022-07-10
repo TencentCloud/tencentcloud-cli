@@ -1214,7 +1214,7 @@
         },
         {
           "default": "",
-          "document": "1：开始apm采集；0：关闭apm采集",
+          "document": "1：开始apm采集（skywalking）；\n0：关闭apm采集；",
           "example": "0",
           "member": "int64",
           "name": "EnableTracing",
@@ -2708,7 +2708,7 @@
         },
         {
           "default": "",
-          "document": "是否开启调用链, 0 为关闭，1位开启",
+          "document": "是否开启调用链,（此参数已弃用）",
           "example": "1",
           "member": "uint64",
           "name": "EnableTracing",
@@ -3097,6 +3097,16 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "k8s service名称",
+          "example": "service123",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

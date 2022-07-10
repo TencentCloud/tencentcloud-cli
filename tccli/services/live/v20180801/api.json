@@ -18,12 +18,6 @@
       "name": "添加水印",
       "output": "AddLiveWatermarkResponse"
     },
-    "BindLiveDomainCert": {
-      "document": "域名绑定证书。\n注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。",
-      "input": "BindLiveDomainCertRequest",
-      "name": "域名绑定证书",
-      "output": "BindLiveDomainCertResponse"
-    },
     "CancelCommonMixStream": {
       "document": "该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。",
       "input": "CancelCommonMixStreamRequest",
@@ -47,12 +41,6 @@
       "input": "CreateLiveCallbackTemplateRequest",
       "name": "创建回调模板",
       "output": "CreateLiveCallbackTemplateResponse"
-    },
-    "CreateLiveCert": {
-      "document": "添加证书",
-      "input": "CreateLiveCertRequest",
-      "name": "添加证书",
-      "output": "CreateLiveCertResponse"
     },
     "CreateLivePullStreamTask": {
       "document": "创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。\n注意：\n1. 默认支持任务数上限20个，如有特殊需求，可通过提单到售后进行评估增加上限。\n2. 源流视频编码目前只支持: H264, H265。其他编码格式建议先进行转码处理。\n3. 源流音频编码目前只支持: AAC。其他编码格式建议先进行转码处理。\n4. 可在控制台开启过期自动清理，避免过期任务占用任务数额度。\n5. 拉流转推功能为计费增值服务，计费规则详情可参见[计费文档](https://cloud.tencent.com/document/product/267/53308)。\n6. 拉流转推功能仅提供内容拉取与推送服务，请确保内容已获得授权并符合内容传播相关的法律法规。若内容有侵权或违规相关问题，云直播会停止相关的功能服务并保留追究法律责任的权利。",
@@ -137,12 +125,6 @@
       "input": "DeleteLiveCallbackTemplateRequest",
       "name": "删除回调模板",
       "output": "DeleteLiveCallbackTemplateResponse"
-    },
-    "DeleteLiveCert": {
-      "document": "删除域名对应的证书",
-      "input": "DeleteLiveCertRequest",
-      "name": "删除证书",
-      "output": "DeleteLiveCertResponse"
     },
     "DeleteLiveDomain": {
       "document": "删除已添加的直播域名",
@@ -618,18 +600,6 @@
       "name": "修改回调模板",
       "output": "ModifyLiveCallbackTemplateResponse"
     },
-    "ModifyLiveCert": {
-      "document": "修改证书",
-      "input": "ModifyLiveCertRequest",
-      "name": "修改证书",
-      "output": "ModifyLiveCertResponse"
-    },
-    "ModifyLiveDomainCert": {
-      "document": "修改域名和证书绑定信息",
-      "input": "ModifyLiveDomainCertRequest",
-      "name": "修改域名和证书绑定信息",
-      "output": "ModifyLiveDomainCertResponse"
-    },
     "ModifyLiveDomainReferer": {
       "document": "设置直播域名 Referer 黑白名单。\n由于 Referer 信息包含在 http 协议中，在开启配置后，播放协议为 rtmp 或 WebRTC 不会校验 Referer 配置，仍可正常播放。如需配置 Referer 鉴权建议使用 http-flv 或 http-hls 协议播放。",
       "input": "ModifyLiveDomainRefererRequest",
@@ -1060,48 +1030,6 @@
         }
       ],
       "usage": "out"
-    },
-    "BindLiveDomainCertRequest": {
-      "document": "BindLiveDomainCert请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "证书Id。使用添加证书接口获取证书Id。",
-          "member": "int64",
-          "name": "CertId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "播放域名。",
-          "member": "string",
-          "name": "DomainName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "HTTPS开启状态，0： 关闭  1：打开。",
-          "member": "int64",
-          "name": "Status",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "BindLiveDomainCertResponse": {
-      "document": "BindLiveDomainCert返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CallBackRuleInfo": {
       "document": "规则信息",
@@ -2060,79 +1988,6 @@
           "member": "int64",
           "name": "TemplateId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLiveCertRequest": {
-      "document": "CreateLiveCert请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "证书类型。0-用户添加证书；1-腾讯云托管证书。\n注意：当证书类型为0时，HttpsCrt和HttpsKey必选；\n当证书类型为1时，优先使用CloudCertId对应证书，若CloudCertId为空则使用HttpsCrt和HttpsKey。",
-          "member": "uint64",
-          "name": "CertType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "证书名称。",
-          "member": "string",
-          "name": "CertName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "证书内容，即公钥。",
-          "member": "string",
-          "name": "HttpsCrt",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "私钥。",
-          "member": "string",
-          "name": "HttpsKey",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "描述。",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "腾讯云证书托管ID。",
-          "member": "string",
-          "name": "CloudCertId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLiveCertResponse": {
-      "document": "CreateLiveCert返回参数结构体",
-      "members": [
-        {
-          "document": "证书ID",
-          "member": "int64",
-          "name": "CertId",
           "type": "int",
           "value_allowed_null": false
         },
@@ -3574,32 +3429,6 @@
     },
     "DeleteLiveCallbackTemplateResponse": {
       "document": "DeleteLiveCallbackTemplate返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLiveCertRequest": {
-      "document": "DeleteLiveCert请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "DescribeLiveCerts接口获取到的证书Id。",
-          "member": "int64",
-          "name": "CertId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLiveCertResponse": {
-      "document": "DeleteLiveCert返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9222,114 +9051,6 @@
     },
     "ModifyLiveCallbackTemplateResponse": {
       "document": "ModifyLiveCallbackTemplate返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLiveCertRequest": {
-      "document": "ModifyLiveCert请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "证书Id。",
-          "member": "string",
-          "name": "CertId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "0",
-          "document": "证书类型。0-用户添加证书；1-腾讯云托管证书。",
-          "member": "uint64",
-          "name": "CertType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "证书名称。",
-          "member": "string",
-          "name": "CertName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "证书内容，即公钥。",
-          "member": "string",
-          "name": "HttpsCrt",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "私钥。",
-          "member": "string",
-          "name": "HttpsKey",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "描述信息。",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLiveCertResponse": {
-      "document": "ModifyLiveCert返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLiveDomainCertRequest": {
-      "document": "ModifyLiveDomainCert请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "document": "播放域名。",
-          "member": "string",
-          "name": "DomainName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "证书Id。",
-          "member": "int64",
-          "name": "CertId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "状态，0：关闭  1：打开。",
-          "member": "int64",
-          "name": "Status",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLiveDomainCertResponse": {
-      "document": "ModifyLiveDomainCert返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

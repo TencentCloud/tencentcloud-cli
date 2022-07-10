@@ -406,6 +406,20 @@
         "title": "订单已受理"
       }
     ],
+    "CreateOpenBankVerificationOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankVerificationOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"OutVerificationId\": \"1212323\",\n    \"OutOrderId\": \"test0039\",\n    \"ChannelOrderId\": \"test003111\",\n    \"VerificationAmount\": 2,\n    \"Remark\": \"111\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notify\",\n    \"ExternalVerificationData\": \"1111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"订单提交成功\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "核销申请成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOpenBankVerificationOrder\n<公共请求参数>\n\n{\n    \"Remark\": \"字符串\",\n    \"ChannelOrderId\": \"765765756765765\",\n    \"OutVerificationId\": \"conf200000001111\",\n    \"NotifyUrl\": \"字符串\",\n    \"ChannelMerchantId\": \"CM584693967762206720\",\n    \"ExternalVerificationData\": \"字符串\",\n    \"OutOrderId\": \"out1111111111\",\n    \"VerificationAmount\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2abc7942-a38e-4a9c-bdd7-59f8af7e3721\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"记录不存在:out1111111111\"\n    }\n}",
+        "title": "查询记录不存在"
+      }
+    ],
     "CreateOrder": [
       {
         "document": "消费请求正常示例",
@@ -1304,6 +1318,20 @@
         "title": "QueryOpenBankUnbindExternalSubMerchantBankAccount"
       }
     ],
+    "QueryOpenBankVerificationOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankVerificationOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"OutVerificationId\": \"1212323\",\n    \"ChannelVerificationId\": \"1111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"订单提交成功\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "核销查询成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryOpenBankVerificationOrder\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM584693967762206720\",\n    \"ChannelVerificationId\": \"CF20220628627602452283318272\",\n    \"OutVerificationId\": \"conf202206270000004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8344dba-bfbe-4f9a-8fbd-0cc4d1de2de4\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.RECORD_NOT_EXIST\",\n        \"ErrMessage\": \"记录不存在:{0}\"\n    }\n}",
+        "title": "查询记录不存在"
+      }
+    ],
     "QueryOrder": [
       {
         "document": "适用于单个订单查询状态的场景",
@@ -1688,6 +1716,20 @@
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTaxPayment\n<公共请求参数>\n\n{\n    \"Channel\": 1,\n    \"TaxId\": \"tax-xxx\",\n    \"FileUrl\": \"http://cos.qcloud.com/tax.xlsx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aadd86c-1727-40ef-9927-9f87201449af\"\n    }\n}",
         "title": "直播平台-上传代理商完税证明"
+      }
+    ],
+    "VerifyOpenBankAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyOpenBankAccount\n<公共请求参数>\n\n{\n    \"ChannelMerchantId\": \"CM572433237990035456\",\n    \"ChannelName\": \"TENPAY\",\n    \"NotifyUrl\": \"http://127.0.0.1/pay/notify\",\n    \"PayeeInfo\": {\n        \"PayeeId\": \"test00002\",\n        \"PayeeName\": \"test00002\",\n        \"BankAccountNumber\": \"xx\",\n        \"BindSerialNo\": \"1212121323\",\n        \"BankBranchId\": \"xx\",\n        \"BankBranchName\": \"xx\",\n        \"AccountType\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"171304d7-1084-4c98-9baa-fa1e8d2af7d0\",\n        \"ErrCode\": \"SUCCESS\",\n        \"ErrMessage\": \"订单提交成功\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "打款验证成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyOpenBankAccount\n<公共请求参数>\n\n{\n    \"PayeeInfo\": {\n        \"BankAccountNumber\": \"字符串\",\n        \"BindSerialNo\": \"1002030191514840205164\",\n        \"BankBranchId\": \"字符串\",\n        \"BankBranchName\": \"字符串\",\n        \"PayeeName\": \"字符串\",\n        \"AccountType\": \"字符串\",\n        \"PayeeId\": \"CM618130426611634176\"\n    },\n    \"ChannelName\": \"TENPAY\",\n    \"ChannelMerchantId\": \"CM584693967762206720\",\n    \"NotifyUrl\": \"字符\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6728d43-3418-4142-875e-ee60c1cce9c7\",\n        \"Result\": null,\n        \"ErrCode\": \"COMMON.SYSTEM_ERROR\",\n        \"ErrMessage\": \"系统未知异常\"\n    }\n}",
+        "title": "调用打款验证失败"
       }
     ],
     "ViewContract": [

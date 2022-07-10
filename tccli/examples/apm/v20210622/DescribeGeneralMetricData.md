@@ -442,7 +442,7 @@ Output:
 }
 ```
 
-**Example 4: 查询1分钟聚合粒度的sql_metric指标数据示例**
+**Example 4: 查询1分钟聚合粒度的sql_metric的service_slow_sql_count（慢调用sql）指标数据示例**
 
 该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的service_slow_sql_count（慢sql）的指标数据。
 
@@ -504,6 +504,127 @@ Output:
                     0,
                     0,
                     0
+                ]
+            }
+        ],
+        "RequestId": "test-test-test"
+    }
+}
+```
+
+**Example 5: 查询起始到终止时间内统计sql_metric的sql_duration_avg（耗时时间）指标数据示例**
+
+该示例查询实例为apm-ylTJfTSbn，按照db.instance（数据库名称）、（db.ip）数据库实例ip为维度过滤，以service.name（服务名）、db.statement（sql语句）为维度进行聚合，查找开始时间-终止时间内的sql_duration_avg（耗时（ms））的指标数据。
+
+Input: 
+
+```
+tccli apm DescribeGeneralMetricData --cli-unfold-argument  \
+    --Filters.0.Key db.instance \
+    --Filters.0.Value mock_project_db \
+    --Filters.1.Key db.ip \
+    --Filters.1.Value 9.147.18.42 \
+    --ViewName sql_metric \
+    --InstanceId apm-ylTJfTSbn \
+    --Metrics sql_duration_avg \
+    --StartTime 1652666416 \
+    --EndTime 1652667616 \
+    --GroupBy service.name db.statement
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Records": [
+            {
+                "Tags": [
+                    {
+                        "Key": "db.statement",
+                        "Value": "select * om un_exist_table limit 1"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "sql_duration_avg",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    29.883333333333333
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "db.statement",
+                        "Value": "select * om un_exist_table limit 1"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-user-service"
+                    }
+                ],
+                "MetricName": "sql_duration_avg",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    26.170082239670673
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "db.statement",
+                        "Value": "select * from un_exist_table limit 1"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-market-service"
+                    }
+                ],
+                "MetricName": "sql_duration_avg",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    25.654237574773983
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "db.statement",
+                        "Value": "select * from mock_project_userinfo where id = ? limit 1"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "sql_duration_avg",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    24.333649579223025
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "db.statement",
+                        "Value": "select * from un_exist_table limit 1"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-user-service"
+                    }
+                ],
+                "MetricName": "sql_duration_avg",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    22.785741520925463
                 ]
             }
         ],
