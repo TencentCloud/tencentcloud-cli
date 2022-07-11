@@ -702,7 +702,7 @@
       "members": [
         {
           "default": "",
-          "document": "要过滤的维度信息\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤。\nsql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。\n查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。",
+          "document": "要过滤的维度信息：\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。",
           "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
           "member": "GeneralFilter",
           "name": "Filters",
@@ -720,7 +720,7 @@
         },
         {
           "default": "",
-          "document": "实例ID",
+          "document": "业务系统ID",
           "example": "apm-ylTJfTSbn",
           "member": "string",
           "name": "InstanceId",
@@ -738,7 +738,7 @@
         },
         {
           "default": "",
-          "document": "聚合维度\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。\nruntime_metric视图支持：service.name（服务名）维度进行聚合。\nsql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。\n查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。",
+          "document": "聚合维度：\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。\nruntime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。",
           "example": "\"service.name\"、\"span.kind\"",
           "member": "string",
           "name": "GroupBy",
@@ -769,6 +769,24 @@
           "example": "60",
           "member": "int64",
           "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "对查询指标进行排序：\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。\nasc:对查询指标进行升序排序\ndesc：对查询指标进行降序排序",
+          "example": "\"OrderBy\": { \t\"Key\": \"sql_duration_avg\",         \"Value\": \"desc\"",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。",
+          "example": "5",
+          "member": "int64",
+          "name": "PageSize",
           "required": false,
           "type": "int"
         }

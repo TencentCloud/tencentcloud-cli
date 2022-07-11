@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cvm ImportKeyPair --cli-unfold-argument  \
-    --KeyName operation_key \
     --ProjectId 0 \
-    --PublicKey 'ssh-rsa XXXXXXXXXXXX'
+    --KeyName operation_key \
+    --PublicKey ssh-rsa XXXXXXXXXXXX== skey_45071
 ```
 
 Output: 

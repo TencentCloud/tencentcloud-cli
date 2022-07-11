@@ -3040,6 +3040,15 @@
           "name": "JumpStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "default": "",
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9127,6 +9136,15 @@
           "value_allowed_null": true
         },
         {
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13451,6 +13469,32 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "标签配置",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Task": {
       "document": "内容管理任务结果",
       "members": [
@@ -14331,6 +14375,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14340,7 +14394,7 @@
       "members": [
         {
           "default": "",
-          "document": "过滤字段名，支持的列表如下：\n- name: 站点名。\n- status: 站点状态",
+          "document": "过滤字段名，支持的列表如下：\n- name: 站点名。\n- status: 站点状态\n- tagKey: 标签键\n- tagValue: 标签值",
           "example": "name",
           "member": "string",
           "name": "Name",

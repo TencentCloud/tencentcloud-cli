@@ -263,7 +263,7 @@
     "DeleteNamespace": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteNamespace\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNamespace\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"mytest\",\n    \"RegistryId\": \"tcr-okmj78\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "删除命名空间"
       }
@@ -464,7 +464,7 @@
       {
         "document": "查询实例内所有的命名空间信息",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaces\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"RegistryId\": \"tcr-f7g1ir99\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d92365c7-3484-4d52-8add-93f682e127bd\",\n        \"NamespaceList\": [\n            {\n                \"Name\": \"mytest1\",\n                \"CreationTime\": \"2020-02-27T00:49:22+08:00\",\n                \"Public\": true,\n                \"NamespaceId\": 2\n            },\n            {\n                \"Name\": \"mytest\",\n                \"CreationTime\": \"2020-02-27T00:44:49+08:00\",\n                \"Public\": true,\n                \"NamespaceId\": 1\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NamespaceList\": [\n            {\n                \"NamespaceId\": 2,\n                \"TagSpecification\": {\n                    \"ResourceType\": \"namespace\",\n                    \"Tags\": [\n                        {\n                            \"Value\": \"tag-value\",\n                            \"Key\": \"tag-key\"\n                        }\n                    ]\n                },\n                \"CreationTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Public\": true,\n                \"Name\": \"ns\"\n            },\n            {\n                \"Public\": true,\n                \"Name\": \"ns1\",\n                \"CreationTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NamespaceId\": 1,\n                \"TagSpecification\": {\n                    \"ResourceType\": \"namespace\",\n                    \"Tags\": [\n                        {\n                            \"Value\": \"tag-value\",\n                            \"Key\": \"tag-key\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"866bda78-ed75-4b10-8876-e82de555f69b\"\n    }\n}",
         "title": "查询命名空间信息"
       }
     ],

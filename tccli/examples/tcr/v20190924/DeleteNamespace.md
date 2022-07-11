@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DeleteNamespace --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
-    --NamespaceName mytest
+    --NamespaceName mytest \
+    --RegistryId tcr-okmj78
 ```
 
 Output: 

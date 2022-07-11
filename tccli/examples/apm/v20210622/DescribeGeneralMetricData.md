@@ -514,7 +514,7 @@ Output:
 
 **Example 5: 查询起始到终止时间内统计sql_metric的sql_duration_avg（耗时时间）指标数据示例**
 
-该示例查询实例为apm-ylTJfTSbn，按照db.instance（数据库名称）、（db.ip）数据库实例ip为维度过滤，以service.name（服务名）、db.statement（sql语句）为维度进行聚合，查找开始时间-终止时间内的sql_duration_avg（耗时（ms））的指标数据。
+该示例查询实例为apm-ylTJfTSbn，按照db.instance（数据库名称）、（db.ip）数据库实例ip为维度过滤，以service.name（服务名）、db.statement（sql语句）为维度进行聚合，查找开始时间-终止时间内top5的sql_duration_avg（耗时（ms））的指标数据。
 
 Input: 
 
@@ -529,7 +529,10 @@ tccli apm DescribeGeneralMetricData --cli-unfold-argument  \
     --Metrics sql_duration_avg \
     --StartTime 1652666416 \
     --EndTime 1652667616 \
-    --GroupBy service.name db.statement
+    --GroupBy service.name db.statement \
+    --OrderBy.Key sql_duration_avg \
+    --OrderBy.Value desc \
+    --PageSize 5
 ```
 
 Output: 

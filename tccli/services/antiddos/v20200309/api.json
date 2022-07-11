@@ -96,6 +96,12 @@
       "name": "批量配置L7转发规则的证书",
       "output": "CreateL7RuleCertsResponse"
     },
+    "CreateNewL7Rules": {
+      "document": "添加7层转发规则",
+      "input": "CreateNewL7RulesRequest",
+      "name": "添加7层转发规则",
+      "output": "CreateNewL7RulesResponse"
+    },
     "CreatePacketFilterConfig": {
       "document": "添加DDoS防护的特征过滤规则",
       "input": "CreatePacketFilterConfigRequest",
@@ -3058,6 +3064,69 @@
     },
     "CreateL7RuleCertsResponse": {
       "document": "CreateL7RuleCerts返回参数结构体",
+      "members": [
+        {
+          "document": "成功码",
+          "example": "无",
+          "member": "SuccessCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNewL7RulesRequest": {
+      "document": "CreateNewL7Rules请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "规则列表",
+          "example": "无",
+          "member": "L7RuleEntry",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "bgpip",
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "资源ID列表",
+          "example": "[\"bgpip-000001\\r\\n\"]",
+          "member": "string",
+          "name": "IdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "资源IP列表",
+          "example": "[\"192.168.1.1\\r\\n\"]",
+          "member": "string",
+          "name": "VipList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNewL7RulesResponse": {
+      "document": "CreateNewL7Rules返回参数结构体",
       "members": [
         {
           "document": "成功码",

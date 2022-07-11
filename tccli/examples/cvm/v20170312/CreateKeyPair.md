@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm CreateKeyPair --cli-unfold-argument  \
-    --KeyName Tencent \
-    --ProjectId 0
+    --ProjectId 0 \
+    --KeyName Tencent
 ```
 
 Output: 

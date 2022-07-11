@@ -1,0 +1,1300 @@
+{
+  "actions": {
+    "RecommendContent": {
+      "document": "获取推荐结果",
+      "input": "RecommendContentRequest",
+      "name": "获取推荐结果",
+      "output": "RecommendContentResponse"
+    },
+    "ReportAction": {
+      "document": "上报行为",
+      "input": "ReportActionRequest",
+      "name": "上报行为",
+      "output": "ReportActionResponse"
+    },
+    "ReportMaterial": {
+      "document": "上报物料",
+      "input": "ReportMaterialRequest",
+      "name": "上报物料",
+      "output": "ReportMaterialResponse"
+    },
+    "ReportPortrait": {
+      "document": "上报用户画像",
+      "input": "ReportPortraitRequest",
+      "name": "上报用户画像",
+      "output": "ReportPortraitResponse"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-03-24",
+    "api_brief": "上云测试",
+    "serviceNameCN": "智能推荐平台",
+    "serviceShortName": "irp"
+  },
+  "objects": {
+    "AuthorInfo": {
+      "document": "作者信息",
+      "members": [
+        {
+          "default": "",
+          "document": "作者id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "新闻观察xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作者来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关注类型：1-关注，2-取关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FollowType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "作者头像icon地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xx.com/image.jpg",
+          "member": "string",
+          "name": "IconUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DislikeInfo": {
+      "document": "不喜欢信息",
+      "members": [
+        {
+          "default": "",
+          "document": "不喜欢的物料类别，对应物料上传协议中的字段名，如authorId，keyword，topic等",
+          "example": "authorId",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "type对应字段名的值，如具体的topic名，作者id等",
+          "example": "123",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DocBehavior": {
+      "document": "行为数据",
+      "members": [
+        {
+          "default": "",
+          "document": "内容唯一ID，如 2824324234",
+          "example": "2824324234",
+          "member": "string",
+          "name": "ItemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行为类型",
+          "example": "1",
+          "member": "int64",
+          "name": "BehaviorType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行为值",
+          "example": "10",
+          "member": "string",
+          "name": "BehaviorValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "行为时间戳： 秒级时间戳（默认为当前时间）,不能延迟太久，尽量实时上报，否则会影响推荐结果的准确性。",
+          "example": "1652705901",
+          "member": "int64",
+          "name": "BehaviorTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "场景id，在控制台创建场景后获取。",
+          "example": "db5ccd_765291",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户id列表",
+          "example": "无",
+          "member": "UserIdInfo",
+          "name": "UserIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "会话id，使用获取推荐结果中返回的RecTraceId填入。<br>注意：如果和在线推荐请求中的traceId不同，会影响行为特征归因，影响推荐算法效果",
+          "example": "9994f7bc21231288365e0f773",
+          "member": "string",
+          "name": "RecTraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "算法来源：用来区分行为来源于哪个算法。值为**business，tencent，other** 三者之一<br>● business 表示业务自己的算法对照组<br>● tencent 为腾讯算法<br>● other 为其他算法",
+          "example": "tencent",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物料类型",
+          "example": "1",
+          "member": "int64",
+          "name": "ItemType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "微信开放平台上查看appId",
+          "example": "wxe0135baa2b2554e8",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "回传video_over事件的时候，回传的用户播放视频的总时长（真正播放的，拖动不算，单位为秒）",
+          "example": "20",
+          "member": "int64",
+          "name": "VideoPlayDuration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "来源物料内容：用来标识在指定内容页面产生的行为，如需要统计用户在A内容详情页里，对推荐内容B点击等行为，则ReferrerItemId代表内容A，ItemId代表内容B",
+          "example": "2824324234",
+          "member": "string",
+          "name": "ReferrerItemId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家，统一用简写，比如中国则填写CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区县",
+          "example": "南山",
+          "member": "string",
+          "name": "District",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端网络类型",
+          "example": "wifi",
+          "member": "string",
+          "name": "Network",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端平台，ios/android/h5",
+          "example": "android",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "客户端app版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "AppVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "操作系统版本",
+          "example": "7.2",
+          "member": "string",
+          "name": "OsVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "机型",
+          "example": "xiaomi",
+          "member": "string",
+          "name": "DeviceModel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "json字符串，用于行为数据的扩展",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "DocItem": {
+      "document": "推荐物料信息",
+      "members": [
+        {
+          "default": "",
+          "document": "内容唯一id",
+          "example": "2824324234",
+          "member": "string",
+          "name": "ItemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "ItemType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容状态：1 - 上架， 2 - 下架",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容生成时间，秒级时间戳（1639624786），需大于0",
+          "example": "1639624786",
+          "member": "int64",
+          "name": "PublishTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物料来源ID",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标题名称",
+          "example": "广州未来24小时有雨",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容正文",
+          "example": "广州未来24小时有雨，请做好防范",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作者",
+          "example": "广州天气",
+          "member": "string",
+          "name": "Author",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作者id",
+          "example": "1001",
+          "member": "string",
+          "name": "AuthorId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "标签关键词，多个用英文分号分割",
+          "example": "天气,广州",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容物料描述：物料的描述信息，推荐系统会对内容的描述信息，使用否LP技术，进行分词、提取关键词，作为news的特征使用。",
+          "example": "杜兰特又夺冠，篮网银河巨舰",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片url",
+          "example": "[\"https://sm.ms/**\"]",
+          "member": "string",
+          "name": "PicUrlList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频url",
+          "example": "[\"https://sm.ms/**\"]",
+          "member": "string",
+          "name": "VideoUrlList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "视频时长，时间秒",
+          "example": "60",
+          "member": "int64",
+          "name": "VideoDuration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类目层级数，例如3级类目，则填3，和CategoryPath字段的类数据匹配",
+          "example": "3",
+          "member": "int64",
+          "name": "CategoryLevel",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "类目路径，一级二级三级等依次用英文冒号联接，如体育：“足球:巴塞罗那”",
+          "example": "体育:足球:巴塞罗纳",
+          "member": "string",
+          "name": "CategoryPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "国家，统一用简写，比如中国则填写CN",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "省",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "区县",
+          "example": "南山",
+          "member": "string",
+          "name": "District",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容过期时间，秒级时间戳（1639624786），如未填，则默认PublishTimestamp往后延一年",
+          "example": "1642668637",
+          "member": "int64",
+          "name": "ExpireTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "所属话题",
+          "example": "体育",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作者粉丝数",
+          "example": "10",
+          "member": "int64",
+          "name": "AuthorFans",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "作者评级",
+          "example": "高级",
+          "member": "string",
+          "name": "AuthorLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容累计收藏次数",
+          "example": "10",
+          "member": "int64",
+          "name": "CollectCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容累积点赞次数",
+          "example": "11",
+          "member": "int64",
+          "name": "PraiseCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容累计评论次数",
+          "example": "12",
+          "member": "int64",
+          "name": "CommentCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容累计分享次数",
+          "example": "13",
+          "member": "int64",
+          "name": "ShareCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容累积打赏数",
+          "example": "14",
+          "member": "int64",
+          "name": "RewardCnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容质量评分，类似豆瓣电影的评分，这里为100分制，比如97分，满分100分，最低0分，范围外的将会被拦截",
+          "example": "9.7",
+          "member": "float",
+          "name": "Score",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "内容池id，用于分内容池召回，一个内容支持指定一个或多个内容池， 内容池id不建议使用0（0表示不区分内容池）",
+          "example": "[123,221]",
+          "member": "string",
+          "name": "PoolIdList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述用户标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "json字符串，用于物料数据的扩展",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "PortraitInfo": {
+      "document": "画像信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户id列表",
+          "example": "无",
+          "member": "UserIdInfo",
+          "name": "UserIdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "如果\"userIdType\"是10则必传，在微信开放平台上查看appId",
+          "example": "12345678901",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户年龄，值域在 0-200",
+          "example": "22",
+          "member": "int64",
+          "name": "Age",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户性别：0-未知，1-男， 2-女",
+          "example": "1",
+          "member": "int64",
+          "name": "Gender",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户学历 ：小学，初中，高中，大专，本科，硕士，博士",
+          "example": "大学",
+          "member": "string",
+          "name": "Degree",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户毕业学校全称",
+          "example": "xx大学",
+          "member": "string",
+          "name": "School",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户职业，保证业务的唯一性",
+          "example": "程序员",
+          "member": "string",
+          "name": "Occupation",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户所属行业，保证业务的唯一性",
+          "example": "互联网",
+          "member": "string",
+          "name": "Industry",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户常驻国家，统一用简写，比如中国则填写CN",
+          "example": "CN",
+          "member": "string",
+          "name": "ResidentCountry",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户常驻省份",
+          "example": "广东",
+          "member": "string",
+          "name": "ResidentProvince",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户常驻城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "ResidentCity",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户常驻区县",
+          "example": "南山",
+          "member": "string",
+          "name": "ResidentDistrict",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机的MD5值",
+          "example": "dahwiuhdaw",
+          "member": "string",
+          "name": "PhoneMd5",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户手机的IMEI号",
+          "example": "95955F33-BFBD-48BA-A630-866D2DAE482D",
+          "member": "string",
+          "name": "PhoneImei",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备idfa信息",
+          "example": "95955F33-BFBD-48BA-A630-866D2DAE482D",
+          "member": "string",
+          "name": "Idfa",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户注册时间，秒级时间戳（1639624786）",
+          "example": "1639624786",
+          "member": "int64",
+          "name": "RegisterTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户会员等级",
+          "example": "高",
+          "member": "string",
+          "name": "MembershipLevel",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户上一次登录时间，秒级时间戳（1639624786）",
+          "example": "1639624786",
+          "member": "int64",
+          "name": "LastLoginTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户上一次登录的ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "LastLoginIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户信息的最后修改时间戳，秒级时间戳（1639624786）",
+          "example": "1639624786",
+          "member": "int64",
+          "name": "LastModifyTimestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户关注作者列表",
+          "example": "无",
+          "member": "AuthorInfo",
+          "name": "AuthorInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户不喜欢列表",
+          "example": "无",
+          "member": "DislikeInfo",
+          "name": "DislikeInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "json字符串，用于画像数据的扩展",
+          "example": "无",
+          "member": "string",
+          "name": "Extension",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备oaid信息",
+          "example": "95955F33-BFBD-48BA-A630-866D2DAE482D",
+          "member": "string",
+          "name": "Oaid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "设备AndroidId信息",
+          "example": "VJE5NE5CNRTBJZ8H",
+          "member": "string",
+          "name": "AndroidId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RecItemData": {
+      "document": "推荐内容信息",
+      "members": [
+        {
+          "default": "",
+          "document": "推荐的内容id，即用户行为上报中的itemId",
+          "example": "20220324V08431**",
+          "member": "string",
+          "name": "ItemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "物料子类型，包括如下： 1-图文、2-长视频（横视频）、3-短视频（横视频）、4-小说、5-小视频（竖视频）、6-纯文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "ItemType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推荐内容的权重，取值范围[0,1000000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "997121",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推荐预测分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6.1",
+          "member": "float",
+          "name": "Score",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "关键词，多个用英文分号分割，和物料上传的keyword一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RecommendContentRequest": {
+      "document": "RecommendContent请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务id",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "Bid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "场景id：比如有“猜你喜欢”，“热门内容”等推荐模块，每一个模块都有一个scene_id来表示。 在控制台创建场景后获取。需要跟行为上报时的id一致",
+          "example": "20787a_13428",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "用户唯一ID数组，每个数组元素详见userId结构体，若不填，则接口返回热门结果",
+          "example": "无",
+          "member": "UserIdInfo",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "会话id：必须和行为数据上报时所填写的traceId相同，用于行为数据来自于那次在线推荐请求的归因。**注意：此处如果没传，则响应会返回一个全局唯一ID返回给客户，并需客户透传给行为日志上报接口**",
+          "example": "f458988816c956727db5d9f",
+          "member": "string",
+          "name": "RecTraceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "推荐数量：物料优选的结果， 默认50个，目前最多支持200个的内容返回，如果返回个数更多，会影响性能，容易超时。",
+          "example": "10",
+          "member": "int64",
+          "name": "ItemCnt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "物料池id，用于召回该pool_id下的商品，如果有多个，用英文;分割。**注意：此处poolId需和物料上报时的poolIdList对应上**",
+          "example": "1001",
+          "member": "string",
+          "name": "PoolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "来源物料id，即用户当前浏览的物料id，用于在内容详情页获取关联推荐内容",
+          "example": "f458988816c956727db5d9f",
+          "member": "string",
+          "name": "CurrentItemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "请求响应超时时间，单位ms，默认300ms，数值设置的过小，会影响推荐效果，最小支持250ms",
+          "example": "300",
+          "member": "int64",
+          "name": "ResponseTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "返回结果中不同物料类型的比例，比例顺序需严格按照（图文，长视频，短视频，小视频）进行。只允许传[0,100]数字，多个请用**英文冒号**分割，且加起来不能超过100，以及比例数量不能超过**场景绑定的物料类型**（图文，长视频，短视频，小视频）数。**示例：**图文和短视频比例为40%:60%时，则填40:60图文和短视频比例为0%:100%时，则填0:100图文，长视频和短视频的比例为，图文占20%，剩余80%由长视频和短视频随机返回，则填20:80或仅填20均可",
+          "example": "30:70",
+          "member": "string",
+          "name": "ItemTypeRatio",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecommendContentResponse": {
+      "document": "RecommendContent返回参数结构体",
+      "members": [
+        {
+          "document": "推荐追踪id，用于行为上报。每次接口调用返回的traceId不同",
+          "example": "9588983c6db7a36734d628537fb26463",
+          "member": "string",
+          "name": "RecTraceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "标识具体的物料信息",
+          "example": "无",
+          "member": "RecItemData",
+          "name": "DataList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportActionRequest": {
+      "document": "ReportAction请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务id",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "Bid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报的行为对象数组，数量不超过50",
+          "example": "无",
+          "member": "DocBehavior",
+          "name": "DocBehaviorList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportActionResponse": {
+      "document": "ReportAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportMaterialRequest": {
+      "document": "ReportMaterial请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "业务id",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "Bid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报的信息流数组，一次数量不超过50",
+          "example": "无",
+          "member": "DocItem",
+          "name": "DocItemList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportMaterialResponse": {
+      "document": "ReportMaterial返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportPortraitRequest": {
+      "document": "ReportPortrait请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "推荐平台上的业务id",
+          "example": "3154571c_d511",
+          "member": "string",
+          "name": "Bid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "上报的用户画像数组，数量不超过50",
+          "example": "无",
+          "member": "PortraitInfo",
+          "name": "PortraitList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportPortraitResponse": {
+      "document": "ReportPortrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagInfo": {
+      "document": "标题信息",
+      "members": [
+        {
+          "default": "",
+          "document": "标签id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "娱乐",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "推荐权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Weight",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserIdInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "default": "",
+          "document": "用户id类型",
+          "example": "1",
+          "member": "int64",
+          "name": "UserIdType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户id",
+          "example": "9748a023ecbe626bb066c75a0cb27d5b",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

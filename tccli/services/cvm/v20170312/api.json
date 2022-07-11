@@ -1401,6 +1401,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到密钥对。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4636,6 +4645,15 @@
           "name": "PublicKey",
           "required": true,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到密钥对。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

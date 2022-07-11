@@ -475,85 +475,85 @@
     "HandleStreamConnectProject": [
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源，InputType 取值 LivePull",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=LivePull\n&InputInfo.LivePullInputInfo.InputUrl=rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddInput\",\n    \"InputEndpoint\": \"Main\",\n    \"InputInfo\": {\n        \"LivePullInputInfo\": {\n            \"InputUrl\": \"rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759\"\n        },\n        \"InputType\": \"LivePull\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "添加直播拉流输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 RtmpPush ， 从获取项目列表接口可拿到对应推流输入源的 PushUrl",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=RtmpPush\n&InputInfo.RtmpPushInputInfo.ExpiredSecond=3600\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddInput\",\n    \"InputEndpoint\": \"Main\",\n    \"InputInfo\": {\n        \"InputType\": \"RtmpPush\",\n        \"RtmpPushInputInfo\": {\n            \"ExpiredSecond\": \"3600\"\n        }\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"rtmp://liveplay-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b4500018xxx?txSecret=4478cfdfe0fd0eb3820705aebaa328ed&txTime=608FA1CE\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e8e5x\"\n    }\n}",
         "title": "添加直播推流输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo)| 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值-1",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddInput\",\n    \"InputEndpoint\": \"Main\",\n    \"InputInfo\": {\n        \"VodPullInputInfo\": {\n            \"LoopTimes\": \"-1\",\n            \"InputUrls\": [\n                \"https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\"\n            ]\n        },\n        \"InputType\": \"VodPull\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"c44cbb5b-b809-4061-8c45-7469b64e85a\"\n    }\n}",
         "title": "添加点播拉流输入源且循环播放"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源，InputType 取值 VodPull ， VodPullInputInfo.LoopTimes 取值 0",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddInput\",\n    \"InputEndpoint\": \"Main\",\n    \"InputInfo\": {\n        \"VodPullInputInfo\": {\n            \"LoopTimes\": \"0\",\n            \"InputUrls\": [\n                \"https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\"\n            ]\n        },\n        \"InputType\": \"VodPull\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"c93cbb5b-b809-4061-8c45-7469b64e8e69\"\n    }\n}",
         "title": "添加点播拉流输入源且单次播放"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DeleteInput\nInputEndpoint | 是 | String | Main 或 Backup",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=DeleteInput\n&InputEndpoint=Main\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DeleteInput\",\n    \"InputEndpoint\": \"Main\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"a48cbb3b-b901-4052-8c48-9869b64e8e69\"\n    }\n}",
         "title": "删除输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyInput\nInputEndpoint | 是 | String | Main 或 Backup\nInputInfo | 是 | [StreamInputInfo](https://cloud.tencent.com/document/api/1156/40360#StreamInputInfo) | 输入源",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyInput\n&InputEndpoint=Main\n&InputInfo.InputType=VodPull\n&InputInfo.VodPullInputInfo.InputUrls.0=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\n&InputInfo.VodPullInputInfo.InputUrls.1=https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/test.mp4\n&InputInfo.VodPullInputInfo.LoopTimes=-1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"ModifyInput\",\n    \"InputEndpoint\": \"Main\",\n    \"InputInfo\": {\n        \"VodPullInputInfo\": {\n            \"LoopTimes\": \"-1\",\n            \"InputUrls\": [\n                \"https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/test.mp4\",\n                \"https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4\"\n            ]\n        },\n        \"InputType\": \"VodPull\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"983cbb5b-b809-4061-8c45-7469b64e8e41\"\n    }\n}",
         "title": "修改输入源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 AddOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段若不填则由后端生成",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=AddOutput\n&OutputInfo.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xx\n&OutputInfo.Name=test\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"AddOutput\",\n    \"OutputInfo\": {\n        \"PushUrl\": \"rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xx\",\n        \"Name\": \"test\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"1938bb5b-b809-4061-8c45-7469b64e8e893\"\n    }\n}",
         "title": "添加输出源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DeleteOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表接口中拿到对应输出源的 Id",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=DeleteOutput\n&OutputInfo.Id=12357877\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DeleteOutput\",\n    \"OutputInfo\": {\n        \"Id\": \"12357877\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"kd83bb5b-b809-4061-8c45-7469b64e9183\"\n    }\n}",
         "title": "删除输出源"
       },
       {
         "document": "**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyOutput\nOutputInfo| 是 | [StreamConnectOutput](https://cloud.tencent.com/document/api/1156/40360#StreamConnectOutput)| 输出源，Id 字段必填，从获取项目列表中拿到对应输出源的 Id",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyOutput\n&OutputInfo.Id=12357877\n&OutputInfo.PushUrl=rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"ModifyOutput\",\n    \"OutputInfo\": {\n        \"PushUrl\": \"rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx\",\n        \"Id\": \"12357877\"\n    },\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"832dbb5b-b809-4061-8c45-7469b648329dl\"\n    }\n}",
         "title": "修改输出源"
       },
       {
         "document": "开启云转推包括开启输入源、输出源转推。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Start",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=Start\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Start\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"l90dbb5b-b809-4061-8c45-7469b64e928d\"\n    }\n}",
         "title": "开启云转推"
       },
       {
         "document": "停止云转推包括停止输入源、输出源转推。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 Stop",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=Stop\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"Stop\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"7819bb5b-b809-4061-8c45-7469b64e8370\"\n    }\n}",
         "title": "停止云转推"
       },
       {
         "document": "云转推主备输入源切换，当前转推输入源为Main，切换到Backup输入源。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 SwitchInput\nInputEndPoint | 是 | String | Main 或 Backup",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=SwitchInput\n&InputEndpoint=Backup\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"SwitchInput\",\n    \"InputEndpoint\": \"Backup\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"9303bb5b-b809-4061-8c45-7469b64e7630\"\n    }\n}",
         "title": "切换输入源"
       },
       {
         "document": "修改当前正在转推项目的转推预计结束时间。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 ModifyCurrentStopTime\nCurrentStopTime | 是 | String | 当前转推预计结束时间，ISO 日期格式，不得超过当前时间30天",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=ModifyCurrentStopTime\n&CurrentStopTime=2021-03-23T07:51:18.029Z\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"ModifyCurrentStopTime\",\n    \"CurrentStopTime\": \"2021-03-23T07:51:18.029Z\",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": null,\n        \"RequestId\": \"kkd89b5b-b809-4061-8c45-7469b64e9263\"\n    }\n}",
         "title": "修改转推结束时间"
       },
       {
         "document": "查询当前正在转推项目的点播输入源播放进度。\n\n**输入参数：**\n除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：\n\n参数名称 | 必选 | 类型 | 描述\n------- | ------- | ------- | -------\nOperation | 是 | String | 请填写 DescribeInputPlayInfo\nInputEndpoint | 是 | String | Main 或 Backup",
-        "input": "https://cme.tencentcloudapi.com/?Action=HandleStreamConnectProject\n&Platform=test\n&ProjectId=12522d74de35ff\n&Operation=DescribeInputPlayInfo\n&InputEndpoint=Main \n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HandleStreamConnectProject\n<公共请求参数>\n\n{\n    \"Platform\": \"test\",\n    \"Operation\": \"DescribeInputPlayInfo\",\n    \"InputEndpoint\": \"Main \",\n    \"ProjectId\": \"12522d74de35ff\"\n}",
         "output": "{\n    \"Response\": {\n        \"StreamInputRtmpPushUrl\": \"\",\n        \"VodPullInputPlayInfo\": {\n            \"Url\": \"https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b5352858907805464143/AfJuJAzie5QA.mp4\",\n            \"TimeOffset\": 15\n        },\n        \"RequestId\": \"kkd89b5b-b809-4061-8c45-7469b64e9263\"\n    }\n}",
         "title": "查询点播输入源播放进度"
       }

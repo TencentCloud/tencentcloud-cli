@@ -16,6 +16,12 @@ Output:
         "Status": "xx",
         "ModifiedOn": "2020-09-22T00:00:00+00:00",
         "Name": "xx",
+        "Tags": [
+            {
+                "TagKey": "xx",
+                "TagValue": "xx"
+            }
+        ],
         "NameServers": [
             "xx"
         ],

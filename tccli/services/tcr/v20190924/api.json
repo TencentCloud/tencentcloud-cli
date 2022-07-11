@@ -2188,6 +2188,7 @@
         {
           "default": "",
           "document": "实例ID",
+          "example": "tcr-okmj78",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2196,6 +2197,7 @@
         {
           "default": "",
           "document": "命名空间的名称",
+          "example": "mytest",
           "member": "string",
           "name": "NamespaceName",
           "required": true,

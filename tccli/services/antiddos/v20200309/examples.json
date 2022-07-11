@@ -128,6 +128,14 @@
         "title": "证书绑定域名列表"
       }
     ],
+    "CreateNewL7Rules": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=CreateNewL7Rules\n&Business=bgpip\n&IdList.0=bgpip-000001\n&VipList.0=192.168.1.1\n&Rules.0.RuleName=test\n&Rules.0.Protocol=http\n&Rules.0.Domain=www.abc.com\n&Rules.0.SourceType=2\n&Rules.0.LbType=1\n&Rules.0.KeepTime=300\n&Rules.0.SourceList.0.Source=1.1.1.10\n&Rules.0.SourceList.0.Weight=100\n&Rules.0.SourceList.1.Source=1.1.1.20\n&Rules.0.SourceList.1.Weight=100\n&Rules.0.CertType=0\n&Rules.0.KeepEnable=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加7层转发规则"
+      }
+    ],
     "CreatePacketFilterConfig": [
       {
         "document": "",

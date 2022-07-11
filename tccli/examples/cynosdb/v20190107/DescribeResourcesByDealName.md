@@ -18,13 +18,15 @@ Output:
                 "ClusterId": "cynosdbmysql-r8ewihg4",
                 "InstanceIds": [
                     "cynosdbmysql-ins-pecl0drs"
-                ]
+                ],
+                "DealName": "xxx"
             },
             {
                 "ClusterId": "cynosdbmysql-hjosrxhu",
                 "InstanceIds": [
                     "cynosdbmysql-ins-7f59pahg"
-                ]
+                ],
+                "DealName": "xxx"
             }
         ],
         "RequestId": "005b862f-f408-4a95-a7e7-26f3e672e081"

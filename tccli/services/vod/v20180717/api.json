@@ -11125,21 +11125,21 @@
         },
         {
           "default": "",
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> RemoveWatermark: 去除水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
-          "example": "Transcoding-TESHD",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
           "example": "无",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
           "type": "int"
+        },
+        {
+          "default": "",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "example": "Transcoding-TESHD",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14490,6 +14490,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片透明度，取值范围：[0, 100]\n<li>0：完全不透明</li>\n<li>100：完全透明</li>\n默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Transparency",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -14500,6 +14510,7 @@
         {
           "default": "",
           "document": "水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。",
+          "example": "12ab",
           "member": "string",
           "name": "ImageContent",
           "required": false,
@@ -14509,6 +14520,7 @@
         {
           "default": "",
           "document": "水印的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>",
+          "example": "10px",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -14518,6 +14530,7 @@
         {
           "default": "",
           "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>",
+          "example": "10px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -14527,10 +14540,21 @@
         {
           "default": "",
           "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束。</li>",
+          "example": "once",
           "member": "string",
           "name": "RepeatType",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片透明度，取值范围：[0, 100]\n<li>0：完全不透明</li>\n<li>100：完全透明。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "Transparency",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -14542,6 +14566,7 @@
         {
           "default": "",
           "document": "水印图片地址。",
+          "example": "http://xxx/xxx.png",
           "member": "string",
           "name": "ImageUrl",
           "required": true,
@@ -14551,6 +14576,7 @@
         {
           "default": "",
           "document": "水印的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。</li>",
+          "example": "10px",
           "member": "string",
           "name": "Width",
           "required": true,
@@ -14560,6 +14586,7 @@
         {
           "default": "",
           "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；</li>\n0px：表示 Height 按照 Width 对视频宽度的比例缩放。",
+          "example": "10px",
           "member": "string",
           "name": "Height",
           "required": true,
@@ -14569,10 +14596,21 @@
         {
           "default": "",
           "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束。</li>",
+          "example": "once",
           "member": "string",
           "name": "RepeatType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "图片透明度，取值范围：[0, 100]\n<li>0：完全不透明</li>\n<li>100：完全透明。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "Transparency",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

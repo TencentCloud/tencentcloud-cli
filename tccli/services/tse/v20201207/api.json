@@ -502,6 +502,15 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "引擎其他组件名称（pushgateway）",
+          "example": "pushgateway",
+          "member": "string",
+          "name": "Workload",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -856,6 +865,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "config内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1:8080",
+          "member": "string",
+          "name": "ConfigIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1501,6 +1520,16 @@
           "name": "MainPassword",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "服务治理pushgateway引擎绑定的网络信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "PgwVpcInfos",
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

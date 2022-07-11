@@ -15,22 +15,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d92365c7-3484-4d52-8add-93f682e127bd",
         "NamespaceList": [
             {
-                "Name": "mytest1",
-                "CreationTime": "2020-02-27T00:49:22+08:00",
+                "NamespaceId": 2,
+                "TagSpecification": {
+                    "ResourceType": "namespace",
+                    "Tags": [
+                        {
+                            "Value": "tag-value",
+                            "Key": "tag-key"
+                        }
+                    ]
+                },
+                "CreationTime": "2020-09-22T00:00:00+00:00",
                 "Public": true,
-                "NamespaceId": 2
+                "Name": "ns"
             },
             {
-                "Name": "mytest",
-                "CreationTime": "2020-02-27T00:44:49+08:00",
                 "Public": true,
-                "NamespaceId": 1
+                "Name": "ns1",
+                "CreationTime": "2020-09-22T00:00:00+00:00",
+                "NamespaceId": 1,
+                "TagSpecification": {
+                    "ResourceType": "namespace",
+                    "Tags": [
+                        {
+                            "Value": "tag-value",
+                            "Key": "tag-key"
+                        }
+                    ]
+                }
             }
         ],
-        "TotalCount": 2
+        "TotalCount": 2,
+        "RequestId": "866bda78-ed75-4b10-8876-e82de555f69b"
     }
 }
 ```

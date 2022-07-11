@@ -14,11 +14,11 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation AddInput \
     --InputEndpoint Main \
+    --InputInfo.LivePullInputInfo.InputUrl rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759 \
     --InputInfo.InputType LivePull \
-    --InputInfo.LivePullInputInfo.InputUrl rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -48,11 +48,11 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation AddInput \
     --InputEndpoint Main \
     --InputInfo.InputType RtmpPush \
-    --InputInfo.RtmpPushInputInfo.ExpiredSecond 3600
+    --InputInfo.RtmpPushInputInfo.ExpiredSecond 3600 \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -82,12 +82,12 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation AddInput \
     --InputEndpoint Main \
-    --InputInfo.InputType VodPull \
+    --InputInfo.VodPullInputInfo.LoopTimes -1 \
     --InputInfo.VodPullInputInfo.InputUrls https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4 \
-    --InputInfo.VodPullInputInfo.LoopTimes -1
+    --InputInfo.InputType VodPull \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -117,12 +117,12 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation AddInput \
     --InputEndpoint Main \
-    --InputInfo.InputType VodPull \
+    --InputInfo.VodPullInputInfo.LoopTimes 0 \
     --InputInfo.VodPullInputInfo.InputUrls https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4 \
-    --InputInfo.VodPullInputInfo.LoopTimes 0
+    --InputInfo.InputType VodPull \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -151,9 +151,9 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation DeleteInput \
-    --InputEndpoint Main
+    --InputEndpoint Main \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -183,12 +183,12 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation ModifyInput \
     --InputEndpoint Main \
+    --InputInfo.VodPullInputInfo.LoopTimes -1 \
+    --InputInfo.VodPullInputInfo.InputUrls https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/test.mp4 https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4 \
     --InputInfo.InputType VodPull \
-    --InputInfo.VodPullInputInfo.InputUrls https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/AfJuJAzie5QA.mp4 https://1810000001.vod2.myqcloud.com/b64e98advodcq1810000001/85f47b535285890787805464143/test.mp4 \
-    --InputInfo.VodPullInputInfo.LoopTimes -1
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -217,10 +217,10 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation AddOutput \
     --OutputInfo.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xx \
-    --OutputInfo.Name test
+    --OutputInfo.Name test \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -249,9 +249,9 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation DeleteOutput \
-    --OutputInfo.Id 12357877
+    --OutputInfo.Id 12357877 \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -280,10 +280,10 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation ModifyOutput \
+    --OutputInfo.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx \
     --OutputInfo.Id 12357877 \
-    --OutputInfo.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -313,8 +313,8 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
-    --Operation Start
+    --Operation Start \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -344,8 +344,8 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
-    --Operation Stop
+    --Operation Stop \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -376,9 +376,9 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation SwitchInput \
-    --InputEndpoint Backup
+    --InputEndpoint Backup \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -409,9 +409,9 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation ModifyCurrentStopTime \
-    --CurrentStopTime 2021-03-23T07:51:18.029Z
+    --CurrentStopTime 2021-03-23T07:51:18.029Z \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 
@@ -442,9 +442,9 @@ Input:
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
     --Platform test \
-    --ProjectId 12522d74de35ff \
     --Operation DescribeInputPlayInfo \
-    --InputEndpoint Main
+    --InputEndpoint Main  \
+    --ProjectId 12522d74de35ff
 ```
 
 Output: 

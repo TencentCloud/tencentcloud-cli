@@ -7229,6 +7229,15 @@
           "name": "RegionNames",
           "required": false,
           "type": "list"
+        },
+        {
+          "default": "",
+          "document": "国家，映射表参照如下文档：\nhttps://cloud.tencent.com/document/product/267/34019。",
+          "example": "[\"孟买\"]",
+          "member": "string",
+          "name": "CountryNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
