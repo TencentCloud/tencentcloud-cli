@@ -294,6 +294,12 @@
       "name": "印尼身份证识别",
       "output": "RecognizeIndonesiaIDCardOCRResponse"
     },
+    "RecognizeIndonesiaIDOCR": {
+      "document": "印度尼西亚身份证识别",
+      "input": "RecognizeIndonesiaIDOCRRequest",
+      "name": "印度尼西亚身份证识别",
+      "output": "RecognizeIndonesiaIDOCRResponse"
+    },
     "RecognizeOnlineTaxiItineraryOCR": {
       "document": "本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。",
       "input": "RecognizeOnlineTaxiItineraryOCRRequest",
@@ -323,6 +329,12 @@
       "input": "RecognizeThaiIDCardOCRRequest",
       "name": "泰国身份证识别",
       "output": "RecognizeThaiIDCardOCRResponse"
+    },
+    "RecognizeThaiIDOCR": {
+      "document": "本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
+      "input": "RecognizeThaiIDOCRRequest",
+      "name": "泰国身份证识别（新版）",
+      "output": "RecognizeThaiIDOCRResponse"
     },
     "RecognizeTravelCardOCR": {
       "document": "本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。",
@@ -6393,6 +6405,204 @@
       ],
       "type": "object"
     },
+    "RecognizeIndonesiaIDOCRRequest": {
+      "document": "RecognizeIndonesiaIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "image",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "场景参数，默认值为V1\n可选值：\nV1\nV2",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeIndonesiaIDOCRResponse": {
+      "document": "RecognizeIndonesiaIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "证件号码",
+          "example": "360XXXXXX",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓名",
+          "example": "INM",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "出生时间",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "性别",
+          "example": "LAKEI",
+          "member": "string",
+          "name": "Sex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "血型",
+          "example": "o",
+          "member": "string",
+          "name": "BloodType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "地址",
+          "example": "无",
+          "member": "string",
+          "name": "Adress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "宗教信仰",
+          "example": "ATHOLIK",
+          "member": "string",
+          "name": "Religion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "婚姻状况",
+          "example": "KAWFN",
+          "member": "string",
+          "name": "MaritalStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "职业",
+          "example": "KARYAWAN",
+          "member": "string",
+          "name": "Occupation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "国籍",
+          "example": "INM",
+          "member": "string",
+          "name": "Nationality",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "身份证有效期限",
+          "example": "SEUMUR",
+          "member": "string",
+          "name": "DateOfExpiration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "发证日期",
+          "example": "15-05-2015",
+          "member": "string",
+          "name": "DateOfIssue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "人像截图",
+          "example": "无",
+          "member": "string",
+          "name": "Photo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "出生地",
+          "example": "无",
+          "member": "string",
+          "name": "PlaceOfBirth",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecognizeOnlineTaxiItineraryOCRRequest": {
       "document": "RecognizeOnlineTaxiItineraryOCR请求参数结构体",
       "members": [
@@ -6941,6 +7151,134 @@
           "name": "EnLastName",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeThaiIDOCRRequest": {
+      "document": "RecognizeThaiIDOCR请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://xx/a.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否返回人像照片。",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnHeadImage",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeThaiIDOCRResponse": {
+      "document": "RecognizeThaiIDOCR返回参数结构体",
+      "members": [
+        {
+          "document": "证件号码",
+          "example": "3102001968756",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓名",
+          "example": "นาย ธนกฤต  บุญโญปกรุณ์",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "姓氏",
+          "example": "Mr. Thanakit",
+          "member": "string",
+          "name": "LastName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "出生日期",
+          "example": "14ธ.ค.2509",
+          "member": "string",
+          "name": "Birthday",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "发证日期",
+          "example": "9ธ.ค.2559",
+          "member": "string",
+          "name": "DateOfIssue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "有效期限",
+          "example": "13ธ.ค.2567",
+          "member": "string",
+          "name": "DateOfExpiration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "性别",
+          "example": "无",
+          "member": "string",
+          "name": "Sex",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "人像截图",
+          "example": "无",
+          "member": "string",
+          "name": "Photo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

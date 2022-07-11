@@ -1679,7 +1679,8 @@
           "name": "CiphertextBlob",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1689,17 +1690,19 @@
           "name": "EncryptList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "有加密需求的用户，传入CBC加密的初始向量",
+          "document": "有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。",
           "example": "null",
           "member": "string",
           "name": "Iv",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"

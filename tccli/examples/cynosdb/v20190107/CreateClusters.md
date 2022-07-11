@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli cynosdb CreateClusters --cli-unfold-argument  \
-    --Zone ap-guangzhou-3 \
-    --ProjectId 0 \
-    --VpcId vpc-1ptuei0b \
-    --SubnetId subnet-1tmw9t4o \
-    --DbType MYSQL \
-    --DbVersion 10.0 \
-    --Cpu 2 \
-    --Memory 4 \
-    --Storage 100 \
-    --ClusterName newInstance \
-    --AdminPassword passwd@admin \
-    --HaCount 1 \
     --Count 1 \
-    --PayMode 0 \
     --StoragePayMode 0 \
+    --VpcId vpc-1ptuei0b \
+    --Zone ap-guangzhou-3 \
+    --AdminPassword passwd@admin \
+    --DbType MYSQL \
+    --ProjectId 0 \
+    --DbVersion 10.0 \
+    --Storage 100 \
+    --PayMode 0 \
+    --ClusterName newInstance \
+    --StorageLimit 100 \
     --RollbackStrategy noneRollback \
-    --StorageLimit 100
+    --Memory 4 \
+    --SubnetId subnet-1tmw9t4o \
+    --Cpu 2 \
+    --HaCount 1
 ```
 
 Output: 

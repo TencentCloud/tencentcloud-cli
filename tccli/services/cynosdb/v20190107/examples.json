@@ -35,7 +35,7 @@
     "CreateClusters": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateClusters\n&Zone=ap-guangzhou-3\n&ProjectId=0\n&VpcId=vpc-1ptuei0b\n&SubnetId=subnet-1tmw9t4o\n&DbType=MYSQL\n&DbVersion=10.0\n&Cpu=2\n&Memory=4\n&Storage=100\n&ClusterName=newInstance\n&AdminPassword=passwd@admin\n&HaCount=1\n&Count=1\n&PayMode=0\n&StoragePayMode=0\n&RollbackStrategy=noneRollback\n&StorageLimit=100\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"StoragePayMode\": \"0\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"AdminPassword\": \"passwd@admin\",\n    \"DbType\": \"MYSQL\",\n    \"ProjectId\": \"0\",\n    \"DbVersion\": \"10.0\",\n    \"Storage\": \"100\",\n    \"PayMode\": \"0\",\n    \"ClusterName\": \"newInstance\",\n    \"StorageLimit\": \"100\",\n    \"RollbackStrategy\": \"noneRollback\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\",\n    \"HaCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbmysql-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
         "title": "创建集群"
       }
@@ -195,8 +195,8 @@
     "DescribeResourcesByDealName": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeResourcesByDealName\n&DealName=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BillingResourceInfos\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-r8ewihg4\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-pecl0drs\"\n                ]\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-hjosrxhu\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-7f59pahg\"\n                ]\n            }\n        ],\n        \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesByDealName\n<公共请求参数>\n\n{\n    \"DealName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BillingResourceInfos\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-r8ewihg4\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-pecl0drs\"\n                ],\n                \"DealName\": \"xxx\"\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-hjosrxhu\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-7f59pahg\"\n                ],\n                \"DealName\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\n    }\n}",
         "title": "查询订单id关联的资源信息"
       }
     ],
@@ -291,7 +291,7 @@
     "ModifyClusterParam": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterParam\n&ClusterId=cynosdbmysql-ins-jhi2gdi0\n&ParamList.0.ParamName=authentication_timeout\n&ParamList.0.OldValue=60\n&ParamList.0.CurrentValue=59\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterParam\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-ins-jhi2gdi0\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"59\",\n            \"OldValue\": \"60\",\n            \"ParamName\": \"authentication_timeout\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"164063\",\n        \"AsyncRequestId\": \"56317d06-8078-4e5c-b675-9e048995c820\"\n    }\n}",
         "title": "修改集群参数"
       }

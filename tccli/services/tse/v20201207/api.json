@@ -526,7 +526,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -535,7 +536,8 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -544,7 +546,18 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "引擎其他组件名称（pushgateway）",
+          "example": "pushgateway",
+          "member": "string",
+          "name": "Workload",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -559,7 +572,8 @@
           "name": "IntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "公网访问地址",
@@ -568,7 +582,8 @@
           "name": "InternetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "apollo多环境公网ip",
@@ -577,7 +592,8 @@
           "name": "EnvAddressInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "控制台公网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -586,7 +602,8 @@
           "name": "ConsoleInternetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "控制台内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -595,7 +612,8 @@
           "name": "ConsoleIntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "客户端公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -604,7 +622,8 @@
           "name": "InternetBandWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "控制台公网带宽\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -613,7 +632,8 @@
           "name": "ConsoleInternetBandWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -886,7 +906,8 @@
           "name": "EnvName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -896,7 +917,8 @@
           "name": "EnableConfigInternet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -906,7 +928,19 @@
           "name": "ConfigInternetServiceIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "config内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1:8080",
+          "member": "string",
+          "name": "ConfigIntranetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1516,7 +1550,8 @@
           "name": "EngineRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1526,7 +1561,8 @@
           "name": "BoundK8SInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1536,7 +1572,8 @@
           "name": "VpcInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1546,7 +1583,8 @@
           "name": "AuthOpen",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1556,7 +1594,8 @@
           "name": "Features",
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -1566,7 +1605,19 @@
           "name": "MainPassword",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "服务治理pushgateway引擎绑定的网络信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "PgwVpcInfos",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "both"

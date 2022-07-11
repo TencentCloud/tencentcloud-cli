@@ -7254,7 +7254,8 @@
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7263,7 +7264,8 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7272,7 +7274,8 @@
           "member": "string",
           "name": "PushDomains",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7281,7 +7284,8 @@
           "member": "string",
           "name": "MainlandOrOversea",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7290,7 +7294,8 @@
           "member": "uint64",
           "name": "Granularity",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7299,7 +7304,18 @@
           "member": "string",
           "name": "RegionNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "国家，映射表参照如下文档：\nhttps://cloud.tencent.com/document/product/267/34019。",
+          "example": "[\"孟买\"]",
+          "member": "string",
+          "name": "CountryNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -7314,7 +7330,8 @@
           "name": "PeakBandwidthTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "峰值带宽，单位是 Mbps。",
@@ -7323,7 +7340,8 @@
           "name": "PeakBandwidth",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "95峰值带宽所在时间点，格式为 yyyy-mm-dd HH:MM:SS。",
@@ -7332,7 +7350,8 @@
           "name": "P95PeakBandwidthTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "95峰值带宽，单位是 Mbps。",
@@ -7341,7 +7360,8 @@
           "name": "P95PeakBandwidth",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "总流量，单位是 MB。",
@@ -7350,7 +7370,8 @@
           "name": "SumFlux",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "明细数据信息。",
@@ -7359,7 +7380,8 @@
           "name": "DataInfoList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

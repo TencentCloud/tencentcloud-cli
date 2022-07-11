@@ -1052,7 +1052,8 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1061,7 +1062,8 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1070,7 +1072,8 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1079,7 +1082,8 @@
           "member": "string",
           "name": "DbType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1088,7 +1092,8 @@
           "member": "string",
           "name": "DbVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1097,7 +1102,8 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1106,7 +1112,8 @@
           "member": "int64",
           "name": "Cpu",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1115,7 +1122,8 @@
           "member": "int64",
           "name": "Memory",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1124,7 +1132,8 @@
           "member": "int64",
           "name": "Storage",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1133,7 +1142,8 @@
           "member": "string",
           "name": "ClusterName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1142,16 +1152,18 @@
           "member": "string",
           "name": "AdminPassword",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "端口，默认5432",
+          "document": "端口，默认3306，取值范围[0, 65535)",
           "example": "3306",
           "member": "int64",
           "name": "Port",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1160,7 +1172,8 @@
           "member": "int64",
           "name": "PayMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1169,7 +1182,8 @@
           "member": "int64",
           "name": "Count",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1178,7 +1192,8 @@
           "member": "string",
           "name": "RollbackStrategy",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1187,7 +1202,8 @@
           "member": "uint64",
           "name": "RollbackId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1196,7 +1212,8 @@
           "member": "string",
           "name": "OriginalClusterId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1205,7 +1222,8 @@
           "member": "string",
           "name": "ExpectTime",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1214,7 +1232,8 @@
           "member": "uint64",
           "name": "ExpectTimeThresh",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1223,16 +1242,18 @@
           "member": "int64",
           "name": "StorageLimit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "实例数量",
+          "document": "实例数量，数量范围为(0,16]",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1241,7 +1262,8 @@
           "member": "int64",
           "name": "TimeSpan",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1250,16 +1272,18 @@
           "member": "string",
           "name": "TimeUnit",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "包年包月购买是否自动续费",
+          "document": "包年包月购买是否自动续费，默认为0",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1268,7 +1292,8 @@
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1277,7 +1302,8 @@
           "member": "int64",
           "name": "HaCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1286,7 +1312,8 @@
           "member": "string",
           "name": "OrderSource",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1295,7 +1322,8 @@
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1304,7 +1332,8 @@
           "member": "string",
           "name": "DbMode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1313,7 +1342,8 @@
           "member": "float",
           "name": "MinCpu",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1322,7 +1352,8 @@
           "member": "float",
           "name": "MaxCpu",
           "required": false,
-          "type": "float"
+          "type": "float",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1331,7 +1362,8 @@
           "member": "string",
           "name": "AutoPause",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1340,7 +1372,8 @@
           "member": "int64",
           "name": "AutoPauseDelay",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1349,7 +1382,8 @@
           "member": "int64",
           "name": "StoragePayMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1358,7 +1392,8 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1367,7 +1402,8 @@
           "member": "string",
           "name": "AlarmPolicyIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1376,7 +1412,8 @@
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1385,16 +1422,28 @@
           "member": "int64",
           "name": "DealMode",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "参数模版ID",
+          "document": "参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
           "example": "0",
           "member": "int64",
           "name": "ParamTemplateId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "多可用区地址",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1409,7 +1458,8 @@
           "name": "TranId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1418,7 +1468,8 @@
           "name": "DealNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1427,7 +1478,8 @@
           "name": "ResourceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1436,7 +1488,8 @@
           "name": "ClusterIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1445,7 +1498,8 @@
           "name": "BigDealIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4154,12 +4208,23 @@
       "members": [
         {
           "default": "",
-          "document": "计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
+          "document": "计费订单ID（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
           "example": "1000000001111",
           "member": "string",
           "name": "DealName",
-          "required": true,
-          "type": "string"
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "计费订单ID列表，可以一次查询若干条订单ID对应资源信息（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
+          "example": "[\"xxx\",\"xxx\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4174,7 +4239,8 @@
           "name": "BillingResourceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4929,25 +4995,28 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值",
+          "document": "要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值且不做校验",
           "example": "无",
           "member": "ParamItem",
           "name": "ParamList",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
           "document": "维护期间执行-yes,立即执行-no",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "IsInMaintainPeriod",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4962,7 +5031,8 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

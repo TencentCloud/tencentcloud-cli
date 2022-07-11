@@ -470,6 +470,14 @@
         "title": "RecognizeIndonesiaIDCardOCR"
       }
     ],
+    "RecognizeIndonesiaIDOCR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeIndonesiaIDOCR\n<公共请求参数>\n\n{\n    \"ReturnHeadImage\": \"false\",\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BloodType\": \"xx\",\n        \"MaritalStatus\": \"xx\",\n        \"Name\": \"xx\",\n        \"Photo\": \"xx\",\n        \"DateOfIssue\": \"xx\",\n        \"PlaceOfBirth\": \"xx\",\n        \"Sex\": \"xx\",\n        \"Religion\": \"xx\",\n        \"Birthday\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"DateOfExpiration\": \"xx\",\n        \"Nationality\": \"xx\",\n        \"Adress\": \"xx\",\n        \"ID\": \"xx\",\n        \"Occupation\": \"xx\"\n    }\n}",
+        "title": "RecognizeIndonesiaIDOCR"
+      }
+    ],
     "RecognizeOnlineTaxiItineraryOCR": [
       {
         "document": "",
@@ -507,6 +515,14 @@
         "document": "",
         "input": "https://ocr.tencentcloudapi.com/?Action=RecognizeThaiIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ID\": \"3102001968756\",\n        \"ThaiName\": \"นาย ธนกฤต  บุญโญปกรุณ์\",\n        \"EnFirstName\": \"Mr. Thanakit\",\n        \"EnLastName\": \"Boonyopakron\",\n        \"Address\": \"ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง\",\n        \"Birthday\": \"14ธ.ค.2509\",\n        \"IssueDate\": \"9ธ.ค.2559\",\n        \"ExpirationDate\": \"13ธ.ค.2567\",\n        \"RequestId\": \"98f8fcbf-933a-4e95-ac48-6f1a9308fs51\"\n    }\n}",
+        "title": "泰国身份证识别示例代码"
+      }
+    ],
+    "RecognizeThaiIDOCR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeThaiIDOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"Photo\": \"xx\",\n        \"DateOfIssue\": \"xx\",\n        \"Sex\": \"xx\",\n        \"Birthday\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"LastName\": \"xx\",\n        \"DateOfExpiration\": \"xx\",\n        \"ID\": \"xx\"\n    }\n}",
         "title": "泰国身份证识别示例代码"
       }
     ],

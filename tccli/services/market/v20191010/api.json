@@ -129,7 +129,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -144,7 +145,8 @@
           "name": "MaxRequestNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "已经调用量",
@@ -153,7 +155,8 @@
           "name": "InUseRequestNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "剩余调用量",
@@ -162,7 +165,8 @@
           "name": "RemainingRequestNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
