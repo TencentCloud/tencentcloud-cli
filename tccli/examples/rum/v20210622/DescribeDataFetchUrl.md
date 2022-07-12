@@ -6,27 +6,27 @@ Input:
 
 ```
 tccli rum DescribeDataFetchUrl --cli-unfold-argument  \
-    --ID 1 \
-    --StartTime 1625444040 \
-    --EndTime 1625454840 \
-    --Type pagepv \
-    --Level 1 \
-    --Isp 中国移动 \
+    --ExtSecond 自定义2 \
+    --Engine ie2 \
+    --IsAbroad 1 \
     --Area 中国 \
     --NetType 2 \
-    --Platform 2 \
-    --Device 三星 \
-    --VersionNum 版本 \
-    --ExtFirst 自定义1 \
-    --ExtSecond 自定义2 \
-    --ExtThird 自定义3 \
-    --IsAbroad 1 \
-    --Browser ie \
+    --CostType avg \
+    --Level 1 \
     --Os apple \
-    --Engine ie2 \
     --Brand apple \
+    --Isp 中国移动 \
+    --VersionNum 版本 \
+    --Platform 2 \
+    --ExtThird 自定义3 \
+    --ExtFirst 自定义1 \
+    --StartTime 1625444040 \
+    --Device 三星 \
     --From index.html \
-    --CostType avg
+    --EndTime 1625454840 \
+    --Type pagepv \
+    --ID 1 \
+    --Browser ie
 ```
 
 Output: 
@@ -35,6 +35,30 @@ Output:
     "Response": {
         "Result": "xxxx",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
+    }
+}
+```
+
+**Example 2: 333**
+
+
+
+Input: 
+
+```
+tccli rum DescribeDataFetchUrl --cli-unfold-argument  \
+    --EndTime 1625454840 \
+    --Type condition \
+    --ID 1 \
+    --StartTime 1625444040
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d8b037d7-08ae-401d-84cf-071e7a133c00",
+        "Result": "{\"request_id\":\"d8b037d7-08ae-401d-84cf-071e7a133c00\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0}]}"
     }
 }
 ```

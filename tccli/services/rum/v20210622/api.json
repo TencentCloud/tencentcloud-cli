@@ -1629,7 +1629,8 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1638,7 +1639,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1647,7 +1649,8 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1656,7 +1659,8 @@
           "member": "int64",
           "name": "ID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1665,7 +1669,8 @@
           "member": "string",
           "name": "ExtSecond",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1674,7 +1679,8 @@
           "member": "string",
           "name": "Engine",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1683,7 +1689,8 @@
           "member": "string",
           "name": "Isp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1692,7 +1699,8 @@
           "member": "string",
           "name": "From",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1701,7 +1709,8 @@
           "member": "string",
           "name": "Level",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1710,7 +1719,8 @@
           "member": "string",
           "name": "Brand",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1719,7 +1729,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1728,7 +1739,8 @@
           "member": "string",
           "name": "VersionNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1737,7 +1749,8 @@
           "member": "string",
           "name": "Platform",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1746,7 +1759,8 @@
           "member": "string",
           "name": "ExtThird",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1755,7 +1769,8 @@
           "member": "string",
           "name": "ExtFirst",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1764,7 +1779,8 @@
           "member": "string",
           "name": "NetType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1773,7 +1789,8 @@
           "member": "string",
           "name": "Device",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1782,7 +1799,8 @@
           "member": "string",
           "name": "IsAbroad",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1791,7 +1809,8 @@
           "member": "string",
           "name": "Os",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1800,7 +1819,8 @@
           "member": "string",
           "name": "Browser",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1809,7 +1829,8 @@
           "member": "string",
           "name": "CostType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1818,7 +1839,8 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1827,7 +1849,28 @@
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "httpcode响应码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1842,7 +1885,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2097,7 +2141,8 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2106,7 +2151,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2115,7 +2161,8 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2124,7 +2171,8 @@
           "member": "int64",
           "name": "ID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2133,7 +2181,8 @@
           "member": "string",
           "name": "ExtSecond",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2142,7 +2191,8 @@
           "member": "string",
           "name": "Engine",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2151,7 +2201,8 @@
           "member": "string",
           "name": "Isp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2160,7 +2211,8 @@
           "member": "string",
           "name": "From",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2169,7 +2221,8 @@
           "member": "string",
           "name": "Level",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2178,7 +2231,8 @@
           "member": "string",
           "name": "Brand",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2187,7 +2241,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2196,7 +2251,8 @@
           "member": "string",
           "name": "VersionNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2205,7 +2261,8 @@
           "member": "string",
           "name": "Platform",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2214,7 +2271,8 @@
           "member": "string",
           "name": "ExtThird",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2223,7 +2281,8 @@
           "member": "string",
           "name": "ExtFirst",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2232,7 +2291,8 @@
           "member": "string",
           "name": "NetType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2241,7 +2301,8 @@
           "member": "string",
           "name": "Device",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2250,7 +2311,8 @@
           "member": "string",
           "name": "IsAbroad",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2259,7 +2321,8 @@
           "member": "string",
           "name": "Os",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2268,7 +2331,8 @@
           "member": "string",
           "name": "Browser",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2277,7 +2341,8 @@
           "member": "string",
           "name": "CostType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2286,7 +2351,8 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2295,7 +2361,28 @@
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "httpcode响应码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2310,7 +2397,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3600,7 +3688,8 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3609,7 +3698,8 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3618,7 +3708,8 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3627,7 +3718,8 @@
           "member": "int64",
           "name": "ID",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3636,7 +3728,8 @@
           "member": "string",
           "name": "ExtSecond",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3645,7 +3738,8 @@
           "member": "string",
           "name": "Engine",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3654,7 +3748,8 @@
           "member": "string",
           "name": "Isp",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3663,7 +3758,8 @@
           "member": "string",
           "name": "From",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3672,7 +3768,8 @@
           "member": "string",
           "name": "Level",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3681,7 +3778,8 @@
           "member": "string",
           "name": "Brand",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3690,7 +3788,8 @@
           "member": "string",
           "name": "Area",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3699,7 +3798,8 @@
           "member": "string",
           "name": "VersionNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3708,7 +3808,8 @@
           "member": "string",
           "name": "Platform",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3717,7 +3818,8 @@
           "member": "string",
           "name": "ExtThird",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3726,7 +3828,8 @@
           "member": "string",
           "name": "ExtFirst",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3735,7 +3838,8 @@
           "member": "string",
           "name": "NetType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3744,7 +3848,8 @@
           "member": "string",
           "name": "Device",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3753,7 +3858,8 @@
           "member": "string",
           "name": "IsAbroad",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3762,7 +3868,8 @@
           "member": "string",
           "name": "Os",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3771,7 +3878,8 @@
           "member": "string",
           "name": "Browser",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3780,7 +3888,8 @@
           "member": "string",
           "name": "CostType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -3789,7 +3898,18 @@
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "获取package",
+          "example": "loadPackage",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3804,7 +3924,8 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

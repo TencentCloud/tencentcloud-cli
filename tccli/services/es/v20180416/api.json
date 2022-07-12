@@ -844,6 +844,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1479,7 +1489,8 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1488,7 +1499,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1497,7 +1509,8 @@
           "member": "string",
           "name": "InstanceNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1506,7 +1519,8 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1515,7 +1529,8 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1524,7 +1539,8 @@
           "member": "uint64",
           "name": "OrderByKey",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1533,7 +1549,8 @@
           "member": "uint64",
           "name": "OrderByType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1542,7 +1559,8 @@
           "member": "TagInfo",
           "name": "TagList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1551,7 +1569,8 @@
           "member": "string",
           "name": "IpList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1560,7 +1579,8 @@
           "member": "string",
           "name": "ZoneList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1569,7 +1589,18 @@
           "member": "int64",
           "name": "HealthStatus",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "Vpc列表 筛选项",
+          "example": "vpc-gz5fa86l",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1584,7 +1615,8 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "实例详细信息列表",
@@ -1593,7 +1625,8 @@
           "name": "InstanceList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3091,6 +3124,17 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "集群可维护时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -3792,6 +3836,117 @@
       ],
       "usage": "out"
     },
+    "OperationDuration": {
+      "document": "集群可运维时间",
+      "members": [
+        {
+          "default": "",
+          "document": "维护周期，表示周一到周日，可取值[0, 6]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1,2]",
+          "member": "uint64",
+          "name": "Periods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "维护开始时间",
+          "example": "02:00",
+          "member": "string",
+          "name": "TimeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "维护结束时间",
+          "example": "06:00",
+          "member": "string",
+          "name": "TimeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "时区，以UTC形式表示",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "OperationDurationUpdated": {
+      "document": "集群可运维时间",
+      "members": [
+        {
+          "default": "",
+          "document": "维护周期，表示周一到周日，可取值[0, 6]",
+          "example": "[0,1,2]",
+          "member": "uint64",
+          "name": "Periods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "维护开始时间",
+          "example": "02:00",
+          "member": "string",
+          "name": "TimeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "维护结束时间",
+          "example": "06:00",
+          "member": "string",
+          "name": "TimeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "时区，以UTC形式表示",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "ES集群ID数组",
+          "example": "[es-c3tz27ww]",
+          "member": "string",
+          "name": "MoreInstances",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
       "members": [
@@ -4273,7 +4428,8 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4282,7 +4438,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4291,7 +4448,8 @@
           "member": "uint64",
           "name": "NodeNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4300,7 +4458,8 @@
           "member": "string",
           "name": "EsConfig",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4309,7 +4468,8 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4318,7 +4478,8 @@
           "member": "EsAcl",
           "name": "EsAcl",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4327,7 +4488,8 @@
           "member": "uint64",
           "name": "DiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4336,7 +4498,8 @@
           "member": "string",
           "name": "NodeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4345,7 +4508,8 @@
           "member": "uint64",
           "name": "MasterNodeNum",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4354,7 +4518,8 @@
           "member": "string",
           "name": "MasterNodeType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4363,7 +4528,8 @@
           "member": "uint64",
           "name": "MasterNodeDiskSize",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4372,7 +4538,8 @@
           "member": "bool",
           "name": "ForceRestart",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4381,7 +4548,8 @@
           "member": "CosBackup",
           "name": "CosBackup",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4390,7 +4558,8 @@
           "member": "NodeInfo",
           "name": "NodeInfoList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4399,7 +4568,8 @@
           "member": "string",
           "name": "PublicAccess",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4408,7 +4578,8 @@
           "member": "EsPublicAcl",
           "name": "EsPublicAcl",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4417,7 +4588,8 @@
           "member": "string",
           "name": "KibanaPublicAccess",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4426,7 +4598,8 @@
           "member": "string",
           "name": "KibanaPrivateAccess",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4435,7 +4608,8 @@
           "member": "int64",
           "name": "BasicSecurityType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4444,7 +4618,8 @@
           "member": "uint64",
           "name": "KibanaPrivatePort",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4453,7 +4628,8 @@
           "member": "int64",
           "name": "ScaleType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4462,7 +4638,8 @@
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4471,7 +4648,8 @@
           "member": "int64",
           "name": "SceneType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4480,7 +4658,8 @@
           "member": "string",
           "name": "KibanaConfig",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4489,7 +4668,8 @@
           "member": "WebNodeTypeInfo",
           "name": "WebNodeTypeInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4498,7 +4678,8 @@
           "member": "string",
           "name": "SwitchPrivateLink",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4507,7 +4688,8 @@
           "member": "bool",
           "name": "EnableCerebro",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4516,7 +4698,8 @@
           "member": "string",
           "name": "CerebroPublicAccess",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4525,7 +4708,8 @@
           "member": "string",
           "name": "CerebroPrivateAccess",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -4534,7 +4718,18 @@
           "member": "EsConfigSetInfo",
           "name": "EsConfigSet",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDurationUpdated",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4549,7 +4744,8 @@
           "name": "DealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli gaap CreateRule --cli-unfold-argument  \
+    --Domain www.bbb.com \
     --RealServerType IP \
+    --HealthCheck 1 \
     --ListenerId listener-9jt0rtv9 \
-    --Scheduler rr \
-    --Path %2Fimage \
-    --CheckParams.StatusCode 100 200 300 400 500 \
-    --CheckParams.DelayLoop 39 \
+    --CheckParams.ConnectTimeout 4 \
     --CheckParams.Path %2F \
     --CheckParams.Method HEAD \
-    --CheckParams.ConnectTimeout 4 \
-    --HealthCheck 1 \
-    --Domain www.bbb.com
+    --CheckParams.DelayLoop 39 \
+    --CheckParams.StatusCode 300 100 400 200 500 \
+    --Scheduler rr \
+    --Path %2Fimage
 ```
 
 Output: 

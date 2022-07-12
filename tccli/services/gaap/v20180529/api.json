@@ -2434,7 +2434,8 @@
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2443,7 +2444,8 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2452,7 +2454,8 @@
           "member": "string",
           "name": "Path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2461,7 +2464,8 @@
           "member": "string",
           "name": "RealServerType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2470,7 +2474,8 @@
           "member": "string",
           "name": "Scheduler",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2479,7 +2484,8 @@
           "member": "uint64",
           "name": "HealthCheck",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2488,7 +2494,8 @@
           "member": "RuleCheckParams",
           "name": "CheckParams",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2497,7 +2504,8 @@
           "member": "string",
           "name": "ForwardProtocol",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2506,7 +2514,8 @@
           "member": "string",
           "name": "ForwardHost",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2515,7 +2524,8 @@
           "member": "string",
           "name": "ServerNameIndicationSwitch",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2524,7 +2534,18 @@
           "member": "string",
           "name": "ServerNameIndication",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。",
+          "example": "https://www.qq.com/url",
+          "member": "string",
+          "name": "ForcedRedirect",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2539,7 +2560,8 @@
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7332,7 +7354,8 @@
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7341,7 +7364,8 @@
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7350,7 +7374,8 @@
           "member": "string",
           "name": "Scheduler",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7359,7 +7384,8 @@
           "member": "uint64",
           "name": "HealthCheck",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7368,7 +7394,8 @@
           "member": "RuleCheckParams",
           "name": "CheckParams",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7377,7 +7404,8 @@
           "member": "string",
           "name": "Path",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7386,7 +7414,8 @@
           "member": "string",
           "name": "ForwardProtocol",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7395,7 +7424,8 @@
           "member": "string",
           "name": "ForwardHost",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7404,7 +7434,8 @@
           "member": "string",
           "name": "ServerNameIndicationSwitch",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7413,7 +7444,18 @@
           "member": "string",
           "name": "ServerNameIndication",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。",
+          "example": "https://www.qq.com/url",
+          "member": "string",
+          "name": "ForcedRedirect",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -9052,7 +9094,8 @@
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9062,7 +9105,8 @@
           "name": "ListenerId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9072,7 +9116,8 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9082,7 +9127,8 @@
           "name": "Path",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9092,7 +9138,8 @@
           "name": "RealServerType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9102,7 +9149,8 @@
           "name": "Scheduler",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9112,7 +9160,8 @@
           "name": "HealthCheck",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9122,7 +9171,8 @@
           "name": "RuleStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9132,7 +9182,8 @@
           "name": "CheckParams",
           "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9142,7 +9193,8 @@
           "name": "RealServerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9152,7 +9204,8 @@
           "name": "BindStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9162,7 +9215,8 @@
           "name": "ForwardHost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9172,7 +9226,8 @@
           "name": "ServerNameIndicationSwitch",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "default": "",
@@ -9182,7 +9237,19 @@
           "name": "ServerNameIndication",
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "强转HTTPS指示，当传递值为https:时表示强转为https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https:",
+          "member": "string",
+          "name": "ForcedRedirect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

@@ -19,7 +19,7 @@
     "BatchDeregisterTargets": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=BatchDeregisterTargets\n&LoadBalancerId=lb-xxxx\n&Targets.0.ListenerId=lbl-xxxx\n&Targets.0.InstanceId=ins-xxx\n&Targets.0.Port=80\n&Targets.0.Weight=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeregisterTargets\n<公共请求参数>\n\n{\n    \"Targets\": [\n        {\n            \"InstanceId\": \"ins-xxx\",\n            \"ListenerId\": \"lbl-xxxx\",\n            \"Weight\": \"10\",\n            \"Port\": \"80\"\n        }\n    ],\n    \"LoadBalancerId\": \"lb-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FailListenerIdSet\": [],\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba22\"\n    }\n}",
         "title": "解绑弹性网卡"
       }
@@ -41,7 +41,7 @@
     "BatchRegisterTargets": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=BatchRegisterTargets\n&LoadBalancerId=lb-xxxx\n&Targets.0.ListenerId=lbl-xxxx\n&Targets.0.InstanceId=ins-xxx\n&Targets.0.Port=80\n&Targets.0.Weight=10\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchRegisterTargets\n<公共请求参数>\n\n{\n    \"Targets\": [\n        {\n            \"InstanceId\": \"ins-xxx\",\n            \"ListenerId\": \"lbl-xxxx\",\n            \"Weight\": \"10\",\n            \"Port\": \"80\"\n        }\n    ],\n    \"LoadBalancerId\": \"lb-xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FailListenerIdSet\": [],\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba22\"\n    }\n}",
         "title": "绑定云主机或弹性网卡"
       }

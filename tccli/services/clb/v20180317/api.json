@@ -13,7 +13,7 @@
       "output": "AutoRewriteResponse"
     },
     "BatchDeregisterTargets": {
-      "document": "批量解绑四七层后端服务。批量解绑的资源数量上限为500。",
+      "document": "批量解绑四七层后端服务。批量解绑的资源数量上限为500。只支持VPC网络负载均衡。",
       "input": "BatchDeregisterTargetsRequest",
       "name": "批量解绑四七层后端服务",
       "output": "BatchDeregisterTargetsResponse"
@@ -25,7 +25,7 @@
       "output": "BatchModifyTargetWeightResponse"
     },
     "BatchRegisterTargets": {
-      "document": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。批量绑定的资源数量上限为500。",
+      "document": "批量绑定虚拟主机或弹性网卡，支持跨域绑定，支持四层、七层（TCP、UDP、HTTP、HTTPS）协议绑定。批量绑定的资源数量上限为500。只支持VPC网络负载均衡。",
       "input": "BatchRegisterTargetsRequest",
       "name": "批量绑定虚拟主机或弹性网卡",
       "output": "BatchRegisterTargetsResponse"
@@ -765,7 +765,8 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -774,7 +775,8 @@
           "member": "BatchTarget",
           "name": "Targets",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -789,7 +791,8 @@
           "name": "FailListenerIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -846,7 +849,8 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -855,7 +859,8 @@
           "member": "BatchTarget",
           "name": "Targets",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -870,7 +875,8 @@
           "name": "FailListenerIdSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -26,34 +26,39 @@ Output:
         "TotalCount": 1,
         "TaskList": [
             {
+                "Error": "xx",
+                "UiUrl": "xx",
                 "CanDownload": true,
-                "DataSet": "{'Schema':['name','age'],'Data':[{'name':'29','age':'Michael'}]}",
+                "DataSet": "xx",
                 "State": 2,
                 "DataAmount": 1024,
+                "SparkJobId": "xx",
                 "Percentage": 100,
-                "SQLType": "DDL",
-                "RowAffectInfo": "500 rows selected (0.077 seconds)",
-                "InputConf": "[{'Key':'paths','Value':'lakefs://20000003366d155f79a522c8349496'}]",
-                "DataEngineId": "resource-1gghpd1t",
-                "UpdateTime": "1611646962000",
-                "TaskType": "presto",
-                "ProgressDetail": "[{'jobId':1,'stages':[{'stageId':1,'numTasks':3,'numActiveTasks'}]}]",
-                "InputType": "local",
+                "SQLType": "xx",
+                "SparkJobFile": "xx",
+                "RowAffectInfo": "xx",
+                "InputConf": "xx",
+                "DataEngineId": "xx",
+                "UpdateTime": "xx",
+                "SparkJobName": "xx",
+                "TaskType": "xx",
+                "ProgressDetail": "xx",
+                "InputType": "xx",
+                "UserAlias": "xx",
                 "DataNumber": 100,
                 "ResultExpired": true,
-                "OutputPath": "cosn://test-bucket-123434324234/result/",
-                "DataEngineName": "shared_presto",
-                "Error": "****",
-                "OperateUin": "****",
-                "OutputMessage": "****",
-                "CreateTime": "1611646962000",
+                "OutputPath": "xx",
+                "DataEngineName": "xx",
+                "OperateUin": "xx",
+                "OutputMessage": "xx",
+                "CreateTime": "xx",
                 "UsedTime": 60000,
-                "DatabaseName": "database1",
-                "SQL": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
-                "Id": "89570c65-49de-4bbd-ac0a-a67c724fc80f"
+                "DatabaseName": "xx",
+                "SQL": "xx",
+                "Id": "xx"
             }
         ],
-        "RequestId": "b577857e-041f-46c7-b5cf-4b3d3f50bc51"
+        "RequestId": "xx"
     }
 }
 ```
