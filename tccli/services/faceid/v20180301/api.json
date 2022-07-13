@@ -1939,16 +1939,18 @@
           "member": "string",
           "name": "EidToken",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息）。\n如 13表示拉取文本类、最佳截图信息。\n默认值：0",
+          "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：最佳截图信息；5：意愿核身相关结果；）。\n如 13表示拉取文本类、最佳截图信息。\n默认值：0",
           "example": "1",
           "member": "string",
           "name": "InfoType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -1957,7 +1959,8 @@
           "member": "uint64",
           "name": "BestFramesCount",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -1972,7 +1975,8 @@
           "name": "Text",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "身份证照片信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1981,7 +1985,8 @@
           "name": "IdCardData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "最佳帧信息。\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1990,7 +1995,8 @@
           "name": "BestFrame",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "Eid信息。（包括商户下用户唯一标识以及加密后的姓名、身份证号信息。解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)）\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -1999,7 +2005,18 @@
           "name": "EidInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionVerifyData",
+          "name": "IntentionVerifyData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2021,7 +2038,30 @@
           "name": "InputType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。",
+          "example": "true",
+          "member": "bool",
+          "name": "UseIntentionVerify",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。",
+          "example": "无",
+          "member": "string",
+          "name": "IntentionVerifyText",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "in"
@@ -2036,7 +2076,8 @@
           "member": "string",
           "name": "MerchantId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2045,7 +2086,8 @@
           "member": "string",
           "name": "IdCard",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2054,7 +2096,8 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2063,16 +2106,18 @@
           "member": "string",
           "name": "Extra",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "小程序模式配置，包括如何传入姓名身份证的配置。",
+          "document": "小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。",
           "example": "无",
           "member": "GetEidTokenConfig",
           "name": "Config",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2081,7 +2126,8 @@
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -2090,7 +2136,8 @@
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2105,7 +2152,8 @@
           "name": "EidToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "发起核身流程的URL，用于H5场景核身。",
@@ -2114,7 +2162,8 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

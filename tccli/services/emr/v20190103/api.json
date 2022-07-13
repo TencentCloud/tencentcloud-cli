@@ -5892,6 +5892,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "default": "",
+          "document": "预设配置组",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ScaleOutServiceConfAssign",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

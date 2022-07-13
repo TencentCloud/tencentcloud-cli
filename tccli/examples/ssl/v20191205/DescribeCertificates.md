@@ -58,6 +58,7 @@ Output:
                 "VulnerabilityStatus": "INACTIVE",
                 "Deployable": true,
                 "IsIgnore": true,
+                "IsSM": true,
                 "Tags": [
                     {
                         "TagKey": "testtag",
@@ -124,6 +125,7 @@ Output:
                 "RenewAble": false,
                 "Deployable": true,
                 "IsIgnore": false,
+                "IsSM": true,
                 "ProjectInfo": {
                     "ProjectId": "0",
                     "OwnerUin": 0,

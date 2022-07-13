@@ -2647,7 +2647,7 @@
     "ReturnIpInternal": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReturnIpInternal\n&Owner=121212\n&VpcId=1\n&UniqueVpcId=vpc-xxx\n&Ip=Ip\n&UniqueInstanceId=ins-xxx\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReturnIpInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"121212\",\n    \"Ip\": \"Ip\",\n    \"UniqueVpcId\": \"vpc-xxx\",\n    \"VpcId\": \"1\",\n    \"UniqueInstanceId\": \"ins-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "用于退还 VPC IP"
       }

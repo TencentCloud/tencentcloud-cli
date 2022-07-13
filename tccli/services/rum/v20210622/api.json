@@ -675,16 +675,18 @@
           "member": "int64",
           "name": "AreaId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
-          "document": "计费类型, (1=体验，2=预付费，3=后付费)",
+          "document": "计费类型, (1=后付费，2=预付费)",
           "example": "1",
           "member": "int64",
           "name": "ChargeType",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -693,7 +695,8 @@
           "member": "int64",
           "name": "DataRetentionDays",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
           "default": "",
@@ -702,7 +705,8 @@
           "member": "string",
           "name": "InstanceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -711,7 +715,8 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -720,7 +725,8 @@
           "member": "string",
           "name": "InstanceDesc",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -729,7 +735,8 @@
           "member": "string",
           "name": "CountNum",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -738,7 +745,8 @@
           "member": "string",
           "name": "PeriodRetain",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
           "default": "",
@@ -747,7 +755,8 @@
           "member": "string",
           "name": "BuyingChannel",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -762,7 +771,8 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

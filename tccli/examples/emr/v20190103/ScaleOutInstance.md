@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli emr ScaleOutInstance --cli-unfold-argument  \
-    --TimeUnit s \
-    --TimeSpan 3600 \
-    --CoreCount 1 \
     --InstanceId emr-5n3l5c83 \
-    --PayMode 0
+    --TimeUnit s \
+    --CoreCount 1 \
+    --PayMode 0 \
+    --TimeSpan 3600
 ```
 
 Output: 

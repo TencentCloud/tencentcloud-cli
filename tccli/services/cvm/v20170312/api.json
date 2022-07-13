@@ -7948,7 +7948,8 @@
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7957,7 +7958,8 @@
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": true,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7966,7 +7968,8 @@
           "member": "bool",
           "name": "ForceStop",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
           "default": "",
@@ -7975,7 +7978,8 @@
           "member": "bool",
           "name": "ReserveHostName",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"

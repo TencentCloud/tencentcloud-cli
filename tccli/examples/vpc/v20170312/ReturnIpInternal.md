@@ -7,9 +7,9 @@ Input:
 ```
 tccli vpc ReturnIpInternal --cli-unfold-argument  \
     --Owner 121212 \
-    --VpcId 1 \
-    --UniqueVpcId vpc-xxx \
     --Ip Ip \
+    --UniqueVpcId vpc-xxx \
+    --VpcId 1 \
     --UniqueInstanceId ins-xxx
 ```
 
