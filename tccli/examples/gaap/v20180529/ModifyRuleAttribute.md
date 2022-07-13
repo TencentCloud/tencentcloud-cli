@@ -7,16 +7,16 @@ Input:
 ```
 tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
     --RuleId rule-5g8dh58 \
-    --ListenerId listener-8fueuc9 \
-    --Path / \
-    --Scheduler rr \
     --HealthCheck 0 \
-    --CheckParams.DelayLoop 1 \
-    --CheckParams.Path str \
+    --ListenerId listener-8fueuc9 \
+    --CheckParams.Domain string \
     --CheckParams.ConnectTimeout 12 \
-    --CheckParams.StatusCode 1 \
+    --CheckParams.Path str \
     --CheckParams.Method string \
-    --CheckParams.Domain string
+    --CheckParams.DelayLoop 1 \
+    --CheckParams.StatusCode 1 \
+    --Scheduler rr \
+    --Path /
 ```
 
 Output: 

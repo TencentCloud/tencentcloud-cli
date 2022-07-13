@@ -163,7 +163,7 @@
     "CreateRule": [
       {
         "document": "创建HTTP/HTTPS监听器转发规则",
-        "input": "https://gaap.tencentcloudapi.com/?Action=CreateRule\n&RealServerType=IP\n&ListenerId=listener-9jt0rtv9\n&Scheduler=rr\n&Path=%2Fimage\n&CheckParams.StatusCode.0=100\n&CheckParams.StatusCode.2=200\n&CheckParams.StatusCode.1=300\n&CheckParams.StatusCode.3=400\n&CheckParams.StatusCode.4=500\n&CheckParams.DelayLoop=39\n&CheckParams.Path=%2F\n&CheckParams.Method=HEAD\n&CheckParams.ConnectTimeout=4\n&HealthCheck=1\n&Domain=www.bbb.com\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.bbb.com\",\n    \"RealServerType\": \"IP\",\n    \"HealthCheck\": \"1\",\n    \"ListenerId\": \"listener-9jt0rtv9\",\n    \"CheckParams\": {\n        \"ConnectTimeout\": \"4\",\n        \"Path\": \"%2F\",\n        \"Method\": \"HEAD\",\n        \"DelayLoop\": \"39\",\n        \"StatusCode\": [\n            \"300\",\n            \"100\",\n            \"400\",\n            \"200\",\n            \"500\"\n        ]\n    },\n    \"Scheduler\": \"rr\",\n    \"Path\": \"%2Fimage\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3ab4984-dfe0-4c6f-aca0-32100550f6fd\",\n        \"RuleId\": \"rule-qws4fmyl\"\n    }\n}",
         "title": "创建监听器转发规则"
       }
@@ -699,7 +699,7 @@
     "ModifyRuleAttribute": [
       {
         "document": "",
-        "input": "https://gaap.tencentcloudapi.com/?Action=ModifyRuleAttribute\n&RuleId=rule-5g8dh58\n&ListenerId=listener-8fueuc9\n&Path=/\n&Scheduler=rr\n&HealthCheck=0\n&CheckParams.DelayLoop=1\n&CheckParams.Path=str\n&CheckParams.ConnectTimeout=12\n&CheckParams.StatusCode.0=1\n&CheckParams.Method=string\n&CheckParams.Domain=string\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleAttribute\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-5g8dh58\",\n    \"HealthCheck\": \"0\",\n    \"ListenerId\": \"listener-8fueuc9\",\n    \"CheckParams\": {\n        \"Domain\": \"string\",\n        \"ConnectTimeout\": \"12\",\n        \"Path\": \"str\",\n        \"Method\": \"string\",\n        \"DelayLoop\": \"1\",\n        \"StatusCode\": [\n            \"1\"\n        ]\n    },\n    \"Scheduler\": \"rr\",\n    \"Path\": \"/\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "修改转发规则信息"
       }

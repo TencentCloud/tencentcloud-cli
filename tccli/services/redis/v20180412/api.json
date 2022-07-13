@@ -3081,7 +3081,7 @@
       "members": [
         {
           "default": "",
-          "document": "实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准",
+          "document": "返回数量，参数默认值20，最大值为1000",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -3292,6 +3292,15 @@
           "example": "无",
           "member": "string",
           "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "需要过滤的产品版本支持多个，\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传则默认不过滤",
+          "example": "[\"cdc\"]",
+          "member": "string",
+          "name": "ProductVersions",
           "required": false,
           "type": "list"
         }

@@ -802,6 +802,15 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1400,6 +1409,15 @@
           "example": "无",
           "member": "int64",
           "name": "HealthStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "Vpc列表 筛选项",
+          "example": "vpc-gz5fa86l",
+          "member": "string",
+          "name": "VpcIds",
           "required": false,
           "type": "list"
         }
@@ -2792,6 +2810,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群可维护时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperationDuration",
+          "name": "OperationDuration",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3482,6 +3510,108 @@
         }
       ],
       "usage": "out"
+    },
+    "OperationDuration": {
+      "document": "集群可运维时间",
+      "members": [
+        {
+          "default": "",
+          "document": "维护周期，表示周一到周日，可取值[0, 6]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1,2]",
+          "member": "uint64",
+          "name": "Periods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "维护开始时间",
+          "example": "02:00",
+          "member": "string",
+          "name": "TimeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维护结束时间",
+          "example": "06:00",
+          "member": "string",
+          "name": "TimeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时区，以UTC形式表示",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OperationDurationUpdated": {
+      "document": "集群可运维时间",
+      "members": [
+        {
+          "default": "",
+          "document": "维护周期，表示周一到周日，可取值[0, 6]",
+          "example": "[0,1,2]",
+          "member": "uint64",
+          "name": "Periods",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维护开始时间",
+          "example": "02:00",
+          "member": "string",
+          "name": "TimeStart",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "维护结束时间",
+          "example": "06:00",
+          "member": "string",
+          "name": "TimeEnd",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "时区，以UTC形式表示",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "ES集群ID数组",
+          "example": "[es-c3tz27ww]",
+          "member": "string",
+          "name": "MoreInstances",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
@@ -4208,6 +4338,15 @@
           "example": "无",
           "member": "EsConfigSetInfo",
           "name": "EsConfigSet",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "document": "可维护时间段",
+          "example": "无",
+          "member": "OperationDurationUpdated",
+          "name": "OperationDuration",
           "required": false,
           "type": "object"
         }

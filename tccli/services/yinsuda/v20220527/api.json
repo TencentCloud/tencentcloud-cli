@@ -444,6 +444,26 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "前奏间隔。",
+          "example": "0",
+          "member": "int64",
+          "name": "PreludeInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "歌曲流派列表。",
+          "example": "无",
+          "member": "string",
+          "name": "GenreSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -46,6 +46,14 @@
         "title": "创建资源配置示例"
       }
     ],
+    "DeleteJobs": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteJobs\n&JobIds.0=cql-2ldwgh8i\n&JobIds.1=cql-34klpwqm\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
+        "title": "批量删除作业示例"
+      }
+    ],
     "DeleteResourceConfigs": [
       {
         "document": "",
@@ -68,6 +76,14 @@
         "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteTableConfig\n&DebugId=1\n&JobId=cql-xxxxxxx\n&TableName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除作业表配置"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 11,\n        \"ClusterSet\": [],\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "查询集群列表"
       }
     ],
     "DescribeJobConfigs": [
@@ -124,6 +140,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSystemResources\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cluster-n8yaia0p\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09250e9b-d3a1-4d37-b44f-de10e06ed52d\",\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"resource-abd503yt\",\n                \"Name\": \"testjar\",\n                \"ResourceType\": 1,\n                \"Remark\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"LatestResourceConfigVersion\": 1\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询系统资源配置列表示例"
+      }
+    ],
+    "DescribeTreeJobs": [
+      {
+        "document": "用户点击作业管理页面中的分类的自定义树状结构并点击分类旁的筛选按钮选择作业类型",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTreeJobs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456a\"\n    }\n}",
+        "title": "分类中的自定义树状结构并筛选"
       }
     ],
     "ModifyJob": [

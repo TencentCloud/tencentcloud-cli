@@ -30,6 +30,12 @@
       "name": "创建资源配置接口",
       "output": "CreateResourceConfigResponse"
     },
+    "DeleteJobs": {
+      "document": "批量删除作业接口，批量操作数量上限20",
+      "input": "DeleteJobsRequest",
+      "name": "删除作业",
+      "output": "DeleteJobsResponse"
+    },
     "DeleteResourceConfigs": {
       "document": "删除资源版本",
       "input": "DeleteResourceConfigsRequest",
@@ -47,6 +53,12 @@
       "input": "DeleteTableConfigRequest",
       "name": "删除作业表配置",
       "output": "DeleteTableConfigResponse"
+    },
+    "DescribeClusters": {
+      "document": "查询集群",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群",
+      "output": "DescribeClustersResponse"
     },
     "DescribeJobConfigs": {
       "document": "查询作业配置列表，一次最多查询100个",
@@ -90,6 +102,12 @@
       "name": "描述系统资源接口",
       "output": "DescribeSystemResourcesResponse"
     },
+    "DescribeTreeJobs": {
+      "document": "生成树状作业显示结构",
+      "input": "DescribeTreeJobsRequest",
+      "name": "自定义树状结构",
+      "output": "DescribeTreeJobsResponse"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
@@ -122,6 +140,39 @@
     "serviceShortName": "oceanus"
   },
   "objects": {
+    "CCN": {
+      "document": "云联网描述信息",
+      "members": [
+        {
+          "default": "",
+          "document": "私有网络 ID",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "子网 ID",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "云联网 ID，如 ccn-rahigzjd",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CheckSavepointRequest": {
       "document": "CheckSavepoint请求参数结构体",
       "members": [
@@ -202,6 +253,378 @@
         }
       ],
       "type": "object"
+    },
+    "Cluster": {
+      "document": "描述用户创建的集群信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "cluster-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "-",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "用户 AppID",
+          "example": "12314214",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "主账号 UIN",
+          "example": "12314214",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "创建者 UIN",
+          "example": "12314214",
+          "member": "string",
+          "name": "CreatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群状态, 1 未初始化,，3 初始化中，2 运行中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "描述",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群创建时间",
+          "example": "2020-01-21 00:00:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "最后一次操作集群的时间",
+          "example": "2020-01-21 01:00:10",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CU 数量",
+          "example": "12",
+          "member": "uint64",
+          "name": "CuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "CU 内存规格",
+          "example": "4",
+          "member": "uint64",
+          "name": "CuMem",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "状态描述",
+          "example": "1",
+          "member": "string",
+          "name": "StatusDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络",
+          "example": "[]",
+          "member": "CCN",
+          "name": "CCNs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "网络",
+          "example": "2",
+          "member": "uint64",
+          "name": "NetEnvironmentType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "空闲 CU",
+          "example": "2",
+          "member": "int64",
+          "name": "FreeCuNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群隔离时间; 没隔离时间，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "IsolatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群过期时间; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "距离过期还有多少秒; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "SecondsUntilExpiry",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "自动续费标记，0 表示默认状态 (用户未设置，即初始状态，用户开通了预付费不停服特权会进行自动续费)， 1 表示自动续费，2表示明确不自动续费(用户设置)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的默认 COS 存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-12314214",
+          "member": "string",
+          "name": "DefaultCOSBucket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的CLS 日志集 LogSet\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx-xx-xx-xxxx",
+          "member": "string",
+          "name": "CLSLogSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的CLS 日志主题 TopicId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx-xx-xx-xxxx",
+          "member": "string",
+          "name": "CLSTopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的CLS 日志集  名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "日志集名字",
+          "member": "string",
+          "name": "CLSLogName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的CLS 日志主题  名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "日志主题名字",
+          "member": "string",
+          "name": "CLSTopicName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ClusterVersion",
+          "name": "Version",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "细粒度资源下的空闲CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "FreeCu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群的默认日志采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DefaultLogCollectConf",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "取值：0-没有设置，1-已设置，2-不允许设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CustomizedDNSEnabled",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "WorkSpaceClusterItem",
+          "name": "Correlations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "运行CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "RunningCu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "0 后付费,1 预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterVersion": {
+      "document": "集群的版本相关信息",
+      "members": [
+        {
+          "default": "",
+          "document": "集群的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Flink-1.11",
+          "member": "string",
+          "name": "Flink",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "集群支持的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Flink-1.13\", \"\"Flink-1.11\"]",
+          "member": "string",
+          "name": "SupportedFlink",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateJobConfigRequest": {
       "document": "CreateJobConfig请求参数结构体",
@@ -671,6 +1094,42 @@
       ],
       "type": "object"
     },
+    "DeleteJobsRequest": {
+      "document": "DeleteJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "作业Id列表",
+          "example": "[]",
+          "member": "string",
+          "name": "JobIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间Id",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobsResponse": {
+      "document": "DeleteJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteResourceConfigsRequest": {
       "document": "DeleteResourceConfigs请求参数结构体",
       "members": [
@@ -797,6 +1256,96 @@
     "DeleteTableConfigResponse": {
       "document": "DeleteTableConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "按照一个或者多个集群 ID 查询，每次请求的集群上限为 100",
+          "example": "cluster-xxxx",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "请求的集群数量，默认 20，最大值 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "document": "过滤规则",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "document": "集群总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "集群列表",
+          "example": "[]",
+          "member": "Cluster",
+          "name": "ClusterSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1427,6 +1976,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTreeJobsRequest": {
+      "document": "DescribeTreeJobs请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "document": "工作空间 Serialid",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTreeJobsResponse": {
+      "document": "DescribeTreeJobs返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2840,6 +3416,30 @@
       ],
       "usage": "out"
     },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "default": "",
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TriggerJobSavepointRequest": {
       "document": "TriggerJobSavepoint请求参数结构体",
       "members": [
@@ -2920,6 +3520,72 @@
         }
       ],
       "type": "object"
+    },
+    "WorkSpaceClusterItem": {
+      "document": "空间和集群绑定关系",
+      "members": [
+        {
+          "default": "",
+          "document": "集群 ID",
+          "example": "1234",
+          "member": "int64",
+          "name": "ClusterGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群 SerialId",
+          "example": "cluster-xxxx",
+          "member": "string",
+          "name": "ClusterGroupSerialId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "集群名称",
+          "example": "MyCluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间 SerialId",
+          "example": "spc-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "工作空间名称",
+          "example": "Myspace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "document": "绑定状态  2 绑定 1  解除绑定",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

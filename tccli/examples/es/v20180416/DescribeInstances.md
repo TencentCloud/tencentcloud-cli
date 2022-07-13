@@ -1,6 +1,6 @@
 **Example 1: 查询ES集群实例**
 
-根据给定条件查询符合条件的ES集群实例并返回详细信息
+
 
 Input: 
 
@@ -14,343 +14,136 @@ Output:
         "TotalCount": 1,
         "InstanceList": [
             {
-                "WebNodeTypeInfo": {
-                    "NodeNum": 1,
-                    "NodeType": "xx"
-                },
-                "EsPort": 1,
-                "RenewFlag": "xx",
-                "Zone": "xx",
-                "FrozenNodeNum": 1,
-                "FrozenCpuNum": 1,
-                "ChargePeriod": 1,
-                "IkConfig": {
-                    "QQDict": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "UpdateType": "xx",
-                    "Stopwords": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "MainDict": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "Synonym": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ]
-                },
-                "WarmMemSize": 1,
-                "DiskType": "xx",
-                "EsPublicUrl": "xx",
-                "NodeNum": 1,
-                "FrozenDiskType": "xx",
-                "ColdNodeType": "xx",
-                "SubnetUid": "xx",
-                "EsVip": "xx",
+                "InstanceId": "es-7sy7efoi",
+                "InstanceName": "_some_name_",
+                "InstanceType": 2,
+                "Region": "ap-guangzhou",
+                "Zone": "ap-guangzhou-3",
+                "AppId": 130000000,
+                "Uin": "100000000",
+                "VpcUid": "vpc-xxxxxx",
+                "SubnetUid": "subnet-xxxxxx",
+                "Status": 1,
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "ChargePeriod": 0,
+                "RenewFlag": "",
                 "NodeInfoList": [
                     {
-                        "LocalDiskInfo": {
-                            "LocalDiskType": "xx",
-                            "LocalDiskSize": 1,
-                            "LocalDiskCount": 1
-                        },
-                        "NodeType": "xx",
-                        "DiskEncrypt": 1,
+                        "Type": "hotData",
+                        "NodeNum": 3,
+                        "NodeType": "ES.SA2.MEDIUM4",
+                        "DiskType": "CLOUD_SSD",
+                        "DiskSize": 20,
+                        "DiskEncrypt": 0,
                         "DiskCount": 1,
-                        "DiskType": "xx",
-                        "NodeNum": 1,
-                        "DiskSize": 1,
-                        "Type": "xx"
+                        "LocalDiskInfo": null
                     }
                 ],
-                "EsPublicAcl": {
-                    "BlackIpList": [
-                        "xx"
-                    ],
-                    "WhiteIpList": [
-                        "xx"
-                    ]
+                "NodeType": "ES.SA2.MEDIUM4",
+                "NodeNum": 3,
+                "CpuNum": 2,
+                "MemSize": 4,
+                "DiskType": "CLOUD_SSD",
+                "DiskSize": 20,
+                "EnableHotWarmMode": false,
+                "WarmNodeType": "",
+                "WarmNodeNum": 0,
+                "WarmCpuNum": 0,
+                "WarmMemSize": 0,
+                "WarmDiskType": "",
+                "WarmDiskSize": 0,
+                "ColdNodeType": "",
+                "ColdNodeNum": 0,
+                "ColdCpuNum": 0,
+                "ColdMemSize": 0,
+                "ColdDiskType": "",
+                "ColdDiskSize": 0,
+                "FrozenNodeType": "",
+                "FrozenNodeNum": 0,
+                "FrozenCpuNum": 0,
+                "FrozenMemSize": 0,
+                "FrozenDiskType": "",
+                "FrozenDiskSize": 0,
+                "MasterNodeInfo": {
+                    "EnableDedicatedMaster": false,
+                    "MasterNodeType": "",
+                    "MasterNodeNum": 0,
+                    "MasterNodeCpuNum": 0,
+                    "MasterNodeMemSize": 0,
+                    "MasterNodeDiskType": "",
+                    "MasterNodeDiskSize": 0
                 },
-                "WarmNodeType": "xx",
-                "KibanaPublicAccess": "xx",
-                "Status": 1,
-                "ColdMemSize": 1,
-                "UpdateTime": "xx",
-                "EnableHotWarmMode": true,
-                "EsPrivateUrl": "xx",
-                "EsPrivateDomain": "xx",
-                "InstanceId": "xx",
-                "FrozenNodeType": "xx",
-                "CpuNum": 1,
-                "ColdNodeNum": 1,
-                "CosBackup": {
-                    "IsAutoBackup": true,
-                    "BackupTime": "xx"
-                },
-                "FrozenMemSize": 1,
-                "SecurityGroups": [
-                    "xx"
-                ],
-                "SceneType": 0,
-                "KibanaPrivateUrl": "xx",
-                "InstanceType": 1,
-                "ColdDiskSize": 1,
-                "EsVersion": "xx",
-                "ColdDiskType": "xx",
-                "AllowCosBackup": true,
-                "Jdk": "xx",
-                "VpcUid": "xx",
-                "Region": "xx",
-                "WarmCpuNum": 1,
-                "MultiZoneInfo": [
-                    {
-                        "SubnetId": "xx",
-                        "Zone": "xx"
-                    }
-                ],
-                "LicenseType": "xx",
-                "EsConfig": "xx",
-                "WarmNodeNum": 1,
-                "WarmDiskType": "xx",
-                "DiskSize": 1,
-                "DeployMode": 1,
                 "KibanaNodeInfo": {
+                    "KibanaNodeType": "ES.SA2.SMALL2",
                     "KibanaNodeNum": 1,
                     "KibanaNodeCpuNum": 1,
-                    "KibanaNodeMemSize": 1,
-                    "KibanaNodeDiskType": "xx",
-                    "KibanaNodeType": "xx",
-                    "KibanaNodeDiskSize": 1
+                    "KibanaNodeMemSize": 2,
+                    "KibanaNodeDiskType": "CLOUD_PREMIUM",
+                    "KibanaNodeDiskSize": 50
                 },
-                "MemSize": 1,
-                "Protocol": "xx",
-                "KibanaPrivateAccess": "xx",
-                "InstanceName": "xx",
+                "EsDomain": "es-7sy7efoi.myelasticsearch.com",
+                "EsPrivateDomain": "es-7sy7efoi-esinternal.kibana.myelasticsearch.com",
+                "EsVip": "{vip}",
+                "EsPort": 9200,
+                "KibanaUrl": "https://es-7sy7efoi.kibana.myelasticsearch.com:5601",
+                "KibanaPrivateUrl": "",
+                "PublicAccess": "CLOSE",
+                "KibanaPublicAccess": "OPEN",
+                "KibanaPrivateAccess": "CLOSE",
+                "Protocol": "",
+                "SecurityGroups": [],
+                "EsPublicUrl": "",
+                "EsPrivateUrl": "https://es-7sy7efoi-esinternal.kibana.myelasticsearch.com:9200",
+                "EsVersion": "7.14.2",
+                "EsConfig": "{}",
+                "EsConfigSets": [],
+                "KibanaConfig": "",
                 "EsAcl": {
-                    "BlackIpList": [
-                        "xx"
-                    ],
                     "WhiteIpList": [
-                        "xx"
-                    ]
+                        "127.0.0.1"
+                    ],
+                    "BlackIpList": []
                 },
-                "ColdCpuNum": 1,
-                "MasterNodeInfo": {
-                    "MasterNodeMemSize": 1,
-                    "MasterNodeDiskType": "xx",
-                    "MasterNodeType": "xx",
-                    "MasterNodeNum": 1,
-                    "MasterNodeDiskSize": 1,
-                    "EnableDedicatedMaster": true,
-                    "MasterNodeCpuNum": 1
+                "EsPublicAcl": {
+                    "WhiteIpList": [],
+                    "BlackIpList": []
                 },
-                "NodeType": "xx",
-                "PublicAccess": "xx",
-                "FrozenDiskSize": 1,
-                "SecurityType": 1,
-                "Uin": "xx",
-                "HealthStatus": 0,
-                "EsDomain": "xx",
-                "WarmDiskSize": 1,
-                "Deadline": "xx",
-                "ChargeType": "xx",
-                "AppId": 1,
-                "KibanaUrl": "xx",
-                "CreateTime": "xx",
-                "KibanaConfig": "xx",
-                "TagList": [
+                "IkConfig": {
+                    "UpdateType": "",
+                    "MainDict": [],
+                    "Stopwords": [],
+                    "Synonym": [],
+                    "QQDict": []
+                },
+                "AllowCosBackup": true,
+                "CosBackup": {
+                    "IsAutoBackup": false,
+                    "BackupTime": ""
+                },
+                "DeployMode": 0,
+                "MultiZoneInfo": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "Zone": "ap-guangzhou-3",
+                        "SubnetId": "subnet-q29llw8g"
                     }
-                ]
-            },
-            {
+                ],
+                "TagList": [],
+                "HealthStatus": 0,
+                "SecurityType": 2,
+                "LicenseType": "platinum",
+                "SceneType": 1,
+                "Jdk": "kona",
                 "WebNodeTypeInfo": {
                     "NodeNum": 1,
-                    "NodeType": "xx"
+                    "NodeType": "ES.SA2.SMALL2"
                 },
-                "EsPort": 1,
-                "RenewFlag": "xx",
-                "Zone": "xx",
-                "FrozenNodeNum": 1,
-                "FrozenCpuNum": 1,
-                "ChargePeriod": 1,
-                "ColdDiskType": "xx",
-                "WarmMemSize": 1,
-                "DiskType": "xx",
-                "EsPublicUrl": "xx",
-                "NodeNum": 1,
-                "SecurityType": 1,
-                "SubnetUid": "xx",
-                "EsVip": "xx",
-                "AllowCosBackup": true,
-                "EsPublicAcl": {
-                    "BlackIpList": [
-                        "xx"
-                    ],
-                    "WhiteIpList": [
-                        "xx"
-                    ]
-                },
-                "WarmNodeType": "xx",
-                "KibanaPublicAccess": "xx",
-                "Status": 1,
-                "ColdMemSize": 1,
-                "UpdateTime": "xx",
-                "InstanceId": "xx",
-                "InstanceName": "xx",
-                "WarmDiskSize": 1,
-                "CpuNum": 1,
-                "ColdNodeNum": 1,
-                "CosBackup": {
-                    "IsAutoBackup": true,
-                    "BackupTime": "xx"
-                },
-                "SecurityGroups": [
-                    "xx"
-                ],
-                "Deadline": "xx",
-                "SceneType": 0,
-                "KibanaPrivateUrl": "xx",
-                "InstanceType": 1,
-                "ColdDiskSize": 1,
-                "EsVersion": "xx",
-                "IkConfig": {
-                    "QQDict": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "UpdateType": "xx",
-                    "Stopwords": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "MainDict": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ],
-                    "Synonym": [
-                        {
-                            "Name": "xx",
-                            "Key": "xx",
-                            "Size": 1
-                        }
-                    ]
-                },
-                "PublicAccess": "xx",
-                "NodeInfoList": [
-                    {
-                        "LocalDiskInfo": {
-                            "LocalDiskType": "xx",
-                            "LocalDiskSize": 1,
-                            "LocalDiskCount": 1
-                        },
-                        "NodeType": "xx",
-                        "DiskEncrypt": 1,
-                        "DiskCount": 1,
-                        "DiskType": "xx",
-                        "NodeNum": 1,
-                        "DiskSize": 1,
-                        "Type": "xx"
-                    }
-                ],
-                "Jdk": "xx",
-                "VpcUid": "xx",
-                "Region": "xx",
-                "AppId": 1,
-                "MultiZoneInfo": [
-                    {
-                        "SubnetId": "xx",
-                        "Zone": "xx"
-                    }
-                ],
-                "LicenseType": "xx",
-                "EsConfig": "xx",
-                "WarmNodeNum": 1,
-                "DiskSize": 1,
-                "DeployMode": 1,
-                "KibanaNodeInfo": {
-                    "KibanaNodeNum": 1,
-                    "KibanaNodeCpuNum": 1,
-                    "KibanaNodeMemSize": 1,
-                    "KibanaNodeDiskType": "xx",
-                    "KibanaNodeType": "xx",
-                    "KibanaNodeDiskSize": 1
-                },
-                "FrozenMemSize": 1,
-                "NodeType": "xx",
-                "KibanaPrivateAccess": "xx",
-                "FrozenNodeType": "xx",
-                "EsAcl": {
-                    "BlackIpList": [
-                        "xx"
-                    ],
-                    "WhiteIpList": [
-                        "xx"
-                    ]
-                },
-                "ColdCpuNum": 1,
-                "EsDomain": "xx",
-                "MasterNodeInfo": {
-                    "MasterNodeMemSize": 1,
-                    "MasterNodeDiskType": "xx",
-                    "MasterNodeType": "xx",
-                    "MasterNodeNum": 1,
-                    "MasterNodeDiskSize": 1,
-                    "EnableDedicatedMaster": true,
-                    "MasterNodeCpuNum": 1
-                },
-                "Protocol": "xx",
-                "MemSize": 1,
-                "FrozenDiskSize": 1,
-                "ColdNodeType": "xx",
-                "Uin": "xx",
-                "WarmDiskType": "xx",
-                "FrozenDiskType": "xx",
-                "HealthStatus": 0,
-                "ChargeType": "xx",
-                "WarmCpuNum": 1,
-                "KibanaUrl": "xx",
-                "CreateTime": "xx",
-                "EnableHotWarmMode": true,
-                "EsPrivateUrl": "xx",
-                "EsPrivateDomain": "xx",
-                "KibanaConfig": "xx",
-                "TagList": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ]
+                "CreateTime": "2022-07-06 20:52:48",
+                "UpdateTime": "2022-07-07 17:35:29",
+                "Deadline": "2017-12-04 00:00:00",
+                "OperationDuration": null
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "xxxx"
     }
 }
 ```

@@ -1828,6 +1828,24 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "httpcode响应码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2294,6 +2312,24 @@
           "example": "prod",
           "member": "string",
           "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "httpcode响应码",
+          "example": "200",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "retcode",
+          "example": "1",
+          "member": "string",
+          "name": "Ret",
           "required": false,
           "type": "string"
         }
@@ -3788,6 +3824,15 @@
           "example": "prod",
           "member": "string",
           "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "document": "获取package",
+          "example": "loadPackage",
+          "member": "string",
+          "name": "PackageType",
           "required": false,
           "type": "string"
         }

@@ -2479,6 +2479,15 @@
           "name": "ServerNameIndication",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。",
+          "example": "https://www.qq.com/url",
+          "member": "string",
+          "name": "ForcedRedirect",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7289,6 +7298,15 @@
           "name": "ServerNameIndication",
           "required": false,
           "type": "string"
+        },
+        {
+          "default": "",
+          "document": "HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。",
+          "example": "https://www.qq.com/url",
+          "member": "string",
+          "name": "ForcedRedirect",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8985,6 +9003,16 @@
           "example": "xx",
           "member": "string",
           "name": "ServerNameIndication",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "document": "强转HTTPS指示，当传递值为https:时表示强转为https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https:",
+          "member": "string",
+          "name": "ForcedRedirect",
           "required": true,
           "type": "string",
           "value_allowed_null": true
